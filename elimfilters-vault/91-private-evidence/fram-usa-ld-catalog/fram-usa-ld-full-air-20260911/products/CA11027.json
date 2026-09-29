@@ -1,0 +1,754 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA11027",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA11027",
+    "product_type": "Air Filter, Air",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": 4.35,
+      "outer_diameter_mm": 110.49,
+      "height_in": 4.71,
+      "height_mm": 119.63,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Round Plastisol Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2038"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "2406"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42406"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87406"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P606079"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF25656"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1017"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF8383"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "84081C"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "84081N"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA11027",
+    "source_part_key": "001510408",
+    "source_totals": {
+      "attributes": 25,
+      "applications": 44,
+      "cross_references": 10
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA11027, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Round Plastisol Air Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "83"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "84"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "85"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "4.710",
+        "recno": "87"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "4.350",
+        "recno": "88"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "3.000",
+        "recno": "89"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "4.350",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "3.000",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100546654",
+        "recno": "92"
+      },
+      {
+        "attribute": "Inside Diameter (Inch)",
+        "value": "3.000",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "4.350",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "94"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "95"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "0.6500",
+        "recno": "99"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "5.7500",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "5.5620",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "5.4370",
+        "recno": "102"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": 0.65,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": 5.75,
+        "case_length_in": 5.562,
+        "case_width_in": 5.437,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 44,
+    "all_cross_references_observed": 10,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:02:09.827Z",
+  "discovered_from": "CA11027",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "10T w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "10T w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "10T3NLM w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "10T3NLM w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "15T w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "15T w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "2000P w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "2000P w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "20T w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "20T w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "20T2 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "20T2 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "2540 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "2540 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "2545 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "2545 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "25T w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "25T w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "25T2 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "25T2 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "3000 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "3000 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "30T w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "30T w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "7100 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "7100 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "71T w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "71T w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "71T2 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "71T2 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "7T w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "7T w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "7T2 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "7T2 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "7T4 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "7T4 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "H15T w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "H15T w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "OL15 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "OL15 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "OL25 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "OL25 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "T30 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "T30 w/Ingersoll-Rand Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2038",
+        "source_part_number": "CA11027",
+        "part_key": "001510408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87406",
+        "source_part_number": "CA11027",
+        "part_key": "001510408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P606079",
+        "source_part_number": "CA11027",
+        "part_key": "001510408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF25656",
+        "source_part_number": "CA11027",
+        "part_key": "001510408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1017",
+        "source_part_number": "CA11027",
+        "part_key": "001510408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF8383",
+        "source_part_number": "CA11027",
+        "part_key": "001510408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "2406",
+        "source_part_number": "CA11027",
+        "part_key": "001510408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "84081C",
+        "source_part_number": "CA11027",
+        "part_key": "001510408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "84081N",
+        "source_part_number": "CA11027",
+        "part_key": "001510408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42406",
+        "source_part_number": "CA11027",
+        "part_key": "001510408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

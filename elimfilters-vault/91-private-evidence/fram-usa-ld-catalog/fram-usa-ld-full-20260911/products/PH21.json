@@ -1,0 +1,1032 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH21",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH21",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 3.781,
+      "outer_diameter_mm": 96.04,
+      "height_in": 5.125,
+      "height_mm": 130.17,
+      "thread_size": "5/8-18",
+      "gasket_od_in": 2.797,
+      "gasket_od_mm": 71.04,
+      "gasket_id_in": 2.422,
+      "gasket_id_mm": 61.52,
+      "gasket_thickness_in": 0.203,
+      "gasket_thickness_mm": 5.16,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "Yes",
+      "bypass_relief_valve": "Yes",
+      "bypass_setting_psi": 12,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7124"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT248"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-6"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1110"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L30019"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51110"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Big A",
+        "part_number": "92110"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85110"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "FP38"
+      },
+      {
+        "manufacturer": "Ditch Witch",
+        "part_number": "155-929"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550194"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF727"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8727"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF425"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L41"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP2252"
+      },
+      {
+        "manufacturer": "United Engine Life",
+        "part_number": "P-4"
+      },
+      {
+        "manufacturer": "Wisconsin",
+        "part_number": "RV38S"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "PH21",
+    "source_part_key": "001470335",
+    "source_totals": {
+      "attributes": 39,
+      "applications": 54,
+      "cross_references": 18
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, PH21, HD Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Spin-on Oil Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "Yes",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "Yes",
+        "recno": "81"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "84"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Standard",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Orange",
+        "recno": "89"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available Only While Supplies Last",
+        "recno": "91"
+      },
+      {
+        "attribute": "Drain Plug Included",
+        "value": "No",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100013927",
+        "recno": "92"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Oil Filter",
+        "recno": "94"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "95"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "5.125",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "3.781",
+        "recno": "97"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "2.422",
+        "recno": "98"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "2.797",
+        "recno": "99"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.203",
+        "recno": "100"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Inch)",
+        "value": "5/8-18",
+        "recno": "101"
+      },
+      {
+        "attribute": "Bypass Relief Valve Setting (Pounds per Square Inch)",
+        "value": "12",
+        "recno": "102"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "103"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "104"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "105"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.4910",
+        "recno": "109"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "8.9460",
+        "recno": "110"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "5.3870",
+        "recno": "111"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "6.0120",
+        "recno": "112"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.7760",
+        "recno": "113"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "11.6670",
+        "recno": "114"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.7760",
+        "recno": "115"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "7.9270",
+        "recno": "116"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.491,
+        "case_weight_lb": 8.946,
+        "unit_height_in": 5.387,
+        "unit_length_in": 3.776,
+        "unit_width_in": 3.776,
+        "case_height_in": 6.012,
+        "case_length_in": 11.667,
+        "case_width_in": 7.927,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 17.892,
+        "estimated_case_dimensions": {
+          "length_in": 15.556,
+          "width_in": 11.89,
+          "height_in": 6.012,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 54,
+    "all_cross_references_observed": 18,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:16:55.907Z",
+  "discovered_from": "PH21",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1045 w/Wisconsin V460D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1045 w/Wisconsin V461D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1046 w/Wisconsin V460D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1046 w/Wisconsin V461D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALER FREEMAN",
+        "model": "300W w/Wisconsin V-461D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALER FREEMAN",
+        "model": "300W, 330W w/Wisconsin V-461D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALER NEW HOLLAND",
+        "model": "1280 w/Wisconsin V461D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALER NEW HOLLAND",
+        "model": "1281 w/Wisconsin V461D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALER NEW HOLLAND",
+        "model": "1290 w/Wisconsin V461D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALER NEW HOLLAND",
+        "model": "425 Hayliner w/Wisconsin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE EQUIPMENT CHALLENGE",
+        "model": "HYDRA-JET BLASTER w/Wisconsin 461D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE PUMP CASE",
+        "model": "P104 w/Wisconsin V465D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE PUMP JAEGER",
+        "model": "Ramrod I w/Wisconsin V-465D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT DEMPSTER",
+        "model": "Compaction Trailer w/Wisconsin V460D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT VERMEER",
+        "model": "1560 w/Wisconsin V465D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT VERMEER",
+        "model": "18 w/Wisconsin V465D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT VERMEER",
+        "model": "665, 1560, 2460 w/Wisconsin Engines",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT VERMEER",
+        "model": "665A w/Wisconsin V465D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL WISCONSIN",
+        "model": "V460D, V461D, V465D",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE WISCONSIN",
+        "model": "460D",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE WISCONSIN",
+        "model": "461D",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE WISCONSIN",
+        "model": "465D",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE WISCONSIN",
+        "model": "V460D",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT VERMEER",
+        "model": "2465 w/Wisconsin V465D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT VERMEER",
+        "model": "SP24 Plow",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FARM EQUIPMENT NEW HOLLAND",
+        "model": "900 w/Wisconsin F460D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FARM EQUIPMENT NEW HOLLAND",
+        "model": "901 w/Wisconsin F460D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FARM EQUIPMENT NEW HOLLAND",
+        "model": "903 w/Wisconsin F461D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FARM EQUIPMENT NEW HOLLAND",
+        "model": "905 w/Wisconsin F461D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FARM EQUIPMENT NEW HOLLAND",
+        "model": "907 w/Wisconsin F461D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FARM EQUIPMENT NEW HOLLAND",
+        "model": "909 w/Wisconsin F461D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR WINPOWER",
+        "model": "GR20W4 w/Wisconsin V465D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT FRIDAY",
+        "model": "Incline Plane Shaker w/Wisconsin V-465D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PAVER CURBMASTER",
+        "model": "CMFS w/Wisconsin V465D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PAVER CURBMASTER",
+        "model": "Groundhog w/Wisconsin V465D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER SNORKELIFT",
+        "model": "A27 w/Wisconsin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER SNORKELIFT",
+        "model": "A35 w/Wisconsin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER SNORKELIFT",
+        "model": "A40 w/Wisconsin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER SNORKELIFT",
+        "model": "A50 w/Wisconsin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER SNORKELIFT",
+        "model": "A50N w/Wisconsin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER SNORKELIFT",
+        "model": "A60 w/Wisconsin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PUMP INDUSTRIAL WHITEMAN",
+        "model": "40 w/Wisconsin V-461D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L775 w/Wisconsin V-465D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS HESSTON",
+        "model": "500 w/Wisconsin V461D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS HESSTON",
+        "model": "600 w/Wisconsin V461D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS OWATONNA",
+        "model": "81 w/Wisconsin V461D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS OWATONNA",
+        "model": "92 w/Wisconsin V461D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LUNDELL",
+        "model": "2020 w/Wisconsin V461 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRENCHER INDUSTRIAL DAVIS",
+        "model": "1000 w/Wisconsin V-461 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRENCHER INDUSTRIAL DAVIS",
+        "model": "70 + 4 w/Wisconsin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRENCHER INDUSTRIAL DAVIS",
+        "model": "PT-90 w/Wisconsin V-461 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRENCHER INDUSTRIAL DITCH WITCH",
+        "model": "R60 w/Wisconsin 60 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRENCHER INDUSTRIAL DITCH WITCH",
+        "model": "R65 w/Wisconsin V465D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRENCHER INDUSTRIAL FRUEHAUF",
+        "model": "Trackmaster w/Wisconsin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7124",
+        "source_part_number": "PH21",
+        "part_key": "001470335",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT248",
+        "source_part_number": "PH21",
+        "part_key": "001470335",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92110",
+        "source_part_number": "PH21",
+        "part_key": "001470335",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85110",
+        "source_part_number": "PH21",
+        "part_key": "001470335",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "FP38",
+        "source_part_number": "PH21",
+        "part_key": "001470335",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ditch Witch",
+        "part_number": "155-929",
+        "source_part_number": "PH21",
+        "part_key": "001470335",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550194",
+        "source_part_number": "PH21",
+        "part_key": "001470335",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF727",
+        "source_part_number": "PH21",
+        "part_key": "001470335",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8727",
+        "source_part_number": "PH21",
+        "part_key": "001470335",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF425",
+        "source_part_number": "PH21",
+        "part_key": "001470335",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L41",
+        "source_part_number": "PH21",
+        "part_key": "001470335",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP2252",
+        "source_part_number": "PH21",
+        "part_key": "001470335",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-6",
+        "source_part_number": "PH21",
+        "part_key": "001470335",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1110",
+        "source_part_number": "PH21",
+        "part_key": "001470335",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L30019",
+        "source_part_number": "PH21",
+        "part_key": "001470335",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "United Engine Life",
+        "part_number": "P-4",
+        "source_part_number": "PH21",
+        "part_key": "001470335",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wisconsin",
+        "part_number": "RV38S",
+        "source_part_number": "PH21",
+        "part_key": "001470335",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51110",
+        "source_part_number": "PH21",
+        "part_key": "001470335",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

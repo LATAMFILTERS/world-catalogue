@@ -1,0 +1,782 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA3518",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA3518",
+    "product_type": "Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": null,
+      "height_mm": null,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": null,
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [],
+    "unresolved_cross_reference_candidates": [],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA3518",
+    "source_part_key": "001509771",
+    "source_totals": {
+      "attributes": 0,
+      "applications": 77,
+      "cross_references": 0
+    },
+    "raw_attributes": [],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": null,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": null,
+        "case_length_in": null,
+        "case_width_in": null,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 77,
+    "all_cross_references_observed": 0,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:46:06.525Z",
+  "discovered_from": "CA3518",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BUS HEAVY DUTY GILLIG",
+        "model": "Low Floor (w/Detroit Diesel 50 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER ADVANCE MIXER",
+        "model": "Concrete Mixers w/Caterpillar 3176 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER ADVANCE MIXER",
+        "model": "Concrete Mixers w/Caterpillar 3306B Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER ADVANCE MIXER",
+        "model": "Concrete Mixers w/Cummins LTA-10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER ADVANCE MIXER",
+        "model": "Concrete Mixers w/Cummins N-14 Diesel",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER ADVANCE MIXER",
+        "model": "Mixers w/Caterpillar 3306C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER ADVANCE MIXER",
+        "model": "Mixers w/Cummins L10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER ADVANCE MIXER",
+        "model": "Mixers w/Cummins M11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT GRADALL",
+        "model": "660E, 880E Carrier w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT GRADALL",
+        "model": "G440 Excavator w/Detroit Diesel 6V-71T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT GRADALL",
+        "model": "G660B w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT GRADALL",
+        "model": "XL4100, XL5100 Carrier w/Cummins 6CTA8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY CCC TRUCKS",
+        "model": "Centurion",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY CCC TRUCKS",
+        "model": "F5024-4",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "CL9000 (w/Caterpillar 3406 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "CL9000 (w/Detroit Diesel 6V-92 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "CL9000 (w/Detroit Diesel 8V-71 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "CL9000 (w/Detroit Diesel 8V-92 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "CL-CLT900 & 9000 (w/Caterpillar 3406 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "CL-CLT900 & 9000 (w/Cummins 855-Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "CL-CLT900 & 9000 (w/Detroit 92-Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "CLT9000 (w/Caterpillar 3406 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "CLT9000 (w/Detroit Diesel 6V-92 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "CLT9000 (w/Detroit Diesel 8V-71 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "CLT9000 (w/Detroit Diesel 8V-92 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L9000 (w/Caterpillar 3406 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L9000 (w/Detroit Diesel 6V-92 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L9000 (w/Detroit Diesel 8V-71 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L9000 (w/Detroit Diesel 8V-92 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LA9000 (w/Caterpillar 3406 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LL9000 (w/Caterpillar 3406 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LL9000 (w/Detroit Diesel 6V-92 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LL9000 (w/Detroit Diesel 8V-92 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LN9000 (w/Caterpillar 3406 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LN9000 (w/Detroit Diesel 6V-92 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LN9000 (w/Detroit Diesel 8V-71 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LN9000 (w/Detroit Diesel 8V-92 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LNT9000 (w/Caterpillar 3406 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LNT9000 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LNT9000 (w/Detroit Diesel 6V-92 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LNT9000 (w/Detroit Diesel 8V-71 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LNT9000 (w/Detroit Diesel 8V-92 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LS9000 (w/Caterpillar 3406 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LS9000 (w/Detroit Diesel 6V-92 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LS9000 (w/Detroit Diesel 8V-92 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LT9000 (w/Caterpillar 3406 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LT9000 (w/Detroit Diesel 6V-92 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LT9000 (w/Detroit Diesel 8V-71 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LT9000 (w/Detroit Diesel 8V-92 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LTA9000 (w/Caterpillar 3406 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LTL9000 (w/Caterpillar 3406 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LTL9000 (w/Detroit Diesel 6V-92 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LTL9000 (w/Detroit Diesel 8V-92 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LTS9000 (w/Caterpillar 3406 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LTS9000 (w/Detroit Diesel 6V-92 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LTS9000 (w/Detroit Diesel 8V-71 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LTS9000 (w/Detroit Diesel 8V-92 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "W9000 (w/Detroit Diesel 8V-71 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "WT9000 (w/Caterpillar 3406 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "WT9000 (w/Detroit Diesel 8V-71 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "9500 Series (w/General Motors 6-71 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "9500 Series (w/General Motors 6-71N Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "9500 Series (w/General Motors 6V-71N Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "9500 Series (w/General Motors 6V-92N Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "9500 Series (w/General Motors 6V-92T Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "9500 Series (w/General Motors 6V-92TT Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "9500 Series (w/General Motors 8V-71N Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "9500 Series (w/General Motors 8V-71T Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "9500 Series (w/General Motors 8V-71TT Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "9500 Series (w/General Motors 8V-92N Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "9500 Series (w/General Motors 8V-92T Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "9500 Series (w/General Motors 8V-92TT Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "Astro & Titan",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9600, 9700 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9670 Series (w/Cummins NTC400 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9670 Series (w/Cummins NTCC400 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9670XL (w/Cummins NTCC400 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

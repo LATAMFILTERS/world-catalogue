@@ -1,0 +1,1254 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "FUEL",
+  "authority": {
+    "part_number": "G9272",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "G9272",
+    "product_type": "Fuel Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 2,
+      "outer_diameter_mm": 50.8,
+      "height_in": 29.73,
+      "height_mm": 755.14,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "In Line",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "General Motors",
+        "part_number": "19112754"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF746"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF851"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF850"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF7669"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF7763"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF1053"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "KL553"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "MF 1011"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3734"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3577"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3576"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F55529"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F65138"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F65139"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WF10020"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33734"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33576"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33577"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Big A",
+        "part_number": "95576"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "95575"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86577"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86734"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86576"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "G6531"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "G6530"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G6642"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G6531"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G6530"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4809118AD"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4809118AC"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "FF901"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "FF900"
+      },
+      {
+        "manufacturer": "Duralast",
+        "part_number": "FF902DL"
+      },
+      {
+        "manufacturer": "Firestone",
+        "part_number": "G6642"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "G6531"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "G6530"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "F65239"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF298"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF299"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF348"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "CH38"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "G9272"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "G261"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "G260"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G6642"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G6530"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G6531"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "23734"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "F65138"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "G6531"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "G6642"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "G6530"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PF5529"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "F55529P"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "F65239"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "F65139"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "F65238"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "F55529"
+      },
+      {
+        "manufacturer": "Tires Plus",
+        "part_number": "F65239"
+      },
+      {
+        "manufacturer": "Tires Plus",
+        "part_number": "G6642"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G6642"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G6531"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G6530"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "04-01",
+        "make": "CHRYSLER",
+        "model": "TOWN & COUNTRY",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "04-01",
+        "make": "CHRYSLER",
+        "model": "TOWN & COUNTRY",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "03-01",
+        "make": "CHRYSLER",
+        "model": "VOYAGER",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "03-01",
+        "make": "CHRYSLER",
+        "model": "VOYAGER",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "04-01",
+        "make": "DODGE",
+        "model": "CARAVAN",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "04-01",
+        "make": "DODGE",
+        "model": "CARAVAN",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "04-01",
+        "make": "DODGE",
+        "model": "GRAND CARAVAN",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "04-01",
+        "make": "DODGE",
+        "model": "GRAND CARAVAN",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "G9272",
+    "source_part_key": "000991432",
+    "source_totals": {
+      "attributes": 27,
+      "applications": 8,
+      "cross_references": 64
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, G9272, Fuel Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "In-Line Fuel Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "In Line",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Black",
+        "recno": "82"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Quick Connect",
+        "recno": "83"
+      },
+      {
+        "attribute": "Fuel Type",
+        "value": "Gasoline",
+        "recno": "84"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "85"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Fuel Filter",
+        "recno": "86"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "29.730",
+        "recno": "88"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "2.000",
+        "recno": "89"
+      },
+      {
+        "attribute": "Housing Material",
+        "value": "Nylon",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Hose Included",
+        "value": "Yes",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100028907",
+        "recno": "92"
+      },
+      {
+        "attribute": "Inlet Line Size (Inch)",
+        "value": "3/8",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outlet Line Size (Inch)",
+        "value": "5/16",
+        "recno": "93"
+      },
+      {
+        "attribute": "Return Line Size (Inch)",
+        "value": "5/16",
+        "recno": "94"
+      },
+      {
+        "attribute": "Clamps Included",
+        "value": "No",
+        "recno": "95"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "96"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Taiwan",
+        "recno": "97"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.1000",
+        "recno": "101"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "5.1500",
+        "recno": "102"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "36.2500",
+        "recno": "103"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "7.5630",
+        "recno": "104"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": 1.1,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": 5.15,
+        "case_length_in": 36.25,
+        "case_width_in": 7.563,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 8,
+    "all_cross_references_observed": 64,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:12:08.744Z",
+  "discovered_from": "G9272",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "CHRYSLER",
+        "model": "TOWN & COUNTRY",
+        "year": "04-01",
+        "engine": "V6-3.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "TOWN & COUNTRY",
+        "year": "04-01",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "VOYAGER",
+        "year": "03-01",
+        "engine": "L4-2.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "VOYAGER",
+        "year": "03-01",
+        "engine": "V6-3.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "CARAVAN",
+        "year": "04-01",
+        "engine": "L4-2.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "CARAVAN",
+        "year": "04-01",
+        "engine": "V6-3.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "GRAND CARAVAN",
+        "year": "04-01",
+        "engine": "V6-3.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "GRAND CARAVAN",
+        "year": "04-01",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF746",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF851",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF850",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF7669",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF7763",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF1053",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "95576",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "95575",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86577",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86734",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86576",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "G6531",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "G6530",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G6642",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G6531",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G6530",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4809118AD",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4809118AC",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "FF901",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "FF900",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Duralast",
+        "part_number": "FF902DL",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Firestone",
+        "part_number": "G6642",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "19112754",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "G6531",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "G6530",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "F65239",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF298",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF299",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF348",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "CH38",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "G9272",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "G261",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "G260",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G6642",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G6530",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G6531",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "KL553",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "MF 1011",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3734",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3577",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3576",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "23734",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "F65138",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "G6531",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "G6642",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "G6530",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PF5529",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "F55529P",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F55529",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F65138",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F65139",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "F65239",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "F65139",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "F65238",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "F55529",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Tires Plus",
+        "part_number": "F65239",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Tires Plus",
+        "part_number": "G6642",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G6642",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G6531",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G6530",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WF10020",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33734",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33576",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33577",
+        "source_part_number": "G9272",
+        "part_key": "000991432",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

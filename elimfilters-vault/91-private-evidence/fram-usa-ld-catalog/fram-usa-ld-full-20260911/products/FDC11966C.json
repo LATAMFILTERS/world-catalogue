@@ -1,0 +1,3739 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "FDC11966C",
+    "line": "DRIVE"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "FDC11966C",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.122,
+      "height_mm": 28.5,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Drive Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [
+      "CF11966",
+      "CV11966"
+    ],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "General Motors",
+        "part_number": "13508023"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "23393247"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "13356914"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "22743911"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "13356916"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "23135671"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF1185"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF1196"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF1184C"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF196"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF184"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF185"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF183"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA10014"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CU24003"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK24003"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C38224C"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C38224"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24211"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10192"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-283"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89211"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "XC10191"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1624"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1904C"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1904P"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4062"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "CAF1904P"
+      },
+      {
+        "manufacturer": "MotoMaster",
+        "part_number": "MCF11966"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "4211"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "230192"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94211"
+      },
+      {
+        "manufacturer": "Pro-Series",
+        "part_number": "PCF11966"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "part_number": "CAF1904"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "part_number": "C38224"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PBC38224"
+      },
+      {
+        "manufacturer": "Purolator TECH",
+        "part_number": "TC38224C"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C38224"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "MC10022C"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1904P"
+      },
+      {
+        "manufacturer": "SUPERTECH",
+        "part_number": "5535"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1184"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1183"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WCAF1904"
+      },
+      {
+        "manufacturer": "Wega",
+        "part_number": "AKX35725/C"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "2024",
+        "make": "ACURA",
+        "model": "ZDX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-18",
+        "make": "BUICK",
+        "model": "ENCLAVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "BUICK",
+        "model": "ENCLAVE",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "24-18",
+        "make": "BUICK",
+        "model": "ENCLAVE",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "BUICK",
+        "model": "ENCORE GX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-20",
+        "make": "BUICK",
+        "model": "ENCORE GX",
+        "engine": "L3-1.2L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "BUICK",
+        "model": "ENCORE GX",
+        "engine": "L3-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "26-16",
+        "make": "BUICK",
+        "model": "ENVISION",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-16",
+        "make": "BUICK",
+        "model": "ENVISION",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BUICK",
+        "model": "ENVISION",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "BUICK",
+        "model": "ENVISTA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "BUICK",
+        "model": "ENVISTA",
+        "engine": "L3-1.2L",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "BUICK",
+        "model": "LACROSSE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-18",
+        "make": "BUICK",
+        "model": "LACROSSE",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "BUICK",
+        "model": "LACROSSE",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "20-18",
+        "make": "BUICK",
+        "model": "REGAL SPORTBACK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-18",
+        "make": "BUICK",
+        "model": "REGAL SPORTBACK",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-18",
+        "make": "BUICK",
+        "model": "REGAL SPORTBACK",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "20-18",
+        "make": "BUICK",
+        "model": "REGAL TOURX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-18",
+        "make": "BUICK",
+        "model": "REGAL TOURX",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-13",
+        "make": "CADILLAC",
+        "model": "ATS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-13",
+        "make": "CADILLAC",
+        "model": "ATS",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "17-13",
+        "make": "CADILLAC",
+        "model": "ATS",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "19-13",
+        "make": "CADILLAC",
+        "model": "ATS",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CADILLAC",
+        "model": "CT4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CADILLAC",
+        "model": "CT4",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CADILLAC",
+        "model": "CT4",
+        "engine": "L4-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "CADILLAC",
+        "model": "CT4",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CADILLAC",
+        "model": "CT5",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CADILLAC",
+        "model": "CT5",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CADILLAC",
+        "model": "CT5",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "CADILLAC",
+        "model": "CT5",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "20-16",
+        "make": "CADILLAC",
+        "model": "CT6",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-16",
+        "make": "CADILLAC",
+        "model": "CT6",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-16",
+        "make": "CADILLAC",
+        "model": "CT6",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-16",
+        "make": "CADILLAC",
+        "model": "CT6",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "20-19",
+        "make": "CADILLAC",
+        "model": "CT6",
+        "engine": "V8-4.2L",
+        "quantity": 1
+      },
+      {
+        "year": "19-14",
+        "make": "CADILLAC",
+        "model": "CTS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-14",
+        "make": "CADILLAC",
+        "model": "CTS",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-14",
+        "make": "CADILLAC",
+        "model": "CTS",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "19-16",
+        "make": "CADILLAC",
+        "model": "CTS",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "CADILLAC",
+        "model": "ESCALADE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-21",
+        "make": "CADILLAC",
+        "model": "ESCALADE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "CADILLAC",
+        "model": "ESCALADE",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "CADILLAC",
+        "model": "ESCALADE ESV",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-21",
+        "make": "CADILLAC",
+        "model": "ESCALADE ESV",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "CADILLAC",
+        "model": "ESCALADE ESV",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "CADILLAC",
+        "model": "ESCALADE IQ",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2026",
+        "make": "CADILLAC",
+        "model": "ESCALADE IQL",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "CADILLAC",
+        "model": "LYRIQ",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "CADILLAC",
+        "model": "OPTIQ",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2026",
+        "make": "CADILLAC",
+        "model": "VISTIQ",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "CADILLAC",
+        "model": "XT4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "CADILLAC",
+        "model": "XT4",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-17",
+        "make": "CADILLAC",
+        "model": "XT5",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CADILLAC",
+        "model": "XT5",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-17",
+        "make": "CADILLAC",
+        "model": "XT5",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "25-20",
+        "make": "CADILLAC",
+        "model": "XT6",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-21",
+        "make": "CADILLAC",
+        "model": "XT6",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-20",
+        "make": "CADILLAC",
+        "model": "XT6",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "19-13",
+        "make": "CADILLAC",
+        "model": "XTS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-13",
+        "make": "CADILLAC",
+        "model": "XTS",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-19",
+        "make": "CHEVROLET",
+        "model": "BLAZER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CHEVROLET",
+        "model": "BLAZER",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-19",
+        "make": "CHEVROLET",
+        "model": "BLAZER",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-19",
+        "make": "CHEVROLET",
+        "model": "BLAZER",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "CHEVROLET",
+        "model": "BLAZER EV",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-22",
+        "make": "CHEVROLET",
+        "model": "BOLT EUV",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-17",
+        "make": "CHEVROLET",
+        "model": "BOLT EV",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "CHEVROLET",
+        "model": "BRIGHTDROP 400",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "CHEVROLET",
+        "model": "BRIGHTDROP 600",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-16",
+        "make": "CHEVROLET",
+        "model": "CAMARO",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-16",
+        "make": "CHEVROLET",
+        "model": "CAMARO",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "24-16",
+        "make": "CHEVROLET",
+        "model": "CAMARO",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "24-16",
+        "make": "CHEVROLET",
+        "model": "CAMARO",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "26-15",
+        "make": "CHEVROLET",
+        "model": "COLORADO",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "22-15",
+        "make": "CHEVROLET",
+        "model": "COLORADO",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "CHEVROLET",
+        "model": "COLORADO",
+        "engine": "L4-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "22-16",
+        "make": "CHEVROLET",
+        "model": "COLORADO",
+        "engine": "L4-2.8L",
+        "quantity": 1
+      },
+      {
+        "year": "22-15",
+        "make": "CHEVROLET",
+        "model": "COLORADO",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CHEVROLET",
+        "model": "CORVETTE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "CHEVROLET",
+        "model": "CORVETTE",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CHEVROLET",
+        "model": "CORVETTE",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "19-16",
+        "make": "CHEVROLET",
+        "model": "CRUZE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-16",
+        "make": "CHEVROLET",
+        "model": "CRUZE",
+        "engine": "L4-1.4L",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "CHEVROLET",
+        "model": "CRUZE",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-18",
+        "make": "CHEVROLET",
+        "model": "EQUINOX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-18",
+        "make": "CHEVROLET",
+        "model": "EQUINOX",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "19-18",
+        "make": "CHEVROLET",
+        "model": "EQUINOX",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "20-18",
+        "make": "CHEVROLET",
+        "model": "EQUINOX",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "CHEVROLET",
+        "model": "EQUINOX EV",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-14",
+        "make": "CHEVROLET",
+        "model": "IMPALA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2014",
+        "make": "CHEVROLET",
+        "model": "IMPALA",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "19-14",
+        "make": "CHEVROLET",
+        "model": "IMPALA",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "20-14",
+        "make": "CHEVROLET",
+        "model": "IMPALA",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "25-16",
+        "make": "CHEVROLET",
+        "model": "MALIBU",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-16",
+        "make": "CHEVROLET",
+        "model": "MALIBU",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "19-16",
+        "make": "CHEVROLET",
+        "model": "MALIBU",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "22-16",
+        "make": "CHEVROLET",
+        "model": "MALIBU",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-19",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-19",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "engine": "L4-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-19",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "engine": "V6-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "26-19",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "26-19",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "2022",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 LTD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2022",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 LTD",
+        "engine": "L4-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "2022",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 LTD",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2022",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 LTD",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "2022",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 LTD",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500 HD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500 HD",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500 HD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500 HD",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "CHEVROLET",
+        "model": "SILVERADO EV",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "CHEVROLET",
+        "model": "SUBURBAN",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "CHEVROLET",
+        "model": "SUBURBAN",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "CHEVROLET",
+        "model": "SUBURBAN",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "CHEVROLET",
+        "model": "SUBURBAN",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "CHEVROLET",
+        "model": "TRAILBLAZER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "CHEVROLET",
+        "model": "TRAILBLAZER",
+        "engine": "L3-1.2L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "CHEVROLET",
+        "model": "TRAILBLAZER",
+        "engine": "L3-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "26-18",
+        "make": "CHEVROLET",
+        "model": "TRAVERSE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-18",
+        "make": "CHEVROLET",
+        "model": "TRAVERSE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "CHEVROLET",
+        "model": "TRAVERSE",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "23-18",
+        "make": "CHEVROLET",
+        "model": "TRAVERSE",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "2024",
+        "make": "CHEVROLET",
+        "model": "TRAVERSE LIMITED",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2024",
+        "make": "CHEVROLET",
+        "model": "TRAVERSE LIMITED",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "CHEVROLET",
+        "model": "TRAX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "CHEVROLET",
+        "model": "TRAX",
+        "engine": "L3-1.2L",
+        "quantity": 1
+      },
+      {
+        "year": "19-16",
+        "make": "CHEVROLET",
+        "model": "VOLT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-16",
+        "make": "CHEVROLET",
+        "model": "VOLT",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-17",
+        "make": "GMC",
+        "model": "ACADIA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-20",
+        "make": "GMC",
+        "model": "ACADIA",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-17",
+        "make": "GMC",
+        "model": "ACADIA",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "GMC",
+        "model": "ACADIA",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "23-17",
+        "make": "GMC",
+        "model": "ACADIA",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-15",
+        "make": "GMC",
+        "model": "CANYON",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "22-15",
+        "make": "GMC",
+        "model": "CANYON",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "GMC",
+        "model": "CANYON",
+        "engine": "L4-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "22-16",
+        "make": "GMC",
+        "model": "CANYON",
+        "engine": "L4-2.8L",
+        "quantity": 1
+      },
+      {
+        "year": "22-15",
+        "make": "GMC",
+        "model": "CANYON",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "GMC",
+        "model": "HUMMER EV PICKUP",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "GMC",
+        "model": "HUMMER EV SUV",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-19",
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-19",
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "engine": "L4-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-19",
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "engine": "V6-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "26-19",
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "26-19",
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "2022",
+        "make": "GMC",
+        "model": "SIERRA 1500 LIMITED",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2022",
+        "make": "GMC",
+        "model": "SIERRA 1500 LIMITED",
+        "engine": "L4-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "2022",
+        "make": "GMC",
+        "model": "SIERRA 1500 LIMITED",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2022",
+        "make": "GMC",
+        "model": "SIERRA 1500 LIMITED",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "2022",
+        "make": "GMC",
+        "model": "SIERRA 1500 LIMITED",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "GMC",
+        "model": "SIERRA 2500 HD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "GMC",
+        "model": "SIERRA 2500 HD",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "GMC",
+        "model": "SIERRA 3500 HD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "GMC",
+        "model": "SIERRA 3500 HD",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "GMC",
+        "model": "SIERRA EV",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-18",
+        "make": "GMC",
+        "model": "TERRAIN",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-18",
+        "make": "GMC",
+        "model": "TERRAIN",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "19-18",
+        "make": "GMC",
+        "model": "TERRAIN",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "20-18",
+        "make": "GMC",
+        "model": "TERRAIN",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "GMC",
+        "model": "YUKON",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "GMC",
+        "model": "YUKON",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "GMC",
+        "model": "YUKON",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "GMC",
+        "model": "YUKON",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "GMC",
+        "model": "YUKON XL",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "GMC",
+        "model": "YUKON XL",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "GMC",
+        "model": "YUKON XL",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "GMC",
+        "model": "YUKON XL",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "HONDA",
+        "model": "PROLOGUE",
+        "engine": "All",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "FDC11966C",
+    "source_part_key": "010740323",
+    "source_totals": {
+      "attributes": 30,
+      "applications": 178,
+      "cross_references": 47
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Drive™cabin air filters prevent harmful airborne particles from entering your vehicle’s cabin. It is engineered to filter the air before it gets to you, removing dust, pollen, and other pollutants. Replacing a dirty cabin air filter with a new FRAM Drive cabin air filter can optimize clean air flow and maintain peak HVAC system performance. FRAM recommends changing your cabin air filter every 12 months.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Up to 12 months or 12,000 mile (19,000 kilometer) protection",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, FDC11966C, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Removes dust, pollen, and other pollutants",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Optimizes airflow and maintains HVAC performance",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Drive Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.122",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "9.38",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "8.05",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "10",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Behind Glove Box",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100578525",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.5000",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.5000",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "9.7500",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.7300",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "8.9300",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "10.4900",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.3100",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "9.9900",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.5,
+        "case_weight_lb": 1.5,
+        "unit_height_in": 9.75,
+        "unit_length_in": 8.93,
+        "unit_width_in": 1.31,
+        "case_height_in": 4.73,
+        "case_length_in": 10.49,
+        "case_width_in": 9.99,
+        "inferred_case_qty": 3
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 6,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 178,
+    "all_cross_references_observed": 47,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T06:00:52.075Z",
+  "discovered_from": "FDC11966C",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "ACURA",
+        "model": "ZDX",
+        "year": "2024",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BRIGHTDROP",
+        "model": "ZEVO",
+        "year": "24-22",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "ENCLAVE",
+        "year": "26-18",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "ENCLAVE",
+        "year": "26-25",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "ENCLAVE",
+        "year": "24-18",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "ENCORE GX",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "ENCORE GX",
+        "year": "25-20",
+        "engine": "L3-1.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "ENCORE GX",
+        "year": "26-20",
+        "engine": "L3-1.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "ENVISION",
+        "year": "26-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "ENVISION",
+        "year": "26-16",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "ENVISION",
+        "year": "20-17",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "ENVISTA",
+        "year": "26-24",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "ENVISTA",
+        "year": "26-24",
+        "engine": "L3-1.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "LACROSSE",
+        "year": "19-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "LACROSSE",
+        "year": "19-18",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "LACROSSE",
+        "year": "19-17",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "REGAL SPORTBACK",
+        "year": "20-18",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "REGAL SPORTBACK",
+        "year": "20-18",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "REGAL SPORTBACK",
+        "year": "20-18",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "REGAL TOURX",
+        "year": "20-18",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "REGAL TOURX",
+        "year": "20-18",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ATS",
+        "year": "19-13",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ATS",
+        "year": "19-13",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ATS",
+        "year": "17-13",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ATS",
+        "year": "19-13",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CT4",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CT4",
+        "year": "26-20",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CT4",
+        "year": "26-20",
+        "engine": "L4-2.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CT4",
+        "year": "26-22",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CT5",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CT5",
+        "year": "26-20",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CT5",
+        "year": "26-20",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CT5",
+        "year": "26-22",
+        "engine": "V8-6.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CT6",
+        "year": "20-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CT6",
+        "year": "19-16",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CT6",
+        "year": "19-16",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CT6",
+        "year": "20-16",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CT6",
+        "year": "20-19",
+        "engine": "V8-4.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CTS",
+        "year": "19-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CTS",
+        "year": "19-14",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CTS",
+        "year": "19-14",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CTS",
+        "year": "19-16",
+        "engine": "V8-6.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE",
+        "year": "26-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE",
+        "year": "24-21",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE",
+        "year": "26-21",
+        "engine": "V8-6.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE ESV",
+        "year": "26-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE ESV",
+        "year": "24-21",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE ESV",
+        "year": "26-21",
+        "engine": "V8-6.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE IQ",
+        "year": "26-25",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE IQL",
+        "year": "2026",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "LYRIQ",
+        "year": "26-23",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "OPTIQ",
+        "year": "26-25",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "VISTIQ",
+        "year": "2026",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "XT4",
+        "year": "25-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "XT4",
+        "year": "25-19",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "XT5",
+        "year": "26-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "XT5",
+        "year": "26-20",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "XT5",
+        "year": "26-17",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "XT6",
+        "year": "25-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "XT6",
+        "year": "25-21",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "XT6",
+        "year": "25-20",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "XTS",
+        "year": "19-13",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "XTS",
+        "year": "19-13",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "BLAZER",
+        "year": "26-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "BLAZER",
+        "year": "26-20",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "BLAZER",
+        "year": "22-19",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "BLAZER",
+        "year": "26-19",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "BLAZER EV",
+        "year": "26-24",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "BOLT EUV",
+        "year": "23-22",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "BOLT EV",
+        "year": "23-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "BRIGHTDROP 400",
+        "year": "26-25",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "BRIGHTDROP 600",
+        "year": "26-25",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CAMARO",
+        "year": "24-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CAMARO",
+        "year": "23-16",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CAMARO",
+        "year": "24-16",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CAMARO",
+        "year": "24-16",
+        "engine": "V8-6.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "COLORADO",
+        "year": "26-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "COLORADO",
+        "year": "22-15",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "COLORADO",
+        "year": "26-23",
+        "engine": "L4-2.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "COLORADO",
+        "year": "22-16",
+        "engine": "L4-2.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "COLORADO",
+        "year": "22-15",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CORVETTE",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CORVETTE",
+        "year": "26-23",
+        "engine": "V8-5.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CORVETTE",
+        "year": "26-20",
+        "engine": "V8-6.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CRUZE",
+        "year": "19-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CRUZE",
+        "year": "19-16",
+        "engine": "L4-1.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CRUZE",
+        "year": "19-17",
+        "engine": "L4-1.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "EQUINOX",
+        "year": "26-18",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "EQUINOX",
+        "year": "26-18",
+        "engine": "L4-1.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "EQUINOX",
+        "year": "19-18",
+        "engine": "L4-1.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "EQUINOX",
+        "year": "20-18",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "EQUINOX EV",
+        "year": "26-24",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "IMPALA",
+        "year": "20-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "IMPALA",
+        "year": "2014",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "IMPALA",
+        "year": "19-14",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "IMPALA",
+        "year": "20-14",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "MALIBU",
+        "year": "25-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "MALIBU",
+        "year": "25-16",
+        "engine": "L4-1.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "MALIBU",
+        "year": "19-16",
+        "engine": "L4-1.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "MALIBU",
+        "year": "22-16",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "year": "26-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "year": "26-19",
+        "engine": "L4-2.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "year": "26-20",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "year": "21-19",
+        "engine": "V6-4.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "year": "26-19",
+        "engine": "V8-5.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "year": "26-19",
+        "engine": "V8-6.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 LTD",
+        "year": "2022",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 LTD",
+        "year": "2022",
+        "engine": "L4-2.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 LTD",
+        "year": "2022",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 LTD",
+        "year": "2022",
+        "engine": "V8-5.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 LTD",
+        "year": "2022",
+        "engine": "V8-6.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500 HD",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500 HD",
+        "year": "26-20",
+        "engine": "V8-6.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500 HD",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500 HD",
+        "year": "26-20",
+        "engine": "V8-6.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO EV",
+        "year": "26-24",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SUBURBAN",
+        "year": "26-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SUBURBAN",
+        "year": "26-21",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SUBURBAN",
+        "year": "26-21",
+        "engine": "V8-5.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SUBURBAN",
+        "year": "26-21",
+        "engine": "V8-6.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "year": "26-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "year": "26-21",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "year": "26-21",
+        "engine": "V8-5.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "year": "26-21",
+        "engine": "V8-6.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TRAILBLAZER",
+        "year": "26-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TRAILBLAZER",
+        "year": "26-21",
+        "engine": "L3-1.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TRAILBLAZER",
+        "year": "26-21",
+        "engine": "L3-1.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TRAVERSE",
+        "year": "26-18",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TRAVERSE",
+        "year": "19-18",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TRAVERSE",
+        "year": "26-24",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TRAVERSE",
+        "year": "23-18",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TRAVERSE LIMITED",
+        "year": "2024",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TRAVERSE LIMITED",
+        "year": "2024",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TRAX",
+        "year": "26-24",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TRAX",
+        "year": "26-24",
+        "engine": "L3-1.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "VOLT",
+        "year": "19-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "VOLT",
+        "year": "19-16",
+        "engine": "L4-1.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "ACADIA",
+        "year": "26-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "ACADIA",
+        "year": "23-20",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "ACADIA",
+        "year": "21-17",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "ACADIA",
+        "year": "26-24",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "ACADIA",
+        "year": "23-17",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "CANYON",
+        "year": "26-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "CANYON",
+        "year": "22-15",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "CANYON",
+        "year": "26-23",
+        "engine": "L4-2.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "CANYON",
+        "year": "22-16",
+        "engine": "L4-2.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "CANYON",
+        "year": "22-15",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "HUMMER EV PICKUP",
+        "year": "26-22",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "HUMMER EV SUV",
+        "year": "26-24",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "year": "26-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "year": "26-19",
+        "engine": "L4-2.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "year": "26-20",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "year": "21-19",
+        "engine": "V6-4.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "year": "26-19",
+        "engine": "V8-5.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "year": "26-19",
+        "engine": "V8-6.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500 LIMITED",
+        "year": "2022",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500 LIMITED",
+        "year": "2022",
+        "engine": "L4-2.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500 LIMITED",
+        "year": "2022",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500 LIMITED",
+        "year": "2022",
+        "engine": "V8-5.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500 LIMITED",
+        "year": "2022",
+        "engine": "V8-6.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 2500 HD",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 2500 HD",
+        "year": "26-20",
+        "engine": "V8-6.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 3500 HD",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 3500 HD",
+        "year": "26-20",
+        "engine": "V8-6.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA EV",
+        "year": "26-24",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "TERRAIN",
+        "year": "26-18",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "TERRAIN",
+        "year": "26-18",
+        "engine": "L4-1.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "TERRAIN",
+        "year": "19-18",
+        "engine": "L4-1.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "TERRAIN",
+        "year": "20-18",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON",
+        "year": "26-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON",
+        "year": "26-21",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON",
+        "year": "26-21",
+        "engine": "V8-5.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON",
+        "year": "26-21",
+        "engine": "V8-6.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON XL",
+        "year": "26-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON XL",
+        "year": "26-21",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON XL",
+        "year": "26-21",
+        "engine": "V8-5.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON XL",
+        "year": "26-21",
+        "engine": "V8-6.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "PROLOGUE",
+        "year": "26-24",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF1185",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF1196",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF1184C",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF196",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF184",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF185",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF183",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-283",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA10014",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89211",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "XC10191",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FRAM Fresh Breeze",
+        "part_number": "CF11966",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FRAM TrueAir",
+        "part_number": "CV11966",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "13508023",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "23393247",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "13356914",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "22743911",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "13356916",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "23135671",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1624",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1904C",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1904P",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CU24003",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK24003",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4062",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "CAF1904P",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MotoMaster",
+        "part_number": "MCF11966",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "4211",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "230192",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94211",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Pro-Series",
+        "part_number": "PCF11966",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "part_number": "CAF1904",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "part_number": "C38224",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C38224C",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C38224",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PBC38224",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator TECH",
+        "part_number": "TC38224C",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C38224",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "MC10022C",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1904P",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "SUPERTECH",
+        "part_number": "5535",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1184",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1183",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WCAF1904",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wega",
+        "part_number": "AKX35725/C",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24211",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10192",
+        "source_part_number": "FDC11966C",
+        "part_key": "010740323",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

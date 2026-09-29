@@ -1,0 +1,659 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA10328",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA10328",
+    "product_type": "Engine Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.844,
+      "height_mm": 46.84,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Flexible Panel Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA4396"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LX1500"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "C36188"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "C36188/1"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "9122"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A35626"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "49122"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "83122"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "AF3936"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1357"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "AF3936"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PA5626"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "AF5626"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "SA10328"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VA-365"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "1K0 129 620B"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "1K0 129 620"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WAF3936"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "09-06",
+        "make": "AUDI",
+        "model": "A3 QUATTRO",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "09-08",
+        "make": "AUDI",
+        "model": "TT QUATTRO",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "17-09",
+        "make": "VOLKSWAGEN",
+        "model": "CC",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "08-07",
+        "make": "VOLKSWAGEN",
+        "model": "EOS",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "2009",
+        "make": "VOLKSWAGEN",
+        "model": "JETTA",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "10-06",
+        "make": "VOLKSWAGEN",
+        "model": "PASSAT",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "18-12",
+        "make": "VOLKSWAGEN",
+        "model": "PASSAT",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "2008",
+        "make": "VOLKSWAGEN",
+        "model": "R32",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CA10328",
+    "source_part_key": "000991603",
+    "source_totals": {
+      "attributes": 37,
+      "applications": 8,
+      "cross_references": 18
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® engine air filters are engineered to protect your engine from harmful contaminants. Replacing an air filter with FRAM Extra Guard can help improve horsepower, acceleration, and engine performance. To prevent engine wear, FRAM recommends changing your air filter every 12 months.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Protects up to 12 months or 12,000 miles (19,000 kilometers)",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA10328, Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Ensures maximum airflow to prevent engine wear",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs quickly in as little as 5 minutes",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Flexible Panel Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Keep your engine running smoothly by preventing damaging particles from entering your vehicle’s engine",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "82"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangular",
+        "recno": "84"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Flexible",
+        "recno": "85"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "86"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "88"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Air Filter",
+        "recno": "89"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.844",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100537539",
+        "recno": "92"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "13.500",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "8.767",
+        "recno": "93"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "94"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "95"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "96"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "97"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "98"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.1160",
+        "recno": "102"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "3.3480",
+        "recno": "103"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "13.6970",
+        "recno": "104"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "11.6250",
+        "recno": "105"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "9.9730",
+        "recno": "106"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "14.3120",
+        "recno": "107"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "2.5670",
+        "recno": "108"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "8.1870",
+        "recno": "109"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.116,
+        "case_weight_lb": 3.348,
+        "unit_height_in": 13.697,
+        "unit_length_in": 9.973,
+        "unit_width_in": 2.567,
+        "case_height_in": 11.625,
+        "case_length_in": 14.312,
+        "case_width_in": 8.187,
+        "inferred_case_qty": 3
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 13.392,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 8,
+    "all_cross_references_observed": 18,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:00:42.209Z",
+  "discovered_from": "CA10328",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "AUDI",
+        "model": "A3 QUATTRO",
+        "year": "09-06",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "TT QUATTRO",
+        "year": "09-08",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "CC",
+        "year": "17-09",
+        "engine": "V6-3.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "EOS",
+        "year": "08-07",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "JETTA",
+        "year": "2009",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "PASSAT",
+        "year": "10-06",
+        "engine": "V6-3.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "PASSAT",
+        "year": "18-12",
+        "engine": "V6-3.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "R32",
+        "year": "2008",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA4396",
+        "source_part_number": "CA10328",
+        "part_key": "000991603",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "83122",
+        "source_part_number": "CA10328",
+        "part_key": "000991603",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "AF3936",
+        "source_part_number": "CA10328",
+        "part_key": "000991603",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1357",
+        "source_part_number": "CA10328",
+        "part_key": "000991603",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "AF3936",
+        "source_part_number": "CA10328",
+        "part_key": "000991603",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LX1500",
+        "source_part_number": "CA10328",
+        "part_key": "000991603",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "C36188",
+        "source_part_number": "CA10328",
+        "part_key": "000991603",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "C36188/1",
+        "source_part_number": "CA10328",
+        "part_key": "000991603",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "9122",
+        "source_part_number": "CA10328",
+        "part_key": "000991603",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PA5626",
+        "source_part_number": "CA10328",
+        "part_key": "000991603",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "AF5626",
+        "source_part_number": "CA10328",
+        "part_key": "000991603",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A35626",
+        "source_part_number": "CA10328",
+        "part_key": "000991603",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "SA10328",
+        "source_part_number": "CA10328",
+        "part_key": "000991603",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VA-365",
+        "source_part_number": "CA10328",
+        "part_key": "000991603",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "1K0 129 620B",
+        "source_part_number": "CA10328",
+        "part_key": "000991603",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "1K0 129 620",
+        "source_part_number": "CA10328",
+        "part_key": "000991603",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WAF3936",
+        "source_part_number": "CA10328",
+        "part_key": "000991603",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "49122",
+        "source_part_number": "CA10328",
+        "part_key": "000991603",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

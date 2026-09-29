@@ -1,0 +1,29 @@
+{
+  "queue": "PARTIAL_REVALIDATION",
+  "count": 1,
+  "rows": [
+    {
+      "id": "ISUZU-0234",
+      "sku": "EF92564",
+      "make": "ISUZU",
+      "model": "FXR",
+      "equipment": "FXR",
+      "type": "TRUCK",
+      "engine": "6HK1-TC",
+      "year": 2010,
+      "base": "P552564",
+      "lane": "PARTIAL_REVALIDATION",
+      "action": "Resolve FXR 6HK1 remainder",
+      "write_allowed": false,
+      "decision": "HOLD",
+      "target_sku": "EF92564",
+      "target_codigo_base": "P552564",
+      "evidence_authority": null,
+      "evidence_url": null,
+      "evidence_reference": null,
+      "evidence_verified": false,
+      "reviewer_note": "Resolve FXR 6HK1 remainder",
+      "resolution_state": "NOT_PRESENT"
+    }
+  ]
+}

@@ -1,0 +1,2651 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA11509",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA11509",
+    "product_type": "Engine Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": 13.07,
+      "outer_diameter_mm": 331.98,
+      "height_in": 15.2,
+      "height_mm": 386.08,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "HD Radial Seal Air Outer",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "RS3519"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "EAF5069"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P547808"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P185069"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF25139M"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "3560734C1"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF1849MXM"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "97-81",
+        "make": "FORD",
+        "model": "L9000",
+        "engine": "L6-14.6L",
+        "quantity": 1
+      },
+      {
+        "year": "1997",
+        "make": "FORD",
+        "model": "L9513",
+        "engine": "L6-14.6L",
+        "quantity": 1
+      },
+      {
+        "year": "95-92",
+        "make": "FORD",
+        "model": "LLA9000",
+        "engine": "6-10.3L",
+        "quantity": 1
+      },
+      {
+        "year": "95-92",
+        "make": "FORD",
+        "model": "LLA9000",
+        "engine": "L6-10.0L",
+        "quantity": 1
+      },
+      {
+        "year": "97-94",
+        "make": "FORD",
+        "model": "LLA9000",
+        "engine": "L6-10.8L",
+        "quantity": 1
+      },
+      {
+        "year": "94-92",
+        "make": "FORD",
+        "model": "LLA9000",
+        "engine": "L6-14.0L",
+        "quantity": 1
+      },
+      {
+        "year": "94-92",
+        "make": "FORD",
+        "model": "LLA9000",
+        "engine": "L6-14.6L",
+        "quantity": 1
+      },
+      {
+        "year": "1994",
+        "make": "FORD",
+        "model": "LLS9000",
+        "engine": "6-10.3L",
+        "quantity": 1
+      },
+      {
+        "year": "1996",
+        "make": "FORD",
+        "model": "LLS9000",
+        "engine": "6-10.3L",
+        "quantity": 1
+      },
+      {
+        "year": "1996",
+        "make": "FORD",
+        "model": "LLS9000",
+        "engine": "L6-10.0L",
+        "quantity": 1
+      },
+      {
+        "year": "95-94",
+        "make": "FORD",
+        "model": "LLS9000",
+        "engine": "L6-14.6L",
+        "quantity": 1
+      },
+      {
+        "year": "95-91",
+        "make": "FORD",
+        "model": "LN9000",
+        "engine": "6-10.3L",
+        "quantity": 1
+      },
+      {
+        "year": "95-94",
+        "make": "FORD",
+        "model": "LN9000",
+        "engine": "L6-10.8L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "FORD",
+        "model": "LT9501",
+        "engine": "6-12.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "FORD",
+        "model": "LT9501",
+        "engine": "L6-10.3L",
+        "quantity": 1
+      },
+      {
+        "year": "1998",
+        "make": "FORD",
+        "model": "LT9511",
+        "engine": "6-12.0L",
+        "quantity": 1
+      },
+      {
+        "year": "1998",
+        "make": "FORD",
+        "model": "LT9511",
+        "engine": "L6-10.3L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "FORD",
+        "model": "LT9513",
+        "engine": "6-12.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "FORD",
+        "model": "LT9513",
+        "engine": "L6-10.3L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "FORD",
+        "model": "LT9522",
+        "engine": "6-12.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "FORD",
+        "model": "LT9522",
+        "engine": "L6-10.3L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CA11509",
+    "source_part_key": "006258902",
+    "source_totals": {
+      "attributes": 25,
+      "applications": 243,
+      "cross_references": 7
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA11509, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "HD Radial Seal Air Outer",
+        "recno": "2"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "83"
+      },
+      {
+        "attribute": "Inside Diameter",
+        "value": "Closed",
+        "recno": "84"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "85"
+      },
+      {
+        "attribute": "Top Inside Diameter",
+        "value": "Closed",
+        "recno": "86"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "87"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "15.200",
+        "recno": "89"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "13.070",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "13.070",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100552099",
+        "recno": "92"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "6.810",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "13.070",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "94"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "95"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "8.9500",
+        "recno": "99"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "15.8060",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "13.5560",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "13.5560",
+        "recno": "102"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": 8.95,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": 15.806,
+        "case_length_in": 13.556,
+        "case_width_in": 13.556,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 243,
+    "all_cross_references_observed": 7,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:41:42.047Z",
+  "discovered_from": "CA11509",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "EQUIPMENT TYLER",
+        "model": "Flex-Air 4300, 4330 w/Caterpillar 3208 Engine .",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT TYLER",
+        "model": "Flex-Air 4300, 4330 w/Caterpillar 3208 Engine .",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT TYLER",
+        "model": "Titan w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT TYLER",
+        "model": "Titan w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "L9000",
+        "year": "97-81",
+        "engine": "L6-14.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "L9513",
+        "year": "1997",
+        "engine": "L6-14.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LLA9000",
+        "year": "95-92",
+        "engine": "6-10.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LLA9000",
+        "year": "95-92",
+        "engine": "L6-10.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LLA9000",
+        "year": "97-94",
+        "engine": "L6-10.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LLA9000",
+        "year": "94-92",
+        "engine": "L6-14.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LLA9000",
+        "year": "94-92",
+        "engine": "L6-14.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LLS9000",
+        "year": "1994",
+        "engine": "6-10.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LLS9000",
+        "year": "1996",
+        "engine": "6-10.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LLS9000",
+        "year": "1996",
+        "engine": "L6-10.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LLS9000",
+        "year": "95-94",
+        "engine": "L6-14.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LN9000",
+        "year": "95-91",
+        "engine": "6-10.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LN9000",
+        "year": "95-94",
+        "engine": "L6-10.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LT9501",
+        "year": "98-97",
+        "engine": "6-12.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LT9501",
+        "year": "98-97",
+        "engine": "L6-10.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LT9511",
+        "year": "1998",
+        "engine": "6-12.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LT9511",
+        "year": "1998",
+        "engine": "L6-10.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LT9513",
+        "year": "98-97",
+        "engine": "6-12.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LT9513",
+        "year": "98-97",
+        "engine": "L6-10.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LT9522",
+        "year": "98-97",
+        "engine": "6-12.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LT9522",
+        "year": "98-97",
+        "engine": "L6-10.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "ARGOSY",
+        "year": "03-01",
+        "engine": "6-15.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "ARGOSY",
+        "year": "1999",
+        "engine": "6-15.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "ARGOSY",
+        "year": "01-00",
+        "engine": "L6-10.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "ARGOSY",
+        "year": "2003",
+        "engine": "L6-10.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "ARGOSY",
+        "year": "03-99",
+        "engine": "L6-10.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "ARGOSY",
+        "year": "2006",
+        "engine": "L6-10.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "ARGOSY",
+        "year": "06-01",
+        "engine": "L6-14.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "ARGOSY",
+        "year": "2008",
+        "engine": "L6-14.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "ARGOSY",
+        "year": "03-00",
+        "engine": "L6-14.9L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "ARGOSY",
+        "year": "2001",
+        "engine": "L6-15.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "ARGOSY",
+        "year": "2003",
+        "engine": "L6-15.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CENTURY CLASS",
+        "year": "04-97",
+        "engine": "6-12.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CENTURY CLASS",
+        "year": "09-04",
+        "engine": "6-12.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CENTURY CLASS",
+        "year": "03-97",
+        "engine": "L6-10.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CENTURY CLASS",
+        "year": "02-97",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CENTURY CLASS",
+        "year": "07-96",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CENTURY CLASS",
+        "year": "11-01",
+        "engine": "L6-12.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CENTURY CLASS",
+        "year": "03-97",
+        "engine": "L6-14.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CENTURY CLASS",
+        "year": "09-97",
+        "engine": "L6-14.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CENTURY CLASS",
+        "year": "10-08",
+        "engine": "L6-14.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CENTURY CLASS",
+        "year": "2000",
+        "engine": "L6-14.9L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CENTURY CLASS",
+        "year": "03-01",
+        "engine": "L6-15.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CLASSIC",
+        "year": "02-01",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CLASSIC",
+        "year": "07-01",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CLASSIC",
+        "year": "2003",
+        "engine": "L6-14.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK FORD",
+        "model": "LT9513 (w/Caterpillar C10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK FORD",
+        "model": "LT9513 (w/Caterpillar C10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK STERLING",
+        "model": "Acterra (w/Cummins 5.9L ISB Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK STERLING",
+        "model": "Acterra (w/Cummins 5.9L ISB Engine)",
+        "year": "03-01",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK STERLING",
+        "model": "L7500 (w/Mercedes Benz MBE900 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK STERLING",
+        "model": "L7500 (w/Mercedes Benz MBE900 Engine)",
+        "year": "07-04",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK STERLING",
+        "model": "L7500 (w/Mercedes Benz MBE906 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK STERLING",
+        "model": "L7500 (w/Mercedes Benz MBE906 Engine)",
+        "year": "07-04",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "STERLING TRUCK",
+        "model": "L7500",
+        "year": "10-04",
+        "engine": "L6-6.4L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "STERLING TRUCK",
+        "model": "LT7500",
+        "year": "2006",
+        "engine": "L6-12.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "STERLING TRUCK",
+        "model": "LT7500",
+        "year": "06-05",
+        "engine": "L6-6.4L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "ACL64 (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "ACL64 (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "ACL64 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "ACL64 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "ACX Xpeditor (w/Cummins ISL9 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "ACX Xpeditor (w/Cummins ISL9 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "ACX Xpeditor (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "ACX Xpeditor (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L, LN, LNT, LT, LTL, LTS Series (w/Caterpillar Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L, LN, LNT, LT, LTL, LTS Series (w/Caterpillar Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L, LN, LNT, LT, LTL, LTS Series (w/Cummins Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L, LN, LNT, LT, LTL, LTS Series (w/Cummins Diesel Engine)",
+        "year": "95-",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L, LN, LNT, LT, LTS Series (w/Detroit Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L, LN, LNT, LT, LTS Series (w/Detroit Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LL, LLA, LLS, LTL, LTLA, LTLS (w/Caterpillar Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LL, LLA, LLS, LTL, LTLA, LTLS (w/Caterpillar Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LLA, LLS, LTLA, LTLS900 (w/Cummins Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LLA, LLS, LTLA, LTLS900 (w/Cummins Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "Louisville 9000 (w/Caterpillar C12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "Louisville 9000 (w/Caterpillar C12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Argosy (w/Caterpillar C10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Argosy (w/Caterpillar C10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Argosy (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Argosy (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Argosy (w/Caterpillar C16 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Argosy (w/Caterpillar C16 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Argosy (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Argosy (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Argosy (w/Cummins ISX Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Argosy (w/Cummins ISX Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Argosy (w/Cummins Signature 600 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Argosy (w/Cummins Signature 600 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century C120 (w/Caterpillar C15  Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century C120 (w/Caterpillar C15  Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century C120 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century C120 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century Class S/T (w/Caterpillar 3406E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century Class S/T (w/Caterpillar 3406E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century Class S/T (w/Caterpillar C13 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century Class S/T (w/Caterpillar C13 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century Class S/T (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century Class S/T (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century Class S/T (w/Caterpillar C16 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century Class S/T (w/Caterpillar C16 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century Class S/T (w/Cummins N14 PLUS Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century Class S/T (w/Cummins N14 PLUS Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century Class S/T (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century Class S/T (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century Class S/T (w/Detroit Diesel DD15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century Class S/T (w/Detroit Diesel DD15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century Class S/T (w/Mercedes-Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century Class S/T (w/Mercedes-Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century CST120 (w/Caterpillar C12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century CST120 (w/Caterpillar C12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century CST120 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century CST120 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Classic, Classic XL (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Classic, Classic XL (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Coronado CC132 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Coronado CC132 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "5500 PayStar (w/International MaxxForce 11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "5500 PayStar (w/International MaxxForce 11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "5500i PayStar, 5600i PayStar (w/Cummins ISL Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "5500i PayStar, 5600i PayStar (w/Cummins ISL Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "5500i PayStar, 5600i PayStar (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "5500i PayStar, 5600i PayStar (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "5500i PayStar, 5600i PayStar (w/Cummins ISX Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "5500i PayStar, 5600i PayStar (w/Cummins ISX Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "5500i,5600i (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "5500i,5600i (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9100i (w/Caterpillar C10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9100i (w/Caterpillar C10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9100i (w/Caterpillar C12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9100i (w/Caterpillar C12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9100i (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9100i (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9100i (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9100i (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200i, Eagle (w/Caterpillar C10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200i, Eagle (w/Caterpillar C10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200i, Eagle (w/Caterpillar C12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200i, Eagle (w/Caterpillar C12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200i, Eagle (w/Caterpillar C13 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200i, Eagle (w/Caterpillar C13 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200i, Eagle (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200i, Eagle (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200i, Eagle (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200i, Eagle (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200i, Eagle (w/Cummins ISX Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200i, Eagle (w/Cummins ISX Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200i, Eagle (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200i, Eagle (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200i, Eagle (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200i, Eagle (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400,9400i (w/Caterpillar C12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400,9400i (w/Caterpillar C12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400,9400i (w/Caterpillar C13 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400,9400i (w/Caterpillar C13 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400,9400i (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400,9400i (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400i (Cummins ISX Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400i (Cummins ISX Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400i (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400i (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400i (w/Cummins N14 Plus Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400i (w/Cummins N14 Plus Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9900i (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9900i (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "ProStar (w/Caterpillar C13 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "ProStar (w/Caterpillar C13 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "ProStar (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "ProStar (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "ProStar, ProStar + (w/MaxxForce 11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "ProStar, ProStar + (w/MaxxForce 11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "ProStar, ProStar + (w/MaxxForce 13 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "ProStar, ProStar + (w/MaxxForce 13 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "A9500, AT9500 (w/Caterpillar C11, C13, C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "A9500, AT9500 (w/Caterpillar C11, C13, C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "A9500, AT9500 (w/Mercedes MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "A9500, AT9500 (w/Mercedes MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "ALine (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "ALine (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "ALine (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "ALine (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "AT9513 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "AT9513 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "AT9522 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "AT9522 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L7500 (w/Mercedes Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L7500 (w/Mercedes Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L8500 (w/Caterpillar 3126B Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L8500 (w/Caterpillar 3126B Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L8500 (w/Caterpillar C7 Diesel)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L8500 (w/Caterpillar C7 Diesel)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L8500 (w/Caterpillar C9 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L8500 (w/Caterpillar C9 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L9500 (w/Caterpillar C11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L9500 (w/Caterpillar C11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L9500 (w/Caterpillar C13 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L9500 (w/Caterpillar C13 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L9500 (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L9500 (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L9500 (w/Caterpillar C9 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L9500 (w/Caterpillar C9 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L9500 (w/MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L9500 (w/MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L9500 (w/Mercedes Benz MBE900 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L9500 (w/Mercedes Benz MBE900 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT7500 (w/Mercedes Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT7500 (w/Mercedes Benz MBE4000 Engine)",
+        "year": "06-",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT7500 (w/Mercedes Benz MBE900 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT7500 (w/Mercedes Benz MBE900 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT7500 (w/Mercedes Benz MBE906 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT7500 (w/Mercedes Benz MBE906 Engine)",
+        "year": "06-",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT8500 (w/Caterpillar 3126B Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT8500 (w/Caterpillar 3126B Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT8500 (w/Caterpillar C7 Diesel)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT8500 (w/Caterpillar C7 Diesel)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT8500 (w/Caterpillar C9 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT8500 (w/Caterpillar C9 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT9500 (w/Caterpillar C11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT9500 (w/Caterpillar C11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT9500 (w/Caterpillar C13 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT9500 (w/Caterpillar C13 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT9500 (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT9500 (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT9500 (w/Caterpillar C9 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT9500 (w/Caterpillar C9 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT9500 (w/MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT9500 (w/MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT9500 (w/Mercedes Benz MBE900 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT9500 (w/Mercedes Benz MBE900 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "SilverStar (w/Cummins ISX Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "SilverStar (w/Cummins ISX Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "SilverStar (w/Cummins N14 Plus Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "SilverStar (w/Cummins N14 Plus Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "SilverStar (w/Cummins Signature 600 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "SilverStar (w/Cummins Signature 600 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "4964 Series (w/Mercedes MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "4964 Series (w/Mercedes MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WHITE",
+        "model": "WGT (w/Volvo VE12-360E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WHITE",
+        "model": "WGT (w/Volvo VE12-360E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "RS3519",
+        "source_part_number": "CA11509",
+        "part_key": "006258902",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "EAF5069",
+        "source_part_number": "CA11509",
+        "part_key": "006258902",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P547808",
+        "source_part_number": "CA11509",
+        "part_key": "006258902",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P185069",
+        "source_part_number": "CA11509",
+        "part_key": "006258902",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF25139M",
+        "source_part_number": "CA11509",
+        "part_key": "006258902",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "3560734C1",
+        "source_part_number": "CA11509",
+        "part_key": "006258902",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF1849MXM",
+        "source_part_number": "CA11509",
+        "part_key": "006258902",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

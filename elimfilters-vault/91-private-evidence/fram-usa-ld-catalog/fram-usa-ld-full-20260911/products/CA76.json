@@ -1,0 +1,1359 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA76",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA76",
+    "product_type": "Air Filter, Air",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 2.34,
+      "height_mm": 59.44,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Round Plastisol Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "General Motors",
+        "part_number": "6484815"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "231847"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AM30800"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "231847"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A365CF"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A3059C"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A365C"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA1712"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FA-244"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "2374"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A10079"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42374"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "27577"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARP-76"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "LT37"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "S1893"
+      },
+      {
+        "manufacturer": "Bendix",
+        "part_number": "H43-661"
+      },
+      {
+        "manufacturer": "Bendix",
+        "part_number": "43-661"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "93374"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87374"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "AF211"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P528206"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF1651"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-81651"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GA12"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GA12M"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF158"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "548436R1"
+      },
+      {
+        "manufacturer": "Kohler",
+        "part_number": "231847-S"
+      },
+      {
+        "manufacturer": "Kohler",
+        "part_number": "231847"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA262"
+      },
+      {
+        "manufacturer": "Lawn Boy",
+        "part_number": "100-60"
+      },
+      {
+        "manufacturer": "Leroi",
+        "part_number": "H43-661"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "AF211"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "83472N"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "84759S"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "140-1188"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "122-0681"
+      },
+      {
+        "manufacturer": "WALMI",
+        "part_number": "WA-76"
+      },
+      {
+        "manufacturer": "WGB",
+        "part_number": "SA-150"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA76",
+    "source_part_key": "001482145",
+    "source_totals": {
+      "attributes": 33,
+      "applications": 60,
+      "cross_references": 40
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA76, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Round Plastisol Air Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "82"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "84"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Flexible",
+        "recno": "85"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "86"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "88"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "89"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "2.340",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100521941",
+        "recno": "92"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "3.000",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "4.390",
+        "recno": "94"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "3.000",
+        "recno": "95"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "4.390",
+        "recno": "96"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "97"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "98"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "99"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.4300",
+        "recno": "103"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "0.8600",
+        "recno": "104"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "6.0000",
+        "recno": "105"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "10.2300",
+        "recno": "106"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "4.6200",
+        "recno": "107"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "6.9900",
+        "recno": "108"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "4.6200",
+        "recno": "109"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "5.2400",
+        "recno": "110"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.43,
+        "case_weight_lb": 0.86,
+        "unit_height_in": 6,
+        "unit_length_in": 4.62,
+        "unit_width_in": 4.62,
+        "case_height_in": 10.23,
+        "case_length_in": 6.99,
+        "case_width_in": 5.24,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 5.16,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 60,
+    "all_cross_references_observed": 40,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:50:26.146Z",
+  "discovered_from": "CA76",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "CONCRETE SAW INDUSTRIAL TARGET",
+        "model": "14-65",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE SAW INDUSTRIAL TARGET",
+        "model": "14-65",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT KOHLER",
+        "model": "K141",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT KOHLER",
+        "model": "K141",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT KOHLER",
+        "model": "K161, L161",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT KOHLER",
+        "model": "K161, L161",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT KOHLER",
+        "model": "K181, L181",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT KOHLER",
+        "model": "K181, L181",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT KOHLER",
+        "model": "K91 4 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT KOHLER",
+        "model": "K91 4 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT KOHLER",
+        "model": "K91RT 4 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT KOHLER",
+        "model": "K91RT 4 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT KOHLER",
+        "model": "KT19 (19 hp) Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT KOHLER",
+        "model": "KT19 (19 hp) Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "7.5C21",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "7.5C21",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "75C21",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "75C21",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR ONAN",
+        "model": "AJ",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR ONAN",
+        "model": "AJ",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR ONAN",
+        "model": "AJ 2.7",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR ONAN",
+        "model": "AJ 2.7",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR ONAN",
+        "model": "AJ 3.0",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR ONAN",
+        "model": "AJ 3.0",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BURNS",
+        "model": "722 w/Kohler 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BURNS",
+        "model": "722 w/Kohler 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "800 w/Kohler K181 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "800 w/Kohler K181 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "86",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "86",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GILSON",
+        "model": "722 w/Kohler 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GILSON",
+        "model": "722 w/Kohler 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JACOBSEN",
+        "model": "53034 w/Kohler K181 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JACOBSEN",
+        "model": "53034 w/Kohler K181 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JACOBSEN",
+        "model": "53074 w/Kohler K181 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JACOBSEN",
+        "model": "53074 w/Kohler K181 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JACOBSEN",
+        "model": "Chief, 53034, 53074 w/Kohler K-181 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JACOBSEN",
+        "model": "Chief, 53034, 53074 w/Kohler K-181 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "110 w/Kohler 7 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "110 w/Kohler 7 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "110H w/Kohler 7 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "110H w/Kohler 7 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR MOTOMOWER",
+        "model": "6024 w/Kohler K181S 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR MOTOMOWER",
+        "model": "6024 w/Kohler K181S 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR ROPER",
+        "model": "RT10 w/Tecumseh 10 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR ROPER",
+        "model": "RT10 w/Tecumseh 10 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "ROAD BUILDING MACHINERY BID-WELL",
+        "model": "Auto Roller Finisher w/Kohler K181 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROAD BUILDING MACHINERY BID-WELL",
+        "model": "Auto Roller Finisher w/Kohler K181 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL EAGER BEAVER",
+        "model": "SR150 w/Kohler K181 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL EAGER BEAVER",
+        "model": "SR150 w/Kohler K181 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "80 w/Kohler 8 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "80 w/Kohler 8 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR GRAVELY",
+        "model": "408 w/Kohler K181 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR GRAVELY",
+        "model": "408 w/Kohler K181 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR GRAVELY",
+        "model": "408 w/Kohler K181T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR GRAVELY",
+        "model": "408 w/Kohler K181T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR WHEEL HORSE",
+        "model": "Charger 8 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR WHEEL HORSE",
+        "model": "Charger 8 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR WHEEL HORSE",
+        "model": "Commando 8 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR WHEEL HORSE",
+        "model": "Commando 8 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A365CF",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A3059C",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A365C",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "27577",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARP-76",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "LT37",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "S1893",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA1712",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Bendix",
+        "part_number": "H43-661",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Bendix",
+        "part_number": "43-661",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "93374",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87374",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "AF211",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P528206",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF1651",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-81651",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "6484815",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GA12",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GA12M",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF158",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "548436R1",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "231847",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AM30800",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Kohler",
+        "part_number": "231847-S",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Kohler",
+        "part_number": "231847",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA262",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Lawn Boy",
+        "part_number": "100-60",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Leroi",
+        "part_number": "H43-661",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "AF211",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "231847",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FA-244",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "2374",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "83472N",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "84759S",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "140-1188",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "122-0681",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A10079",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "WALMI",
+        "part_number": "WA-76",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "WGB",
+        "part_number": "SA-150",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42374",
+        "source_part_number": "CA76",
+        "part_key": "001482145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

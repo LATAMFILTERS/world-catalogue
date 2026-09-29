@@ -1,0 +1,5122 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "CH191APL",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CH191APL",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 3.897,
+      "outer_diameter_mm": 98.98,
+      "height_in": 9.354,
+      "height_mm": 237.59,
+      "thread_size": null,
+      "gasket_od_in": 4.472,
+      "gasket_od_mm": 113.59,
+      "gasket_id_in": 4.263,
+      "gasket_id_mm": 108.28,
+      "gasket_thickness_in": 0.208,
+      "gasket_thickness_mm": 5.28,
+      "media_type": "Genuine Media",
+      "style": "Cartridge",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "9F-6430"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "7M-3800"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "5S-484"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "9F-6700"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "5S-0484"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "1R-0659"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "9F-6427"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "9F-6426"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "1W-7399"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "1C-6406"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "4W-4840"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I-1207"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "5576057"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "5573597"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF328F"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF328"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PT670"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "1457429474"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-83"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L50005"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51161"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Atlas-Copco",
+        "part_number": "9710-0376"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92162"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92161"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85161"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "28024"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "AZL004"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "AZL073"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "402"
+      },
+      {
+        "manufacturer": "Deutz",
+        "part_number": "1161212"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P166482"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550484"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "LFP550484"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF740"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3610"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF558"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8558"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8740"
+      },
+      {
+        "manufacturer": "Flo-line",
+        "part_number": "Q9F6700"
+      },
+      {
+        "manufacturer": "Flo-line",
+        "part_number": "Q7M3800"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "G191M"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "G191"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF317"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "FP317A"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "6120-50-5103"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "175-49-11580"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "6110-53-5120"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "6120-50-5101"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "H1081"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "4D-155-A5523"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "6610-53-5120"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L802"
+      },
+      {
+        "manufacturer": "Leroi",
+        "part_number": "43-274"
+      },
+      {
+        "manufacturer": "Leroi",
+        "part_number": "A-43-274"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFH4213"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "88152-C"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "W5S484"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "88152-E"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "W9F6700"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "W5S484P"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "W7M-3800"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "83239-D"
+      },
+      {
+        "manufacturer": "Perry",
+        "part_number": "PL-87"
+      },
+      {
+        "manufacturer": "Phillips 66",
+        "part_number": "P5"
+      },
+      {
+        "manufacturer": "Purflux",
+        "part_number": "L503"
+      },
+      {
+        "manufacturer": "Rol-Pak",
+        "part_number": "CATQ-4X9-SF"
+      },
+      {
+        "manufacturer": "Rol-Pak",
+        "part_number": "CAT-4X9-FF"
+      },
+      {
+        "manufacturer": "Rol-Pak",
+        "part_number": "CATQ-4X9-FF"
+      },
+      {
+        "manufacturer": "Rol-Pak",
+        "part_number": "CAT-4X9-SF"
+      },
+      {
+        "manufacturer": "Twin Disc Clutch",
+        "part_number": "M-2188-1"
+      },
+      {
+        "manufacturer": "United Engine Life",
+        "part_number": "CP-3800-P"
+      },
+      {
+        "manufacturer": "United Engine Life",
+        "part_number": "CP-6700"
+      },
+      {
+        "manufacturer": "WGB",
+        "part_number": "S-51-CP"
+      },
+      {
+        "manufacturer": "White",
+        "part_number": "848012"
+      },
+      {
+        "manufacturer": "White",
+        "part_number": "2LB-0611"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "98-96",
+        "make": "FORD",
+        "model": "A9513",
+        "engine": "6-10.5L",
+        "quantity": 1
+      },
+      {
+        "year": "1997",
+        "make": "FORD",
+        "model": "AT9513",
+        "engine": "6-10.5L",
+        "quantity": 1
+      },
+      {
+        "year": "97-96",
+        "make": "FORD",
+        "model": "LA9000",
+        "engine": "6-10.5L",
+        "quantity": 1
+      },
+      {
+        "year": "96-89",
+        "make": "FORD",
+        "model": "LTA9000",
+        "engine": "6-10.5L",
+        "quantity": 1
+      },
+      {
+        "year": "97-89",
+        "make": "FORD",
+        "model": "LTS9000",
+        "engine": "6-10.5L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CH191APL",
+    "source_part_key": "001509413",
+    "source_totals": {
+      "attributes": 33,
+      "applications": 419,
+      "cross_references": 75
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® Oil Filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE recommended intervals. Extra Guard is engineered for extended performance that meets all manufacturers recommended change intervals. No matter what you drive, or what motor oil you  use, FRAM® has a filter for you.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CH191APL, HD Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Cartridge Oil Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Cartridge",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "82"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Cover",
+        "recno": "83"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "NA",
+        "recno": "84"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "85"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "86"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Oil Filter",
+        "recno": "87"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "9.354",
+        "recno": "89"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "3.897",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "4.263",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100420800",
+        "recno": "92"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "4.472",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.208",
+        "recno": "93"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "1.692",
+        "recno": "94"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "1.692",
+        "recno": "95"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "96"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "97"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Turkey",
+        "recno": "98"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.9910",
+        "recno": "102"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "5.9460",
+        "recno": "103"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "9.5210",
+        "recno": "104"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "10.7360",
+        "recno": "105"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.9730",
+        "recno": "106"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "8.9110",
+        "recno": "107"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.9730",
+        "recno": "108"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "12.8480",
+        "recno": "109"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.991,
+        "case_weight_lb": 5.946,
+        "unit_height_in": 9.521,
+        "unit_length_in": 3.973,
+        "unit_width_in": 3.973,
+        "case_height_in": 10.736,
+        "case_length_in": 8.911,
+        "case_width_in": 12.848,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 11.892,
+        "estimated_case_dimensions": {
+          "length_in": 11.881,
+          "width_in": 19.272,
+          "height_in": 10.736,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 419,
+    "all_cross_references_observed": 75,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:13:56.922Z",
+  "discovered_from": "CH191APL",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "ARTICULATED DUMP TRUCK CATERPILLAR",
+        "model": "D330, D330B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK CATERPILLAR",
+        "model": "D330, D330B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK CATERPILLAR",
+        "model": "D330B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK CATERPILLAR",
+        "model": "D330B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY RENAULT",
+        "model": "Cruisair PR2 (w/V800 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY RENAULT",
+        "model": "Cruisair PR2 (w/V800 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY RENAULT",
+        "model": "Cruisair PR2A (w/V800 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY RENAULT",
+        "model": "Cruisair PR2A (w/V800 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY RENAULT",
+        "model": "Cruisair PR3 (w/V800 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY RENAULT",
+        "model": "Cruisair PR3 (w/V800 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY RENAULT",
+        "model": "Cruisair PR3A (w/V800 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY RENAULT",
+        "model": "Cruisair PR3A (w/V800 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CARRIER CATERPILLAR",
+        "model": "D6B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CARRIER CATERPILLAR",
+        "model": "D6B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER BUFFALO SPRINGFIELD",
+        "model": "K45 Kompactor w/Caterpillar D318 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER BUFFALO SPRINGFIELD",
+        "model": "K45 Kompactor w/Caterpillar D318 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D4",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D4",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D4D w/Caterpillar 3304 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D4D w/Caterpillar 3304 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D5, D5 Turbo",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D5, D5 Turbo",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D6",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D6",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D6C w/Caterpillar 3306 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D6C w/Caterpillar 3306 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D7",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D7",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D7",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D7",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D8",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D8",
+        "year": "",
+        "engine": "",
+        "part_type": "Torque Converter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D8",
+        "year": "",
+        "engine": "",
+        "part_type": "Power Steering",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D8",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D8",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D8",
+        "year": "",
+        "engine": "",
+        "part_type": "Power Steering Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D8",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D8",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D8H w/Caterpiller D342T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D8H w/Caterpiller D342T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D9D",
+        "year": "",
+        "engine": "",
+        "part_type": "Torque Converter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D9D",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER KOMATSU",
+        "model": "D150A-1, D155A-1, D155A-2 w/Komatsu S6D155 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER KOMATSU",
+        "model": "D150A-1, D155A-1, D155A-2 w/Komatsu S6D155 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER KOMATSU",
+        "model": "D50A, D50S-15",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER KOMATSU",
+        "model": "D50A, D50S-15",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER KOMATSU",
+        "model": "D50A-16, D50P-16, D50PL-16, D50S-16 w/Komatsu 4D130 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER KOMATSU",
+        "model": "D50A-16, D50P-16, D50PL-16, D50S-16 w/Komatsu 4D130 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER KOMATSU",
+        "model": "D50F-16 w/S4D130 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER KOMATSU",
+        "model": "D50F-16 w/S4D130 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER KOMATSU",
+        "model": "D53A-15, D53S-15 w/Komatsu S4D120 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER KOMATSU",
+        "model": "D53A-15, D53S-15 w/Komatsu S4D120 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER KOMATSU",
+        "model": "D53A-16, D53P-16, D53S-16 w/Komatsu 4D130 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER KOMATSU",
+        "model": "D53A-16, D53P-16, D53S-16 w/Komatsu 4D130 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER KOMATSU",
+        "model": "D80A-12, D85A-12 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Power Steering",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER KOMATSU",
+        "model": "D80A-12, D85A-12 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Power Steering Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER KOMATSU",
+        "model": "D95S-1 w/Komatsu S4D155-4 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER KOMATSU",
+        "model": "D95S-1 w/Komatsu S4D155-4 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "941",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "941",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "941B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "941B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "951B, 951C w/Caterpillar 3304 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "951B, 951C w/Caterpillar 3304 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Power Steering",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "951B, 951C w/Caterpillar 3304 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "951B, 951C w/Caterpillar 3304 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Power Steering Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "951B, 951C w/Caterpillar 3304 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "951B, 951C w/Caterpillar 3304 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "955, 955C, 955E, 955F",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "955, 955C, 955E, 955F",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "955H",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "955H",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "955H",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "955H",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "955K",
+        "year": "",
+        "engine": "",
+        "part_type": "Power Steering",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "955K",
+        "year": "",
+        "engine": "",
+        "part_type": "Power Steering Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "955K",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "955K",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "955L",
+        "year": "",
+        "engine": "",
+        "part_type": "Power Steering",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "955L",
+        "year": "",
+        "engine": "",
+        "part_type": "Power Steering Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "977H",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "977H",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "977H",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "977H",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "977K, 977L",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "977K, 977L",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR CATERPILLAR",
+        "model": "D2",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR CATERPILLAR",
+        "model": "D2",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "1673",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "1673",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "1674",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "1674",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "3306",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "3306",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "3306TA",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "3306TA",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D11000",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D11000",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D13000",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D13000",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D17000",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D17000",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D311",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D311",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D315",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D315",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D318",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D318",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D320",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D320",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D326",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D326",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D330",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D330",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D334",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D334",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D337",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D337",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D339",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D339",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D3400",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D3400",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D342",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D342",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D346",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D346",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D348",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D348",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D349",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D349",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D386",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D386",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D398",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D398",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D399",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D399",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D4400",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D4400",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D4600",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D4600",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D8800",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "D8800",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "G342C",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "G342C",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "G379",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "G379",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "G398",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "G398",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "BF16M716",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "BF16M716",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL CATERPILLAR",
+        "model": "D315",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL CATERPILLAR",
+        "model": "D315",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL CATERPILLAR",
+        "model": "D318",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL CATERPILLAR",
+        "model": "D318",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL CATERPILLAR",
+        "model": "D320",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL CATERPILLAR",
+        "model": "D320",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL CATERPILLAR",
+        "model": "D333",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL CATERPILLAR",
+        "model": "D333",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL CATERPILLAR",
+        "model": "D333C",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL CATERPILLAR",
+        "model": "D333C",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL CATERPILLAR",
+        "model": "D379",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL CATERPILLAR",
+        "model": "D379",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL CATERPILLAR",
+        "model": "D379B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL CATERPILLAR",
+        "model": "D379B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KOMATSU",
+        "model": "4D120",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KOMATSU",
+        "model": "4D120",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KOMATSU",
+        "model": "S4D120",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KOMATSU",
+        "model": "S4D120",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KOMATSU",
+        "model": "S4D155",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KOMATSU",
+        "model": "S4D155",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE CATERPILLAR",
+        "model": "D315",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE CATERPILLAR",
+        "model": "D315",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE CATERPILLAR",
+        "model": "D318",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE CATERPILLAR",
+        "model": "D318",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE CATERPILLAR",
+        "model": "D333",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE CATERPILLAR",
+        "model": "D333",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE CATERPILLAR",
+        "model": "D333A",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE CATERPILLAR",
+        "model": "D333A",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE CATERPILLAR",
+        "model": "D342C",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE CATERPILLAR",
+        "model": "D342C",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE CATERPILLAR",
+        "model": "D364",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE CATERPILLAR",
+        "model": "D364",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE CATERPILLAR",
+        "model": "D375",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE CATERPILLAR",
+        "model": "D375",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE CATERPILLAR",
+        "model": "D379",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE CATERPILLAR",
+        "model": "D379",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE CATERPILLAR",
+        "model": "D379B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE CATERPILLAR",
+        "model": "D379B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE CATERPILLAR",
+        "model": "D398B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE CATERPILLAR",
+        "model": "D398B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MWM-MURPHY",
+        "model": "D232V6",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MWM-MURPHY",
+        "model": "D232V6",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MWM-MURPHY",
+        "model": "D232V8",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MWM-MURPHY",
+        "model": "D232V8",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MWM-MURPHY",
+        "model": "D233V8",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MWM-MURPHY",
+        "model": "D233V8",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE NATURAL GAS CATERPILLAR",
+        "model": "G333 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE NATURAL GAS CATERPILLAR",
+        "model": "G333 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE NATURAL GAS CATERPILLAR",
+        "model": "G342",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE NATURAL GAS CATERPILLAR",
+        "model": "G342",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE TRUCK CATERPILLAR",
+        "model": "1673 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE TRUCK CATERPILLAR",
+        "model": "1673 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOMATSU",
+        "model": "PC20HT-1 w/Komatsu 4D130-1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOMATSU",
+        "model": "PC20HT-1 w/Komatsu 4D130-1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "A9513",
+        "year": "98-96",
+        "engine": "6-10.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "AT9513",
+        "year": "1997",
+        "engine": "6-10.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LA9000",
+        "year": "97-96",
+        "engine": "6-10.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LTA9000",
+        "year": "96-89",
+        "engine": "6-10.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LTS9000",
+        "year": "97-89",
+        "engine": "6-10.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CATERPILLAR",
+        "model": "112",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CATERPILLAR",
+        "model": "112",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CATERPILLAR",
+        "model": "112E",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CATERPILLAR",
+        "model": "112E",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CATERPILLAR",
+        "model": "12",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CATERPILLAR",
+        "model": "12",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CATERPILLAR",
+        "model": "120",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CATERPILLAR",
+        "model": "120",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CATERPILLAR",
+        "model": "12F",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CATERPILLAR",
+        "model": "12F",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CATERPILLAR",
+        "model": "14",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CATERPILLAR",
+        "model": "14",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CATERPILLAR",
+        "model": "140",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CATERPILLAR",
+        "model": "140",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CATERPILLAR",
+        "model": "14E",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CATERPILLAR",
+        "model": "14E",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CATERPILLAR",
+        "model": "16",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CATERPILLAR",
+        "model": "16",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CATERPILLAR",
+        "model": "212",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CATERPILLAR",
+        "model": "212",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER KOMATSU",
+        "model": "GD30-5M w/Komatsu 4D120-11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER KOMATSU",
+        "model": "GD30-5M w/Komatsu 4D120-11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER KOMATSU",
+        "model": "GD310RC-3A w/Komatsu 4D130-1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER KOMATSU",
+        "model": "GD310RC-3A w/Komatsu 4D130-1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER KOMATSU",
+        "model": "GD31-3H w/Komatsu S4D120-11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER KOMATSU",
+        "model": "GD31-3H w/Komatsu S4D120-11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER KOMATSU",
+        "model": "GD31RC-3A, GD310RC-3A w/Komatsu 4D130-1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER KOMATSU",
+        "model": "GD31RC-3A, GD310RC-3A w/Komatsu 4D130-1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER KOMATSU",
+        "model": "GD37-5H w/Komatsu S4D120-11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER KOMATSU",
+        "model": "GD37-5H w/Komatsu S4D120-11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER KOMATSU",
+        "model": "GD500R-1 w/Komatsu S4D130-1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER KOMATSU",
+        "model": "GD500R-1 w/Komatsu S4D130-1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOWMOTOR",
+        "model": "AH40, AH46, AH52, AH60 w/Caterpillar D330 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOWMOTOR",
+        "model": "AH40, AH46, AH52, AH60 w/Caterpillar D330 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOWMOTOR",
+        "model": "AH40, AH60 w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOWMOTOR",
+        "model": "AH40, AH60 w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOWMOTOR",
+        "model": "AH52 w/Caterpillar D330 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOWMOTOR",
+        "model": "AH52 w/Caterpillar D330 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOWMOTOR",
+        "model": "AM36 w/Caterpillar D330 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOWMOTOR",
+        "model": "AM36 w/Caterpillar D330 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOWMOTOR",
+        "model": "AM36, AM40, AM46, AM52, AM60 w/Caterpillar D330 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOWMOTOR",
+        "model": "AM36, AM40, AM46, AM52, AM60 w/Caterpillar D330 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOWMOTOR",
+        "model": "AM40 w/Caterpillar D330 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOWMOTOR",
+        "model": "AM40 w/Caterpillar D330 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOWMOTOR",
+        "model": "AM46 w/Caterpillar D330 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOWMOTOR",
+        "model": "AM46 w/Caterpillar D330 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOWMOTOR",
+        "model": "AM52 w/Caterpillar D330 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOWMOTOR",
+        "model": "AM52 w/Caterpillar D330 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "772",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "772",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "773",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "773",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "777",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "777",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "779",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "779",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER CATERPILLAR",
+        "model": "561",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER CATERPILLAR",
+        "model": "561",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER CATERPILLAR",
+        "model": "561B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER CATERPILLAR",
+        "model": "561B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER CATERPILLAR",
+        "model": "561C, 561D",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER CATERPILLAR",
+        "model": "561C, 561D",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER CATERPILLAR",
+        "model": "572",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER CATERPILLAR",
+        "model": "572",
+        "year": "",
+        "engine": "",
+        "part_type": "Torque Converter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER CATERPILLAR",
+        "model": "572",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER CATERPILLAR",
+        "model": "572",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER CATERPILLAR",
+        "model": "572",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER CATERPILLAR",
+        "model": "572",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER CATERPILLAR",
+        "model": "583",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER CATERPILLAR",
+        "model": "583",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER CATERPILLAR",
+        "model": "583",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER CATERPILLAR",
+        "model": "583",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER CATERPILLAR",
+        "model": "583H",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER CATERPILLAR",
+        "model": "583H",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "621",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "621",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "623",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "623",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "627",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "627",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "637",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "637",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "641",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "641",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "641B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "641B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "650",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "650",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "651",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "651",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "657B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "657B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "660",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "660",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "666B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "666B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "DW10",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "DW10",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "DW15",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "DW15",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKIDDER CATERPILLAR",
+        "model": "518",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKIDDER CATERPILLAR",
+        "model": "518",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D155A-1 w/Komatsu S6D155 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D155A-1 w/Komatsu S6D155 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D155S-1 w/Komatsu S6D155 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D155S-1 w/Komatsu S6D155 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D355A-1 w/Komatsu S6D155-4 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D355A-1 w/Komatsu S6D155-4 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D355A-1 w/Komatsu SA6D155-4 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D355A-1 w/Komatsu SA6D155-4 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D50PL-16 w/Komatsu 4D130 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D50PL-16 w/Komatsu 4D130 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D50S-15",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D50S-15",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D50S-16 w/Komatsu 4D130 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D50S-16 w/Komatsu 4D130 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D53P-16 w/Komatsu 4D130 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D53P-16 w/Komatsu 4D130 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D53S-16 w/Komatsu 4D130 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D53S-16 w/Komatsu 4D130 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D55S, D55S-3 w/Komatsu Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D55S, D55S-3 w/Komatsu Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D57S-1 w/Komatsu S6D108",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D57S-1 w/Komatsu S6D108",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D85A-12 w/Cummins",
+        "year": "",
+        "engine": "",
+        "part_type": "Power Steering",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D85A-12 w/Cummins",
+        "year": "",
+        "engine": "",
+        "part_type": "Power Steering Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D85E-12 w/Cummins",
+        "year": "",
+        "engine": "",
+        "part_type": "Power Steering",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D85E-12 w/Cummins",
+        "year": "",
+        "engine": "",
+        "part_type": "Power Steering Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSMISSION TWIN DISC",
+        "model": "512",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSMISSION TWIN DISC",
+        "model": "512",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSMISSION TWIN DISC",
+        "model": "514",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSMISSION TWIN DISC",
+        "model": "514",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSMISSION TWIN DISC",
+        "model": "MG-540",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSMISSION TWIN DISC",
+        "model": "MG-540",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "CL65 (w/Le-Roi TH-540 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "CL65 (w/Le-Roi TH-540 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "CL65D (w/Le-Roi TH-540 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "CL65D (w/Le-Roi TH-540 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "CL65T (w/Le-Roi TH-540 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "CL65T (w/Le-Roi TH-540 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "CL84T (w/Le-Roi TH-540 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "CL84T (w/Le-Roi TH-540 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "CL85 (w/Le-Roi TH-540 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "CL85 (w/Le-Roi TH-540 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "CL85T (w/Le-Roi TH-540 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "CL85T (w/Le-Roi TH-540 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLL (w/Caterpillar 3306 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLL (w/Caterpillar 3306 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLT (w/Caterpillar 3306 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLT (w/Caterpillar 3306 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "W900 (w/Caterpillar 1673C Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "W900 (w/Caterpillar 1673C Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "W900 (w/Caterpillar 1674 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "W900 (w/Caterpillar 1674 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL DOZER-COMPACTOR CATERPILLAR",
+        "model": "814",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL DOZER-COMPACTOR CATERPILLAR",
+        "model": "814",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL DOZER-COMPACTOR CATERPILLAR",
+        "model": "814B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL DOZER-COMPACTOR CATERPILLAR",
+        "model": "814B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL DOZER-COMPACTOR CATERPILLAR",
+        "model": "815",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL DOZER-COMPACTOR CATERPILLAR",
+        "model": "815",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "920",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "920",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "922",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "922",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "922A, 922B",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "922A, 922B",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "922A, 922B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "922A, 922B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "944",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "944",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "944",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "944",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "944A",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "944A",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "944A",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "944A",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "950",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "950",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "950",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "950",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "950A",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "950A",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "951",
+        "year": "",
+        "engine": "",
+        "part_type": "Power Steering",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "951",
+        "year": "",
+        "engine": "",
+        "part_type": "Power Steering Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "951",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "951",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "955",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "955",
+        "year": "",
+        "engine": "",
+        "part_type": "Power Steering",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "955",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "955",
+        "year": "",
+        "engine": "",
+        "part_type": "Power Steering Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "955",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "955",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "966",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "966",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "966",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "966",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "966A, 966B",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "966A, 966B",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "966A, 966B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "966A, 966B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "977",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "977",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "977",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "977",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "980",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "980",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "992",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "992",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "992B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "992B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF328F",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF328",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Atlas-Copco",
+        "part_number": "9710-0376",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PT670",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92162",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92161",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "1457429474",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85161",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "28024",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "9F-6430",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "7M-3800",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "5S-484",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "9F-6700",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "5S-0484",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "1R-0659",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "9F-6427",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "9F-6426",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "1W-7399",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "1C-6406",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "4W-4840",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I-1207",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "AZL004",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "AZL073",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "402",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Deutz",
+        "part_number": "1161212",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P166482",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550484",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "LFP550484",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF740",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3610",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF558",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8558",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8740",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Flo-line",
+        "part_number": "Q9F6700",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Flo-line",
+        "part_number": "Q7M3800",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "5576057",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "5573597",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "G191M",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "G191",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF317",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "FP317A",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "6120-50-5103",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "175-49-11580",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "6110-53-5120",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "6120-50-5101",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "H1081",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "4D-155-A5523",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "6610-53-5120",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L802",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Leroi",
+        "part_number": "43-274",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Leroi",
+        "part_number": "A-43-274",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFH4213",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-83",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "88152-C",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "W5S484",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "88152-E",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "W9F6700",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "W5S484P",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "W7M-3800",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "83239-D",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Perry",
+        "part_number": "PL-87",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Phillips 66",
+        "part_number": "P5",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purflux",
+        "part_number": "L503",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L50005",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Rol-Pak",
+        "part_number": "CATQ-4X9-SF",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Rol-Pak",
+        "part_number": "CAT-4X9-FF",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Rol-Pak",
+        "part_number": "CATQ-4X9-FF",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Rol-Pak",
+        "part_number": "CAT-4X9-SF",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Twin Disc Clutch",
+        "part_number": "M-2188-1",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "United Engine Life",
+        "part_number": "CP-3800-P",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "United Engine Life",
+        "part_number": "CP-6700",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "WGB",
+        "part_number": "S-51-CP",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "White",
+        "part_number": "848012",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "White",
+        "part_number": "2LB-0611",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51161",
+        "source_part_number": "CH191APL",
+        "part_key": "001509413",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

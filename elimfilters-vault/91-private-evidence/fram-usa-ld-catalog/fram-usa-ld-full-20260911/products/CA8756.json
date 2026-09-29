@@ -1,0 +1,2577 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA8756",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA8756",
+    "product_type": "Engine Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 2,
+      "height_mm": 50.8,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Flexible Panel Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "General Motors",
+        "part_number": "23349854"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "19114110"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25313348"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "15908916"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A3086C"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A1519CF"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A3218C"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A1519C"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA4113"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "5499WS"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CAP8756"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LX2562"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "MA 1003"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "2487"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A45314"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42487"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "EAA123"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "93487"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87487"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CFA1052"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "AF1519"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DA8756"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "XA5314"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF25757"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF26308"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "P2487"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "VA5314"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1052"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "AE8756"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "33-2129"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "AF1519"
+      },
+      {
+        "manufacturer": "MicroGard Select",
+        "part_number": "MSA81015"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "A81519"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "MA5314"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "22487"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "62487"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "62488"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "AF1519"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PA5314"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PA-5314"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "MA5314"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "SHA152"
+      },
+      {
+        "manufacturer": "Silverline",
+        "part_number": "22487"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "SA8755"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VA115"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VA-115"
+      },
+      {
+        "manufacturer": "VIPER",
+        "part_number": "8756"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "AF1519"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "05-02",
+        "make": "CADILLAC",
+        "model": "ESCALADE",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "06-02",
+        "make": "CADILLAC",
+        "model": "ESCALADE",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "13-09",
+        "make": "CADILLAC",
+        "model": "ESCALADE",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-07",
+        "make": "CADILLAC",
+        "model": "ESCALADE",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "06-03",
+        "make": "CADILLAC",
+        "model": "ESCALADE ESV",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-07",
+        "make": "CADILLAC",
+        "model": "ESCALADE ESV",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "06-02",
+        "make": "CADILLAC",
+        "model": "ESCALADE EXT",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "13-07",
+        "make": "CADILLAC",
+        "model": "ESCALADE EXT",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "13-07",
+        "make": "CHEVROLET",
+        "model": "AVALANCHE",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "09-07",
+        "make": "CHEVROLET",
+        "model": "AVALANCHE",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "06-02",
+        "make": "CHEVROLET",
+        "model": "AVALANCHE 1500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "06-02",
+        "make": "CHEVROLET",
+        "model": "AVALANCHE 2500",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "CHEVROLET",
+        "model": "C3500HD",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      },
+      {
+        "year": "18-99",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "engine": "V6-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "13-99",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "engine": "V8-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "18-99",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "13-03",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-09",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "2007",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 CLASSIC",
+        "engine": "V6-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "2007",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 CLASSIC",
+        "engine": "V8-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "2007",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 CLASSIC",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "2007",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 CLASSIC",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "03-01",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 HD",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "06-05",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 HD",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2007",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 HD CLASSIC",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2019",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 LD",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "00-99",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "05-04",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "2014",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "04-99",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-01",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500 HD",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "05-01",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500 HD",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500 HD",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      },
+      {
+        "year": "2007",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500 HD CLASSIC",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2007",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500 HD CLASSIC",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "05-01",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      },
+      {
+        "year": "2007",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500 CLASSIC",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2007",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500 CLASSIC",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      },
+      {
+        "year": "19-07",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500 HD",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-15",
+        "make": "CHEVROLET",
+        "model": "SUBURBAN",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "20-19",
+        "make": "CHEVROLET",
+        "model": "SUBURBAN",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "14-00",
+        "make": "CHEVROLET",
+        "model": "SUBURBAN 1500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "09-06",
+        "make": "CHEVROLET",
+        "model": "SUBURBAN 1500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "13-00",
+        "make": "CHEVROLET",
+        "model": "SUBURBAN 2500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "CHEVROLET",
+        "model": "SUBURBAN 2500",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      },
+      {
+        "year": "19-16",
+        "make": "CHEVROLET",
+        "model": "SUBURBAN 3500 HD",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "09-00",
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "engine": "V8-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "20-00",
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "13-08",
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "09-08",
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "20-18",
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "GMC",
+        "model": "C3500HD",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      },
+      {
+        "year": "18-99",
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "engine": "V6-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "13-99",
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "engine": "V8-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "18-99",
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "13-01",
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-07",
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "2007",
+        "make": "GMC",
+        "model": "SIERRA 1500 CLASSIC",
+        "engine": "V6-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "2007",
+        "make": "GMC",
+        "model": "SIERRA 1500 CLASSIC",
+        "engine": "V8-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "2007",
+        "make": "GMC",
+        "model": "SIERRA 1500 CLASSIC",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "2007",
+        "make": "GMC",
+        "model": "SIERRA 1500 CLASSIC",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "03-01",
+        "make": "GMC",
+        "model": "SIERRA 1500 HD",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "06-05",
+        "make": "GMC",
+        "model": "SIERRA 1500 HD",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2007",
+        "make": "GMC",
+        "model": "SIERRA 1500 HD CLASSIC",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2019",
+        "make": "GMC",
+        "model": "SIERRA 1500 LIMITED",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "00-99",
+        "make": "GMC",
+        "model": "SIERRA 2500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "04-99",
+        "make": "GMC",
+        "model": "SIERRA 2500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-01",
+        "make": "GMC",
+        "model": "SIERRA 2500 HD",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "05-01",
+        "make": "GMC",
+        "model": "SIERRA 2500 HD",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "GMC",
+        "model": "SIERRA 2500 HD",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      },
+      {
+        "year": "2007",
+        "make": "GMC",
+        "model": "SIERRA 2500 HD CLASSIC",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2007",
+        "make": "GMC",
+        "model": "SIERRA 2500 HD CLASSIC",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "GMC",
+        "model": "SIERRA 3500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "05-01",
+        "make": "GMC",
+        "model": "SIERRA 3500",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "GMC",
+        "model": "SIERRA 3500",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      },
+      {
+        "year": "2007",
+        "make": "GMC",
+        "model": "SIERRA 3500 CLASSIC",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2007",
+        "make": "GMC",
+        "model": "SIERRA 3500 CLASSIC",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      },
+      {
+        "year": "19-07",
+        "make": "GMC",
+        "model": "SIERRA 3500 HD",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "09-00",
+        "make": "GMC",
+        "model": "YUKON",
+        "engine": "V8-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "20-00",
+        "make": "GMC",
+        "model": "YUKON",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "GMC",
+        "model": "YUKON",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "13-08",
+        "make": "GMC",
+        "model": "YUKON",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-07",
+        "make": "GMC",
+        "model": "YUKON",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "20-15",
+        "make": "GMC",
+        "model": "YUKON XL",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "20-15",
+        "make": "GMC",
+        "model": "YUKON XL",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "14-00",
+        "make": "GMC",
+        "model": "YUKON XL 1500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "09-01",
+        "make": "GMC",
+        "model": "YUKON XL 1500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "14-07",
+        "make": "GMC",
+        "model": "YUKON XL 1500",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "13-00",
+        "make": "GMC",
+        "model": "YUKON XL 2500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "GMC",
+        "model": "YUKON XL 2500",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CA8756",
+    "source_part_key": "000991332",
+    "source_totals": {
+      "attributes": 37,
+      "applications": 109,
+      "cross_references": 48
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® engine air filters are engineered to protect your engine from harmful contaminants. Replacing an air filter with FRAM Extra Guard can help improve horsepower, acceleration, and engine performance. To prevent engine wear, FRAM recommends changing your air filter every 12 months.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Ensures maximum airflow to prevent engine wear",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA8756, Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Keep your engine running smoothly by preventing damaging particles from entering your vehicle’s engine",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs quickly in as little as 5 minutes",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Flexible Panel Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Protects up to 12 months or 12,000 miles (19,000 kilometers)",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "82"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangular",
+        "recno": "84"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Flexible",
+        "recno": "85"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "86"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "88"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Air Filter",
+        "recno": "89"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "2.000",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100021731",
+        "recno": "92"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "12.250",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "9.688",
+        "recno": "93"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "94"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "95"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "96"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "97"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "98"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.4750",
+        "recno": "102"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "2.9500",
+        "recno": "103"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "12.5000",
+        "recno": "104"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "5.5000",
+        "recno": "105"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "10.0000",
+        "recno": "106"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "13.2500",
+        "recno": "107"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "2.5000",
+        "recno": "108"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "10.7500",
+        "recno": "109"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.475,
+        "case_weight_lb": 2.95,
+        "unit_height_in": 12.5,
+        "unit_length_in": 10,
+        "unit_width_in": 2.5,
+        "case_height_in": 5.5,
+        "case_length_in": 13.25,
+        "case_width_in": 10.75,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 17.7,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 109,
+    "all_cross_references_observed": 48,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:52:07.752Z",
+  "discovered_from": "CA8756",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BUS HEAVY DUTY ELDORADO",
+        "model": "Cut-Away Chassis (w/General Motors V8-8.1L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY ELDORADO",
+        "model": "Cut-Away Chassis (w/General Motors V8-8.1L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE",
+        "year": "05-02",
+        "engine": "V8-5.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE",
+        "year": "06-02",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE",
+        "year": "13-09",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE",
+        "year": "20-07",
+        "engine": "V8-6.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE ESV",
+        "year": "06-03",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE ESV",
+        "year": "20-07",
+        "engine": "V8-6.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE EXT",
+        "year": "06-02",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE EXT",
+        "year": "13-07",
+        "engine": "V8-6.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "AVALANCHE",
+        "year": "13-07",
+        "engine": "V8-5.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "AVALANCHE",
+        "year": "09-07",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "AVALANCHE 1500",
+        "year": "06-02",
+        "engine": "V8-5.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "AVALANCHE 2500",
+        "year": "06-02",
+        "engine": "V8-8.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "C3500HD",
+        "year": "02-01",
+        "engine": "V8-8.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "year": "18-99",
+        "engine": "V6-4.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "year": "13-99",
+        "engine": "V8-4.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "year": "18-99",
+        "engine": "V8-5.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "year": "13-03",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "year": "18-09",
+        "engine": "V8-6.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 CLASSIC",
+        "year": "2007",
+        "engine": "V6-4.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 CLASSIC",
+        "year": "2007",
+        "engine": "V8-4.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 CLASSIC",
+        "year": "2007",
+        "engine": "V8-5.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 CLASSIC",
+        "year": "2007",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 HD",
+        "year": "03-01",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 HD",
+        "year": "06-05",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 HD CLASSIC",
+        "year": "2007",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 LD",
+        "year": "2019",
+        "engine": "V8-5.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500",
+        "year": "00-99",
+        "engine": "V8-5.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500",
+        "year": "05-04",
+        "engine": "V8-5.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500",
+        "year": "2014",
+        "engine": "V8-5.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500",
+        "year": "04-99",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500 HD",
+        "year": "19-01",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500 HD",
+        "year": "05-01",
+        "engine": "V8-6.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500 HD",
+        "year": "06-01",
+        "engine": "V8-8.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500 HD CLASSIC",
+        "year": "2007",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500 HD CLASSIC",
+        "year": "2007",
+        "engine": "V8-8.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500",
+        "year": "06-01",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500",
+        "year": "05-01",
+        "engine": "V8-6.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500",
+        "year": "06-01",
+        "engine": "V8-8.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500 CLASSIC",
+        "year": "2007",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500 CLASSIC",
+        "year": "2007",
+        "engine": "V8-8.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500 HD",
+        "year": "19-07",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SUBURBAN",
+        "year": "20-15",
+        "engine": "V8-5.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SUBURBAN",
+        "year": "20-19",
+        "engine": "V8-6.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SUBURBAN 1500",
+        "year": "14-00",
+        "engine": "V8-5.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SUBURBAN 1500",
+        "year": "09-06",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SUBURBAN 2500",
+        "year": "13-00",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SUBURBAN 2500",
+        "year": "06-01",
+        "engine": "V8-8.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SUBURBAN 3500 HD",
+        "year": "19-16",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "year": "09-00",
+        "engine": "V8-4.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "year": "20-00",
+        "engine": "V8-5.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "year": "13-08",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "year": "09-08",
+        "engine": "V8-6.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "year": "20-18",
+        "engine": "V8-6.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C3500HD",
+        "year": "02-01",
+        "engine": "V8-8.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "year": "18-99",
+        "engine": "V6-4.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "year": "13-99",
+        "engine": "V8-4.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "year": "18-99",
+        "engine": "V8-5.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "year": "13-01",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "year": "18-07",
+        "engine": "V8-6.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500 CLASSIC",
+        "year": "2007",
+        "engine": "V6-4.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500 CLASSIC",
+        "year": "2007",
+        "engine": "V8-4.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500 CLASSIC",
+        "year": "2007",
+        "engine": "V8-5.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500 CLASSIC",
+        "year": "2007",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500 HD",
+        "year": "03-01",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500 HD",
+        "year": "06-05",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500 HD CLASSIC",
+        "year": "2007",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500 LIMITED",
+        "year": "2019",
+        "engine": "V8-5.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 2500",
+        "year": "00-99",
+        "engine": "V8-5.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 2500",
+        "year": "04-99",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 2500 HD",
+        "year": "19-01",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 2500 HD",
+        "year": "05-01",
+        "engine": "V8-6.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 2500 HD",
+        "year": "06-01",
+        "engine": "V8-8.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 2500 HD CLASSIC",
+        "year": "2007",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 2500 HD CLASSIC",
+        "year": "2007",
+        "engine": "V8-8.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 3500",
+        "year": "06-01",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 3500",
+        "year": "05-01",
+        "engine": "V8-6.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 3500",
+        "year": "06-01",
+        "engine": "V8-8.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 3500 CLASSIC",
+        "year": "2007",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 3500 CLASSIC",
+        "year": "2007",
+        "engine": "V8-8.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 3500 HD",
+        "year": "19-07",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON",
+        "year": "09-00",
+        "engine": "V8-4.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON",
+        "year": "20-00",
+        "engine": "V8-5.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON",
+        "year": "06-01",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON",
+        "year": "13-08",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON",
+        "year": "20-07",
+        "engine": "V8-6.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON XL",
+        "year": "20-15",
+        "engine": "V8-5.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON XL",
+        "year": "20-15",
+        "engine": "V8-6.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON XL 1500",
+        "year": "14-00",
+        "engine": "V8-5.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON XL 1500",
+        "year": "09-01",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON XL 1500",
+        "year": "14-07",
+        "engine": "V8-6.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON XL 2500",
+        "year": "13-00",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON XL 2500",
+        "year": "06-01",
+        "engine": "V8-8.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-6.0L F/inj. CNG U Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-6.0L F/inj. CNG U Engine",
+        "year": "05-03",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-6.0L F/inj. Flex Fuel L96 G Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-6.0L F/inj. Flex Fuel L96 G Engine",
+        "year": "11-10",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-6.0L F/inj. K Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-6.0L F/inj. K Engine",
+        "year": "2007",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-6.0L F/inj. LQ4 U Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-6.0L F/inj. LQ4 U Engine",
+        "year": "04-01",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-6.0L F/inj. LQ4 U Engine",
+        "year": "2007",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-6.0L F/inj. LY6 K Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-6.0L F/inj. LY6 K Engine",
+        "year": "10-08",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-6.0L F/inj. U Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-6.0L F/inj. U Engine",
+        "year": "06-05",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-8.1L F/inj. L18 G Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-8.1L F/inj. L18 G Engine",
+        "year": "07-01",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "Z",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A3086C",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A1519CF",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A3218C",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A1519C",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "EAA123",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA4113",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "93487",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "5499WS",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87487",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CFA1052",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "AF1519",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CAP8756",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DA8756",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "XA5314",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF25757",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF26308",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "P2487",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "23349854",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "19114110",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25313348",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "15908916",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "VA5314",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1052",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "AE8756",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "33-2129",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "AF1519",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LX2562",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "MA 1003",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard Select",
+        "part_number": "MSA81015",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "A81519",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "MA5314",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "2487",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "22487",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "62487",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "62488",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "AF1519",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PA5314",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PA-5314",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A45314",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "MA5314",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "SHA152",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Silverline",
+        "part_number": "22487",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "SA8755",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VA115",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VA-115",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "VIPER",
+        "part_number": "8756",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "AF1519",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42487",
+        "source_part_number": "CA8756",
+        "part_key": "000991332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

@@ -1,0 +1,615 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "FUEL",
+  "authority": {
+    "part_number": "G8711",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "G8711",
+    "product_type": "Fuel Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 2.203,
+      "outer_diameter_mm": 55.96,
+      "height_in": 4.641,
+      "height_mm": 117.88,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "In Line",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "General Motors",
+        "part_number": "19112747"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "23300-50090"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF858"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF788"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "KL857"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3875"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3526"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F55354"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33526"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86875"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86526"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G6590"
+      },
+      {
+        "manufacturer": "Duralast",
+        "part_number": "FF40009DL"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "F55354"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF325"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "G8711"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G6590"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "73526"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "G6590"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PF5354"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "F55354"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "F55354"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G6590"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "06-98",
+        "make": "LEXUS",
+        "model": "LX470",
+        "engine": "V8-4.7L",
+        "quantity": 1
+      },
+      {
+        "year": "06-98",
+        "make": "TOYOTA",
+        "model": "LAND CRUISER",
+        "engine": "V8-4.7L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "G8711",
+    "source_part_key": "000991311",
+    "source_totals": {
+      "attributes": 32,
+      "applications": 2,
+      "cross_references": 23
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, G8711, Fuel Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "In-Line Fuel Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "In Line",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Black",
+        "recno": "82"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "83"
+      },
+      {
+        "attribute": "Attachment Type",
+        "value": "Bracket",
+        "recno": "84"
+      },
+      {
+        "attribute": "Outlet Type",
+        "value": "Tube Connector",
+        "recno": "85"
+      },
+      {
+        "attribute": "Fuel Type",
+        "value": "Gasoline",
+        "recno": "86"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "87"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Fuel Filter",
+        "recno": "88"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "89"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "4.641",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available Only While Supplies Last",
+        "recno": "91"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "2.203",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100020932",
+        "recno": "92"
+      },
+      {
+        "attribute": "Housing Material",
+        "value": "Metal",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Hose Included",
+        "value": "No",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outlet Line Size (Inch)",
+        "value": "5/16",
+        "recno": "94"
+      },
+      {
+        "attribute": "Clamps Included",
+        "value": "No",
+        "recno": "95"
+      },
+      {
+        "attribute": "Inlet Line Size (Millimeter)",
+        "value": "M14x1.5",
+        "recno": "96"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "97"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Taiwan",
+        "recno": "98"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.5420",
+        "recno": "102"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "3.2520",
+        "recno": "103"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "1.2590",
+        "recno": "104"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "5.8750",
+        "recno": "105"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.0980",
+        "recno": "106"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "9.8750",
+        "recno": "107"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.0980",
+        "recno": "108"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "6.7500",
+        "recno": "109"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.542,
+        "case_weight_lb": 3.252,
+        "unit_height_in": 1.259,
+        "unit_length_in": 3.098,
+        "unit_width_in": 3.098,
+        "case_height_in": 5.875,
+        "case_length_in": 9.875,
+        "case_width_in": 6.75,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 6.504,
+        "estimated_case_dimensions": {
+          "length_in": 13.167,
+          "width_in": 10.125,
+          "height_in": 5.875,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 2,
+    "all_cross_references_observed": 23,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:12:04.538Z",
+  "discovered_from": "G8711",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "LEXUS",
+        "model": "LX470",
+        "year": "06-98",
+        "engine": "V8-4.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "LAND CRUISER",
+        "year": "06-98",
+        "engine": "V8-4.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF858",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF788",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86875",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86526",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G6590",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Duralast",
+        "part_number": "FF40009DL",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "19112747",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "F55354",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF325",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "G8711",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G6590",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "KL857",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3875",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3526",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "73526",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "G6590",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PF5354",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F55354",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "F55354",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "F55354",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "23300-50090",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G6590",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33526",
+        "source_part_number": "G8711",
+        "part_key": "000991311",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

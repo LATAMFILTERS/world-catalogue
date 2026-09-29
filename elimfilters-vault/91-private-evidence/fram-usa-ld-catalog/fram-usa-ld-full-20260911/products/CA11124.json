@@ -1,0 +1,557 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA11124",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA11124",
+    "product_type": "Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": null,
+      "height_mm": null,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": null,
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [],
+    "unresolved_cross_reference_candidates": [],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA11124",
+    "source_part_key": "007122106",
+    "source_totals": {
+      "attributes": 0,
+      "applications": 52,
+      "cross_references": 0
+    },
+    "raw_attributes": [],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": null,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": null,
+        "case_length_in": null,
+        "case_width_in": null,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 52,
+    "all_cross_references_observed": 0,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:40:32.771Z",
+  "discovered_from": "CA11124",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "ARTICULATED DUMP TRUCK CATERPILLAR",
+        "model": "AD55B w/Caterpillar C27 ACERT 27.0L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK CATERPILLAR",
+        "model": "AD55B w/Caterpillar C27 ACERT 27.0L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK JOHN DEERE",
+        "model": "350D w/Mercedes-Benz OM501LA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK JOHN DEERE",
+        "model": "350D, 400D w/Mercedes OM501LA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK JOHN DEERE",
+        "model": "400D w/Mercedes-Benz OM501LA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BAGGER AG-BAG INTERNATIONAL, LTD",
+        "model": "X1114 Professional w/Caterpillar C15 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHIPPER & MULCHER VERMEER",
+        "model": "BC1200XL w/Cummins B3.3L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "3520 w/John Deere 6090T 9.0L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "3520 w/John Deere 6090T 9.0L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9750STS w/John Deere 6125 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9750STS w/John Deere 6125 12.5L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9860STS w/John Deere Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9880STS w/John Deere 6125 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9880STS w/John Deere 6125 12.5L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "CR9080 Combine w/Iveco Cursor 13  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "CR9080 Combine, CR9090 Combine w/Iveco Cursor 13 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "CR9090 Combine w/Iveco Cursor 13 12.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "CX-880 w/Ford Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "C15 15.2L",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "C16 15.8L",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "C18",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT HAYBUSTER",
+        "model": "1150 Tub Grinder w/Caterpillar C-15 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT HAYBUSTER",
+        "model": "1150 Tub Grinder, 1155 Tub Grinder w/Caterpillar C-15 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT HAYBUSTER",
+        "model": "1155 Tub Grinder w/Caterpillar C-15 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT WIRTGEN",
+        "model": "W2000 Milling Machine w/Caterpillar 3406 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER NEW HOLLAND",
+        "model": "FR9040  w/Iveco Cursor 10  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER NEW HOLLAND",
+        "model": "FR9050  FR9060  w/Iveco Cursor 13  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER NEW HOLLAND",
+        "model": "FR9050  w/Iveco Cursor 13 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER NEW HOLLAND",
+        "model": "FR9060  w/Iveco Cursor 13  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER NEW HOLLAND",
+        "model": "FX-30 w/Iveco Cursor 10 10.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER NEW HOLLAND",
+        "model": "FX-40 w/Iveco Cursor 13 12.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER NEW HOLLAND",
+        "model": "FX-50 w/Iveco Cursor 13 12.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER NEW HOLLAND",
+        "model": "FX-58 w/Caterpillar 3406E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER NEW HOLLAND",
+        "model": "FX-58 w/Caterpillar C-15 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER NEW HOLLAND",
+        "model": "FX-58 w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER NEW HOLLAND",
+        "model": "FX-60 w/Caterpillar C-15 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "770 w/Caterpillar C15 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "770 w/Caterpillar C-15 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "770G w/Caterpillar C18  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "770G w/Caterpillar C18 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "772 w/Caterpillar C18 18.1L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "772 w/Caterpillar C18 18.1L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "772G w/Caterpillar C18 18.1L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "772G w/Caterpillar C18 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "773F w/Caterpillar C27 Acert 27.0L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "773F w/Caterpillar C27 ACERT 27.0L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "775F w/Caterpillar C27 Acert 27.0L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "775F w/Caterpillar C27 ACERT 27.0L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "777F w/Caterpillar C32 Acert Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "777G w/Caterpillar C32 Acert Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "STX500 w/Cummins QSX15  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY DOOSAN",
+        "model": "MT41 (w/Scania Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

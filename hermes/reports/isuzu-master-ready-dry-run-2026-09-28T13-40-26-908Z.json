@@ -1,0 +1,23 @@
+{
+  "phase": "ISUZU_MASTER_READY",
+  "apply": false,
+  "database_write": false,
+  "rows": [
+    {
+      "sku": "EF93009",
+      "ready_positions": 5,
+      "added_ranges": 0
+    },
+    {
+      "sku": "EL80428",
+      "ready_positions": 5,
+      "added_ranges": 0
+    }
+  ],
+  "summary": {
+    "skus": 2,
+    "ready_positions": 10,
+    "added_ranges": 0,
+    "database_write": false
+  }
+}

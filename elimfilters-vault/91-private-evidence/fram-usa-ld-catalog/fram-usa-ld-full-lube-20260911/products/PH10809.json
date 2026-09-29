@@ -1,0 +1,959 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH10809",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH10809",
+    "product_type": "Engine Oil Filter, Oil",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 5.38,
+      "outer_diameter_mm": 136.65,
+      "height_in": 12.1,
+      "height_mm": 307.34,
+      "thread_size": "1 1/2-16",
+      "gasket_od_in": 4.29,
+      "gasket_od_mm": 108.97,
+      "gasket_id_in": 3.72,
+      "gasket_id_mm": 94.49,
+      "gasket_thickness_in": 0.57,
+      "gasket_thickness_mm": 14.48,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "Yes",
+      "bypass_setting_psi": 35,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "General Motors",
+        "part_number": "536-184-00-01"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7180"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W13145/3"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "WD 13 145/4"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "7036"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57036"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "84036"
+      },
+      {
+        "manufacturer": "DAF",
+        "part_number": "267714"
+      },
+      {
+        "manufacturer": "Detroit Diesel",
+        "part_number": "23526919"
+      },
+      {
+        "manufacturer": "Detroit Diesel",
+        "part_number": "5241800110"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P551402"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3957"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "B7180"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP2248"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "PH10809",
+    "source_part_key": "001509743",
+    "source_totals": {
+      "attributes": 39,
+      "applications": 52,
+      "cross_references": 14
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, PH10809, HD Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Spin-on Oil Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "Yes",
+        "recno": "81"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "84"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Standard",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Orange",
+        "recno": "89"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Drain Plug Included",
+        "value": "No",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100545107",
+        "recno": "92"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Oil Filter",
+        "recno": "94"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "95"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "12.100",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "5.380",
+        "recno": "97"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "3.720",
+        "recno": "98"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "4.290",
+        "recno": "99"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.570",
+        "recno": "100"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Inch)",
+        "value": "1 1/2-16",
+        "recno": "101"
+      },
+      {
+        "attribute": "Bypass Relief Valve Setting (Pounds per Square Inch)",
+        "value": "35",
+        "recno": "102"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "103"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "104"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "105"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "4.6330",
+        "recno": "109"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "27.7980",
+        "recno": "110"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "12.3750",
+        "recno": "111"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "13.5000",
+        "recno": "112"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "5.5620",
+        "recno": "113"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "17.5620",
+        "recno": "114"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "5.5620",
+        "recno": "115"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "11.8120",
+        "recno": "116"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 4.633,
+        "case_weight_lb": 27.798,
+        "unit_height_in": 12.375,
+        "unit_length_in": 5.562,
+        "unit_width_in": 5.562,
+        "case_height_in": 13.5,
+        "case_length_in": 17.562,
+        "case_width_in": 11.812,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 55.596,
+        "estimated_case_dimensions": {
+          "length_in": 23.416,
+          "width_in": 17.718,
+          "height_in": 13.5,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 52,
+    "all_cross_references_observed": 14,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:07:24.839Z",
+  "discovered_from": "PH10809",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "ARTICULATED DUMP TRUCK TEREX",
+        "model": "TR100 w/Detroit Diesel 16V 2000 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK TEREX",
+        "model": "TR100 w/Detroit Diesel 16V 2000 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER LETOURNEAU-WESTINGHOUSE",
+        "model": "D950 w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER LETOURNEAU-WESTINGHOUSE",
+        "model": "D950 w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK ATLAS COPCO",
+        "model": "MT5010 Mine Truck (w/Detroit Diesel 2000 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK ATLAS COPCO",
+        "model": "MT5010 Mine Truck (w/Detroit Diesel 2000 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK HITACHI",
+        "model": "EH1100 w/Detroit Diesel 12V 2000 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK HITACHI",
+        "model": "EH1100 w/Detroit Diesel 12V 2000 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK HITACHI",
+        "model": "EH4500 w/Detroit Diesel 16V 2000 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK HITACHI",
+        "model": "EH4500 w/Detroit Diesel 16V 2000 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK HITACHI",
+        "model": "EH5500 w/Detroit Diesel 16V 2000 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK HITACHI",
+        "model": "EH5500 w/Detroit Diesel 16V 2000 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK TEREX",
+        "model": "TR100 w/Detroit Diesel 16V 2000 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK TEREX",
+        "model": "TR100 w/Detroit Diesel 16V 2000 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK UNIT RIG",
+        "model": "MT3000 w/Detroit Diesel 16V 2000 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK UNIT RIG",
+        "model": "MT3000 w/Detroit Diesel 16V 2000 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK UNIT RIG",
+        "model": "MT3300 w/Detroit Diesel 16V 2000 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK UNIT RIG",
+        "model": "MT3300 w/Detroit Diesel 16V 2000 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DETROIT DIESEL",
+        "model": "12V-2000 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DETROIT DIESEL",
+        "model": "12V-2000 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DETROIT DIESEL",
+        "model": "12V-4000 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DETROIT DIESEL",
+        "model": "12V-4000 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DETROIT DIESEL",
+        "model": "16V-2000 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DETROIT DIESEL",
+        "model": "16V-2000 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DETROIT DIESEL",
+        "model": "18V-2000 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DETROIT DIESEL",
+        "model": "18V-2000 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DETROIT DIESEL",
+        "model": "8V 2000 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DETROIT DIESEL",
+        "model": "8V 2000 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE M.T.U.",
+        "model": "12V-2000",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE M.T.U.",
+        "model": "12V-2000",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE M.T.U.",
+        "model": "12V-4000",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE M.T.U.",
+        "model": "12V-4000",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE M.T.U.",
+        "model": "16V-2000",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE M.T.U.",
+        "model": "16V-2000",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE M.T.U.",
+        "model": "18V-2000",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE M.T.U.",
+        "model": "18V-2000",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR COLEMAN",
+        "model": "TD1000S w/Detroit Diesel 16V 2000 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR COLEMAN",
+        "model": "TD1000S w/Detroit Diesel 16V 2000 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR COLEMAN",
+        "model": "TD500S w/Detroit Diesel 8V 2000 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR COLEMAN",
+        "model": "TD500S w/Detroit Diesel 8V 2000 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR COLEMAN",
+        "model": "TD750S w/Detroit Diesel 12V 2000 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR COLEMAN",
+        "model": "TD750S w/Detroit Diesel 12V 2000 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER LETOURNEAU-WESTINGHOUSE",
+        "model": "L950 w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER LETOURNEAU-WESTINGHOUSE",
+        "model": "L950 w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY E-ONE",
+        "model": "Titan HPR 8 X 8 (w/Detroit Diesel 12V 2000 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY E-ONE",
+        "model": "Titan HPR 8 X 8 (w/Detroit Diesel 12V 2000 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PERLINI",
+        "model": "DP905 (w/2000 Series Detroit Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PERLINI",
+        "model": "DP905 (w/2000 Series Detroit Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY TEREX",
+        "model": "TR70 (w/Detroit Diesel 12V 2000 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY TEREX",
+        "model": "TR70 (w/Detroit Diesel 12V 2000 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER LETOURNEAU-WESTINGHOUSE",
+        "model": "L1100 w/Detroit Diesel 16V 2000 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER LETOURNEAU-WESTINGHOUSE",
+        "model": "L1100 w/Detroit Diesel 16V 2000 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7180",
+        "source_part_number": "PH10809",
+        "part_key": "001509743",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "84036",
+        "source_part_number": "PH10809",
+        "part_key": "001509743",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "DAF",
+        "part_number": "267714",
+        "source_part_number": "PH10809",
+        "part_key": "001509743",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Detroit Diesel",
+        "part_number": "23526919",
+        "source_part_number": "PH10809",
+        "part_key": "001509743",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Detroit Diesel",
+        "part_number": "5241800110",
+        "source_part_number": "PH10809",
+        "part_key": "001509743",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P551402",
+        "source_part_number": "PH10809",
+        "part_key": "001509743",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3957",
+        "source_part_number": "PH10809",
+        "part_key": "001509743",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "536-184-00-01",
+        "source_part_number": "PH10809",
+        "part_key": "001509743",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "B7180",
+        "source_part_number": "PH10809",
+        "part_key": "001509743",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP2248",
+        "source_part_number": "PH10809",
+        "part_key": "001509743",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W13145/3",
+        "source_part_number": "PH10809",
+        "part_key": "001509743",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "WD 13 145/4",
+        "source_part_number": "PH10809",
+        "part_key": "001509743",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "7036",
+        "source_part_number": "PH10809",
+        "part_key": "001509743",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57036",
+        "source_part_number": "PH10809",
+        "part_key": "001509743",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

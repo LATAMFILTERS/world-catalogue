@@ -1,0 +1,606 @@
+{
+  "patterns": [
+    {
+      "pattern": "CF00*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF01*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF02*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF03*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF04*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF05*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF06*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF07*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF08*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF09*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF10*",
+      "total_records": 110,
+      "fram_records": 86
+    },
+    {
+      "pattern": "CF11*",
+      "total_records": 65,
+      "fram_records": 52
+    },
+    {
+      "pattern": "CF12*",
+      "total_records": 59,
+      "fram_records": 49
+    },
+    {
+      "pattern": "CF13*",
+      "total_records": 16,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF14*",
+      "total_records": 17,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF15*",
+      "total_records": 9,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF16*",
+      "total_records": 12,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF17*",
+      "total_records": 15,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF18*",
+      "total_records": 9,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF19*",
+      "total_records": 10,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF20*",
+      "total_records": 11,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF21*",
+      "total_records": 10,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF22*",
+      "total_records": 11,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF23*",
+      "total_records": 9,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF24*",
+      "total_records": 11,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF25*",
+      "total_records": 21,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF26*",
+      "total_records": 18,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF27*",
+      "total_records": 10,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF28*",
+      "total_records": 14,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF29*",
+      "total_records": 6,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF30*",
+      "total_records": 5,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF31*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF32*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF33*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF34*",
+      "total_records": 4,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF35*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF36*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF37*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF38*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF39*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF40*",
+      "total_records": 3,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF41*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF42*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF43*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF44*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF45*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF46*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF47*",
+      "total_records": 6,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF48*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF49*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF50*",
+      "total_records": 6,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF51*",
+      "total_records": 6,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF52*",
+      "total_records": 13,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF53*",
+      "total_records": 11,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF54*",
+      "total_records": 8,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF55*",
+      "total_records": 11,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF56*",
+      "total_records": 10,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF57*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF58*",
+      "total_records": 6,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CF59*",
+      "total_records": 5,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CF60*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF61*",
+      "total_records": 6,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF62*",
+      "total_records": 5,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF63*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF64*",
+      "total_records": 3,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF65*",
+      "total_records": 3,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF66*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF67*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF68*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF69*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF70*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF71*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF72*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF73*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF74*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF75*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF76*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF77*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF78*",
+      "total_records": 3,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF79*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF80*",
+      "total_records": 2,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CF81*",
+      "total_records": 12,
+      "fram_records": 2
+    },
+    {
+      "pattern": "CF82*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF83*",
+      "total_records": 5,
+      "fram_records": 3
+    },
+    {
+      "pattern": "CF84*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF85*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF86*",
+      "total_records": 4,
+      "fram_records": 3
+    },
+    {
+      "pattern": "CF87*",
+      "total_records": 10,
+      "fram_records": 9
+    },
+    {
+      "pattern": "CF88*",
+      "total_records": 4,
+      "fram_records": 2
+    },
+    {
+      "pattern": "CF89*",
+      "total_records": 2,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CF90*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF91*",
+      "total_records": 8,
+      "fram_records": 2
+    },
+    {
+      "pattern": "CF92*",
+      "total_records": 10,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF93*",
+      "total_records": 2,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CF94*",
+      "total_records": 2,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CF95*",
+      "total_records": 3,
+      "fram_records": 2
+    },
+    {
+      "pattern": "CF96*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CF97*",
+      "total_records": 2,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CF98*",
+      "total_records": 2,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CF99*",
+      "total_records": 2,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FDC0*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FDC1*",
+      "total_records": 92,
+      "fram_records": 92
+    },
+    {
+      "pattern": "FDC2*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FDC3*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FDC4*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FDC5*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FDC6*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FDC7*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FDC8*",
+      "total_records": 10,
+      "fram_records": 10
+    },
+    {
+      "pattern": "FDC9*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FSC0*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FSC1*",
+      "total_records": 61,
+      "fram_records": 61
+    },
+    {
+      "pattern": "FSC2*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FSC3*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FSC4*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FSC5*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FSC6*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FSC7*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FSC8*",
+      "total_records": 4,
+      "fram_records": 4
+    },
+    {
+      "pattern": "FSC9*",
+      "total_records": 1,
+      "fram_records": 1
+    }
+  ],
+  "unique_candidates": 385,
+  "legacy_seed_count": 13
+}

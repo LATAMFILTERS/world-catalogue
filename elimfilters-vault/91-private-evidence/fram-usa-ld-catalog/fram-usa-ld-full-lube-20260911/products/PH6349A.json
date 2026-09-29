@@ -1,0 +1,5588 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH6349A",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH6349A",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": null,
+      "height_mm": null,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": null,
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [],
+    "unresolved_cross_reference_candidates": [],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "PH6349A",
+    "source_part_key": "001509442",
+    "source_totals": {
+      "attributes": 0,
+      "applications": 611,
+      "cross_references": 0
+    },
+    "raw_attributes": [],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": null,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": null,
+        "case_length_in": null,
+        "case_width_in": null,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 611,
+    "all_cross_references_observed": 0,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:11:11.663Z",
+  "discovered_from": "PH6349A",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "1300 Series Compressor w/Cummins N14 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "VHP600WCU w/Cummins 6CTA8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "XP750WCU w/Cummins 6CTA8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "XP825WCU w/Cummins LT10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APPLICATOR & SPRAYER AG-CHEM",
+        "model": "1803, 1804 Terra-Gator w/Cummins 6CTA8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APPLICATOR & SPRAYER CASE INTERNATIONAL",
+        "model": "FLX3010 w/ 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APPLICATOR & SPRAYER CASE INTERNATIONAL",
+        "model": "FLX3510 w/Cummins 6TAA-9004 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APPLICATOR & SPRAYER CASE INTERNATIONAL",
+        "model": "FLX4010 w/Cummins QSC 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APPLICATOR & SPRAYER CASE INTERNATIONAL",
+        "model": "FLX4510",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APPLICATOR & SPRAYER CASE INTERNATIONAL",
+        "model": "FLX4510 w/Cummins 6TAA-9004 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APPLICATOR & SPRAYER CASE INTERNATIONAL",
+        "model": "SPX4410 w/Case 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APPLICATOR & SPRAYER GVM",
+        "model": "Prowler 1148T, 1149T w/Cummins 6CTA8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APPLICATOR & SPRAYER MILLER TECHNOLOGIES",
+        "model": "4365 w/Cummins QSL8.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APPLICATOR & SPRAYER MILLER TECHNOLOGIES",
+        "model": "Atlas 3654 w/Cummins ISL8.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK CASE",
+        "model": "325 w/Cummins 6CTAA 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK CASE",
+        "model": "330 w/Cummins M11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK HITACHI",
+        "model": "EH700, EH750 w/OSK19 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK NEW HOLLAND",
+        "model": "AD250",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK TEREX",
+        "model": "TA25 w/Cummins QSC8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY BLUE BIRD",
+        "model": "Wonderlodge M380 (w/Cummins ISL Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY BLUE BIRD",
+        "model": "XCEL102 (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY ELDORADO",
+        "model": "Transit RE (w/Cummins ISC Diesel)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GILLIG",
+        "model": "City Transit (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GILLIG",
+        "model": "Low Floor (w/Cummins ISL Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GILLIG",
+        "model": "Low Floor (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GILLIG",
+        "model": "Phantom (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY NABI",
+        "model": "40LF Transit (W/Cummins ISLNG Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY NEOPLAN BUS",
+        "model": "AN440LF Transliner (w/Cummins ISL Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY NEOPLAN BUS",
+        "model": "AN440LF Transliner (w/Cummins ISLG Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY NEOPLAN BUS",
+        "model": "AN460, AN460LF Articulated Transit (w/Cummins ISL CNG Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY NEOPLAN BUS",
+        "model": "AN460, AN460LF Articulated Transit (w/Cummins ISL Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY NEOPLAN BUS",
+        "model": "AN460, AN460LF Articulated Transit (w/Cummins ISL Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY NEOPLAN BUS",
+        "model": "AN460, AN460LF Articulated Transit (w/Cummins ISLG Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY THOMAS BUS",
+        "model": "Saf-T-Liner (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY VAN HOOL",
+        "model": "C2045 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY VAN HOOL",
+        "model": "T2100 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY VAN HOOL",
+        "model": "T800 (Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY VAN HOOL",
+        "model": "T900 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE CASE INTERNATIONAL",
+        "model": "1660 w/Case 6TA830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE CASE INTERNATIONAL",
+        "model": "1666 w/Case 6CTA830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE CASE INTERNATIONAL",
+        "model": "1680 w/Case 6TA830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE CASE INTERNATIONAL",
+        "model": "1688 w/Case 6CTA830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE CASE INTERNATIONAL",
+        "model": "2166 COMBINE w/CASE 6CTA-830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE CASE INTERNATIONAL",
+        "model": "2188 COMBINE w/CASE 6CTA-830  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE CASE INTERNATIONAL",
+        "model": "2366 w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE CASE INTERNATIONAL",
+        "model": "2377, 2388 w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE CASE INTERNATIONAL",
+        "model": "2577  w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE CASE INTERNATIONAL",
+        "model": "2588 w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE CASE INTERNATIONAL",
+        "model": "5088  w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE CASE INTERNATIONAL",
+        "model": "6088 w/Case International 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE CASE INTERNATIONAL",
+        "model": "7088 COMBINE w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE CHALLENGER",
+        "model": "642 COMBINE w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE CHALLENGER",
+        "model": "643 COMBINE w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE DEUTZ-ALLIS",
+        "model": "R42 w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE DEUTZ-ALLIS",
+        "model": "R52 w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE DEUTZ-ALLIS",
+        "model": "R62 w/Cummins 6CTA8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE GLEANER",
+        "model": "C62 w/Cummins 6CTA8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE GLEANER",
+        "model": "R42, R52 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE GLEANER",
+        "model": "R5, R6 w/Allis Chalmers Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE GLEANER",
+        "model": "R62 w/Cummins Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE GLEANER",
+        "model": "R65 w/Cummins QSC8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE GLEANER",
+        "model": "R72 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE GLEANER",
+        "model": "R75 w/Cummins M11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "8570 w/Cummins 6CTA 8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "8680 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "8780 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "8780XP",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "9690, 9790 w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR VOLVO",
+        "model": "SD70",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR VOLVO",
+        "model": "SD70F",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR VOLVO",
+        "model": "SD77F",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER ADVANCE MIXER",
+        "model": "Concrete Mixers w/Cummins LTA-10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER ADVANCE MIXER",
+        "model": "Concrete Mixers w/Cummins N-14 Diesel",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER ADVANCE MIXER",
+        "model": "Mixers w/Cummins L10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER ADVANCE MIXER",
+        "model": "Mixers w/Cummins M11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER SAVAGE",
+        "model": "Dynamix Series w/Cummins L10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT CMI",
+        "model": "3-90C Trashmaster",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT CMI",
+        "model": "3-90E TRASHMASTER w/Cummins QSK19 19.0L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT GRADALL",
+        "model": "660E, 880E Carrier w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT GRADALL",
+        "model": "XL4100, XL5100 Carrier w/Cummins 6CTA8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COTTON PICKER CASE INTERNATIONAL",
+        "model": "2044 w/Cummins 6TA830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COTTON PICKER CASE INTERNATIONAL",
+        "model": "2055 w/Cummins 6TA830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COTTON PICKER CASE INTERNATIONAL",
+        "model": "2155 w/Cummins 6CTA830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COTTON PICKER CASE INTERNATIONAL",
+        "model": "2555 w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COTTON PICKER CASE INTERNATIONAL",
+        "model": "420 Cotton Express w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COTTON PICKER CASE INTERNATIONAL",
+        "model": "620 Cotton Express w/Cummins 9.0L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COTTON PICKER CASE INTERNATIONAL",
+        "model": "625 Cotton Express w/Cummins 9.0L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COTTON PICKER CASE INTERNATIONAL",
+        "model": "CPX610 Cotton Picker w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COTTON PICKER CASE INTERNATIONAL",
+        "model": "CPX620 Cotton Picker w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CASE",
+        "model": "1850K w/Cummins 6.7L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER KOMATSU",
+        "model": "D61EX-12, D61PX-12 w/S6D114E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER KOMATSU",
+        "model": "D65WX-15 w/SAA6D114E-3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER KOMATSU",
+        "model": "D65WX-16 w/Komatsu SAAD6114E-3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER NEW HOLLAND",
+        "model": "DC180 DOZER w/Cummins 6CT8.3",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER NEW HOLLAND",
+        "model": "DC180B DOZER w/Cummins 6CTA8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER NEW HOLLAND",
+        "model": "DC180LGP w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER SAMSUNG",
+        "model": "SD250 w/Cummins LT10C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER FIAT-ALLIS",
+        "model": "FL14C w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DRILL INDUSTRIAL INGERSOLL-RAND",
+        "model": "ECM680 w/Cummins 6CTA8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK EUCLID",
+        "model": "R40, R40C w/Cummins QSK19 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK EUCLID",
+        "model": "R60, R60C, R60D w/Cummins QSK19 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CASE",
+        "model": "6-830/6C8.3",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CASE",
+        "model": "6T-830/6CT-8.3",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CASE",
+        "model": "6TA-830/6CTA-8.3",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CUMMINS",
+        "model": "FORMULA 10-240",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CUMMINS",
+        "model": "ISC 8.3L",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CUMMINS",
+        "model": "N14 Command SERIES",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CUMMINS",
+        "model": "QSL9.0L",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL CUMMINS",
+        "model": "QSK19",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL PACCAR",
+        "model": "PACCAR PX-8 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DOOSAN",
+        "model": "DV11",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE FORD",
+        "model": "FD1460 FORD DIESEL ENGINE",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE JOHN DEERE",
+        "model": "6101A",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE NATURAL GAS CUMMINS",
+        "model": "L10",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE TRUCK CUMMINS",
+        "model": "6C/CT/CTA8.3",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE TRUCK CUMMINS",
+        "model": "ISL",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE TRUCK CUMMINS",
+        "model": "L10",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE TRUCK CUMMINS",
+        "model": "LT10",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE TRUCK CUMMINS",
+        "model": "LTA10 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE TRUCK CUMMINS",
+        "model": "M11",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE TRUCK CUMMINS",
+        "model": "N14 Plus",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE TRUCK CUMMINS",
+        "model": "NT Big Cam IV Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT LINK BELT",
+        "model": "6000Q Scrapmaster w/Cummins M11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "L140 w/Cummins LT-10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "1187C Logger Crawler",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "9040 w/Cummins 6T-830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "9040B w/Cummins 6T-830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "9045B w/Cummins 6T-830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "9050B w/Cummins M11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "9050B, 9060B w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "CX330 w/Cummins 6TAA-8304 8.3L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "CX330LR w/Cummins 6TAA-8304 8.3L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR DOOSAN",
+        "model": "DX480LC w/Doosan DV11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR DOOSAN",
+        "model": "DX520LC w/Doosan DV11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX1100-3 w/QSK19 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX1800-3 w/Cummins QSK19C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX255, EX255EL, EX255LC w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX285, EX285LC w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX550, EX550-3, EX550-5 w/Cummins N14 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX600 w/Cummins N14 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX600-3 w/N14 or NTA855 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX700 w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX750-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX800",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "FH270.3 w/Cummins 6CT8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HYUNDAI",
+        "model": "Robex 180LC-3, Robex 200LC-3 w/Cummins 6BT5.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HYUNDAI",
+        "model": "Robex 200, Robex 200LC w/Cummins 6BT5.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HYUNDAI",
+        "model": "Robex 210-7, Robex 210LC-7 w/Cummins B5.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HYUNDAI",
+        "model": "Robex 210LC-3 Excavator w/Cummins 6BT5.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HYUNDAI",
+        "model": "Robex 250LC-3, 250NLC-3 w/Cummins 6B5.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HYUNDAI",
+        "model": "Robex 360-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HYUNDAI",
+        "model": "Robex 360LC-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HYUNDAI",
+        "model": "Robex 450-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HYUNDAI",
+        "model": "Robex 450LC-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR JOHN DEERE",
+        "model": "450LC w/John Deere 6101A Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR JOHN DEERE",
+        "model": "550 LC",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR JOHN DEERE",
+        "model": "750 w/Cummins N14 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR JOHN DEERE",
+        "model": "992ELC",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "SK300LCIV w/Cummins 6CTA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "SK400LCIV w/Cummins M11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "SK400LCIV w/Cummins MTA11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOMATSU",
+        "model": "PC300HD-7, PC300LC-7 w/Komatsu SAA6D114E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOMATSU",
+        "model": "PC340-6K",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOMATSU",
+        "model": "PC450-6K, PC450LC-6K",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "LS4300 w/Cummins M-11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "LS4300CII w/Cummins 6CTA8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "LS5800CII w/Cummins LTA10C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR NEW HOLLAND",
+        "model": "EC450, EC600",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR SAMSUNG",
+        "model": "SE280LC SE280LC-2 w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR SAMSUNG",
+        "model": "SE350LC, SE350LC-2 w/Cummins LTA-10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR SAMSUNG",
+        "model": "SE450LC, SE450LC-2 w/Cummins LTA10C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR SAMSUNG",
+        "model": "SE450LC-2 w/Cummins M11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR VOLVO",
+        "model": "EC240 w/Cummins 8.3C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR VOLVO",
+        "model": "EC290 w/Cummins 8.3C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR VOLVO",
+        "model": "EC360 w/Cummins M-11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR VOLVO",
+        "model": "EC400",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR VOLVO",
+        "model": "EC460 w/Cummins M-11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FELLER BUNCHER JOHN DEERE",
+        "model": "753G w/Cummins 6CTA8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FELLER BUNCHER JOHN DEERE",
+        "model": "753G, 753GL w/Cummins 6CT8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FELLER BUNCHER JOHN DEERE",
+        "model": "753GL w/Cummins 6CTA8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER JOHN DEERE",
+        "model": "6710 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER JOHN DEERE",
+        "model": "6750, 6850 w/John Deere 6125H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER JOHN DEERE",
+        "model": "6950 w/Cummins N14 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CASE",
+        "model": "865 Tier 1",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CASE",
+        "model": "885 Tier 1",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "720 w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "720, 720 VHP, 720A, 720A VHP, 726A, 726A VHP w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "730 w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "730, 730A, 736A w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "740 VHP SERIES w/Cummins M11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "740 w/Cummins M11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "740A VHP w/Cummins M11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "740A w/Cummins M11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "750 w/Cummins LT10C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "750, 750A w/Cummins LT10C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "780 w/Cummins LT10C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "780, 780A w/Cummins LT10C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "780A VHP w/Cummins M11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "780A w/Cummins M11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER DRESSER",
+        "model": "850 w/Dresser D505T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER DRESSER",
+        "model": "850B, 850C w/D505T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER DRESSER",
+        "model": "870 w/Dresser D505T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER KOMATSU",
+        "model": "GD670-2A, GD670-2B, GD670-2C, GD670A-2E, GD670AW-2B, GD670AW-2C",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER KOMATSU",
+        "model": "GD750A-1",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER NEW HOLLAND",
+        "model": "RE200",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER NEW HOLLAND",
+        "model": "RG170, RG200 w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER NEW HOLLAND",
+        "model": "RG170B w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER NEW HOLLAND",
+        "model": "RG200B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER VOLVO",
+        "model": "G720",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER VOLVO",
+        "model": "G720VHP",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER VOLVO",
+        "model": "G726VHP",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER VOLVO",
+        "model": "G730",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER VOLVO",
+        "model": "G730VHP",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER VOLVO",
+        "model": "G736VHP",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER VOLVO",
+        "model": "G740",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER VOLVO",
+        "model": "G740VHP",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER VOLVO",
+        "model": "G780",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER VOLVO",
+        "model": "G780VHP",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "H1050 Series w/Cummins LTA-10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "H800 Series w/Cummins LTA-10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "H880 Series w/Cummins LTA-10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "H970 Series w/Cummins LTA-10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER KOMATSU",
+        "model": "WA300-3 w/Cummins M11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER KOMATSU",
+        "model": "WA470-3H w/Cummins M11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBCO",
+        "model": "T435",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBCO",
+        "model": "T435C",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBCO",
+        "model": "T445",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBCO",
+        "model": "T445B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBCO",
+        "model": "T445C",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBCO",
+        "model": "T450C",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBCO",
+        "model": "T455C",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK FORD",
+        "model": "CF6000, CF7000, CF8000 (w/Ford FD1460 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK FREIGHTLINER",
+        "model": "FL50, FL60, FL70, FL80 (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK KENWORTH",
+        "model": "K220 Midranger (w/Cummins 6CT 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK KENWORTH",
+        "model": "K300 (w/Cummins 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK KENWORTH",
+        "model": "T270, T370 (w/Paccar PX8 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK KENWORTH",
+        "model": "T300 (w/Cummins 6CT 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK KENWORTH",
+        "model": "T300 (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK KENWORTH",
+        "model": "T300 (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK KENWORTH",
+        "model": "T300 (w/Paccar PX8 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "200 Midranger (w/Cummins 6CT8.3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "224 Midranger (w/Cummins 6CT8.3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "227 Midranger (w/Cummins 6CT8.3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "265 Midranger (w/Cummins 6CT8.3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "265 Midranger (W/Cummins 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "270 Midranger (w/Cummins 6CT8.3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "320 (w/Cummins ISL Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "330 (w/Cummins 6CT8.3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "330 (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "335 (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "335 (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "335 (w/Paccar PX8 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "337 (w/Paccar PX-8 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "337 (w/Paccar PX-9 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "340 (w/Cummins ISB 6.7L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "340 (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "340 (w/Paccar PX6 6.7L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "340 (w/Paccar PX8 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "348 (w/Paccar PX8 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "348 (w/Paccar PX9 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK STERLING",
+        "model": "Acterra 5500 (w/Cummins ISB Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK STERLING",
+        "model": "Acterra 5500 (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK STERLING",
+        "model": "Acterra 6500 (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK STERLING",
+        "model": "Acterra 7500 (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK STERLING",
+        "model": "L7500 (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK STERLING",
+        "model": "LT7500 (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK STERLING",
+        "model": "LT9511,LT9513 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MOTOR HOME BLUE BIRD",
+        "model": "M380 Motor Home (w/Cummins ISL Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MOTOR HOME SPARTAN CHASSIS INC.",
+        "model": "Alpine (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MOTORHOME CHASSIS SPARTAN CHASSIS INC.",
+        "model": "K2  (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MOTORHOME CHASSIS SPARTAN CHASSIS INC.",
+        "model": "Mountain Master (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MOTORHOME CHASSIS SPARTAN CHASSIS INC.",
+        "model": "Mountain Master (w/Cummins ISL Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MOTORHOME CHASSIS SPARTAN CHASSIS INC.",
+        "model": "Mountain Master (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MOTORHOME CHASSIS SPARTAN CHASSIS INC.",
+        "model": "Mountain Master ME (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MOTORHOME CHASSIS SPARTAN CHASSIS INC.",
+        "model": "NVS GT (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MOTORHOME CHASSIS SPARTAN CHASSIS INC.",
+        "model": "NVS ME (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL JCB",
+        "model": "VM75, VM75D w/JCB 444 Dieselmax Tier 3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL JCB",
+        "model": "VM75D w/JCB 444 Dieselmax Tier 2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER DRESSER",
+        "model": "412B w/Dresser D505T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCREENER HYDRO-AX",
+        "model": "721E w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SNOW REMOVER SNOGO",
+        "model": "MP-3D w/Cummins 6TC 8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS BIG A",
+        "model": "2800 Sprayer w/Cummins 6CTA8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS CASE INTERNATIONAL",
+        "model": "3020 Titan w/Cummins 9.0L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS CASE INTERNATIONAL",
+        "model": "3520 Titan w/Cummins 9.0L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS CASE INTERNATIONAL",
+        "model": "Titan 4020 w/Cummins 9.0L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS CASE INTERNATIONAL",
+        "model": "Titan 4420 w/Cummins 9.0L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS CASE INTERNATIONAL",
+        "model": "Titan 4520 w/Cummins 9.0L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS WILLMAR",
+        "model": "8600 EAGLE",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR AGCO",
+        "model": "8360 Agcostar w/Cummins N-14 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR AGCO",
+        "model": "8425 Agcostar w/Cummins N14 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR AGCO",
+        "model": "9435, 9455 w/Series 40 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR AGCO",
+        "model": "9635, 9655, 9675, 9695 w/Series 40 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR AGCO",
+        "model": "9755 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR AGCO",
+        "model": "9765 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR AGCO",
+        "model": "9775 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR AGCO",
+        "model": "9785 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE",
+        "model": "7110 w/Case 6T-830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "7110 w/Case 6T-830  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "7120 w/Case 6T-830  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "7130 w/Cummins 8.3L  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "7140 w/Cummins 8.3L  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "7150 w/Cummins 8.3L  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "7220 w/Cummin 8.3L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "7230 w/Cummins 6CT8.3  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "7230 w/Cummins 8.3L  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "7240 w/Cummins 6CT8.3  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "7240 w/Cummins 8.3L  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "7250 w/Cummins 6CT8.3  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "7250 w/Cummins 8.3L  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "8910 w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "8920 w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "8930 w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "8940 w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "8950 w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9110 Steiger Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9130 Steiger Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9150 Steiger Series w/Cummins L10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9210 w/Cummins 6CTA830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9230 w/Cummins 6CTA830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9240 w/Cummins 6CTA830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9250 w/Cummins LTA10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9260 w/Cummins LTA10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9270 w/Cummins NTA855 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9280 w/Cummins NTA855 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9310 w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9330 w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9350 w/Cummins LTA10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9350 w/Cummins M11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9370 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9380 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9390 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "QUAD TRAK",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "STX275 w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "STX325 w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "9280 w/Cummins LT-10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "9480 w/Cummins N-14 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "9680 w/Cummins N-14 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "9880 w/Cummins N-14 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "8770 w/John Deere 6101A Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "8870 w/John Deere 6101A Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "8960 w/Cummins NTA855 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "8960 w/John Deere 6135 13.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "8970 w/John Deere 6135 13.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "9240 w/Cummins 8.3L Engne",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MCCORMICK",
+        "model": "ZTX230, ZTX260, ZTX280 w/Cummins QSC 24 Valve 8.3L Engine 2004-07",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MTD",
+        "model": "Workhorse 170 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MTD",
+        "model": "Workhorse 195 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "9184, 9384, 9484",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "9282, 9482",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "9682, 9882",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "9684, 9884",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "2240",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "2270",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "2290 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "2310",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "2335 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "2360 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "2360 w/Cummins N14 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "2375 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "2425",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "836 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "846 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "856 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "876 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "9280 w/Cummins L10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "9282",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "936 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "946, 956, 976 w/Cummins NTA855 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "9480 w/Cummins L-10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "9480, 9680, 9880 w/Cummins NTA855 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR WHITE",
+        "model": "170 Workhorse, 195 Workhorse w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR WHITE",
+        "model": "6175",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR WHITE",
+        "model": "6175, 6195 w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR WHITE",
+        "model": "6195",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR WHITE",
+        "model": "6215 w/Cummins 6CTA8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AMERICAN LAFRANCE",
+        "model": "Eagle ALF 134 (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AMERICAN LAFRANCE",
+        "model": "Metropolitan (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AMERICAN LAFRANCE",
+        "model": "Metropolitan (w/Cummins ISL Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "ACX Xpeditor (w/Cummins ISL Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "WXR42 (w/Cummins ISL CNG Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "WXR64 (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY BERING",
+        "model": "HD160 (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY CAPACITY",
+        "model": "TJ9000 (w/Cummins ISL-NG Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY DAF",
+        "model": "95.530XF (w/Cummins VF390M Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ERF",
+        "model": "10.30ST, 10.30TP (w/Cummins L300 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ERF",
+        "model": "10.32MT, RT, ST, TT, 10.35RT, ST, TT (w/Cummins LTAA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ERF",
+        "model": "10.35MT, RT,ST & TT (w/CUMMINS LTAA10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ERF",
+        "model": "14.34MT, RT, ST, TT, 14.38DT, MT, RT, ST, TT (w/Cummins NTAA340 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ERF",
+        "model": "14.41DT, MT, RD, ST, TT, 14.50DT, MT, RT, ST, TT (w/Cummins NTAA340 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ERF",
+        "model": "E10 Series (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ERF",
+        "model": "EC10 SERIES (w/Cummins L-10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ERF",
+        "model": "EC14 SERIES (w/Cummins N-14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FODEN",
+        "model": "ALPHA 2000 (w/Cummins N-14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FODEN",
+        "model": "Alpha 2000, 3000, 4000 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FODEN",
+        "model": "ALPHA 3000 (w/Cummins N-14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FODEN",
+        "model": "ALPHA 4000 (w/Cummins N-14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "Aero Max 106 (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "Aero Max 113 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "Aeromax 9500 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "B600, B6000 (w/Ford FD1460 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "B700, B7000 (w/Ford FD1460 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "CFT800, CFT8000 (w/Ford FD1460 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "CL9000 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "F800 (w/FD1460, 8.3L Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L/LN8000,LT8000 (w/Cummins 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L/LN8000,LT8000 (w/Ford FD1460 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L900, LN900 (w/Ford FD1460 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LN9000 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LN9000 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "Louisville 9000 (w/Cummins 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LT900,LT9000,LTS900,LTS9000 (w/Ford FD1460 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LT9000 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LT9000 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LTS9000 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "114SD (w/Cummins ISL 9.0L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "C112 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century C120 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century C120 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century C120 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century Class S/T (w/Cummins N14 PLUS Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century CST112 (w/Cummins M-11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century CST120 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Classic, Classic XL (w/Cummins N14 PLUS Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Columbia (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Condor (Refuse Truck) (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Condor (Refuse Truck) (w/Cummins ISL Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Condor (Refuse Truck) (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Coronado (w/Cummins N14 PLUS Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FL112 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLA (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLA (w/Cummins NTC855 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLB (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLC (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLC (w/Cummins N-14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLC (w/Cummins NTC Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLC112 (w/Cummins M11 eng.)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLC112 (w/Cummins M-11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLC112 (w/Cummins N-14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLD (w/Cummins N-14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLD120SD (w/Cummins 6C8.3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLL (w/Cummins 6C8.3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLL (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLL (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLL (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLT (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLT (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLT (w/Cummins NTC Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "2554, 2574, 2654, 2674 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "5500i (w/Cummins ISL Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "5500i,5600i (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "5600 Series (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "5600I (w/Cummins ISL Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "5900i (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "7600 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100 (w/Cummins L-10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100, 8200, 8300 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100,8200, 8300 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8200, 8300 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8600 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9100i (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200i, Eagle (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9300 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400i, Eagle (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9600, 9700 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9600, 9700 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9700 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9800 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9900i, ix, Eagle (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9900ix (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "13-210, 22-210 Midranger (w/Cummins 6CT8.3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "C500 (w/Cummins Formula 10-240 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "C500 (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "C500 (w/Cummins NTC350 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "C550 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "K100E (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "K100E (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "K130, K150 Midranger (w/Cummins 6CT 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T2000 (w/Cummins ISL Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T2000 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T2000 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T400 (w/Cummins 6C 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T400 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T440 (w/Paccar PX8 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T450 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T600 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T600 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T600 (w/Cummins NTC Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T600A, T600B (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T660 (w/Cummins ISL Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800 (w/Cummins Formula 10-240 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800 (w/Cummins ISL Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800 (w/Cummins NTC Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "W900 (w/Cummins Formula 10-240 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "W900 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "W900 (w/Cummins NTC350 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "W900B (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "W900L (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "W900L (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "CV513 (w/Cummins ISL Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "CV712 (w/Cummins ISL Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "Granite Series (w/ASET Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "Granite Series (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "Granite Series (w/Cummins ISL Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "357 (w/Cummins 6CT8.3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "357 (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "357 (w/Cummins ISL Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "357 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "357 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "357 (w/Cummins N14 PLUS Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "359 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "362 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "362E (w/Cummins N14 PLUS Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "365 (w/Cummins ISL Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "372 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "375 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "375 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "377 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "377 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "378 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "379 (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "379 (w/Cummins ISL Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "379 (w/Cummins N14 PLUS Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "385 (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "385 (w/Cummins ISL Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "385 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY SEDDON-ATKINSON",
+        "model": "Strato 325 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY SEDDON-ATKINSON",
+        "model": "Strato 340 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY SEDDON-ATKINSON",
+        "model": "Strato 380 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY SEDDON-ATKINSON",
+        "model": "Strato 410 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY SISU",
+        "model": "SM270 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY SISU",
+        "model": "SM340 (w/471 h.p.)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "A/AT9500, L/LT9500 (w/Cummins N14 PLUS Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "Acterra 8500 (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "AT9513 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "AT9513 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "AT9522 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "AT9522 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "Condor (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "Condor (w/Cummins ISL Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L7500 (w/Cummins ISL Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L8500 (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT8500 (w/Cummins ISC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "SilverStar (w/Cummins N14 Plus Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "VN 420 Cab (w/Cummins N14 PLUS Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "VN 610 Cab (w/Cummins N14 Plus Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "VN 660 Cab (w/Cummins N14 Plus Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "VN 770 Cab (w/Cummins N14 Plus Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "VNL DayCab (w/Cummins N14 Plus Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "VNL660 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "VNM (w/Cummins N14 Plus Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "WG42 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "WG42 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "WG42 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "WG42 (w/Cummins NTC315 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "WG64 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "WG64 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "Constellation 4964EX (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "Constellation 4964F (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "Constellation 4964F (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "Constellation 4964FX (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "Constellation 5964F (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WHITE",
+        "model": "WG42 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WHITE",
+        "model": "WG42 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WHITE",
+        "model": "WG64 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WHITE",
+        "model": "WG64 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WHITE",
+        "model": "WG64T (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CASE",
+        "model": "721B w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CASE",
+        "model": "721C, 721CXT, 721CXR w/Cummins 6CT8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CASE",
+        "model": "821B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CASE",
+        "model": "821C",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CASE",
+        "model": "921 w/Cummins LTA10C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CASE",
+        "model": "921B w/Cummins M-11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CASE",
+        "model": "921C",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER DOOSAN",
+        "model": "DL400 w/Cummins QSL9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER DRESSER",
+        "model": "532 w/John Deere KDC 614T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER DRESSER",
+        "model": "538 w/John Deere KDC 614T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER DRESSER",
+        "model": "542 w/John Deere KDC 614TA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER DRESSER",
+        "model": "545 w/Cummins LTA10C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER DRESSER",
+        "model": "558 w/Cummins NTA855 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER FIAT-ALLIS",
+        "model": "FR140 w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER FURUKAWA",
+        "model": "375 w/Cummins NTA-855 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER FURUKAWA",
+        "model": "640ELS w/Furukawa F659TA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER FURUKAWA",
+        "model": "645ELS w/Furukawa F683T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER HYUNDAI",
+        "model": "HL35 LOADER",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER HYUNDAI",
+        "model": "HL760 LOADER",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER HYUNDAI",
+        "model": "HL770 LOADER",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER JCB",
+        "model": "446B, 456B w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER JCB",
+        "model": "456HT w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER JOHN DEERE",
+        "model": "744E",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KAWASAKI",
+        "model": "115 ZIV, 115 ZIV-2 w/Cummins QSK19 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KAWASAKI",
+        "model": "80ZIII w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "WA320-1 w/Komatsu Dresser 614T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "WA380-1 w/Komatsu /Dresser 614T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "WA380-5 w/Komatsu SAA6D114E-3 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "WA420-1 w/Komatsu /Dresser 614T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "WA420-3CS w/Komatsu SA6D114-1AA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "WA450-2 w/Cummins LTA10C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "WA500-3 w/Cummins M-11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER NEW HOLLAND",
+        "model": "LW170, LW190 w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER NEW HOLLAND",
+        "model": "LW230, LW230B w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER NEW HOLLAND",
+        "model": "LW270 w/Cummins M11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER SAMSUNG",
+        "model": "SL180 w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER SAMSUNG",
+        "model": "SL180-2 w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER SAMSUNG",
+        "model": "SL250 w/Cummins LTA10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER SAMSUNG",
+        "model": "SL250-2 w/Cummins LTA10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

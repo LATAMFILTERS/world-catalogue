@@ -1,0 +1,848 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "FDC11663C",
+    "line": "DRIVE"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "FDC11663C",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 0.67,
+      "height_mm": 17.02,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Drive Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [
+      "CF11663",
+      "CV11663"
+    ],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "General Motors",
+        "part_number": "20958479"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF179C"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA10002"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "C3947WS"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF1897"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "230013"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C26205C"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10074"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-248"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "90295C"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1897C"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F0074C"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F0074"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF1012"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1897C"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4043"
+      },
+      {
+        "manufacturer": "MotoMaster",
+        "part_number": "MCF11663"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "2230074"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC6205C"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PC-6205C"
+      },
+      {
+        "manufacturer": "Pro-Series",
+        "part_number": "PCF11663"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "part_number": "C26205"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C26205"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF19897C"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1897M"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1897C"
+      },
+      {
+        "manufacturer": "SUPERTECH",
+        "part_number": "5520"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1080"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA1080"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WCAF1897"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "17-08",
+        "make": "BUICK",
+        "model": "ENCLAVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "17-08",
+        "make": "BUICK",
+        "model": "ENCLAVE",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "17-09",
+        "make": "CHEVROLET",
+        "model": "TRAVERSE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "17-09",
+        "make": "CHEVROLET",
+        "model": "TRAVERSE",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "16-07",
+        "make": "GMC",
+        "model": "ACADIA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-07",
+        "make": "GMC",
+        "model": "ACADIA",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "2017",
+        "make": "GMC",
+        "model": "ACADIA LIMITED",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2017",
+        "make": "GMC",
+        "model": "ACADIA LIMITED",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "10-07",
+        "make": "SATURN",
+        "model": "OUTLOOK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "10-07",
+        "make": "SATURN",
+        "model": "OUTLOOK",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "FDC11663C",
+    "source_part_key": "010740198",
+    "source_totals": {
+      "attributes": 30,
+      "applications": 10,
+      "cross_references": 32
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Drive™cabin air filters prevent harmful airborne particles from entering your vehicle’s cabin. It is engineered to filter the air before it gets to you, removing dust, pollen, and other pollutants. Replacing a dirty cabin air filter with a new FRAM Drive cabin air filter can optimize clean air flow and maintain peak HVAC system performance. FRAM recommends changing your cabin air filter every 12 months.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Removes dust, pollen, and other pollutants",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, FDC11663C, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Up to 12 months or 12,000 mile (19,000 kilometer) protection",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Optimizes airflow and maintains HVAC performance",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Drive Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "0.67",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "9.35",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "6.75",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "5",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Behind Glove Box",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100577955",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.2670",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "0.8010",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "10.6300",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "3.6000",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "7.6900",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "11.2400",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "0.9400",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "8.4900",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.267,
+        "case_weight_lb": 0.801,
+        "unit_height_in": 10.63,
+        "unit_length_in": 7.69,
+        "unit_width_in": 0.94,
+        "case_height_in": 3.6,
+        "case_length_in": 11.24,
+        "case_width_in": 8.49,
+        "inferred_case_qty": 3
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 3.204,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 10,
+    "all_cross_references_observed": 32,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T06:00:34.793Z",
+  "discovered_from": "FDC11663C",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BUICK",
+        "model": "ENCLAVE",
+        "year": "17-08",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "ENCLAVE",
+        "year": "17-08",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TRAVERSE",
+        "year": "17-09",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TRAVERSE",
+        "year": "17-09",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "ACADIA",
+        "year": "16-07",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "ACADIA",
+        "year": "16-07",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "ACADIA LIMITED",
+        "year": "2017",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "ACADIA LIMITED",
+        "year": "2017",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SATURN",
+        "model": "OUTLOOK",
+        "year": "10-07",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SATURN",
+        "model": "OUTLOOK",
+        "year": "10-07",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF179C",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-248",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA10002",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "C3947WS",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "90295C",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1897C",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF1897",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FRAM Fresh Breeze",
+        "part_number": "CF11663",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FRAM TrueAir",
+        "part_number": "CV11663",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F0074C",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F0074",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "20958479",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF1012",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1897C",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4043",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MotoMaster",
+        "part_number": "MCF11663",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "230013",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "2230074",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC6205C",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PC-6205C",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Pro-Series",
+        "part_number": "PCF11663",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "part_number": "C26205",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C26205C",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C26205",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF19897C",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1897M",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1897C",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "SUPERTECH",
+        "part_number": "5520",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1080",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA1080",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WCAF1897",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10074",
+        "source_part_number": "FDC11663C",
+        "part_key": "010740198",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

@@ -1,0 +1,4580 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH3776",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH3776",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 3.797,
+      "outer_diameter_mm": 96.44,
+      "height_in": 8.125,
+      "height_mm": 206.38,
+      "thread_size": "1-12",
+      "gasket_od_in": 2.813,
+      "gasket_od_mm": 71.45,
+      "gasket_id_in": 2.469,
+      "gasket_id_mm": 62.71,
+      "gasket_thickness_in": 0.188,
+      "gasket_thickness_mm": 4.78,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "Yes",
+      "bypass_relief_valve": "Yes",
+      "bypass_setting_psi": 30,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "AGCO",
+        "part_number": "1174421"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AZ22878"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B236"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W962/6"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W962"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W962/14"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1820"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L40106"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51820"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Baudouin",
+        "part_number": "040340W"
+      },
+      {
+        "manufacturer": "Baudouin",
+        "part_number": "15040340W"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92820"
+      },
+      {
+        "manufacturer": "Bomag",
+        "part_number": "5710634"
+      },
+      {
+        "manufacturer": "Bomag",
+        "part_number": "5710640"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85820"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "A44081"
+      },
+      {
+        "manufacturer": "Deutz",
+        "part_number": "1174421"
+      },
+      {
+        "manufacturer": "Deutz",
+        "part_number": "A15H4123"
+      },
+      {
+        "manufacturer": "Deutz",
+        "part_number": "1160025"
+      },
+      {
+        "manufacturer": "Deutz",
+        "part_number": "1173430"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P553771"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P557624"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "1901919"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "1153430"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3625"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3687"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-84054"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF315"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "B236"
+      },
+      {
+        "manufacturer": "Liebherr",
+        "part_number": "5502096"
+      },
+      {
+        "manufacturer": "Linde",
+        "part_number": "016-000-000-200"
+      },
+      {
+        "manufacturer": "Linde",
+        "part_number": "0-116-0025"
+      },
+      {
+        "manufacturer": "Linde",
+        "part_number": "000-983-0610"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP2222"
+      },
+      {
+        "manufacturer": "Manitou",
+        "part_number": "128680"
+      },
+      {
+        "manufacturer": "STEYR",
+        "part_number": "610-00-07-0005"
+      },
+      {
+        "manufacturer": "Timberjack",
+        "part_number": "413977"
+      },
+      {
+        "manufacturer": "Trojan",
+        "part_number": "4795837"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "6211489"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "3831236"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "85-82",
+        "make": "GMC",
+        "model": "C7000",
+        "engine": "L6-6.1L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "PH3776",
+    "source_part_key": "001490952",
+    "source_totals": {
+      "attributes": 39,
+      "applications": 413,
+      "cross_references": 40
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, PH3776, HD Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Spin-on Oil Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "Yes",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "Yes",
+        "recno": "81"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "84"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Standard",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Orange",
+        "recno": "89"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Drain Plug Included",
+        "value": "No",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100381170",
+        "recno": "92"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Oil Filter",
+        "recno": "94"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "95"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "8.125",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "3.797",
+        "recno": "97"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "2.469",
+        "recno": "98"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "2.813",
+        "recno": "99"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.188",
+        "recno": "100"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Inch)",
+        "value": "1-12",
+        "recno": "101"
+      },
+      {
+        "attribute": "Bypass Relief Valve Setting (Pounds per Square Inch)",
+        "value": "30",
+        "recno": "102"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "103"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "104"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Brazil",
+        "recno": "105"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.7830",
+        "recno": "109"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "10.6980",
+        "recno": "110"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "8.4580",
+        "recno": "111"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "9.1610",
+        "recno": "112"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.7760",
+        "recno": "113"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "11.8250",
+        "recno": "114"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.7760",
+        "recno": "115"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "8.0450",
+        "recno": "116"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.783,
+        "case_weight_lb": 10.698,
+        "unit_height_in": 8.458,
+        "unit_length_in": 3.776,
+        "unit_width_in": 3.776,
+        "case_height_in": 9.161,
+        "case_length_in": 11.825,
+        "case_width_in": 8.045,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 21.396,
+        "estimated_case_dimensions": {
+          "length_in": 15.767,
+          "width_in": 12.067,
+          "height_in": 9.161,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 413,
+    "all_cross_references_observed": 40,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:18:46.759Z",
+  "discovered_from": "PH3776",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "ARTICULATED DUMP TRUCK VOLVO",
+        "model": "A25C w/Volvo TD73KCE Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK VOLVO",
+        "model": "A25C w/Volvo TD73KCE Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK VOLVO",
+        "model": "A30C w/Volvo TD104KBE Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK VOLVO",
+        "model": "A30C w/Volvo TD104KBE Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK VOLVO",
+        "model": "A35C w/Volvo TD121G Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK VOLVO",
+        "model": "A35C w/Volvo TD121G Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK VOLVO",
+        "model": "A35C w/Volvo TD122KME Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK VOLVO",
+        "model": "A35C w/Volvo TD122KME Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK VOLVO",
+        "model": "A40 w/Volvo TD122KFE Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK VOLVO",
+        "model": "A40 w/Volvo TD122KFE Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ASPHALT PAVER ABG",
+        "model": "Titan 325 Paver w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ASPHALT PAVER ABG",
+        "model": "Titan 325 Paver w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL60 w/Volvo D5D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL60 w/Volvo D5D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL61 Plus w/Volvo D5D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL61 Plus w/Volvo D5D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL61 w/Volvo D5D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL61 w/Volvo D5D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL70 w/Volvo D5D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL70 w/Volvo D5D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL71 Plus w/Volvo D5D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL71 Plus w/Volvo D5D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL71 w/Volvo D5D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL71 w/Volvo D5D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY DAF",
+        "model": "SB 3000 (w/DKSB 1160 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY DAF",
+        "model": "SB 3000 (w/DKSB 1160 Engine)",
+        "year": "93-87",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY DAF",
+        "model": "SB 3000 (w/DKV 1160 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY DAF",
+        "model": "SB 3000 (w/DKV 1160 Engine)",
+        "year": "93-87",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "120L80, 120R80 (w/Deutz F6L912 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "120L80, 120R80 (w/Deutz F6L912 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "130R81 (w/Deutz F6L913 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "130R81 (w/Deutz F6L913 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "150L10, 150R10, 150S10, 150S11, 150S12, 170S11H (VOV), 170S11M (w/Deutz F6L312 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "150L10, 150R10, 150S10, 150S11, 150S12, 170S11H (VOV), 170S11M (w/Deutz F6L312 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "150L10, 150R10, 150S10, 150S11, 150S12, 170S11H (VOV), 170S11M (w/Deutz F6L413 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "150L10, 150R10, 150S10, 150S11, 150S12, 170S11H (VOV), 170S11M (w/Deutz F6L413 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "170L/R100, 230L/R100 (w/Deutz F6L413 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "170L/R100, 230L/R100 (w/Deutz F6L413 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "170L100, 200L100, 200L120, 200S12, 200RS12, M230L117, 230L120 (w/Deutz F8L413 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "170L100, 200L100, 200L120, 200S12, 200RS12, M230L117, 230L120 (w/Deutz F8L413 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "170L100, 200L100, 200L120, 230L120 (w/Deutz F6L413 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "170L100, 200L100, 200L120, 230L120 (w/Deutz F6L413 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "230R120",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "230R120",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "260L117P, M2000/R106, M2000/R113, M2000/R119 (w/Deutz F8L413F Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "260L117P, M2000/R106, M2000/R113, M2000/R119 (w/Deutz F8L413F Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "470.20, 570.20 (w/8220.12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "470.20, 570.20 (w/8220.12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "471.12.24 (w/8220.32 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "471.12.24 (w/8220.32 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "Lorraine 170, Lorraine 200",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "Lorraine 170, Lorraine 200",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY KAESSBOHRER-SETRA",
+        "model": "S120, S130, S150 (w/Henschel 561 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY KAESSBOHRER-SETRA",
+        "model": "S120, S130, S150 (w/Henschel 561 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY KAESSBOHRER-SETRA",
+        "model": "S120, S130, S150 (w/Henschel 562 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY KAESSBOHRER-SETRA",
+        "model": "S120, S130, S150 (w/Henschel 562 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY KAESSBOHRER-SETRA",
+        "model": "S120, S130, S150 (w/Henschel 6R1315 523 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY KAESSBOHRER-SETRA",
+        "model": "S120, S130, S150 (w/Henschel 6R1315 523 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY KAESSBOHRER-SETRA",
+        "model": "S120, S130, S150 (w/Henschel 6R1315 524 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY KAESSBOHRER-SETRA",
+        "model": "S120, S130, S150 (w/Henschel 6R1315 524 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY KAESSBOHRER-SETRA",
+        "model": "S140S, S140ES (w/Henschel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY KAESSBOHRER-SETRA",
+        "model": "S140S, S140ES (w/Henschel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY VAN HOOL",
+        "model": "Series 750 Alizee (w/Fiat 8220.2 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY VAN HOOL",
+        "model": "Series 750 Alizee (w/Fiat 8220.2 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY VAN HOOL",
+        "model": "Series 760 Alizee, 815 Alizee (w/DAF DKT 1160 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY VAN HOOL",
+        "model": "Series 760 Alizee, 815 Alizee (w/DAF DKT 1160 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE DEUTZ-ALLIS",
+        "model": "R60 w/8 cyl. Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE DEUTZ-ALLIS",
+        "model": "R60 w/8 cyl. Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE DEUTZ-ALLIS",
+        "model": "R62 w/Deutz BF8L513 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE DEUTZ-ALLIS",
+        "model": "R62 w/Deutz BF8L513 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE DEUTZ-ALLIS",
+        "model": "R70, R72 w/Deutz BF8L513 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE DEUTZ-ALLIS",
+        "model": "R70, R72 w/Deutz BF8L513 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE GLEANER",
+        "model": "R62, R72 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE GLEANER",
+        "model": "R62, R72 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE GLEANER",
+        "model": "R72 w/Deutz BF8L513 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE GLEANER",
+        "model": "R72 w/Deutz BF8L513 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "1055 German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "1055 German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "1065 German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "1065 German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "1068 German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "1068 German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "1068H",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "1068H",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "1075 German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "1075 German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "1166 German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "1166 German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "1169H German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "1169H German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "1174 German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "1174 German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "1177 German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "1177 German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "1177H German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "1177H German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "1188 German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "1188 German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "4425 w/John Deere 6359 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "4425 w/John Deere 6359 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "4425, 4435 w/John Deere 6359 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "4425, 4435 w/John Deere 6359 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "4425, 4435 w/John Deere 6359 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "4425, 4435 w/John Deere 6359 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "4435 HYDRO",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "4435 HYDRO",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "965 German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "965 German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "975 German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "975 German Combine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER INGERSOLL-RAND",
+        "model": "SP-56 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER INGERSOLL-RAND",
+        "model": "SP-56 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER SAKAI",
+        "model": "SV100 w/Deutz F5L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER SAKAI",
+        "model": "SV100 w/Deutz F5L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER SAKAI",
+        "model": "SV90 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER SAKAI",
+        "model": "SV90 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR SAKAI",
+        "model": "R2TS 7409 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR SAKAI",
+        "model": "R2TS 7409 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE PUMP CHALLENGE",
+        "model": "CONCRETE PUMP w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE PUMP CHALLENGE",
+        "model": "CONCRETE PUMP w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT RAYGO",
+        "model": "F230D w/Deutz F8L413Y Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT RAYGO",
+        "model": "F230D w/Deutz F8L413Y Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT RAYGO",
+        "model": "F230D10 w/Deutz F8L413Y Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT RAYGO",
+        "model": "F230D10 w/Deutz F8L413Y Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT RAYGO",
+        "model": "F230D12 w/Deutz F8L413Y Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT RAYGO",
+        "model": "F230D12 w/Deutz F8L413Y Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRANE BUCYRUS ERIE",
+        "model": "150 w/Deutz F5L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRANE BUCYRUS ERIE",
+        "model": "150 w/Deutz F5L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK TEREX",
+        "model": "2366, 2566 w/Deutz BF6413FR Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK TEREX",
+        "model": "2366, 2566 w/Deutz BF6413FR Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "912 SERIES",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "912 SERIES",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "A6L912",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "A6L912",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "BF4L913",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "BF4L913",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "F6L312",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "F6L312",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "F6L913",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "F6L913",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "F8L413V",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "F8L413V",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "F8L513",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "F8L513",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "A6L911",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "A6L911",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "BF10L413",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "BF10L413",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "BF12L413",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "BF12L413",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "BF6L912",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "BF6L912",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "BF6M1013",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "BF6M1013",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "BF8L413",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "BF8L413",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "BF8L610",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "BF8L610",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F10L312",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F10L312",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F10L413",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F10L413",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F12L312",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F12L312",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F12L413",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F12L413",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F5L413",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F5L413",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F6L911",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F6L911",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F6L912",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F6L912",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F8L413",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F8L413",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F8L610",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F8L610",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR ATLAS",
+        "model": "1702 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR ATLAS",
+        "model": "1702 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR ATLAS",
+        "model": "1902 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR ATLAS",
+        "model": "1902 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR ATLAS",
+        "model": "2002 w/Deutz F6L413 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR ATLAS",
+        "model": "2002 w/Deutz F6L413 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR FUCHS",
+        "model": "MHL330H w/Deutz BF6M1013E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR FUCHS",
+        "model": "MHL330H w/Deutz BF6M1013E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "A314 w/Deutz BF4M1013E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "A314 w/Deutz BF4M1013E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "A314, A316 Litronic w/BF4M 4013 GC Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "A314, A316 Litronic w/BF4M 4013 GC Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "A314, A316 w/Deutz BF4M1013E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "A314, A316 w/Deutz BF4M1013E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "A316, A900B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "A316, A900B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "A900B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "A900B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "A912LI",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "A912LI",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "A914",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "A914",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "A914, A924",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "A914, A924",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "A924",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "A924",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "A932LI",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "A932LI",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R900B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R900B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R912LI",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R912LI",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R914",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R914",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R922LI",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R922LI",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R924",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R924",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R932LI",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R932LI",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R932LI, R934, R942LI, R944",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R932LI, R934, R942LI, R944",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R934",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R934",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R942LI",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R942LI",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R944",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R944",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R954",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R954",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R954, R964, R964B, R964Li",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R954, R964, R964B, R964Li",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R964",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R964",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R964B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R964B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R964Li",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LIEBHERR",
+        "model": "R964Li",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR POCLAIN",
+        "model": "LC80, LC80M, LY80 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR POCLAIN",
+        "model": "LC80, LC80M, LY80 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR POCLAIN",
+        "model": "LC80M, LY2P w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR POCLAIN",
+        "model": "LC80M, LY2P w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR POCLAIN",
+        "model": "LY2P w/Deutz F6L812,",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR POCLAIN",
+        "model": "LY2P w/Deutz F6L812,",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR POCLAIN",
+        "model": "LY4X4 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR POCLAIN",
+        "model": "LY4X4 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR POCLAIN",
+        "model": "LY80 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR POCLAIN",
+        "model": "LY80 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR POCLAIN",
+        "model": "MC100L w/Deutz F5L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR POCLAIN",
+        "model": "MC100L w/Deutz F5L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR POCLAIN",
+        "model": "MC100L w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR POCLAIN",
+        "model": "MC100L w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR VOLVO",
+        "model": "EC180CL w/Volvo D6E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR VOLVO",
+        "model": "EC180CL w/Volvo D6E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR VOLVO",
+        "model": "ECR235CL w/Volvo D6E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR VOLVO",
+        "model": "ECR235CL w/Volvo D6E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C7000",
+        "year": "85-82",
+        "engine": "L6-6.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE B & W-LATHROP",
+        "model": "B220",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE B & W-LATHROP",
+        "model": "B220",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE B & W-LATHROP",
+        "model": "D150 Turbo Diesel",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE B & W-LATHROP",
+        "model": "D150 Turbo Diesel",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBERJACK",
+        "model": "225 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBERJACK",
+        "model": "225 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBERJACK",
+        "model": "230 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBERJACK",
+        "model": "230 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBERJACK",
+        "model": "240 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBERJACK",
+        "model": "240 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBERJACK",
+        "model": "240A w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBERJACK",
+        "model": "240A w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBERJACK",
+        "model": "350 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBERJACK",
+        "model": "350 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW15, BW15A, BW15S w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW15, BW15A, BW15S w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW210, BW210A, BW210D, BW210PD w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW210, BW210A, BW210D, BW210PD w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW211, BW211A, BW211AB, BW211AD, BW211B w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW211, BW211A, BW211AB, BW211AD, BW211B w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW212, BW212B, BW212D, BW212DH, BW212PD, BW212SB w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW212, BW212B, BW212D, BW212DH, BW212PD, BW212SB w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW213, BW213A, BW213AD, BW213D w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW213, BW213A, BW213AD, BW213D w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW214 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW214 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW215D, BW215PD w/Deutz F6L413 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW215D, BW215PD w/Deutz F6L413 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW217D, BW217PD w/Deutz F6L413 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW217D, BW217PD w/Deutz F6L413 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL HAMM",
+        "model": "HD110 w/Deutz BF4M1013E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL HAMM",
+        "model": "HD110 w/Deutz BF4M1013E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL HAMM",
+        "model": "HD120 w/Deutz BF4M1013E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL HAMM",
+        "model": "HD120 w/Deutz BF4M1013E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL HAMM",
+        "model": "HD130 w/Deutz BF4M1013E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL HAMM",
+        "model": "HD130 w/Deutz BF4M1013E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL HAMM",
+        "model": "HD90 w/Deutz BF4M1013E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL HAMM",
+        "model": "HD90 w/Deutz BF4M1013E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL SAKAI",
+        "model": "TS7409 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL SAKAI",
+        "model": "TS7409 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS FMC",
+        "model": "4000CP w/Deutz F5L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS FMC",
+        "model": "4000CP w/Deutz F5L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR AGCO",
+        "model": "9670, 9690 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR AGCO",
+        "model": "9670, 9690 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "120 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "120 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "135 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "135 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "150 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "150 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "6.2 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "6.2 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "6.3 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "6.3 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "6.45 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "6.45 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "Agrotron 120 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "Agrotron 120 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "Agrotron 135 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "Agrotron 135 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "Agrotron 150 MK3 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "Agrotron 150 MK3 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "Agrotron TTV1130, 1145, 1160 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "Agrotron TTV1130, 1145, 1160 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "D10006, D10006A, D13006, D16006 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "D10006, D10006A, D13006, D16006 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "D7506 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "D7506 w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "D8006, D8006A, D9006, D9006A, D10006, D10006A, w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "D8006, D8006A, D9006, D9006A, D10006, D10006A, w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "DX110, DX110A w/Deutz F5L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "DX110, DX110A w/Deutz F5L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "DX110, DX110A w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "DX110, DX110A w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "DX120, DX120A w/Deutz BF6L913 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "DX120, DX120A w/Deutz BF6L913 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "DX85, DX85A, DX90, DX90A w/Deutz F5L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "DX85, DX85A, DX90, DX90A w/Deutz F5L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "DX85, DX85A, DX90, DX90A w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ",
+        "model": "DX85, DX85A, DX90, DX90A w/Deutz F6L912 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-ALLIS",
+        "model": "7110 w/Deutz F6L913 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-ALLIS",
+        "model": "7110 w/Deutz F6L913 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-ALLIS",
+        "model": "9170 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-ALLIS",
+        "model": "9170 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-ALLIS",
+        "model": "9190 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-ALLIS",
+        "model": "9190 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron 100 w/Deutz BF4M2012C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron 100 w/Deutz BF4M2012C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron 120 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron 120 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron 130 w/Deutz BF6M2012C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron 130 w/Deutz BF6M2012C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron 135 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron 135 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron 135, Agrotron 150 w/Deutz BF6M1013EC Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron 135, Agrotron 150 w/Deutz BF6M1013EC Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron 150 MK3 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron 150 MK3 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron 155 w/Deutz BF6M1013E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron 155 w/Deutz BF6M1013E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron 6.20 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron 6.20 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron 6.20, Agrotron 6.30, Agrotron 6.45 w/Deutz BF6M1013E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron 6.20, Agrotron 6.30, Agrotron 6.45 w/Deutz BF6M1013E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron 6.30 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron 6.30 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron 6.45 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron 6.45 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron Euro II 130 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron Euro II 130 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron Euro II 140 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron Euro II 140 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron Euro II 150.7 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron Euro II 150.7 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron Euro II 155 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron Euro II 155 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron Euro II 165 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron Euro II 165 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron Euro II 165.7 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron Euro II 165.7 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron MK II 120 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron MK II 120 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron MK II 130 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron MK II 130 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron MK II 135 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron MK II 135 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron MK II 150 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron MK II 150 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron MK II 165 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron MK II 165 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "AGROTRON MK III 120 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "AGROTRON MK III 120 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron TTV1130, TTV1145, TTV1160 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-FAHR",
+        "model": "Agrotron TTV1130, TTV1145, TTV1160 w/Deutz BF6M1013 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C7000 (w/Deutz BF6L913 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C7000 (w/Deutz BF6L913 Engine)",
+        "year": "1982",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY IVECO",
+        "model": "Z100 (w/Deutz F5L912 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY IVECO",
+        "model": "Z100 (w/Deutz F5L912 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER LIEBHERR",
+        "model": "L521",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER LIEBHERR",
+        "model": "L521",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER LIEBHERR",
+        "model": "L522",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER LIEBHERR",
+        "model": "L522",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER LIEBHERR",
+        "model": "L551",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER LIEBHERR",
+        "model": "L551",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER TROJAN",
+        "model": "1500Z w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER TROJAN",
+        "model": "1500Z w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER TROJAN",
+        "model": "1700Z w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER TROJAN",
+        "model": "1700Z w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER TROJAN",
+        "model": "1900Z w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER TROJAN",
+        "model": "1900Z w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER TROJAN",
+        "model": "2000Z w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER TROJAN",
+        "model": "2000Z w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER TROJAN",
+        "model": "3500Z w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER TROJAN",
+        "model": "3500Z w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER VOLVO",
+        "model": "L40 w/Deutz BF4M1013E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER VOLVO",
+        "model": "L40 w/Deutz BF4M1013E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER VOLVO",
+        "model": "L40B, L45B w/D5D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER VOLVO",
+        "model": "L40B, L45B w/D5D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER VOLVO",
+        "model": "L40B, L45B w/Deutz BF4M1013E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER VOLVO",
+        "model": "L40B, L45B w/Deutz BF4M1013E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "AGCO",
+        "part_number": "1174421",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B236",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baudouin",
+        "part_number": "040340W",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baudouin",
+        "part_number": "15040340W",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92820",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bomag",
+        "part_number": "5710634",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bomag",
+        "part_number": "5710640",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85820",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "A44081",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Deutz",
+        "part_number": "1174421",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Deutz",
+        "part_number": "A15H4123",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Deutz",
+        "part_number": "1160025",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Deutz",
+        "part_number": "1173430",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P553771",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P557624",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "1901919",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "1153430",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3625",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3687",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-84054",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF315",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "B236",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AZ22878",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Liebherr",
+        "part_number": "5502096",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Linde",
+        "part_number": "016-000-000-200",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Linde",
+        "part_number": "0-116-0025",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Linde",
+        "part_number": "000-983-0610",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP2222",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Manitou",
+        "part_number": "128680",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W962/6",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W962",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W962/14",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1820",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L40106",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STEYR",
+        "part_number": "610-00-07-0005",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Timberjack",
+        "part_number": "413977",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Trojan",
+        "part_number": "4795837",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "6211489",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "3831236",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51820",
+        "source_part_number": "PH3776",
+        "part_key": "001490952",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

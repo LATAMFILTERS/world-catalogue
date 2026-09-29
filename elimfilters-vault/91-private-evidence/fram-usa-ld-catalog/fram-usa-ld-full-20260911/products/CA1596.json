@@ -1,0 +1,2274 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA1596",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA1596",
+    "product_type": "Engine Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": 10.406,
+      "outer_diameter_mm": 264.31,
+      "height_in": 16.5,
+      "height_mm": 419.1,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Metal End Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "7C-8307"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25041283"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A821C"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A821CF"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2521"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "LL2521"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "HA533"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "C26816"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FA-806"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "2253"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A63228"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-18-1028"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-1596"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "10303"
+      },
+      {
+        "manufacturer": "Alliance Parts",
+        "part_number": "ABP/N10G-AF979"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "93253"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87253"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "XLP182028"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "EAF5028"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P182028"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P129545"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P185028"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P181028"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P149375"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF979"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF979M"
+      },
+      {
+        "manufacturer": "Fleetlife",
+        "part_number": "FA-1596"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-8979M"
+      },
+      {
+        "manufacturer": "Franklin Equipment",
+        "part_number": "1505018"
+      },
+      {
+        "manufacturer": "Franklin Equipment",
+        "part_number": "1505190"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GA209"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GA209M"
+      },
+      {
+        "manufacturer": "Guardian",
+        "part_number": "G43-1596"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF608"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "492919C91"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "1661755-C91"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "998055C91"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "1680058C91"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "476741C1"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "1623047C91"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "492920C91"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "482647C92"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "470185C92"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "998054C91"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "38-1003"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA923"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF9545"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "70142N"
+      },
+      {
+        "manufacturer": "Nu-Tech",
+        "part_number": "N1566"
+      },
+      {
+        "manufacturer": "Nu-Tech",
+        "part_number": "S1566"
+      },
+      {
+        "manufacturer": "Racor",
+        "part_number": "AFN1366"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "3946290"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA1596",
+    "source_part_key": "001509777",
+    "source_totals": {
+      "attributes": 24,
+      "applications": 148,
+      "cross_references": 52
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA1596, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Metal End Air Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "83"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "84"
+      },
+      {
+        "attribute": "Top Inside Diameter",
+        "value": "Closed",
+        "recno": "85"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "86"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "16.500",
+        "recno": "88"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "10.406",
+        "recno": "89"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "10.406",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "6.031",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100524669",
+        "recno": "92"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "10.406",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "94"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "6.4500",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "16.6540",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "11.2200",
+        "recno": "100"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "11.2200",
+        "recno": "101"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": 6.45,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": 16.654,
+        "case_length_in": 11.22,
+        "case_width_in": 11.22,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 148,
+    "all_cross_references_observed": 52,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:44:01.920Z",
+  "discovered_from": "CA1596",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "APPLICATOR & SPRAYER AG-CHEM",
+        "model": "1604 Terra-Truck w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APPLICATOR & SPRAYER AG-CHEM",
+        "model": "1604 Terra-Truck w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Setra S411 (w/OM501LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Setra S411 (w/OM501LA Engine)",
+        "year": "07-01",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Setra S415HD (w/OM457LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Setra S415HD (w/OM457LA Engine)",
+        "year": "07-01",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Setra S416GT-HD, S416GT-HD2 Top Class (w/OM457LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Setra S416GT-HD, S416GT-HD2 Top Class (w/OM457LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Travego 15RH, 15RHD (w/OM457LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Travego 15RH, 15RHD (w/OM457LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IC CORPORATION",
+        "model": "CE Series Bus (w/DTA360 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IC CORPORATION",
+        "model": "CE Series Bus (w/DTA360 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IC CORPORATION",
+        "model": "RE (cab over bus) (w/MaxxForce DT Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IC CORPORATION",
+        "model": "RE (cab over bus) (w/MaxxForce DT Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IC CORPORATION",
+        "model": "RE Rear Engine Commercial Bus (w/International DT466E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IC CORPORATION",
+        "model": "RE Rear Engine Commercial Bus (w/International DT466E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "INTERNATIONAL",
+        "model": "4600",
+        "year": "95-91",
+        "engine": "V8-7.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INTERNATIONAL",
+        "model": "4600LP",
+        "year": "93-90",
+        "engine": "V8-7.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INTERNATIONAL",
+        "model": "7100",
+        "year": "95-90",
+        "engine": "L6-7.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INTERNATIONAL",
+        "model": "7100",
+        "year": "95-94",
+        "engine": "L6-8.7L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INTERNATIONAL",
+        "model": "7100",
+        "year": "95-94",
+        "engine": "V8-7.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "13-210",
+        "year": "89-88",
+        "engine": "L6-8.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "22-210",
+        "year": "1989",
+        "engine": "L6-8.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "K130",
+        "year": "93-87",
+        "engine": "L6-8.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "K150",
+        "year": "94-90",
+        "engine": "L6-8.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "K200",
+        "year": "1993",
+        "engine": "L6-8.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "K220",
+        "year": "1994",
+        "engine": "L6-8.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "K220",
+        "year": "92-88",
+        "engine": "L6-8.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "1600 (w/DT360 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "1600 (w/DT360 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "1850,1854 S series (w/DT466 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "1850,1854 S series (w/DT466 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "1853 (w/DTA360 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "1853 (w/DTA360 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "3000, 3400, 3800 Series Buses (w/T444E 7.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "3000, 3400, 3800 Series Buses (w/T444E 7.3L Engine)",
+        "year": "04-94",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "3600, 3700, 3800 (w/7.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "3600, 3700, 3800 (w/7.3L Engine)",
+        "year": "93-90",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "3600, 3700, 3800, 3900 Series (w/International DT466 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "3600, 3700, 3800, 3900 Series (w/International DT466 Engine)",
+        "year": "98-90",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "3600, 3700, 3800, 3900 Series (w/International DT466E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "3600, 3700, 3800, 3900 Series (w/International DT466E Engine)",
+        "year": "04-99",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "3600, SC, 3700, 3800, 3900, FC (w/International DT408 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "3600, SC, 3700, 3800, 3900, FC (w/International DT408 Engine)",
+        "year": "96-94",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "3600, SC, 3700, 3800, 3900, FC (w/International DT466 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "3600, SC, 3700, 3800, 3900, FC (w/International DT466 Engine)",
+        "year": "98-90",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "4300 (w/DT466E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "4300 (w/DT466E Engine)",
+        "year": "01-99",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "4600, 4700, 4800 (w/T444E 7.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "4600, 4700, 4800 (w/T444E 7.3L Engine)",
+        "year": "02-90",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "S1654, S1754, S1853, S1854, S1924, S1925 (w/International DT466 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "S1654, S1754, S1853, S1854, S1924, S1925 (w/International DT466 Engine)",
+        "year": "89-80",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK KENWORTH",
+        "model": "K220 Midranger (w/Cummins 6CT 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK KENWORTH",
+        "model": "K220 Midranger (w/Cummins 6CT 8.3L Engine)",
+        "year": "94-88",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "200 Midranger (w/Cummins 6CT8.3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "200 Midranger (w/Cummins 6CT8.3 Engine)",
+        "year": "98-90",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "224 Midranger (w/Cummins 6CT8.3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "224 Midranger (w/Cummins 6CT8.3 Engine)",
+        "year": "98-90",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "227 Midranger (w/Cummins 6CT8.3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "227 Midranger (w/Cummins 6CT8.3 Engine)",
+        "year": "98-90",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "265 Midranger (w/Cummins 6CT8.3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "265 Midranger (w/Cummins 6CT8.3 Engine)",
+        "year": "98-90",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "265 Midranger (W/Cummins 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "265 Midranger (W/Cummins 8.3L Engine)",
+        "year": "98-90",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "270 Midranger (w/Cummins 6CT8.3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "270 Midranger (w/Cummins 6CT8.3 Engine)",
+        "year": "98-90",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "SKIDDER FRANKLIN",
+        "model": "170 w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKIDDER FRANKLIN",
+        "model": "170 w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKIDDER FRANKLIN",
+        "model": "190 w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKIDDER FRANKLIN",
+        "model": "190 w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "2554, 2654 (w/International DT466E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "2554, 2654 (w/International DT466E Engine)",
+        "year": "01-00",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4600, 4700, 4800, 4900 (w/International 530 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4600, 4700, 4800, 4900 (w/International 530 Engine)",
+        "year": "98-94",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4600, 4700, 4800, 4900 (w/International DT-408 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4600, 4700, 4800, 4900 (w/International DT-408 Engine)",
+        "year": "98-94",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4600, 4700, 4800, 4900 (w/International DT466 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4600, 4700, 4800, 4900 (w/International DT466 Engine)",
+        "year": "98-90",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4700, 4800, 4900 (w/DT360 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4700, 4800, 4900 (w/DT360 Engine)",
+        "year": "93-90",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4700, LP, LPX (w/International DT-360 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4700, LP, LPX (w/International DT-360 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4700, LP, LPX (w/International DT408 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4700, LP, LPX (w/International DT408 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4700, LP, LPX (w/International DT466 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4700, LP, LPX (w/International DT466 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4700, LP, LPX (w/International T444E Diesel)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4700, LP, LPX (w/International T444E Diesel)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4800 (w/International DT466E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4800 (w/International DT466E Engine)",
+        "year": "01-00",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4900 (w/International DT466E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4900 (w/International DT466E Engine)",
+        "year": "01-00",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "5050 (w/FRAM Housing 470185C92)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "5050 (w/FRAM Housing 470185C92)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "7100",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "7100",
+        "year": "95-92",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100 (w/Caterpillar C10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100 (w/Caterpillar C10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100 (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100 (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100 (w/Cummins L-10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100 (w/Cummins L-10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100 (w/International DT466E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100 (w/International DT466E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100 (w/International DT530 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100 (w/International DT530 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100, 8200, 8300 (w/Caterpillar 3176 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100, 8200, 8300 (w/Caterpillar 3176 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100, 8200, 8300 (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100, 8200, 8300 (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100, 8200, 8300 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100, 8200, 8300 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100,8200, 8300 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100,8200, 8300 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100,8200,8300 (w/Caterpillar 3176 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100,8200,8300 (w/Caterpillar 3176 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8200, 8300 (w/Caterpillar Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8200, 8300 (w/Caterpillar Engine)",
+        "year": "97-92",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9370 Series (w/Cummins Formula 300 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9370 Series (w/Cummins Formula 300 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9370 Series (w/Cummins NTC350 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9370 Series (w/Cummins NTC350 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "CE (w/IHC-Navistar DTA360 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "CE (w/IHC-Navistar DTA360 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "FE (w/IHC-Navistar DT360 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "FE (w/IHC-Navistar DT360 Engine)",
+        "year": "2010",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "M1660",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "M1660",
+        "year": "90-87",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "RE (w/IHC-Navistar DT466 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "RE (w/IHC-Navistar DT466 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "RE (w/IHC-Navistar T444E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "RE (w/IHC-Navistar T444E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "RE (w/MaxxForce DT 7.6L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "RE (w/MaxxForce DT 7.6L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "13-210, 22-210 Midranger (w/Cummins 6CT8.3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "13-210, 22-210 Midranger (w/Cummins 6CT8.3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "K130, K150 Midranger (w/Cummins 6CT 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "K130, K150 Midranger (w/Cummins 6CT 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "MID RANGER (w/Cummins 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "MID RANGER (w/Cummins 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "L1319 (w/Mercedes-Benz OM366LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "L1319 (w/Mercedes-Benz OM366LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "LP1219 (w/Mercedes-Benz OM366LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "LP1219 (w/Mercedes-Benz OM366LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "LP1419 (w/Mercedes-Benz OM366LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "LP1419 (w/Mercedes-Benz OM366LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "LPS1525 (w/Mercedes-Benz OM429LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "LPS1525 (w/Mercedes-Benz OM429LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A821C",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A821CF",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-18-1028",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-1596",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "10303",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Alliance Parts",
+        "part_number": "ABP/N10G-AF979",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2521",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "LL2521",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "93253",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87253",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "7C-8307",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "HA533",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "XLP182028",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "EAF5028",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P182028",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P129545",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P185028",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P181028",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P149375",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF979",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF979M",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Fleetlife",
+        "part_number": "FA-1596",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-8979M",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Franklin Equipment",
+        "part_number": "1505018",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Franklin Equipment",
+        "part_number": "1505190",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25041283",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GA209",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GA209M",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Guardian",
+        "part_number": "G43-1596",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF608",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "492919C91",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "1661755-C91",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "998055C91",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "1680058C91",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "476741C1",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "1623047C91",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "492920C91",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "482647C92",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "470185C92",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "998054C91",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "38-1003",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA923",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF9545",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "C26816",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FA-806",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "2253",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "70142N",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Nu-Tech",
+        "part_number": "N1566",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Nu-Tech",
+        "part_number": "S1566",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A63228",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Racor",
+        "part_number": "AFN1366",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "3946290",
+        "source_part_number": "CA1596",
+        "part_key": "001509777",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

@@ -1,0 +1,1125 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA4304",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA4304",
+    "product_type": "Air Filter, Air",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 14.656,
+      "height_mm": 372.26,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Metal End Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Ford",
+        "part_number": "E9NN-9B618-AA"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "D5NN-9B618-A"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "D6NN-9601-B"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25043062"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A900C"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2587"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FA-902"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "2533"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A63262"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42533"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Air Maze",
+        "part_number": "CD-0615506-826"
+      },
+      {
+        "manufacturer": "Air Maze",
+        "part_number": "CD-0615506-825"
+      },
+      {
+        "manufacturer": "Air Maze",
+        "part_number": "CD-0615502-826"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-28"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87533"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87136"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P526505"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF1855"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-81855"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF787"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF596"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "A-2002"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "HDA-02002"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA895"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF3717"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "70087N"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA4304",
+    "source_part_key": "001509596",
+    "source_totals": {
+      "attributes": 29,
+      "applications": 58,
+      "cross_references": 26
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA4304, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Metal End Air Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "82"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "84"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "85"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "86"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "87"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "88"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "89"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "14.656",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100521422",
+        "recno": "92"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "0.438",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "5.312",
+        "recno": "94"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "3.063",
+        "recno": "95"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "5.750",
+        "recno": "96"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "97"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "98"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "South Africa",
+        "recno": "99"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.9850",
+        "recno": "103"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "17.5000",
+        "recno": "104"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "6.6250",
+        "recno": "105"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "6.6250",
+        "recno": "106"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": 1.985,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": 17.5,
+        "case_length_in": 6.625,
+        "case_width_in": 6.625,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 58,
+    "all_cross_references_observed": 26,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:09:40.288Z",
+  "discovered_from": "CA4304",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "175 BSD329 2.9L",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "175 BSD329 2.9L",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "192 BSD332 3.2L",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "192 BSD332 3.2L",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "201 BSD-333H/3.3L",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "201 BSD-333H/3.3L",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "256 BSD442 4.2L",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "256 BSD442 4.2L",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "230B",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "230B",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "2310 Compact Diesel",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "2310 Compact Diesel",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "2310, 2610 w/Ford Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "2310, 2610 w/Ford Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "234",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "234",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "250C, 260C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "250C, 260C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "260C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "260C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "2810, 2910",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "2810, 2910",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "3230, 3430",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "3230, 3430",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "334",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "334",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "3610",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "3610",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "3910",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "3910",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "3930",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "3930",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "4110 w/John Deere Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "4110 w/John Deere Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "4610",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "4610",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "4630",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "4630",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "4830",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "4830",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "5030",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "5030",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "530B",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "530B",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "5600",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "5600",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "5610",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "5610",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "5700",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "5700",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "6600",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "6600",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "6600, 6610",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "6600, 6610",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "6700, 6710",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "6700, 6710",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "4130",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "4130",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A900C",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Maze",
+        "part_number": "CD-0615506-826",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Maze",
+        "part_number": "CD-0615506-825",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Maze",
+        "part_number": "CD-0615502-826",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-28",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2587",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87533",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87136",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P526505",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF1855",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-81855",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "E9NN-9B618-AA",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "D5NN-9B618-A",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "D6NN-9601-B",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25043062",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF787",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF596",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "A-2002",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "HDA-02002",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA895",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF3717",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FA-902",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "2533",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "70087N",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A63262",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42533",
+        "source_part_number": "CA4304",
+        "part_key": "001509596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

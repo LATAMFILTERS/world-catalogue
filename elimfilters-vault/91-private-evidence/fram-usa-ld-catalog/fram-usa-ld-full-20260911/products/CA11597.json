@@ -1,0 +1,877 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA11597",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA11597",
+    "product_type": "Engine Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": 9.21,
+      "outer_diameter_mm": 233.93,
+      "height_in": 18.5,
+      "height_mm": 469.9,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "HD Metal-End Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "General Motors",
+        "part_number": "89002257"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A2084C"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA3600"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6727"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A76047"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46727"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88727"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P535596"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF25415"
+      },
+      {
+        "manufacturer": "Hino",
+        "part_number": "17801-2810"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF1936"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA11597",
+    "source_part_key": "006686866",
+    "source_totals": {
+      "attributes": 25,
+      "applications": 56,
+      "cross_references": 11
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA11597, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "HD Metal-End Air Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "83"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "84"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "85"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "18.500",
+        "recno": "87"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "9.210",
+        "recno": "88"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "0.660",
+        "recno": "89"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "9.210",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "6.380",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100553102",
+        "recno": "92"
+      },
+      {
+        "attribute": "Inside Diameter (Inch)",
+        "value": "0.660",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "9.210",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "94"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "95"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "5.7500",
+        "recno": "99"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "19.6120",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "9.9260",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "9.9260",
+        "recno": "102"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": 5.75,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": 19.612,
+        "case_length_in": 9.926,
+        "case_width_in": 9.926,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 56,
+    "all_cross_references_observed": 11,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:41:45.054Z",
+  "discovered_from": "CA11597",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "HINO",
+        "model": "FD20",
+        "year": "1992",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FD2218",
+        "year": "97-93",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FD2218LP",
+        "year": "97-93",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FD2220",
+        "year": "02-98",
+        "engine": "L6-8.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FD2320",
+        "year": "04-03",
+        "engine": "L6-8.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FE19",
+        "year": "1992",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FE20",
+        "year": "1992",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FE2618",
+        "year": "97-93",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FE2620",
+        "year": "04-98",
+        "engine": "L6-8.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FF20",
+        "year": "1992",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FF23",
+        "year": "1992",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FF3020",
+        "year": "97-93",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FF3020",
+        "year": "02-98",
+        "engine": "L6-8.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FF3020",
+        "year": "2004",
+        "engine": "L6-8.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "GC20",
+        "year": "1992",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG19",
+        "year": "1992",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG20",
+        "year": "1992",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG23",
+        "year": "1992",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG3320",
+        "year": "97-93",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG3320",
+        "year": "02-98",
+        "engine": "L6-8.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG3320",
+        "year": "2004",
+        "engine": "L6-8.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG3323",
+        "year": "97-93",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG3325",
+        "year": "04-98",
+        "engine": "L6-8.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG5523",
+        "year": "96-93",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD20 (w/H06CTI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD20 (w/H06CTI Engine)",
+        "year": "97-92",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD2218, FE2218 (w/H06CTN Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD2218, FE2218 (w/H06CTN Engine)",
+        "year": "97-93",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD2218, FE2218 (w/H06CTP Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD2218, FE2218 (w/H06CTP Engine)",
+        "year": "97-93",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD2220, FD2320 (w/J08CTD Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD2220, FD2320 (w/J08CTD Engine)",
+        "year": "04-98",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE19, FE20 (w/H06C Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE19, FE20 (w/H06C Engine)",
+        "year": "1992",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE2618 (w/H06CTP Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE2618 (w/H06CTP Engine)",
+        "year": "97-93",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE2618 (w/H06CTT Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE2618 (w/H06CTT Engine)",
+        "year": "97-93",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE2620 (w/J08CTD, TP Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE2620 (w/J08CTD, TP Engine)",
+        "year": "04-98",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF20 (w/H06CTI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF20 (w/H06CTI Engine)",
+        "year": "93-92",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF23 (w/H06CTI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF23 (w/H06CTI Engine)",
+        "year": "93-92",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF3020 (w/Hino J08CTD Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF3020 (w/Hino J08CTD Engine)",
+        "year": "04-98",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF3020 (w/Hino J08CTP Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF3020 (w/Hino J08CTP Engine)",
+        "year": "04-99",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG19, SG20,SG23 (w/HO6CT Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG19, SG20,SG23 (w/HO6CT Engine)",
+        "year": "1992",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG3320, SG3325 (w/J08CTD Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG3320, SG3325 (w/J08CTD Engine)",
+        "year": "04-98",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG3323 (w/H06C-TM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG3323 (w/H06C-TM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG5523 (w/H06C-TM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG5523 (w/H06C-TM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A2084C",
+        "source_part_number": "CA11597",
+        "part_key": "006686866",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA3600",
+        "source_part_number": "CA11597",
+        "part_key": "006686866",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88727",
+        "source_part_number": "CA11597",
+        "part_key": "006686866",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P535596",
+        "source_part_number": "CA11597",
+        "part_key": "006686866",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF25415",
+        "source_part_number": "CA11597",
+        "part_key": "006686866",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "89002257",
+        "source_part_number": "CA11597",
+        "part_key": "006686866",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Hino",
+        "part_number": "17801-2810",
+        "source_part_number": "CA11597",
+        "part_key": "006686866",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF1936",
+        "source_part_number": "CA11597",
+        "part_key": "006686866",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6727",
+        "source_part_number": "CA11597",
+        "part_key": "006686866",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A76047",
+        "source_part_number": "CA11597",
+        "part_key": "006686866",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46727",
+        "source_part_number": "CA11597",
+        "part_key": "006686866",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

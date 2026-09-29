@@ -1,0 +1,314 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "FUEL",
+  "authority": {
+    "part_number": "G7736",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "G7736",
+    "product_type": "Fuel Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": null,
+      "height_mm": null,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": null,
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [],
+    "unresolved_cross_reference_candidates": [],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "G7736",
+    "source_part_key": "000991107",
+    "source_totals": {
+      "attributes": 0,
+      "applications": 25,
+      "cross_references": 0
+    },
+    "raw_attributes": [],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": null,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": null,
+        "case_length_in": null,
+        "case_width_in": null,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 25,
+    "all_cross_references_observed": 0,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:11:47.786Z",
+  "discovered_from": "G7736",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "LIFT TRUCK TOYOTA",
+        "model": "02-2FDC20, 20-2FDC25 w/Toyota 2J Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOYOTA",
+        "model": "02-2FDC30 w/Toyota 2J Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOYOTA",
+        "model": "02-3FD20 w/Toyota 2J Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOYOTA",
+        "model": "02-3FD23 w/Toyota 2J Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOYOTA",
+        "model": "02-3FD25 w/Toyota 2J Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOYOTA",
+        "model": "02-4FD20 w/Toyota 2J Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOYOTA",
+        "model": "02-4FD20, 02-4FD25 w/Toyota 2J Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOYOTA",
+        "model": "02-4FD23 w/Toyota 2J Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOYOTA",
+        "model": "02-FD18, 02-FD23 w/Toyota 2J Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOYOTA",
+        "model": "02-FDC18 w/Toyota 2J Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOYOTA",
+        "model": "02-FDC28 w/Toyota 2J Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOYOTA",
+        "model": "2FDC20 w/Toyota 2J Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOYOTA",
+        "model": "2FDC25 w/Toyota 2J Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOYOTA",
+        "model": "2FDC30 w/Toyota 2J Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOYOTA",
+        "model": "3FD20 w/Toyota 2J Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOYOTA",
+        "model": "3FD25 w/Toyota 2J Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOYOTA",
+        "model": "4FD20, 4FD23, 4FD25 w/Toyota 2J Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOYOTA",
+        "model": "FD23 w/Toyota 2J Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOYOTA",
+        "model": "FDC18 w/Toyota 2J Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOYOTA",
+        "model": "FDC23 w/Toyota 2J Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOYOTA",
+        "model": "FDC28 w/Toyota 2J Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOYOTA",
+        "model": "FDT25 w/Toyota 2J Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FORD (EUROPE)",
+        "model": "Tourneo (w/2.0L Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FORD (EUROPE)",
+        "model": "Transit 92 (w/NBA 2.0 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FORD (EUROPE)",
+        "model": "Transit 92 (w/NCA 2.0i Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

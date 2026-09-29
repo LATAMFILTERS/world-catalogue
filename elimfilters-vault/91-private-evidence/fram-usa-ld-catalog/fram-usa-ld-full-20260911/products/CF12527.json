@@ -1,0 +1,551 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF12527",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF12527",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.772,
+      "height_mm": 45.01,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA10017"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C51395"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10263"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68169308AA"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1924P"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "CAF1924P"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "230263"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C51395"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WCAF1924"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "26-14",
+        "make": "RAM",
+        "model": "PROMASTER 1500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "17-14",
+        "make": "RAM",
+        "model": "PROMASTER 1500",
+        "engine": "L4-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-14",
+        "make": "RAM",
+        "model": "PROMASTER 1500",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-14",
+        "make": "RAM",
+        "model": "PROMASTER 2500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-14",
+        "make": "RAM",
+        "model": "PROMASTER 2500",
+        "engine": "L4-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-14",
+        "make": "RAM",
+        "model": "PROMASTER 2500",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-14",
+        "make": "RAM",
+        "model": "PROMASTER 3500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-14",
+        "make": "RAM",
+        "model": "PROMASTER 3500",
+        "engine": "L4-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "17-14",
+        "make": "RAM",
+        "model": "PROMASTER 3500",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-19",
+        "make": "RAM",
+        "model": "PROMASTER 3500",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "RAM",
+        "model": "PROMASTER EV",
+        "engine": "All",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF12527",
+    "source_part_key": "008809563",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 11,
+      "cross_references": 9
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF12527, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.772",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "14.567",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "10.827",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "10",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Under Hood",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100564030",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Thailand",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.3250",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "2.6500",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "15.0000",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.8000",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "11.2500",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "12.5000",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.9800",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "11.7500",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.325,
+        "case_weight_lb": 2.65,
+        "unit_height_in": 15,
+        "unit_length_in": 11.25,
+        "unit_width_in": 1.98,
+        "case_height_in": 4.8,
+        "case_length_in": 12.5,
+        "case_width_in": 11.75,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 15.9,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 11,
+    "all_cross_references_observed": 9,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:58:53.117Z",
+  "discovered_from": "CF12527",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "RAM",
+        "model": "PROMASTER 1500",
+        "year": "26-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "RAM",
+        "model": "PROMASTER 1500",
+        "year": "17-14",
+        "engine": "L4-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "RAM",
+        "model": "PROMASTER 1500",
+        "year": "26-14",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "RAM",
+        "model": "PROMASTER 2500",
+        "year": "26-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "RAM",
+        "model": "PROMASTER 2500",
+        "year": "18-14",
+        "engine": "L4-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "RAM",
+        "model": "PROMASTER 2500",
+        "year": "26-14",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "RAM",
+        "model": "PROMASTER 3500",
+        "year": "26-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "RAM",
+        "model": "PROMASTER 3500",
+        "year": "18-14",
+        "engine": "L4-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "RAM",
+        "model": "PROMASTER 3500",
+        "year": "17-14",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "RAM",
+        "model": "PROMASTER 3500",
+        "year": "26-19",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "RAM",
+        "model": "PROMASTER EV",
+        "year": "26-24",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA10017",
+        "source_part_number": "CF12527",
+        "part_key": "008809563",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68169308AA",
+        "source_part_number": "CF12527",
+        "part_key": "008809563",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1924P",
+        "source_part_number": "CF12527",
+        "part_key": "008809563",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "CAF1924P",
+        "source_part_number": "CF12527",
+        "part_key": "008809563",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "230263",
+        "source_part_number": "CF12527",
+        "part_key": "008809563",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C51395",
+        "source_part_number": "CF12527",
+        "part_key": "008809563",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C51395",
+        "source_part_number": "CF12527",
+        "part_key": "008809563",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WCAF1924",
+        "source_part_number": "CF12527",
+        "part_key": "008809563",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10263",
+        "source_part_number": "CF12527",
+        "part_key": "008809563",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

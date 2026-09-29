@@ -1,0 +1,1699 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA7466",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA7466",
+    "product_type": "Air Filter, Air",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 18.656,
+      "height_mm": 473.86,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Radial Seal Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25313787"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "RE63931"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AH148880"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A1537C"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "RS3530"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "C341600"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6745"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A75345"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A75096"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46745"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Alliance Parts",
+        "part_number": "ABP/N10G-AF25033M"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "94745"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88745"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "EAF5104"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P533235"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF25033"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF25033M"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF2275"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "1694039C1"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "2005895C1"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA1534"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF1953"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA7466",
+    "source_part_key": "001510185",
+    "source_totals": {
+      "attributes": 29,
+      "applications": 128,
+      "cross_references": 22
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA7466, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Radial Seal Air Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "82"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "84"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "85"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "86"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Top Inside Diameter",
+        "value": "Closed",
+        "recno": "88"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "89"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100528117",
+        "recno": "92"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "18.656",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "13.078",
+        "recno": "94"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "6.781",
+        "recno": "95"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "13.078",
+        "recno": "96"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "97"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "98"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "99"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "7.6500",
+        "recno": "103"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "19.6000",
+        "recno": "104"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "13.6400",
+        "recno": "105"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "13.6400",
+        "recno": "106"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": 7.65,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": 19.6,
+        "case_length_in": 13.64,
+        "case_width_in": 13.64,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 128,
+    "all_cross_references_observed": 22,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:12:55.845Z",
+  "discovered_from": "CA7466",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "6510 w/John Deere 6359 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "6510 w/John Deere 6359 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9410",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9410",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9510, 9510 Hillside w/John Deere 6081 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9510, 9510 Hillside w/John Deere 6081 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9510SH",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9510SH",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9550 w/John Deere 6068 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9550 w/John Deere 6068 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9550 w/John Deere 6081 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9550 w/John Deere 6081 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9550, 9650 w/John Deere 6081 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9550, 9650 w/John Deere 6081 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9560, 9560 Hillside w/John Deere 6081H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9560, 9560 Hillside w/John Deere 6081H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9560STS w/John Deere Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9560STS w/John Deere Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9610 Combine w/John Deere 6081 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9610 Combine w/John Deere 6081 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9650CTS, 9650STS w/John Deere 6081 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9650CTS, 9650STS w/John Deere 6081 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9660 w/John Deere Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9660 w/John Deere Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9660, 9660CTS w/John Deere 6081 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9660, 9660CTS w/John Deere 6081 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9660CTS w/John Deere Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9660CTS w/John Deere Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9660STS w/John Deere Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "9660STS w/John Deere Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "CTS II",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "CTS II",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "T560, T560i w/John Deere 6090HZ 9.0L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE JOHN DEERE",
+        "model": "T560, T560i w/John Deere 6090HZ 9.0L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FELLER BUNCHER JOHN DEERE",
+        "model": "953K w/John Deere 6090HT 9.0L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FELLER BUNCHER JOHN DEERE",
+        "model": "953K w/John Deere 6090HT 9.0L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FELLER BUNCHER JOHN DEERE",
+        "model": "959K w/John Deere 6090HT 9.0L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FELLER BUNCHER JOHN DEERE",
+        "model": "959K w/John Deere 6090HT 9.0L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "4300 (w/DT466E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK INTERNATIONAL",
+        "model": "4300 (w/DT466E Engine)",
+        "year": "01-99",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9100, 9100T w/John Deere 6081 8.1L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9100, 9100T w/John Deere 6081 8.1L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9120",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9120",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9120 w/John Deere 6081T 8.1L 200 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9120 w/John Deere 6081T 8.1L 200 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9200 w/John Deere 6105H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9200 w/John Deere 6105H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9200T, 9300T, 9400T",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9200T, 9300T, 9400T",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9220 w/John Deere 6125 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9220 w/John Deere 6125 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9220 w/John Deere Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9220 w/John Deere Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9300 w/John Deere 6125H 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9300 w/John Deere 6125H 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9320 w/John Deere 6125 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9320 w/John Deere 6125 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9320T",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9320T",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9320T w/John Deere 6125 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9320T w/John Deere 6125 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9400 w/John Deere 6125H 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9400 w/John Deere 6125H 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9420 w/John Deere 6125 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9420 w/John Deere 6125 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9420T",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9420T",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9420T w/John Deere 6125 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9420T w/John Deere 6125 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9520 w/John Deere 6125 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9520 w/John Deere 6125 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9520T",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9520T",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9520T w/John Deere 6125 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9520T w/John Deere 6125 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9620, 9620T w/John Deere 6125 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9620, 9620T w/John Deere 6125 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9620T w/John Deere 6125 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "9620T w/John Deere 6125 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "2554, 2654 (w/International DT466E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "2554, 2654 (w/International DT466E Engine)",
+        "year": "00-99",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4800 (w/International DT466E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4800 (w/International DT466E Engine)",
+        "year": "1999",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4900 (w/International DT466E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "4900 (w/International DT466E Engine)",
+        "year": "1999",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9100i (w/Caterpillar C10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9100i (w/Caterpillar C10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9100i (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9100i (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9100i (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9100i (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9100i (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9100i (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200 (w/Caterpillar 3406E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200 (w/Caterpillar 3406E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200 (w/Caterpillar C10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200 (w/Caterpillar C10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200 (w/Caterpillar C12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200 (w/Caterpillar C12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9300 (w/Caterpillar 3406E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9300 (w/Caterpillar 3406E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9300 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9300 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9300 (w/Detroit Diesel 60 series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9300 (w/Detroit Diesel 60 series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400 (w/Caterpillar C12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400 (w/Caterpillar C12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400i, Eagle (w/Caterpillar C13 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400i, Eagle (w/Caterpillar C13 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400i, Eagle (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400i, Eagle (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400i, Eagle (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400i, Eagle (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9900i, ix, Eagle (w/Caterpillar 3406 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9900i, ix, Eagle (w/Caterpillar 3406 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9900i, ix, Eagle (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9900i, ix, Eagle (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A1537C",
+        "source_part_number": "CA7466",
+        "part_key": "001510185",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Alliance Parts",
+        "part_number": "ABP/N10G-AF25033M",
+        "source_part_number": "CA7466",
+        "part_key": "001510185",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "RS3530",
+        "source_part_number": "CA7466",
+        "part_key": "001510185",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "94745",
+        "source_part_number": "CA7466",
+        "part_key": "001510185",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88745",
+        "source_part_number": "CA7466",
+        "part_key": "001510185",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "EAF5104",
+        "source_part_number": "CA7466",
+        "part_key": "001510185",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P533235",
+        "source_part_number": "CA7466",
+        "part_key": "001510185",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF25033",
+        "source_part_number": "CA7466",
+        "part_key": "001510185",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF25033M",
+        "source_part_number": "CA7466",
+        "part_key": "001510185",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25313787",
+        "source_part_number": "CA7466",
+        "part_key": "001510185",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF2275",
+        "source_part_number": "CA7466",
+        "part_key": "001510185",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "1694039C1",
+        "source_part_number": "CA7466",
+        "part_key": "001510185",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "2005895C1",
+        "source_part_number": "CA7466",
+        "part_key": "001510185",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "RE63931",
+        "source_part_number": "CA7466",
+        "part_key": "001510185",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AH148880",
+        "source_part_number": "CA7466",
+        "part_key": "001510185",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA1534",
+        "source_part_number": "CA7466",
+        "part_key": "001510185",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF1953",
+        "source_part_number": "CA7466",
+        "part_key": "001510185",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "C341600",
+        "source_part_number": "CA7466",
+        "part_key": "001510185",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6745",
+        "source_part_number": "CA7466",
+        "part_key": "001510185",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A75345",
+        "source_part_number": "CA7466",
+        "part_key": "001510185",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A75096",
+        "source_part_number": "CA7466",
+        "part_key": "001510185",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46745",
+        "source_part_number": "CA7466",
+        "part_key": "001510185",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

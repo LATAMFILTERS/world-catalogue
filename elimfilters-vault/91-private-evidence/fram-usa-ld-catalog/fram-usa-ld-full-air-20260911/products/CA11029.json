@@ -1,0 +1,2074 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA11029",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA11029",
+    "product_type": "Air Filter, Air",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": 5.12,
+      "outer_diameter_mm": 130.05,
+      "height_in": 7.131,
+      "height_mm": 181.13,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Special Configuration Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AL17280"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AL172780"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AL119839"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "CA4702"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6937"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46937"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88937"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "LAF5453"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P606119"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF26157"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF2379"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF5453"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA11029",
+    "source_part_key": "001509727",
+    "source_totals": {
+      "attributes": 24,
+      "applications": 188,
+      "cross_references": 12
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA11029, Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Special Configuration Air Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "83"
+      },
+      {
+        "attribute": "Top Inside Diameter",
+        "value": "Closed",
+        "recno": "84"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "85"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "7.131",
+        "recno": "87"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "5.120",
+        "recno": "88"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "5.120",
+        "recno": "89"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "3.670",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Inside Diameter (Inch)",
+        "value": "11.000",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100547323",
+        "recno": "92"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "12.870",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "94"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "2.2500",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "8.1250",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "13.5620",
+        "recno": "100"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "6.3120",
+        "recno": "101"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": 2.25,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": 8.125,
+        "case_length_in": 13.562,
+        "case_width_in": 6.312,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 188,
+    "all_cross_references_observed": 12,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:02:10.773Z",
+  "discovered_from": "CA11029",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "ENGINE INDUSTRIAL & MARINE JOHN DEERE",
+        "model": "4.5L PowerTech M Tier 3",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL & MARINE JOHN DEERE",
+        "model": "4.5L PowerTech M Tier 3",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL & MARINE JOHN DEERE",
+        "model": "4045 Power Tech",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL & MARINE JOHN DEERE",
+        "model": "4045 Power Tech",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE JOHN DEERE",
+        "model": "6068 PowerTech PVX Tier 4",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE JOHN DEERE",
+        "model": "6068 PowerTech PVX Tier 4",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5065M w/John Deere 5030 Power Tech Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5065M w/John Deere 5030 Power Tech Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5065M, 5075M w/John Deere 5030 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5065M, 5075M w/John Deere 5030 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5075M w/John Deere 5030 Power Tech Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5075M w/John Deere 5030 Power Tech Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5085M w/John Deere 4045 Powertech M Interim 4 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5085M w/John Deere 4045 Powertech M Interim 4 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5085M w/John Deere 4045 PowerTech Tier 3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5085M w/John Deere 4045 PowerTech Tier 3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5085M w/John Deere 5030 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5085M w/John Deere 5030 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5085M, 5095M, 5105M w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5085M, 5095M, 5105M w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5085M, 5095M, 5105M w/John Deere 4045 PowerTech Tier 3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5085M, 5095M, 5105M w/John Deere 4045 PowerTech Tier 3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5095M w/John Deere 4045T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5095M w/John Deere 4045T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5095M w/John Deere 5030 Power Tech Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5095M w/John Deere 5030 Power Tech Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5095M w/John Deere 5030 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5095M w/John Deere 5030 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5095M w/John Deere 5030 Power Tech Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5095M w/John Deere 5030 Power Tech Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5095MH w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5095MH w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5095MH w/John Deere 4045T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5095MH w/John Deere 4045T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5105M w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5105M w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5105M w/John Deere 4045 Power Tech Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5105M w/John Deere 4045 Power Tech Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6020 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6020 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6100D w/John Deere Power Tech 4.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6100D w/John Deere Power Tech 4.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6100D, 6110D w/John Deere 4.5LPowerTech M Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6100D, 6110D w/John Deere 4.5LPowerTech M Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6110J w/John Deere 4045T Power Tech M Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6110J w/John Deere 4045T Power Tech M Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6115D w/John Deere 4.5LPower Tech M Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6115D w/John Deere 4.5LPower Tech M Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6115D w/John Deere 4.5LPowerTech M Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6115D w/John Deere 4.5LPowerTech M Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6120",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6120",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6120 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6120 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6120, 6220 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6120, 6220 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6120L w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6120L w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6125D w/John Deere 4.5LPower Tech M Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6125D w/John Deere 4.5LPower Tech M Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6125D w/John Deere 4.5LPowerTech M Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6125D w/John Deere 4.5LPowerTech M Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6130 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6130 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6130D w/John Deere 4.5LPower Tech M Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6130D w/John Deere 4.5LPower Tech M Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6130D, 6140D w/John Deere 4.5LPowerTech M Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6130D, 6140D w/John Deere 4.5LPowerTech M Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6140D w/John Deere 4.5LPower Tech M Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6140D w/John Deere 4.5LPower Tech M Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6215",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6215",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6215 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6215 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6215, 6415 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6215, 6415 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6220",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6220",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6220 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6220 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6220L w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6220L w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6225 w/John Deere 4045H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6225 w/John Deere 4045H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6230 Premium w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6230 Premium w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6230, 6230 Premium w/John Deere 4045 PowerTech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6230, 6230 Premium w/John Deere 4045 PowerTech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6230, 6330, 6430 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6230, 6330, 6430 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6320",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6320",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6320 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6320 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6320, 6420 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6320, 6420 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6320L w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6320L w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6325 w/John Deere 4045H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6325 w/John Deere 4045H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6330 Premium w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6330 Premium w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6330, 6330 Premium w/John Deere 4045 PowerTech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6330, 6330 Premium w/John Deere 4045 PowerTech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6415",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6415",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6415 Classic w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6415 Classic w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6415 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6415 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6420",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6420",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6420 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6420 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6420L w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6420L w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6420S w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6420S w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6425 w/John Deere 4045H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6425 w/John Deere 4045H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6430 Premium w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6430 Premium w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6430, 6430 Premium w/John Deere 4045 PowerTech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6430, 6430 Premium w/John Deere 4045 PowerTech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6515 w/John Deere 6068 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6515 w/John Deere 6068 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6520 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6520 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6520, 6520L w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6520, 6520L w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6520L w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6520L w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6525 w/John Deere 6068H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6525 w/John Deere 6068H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6530 Premium w/John Deere 6068 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6530 Premium w/John Deere 6068 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6530 w/John Deere 6068 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6530 w/John Deere 6068 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6530, 6530 Premium w/John Deere 6068 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6530, 6530 Premium w/John Deere 6068 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6615 Classic w/John Deere 6068 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6615 Classic w/John Deere 6068 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6615 w/John Deere 6068T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6615 w/John Deere 6068T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6615, 6715 w/John Deere 6068T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6615, 6715 w/John Deere 6068T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6620 w/John Deere 6068 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6620 w/John Deere 6068 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6630 Premium w/John Deere 6068 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6630 Premium w/John Deere 6068 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6630 w/John Deere 6068 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6630 w/John Deere 6068 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6630, 6630 Premium w/John Deere 6068 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6630, 6630 Premium w/John Deere 6068 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6715 w/John Deere 6068T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "6715 w/John Deere 6068T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "7130 Premium w/John Deere 6068 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "7130 Premium w/John Deere 6068 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "7130 w/John Deere 6068 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "7130 w/John Deere 6068 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "7130, 7130 Premium w/John Deere 6068 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "7130, 7130 Premium w/John Deere 6068 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "7130,7130 Premium w/John Deere PowerTech E or PowerTech Plus 4045 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "7130,7130 Premium w/John Deere PowerTech E or PowerTech Plus 4045 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "7220 w/John Deere 6068T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "7220 w/John Deere 6068T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "7230 w/John Deere 6068 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "7230 w/John Deere 6068 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "7320 w/John Deere 6068T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "7320 w/John Deere 6068T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "SE6020 w/John Deere 4045T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "SE6020 w/John Deere 4045T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "SE6020, SE6120, SE6220, SE6320, SE6420, SE6420, w/John Deere 4045T",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "SE6020, SE6120, SE6220, SE6320, SE6420, SE6420, w/John Deere 4045T",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "SE6120 w/John Deere 4045T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "SE6120 w/John Deere 4045T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "SE6220 w/John Deere 4045T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "SE6220 w/John Deere 4045T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "SE6320 w/John Deere 4045T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "SE6320 w/John Deere 4045T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "SE6420 w/John Deere 4045T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "SE6420 w/John Deere 4045T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "SE6520 w/John Deere 6068T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "SE6520 w/John Deere 6068T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "SE6520, SE6620 w/John Deere 6068T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "SE6520, SE6620 w/John Deere 6068T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "SE6620 w/John Deere 6068T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "SE6620 w/John Deere 6068T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "CA4702",
+        "source_part_number": "CA11029",
+        "part_key": "001509727",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88937",
+        "source_part_number": "CA11029",
+        "part_key": "001509727",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "LAF5453",
+        "source_part_number": "CA11029",
+        "part_key": "001509727",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P606119",
+        "source_part_number": "CA11029",
+        "part_key": "001509727",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF26157",
+        "source_part_number": "CA11029",
+        "part_key": "001509727",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF2379",
+        "source_part_number": "CA11029",
+        "part_key": "001509727",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AL17280",
+        "source_part_number": "CA11029",
+        "part_key": "001509727",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AL172780",
+        "source_part_number": "CA11029",
+        "part_key": "001509727",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AL119839",
+        "source_part_number": "CA11029",
+        "part_key": "001509727",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF5453",
+        "source_part_number": "CA11029",
+        "part_key": "001509727",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6937",
+        "source_part_number": "CA11029",
+        "part_key": "001509727",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46937",
+        "source_part_number": "CA11029",
+        "part_key": "001509727",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

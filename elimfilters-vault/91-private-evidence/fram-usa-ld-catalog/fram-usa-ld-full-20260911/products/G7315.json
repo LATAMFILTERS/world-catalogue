@@ -1,0 +1,2588 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "FUEL",
+  "authority": {
+    "part_number": "G7315",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "G7315",
+    "product_type": "Fuel Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 2.156,
+      "outer_diameter_mm": 54.76,
+      "height_in": 5.469,
+      "height_mm": 138.91,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "In Line",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25163684"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25121293"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25121942"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25121935"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF578"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF627"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF578F"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF1171"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "KL692"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "MF 1001"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3311"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F54714"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Big A",
+        "part_number": "95311"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86311"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "R86311"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CG258"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "G578"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G578"
+      },
+      {
+        "manufacturer": "Delphi",
+        "part_number": "FF1021"
+      },
+      {
+        "manufacturer": "Delphi",
+        "part_number": "FF1009"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "FF508"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "FF4508"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P552371"
+      },
+      {
+        "manufacturer": "Firestone",
+        "part_number": "FF-4714"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "FF5503"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GG66"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "G578"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "F54714"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF258"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "G7315"
+      },
+      {
+        "manufacturer": "KEM",
+        "part_number": "GF493"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "G214"
+      },
+      {
+        "manufacturer": "Lee",
+        "part_number": "LG-578"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G578"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "23311"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "73311"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "G578"
+      },
+      {
+        "manufacturer": "Phillips 66",
+        "part_number": "PF3311"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PF7315"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "F54714P"
+      },
+      {
+        "manufacturer": "Pro-Tec",
+        "part_number": "516"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "33311MP"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "52073"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "F54714"
+      },
+      {
+        "manufacturer": "Tires Plus",
+        "part_number": "FF-4714"
+      },
+      {
+        "manufacturer": "Trust",
+        "part_number": "G578"
+      },
+      {
+        "manufacturer": "Unocal 76",
+        "part_number": "UF578"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VG-33"
+      },
+      {
+        "manufacturer": "WALMI",
+        "part_number": "WG-578"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "2005",
+        "make": "BUICK",
+        "model": "ALLURE",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "2005",
+        "make": "BUICK",
+        "model": "ALLURE",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "05-97",
+        "make": "BUICK",
+        "model": "CENTURY",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "2005",
+        "make": "BUICK",
+        "model": "LACROSSE",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "2005",
+        "make": "BUICK",
+        "model": "LACROSSE",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "05-94",
+        "make": "BUICK",
+        "model": "LESABRE",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "05-94",
+        "make": "BUICK",
+        "model": "PARK AVENUE",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "BUICK",
+        "model": "REGAL",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "04-92",
+        "make": "BUICK",
+        "model": "REGAL",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "99-95",
+        "make": "BUICK",
+        "model": "RIVIERA",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "95-92",
+        "make": "BUICK",
+        "model": "SKYLARK",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "98-96",
+        "make": "BUICK",
+        "model": "SKYLARK",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "98-94",
+        "make": "BUICK",
+        "model": "SKYLARK",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "93-92",
+        "make": "BUICK",
+        "model": "SKYLARK",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "04-03",
+        "make": "CADILLAC",
+        "model": "CTS",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "05-99",
+        "make": "CADILLAC",
+        "model": "DEVILLE",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "CADILLAC",
+        "model": "DTS",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "04-98",
+        "make": "CADILLAC",
+        "model": "SEVILLE",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "2004",
+        "make": "CADILLAC",
+        "model": "XLR",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "96-93",
+        "make": "CHEVROLET",
+        "model": "BERETTA",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "94-93",
+        "make": "CHEVROLET",
+        "model": "BERETTA",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "96-93",
+        "make": "CHEVROLET",
+        "model": "BERETTA",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "95-93",
+        "make": "CHEVROLET",
+        "model": "CAMARO",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "02-95",
+        "make": "CHEVROLET",
+        "model": "CAMARO",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "02-93",
+        "make": "CHEVROLET",
+        "model": "CAMARO",
+        "engine": "V8-5.7L",
+        "quantity": 1
+      },
+      {
+        "year": "05-92",
+        "make": "CHEVROLET",
+        "model": "CAVALIER",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1995",
+        "make": "CHEVROLET",
+        "model": "CAVALIER",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "02-96",
+        "make": "CHEVROLET",
+        "model": "CAVALIER",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "94-92",
+        "make": "CHEVROLET",
+        "model": "CAVALIER",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "05-04",
+        "make": "CHEVROLET",
+        "model": "CLASSIC",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "96-93",
+        "make": "CHEVROLET",
+        "model": "CORSICA",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "96-93",
+        "make": "CHEVROLET",
+        "model": "CORSICA",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "CHEVROLET",
+        "model": "EXPRESS 1500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "CHEVROLET",
+        "model": "EXPRESS 2500",
+        "engine": "V8-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "CHEVROLET",
+        "model": "EXPRESS 2500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "04-03",
+        "make": "CHEVROLET",
+        "model": "EXPRESS 2500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "04-03",
+        "make": "CHEVROLET",
+        "model": "EXPRESS 3500",
+        "engine": "V8-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "04-03",
+        "make": "CHEVROLET",
+        "model": "EXPRESS 3500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "05-00",
+        "make": "CHEVROLET",
+        "model": "IMPALA",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "05-00",
+        "make": "CHEVROLET",
+        "model": "IMPALA",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "1993",
+        "make": "CHEVROLET",
+        "model": "LUMINA",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1992",
+        "make": "CHEVROLET",
+        "model": "LUMINA",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "01-92",
+        "make": "CHEVROLET",
+        "model": "LUMINA",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "97-92",
+        "make": "CHEVROLET",
+        "model": "LUMINA",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "99-98",
+        "make": "CHEVROLET",
+        "model": "LUMINA",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "99-97",
+        "make": "CHEVROLET",
+        "model": "MALIBU",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "03-97",
+        "make": "CHEVROLET",
+        "model": "MALIBU",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "99-95",
+        "make": "CHEVROLET",
+        "model": "MONTE CARLO",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "05-00",
+        "make": "CHEVROLET",
+        "model": "MONTE CARLO",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "97-95",
+        "make": "CHEVROLET",
+        "model": "MONTE CARLO",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "05-98",
+        "make": "CHEVROLET",
+        "model": "MONTE CARLO",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "GMC",
+        "model": "SAVANA 1500",
+        "engine": "V6-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "GMC",
+        "model": "SAVANA 1500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "GMC",
+        "model": "SAVANA 2500",
+        "engine": "V8-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "GMC",
+        "model": "SAVANA 2500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "04-03",
+        "make": "GMC",
+        "model": "SAVANA 2500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "04-03",
+        "make": "GMC",
+        "model": "SAVANA 3500",
+        "engine": "V8-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "GMC",
+        "model": "SAVANA 3500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "99-94",
+        "make": "OLDSMOBILE",
+        "model": "88",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "96-94",
+        "make": "OLDSMOBILE",
+        "model": "98",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "95-92",
+        "make": "OLDSMOBILE",
+        "model": "ACHIEVA",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "98-96",
+        "make": "OLDSMOBILE",
+        "model": "ACHIEVA",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "98-94",
+        "make": "OLDSMOBILE",
+        "model": "ACHIEVA",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "93-92",
+        "make": "OLDSMOBILE",
+        "model": "ACHIEVA",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "04-02",
+        "make": "OLDSMOBILE",
+        "model": "ALERO",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "01-99",
+        "make": "OLDSMOBILE",
+        "model": "ALERO",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "04-99",
+        "make": "OLDSMOBILE",
+        "model": "ALERO",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "OLDSMOBILE",
+        "model": "AURORA",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "03-01",
+        "make": "OLDSMOBILE",
+        "model": "AURORA",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "99-95",
+        "make": "OLDSMOBILE",
+        "model": "AURORA",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "99-97",
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "1994",
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS CRUISER",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "97-92",
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS SUPREME",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS SUPREME",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "OLDSMOBILE",
+        "model": "INTRIGUE",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "99-98",
+        "make": "OLDSMOBILE",
+        "model": "INTRIGUE",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "99-96",
+        "make": "OLDSMOBILE",
+        "model": "LSS",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "OLDSMOBILE",
+        "model": "REGENCY",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "05-94",
+        "make": "PONTIAC",
+        "model": "BONNEVILLE",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "05-04",
+        "make": "PONTIAC",
+        "model": "BONNEVILLE",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "95-93",
+        "make": "PONTIAC",
+        "model": "FIREBIRD",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "02-95",
+        "make": "PONTIAC",
+        "model": "FIREBIRD",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "02-93",
+        "make": "PONTIAC",
+        "model": "FIREBIRD",
+        "engine": "V8-5.7L",
+        "quantity": 1
+      },
+      {
+        "year": "00-96",
+        "make": "PONTIAC",
+        "model": "FIREFLY",
+        "engine": "L3-1.0L",
+        "quantity": 1
+      },
+      {
+        "year": "00-96",
+        "make": "PONTIAC",
+        "model": "FIREFLY",
+        "engine": "L4-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "05-02",
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "95-92",
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "01-96",
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "98-94",
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "93-92",
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "05-99",
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "03-92",
+        "make": "PONTIAC",
+        "model": "GRAND PRIX",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "PONTIAC",
+        "model": "GRAND PRIX",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "03-97",
+        "make": "PONTIAC",
+        "model": "GRAND PRIX",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "94-92",
+        "make": "PONTIAC",
+        "model": "SUNBIRD",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "94-92",
+        "make": "PONTIAC",
+        "model": "SUNBIRD",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "05-95",
+        "make": "PONTIAC",
+        "model": "SUNFIRE",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1995",
+        "make": "PONTIAC",
+        "model": "SUNFIRE",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "02-96",
+        "make": "PONTIAC",
+        "model": "SUNFIRE",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "G7315",
+    "source_part_key": "000991026",
+    "source_totals": {
+      "attributes": 29,
+      "applications": 107,
+      "cross_references": 49
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, G7315, Fuel Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "In-Line Fuel Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "In Line",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Copper",
+        "recno": "82"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Tube Connector",
+        "recno": "83"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "84"
+      },
+      {
+        "attribute": "Fuel Type",
+        "value": "Gasoline",
+        "recno": "85"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "86"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Fuel Filter",
+        "recno": "87"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "5.469",
+        "recno": "89"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "2.156",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Housing Material",
+        "value": "Metal",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100353399",
+        "recno": "92"
+      },
+      {
+        "attribute": "Inlet Line Size (Inch)",
+        "value": "3/8",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outlet Line Size (Inch)",
+        "value": "M16x1.5",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "94"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Taiwan",
+        "recno": "95"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.4330",
+        "recno": "99"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "2.5980",
+        "recno": "100"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "5.2600",
+        "recno": "101"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "5.8750",
+        "recno": "102"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.0980",
+        "recno": "103"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "9.8750",
+        "recno": "104"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.0980",
+        "recno": "105"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "6.7500",
+        "recno": "106"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.433,
+        "case_weight_lb": 2.598,
+        "unit_height_in": 5.26,
+        "unit_length_in": 3.098,
+        "unit_width_in": 3.098,
+        "case_height_in": 5.875,
+        "case_length_in": 9.875,
+        "case_width_in": 6.75,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 5.196,
+        "estimated_case_dimensions": {
+          "length_in": 13.167,
+          "width_in": 10.125,
+          "height_in": 5.875,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 107,
+    "all_cross_references_observed": 49,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T06:03:40.607Z",
+  "discovered_from": "G7315",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BUICK",
+        "model": "ALLURE",
+        "year": "2005",
+        "engine": "V6-3.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "ALLURE",
+        "year": "2005",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "CENTURY",
+        "year": "05-97",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "LACROSSE",
+        "year": "2005",
+        "engine": "V6-3.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "LACROSSE",
+        "year": "2005",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "LESABRE",
+        "year": "05-94",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "PARK AVENUE",
+        "year": "05-94",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "REGAL",
+        "year": "96-92",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "REGAL",
+        "year": "04-92",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "RIVIERA",
+        "year": "99-95",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "SKYLARK",
+        "year": "95-92",
+        "engine": "L4-2.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "SKYLARK",
+        "year": "98-96",
+        "engine": "L4-2.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "SKYLARK",
+        "year": "98-94",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "SKYLARK",
+        "year": "93-92",
+        "engine": "V6-3.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY BLUE BIRD",
+        "model": "Microbus (w/GM 4.8L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY BLUE BIRD",
+        "model": "Microbus (w/GM 4.8L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY BLUE BIRD",
+        "model": "Microbus (w/GM 6.0L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY BLUE BIRD",
+        "model": "Microbus (w/GM 6.0L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CTS",
+        "year": "04-03",
+        "engine": "V6-3.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "DEVILLE",
+        "year": "05-99",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "DTS",
+        "year": "2006",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "SEVILLE",
+        "year": "04-98",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "XLR",
+        "year": "2004",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "BERETTA",
+        "year": "96-93",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "BERETTA",
+        "year": "94-93",
+        "engine": "L4-2.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "BERETTA",
+        "year": "96-93",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CAMARO",
+        "year": "95-93",
+        "engine": "V6-3.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CAMARO",
+        "year": "02-95",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CAMARO",
+        "year": "02-93",
+        "engine": "V8-5.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CAVALIER",
+        "year": "05-92",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CAVALIER",
+        "year": "1995",
+        "engine": "L4-2.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CAVALIER",
+        "year": "02-96",
+        "engine": "L4-2.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CAVALIER",
+        "year": "94-92",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CLASSIC",
+        "year": "05-04",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CORSICA",
+        "year": "96-93",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CORSICA",
+        "year": "96-93",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "EXPRESS 1500",
+        "year": "2003",
+        "engine": "V8-5.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "EXPRESS 2500",
+        "year": "2003",
+        "engine": "V8-4.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "EXPRESS 2500",
+        "year": "2003",
+        "engine": "V8-5.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "EXPRESS 2500",
+        "year": "04-03",
+        "engine": "V8-6.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "EXPRESS 3500",
+        "year": "04-03",
+        "engine": "V8-4.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "EXPRESS 3500",
+        "year": "04-03",
+        "engine": "V8-6.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "IMPALA",
+        "year": "05-00",
+        "engine": "V6-3.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "IMPALA",
+        "year": "05-00",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "LUMINA",
+        "year": "1993",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "LUMINA",
+        "year": "1992",
+        "engine": "L4-2.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "LUMINA",
+        "year": "01-92",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "LUMINA",
+        "year": "97-92",
+        "engine": "V6-3.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "LUMINA",
+        "year": "99-98",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "MALIBU",
+        "year": "99-97",
+        "engine": "L4-2.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "MALIBU",
+        "year": "03-97",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "MONTE CARLO",
+        "year": "99-95",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "MONTE CARLO",
+        "year": "05-00",
+        "engine": "V6-3.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "MONTE CARLO",
+        "year": "97-95",
+        "engine": "V6-3.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "MONTE CARLO",
+        "year": "05-98",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SAVANA 1500",
+        "year": "2003",
+        "engine": "V6-4.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SAVANA 1500",
+        "year": "2003",
+        "engine": "V8-5.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SAVANA 2500",
+        "year": "2003",
+        "engine": "V8-4.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SAVANA 2500",
+        "year": "2003",
+        "engine": "V8-5.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SAVANA 2500",
+        "year": "04-03",
+        "engine": "V8-6.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SAVANA 3500",
+        "year": "04-03",
+        "engine": "V8-4.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SAVANA 3500",
+        "year": "2003",
+        "engine": "V8-6.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "88",
+        "year": "99-94",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "98",
+        "year": "96-94",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "ACHIEVA",
+        "year": "95-92",
+        "engine": "L4-2.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "ACHIEVA",
+        "year": "98-96",
+        "engine": "L4-2.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "ACHIEVA",
+        "year": "98-94",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "ACHIEVA",
+        "year": "93-92",
+        "engine": "V6-3.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "ALERO",
+        "year": "04-02",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "ALERO",
+        "year": "01-99",
+        "engine": "L4-2.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "ALERO",
+        "year": "04-99",
+        "engine": "V6-3.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "AURORA",
+        "year": "02-01",
+        "engine": "V6-3.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "AURORA",
+        "year": "03-01",
+        "engine": "V8-4.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "AURORA",
+        "year": "99-95",
+        "engine": "V8-4.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS",
+        "year": "99-97",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS CRUISER",
+        "year": "1994",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS SUPREME",
+        "year": "97-92",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS SUPREME",
+        "year": "96-92",
+        "engine": "V6-3.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "INTRIGUE",
+        "year": "02-99",
+        "engine": "V6-3.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "INTRIGUE",
+        "year": "99-98",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "LSS",
+        "year": "99-96",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "REGENCY",
+        "year": "98-97",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "BONNEVILLE",
+        "year": "05-94",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "BONNEVILLE",
+        "year": "05-04",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "FIREBIRD",
+        "year": "95-93",
+        "engine": "V6-3.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "FIREBIRD",
+        "year": "02-95",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "FIREBIRD",
+        "year": "02-93",
+        "engine": "V8-5.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "FIREFLY",
+        "year": "00-96",
+        "engine": "L3-1.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "FIREFLY",
+        "year": "00-96",
+        "engine": "L4-1.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "year": "05-02",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "year": "95-92",
+        "engine": "L4-2.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "year": "01-96",
+        "engine": "L4-2.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "year": "98-94",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "year": "93-92",
+        "engine": "V6-3.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "year": "05-99",
+        "engine": "V6-3.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "GRAND PRIX",
+        "year": "03-92",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "GRAND PRIX",
+        "year": "96-92",
+        "engine": "V6-3.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "GRAND PRIX",
+        "year": "03-97",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "SUNBIRD",
+        "year": "94-92",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "SUNBIRD",
+        "year": "94-92",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "SUNFIRE",
+        "year": "05-95",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "SUNFIRE",
+        "year": "1995",
+        "engine": "L4-2.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "SUNFIRE",
+        "year": "02-96",
+        "engine": "L4-2.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MID BUS",
+        "model": "Cut-Away Chassis (w/General Motors V8-4.8L Vortec Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MID BUS",
+        "model": "Cut-Away Chassis (w/General Motors V8-4.8L Vortec Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MID BUS",
+        "model": "Cut-Away Chassis (w/General Motors V8-6.0L Vortec Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MID BUS",
+        "model": "Cut-Away Chassis (w/General Motors V8-6.0L Vortec Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF578",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF627",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF578F",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF1171",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "95311",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86311",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "R86311",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CG258",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "G578",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G578",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Delphi",
+        "part_number": "FF1021",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Delphi",
+        "part_number": "FF1009",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "FF508",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "FF4508",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P552371",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Firestone",
+        "part_number": "FF-4714",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "FF5503",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25163684",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25121293",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25121942",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25121935",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GG66",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "G578",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "F54714",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF258",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "G7315",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "KEM",
+        "part_number": "GF493",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "G214",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Lee",
+        "part_number": "LG-578",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G578",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "KL692",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "MF 1001",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3311",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "23311",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "73311",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "G578",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Phillips 66",
+        "part_number": "PF3311",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PF7315",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "F54714P",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Pro-Tec",
+        "part_number": "516",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F54714",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "33311MP",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "52073",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "F54714",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Tires Plus",
+        "part_number": "FF-4714",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Trust",
+        "part_number": "G578",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Unocal 76",
+        "part_number": "UF578",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VG-33",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "WALMI",
+        "part_number": "WG-578",
+        "source_part_number": "G7315",
+        "part_key": "000991026",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

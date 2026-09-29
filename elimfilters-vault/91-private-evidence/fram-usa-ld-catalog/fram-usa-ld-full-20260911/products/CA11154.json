@@ -1,0 +1,778 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA11154",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA11154",
+    "product_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": 3.94,
+      "outer_diameter_mm": 100.08,
+      "height_in": 3.11,
+      "height_mm": 78.99,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Round Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA4758"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E714L"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LX3009"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "C1140"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "9913"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "49913"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Atlas-Copco",
+        "part_number": "1613-9001-00"
+      },
+      {
+        "manufacturer": "Boge",
+        "part_number": "569003301"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "83913"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P784578"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF26403"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "LX3009"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF8597"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "9891311"
+      },
+      {
+        "manufacturer": "Woodgate",
+        "part_number": "WGA1647"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA11154",
+    "source_part_key": "007122108",
+    "source_totals": {
+      "attributes": 29,
+      "applications": 36,
+      "cross_references": 15
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA11154, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Round Air Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "83"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "84"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "85"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "3.110",
+        "recno": "87"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "3.940",
+        "recno": "88"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "2.640",
+        "recno": "89"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "3.940",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "2.640",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100553003",
+        "recno": "92"
+      },
+      {
+        "attribute": "Inside Diameter (Inch)",
+        "value": "2.640",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "3.940",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "94"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "95"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.2660",
+        "recno": "99"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.5960",
+        "recno": "100"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "3.9500",
+        "recno": "101"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.6200",
+        "recno": "102"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "4.6000",
+        "recno": "103"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "14.2500",
+        "recno": "104"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "4.6000",
+        "recno": "105"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "9.6200",
+        "recno": "106"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.266,
+        "case_weight_lb": 1.596,
+        "unit_height_in": 3.95,
+        "unit_length_in": 4.6,
+        "unit_width_in": 4.6,
+        "case_height_in": 4.62,
+        "case_length_in": 14.25,
+        "case_width_in": 9.62,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 3.192,
+        "estimated_case_dimensions": {
+          "length_in": 19,
+          "width_in": 14.43,
+          "height_in": 4.62,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 36,
+    "all_cross_references_observed": 15,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:42:03.742Z",
+  "discovered_from": "CA11154",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "AIR COMPRESSOR ATLAS COPCO",
+        "model": "GA10",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR ATLAS COPCO",
+        "model": "GA10",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR ATLAS COPCO",
+        "model": "GA11 VSD",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR ATLAS COPCO",
+        "model": "GA11 VSD",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR ATLAS COPCO",
+        "model": "GA5",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR ATLAS COPCO",
+        "model": "GA5",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR ATLAS COPCO",
+        "model": "GX11",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR ATLAS COPCO",
+        "model": "GX11",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR ATLAS COPCO",
+        "model": "GX5",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR ATLAS COPCO",
+        "model": "GX5",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR ATLAS COPCO",
+        "model": "GX7",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR ATLAS COPCO",
+        "model": "GX7",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUXILIARY POWER UNIT E ZON",
+        "model": "Model II (w/Caterpillar 0.5 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "AUXILIARY POWER UNIT E ZON",
+        "model": "Model II (w/Caterpillar 0.5 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "AUXILIARY POWER UNIT E ZON",
+        "model": "Model II (w/Perkins 402C-05 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "AUXILIARY POWER UNIT E ZON",
+        "model": "Model II (w/Perkins 402C-05 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "AUXILIARY POWER UNIT INTERNATIONAL",
+        "model": "Fleetrite (w/ Cat. C 0.5 eng.)",
+        "year": "",
+        "engine": "",
+        "part_type": "Breather",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "AUXILIARY POWER UNIT INTERNATIONAL",
+        "model": "Fleetrite (w/ Cat. C 0.5 eng.)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Crankcase Breather Element",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "AUXILIARY POWER UNIT RIG MASTER",
+        "model": "RMP104 (w/Perkins 402-05 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "AUXILIARY POWER UNIT RIG MASTER",
+        "model": "RMP104 (w/Perkins 402-05 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "AUXILIARY POWER UNIT RIG MASTER",
+        "model": "RMP14-6 (w/Perkins 402-05 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "AUXILIARY POWER UNIT RIG MASTER",
+        "model": "RMP14-6 (w/Perkins 402-05 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "AUXILIARY POWER UNIT RIG MASTER",
+        "model": "RMP14-6 (w/Perkins 5H3XL Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "AUXILIARY POWER UNIT RIG MASTER",
+        "model": "RMP14-6 (w/Perkins 5H3XL Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "AUXILIARY POWER UNIT RIG MASTER",
+        "model": "RMPLG-10 (w/Perkins 402-05 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "AUXILIARY POWER UNIT RIG MASTER",
+        "model": "RMPLG-10 (w/Perkins 402-05 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "AUXILIARY POWER UNIT RIG MASTER",
+        "model": "RMPT4-6 (w/Perkins 402-05 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "AUXILIARY POWER UNIT RIG MASTER",
+        "model": "RMPT4-6 (w/Perkins 402-05 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Setra S411 (w/OM501LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Setra S411 (w/OM501LA Engine)",
+        "year": "07-01",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Setra S416GT-HD, S416GT-HD2 Top Class (w/OM457LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Setra S416GT-HD, S416GT-HD2 Top Class (w/OM457LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Tourismo II, Tourismo M, L (w/OM457LA Euro 4/5 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Tourismo II, Tourismo M, L (w/OM457LA Euro 4/5 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Travego 15RHD, 16RHD, 17RHD (w/OM457LS Euro 4/5 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Travego 15RHD, 16RHD, 17RHD (w/OM457LS Euro 4/5 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Atlas-Copco",
+        "part_number": "1613-9001-00",
+        "source_part_number": "CA11154",
+        "part_key": "007122108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA4758",
+        "source_part_number": "CA11154",
+        "part_key": "007122108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Boge",
+        "part_number": "569003301",
+        "source_part_number": "CA11154",
+        "part_key": "007122108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "83913",
+        "source_part_number": "CA11154",
+        "part_key": "007122108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P784578",
+        "source_part_number": "CA11154",
+        "part_key": "007122108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF26403",
+        "source_part_number": "CA11154",
+        "part_key": "007122108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E714L",
+        "source_part_number": "CA11154",
+        "part_key": "007122108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "LX3009",
+        "source_part_number": "CA11154",
+        "part_key": "007122108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF8597",
+        "source_part_number": "CA11154",
+        "part_key": "007122108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LX3009",
+        "source_part_number": "CA11154",
+        "part_key": "007122108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "C1140",
+        "source_part_number": "CA11154",
+        "part_key": "007122108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "9891311",
+        "source_part_number": "CA11154",
+        "part_key": "007122108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "9913",
+        "source_part_number": "CA11154",
+        "part_key": "007122108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "49913",
+        "source_part_number": "CA11154",
+        "part_key": "007122108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Woodgate",
+        "part_number": "WGA1647",
+        "source_part_number": "CA11154",
+        "part_key": "007122108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

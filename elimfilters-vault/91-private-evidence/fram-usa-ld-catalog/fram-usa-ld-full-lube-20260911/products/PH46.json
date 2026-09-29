@@ -1,0 +1,2653 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH46",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH46",
+    "product_type": "Engine Oil Filter, Turbocharger Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 2.984,
+      "outer_diameter_mm": 75.79,
+      "height_in": 3.359,
+      "height_mm": 85.32,
+      "thread_size": "3/4-16",
+      "gasket_od_in": 2.75,
+      "gasket_od_mm": 69.85,
+      "gasket_id_in": 2.469,
+      "gasket_id_mm": 62.71,
+      "gasket_thickness_in": 0.188,
+      "gasket_thickness_mm": 4.78,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "Yes",
+      "bypass_relief_valve": "Yes",
+      "bypass_setting_psi": 22,
+      "burst_pressure_psi": 265
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "John Deere",
+        "part_number": "HE1220338"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "15208-H8916"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF1232"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "OF417"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OC78"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W712/6"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W814/99"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W712/4"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W7.12/4"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W920/21"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "7085"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1288"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "PC201"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L10168"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57085"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51288"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "SDF57"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "ASF57"
+      },
+      {
+        "manufacturer": "Autopar - Archived",
+        "part_number": "FE147"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "041-8121"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92288"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92339"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85319"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85288"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CF3614"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "CO2816"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "PH2816"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "part_number": "OF417"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "FT4756"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "691"
+      },
+      {
+        "manufacturer": "Delphi",
+        "part_number": "FX1017"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "D364"
+      },
+      {
+        "manufacturer": "Deutz",
+        "part_number": "1174416"
+      },
+      {
+        "manufacturer": "Deutz",
+        "part_number": "1164626"
+      },
+      {
+        "manufacturer": "Deutz",
+        "part_number": "1163420"
+      },
+      {
+        "manufacturer": "Deutz",
+        "part_number": "A04H4123"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550227"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559059"
+      },
+      {
+        "manufacturer": "Evergard",
+        "part_number": "E183"
+      },
+      {
+        "manufacturer": "Facet Industrial",
+        "part_number": "346"
+      },
+      {
+        "manufacturer": "FERGUSON",
+        "part_number": "R1374"
+      },
+      {
+        "manufacturer": "Flag",
+        "part_number": "C-2870"
+      },
+      {
+        "manufacturer": "Flag",
+        "part_number": "C-2951"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3766"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "R1374"
+      },
+      {
+        "manufacturer": "Girling",
+        "part_number": "F691"
+      },
+      {
+        "manufacturer": "Girling",
+        "part_number": "F6615"
+      },
+      {
+        "manufacturer": "Goodyear",
+        "part_number": "222-4523"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "L10168"
+      },
+      {
+        "manufacturer": "GUD Filters",
+        "part_number": "Z85"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF155"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "AL46"
+      },
+      {
+        "manufacturer": "International Parts Service",
+        "part_number": "4-1081"
+      },
+      {
+        "manufacturer": "International Parts Service",
+        "part_number": "4-1100"
+      },
+      {
+        "manufacturer": "International Parts Service",
+        "part_number": "4-1097"
+      },
+      {
+        "manufacturer": "IPD",
+        "part_number": "10139"
+      },
+      {
+        "manufacturer": "ITM",
+        "part_number": "11-12002"
+      },
+      {
+        "manufacturer": "ITM",
+        "part_number": "111-2002"
+      },
+      {
+        "manufacturer": "ITM Autoparts",
+        "part_number": "11-12002"
+      },
+      {
+        "manufacturer": "ITM Autoparts",
+        "part_number": "111-2002"
+      },
+      {
+        "manufacturer": "Jiffy Lube",
+        "part_number": "HL46"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "SS-2004"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "AW14-1"
+      },
+      {
+        "manufacturer": "Lazorlite",
+        "part_number": "L11-1015"
+      },
+      {
+        "manufacturer": "Lazorlite",
+        "part_number": "L11-1279"
+      },
+      {
+        "manufacturer": "Letourneau",
+        "part_number": "MO2816"
+      },
+      {
+        "manufacturer": "Lombardini",
+        "part_number": "2175040"
+      },
+      {
+        "manufacturer": "Lombardini",
+        "part_number": "MO2816"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH2816"
+      },
+      {
+        "manufacturer": "Marathon",
+        "part_number": "MO2816"
+      },
+      {
+        "manufacturer": "MICRO",
+        "part_number": "F-201"
+      },
+      {
+        "manufacturer": "Micro Filters",
+        "part_number": "F-201"
+      },
+      {
+        "manufacturer": "MicroGard Select",
+        "part_number": "MSL51374"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "L10168"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "L10168"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1-102A"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1-102"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "L-519"
+      },
+      {
+        "manufacturer": "Murphy",
+        "part_number": "MD-438-13"
+      },
+      {
+        "manufacturer": "New Holland Agriculture",
+        "part_number": "276514"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "122-0338"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "122B-338"
+      },
+      {
+        "manufacturer": "One Performance",
+        "part_number": "122B-338"
+      },
+      {
+        "manufacturer": "One Performance",
+        "part_number": "122-0338"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "61374"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "PH2816"
+      },
+      {
+        "manufacturer": "Power Flo",
+        "part_number": "SL20252"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PG183"
+      },
+      {
+        "manufacturer": "Purflux",
+        "part_number": "LS115"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "L10168"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "PO-115"
+      },
+      {
+        "manufacturer": "Security Filters",
+        "part_number": "PH2816"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "L10168"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S3816"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "L-183"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "035 115 591"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "PH2816"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "PH2816"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "1988",
+        "make": "AUDI",
+        "model": "5000",
+        "engine": "L5-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "86-80",
+        "make": "AUDI",
+        "model": "5000",
+        "engine": "L5-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "88-86",
+        "make": "AUDI",
+        "model": "5000 QUATTRO",
+        "engine": "L5-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1984",
+        "make": "AUDI",
+        "model": "QUATTRO",
+        "engine": "L5-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "73-72",
+        "make": "NISSAN",
+        "model": "1300",
+        "engine": "L4-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "82-79",
+        "make": "NISSAN",
+        "model": "210",
+        "engine": "L4-1.2L",
+        "quantity": 1
+      },
+      {
+        "year": "82-79",
+        "make": "NISSAN",
+        "model": "210",
+        "engine": "L4-1.4L",
+        "quantity": 1
+      },
+      {
+        "year": "82-79",
+        "make": "NISSAN",
+        "model": "210",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "80-79",
+        "make": "NISSAN",
+        "model": "310",
+        "engine": "L4-1.4L",
+        "quantity": 1
+      },
+      {
+        "year": "82-81",
+        "make": "NISSAN",
+        "model": "310",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "1974",
+        "make": "NISSAN",
+        "model": "B210",
+        "engine": "L4-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "NISSAN",
+        "model": "B210",
+        "engine": "L4-1.4L",
+        "quantity": 1
+      },
+      {
+        "year": "78-76",
+        "make": "NISSAN",
+        "model": "F10",
+        "engine": "L4-1.4L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "PH46",
+    "source_part_key": "000944288",
+    "source_totals": {
+      "attributes": 48,
+      "applications": 95,
+      "cross_references": 98
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® oil filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE (original equipment) recommended intervals. Equipped with SureGrip® technology, FRAM Extra Guard® oil filters provide a non-slip surface allowing for easy install and removal.\\nThe silicone anti-drain back valve ensures safe engine startups, extending the life of the oil filter for up to 10,000 miles (16,000 kilometers).",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Silicone anti-drain back valve helps ensure safe engine start up",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, PH46, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filter media is a blend of fiber and resin that captures 95% of the dirt particles",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "SureGrip® technology for easy install and removal",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Spin-on Oil Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Engineered for use with synthetic or conventional motor oils",
+        "recno": "4"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Proven protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "5"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "Yes",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "Yes",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "Yes",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "85"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Standard",
+        "recno": "86"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "88"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base",
+        "recno": "89"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Orange",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100380210",
+        "recno": "92"
+      },
+      {
+        "attribute": "Attachment Type",
+        "value": "Spin-On",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "94"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "95"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "3.359",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "2.984",
+        "recno": "97"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "98"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "2.469",
+        "recno": "99"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "2.750",
+        "recno": "100"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.188",
+        "recno": "101"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Inch)",
+        "value": "3/4-16",
+        "recno": "102"
+      },
+      {
+        "attribute": "Bypass Relief Valve Setting (Pounds per Square Inch)",
+        "value": "22",
+        "recno": "103"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "104"
+      },
+      {
+        "attribute": "Burst Pressure (Pounds per Square Inch)",
+        "value": "265.000",
+        "recno": "105"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "106"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "107"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "108"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.5580",
+        "recno": "112"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "6.6960",
+        "recno": "113"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "3.5010",
+        "recno": "114"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "3.8120",
+        "recno": "115"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.0940",
+        "recno": "116"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "12.9370",
+        "recno": "117"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.0940",
+        "recno": "118"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "9.6870",
+        "recno": "119"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.558,
+        "case_weight_lb": 6.696,
+        "unit_height_in": 3.501,
+        "unit_length_in": 3.094,
+        "unit_width_in": 3.094,
+        "case_height_in": 3.812,
+        "case_length_in": 12.937,
+        "case_width_in": 9.687,
+        "inferred_case_qty": 12
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 6.696,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 95,
+    "all_cross_references_observed": 98,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:10:35.347Z",
+  "discovered_from": "PH46",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "AERIAL WORK PLATFORM BENFORD",
+        "model": "LM46B, LM46BS, LM46S w/Deutz F2L511W Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AERIAL WORK PLATFORM BENFORD",
+        "model": "LM46B, LM46BS, LM46S w/Deutz F2L511W Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "5000",
+        "year": "1988",
+        "engine": "L5-2.2L",
+        "part_type": "Turbocharger Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "5000",
+        "year": "86-80",
+        "engine": "L5-2.2L",
+        "part_type": "Turbocharger Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "5000 QUATTRO",
+        "year": "88-86",
+        "engine": "L5-2.2L",
+        "part_type": "Turbocharger Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "QUATTRO",
+        "year": "1984",
+        "engine": "L5-2.2L",
+        "part_type": "Turbocharger Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "BF4M2011",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "BF4M2011",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "D2011",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "D2011",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "F2L1011",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "F2L1011",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "F2L2011",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "F2L2011",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "F3L2011",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "F3L2011",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "F4L1011",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "F4L1011",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "F4L2011",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "F4L2011",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "A1L410",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "A1L410",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F1L208",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F1L208",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F1L410",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F1L410",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F1L411",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F1L411",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F1L511W",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F1L511W",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F2L208",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F2L208",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F2L410D",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F2L410D",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F2L411",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F2L411",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F2L511W",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL DEUTZ",
+        "model": "F2L511W",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR ONAN",
+        "model": "4.0 Aux. w/BFA Gasoline Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR ONAN",
+        "model": "4.0 Aux. w/BFA Gasoline Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER BLADE MOR",
+        "model": "707A w/Deutz F2L511 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER BLADE MOR",
+        "model": "707A w/Deutz F2L511 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER BLADE MOR",
+        "model": "727 w/Deutz F2L511 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER BLADE MOR",
+        "model": "727 w/Deutz F2L511 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE BMW",
+        "model": "G130S",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE BMW",
+        "model": "G130S",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK JCB",
+        "model": "TLT35D Teletruk w/Deutz D2011 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK JCB",
+        "model": "TLT35D Teletruk w/Deutz D2011 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK JCB",
+        "model": "TLT35D Teletruk w/Deutz D2011 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK JCB",
+        "model": "TLT35D Teletruk w/Deutz D2011 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER GEHL",
+        "model": "480 Loader, 480T Loader w/Deutz F4M2011F Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER GEHL",
+        "model": "480 Loader, 480T Loader w/Deutz F4M2011F Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER GEHL",
+        "model": "480, 480T Loader w/Deutz F4M2011F Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER GEHL",
+        "model": "480, 480T Loader w/Deutz F4M2011F Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER GEHL",
+        "model": "680 Loader w/Deutz BF4M1011F Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER GEHL",
+        "model": "680 Loader w/Deutz BF4M1011F Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "1300",
+        "year": "73-72",
+        "engine": "L4-1.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "210",
+        "year": "82-79",
+        "engine": "L4-1.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "210",
+        "year": "82-79",
+        "engine": "L4-1.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "210",
+        "year": "82-79",
+        "engine": "L4-1.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "310",
+        "year": "80-79",
+        "engine": "L4-1.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "310",
+        "year": "82-81",
+        "engine": "L4-1.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "B210",
+        "year": "1974",
+        "engine": "L4-1.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "B210",
+        "year": "78-75",
+        "engine": "L4-1.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "F10",
+        "year": "78-76",
+        "engine": "L4-1.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "JJL490 20/20 w/Deutz F2L1011 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "JJL490 20/20 w/Deutz F2L1011 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "JJL490 20/20 w/Deutz F2L2011 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "JJL490 20/20 w/Deutz F2L2011 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "JJL490 20/20 w/Deutz F3L2011 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "JJL490 20/20 w/Deutz F3L2011 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "JJL490 20/30 w/Deutz F2L1011 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "JJL490 20/30 w/Deutz F2L1011 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "JJL490 20/30 w/Deutz F2L2011 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "JJL490 20/30 w/Deutz F2L2011 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "JJL490 20/30 w/Deutz F3L2011 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "JJL490 20/30 w/Deutz F3L2011 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "YJJL 30/30 w/Deutz F4L1011F Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "YJJL 30/30 w/Deutz F4L1011F Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "YJJL 30/30 w/Deutz F4L1011F Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "YJJL 30/30 w/Deutz F4L1011F Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "YJJL 30/30 w/Deutz F4L2011 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "YJJL 30/30 w/Deutz F4L2011 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "YJJL 30/30 w/Deutz F4L2011 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "YJJL 30/30 w/Deutz F4L2011 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "121E w/Deutz F4M2011F Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "121E w/Deutz F4M2011F Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER GEHL",
+        "model": "680 Loader w/Deutz BF4M1011F Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER GEHL",
+        "model": "680 Loader w/Deutz BF4M1011F Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L-445 w/Deutz F2L511D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L-445 w/Deutz F2L511D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L-451 w/Deutz F2L511D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L-451 w/Deutz F2L511D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER THOMAS",
+        "model": "T243HDS w/Deutz BF4M1011F Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER THOMAS",
+        "model": "T243HDS w/Deutz BF4M1011F Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF1232",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "SDF57",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "ASF57",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Autopar - Archived",
+        "part_number": "FE147",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "041-8121",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92288",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92339",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85319",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85288",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CF3614",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "CO2816",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "PH2816",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "OF417",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "part_number": "OF417",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "FT4756",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "691",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Delphi",
+        "part_number": "FX1017",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "D364",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Deutz",
+        "part_number": "1174416",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Deutz",
+        "part_number": "1164626",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Deutz",
+        "part_number": "1163420",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Deutz",
+        "part_number": "A04H4123",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550227",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559059",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Evergard",
+        "part_number": "E183",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Facet Industrial",
+        "part_number": "346",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "FERGUSON",
+        "part_number": "R1374",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Flag",
+        "part_number": "C-2870",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Flag",
+        "part_number": "C-2951",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3766",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "R1374",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Girling",
+        "part_number": "F691",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Girling",
+        "part_number": "F6615",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Goodyear",
+        "part_number": "222-4523",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "L10168",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "GUD Filters",
+        "part_number": "Z85",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF155",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "AL46",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "International Parts Service",
+        "part_number": "4-1081",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "International Parts Service",
+        "part_number": "4-1100",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "International Parts Service",
+        "part_number": "4-1097",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "IPD",
+        "part_number": "10139",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "ITM",
+        "part_number": "11-12002",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "ITM",
+        "part_number": "111-2002",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "ITM Autoparts",
+        "part_number": "11-12002",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "ITM Autoparts",
+        "part_number": "111-2002",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Jiffy Lube",
+        "part_number": "HL46",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "HE1220338",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "SS-2004",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "AW14-1",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Lazorlite",
+        "part_number": "L11-1015",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Lazorlite",
+        "part_number": "L11-1279",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Letourneau",
+        "part_number": "MO2816",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Lombardini",
+        "part_number": "2175040",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Lombardini",
+        "part_number": "MO2816",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH2816",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OC78",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W712/6",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W814/99",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W712/4",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W7.12/4",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W920/21",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Marathon",
+        "part_number": "MO2816",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "MICRO",
+        "part_number": "F-201",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Micro Filters",
+        "part_number": "F-201",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "MicroGard Select",
+        "part_number": "MSL51374",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "L10168",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "L10168",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1-102A",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1-102",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "L-519",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Murphy",
+        "part_number": "MD-438-13",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "7085",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1288",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "New Holland Agriculture",
+        "part_number": "276514",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "15208-H8916",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "122-0338",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "122B-338",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "One Performance",
+        "part_number": "122B-338",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "One Performance",
+        "part_number": "122-0338",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "61374",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "PH2816",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Power Flo",
+        "part_number": "SL20252",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PG183",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Purflux",
+        "part_number": "LS115",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "PC201",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L10168",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "L10168",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "PO-115",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Security Filters",
+        "part_number": "PH2816",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "L10168",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S3816",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "L-183",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "035 115 591",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "PH2816",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "PH2816",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57085",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51288",
+        "source_part_number": "PH46",
+        "part_key": "000944288",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Turbocharger Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

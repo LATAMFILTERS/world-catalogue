@@ -1,0 +1,2058 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "FUEL",
+  "authority": {
+    "part_number": "G3850DP",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "G3850DP",
+    "product_type": "Fuel Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 3.125,
+      "outer_diameter_mm": 79.38,
+      "height_in": 6.844,
+      "height_mm": 173.84,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "In Line",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "MF 1004"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3296MP"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33296"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF247"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "92-91",
+        "make": "FORD",
+        "model": "AEROSTAR",
+        "engine": "V6-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "1992",
+        "make": "FORD",
+        "model": "BRONCO",
+        "engine": "L6-4.9L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "BRONCO",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "BRONCO",
+        "engine": "V8-5.8L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "E-150 ECONOLINE",
+        "engine": "L6-4.9L",
+        "quantity": 1
+      },
+      {
+        "year": "02-97",
+        "make": "FORD",
+        "model": "E-150 ECONOLINE",
+        "engine": "V6-4.2L",
+        "quantity": 1
+      },
+      {
+        "year": "02-97",
+        "make": "FORD",
+        "model": "E-150 ECONOLINE",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "E-150 ECONOLINE",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "02-97",
+        "make": "FORD",
+        "model": "E-150 ECONOLINE",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "E-150 ECONOLINE",
+        "engine": "V8-5.8L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "E-150 ECONOLINE CLUB WAGON",
+        "engine": "L6-4.9L",
+        "quantity": 1
+      },
+      {
+        "year": "02-97",
+        "make": "FORD",
+        "model": "E-150 ECONOLINE CLUB WAGON",
+        "engine": "V6-4.2L",
+        "quantity": 1
+      },
+      {
+        "year": "02-97",
+        "make": "FORD",
+        "model": "E-150 ECONOLINE CLUB WAGON",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "E-150 ECONOLINE CLUB WAGON",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "02-97",
+        "make": "FORD",
+        "model": "E-150 ECONOLINE CLUB WAGON",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "E-150 ECONOLINE CLUB WAGON",
+        "engine": "V8-5.8L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "E-250 ECONOLINE",
+        "engine": "L6-4.9L",
+        "quantity": 1
+      },
+      {
+        "year": "02-97",
+        "make": "FORD",
+        "model": "E-250 ECONOLINE",
+        "engine": "V6-4.2L",
+        "quantity": 1
+      },
+      {
+        "year": "02-97",
+        "make": "FORD",
+        "model": "E-250 ECONOLINE",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "E-250 ECONOLINE",
+        "engine": "V8-5.8L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "E-350 ECONOLINE",
+        "engine": "L6-4.9L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "FORD",
+        "model": "E-350 ECONOLINE",
+        "engine": "V10-6.8L",
+        "quantity": 1
+      },
+      {
+        "year": "00-97",
+        "make": "FORD",
+        "model": "E-350 ECONOLINE",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "E-350 ECONOLINE",
+        "engine": "V8-5.8L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "E-350 ECONOLINE",
+        "engine": "V8-7.5L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "E-350 ECONOLINE CLUB WAGON",
+        "engine": "L6-4.9L",
+        "quantity": 1
+      },
+      {
+        "year": "02-97",
+        "make": "FORD",
+        "model": "E-350 ECONOLINE CLUB WAGON",
+        "engine": "V10-6.8L",
+        "quantity": 1
+      },
+      {
+        "year": "02-97",
+        "make": "FORD",
+        "model": "E-350 ECONOLINE CLUB WAGON",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "E-350 ECONOLINE CLUB WAGON",
+        "engine": "V8-5.8L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "E-350 ECONOLINE CLUB WAGON",
+        "engine": "V8-7.5L",
+        "quantity": 1
+      },
+      {
+        "year": "03-99",
+        "make": "FORD",
+        "model": "E-350 SUPER DUTY",
+        "engine": "V10-6.8L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "FORD",
+        "model": "E-350 SUPER DUTY",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "FORD",
+        "model": "E-450 ECONOLINE SUPER DUTY",
+        "engine": "V10-6.8L",
+        "quantity": 1
+      },
+      {
+        "year": "02-00",
+        "make": "FORD",
+        "model": "E-450 ECONOLINE SUPER DUTY",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "2002",
+        "make": "FORD",
+        "model": "E-550 ECONOLINE SUPER DUTY",
+        "engine": "V10-6.8L",
+        "quantity": 1
+      },
+      {
+        "year": "99-97",
+        "make": "FORD",
+        "model": "ECONOLINE SUPER DUTY",
+        "engine": "V10-6.8L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "FORD",
+        "model": "ECONOLINE SUPER DUTY",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "1996",
+        "make": "FORD",
+        "model": "ECONOLINE SUPER DUTY",
+        "engine": "V8-5.8L",
+        "quantity": 1
+      },
+      {
+        "year": "1996",
+        "make": "FORD",
+        "model": "ECONOLINE SUPER DUTY",
+        "engine": "V8-7.5L",
+        "quantity": 1
+      },
+      {
+        "year": "2008",
+        "make": "FORD",
+        "model": "ESCAPE",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "2008",
+        "make": "FORD",
+        "model": "ESCAPE",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "FORD",
+        "model": "ESCORT",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "05-00",
+        "make": "FORD",
+        "model": "EXCURSION",
+        "engine": "V10-6.8L",
+        "quantity": 1
+      },
+      {
+        "year": "05-02",
+        "make": "FORD",
+        "model": "EXCURSION",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "FORD",
+        "model": "EXPEDITION",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "FORD",
+        "model": "EXPEDITION",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "98-91",
+        "make": "FORD",
+        "model": "EXPLORER",
+        "engine": "V6-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-96",
+        "make": "FORD",
+        "model": "EXPLORER",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "F-150",
+        "engine": "L6-4.9L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "FORD",
+        "model": "F-150",
+        "engine": "V6-4.2L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "FORD",
+        "model": "F-150",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "F-150",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "01-00",
+        "make": "FORD",
+        "model": "F-150",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "FORD",
+        "model": "F-150",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "F-150",
+        "engine": "V8-5.8L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "F-250",
+        "engine": "L6-4.9L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "FORD",
+        "model": "F-250",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "F-250",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "99-97",
+        "make": "FORD",
+        "model": "F-250",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "97-92",
+        "make": "FORD",
+        "model": "F-250",
+        "engine": "V8-5.8L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "F-250",
+        "engine": "V8-7.5L",
+        "quantity": 1
+      },
+      {
+        "year": "1997",
+        "make": "FORD",
+        "model": "F-250 HD",
+        "engine": "V8-5.8L",
+        "quantity": 1
+      },
+      {
+        "year": "1997",
+        "make": "FORD",
+        "model": "F-250 HD",
+        "engine": "V8-7.5L",
+        "quantity": 1
+      },
+      {
+        "year": "04-99",
+        "make": "FORD",
+        "model": "F-250 SUPER DUTY",
+        "engine": "V10-6.8L",
+        "quantity": 1
+      },
+      {
+        "year": "1999",
+        "make": "FORD",
+        "model": "F-250 SUPER DUTY",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "2004",
+        "make": "FORD",
+        "model": "F-250 SUPER DUTY",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "F-350",
+        "engine": "L6-4.9L",
+        "quantity": 1
+      },
+      {
+        "year": "97-92",
+        "make": "FORD",
+        "model": "F-350",
+        "engine": "V8-5.8L",
+        "quantity": 1
+      },
+      {
+        "year": "97-92",
+        "make": "FORD",
+        "model": "F-350",
+        "engine": "V8-7.5L",
+        "quantity": 1
+      },
+      {
+        "year": "04-99",
+        "make": "FORD",
+        "model": "F-350 SUPER DUTY",
+        "engine": "V10-6.8L",
+        "quantity": 1
+      },
+      {
+        "year": "1999",
+        "make": "FORD",
+        "model": "F-350 SUPER DUTY",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "2004",
+        "make": "FORD",
+        "model": "F-350 SUPER DUTY",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "04-99",
+        "make": "FORD",
+        "model": "F-450 SUPER DUTY",
+        "engine": "V10-6.8L",
+        "quantity": 1
+      },
+      {
+        "year": "04-99",
+        "make": "FORD",
+        "model": "F-53 MOTORHOME CHASSIS",
+        "engine": "V10-6.8L",
+        "quantity": 1
+      },
+      {
+        "year": "97-92",
+        "make": "FORD",
+        "model": "F-53 MOTORHOME CHASSIS",
+        "engine": "V8-7.5L",
+        "quantity": 1
+      },
+      {
+        "year": "04-99",
+        "make": "FORD",
+        "model": "F-550 SUPER DUTY",
+        "engine": "V10-6.8L",
+        "quantity": 1
+      },
+      {
+        "year": "97-92",
+        "make": "FORD",
+        "model": "F-SUPER DUTY",
+        "engine": "V8-7.5L",
+        "quantity": 1
+      },
+      {
+        "year": "97-95",
+        "make": "FORD",
+        "model": "RANGER",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "92-91",
+        "make": "FORD",
+        "model": "RANGER",
+        "engine": "V6-2.9L",
+        "quantity": 1
+      },
+      {
+        "year": "97-95",
+        "make": "FORD",
+        "model": "RANGER",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "92-91",
+        "make": "FORD",
+        "model": "RANGER",
+        "engine": "V6-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "97-95",
+        "make": "FORD",
+        "model": "RANGER",
+        "engine": "V6-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-95",
+        "make": "FORD",
+        "model": "WINDSTAR",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-95",
+        "make": "FORD",
+        "model": "WINDSTAR",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "1998",
+        "make": "LINCOLN",
+        "model": "NAVIGATOR",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "97-95",
+        "make": "MAZDA",
+        "model": "B2300",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "97-95",
+        "make": "MAZDA",
+        "model": "B3000",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "97-95",
+        "make": "MAZDA",
+        "model": "B4000",
+        "engine": "V6-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "94-91",
+        "make": "MAZDA",
+        "model": "NAVAJO",
+        "engine": "V6-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2008",
+        "make": "MAZDA",
+        "model": "TRIBUTE",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "11-09",
+        "make": "MAZDA",
+        "model": "TRIBUTE",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "11-08",
+        "make": "MAZDA",
+        "model": "TRIBUTE",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2008",
+        "make": "MERCURY",
+        "model": "MARINER",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "11-09",
+        "make": "MERCURY",
+        "model": "MARINER",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "11-08",
+        "make": "MERCURY",
+        "model": "MARINER",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "1998",
+        "make": "MERCURY",
+        "model": "MOUNTAINEER",
+        "engine": "V6-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "MERCURY",
+        "model": "MOUNTAINEER",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "G3850DP",
+    "source_part_key": "001491893",
+    "source_totals": {
+      "attributes": 28,
+      "applications": 121,
+      "cross_references": 4
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, G3850DP, Fuel Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "In-Line Fuel Filter Display Pack",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "In Line",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Metal",
+        "recno": "82"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Tube Connector",
+        "recno": "83"
+      },
+      {
+        "attribute": "Fuel Type",
+        "value": "Gasoline",
+        "recno": "84"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "85"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Fuel Filter",
+        "recno": "86"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "6.844",
+        "recno": "88"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "3.125",
+        "recno": "89"
+      },
+      {
+        "attribute": "Housing Material",
+        "value": "Metal",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Inlet Line Size (Inch)",
+        "value": "5/16",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100353740",
+        "recno": "92"
+      },
+      {
+        "attribute": "Outlet Line Size (Inch)",
+        "value": "5/16",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "94"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.7330",
+        "recno": "98"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "2.1990",
+        "recno": "99"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "3.5820",
+        "recno": "100"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "10.5000",
+        "recno": "101"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "9.6250",
+        "recno": "102"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "9.3750",
+        "recno": "103"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "7.6250",
+        "recno": "104"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "8.1250",
+        "recno": "105"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.733,
+        "case_weight_lb": 2.199,
+        "unit_height_in": 3.582,
+        "unit_length_in": 9.625,
+        "unit_width_in": 7.625,
+        "case_height_in": 10.5,
+        "case_length_in": 9.375,
+        "case_width_in": 8.125,
+        "inferred_case_qty": 3
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 8.796,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 121,
+    "all_cross_references_observed": 4,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:10:36.618Z",
+  "discovered_from": "G3850DP",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "ENGINE FORD",
+        "model": "V10-6.8L TRITON",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE FORD",
+        "model": "V10-6.8L TRITON",
+        "year": "04-98",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE FORD",
+        "model": "V8-370 6.1L",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE FORD",
+        "model": "V8-370 6.1L",
+        "year": "1991",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE FORD",
+        "model": "V8-4.6L TRITON",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE FORD",
+        "model": "V8-4.6L TRITON",
+        "year": "98-97",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE FORD",
+        "model": "V8-429 7.0L",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE FORD",
+        "model": "V8-429 7.0L",
+        "year": "1991",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE FORD",
+        "model": "V8-5.4L TRITON 12V",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE FORD",
+        "model": "V8-5.4L TRITON 12V",
+        "year": "98-97",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE GASOLINE INDUSTRIAL FORD",
+        "model": "460 V8 7.5L",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE GASOLINE INDUSTRIAL FORD",
+        "model": "460 V8 7.5L",
+        "year": "97-94",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL FORD",
+        "model": "302 5.0L, 351 5.8L, 400 6.6L cid",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL FORD",
+        "model": "302 5.0L, 351 5.8L, 400 6.6L cid",
+        "year": "98-94",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "AEROSTAR",
+        "year": "92-91",
+        "engine": "V6-4.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "BRONCO",
+        "year": "1992",
+        "engine": "L6-4.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "BRONCO",
+        "year": "96-92",
+        "engine": "V8-5.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "BRONCO",
+        "year": "96-92",
+        "engine": "V8-5.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-150 ECONOLINE",
+        "year": "96-92",
+        "engine": "L6-4.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-150 ECONOLINE",
+        "year": "02-97",
+        "engine": "V6-4.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-150 ECONOLINE",
+        "year": "02-97",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-150 ECONOLINE",
+        "year": "96-92",
+        "engine": "V8-5.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-150 ECONOLINE",
+        "year": "02-97",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-150 ECONOLINE",
+        "year": "96-92",
+        "engine": "V8-5.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-150 ECONOLINE CLUB WAGON",
+        "year": "96-92",
+        "engine": "L6-4.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-150 ECONOLINE CLUB WAGON",
+        "year": "02-97",
+        "engine": "V6-4.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-150 ECONOLINE CLUB WAGON",
+        "year": "02-97",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-150 ECONOLINE CLUB WAGON",
+        "year": "96-92",
+        "engine": "V8-5.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-150 ECONOLINE CLUB WAGON",
+        "year": "02-97",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-150 ECONOLINE CLUB WAGON",
+        "year": "96-92",
+        "engine": "V8-5.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-250 ECONOLINE",
+        "year": "96-92",
+        "engine": "L6-4.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-250 ECONOLINE",
+        "year": "02-97",
+        "engine": "V6-4.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-250 ECONOLINE",
+        "year": "02-97",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-250 ECONOLINE",
+        "year": "96-92",
+        "engine": "V8-5.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-350 ECONOLINE",
+        "year": "96-92",
+        "engine": "L6-4.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-350 ECONOLINE",
+        "year": "98-97",
+        "engine": "V10-6.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-350 ECONOLINE",
+        "year": "00-97",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-350 ECONOLINE",
+        "year": "96-92",
+        "engine": "V8-5.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-350 ECONOLINE",
+        "year": "96-92",
+        "engine": "V8-7.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-350 ECONOLINE CLUB WAGON",
+        "year": "96-92",
+        "engine": "L6-4.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-350 ECONOLINE CLUB WAGON",
+        "year": "02-97",
+        "engine": "V10-6.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-350 ECONOLINE CLUB WAGON",
+        "year": "02-97",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-350 ECONOLINE CLUB WAGON",
+        "year": "96-92",
+        "engine": "V8-5.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-350 ECONOLINE CLUB WAGON",
+        "year": "96-92",
+        "engine": "V8-7.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-350 SUPER DUTY",
+        "year": "03-99",
+        "engine": "V10-6.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-350 SUPER DUTY",
+        "year": "02-99",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-450 ECONOLINE SUPER DUTY",
+        "year": "02-99",
+        "engine": "V10-6.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-450 ECONOLINE SUPER DUTY",
+        "year": "02-00",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-550 ECONOLINE SUPER DUTY",
+        "year": "2002",
+        "engine": "V10-6.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "ECONOLINE SUPER DUTY",
+        "year": "99-97",
+        "engine": "V10-6.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "ECONOLINE SUPER DUTY",
+        "year": "98-97",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "ECONOLINE SUPER DUTY",
+        "year": "1996",
+        "engine": "V8-5.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "ECONOLINE SUPER DUTY",
+        "year": "1996",
+        "engine": "V8-7.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "ESCAPE",
+        "year": "2008",
+        "engine": "L4-2.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "ESCAPE",
+        "year": "2008",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "ESCORT",
+        "year": "2003",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "EXCURSION",
+        "year": "05-00",
+        "engine": "V10-6.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "EXCURSION",
+        "year": "05-02",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "EXPEDITION",
+        "year": "98-97",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "EXPEDITION",
+        "year": "98-97",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "EXPLORER",
+        "year": "98-91",
+        "engine": "V6-4.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "EXPLORER",
+        "year": "98-96",
+        "engine": "V8-5.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-150",
+        "year": "96-92",
+        "engine": "L6-4.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-150",
+        "year": "98-97",
+        "engine": "V6-4.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-150",
+        "year": "98-97",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-150",
+        "year": "96-92",
+        "engine": "V8-5.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-150",
+        "year": "01-00",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-150",
+        "year": "98-97",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-150",
+        "year": "96-92",
+        "engine": "V8-5.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-250",
+        "year": "96-92",
+        "engine": "L6-4.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-250",
+        "year": "98-97",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-250",
+        "year": "96-92",
+        "engine": "V8-5.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-250",
+        "year": "99-97",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-250",
+        "year": "97-92",
+        "engine": "V8-5.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-250",
+        "year": "96-92",
+        "engine": "V8-7.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-250 HD",
+        "year": "1997",
+        "engine": "V8-5.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-250 HD",
+        "year": "1997",
+        "engine": "V8-7.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-250 SUPER DUTY",
+        "year": "04-99",
+        "engine": "V10-6.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-250 SUPER DUTY",
+        "year": "1999",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-250 SUPER DUTY",
+        "year": "2004",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-350",
+        "year": "96-92",
+        "engine": "L6-4.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-350",
+        "year": "97-92",
+        "engine": "V8-5.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-350",
+        "year": "97-92",
+        "engine": "V8-7.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-350 SUPER DUTY",
+        "year": "04-99",
+        "engine": "V10-6.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-350 SUPER DUTY",
+        "year": "1999",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-350 SUPER DUTY",
+        "year": "2004",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-450 SUPER DUTY",
+        "year": "04-99",
+        "engine": "V10-6.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-53 MOTORHOME CHASSIS",
+        "year": "04-99",
+        "engine": "V10-6.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-53 MOTORHOME CHASSIS",
+        "year": "97-92",
+        "engine": "V8-7.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-550 SUPER DUTY",
+        "year": "04-99",
+        "engine": "V10-6.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-SUPER DUTY",
+        "year": "97-92",
+        "engine": "V8-7.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "RANGER",
+        "year": "97-95",
+        "engine": "L4-2.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "RANGER",
+        "year": "92-91",
+        "engine": "V6-2.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "RANGER",
+        "year": "97-95",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "RANGER",
+        "year": "92-91",
+        "engine": "V6-4.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "RANGER",
+        "year": "97-95",
+        "engine": "V6-4.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "WINDSTAR",
+        "year": "98-95",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "WINDSTAR",
+        "year": "98-95",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "NAVIGATOR",
+        "year": "1998",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MAZDA",
+        "model": "B2300",
+        "year": "97-95",
+        "engine": "L4-2.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MAZDA",
+        "model": "B3000",
+        "year": "97-95",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MAZDA",
+        "model": "B4000",
+        "year": "97-95",
+        "engine": "V6-4.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MAZDA",
+        "model": "NAVAJO",
+        "year": "94-91",
+        "engine": "V6-4.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MAZDA",
+        "model": "TRIBUTE",
+        "year": "2008",
+        "engine": "L4-2.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MAZDA",
+        "model": "TRIBUTE",
+        "year": "11-09",
+        "engine": "L4-2.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MAZDA",
+        "model": "TRIBUTE",
+        "year": "11-08",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCURY",
+        "model": "MARINER",
+        "year": "2008",
+        "engine": "L4-2.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCURY",
+        "model": "MARINER",
+        "year": "11-09",
+        "engine": "L4-2.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCURY",
+        "model": "MARINER",
+        "year": "11-08",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCURY",
+        "model": "MOUNTAINEER",
+        "year": "1998",
+        "engine": "V6-4.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCURY",
+        "model": "MOUNTAINEER",
+        "year": "98-97",
+        "engine": "V8-5.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MOTOR HOME WINNEBAGO",
+        "model": "Adventurer (w/Ford V10-6.8L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MOTOR HOME WINNEBAGO",
+        "model": "Adventurer (w/Ford V10-6.8L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MOTOR HOME WINNEBAGO",
+        "model": "Chieftain (w/Ford V10-6.8L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MOTOR HOME WINNEBAGO",
+        "model": "Chieftain (w/Ford V10-6.8L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MOTOR HOME WINNEBAGO",
+        "model": "Minnie (GM G3500, Ford E3/450) (w/Ford V10 6.8L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MOTOR HOME WINNEBAGO",
+        "model": "Minnie (GM G3500, Ford E3/450) (w/Ford V10 6.8L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MOTOR HOME WINNEBAGO",
+        "model": "Minnie Winnie (Ford E450) (w/Ford V10 6.8L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MOTOR HOME WINNEBAGO",
+        "model": "Minnie Winnie (Ford E450) (w/Ford V10 6.8L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "FT900, FT9000 (w/V8-7.0L F/inj. (J))",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "FT900, FT9000 (w/V8-7.0L F/inj. (J))",
+        "year": "97-91",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF247",
+        "source_part_number": "G3850DP",
+        "part_key": "001491893",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "MF 1004",
+        "source_part_number": "G3850DP",
+        "part_key": "001491893",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3296MP",
+        "source_part_number": "G3850DP",
+        "part_key": "001491893",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33296",
+        "source_part_number": "G3850DP",
+        "part_key": "001491893",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

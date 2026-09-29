@@ -1,0 +1,1552 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH52",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH52",
+    "product_type": "Engine Oil Filter, Oil",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 4.25,
+      "outer_diameter_mm": 107.95,
+      "height_in": 5.817,
+      "height_mm": 147.75,
+      "thread_size": "1-16",
+      "gasket_od_in": 2.813,
+      "gasket_od_mm": 71.45,
+      "gasket_id_in": 2.469,
+      "gasket_id_mm": 62.71,
+      "gasket_thickness_in": 0.203,
+      "gasket_thickness_mm": 5.16,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "4035556"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "4023548"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "40235483"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "4023548-3"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "74035556"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "4023548-2"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF922"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT564"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-327"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1796"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L30121"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51796"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Big A",
+        "part_number": "92796"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85796"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550152"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF739"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8739"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF137"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L50"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH52"
+      },
+      {
+        "manufacturer": "Phillips 66",
+        "part_number": "P121"
+      },
+      {
+        "manufacturer": "White",
+        "part_number": "731607"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "PH52",
+    "source_part_key": "001509404",
+    "source_totals": {
+      "attributes": 38,
+      "applications": 106,
+      "cross_references": 22
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, PH52, HD Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Spin-on Oil Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "84"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Standard",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Orange",
+        "recno": "89"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Drain Plug Included",
+        "value": "No",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100420572",
+        "recno": "92"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Oil Filter",
+        "recno": "94"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "95"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "5.817",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "4.250",
+        "recno": "97"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "2.469",
+        "recno": "98"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "2.813",
+        "recno": "99"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.203",
+        "recno": "100"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Inch)",
+        "value": "1-16",
+        "recno": "101"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "102"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "103"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "104"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.5830",
+        "recno": "108"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "9.4980",
+        "recno": "109"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "6.0100",
+        "recno": "110"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "6.5620",
+        "recno": "111"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "4.5990",
+        "recno": "112"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "14.2500",
+        "recno": "113"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "4.5990",
+        "recno": "114"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "9.5620",
+        "recno": "115"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.583,
+        "case_weight_lb": 9.498,
+        "unit_height_in": 6.01,
+        "unit_length_in": 4.599,
+        "unit_width_in": 4.599,
+        "case_height_in": 6.562,
+        "case_length_in": 14.25,
+        "case_width_in": 9.562,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 18.996,
+        "estimated_case_dimensions": {
+          "length_in": 19,
+          "width_in": 14.343,
+          "height_in": 6.562,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 106,
+    "all_cross_references_observed": 22,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:19:38.364Z",
+  "discovered_from": "PH52",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BACKHOE LOADER ALLIS-CHALMERS",
+        "model": "940 w/2900 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER ALLIS-CHALMERS",
+        "model": "940 w/2900 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALER FREEMAN",
+        "model": "200T w/Allis-Chalmers Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALER FREEMAN",
+        "model": "200T w/Allis-Chalmers Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE ALLIS-CHALMERS",
+        "model": "L w/2900 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE ALLIS-CHALMERS",
+        "model": "L w/2900 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE ALLIS-CHALMERS",
+        "model": "L2 w/2900 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE ALLIS-CHALMERS",
+        "model": "L2 w/2900 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE ALLIS-CHALMERS",
+        "model": "L2 w/3500 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE ALLIS-CHALMERS",
+        "model": "L2 w/3500 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE ALLIS-CHALMERS",
+        "model": "M w/2900 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE ALLIS-CHALMERS",
+        "model": "M w/2900 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE ALLIS-CHALMERS",
+        "model": "MH2 w/2900 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE ALLIS-CHALMERS",
+        "model": "MH2 w/2900 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE ALLIS-CHALMERS",
+        "model": "MH2 w/3500 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE ALLIS-CHALMERS",
+        "model": "MH2 w/3500 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE ALLIS-CHALMERS",
+        "model": "MM2 w/2900 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE ALLIS-CHALMERS",
+        "model": "MM2 w/2900 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW IDEA",
+        "model": "800 w/Allis-Chalmers Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW IDEA",
+        "model": "800 w/Allis-Chalmers Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COTTON PICKER ALLIS-CHALMERS",
+        "model": "860 w/A-1 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COTTON PICKER ALLIS-CHALMERS",
+        "model": "860 w/A-1 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL ALLIS-CHALMERS",
+        "model": "3500",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL ALLIS-CHALMERS",
+        "model": "3500",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL ALLIS-CHALMERS",
+        "model": "3750",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL ALLIS-CHALMERS",
+        "model": "3750",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL ALLIS-CHALMERS",
+        "model": "649-I",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL ALLIS-CHALMERS",
+        "model": "649-I",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL ALLIS-CHALMERS",
+        "model": "649T",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL ALLIS-CHALMERS",
+        "model": "649T",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL ALLIS-CHALMERS",
+        "model": "6-70T",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL ALLIS-CHALMERS",
+        "model": "6-70T",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE GASOLINE ALLIS-CHALMERS",
+        "model": "G2800",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE GASOLINE ALLIS-CHALMERS",
+        "model": "G2800",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR BANTAM",
+        "model": "450 w/Allis-Chalmers 2900 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR BANTAM",
+        "model": "450 w/Allis-Chalmers 2900 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR BANTAM",
+        "model": "C166 w/Allis-Chalmers 2900 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR BANTAM",
+        "model": "C166 w/Allis-Chalmers 2900 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR BANTAM",
+        "model": "C450 Telekrane w/Allis-Chalmers 2900 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR BANTAM",
+        "model": "C450 Telekrane w/Allis-Chalmers 2900 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR BANTAM",
+        "model": "T450 w/Allis-Chalmers 2900 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR BANTAM",
+        "model": "T450 w/Allis-Chalmers 2900 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FARM EQUIPMENT NEW IDEA",
+        "model": "801 w/Allis-Chalmers Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FARM EQUIPMENT NEW IDEA",
+        "model": "801 w/Allis-Chalmers Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "715 w/Allis-Chalmers 3500 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "715 w/Allis-Chalmers 3500 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "715 w/Allis-Chalmers 3500 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "715 w/Allis-Chalmers 3500 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK ALLIS-CHALMERS",
+        "model": "ACP225 w/Allis-Chalmers 2900 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK ALLIS-CHALMERS",
+        "model": "ACP225 w/Allis-Chalmers 2900 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER BARKO",
+        "model": "140 w/Allis-Chalmers Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER BARKO",
+        "model": "140 w/Allis-Chalmers Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW210 w/Allis-Chalmers 2900MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW210 w/Allis-Chalmers 2900MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW210A w/Allis-Chalmers 2900MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW210A w/Allis-Chalmers 2900MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW211 w/Allis-Chalmers 2900 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW211 w/Allis-Chalmers 2900 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW211A w/Allis-Chalmers 2900 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW211A w/Allis-Chalmers 2900 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW211AB w/Allis-Chalmers 2900 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW211AB w/Allis-Chalmers 2900 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW211B w/Allis-Chalmers 2900 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW211B w/Allis-Chalmers 2900 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW212 w/Allis-Chalmers 2900 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW212 w/Allis-Chalmers 2900 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW212B w/Allis-Chalmers 2900 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW212B w/Allis-Chalmers 2900 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW212SB w/Allis-Chalmers 2900 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW212SB w/Allis-Chalmers 2900 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW213 w/Allis-Chalmers 2900 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW213 w/Allis-Chalmers 2900 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW214 w/Allis-Chalmers 2900 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL BOMAG",
+        "model": "BW214 w/Allis-Chalmers 2900 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "4W220",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "4W220",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "6491",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "6491",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "7000 w/2900 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "7000 w/2900 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "7000 w/6-301TB Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "7000 w/6-301TB Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "7010 w/A-C 6491 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "7010 w/A-C 6491 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "7040 w/3500 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "7040 w/3500 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "8010 w/649T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "8010 w/649T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-ALLIS",
+        "model": "7060 w/3700 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-ALLIS",
+        "model": "7060 w/3700 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-ALLIS",
+        "model": "7080 w/3750 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-ALLIS",
+        "model": "7080 w/3750 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-ALLIS",
+        "model": "7580 w/3750 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-ALLIS",
+        "model": "7580 w/3750 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-ALLIS",
+        "model": "8010 w/Deutz 649T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR DEUTZ-ALLIS",
+        "model": "8010 w/Deutz 649T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRENCHER INDUSTRIAL PARSONS",
+        "model": "610T w/Allis-Chalmers 6-70T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRENCHER INDUSTRIAL PARSONS",
+        "model": "610T w/Allis-Chalmers 6-70T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER FIAT-ALLIS",
+        "model": "345B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER FIAT-ALLIS",
+        "model": "345B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER FIAT-ALLIS",
+        "model": "545B w/2900 MKII Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER FIAT-ALLIS",
+        "model": "545B w/2900 MKII Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER FIAT-ALLIS",
+        "model": "605B w/2900 MKII Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER FIAT-ALLIS",
+        "model": "605B w/2900 MKII Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER FIAT-ALLIS",
+        "model": "645B w/3500 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER FIAT-ALLIS",
+        "model": "645B w/3500 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF922",
+        "source_part_number": "PH52",
+        "part_key": "001509404",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "4035556",
+        "source_part_number": "PH52",
+        "part_key": "001509404",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "4023548",
+        "source_part_number": "PH52",
+        "part_key": "001509404",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "40235483",
+        "source_part_number": "PH52",
+        "part_key": "001509404",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "4023548-3",
+        "source_part_number": "PH52",
+        "part_key": "001509404",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "74035556",
+        "source_part_number": "PH52",
+        "part_key": "001509404",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "4023548-2",
+        "source_part_number": "PH52",
+        "part_key": "001509404",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT564",
+        "source_part_number": "PH52",
+        "part_key": "001509404",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92796",
+        "source_part_number": "PH52",
+        "part_key": "001509404",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85796",
+        "source_part_number": "PH52",
+        "part_key": "001509404",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550152",
+        "source_part_number": "PH52",
+        "part_key": "001509404",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF739",
+        "source_part_number": "PH52",
+        "part_key": "001509404",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8739",
+        "source_part_number": "PH52",
+        "part_key": "001509404",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF137",
+        "source_part_number": "PH52",
+        "part_key": "001509404",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L50",
+        "source_part_number": "PH52",
+        "part_key": "001509404",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH52",
+        "source_part_number": "PH52",
+        "part_key": "001509404",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-327",
+        "source_part_number": "PH52",
+        "part_key": "001509404",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1796",
+        "source_part_number": "PH52",
+        "part_key": "001509404",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Phillips 66",
+        "part_number": "P121",
+        "source_part_number": "PH52",
+        "part_key": "001509404",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L30121",
+        "source_part_number": "PH52",
+        "part_key": "001509404",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "White",
+        "part_number": "731607",
+        "source_part_number": "PH52",
+        "part_key": "001509404",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51796",
+        "source_part_number": "PH52",
+        "part_key": "001509404",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

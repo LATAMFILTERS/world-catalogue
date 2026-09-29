@@ -1,0 +1,1337 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA10983",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA10983",
+    "product_type": "Air Filter, Air",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": 4.25,
+      "outer_diameter_mm": 107.95,
+      "height_in": 3.75,
+      "height_mm": 95.25,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Round Plastisol Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Briggs & Stratton",
+        "part_number": "390930"
+      },
+      {
+        "manufacturer": "Briggs & Stratton",
+        "part_number": "393957"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2223"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A13338"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42291"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P606290"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF4574"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "E-4370"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "AF206"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA10983",
+    "source_part_key": "001482122",
+    "source_totals": {
+      "attributes": 29,
+      "applications": 108,
+      "cross_references": 9
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA10983, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Round Plastisol Air Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "83"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "84"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "85"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "3.750",
+        "recno": "87"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "4.250",
+        "recno": "88"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "2.000",
+        "recno": "89"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "4.250",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "2.000",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100546043",
+        "recno": "92"
+      },
+      {
+        "attribute": "Inside Diameter (Inch)",
+        "value": "2.000",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "4.250",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "94"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "95"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.5910",
+        "recno": "99"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.7730",
+        "recno": "100"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "6.0800",
+        "recno": "101"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "6.7500",
+        "recno": "102"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "4.6650",
+        "recno": "103"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "14.8120",
+        "recno": "104"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "4.6650",
+        "recno": "105"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "10.0620",
+        "recno": "106"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.591,
+        "case_weight_lb": 1.773,
+        "unit_height_in": 6.08,
+        "unit_length_in": 4.665,
+        "unit_width_in": 4.665,
+        "case_height_in": 6.75,
+        "case_length_in": 14.812,
+        "case_width_in": 10.062,
+        "inferred_case_qty": 3
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 7.092,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 108,
+    "all_cross_references_observed": 9,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:38:37.425Z",
+  "discovered_from": "CA10983",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "ALTERNATOR JOHN DEERE",
+        "model": "325 Portable Alternator w/B&S Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ALTERNATOR JOHN DEERE",
+        "model": "325 Portable Alternator w/B&S Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ALTERNATOR JOHN DEERE",
+        "model": "375 Portable Alternator w/B&S Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ALTERNATOR JOHN DEERE",
+        "model": "375 Portable Alternator w/B&S Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ALTERNATOR JOHN DEERE",
+        "model": "500 Portable Alternator w/B&S Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ALTERNATOR JOHN DEERE",
+        "model": "500 Portable Alternator w/B&S Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHIPPER & MULCHER BEAR CAT",
+        "model": "70080 Chipper w/B&S 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "CHIPPER & MULCHER BEAR CAT",
+        "model": "70080 Chipper w/B&S 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "CHIPPER & MULCHER BEAR CAT",
+        "model": "70085 Chipper w/B&S 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "CHIPPER & MULCHER BEAR CAT",
+        "model": "70085 Chipper w/B&S 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "CHIPPER & MULCHER BEAR CAT",
+        "model": "70180 Chipper w/B&S 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "CHIPPER & MULCHER BEAR CAT",
+        "model": "70180 Chipper w/B&S 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "170400 Series 7 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "170400 Series 7 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "171400 Series 7 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "171400 Series 7 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "174000 Series 7 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "174000 Series 7 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "190400 Series 8 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "190400 Series 8 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "194400 Series 8 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "194400 Series 8 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "195400 Series 8 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "195400 Series 8 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "220400 Series 10 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "220400 Series 10 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "221400 Series 10 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "221400 Series 10 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "222400 Series 10 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "222400 Series 10 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "233400 Series 10 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "233400 Series 10 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "243400 Series 10 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "243400 Series 10 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "251400 Series 10 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "251400 Series 10 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "251700 Series 11 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "251700 Series 11 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "252400 Series 11 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "252400 Series 11 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "253700 Series 11 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "253700 Series 11 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "254400 Series 11 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "254400 Series 11 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "256700 Series 11 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "256700 Series 11 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "290000 Series 18 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "290000 Series 18 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "290400 Series 12.5 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "290400 Series 12.5 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "290400 Series 18 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "290400 Series 18 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "294400 Series 14 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "294400 Series 14 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "294400 Series 18 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "294400 Series 18 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "301430 Series 12 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "301430 Series 12 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "302400 Series 12 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "302400 Series 12 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "303400 Series 16 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "303400 Series 16 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "325430 Series 15 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "325430 Series 15 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "326400 Series 12 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "326400 Series 12 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "326430 Series 16 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "326430 Series 16 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "350000 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "350000 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "350400 Series 18 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "350400 Series 18 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "380000 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "380000 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR GENERAC",
+        "model": "SV4200 w/B&S 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR GENERAC",
+        "model": "SV4200 w/B&S 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR GENERAC",
+        "model": "SVP5000 w/B&S 10 h.p Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR GENERAC",
+        "model": "SVP5000 w/B&S 10 h.p Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR GENERAC",
+        "model": "SVT4200 w/B&S 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR GENERAC",
+        "model": "SVT4200 w/B&S 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR GENERAC",
+        "model": "SVT5000 w/B&S 10 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR GENERAC",
+        "model": "SVT5000 w/B&S 10 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR JOHN DEERE",
+        "model": "325 w/Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR JOHN DEERE",
+        "model": "325 w/Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BCS",
+        "model": "Professional 30 w/B&S Vanguard 12 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BCS",
+        "model": "Professional 30 w/B&S Vanguard 12 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "650C w/B&S 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "650C w/B&S 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HECK",
+        "model": "73901 w/B&S I/C 10 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HECK",
+        "model": "73901 w/B&S I/C 10 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HECK",
+        "model": "73905 w/B&S I/C 10 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HECK",
+        "model": "73905 w/B&S I/C 10 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HECK",
+        "model": "73906 w/B&S Vanguard 16 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HECK",
+        "model": "73906 w/B&S Vanguard 16 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HECK",
+        "model": "739061 w/B&S I/C 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HECK",
+        "model": "739061 w/B&S I/C 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JACOBSEN",
+        "model": "Bobcat Mower w/B&S 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JACOBSEN",
+        "model": "Bobcat Mower w/B&S 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JACOBSEN",
+        "model": "Crew King Mower w/B&S 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JACOBSEN",
+        "model": "Crew King Mower w/B&S 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR WALKER",
+        "model": "MB Series Mower w/B&S 11 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR WALKER",
+        "model": "MB Series Mower w/B&S 11 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR WALKER",
+        "model": "MB Series Mower w/B&S Vanguard 18 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR WALKER",
+        "model": "MB Series Mower w/B&S Vanguard 18 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "TILLER BCS",
+        "model": "Professional 605 w/B&S Vanguard 12.5 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "TILLER BCS",
+        "model": "Professional 605 w/B&S Vanguard 12.5 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "TILLER BCS",
+        "model": "Professional 850 w/B&S Vanguard 12.5 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "TILLER BCS",
+        "model": "Professional 850 w/B&S Vanguard 12.5 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2223",
+        "source_part_number": "CA10983",
+        "part_key": "001482122",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Briggs & Stratton",
+        "part_number": "390930",
+        "source_part_number": "CA10983",
+        "part_key": "001482122",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Briggs & Stratton",
+        "part_number": "393957",
+        "source_part_number": "CA10983",
+        "part_key": "001482122",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P606290",
+        "source_part_number": "CA10983",
+        "part_key": "001482122",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF4574",
+        "source_part_number": "CA10983",
+        "part_key": "001482122",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "E-4370",
+        "source_part_number": "CA10983",
+        "part_key": "001482122",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "AF206",
+        "source_part_number": "CA10983",
+        "part_key": "001482122",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A13338",
+        "source_part_number": "CA10983",
+        "part_key": "001482122",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42291",
+        "source_part_number": "CA10983",
+        "part_key": "001482122",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

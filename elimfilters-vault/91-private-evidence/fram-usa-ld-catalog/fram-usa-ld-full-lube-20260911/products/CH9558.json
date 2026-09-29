@@ -1,0 +1,1421 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "CH9558",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CH9558",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 4.75,
+      "outer_diameter_mm": 120.65,
+      "height_in": 10.44,
+      "height_mm": 265.18,
+      "thread_size": null,
+      "gasket_od_in": 5.314,
+      "gasket_od_mm": 134.98,
+      "gasket_id_in": 5.157,
+      "gasket_id_mm": 130.99,
+      "gasket_thickness_in": 0.157,
+      "gasket_thickness_mm": 3.99,
+      "media_type": "Genuine Media",
+      "style": "Cartridge",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BK6676"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "P7230"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BK6675"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BK6671"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E175HD129"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E175HD68"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX348D"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU12110X"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU1012"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "7213"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L55960"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57213"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Alliance Parts",
+        "part_number": "ABP/N10G-LF16046"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "LEF5198"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550769"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "MK13158"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "MK13170"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "MK13169"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "MK13128"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "MK13051"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "MK13068"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "MK13126"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF16046"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "MK13160"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF555"
+      },
+      {
+        "manufacturer": "Hino",
+        "part_number": "S2340-11700"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "HP-8028"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "OX348D"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L7213"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LP8995"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LP5048"
+      },
+      {
+        "manufacturer": "M Filter",
+        "part_number": "MU1230"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A0001802909"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A000 180 2909"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "541 180 0009"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A 457 184 01 2"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "000 180 2109"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A000 180 2109"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "1802109"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "457 184 0125"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "000 180 2129"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A457 184 0125"
+      },
+      {
+        "manufacturer": "Mitsubishi",
+        "part_number": "MX901584"
+      },
+      {
+        "manufacturer": "Mitsubishi",
+        "part_number": "ME422778"
+      },
+      {
+        "manufacturer": "Ryco",
+        "part_number": "R2749P"
+      },
+      {
+        "manufacturer": "Wirtgen",
+        "part_number": "177725"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CH9558",
+    "source_part_key": "001509691",
+    "source_totals": {
+      "attributes": 33,
+      "applications": 57,
+      "cross_references": 46
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® Oil Filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE recommended intervals. Extra Guard is engineered for extended performance that meets all manufacturers recommended change intervals. No matter what you drive, or what motor oil you  use, FRAM® has a filter for you.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CH9558, HD Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Cartridge Oil Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Cartridge",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "82"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Cover",
+        "recno": "83"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "NA",
+        "recno": "84"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "85"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "86"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Oil Filter",
+        "recno": "87"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "10.440",
+        "recno": "89"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "4.750",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "5.157",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100039859",
+        "recno": "92"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "5.314",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.157",
+        "recno": "93"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "0.570",
+        "recno": "94"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "2.210",
+        "recno": "95"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "96"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "97"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Malaysia",
+        "recno": "98"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "2.3200",
+        "recno": "102"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "13.9200",
+        "recno": "103"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "10.6300",
+        "recno": "104"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "11.0240",
+        "recno": "105"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "4.9210",
+        "recno": "106"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "15.3540",
+        "recno": "107"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "4.9210",
+        "recno": "108"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "10.4330",
+        "recno": "109"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 2.32,
+        "case_weight_lb": 13.92,
+        "unit_height_in": 10.63,
+        "unit_length_in": 4.921,
+        "unit_width_in": 4.921,
+        "case_height_in": 11.024,
+        "case_length_in": 15.354,
+        "case_width_in": 10.433,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 27.84,
+        "estimated_case_dimensions": {
+          "length_in": 20.472,
+          "width_in": 15.649,
+          "height_in": 11.024,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 57,
+    "all_cross_references_observed": 46,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:15:32.833Z",
+  "discovered_from": "CH9558",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Setra S415HD (w/OM457LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Setra S415HD (w/OM457LA Engine)",
+        "year": "07-01",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Setra S415HD, Setra S415HDH (w/OM457LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Setra S415HD, Setra S415HDH (w/OM457LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Setra S416GT-HD, S416GT-HD2 Top Class (w/OM457LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Setra S416GT-HD, S416GT-HD2 Top Class (w/OM457LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Setra S416HDH Top Class (w/OM502LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Setra S416HDH Top Class (w/OM502LA Engine)",
+        "year": "07-03",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Tourismo 1 O 350, O 403 (w/OM457LA Euro 3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Tourismo 1 O 350, O 403 (w/OM457LA Euro 3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Tourismo II, Tourismo M, L (w/OM457LA Euro 4/5 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Tourismo II, Tourismo M, L (w/OM457LA Euro 4/5 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "MBE4000",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "MBE4000",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT KRONE",
+        "model": "Big M II w/Mercedes-Benz OM457LA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT KRONE",
+        "model": "Big M II w/Mercedes-Benz OM457LA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CASCADIA",
+        "year": "13-08",
+        "engine": "L6-12.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CENTURY CLASS",
+        "year": "11-01",
+        "engine": "L6-12.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CLASSIC",
+        "year": "11-04",
+        "engine": "L6-12.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Business Class M2 (w/Mercedes-Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Business Class M2 (w/Mercedes-Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Business Class M2 (w/Mercedes-Benz MBE460 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Business Class M2 (w/Mercedes-Benz MBE460 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Cascadia (w/Mercedes MB4000 eng.)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Cascadia (w/Mercedes MB4000 eng.)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Cascadia (w/Mercedes-Benz MBE4000)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Cascadia (w/Mercedes-Benz MBE4000)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century Class S/T (w/Mercedes-Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century Class S/T (w/Mercedes-Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Classic, Classic XL (w/Mercedes-Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Classic, Classic XL (w/Mercedes-Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Columbia (w/Mercedes-Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Columbia (w/Mercedes-Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Columbia (w/Mercedes-Benz MBE460 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Columbia (w/Mercedes-Benz MBE460 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "CST120 (w/Mercedes-Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "CST120 (w/Mercedes-Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLD120SD (w/Mercedes-Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLD120SD (w/Mercedes-Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "A/AT9500, L/LT9500 (w/Mercedes Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "A/AT9500, L/LT9500 (w/Mercedes Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "ALine (w/Mercedes Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "ALine (w/Mercedes Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L Line (w/Mercedes Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L Line (w/Mercedes Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L7500 (w/Mercedes Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L7500 (w/Mercedes Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT7500 (w/Mercedes Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT7500 (w/Mercedes Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT9500 (w/Mercedes Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT9500 (w/Mercedes Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "SilverStar (w/MercedesBenz MBE4000)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "SilverStar (w/MercedesBenz MBE4000)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "4900 Series (w/Mercedes-Benz MBE4000)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "4900 Series (w/Mercedes-Benz MBE4000)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "Constellation 4964FX (w/Mercedes-Benz MBE4000)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "Constellation 4964FX (w/Mercedes-Benz MBE4000)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Alliance Parts",
+        "part_number": "ABP/N10G-LF16046",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BK6676",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "P7230",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BK6675",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BK6671",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "LEF5198",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550769",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "MK13158",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "MK13170",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "MK13169",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "MK13128",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "MK13051",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "MK13068",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "MK13126",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF16046",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "MK13160",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF555",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E175HD129",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E175HD68",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hino",
+        "part_number": "S2340-11700",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "HP-8028",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "OX348D",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L7213",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LP8995",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LP5048",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "M Filter",
+        "part_number": "MU1230",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX348D",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU12110X",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU1012",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A0001802909",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A000 180 2909",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "541 180 0009",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A 457 184 01 2",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "000 180 2109",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A000 180 2109",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "1802109",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "457 184 0125",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "000 180 2129",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A457 184 0125",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mitsubishi",
+        "part_number": "MX901584",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mitsubishi",
+        "part_number": "ME422778",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "7213",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L55960",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ryco",
+        "part_number": "R2749P",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wirtgen",
+        "part_number": "177725",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57213",
+        "source_part_number": "CH9558",
+        "part_key": "001509691",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

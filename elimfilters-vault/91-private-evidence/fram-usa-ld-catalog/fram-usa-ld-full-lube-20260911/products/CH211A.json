@@ -1,0 +1,2464 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "CH211A",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CH211A",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 4.959,
+      "outer_diameter_mm": 125.96,
+      "height_in": 9.814,
+      "height_mm": 249.28,
+      "thread_size": null,
+      "gasket_od_in": 1.94,
+      "gasket_od_mm": 49.28,
+      "gasket_id_in": 1.54,
+      "gasket_id_mm": 39.12,
+      "gasket_thickness_in": 0.135,
+      "gasket_thickness_mm": 3.43,
+      "media_type": "Genuine Media",
+      "style": "Cartridge",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "658126"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "6581268"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "C6TZ-6731-A"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "15587164"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "6436290"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF432"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF432L"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "P999-HD"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "P7599"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BK6355"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "P999"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "HO505"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-170"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4954"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "P41"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L50041"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51954MP"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24954"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51954"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Atlas-Copco",
+        "part_number": "9710-1777"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92955"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92954"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "96954"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89954"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85954"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "28018"
+      },
+      {
+        "manufacturer": "Coach Guard",
+        "part_number": "T08-1079"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "AZL050"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "626"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "158139"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "402700"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "CL516"
+      },
+      {
+        "manufacturer": "Diamond Reo",
+        "part_number": "892161"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550516"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P166483"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559026"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559013"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "LFP550516"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559075"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF516"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8516"
+      },
+      {
+        "manufacturer": "Galion",
+        "part_number": "D85461"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "G566"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "FP428"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF330"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF428"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "244523R91"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "1214939H1"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "LP566"
+      },
+      {
+        "manufacturer": "Kenworth",
+        "part_number": "KW516"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "6710-50-5101"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "6710-51-4401"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L896"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP566"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LK18C"
+      },
+      {
+        "manufacturer": "Morbark",
+        "part_number": "29214-179"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "WLF-516"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "88052-A"
+      },
+      {
+        "manufacturer": "Phillips 66",
+        "part_number": "PL-268"
+      },
+      {
+        "manufacturer": "Phillips 66",
+        "part_number": "P41"
+      },
+      {
+        "manufacturer": "United Engine Life",
+        "part_number": "P-3"
+      },
+      {
+        "manufacturer": "WALMI",
+        "part_number": "WCA-211"
+      },
+      {
+        "manufacturer": "WGB",
+        "part_number": "S-196-CP"
+      },
+      {
+        "manufacturer": "White",
+        "part_number": "892161"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "82-80",
+        "make": "CHEVROLET",
+        "model": "C70",
+        "engine": "V8-9.1L",
+        "quantity": 1
+      },
+      {
+        "year": "1981",
+        "make": "FORD",
+        "model": "L8000",
+        "engine": "V8-9.1L",
+        "quantity": 1
+      },
+      {
+        "year": "82-81",
+        "make": "FORD",
+        "model": "LN8000",
+        "engine": "V8-9.1L",
+        "quantity": 1
+      },
+      {
+        "year": "82-81",
+        "make": "FORD",
+        "model": "LNT8000",
+        "engine": "V8-9.1L",
+        "quantity": 1
+      },
+      {
+        "year": "82-81",
+        "make": "FORD",
+        "model": "LT8000",
+        "engine": "V8-9.1L",
+        "quantity": 1
+      },
+      {
+        "year": "82-80",
+        "make": "GMC",
+        "model": "C7000",
+        "engine": "V8-9.1L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CH211A",
+    "source_part_key": "001509390",
+    "source_totals": {
+      "attributes": 33,
+      "applications": 140,
+      "cross_references": 64
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® Oil Filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE recommended intervals. Extra Guard is engineered for extended performance that meets all manufacturers recommended change intervals. No matter what you drive, or what motor oil you  use, FRAM® has a filter for you.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CH211A, HD Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Cartridge Oil Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Cartridge",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "82"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Cover",
+        "recno": "83"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "NA",
+        "recno": "84"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "85"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "86"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Oil Filter",
+        "recno": "87"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "9.814",
+        "recno": "89"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "4.959",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "1.540",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100420251",
+        "recno": "92"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "1.940",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.135",
+        "recno": "93"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "0.688",
+        "recno": "94"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "1.563",
+        "recno": "95"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "96"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "97"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "98"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.7580",
+        "recno": "102"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "10.5480",
+        "recno": "103"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "10.8220",
+        "recno": "104"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "11.5000",
+        "recno": "105"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "5.0990",
+        "recno": "106"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "16.4380",
+        "recno": "107"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "5.0990",
+        "recno": "108"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "11.0630",
+        "recno": "109"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.758,
+        "case_weight_lb": 10.548,
+        "unit_height_in": 10.822,
+        "unit_length_in": 5.099,
+        "unit_width_in": 5.099,
+        "case_height_in": 11.5,
+        "case_length_in": 16.438,
+        "case_width_in": 11.063,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 21.096,
+        "estimated_case_dimensions": {
+          "length_in": 21.917,
+          "width_in": 16.595,
+          "height_in": 11.5,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 140,
+    "all_cross_references_observed": 64,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:14:00.950Z",
+  "discovered_from": "CH211A",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "AIR COMPRESSOR BROOM & WADE",
+        "model": "WR431 w/Cummins NHC Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR BROOM & WADE",
+        "model": "WR431 w/Cummins NHC Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "C70",
+        "year": "82-80",
+        "engine": "V8-9.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER BROS",
+        "model": "SP10000",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER BROS",
+        "model": "SP10000",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER FIAT-ALLIS",
+        "model": "FD50 w/Cummins VT-1710 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER FIAT-ALLIS",
+        "model": "FD50 w/Cummins VT-1710 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK KOMATSU",
+        "model": "HD680-2 w/Cummins VTA1710 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK KOMATSU",
+        "model": "HD680-2 w/Cummins VTA1710 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CUMMINS",
+        "model": "C160, C175, CS180, CT190",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CUMMINS",
+        "model": "C160, C175, CS180, CT190",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CUMMINS",
+        "model": "J401, JN100, JN130",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CUMMINS",
+        "model": "J401, JN100, JN130",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CUMMINS",
+        "model": "NH Small Cam Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CUMMINS",
+        "model": "NH Small Cam Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CUMMINS",
+        "model": "NH195, NH200, NH220",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CUMMINS",
+        "model": "NH195, NH200, NH220",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CUMMINS",
+        "model": "NT495",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CUMMINS",
+        "model": "NT495",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CUMMINS",
+        "model": "NT855 SMALL CAM SERIES",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CUMMINS",
+        "model": "NT855 SMALL CAM SERIES",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE CUMMINS",
+        "model": "V903M",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE CUMMINS",
+        "model": "V903M",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE TRUCK CUMMINS",
+        "model": "V555",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE TRUCK CUMMINS",
+        "model": "V555",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "L8000",
+        "year": "1981",
+        "engine": "V8-9.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LN8000",
+        "year": "82-81",
+        "engine": "V8-9.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LNT8000",
+        "year": "82-81",
+        "engine": "V8-9.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LT8000",
+        "year": "82-81",
+        "engine": "V8-9.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "250 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "250 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "350 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "350 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "700 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "700 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "825 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "825 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "830 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "830 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "840 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "840 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C7000",
+        "year": "82-80",
+        "engine": "V8-9.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER KOMATSU",
+        "model": "WS16S-1 w/Cummins NTA-855 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER KOMATSU",
+        "model": "WS16S-1 w/Cummins NTA-855 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "440 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "440 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-41 w/Cummins V-12 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-41 w/Cummins V-12 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-41B w/Cummins V-12 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-41B w/Cummins V-12 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D455A-1 w/Komatsu VTA1710 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "D455A-1 w/Komatsu VTA1710 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Cougar III Series w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Cougar III Series w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Panther II Series w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Panther II Series w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "PT350 Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "PT350 Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "PTA296, PTA297, PTA310 w/Cummins V903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "PTA296, PTA297, PTA310 w/Cummins V903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST220 Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST220 Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST251 Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST251 Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST350",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST350",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST350 Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST350 Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLA (w/Cummins NTC855 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLA (w/Cummins NTC855 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLC (w/Cummins NTC Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLC (w/Cummins NTC Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLT (w/Cummins NTC Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLT (w/Cummins NTC Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "9500 Series (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "9500 Series (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C7000 (w/Cummins VT225 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C7000 (w/Cummins VT225 Engine)",
+        "year": "1982",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "5070 Series (w/Cummins NTC300 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "5070 Series (w/Cummins NTC300 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "5870 (w/Cummins NTC300 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "5870 (w/Cummins NTC300 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9670 Series (w/Cummins Formula 270 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9670 Series (w/Cummins Formula 270 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9670 Series (w/Cummins Formula 290 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9670 Series (w/Cummins Formula 290 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9670 Series (w/Cummins Formula 300 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9670 Series (w/Cummins Formula 300 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9670 Series (w/Cummins Formula 350 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9670 Series (w/Cummins Formula 350 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9670 Series (w/Cummins NTC300 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9670 Series (w/Cummins NTC300 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9670 Series (w/Cummins NTC350 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9670 Series (w/Cummins NTC350 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9670XL (w/Cummins Formula 290 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9670XL (w/Cummins Formula 290 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9670XL (w/Cummins Formula 300 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9670XL (w/Cummins Formula 300 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9670XL (w/Cummins Formula 350 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9670XL (w/Cummins Formula 350 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "F2276 S Series Car Hauler (w/Cummins NTC Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "F2276 S Series Car Hauler (w/Cummins NTC Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "F5050 Paystar Series (w/Cummins NTCC400 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "F5050 Paystar Series (w/Cummins NTCC400 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "F5070 Paystar Series (w/Cummins NTC Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "F5070 Paystar Series (w/Cummins NTC Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "Cruise Liner (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "Cruise Liner (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "Cruise Liner (w/Cummins NTC350 Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "Cruise Liner (w/Cummins NTC350 Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "F700 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "F700 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "FL700 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "FL700 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "FS700 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "FS700 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "RD700 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "RD700 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "RL700 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "RL700 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "RS700 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "RS700 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "RWL700 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "RWL700 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "RWS700 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "RWS700 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "WL700 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "WL700 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "WS700 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "WS700 (w/Cummins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "WG42 (w/Cummins NTC315 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "WG42 (w/Cummins NTC315 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL DOZER-COMPACTOR DRESSER",
+        "model": "970 w/Cummins VTA28C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL DOZER-COMPACTOR DRESSER",
+        "model": "970 w/Cummins VTA28C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER DRESSER",
+        "model": "570 w/Cummins VTA28C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER DRESSER",
+        "model": "570 w/Cummins VTA28C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "JH90EV w/Cummins V903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "JH90EV w/Cummins V903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "W170-1 w/Cummins V903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "W170-1 w/Cummins V903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF432",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF432L",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "658126",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "6581268",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Atlas-Copco",
+        "part_number": "9710-1777",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "P999-HD",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "P7599",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BK6355",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "P999",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92955",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92954",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "96954",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89954",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85954",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "28018",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "HO505",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Coach Guard",
+        "part_number": "T08-1079",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "AZL050",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "626",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "158139",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "402700",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "CL516",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Diamond Reo",
+        "part_number": "892161",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550516",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P166483",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559026",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559013",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "LFP550516",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559075",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF516",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8516",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "C6TZ-6731-A",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Galion",
+        "part_number": "D85461",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "15587164",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "6436290",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "G566",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "FP428",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF330",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF428",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "244523R91",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "1214939H1",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "LP566",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kenworth",
+        "part_number": "KW516",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "6710-50-5101",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "6710-51-4401",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L896",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP566",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LK18C",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Morbark",
+        "part_number": "29214-179",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-170",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4954",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "WLF-516",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "88052-A",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Phillips 66",
+        "part_number": "PL-268",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Phillips 66",
+        "part_number": "P41",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "P41",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L50041",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "United Engine Life",
+        "part_number": "P-3",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "WALMI",
+        "part_number": "WCA-211",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "WGB",
+        "part_number": "S-196-CP",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "White",
+        "part_number": "892161",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51954MP",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24954",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51954",
+        "source_part_number": "CH211A",
+        "part_key": "001509390",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

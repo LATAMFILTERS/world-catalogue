@@ -1,0 +1,250 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "FF10855",
+    "line": "FORCE"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "FF10855",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": null,
+      "height_mm": null,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": null,
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [],
+    "unresolved_cross_reference_candidates": [],
+    "vehicle_application_candidates": [
+      {
+        "year": "17-12",
+        "make": "HYUNDAI",
+        "model": "AZERA",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "18-13",
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "12-10",
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "19-13",
+        "make": "HYUNDAI",
+        "model": "SANTA FE XL",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "KIA",
+        "model": "CADENZA",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "18-15",
+        "make": "KIA",
+        "model": "SEDONA",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "12-11",
+        "make": "KIA",
+        "model": "SEDONA",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "2014",
+        "make": "KIA",
+        "model": "SEDONA",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "18-14",
+        "make": "KIA",
+        "model": "SORENTO",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "13-11",
+        "make": "KIA",
+        "model": "SORENTO",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "FF10855",
+    "source_part_key": "011295093",
+    "source_totals": {
+      "attributes": 0,
+      "applications": 10,
+      "cross_references": 0
+    },
+    "raw_attributes": [],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": null,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": null,
+        "case_length_in": null,
+        "case_width_in": null,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 10,
+    "all_cross_references_observed": 0,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:33:51.994Z",
+  "discovered_from": "FF10855",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "HYUNDAI",
+        "model": "AZERA",
+        "year": "17-12",
+        "engine": "V6-3.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "year": "18-13",
+        "engine": "V6-3.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "year": "12-10",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SANTA FE XL",
+        "year": "19-13",
+        "engine": "V6-3.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "CADENZA",
+        "year": "16-14",
+        "engine": "V6-3.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "SEDONA",
+        "year": "18-15",
+        "engine": "V6-3.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "SEDONA",
+        "year": "12-11",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "SEDONA",
+        "year": "2014",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "SORENTO",
+        "year": "18-14",
+        "engine": "V6-3.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "SORENTO",
+        "year": "13-11",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

@@ -1,0 +1,1313 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA10984",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA10984",
+    "product_type": "Air Filter, Air",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": 4.09,
+      "outer_diameter_mm": 103.89,
+      "height_in": 9.18,
+      "height_mm": 233.17,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Metal End Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Kubota",
+        "part_number": "T0070-16323"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA3792"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6483"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46483"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88483"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "LAF8772"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P606953"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF25578"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1169"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF8772"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA10984",
+    "source_part_key": "001482115",
+    "source_totals": {
+      "attributes": 25,
+      "applications": 106,
+      "cross_references": 10
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA10984, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Metal End Air Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "83"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "84"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "85"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "9.180",
+        "recno": "87"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "4.090",
+        "recno": "88"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "2.490",
+        "recno": "89"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "4.090",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "2.490",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100546111",
+        "recno": "92"
+      },
+      {
+        "attribute": "Inside Diameter (Inch)",
+        "value": "2.490",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "4.090",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "94"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "95"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.1500",
+        "recno": "99"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "12.0000",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "5.0620",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "5.0620",
+        "recno": "102"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": 1.15,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": 12,
+        "case_length_in": 5.062,
+        "case_width_in": 5.062,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 106,
+    "all_cross_references_observed": 10,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T04:59:51.616Z",
+  "discovered_from": "CA10984",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "ENGINE DIESEL MITSUBISHI",
+        "model": "S3L2",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL MITSUBISHI",
+        "model": "S3L2",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KUBOTA",
+        "model": "D1403-AE",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KUBOTA",
+        "model": "D1403-AE",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KUBOTA",
+        "model": "D1503E",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KUBOTA",
+        "model": "D1503E",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KUBOTA",
+        "model": "D1503-LA",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KUBOTA",
+        "model": "D1503-LA",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KUBOTA",
+        "model": "D1703-A",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KUBOTA",
+        "model": "D1703-A",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KUBOTA",
+        "model": "D1703TLB",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KUBOTA",
+        "model": "D1703TLB",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KUBOTA",
+        "model": "V1305-FM",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KUBOTA",
+        "model": "V1305-FM",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KUBOTA",
+        "model": "V1902",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KUBOTA",
+        "model": "V1902",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KUBOTA",
+        "model": "V1903",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KUBOTA",
+        "model": "V1903",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KUBOTA",
+        "model": "V2203A",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KUBOTA",
+        "model": "V2203A",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MAHINDRA",
+        "model": "K3M-D",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MAHINDRA",
+        "model": "K3M-D",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "F3060 w/Kubota 30 hp Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "F3060 w/Kubota 30 hp Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "F3060 w/Kubota V1305-FM Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "F3060 w/Kubota V1305-FM Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "F3060E w/Kubota V1305-FM Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "F3060E w/Kubota V1305-FM Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "F3060R w/Kubota V1305-FM Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "F3060R w/Kubota V1305-FM Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L2500 w/Kubota Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L2500 w/Kubota Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L2500DT w/Kubota D1403-AE Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L2500DT w/Kubota D1403-AE Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L2500F w/Kubota D1403-AE Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L2500F w/Kubota D1403-AE Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L2600 w/Kubota D1403-AE Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L2600 w/Kubota D1403-AE Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L2600DT w/Kubota D1403-AE Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L2600DT w/Kubota D1403-AE Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L2600F w/Kubota D1403-AE Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L2600F w/Kubota D1403-AE Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L3000 w/Kubota D1503E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L3000 w/Kubota D1503E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L3000DT w/Kubota D1503E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L3000DT w/Kubota D1503E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L3000F w/Kubota D1503E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L3000F w/Kubota D1503E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L3300 w/Kubota D1703-A Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L3300 w/Kubota D1703-A Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L3300DT w/Kubota D1703-A Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L3300DT w/Kubota D1703-A Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L3300F w/Kubota D1703-A Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "L3300F w/Kubota D1703-A Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK MOFFETT",
+        "model": "M50 w/Kubota V2203 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK MOFFETT",
+        "model": "M50 w/Kubota V2203 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK MOFFETT",
+        "model": "M50, M55P w/Kubota V2203 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK MOFFETT",
+        "model": "M50, M55P w/Kubota V2203 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK MOFFETT",
+        "model": "M55P w/Kubota V2203 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK MOFFETT",
+        "model": "M55P w/Kubota V2203 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L2900 w/Kubota D1503-LA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L2900 w/Kubota D1503-LA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L2900DT w/Kubota D1503-LA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L2900DT w/Kubota D1503-LA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L2900F, L2900DT, L2900GST w/Kubota D1503-LA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L2900F, L2900DT, L2900GST w/Kubota D1503-LA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L2950DT, L2950GST w/Kubota Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L2950DT, L2950GST w/Kubota Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L2950F w/Kubota Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L2950F w/Kubota Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L3300 w/Kubota D1703-A Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L3300 w/Kubota D1703-A Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L3450 w/Kubota Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L3450 w/Kubota Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L3450DT, L3450GST w/Kubota Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L3450DT, L3450GST w/Kubota Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L35 w/Kubota D1703TLB Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L35 w/Kubota D1703TLB Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L35-TL w/Kubota D1703TLB Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L35-TL w/Kubota D1703TLB Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L35TLB",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L35TLB",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L35-TLB w/Kubota D1703TLB Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L35-TLB w/Kubota D1703TLB Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L3600 w/Kubota V1903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L3600 w/Kubota V1903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L3600DT, L3600GST w/Kubota V1903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L3600DT, L3600GST w/Kubota V1903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L3600DT-GST w/Kubota V1903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L3600DT-GST w/Kubota V1903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L3650 w/Kubota Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L3650 w/Kubota Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L3650AST w/Kubota Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L3650AST w/Kubota Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L3650DT, GST w/Kubota V1900DI XA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L3650DT, GST w/Kubota V1900DI XA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L3650DT, L3650GST w/Kubota V1900DI XA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L3650DT, L3650GST w/Kubota V1900DI XA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L3650DT-GST w/Kubota V1902 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L3650DT-GST w/Kubota V1902 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L4200 w/Kubota 37 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L4200 w/Kubota 37 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L4200 w/Kubota V2203A Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L4200 w/Kubota V2203A Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MAHINDRA",
+        "model": "3015 w/Mitsubishi K3M-D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MAHINDRA",
+        "model": "3015 w/Mitsubishi K3M-D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA3792",
+        "source_part_number": "CA10984",
+        "part_key": "001482115",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88483",
+        "source_part_number": "CA10984",
+        "part_key": "001482115",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "LAF8772",
+        "source_part_number": "CA10984",
+        "part_key": "001482115",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P606953",
+        "source_part_number": "CA10984",
+        "part_key": "001482115",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF25578",
+        "source_part_number": "CA10984",
+        "part_key": "001482115",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1169",
+        "source_part_number": "CA10984",
+        "part_key": "001482115",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Kubota",
+        "part_number": "T0070-16323",
+        "source_part_number": "CA10984",
+        "part_key": "001482115",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF8772",
+        "source_part_number": "CA10984",
+        "part_key": "001482115",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6483",
+        "source_part_number": "CA10984",
+        "part_key": "001482115",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46483",
+        "source_part_number": "CA10984",
+        "part_key": "001482115",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

@@ -1,0 +1,671 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "FUEL",
+  "authority": {
+    "part_number": "G8861A",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "G8861A",
+    "product_type": "Fuel Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 2.01,
+      "outer_diameter_mm": 51.05,
+      "height_in": 6.52,
+      "height_mm": 165.61,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "In Line",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Ford",
+        "part_number": "1F1Z-9155-AD"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "1F1Z-9155-CA"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "19112755"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF741"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF7801"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF7739"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "G-6626"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "KLH867"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "MF 1039"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FG-1072"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3957"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3735"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F65500"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F65455"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33957"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33735"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Big A",
+        "part_number": "95735"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G6626"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "FF771"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "G6626"
+      },
+      {
+        "manufacturer": "Duralast",
+        "part_number": "FF771DL"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF343"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF353"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "G8861"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G6626"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "23957"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PF5500"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "2001",
+        "make": "FORD",
+        "model": "TAURUS",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2001",
+        "make": "MERCURY",
+        "model": "SABLE",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "G8861A",
+    "source_part_key": "000991437",
+    "source_totals": {
+      "attributes": 32,
+      "applications": 2,
+      "cross_references": 27
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, G8861A, Fuel Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "In-Line Fuel Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "In Line",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Metal",
+        "recno": "82"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Tube Connector",
+        "recno": "83"
+      },
+      {
+        "attribute": "Attachment Type",
+        "value": "Bracket",
+        "recno": "84"
+      },
+      {
+        "attribute": "Fuel Type",
+        "value": "Gasoline",
+        "recno": "85"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "86"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Fuel Filter",
+        "recno": "87"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "6.520",
+        "recno": "89"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "2.010",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Housing Material",
+        "value": "Metal",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100031112",
+        "recno": "92"
+      },
+      {
+        "attribute": "Hose Included",
+        "value": "No",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Inlet Line Size (Inch)",
+        "value": "3/8",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outlet Line Size (Inch)",
+        "value": "5/16",
+        "recno": "94"
+      },
+      {
+        "attribute": "Return Line Size (Inch)",
+        "value": "5/16",
+        "recno": "95"
+      },
+      {
+        "attribute": "Clamps Included",
+        "value": "No",
+        "recno": "96"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "97"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Taiwan",
+        "recno": "98"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.5830",
+        "recno": "102"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "3.4980",
+        "recno": "103"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "5.5800",
+        "recno": "104"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "6.1250",
+        "recno": "105"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.9150",
+        "recno": "106"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "12.2500",
+        "recno": "107"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.9150",
+        "recno": "108"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "8.2500",
+        "recno": "109"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.583,
+        "case_weight_lb": 3.498,
+        "unit_height_in": 5.58,
+        "unit_length_in": 3.915,
+        "unit_width_in": 3.915,
+        "case_height_in": 6.125,
+        "case_length_in": 12.25,
+        "case_width_in": 8.25,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 6.996,
+        "estimated_case_dimensions": {
+          "length_in": 16.333,
+          "width_in": 12.375,
+          "height_in": 6.125,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 2,
+    "all_cross_references_observed": 27,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:12:07.507Z",
+  "discovered_from": "G8861A",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "FORD",
+        "model": "TAURUS",
+        "year": "2001",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCURY",
+        "model": "SABLE",
+        "year": "2001",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF741",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF7801",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF7739",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "95735",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G6626",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "G-6626",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "FF771",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "G6626",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Duralast",
+        "part_number": "FF771DL",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "1F1Z-9155-AD",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "1F1Z-9155-CA",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "19112755",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF343",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF353",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "G8861",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G6626",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "KLH867",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "MF 1039",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FG-1072",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3957",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3735",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "23957",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PF5500",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F65500",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F65455",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33957",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33735",
+        "source_part_number": "G8861A",
+        "part_key": "000991437",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

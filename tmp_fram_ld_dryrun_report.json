@@ -1,0 +1,151 @@
+{
+  "stats": {
+    "harvested": 1755,
+    "direct_unique": 93,
+    "cross_unique": 86,
+    "ambiguous": 93,
+    "insufficient": 124,
+    "unmatched": 1359,
+    "hd_hits": 1881,
+    "by_family": {
+      "AIR": {
+        "harvested": 1055,
+        "direct_unique": 2,
+        "cross_unique": 48,
+        "ambiguous": 31,
+        "insufficient": 96,
+        "unmatched": 878
+      },
+      "CABIN": {
+        "harvested": 237,
+        "direct_unique": 0,
+        "cross_unique": 7,
+        "ambiguous": 4,
+        "insufficient": 5,
+        "unmatched": 221
+      },
+      "LUBE": {
+        "harvested": 330,
+        "direct_unique": 90,
+        "cross_unique": 26,
+        "ambiguous": 56,
+        "insufficient": 21,
+        "unmatched": 137
+      },
+      "FUEL": {
+        "harvested": 133,
+        "direct_unique": 1,
+        "cross_unique": 5,
+        "ambiguous": 2,
+        "insufficient": 2,
+        "unmatched": 123
+      }
+    },
+    "accepted": 179,
+    "unique_skus": 165,
+    "multi_authority_skus": 14,
+    "identity_rows": 1,
+    "existing_fram_cross_rows": 953
+  },
+  "multiAuthoritySkus": [
+    [
+      "EA33004",
+      [
+        "CA11033",
+        "CA8029SY"
+      ]
+    ],
+    [
+      "EA32100",
+      [
+        "CA546SY",
+        "CA584SY"
+      ]
+    ],
+    [
+      "EC32131",
+      [
+        "CF10132",
+        "CF9846A"
+      ]
+    ],
+    [
+      "EC32032",
+      [
+        "CF12157",
+        "FDC12157C"
+      ]
+    ],
+    [
+      "EL36006",
+      [
+        "CH10358",
+        "CH11252"
+      ]
+    ],
+    [
+      "EL39254",
+      [
+        "CH10415",
+        "CH8081"
+      ]
+    ],
+    [
+      "EL39316",
+      [
+        "CH10649",
+        "CH8751"
+      ]
+    ],
+    [
+      "EL32001",
+      [
+        "CH10797",
+        "PH8690"
+      ]
+    ],
+    [
+      "EL30514",
+      [
+        "CH11246",
+        "CH9918"
+      ]
+    ],
+    [
+      "EL30951",
+      [
+        "CH8871",
+        "PH8942"
+      ]
+    ],
+    [
+      "EF33802",
+      [
+        "G3727",
+        "G3802A"
+      ]
+    ],
+    [
+      "EL31680",
+      [
+        "PH2921",
+        "PH2977A"
+      ]
+    ],
+    [
+      "EL34967",
+      [
+        "PH2951",
+        "PH4967"
+      ]
+    ],
+    [
+      "EL30671",
+      [
+        "PH6010A",
+        "PH9688"
+      ]
+    ]
+  ],
+  "generated_at": "2026-09-12T14:28:34.859Z"
+}

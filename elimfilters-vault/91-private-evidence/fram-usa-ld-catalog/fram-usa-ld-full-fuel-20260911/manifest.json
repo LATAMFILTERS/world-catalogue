@@ -1,0 +1,968 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "fram-usa-ld-full-fuel-20260911",
+  "harvested_at": "2026-09-12T05:12:13.469Z",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "allowed_families": [
+    "LUBE",
+    "AIR",
+    "CABIN",
+    "FUEL"
+  ],
+  "case_pack_policy": 12,
+  "public_media_policy": "Genuine Media",
+  "gtin_promoted": false,
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "candidates": 134,
+  "unique_authorities": 133,
+  "ok": 133,
+  "errors": 0,
+  "skipped": 1,
+  "by_family": {
+    "LUBE": 0,
+    "AIR": 0,
+    "CABIN": 0,
+    "FUEL": 133
+  },
+  "results": [
+    {
+      "status": "OK",
+      "discovered_from": "G1000",
+      "authority_part_number": "G1000",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G1000.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G10166",
+      "authority_part_number": "G10166",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G10166.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G10243",
+      "authority_part_number": "G10243",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G10243.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G10617",
+      "authority_part_number": "G10617",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G10617.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G10902",
+      "authority_part_number": "G10902",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G10902.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G11278",
+      "authority_part_number": "G11278",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G11278.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G11995",
+      "authority_part_number": "G11995",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G11995.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3359",
+      "authority_part_number": "G3359",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3359.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3427",
+      "authority_part_number": "G3427",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3427.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3428A",
+      "authority_part_number": "G3428A",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3428A.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3499",
+      "authority_part_number": "G3499",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3499.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3499DP",
+      "authority_part_number": "G3499DP",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3499DP.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3515",
+      "authority_part_number": "G3515",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3515.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3583",
+      "authority_part_number": "G3583",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3583.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3587",
+      "authority_part_number": "G3587",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3587.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3596",
+      "authority_part_number": "G3596",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3596.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3606DP",
+      "authority_part_number": "G3606DP",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3606DP.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3641",
+      "authority_part_number": "G3641",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3641.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3692",
+      "authority_part_number": "G3692",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3692.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3713",
+      "authority_part_number": "G3713",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3713.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3724",
+      "authority_part_number": "G3724",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3724.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3727",
+      "authority_part_number": "G3727",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3727.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3727FP",
+      "authority_part_number": "G3727FP",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3727FP.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3744",
+      "authority_part_number": "G3744",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3744.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3747",
+      "authority_part_number": "G3747",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3747.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3802A",
+      "authority_part_number": "G3802A",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3802A.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3802ADP",
+      "authority_part_number": "G3802ADP",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3802ADP.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3802AFP",
+      "authority_part_number": "G3802AFP",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3802AFP.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3829",
+      "authority_part_number": "G3829",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3829.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3831",
+      "authority_part_number": "G3831",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3831.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3841",
+      "authority_part_number": "G3841",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3841.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3842",
+      "authority_part_number": "G3842",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3842.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3850",
+      "authority_part_number": "G3850",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3850.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3850DP",
+      "authority_part_number": "G3850DP",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3850DP.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G3941",
+      "authority_part_number": "G3941",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G3941.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G4143",
+      "authority_part_number": "G4143",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G4143.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G4143DP",
+      "authority_part_number": "G4143DP",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G4143DP.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G4164",
+      "authority_part_number": "G4164",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G4164.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G4166",
+      "authority_part_number": "G4166",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G4166.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G4167",
+      "authority_part_number": "G4167",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G4167.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G4177",
+      "authority_part_number": "G4177",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G4177.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G4191",
+      "authority_part_number": "G4191",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G4191.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G4773",
+      "authority_part_number": "G4773",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G4773.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G4774",
+      "authority_part_number": "G4774",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G4774.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G4776",
+      "authority_part_number": "G4776",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G4776.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G4777",
+      "authority_part_number": "G4777",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G4777.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G4926",
+      "authority_part_number": "G4926",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G4926.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G5237",
+      "authority_part_number": "G5237",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G5237.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G5237DP",
+      "authority_part_number": "G5237DP",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G5237DP.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G5870",
+      "authority_part_number": "G5870",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G5870.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G5982",
+      "authority_part_number": "G5982",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G5982.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6343",
+      "authority_part_number": "G6343",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6343.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6346",
+      "authority_part_number": "G6346",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6346.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6348",
+      "authority_part_number": "G6348",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6348.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6405",
+      "authority_part_number": "G6405",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6405.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6426",
+      "authority_part_number": "G6426",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6426.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6429",
+      "authority_part_number": "G6429",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6429.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6431",
+      "authority_part_number": "G6431",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6431.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6435",
+      "authority_part_number": "G6435",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6435.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6436",
+      "authority_part_number": "G6436",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6436.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6440",
+      "authority_part_number": "G6440",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6440.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6442",
+      "authority_part_number": "G6442",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6442.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6451",
+      "authority_part_number": "G6451",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6451.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6457",
+      "authority_part_number": "G6457",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6457.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6460",
+      "authority_part_number": "G6460",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6460.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6462",
+      "authority_part_number": "G6462",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6462.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6495",
+      "authority_part_number": "G6495",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6495.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6507",
+      "authority_part_number": "G6507",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6507.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6534",
+      "authority_part_number": "G6534",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6534.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6535",
+      "authority_part_number": "G6535",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6535.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6537",
+      "authority_part_number": "G6537",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6537.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6561",
+      "authority_part_number": "G6561",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6561.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6566",
+      "authority_part_number": "G6566",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6566.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6567",
+      "authority_part_number": "G6567",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6567.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6612",
+      "authority_part_number": "G6612",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6612.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6680",
+      "authority_part_number": "G6680",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6680.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6681",
+      "authority_part_number": "G6681",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6681.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6689",
+      "authority_part_number": "G6689",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6689.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6826DP",
+      "authority_part_number": "G6826DP",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6826DP.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6859",
+      "authority_part_number": "G6859",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6859.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6896",
+      "authority_part_number": "G6896",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6896.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G6897",
+      "authority_part_number": "G6897",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G6897.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7071",
+      "authority_part_number": "G7071",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7071.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7143",
+      "authority_part_number": "G7143",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7143.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7144",
+      "authority_part_number": "G7144",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7144.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7194",
+      "authority_part_number": "G7194",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7194.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7196DP",
+      "authority_part_number": "G7196DP",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7196DP.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7296",
+      "authority_part_number": "G7296",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7296.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7315",
+      "authority_part_number": "G7315",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7315.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7315DP",
+      "authority_part_number": "G7315DP",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7315DP.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7333",
+      "authority_part_number": "G7333",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7333.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7355",
+      "authority_part_number": "G7355",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7355.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7356",
+      "authority_part_number": "G7356",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7356.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7393",
+      "authority_part_number": "G7393",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7393.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7398",
+      "authority_part_number": "G7398",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7398.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7399",
+      "authority_part_number": "G7399",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7399.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7416",
+      "authority_part_number": "G7416",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7416.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7418",
+      "authority_part_number": "G7418",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7418.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7596",
+      "authority_part_number": "G7596",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7596.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7596DP",
+      "authority_part_number": "G7596DP",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7596DP.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7599",
+      "authority_part_number": "G7599",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7599.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7609",
+      "authority_part_number": "G7609",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7609.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7610",
+      "authority_part_number": "G7610",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7610.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7611",
+      "authority_part_number": "G7611",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7611.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7647",
+      "authority_part_number": "G7647",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7647.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7735",
+      "authority_part_number": "G7735",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7735.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7736",
+      "authority_part_number": "G7736",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7736.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7739",
+      "authority_part_number": "G7739",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7739.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7740",
+      "authority_part_number": "G7740",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7740.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7766",
+      "authority_part_number": "G7766",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7766.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G7769",
+      "authority_part_number": "G7769",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G7769.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G8008",
+      "authority_part_number": "G8008",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G8008.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G8018",
+      "authority_part_number": "G8018",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G8018.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G8018DP",
+      "authority_part_number": "G8018DP",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G8018DP.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G8075",
+      "authority_part_number": "G8075",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G8075.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G8086",
+      "authority_part_number": "G8086",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G8086.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G8116",
+      "authority_part_number": "G8116",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G8116.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G8122",
+      "authority_part_number": "G8122",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G8122.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G8216",
+      "authority_part_number": "G8216",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G8216.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G8219",
+      "authority_part_number": "G8219",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G8219.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G8228",
+      "authority_part_number": "G8228",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G8228.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G8414",
+      "authority_part_number": "G8414",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G8414.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G8415",
+      "authority_part_number": "G8415",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G8415.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G8615",
+      "authority_part_number": "G8615",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G8615.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G8711",
+      "authority_part_number": "G8711",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G8711.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G8757",
+      "authority_part_number": "G8757",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G8757.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G8758",
+      "authority_part_number": "G8758",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G8758.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G8861A",
+      "authority_part_number": "G8861A",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G8861A.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G9272",
+      "authority_part_number": "G9272",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G9272.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G9279",
+      "authority_part_number": "G9279",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G9279.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G9343",
+      "authority_part_number": "G9343",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G9343.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G9370",
+      "authority_part_number": "G9370",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G9370.json"
+    },
+    {
+      "status": "OK",
+      "discovered_from": "G9795",
+      "authority_part_number": "G9795",
+      "family": "FUEL",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-fuel-20260911/products/G9795.json"
+    },
+    {
+      "status": "OUT_OF_SCOPE",
+      "part_number": "G9344",
+      "part_type": ""
+    }
+  ]
+}

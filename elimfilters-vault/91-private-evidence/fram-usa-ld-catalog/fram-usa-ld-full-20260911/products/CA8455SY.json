@@ -1,0 +1,507 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA8455SY",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA8455SY",
+    "product_type": "Air Filter, Air",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 9.125,
+      "height_mm": 231.77,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Metal End Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I-1441"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "CH12881"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AT308571"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2861"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42456"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Big A",
+        "part_number": "93456"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87456"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P141278"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P606959"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF2273"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF5835"
+      },
+      {
+        "manufacturer": "Yanmar",
+        "part_number": "121422-12570"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA8455SY",
+    "source_part_key": "001510488",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 10,
+      "cross_references": 12
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA8455SY, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Metal End Air Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Safety",
+        "recno": "81"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "83"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "84"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "85"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "86"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "87"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "88"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "89"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "9.125",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100017291",
+        "recno": "92"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "0.656",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "2.390",
+        "recno": "93"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "1.953",
+        "recno": "94"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "2.453",
+        "recno": "95"
+      },
+      {
+        "attribute": "Washer Thickness (Inch)",
+        "value": "0.188",
+        "recno": "96"
+      },
+      {
+        "attribute": "Washer Inside Diameter (Inch)",
+        "value": "0.593",
+        "recno": "97"
+      },
+      {
+        "attribute": "Washer Outside Diameter (Inch)",
+        "value": "1.250",
+        "recno": "98"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "99"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "100"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "South Africa",
+        "recno": "101"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "0.5000",
+        "recno": "105"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "9.5000",
+        "recno": "106"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "4.7500",
+        "recno": "107"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "4.7500",
+        "recno": "108"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": 0.5,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": 9.5,
+        "case_length_in": 4.75,
+        "case_width_in": 4.75,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 10,
+    "all_cross_references_observed": 12,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:51:33.806Z",
+  "discovered_from": "CA8455SY",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "EXCAVATOR JOHN DEERE",
+        "model": "25 EXCAVATOR",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR JOHN DEERE",
+        "model": "25 EXCAVATOR",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR JOHN DEERE",
+        "model": "30, 50 w/Yanmar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR JOHN DEERE",
+        "model": "30, 50 w/Yanmar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "1050 w/Yanmar 3T90TJ Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "1050 w/Yanmar 3T90TJ Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "770 TRACTOR",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "770 TRACTOR",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "870, 970 w/Yanmar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "870, 970 w/Yanmar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2861",
+        "source_part_number": "CA8455SY",
+        "part_key": "001510488",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "93456",
+        "source_part_number": "CA8455SY",
+        "part_key": "001510488",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87456",
+        "source_part_number": "CA8455SY",
+        "part_key": "001510488",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I-1441",
+        "source_part_number": "CA8455SY",
+        "part_key": "001510488",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P141278",
+        "source_part_number": "CA8455SY",
+        "part_key": "001510488",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P606959",
+        "source_part_number": "CA8455SY",
+        "part_key": "001510488",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF2273",
+        "source_part_number": "CA8455SY",
+        "part_key": "001510488",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "CH12881",
+        "source_part_number": "CA8455SY",
+        "part_key": "001510488",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AT308571",
+        "source_part_number": "CA8455SY",
+        "part_key": "001510488",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF5835",
+        "source_part_number": "CA8455SY",
+        "part_key": "001510488",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42456",
+        "source_part_number": "CA8455SY",
+        "part_key": "001510488",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Yanmar",
+        "part_number": "121422-12570",
+        "source_part_number": "CA8455SY",
+        "part_key": "001510488",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

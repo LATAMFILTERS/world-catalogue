@@ -1,0 +1,861 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH6355",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH6355",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 3.969,
+      "outer_diameter_mm": 100.81,
+      "height_in": 5.039,
+      "height_mm": 127.99,
+      "thread_size": "Metric",
+      "gasket_od_in": 2.953,
+      "gasket_od_mm": 75.01,
+      "gasket_id_in": 2.559,
+      "gasket_id_mm": 65,
+      "gasket_thickness_in": 0.394,
+      "gasket_thickness_mm": 10.01,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "Yes",
+      "bypass_relief_valve": "Yes",
+      "bypass_setting_psi": 20,
+      "burst_pressure_psi": 350
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2147"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BD28"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "WP928/81"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-805"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1067"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L34750"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51067"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Big A",
+        "part_number": "92067"
+      },
+      {
+        "manufacturer": "Car Care",
+        "part_number": "OF6355"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85067"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "MD069782"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "2087"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P551343"
+      },
+      {
+        "manufacturer": "FERGUSON",
+        "part_number": "R1067"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3564"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "R1067"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "L34750"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF147"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "D3"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP9930"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP805"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "L34750"
+      },
+      {
+        "manufacturer": "Mitsubishi",
+        "part_number": "MD069782"
+      },
+      {
+        "manufacturer": "Mitsubishi",
+        "part_number": "MD184086"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "L34750"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "L34750"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "L34750"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "LFP805"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "LFP805"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-136"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "87-85",
+        "make": "FORD",
+        "model": "RANGER",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "PH6355",
+    "source_part_key": "000990673",
+    "source_totals": {
+      "attributes": 47,
+      "applications": 11,
+      "cross_references": 30
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® oil filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE (original equipment) recommended intervals. Equipped with SureGrip® technology, FRAM Extra Guard® oil filters provide a non-slip surface allowing for easy install and removal.\\nThe silicone anti-drain back valve ensures safe engine startups, extending the life of the oil filter for up to 10,000 miles (16,000 kilometers).",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Engineered for use with synthetic or conventional motor oils",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, PH6355, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filter media is a blend of fiber and resin that captures 95%?of the dirt particles",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Proven protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Spin-on Combination By-Pass Oil Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Silicone anti-drain back valve helps ensure safe engine start up",
+        "recno": "4"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "Yes",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "Yes",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "85"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Metric",
+        "recno": "86"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "88"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base",
+        "recno": "89"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "White",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100381590",
+        "recno": "92"
+      },
+      {
+        "attribute": "Attachment Type",
+        "value": "Spin-On",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "94"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "95"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "5.039",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "3.969",
+        "recno": "97"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "98"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "2.559",
+        "recno": "99"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "2.953",
+        "recno": "100"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.394",
+        "recno": "101"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Millimeter)",
+        "value": "M26x1.5",
+        "recno": "102"
+      },
+      {
+        "attribute": "Bypass Relief Valve Setting (Pounds per Square Inch)",
+        "value": "20",
+        "recno": "103"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "104"
+      },
+      {
+        "attribute": "Burst Pressure (Pounds per Square Inch)",
+        "value": "350.000",
+        "recno": "105"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "106"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "107"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "108"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.7590",
+        "recno": "112"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "10.5540",
+        "recno": "113"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "5.1900",
+        "recno": "114"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "6.2090",
+        "recno": "115"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "4.1700",
+        "recno": "116"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "13.2420",
+        "recno": "117"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "4.1700",
+        "recno": "118"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "9.1080",
+        "recno": "119"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.759,
+        "case_weight_lb": 10.554,
+        "unit_height_in": 5.19,
+        "unit_length_in": 4.17,
+        "unit_width_in": 4.17,
+        "case_height_in": 6.209,
+        "case_length_in": 13.242,
+        "case_width_in": 9.108,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 21.108,
+        "estimated_case_dimensions": {
+          "length_in": 17.656,
+          "width_in": 13.662,
+          "height_in": 6.209,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 11,
+    "all_cross_references_observed": 30,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:11:14.072Z",
+  "discovered_from": "PH6355",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "FORD",
+        "model": "RANGER",
+        "year": "87-85",
+        "engine": "L4-2.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER HYUNDAI",
+        "model": "H-1, H-1 Starex 2.5D (w/D4BB Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER HYUNDAI",
+        "model": "H-1, H-1 Starex 2.5D (w/D4BB Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER HYUNDAI",
+        "model": "H100 2.5D (w/D4BA/F Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER HYUNDAI",
+        "model": "H100 2.5D (w/D4BA/F Engine)",
+        "year": "00-95",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER HYUNDAI",
+        "model": "H100 2.5D FDXV/W (w/D4B4 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER HYUNDAI",
+        "model": "H100 2.5D FDXV/W (w/D4B4 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER HYUNDAI",
+        "model": "H100 2.5D FDXV/W (w/D4BX Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER HYUNDAI",
+        "model": "H100 2.5D FDXV/W (w/D4BX Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER HYUNDAI",
+        "model": "H100 2.5TD (P) (w/D48F Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER HYUNDAI",
+        "model": "H100 2.5TD (P) (w/D48F Engine)",
+        "year": "00-93",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2147",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BD28",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92067",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Car Care",
+        "part_number": "OF6355",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85067",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "MD069782",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "2087",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P551343",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FERGUSON",
+        "part_number": "R1067",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3564",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "R1067",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "L34750",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF147",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "D3",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP9930",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP805",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "WP928/81",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "L34750",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mitsubishi",
+        "part_number": "MD069782",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mitsubishi",
+        "part_number": "MD184086",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "L34750",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-805",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1067",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L34750",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "L34750",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "L34750",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "LFP805",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "LFP805",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-136",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51067",
+        "source_part_number": "PH6355",
+        "part_key": "000990673",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

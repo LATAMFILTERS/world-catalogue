@@ -1,0 +1,932 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH8936",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH8936",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 4.765,
+      "outer_diameter_mm": 121.03,
+      "height_in": 5.844,
+      "height_mm": 148.44,
+      "thread_size": "Metric",
+      "gasket_od_in": 2.813,
+      "gasket_od_mm": 71.45,
+      "gasket_id_in": 2.453,
+      "gasket_id_mm": 62.31,
+      "gasket_thickness_in": 0.188,
+      "gasket_thickness_mm": 4.78,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "Yes",
+      "bypass_setting_psi": 19,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BD7028"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1675"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L45262"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51675"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Big A",
+        "part_number": "92675"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85675"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P502008"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3830"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF456"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP3307"
+      },
+      {
+        "manufacturer": "Mitsubishi",
+        "part_number": "ME013344"
+      },
+      {
+        "manufacturer": "Mitsubishi",
+        "part_number": "ME013343"
+      },
+      {
+        "manufacturer": "Mitsubishi",
+        "part_number": "ME202472"
+      },
+      {
+        "manufacturer": "Mitsubishi",
+        "part_number": "ME013307"
+      },
+      {
+        "manufacturer": "Mitsubishi",
+        "part_number": "ME215002"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-146"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "PH8936",
+    "source_part_key": "001510306",
+    "source_totals": {
+      "attributes": 39,
+      "applications": 46,
+      "cross_references": 16
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, PH8936, HD Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Spin-on Combination By-Pass Oil Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "Yes",
+        "recno": "81"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "84"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Metric",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Orange",
+        "recno": "89"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Drain Plug Included",
+        "value": "No",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100027580",
+        "recno": "92"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Oil Filter",
+        "recno": "94"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "95"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "5.844",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "4.765",
+        "recno": "97"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "2.453",
+        "recno": "98"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "2.813",
+        "recno": "99"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.188",
+        "recno": "100"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Millimeter)",
+        "value": "M26x1.5",
+        "recno": "101"
+      },
+      {
+        "attribute": "Bypass Relief Valve Setting (Pounds per Square Inch)",
+        "value": "19",
+        "recno": "102"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "103"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "104"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "South Africa",
+        "recno": "105"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.9080",
+        "recno": "109"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "11.4480",
+        "recno": "110"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "6.6070",
+        "recno": "111"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "7.2320",
+        "recno": "112"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "4.1700",
+        "recno": "113"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "12.9000",
+        "recno": "114"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "4.1700",
+        "recno": "115"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "8.7620",
+        "recno": "116"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.908,
+        "case_weight_lb": 11.448,
+        "unit_height_in": 6.607,
+        "unit_length_in": 4.17,
+        "unit_width_in": 4.17,
+        "case_height_in": 7.232,
+        "case_length_in": 12.9,
+        "case_width_in": 8.762,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 22.896,
+        "estimated_case_dimensions": {
+          "length_in": 17.2,
+          "width_in": 13.143,
+          "height_in": 7.232,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 46,
+    "all_cross_references_observed": 16,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:20:52.548Z",
+  "discovered_from": "PH8936",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "MEDIUM DUTY TRUCK MITSUBISHI FUSO",
+        "model": "FE439 (w/Mitsubishi 4D34 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK MITSUBISHI FUSO",
+        "model": "FE439 (w/Mitsubishi 4D34 Engine)",
+        "year": "95-92",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK MITSUBISHI FUSO",
+        "model": "FE639 (w/Mitsubishi 4D34T Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK MITSUBISHI FUSO",
+        "model": "FE639 (w/Mitsubishi 4D34T Engine)",
+        "year": "04-96",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK MITSUBISHI FUSO",
+        "model": "FH211 (w/Mitsubishi 6D34-0AT2 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK MITSUBISHI FUSO",
+        "model": "FH211 (w/Mitsubishi 6D34-0AT2 Engine)",
+        "year": "02-96",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK MITSUBISHI FUSO",
+        "model": "FH211 (w/Mitsubishi 6D34-1AT2 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK MITSUBISHI FUSO",
+        "model": "FH211 (w/Mitsubishi 6D34-1AT2 Engine)",
+        "year": "02-96",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MITSUBISHI FUSO",
+        "model": "FE",
+        "year": "04-92",
+        "engine": "L4-3.9L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MITSUBISHI FUSO",
+        "model": "FE-CA",
+        "year": "2001",
+        "engine": "L4-3.9L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MITSUBISHI FUSO",
+        "model": "FE-HD",
+        "year": "04-96",
+        "engine": "L4-3.9L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MITSUBISHI FUSO",
+        "model": "FE-SP",
+        "year": "04-96",
+        "engine": "L4-3.9L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MITSUBISHI FUSO",
+        "model": "FG",
+        "year": "04-98",
+        "engine": "L4-3.9L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MITSUBISHI FUSO",
+        "model": "FG",
+        "year": "93-92",
+        "engine": "L4-3.9L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MITSUBISHI FUSO",
+        "model": "FH",
+        "year": "95-93",
+        "engine": "L6-5.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MITSUBISHI FUSO",
+        "model": "FH",
+        "year": "04-96",
+        "engine": "L6-5.9L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FE434",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FE434",
+        "year": "95-92",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FE439",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FE439",
+        "year": "95-92",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FE444",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FE444",
+        "year": "95-92",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FE449",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FE449",
+        "year": "95-92",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FE534",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FE534",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FE537",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FE537",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FE649 (w/Mitsubishi 4D34T Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FE649 (w/Mitsubishi 4D34T Engine)",
+        "year": "04-96",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FE73B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FE73B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FG439",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FG439",
+        "year": "93-92",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FG639 (w/Mitsubishi 4D34-3AT3A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FG639 (w/Mitsubishi 4D34-3AT3A Engine)",
+        "year": "04-98",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FG639 (w/Mitsubishi 4D34T Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FG639 (w/Mitsubishi 4D34T Engine)",
+        "year": "04-98",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FG649 (w/Mitsubishi 4D34-3AT3A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FG649 (w/Mitsubishi 4D34-3AT3A Engine)",
+        "year": "04-01",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FH100",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FH100",
+        "year": "95-92",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FH100 (w/Mitsubishi 6D31 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FH100 (w/Mitsubishi 6D31 Engine)",
+        "year": "95-92",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FH100 (w/Mitsubishi 6D31T Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FH100 (w/Mitsubishi 6D31T Engine)",
+        "year": "95-92",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BD7028",
+        "source_part_number": "PH8936",
+        "part_key": "001510306",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92675",
+        "source_part_number": "PH8936",
+        "part_key": "001510306",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85675",
+        "source_part_number": "PH8936",
+        "part_key": "001510306",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P502008",
+        "source_part_number": "PH8936",
+        "part_key": "001510306",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3830",
+        "source_part_number": "PH8936",
+        "part_key": "001510306",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF456",
+        "source_part_number": "PH8936",
+        "part_key": "001510306",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP3307",
+        "source_part_number": "PH8936",
+        "part_key": "001510306",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mitsubishi",
+        "part_number": "ME013344",
+        "source_part_number": "PH8936",
+        "part_key": "001510306",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mitsubishi",
+        "part_number": "ME013343",
+        "source_part_number": "PH8936",
+        "part_key": "001510306",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mitsubishi",
+        "part_number": "ME202472",
+        "source_part_number": "PH8936",
+        "part_key": "001510306",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mitsubishi",
+        "part_number": "ME013307",
+        "source_part_number": "PH8936",
+        "part_key": "001510306",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mitsubishi",
+        "part_number": "ME215002",
+        "source_part_number": "PH8936",
+        "part_key": "001510306",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1675",
+        "source_part_number": "PH8936",
+        "part_key": "001510306",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L45262",
+        "source_part_number": "PH8936",
+        "part_key": "001510306",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-146",
+        "source_part_number": "PH8936",
+        "part_key": "001510306",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51675",
+        "source_part_number": "PH8936",
+        "part_key": "001510306",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

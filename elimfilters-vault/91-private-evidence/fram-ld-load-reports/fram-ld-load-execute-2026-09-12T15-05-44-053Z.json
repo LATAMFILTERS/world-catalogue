@@ -1,0 +1,152 @@
+{
+  "mode": "execute",
+  "candidate_authorities": 179,
+  "excluded_authority_conflicts": [
+    {
+      "authority": "CA10495",
+      "proposed_sku": "EA30020",
+      "existing_skus": [
+        "EA53012"
+      ]
+    },
+    {
+      "authority": "CA5125",
+      "proposed_sku": "EA32568",
+      "existing_skus": [
+        "EA55262"
+      ]
+    },
+    {
+      "authority": "CA6828",
+      "proposed_sku": "EA35522",
+      "existing_skus": [
+        "EA51381"
+      ]
+    },
+    {
+      "authority": "CA9244",
+      "proposed_sku": "EA36422",
+      "existing_skus": [
+        "EA54039"
+      ]
+    },
+    {
+      "authority": "CF10139",
+      "proposed_sku": "EC31828",
+      "existing_skus": [
+        "EC51828"
+      ]
+    },
+    {
+      "authority": "CH10358",
+      "proposed_sku": "EL36006",
+      "existing_skus": [
+        "EL56006"
+      ]
+    },
+    {
+      "authority": "CH10530",
+      "proposed_sku": "EL30823",
+      "existing_skus": [
+        "EL58231"
+      ]
+    },
+    {
+      "authority": "CH11252",
+      "proposed_sku": "EL36006",
+      "existing_skus": [
+        "EL56006"
+      ]
+    },
+    {
+      "authority": "CH11784",
+      "proposed_sku": "EL36013",
+      "existing_skus": [
+        "EL56002"
+      ]
+    },
+    {
+      "authority": "PH2842",
+      "proposed_sku": "EL34029",
+      "existing_skus": [
+        "EL52181"
+      ]
+    },
+    {
+      "authority": "PH3567",
+      "proposed_sku": "EL33012",
+      "existing_skus": [
+        "EL52371"
+      ]
+    },
+    {
+      "authority": "PH3612",
+      "proposed_sku": "EL31294",
+      "existing_skus": [
+        "EL52941"
+      ]
+    },
+    {
+      "authority": "PH6349A",
+      "proposed_sku": "EL32300",
+      "existing_skus": [
+        "EL53001"
+      ]
+    },
+    {
+      "authority": "PH7136",
+      "proposed_sku": "EL31170",
+      "existing_skus": [
+        "EL51701",
+        "EL51702"
+      ]
+    }
+  ],
+  "matched_authorities": 165,
+  "matched_skus": 152,
+  "planned": {
+    "comp": 1727,
+    "oem": 696,
+    "apps": 4049,
+    "specs": 1207,
+    "skipped_competitor_conflicts": 68,
+    "valid_apps": 4049
+  },
+  "inserted": {
+    "parents": 151,
+    "readiness_created": 151,
+    "competitor": 1659,
+    "oem": 696,
+    "applications": 4049,
+    "specifications": 1207,
+    "readiness_updated": 152
+  },
+  "audit": {
+    "heavy_duty_targets": 0,
+    "target_filter_types": [
+      {
+        "filter_type": "air",
+        "n": 44
+      },
+      {
+        "filter_type": "cabin",
+        "n": 4
+      },
+      {
+        "filter_type": "fuel",
+        "n": 5
+      },
+      {
+        "filter_type": "oil",
+        "n": 99
+      }
+    ],
+    "preexisting_or_external_source_rows_on_hd": {
+      "competitor_hd": 0,
+      "oem_hd": 0,
+      "specs_hd": 0,
+      "apps_hd": 0
+    }
+  },
+  "transaction": "COMMIT"
+}

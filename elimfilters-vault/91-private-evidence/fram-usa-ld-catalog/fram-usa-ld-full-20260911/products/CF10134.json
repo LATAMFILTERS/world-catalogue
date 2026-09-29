@@ -1,0 +1,1937 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF10134",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF10134",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.182,
+      "height_mm": 30.02,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF159"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA4196"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3875WS"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF7781"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LA216"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4815"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C35519"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24815"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-41"
+      },
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-40"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2019"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2023"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89815"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1781"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DC058"
+      },
+      {
+        "manufacturer": "Delphi",
+        "part_number": "16458329"
+      },
+      {
+        "manufacturer": "Driveworks",
+        "part_number": "DW-35519"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "XC35519"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4815"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4815C"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1244"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1244"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "80292-T0G-A01"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "80292-SEC-A01"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "80292-SHJ-A01"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "80292-TZ3-A41"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "80292-TZ5-A41"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "80292-SHJ-A41"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "80292-SDA-407"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "80292-SDA-A01"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "80219-SHJ-A01"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "80292-SWA-A01"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "80292-SDC-A01"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF2001"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1781"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1781"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1781"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF7781"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3047"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "HN03104"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "CAF1781"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "224815"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94815"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PC-58"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC5519"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "C35519P"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PC-5519"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PBC35519"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF7781"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1781M"
+      },
+      {
+        "manufacturer": "SUPERTECH",
+        "part_number": "5750"
+      },
+      {
+        "manufacturer": "VIPER",
+        "part_number": "10134C"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "11-07",
+        "make": "ACURA",
+        "model": "CSX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "11-07",
+        "make": "ACURA",
+        "model": "CSX",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-13",
+        "make": "ACURA",
+        "model": "ILX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "15-13",
+        "make": "ACURA",
+        "model": "ILX",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "15-13",
+        "make": "ACURA",
+        "model": "ILX",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-13",
+        "make": "ACURA",
+        "model": "ILX",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "20-07",
+        "make": "ACURA",
+        "model": "MDX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "ACURA",
+        "model": "MDX",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-14",
+        "make": "ACURA",
+        "model": "MDX",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "13-07",
+        "make": "ACURA",
+        "model": "MDX",
+        "engine": "V6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "18-07",
+        "make": "ACURA",
+        "model": "RDX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "12-07",
+        "make": "ACURA",
+        "model": "RDX",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "18-13",
+        "make": "ACURA",
+        "model": "RDX",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "12-05",
+        "make": "ACURA",
+        "model": "RL",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "08-05",
+        "make": "ACURA",
+        "model": "RL",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "12-09",
+        "make": "ACURA",
+        "model": "RL",
+        "engine": "V6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "20-14",
+        "make": "ACURA",
+        "model": "RLX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-14",
+        "make": "ACURA",
+        "model": "RLX",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "14-04",
+        "make": "ACURA",
+        "model": "TL",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "08-04",
+        "make": "ACURA",
+        "model": "TL",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "14-07",
+        "make": "ACURA",
+        "model": "TL",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "14-09",
+        "make": "ACURA",
+        "model": "TL",
+        "engine": "V6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "20-15",
+        "make": "ACURA",
+        "model": "TLX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-15",
+        "make": "ACURA",
+        "model": "TLX",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "20-15",
+        "make": "ACURA",
+        "model": "TLX",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "14-04",
+        "make": "ACURA",
+        "model": "TSX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "14-04",
+        "make": "ACURA",
+        "model": "TSX",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "14-10",
+        "make": "ACURA",
+        "model": "TSX",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "13-10",
+        "make": "ACURA",
+        "model": "ZDX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-10",
+        "make": "ACURA",
+        "model": "ZDX",
+        "engine": "V6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "22-03",
+        "make": "HONDA",
+        "model": "ACCORD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "22-18",
+        "make": "HONDA",
+        "model": "ACCORD",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "15-14",
+        "make": "HONDA",
+        "model": "ACCORD",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-17",
+        "make": "HONDA",
+        "model": "ACCORD",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "17-03",
+        "make": "HONDA",
+        "model": "ACCORD",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "07-03",
+        "make": "HONDA",
+        "model": "ACCORD",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "17-08",
+        "make": "HONDA",
+        "model": "ACCORD",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "11-10",
+        "make": "HONDA",
+        "model": "ACCORD CROSSTOUR",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "11-10",
+        "make": "HONDA",
+        "model": "ACCORD CROSSTOUR",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "15-06",
+        "make": "HONDA",
+        "model": "CIVIC",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "11-06",
+        "make": "HONDA",
+        "model": "CIVIC",
+        "engine": "L4-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "15-12",
+        "make": "HONDA",
+        "model": "CIVIC",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "15-06",
+        "make": "HONDA",
+        "model": "CIVIC",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "11-06",
+        "make": "HONDA",
+        "model": "CIVIC",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-12",
+        "make": "HONDA",
+        "model": "CIVIC",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "15-12",
+        "make": "HONDA",
+        "model": "CROSSTOUR",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "15-12",
+        "make": "HONDA",
+        "model": "CROSSTOUR",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "15-12",
+        "make": "HONDA",
+        "model": "CROSSTOUR",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "16-07",
+        "make": "HONDA",
+        "model": "CR-V",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-07",
+        "make": "HONDA",
+        "model": "CR-V",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "17-05",
+        "make": "HONDA",
+        "model": "ODYSSEY",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "17-05",
+        "make": "HONDA",
+        "model": "ODYSSEY",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "HONDA",
+        "model": "PASSPORT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "HONDA",
+        "model": "PASSPORT",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "22-09",
+        "make": "HONDA",
+        "model": "PILOT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "22-09",
+        "make": "HONDA",
+        "model": "PILOT",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "14-06",
+        "make": "HONDA",
+        "model": "RIDGELINE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-17",
+        "make": "HONDA",
+        "model": "RIDGELINE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "14-06",
+        "make": "HONDA",
+        "model": "RIDGELINE",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-17",
+        "make": "HONDA",
+        "model": "RIDGELINE",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF10134",
+    "source_part_key": "000991510",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 60,
+      "cross_references": 52
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF10134, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.182",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "9.298",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "8.904",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "10",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Behind Glove Box",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100531858",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.6750",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.3500",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "9.4700",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "3.4800",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "9.2500",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "11.7400",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.3100",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "9.9900",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.675,
+        "case_weight_lb": 1.35,
+        "unit_height_in": 9.47,
+        "unit_length_in": 9.25,
+        "unit_width_in": 1.31,
+        "case_height_in": 3.48,
+        "case_length_in": 11.74,
+        "case_width_in": 9.99,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 8.1,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 60,
+    "all_cross_references_observed": 52,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:56:30.705Z",
+  "discovered_from": "CF10134",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "ACURA",
+        "model": "CSX",
+        "year": "11-07",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "CSX",
+        "year": "11-07",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "ILX",
+        "year": "22-13",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "ILX",
+        "year": "15-13",
+        "engine": "L4-1.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "ILX",
+        "year": "15-13",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "ILX",
+        "year": "22-13",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "MDX",
+        "year": "20-07",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "MDX",
+        "year": "20-17",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "MDX",
+        "year": "20-14",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "MDX",
+        "year": "13-07",
+        "engine": "V6-3.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "RDX",
+        "year": "18-07",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "RDX",
+        "year": "12-07",
+        "engine": "L4-2.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "RDX",
+        "year": "18-13",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "RL",
+        "year": "12-05",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "RL",
+        "year": "08-05",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "RL",
+        "year": "12-09",
+        "engine": "V6-3.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "RLX",
+        "year": "20-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "RLX",
+        "year": "20-14",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "TL",
+        "year": "14-04",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "TL",
+        "year": "08-04",
+        "engine": "V6-3.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "TL",
+        "year": "14-07",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "TL",
+        "year": "14-09",
+        "engine": "V6-3.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "TLX",
+        "year": "20-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "TLX",
+        "year": "20-15",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "TLX",
+        "year": "20-15",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "TSX",
+        "year": "14-04",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "TSX",
+        "year": "14-04",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "TSX",
+        "year": "14-10",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "ZDX",
+        "year": "13-10",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ACURA",
+        "model": "ZDX",
+        "year": "13-10",
+        "engine": "V6-3.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "ACCORD",
+        "year": "22-03",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "ACCORD",
+        "year": "22-18",
+        "engine": "L4-1.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "ACCORD",
+        "year": "15-14",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "ACCORD",
+        "year": "22-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "ACCORD",
+        "year": "17-03",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "ACCORD",
+        "year": "07-03",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "ACCORD",
+        "year": "17-08",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "ACCORD CROSSTOUR",
+        "year": "11-10",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "ACCORD CROSSTOUR",
+        "year": "11-10",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CIVIC",
+        "year": "15-06",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CIVIC",
+        "year": "11-06",
+        "engine": "L4-1.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CIVIC",
+        "year": "15-12",
+        "engine": "L4-1.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CIVIC",
+        "year": "15-06",
+        "engine": "L4-1.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CIVIC",
+        "year": "11-06",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CIVIC",
+        "year": "15-12",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CROSSTOUR",
+        "year": "15-12",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CROSSTOUR",
+        "year": "15-12",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CROSSTOUR",
+        "year": "15-12",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CR-V",
+        "year": "16-07",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CR-V",
+        "year": "16-07",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "ODYSSEY",
+        "year": "17-05",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "ODYSSEY",
+        "year": "17-05",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "PASSPORT",
+        "year": "25-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "PASSPORT",
+        "year": "25-19",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "PILOT",
+        "year": "22-09",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "PILOT",
+        "year": "22-09",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "RIDGELINE",
+        "year": "14-06",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "RIDGELINE",
+        "year": "26-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "RIDGELINE",
+        "year": "14-06",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "RIDGELINE",
+        "year": "26-17",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF159",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-41",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-40",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA4196",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2019",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2023",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3875WS",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89815",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1781",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF7781",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DC058",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Delphi",
+        "part_number": "16458329",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Driveworks",
+        "part_number": "DW-35519",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "XC35519",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4815",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4815C",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1244",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1244",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "80292-T0G-A01",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "80292-SEC-A01",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "80292-SHJ-A01",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "80292-TZ3-A41",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "80292-TZ5-A41",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "80292-SHJ-A41",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "80292-SDA-407",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "80292-SDA-A01",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "80219-SHJ-A01",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "80292-SWA-A01",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "80292-SDC-A01",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF2001",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1781",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1781",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1781",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF7781",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LA216",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3047",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "HN03104",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "CAF1781",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4815",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "224815",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94815",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PC-58",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC5519",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "C35519P",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PC-5519",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C35519",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PBC35519",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF7781",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1781M",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "SUPERTECH",
+        "part_number": "5750",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "VIPER",
+        "part_number": "10134C",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24815",
+        "source_part_number": "CF10134",
+        "part_key": "000991510",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

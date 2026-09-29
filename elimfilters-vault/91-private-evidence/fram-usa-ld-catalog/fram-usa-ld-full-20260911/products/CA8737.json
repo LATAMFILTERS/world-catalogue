@@ -1,0 +1,4457 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CA8737",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA8737",
+    "product_type": "Cabin Air Filter, Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 14,
+      "height_mm": 355.6,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Radial Seal Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "131-8902"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "110-6326"
+      },
+      {
+        "manufacturer": "Hyster",
+        "part_number": "S0076041"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AT171853"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "KV16429"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "RT6005011111"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "30981-70410"
+      },
+      {
+        "manufacturer": "Vermeer",
+        "part_number": "220166-005"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A2113C"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "RS3544"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LX1142"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6562"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A65295"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46562"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Big A",
+        "part_number": "94562"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88562"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "82981152"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "222421A1"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "G082526"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P828889"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "G082525"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P772580"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "1930589"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF25352"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF25292"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF25557"
+      },
+      {
+        "manufacturer": "Gehl",
+        "part_number": "L99453"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF2270"
+      },
+      {
+        "manufacturer": "Kobelco",
+        "part_number": "LP02P00004-3"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "848101144"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "600-185-2100"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF4544"
+      },
+      {
+        "manufacturer": "Perkins",
+        "part_number": "26510342"
+      },
+      {
+        "manufacturer": "Perkins",
+        "part_number": "23510342"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "11883618"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA8737",
+    "source_part_key": "001509766",
+    "source_totals": {
+      "attributes": 33,
+      "applications": 412,
+      "cross_references": 35
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA8737, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Radial Seal Air Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "82"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "84"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Flexible",
+        "recno": "85"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "86"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Top Inside Diameter",
+        "value": "Closed",
+        "recno": "88"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "89"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100021113",
+        "recno": "92"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "14.000",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "6.438",
+        "recno": "94"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "3.688",
+        "recno": "95"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "6.438",
+        "recno": "96"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "97"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "98"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "99"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "2.4000",
+        "recno": "103"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "2.4000",
+        "recno": "104"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "13.8200",
+        "recno": "105"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "7.4300",
+        "recno": "106"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "6.4500",
+        "recno": "107"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "14.4600",
+        "recno": "108"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "6.4500",
+        "recno": "109"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "7.0900",
+        "recno": "110"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 2.4,
+        "case_weight_lb": 2.4,
+        "unit_height_in": 13.82,
+        "unit_length_in": 6.45,
+        "unit_width_in": 6.45,
+        "case_height_in": 7.43,
+        "case_length_in": 14.46,
+        "case_width_in": 7.09,
+        "inferred_case_qty": 1
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 28.8,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 412,
+    "all_cross_references_observed": 35,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:51:58.070Z",
+  "discovered_from": "CA8737",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BACKHOE LOADER CASE",
+        "model": "570L XT, 570L XT Series II w/Cummins 4-390 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CASE",
+        "model": "570L XT, 570L XT Series II w/Cummins 4-390 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CASE",
+        "model": "570M w/Cummins 4T-390 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CASE",
+        "model": "570M w/Cummins 4T-390 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CASE",
+        "model": "580 Super N WT w/Case 445T/M3",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CASE",
+        "model": "580 Super N WT w/Case 445T/M3",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CASE",
+        "model": "580 Supr M Backhoe w/Cummins B3.9 Diesel",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CASE",
+        "model": "580 Supr M Backhoe w/Cummins B3.9 Diesel",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CASE",
+        "model": "580N, 580 Super N w/445M3/RE3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CASE",
+        "model": "580N, 580 Super N w/445M3/RE3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CASE",
+        "model": "590 Super L Series 2 w/Cummins B3.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CASE",
+        "model": "590 Super L Series 2 w/Cummins B3.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CASE",
+        "model": "590 Super N w/434T/E Interim Tier 4 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CASE",
+        "model": "590 Super N w/434T/E Interim Tier 4 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CASE",
+        "model": "590N w/Case 445TA/E3 Turbo",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CASE",
+        "model": "590N w/Case 445TA/E3 Turbo",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CATERPILLAR",
+        "model": "416C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CATERPILLAR",
+        "model": "416C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CATERPILLAR",
+        "model": "416D",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CATERPILLAR",
+        "model": "416D",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CATERPILLAR",
+        "model": "420D",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CATERPILLAR",
+        "model": "420D",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CATERPILLAR",
+        "model": "426C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CATERPILLAR",
+        "model": "426C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CATERPILLAR",
+        "model": "428C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CATERPILLAR",
+        "model": "428C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CATERPILLAR",
+        "model": "430D",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CATERPILLAR",
+        "model": "430D",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CATERPILLAR",
+        "model": "436C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CATERPILLAR",
+        "model": "436C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CATERPILLAR",
+        "model": "438C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER CATERPILLAR",
+        "model": "438C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER JOHN DEERE",
+        "model": "210E",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER JOHN DEERE",
+        "model": "210E",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER JOHN DEERE",
+        "model": "210LE w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER JOHN DEERE",
+        "model": "210LE w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER JOHN DEERE",
+        "model": "310E",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER JOHN DEERE",
+        "model": "310E",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER JOHN DEERE",
+        "model": "310G w/John Deere 4045T",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER JOHN DEERE",
+        "model": "310G w/John Deere 4045T",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER JOHN DEERE",
+        "model": "310SE",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER JOHN DEERE",
+        "model": "310SE",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER JOHN DEERE",
+        "model": "310SG w/John Deere 4045T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER JOHN DEERE",
+        "model": "310SG w/John Deere 4045T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER JOHN DEERE",
+        "model": "315SE",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER JOHN DEERE",
+        "model": "315SE",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER JOHN DEERE",
+        "model": "315SG w/John Deere 4045T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER JOHN DEERE",
+        "model": "315SG w/John Deere 4045T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER KOMATSU",
+        "model": "WB142-5 w/Komatsu 4D102LE-2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER KOMATSU",
+        "model": "WB142-5 w/Komatsu 4D102LE-2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER KOMATSU",
+        "model": "WB146-5, WB146PS-5 w/Komatsu S4D102LE-2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER KOMATSU",
+        "model": "WB146-5, WB146PS-5 w/Komatsu S4D102LE-2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER KOMATSU",
+        "model": "WB150-2, WB150-2N, WB150AWS-2N w/Komatsu S4D106-1FA Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER KOMATSU",
+        "model": "WB150-2, WB150-2N, WB150AWS-2N w/Komatsu S4D106-1FA Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER KOMATSU",
+        "model": "WB150AWS-2N w/Komatsu S4D106-1FA Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER KOMATSU",
+        "model": "WB150AWS-2N w/Komatsu S4D106-1FA Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER KOMATSU",
+        "model": "WB150PS-2 w/Komatsu S4D106-1FA Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER KOMATSU",
+        "model": "WB150PS-2 w/Komatsu S4D106-1FA Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER KOMATSU",
+        "model": "WB150PS-2N w/Komatsu S4D106-1FA Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER KOMATSU",
+        "model": "WB150PS-2N w/Komatsu S4D106-1FA Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER KOMATSU",
+        "model": "WB156-5, WB156PS-5 w/Komatsu S4D102LE-2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER KOMATSU",
+        "model": "WB156-5, WB156PS-5 w/Komatsu S4D102LE-2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "B95B LR w/New Holland 445TA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "B95B LR w/New Holland 445TA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "B95B LR w/New Holland NH Tier 3 Dsl Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "B95B LR w/New Holland NH Tier 3 Dsl Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "B95B w/New Holland 445TA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "B95B w/New Holland 445TA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "B95B w/New Holland NH Tier 3 Dsl Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "B95B w/New Holland NH Tier 3 Dsl Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "L180 w/Iveco F5CE 3.2L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "L180 w/Iveco F5CE 3.2L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "L185 w/Iveco F5CE 3.2L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "L185 w/Iveco F5CE 3.2L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "L190 w/Iveco NEF67 TE2X",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "L190 w/Iveco NEF67 TE2X",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "LS190.B w/Iveco NEF67 TE2X",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "LS190.B w/Iveco NEF67 TE2X",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "LT190.B w/Iveco NEF67 TE2X",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "LT190.B w/Iveco NEF67 TE2X",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL60 w/Volvo D4D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL60 w/Volvo D4D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL61 Plus w/Volvo D4D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL61 Plus w/Volvo D4D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL61 w/Volvo D4D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL61 w/Volvo D4D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL70 w/Volvo D4D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL70 w/Volvo D4D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL71 Plus w/Volvo D4D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL71 Plus w/Volvo D4D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL71 w/Volvo D4D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER VOLVO",
+        "model": "BL71 w/Volvo D4D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "CR-920",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "CR-920",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "CR920, CR940 w/7.5L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "CR920, CR940 w/7.5L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "CR-940",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "CR-940",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "CR-960",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "CR-960",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "CR-960, CR-970",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "CR-960, CR-970",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "CR-970",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "CR-970",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "CX-840",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "CX-840",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "CX-860",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "CX-860",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "CX-880 w/Ford Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "CX-880 w/Ford Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR CATERPILLAR",
+        "model": "CP433C w/Caterpillar 3054 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR CATERPILLAR",
+        "model": "CP433C w/Caterpillar 3054 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER CATERPILLAR",
+        "model": "PS150B",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER CATERPILLAR",
+        "model": "PS150B",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER CATERPILLAR",
+        "model": "PS300B w/Caterpillar 3054T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER CATERPILLAR",
+        "model": "PS300B w/Caterpillar 3054T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR VOLVO",
+        "model": "SD70",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR VOLVO",
+        "model": "SD70",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR VOLVO",
+        "model": "SD70F",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR VOLVO",
+        "model": "SD70F",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR VOLVO",
+        "model": "SD77F",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR VOLVO",
+        "model": "SD77F",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER JOHN DEERE",
+        "model": "450H LT w/John Deere 4045D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER JOHN DEERE",
+        "model": "450H LT w/John Deere 4045D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER JOHN DEERE",
+        "model": "450H, 450H LGP w/John Deere 4045D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER JOHN DEERE",
+        "model": "450H, 450H LGP w/John Deere 4045D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER NEW HOLLAND",
+        "model": "C227 w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER NEW HOLLAND",
+        "model": "C227 w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER NEW HOLLAND",
+        "model": "C232 w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER NEW HOLLAND",
+        "model": "C232 w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER NEW HOLLAND",
+        "model": "C232, C238 w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER NEW HOLLAND",
+        "model": "C232, C238 w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER NEW HOLLAND",
+        "model": "C238 w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER NEW HOLLAND",
+        "model": "C238 w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL CASE",
+        "model": "432T/M3",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL CASE",
+        "model": "432T/M3",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "307",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "307",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "311B, 312B, 312BL w/Caterpillar 3064 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "311B, 312B, 312BL w/Caterpillar 3064 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "311CU",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "311CU",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "312",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "312",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "312C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "312C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "312CL",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "312CL",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "314C CR w/Caterpillar 3145 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "314C CR w/Caterpillar 3145 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "314C w/Caterpillar 3064 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "314C w/Caterpillar 3064 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "315",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "315",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "315B, 315BL, 317B, 317BLN w/Caterpillar 3046 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "315B, 315BL, 317B, 317BLN w/Caterpillar 3046 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "317",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "317",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "317N",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "317N",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "M312 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "M312 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "M315 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "M315 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "SK115SR w/Isuzu 4BG1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "SK115SR w/Isuzu 4BG1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "SK135SR w/Isuzu 4BG1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "SK135SR w/Isuzu 4BG1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER NEW HOLLAND",
+        "model": "FX-30 w/Iveco Cursor 10 10.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER NEW HOLLAND",
+        "model": "FX-30 w/Iveco Cursor 10 10.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER NEW HOLLAND",
+        "model": "FX-40 w/Iveco Cursor 13 12.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER NEW HOLLAND",
+        "model": "FX-40 w/Iveco Cursor 13 12.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER NEW HOLLAND",
+        "model": "FX-45 w/New Holland 6/5421 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER NEW HOLLAND",
+        "model": "FX-45 w/New Holland 6/5421 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER NEW HOLLAND",
+        "model": "FX-50 w/Iveco Cursor 13 12.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER NEW HOLLAND",
+        "model": "FX-50 w/Iveco Cursor 13 12.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER NEW HOLLAND",
+        "model": "FX-58 w/Caterpillar 3406E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER NEW HOLLAND",
+        "model": "FX-58 w/Caterpillar 3406E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HAULER INDUSTRIAL THWAITES",
+        "model": "5 Tonne MK1 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HAULER INDUSTRIAL THWAITES",
+        "model": "5 Tonne MK1 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HAULER INDUSTRIAL THWAITES",
+        "model": "5 Tonne MK1, 5 Tonne MK2 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HAULER INDUSTRIAL THWAITES",
+        "model": "5 Tonne MK1, 5 Tonne MK2 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HAULER INDUSTRIAL THWAITES",
+        "model": "5 Tonne MK2 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HAULER INDUSTRIAL THWAITES",
+        "model": "5 Tonne MK2 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK CASE",
+        "model": "586H, 588H w/Case 434T/E Interim Tier 4 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK CASE",
+        "model": "586H, 588H w/Case 434T/E Interim Tier 4 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK JOHN DEERE",
+        "model": "485E",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK JOHN DEERE",
+        "model": "485E",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK JOHN DEERE",
+        "model": "486E",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK JOHN DEERE",
+        "model": "486E",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK JOHN DEERE",
+        "model": "488E",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK JOHN DEERE",
+        "model": "488E",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER GEHL",
+        "model": "CTL80 TURBO",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER GEHL",
+        "model": "CTL80 TURBO",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER NEW HOLLAND",
+        "model": "U80B w/New Holland 445T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER NEW HOLLAND",
+        "model": "U80B w/New Holland 445T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "410 w/Case 422T/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "410 w/Case 422T/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "410 w/Case 422T/M3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "410 w/Case 422T/M3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "435 w/Case 432T/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "435 w/Case 432T/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "435 w/Case 432T/M3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "435 w/Case 432T/M3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "440 w/Case 445T/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "440 w/Case 445T/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "440, 440CT w/Case 445T/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "440, 440CT w/Case 445T/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "440CT w/Case 445T/M2",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "440CT w/Case 445T/M2",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "580 Super L Series 2 w/Cummins 4B3.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "580 Super L Series 2 w/Cummins 4B3.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "580 Super M Series 2 w/Case 445T/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "580 Super M Series 2 w/Case 445T/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "580 Super M Series 2 w/Case 445T/M2 Turbo",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "580 Super M Series 2 w/Case 445T/M2 Turbo",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "580 Super M Series 3 w/Case 445T/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "580 Super M Series 3 w/Case 445T/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "580M Series 2 w/Case 445/M2",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "580M Series 2 w/Case 445/M2",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "580M Series 2 w/Case 445/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "580M Series 2 w/Case 445/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "580M Series 2 w/Case 445T/M2",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "580M Series 2 w/Case 445T/M2",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "580M Series 2 w/Case 445T/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "580M Series 2 w/Case 445T/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "586G w/Case 445T/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "586G w/Case 445T/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "590 Super M Series 3 w/Case 445T/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "590 Super M Series 3 w/Case 445T/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "590 Super M Series 3 w/Case 445TA/E3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "590 Super M Series 3 w/Case 445TA/E3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "590 Super M w/Case 445T/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "590 Super M w/Case 445T/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "590 Super M w/Cummins 4B3.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "590 Super M w/Cummins 4B3.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "590M w/Cummins 4B3.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "590M w/Cummins 4B3.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "90XT, 95XT w/Cummins 4BT3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "90XT, 95XT w/Cummins 4BT3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "SR175 w/Case 422T/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "SR175 w/Case 422T/M2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "SR200, SR220, SR250 w/Case 432T/M3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "SR200, SR220, SR250 w/Case 432T/M3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CATERPILLAR",
+        "model": "236 w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CATERPILLAR",
+        "model": "236 w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CATERPILLAR",
+        "model": "246 w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CATERPILLAR",
+        "model": "246 w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CATERPILLAR",
+        "model": "248 w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CATERPILLAR",
+        "model": "248 w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CATERPILLAR",
+        "model": "252 w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CATERPILLAR",
+        "model": "252 w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CATERPILLAR",
+        "model": "262 w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CATERPILLAR",
+        "model": "262 w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER GEHL",
+        "model": "5635SX, 5635SXT w/Deutz BF4M1011F Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER GEHL",
+        "model": "5635SX, 5635SXT w/Deutz BF4M1011F Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER JOHN DEERE",
+        "model": "325, 328, 332 w/John Deere 5030 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER JOHN DEERE",
+        "model": "325, 328, 332 w/John Deere 5030 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER JOHN DEERE",
+        "model": "332D w/John Deere 5030HT Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER JOHN DEERE",
+        "model": "332D w/John Deere 5030HT Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L218 w/Cummins ISM N844LT 2.2L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L218 w/Cummins ISM N844LT 2.2L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L218, L220 w/Cummins ISM N844LT 2.2L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L218, L220 w/Cummins ISM N844LT 2.2L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L220 w/Cummins ISM N844LT 2.2L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L220 w/Cummins ISM N844LT 2.2L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L223 w/Iveco F5CE 3.2L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L223 w/Iveco F5CE 3.2L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L223, L225 w/Iveco F5CE 3.2L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L223, L225 w/Iveco F5CE 3.2L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L225 w/Iveco F5CE 3.2L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L225 w/Iveco F5CE 3.2L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L230 w/Iveco F5CE 3.2L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L230 w/Iveco F5CE 3.2L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "LS180 w/New Holland 3/192 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "LS180 w/New Holland 3/192 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "LS180 w/New Holland BSD332T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "LS180 w/New Holland BSD332T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TELESCOPIC HANDLER CATERPILLAR",
+        "model": "TH63, TH82, TH83 w/Caterpillar 3054T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TELESCOPIC HANDLER CATERPILLAR",
+        "model": "TH63, TH82, TH83 w/Caterpillar 3054T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX1085C w/4.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX1085C w/4.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX1095C w/4.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX1095C w/4.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5101E,5101E Limited w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5101E,5101E Limited w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5203 w/John Deere 3029 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5203 w/John Deere 3029 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5210 w/John Deere 3029D Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5210 w/John Deere 3029D Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5220, 5320, 5420, 5520 w/John Deere 3029T Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5220, 5320, 5420, 5520 w/John Deere 3029T Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5303 w/John Deere 3029 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5303 w/John Deere 3029 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5310, 5310N",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5310, 5310N",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5310N",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5310N",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5410 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5410 w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5510, 5510N",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5510, 5510N",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5510N w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "5510N w/John Deere 4045 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KIOTI",
+        "model": "DK751 w/Perkins 1104C-44 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KIOTI",
+        "model": "DK751 w/Perkins 1104C-44 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KIOTI",
+        "model": "DK902C w/Perkins 1104C-44T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KIOTI",
+        "model": "DK902C w/Perkins 1104C-44T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KIOTI",
+        "model": "DK90C w/Perkins 1104C-44T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KIOTI",
+        "model": "DK90C w/Perkins 1104C-44T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KIOTI",
+        "model": "DX100 w/Perkins 1104C-44T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KIOTI",
+        "model": "DX100 w/Perkins 1104C-44T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KIOTI",
+        "model": "DX7510 w/Perkins 1104C-44T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KIOTI",
+        "model": "DX7510 w/Perkins 1104C-44T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KIOTI",
+        "model": "DX9010 w/Perkins 1104C-44T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KIOTI",
+        "model": "DX9010 w/Perkins 1104C-44T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MCCORMICK",
+        "model": "C100 w/Perkins 1104C-44 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MCCORMICK",
+        "model": "C100 w/Perkins 1104C-44 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MCCORMICK",
+        "model": "F100 w/Perkins 1004.40 Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MCCORMICK",
+        "model": "F100 w/Perkins 1004.40 Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "3010S",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "3010S",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "6610S",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "6610S",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "6610S, 6810S",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "6610S, 6810S",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "6810S",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "6810S",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "7610S",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "7610S",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "7610S, 7810S",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "7610S, 7810S",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "7810S",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "7810S",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "8010",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "8010",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "LV80 w/New Holland 439 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "LV80 w/New Holland 439 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "LV80 w/Perkins Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "LV80 w/Perkins Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "LV80T w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "LV80T w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TD70D w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TD70D w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TD70D, TD75D, TD80D w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TD70D, TD75D, TD80D w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TD75D w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TD75D w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TD80D w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TD80D w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TL100",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TL100",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TL90",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TL90",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 29-10, 35-10 Turbo HPI (w/2.3 HPI F1A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 29-10, 35-10 Turbo HPI (w/2.3 HPI F1A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 29-11, 35-11 Turbo (w/8140.43.C Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 29-11, 35-11 Turbo (w/8140.43.C Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 29-12, 35-12 Turbo HPI (w/2.3 HPI F1A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 29-12, 35-12 Turbo HPI (w/2.3 HPI F1A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 29-13, 35-13 Turbo (w/8140.43.SEDC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 29-13, 35-13 Turbo (w/8140.43.SEDC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 29-14, 35-14, 40-14 Turbo HPT (w/2.3 HPT F1A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 29-14, 35-14, 40-14 Turbo HPT (w/2.3 HPT F1A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 29-9, 35-9, 40-9 (w/8140.63 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 29-9, 35-9, 40-9 (w/8140.63 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 29-9, 40-9 Turbo (w/8140.43 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 29-9, 40-9 Turbo (w/8140.43 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 35-14, 40-14 Turbo HPI (w/3.0 HPI F1C E0481B Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 35-14, 40-14 Turbo HPI (w/3.0 HPI F1C E0481B Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 35-15, 40-15, 50-15 Turbo (w/8140.43N Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 35-15, 40-15, 50-15 Turbo (w/8140.43N Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 35-17, 40-17 Turbo HPT (w/3.0 HPT F1C E0481B Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 35-17, 40-17 Turbo HPT (w/3.0 HPT F1C E0481B Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 35-9 Turbo (w/8140.43 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 35-9 Turbo (w/8140.43 Engine)",
+        "year": "02-01",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 40-11, 45-11, 49-11 Turbo (w/8140.43.C Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 40-11, 45-11, 49-11 Turbo (w/8140.43.C Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 40-13, 45-13, 49-13 Turbo (w/8140.43.SEDC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 40-13, 45-13, 49-13 Turbo (w/8140.43.SEDC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 50-11 Turbo (w/8140.43.C Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 50-11 Turbo (w/8140.43.C Engine)",
+        "year": "02-99",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 50-13, 59-13 Turbo (w/8140.43.SEDC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 50-13, 59-13 Turbo (w/8140.43.SEDC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 50-14, 65-14 Turbo HPI (w/3.0 HPI F1C E0481B Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 50-14, 65-14 Turbo HPI (w/3.0 HPI F1C E0481B Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 50-17, 65-17 Turbo HPT (w/3.0 HPT F1C E0481B Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 50-17, 65-17 Turbo HPT (w/3.0 HPT F1C E0481B Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 60-15, 65-15 Turbo (w/8140.43N Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily IV 60-15, 65-15 Turbo (w/8140.43N Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily V 35C 10, 35S 10 (w/2.3 HPI F1AE0481FA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily V 35C 10, 35S 10 (w/2.3 HPI F1AE0481FA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily V 35C 11, 35S 11 (w/2.3HPI F1AE0481UA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily V 35C 11, 35S 11 (w/2.3HPI F1AE0481UA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily V 35C 12, 35S 12 (w/2.3 HPI F1AE0481GA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily V 35C 12, 35S 12 (w/2.3 HPI F1AE0481GA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily V 35C 13, 35S 13 (w/2.3 HPT F1AE0481VA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily V 35C 13, 35S 13 (w/2.3 HPT F1AE0481VA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily V 40C 15, 45C 15 (w/3.0 HPI F1CE0481FA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily V 40C 15, 45C 15 (w/3.0 HPI F1CE0481FA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily V 40C 18, 45C 18 (w/3.0 HPT F1CE0481HA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily V 40C 18, 45C 18 (w/3.0 HPT F1CE0481HA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily V 60C 15, 65C 15 (w/3.0 HPI F1CE0481FA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily V 60C 15, 65C 15 (w/3.0 HPI F1CE0481FA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily V 60C 18, 65C 18 (w/3.0 HPT F1CE0481HA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER IVECO",
+        "model": "Daily V 60C 18, 65C 18 (w/3.0 HPT F1CE0481HA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "908",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "908",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "910G",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "910G",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "914G",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "914G",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A2113C",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "RS3544",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "94562",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88562",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "82981152",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "222421A1",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "131-8902",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "110-6326",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "G082526",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P828889",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "G082525",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P772580",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "1930589",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF25352",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF25292",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF25557",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Gehl",
+        "part_number": "L99453",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF2270",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Hyster",
+        "part_number": "S0076041",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AT171853",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "KV16429",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "RT6005011111",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "30981-70410",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Kobelco",
+        "part_number": "LP02P00004-3",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "848101144",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "600-185-2100",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF4544",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LX1142",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6562",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Perkins",
+        "part_number": "26510342",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Perkins",
+        "part_number": "23510342",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A65295",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Vermeer",
+        "part_number": "220166-005",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "11883618",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46562",
+        "source_part_number": "CA8737",
+        "part_key": "001509766",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter, Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

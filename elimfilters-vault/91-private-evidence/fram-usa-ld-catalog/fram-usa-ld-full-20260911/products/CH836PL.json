@@ -1,0 +1,2858 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "CH836PL",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CH836PL",
+    "product_type": "Engine Oil Filter, Oil",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 3.922,
+      "height_mm": 99.62,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Cartridge",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [
+      "CH836PL1"
+    ],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Ford",
+        "part_number": "2701E-6731-A2"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "508E-6731"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "C7TZ-6731-A"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "C2TZ-6731-A"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "C2TA-6708-A"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "7984374"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "1531789"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "7961399"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "6435103"
+      },
+      {
+        "manufacturer": "Hyster",
+        "part_number": "98561"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "AC70V"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "P15"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "1457429441"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "H1029/1N"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-221"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-336"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1305"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L20126"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51305"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Big A",
+        "part_number": "92305"
+      },
+      {
+        "manufacturer": "British Leyland",
+        "part_number": "GFE-128"
+      },
+      {
+        "manufacturer": "Can-Am",
+        "part_number": "21012"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85305"
+      },
+      {
+        "manufacturer": "Carrier Transicold",
+        "part_number": "29.21026"
+      },
+      {
+        "manufacturer": "Carrier Transicold",
+        "part_number": "2.1026"
+      },
+      {
+        "manufacturer": "Carrier Transicold",
+        "part_number": "30.21026"
+      },
+      {
+        "manufacturer": "Carrier Transicold",
+        "part_number": "2.1043"
+      },
+      {
+        "manufacturer": "Co-op",
+        "part_number": "PM-216"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "FA4303"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "AZL018"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "478"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P551285"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF599"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8599"
+      },
+      {
+        "manufacturer": "Girling",
+        "part_number": "F551"
+      },
+      {
+        "manufacturer": "Girling",
+        "part_number": "F4683"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "G836"
+      },
+      {
+        "manufacturer": "GUD Filters",
+        "part_number": "G553"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF185"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "EH323"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L530"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LP70V"
+      },
+      {
+        "manufacturer": "Manitou",
+        "part_number": "1-568410"
+      },
+      {
+        "manufacturer": "Mercury",
+        "part_number": "35-896546T"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "L-26"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "WAC-70"
+      },
+      {
+        "manufacturer": "Perkins",
+        "part_number": "FP-3331"
+      },
+      {
+        "manufacturer": "Perkins",
+        "part_number": "26540154"
+      },
+      {
+        "manufacturer": "Perkins",
+        "part_number": "101606"
+      },
+      {
+        "manufacturer": "Perkins",
+        "part_number": "30212"
+      },
+      {
+        "manufacturer": "Perkins",
+        "part_number": "35312"
+      },
+      {
+        "manufacturer": "Perkins",
+        "part_number": "32578"
+      },
+      {
+        "manufacturer": "Purflux",
+        "part_number": "L110"
+      },
+      {
+        "manufacturer": "Renault",
+        "part_number": "048100160"
+      },
+      {
+        "manufacturer": "Renault",
+        "part_number": "48100160"
+      },
+      {
+        "manufacturer": "Rol-Pak",
+        "part_number": "ACQ-70-FF"
+      },
+      {
+        "manufacturer": "Rol-Pak",
+        "part_number": "AC-70-FF"
+      },
+      {
+        "manufacturer": "Rootes",
+        "part_number": "K-33052"
+      },
+      {
+        "manufacturer": "Serck",
+        "part_number": "37851-1102"
+      },
+      {
+        "manufacturer": "Tecalemit",
+        "part_number": "FP-3338"
+      },
+      {
+        "manufacturer": "Tecalemit",
+        "part_number": "FP-3335"
+      },
+      {
+        "manufacturer": "Tecalemit",
+        "part_number": "FP-3331"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "415415"
+      },
+      {
+        "manufacturer": "WGB",
+        "part_number": "S-188-CP"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CH836PL",
+    "source_part_key": "000944202",
+    "source_totals": {
+      "attributes": 46,
+      "applications": 180,
+      "cross_references": 65
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® oil filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE (original equipment) recommended intervals. Engineered for conventional and synthetic motor oil, Extra Guard offers proven engine protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filter media is a blend of fiber and resin that captures 95%?of the dirt particles",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CH836PL, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Proven protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Includes gaskets and O-rings manufactured to endure the high pressures and high temperatures in today’s engines",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Cartridge Oil Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Engineered for use with synthetic or conventional motor oils",
+        "recno": "4"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "The perfect balance of dirt-trapping efficiency and dirt-holding capacity",
+        "recno": "5"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Cartridge",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "NA",
+        "recno": "89"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100421159",
+        "recno": "92"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "3.922",
+        "recno": "93"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "94"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "1.343",
+        "recno": "95"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "3.734",
+        "recno": "96"
+      },
+      {
+        "attribute": "O-Ring Inside Diameter (Inch)",
+        "value": "4.110",
+        "recno": "97"
+      },
+      {
+        "attribute": "O-Ring Outside Diameter (Inch)",
+        "value": "4.350",
+        "recno": "98"
+      },
+      {
+        "attribute": "O-Ring Thickness (Inch)",
+        "value": "0.130",
+        "recno": "99"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "1.343",
+        "recno": "100"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "3.734",
+        "recno": "101"
+      },
+      {
+        "attribute": "O-Rings Included",
+        "value": "Yes",
+        "recno": "102"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "103"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "104"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "105"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "India",
+        "recno": "106"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.4750",
+        "recno": "110"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "2.8500",
+        "recno": "111"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "4.2270",
+        "recno": "112"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "5.0620",
+        "recno": "113"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.8520",
+        "recno": "114"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "12.0620",
+        "recno": "115"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.8520",
+        "recno": "116"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "8.2500",
+        "recno": "117"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.475,
+        "case_weight_lb": 2.85,
+        "unit_height_in": 4.227,
+        "unit_length_in": 3.852,
+        "unit_width_in": 3.852,
+        "case_height_in": 5.062,
+        "case_length_in": 12.062,
+        "case_width_in": 8.25,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 5.7,
+        "estimated_case_dimensions": {
+          "length_in": 16.083,
+          "width_in": 12.375,
+          "height_in": 5.062,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 180,
+    "all_cross_references_observed": 65,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:23:35.204Z",
+  "discovered_from": "CH836PL",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "AIR COMPRESSOR BROOM & WADE",
+        "model": "WR235 w/Ford Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR BROOM & WADE",
+        "model": "WR235 w/Ford Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR BROOM & WADE",
+        "model": "WR250 w/Ford Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR BROOM & WADE",
+        "model": "WR250 w/Ford Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR HOLMAN",
+        "model": "Hydrovane 85D",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR HOLMAN",
+        "model": "Hydrovane 85D",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR LEROI",
+        "model": "125G1 w/Ford 200 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR LEROI",
+        "model": "125G1 w/Ford 200 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR LEROI",
+        "model": "125G2 w/Ford 200 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR LEROI",
+        "model": "125G2 w/Ford 200 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR LEROI",
+        "model": "125RG1 w/Ford 200 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR LEROI",
+        "model": "125RG1 w/Ford 200 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR LEROI",
+        "model": "125RG2 w/Ford 200 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR LEROI",
+        "model": "125RG2 w/Ford 200 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR LEROI",
+        "model": "125TRACAIR w/Ford 200 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR LEROI",
+        "model": "125TRACAIR w/Ford 200 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR LEROI",
+        "model": "150RG2 w/Ford 200 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR LEROI",
+        "model": "150RG2 w/Ford 200 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR MASTER",
+        "model": "MWR125 w/Ford 2701E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR MASTER",
+        "model": "MWR125 w/Ford 2701E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR MASTER",
+        "model": "MWR160 w/Ford 2701E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR MASTER",
+        "model": "MWR160 w/Ford 2701E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER TAMPO",
+        "model": "SP-518 w/Ford 220 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER TAMPO",
+        "model": "SP-518 w/Ford 220 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT HOUGH",
+        "model": "S-7 Series B w/Ford 220 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT HOUGH",
+        "model": "S-7 Series B w/Ford 220 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRANE DROTT",
+        "model": "85RM2 Carry Deck Crane w/Ford 220 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRANE DROTT",
+        "model": "85RM2 Carry Deck Crane w/Ford 220 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "144 2.4L, YSD-635M/3.5L",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "144 2.4L, YSD-635M/3.5L",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "220 Four",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "220 Four",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "2401E",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "2401E",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "254 DSD442 4.2L",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "254 DSD442 4.2L",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "2701E",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "2701E",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "2702E",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "2702E",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "2711E",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "2711E",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "2712E",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL INDUSTRIAL FORD",
+        "model": "2712E",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE FORD",
+        "model": "242 FORD DIESEL ENGINE",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE FORD",
+        "model": "242 FORD DIESEL ENGINE",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE FORD",
+        "model": "242 FOUR INDUSTRIAL DIESEL ENG",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE FORD",
+        "model": "242 FOUR INDUSTRIAL DIESEL ENG",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE FORD",
+        "model": "330 FORD DIESEL ENGINE",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE FORD",
+        "model": "330 FORD DIESEL ENGINE",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "3.152, 3.152Y",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "3.152, 3.152Y",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "3AB152",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "3AB152",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "4.107, 4.107M",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "4.107, 4.107M",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "4.99",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "4.99",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "6.354, 6.354M",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "6.354, 6.354M",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "H6.354, H6.354M",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "H6.354, H6.354M",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "V8-510",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "V8-510",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PETTER",
+        "model": "R140",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PETTER",
+        "model": "R140",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PETTER",
+        "model": "R140S",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PETTER",
+        "model": "R140S",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PETTER",
+        "model": "R175PO",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PETTER",
+        "model": "R175PO",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT VERMEER",
+        "model": "M475 Trencher w/Ford 254 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT VERMEER",
+        "model": "M475 Trencher w/Ford 254 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT VERMEER",
+        "model": "M485 Trencher w/Ford 254 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT VERMEER",
+        "model": "M485 Trencher w/Ford 254 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "10APO63",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "10APO63",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "10RO61, 10R063",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "10RO61, 10R063",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "12.5ACOP63",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "12.5ACOP63",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "12.5AOP63",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "12.5AOP63",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "7.5ACOP63",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR KOHLER",
+        "model": "7.5ACOP63",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR MARINE ONAN",
+        "model": "30MDEH",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR MARINE ONAN",
+        "model": "30MDEH",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR MARINE ONAN",
+        "model": "30MDEH3R",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR MARINE ONAN",
+        "model": "30MDEH3R",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR MARINE ONAN",
+        "model": "30MDH",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR MARINE ONAN",
+        "model": "30MDH",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR MARINE ONAN",
+        "model": "MDEH",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR MARINE ONAN",
+        "model": "MDEH",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE BARR",
+        "model": "FDX242",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE BARR",
+        "model": "FDX242",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE BARR",
+        "model": "FDXP254",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE BARR",
+        "model": "FDXP254",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE BARR",
+        "model": "FDXV242",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE BARR",
+        "model": "FDXV242",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE BARR",
+        "model": "FDYN363",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE BARR",
+        "model": "FDYN363",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE BARR",
+        "model": "FDYV380",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE BARR",
+        "model": "FDYV380",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE RENAULT",
+        "model": "RC80D",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE RENAULT",
+        "model": "RC80D",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE ROOTES",
+        "model": "Super Snipe",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE ROOTES",
+        "model": "Super Snipe",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE TEMPEST",
+        "model": "4/80 w/Ford 2710 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE TEMPEST",
+        "model": "4/80 w/Ford 2710 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE VOLVO PENTA",
+        "model": "BB25",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE VOLVO PENTA",
+        "model": "BB25",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE VOLVO PENTA",
+        "model": "MB3",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE VOLVO PENTA",
+        "model": "MB3",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE VOLVO PENTA",
+        "model": "MB36A",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE VOLVO PENTA",
+        "model": "MB36A",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE VOLVO PENTA",
+        "model": "MB6",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE VOLVO PENTA",
+        "model": "MB6",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE WESTERBEKE",
+        "model": "FOUR-107",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE WESTERBEKE",
+        "model": "FOUR-107",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE WESTERBEKE",
+        "model": "Pilot 10",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE WESTERBEKE",
+        "model": "Pilot 10",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE WESTERBEKE",
+        "model": "Pilot 20",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE WESTERBEKE",
+        "model": "Pilot 20",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE WESTERBEKE",
+        "model": "Sea Still",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE WESTERBEKE",
+        "model": "Sea Still",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE WESTERBEKE",
+        "model": "WPDS",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INBOARD/STERN DRIVE WESTERBEKE",
+        "model": "WPDS",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK WIGGINS",
+        "model": "W46, W56, W66, W46ATS, W56ATS, W66ATS, W356LW w/Perkins 4.203 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK WIGGINS",
+        "model": "W46, W56, W66, W46ATS, W56ATS, W66ATS, W356LW w/Perkins 4.203 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT CAN-CAR",
+        "model": "C8 Perkins V8-510 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT CAN-CAR",
+        "model": "C8 Perkins V8-510 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT CAN-CAR",
+        "model": "Tree Farmer w/Ford 220 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT CAN-CAR",
+        "model": "Tree Farmer w/Ford 220 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBERJACK",
+        "model": "205C, 215C w/Ford 4-220 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBERJACK",
+        "model": "205C, 215C w/Ford 4-220 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "REFRIGERATION UNIT CARRIER-TRANSICOLD",
+        "model": "230, 230B, 231, 234, 250, 250C, 260, 400C-1, 640, 650 (w/Perkins 4/99 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "REFRIGERATION UNIT CARRIER-TRANSICOLD",
+        "model": "230, 230B, 231, 234, 250, 250C, 260, 400C-1, 640, 650 (w/Perkins 4/99 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "REFRIGERATION UNIT FRIGIKING",
+        "model": "VA3 (w/Ford 220 Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "REFRIGERATION UNIT FRIGIKING",
+        "model": "VA3 (w/Ford 220 Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "SCREENER POWERSCREEN",
+        "model": "Models w/Ford 254D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCREENER POWERSCREEN",
+        "model": "Models w/Ford 254D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWEEPER INDUSTRIAL WAYNE",
+        "model": "945",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWEEPER INDUSTRIAL WAYNE",
+        "model": "945",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BOLINDER-MUNKTELL",
+        "model": "BM35",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BOLINDER-MUNKTELL",
+        "model": "BM35",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BOLINDER-MUNKTELL",
+        "model": "BM36",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BOLINDER-MUNKTELL",
+        "model": "BM36",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BOLINDER-MUNKTELL",
+        "model": "BM55",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BOLINDER-MUNKTELL",
+        "model": "BM55",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BOLINDER-MUNKTELL",
+        "model": "T55",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BOLINDER-MUNKTELL",
+        "model": "T55",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BRISTOL",
+        "model": "ATS 160 PD2, ATS 160 PD4 w/Ford 2701E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BRISTOL",
+        "model": "ATS 160 PD2, ATS 160 PD4 w/Ford 2701E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BRISTOL",
+        "model": "ATS 191 PD2 w/Ford 2701E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BRISTOL",
+        "model": "ATS 191 PD2 w/Ford 2701E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BRISTOL",
+        "model": "ATS161PD2 w/Ford Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BRISTOL",
+        "model": "ATS161PD2 w/Ford Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BRISTOL",
+        "model": "ATS161PD4 w/Ford Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BRISTOL",
+        "model": "ATS161PD4 w/Ford Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF130 w/Perkins 4.107 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF130 w/Perkins 4.107 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MUIR HILL",
+        "model": "MH101 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MUIR HILL",
+        "model": "MH101 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MUIR HILL",
+        "model": "MH110 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MUIR HILL",
+        "model": "MH110 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FORD (EUROPE)",
+        "model": "Transit (w/Ford Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FORD (EUROPE)",
+        "model": "Transit (w/Ford Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FORD (EUROPE)",
+        "model": "Transit (w/Perkins 4.99 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FORD (EUROPE)",
+        "model": "Transit (w/Perkins 4.99 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FORD (EUROPE)",
+        "model": "Transit FT100, 130, 160, 190 (w/2.4L Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FORD (EUROPE)",
+        "model": "Transit FT100, 130, 160, 190 (w/2.4L Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY THAMES TRADER",
+        "model": "6D",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY THAMES TRADER",
+        "model": "6D",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "L420",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "L420",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "L430",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "L430",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "WELDER HOBART",
+        "model": "D-250",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WELDER HOBART",
+        "model": "D-250",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER WAIN ROY",
+        "model": "450 w/Ford 242 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER WAIN ROY",
+        "model": "450 w/Ford 242 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "AC70V",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "P15",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92305",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "1457429441",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "British Leyland",
+        "part_number": "GFE-128",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Can-Am",
+        "part_number": "21012",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85305",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Carrier Transicold",
+        "part_number": "29.21026",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Carrier Transicold",
+        "part_number": "2.1026",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Carrier Transicold",
+        "part_number": "30.21026",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Carrier Transicold",
+        "part_number": "2.1043",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Co-op",
+        "part_number": "PM-216",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "FA4303",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "AZL018",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "478",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P551285",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF599",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8599",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "2701E-6731-A2",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "508E-6731",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "C7TZ-6731-A",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "C2TZ-6731-A",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "C2TA-6708-A",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "FRAM",
+        "part_number": "CH836PL1",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "7984374",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "1531789",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "7961399",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "6435103",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Girling",
+        "part_number": "F551",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Girling",
+        "part_number": "F4683",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "G836",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "GUD Filters",
+        "part_number": "G553",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF185",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Hyster",
+        "part_number": "98561",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "EH323",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L530",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LP70V",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Manitou",
+        "part_number": "1-568410",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "H1029/1N",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Mercury",
+        "part_number": "35-896546T",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "L-26",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-221",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-336",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1305",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "WAC-70",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Perkins",
+        "part_number": "FP-3331",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Perkins",
+        "part_number": "26540154",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Perkins",
+        "part_number": "101606",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Perkins",
+        "part_number": "30212",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Perkins",
+        "part_number": "35312",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Perkins",
+        "part_number": "32578",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Purflux",
+        "part_number": "L110",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L20126",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Renault",
+        "part_number": "048100160",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Renault",
+        "part_number": "48100160",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Rol-Pak",
+        "part_number": "ACQ-70-FF",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Rol-Pak",
+        "part_number": "AC-70-FF",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Rootes",
+        "part_number": "K-33052",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Serck",
+        "part_number": "37851-1102",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Tecalemit",
+        "part_number": "FP-3338",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Tecalemit",
+        "part_number": "FP-3335",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Tecalemit",
+        "part_number": "FP-3331",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "415415",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "WGB",
+        "part_number": "S-188-CP",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51305",
+        "source_part_number": "CH836PL",
+        "part_key": "000944202",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

@@ -1,0 +1,674 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH8910",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH8910",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": null,
+      "height_mm": null,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": null,
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [],
+    "unresolved_cross_reference_candidates": [],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "PH8910",
+    "source_part_key": "001510314",
+    "source_totals": {
+      "attributes": 0,
+      "applications": 65,
+      "cross_references": 0
+    },
+    "raw_attributes": [],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": null,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": null,
+        "case_length_in": null,
+        "case_width_in": null,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 65,
+    "all_cross_references_observed": 0,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:12:08.839Z",
+  "discovered_from": "PH8910",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BUS HEAVY DUTY MITSUBISHI",
+        "model": "MK Series (w/6D15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY MITSUBISHI",
+        "model": "MK Series (w/6D15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "K909LC II w/Mitsubishi 6D15T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "K909LC II w/Mitsubishi 6D15T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "MD240BLC w/Mitsubishi 6D15T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "MD240BLC w/Mitsubishi 6D15T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "MD240CLC, SK220LC III w/Mitsubishi 6D15T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "MD240CLC, SK220LC III w/Mitsubishi 6D15T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "SK200-2 Acera w/Mitsubishi 6D31T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "SK200-2 Acera w/Mitsubishi 6D31T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "SK220LCIII w/Mitsubishi 6D15T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "SK220LCIII w/Mitsubishi 6D15T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "SK290-6 w/Mitsubishi 6D16CT Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "SK290-6 w/Mitsubishi 6D16CT Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "SK330-6 w/Mitsubishi 6D16CT Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "SK330-6 w/Mitsubishi 6D16CT Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK MITSUBISHI FUSO",
+        "model": "FK200 (w/Mitsubishi 6M60 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK MITSUBISHI FUSO",
+        "model": "FK200 (w/Mitsubishi 6M60 Engine)",
+        "year": "09-05",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK MITSUBISHI FUSO",
+        "model": "FK260 (w/Mitsubishi 6M60 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK MITSUBISHI FUSO",
+        "model": "FK260 (w/Mitsubishi 6M60 Engine)",
+        "year": "09-05",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK MITSUBISHI FUSO",
+        "model": "FK617 (w/Mitubishi 6D16T Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK MITSUBISHI FUSO",
+        "model": "FK617 (w/Mitubishi 6D16T Engine)",
+        "year": "04-96",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK MITSUBISHI FUSO",
+        "model": "FM555",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK MITSUBISHI FUSO",
+        "model": "FM555",
+        "year": "91-88",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK MITSUBISHI FUSO",
+        "model": "FM557",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK MITSUBISHI FUSO",
+        "model": "FM557",
+        "year": "95-91",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK MITSUBISHI FUSO",
+        "model": "FM617 (w/Mitsubishi 6D16-3AT3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK MITSUBISHI FUSO",
+        "model": "FM617 (w/Mitsubishi 6D16-3AT3 Engine)",
+        "year": "04-96",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK UD",
+        "model": "UD1800, UD2000, UD2300HD/LP, UD2600, UD3000 (w/FE6TA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK UD",
+        "model": "UD1800, UD2000, UD2300HD/LP, UD2600, UD3000 (w/FE6TA Engine)",
+        "year": "98-95",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK UD",
+        "model": "UD1800HD, UD2000HD, UD2300HD/LP, UD2600, UD3000 (w/FE6TA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK UD",
+        "model": "UD1800HD, UD2000HD, UD2300HD/LP, UD2600, UD3000 (w/FE6TA Engine)",
+        "year": "04-99",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK UD",
+        "model": "UD3300 (w/FE6TA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK UD",
+        "model": "UD3300 (w/FE6TA Engine)",
+        "year": "04-99",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MITSUBISHI FUSO",
+        "model": "FK",
+        "year": "91-88",
+        "engine": "L6-6.6L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MITSUBISHI FUSO",
+        "model": "FK",
+        "year": "04-92",
+        "engine": "L6-7.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MITSUBISHI FUSO",
+        "model": "FK200",
+        "year": "11-05",
+        "engine": "L6-7.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MITSUBISHI FUSO",
+        "model": "FK260",
+        "year": "11-08",
+        "engine": "L6-7.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MITSUBISHI FUSO",
+        "model": "FM",
+        "year": "91-86",
+        "engine": "L6-6.6L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MITSUBISHI FUSO",
+        "model": "FM",
+        "year": "95-90",
+        "engine": "L6-7.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MITSUBISHI FUSO",
+        "model": "FM260",
+        "year": "07-05",
+        "engine": "L6-7.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MITSUBISHI FUSO",
+        "model": "FM330",
+        "year": "11-05",
+        "engine": "L6-7.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MITSUBISHI FUSO",
+        "model": "FM-HR",
+        "year": "03-96",
+        "engine": "L6-7.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MITSUBISHI FUSO",
+        "model": "FM-MR",
+        "year": "04-96",
+        "engine": "L6-7.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MITSUBISHI FUSO",
+        "model": "FM-SP",
+        "year": "04-96",
+        "engine": "L6-7.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MITSUBISHI FUSO",
+        "model": "FM-SR",
+        "year": "04-99",
+        "engine": "L6-7.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MITSUBISHI FUSO",
+        "model": "FM-SR",
+        "year": "97-96",
+        "engine": "L6-7.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FK415",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FK415",
+        "year": "91-88",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FK417",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FK417",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FK455",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FK455",
+        "year": "91-88",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FK457",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FK457",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FK617 (w/Mitsubishi 6D16-3AT3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FK617 (w/Mitsubishi 6D16-3AT3 Engine)",
+        "year": "04-96",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FM260 (w/Mitsubishi 6M60 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FM260 (w/Mitsubishi 6M60 Engine)",
+        "year": "07-05",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FM330 (w/Mitsubishi 6M60 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FM330 (w/Mitsubishi 6M60 Engine)",
+        "year": "08-05",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FM657 (w/Mitsubishi 6D16-3AT2 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FM657 (w/Mitsubishi 6D16-3AT2 Engine)",
+        "year": "04-96",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FM657 (w/Mitsubishi 6D16-3AT3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MITSUBISHI FUSO",
+        "model": "FM657 (w/Mitsubishi 6D16-3AT3 Engine)",
+        "year": "03-96",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

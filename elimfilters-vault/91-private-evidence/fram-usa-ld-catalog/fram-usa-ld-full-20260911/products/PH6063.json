@@ -1,0 +1,1103 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH6063",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH6063",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 3.078,
+      "outer_diameter_mm": 78.18,
+      "height_in": 3.188,
+      "height_mm": 80.98,
+      "thread_size": "3/4-16",
+      "gasket_od_in": 2.875,
+      "gasket_od_mm": 73.02,
+      "gasket_id_in": 2.469,
+      "gasket_id_mm": 62.71,
+      "gasket_thickness_in": 0.125,
+      "gasket_thickness_mm": 3.17,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "Yes",
+      "bypass_setting_psi": 9,
+      "burst_pressure_psi": 315
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OC91"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "ML16825"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57936"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 1 460 845"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 1 460 858"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 2 325 751"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 1 460 697"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "PH7025"
+      },
+      {
+        "manufacturer": "Emgo",
+        "part_number": "10-26720"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "KN-163"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH2835"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH7025"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "PH7025"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "PH7025"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "93-89",
+        "make": "BMW",
+        "model": "K1",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "86-83",
+        "make": "BMW",
+        "model": "K100",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "92-87",
+        "make": "BMW",
+        "model": "K100LT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "92-89",
+        "make": "BMW",
+        "model": "K100LT ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "88-83",
+        "make": "BMW",
+        "model": "K100RS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "89-88",
+        "make": "BMW",
+        "model": "K100RS ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "92-91",
+        "make": "BMW",
+        "model": "K100RS FL",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "92-91",
+        "make": "BMW",
+        "model": "K100RS FL ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "88-85",
+        "make": "BMW",
+        "model": "K100RT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "95-93",
+        "make": "BMW",
+        "model": "K1100LT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "95-93",
+        "make": "BMW",
+        "model": "K1100RS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "05-03",
+        "make": "BMW",
+        "model": "K1200GT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "08-98",
+        "make": "BMW",
+        "model": "K1200LT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "04-97",
+        "make": "BMW",
+        "model": "K1200RS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "95-88",
+        "make": "BMW",
+        "model": "K75",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1995",
+        "make": "BMW",
+        "model": "K75/3",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "88-86",
+        "make": "BMW",
+        "model": "K75C",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "92-90",
+        "make": "BMW",
+        "model": "K75RT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "92-87",
+        "make": "BMW",
+        "model": "K75S",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "95-94",
+        "make": "BMW",
+        "model": "R1100GS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "00-95",
+        "make": "BMW",
+        "model": "R1100R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "94-93",
+        "make": "BMW",
+        "model": "R1100RS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "01-96",
+        "make": "BMW",
+        "model": "R1100RT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "05-99",
+        "make": "BMW",
+        "model": "R1100S",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "04-99",
+        "make": "BMW",
+        "model": "R1150GS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "05-02",
+        "make": "BMW",
+        "model": "R1150GS ADVENTURE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "BMW",
+        "model": "R1150R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "04-02",
+        "make": "BMW",
+        "model": "R1150RS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "05-01",
+        "make": "BMW",
+        "model": "R1150RT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "BMW",
+        "model": "R1200C",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "05-02",
+        "make": "BMW",
+        "model": "R1200C CLASSIC",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "05-04",
+        "make": "BMW",
+        "model": "R1200C MONTAUK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "05-03",
+        "make": "BMW",
+        "model": "R1200CL",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-00",
+        "make": "BMW",
+        "model": "R850C AVANTGARDE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "01-99",
+        "make": "BMW",
+        "model": "R850C CLASSIC",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "01-95",
+        "make": "BMW",
+        "model": "R850R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1996",
+        "make": "BMW",
+        "model": "R850R ABS",
+        "engine": "All",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "PH6063",
+    "source_part_key": "001481545",
+    "source_totals": {
+      "attributes": 43,
+      "applications": 37,
+      "cross_references": 14
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® oil filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE (original equipment) recommended intervals. Equipped with SureGrip® technology, FRAM Extra Guard® oil filters provide a non-slip surface allowing for easy install and removal.\\nThe silicone anti-drain back valve ensures safe engine startups, extending the life of the oil filter for up to 10,000 miles (16,000 kilometers).",
+        "recno": "0"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, PH6063, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Motorcycle Full-Flow Spin-on Oil Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "Yes",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "85"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Standard",
+        "recno": "86"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "88"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base",
+        "recno": "89"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Chrome",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100382726",
+        "recno": "92"
+      },
+      {
+        "attribute": "Attachment Type",
+        "value": "Spin-On",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "94"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "95"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "3.188",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "3.078",
+        "recno": "97"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "98"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "2.469",
+        "recno": "99"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "2.875",
+        "recno": "100"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.125",
+        "recno": "101"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Inch)",
+        "value": "3/4-16",
+        "recno": "102"
+      },
+      {
+        "attribute": "Bypass Relief Valve Setting (Pounds per Square Inch)",
+        "value": "9-11",
+        "recno": "103"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "104"
+      },
+      {
+        "attribute": "Burst Pressure (Pounds per Square Inch)",
+        "value": "315.000",
+        "recno": "105"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "106"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "107"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "108"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.7250",
+        "recno": "112"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "4.3500",
+        "recno": "113"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "3.4220",
+        "recno": "114"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.3140",
+        "recno": "115"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.3860",
+        "recno": "116"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "10.7460",
+        "recno": "117"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.3860",
+        "recno": "118"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "7.4070",
+        "recno": "119"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.725,
+        "case_weight_lb": 4.35,
+        "unit_height_in": 3.422,
+        "unit_length_in": 3.386,
+        "unit_width_in": 3.386,
+        "case_height_in": 4.314,
+        "case_length_in": 10.746,
+        "case_width_in": 7.407,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 8.7,
+        "estimated_case_dimensions": {
+          "length_in": 14.328,
+          "width_in": 11.111,
+          "height_in": 4.314,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 37,
+    "all_cross_references_observed": 14,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:19:53.158Z",
+  "discovered_from": "PH6063",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BMW",
+        "model": "K1",
+        "year": "93-89",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "K100",
+        "year": "86-83",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "K100LT",
+        "year": "92-87",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "K100LT ABS",
+        "year": "92-89",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "K100RS",
+        "year": "88-83",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "K100RS ABS",
+        "year": "89-88",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "K100RS FL",
+        "year": "92-91",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "K100RS FL ABS",
+        "year": "92-91",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "K100RT",
+        "year": "88-85",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "K1100LT",
+        "year": "95-93",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "K1100RS",
+        "year": "95-93",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "K1200GT",
+        "year": "05-03",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "K1200LT",
+        "year": "08-98",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "K1200RS",
+        "year": "04-97",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "K75",
+        "year": "95-88",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "K75/3",
+        "year": "1995",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "K75C",
+        "year": "88-86",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "K75RT",
+        "year": "92-90",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "K75S",
+        "year": "92-87",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "R1100GS",
+        "year": "95-94",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "R1100R",
+        "year": "00-95",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "R1100RS",
+        "year": "94-93",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "R1100RT",
+        "year": "01-96",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "R1100S",
+        "year": "05-99",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "R1150GS",
+        "year": "04-99",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "R1150GS ADVENTURE",
+        "year": "05-02",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "R1150R",
+        "year": "06-01",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "R1150RS",
+        "year": "04-02",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "R1150RT",
+        "year": "05-01",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "R1200C",
+        "year": "02-99",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "R1200C CLASSIC",
+        "year": "05-02",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "R1200C MONTAUK",
+        "year": "05-04",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "R1200CL",
+        "year": "05-03",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "R850C AVANTGARDE",
+        "year": "02-00",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "R850C CLASSIC",
+        "year": "01-99",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "R850R",
+        "year": "01-95",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "R850R ABS",
+        "year": "1996",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 1 460 845",
+        "source_part_number": "PH6063",
+        "part_key": "001481545",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 1 460 858",
+        "source_part_number": "PH6063",
+        "part_key": "001481545",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 2 325 751",
+        "source_part_number": "PH6063",
+        "part_key": "001481545",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 1 460 697",
+        "source_part_number": "PH6063",
+        "part_key": "001481545",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "PH7025",
+        "source_part_number": "PH6063",
+        "part_key": "001481545",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Emgo",
+        "part_number": "10-26720",
+        "source_part_number": "PH6063",
+        "part_key": "001481545",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "KN-163",
+        "source_part_number": "PH6063",
+        "part_key": "001481545",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH2835",
+        "source_part_number": "PH6063",
+        "part_key": "001481545",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH7025",
+        "source_part_number": "PH6063",
+        "part_key": "001481545",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OC91",
+        "source_part_number": "PH6063",
+        "part_key": "001481545",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "ML16825",
+        "source_part_number": "PH6063",
+        "part_key": "001481545",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "PH7025",
+        "source_part_number": "PH6063",
+        "part_key": "001481545",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "PH7025",
+        "source_part_number": "PH6063",
+        "part_key": "001481545",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57936",
+        "source_part_number": "PH6063",
+        "part_key": "001481545",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

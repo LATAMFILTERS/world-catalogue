@@ -1,0 +1,2649 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH373",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH373",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 3.69,
+      "outer_diameter_mm": 93.73,
+      "height_in": 8.708,
+      "height_mm": 221.18,
+      "thread_size": "13/16-16",
+      "gasket_od_in": 3.471,
+      "gasket_od_mm": 88.16,
+      "gasket_id_in": 3.142,
+      "gasket_id_mm": 79.81,
+      "gasket_thickness_in": 0.22,
+      "gasket_thickness_mm": 5.59,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I-1211"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "6439034"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25010754"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "TY22012"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF932F"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF932"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BK6811"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "OF416"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W960"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-308FP"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-308"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1794"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1794MP"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51794"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "PH832"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51794MP"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Alliance Parts",
+        "part_number": "ABP/N10G-LF692"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "SDF76"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "EAO76"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92794"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85794"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "CO1392"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "PH832"
+      },
+      {
+        "manufacturer": "Coach Guard",
+        "part_number": "T08-1071"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "D801"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "LFP550832"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550832"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF692"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8692"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "PH832"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "V84"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "F226"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF226"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF226F"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "AL373"
+      },
+      {
+        "manufacturer": "Jiffy Lube",
+        "part_number": "HL373"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L175A"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP832"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH832"
+      },
+      {
+        "manufacturer": "Marathon",
+        "part_number": "PH832"
+      },
+      {
+        "manufacturer": "Master Parts",
+        "part_number": "PH-832"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "L40084"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "PH832"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "61794"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ-103"
+      },
+      {
+        "manufacturer": "Phillips 66",
+        "part_number": "PO84"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "L40084"
+      },
+      {
+        "manufacturer": "Silverline",
+        "part_number": "21794"
+      },
+      {
+        "manufacturer": "Unocal 76",
+        "part_number": "OF1794"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "L-373"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "3131413"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "86-73",
+        "make": "CHEVROLET",
+        "model": "C50",
+        "engine": "L6-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "87-72",
+        "make": "CHEVROLET",
+        "model": "C50",
+        "engine": "V8-5.7L",
+        "quantity": 1
+      },
+      {
+        "year": "79-72",
+        "make": "CHEVROLET",
+        "model": "C50",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "79-72",
+        "make": "CHEVROLET",
+        "model": "C50",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "86-72",
+        "make": "CHEVROLET",
+        "model": "C60",
+        "engine": "L6-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "87-72",
+        "make": "CHEVROLET",
+        "model": "C60",
+        "engine": "V8-5.7L",
+        "quantity": 1
+      },
+      {
+        "year": "87-72",
+        "make": "CHEVROLET",
+        "model": "C60",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "79-72",
+        "make": "CHEVROLET",
+        "model": "C60",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "CHEVROLET",
+        "model": "C6500 KODIAK",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "CHEVROLET",
+        "model": "C6500 KODIAK",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "90-79",
+        "make": "CHEVROLET",
+        "model": "C70",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "90-79",
+        "make": "CHEVROLET",
+        "model": "C70",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "CHEVROLET",
+        "model": "C7500 KODIAK",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "CHEVROLET",
+        "model": "C7500 KODIAK",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "CHEVROLET",
+        "model": "T6500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "CHEVROLET",
+        "model": "T7500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "87-79",
+        "make": "GMC",
+        "model": "C5000",
+        "engine": "L6-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "90-79",
+        "make": "GMC",
+        "model": "C5000",
+        "engine": "V8-5.7L",
+        "quantity": 1
+      },
+      {
+        "year": "1979",
+        "make": "GMC",
+        "model": "C5000",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "1979",
+        "make": "GMC",
+        "model": "C5000",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "91-90",
+        "make": "GMC",
+        "model": "C5000 TOPKICK",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "86-79",
+        "make": "GMC",
+        "model": "C6000",
+        "engine": "L6-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "90-79",
+        "make": "GMC",
+        "model": "C6000",
+        "engine": "V8-5.7L",
+        "quantity": 1
+      },
+      {
+        "year": "90-79",
+        "make": "GMC",
+        "model": "C6000",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "1979",
+        "make": "GMC",
+        "model": "C6000",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "1985",
+        "make": "GMC",
+        "model": "C6000",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "1990",
+        "make": "GMC",
+        "model": "C6000",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "96-90",
+        "make": "GMC",
+        "model": "C6000 TOPKICK",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "96-90",
+        "make": "GMC",
+        "model": "C6000 TOPKICK",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "GMC",
+        "model": "C6500 TOPKICK",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "GMC",
+        "model": "C6500 TOPKICK",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "1979",
+        "make": "GMC",
+        "model": "C7000",
+        "engine": "V8-5.7L",
+        "quantity": 1
+      },
+      {
+        "year": "90-79",
+        "make": "GMC",
+        "model": "C7000",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "90-79",
+        "make": "GMC",
+        "model": "C7000",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "96-90",
+        "make": "GMC",
+        "model": "C7000 TOPKICK",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "96-90",
+        "make": "GMC",
+        "model": "C7000 TOPKICK",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "GMC",
+        "model": "C7500 TOPKICK",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "GMC",
+        "model": "C7500 TOPKICK",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "GMC",
+        "model": "T6500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "GMC",
+        "model": "T7500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "PH373",
+    "source_part_key": "001509613",
+    "source_totals": {
+      "attributes": 38,
+      "applications": 150,
+      "cross_references": 52
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, PH373, HD Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Spin-on Oil Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "84"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Standard",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Orange",
+        "recno": "89"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Drain Plug Included",
+        "value": "No",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100400161",
+        "recno": "92"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Oil Filter",
+        "recno": "94"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "95"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "8.708",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "3.690",
+        "recno": "97"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "3.142",
+        "recno": "98"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "3.471",
+        "recno": "99"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.220",
+        "recno": "100"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Inch)",
+        "value": "13/16-16",
+        "recno": "101"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "102"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "103"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "104"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.8750",
+        "recno": "108"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "11.2500",
+        "recno": "109"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "8.3400",
+        "recno": "110"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "8.9650",
+        "recno": "111"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.7760",
+        "recno": "112"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "11.6670",
+        "recno": "113"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.7760",
+        "recno": "114"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "7.9270",
+        "recno": "115"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.875,
+        "case_weight_lb": 11.25,
+        "unit_height_in": 8.34,
+        "unit_length_in": 3.776,
+        "unit_width_in": 3.776,
+        "case_height_in": 8.965,
+        "case_length_in": 11.667,
+        "case_width_in": 7.927,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 22.5,
+        "estimated_case_dimensions": {
+          "length_in": 15.556,
+          "width_in": 11.89,
+          "height_in": 8.965,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 150,
+    "all_cross_references_observed": 52,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:18:41.194Z",
+  "discovered_from": "PH373",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B6P School Bus Chassis (w/350 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B6P School Bus Chassis (w/350 Gas Engine)",
+        "year": "92-80",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B6P School Bus Chassis (w/366 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B6P School Bus Chassis (w/366 Gas Engine)",
+        "year": "92-80",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B6P School Bus Chassis (w/427 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B6P School Bus Chassis (w/427 Gas Engine)",
+        "year": "92-80",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B6P School Bus Chassis (w/350 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B6P School Bus Chassis (w/350 Gas Engine)",
+        "year": "92-80",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B6P School Bus Chassis (w/366 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B6P School Bus Chassis (w/366 Gas Engine)",
+        "year": "92-80",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B6P School Bus Chassis (w/427 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B6P School Bus Chassis (w/427 Gas Engine)",
+        "year": "92-80",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "C50",
+        "year": "86-73",
+        "engine": "L6-4.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "C50",
+        "year": "87-72",
+        "engine": "V8-5.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "C50",
+        "year": "79-72",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "C50",
+        "year": "79-72",
+        "engine": "V8-7.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "C60",
+        "year": "86-72",
+        "engine": "L6-4.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "C60",
+        "year": "87-72",
+        "engine": "V8-5.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "C60",
+        "year": "87-72",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "C60",
+        "year": "79-72",
+        "engine": "V8-7.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "C6500 KODIAK",
+        "year": "98-97",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "C6500 KODIAK",
+        "year": "98-97",
+        "engine": "V8-7.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "C70",
+        "year": "90-79",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "C70",
+        "year": "90-79",
+        "engine": "V8-7.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "C7500 KODIAK",
+        "year": "98-97",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "C7500 KODIAK",
+        "year": "98-97",
+        "engine": "V8-7.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "T6500",
+        "year": "98-97",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "T7500",
+        "year": "98-97",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CHEVROLET",
+        "model": "6-292 4.8L",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CHEVROLET",
+        "model": "6-292 4.8L",
+        "year": "88-71",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CHEVROLET",
+        "model": "V8-350 5.7L",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CHEVROLET",
+        "model": "V8-350 5.7L",
+        "year": "88-72",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CHEVROLET",
+        "model": "V8-366 6.0L",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CHEVROLET",
+        "model": "V8-366 6.0L",
+        "year": "96-72",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CHEVROLET",
+        "model": "V8-396",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CHEVROLET",
+        "model": "V8-396",
+        "year": "1972",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CHEVROLET",
+        "model": "V8-427 7.0L",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CHEVROLET",
+        "model": "V8-427 7.0L",
+        "year": "95-72",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CHEVROLET",
+        "model": "V8-454 7.4L",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CHEVROLET",
+        "model": "V8-454 7.4L",
+        "year": "93-76",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE GASOLINE GMC",
+        "model": "292 6 cyl. 4.8L",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE GASOLINE GMC",
+        "model": "292 6 cyl. 4.8L",
+        "year": "88-71",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE GASOLINE GMC",
+        "model": "350 V8 5.7L",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE GASOLINE GMC",
+        "model": "350 V8 5.7L",
+        "year": "88-72",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE GASOLINE GMC",
+        "model": "366 V8 6.0L",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE GASOLINE GMC",
+        "model": "366 V8 6.0L",
+        "year": "96-72",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE GASOLINE GMC",
+        "model": "396 V8",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE GASOLINE GMC",
+        "model": "396 V8",
+        "year": "1972",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE GASOLINE GMC",
+        "model": "427 V8 7.0L",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE GASOLINE GMC",
+        "model": "427 V8 7.0L",
+        "year": "95-72",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE GASOLINE GMC",
+        "model": "454 V8 7.4L",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE GASOLINE GMC",
+        "model": "454 V8 7.4L",
+        "year": "93-76",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C5000",
+        "year": "87-79",
+        "engine": "L6-4.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C5000",
+        "year": "90-79",
+        "engine": "V8-5.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C5000",
+        "year": "1979",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C5000",
+        "year": "1979",
+        "engine": "V8-7.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C5000 TOPKICK",
+        "year": "91-90",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C6000",
+        "year": "86-79",
+        "engine": "L6-4.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C6000",
+        "year": "90-79",
+        "engine": "V8-5.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C6000",
+        "year": "90-79",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C6000",
+        "year": "1979",
+        "engine": "V8-7.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C6000",
+        "year": "1985",
+        "engine": "V8-7.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C6000",
+        "year": "1990",
+        "engine": "V8-7.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C6000 TOPKICK",
+        "year": "96-90",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C6000 TOPKICK",
+        "year": "96-90",
+        "engine": "V8-7.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C6500 TOPKICK",
+        "year": "98-97",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C6500 TOPKICK",
+        "year": "98-97",
+        "engine": "V8-7.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C7000",
+        "year": "1979",
+        "engine": "V8-5.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C7000",
+        "year": "90-79",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C7000",
+        "year": "90-79",
+        "engine": "V8-7.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C7000 TOPKICK",
+        "year": "96-90",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C7000 TOPKICK",
+        "year": "96-90",
+        "engine": "V8-7.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C7500 TOPKICK",
+        "year": "98-97",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C7500 TOPKICK",
+        "year": "98-97",
+        "engine": "V8-7.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "T6500",
+        "year": "98-97",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "T7500",
+        "year": "98-97",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "C50, C60 (w/GM 6 cyl. 292 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "C50, C60 (w/GM 6 cyl. 292 Gas Engine)",
+        "year": "86-73",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "C50, C60 (w/GM V8 5.7L 350 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "C50, C60 (w/GM V8 5.7L 350 Gas Engine)",
+        "year": "90-72",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "C60, C70 (w/GM 6.0L 366 CID Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "C60, C70 (w/GM 6.0L 366 CID Gas Engine)",
+        "year": "90-72",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "C60, C70 Kodiak (w/GM V8 6.0L 366 FI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "C60, C70 Kodiak (w/GM V8 6.0L 366 FI Engine)",
+        "year": "96-90",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "C60, C70 Kodiak (w/GM V8 7.0L 427 FI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "C60, C70 Kodiak (w/GM V8 7.0L 427 FI Engine)",
+        "year": "96-90",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "P6 Forward Chassis (w/6.0L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "P6 Forward Chassis (w/6.0L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "P6 Forward Chassis (w/7.0L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "P6 Forward Chassis (w/7.0L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "C5000, C6000 (w/General Motors 6 cyl. 292 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "C5000, C6000 (w/General Motors 6 cyl. 292 Gas Engine)",
+        "year": "86-73",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "C5000, C6000 (w/General Motors V8 5.7L 350 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "C5000, C6000 (w/General Motors V8 5.7L 350 Gas Engine)",
+        "year": "90-72",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "C6000, C7000 (w/GM 6.0L 366 CID Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "C6000, C7000 (w/GM 6.0L 366 CID Gas Engine)",
+        "year": "90-72",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "C6000, C7000 Topkick (w/General Motors V8 7.0L 427 FI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "C6000, C7000 Topkick (w/General Motors V8 7.0L 427 FI Engine)",
+        "year": "96-90",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "C6000, C7000 Topkick (w/GM V8 6.0L 366 FI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "C6000, C7000 Topkick (w/GM V8 6.0L 366 FI Engine)",
+        "year": "96-90",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "P6 Forward Chassis (w/6.0L Gas engs.)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "P6 Forward Chassis (w/6.0L Gas engs.)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "P6 Forward Chassis (w/7.0L Gas engs.)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "P6 Forward Chassis (w/7.0L Gas engs.)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "T Series (w/General Motors V8 6.0L 366 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "T Series (w/General Motors V8 6.0L 366 Gas Engine)",
+        "year": "98-97",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY CHEVROLET",
+        "model": "C70 (w/GM 7.0L 427 CID Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY CHEVROLET",
+        "model": "C70 (w/GM 7.0L 427 CID Gas Engine)",
+        "year": "90-72",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B6P042 School Bus (w/General Motors V8-350 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B6P042 School Bus (w/General Motors V8-350 Gas Engine)",
+        "year": "91-83",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B6P042 School Bus (w/General Motors V8-366 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B6P042 School Bus (w/General Motors V8-366 Gas Engine)",
+        "year": "91-83",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B6P042 School Bus (w/General Motors V8-427 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B6P042 School Bus (w/General Motors V8-427 Gas Engine)",
+        "year": "85-83",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/General Motors 6.0L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/General Motors 6.0L Gas Engine)",
+        "year": "96-93",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/General Motors 7.0L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/General Motors 7.0L Gas Engine)",
+        "year": "96-93",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C5D042 (w/General Motors V8-350 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C5D042 (w/General Motors V8-350 Gas Engine)",
+        "year": "82-77",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C5D042 (w/General Motors V8-350 Gas Engine)",
+        "year": "90-85",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C5D042 (w/General Motors V8-366 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C5D042 (w/General Motors V8-366 Gas Engine)",
+        "year": "90-77",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C5D042 (w/General Motors V8-427 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C5D042 (w/General Motors V8-427 Gas Engine)",
+        "year": "90-77",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C5H042 (w/General Motors 6.0L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C5H042 (w/General Motors 6.0L Gas Engine)",
+        "year": "1990",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C5H042 (w/General Motors 7.0L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C5H042 (w/General Motors 7.0L Gas Engine)",
+        "year": "1990",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C6D042 (w/General Motors V8-350 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C6D042 (w/General Motors V8-350 Gas Engine)",
+        "year": "82-77",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C6D042 (w/General Motors V8-350 Gas Engine)",
+        "year": "90-85",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C6D042 (w/General Motors V8-366 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C6D042 (w/General Motors V8-366 Gas Engine)",
+        "year": "90-77",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C6D042 (w/General Motors V8-427 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C6D042 (w/General Motors V8-427 Gas Engine)",
+        "year": "90-77",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C6H042",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C6H042",
+        "year": "98-90",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C7D042 (w/General Motors V8-350 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C7D042 (w/General Motors V8-350 Gas Engine)",
+        "year": "82-77",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C7D042 (w/General Motors V8-350 Gas Engine)",
+        "year": "90-85",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C7D042 (w/General Motors V8-366 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C7D042 (w/General Motors V8-366 Gas Engine)",
+        "year": "90-77",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C7D042 (w/General Motors V8-427 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C7D042 (w/General Motors V8-427 Gas Engine)",
+        "year": "90-77",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C7H042",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C7H042",
+        "year": "98-90",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "P6T042",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "P6T042",
+        "year": "90-83",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "P6T042",
+        "year": "96-92",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF932F",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF932",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Alliance Parts",
+        "part_number": "ABP/N10G-LF692",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "SDF76",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "EAO76",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BK6811",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92794",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85794",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I-1211",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "CO1392",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "PH832",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "OF416",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Coach Guard",
+        "part_number": "T08-1071",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "D801",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "LFP550832",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550832",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF692",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8692",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "6439034",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25010754",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "PH832",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "V84",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "F226",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF226",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF226F",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "AL373",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Jiffy Lube",
+        "part_number": "HL373",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "TY22012",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L175A",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP832",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH832",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W960",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Marathon",
+        "part_number": "PH832",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Master Parts",
+        "part_number": "PH-832",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "L40084",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "PH832",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-308FP",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-308",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1794",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1794MP",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "61794",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ-103",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Phillips 66",
+        "part_number": "PO84",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "L40084",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Silverline",
+        "part_number": "21794",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Unocal 76",
+        "part_number": "OF1794",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "L-373",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "3131413",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51794",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "PH832",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51794MP",
+        "source_part_number": "PH373",
+        "part_key": "001509613",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

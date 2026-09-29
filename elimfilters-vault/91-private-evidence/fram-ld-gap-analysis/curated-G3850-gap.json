@@ -1,0 +1,28 @@
+{
+  "generated_at": "2026-09-13T07:26:34.263Z",
+  "harvested": 1,
+  "counts": {
+    "REAL_GAP_CREATE_SAFE": 1
+  },
+  "by_family": {
+    "FUEL": {
+      "REAL_GAP_CREATE_SAFE": 1
+    }
+  },
+  "existing_covered": 0,
+  "variants": 1,
+  "create_safe": 1,
+  "quarantine": 0,
+  "safe_candidates": [
+    {
+      "family": "FUEL",
+      "authority": "G3850",
+      "sku": "EF33850",
+      "variants": [
+        "G3850DP"
+      ],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\G3850.json"
+    }
+  ],
+  "results": []
+}

@@ -1,0 +1,1601 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA11508",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA11508",
+    "product_type": "Air Filter, Air",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": 4.11,
+      "outer_diameter_mm": 104.39,
+      "height_in": 10.72,
+      "height_mm": 272.29,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "HD Radial Seal Air Outer",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Ariens",
+        "part_number": "21545400"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "MU11747"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "MIU11747"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "11013-7038"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "110137038"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "RS5325"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "49168"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Bad Boy Mowers",
+        "part_number": "063-8019-00"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "83168"
+      },
+      {
+        "manufacturer": "Carrier Transicold",
+        "part_number": "30-00426-24"
+      },
+      {
+        "manufacturer": "Carrier Transicold",
+        "part_number": "30-00426-27"
+      },
+      {
+        "manufacturer": "Carrier Transicold",
+        "part_number": "30-00430-27"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P616641"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF26168"
+      },
+      {
+        "manufacturer": "Gravely",
+        "part_number": "21545400"
+      },
+      {
+        "manufacturer": "Gravely",
+        "part_number": "21545300"
+      },
+      {
+        "manufacturer": "Hustler",
+        "part_number": "601652"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF5325"
+      },
+      {
+        "manufacturer": "Snapper",
+        "part_number": "5023141"
+      },
+      {
+        "manufacturer": "Stens",
+        "part_number": "054-303"
+      },
+      {
+        "manufacturer": "Stens",
+        "part_number": "100-656"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA11508",
+    "source_part_key": "007122159",
+    "source_totals": {
+      "attributes": 29,
+      "applications": 118,
+      "cross_references": 21
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA11508, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "HD Radial Seal Air Outer",
+        "recno": "2"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "83"
+      },
+      {
+        "attribute": "Inside Diameter",
+        "value": "Closed",
+        "recno": "84"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "85"
+      },
+      {
+        "attribute": "Top Inside Diameter",
+        "value": "Closed",
+        "recno": "86"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "87"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "10.720",
+        "recno": "89"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "4.110",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "4.110",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100552082",
+        "recno": "92"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "3.050",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "4.110",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "94"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "95"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.9670",
+        "recno": "99"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "5.8020",
+        "recno": "100"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "11.5800",
+        "recno": "101"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "12.1200",
+        "recno": "102"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "4.6600",
+        "recno": "103"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "14.7500",
+        "recno": "104"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "4.6600",
+        "recno": "105"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "10.0000",
+        "recno": "106"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.967,
+        "case_weight_lb": 5.802,
+        "unit_height_in": 11.58,
+        "unit_length_in": 4.66,
+        "unit_width_in": 4.66,
+        "case_height_in": 12.12,
+        "case_length_in": 14.75,
+        "case_width_in": 10,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 11.604,
+        "estimated_case_dimensions": {
+          "length_in": 19.667,
+          "width_in": 15,
+          "height_in": 12.12,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 118,
+    "all_cross_references_observed": 21,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:40:44.786Z",
+  "discovered_from": "CA11508",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "EQUIPMENT VERMEER",
+        "model": "RTX350 Trencher w/Cummins A Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT VERMEER",
+        "model": "RTX350 Trencher w/Cummins A Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR ARIENS",
+        "model": "Pro Zoom w/Kawasaki FX 27 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR ARIENS",
+        "model": "Pro Zoom w/Kawasaki FX 27 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BAD BOY",
+        "model": "Lightning Z Series w/Kawasaki FX850V 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BAD BOY",
+        "model": "Lightning Z Series w/Kawasaki FX850V 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BAD BOY",
+        "model": "Outlaw Series w/Kawasaki 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BAD BOY",
+        "model": "Outlaw Series w/Kawasaki 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BOBCAT",
+        "model": "Predator Pro w/Kawasaki FX1000V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BOBCAT",
+        "model": "Predator Pro w/Kawasaki FX1000V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BOBCAT",
+        "model": "Predator Pro w/Kawasaki FX921V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BOBCAT",
+        "model": "Predator Pro w/Kawasaki FX921V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BOBCAT",
+        "model": "Pro Cat SE w/Kawasaki FX651V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BOBCAT",
+        "model": "Pro Cat SE w/Kawasaki FX651V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BOBCAT",
+        "model": "Pro Cat SE w/Kawasaki FX691V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BOBCAT",
+        "model": "Pro Cat SE w/Kawasaki FX691V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BOBCAT",
+        "model": "Pro Cat w/Kawasaki 25 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BOBCAT",
+        "model": "Pro Cat w/Kawasaki 25 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BOBCAT",
+        "model": "Pro Cat w/Kawasaki FX801V 29 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BOBCAT",
+        "model": "Pro Cat w/Kawasaki FX801V 29 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BUNTON",
+        "model": "Missile w/Kawasaki FX1000V 37 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BUNTON",
+        "model": "Missile w/Kawasaki FX1000V 37 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CONVERTIBLE MOWER",
+        "model": "LP29KA w/Kawasaki FX801V 29 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CONVERTIBLE MOWER",
+        "model": "LP29KA w/Kawasaki FX801V 29 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR COUNTRY CLIPPER",
+        "model": "JAZee Boss w/Kawasaki 31 & 37 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR COUNTRY CLIPPER",
+        "model": "JAZee Boss w/Kawasaki 31 & 37 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "Tank M60 w/Kawasaki 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "Tank M60 w/Kawasaki 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "Tank M60 w/Kawasaki 37 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "Tank M60 w/Kawasaki 37 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "Tank M72 w/Kawasaki 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "Tank M72 w/Kawasaki 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "Tank M72 w/Kawasaki 37 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "Tank M72 w/Kawasaki 37 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "Tank S w/Kawasaki 31 HP Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "Tank S w/Kawasaki 31 HP Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "Tank S w/Kawasaki 37 HP Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "Tank S w/Kawasaki 37 HP Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR FERRIS INDUSTRIES",
+        "model": "IS3100Z w/Kawasaki FX1000V 37 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR FERRIS INDUSTRIES",
+        "model": "IS3100Z w/Kawasaki FX1000V 37 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GRAVELY",
+        "model": "PM3084 Turf w/Kawaski FX Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GRAVELY",
+        "model": "PM3084 Turf w/Kawaski FX Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GRAVELY",
+        "model": "Pro Master Series w/Kawasaki Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GRAVELY",
+        "model": "Pro Master Series w/Kawasaki Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GRAVELY",
+        "model": "Promaster 272 w/Kawasaki FX 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GRAVELY",
+        "model": "Promaster 272 w/Kawasaki FX 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GRAVELY",
+        "model": "Promaster 320HD w/Kawasaki FX751V 27 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GRAVELY",
+        "model": "Promaster 320HD w/Kawasaki FX751V 27 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GRAVELY",
+        "model": "Pro-Ride 254, Pro-Ride 260, Pro-Ride 266 w/Kawasaki FX Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GRAVELY",
+        "model": "Pro-Ride 254, Pro-Ride 260, Pro-Ride 266 w/Kawasaki FX Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GRAVELY",
+        "model": "Pro-Stance 48FL, 52FL, 61FL w/Kawasaki FX Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GRAVELY",
+        "model": "Pro-Stance 48FL, 52FL, 61FL w/Kawasaki FX Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GRAVELY",
+        "model": "Pro-Turn 252, 260, 272 Commercial w/Kawasaki FX Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GRAVELY",
+        "model": "Pro-Turn 252, 260, 272 Commercial w/Kawasaki FX Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GRAVELY",
+        "model": "ProTurn 260 & 266 Commercial w/Kawasaki 27 & 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GRAVELY",
+        "model": "ProTurn 260 & 266 Commercial w/Kawasaki 27 & 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GRAVELY",
+        "model": "Pro-Turn 452 w/Kawasaki FX751V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GRAVELY",
+        "model": "Pro-Turn 452 w/Kawasaki FX751V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GRAVELY",
+        "model": "Pro-Turn 460 w/Kawasaki FX Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GRAVELY",
+        "model": "Pro-Turn 460 w/Kawasaki FX Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GRAVELY",
+        "model": "Pro-Turn 472 Commercial w/Kawasaki FX Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR GRAVELY",
+        "model": "Pro-Turn 472 Commercial w/Kawasaki FX Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSQVARNA",
+        "model": "PZ-6029FX w/Kawasaki FX801 29 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSQVARNA",
+        "model": "PZ-6029FX w/Kawasaki FX801 29 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSQVARNA",
+        "model": "PZ-6034FX w/Kawasaki FX921V 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSQVARNA",
+        "model": "PZ-6034FX w/Kawasaki FX921V 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSQVARNA",
+        "model": "PZ-6054 w/Kawasaki FX921V 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSQVARNA",
+        "model": "PZ-6054 w/Kawasaki FX921V 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSQVARNA",
+        "model": "PZ-7234FX w/Kawasaki FX921V 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSQVARNA",
+        "model": "PZ-7234FX w/Kawasaki FX921V 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSTLER",
+        "model": "Super Z w/Kawasaki FX850V or FX1000V Engines",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSTLER",
+        "model": "Super Z w/Kawasaki FX850V or FX1000V Engines",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSTLER",
+        "model": "X-ONE Series w/Kawasaki 24,26,or 31 hp Engines",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSTLER",
+        "model": "X-ONE Series w/Kawasaki 24,26,or 31 hp Engines",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSTLER",
+        "model": "X-ONE w/Kawasaki 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSTLER",
+        "model": "X-ONE w/Kawasaki 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z830A w/Kawasaki 27 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z830A w/Kawasaki 27 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z850A w/Kawasaki 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z850A w/Kawasaki 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z860A w/Kawasaki 34 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z860A w/Kawasaki 34 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z925 w/Kawasaki 27hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z925 w/Kawasaki 27hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z930A w/Kawasaki FX801V 29 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z930A w/Kawasaki FX801V 29 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z970A w/Kawaski FX1000V  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z970A w/Kawaski FX1000V  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR NEW HOLLAND",
+        "model": "G5030 w/Kawasaki FX751V 27 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR NEW HOLLAND",
+        "model": "G5030 w/Kawasaki FX751V 27 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR NEW HOLLAND",
+        "model": "G5035 w/Kawasaki FX850V 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR NEW HOLLAND",
+        "model": "G5035 w/Kawasaki FX850V 31 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR SCAG",
+        "model": "Cheetah w/Kawasaki FX850 & FX921 Engines",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR SCAG",
+        "model": "Cheetah w/Kawasaki FX850 & FX921 Engines",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR SCAG",
+        "model": "V Ride w/Kawasaki FX Series Engines",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR SCAG",
+        "model": "V Ride w/Kawasaki FX Series Engines",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR SNAPPER",
+        "model": "S150X Pro Series w/Kawasaki FH641V 21 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR SNAPPER",
+        "model": "S150X Pro Series w/Kawasaki FH641V 21 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR SNAPPER",
+        "model": "S150X Pro Series w/Kawasaki FH721V 25 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR SNAPPER",
+        "model": "S150X Pro Series w/Kawasaki FH721V 25 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR SNAPPER",
+        "model": "S200X w/Kawasaki FH721V 25 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR SNAPPER",
+        "model": "S200X w/Kawasaki FH721V 25 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR SNAPPER",
+        "model": "S200X w/Kawasaki FX751V 27 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR SNAPPER",
+        "model": "S200X w/Kawasaki FX751V 27 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR SNAPPER",
+        "model": "S200xt Pro Series w/Kawasaki FX801 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR SNAPPER",
+        "model": "S200xt Pro Series w/Kawasaki FX801 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR TORO",
+        "model": "Z Master Commercial w/Kawasaki Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR TORO",
+        "model": "Z Master Commercial w/Kawasaki Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR TORO",
+        "model": "Z580 w/Kawasaki DFI Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR TORO",
+        "model": "Z580 w/Kawasaki DFI Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "REFRIGERATION UNIT CARRIER-TRANSICOLD",
+        "model": "Extra XT (w/CT4-114TV Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "REFRIGERATION UNIT CARRIER-TRANSICOLD",
+        "model": "Extra XT (w/CT4-114TV Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "REFRIGERATION UNIT CARRIER-TRANSICOLD",
+        "model": "TM900, TM1000",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "REFRIGERATION UNIT CARRIER-TRANSICOLD",
+        "model": "TM900, TM1000",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "REFRIGERATION UNIT CARRIER-TRANSICOLD",
+        "model": "Ultima XTC (w/CT4-134DI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "REFRIGERATION UNIT CARRIER-TRANSICOLD",
+        "model": "Ultima XTC (w/CT4-134DI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "REFRIGERATION UNIT CARRIER-TRANSICOLD",
+        "model": "Ultra XL, Ultra XT, XTC (w/CT4-134DI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "REFRIGERATION UNIT CARRIER-TRANSICOLD",
+        "model": "Ultra XL, Ultra XT, XTC (w/CT4-134DI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Ariens",
+        "part_number": "21545400",
+        "source_part_number": "CA11508",
+        "part_key": "007122159",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Bad Boy Mowers",
+        "part_number": "063-8019-00",
+        "source_part_number": "CA11508",
+        "part_key": "007122159",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "RS5325",
+        "source_part_number": "CA11508",
+        "part_key": "007122159",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "83168",
+        "source_part_number": "CA11508",
+        "part_key": "007122159",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Carrier Transicold",
+        "part_number": "30-00426-24",
+        "source_part_number": "CA11508",
+        "part_key": "007122159",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Carrier Transicold",
+        "part_number": "30-00426-27",
+        "source_part_number": "CA11508",
+        "part_key": "007122159",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Carrier Transicold",
+        "part_number": "30-00430-27",
+        "source_part_number": "CA11508",
+        "part_key": "007122159",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P616641",
+        "source_part_number": "CA11508",
+        "part_key": "007122159",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF26168",
+        "source_part_number": "CA11508",
+        "part_key": "007122159",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Gravely",
+        "part_number": "21545400",
+        "source_part_number": "CA11508",
+        "part_key": "007122159",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Gravely",
+        "part_number": "21545300",
+        "source_part_number": "CA11508",
+        "part_key": "007122159",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Hustler",
+        "part_number": "601652",
+        "source_part_number": "CA11508",
+        "part_key": "007122159",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "MU11747",
+        "source_part_number": "CA11508",
+        "part_key": "007122159",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "MIU11747",
+        "source_part_number": "CA11508",
+        "part_key": "007122159",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "11013-7038",
+        "source_part_number": "CA11508",
+        "part_key": "007122159",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "110137038",
+        "source_part_number": "CA11508",
+        "part_key": "007122159",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF5325",
+        "source_part_number": "CA11508",
+        "part_key": "007122159",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Snapper",
+        "part_number": "5023141",
+        "source_part_number": "CA11508",
+        "part_key": "007122159",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Stens",
+        "part_number": "054-303",
+        "source_part_number": "CA11508",
+        "part_key": "007122159",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Stens",
+        "part_number": "100-656",
+        "source_part_number": "CA11508",
+        "part_key": "007122159",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "49168",
+        "source_part_number": "CA11508",
+        "part_key": "007122159",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

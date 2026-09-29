@@ -1,0 +1,260 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "FUEL",
+  "authority": {
+    "part_number": "G1000",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "G1000",
+    "product_type": "Fuel Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 1.891,
+      "outer_diameter_mm": 48.03,
+      "height_in": 4.203,
+      "height_mm": 106.76,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "In Line",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [],
+    "unresolved_cross_reference_candidates": [],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "G1000",
+    "source_part_key": "007121956",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 1,
+      "cross_references": 0
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, G1000, Fuel Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "In-Line Fuel Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "In Line",
+        "recno": "80"
+      },
+      {
+        "attribute": "Micron Rating (Micro)",
+        "value": "3",
+        "recno": "81"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "82"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Clear",
+        "recno": "83"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Tube Connector",
+        "recno": "84"
+      },
+      {
+        "attribute": "Fuel Type",
+        "value": "Gasoline",
+        "recno": "85"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Universal",
+        "recno": "86"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Fuel Filter",
+        "recno": "87"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "4.203",
+        "recno": "89"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "1.891",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Housing Material",
+        "value": "Nylon",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100004796",
+        "recno": "92"
+      },
+      {
+        "attribute": "Hose Included",
+        "value": "No",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Clamps Included",
+        "value": "No",
+        "recno": "93"
+      },
+      {
+        "attribute": "Inlet Line Size (Millimeter)",
+        "value": "6-8",
+        "recno": "94"
+      },
+      {
+        "attribute": "Outlet Line Size (Millimeter)",
+        "value": "6-8",
+        "recno": "95"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "96"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Taiwan",
+        "recno": "97"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.1000",
+        "recno": "101"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "0.6000",
+        "recno": "102"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "4.4420",
+        "recno": "103"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "5.0670",
+        "recno": "104"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "2.2410",
+        "recno": "105"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "7.0610",
+        "recno": "106"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "2.2410",
+        "recno": "107"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "4.8560",
+        "recno": "108"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.1,
+        "case_weight_lb": 0.6,
+        "unit_height_in": 4.442,
+        "unit_length_in": 2.241,
+        "unit_width_in": 2.241,
+        "case_height_in": 5.067,
+        "case_length_in": 7.061,
+        "case_width_in": 4.856,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 1.2,
+        "estimated_case_dimensions": {
+          "length_in": 9.415,
+          "width_in": 7.284,
+          "height_in": 5.067,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 1,
+    "all_cross_references_observed": 0,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T06:02:24.848Z",
+  "discovered_from": "G1000",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "NA",
+        "model": "NA",
+        "year": "NA",
+        "engine": "NA",
+        "part_type": "NA",
+        "application_type": "NA",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

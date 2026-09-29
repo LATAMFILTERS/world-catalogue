@@ -1,0 +1,5005 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH5964",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH5964",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 4.25,
+      "outer_diameter_mm": 107.95,
+      "height_in": 4.373,
+      "height_mm": 111.07,
+      "thread_size": "3/4-16",
+      "gasket_od_in": 2.81,
+      "gasket_od_mm": 71.37,
+      "gasket_id_in": 2.46,
+      "gasket_id_mm": 62.48,
+      "gasket_thickness_in": 0.2,
+      "gasket_thickness_mm": 5.08,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "Yes",
+      "bypass_relief_valve": "Yes",
+      "bypass_setting_psi": 30,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "AGCO",
+        "part_number": "72217092"
+      },
+      {
+        "manufacturer": "AGCO",
+        "part_number": "10A14373"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "10A14373"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "4113539"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "72217092"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "9Y4506"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I1261"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "B8NN-6714-A"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "A700X-6714-MA"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "CPN-6882-A"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "A760X-6714-RA"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "CBPN-18649-A"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "D9NN-6714-FA"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "A800X-6714-BA"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "A720X-6714-DA"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "C5NN-6714-A"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "D9NN-6714-DA"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "C9NN-6714-A"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "B9NN-6714-A"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "C5NN-6714-B"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "93892080"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "5577281"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "89002942"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "1005511M91"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "1015511M91"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "1015511M92"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF1288"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7219"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT5"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W1130"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W1126"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "7075"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Asahi",
+        "part_number": "TO-130"
+      },
+      {
+        "manufacturer": "Auto Express",
+        "part_number": "39555 WB"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "041-0696"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "041-8889"
+      },
+      {
+        "manufacturer": "Bowes",
+        "part_number": "LFP2258"
+      },
+      {
+        "manufacturer": "Bowes",
+        "part_number": "FP190"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "84075"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "47135704"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "84222017"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "47135705"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "47135703"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "47135703MP"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "1931018"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "AZL007"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "LSF5102"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "2043"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "484"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "623"
+      },
+      {
+        "manufacturer": "Cyclone",
+        "part_number": "PM-285"
+      },
+      {
+        "manufacturer": "Diamond",
+        "part_number": "FD8226"
+      },
+      {
+        "manufacturer": "Diamond",
+        "part_number": "FD8245"
+      },
+      {
+        "manufacturer": "Divco Trucks",
+        "part_number": "8115"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P16-8289"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P168289"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P55-0580"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P779132"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "FT5265"
+      },
+      {
+        "manufacturer": "Donit",
+        "part_number": "431017"
+      },
+      {
+        "manufacturer": "Donit",
+        "part_number": "431040"
+      },
+      {
+        "manufacturer": "Fapofil",
+        "part_number": "OR521"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "4434825"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "4777082"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "4719150"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "4434794"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "4712132"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "4236942"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "4371581"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "4135559"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "9129"
+      },
+      {
+        "manufacturer": "Finn Filter",
+        "part_number": "FFUP-422"
+      },
+      {
+        "manufacturer": "Finn Filter",
+        "part_number": "FFUP422"
+      },
+      {
+        "manufacturer": "Fispa",
+        "part_number": "LI3970"
+      },
+      {
+        "manufacturer": "Fispa",
+        "part_number": "FOE036"
+      },
+      {
+        "manufacturer": "Fispa",
+        "part_number": "LI3928"
+      },
+      {
+        "manufacturer": "Fispa",
+        "part_number": "FAP011"
+      },
+      {
+        "manufacturer": "Fispa",
+        "part_number": "FOE011"
+      },
+      {
+        "manufacturer": "Fispa",
+        "part_number": "FOE012"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF580"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8580"
+      },
+      {
+        "manufacturer": "Fluitek",
+        "part_number": "H430425M11"
+      },
+      {
+        "manufacturer": "GRADALL",
+        "part_number": "1210053"
+      },
+      {
+        "manufacturer": "Harmo",
+        "part_number": "S828"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "B7219"
+      },
+      {
+        "manufacturer": "Hurlimann",
+        "part_number": "4415670"
+      },
+      {
+        "manufacturer": "Hurlimann",
+        "part_number": "044.1554.0"
+      },
+      {
+        "manufacturer": "Hurlimann",
+        "part_number": "4415540"
+      },
+      {
+        "manufacturer": "Hymac",
+        "part_number": "2707084"
+      },
+      {
+        "manufacturer": "IAPCO",
+        "part_number": "A-0295-001"
+      },
+      {
+        "manufacturer": "Interceptor Marine",
+        "part_number": "DM-16304"
+      },
+      {
+        "manufacturer": "Interceptor Marine",
+        "part_number": "B8NN-6714-A"
+      },
+      {
+        "manufacturer": "Interceptor Marine",
+        "part_number": "2517A"
+      },
+      {
+        "manufacturer": "Iveco",
+        "part_number": "1901606"
+      },
+      {
+        "manufacturer": "Iveco",
+        "part_number": "4236942"
+      },
+      {
+        "manufacturer": "Iveco",
+        "part_number": "4712132"
+      },
+      {
+        "manufacturer": "Iveco",
+        "part_number": "4719150"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "AW28"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "OC17"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "OC131"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "OC133"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "AW103"
+      },
+      {
+        "manufacturer": "Koehring",
+        "part_number": "8825164"
+      },
+      {
+        "manufacturer": "Koehring",
+        "part_number": "8825178"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L29A"
+      },
+      {
+        "manufacturer": "Lautrette",
+        "part_number": "ELH4069"
+      },
+      {
+        "manufacturer": "Lautrette",
+        "part_number": "ELH4125"
+      },
+      {
+        "manufacturer": "Lautrette",
+        "part_number": "ELH4087"
+      },
+      {
+        "manufacturer": "Lautrette",
+        "part_number": "ELHA4069"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP5805SC"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP2258"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP7075"
+      },
+      {
+        "manufacturer": "M Filter",
+        "part_number": "MH325"
+      },
+      {
+        "manufacturer": "Manitou",
+        "part_number": "814346"
+      },
+      {
+        "manufacturer": "Manitou",
+        "part_number": "106487"
+      },
+      {
+        "manufacturer": "Manitou",
+        "part_number": "136163"
+      },
+      {
+        "manufacturer": "Maste",
+        "part_number": "DK32"
+      },
+      {
+        "manufacturer": "Master Parts",
+        "part_number": "PH190"
+      },
+      {
+        "manufacturer": "Micro-Filters",
+        "part_number": "F-20"
+      },
+      {
+        "manufacturer": "Minit-Lube",
+        "part_number": "PH190"
+      },
+      {
+        "manufacturer": "Motaquip",
+        "part_number": "VFL150"
+      },
+      {
+        "manufacturer": "Motaquip",
+        "part_number": "VFL112"
+      },
+      {
+        "manufacturer": "Owatonna",
+        "part_number": "425-32300"
+      },
+      {
+        "manufacturer": "Permatic",
+        "part_number": "FH132V"
+      },
+      {
+        "manufacturer": "Permatic",
+        "part_number": "ELH4125"
+      },
+      {
+        "manufacturer": "Perry",
+        "part_number": "PL-108"
+      },
+      {
+        "manufacturer": "Phillips 66",
+        "part_number": "P20"
+      },
+      {
+        "manufacturer": "Phillips 66",
+        "part_number": "P775"
+      },
+      {
+        "manufacturer": "Phillips 66",
+        "part_number": "WO1189"
+      },
+      {
+        "manufacturer": "Powerguard",
+        "part_number": "FO53"
+      },
+      {
+        "manufacturer": "Precision Tune",
+        "part_number": "OF101"
+      },
+      {
+        "manufacturer": "Purflux",
+        "part_number": "LS775"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "PH5964",
+    "source_part_key": "001509751",
+    "source_totals": {
+      "attributes": 39,
+      "applications": 318,
+      "cross_references": 132
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, PH5964, HD Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Spin-on Oil Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "Yes",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "Yes",
+        "recno": "81"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "84"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Standard",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Orange",
+        "recno": "89"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Drain Plug Included",
+        "value": "No",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100545602",
+        "recno": "92"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Oil Filter",
+        "recno": "94"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "95"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "4.373",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "4.250",
+        "recno": "97"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "2.460",
+        "recno": "98"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "2.810",
+        "recno": "99"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.200",
+        "recno": "100"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Inch)",
+        "value": "3/4-16",
+        "recno": "101"
+      },
+      {
+        "attribute": "Bypass Relief Valve Setting (Pounds per Square Inch)",
+        "value": "30",
+        "recno": "102"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "103"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "104"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "105"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.5830",
+        "recno": "109"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "9.4980",
+        "recno": "110"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "6.0720",
+        "recno": "111"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "7.1250",
+        "recno": "112"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "4.4110",
+        "recno": "113"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "13.6870",
+        "recno": "114"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "4.4110",
+        "recno": "115"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "9.2500",
+        "recno": "116"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.583,
+        "case_weight_lb": 9.498,
+        "unit_height_in": 6.072,
+        "unit_length_in": 4.411,
+        "unit_width_in": 4.411,
+        "case_height_in": 7.125,
+        "case_length_in": 13.687,
+        "case_width_in": 9.25,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 18.996,
+        "estimated_case_dimensions": {
+          "length_in": 18.249,
+          "width_in": 13.875,
+          "height_in": 7.125,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 318,
+    "all_cross_references_observed": 132,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:10:56.422Z",
+  "discovered_from": "PH5964",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "CRAWLER DOZER NEW HOLLAND",
+        "model": "TK-100A w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER NEW HOLLAND",
+        "model": "TK-100A w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER NEW HOLLAND",
+        "model": "TK-75VA w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER NEW HOLLAND",
+        "model": "TK-75VA w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER NEW HOLLAND",
+        "model": "TK-76",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER NEW HOLLAND",
+        "model": "TK-76",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER NEW HOLLAND",
+        "model": "TK-76 w/Iveco 8045 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER NEW HOLLAND",
+        "model": "TK-76 w/Iveco 8045 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER NEW HOLLAND",
+        "model": "TK-76 w/New Holland 4/220 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER NEW HOLLAND",
+        "model": "TK-76 w/New Holland 4/220 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER NEW HOLLAND",
+        "model": "TK-90A w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER NEW HOLLAND",
+        "model": "TK-90A w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER NEW HOLLAND",
+        "model": "TK-90MA w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER NEW HOLLAND",
+        "model": "TK-90MA w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR NEW HOLLAND",
+        "model": "TK-76 w/Iveco 8045 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR NEW HOLLAND",
+        "model": "TK-76 w/Iveco 8045 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR NEW HOLLAND",
+        "model": "TK-80 w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR NEW HOLLAND",
+        "model": "TK-80 w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR NEW HOLLAND",
+        "model": "TK-80A w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR NEW HOLLAND",
+        "model": "TK-80A w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR NEW HOLLAND",
+        "model": "TK-80A, TK-80MA w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR NEW HOLLAND",
+        "model": "TK-80A, TK-80MA w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR NEW HOLLAND",
+        "model": "TK-80MA w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR NEW HOLLAND",
+        "model": "TK-80MA w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR NEW HOLLAND",
+        "model": "TK-85",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR NEW HOLLAND",
+        "model": "TK-85",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR NEW HOLLAND",
+        "model": "TK-85 w/Iveco 8045 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR NEW HOLLAND",
+        "model": "TK-85 w/Iveco 8045 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR NEW HOLLAND",
+        "model": "TK-85 w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR NEW HOLLAND",
+        "model": "TK-85 w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR NEW HOLLAND",
+        "model": "TK-85M",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR NEW HOLLAND",
+        "model": "TK-85M",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR NEW HOLLAND",
+        "model": "TK-85M w/Iveco 8045 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR NEW HOLLAND",
+        "model": "TK-85M w/Iveco 8045 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE IVECO",
+        "model": "8035",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE IVECO",
+        "model": "8035",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE NEW HOLLAND",
+        "model": "3/179",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE NEW HOLLAND",
+        "model": "3/179",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE NEW HOLLAND",
+        "model": "4/238",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE NEW HOLLAND",
+        "model": "4/238",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "TELESCOPIC HANDLER NEW HOLLAND",
+        "model": "LM-640",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TELESCOPIC HANDLER NEW HOLLAND",
+        "model": "LM-640",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX1060C w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX1060C w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX1070C w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX1070C w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX1070N w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX1070N w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX1075C w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX1075C w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX1075N w/2.9L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX1075N w/2.9L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX55 w/Iveco 8035 2.7L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX55 w/Iveco 8035 2.7L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX60 w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX60 w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX65 w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX65 w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX70 w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX70 w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX75 w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX75 w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX80 w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX80 w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX90 w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX90 w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX95 w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "JX95 w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TD60D w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TD60D w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TD70D w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TD70D w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TD70D, TD75D, TD80D w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TD70D, TD75D, TD80D w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TD75D w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TD75D w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TD80D w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TD80D w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TD90D w/3.9L Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TD90D w/3.9L Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TD95D w/3.9L Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TD95D w/3.9L Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-100 w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-100 w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-100A w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-100A w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-70FA w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-70FA w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-70FA, TK-70VA w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-70FA, TK-70VA w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-70VA w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-70VA w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-75FA w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-75FA w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-75FA, TK-75MA, TK-75VA w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-75FA, TK-75MA, TK-75VA w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-75MA w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-75MA w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-75VA w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-75VA w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-75VA w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-75VA w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-90 w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-90 w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-90A w/3.9L Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-90A w/3.9L Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-90A w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-90A w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-90MA w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TK-90MA w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55 w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55 w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55 w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55 w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55 w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55 w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55D",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55D",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55D w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55D w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55D w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55D w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55D w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55D w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55S",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55S",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55S w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55S w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55S w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55S w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55S w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-55S w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-60A w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-60A w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-60A, TN-60DA, TN-60SA w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-60A, TN-60DA, TN-60SA w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-60DA w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-60DA w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-60SA w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-60SA w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-60VA w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-60VA w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65 w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65 w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65 w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65 w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65 w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65 w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65D",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65D",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65D w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65D w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65D w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65D w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65D w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65D w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65F",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65F",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65F w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65F w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65F w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65F w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65F w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65F w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65S",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65S",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65S w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65S w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65S w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65S w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65S w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65S w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65V w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65V w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65V w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-65V w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70 w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70 w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70 w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70 w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70A w/New Holland 3/179T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70A w/New Holland 3/179T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70D",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70D",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70D w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70D w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70D w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70D w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70DA w/New Holland 3/179T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70DA w/New Holland 3/179T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70F w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70F w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70F w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70F w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70F, TN-70FA w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70F, TN-70FA w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70FA w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70FA w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70S w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70S w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70S w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70S w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70SA w/New Holland 3/179T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70SA w/New Holland 3/179T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70VA w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-70VA w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75 w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75 w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75 w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75 w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75A w/2.9L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75A w/2.9L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75A w/New Holland 3/179T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75A w/New Holland 3/179T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75D",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75D",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75D w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75D w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75D w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75D w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75DA w/New Holland 3/179T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75DA w/New Holland 3/179T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75F",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75F",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75F w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75F w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75F w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75F w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75F w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75F w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75FA w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75FA w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75FA w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75FA w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75S",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75S",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75S w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75S w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75S w/New Holland 3/179T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75S w/New Holland 3/179T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75SA w/New Holland 3/179T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75SA w/New Holland 3/179T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75V w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75V w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75V w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75V w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75V w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75V w/New Holland 3/179 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75VA w/New Holland 3/179T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-75VA w/New Holland 3/179T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-80F w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-80F w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-80F w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-80F w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-80FA w/3.9L Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-80FA w/3.9L Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-80FA w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-80FA w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-85FA w/3.9L Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-85FA w/3.9L Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-85FA w/New Holland 4/238T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-85FA w/New Holland 4/238T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-90 w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-90 w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-90, TN-90D w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-90, TN-90D w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-90D w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-90D w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN90F",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN90F",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-90F",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-90F",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-90F w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-90F w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-90F w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-90F w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-90F w/New Holland 4/238T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-90F w/New Holland 4/238T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-90S w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-90S w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN95F",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN95F",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-95F w/3.9L Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-95F w/3.9L Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-95F w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-95F w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-95F w/New Holland 4/238T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-95F w/New Holland 4/238T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-95FA w/3.9L Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-95FA w/3.9L Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-95FA w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-95FA w/New Holland 4/238 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-95FA w/New Holland 4/238T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-95FA w/New Holland 4/238T Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-95VA w/3.9L Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TN-95VA w/3.9L Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TT-55 w/2.7L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TT-55 w/2.7L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TT-55 w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TT-55 w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TT-60A w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TT-60A w/2.9L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TT-65 w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TT-65 w/Iveco Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TT-75 w/3.6L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TT-75 w/3.6L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TT-75 w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TT-75 w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TT-75A w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR NEW HOLLAND",
+        "model": "TT-75A w/3.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF1288",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "AGCO",
+        "part_number": "72217092",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "AGCO",
+        "part_number": "10A14373",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "10A14373",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "4113539",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "72217092",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Asahi",
+        "part_number": "TO-130",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Auto Express",
+        "part_number": "39555 WB",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7219",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT5",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "041-0696",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "041-8889",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bowes",
+        "part_number": "LFP2258",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bowes",
+        "part_number": "FP190",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "84075",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "47135704",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "84222017",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "47135705",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "47135703",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "47135703MP",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "1931018",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "9Y4506",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I1261",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "AZL007",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "LSF5102",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "2043",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "484",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "623",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Cyclone",
+        "part_number": "PM-285",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Diamond",
+        "part_number": "FD8226",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Diamond",
+        "part_number": "FD8245",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Divco Trucks",
+        "part_number": "8115",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P16-8289",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P168289",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P55-0580",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P779132",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "FT5265",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donit",
+        "part_number": "431017",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donit",
+        "part_number": "431040",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fapofil",
+        "part_number": "OR521",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "4434825",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "4777082",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "4719150",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "4434794",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "4712132",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "4236942",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "4371581",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "4135559",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "9129",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Finn Filter",
+        "part_number": "FFUP-422",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Finn Filter",
+        "part_number": "FFUP422",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fispa",
+        "part_number": "LI3970",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fispa",
+        "part_number": "FOE036",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fispa",
+        "part_number": "LI3928",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fispa",
+        "part_number": "FAP011",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fispa",
+        "part_number": "FOE011",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fispa",
+        "part_number": "FOE012",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF580",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8580",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fluitek",
+        "part_number": "H430425M11",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "B8NN-6714-A",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "A700X-6714-MA",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "CPN-6882-A",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "A760X-6714-RA",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "CBPN-18649-A",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "D9NN-6714-FA",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "A800X-6714-BA",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "A720X-6714-DA",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "C5NN-6714-A",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "D9NN-6714-DA",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "C9NN-6714-A",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "B9NN-6714-A",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "C5NN-6714-B",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "93892080",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "5577281",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "89002942",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "GRADALL",
+        "part_number": "1210053",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Harmo",
+        "part_number": "S828",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "B7219",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hurlimann",
+        "part_number": "4415670",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hurlimann",
+        "part_number": "044.1554.0",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hurlimann",
+        "part_number": "4415540",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hymac",
+        "part_number": "2707084",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "IAPCO",
+        "part_number": "A-0295-001",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Interceptor Marine",
+        "part_number": "DM-16304",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Interceptor Marine",
+        "part_number": "B8NN-6714-A",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Interceptor Marine",
+        "part_number": "2517A",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Iveco",
+        "part_number": "1901606",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Iveco",
+        "part_number": "4236942",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Iveco",
+        "part_number": "4712132",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Iveco",
+        "part_number": "4719150",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "AW28",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "OC17",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "OC131",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "OC133",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "AW103",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Koehring",
+        "part_number": "8825164",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Koehring",
+        "part_number": "8825178",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L29A",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Lautrette",
+        "part_number": "ELH4069",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Lautrette",
+        "part_number": "ELH4125",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Lautrette",
+        "part_number": "ELH4087",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Lautrette",
+        "part_number": "ELHA4069",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP5805SC",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP2258",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP7075",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "M Filter",
+        "part_number": "MH325",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Manitou",
+        "part_number": "814346",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Manitou",
+        "part_number": "106487",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Manitou",
+        "part_number": "136163",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W1130",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W1126",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "1005511M91",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "1015511M91",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "1015511M92",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Maste",
+        "part_number": "DK32",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Master Parts",
+        "part_number": "PH190",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Micro-Filters",
+        "part_number": "F-20",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Minit-Lube",
+        "part_number": "PH190",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Motaquip",
+        "part_number": "VFL150",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Motaquip",
+        "part_number": "VFL112",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "7075",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Owatonna",
+        "part_number": "425-32300",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Permatic",
+        "part_number": "FH132V",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Permatic",
+        "part_number": "ELH4125",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Perry",
+        "part_number": "PL-108",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Phillips 66",
+        "part_number": "P20",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Phillips 66",
+        "part_number": "P775",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Phillips 66",
+        "part_number": "WO1189",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Powerguard",
+        "part_number": "FO53",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Precision Tune",
+        "part_number": "OF101",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purflux",
+        "part_number": "LS775",
+        "source_part_number": "PH5964",
+        "part_key": "001509751",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

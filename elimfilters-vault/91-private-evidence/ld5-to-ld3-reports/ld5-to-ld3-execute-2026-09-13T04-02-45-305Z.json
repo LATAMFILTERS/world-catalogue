@@ -1,0 +1,63 @@
+{
+  "migration": "100_LD_LEGACY_PREFIX_5_TO_3",
+  "mode": "execute",
+  "plan": {
+    "safe": 4632,
+    "quarantine": 5,
+    "by_status": {
+      "SAFE_PUBLIC_PLACEHOLDER": 3247,
+      "SAFE_EMPTY_TARGET": 433,
+      "SAFE_TARGET_CROSSES_SOURCE": 883,
+      "SAFE_APPLICATION_MATCH": 69,
+      "OCCUPIED_UNPROVEN": 5
+    },
+    "direct_renames": 4497,
+    "merge_targets": 135
+  },
+  "before": {
+    "competitor": 65019,
+    "oem": 6374,
+    "applications": 284992,
+    "specifications": 2182,
+    "safe_parents": 4632,
+    "legacy_identity_rows": 0,
+    "competitor_source_rows": 63641
+  },
+  "mutations": {
+    "quarantine_snapshots": 5,
+    "direct_parents_renamed": 4497,
+    "competitor_quarantined": 51926,
+    "competitor_reinserted": 11447,
+    "oem_merged": 161,
+    "specifications_merged": 22,
+    "applications_merged": 15074,
+    "readiness_merged": 135,
+    "merged_parents_removed": 135,
+    "backfill_renamed": 4497,
+    "quarantine_competitor_removed": 45,
+    "quarantine_oem_removed": 0,
+    "quarantine_applications_removed": 2,
+    "quarantine_specifications_removed": 0,
+    "quarantine_parents_removed": 5,
+    "orphan_backfill_removed": 1
+  },
+  "audit": {
+    "competitor": 12825,
+    "oem": 6374,
+    "applications": 284992,
+    "specifications": 2182,
+    "safe_parents": 4632,
+    "legacy_parents": 0,
+    "legacy_backfill": 0,
+    "legacy_ld_competitor_cross_references": 0,
+    "legacy_ld_oem_cross_references": 0,
+    "legacy_ld_vehicle_applications": 0,
+    "legacy_ld_product_specifications": 0,
+    "legacy_ld_production_readiness": 0,
+    "quarantine_rows": 5,
+    "public_legacy": 0,
+    "competitor_quarantine_evidence_rows": 51926,
+    "competitor_unaccounted": 0
+  },
+  "transaction": "COMMIT"
+}

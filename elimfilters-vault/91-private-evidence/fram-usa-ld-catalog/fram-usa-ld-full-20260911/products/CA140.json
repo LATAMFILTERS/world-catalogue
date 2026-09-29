@@ -1,0 +1,1286 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA140",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA140",
+    "product_type": "Engine Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": 8.063,
+      "outer_diameter_mm": 204.8,
+      "height_in": 2.13,
+      "height_mm": 54.1,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Round Plastisol Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "John Deere",
+        "part_number": "HE1402628"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "HE1402522"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "HE1401228"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AM106953"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A629CF"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A629C"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2063"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6094"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A12283"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46094"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "27627"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARP-140"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "TS40"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "LT40"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "94094"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88094"
+      },
+      {
+        "manufacturer": "Ditch Witch",
+        "part_number": "195-368"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P530642"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF1669"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-81669"
+      },
+      {
+        "manufacturer": "Gravely",
+        "part_number": "46634"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF56"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "E-4425"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA295"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF1782"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "87503N"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "84777S"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "140-1228"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "140-2628-01"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "140-2522"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "140-2628"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "125 129 605"
+      },
+      {
+        "manufacturer": "WGB",
+        "part_number": "SA-142"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA140",
+    "source_part_key": "001482123",
+    "source_totals": {
+      "attributes": 29,
+      "applications": 65,
+      "cross_references": 33
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA140, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Round Plastisol Air Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "83"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "84"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "85"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "2.130",
+        "recno": "87"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "8.063",
+        "recno": "88"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "6.563",
+        "recno": "89"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "8.063",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "6.560",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100500229",
+        "recno": "92"
+      },
+      {
+        "attribute": "Inside Diameter (Inch)",
+        "value": "6.560",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "8.060",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "94"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "95"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.6500",
+        "recno": "99"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.3000",
+        "recno": "100"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "2.3160",
+        "recno": "101"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "5.5000",
+        "recno": "102"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "8.2250",
+        "recno": "103"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "8.8330",
+        "recno": "104"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "8.2250",
+        "recno": "105"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "8.9510",
+        "recno": "106"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.65,
+        "case_weight_lb": 1.3,
+        "unit_height_in": 2.316,
+        "unit_length_in": 8.225,
+        "unit_width_in": 8.225,
+        "case_height_in": 5.5,
+        "case_length_in": 8.833,
+        "case_width_in": 8.951,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 7.8,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 65,
+    "all_cross_references_observed": 33,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:43:27.227Z",
+  "discovered_from": "CA140",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "4R, 40GX",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR INGERSOLL-RAND",
+        "model": "4R, 40GX",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARC WELDER MILLER ELECTRIC",
+        "model": "AEA w/Onan CCKA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARC WELDER MILLER ELECTRIC",
+        "model": "AEA w/Onan CCKA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUSTIN",
+        "model": "AMERICA",
+        "year": "72-68",
+        "engine": "L4-1.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUSTIN",
+        "model": "MINI COOPER",
+        "year": "69-67",
+        "engine": "L4-1.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CORN DETASSELER VERSATRAC",
+        "model": "6100 w/Volkswagen 126A Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CORN DETASSELER VERSATRAC",
+        "model": "6100 w/Volkswagen 126A Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "B48M-GAO19.9",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "B48M-GAO19.9",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "B48M-GAO20",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "B48M-GAO20",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "GAO19.9",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "GAO19.9",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "N52M",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "N52M",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "NAV",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "NAV",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "NHBV",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "NHBV",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "NHC",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "NHC",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "NHCV",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "NHCV",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "P216G Twin Performer",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "P216G Twin Performer",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "P218G, P218V Twin Performer",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "P218G, P218V Twin Performer",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "P220G, P220V Twin Performer",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "P220G, P220V Twin Performer",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "P224G Twin Performer",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "P224G Twin Performer",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "T260G",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "T260G",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "3016 PS w/Onan Performer P216G 16 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "3016 PS w/Onan Performer P216G 16 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "4016 w/Onan Performer P216G 16 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "4016 w/Onan Performer P216G 16 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "4018 PS w/Onan Performer P218G 18 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "4018 PS w/Onan Performer P218G 18 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "4020 PS w/Onan Performer P220G 20 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "4020 PS w/Onan Performer P220G 20 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "6018 w/Onan Performer P218G 18 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "6018 w/Onan Performer P218G 18 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "646",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "646",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "316 w/Kohler K341A 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "316 w/Kohler K341A 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "317 w/Kohler KT17 17 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "317 w/Kohler KT17 17 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "318 w/Onan Performer P218G 18 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "318 w/Onan Performer P218G 18 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "420 w/Onan B48G 20 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "420 w/Onan B48G 20 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR STEINER",
+        "model": "Model 420 w/Onan Performer P220G 20 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR STEINER",
+        "model": "Model 420 w/Onan Performer P220G 20 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR STEINER",
+        "model": "Model 425 w/Onan Performer P224G 24 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR STEINER",
+        "model": "Model 425 w/Onan Performer P224G 24 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "OPEL",
+        "model": "KADETT",
+        "year": "69-64",
+        "engine": "L4-1.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR WHEEL HORSE",
+        "model": "416H w/Onan Performer P216G 16 hp Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR WHEEL HORSE",
+        "model": "416H w/Onan Performer P216G 16 hp Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR WHEEL HORSE",
+        "model": "520H w/Onan P220G 20 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR WHEEL HORSE",
+        "model": "520H w/Onan P220G 20 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WELDER MILLER ELECTRIC",
+        "model": "AEAD",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WELDER MILLER ELECTRIC",
+        "model": "AEAD",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A629CF",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A629C",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "27627",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARP-140",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "TS40",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "LT40",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2063",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "94094",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88094",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Ditch Witch",
+        "part_number": "195-368",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P530642",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF1669",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-81669",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Gravely",
+        "part_number": "46634",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF56",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "HE1402628",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "HE1402522",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "HE1401228",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AM106953",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "E-4425",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA295",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF1782",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6094",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "87503N",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "84777S",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "140-1228",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "140-2628-01",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "140-2522",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "140-2628",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A12283",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "125 129 605",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "WGB",
+        "part_number": "SA-142",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46094",
+        "source_part_number": "CA140",
+        "part_key": "001482123",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

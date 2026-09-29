@@ -1,0 +1,1251 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA30",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA30",
+    "product_type": "Air Filter, Air",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 6.188,
+      "height_mm": 157.18,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Round Plastisol Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Ford",
+        "part_number": "TH9027"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "6487828"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "6487829"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AM34093"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AM100137"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A493C"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A856C"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA1969"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FA-872"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6261"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "2965"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A23322"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46261"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42965"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARP-55"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "27556"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARP-3493"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "S1505"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "93965"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "94261"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88261"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87965"
+      },
+      {
+        "manufacturer": "Ditch Witch",
+        "part_number": "195-352"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P530634"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF1948"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-81948"
+      },
+      {
+        "manufacturer": "Gravely",
+        "part_number": "21333"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF341"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "405716R2"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "405716R1"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA492"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF1915"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "83816N"
+      },
+      {
+        "manufacturer": "United Air Cleaner",
+        "part_number": "TJ-1"
+      },
+      {
+        "manufacturer": "United Air Cleaner",
+        "part_number": "250B16S"
+      },
+      {
+        "manufacturer": "United Air Cleaner",
+        "part_number": "TJE-1"
+      },
+      {
+        "manufacturer": "United Air Cleaner",
+        "part_number": "250B16"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA30",
+    "source_part_key": "001482138",
+    "source_totals": {
+      "attributes": 33,
+      "applications": 52,
+      "cross_references": 37
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA30, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Round Plastisol Air Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "82"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "84"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Flexible",
+        "recno": "85"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "86"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "88"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "89"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available Only While Supplies Last",
+        "recno": "91"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "6.188",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100521927",
+        "recno": "92"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "2.094",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "4.250",
+        "recno": "94"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "2.094",
+        "recno": "95"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "4.250",
+        "recno": "96"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "97"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "98"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "99"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.9300",
+        "recno": "103"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "5.5800",
+        "recno": "104"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "7.1300",
+        "recno": "105"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "8.2500",
+        "recno": "106"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "4.8750",
+        "recno": "107"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "15.1250",
+        "recno": "108"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "4.8750",
+        "recno": "109"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "10.3750",
+        "recno": "110"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.93,
+        "case_weight_lb": 5.58,
+        "unit_height_in": 7.13,
+        "unit_length_in": 4.875,
+        "unit_width_in": 4.875,
+        "case_height_in": 8.25,
+        "case_length_in": 15.125,
+        "case_width_in": 10.375,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 11.16,
+        "estimated_case_dimensions": {
+          "length_in": 20.167,
+          "width_in": 15.563,
+          "height_in": 8.25,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 52,
+    "all_cross_references_observed": 37,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:45:17.849Z",
+  "discovered_from": "CA30",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "CONCRETE BUGGY PRIME MOVER",
+        "model": "M20 w/Wisconsin 58D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE BUGGY PRIME MOVER",
+        "model": "M20 w/Wisconsin 58D Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT VERMEER",
+        "model": "6 w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT VERMEER",
+        "model": "6 w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT VERMEER",
+        "model": "M-18 w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT VERMEER",
+        "model": "M-18 w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT VERMEER",
+        "model": "TS-44A w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT VERMEER",
+        "model": "TS-44A w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL WISCONSIN",
+        "model": "ACN, AD, AE, AEH, AEN, AENL, AENLD",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL WISCONSIN",
+        "model": "ACN, AD, AE, AEH, AEN, AENL, AENLD",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL WISCONSIN",
+        "model": "AENS, AFH, AGH, AGN, AGND, AHH, BKN",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL WISCONSIN",
+        "model": "AENS, AFH, AGH, AGN, AGND, AHH, BKN",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL WISCONSIN",
+        "model": "S-7D, S-8D, S-10D, S-12D, S-14D",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL WISCONSIN",
+        "model": "S-7D, S-8D, S-10D, S-12D, S-14D",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL WISCONSIN",
+        "model": "TE, TF, TFPD, TH, THD, TJD",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL WISCONSIN",
+        "model": "TE, TF, TFPD, TH, THD, TJD",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE WISCONSIN",
+        "model": "F14D",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE WISCONSIN",
+        "model": "F14D",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT VERMEER",
+        "model": "M418 Trencher w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT VERMEER",
+        "model": "M418 Trencher w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "110 w/Kohler K181S 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "110 w/Kohler K181S 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "110H w/Kohler K181S 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "110H w/Kohler K181S 8 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "112 w/Tecumseh 10 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "112 w/Tecumseh 10 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "112H w/Tecumseh 10 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "112H w/Tecumseh 10 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "MINING EQUIPMENT PCM",
+        "model": "KA-MO 24-30 w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MINING EQUIPMENT PCM",
+        "model": "KA-MO 24-30 w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MINING EQUIPMENT PCM",
+        "model": "KA-MO 24-60 w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MINING EQUIPMENT PCM",
+        "model": "KA-MO 24-60 w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L225 w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L225 w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L325 w/Kohler K582 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L325 w/Kohler K582 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "T-330 w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "T-330 w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER THOMAS",
+        "model": "S-S 700 w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER THOMAS",
+        "model": "S-S 700 w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER THOMAS",
+        "model": "T81",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER THOMAS",
+        "model": "T81",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS LOCKWOOD",
+        "model": "2020 w/Wisconsin S12D 12.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS LOCKWOOD",
+        "model": "2020 w/Wisconsin S12D 12.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR INTERNATIONAL HARVESTER",
+        "model": "Cub, Cub 154, Cub Lo-Boy, Cub Hi-Boy",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR INTERNATIONAL HARVESTER",
+        "model": "Cub, Cub 154, Cub Lo-Boy, Cub Hi-Boy",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRENCHER INDUSTRIAL DAVIS",
+        "model": "20 + 4 w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRENCHER INDUSTRIAL DAVIS",
+        "model": "20 + 4 w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRENCHER INDUSTRIAL DAVIS",
+        "model": "300, 500 w/Wisconsin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRENCHER INDUSTRIAL DAVIS",
+        "model": "300, 500 w/Wisconsin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRENCHER INDUSTRIAL DITCH WITCH",
+        "model": "J20 w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRENCHER INDUSTRIAL DITCH WITCH",
+        "model": "J20 w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A493C",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A856C",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARP-55",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "27556",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARP-3493",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "S1505",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA1969",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "93965",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "94261",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88261",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87965",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Ditch Witch",
+        "part_number": "195-352",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P530634",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF1948",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-81948",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "TH9027",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "6487828",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "6487829",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Gravely",
+        "part_number": "21333",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF341",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "405716R2",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "405716R1",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AM34093",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AM100137",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA492",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF1915",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FA-872",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6261",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "2965",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "83816N",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A23322",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "United Air Cleaner",
+        "part_number": "TJ-1",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "United Air Cleaner",
+        "part_number": "250B16S",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "United Air Cleaner",
+        "part_number": "TJE-1",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "United Air Cleaner",
+        "part_number": "250B16",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46261",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42965",
+        "source_part_number": "CA30",
+        "part_key": "001482138",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

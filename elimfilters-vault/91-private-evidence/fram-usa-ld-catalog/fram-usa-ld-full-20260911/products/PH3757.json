@@ -1,0 +1,5273 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH3757",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH3757",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 4.66,
+      "outer_diameter_mm": 118.36,
+      "height_in": 8.1,
+      "height_mm": 205.74,
+      "thread_size": "1 1/2-12",
+      "gasket_od_in": 4.06,
+      "gasket_od_mm": 103.12,
+      "gasket_id_in": 3.85,
+      "gasket_id_mm": 97.79,
+      "gasket_thickness_in": 0.27,
+      "gasket_thickness_mm": 6.86,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I-1242"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25012679"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "23518667"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "1076750-M1"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF911D"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF1101"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2195"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B205"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7005"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7108"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7004"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1649"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L40313"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L54998"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51649"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "PL-734"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92649"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85649"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "A77537"
+      },
+      {
+        "manufacturer": "Coach Guard",
+        "part_number": "T08-1064"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "2026"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "3313281"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "3014654"
+      },
+      {
+        "manufacturer": "Daewoo",
+        "part_number": "2474-9037"
+      },
+      {
+        "manufacturer": "Detroit Diesel",
+        "part_number": "23518667"
+      },
+      {
+        "manufacturer": "Detroit Diesel",
+        "part_number": "23530411"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P551381"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF734"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3478"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3626"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-83478"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8734"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GP43"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GP43M"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF534"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "B7005"
+      },
+      {
+        "manufacturer": "Hino",
+        "part_number": "15607-1810"
+      },
+      {
+        "manufacturer": "Hino",
+        "part_number": "15607-1740"
+      },
+      {
+        "manufacturer": "Hino",
+        "part_number": "15607-1740A"
+      },
+      {
+        "manufacturer": "Hino",
+        "part_number": "15607-1381"
+      },
+      {
+        "manufacturer": "Hino",
+        "part_number": "15607-1380"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "1240892H1"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "1-13240157-0"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "2-94561-112-0"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "1-13240157-1"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L214"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LK134C"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "30-3436861"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "187-0022"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "122-0756"
+      },
+      {
+        "manufacturer": "Trojan",
+        "part_number": "6960401"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "82-80",
+        "make": "CHEVROLET",
+        "model": "C70",
+        "engine": "V8-9.1L",
+        "quantity": 1
+      },
+      {
+        "year": "98-95",
+        "make": "CHEVROLET",
+        "model": "W3500 TILTMASTER",
+        "engine": "L4-3.9L",
+        "quantity": 1
+      },
+      {
+        "year": "98-92",
+        "make": "CHEVROLET",
+        "model": "W4500 TILTMASTER",
+        "engine": "L4-3.9L",
+        "quantity": 1
+      },
+      {
+        "year": "97-93",
+        "make": "FORD",
+        "model": "CF8000",
+        "engine": "L6-8.3L",
+        "quantity": 1
+      },
+      {
+        "year": "1981",
+        "make": "FORD",
+        "model": "L8000",
+        "engine": "V8-9.1L",
+        "quantity": 1
+      },
+      {
+        "year": "82-81",
+        "make": "FORD",
+        "model": "LN8000",
+        "engine": "V8-9.1L",
+        "quantity": 1
+      },
+      {
+        "year": "82-81",
+        "make": "FORD",
+        "model": "LNT8000",
+        "engine": "V8-9.1L",
+        "quantity": 1
+      },
+      {
+        "year": "97-93",
+        "make": "FORD",
+        "model": "LT8000F",
+        "engine": "L6-8.3L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "FORD",
+        "model": "LT8501",
+        "engine": "L6-8.3L",
+        "quantity": 1
+      },
+      {
+        "year": "1998",
+        "make": "FORD",
+        "model": "LT8511",
+        "engine": "L6-8.3L",
+        "quantity": 1
+      },
+      {
+        "year": "98-96",
+        "make": "FORD",
+        "model": "LT8513",
+        "engine": "L6-8.3L",
+        "quantity": 1
+      },
+      {
+        "year": "1985",
+        "make": "FORD",
+        "model": "LTL9000",
+        "engine": "V8-9.1L",
+        "quantity": 1
+      },
+      {
+        "year": "1981",
+        "make": "FORD",
+        "model": "LTS8000",
+        "engine": "V8-9.1L",
+        "quantity": 1
+      },
+      {
+        "year": "97-93",
+        "make": "FORD",
+        "model": "LTS8000F",
+        "engine": "L6-8.3L",
+        "quantity": 1
+      },
+      {
+        "year": "82-80",
+        "make": "GMC",
+        "model": "C7000",
+        "engine": "V8-9.1L",
+        "quantity": 1
+      },
+      {
+        "year": "98-95",
+        "make": "GMC",
+        "model": "W3500 FORWARD",
+        "engine": "L4-3.9L",
+        "quantity": 1
+      },
+      {
+        "year": "98-92",
+        "make": "GMC",
+        "model": "W4500 FORWARD",
+        "engine": "L4-3.9L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "PH3757",
+    "source_part_key": "001509389",
+    "source_totals": {
+      "attributes": 38,
+      "applications": 461,
+      "cross_references": 51
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, PH3757, HD Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Spin-on Oil Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "84"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Standard",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Orange",
+        "recno": "89"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Drain Plug Included",
+        "value": "No",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100381156",
+        "recno": "92"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Oil Filter",
+        "recno": "94"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "95"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "8.100",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "4.660",
+        "recno": "97"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "3.850",
+        "recno": "98"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "4.060",
+        "recno": "99"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.270",
+        "recno": "100"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Inch)",
+        "value": "1 1/2-12",
+        "recno": "101"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "102"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "103"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "104"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "2.6330",
+        "recno": "108"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "15.7980",
+        "recno": "109"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "8.3220",
+        "recno": "110"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "9.0000",
+        "recno": "111"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "5.0990",
+        "recno": "112"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "16.5600",
+        "recno": "113"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "5.0990",
+        "recno": "114"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "11.0000",
+        "recno": "115"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 2.633,
+        "case_weight_lb": 15.798,
+        "unit_height_in": 8.322,
+        "unit_length_in": 5.099,
+        "unit_width_in": 5.099,
+        "case_height_in": 9,
+        "case_length_in": 16.56,
+        "case_width_in": 11,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 31.596,
+        "estimated_case_dimensions": {
+          "length_in": 22.08,
+          "width_in": 16.5,
+          "height_in": 9,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 461,
+    "all_cross_references_observed": 51,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:18:42.561Z",
+  "discovered_from": "PH3757",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "CARRIER HITACHI",
+        "model": "CHR70",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CARRIER HITACHI",
+        "model": "CHR70",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CARRIER HITACHI",
+        "model": "CHR70MT",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CARRIER HITACHI",
+        "model": "CHR70MT",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "C70",
+        "year": "82-80",
+        "engine": "V8-9.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "W3500 TILTMASTER",
+        "year": "98-95",
+        "engine": "L4-3.9L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "W4500 TILTMASTER",
+        "year": "98-92",
+        "engine": "L4-3.9L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE CASE INTERNATIONAL",
+        "model": "1660 w/Case 6TA830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE CASE INTERNATIONAL",
+        "model": "1660 w/Case 6TA830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE CASE INTERNATIONAL",
+        "model": "1680 w/Case 6TA830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE CASE INTERNATIONAL",
+        "model": "1680 w/Case 6TA830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "8570 w/Cummins 6CTA 8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "8570 w/Cummins 6CTA 8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "MF8570",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "MF8570",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT GRADALL",
+        "model": "660E, 880E Carrier w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT GRADALL",
+        "model": "660E, 880E Carrier w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COTTON PICKER CASE INTERNATIONAL",
+        "model": "1844",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COTTON PICKER CASE INTERNATIONAL",
+        "model": "1844",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRANE HITACHI",
+        "model": "KH150-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRANE HITACHI",
+        "model": "KH150-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRANE HITACHI",
+        "model": "RX2000",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRANE HITACHI",
+        "model": "RX2000",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRANE HITACHI",
+        "model": "RX2000-2",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRANE HITACHI",
+        "model": "RX2000-2",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRANE HITACHI",
+        "model": "RX2300",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRANE HITACHI",
+        "model": "RX2300",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRANE HITACHI",
+        "model": "RX2300-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRANE HITACHI",
+        "model": "RX2300-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CASE",
+        "model": "1150D, 1150E, 1155E w/830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CASE",
+        "model": "1150D, 1150E, 1155E w/830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CASE",
+        "model": "1550 w/830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CASE",
+        "model": "1550 w/830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER DRESSER",
+        "model": "200 w/Dresser D505T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER DRESSER",
+        "model": "200 w/Dresser D505T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR DRESSER",
+        "model": "TD12B w/Dresser D505N Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR DRESSER",
+        "model": "TD12B w/Dresser D505N Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR DRESSER",
+        "model": "TD15C w/Dresser D505N Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR DRESSER",
+        "model": "TD15C w/Dresser D505N Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR DRESSER",
+        "model": "TD15C w/Dresser D505T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR DRESSER",
+        "model": "TD15C w/Dresser D505T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR DRESSER",
+        "model": "TD15E w/Dresser D505N Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR DRESSER",
+        "model": "TD15E w/Dresser D505N Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR DRESSER",
+        "model": "TD15E w/Dresser D505T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR DRESSER",
+        "model": "TD15E w/Dresser D505T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRUSHER HITACHI",
+        "model": "HC1110",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRUSHER HITACHI",
+        "model": "HC1110",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRUSHER HITACHI",
+        "model": "HR1200S-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRUSHER HITACHI",
+        "model": "HR1200S-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRUSHER HITACHI",
+        "model": "HR320",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRUSHER HITACHI",
+        "model": "HR320",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRUSHER HITACHI",
+        "model": "HR320G-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRUSHER HITACHI",
+        "model": "HR320G-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRUSHER HITACHI",
+        "model": "HR420",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRUSHER HITACHI",
+        "model": "HR420",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRUSHER HITACHI",
+        "model": "HR900S",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRUSHER HITACHI",
+        "model": "HR900S",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRUSHER HITACHI",
+        "model": "HR900S-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRUSHER HITACHI",
+        "model": "HR900S-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRUSHER HITACHI",
+        "model": "HR900SM",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRUSHER HITACHI",
+        "model": "HR900SM",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRUSHER HITACHI",
+        "model": "SR-G2000",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRUSHER HITACHI",
+        "model": "SR-G2000",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRUSHER HITACHI",
+        "model": "SR-P1200",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRUSHER HITACHI",
+        "model": "SR-P1200",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CASE",
+        "model": "6-830/6C8.3",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CASE",
+        "model": "6-830/6C8.3",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CASE",
+        "model": "6T-830/6CT-8.3",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CASE",
+        "model": "6T-830/6CT-8.3",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CASE",
+        "model": "6TA-830/6CTA-8.3",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CASE",
+        "model": "6TA-830/6CTA-8.3",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CUMMINS",
+        "model": "ISC 8.3L",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CUMMINS",
+        "model": "ISC 8.3L",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CUMMINS",
+        "model": "V378, V504 SERIES",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CUMMINS",
+        "model": "V378, V504 SERIES",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE ISUZU",
+        "model": "D381",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE ISUZU",
+        "model": "D381",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE TRUCK CUMMINS",
+        "model": "V555",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE TRUCK CUMMINS",
+        "model": "V555",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE TRUCK HINO",
+        "model": "EM100",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE TRUCK HINO",
+        "model": "EM100",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE TRUCK HINO",
+        "model": "H06C-T",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE TRUCK HINO",
+        "model": "H06C-T",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE TRUCK HINO",
+        "model": "H07C-B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE TRUCK HINO",
+        "model": "H07C-B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE TRUCK HINO",
+        "model": "W06E",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE TRUCK HINO",
+        "model": "W06E",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "125C w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "125C w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "55C w/Cummins V378C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "55C w/Cummins V378C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "75C w/Cummins V504C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "75C w/Cummins V504C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "1187C Logger Crawler",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "1187C Logger Crawler",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "CX210N",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "CX210N",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR DAEWOO",
+        "model": "DH180LC , DH200LC w/D0846HM Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR DAEWOO",
+        "model": "DH180LC , DH200LC w/D0846HM Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR DAEWOO",
+        "model": "DH200W w/D1146 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR DAEWOO",
+        "model": "DH200W w/D1146 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR DRESSER",
+        "model": "6300LC w/Dresser 614TA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR DRESSER",
+        "model": "6300LC w/Dresser 614TA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX100W",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX100W",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX100WD w/Isuzu 6BB1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX100WD w/Isuzu 6BB1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX125WD-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX125WD-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX160WD",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX160WD",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200 w/Isuzu 6BD1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200 w/Isuzu 6BD1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200 w/Isuzu 6BD1T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200 w/Isuzu 6BD1T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-1",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-1",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-2, EX200-3 w/Isuzu 6BD1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-2, EX200-3 w/Isuzu 6BD1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-2M",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-2M",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-3C",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-3C",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-3E",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-3E",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-3M",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-3M",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-5E",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-5E",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-5HG",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-5HG",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-5HHE",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-5HHE",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-5LV",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-5LV",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-5X",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-5X",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-5Z",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200-5Z",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200H-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200H-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200K",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200K",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200K-2",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200K-2",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200K-2M",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200K-2M",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200K-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200K-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200K-3M",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200K-3M",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200LC w/Isuzu 6BD1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200LC w/Isuzu 6BD1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200LC-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200LC-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200LC-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200LC-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200LC-5HHE",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200LC-5HHE",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200LCK-2M",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200LCK-2M",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200LCSS-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200LCSS-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200SS-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX200SS-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX210H-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX210H-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX210H-5E",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX210H-5E",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX210K-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX210K-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX210K-5B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX210K-5B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX210K-5HG",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX210K-5HG",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX210LC-5HEE",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX210LC-5HEE",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX210LCH-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX210LCH-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX210MT-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX210MT-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX225LCUSR",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX225LCUSR",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX225LCUSRK",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX225LCUSRK",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX225USR",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX225USR",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX225USRK",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX225USRK",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX255, EX285 w/Isuzu 6BG1T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX255, EX285 w/Isuzu 6BG1T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX270 w/Cummins M11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX270 w/Cummins M11 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX270 w/Hino H06C-T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX270 w/Hino H06C-T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX295",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX295",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX300",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX300",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "MA145-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "MA145-5",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "UH063",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "UH063",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "UH073",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "UH073",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "UH083 w/Isuzu 6BD1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "UH083 w/Isuzu 6BD1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "UH083LC",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "UH083LC",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "UH103",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "UH103",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "UH123",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "UH123",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "UH143",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "UH143",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "210LX w/Isuzu BB-6BG1T  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "210LX w/Isuzu BB-6BG1T  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "240LX w/Isuzu BB-6BG1T Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "240LX w/Isuzu BB-6BG1T Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "2800Q Quantum (w/Isuzu 6BG1T Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "2800Q Quantum (w/Isuzu 6BG1T Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "290LX w/Isuzu CC-6BG1TC Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "290LX w/Isuzu CC-6BG1TC Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "3400Q Quantum (Isuzu 6BGIT Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "3400Q Quantum (Isuzu 6BGIT Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR SAMSUNG",
+        "model": "SE280LC SE280LC-2 w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR SAMSUNG",
+        "model": "SE280LC SE280LC-2 w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR SUMITOMO",
+        "model": "SH200-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR SUMITOMO",
+        "model": "SH200-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR SUMITOMO",
+        "model": "SH200HD-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR SUMITOMO",
+        "model": "SH200HD-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR SUMITOMO",
+        "model": "SH200LC-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR SUMITOMO",
+        "model": "SH200LC-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR SUMITOMO",
+        "model": "SH220-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR SUMITOMO",
+        "model": "SH220-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "CF8000",
+        "year": "97-93",
+        "engine": "L6-8.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "L8000",
+        "year": "1981",
+        "engine": "V8-9.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LN8000",
+        "year": "82-81",
+        "engine": "V8-9.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LNT8000",
+        "year": "82-81",
+        "engine": "V8-9.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LT8000F",
+        "year": "97-93",
+        "engine": "L6-8.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LT8501",
+        "year": "98-97",
+        "engine": "L6-8.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LT8511",
+        "year": "1998",
+        "engine": "L6-8.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LT8513",
+        "year": "98-96",
+        "engine": "L6-8.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LTL9000",
+        "year": "1985",
+        "engine": "V8-9.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LTS8000",
+        "year": "1981",
+        "engine": "V8-9.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LTS8000F",
+        "year": "97-93",
+        "engine": "L6-8.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR ONAN",
+        "model": "DFGA 135 w/Cummins 6CTA8.3G Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR ONAN",
+        "model": "DFGA 135 w/Cummins 6CTA8.3G Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR ONAN",
+        "model": "DGEA 100, 125, DGFA 125, 150 w/Cummins 6CTA8.3-G2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR ONAN",
+        "model": "DGEA 100, 125, DGFA 125, 150 w/Cummins 6CTA8.3-G2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C7000",
+        "year": "82-80",
+        "engine": "V8-9.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "W3500 FORWARD",
+        "year": "98-95",
+        "engine": "L4-3.9L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "W4500 FORWARD",
+        "year": "98-92",
+        "engine": "L4-3.9L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "720 w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "720 w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "720, 720 VHP, 720A, 720A VHP, 726A, 726A VHP w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "720, 720 VHP, 720A, 720A VHP, 726A, 726A VHP w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "730 w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "730 w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "730, 730A, 736A w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "730, 730A, 736A w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER DRESSER",
+        "model": "850 w/Dresser D505T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER DRESSER",
+        "model": "850 w/Dresser D505T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER DRESSER",
+        "model": "870 w/Dresser D505T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER DRESSER",
+        "model": "870 w/Dresser D505T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARVESTER UNI",
+        "model": "6200 Forage w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARVESTER UNI",
+        "model": "6200 Forage w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARVESTER UNI",
+        "model": "882 Husk-on w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARVESTER UNI",
+        "model": "882 Husk-on w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FD16",
+        "year": "87-86",
+        "engine": "L6-5.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FD17",
+        "year": "92-88",
+        "engine": "L6-6.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FD20",
+        "year": "1992",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FD2218",
+        "year": "97-93",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FD2218LP",
+        "year": "97-93",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FE16",
+        "year": "87-86",
+        "engine": "L6-5.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FE17",
+        "year": "92-84",
+        "engine": "L6-6.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FE19",
+        "year": "92-85",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FE20",
+        "year": "1992",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FE2618",
+        "year": "97-93",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FF17",
+        "year": "91-84",
+        "engine": "L6-6.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FF19",
+        "year": "92-84",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FF19",
+        "year": "1989",
+        "engine": "L6-6.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FF20",
+        "year": "1992",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FF23",
+        "year": "1992",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FF3018",
+        "year": "97-93",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FF3020",
+        "year": "97-93",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FG19",
+        "year": "86-85",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FG22",
+        "year": "85-84",
+        "engine": "L6-9.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "GC17",
+        "year": "91-90",
+        "engine": "L6-6.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "GC20",
+        "year": "1992",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SF17",
+        "year": "1989",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG19",
+        "year": "91-86",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG20",
+        "year": "1992",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG22",
+        "year": "87-86",
+        "engine": "L6-9.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG23",
+        "year": "92-86",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG231",
+        "year": "92-89",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG3320",
+        "year": "97-93",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG3323",
+        "year": "97-93",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG5523",
+        "year": "96-93",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "K130",
+        "year": "93-87",
+        "engine": "L6-8.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "K150",
+        "year": "94-90",
+        "engine": "L6-8.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "K200",
+        "year": "1993",
+        "engine": "L6-8.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "K220",
+        "year": "1994",
+        "engine": "L6-8.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "K220",
+        "year": "92-88",
+        "engine": "L6-8.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "K300",
+        "year": "98-93",
+        "engine": "L6-8.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T300",
+        "year": "99-95",
+        "engine": "L6-8.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "W4 Forward (w/4BD2T 3.9L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "W4 Forward (w/4BD2T 3.9L Engine)",
+        "year": "98-92",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK FORD",
+        "model": "CF6000, CF7000, CF8000 (w/Ford FD1460 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK FORD",
+        "model": "CF6000, CF7000, CF8000 (w/Ford FD1460 8.3L Engine)",
+        "year": "97-93",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK FREIGHTLINER",
+        "model": "FL70 (w/Cummins 8.3L eng.)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK FREIGHTLINER",
+        "model": "FL70 (w/Cummins 8.3L eng.)",
+        "year": "98-92",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "W4 Forward (w/4BD2T 3.9L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "W4 Forward (w/4BD2T 3.9L Engine)",
+        "year": "98-92",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "W4 Forward (w/General Motors 5.7L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "W4 Forward (w/General Motors 5.7L Gas Engine)",
+        "year": "98-92",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD16, FE16 (w/Hino W06E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD16, FE16 (w/Hino W06E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD17 (w/H07CF Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD17 (w/H07CF Engine)",
+        "year": "91-88",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD20 (w/H06CTI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD20 (w/H06CTI Engine)",
+        "year": "97-92",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD2218, FE2218 (w/H06CTN Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD2218, FE2218 (w/H06CTN Engine)",
+        "year": "97-93",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD2218, FE2218 (w/H06CTP Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD2218, FE2218 (w/H06CTP Engine)",
+        "year": "97-93",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE16",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE16",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE17",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE17",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE19 (w/Hino H06CTJ Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE19 (w/Hino H06CTJ Engine)",
+        "year": "91-85",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE19, FE20 (w/H06C Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE19, FE20 (w/H06C Engine)",
+        "year": "1992",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE2618 (w/H06CTP Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE2618 (w/H06CTP Engine)",
+        "year": "97-93",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE2618 (w/H06CTT Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE2618 (w/H06CTT Engine)",
+        "year": "97-93",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF17 (w/Hino H07CF Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF17 (w/Hino H07CF Engine)",
+        "year": "91-84",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF19 (w/Hino H06CTJ Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF19 (w/Hino H06CTJ Engine)",
+        "year": "91-84",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF20 (w/H06CTI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF20 (w/H06CTI Engine)",
+        "year": "93-92",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF23 (w/H06CTI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF23 (w/H06CTI Engine)",
+        "year": "93-92",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF3018, FF3020 (w/H06CTN Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF3018, FF3020 (w/H06CTN Engine)",
+        "year": "97-93",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF3018, FF3020 (w/H06CTU Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF3018, FF3020 (w/H06CTU Engine)",
+        "year": "97-93",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FG19 (w/Hino H06CTJ Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FG19 (w/Hino H06CTJ Engine)",
+        "year": "85-84",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FG22",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FG22",
+        "year": "85-84",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "GC17 (w/Hino H07C-F Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "GC17 (w/Hino H07C-F Engine)",
+        "year": "92-90",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "GC20 (w/H06C-TI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "GC20 (w/H06C-TI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG19 (w/H06C-TJ Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG19 (w/H06C-TJ Engine)",
+        "year": "91-84",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG22 (w/EM100 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG22 (w/EM100 Engine)",
+        "year": "1986",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG23 (w/H06C-T Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG23 (w/H06C-T Engine)",
+        "year": "91-87",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG3320, SG3323 (w/H06CTM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG3320, SG3323 (w/H06CTM Engine)",
+        "year": "97-93",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG3320, SG3323 (w/H06CTN Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG3320, SG3323 (w/H06CTN Engine)",
+        "year": "97-93",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG3320, SG3323 (w/H06CTV Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG3320, SG3323 (w/H06CTV Engine)",
+        "year": "97-93",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG3323 (w/H06C-TM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG3323 (w/H06C-TM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG5523 (w/H06C-TM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG5523 (w/H06C-TM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK KENWORTH",
+        "model": "K300 (w/Cummins 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK KENWORTH",
+        "model": "K300 (w/Cummins 8.3L Engine)",
+        "year": "98-93",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK KENWORTH",
+        "model": "T300 (w/Cummins 6CT 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK KENWORTH",
+        "model": "T300 (w/Cummins 6CT 8.3L Engine)",
+        "year": "98-95",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "224 Midranger (w/Cummins 6CT 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "224 Midranger (w/Cummins 6CT 8.3L Engine)",
+        "year": "89-88",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "265 Midranger (w/Cummins 6CT 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "265 Midranger (w/Cummins 6CT 8.3L Engine)",
+        "year": "1989",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "330 (w/Cummins 6CT8.3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK PETERBILT",
+        "model": "330 (w/Cummins 6CT8.3 Engine)",
+        "year": "98-95",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "PETERBILT",
+        "model": "330",
+        "year": "02-95",
+        "engine": "L6-8.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER DRESSER",
+        "model": "412B w/Dresser D505T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER DRESSER",
+        "model": "412B w/Dresser D505T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER HITACHI",
+        "model": "LX100",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER HITACHI",
+        "model": "LX100",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER HITACHI",
+        "model": "LX80",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER HITACHI",
+        "model": "LX80",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKIDDER RANGER",
+        "model": "F668 w/Cummins 6CTA8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKIDDER RANGER",
+        "model": "F668 w/Cummins 6CTA8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "7110 w/Case 6T-830  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "7110 w/Case 6T-830  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "7120 w/Case 6T-830  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "7120 w/Case 6T-830  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "7130 w/Cummins 8.3L  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "7130 w/Cummins 8.3L  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "7140 w/Cummins 8.3L  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "7140 w/Cummins 8.3L  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "7150 w/Cummins 8.3L  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "7150 w/Cummins 8.3L  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9110 Steiger Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9110 Steiger Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9130 Steiger Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9130 Steiger Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Puma 1000 w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Puma 1000 w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Wildcat 1000 w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Wildcat 1000 w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR WHITE",
+        "model": "170 Workhorse, 195 Workhorse w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR WHITE",
+        "model": "170 Workhorse, 195 Workhorse w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR WHITE",
+        "model": "2-160",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR WHITE",
+        "model": "2-160",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR WHITE",
+        "model": "2-185",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR WHITE",
+        "model": "2-185",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ERF",
+        "model": "10.30ST, 10.30TP (w/Cummins L300 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ERF",
+        "model": "10.30ST, 10.30TP (w/Cummins L300 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ERF",
+        "model": "10.32MT, RT, ST, TT, 10.35RT, ST, TT (w/Cummins LTAA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ERF",
+        "model": "10.32MT, RT, ST, TT, 10.35RT, ST, TT (w/Cummins LTAA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ERF",
+        "model": "10.35MT, RT,ST & TT (w/CUMMINS LTAA10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ERF",
+        "model": "10.35MT, RT,ST & TT (w/CUMMINS LTAA10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLL (w/Cummins 6C8.3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLL (w/Cummins 6C8.3 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C7000 (w/Cummins VT225 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C7000 (w/Cummins VT225 Engine)",
+        "year": "1982",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY HINO",
+        "model": "SF17 (w/Hino H07C-F Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY HINO",
+        "model": "SF17 (w/Hino H07C-F Engine)",
+        "year": "91-84",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "376 (w/Cummins 6CT8.3 Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "376 (w/Cummins 6CT8.3 Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CASE",
+        "model": "721 w/Cummins 6T-830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CASE",
+        "model": "721 w/Cummins 6T-830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CASE",
+        "model": "821 w/Cummins 6T-830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CASE",
+        "model": "821 w/Cummins 6T-830 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER DRESSER",
+        "model": "530 w/Dresser D505T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER DRESSER",
+        "model": "530 w/Dresser D505T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER DRESSER",
+        "model": "530, 530C w/Dresser D505T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER DRESSER",
+        "model": "530, 530C w/Dresser D505T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER DRESSER",
+        "model": "540 w/Dresser D505T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER DRESSER",
+        "model": "540 w/Dresser D505T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KAWASAKI",
+        "model": "65ZIII",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KAWASAKI",
+        "model": "65ZIII",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KAWASAKI",
+        "model": "65ZIV",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KAWASAKI",
+        "model": "65ZIV",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KAWASAKI",
+        "model": "80ZIII w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KAWASAKI",
+        "model": "80ZIII w/Cummins 6CT8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KAWASAKI",
+        "model": "KSS 70B, 70C, 70D w/Cummins V504 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KAWASAKI",
+        "model": "KSS 70B, 70C, 70D w/Cummins V504 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KAWASAKI",
+        "model": "KSS 80 ZII w/Cummins V504C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KAWASAKI",
+        "model": "KSS 80 ZII w/Cummins V504C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KAWASAKI",
+        "model": "KSS70BC w/Cummins V-504 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KAWASAKI",
+        "model": "KSS70BC w/Cummins V-504 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER TCM",
+        "model": "835-2",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER TCM",
+        "model": "835-2",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER TCM",
+        "model": "840-2",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER TCM",
+        "model": "840-2",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER TROJAN",
+        "model": "2000D w/Cummins VT504C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER TROJAN",
+        "model": "2000D w/Cummins VT504C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF911D",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF1101",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2195",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "PL-734",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B205",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7005",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7108",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7004",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92649",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85649",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "A77537",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I-1242",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Coach Guard",
+        "part_number": "T08-1064",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "2026",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "3313281",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "3014654",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Daewoo",
+        "part_number": "2474-9037",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Detroit Diesel",
+        "part_number": "23518667",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Detroit Diesel",
+        "part_number": "23530411",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P551381",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF734",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3478",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3626",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-83478",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8734",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25012679",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "23518667",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GP43",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GP43M",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF534",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "B7005",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hino",
+        "part_number": "15607-1810",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hino",
+        "part_number": "15607-1740",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hino",
+        "part_number": "15607-1740A",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hino",
+        "part_number": "15607-1381",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hino",
+        "part_number": "15607-1380",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "1240892H1",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "1-13240157-0",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "2-94561-112-0",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "1-13240157-1",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L214",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LK134C",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "30-3436861",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "1076750-M1",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1649",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "187-0022",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "122-0756",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L40313",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L54998",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Trojan",
+        "part_number": "6960401",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51649",
+        "source_part_number": "PH3757",
+        "part_key": "001509389",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

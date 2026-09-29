@@ -1,0 +1,1563 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF11855",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF11855",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.575,
+      "height_mm": 40,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LAK1355"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK26023"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C31769C"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1959C"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "205 835 0147 64"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "205 835 0147"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A 205835 0147"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "26-21",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 43",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 43",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 43",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "24-19",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 53",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-19",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 53",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-24",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 55",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-24",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 55",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-19",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-23",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "21-19",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-23",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2023",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63 S",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "21-19",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63 S",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2023",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63 S",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-19",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63 S",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63 S E PERFORMANCE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63 S E PERFORMANCE",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "23-15",
+        "make": "MERCEDES-BENZ",
+        "model": "C300",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "MERCEDES-BENZ",
+        "model": "C300",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-15",
+        "make": "MERCEDES-BENZ",
+        "model": "C300",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "MERCEDES-BENZ",
+        "model": "C300",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-16",
+        "make": "MERCEDES-BENZ",
+        "model": "C350E",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-16",
+        "make": "MERCEDES-BENZ",
+        "model": "C350E",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2015",
+        "make": "MERCEDES-BENZ",
+        "model": "C400",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2015",
+        "make": "MERCEDES-BENZ",
+        "model": "C400",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "23-17",
+        "make": "MERCEDES-BENZ",
+        "model": "C43 AMG",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-17",
+        "make": "MERCEDES-BENZ",
+        "model": "C43 AMG",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2016",
+        "make": "MERCEDES-BENZ",
+        "model": "C450 AMG",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2016",
+        "make": "MERCEDES-BENZ",
+        "model": "C450 AMG",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-16",
+        "make": "MERCEDES-BENZ",
+        "model": "C63 AMG",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "21-16",
+        "make": "MERCEDES-BENZ",
+        "model": "C63 AMG",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2023",
+        "make": "MERCEDES-BENZ",
+        "model": "C63 AMG S",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "21-15",
+        "make": "MERCEDES-BENZ",
+        "model": "C63 AMG S",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2023",
+        "make": "MERCEDES-BENZ",
+        "model": "C63 AMG S",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-15",
+        "make": "MERCEDES-BENZ",
+        "model": "C63 AMG S",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "23-19",
+        "make": "MERCEDES-BENZ",
+        "model": "CLS450",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-19",
+        "make": "MERCEDES-BENZ",
+        "model": "CLS450",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-19",
+        "make": "MERCEDES-BENZ",
+        "model": "CLS53 AMG",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "22-19",
+        "make": "MERCEDES-BENZ",
+        "model": "CLS53 AMG",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "MERCEDES-BENZ",
+        "model": "E300",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "MERCEDES-BENZ",
+        "model": "E300",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2018",
+        "make": "MERCEDES-BENZ",
+        "model": "E400",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2018",
+        "make": "MERCEDES-BENZ",
+        "model": "E400",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-17",
+        "make": "MERCEDES-BENZ",
+        "model": "E43 AMG",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-17",
+        "make": "MERCEDES-BENZ",
+        "model": "E43 AMG",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "23-19",
+        "make": "MERCEDES-BENZ",
+        "model": "E450",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-21",
+        "make": "MERCEDES-BENZ",
+        "model": "E450",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-19",
+        "make": "MERCEDES-BENZ",
+        "model": "E450",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "23-19",
+        "make": "MERCEDES-BENZ",
+        "model": "E53 AMG",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-19",
+        "make": "MERCEDES-BENZ",
+        "model": "E53 AMG",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2023",
+        "make": "MERCEDES-BENZ",
+        "model": "E63 AMG S",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "21-18",
+        "make": "MERCEDES-BENZ",
+        "model": "E63 AMG S",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2023",
+        "make": "MERCEDES-BENZ",
+        "model": "E63 AMG S",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-18",
+        "make": "MERCEDES-BENZ",
+        "model": "E63 AMG S",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "23-19",
+        "make": "MERCEDES-BENZ",
+        "model": "G550",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-19",
+        "make": "MERCEDES-BENZ",
+        "model": "G550",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "24-19",
+        "make": "MERCEDES-BENZ",
+        "model": "G63 AMG",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-19",
+        "make": "MERCEDES-BENZ",
+        "model": "G63 AMG",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "23-16",
+        "make": "MERCEDES-BENZ",
+        "model": "GLC300",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-16",
+        "make": "MERCEDES-BENZ",
+        "model": "GLC300",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-18",
+        "make": "MERCEDES-BENZ",
+        "model": "GLC350E",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-18",
+        "make": "MERCEDES-BENZ",
+        "model": "GLC350E",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-17",
+        "make": "MERCEDES-BENZ",
+        "model": "GLC43 AMG",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "22-17",
+        "make": "MERCEDES-BENZ",
+        "model": "GLC43 AMG",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-18",
+        "make": "MERCEDES-BENZ",
+        "model": "GLC63 AMG",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "21-18",
+        "make": "MERCEDES-BENZ",
+        "model": "GLC63 AMG",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-18",
+        "make": "MERCEDES-BENZ",
+        "model": "GLC63 AMG S",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "21-18",
+        "make": "MERCEDES-BENZ",
+        "model": "GLC63 AMG S",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "MERCEDES-BENZ",
+        "model": "SL43 AMG",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "MERCEDES-BENZ",
+        "model": "SL43 AMG",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "MERCEDES-BENZ",
+        "model": "SL55 AMG",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "MERCEDES-BENZ",
+        "model": "SL55 AMG",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "MERCEDES-BENZ",
+        "model": "SL63 AMG",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "MERCEDES-BENZ",
+        "model": "SL63 AMG",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "MERCEDES-BENZ",
+        "model": "SL63 AMG S E PERFORMANCE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "MERCEDES-BENZ",
+        "model": "SL63 AMG S E PERFORMANCE",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF11855",
+    "source_part_key": "009404136",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 76,
+      "cross_references": 7
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF11855, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.575",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "10.098",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "8.346",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "20",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Under Glove Box",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100570444",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Thailand",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.0250",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "2.0500",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "10.3940",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "2.8000",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "10.0000",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "10.7480",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.7320",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "10.3540",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.025,
+        "case_weight_lb": 2.05,
+        "unit_height_in": 10.394,
+        "unit_length_in": 10,
+        "unit_width_in": 1.732,
+        "case_height_in": 2.8,
+        "case_length_in": 10.748,
+        "case_width_in": 10.354,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 12.3,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 76,
+    "all_cross_references_observed": 7,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:58:21.030Z",
+  "discovered_from": "CF11855",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 43",
+        "year": "26-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 43",
+        "year": "26-25",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 43",
+        "year": "26-21",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 53",
+        "year": "24-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 53",
+        "year": "24-19",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 55",
+        "year": "25-24",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 55",
+        "year": "25-24",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63",
+        "year": "21-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63",
+        "year": "25-23",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63",
+        "year": "21-19",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63",
+        "year": "25-23",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63 S",
+        "year": "2023",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63 S",
+        "year": "21-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63 S",
+        "year": "2023",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63 S",
+        "year": "21-19",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63 S E PERFORMANCE",
+        "year": "26-24",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63 S E PERFORMANCE",
+        "year": "26-24",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C300",
+        "year": "23-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C300",
+        "year": "26-25",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C300",
+        "year": "23-15",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C300",
+        "year": "26-25",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C350E",
+        "year": "18-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C350E",
+        "year": "18-16",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C400",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C400",
+        "year": "2015",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C43 AMG",
+        "year": "23-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C43 AMG",
+        "year": "23-17",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C450 AMG",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C450 AMG",
+        "year": "2016",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C63 AMG",
+        "year": "21-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C63 AMG",
+        "year": "21-16",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C63 AMG S",
+        "year": "2023",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C63 AMG S",
+        "year": "21-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C63 AMG S",
+        "year": "2023",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C63 AMG S",
+        "year": "21-15",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLS450",
+        "year": "23-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLS450",
+        "year": "23-19",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLS53 AMG",
+        "year": "22-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLS53 AMG",
+        "year": "22-19",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E300",
+        "year": "19-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E300",
+        "year": "19-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E400",
+        "year": "2018",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E400",
+        "year": "2018",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E43 AMG",
+        "year": "18-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E43 AMG",
+        "year": "18-17",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E450",
+        "year": "23-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E450",
+        "year": "23-21",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E450",
+        "year": "20-19",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E53 AMG",
+        "year": "23-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E53 AMG",
+        "year": "23-19",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E63 AMG S",
+        "year": "2023",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E63 AMG S",
+        "year": "21-18",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E63 AMG S",
+        "year": "2023",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E63 AMG S",
+        "year": "21-18",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "G550",
+        "year": "23-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "G550",
+        "year": "23-19",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "G63 AMG",
+        "year": "24-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "G63 AMG",
+        "year": "24-19",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLC300",
+        "year": "23-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLC300",
+        "year": "23-16",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLC350E",
+        "year": "20-18",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLC350E",
+        "year": "20-18",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLC43 AMG",
+        "year": "22-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLC43 AMG",
+        "year": "22-17",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLC63 AMG",
+        "year": "21-18",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLC63 AMG",
+        "year": "21-18",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLC63 AMG S",
+        "year": "21-18",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLC63 AMG S",
+        "year": "21-18",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SL43 AMG",
+        "year": "26-23",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SL43 AMG",
+        "year": "26-23",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SL55 AMG",
+        "year": "26-22",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SL55 AMG",
+        "year": "26-22",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SL63 AMG",
+        "year": "26-22",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SL63 AMG",
+        "year": "26-22",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SL63 AMG S E PERFORMANCE",
+        "year": "26-24",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SL63 AMG S E PERFORMANCE",
+        "year": "26-24",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1959C",
+        "source_part_number": "CF11855",
+        "part_key": "009404136",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LAK1355",
+        "source_part_number": "CF11855",
+        "part_key": "009404136",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK26023",
+        "source_part_number": "CF11855",
+        "part_key": "009404136",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "205 835 0147 64",
+        "source_part_number": "CF11855",
+        "part_key": "009404136",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "205 835 0147",
+        "source_part_number": "CF11855",
+        "part_key": "009404136",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A 205835 0147",
+        "source_part_number": "CF11855",
+        "part_key": "009404136",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C31769C",
+        "source_part_number": "CF11855",
+        "part_key": "009404136",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

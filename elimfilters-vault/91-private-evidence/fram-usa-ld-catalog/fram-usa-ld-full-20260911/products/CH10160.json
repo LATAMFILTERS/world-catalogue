@@ -1,0 +1,1686 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "CH10160",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CH10160",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 6.141,
+      "height_mm": 155.98,
+      "thread_size": null,
+      "gasket_od_in": 3.149,
+      "gasket_od_mm": 79.98,
+      "gasket_id_in": 2.874,
+      "gasket_id_mm": 73,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Cartridge",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [
+      "FD10160"
+    ],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7414"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "P7414"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P9268"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "72255WS"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "1457429268"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "COC10160"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E32HD125"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E32HD184"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX381D"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX381DECO"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU722Z"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU7029Z"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "7204"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L45598"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57204"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "A.L. Solutions U.S.",
+        "part_number": "ALO-8166"
+      },
+      {
+        "manufacturer": "Audi",
+        "part_number": "06E 115 562A"
+      },
+      {
+        "manufacturer": "Audi",
+        "part_number": "06E 115 562"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "041-8189"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "84204"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "84204MP"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "84204"
+      },
+      {
+        "manufacturer": "Carquest Standard Filters",
+        "part_number": "R84204"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "P966"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "part_number": "COC10160"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "X5598"
+      },
+      {
+        "manufacturer": "FERGUSON",
+        "part_number": "G7204"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "G7204"
+      },
+      {
+        "manufacturer": "GUD Filters",
+        "part_number": "M75"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF629"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "AL10160"
+      },
+      {
+        "manufacturer": "Inter-Continental Gear & Brake",
+        "part_number": "ALO-8166"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "HP-7015"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "PS-7015"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "OX381D"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P966"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "MGL57204"
+      },
+      {
+        "manufacturer": "MicroGard Select",
+        "part_number": "MSL57204"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "M966"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "P966"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "7204"
+      },
+      {
+        "manufacturer": "Original Engine Management",
+        "part_number": "OF57"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "67204"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "P966"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ19BP"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ-191"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ191"
+      },
+      {
+        "manufacturer": "Pentius",
+        "part_number": "PCB10160"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PO-191"
+      },
+      {
+        "manufacturer": "Porsche",
+        "part_number": "95810722200"
+      },
+      {
+        "manufacturer": "Porsche",
+        "part_number": "9581072220"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PG5598"
+      },
+      {
+        "manufacturer": "Prime Guard Filters - Archived",
+        "part_number": "POF5598"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PO5598"
+      },
+      {
+        "manufacturer": "Pro-Tec",
+        "part_number": "715"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "part_number": "PL5598"
+      },
+      {
+        "manufacturer": "Purflux",
+        "part_number": "L390"
+      },
+      {
+        "manufacturer": "Ryco",
+        "part_number": "R2632P"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "CF5598"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "M5598"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "S10160"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S10160"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S10160XL"
+      },
+      {
+        "manufacturer": "TVI",
+        "part_number": "V5598"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-92"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "06E 115 562A"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "06E 115 562C"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "958 107 222 01"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "06E 115 466"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "06E 115 562E"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "06E 115 562"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "958 107 222 00"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WP966"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "WP966"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "08-06",
+        "make": "AUDI",
+        "model": "A4",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "09-05",
+        "make": "AUDI",
+        "model": "A4 QUATTRO",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "10-08",
+        "make": "AUDI",
+        "model": "A5 QUATTRO",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "11-06",
+        "make": "AUDI",
+        "model": "A6",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "15-09",
+        "make": "AUDI",
+        "model": "A6 QUATTRO",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "08-05",
+        "make": "AUDI",
+        "model": "A6 QUATTRO",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "15-12",
+        "make": "AUDI",
+        "model": "A7 QUATTRO",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "14-13",
+        "make": "AUDI",
+        "model": "A8 QUATTRO",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "17-13",
+        "make": "AUDI",
+        "model": "Q5",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "12-09",
+        "make": "AUDI",
+        "model": "Q5",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "15-11",
+        "make": "AUDI",
+        "model": "Q7",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-10",
+        "make": "AUDI",
+        "model": "S4",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "17-10",
+        "make": "AUDI",
+        "model": "S5",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "17-14",
+        "make": "AUDI",
+        "model": "SQ5",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-11",
+        "make": "PORSCHE",
+        "model": "CAYENNE",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-17",
+        "make": "PORSCHE",
+        "model": "CAYENNE",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "14-12",
+        "make": "PORSCHE",
+        "model": "PANAMERA",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "14-12",
+        "make": "VOLKSWAGEN",
+        "model": "TOUAREG",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CH10160",
+    "source_part_key": "000991569",
+    "source_totals": {
+      "attributes": 50,
+      "applications": 18,
+      "cross_references": 75
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® oil filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE (original equipment) recommended intervals. Engineered for conventional and synthetic motor oil, Extra Guard offers proven engine protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filter media is a blend of fiber and resin that captures 95%?of the dirt particles",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CH10160, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Proven protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "The perfect balance of dirt-trapping efficiency and dirt-holding capacity",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Cartridge Oil Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Includes gaskets and O-rings manufactured to endure the high pressures and high temperatures in today’s engines",
+        "recno": "4"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Engineered for use with synthetic or conventional motor oils",
+        "recno": "5"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Cartridge",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Cover",
+        "recno": "89"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "NA",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Gasket Thickness",
+        "value": "0.185",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100533043",
+        "recno": "92"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "93"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "94"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "6.141",
+        "recno": "95"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "96"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "2.874",
+        "recno": "97"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "3.149",
+        "recno": "98"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "1.299",
+        "recno": "99"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "2.559",
+        "recno": "100"
+      },
+      {
+        "attribute": "O-Ring Inside Diameter (Inch)",
+        "value": "3.090",
+        "recno": "101"
+      },
+      {
+        "attribute": "O-Ring Outside Diameter (Inch)",
+        "value": "3.129",
+        "recno": "102"
+      },
+      {
+        "attribute": "O-Ring Thickness (Inch)",
+        "value": "0.039",
+        "recno": "103"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "1.299",
+        "recno": "104"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "2.559",
+        "recno": "105"
+      },
+      {
+        "attribute": "O-Rings Included",
+        "value": "Yes",
+        "recno": "106"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "107"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "108"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "109"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Korea Republic of",
+        "recno": "110"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.2410",
+        "recno": "114"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.4460",
+        "recno": "115"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "6.4860",
+        "recno": "116"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "7.6870",
+        "recno": "117"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "2.7270",
+        "recno": "118"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "8.7500",
+        "recno": "119"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "2.7270",
+        "recno": "120"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "6.0620",
+        "recno": "121"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.241,
+        "case_weight_lb": 1.446,
+        "unit_height_in": 6.486,
+        "unit_length_in": 2.727,
+        "unit_width_in": 2.727,
+        "case_height_in": 7.687,
+        "case_length_in": 8.75,
+        "case_width_in": 6.062,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 2.892,
+        "estimated_case_dimensions": {
+          "length_in": 11.667,
+          "width_in": 9.093,
+          "height_in": 7.687,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 18,
+    "all_cross_references_observed": 75,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:21:23.093Z",
+  "discovered_from": "CH10160",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "AUDI",
+        "model": "A4",
+        "year": "08-06",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A4 QUATTRO",
+        "year": "09-05",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A5 QUATTRO",
+        "year": "10-08",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A6",
+        "year": "11-06",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A6 QUATTRO",
+        "year": "15-09",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A6 QUATTRO",
+        "year": "08-05",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A7 QUATTRO",
+        "year": "15-12",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A8 QUATTRO",
+        "year": "14-13",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "Q5",
+        "year": "17-13",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "Q5",
+        "year": "12-09",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "Q7",
+        "year": "15-11",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S4",
+        "year": "16-10",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S5",
+        "year": "17-10",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "SQ5",
+        "year": "17-14",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "CAYENNE",
+        "year": "15-11",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "CAYENNE",
+        "year": "18-17",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "PANAMERA",
+        "year": "14-12",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "TOUAREG",
+        "year": "14-12",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "A.L. Solutions U.S.",
+        "part_number": "ALO-8166",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Audi",
+        "part_number": "06E 115 562A",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Audi",
+        "part_number": "06E 115 562",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7414",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "P7414",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "041-8189",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P9268",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "72255WS",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "1457429268",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "84204",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "84204MP",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "84204",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest Standard Filters",
+        "part_number": "R84204",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "P966",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "COC10160",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "part_number": "COC10160",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "X5598",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FERGUSON",
+        "part_number": "G7204",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Drive",
+        "part_number": "FD10160",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "G7204",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "GUD Filters",
+        "part_number": "M75",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF629",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E32HD125",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E32HD184",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "AL10160",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Inter-Continental Gear & Brake",
+        "part_number": "ALO-8166",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "HP-7015",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "PS-7015",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "OX381D",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P966",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX381D",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX381DECO",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU722Z",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU7029Z",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "MGL57204",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MicroGard Select",
+        "part_number": "MSL57204",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "M966",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "P966",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "7204",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "7204",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Original Engine Management",
+        "part_number": "OF57",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "67204",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "P966",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ19BP",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ-191",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ191",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pentius",
+        "part_number": "PCB10160",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PO-191",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Porsche",
+        "part_number": "95810722200",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Porsche",
+        "part_number": "9581072220",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PG5598",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Prime Guard Filters - Archived",
+        "part_number": "POF5598",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PO5598",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pro-Tec",
+        "part_number": "715",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "part_number": "PL5598",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purflux",
+        "part_number": "L390",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L45598",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ryco",
+        "part_number": "R2632P",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "CF5598",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "M5598",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "S10160",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S10160",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S10160XL",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "TVI",
+        "part_number": "V5598",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-92",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "06E 115 562A",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "06E 115 562C",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "958 107 222 01",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "06E 115 466",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "06E 115 562E",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "06E 115 562",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "958 107 222 00",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WP966",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "WP966",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57204",
+        "source_part_number": "CH10160",
+        "part_key": "000991569",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

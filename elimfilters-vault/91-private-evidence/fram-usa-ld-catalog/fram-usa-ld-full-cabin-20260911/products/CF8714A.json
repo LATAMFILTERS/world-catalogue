@@ -1,0 +1,869 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF8714A",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF8714A",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.497,
+      "height_mm": 38.02,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3700"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF7716"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CU2650"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4821"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C25483"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24821"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2013"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2149"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2028"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1716"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4821"
+      },
+      {
+        "manufacturer": "GK Industries",
+        "part_number": "CF1049"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1010"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1716"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1716"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1716"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF7716"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3650"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "VV97139"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "224821"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94821"
+      },
+      {
+        "manufacturer": "Power Train",
+        "part_number": "3650"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1716"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1161"
+      },
+      {
+        "manufacturer": "VIPER",
+        "part_number": "8714C"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "9171296-8"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "97-93",
+        "make": "VOLVO",
+        "model": "850",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "97-94",
+        "make": "VOLVO",
+        "model": "850",
+        "engine": "L5-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "97-93",
+        "make": "VOLVO",
+        "model": "850",
+        "engine": "L5-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "02-98",
+        "make": "VOLVO",
+        "model": "C70",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "01-98",
+        "make": "VOLVO",
+        "model": "C70",
+        "engine": "L5-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "02-98",
+        "make": "VOLVO",
+        "model": "C70",
+        "engine": "L5-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "00-98",
+        "make": "VOLVO",
+        "model": "S70",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "00-98",
+        "make": "VOLVO",
+        "model": "S70",
+        "engine": "L5-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "00-98",
+        "make": "VOLVO",
+        "model": "S70",
+        "engine": "L5-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "VOLVO",
+        "model": "S90",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "VOLVO",
+        "model": "S90",
+        "engine": "L6-2.9L",
+        "quantity": 1
+      },
+      {
+        "year": "00-98",
+        "make": "VOLVO",
+        "model": "V70",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "00-98",
+        "make": "VOLVO",
+        "model": "V70",
+        "engine": "L5-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "00-98",
+        "make": "VOLVO",
+        "model": "V70",
+        "engine": "L5-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "VOLVO",
+        "model": "V90",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "VOLVO",
+        "model": "V90",
+        "engine": "L6-2.9L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF8714A",
+    "source_part_key": "000991108",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 16,
+      "cross_references": 26
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF8714A, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.497",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "10.244",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "7.269",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "15",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Under Hood",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100537812",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Thailand",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.7750",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.5500",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "1.6930",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "3.9370",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "10.4330",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "11.0240",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "7.4020",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "8.0710",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.775,
+        "case_weight_lb": 1.55,
+        "unit_height_in": 1.693,
+        "unit_length_in": 10.433,
+        "unit_width_in": 7.402,
+        "case_height_in": 3.937,
+        "case_length_in": 11.024,
+        "case_width_in": 8.071,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 9.3,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 16,
+    "all_cross_references_observed": 26,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:02:12.395Z",
+  "discovered_from": "CF8714A",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "VOLVO",
+        "model": "850",
+        "year": "97-93",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "850",
+        "year": "97-94",
+        "engine": "L5-2.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "850",
+        "year": "97-93",
+        "engine": "L5-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "C70",
+        "year": "02-98",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "C70",
+        "year": "01-98",
+        "engine": "L5-2.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "C70",
+        "year": "02-98",
+        "engine": "L5-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "S70",
+        "year": "00-98",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "S70",
+        "year": "00-98",
+        "engine": "L5-2.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "S70",
+        "year": "00-98",
+        "engine": "L5-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "S90",
+        "year": "98-97",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "S90",
+        "year": "98-97",
+        "engine": "L6-2.9L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "V70",
+        "year": "00-98",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "V70",
+        "year": "00-98",
+        "engine": "L5-2.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "V70",
+        "year": "00-98",
+        "engine": "L5-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "V90",
+        "year": "98-97",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "V90",
+        "year": "98-97",
+        "engine": "L6-2.9L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2013",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2149",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2028",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3700",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1716",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF7716",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4821",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "GK Industries",
+        "part_number": "CF1049",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1010",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1716",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1716",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1716",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF7716",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CU2650",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3650",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "VV97139",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4821",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "224821",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94821",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Power Train",
+        "part_number": "3650",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C25483",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1716",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1161",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "VIPER",
+        "part_number": "8714C",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "9171296-8",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24821",
+        "source_part_number": "CF8714A",
+        "part_key": "000991108",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

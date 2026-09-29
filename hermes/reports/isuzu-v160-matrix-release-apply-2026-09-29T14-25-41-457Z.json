@@ -1,0 +1,19 @@
+{
+  "phase": "ISUZU_V160_MATRIX_RELEASE",
+  "apply": true,
+  "database_write": true,
+  "rows": [
+    {
+      "sku": "EA13930",
+      "status": "READY",
+      "exact_positions": 3,
+      "added_ranges": 3
+    }
+  ],
+  "backup_path": "hermes/backups/isuzu-v160/prewrite-2026-09-29T14-25-41-453Z.json",
+  "summary": {
+    "skus": 1,
+    "exact_positions": 3,
+    "database_write": true
+  }
+}

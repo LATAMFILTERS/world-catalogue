@@ -1,0 +1,962 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH3682",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH3682",
+    "product_type": "Transmission Oil Filter, Engine Oil Filter, Hydraulic Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": null,
+      "height_mm": null,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": null,
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [],
+    "unresolved_cross_reference_candidates": [],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "PH3682",
+    "source_part_key": "000944049",
+    "source_totals": {
+      "attributes": 0,
+      "applications": 97,
+      "cross_references": 0
+    },
+    "raw_attributes": [],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": null,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": null,
+        "case_length_in": null,
+        "case_width_in": null,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 97,
+    "all_cross_references_observed": 0,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:18:37.084Z",
+  "discovered_from": "PH3682FP",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "ENGINE KUBOTA",
+        "model": "GH680",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KUBOTA",
+        "model": "V1305-FM",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "F2000 w/Kubota 20 hp Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "F2000HST w/Kubota 20 hp Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "F2100 w/Kubota 21 hp Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "F2100E w/Kubota 21 hp Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "F2100HST w/Kubota 21 hp Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "F2260E w/Kubota 22 hp Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "F2400HST w/Kubota 24 hp Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "F2560E w/Kubota  Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "F3060 w/Kubota 30 hp Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "FZ2100 w/Kubota D905 21 hp Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "FZ2400 w/Kubota D1105F 24 hp Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "ZG23F w/Kubota GH680 23 hp Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "ZG30 w/Kubota GH680 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "FG10 H-1 w/Nissan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "FG10 H-14 w/Nissan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "FG10 S-2 w/Nissan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "FG10-10, FD15-10, FG10-11, FD15-11 w/Nissan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "FG10-2 w/Nissan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "FG15 H-1 w/Nissan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "FG15 H-14 w/Nissan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "FG15 S-2 w/Nissan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "FG15-10 w/Nissan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "FG15-11 w/Nissan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "FG15-2 w/Nissan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "FG18 H-1 w/Nissan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "FG18 H-14 w/Nissan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "FG18 S-2 w/Nissan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "FG18-2 w/Nissan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "FG20-8 w/Nissan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "FG20ST12",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "FG25L-8 w/Nissan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "FG30-8 w/Nissan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "FG30S-3 w/Nissan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "FG30S-4 w/Nissan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER CASE",
+        "model": "1825 w/Nissan Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR GRAVELY",
+        "model": "Pro Series Mowers",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "B21",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "B2410HSD w/Kubota D1005 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "B2410HSD w/Kubota D1105 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "B2410HSDB, B2410HSE w/Kubota D1105 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "B2710HSD w/Kubota V1305 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "B2710HSD w/Kubota V1305-E-D12 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "B2910HSD w/Kubota V1505 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "B7300HSD w/Kubota D722-D10SP Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "B7400HSD w/Kubota D722 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KOMATSU",
+        "model": "B7800HSD w/Kubota V1505-E-D16 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B1550HST-D w/Kubota D850-5B Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B1550HST-E w/Kubota D850-5B Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B1700DT, B1700HSD w/Kubota D905-D10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B1700E w/Kubota D905-D10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B1700HST-D w/Kubota D905-D10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B1750HST",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B1750HST-D w/Kubota D950-5B Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B1750HST-E w/Kubota D950-5B Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B21 w/Kubota D1005 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B2100DT w/Kubota D1005-D10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B2100HST-D w/Kubota D1005-D10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B2400HST-D w/Kubota D1105-D10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B2400HST-DB w/Kubota D1105-D10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B2410HSD w/Kubota D1005 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B2410HSD w/Kubota D1105 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B2410HSDB w/Kubota D1105 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B2410HSE w/Kubota D1105 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B2710HSD w/Kubota V1305 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B2710HSD w/Kubota V1305-E-D12 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B2910HSD w/Kubota V1505 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B2910HSD w/Kubota V1505-E-D16 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B3200 w/Kubota V1505-E3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B5200 w/Kubota D750 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B6100, B6100HST, B7100, B7100HST w/Kubota D750-B Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B6100HST-DT w/Kubota D650-B Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B6100HST-E w/Kubota D650-B Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B6200, B6200HST, B7200, B7200HST",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B6200D w/Kubota D850-5B Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B6200E w/Kubota D850-5B Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B7100HST-DT w/Kubota D750-B Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B7100HST-E w/Kubota D750-B Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B7100HST-II-DT w/Kubota D750-B Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B7200D w/Kubota D950 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B7200E w/Kubota D950 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B7200HST-D w/Kubota D950 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B7200HST-E w/Kubota D950 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B7300 (w/Kubota D722 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B7300HSD w/Kubota D722 D10SP Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B7400HSD w/Kubota D722 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B8200, B8200HSD, B8200HSE, B8200HST",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "G1800 w/Kubota D662 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "G1800S w/Kubota D662 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "G1900, G1900S, F1900",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "G2000",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "G4200, G4200H w/Kubota Z430 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "G5200H w/Kubota D600 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "G6200H",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L2550DT, L2550GST",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "L2850DT, L2850F, L2850GST w/Kubota Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

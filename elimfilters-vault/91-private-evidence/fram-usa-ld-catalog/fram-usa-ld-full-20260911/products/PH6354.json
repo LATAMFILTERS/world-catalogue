@@ -1,0 +1,218 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH6354",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH6354",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": null,
+      "height_mm": null,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": null,
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [],
+    "unresolved_cross_reference_candidates": [],
+    "vehicle_application_candidates": [
+      {
+        "year": "85-83",
+        "make": "CHEVROLET",
+        "model": "S10",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1984",
+        "make": "CHEVROLET",
+        "model": "S10 BLAZER",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "85-84",
+        "make": "GMC",
+        "model": "S15",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "87-84",
+        "make": "ISUZU",
+        "model": "PICKUP",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1984",
+        "make": "ISUZU",
+        "model": "TROOPER",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "87-86",
+        "make": "ISUZU",
+        "model": "TROOPER",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1983",
+        "make": "NISSAN",
+        "model": "MAXIMA",
+        "engine": "L6-2.8L",
+        "quantity": 1
+      },
+      {
+        "year": "87-83",
+        "make": "NISSAN",
+        "model": "SENTRA",
+        "engine": "L4-1.7L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "PH6354",
+    "source_part_key": "000990568",
+    "source_totals": {
+      "attributes": 0,
+      "applications": 8,
+      "cross_references": 0
+    },
+    "raw_attributes": [],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": null,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": null,
+        "case_length_in": null,
+        "case_width_in": null,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 8,
+    "all_cross_references_observed": 0,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:19:58.063Z",
+  "discovered_from": "PH6354",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "CHEVROLET",
+        "model": "S10",
+        "year": "85-83",
+        "engine": "L4-2.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "S10 BLAZER",
+        "year": "1984",
+        "engine": "L4-2.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "S15",
+        "year": "85-84",
+        "engine": "L4-2.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "PICKUP",
+        "year": "87-84",
+        "engine": "L4-2.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "TROOPER",
+        "year": "1984",
+        "engine": "L4-2.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "TROOPER",
+        "year": "87-86",
+        "engine": "L4-2.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "MAXIMA",
+        "year": "1983",
+        "engine": "L6-2.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "SENTRA",
+        "year": "87-83",
+        "engine": "L4-1.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

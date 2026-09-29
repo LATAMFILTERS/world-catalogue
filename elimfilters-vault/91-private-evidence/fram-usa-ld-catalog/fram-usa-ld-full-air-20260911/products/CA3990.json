@@ -1,0 +1,2249 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA3990",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA3990",
+    "product_type": "Engine Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": 11.781,
+      "outer_diameter_mm": 299.24,
+      "height_in": 22.4,
+      "height_mm": 568.96,
+      "thread_size": null,
+      "gasket_od_in": 8.906,
+      "gasket_od_mm": 226.21,
+      "gasket_id_in": 8.125,
+      "gasket_id_mm": 206.38,
+      "gasket_thickness_in": 0.5,
+      "gasket_thickness_mm": 12.7,
+      "media_type": "Genuine Media",
+      "style": "Cone Shaped Conical Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I-0415"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A1175C"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A1175CF"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2705"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2715"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA4585"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "C30800"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6830"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6883"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A74435"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46883"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46830"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-15-3551"
+      },
+      {
+        "manufacturer": "Alliance Parts",
+        "part_number": "ABP/N10G-AF1968"
+      },
+      {
+        "manufacturer": "Alliance Parts",
+        "part_number": "ABP/N10G-AF1968M"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "94830"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "94883"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88830"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88883"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P153551"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "EAF5053"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "G112504"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "G112404"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "ECG112504"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P185053"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P537791"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF26328"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF1968M"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF1968"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-81968M"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GA3551"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF785"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "PA2715"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "HDA-153551"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "A-153551"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA1193"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF3551"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "70640N"
+      },
+      {
+        "manufacturer": "Racor",
+        "part_number": "AFN0387"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "22005-5064"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "3946288"
+      },
+      {
+        "manufacturer": "White",
+        "part_number": "22005-5064"
+      },
+      {
+        "manufacturer": "White",
+        "part_number": "22-0055064"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA3990",
+    "source_part_key": "001510104",
+    "source_totals": {
+      "attributes": 37,
+      "applications": 152,
+      "cross_references": 43
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA3990, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Cone Shaped Conical Air Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "82"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Tapered",
+        "recno": "84"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "85"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "86"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "87"
+      },
+      {
+        "attribute": "Top Inside Diameter",
+        "value": "Closed",
+        "recno": "88"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "89"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available Only While Supplies Last",
+        "recno": "91"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100521279",
+        "recno": "92"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "22.400",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "11.781",
+        "recno": "93"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "94"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "8.125",
+        "recno": "95"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "8.906",
+        "recno": "96"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.500",
+        "recno": "97"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "9.218",
+        "recno": "98"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "6.688",
+        "recno": "99"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "10.593",
+        "recno": "100"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "101"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "102"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "103"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "7.5500",
+        "recno": "107"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "7.5500",
+        "recno": "108"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "22.0100",
+        "recno": "109"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "23.3130",
+        "recno": "110"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "10.5300",
+        "recno": "111"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "13.1000",
+        "recno": "112"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "10.5300",
+        "recno": "113"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "13.1000",
+        "recno": "114"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 7.55,
+        "case_weight_lb": 7.55,
+        "unit_height_in": 22.01,
+        "unit_length_in": 10.53,
+        "unit_width_in": 10.53,
+        "case_height_in": 23.313,
+        "case_length_in": 13.1,
+        "case_width_in": 13.1,
+        "inferred_case_qty": 1
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 90.6,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 152,
+    "all_cross_references_observed": 43,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:09:33.107Z",
+  "discovered_from": "CA3990",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "FREIGHTLINER",
+        "model": "CLASSIC",
+        "year": "07-04",
+        "engine": "L6-12.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CLASSIC",
+        "year": "2011",
+        "engine": "L6-12.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "C550",
+        "year": "94-86",
+        "engine": "L6-14.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T400",
+        "year": "97-89",
+        "engine": "6-10.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T400",
+        "year": "99-89",
+        "engine": "6-10.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T400",
+        "year": "98-95",
+        "engine": "L4-8.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T400",
+        "year": "98-89",
+        "engine": "L6-10.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T400",
+        "year": "98-93",
+        "engine": "L6-10.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T400",
+        "year": "96-89",
+        "engine": "L6-8.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T450",
+        "year": "96-93",
+        "engine": "6-10.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T450",
+        "year": "96-93",
+        "engine": "6-10.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T450",
+        "year": "96-95",
+        "engine": "L4-8.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T450",
+        "year": "96-93",
+        "engine": "L6-10.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T450",
+        "year": "96-94",
+        "engine": "L6-10.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T600A",
+        "year": "97-89",
+        "engine": "6-10.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T600A",
+        "year": "1999",
+        "engine": "6-10.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T600A",
+        "year": "90-86",
+        "engine": "6-10.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T600A",
+        "year": "93-92",
+        "engine": "6-10.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T600A",
+        "year": "96-95",
+        "engine": "6-10.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T600A",
+        "year": "07-05",
+        "engine": "6-11.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T600A",
+        "year": "99-96",
+        "engine": "6-12.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T600A",
+        "year": "07-05",
+        "engine": "6-12.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T600A",
+        "year": "94-86",
+        "engine": "L6-10.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T600A",
+        "year": "98-96",
+        "engine": "L6-10.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T600A",
+        "year": "99-96",
+        "engine": "L6-10.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T600A",
+        "year": "07-94",
+        "engine": "L6-10.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T600A",
+        "year": "03-87",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T600A",
+        "year": "02-86",
+        "engine": "L6-14.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T600A",
+        "year": "99-86",
+        "engine": "L6-14.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T600A",
+        "year": "00-99",
+        "engine": "L6-14.9L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T600A",
+        "year": "07-02",
+        "engine": "L6-14.9L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T800",
+        "year": "2010",
+        "engine": "6-10.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T800",
+        "year": "97-89",
+        "engine": "6-10.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T800",
+        "year": "00-87",
+        "engine": "6-10.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T800",
+        "year": "07-05",
+        "engine": "6-11.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T800",
+        "year": "13-11",
+        "engine": "6-11.9L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T800",
+        "year": "99-96",
+        "engine": "6-12.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T800",
+        "year": "07-05",
+        "engine": "6-12.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T800",
+        "year": "00-96",
+        "engine": "L6-10.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T800",
+        "year": "2002",
+        "engine": "L6-10.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T800",
+        "year": "07-94",
+        "engine": "L6-10.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T800",
+        "year": "03-87",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T800",
+        "year": "02-87",
+        "engine": "L6-14.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T800",
+        "year": "11-00",
+        "engine": "L6-14.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T800",
+        "year": "00-99",
+        "engine": "L6-14.9L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T800",
+        "year": "07-02",
+        "engine": "L6-14.9L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T800",
+        "year": "10-00",
+        "engine": "L6-15.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T800",
+        "year": "07-02",
+        "engine": "L6-8.9L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T800",
+        "year": "1991",
+        "engine": "V8-12.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T800",
+        "year": "89-88",
+        "engine": "V8-12.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "W900",
+        "year": "97-94",
+        "engine": "6-10.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "W900",
+        "year": "99-94",
+        "engine": "6-10.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "W900",
+        "year": "07-05",
+        "engine": "6-11.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "W900",
+        "year": "99-97",
+        "engine": "6-12.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "W900",
+        "year": "11-05",
+        "engine": "6-12.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "W900",
+        "year": "97-94",
+        "engine": "L6-10.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "W900",
+        "year": "99-97",
+        "engine": "L6-10.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "W900",
+        "year": "11-94",
+        "engine": "L6-10.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "W900",
+        "year": "03-94",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "W900",
+        "year": "02-94",
+        "engine": "L6-14.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "KENWORTH",
+        "model": "W900",
+        "year": "13-94",
+        "engine": "L6-14.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "W900",
+        "year": "13-00",
+        "engine": "L6-15.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "W900",
+        "year": "2001",
+        "engine": "L6-7.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "W900",
+        "year": "2003",
+        "engine": "L6-7.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "W900",
+        "year": "2008",
+        "engine": "L6-8.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Classic, Classic XL (w/Mercedes-Benz MBE4000 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Columbia (w/Caterpillar C12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Condor (Refuse Truck) (w/Cummins ISX Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Condor (Refuse Truck) (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Condor (Refuse Truck) (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FL112 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLA (w/Caterpillar 3176 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLA (w/Caterpillar 3306 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLA (w/Caterpillar 3406 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLA (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLA (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLA (w/Cummins NTC855 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLA (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLB (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLC (w/Caterpillar 3406 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLC (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLC (w/Cummins N-14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLC (w/Cummins NTC Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLC (w/Detroit Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLC112 (w/Cummins N-14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLD (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLD (w/Caterpillar C16 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLD (w/Caterpillar Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLD (w/Cummins N-14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLD (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLD112SD (w/Caterpillar 3176B Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLT (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9600, 9700 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9600, 9700 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9600, 9700 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "C550 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T400 (w/Cummins 6C 8.3L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T400 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T400A (w/Caterpillar 3176 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T400A (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T450 (w/Cummins L10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T450A (w/Caterpillar 3176 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T600 (w/Caterpillar 3406TA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T600 (w/Caterpillar C10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T600 (w/Caterpillar C12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T600 (w/Caterpillar C13 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T600 (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T600 (w/Cummins ISX  Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T600 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T600 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T600 (w/Cummins NTC Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T600, T600A (w/Detroit Diesel Series 60 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T600A (w/Caterpillar 3176 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T600A (w/Caterpillar 3406E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T600A, T600B (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T600B (w/Caterpillar C13 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T600B (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T600B (w/Cummins ISX Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800 (w/Caterpillar 3176 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800 (w/Caterpillar 3401 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800 (w/Caterpillar C10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800 (w/Caterpillar C11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800 (w/Caterpillar C12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800 (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800 (w/Cummins ISX 11.9 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800 (w/Cummins M11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800 (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800 (w/Cummins NTC Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800 Tiffin (w/Caterpillar C12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800, T800B (w/Caterpillar C13 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800, T800B (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800,T800B (w/Cummins ISX  Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800B (w/Caterpillar C11 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800B (w/Cummins ISL Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800B (w/Cummins ISM  Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "W900 (w/Caterpillar C10 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "W900 (w/Cummins ISM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "W900, W900L (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "W900L (w/Caterpillar C12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "W900L (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "W900L (w/Caterpillar C16 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "362 (w/Caterpillar C12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "367 (w/Caterpillar C13 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "367 (w/Caterpillar C15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "367 (w/Cummins ISX Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "4900 Series (w/Caterpillar C12 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "4900 Series (w/Mercedes-Benz MBE4000)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "Constellation 5964F (w/Caterpillar 3406E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "Constellation 5964F (w/Cummins N14 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "Solar Series 5964SS (w/Caterpillar 3406E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "SOLAR SERIES 5964SS (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A1175C",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A1175CF",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-15-3551",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Alliance Parts",
+        "part_number": "ABP/N10G-AF1968",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Alliance Parts",
+        "part_number": "ABP/N10G-AF1968M",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2705",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2715",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA4585",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "94830",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "94883",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88830",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88883",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I-0415",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P153551",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "EAF5053",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "G112504",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "G112404",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "ECG112504",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P185053",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P537791",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF26328",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF1968M",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF1968",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-81968M",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GA3551",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF785",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "PA2715",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "HDA-153551",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "A-153551",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA1193",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF3551",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "C30800",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6830",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6883",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "70640N",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A74435",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Racor",
+        "part_number": "AFN0387",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "22005-5064",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "3946288",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "White",
+        "part_number": "22005-5064",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "White",
+        "part_number": "22-0055064",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46883",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46830",
+        "source_part_number": "CA3990",
+        "part_key": "001510104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

@@ -1,0 +1,3936 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH3567",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH3567",
+    "product_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 5.063,
+      "outer_diameter_mm": 128.6,
+      "height_in": 6.625,
+      "height_mm": 168.27,
+      "thread_size": "1 1/2-16",
+      "gasket_od_in": 5.016,
+      "gasket_od_mm": 127.41,
+      "gasket_id_in": 4.484,
+      "gasket_id_mm": 113.89,
+      "gasket_thickness_in": 0.359,
+      "gasket_thickness_mm": 9.12,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "4T-6788"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I-1627"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "9T-5664"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "8J-1600"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "342449"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "D5NN-F914-A"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "1046Z602"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25011184"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25012521"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AT44696"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "GG17032376"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AT58368"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "GG17032373"
+      },
+      {
+        "manufacturer": "Toro",
+        "part_number": "74-3570"
+      },
+      {
+        "manufacturer": "Toro",
+        "part_number": "80-76001"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2010"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF941"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2021"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT424"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT387-10"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT287-10"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FH-61"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1759"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "H40029"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51759"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "AG Chem",
+        "part_number": "708476"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92759"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85759"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85865"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "D80538"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "R25844"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "7738743"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "7513"
+      },
+      {
+        "manufacturer": "Delaware Manitou",
+        "part_number": "DMS511AN"
+      },
+      {
+        "manufacturer": "Ditch Witch",
+        "part_number": "155-954"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550590"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P165189"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P163068"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550388"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P165879"
+      },
+      {
+        "manufacturer": "Elgin Sweeper",
+        "part_number": "7071030"
+      },
+      {
+        "manufacturer": "Elgin Sweeper",
+        "part_number": "1030553"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "HF6163"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "HF6710"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "HF28792"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "HF6132"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "MK13077"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "HFR-86163"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "HFR-86027"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "HFR-86067"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "HFR-86710"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GP135"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GP135M"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "HF903"
+      },
+      {
+        "manufacturer": "Hesston",
+        "part_number": "7738743"
+      },
+      {
+        "manufacturer": "Hycon",
+        "part_number": "MFE160-10/2"
+      },
+      {
+        "manufacturer": "Hydra-mac",
+        "part_number": "3401303"
+      },
+      {
+        "manufacturer": "Jacobsen",
+        "part_number": "59587916"
+      },
+      {
+        "manufacturer": "Jacobsen",
+        "part_number": "554891"
+      },
+      {
+        "manufacturer": "Koehring",
+        "part_number": "8320240"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L194"
+      },
+      {
+        "manufacturer": "Lenz",
+        "part_number": "CP12821056"
+      },
+      {
+        "manufacturer": "Lenz",
+        "part_number": "CP128255"
+      },
+      {
+        "manufacturer": "Lha",
+        "part_number": "SPE-50-10"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFH5068-10"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFH4955"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFH4951"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFH7355"
+      },
+      {
+        "manufacturer": "McNeilus",
+        "part_number": "MTM00436"
+      },
+      {
+        "manufacturer": "Morbark",
+        "part_number": "26838-641"
+      },
+      {
+        "manufacturer": "Owatonna",
+        "part_number": "170-32342"
+      },
+      {
+        "manufacturer": "Owatonna",
+        "part_number": "170-32375"
+      },
+      {
+        "manufacturer": "Pall",
+        "part_number": "HC9500SUJ4H"
+      },
+      {
+        "manufacturer": "Pall",
+        "part_number": "HC7500FDJ4H"
+      },
+      {
+        "manufacturer": "Pall",
+        "part_number": "HC9500SUJ4HY5"
+      },
+      {
+        "manufacturer": "Prince",
+        "part_number": "FB10"
+      },
+      {
+        "manufacturer": "Separation Technologies",
+        "part_number": "ST6710"
+      },
+      {
+        "manufacturer": "Universal",
+        "part_number": "902188"
+      },
+      {
+        "manufacturer": "Versatile",
+        "part_number": "V15801"
+      },
+      {
+        "manufacturer": "Zinga",
+        "part_number": "SE-10"
+      },
+      {
+        "manufacturer": "Zinga",
+        "part_number": "GCE-10"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "PH3567",
+    "source_part_key": "001509794",
+    "source_totals": {
+      "attributes": 40,
+      "applications": 278,
+      "cross_references": 81
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, PH3567, Hydraulic Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Hydraulic Spin-on Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "84"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Standard",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base Gasket",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Orange",
+        "recno": "89"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Fuel Type",
+        "value": "Hydraulic",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100422149",
+        "recno": "92"
+      },
+      {
+        "attribute": "Mounting Type",
+        "value": "Spin On",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Drain Plug Included",
+        "value": "No",
+        "recno": "93"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "94"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "95"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Hydraulic Filter",
+        "recno": "96"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "6.625",
+        "recno": "98"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "5.063",
+        "recno": "99"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "4.484",
+        "recno": "100"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "5.016",
+        "recno": "101"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.359",
+        "recno": "102"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Inch)",
+        "value": "1 1/2-16",
+        "recno": "103"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "104"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "105"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "106"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "2.4250",
+        "recno": "110"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "14.5500",
+        "recno": "111"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "7.2990",
+        "recno": "112"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "8.0000",
+        "recno": "113"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "5.3060",
+        "recno": "114"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "16.6250",
+        "recno": "115"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "5.3060",
+        "recno": "116"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "11.2500",
+        "recno": "117"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 2.425,
+        "case_weight_lb": 14.55,
+        "unit_height_in": 7.299,
+        "unit_length_in": 5.306,
+        "unit_width_in": 5.306,
+        "case_height_in": 8,
+        "case_length_in": 16.625,
+        "case_width_in": 11.25,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 29.1,
+        "estimated_case_dimensions": {
+          "length_in": 22.167,
+          "width_in": 16.875,
+          "height_in": 8,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 278,
+    "all_cross_references_observed": 81,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:09:15.481Z",
+  "discovered_from": "PH3567",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "ASPHALT PAVER BLAW KNOX",
+        "model": "PF115 w/John Deere 4219 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ASPHALT PAVER BLAW KNOX",
+        "model": "PF115 w/John Deere 4219 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ASPHALT PAVER BLAW KNOX",
+        "model": "PF120H w/John Deere 4276T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ASPHALT PAVER BLAW KNOX",
+        "model": "PF120H w/John Deere 4276T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1049 Hay Hauler w/Ford 361HD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1049 Hay Hauler w/Ford 361HD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1065 w/Ford 460 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1065 w/Ford 460 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1068 w/Ford V8-460 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1068 w/Ford V8-460 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1068 w/Perkins 6.354 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1068 w/Perkins 6.354 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1069 w/Ford V8-460 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1069 w/Ford V8-460 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1069 w/Perkins 6.354 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1069 w/Perkins 6.354 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1075 w/Ford V8-460 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1075 w/Ford V8-460 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1075 w/Perkins 6.354 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1075 w/Perkins 6.354 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1078 w/Ford 666H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1078 w/Ford 666H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1079 w/Ford 666H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1079 w/Ford 666H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1085 w/Ford 666H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1085 w/Ford 666H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "8500 w/Perkins 6.354 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "8500 w/Perkins 6.354 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "Super 1048",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "Super 1048",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "Super 1409",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "Super 1409",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE ALLIS-CHALMERS",
+        "model": "N7 w/A-1 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE ALLIS-CHALMERS",
+        "model": "N7 w/A-1 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "5260 Combine Cummins QSB 5.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "5260 Combine Cummins QSB 5.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "5260 Combine w/Cummins QSB 5.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "5260 Combine w/Cummins QSB 5.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "TR-75 w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "TR-75 w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "TR-75 w/Ford Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "TR-75 w/Ford Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "TR-85 w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "TR-85 w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "TR-86 w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "TR-86 w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "TR-86 w/Ford 678HT Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "TR-86 w/Ford 678HT Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "TR-87 w/Ford 678HTA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "TR-87 w/Ford 678HTA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "TR-95 w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "TR-95 w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "TR-96 w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "TR-96 w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "TR-96 w/Ford 678HTA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE NEW HOLLAND",
+        "model": "TR-96 w/Ford 678HTA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR INGERSOLL-RAND",
+        "model": "SP-56 w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Power Steering",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR INGERSOLL-RAND",
+        "model": "SP-56 w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR INGERSOLL-RAND",
+        "model": "SP-56 w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR INGERSOLL-RAND",
+        "model": "SP-56 w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Power Steering Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER BOARDMAN",
+        "model": "905LD",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER BOARDMAN",
+        "model": "905LD",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER MACK",
+        "model": "FDM700",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER MACK",
+        "model": "FDM700",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER MCNEILUS",
+        "model": "MIXERS",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER MCNEILUS",
+        "model": "MIXERS",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER SAVAGE",
+        "model": "Dynamix Series w/Cummins L10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER SAVAGE",
+        "model": "Dynamix Series w/Cummins L10 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER T.L. SMITH",
+        "model": "11 Yard Mixer",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER T.L. SMITH",
+        "model": "11 Yard Mixer",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT RAYGO",
+        "model": "Roadster 120 w/Deutz F2L511 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT RAYGO",
+        "model": "Roadster 120 w/Deutz F2L511 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D6H Series II w/Caterpillar 3306 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D6H Series II w/Caterpillar 3306 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D6H, D6HXL, D6HXR w/Caterpillar 3306 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D6H, D6HXL, D6HXR w/Caterpillar 3306 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D6R LGP",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D6R LGP",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D6R Series II & III w/Caterpillar C9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D6R Series II & III w/Caterpillar C9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D6R, D6R LGP, D6RXL, D6R XR, D6R XW w/Caterpillar 3306 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D6R, D6R LGP, D6RXL, D6R XR, D6R XW w/Caterpillar 3306 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D7H, D7H LGP, D7H LGP Series II",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D7H, D7H LGP, D7H LGP Series II",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D7R, D7R LGP, D7RXL w/Caterpillar 3306 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D7R, D7R LGP, D7RXL w/Caterpillar 3306 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D8N w/Caterpillar 3408 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D8N w/Caterpillar 3408 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "953C",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "953C",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "963C w/Caterpillar 3126B Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "963C w/Caterpillar 3126B Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "F4L1011",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "F4L1011",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "F4L2011",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DEUTZ",
+        "model": "F4L2011",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "215",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "215",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "215B",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "215B",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "215BSA",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "215BSA",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "215C",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "215C",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "215D",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "215D",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "219",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "219",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "219D",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "219D",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "350",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "350",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "350L",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "350L",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "365BL",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "365BL",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "374D w/Caterpillar C15 15.2L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "374D w/Caterpillar C15 15.2L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "375",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "375",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "375L",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "375L",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "385B",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "385B",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "385BL",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "385BL",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "390D, 390DLC w/Caterpillar C18 ACERT 18.1L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "390D, 390DLC w/Caterpillar C18 ACERT 18.1L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "5080",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "5080",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "5090B",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "5090B",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "715 w/Allis-Chalmers 3500 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "715 w/Allis-Chalmers 3500 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "715 w/Allis-Chalmers 3500 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CHAMPION",
+        "model": "715 w/Allis-Chalmers 3500 MKII Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER TCI",
+        "model": "727 w/Deutz F2L511 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER TCI",
+        "model": "727 w/Deutz F2L511 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARVESTER CHISHOLM RYDER",
+        "model": "800 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARVESTER CHISHOLM RYDER",
+        "model": "800 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARVESTER UNI",
+        "model": "6200 Forage w/Cummins 5.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARVESTER UNI",
+        "model": "6200 Forage w/Cummins 5.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARVESTER UNI",
+        "model": "6200 Forage w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARVESTER UNI",
+        "model": "6200 Forage w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARVESTER UNI",
+        "model": "882 Husk-on w/Cummins 5.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARVESTER UNI",
+        "model": "882 Husk-on w/Cummins 5.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARVESTER UNI",
+        "model": "882 Husk-on w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARVESTER UNI",
+        "model": "882 Husk-on w/Cummins 8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYDRAULIC SYSTEM GRESEN",
+        "model": "Hydraulic filters",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYDRAULIC SYSTEM GRESEN",
+        "model": "Hydraulic filters",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXCEL",
+        "model": "2500 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXCEL",
+        "model": "2500 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXCEL",
+        "model": "251K/TS, 260K/TS w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXCEL",
+        "model": "251K/TS, 260K/TS w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXCEL",
+        "model": "272, 275, 285 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXCEL",
+        "model": "272, 275, 285 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXCEL",
+        "model": "295 Hustler w/Continental Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXCEL",
+        "model": "295 Hustler w/Continental Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXCEL",
+        "model": "305",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXCEL",
+        "model": "305",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXCEL",
+        "model": "4100 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXCEL",
+        "model": "4100 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXCEL",
+        "model": "602",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXCEL",
+        "model": "602",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOWMOTOR",
+        "model": "T100C",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOWMOTOR",
+        "model": "T100C",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOWMOTOR",
+        "model": "T120C",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK TOWMOTOR",
+        "model": "T120C",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MIXER RITE-A-WAY",
+        "model": "11 Yard Mixer w/Cummins VT903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MIXER RITE-A-WAY",
+        "model": "11 Yard Mixer w/Cummins VT903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "769D w/Caterpillar 3408E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "769D w/Caterpillar 3408E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "771D w/Caterpillar 3408E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "771D w/Caterpillar 3408E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "773D",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "773D",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "773D w/Caterpillar 3412E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "773D w/Caterpillar 3412E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "775E w/Caterpillar 3412E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "775E w/Caterpillar 3412E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "777D w/Caterpillar 3508 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "777D w/Caterpillar 3508 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "777D w/Caterpillar 3512B Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "777D w/Caterpillar 3512B Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "797",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "797",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "797B w/Caterpillar 3524B Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "797B w/Caterpillar 3524B Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "Wood Chuck w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "Wood Chuck w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "YJJL 30/30 w/Deutz F4L1011F Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "YJJL 30/30 w/Deutz F4L1011F Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "YJJL 30/30 w/Deutz F4L1011F Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "YJJL 30/30 w/Deutz F4L1011F Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "YJJL 30/30 w/Deutz F4L2011 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "YJJL 30/30 w/Deutz F4L2011 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "YJJL 30/30 w/Deutz F4L2011 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ORCHARD MACHINERY JACKRABBIT",
+        "model": "YJJL 30/30 w/Deutz F4L2011 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER CATERPILLAR",
+        "model": "572R SERIES II w/Caterpillar 3176C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER CATERPILLAR",
+        "model": "572R SERIES II w/Caterpillar 3176C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER CATERPILLAR",
+        "model": "572R w/Caterpillar 3306 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PIPELAYER CATERPILLAR",
+        "model": "572R w/Caterpillar 3306 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL INGERSOLL-RAND",
+        "model": "DA40 w/Detroit Diesel 3-71 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL INGERSOLL-RAND",
+        "model": "DA40 w/Detroit Diesel 3-71 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL INGERSOLL-RAND",
+        "model": "SPF48B w/Detroit Diesel 3-53 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL INGERSOLL-RAND",
+        "model": "SPF48B w/Detroit Diesel 3-53 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL INGERSOLL-RAND",
+        "model": "SPF48B w/Detroit Diesel 3-53 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROLLER INDUSTRIAL INGERSOLL-RAND",
+        "model": "SPF48B w/Detroit Diesel 3-53 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER JOHN DEERE",
+        "model": "125 w/A-1 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER JOHN DEERE",
+        "model": "125 w/A-1 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER JOHN DEERE",
+        "model": "125 w/Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER JOHN DEERE",
+        "model": "125 w/Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER JOHN DEERE",
+        "model": "90 w/Onan 23 HP Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER JOHN DEERE",
+        "model": "90 w/Onan 23 HP Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L225 w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L225 w/Wisconsin TJD Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L-778 w/Ford 192 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L-778 w/Ford 192 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L-778 w/Ford 192 Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L-778 w/Ford 192 Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS HAGIE",
+        "model": "470 w/Perkins 4.154 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS HAGIE",
+        "model": "470 w/Perkins 4.154 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS HAGIE",
+        "model": "472 w/Ford Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS HAGIE",
+        "model": "472 w/Ford Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS HAGIE",
+        "model": "473 w/Chrysler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS HAGIE",
+        "model": "473 w/Chrysler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS HAGIE",
+        "model": "8400 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS HAGIE",
+        "model": "8400 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS CASE INTERNATIONAL",
+        "model": "8820 w/Cummins 4B3.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS CASE INTERNATIONAL",
+        "model": "8820 w/Cummins 4B3.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS CASE INTERNATIONAL",
+        "model": "8830 w/Cummins 4B3.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS CASE INTERNATIONAL",
+        "model": "8830 w/Cummins 4B3.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS CASE INTERNATIONAL",
+        "model": "8850 w/Cummins 5.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS CASE INTERNATIONAL",
+        "model": "8850 w/Cummins 5.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS CHALLENGER",
+        "model": "SP185B Windrower w/Cummins QSB 5.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS CHALLENGER",
+        "model": "SP185B Windrower w/Cummins QSB 5.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS HESSTON",
+        "model": "8100 w/A-1 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS HESSTON",
+        "model": "8100 w/A-1 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS HESSTON",
+        "model": "8100 w/Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS HESSTON",
+        "model": "8100 w/Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS HESSTON",
+        "model": "8200 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS HESSTON",
+        "model": "8200 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS HESSTON",
+        "model": "8200 w/Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS HESSTON",
+        "model": "8200 w/Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS HESSTON",
+        "model": "8200 w/Iveco Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS HESSTON",
+        "model": "8200 w/Iveco Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS HESSTON",
+        "model": "8400 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS HESSTON",
+        "model": "8400 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS HESSTON",
+        "model": "8400 w/Iveco Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS HESSTON",
+        "model": "8400 w/Iveco Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS HESSTON",
+        "model": "9260 Windrower w/Cummins QSB 5.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS HESSTON",
+        "model": "9260 Windrower w/Cummins QSB 5.9L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS NEW HOLLAND",
+        "model": "1048 w/Ford Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS NEW HOLLAND",
+        "model": "1048 w/Ford Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWEEPER INDUSTRIAL ELGIN SWEEPER",
+        "model": "Pelican Series SE w/John Deere 4039T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWEEPER INDUSTRIAL ELGIN SWEEPER",
+        "model": "Pelican Series SE w/John Deere 4039T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9190 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "9190 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "8630",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "8630",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "TW10",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "TW10",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "TW15",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "TW15",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "TW20",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "TW20",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "TW25",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "TW25",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "TW5",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "TW5",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Panther III w/Caterpillar 3406 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Panther III w/Caterpillar 3406 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Tiger III ST450, Tiger III ST470 w/Cummins KTA1150C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Tiger III ST450, Tiger III ST470 w/Cummins KTA1150C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "357 (w/Caterpillar C9 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "357 (w/Caterpillar C9 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CASE",
+        "model": "W11B",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CASE",
+        "model": "W11B",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2010",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF941",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2021",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "AG Chem",
+        "part_number": "708476",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT424",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT387-10",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT287-10",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92759",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85759",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85865",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "D80538",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "R25844",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "7738743",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "4T-6788",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I-1627",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "9T-5664",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "8J-1600",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "342449",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "7513",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Delaware Manitou",
+        "part_number": "DMS511AN",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Ditch Witch",
+        "part_number": "155-954",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550590",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P165189",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P163068",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550388",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P165879",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Elgin Sweeper",
+        "part_number": "7071030",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Elgin Sweeper",
+        "part_number": "1030553",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "HF6163",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "HF6710",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "HF28792",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "HF6132",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "MK13077",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "HFR-86163",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "HFR-86027",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "HFR-86067",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "HFR-86710",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "D5NN-F914-A",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "1046Z602",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25011184",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25012521",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GP135",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GP135M",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "HF903",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Hesston",
+        "part_number": "7738743",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Hycon",
+        "part_number": "MFE160-10/2",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Hydra-mac",
+        "part_number": "3401303",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Jacobsen",
+        "part_number": "59587916",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Jacobsen",
+        "part_number": "554891",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AT44696",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "GG17032376",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AT58368",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "GG17032373",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Koehring",
+        "part_number": "8320240",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L194",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Lenz",
+        "part_number": "CP12821056",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Lenz",
+        "part_number": "CP128255",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Lha",
+        "part_number": "SPE-50-10",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFH5068-10",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFH4955",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFH4951",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFH7355",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "McNeilus",
+        "part_number": "MTM00436",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Morbark",
+        "part_number": "26838-641",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FH-61",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1759",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Owatonna",
+        "part_number": "170-32342",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Owatonna",
+        "part_number": "170-32375",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Pall",
+        "part_number": "HC9500SUJ4H",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Pall",
+        "part_number": "HC7500FDJ4H",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Pall",
+        "part_number": "HC9500SUJ4HY5",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Prince",
+        "part_number": "FB10",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "H40029",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Separation Technologies",
+        "part_number": "ST6710",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Toro",
+        "part_number": "74-3570",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Toro",
+        "part_number": "80-76001",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Universal",
+        "part_number": "902188",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Versatile",
+        "part_number": "V15801",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51759",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Zinga",
+        "part_number": "SE-10",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      },
+      {
+        "manufacturer": "Zinga",
+        "part_number": "GCE-10",
+        "source_part_number": "PH3567",
+        "part_key": "001509794",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Power Steering Filter, Hydraulic Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

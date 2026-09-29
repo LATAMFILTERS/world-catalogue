@@ -1,0 +1,20 @@
+{
+  "generated_at": "2026-09-14T03:48:00.000Z",
+  "harvested": 1,
+  "counts": {"REAL_GAP_CREATE_SAFE": 1},
+  "by_family": {"LUBE": {"REAL_GAP_CREATE_SAFE": 1}},
+  "existing_covered": 0,
+  "variants": 0,
+  "create_safe": 1,
+  "quarantine": 0,
+  "safe_candidates": [
+    {
+      "family": "LUBE",
+      "authority": "PH2821A",
+      "sku": "EL3276139",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\PH2821A.json"
+    }
+  ],
+  "results": []
+}

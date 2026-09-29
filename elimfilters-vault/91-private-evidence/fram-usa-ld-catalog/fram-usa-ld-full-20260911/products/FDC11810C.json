@@ -1,0 +1,844 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "FDC11810C",
+    "line": "DRIVE"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "FDC11810C",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.18,
+      "height_mm": 29.97,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Drive Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [
+      "CF11810",
+      "CV11810"
+    ],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10106"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-269"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "507632"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1919P"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68267921AA"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68212070AA"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68347555AA"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68338536AA"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68350346AA"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68350351AA"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "68212070AA"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1633"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF1014"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1919P"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4075HP"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4075"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "230106"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "23016"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1919P"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF90168M"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF90168P"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "25-23",
+        "make": "DODGE",
+        "model": "HORNET",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-24",
+        "make": "DODGE",
+        "model": "HORNET",
+        "engine": "L4-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "25-23",
+        "make": "DODGE",
+        "model": "HORNET",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-14",
+        "make": "FIAT",
+        "model": "500L",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-14",
+        "make": "FIAT",
+        "model": "500L",
+        "engine": "L4-1.4L",
+        "quantity": 1
+      },
+      {
+        "year": "23-16",
+        "make": "FIAT",
+        "model": "500X",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-19",
+        "make": "FIAT",
+        "model": "500X",
+        "engine": "L4-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "18-16",
+        "make": "FIAT",
+        "model": "500X",
+        "engine": "L4-1.4L",
+        "quantity": 1
+      },
+      {
+        "year": "18-16",
+        "make": "FIAT",
+        "model": "500X",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "26-17",
+        "make": "JEEP",
+        "model": "COMPASS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "JEEP",
+        "model": "COMPASS",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-17",
+        "make": "JEEP",
+        "model": "COMPASS",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "23-15",
+        "make": "JEEP",
+        "model": "RENEGADE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-19",
+        "make": "JEEP",
+        "model": "RENEGADE",
+        "engine": "L4-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "18-15",
+        "make": "JEEP",
+        "model": "RENEGADE",
+        "engine": "L4-1.4L",
+        "quantity": 1
+      },
+      {
+        "year": "20-15",
+        "make": "JEEP",
+        "model": "RENEGADE",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "FDC11810C",
+    "source_part_key": "010740362",
+    "source_totals": {
+      "attributes": 30,
+      "applications": 19,
+      "cross_references": 23
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Drive™cabin air filters prevent harmful airborne particles from entering your vehicle’s cabin. It is engineered to filter the air before it gets to you, removing dust, pollen, and other pollutants. Replacing a dirty cabin air filter with a new FRAM Drive cabin air filter can optimize clean air flow and maintain peak HVAC system performance. FRAM recommends changing your cabin air filter every 12 months.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Removes dust, pollen, and other pollutants",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, FDC11810C, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Up to 12 months or 12,000 mile (19,000 kilometer) protection",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Optimizes airflow and maintains HVAC performance",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Drive Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.18",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "8.62",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "7.76",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "10",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Behind Glove Box",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100578549",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.4330",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.2990",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "9.0600",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.7300",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "8.0700",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "10.4900",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.3800",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "9.9900",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.433,
+        "case_weight_lb": 1.299,
+        "unit_height_in": 9.06,
+        "unit_length_in": 8.07,
+        "unit_width_in": 1.38,
+        "case_height_in": 4.73,
+        "case_length_in": 10.49,
+        "case_width_in": 9.99,
+        "inferred_case_qty": 3
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 5.196,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 19,
+    "all_cross_references_observed": 23,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T06:00:45.779Z",
+  "discovered_from": "FDC11810C",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "ALFA ROMEO",
+        "model": "TONALE",
+        "year": "26-24",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ALFA ROMEO",
+        "model": "TONALE",
+        "year": "26-24",
+        "engine": "L4-1.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ALFA ROMEO",
+        "model": "TONALE",
+        "year": "26-24",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "HORNET",
+        "year": "25-23",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "HORNET",
+        "year": "25-24",
+        "engine": "L4-1.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "HORNET",
+        "year": "25-23",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FIAT",
+        "model": "500L",
+        "year": "20-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FIAT",
+        "model": "500L",
+        "year": "20-14",
+        "engine": "L4-1.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FIAT",
+        "model": "500X",
+        "year": "23-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FIAT",
+        "model": "500X",
+        "year": "23-19",
+        "engine": "L4-1.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FIAT",
+        "model": "500X",
+        "year": "18-16",
+        "engine": "L4-1.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FIAT",
+        "model": "500X",
+        "year": "18-16",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JEEP",
+        "model": "COMPASS",
+        "year": "26-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JEEP",
+        "model": "COMPASS",
+        "year": "26-23",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JEEP",
+        "model": "COMPASS",
+        "year": "22-17",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JEEP",
+        "model": "RENEGADE",
+        "year": "23-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JEEP",
+        "model": "RENEGADE",
+        "year": "23-19",
+        "engine": "L4-1.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JEEP",
+        "model": "RENEGADE",
+        "year": "18-15",
+        "engine": "L4-1.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JEEP",
+        "model": "RENEGADE",
+        "year": "20-15",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-269",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "507632",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1919P",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68267921AA",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68212070AA",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68347555AA",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68338536AA",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68350346AA",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68350351AA",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "68212070AA",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FRAM Fresh Breeze",
+        "part_number": "CF11810",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FRAM TrueAir",
+        "part_number": "CV11810",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1633",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF1014",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1919P",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4075HP",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4075",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "230106",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "23016",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1919P",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF90168M",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF90168P",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10106",
+        "source_part_number": "FDC11810C",
+        "part_key": "010740362",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

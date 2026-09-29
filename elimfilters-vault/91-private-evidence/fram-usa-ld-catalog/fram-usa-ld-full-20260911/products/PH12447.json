@@ -1,0 +1,1153 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH12447",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH12447",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 2.94,
+      "outer_diameter_mm": 74.68,
+      "height_in": 3.11,
+      "height_mm": 78.99,
+      "thread_size": "1-16",
+      "gasket_od_in": 2.78,
+      "gasket_od_mm": 70.61,
+      "gasket_id_in": 2.33,
+      "gasket_id_mm": 59.18,
+      "gasket_thickness_in": 0.45,
+      "gasket_thickness_mm": 11.43,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "Yes",
+      "bypass_relief_valve": "Yes",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [
+      "TG12447",
+      "XG12447"
+    ],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "General Motors",
+        "part_number": "55495105"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "12727115"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF66"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L11424"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WL10351"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "95146"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "PH10066"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "HP-1021"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH10066"
+      },
+      {
+        "manufacturer": "MicroGard Select",
+        "part_number": "MSL10290"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "M9510SP"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "PH10066"
+      },
+      {
+        "manufacturer": "Motomaster OE Plus",
+        "part_number": "MOPH12447"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "100351"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "WL610351"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PG99495"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "OF1424"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S45008XL"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S45008"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-202"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WPH10066"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "WPH10066"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "26-25",
+        "make": "BUICK",
+        "model": "ENCLAVE",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "BUICK",
+        "model": "ENCORE GX",
+        "engine": "L3-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "BUICK",
+        "model": "ENVISION",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CADILLAC",
+        "model": "CT4",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CADILLAC",
+        "model": "CT4",
+        "engine": "L4-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CADILLAC",
+        "model": "CT5",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2019",
+        "make": "CADILLAC",
+        "model": "CT6",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "24-21",
+        "make": "CADILLAC",
+        "model": "ESCALADE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "24-21",
+        "make": "CADILLAC",
+        "model": "ESCALADE ESV",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "CADILLAC",
+        "model": "XT4",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CADILLAC",
+        "model": "XT5",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-21",
+        "make": "CADILLAC",
+        "model": "XT6",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CHEVROLET",
+        "model": "BLAZER",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "CHEVROLET",
+        "model": "COLORADO",
+        "engine": "L4-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "26-19",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "engine": "L4-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2022",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 LTD",
+        "engine": "L4-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "2022",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 LTD",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "CHEVROLET",
+        "model": "SUBURBAN",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "CHEVROLET",
+        "model": "TRAILBLAZER",
+        "engine": "L3-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "CHEVROLET",
+        "model": "TRAVERSE",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "23-20",
+        "make": "GMC",
+        "model": "ACADIA",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "GMC",
+        "model": "ACADIA",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "GMC",
+        "model": "CANYON",
+        "engine": "L4-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "26-19",
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "engine": "L4-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2022",
+        "make": "GMC",
+        "model": "SIERRA 1500 LIMITED",
+        "engine": "L4-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "2022",
+        "make": "GMC",
+        "model": "SIERRA 1500 LIMITED",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "GMC",
+        "model": "YUKON",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "GMC",
+        "model": "YUKON XL",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "PH12447",
+    "source_part_key": "009404142",
+    "source_totals": {
+      "attributes": 45,
+      "applications": 31,
+      "cross_references": 24
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® oil filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE (original equipment) recommended intervals. Equipped with SureGrip® technology, FRAM Extra Guard® oil filters provide a non-slip surface allowing for easy install and removal.\\nThe silicone anti-drain back valve ensures safe engine startups, extending the life of the oil filter for up to 10,000 miles (16,000 kilometers).",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filter media is a blend of fiber and resin that captures 95%?of the dirt particles",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, PH12447, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "The perfect balance of dirt-trapping efficiency and dirt-holding capacity",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Proven protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Spin-on Oil Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Engineered for use with synthetic or conventional motor oils",
+        "recno": "4"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "Yes",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "Yes",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "Yes",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "85"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Standard",
+        "recno": "86"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "88"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base",
+        "recno": "89"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Orange",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100576286",
+        "recno": "92"
+      },
+      {
+        "attribute": "Attachment Type",
+        "value": "Spin-On",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "94"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "95"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "3.11",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "2.94",
+        "recno": "97"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "98"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "2.33",
+        "recno": "99"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "2.78",
+        "recno": "100"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.45",
+        "recno": "101"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Inch)",
+        "value": "1-16",
+        "recno": "102"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "103"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "104"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "105"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "106"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.5330",
+        "recno": "110"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "3.1980",
+        "recno": "111"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "3.3100",
+        "recno": "112"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "3.6100",
+        "recno": "113"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.1200",
+        "recno": "114"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "10.0400",
+        "recno": "115"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.1200",
+        "recno": "116"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "6.6100",
+        "recno": "117"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.533,
+        "case_weight_lb": 3.198,
+        "unit_height_in": 3.31,
+        "unit_length_in": 3.12,
+        "unit_width_in": 3.12,
+        "case_height_in": 3.61,
+        "case_length_in": 10.04,
+        "case_width_in": 6.61,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 6.396,
+        "estimated_case_dimensions": {
+          "length_in": 13.387,
+          "width_in": 9.915,
+          "height_in": 3.61,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 31,
+    "all_cross_references_observed": 24,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:16:35.458Z",
+  "discovered_from": "PH12447",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BUICK",
+        "model": "ENCLAVE",
+        "year": "26-25",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "ENCORE GX",
+        "year": "26-20",
+        "engine": "L3-1.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "ENVISION",
+        "year": "26-21",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CT4",
+        "year": "26-20",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CT4",
+        "year": "26-20",
+        "engine": "L4-2.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CT5",
+        "year": "26-20",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CT6",
+        "year": "2019",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE",
+        "year": "24-21",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE ESV",
+        "year": "24-21",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "XT4",
+        "year": "25-19",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "XT5",
+        "year": "26-20",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "XT6",
+        "year": "25-21",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "BLAZER",
+        "year": "26-20",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "COLORADO",
+        "year": "26-23",
+        "engine": "L4-2.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "year": "26-19",
+        "engine": "L4-2.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "year": "26-20",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 LTD",
+        "year": "2022",
+        "engine": "L4-2.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 LTD",
+        "year": "2022",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SUBURBAN",
+        "year": "26-21",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "year": "26-21",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TRAILBLAZER",
+        "year": "26-21",
+        "engine": "L3-1.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TRAVERSE",
+        "year": "26-24",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "ACADIA",
+        "year": "23-20",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "ACADIA",
+        "year": "26-24",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "CANYON",
+        "year": "26-23",
+        "engine": "L4-2.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "year": "26-19",
+        "engine": "L4-2.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "year": "26-20",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500 LIMITED",
+        "year": "2022",
+        "engine": "L4-2.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500 LIMITED",
+        "year": "2022",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON",
+        "year": "26-21",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON XL",
+        "year": "26-21",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF66",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "95146",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "PH10066",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Tough Guard",
+        "part_number": "TG12447",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Ultra Synthetic",
+        "part_number": "XG12447",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "55495105",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "12727115",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "HP-1021",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH10066",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MicroGard Select",
+        "part_number": "MSL10290",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "M9510SP",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "PH10066",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Motomaster OE Plus",
+        "part_number": "MOPH12447",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "100351",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "WL610351",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PG99495",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L11424",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "OF1424",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S45008XL",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S45008",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-202",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WPH10066",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "WPH10066",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WL10351",
+        "source_part_number": "PH12447",
+        "part_key": "009404142",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

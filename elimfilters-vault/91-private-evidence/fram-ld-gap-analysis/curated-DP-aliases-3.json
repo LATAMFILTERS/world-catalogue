@@ -1,0 +1,34 @@
+{
+  "generated_at": "2026-09-13T18:00:00.000Z",
+  "harvested": 3,
+  "counts": {"REAL_GAP_CREATE_SAFE": 3},
+  "by_family": {"FUEL": {"REAL_GAP_CREATE_SAFE": 3}},
+  "existing_covered": 0,
+  "variants": 3,
+  "create_safe": 3,
+  "quarantine": 0,
+  "safe_candidates": [
+    {
+      "family": "FUEL",
+      "authority": "G3499",
+      "sku": "EF33499",
+      "variants": ["G3499DP"],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\G3499.json"
+    },
+    {
+      "family": "FUEL",
+      "authority": "G4143",
+      "sku": "EF34143",
+      "variants": ["G4143DP"],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\G4143.json"
+    },
+    {
+      "family": "FUEL",
+      "authority": "G5237",
+      "sku": "EF35237",
+      "variants": ["G5237DP"],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\G5237.json"
+    }
+  ],
+  "results": []
+}

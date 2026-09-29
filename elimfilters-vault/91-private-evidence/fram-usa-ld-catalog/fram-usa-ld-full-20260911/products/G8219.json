@@ -1,0 +1,1034 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "FUEL",
+  "authority": {
+    "part_number": "G8219",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "G8219",
+    "product_type": "Fuel Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 2.203,
+      "outer_diameter_mm": 55.96,
+      "height_in": 5.39,
+      "height_mm": 136.91,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "In Line",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25164003"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25168594"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF847"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF645"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF644"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "G259"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF7808"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF7658"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "MF 1007"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3623"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3579"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F55215"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33579MP"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33623"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33579"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86579"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86623"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G6847"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G645"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "FF511"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "FF4511"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550508"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "FF5662"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "F55215"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF347"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF308"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "G8219"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "8-25168-594-0"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G645"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "23623"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "23579"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "73579"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "G645"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PF8219"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "F55215"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "52085"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "F55215"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G645"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "05-97",
+        "make": "CHEVROLET",
+        "model": "BLAZER",
+        "engine": "V6-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "00-97",
+        "make": "CHEVROLET",
+        "model": "S10",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "04-97",
+        "make": "CHEVROLET",
+        "model": "S10",
+        "engine": "V6-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "04-02",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "05-04",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "04-02",
+        "make": "CHEVROLET",
+        "model": "SUBURBAN 1500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "04-02",
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "05-97",
+        "make": "GMC",
+        "model": "JIMMY",
+        "engine": "V6-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "04-02",
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "00-97",
+        "make": "GMC",
+        "model": "SONOMA",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "04-97",
+        "make": "GMC",
+        "model": "SONOMA",
+        "engine": "V6-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "04-02",
+        "make": "GMC",
+        "model": "YUKON",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "04-02",
+        "make": "GMC",
+        "model": "YUKON XL 1500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "00-97",
+        "make": "ISUZU",
+        "model": "HOMBRE",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "00-97",
+        "make": "ISUZU",
+        "model": "HOMBRE",
+        "engine": "V6-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "01-97",
+        "make": "OLDSMOBILE",
+        "model": "BRAVADA",
+        "engine": "V6-4.3L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "G8219",
+    "source_part_key": "000991254",
+    "source_totals": {
+      "attributes": 29,
+      "applications": 16,
+      "cross_references": 38
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, G8219, Fuel Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "In-Line Fuel Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "In Line",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Metal",
+        "recno": "82"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Quick Connect",
+        "recno": "83"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "84"
+      },
+      {
+        "attribute": "Fuel Type",
+        "value": "Gasoline",
+        "recno": "85"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "86"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Fuel Filter",
+        "recno": "87"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "5.390",
+        "recno": "89"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "2.203",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Housing Material",
+        "value": "Metal",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100005908",
+        "recno": "92"
+      },
+      {
+        "attribute": "Outlet Line Size (Inch)",
+        "value": "3/8",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Inlet Line Size (Millimeter)",
+        "value": "M16x1.5",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "94"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "95"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.4000",
+        "recno": "99"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "2.4000",
+        "recno": "100"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "5.7010",
+        "recno": "101"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "6.3230",
+        "recno": "102"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "2.8310",
+        "recno": "103"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "8.8320",
+        "recno": "104"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "2.8310",
+        "recno": "105"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "6.0370",
+        "recno": "106"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.4,
+        "case_weight_lb": 2.4,
+        "unit_height_in": 5.701,
+        "unit_length_in": 2.831,
+        "unit_width_in": 2.831,
+        "case_height_in": 6.323,
+        "case_length_in": 8.832,
+        "case_width_in": 6.037,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 4.8,
+        "estimated_case_dimensions": {
+          "length_in": 11.776,
+          "width_in": 9.056,
+          "height_in": 6.323,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 16,
+    "all_cross_references_observed": 38,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T06:04:08.634Z",
+  "discovered_from": "G8219",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "CHEVROLET",
+        "model": "BLAZER",
+        "year": "05-97",
+        "engine": "V6-4.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "S10",
+        "year": "00-97",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "S10",
+        "year": "04-97",
+        "engine": "V6-4.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "year": "04-02",
+        "engine": "V8-5.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500",
+        "year": "05-04",
+        "engine": "V8-5.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SUBURBAN 1500",
+        "year": "04-02",
+        "engine": "V8-5.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "year": "04-02",
+        "engine": "V8-5.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "JIMMY",
+        "year": "05-97",
+        "engine": "V6-4.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "year": "04-02",
+        "engine": "V8-5.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SONOMA",
+        "year": "00-97",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SONOMA",
+        "year": "04-97",
+        "engine": "V6-4.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON",
+        "year": "04-02",
+        "engine": "V8-5.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON XL 1500",
+        "year": "04-02",
+        "engine": "V8-5.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "HOMBRE",
+        "year": "00-97",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "HOMBRE",
+        "year": "00-97",
+        "engine": "V6-4.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "BRAVADA",
+        "year": "01-97",
+        "engine": "V6-4.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF847",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF645",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF644",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "G259",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF7808",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF7658",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86579",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86623",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G6847",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G645",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "FF511",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "FF4511",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550508",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "FF5662",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25164003",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25168594",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "F55215",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF347",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF308",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "G8219",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "8-25168-594-0",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G645",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "MF 1007",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3623",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3579",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "23623",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "23579",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "73579",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "G645",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PF8219",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F55215",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "F55215",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "52085",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "F55215",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G645",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33579MP",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33623",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33579",
+        "source_part_number": "G8219",
+        "part_key": "000991254",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

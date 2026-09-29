@@ -1,0 +1,4733 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "FUEL",
+  "authority": {
+    "part_number": "G3499",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "G3499",
+    "product_type": "Fuel Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 1.938,
+      "outer_diameter_mm": 49.23,
+      "height_in": 3.875,
+      "height_mm": 98.42,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "In Line",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF480"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF865"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF865-K"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "GF12"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FG-797"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3054BP"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3054"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F20030"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33054"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Atlas",
+        "part_number": "FF-20"
+      },
+      {
+        "manufacturer": "Autopar - Archived",
+        "part_number": "FE197"
+      },
+      {
+        "manufacturer": "Autopar - Archived",
+        "part_number": "FE185"
+      },
+      {
+        "manufacturer": "Avatar",
+        "part_number": "FF-513"
+      },
+      {
+        "manufacturer": "Barad",
+        "part_number": "GFC-607"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "95054"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86054"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CG3499"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "G474"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G474"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4041540"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4049224"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "3879782"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "387054"
+      },
+      {
+        "manufacturer": "Delphi",
+        "part_number": "FF1001"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "FF421"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550474"
+      },
+      {
+        "manufacturer": "Dynalife",
+        "part_number": "CNG-3499"
+      },
+      {
+        "manufacturer": "Filko",
+        "part_number": "FF-52"
+      },
+      {
+        "manufacturer": "Flag",
+        "part_number": "F-3499"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "FF239"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "FF5669"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "FFR-8239"
+      },
+      {
+        "manufacturer": "Goodyear",
+        "part_number": "222-4659"
+      },
+      {
+        "manufacturer": "Goodyear",
+        "part_number": "G3499"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "G474"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "F20030"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF84"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "G3499"
+      },
+      {
+        "manufacturer": "ITM",
+        "part_number": "11-37602"
+      },
+      {
+        "manufacturer": "KEM",
+        "part_number": "GF531"
+      },
+      {
+        "manufacturer": "Kendall",
+        "part_number": "KG9"
+      },
+      {
+        "manufacturer": "Lee",
+        "part_number": "LG-474"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G474"
+      },
+      {
+        "manufacturer": "Master Parts",
+        "part_number": "G-474"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "L-610"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "PF30"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "L-613"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "L-609"
+      },
+      {
+        "manufacturer": "Niehoff",
+        "part_number": "FS-312"
+      },
+      {
+        "manufacturer": "Parr",
+        "part_number": "4735"
+      },
+      {
+        "manufacturer": "Pro-Tec",
+        "part_number": "508"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "QSG3499"
+      },
+      {
+        "manufacturer": "Rockhill",
+        "part_number": "63054"
+      },
+      {
+        "manufacturer": "Sears",
+        "part_number": "45157"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "F20030"
+      },
+      {
+        "manufacturer": "Sunoco",
+        "part_number": "G-12"
+      },
+      {
+        "manufacturer": "Trust",
+        "part_number": "G474"
+      },
+      {
+        "manufacturer": "Unocal 76",
+        "part_number": "UF482"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VG-13"
+      },
+      {
+        "manufacturer": "WALMI",
+        "part_number": "GFC-607"
+      },
+      {
+        "manufacturer": "WALMI",
+        "part_number": "WG-8"
+      },
+      {
+        "manufacturer": "WALMI",
+        "part_number": "WG-8M"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G474"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "83-80",
+        "make": "CHRYSLER",
+        "model": "CORDOBA",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "83-75",
+        "make": "CHRYSLER",
+        "model": "CORDOBA",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "CHRYSLER",
+        "model": "CORDOBA",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "CHRYSLER",
+        "model": "CORDOBA",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "1983",
+        "make": "CHRYSLER",
+        "model": "FIFTH AVENUE",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "89-83",
+        "make": "CHRYSLER",
+        "model": "FIFTH AVENUE",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1975",
+        "make": "CHRYSLER",
+        "model": "IMPERIAL",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "81-78",
+        "make": "CHRYSLER",
+        "model": "LEBARON",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "81-77",
+        "make": "CHRYSLER",
+        "model": "LEBARON",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "79-78",
+        "make": "CHRYSLER",
+        "model": "LEBARON",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "1982",
+        "make": "CHRYSLER",
+        "model": "NEW YORKER",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "82-79",
+        "make": "CHRYSLER",
+        "model": "NEW YORKER",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-77",
+        "make": "CHRYSLER",
+        "model": "NEW YORKER",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "CHRYSLER",
+        "model": "NEW YORKER",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "CHRYSLER",
+        "model": "NEW YORKER",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "81-79",
+        "make": "CHRYSLER",
+        "model": "NEWPORT",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "81-79",
+        "make": "CHRYSLER",
+        "model": "NEWPORT",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "CHRYSLER",
+        "model": "NEWPORT",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "CHRYSLER",
+        "model": "NEWPORT",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "CHRYSLER",
+        "model": "NEWPORT",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "81-78",
+        "make": "CHRYSLER",
+        "model": "TOWN & COUNTRY",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "81-78",
+        "make": "CHRYSLER",
+        "model": "TOWN & COUNTRY",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "79-78",
+        "make": "CHRYSLER",
+        "model": "TOWN & COUNTRY",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "77-75",
+        "make": "CHRYSLER",
+        "model": "TOWN & COUNTRY",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "77-75",
+        "make": "CHRYSLER",
+        "model": "TOWN & COUNTRY",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-76",
+        "make": "DODGE",
+        "model": "ASPEN",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "80-76",
+        "make": "DODGE",
+        "model": "ASPEN",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-76",
+        "make": "DODGE",
+        "model": "ASPEN",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "DODGE",
+        "model": "B100",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "DODGE",
+        "model": "B100",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "78-76",
+        "make": "DODGE",
+        "model": "B100",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "87-81",
+        "make": "DODGE",
+        "model": "B150",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "87-81",
+        "make": "DODGE",
+        "model": "B150",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "DODGE",
+        "model": "B200",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "DODGE",
+        "model": "B200",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "DODGE",
+        "model": "B200",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-76",
+        "make": "DODGE",
+        "model": "B200",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "DODGE",
+        "model": "B200",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "87-81",
+        "make": "DODGE",
+        "model": "B250",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "87-81",
+        "make": "DODGE",
+        "model": "B250",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1981",
+        "make": "DODGE",
+        "model": "B250",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "88-84",
+        "make": "DODGE",
+        "model": "B250",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "DODGE",
+        "model": "B300",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "DODGE",
+        "model": "B300",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "DODGE",
+        "model": "B300",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-76",
+        "make": "DODGE",
+        "model": "B300",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "DODGE",
+        "model": "B300",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "87-81",
+        "make": "DODGE",
+        "model": "B350",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "88-81",
+        "make": "DODGE",
+        "model": "B350",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "1975",
+        "make": "DODGE",
+        "model": "CB300",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "79-77",
+        "make": "DODGE",
+        "model": "CB300",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "DODGE",
+        "model": "CB300",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "DODGE",
+        "model": "CB300",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-76",
+        "make": "DODGE",
+        "model": "CB300",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "79-77",
+        "make": "DODGE",
+        "model": "CB300",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1986",
+        "make": "DODGE",
+        "model": "CHARGER",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1976",
+        "make": "DODGE",
+        "model": "CHARGER",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "DODGE",
+        "model": "CHARGER",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "DODGE",
+        "model": "CHARGER",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "DODGE",
+        "model": "CHARGER",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "76-75",
+        "make": "DODGE",
+        "model": "CORONET",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "76-75",
+        "make": "DODGE",
+        "model": "CORONET",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "76-75",
+        "make": "DODGE",
+        "model": "CORONET",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "76-75",
+        "make": "DODGE",
+        "model": "CORONET",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "76-75",
+        "make": "DODGE",
+        "model": "CORONET",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "79-75",
+        "make": "DODGE",
+        "model": "D100",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "87-84",
+        "make": "DODGE",
+        "model": "D100",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "79-75",
+        "make": "DODGE",
+        "model": "D100",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "87-84",
+        "make": "DODGE",
+        "model": "D100",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "79-75",
+        "make": "DODGE",
+        "model": "D100",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "88-84",
+        "make": "DODGE",
+        "model": "D100",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-76",
+        "make": "DODGE",
+        "model": "D100",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "DODGE",
+        "model": "D100",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "87-77",
+        "make": "DODGE",
+        "model": "D150",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "87-77",
+        "make": "DODGE",
+        "model": "D150",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "82-77",
+        "make": "DODGE",
+        "model": "D150",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "88-84",
+        "make": "DODGE",
+        "model": "D150",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-77",
+        "make": "DODGE",
+        "model": "D150",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "1978",
+        "make": "DODGE",
+        "model": "D150",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "DODGE",
+        "model": "D200",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "DODGE",
+        "model": "D200",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "DODGE",
+        "model": "D200",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "DODGE",
+        "model": "D200",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "DODGE",
+        "model": "D200",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "87-81",
+        "make": "DODGE",
+        "model": "D250",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "87-81",
+        "make": "DODGE",
+        "model": "D250",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "82-81",
+        "make": "DODGE",
+        "model": "D250",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "88-84",
+        "make": "DODGE",
+        "model": "D250",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "DODGE",
+        "model": "D300",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "DODGE",
+        "model": "D300",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "DODGE",
+        "model": "D300",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-76",
+        "make": "DODGE",
+        "model": "D300",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "DODGE",
+        "model": "D300",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "83-81",
+        "make": "DODGE",
+        "model": "D350",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "88-81",
+        "make": "DODGE",
+        "model": "D350",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "81-78",
+        "make": "DODGE",
+        "model": "D400",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "1978",
+        "make": "DODGE",
+        "model": "D400",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "81-78",
+        "make": "DODGE",
+        "model": "D450",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "1978",
+        "make": "DODGE",
+        "model": "D450",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1987",
+        "make": "DODGE",
+        "model": "DAKOTA",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "76-75",
+        "make": "DODGE",
+        "model": "DART",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "76-75",
+        "make": "DODGE",
+        "model": "DART",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "76-75",
+        "make": "DODGE",
+        "model": "DART",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "83-78",
+        "make": "DODGE",
+        "model": "DIPLOMAT",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "89-77",
+        "make": "DODGE",
+        "model": "DIPLOMAT",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "79-78",
+        "make": "DODGE",
+        "model": "DIPLOMAT",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "79-78",
+        "make": "DODGE",
+        "model": "MAGNUM",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "79-78",
+        "make": "DODGE",
+        "model": "MAGNUM",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "1978",
+        "make": "DODGE",
+        "model": "MAGNUM",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "83-80",
+        "make": "DODGE",
+        "model": "MIRADA",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "83-80",
+        "make": "DODGE",
+        "model": "MIRADA",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1980",
+        "make": "DODGE",
+        "model": "MIRADA",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-77",
+        "make": "DODGE",
+        "model": "MONACO",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "DODGE",
+        "model": "MONACO",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "DODGE",
+        "model": "MONACO",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "DODGE",
+        "model": "MONACO",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "DODGE",
+        "model": "MONACO",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1986",
+        "make": "DODGE",
+        "model": "OMNI",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "DODGE",
+        "model": "RAMCHARGER",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "87-75",
+        "make": "DODGE",
+        "model": "RAMCHARGER",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "81-75",
+        "make": "DODGE",
+        "model": "RAMCHARGER",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "88-84",
+        "make": "DODGE",
+        "model": "RAMCHARGER",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-77",
+        "make": "DODGE",
+        "model": "RAMCHARGER",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "DODGE",
+        "model": "RAMCHARGER",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-78",
+        "make": "DODGE",
+        "model": "RD200",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-78",
+        "make": "DODGE",
+        "model": "RD200",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "1975",
+        "make": "DODGE",
+        "model": "ROYAL MONACO",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1977",
+        "make": "DODGE",
+        "model": "ROYAL MONACO",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "77-75",
+        "make": "DODGE",
+        "model": "ROYAL MONACO",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "77-75",
+        "make": "DODGE",
+        "model": "ROYAL MONACO",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "77-75",
+        "make": "DODGE",
+        "model": "ROYAL MONACO",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "81-79",
+        "make": "DODGE",
+        "model": "ST. REGIS",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "81-79",
+        "make": "DODGE",
+        "model": "ST. REGIS",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-79",
+        "make": "DODGE",
+        "model": "ST. REGIS",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "77-75",
+        "make": "DODGE",
+        "model": "W100",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "87-84",
+        "make": "DODGE",
+        "model": "W100",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "77-75",
+        "make": "DODGE",
+        "model": "W100",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "87-84",
+        "make": "DODGE",
+        "model": "W100",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "77-75",
+        "make": "DODGE",
+        "model": "W100",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "88-84",
+        "make": "DODGE",
+        "model": "W100",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "77-75",
+        "make": "DODGE",
+        "model": "W100",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "77-75",
+        "make": "DODGE",
+        "model": "W100",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "87-78",
+        "make": "DODGE",
+        "model": "W150",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "87-77",
+        "make": "DODGE",
+        "model": "W150",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "81-77",
+        "make": "DODGE",
+        "model": "W150",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "88-84",
+        "make": "DODGE",
+        "model": "W150",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-77",
+        "make": "DODGE",
+        "model": "W150",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "1978",
+        "make": "DODGE",
+        "model": "W150",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "DODGE",
+        "model": "W200",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "DODGE",
+        "model": "W200",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "DODGE",
+        "model": "W200",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-76",
+        "make": "DODGE",
+        "model": "W200",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "DODGE",
+        "model": "W200",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "87-81",
+        "make": "DODGE",
+        "model": "W250",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "82-81",
+        "make": "DODGE",
+        "model": "W250",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "88-84",
+        "make": "DODGE",
+        "model": "W250",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "DODGE",
+        "model": "W300",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "1980",
+        "make": "DODGE",
+        "model": "W300",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "DODGE",
+        "model": "W300",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "DODGE",
+        "model": "W300",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-76",
+        "make": "DODGE",
+        "model": "W300",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "DODGE",
+        "model": "W300",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "83-82",
+        "make": "DODGE",
+        "model": "W350",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "88-81",
+        "make": "DODGE",
+        "model": "W350",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "83-80",
+        "make": "PLYMOUTH",
+        "model": "CARAVELLE",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "89-80",
+        "make": "PLYMOUTH",
+        "model": "CARAVELLE",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "76-75",
+        "make": "PLYMOUTH",
+        "model": "DUSTER",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "76-75",
+        "make": "PLYMOUTH",
+        "model": "DUSTER",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "76-75",
+        "make": "PLYMOUTH",
+        "model": "DUSTER",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "PLYMOUTH",
+        "model": "FURY",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "PLYMOUTH",
+        "model": "FURY",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "PLYMOUTH",
+        "model": "FURY",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-74",
+        "make": "PLYMOUTH",
+        "model": "FURY",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "1975",
+        "make": "PLYMOUTH",
+        "model": "FURY",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "78-77",
+        "make": "PLYMOUTH",
+        "model": "FURY",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1974",
+        "make": "PLYMOUTH",
+        "model": "FURY I",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "1974",
+        "make": "PLYMOUTH",
+        "model": "FURY II",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "1974",
+        "make": "PLYMOUTH",
+        "model": "FURY III",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "83-80",
+        "make": "PLYMOUTH",
+        "model": "GRAN FURY",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "77-75",
+        "make": "PLYMOUTH",
+        "model": "GRAN FURY",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "89-80",
+        "make": "PLYMOUTH",
+        "model": "GRAN FURY",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1980",
+        "make": "PLYMOUTH",
+        "model": "GRAN FURY",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "77-75",
+        "make": "PLYMOUTH",
+        "model": "GRAN FURY",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "77-75",
+        "make": "PLYMOUTH",
+        "model": "GRAN FURY",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "77-75",
+        "make": "PLYMOUTH",
+        "model": "GRAN FURY",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "PLYMOUTH",
+        "model": "PB100",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "PLYMOUTH",
+        "model": "PB100",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "78-76",
+        "make": "PLYMOUTH",
+        "model": "PB100",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "83-81",
+        "make": "PLYMOUTH",
+        "model": "PB150",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "1981",
+        "make": "PLYMOUTH",
+        "model": "PB150",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1983",
+        "make": "PLYMOUTH",
+        "model": "PB150",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1980",
+        "make": "PLYMOUTH",
+        "model": "PB200",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "PLYMOUTH",
+        "model": "PB200",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "PLYMOUTH",
+        "model": "PB200",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "PLYMOUTH",
+        "model": "PB200",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-76",
+        "make": "PLYMOUTH",
+        "model": "PB200",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "78-76",
+        "make": "PLYMOUTH",
+        "model": "PB200",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "83-81",
+        "make": "PLYMOUTH",
+        "model": "PB250",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "83-81",
+        "make": "PLYMOUTH",
+        "model": "PB250",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1981",
+        "make": "PLYMOUTH",
+        "model": "PB250",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "PLYMOUTH",
+        "model": "PB300",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "PLYMOUTH",
+        "model": "PB300",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-76",
+        "make": "PLYMOUTH",
+        "model": "PB300",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "78-76",
+        "make": "PLYMOUTH",
+        "model": "PB300",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "83-81",
+        "make": "PLYMOUTH",
+        "model": "PB350",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "83-81",
+        "make": "PLYMOUTH",
+        "model": "PB350",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "1975",
+        "make": "PLYMOUTH",
+        "model": "ROAD RUNNER",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "76-75",
+        "make": "PLYMOUTH",
+        "model": "SCAMP",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "76-75",
+        "make": "PLYMOUTH",
+        "model": "SCAMP",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-75",
+        "make": "PLYMOUTH",
+        "model": "TRAILDUSTER",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "81-75",
+        "make": "PLYMOUTH",
+        "model": "TRAILDUSTER",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "81-75",
+        "make": "PLYMOUTH",
+        "model": "TRAILDUSTER",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "78-77",
+        "make": "PLYMOUTH",
+        "model": "TRAILDUSTER",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "PLYMOUTH",
+        "model": "TRAILDUSTER",
+        "engine": "V8-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "86-84",
+        "make": "PLYMOUTH",
+        "model": "TURISMO",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1986",
+        "make": "PLYMOUTH",
+        "model": "TURISMO 2.2",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "76-75",
+        "make": "PLYMOUTH",
+        "model": "VALIANT",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "76-75",
+        "make": "PLYMOUTH",
+        "model": "VALIANT",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1976",
+        "make": "PLYMOUTH",
+        "model": "VALIANT",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      },
+      {
+        "year": "80-76",
+        "make": "PLYMOUTH",
+        "model": "VOLARE",
+        "engine": "L6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "80-76",
+        "make": "PLYMOUTH",
+        "model": "VOLARE",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "80-76",
+        "make": "PLYMOUTH",
+        "model": "VOLARE",
+        "engine": "V8-5.9L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "G3499",
+    "source_part_key": "000944279",
+    "source_totals": {
+      "attributes": 29,
+      "applications": 228,
+      "cross_references": 63
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, G3499, Fuel Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "In-Line Fuel Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "In Line",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Metal",
+        "recno": "82"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Tube Connector",
+        "recno": "83"
+      },
+      {
+        "attribute": "Fuel Type",
+        "value": "Gasoline",
+        "recno": "84"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "85"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Fuel Filter",
+        "recno": "86"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "3.875",
+        "recno": "88"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "1.938",
+        "recno": "89"
+      },
+      {
+        "attribute": "Housing Material",
+        "value": "Metal",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Inlet Line Size (Inch)",
+        "value": "5/16",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100350534",
+        "recno": "92"
+      },
+      {
+        "attribute": "Outlet Line Size (Inch)",
+        "value": "5/16",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Return Line Size (Inch)",
+        "value": "1/4",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "94"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "95"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.2250",
+        "recno": "99"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.3500",
+        "recno": "100"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "4.4500",
+        "recno": "101"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "5.0660",
+        "recno": "102"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "2.2450",
+        "recno": "103"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "7.1310",
+        "recno": "104"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "2.2450",
+        "recno": "105"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "4.8560",
+        "recno": "106"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.225,
+        "case_weight_lb": 1.35,
+        "unit_height_in": 4.45,
+        "unit_length_in": 2.245,
+        "unit_width_in": 2.245,
+        "case_height_in": 5.066,
+        "case_length_in": 7.131,
+        "case_width_in": 4.856,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 2.7,
+        "estimated_case_dimensions": {
+          "length_in": 9.508,
+          "width_in": 7.284,
+          "height_in": 5.066,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 228,
+    "all_cross_references_observed": 63,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:10:11.848Z",
+  "discovered_from": "G3499",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "CHRYSLER",
+        "model": "CORDOBA",
+        "year": "83-80",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "CORDOBA",
+        "year": "83-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "CORDOBA",
+        "year": "80-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "CORDOBA",
+        "year": "78-75",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "FIFTH AVENUE",
+        "year": "1983",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "FIFTH AVENUE",
+        "year": "89-83",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "IMPERIAL",
+        "year": "1975",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "LEBARON",
+        "year": "81-78",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "LEBARON",
+        "year": "81-77",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "LEBARON",
+        "year": "79-78",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "NEW YORKER",
+        "year": "1982",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "NEW YORKER",
+        "year": "82-79",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "NEW YORKER",
+        "year": "80-77",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "NEW YORKER",
+        "year": "78-75",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "NEW YORKER",
+        "year": "78-75",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "NEWPORT",
+        "year": "81-79",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "NEWPORT",
+        "year": "81-79",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "NEWPORT",
+        "year": "80-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "NEWPORT",
+        "year": "78-75",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "NEWPORT",
+        "year": "78-75",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "TOWN & COUNTRY",
+        "year": "81-78",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "TOWN & COUNTRY",
+        "year": "81-78",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "TOWN & COUNTRY",
+        "year": "79-78",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "TOWN & COUNTRY",
+        "year": "77-75",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "TOWN & COUNTRY",
+        "year": "77-75",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "ASPEN",
+        "year": "80-76",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "ASPEN",
+        "year": "80-76",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "ASPEN",
+        "year": "80-76",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "B100",
+        "year": "80-75",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "B100",
+        "year": "80-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "B100",
+        "year": "78-76",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "B150",
+        "year": "87-81",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "B150",
+        "year": "87-81",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "B200",
+        "year": "80-75",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "B200",
+        "year": "80-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "B200",
+        "year": "80-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "B200",
+        "year": "78-76",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "B200",
+        "year": "78-75",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "B250",
+        "year": "87-81",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "B250",
+        "year": "87-81",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "B250",
+        "year": "1981",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "B250",
+        "year": "88-84",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "B300",
+        "year": "80-75",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "B300",
+        "year": "80-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "B300",
+        "year": "80-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "B300",
+        "year": "78-76",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "B300",
+        "year": "78-75",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "B350",
+        "year": "87-81",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "B350",
+        "year": "88-81",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "CB300",
+        "year": "1975",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "CB300",
+        "year": "79-77",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "CB300",
+        "year": "80-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "CB300",
+        "year": "80-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "CB300",
+        "year": "78-76",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "CB300",
+        "year": "79-77",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "CHARGER",
+        "year": "1986",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "CHARGER",
+        "year": "1976",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "CHARGER",
+        "year": "78-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "CHARGER",
+        "year": "78-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "CHARGER",
+        "year": "78-75",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "CORONET",
+        "year": "76-75",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "CORONET",
+        "year": "76-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "CORONET",
+        "year": "76-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "CORONET",
+        "year": "76-75",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "CORONET",
+        "year": "76-75",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D100",
+        "year": "79-75",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D100",
+        "year": "87-84",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D100",
+        "year": "79-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D100",
+        "year": "87-84",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D100",
+        "year": "79-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D100",
+        "year": "88-84",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D100",
+        "year": "78-76",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D100",
+        "year": "78-75",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D150",
+        "year": "87-77",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D150",
+        "year": "87-77",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D150",
+        "year": "82-77",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D150",
+        "year": "88-84",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D150",
+        "year": "78-77",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D150",
+        "year": "1978",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D200",
+        "year": "80-75",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D200",
+        "year": "80-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D200",
+        "year": "80-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D200",
+        "year": "78-75",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D200",
+        "year": "78-75",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D250",
+        "year": "87-81",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D250",
+        "year": "87-81",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D250",
+        "year": "82-81",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D250",
+        "year": "88-84",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D300",
+        "year": "78-75",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D300",
+        "year": "80-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D300",
+        "year": "80-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D300",
+        "year": "78-76",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D300",
+        "year": "78-75",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D350",
+        "year": "83-81",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D350",
+        "year": "88-81",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D400",
+        "year": "81-78",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D400",
+        "year": "1978",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D450",
+        "year": "81-78",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "D450",
+        "year": "1978",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "DAKOTA",
+        "year": "1987",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "DART",
+        "year": "76-75",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "DART",
+        "year": "76-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "DART",
+        "year": "76-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "DIPLOMAT",
+        "year": "83-78",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "DIPLOMAT",
+        "year": "89-77",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "DIPLOMAT",
+        "year": "79-78",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "MAGNUM",
+        "year": "79-78",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "MAGNUM",
+        "year": "79-78",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "MAGNUM",
+        "year": "1978",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "MIRADA",
+        "year": "83-80",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "MIRADA",
+        "year": "83-80",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "MIRADA",
+        "year": "1980",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "MONACO",
+        "year": "78-77",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "MONACO",
+        "year": "78-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "MONACO",
+        "year": "78-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "MONACO",
+        "year": "78-75",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "MONACO",
+        "year": "78-75",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "OMNI",
+        "year": "1986",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "RAMCHARGER",
+        "year": "80-75",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "RAMCHARGER",
+        "year": "87-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "RAMCHARGER",
+        "year": "81-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "RAMCHARGER",
+        "year": "88-84",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "RAMCHARGER",
+        "year": "78-77",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "RAMCHARGER",
+        "year": "78-75",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "RD200",
+        "year": "80-78",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "RD200",
+        "year": "80-78",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "ROYAL MONACO",
+        "year": "1975",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "ROYAL MONACO",
+        "year": "1977",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "ROYAL MONACO",
+        "year": "77-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "ROYAL MONACO",
+        "year": "77-75",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "ROYAL MONACO",
+        "year": "77-75",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "ST. REGIS",
+        "year": "81-79",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "ST. REGIS",
+        "year": "81-79",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "ST. REGIS",
+        "year": "80-79",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W100",
+        "year": "77-75",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W100",
+        "year": "87-84",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W100",
+        "year": "77-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W100",
+        "year": "87-84",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W100",
+        "year": "77-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W100",
+        "year": "88-84",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W100",
+        "year": "77-75",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W100",
+        "year": "77-75",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W150",
+        "year": "87-78",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W150",
+        "year": "87-77",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W150",
+        "year": "81-77",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W150",
+        "year": "88-84",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W150",
+        "year": "78-77",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W150",
+        "year": "1978",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W200",
+        "year": "80-75",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W200",
+        "year": "80-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W200",
+        "year": "80-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W200",
+        "year": "78-76",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W200",
+        "year": "78-75",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W250",
+        "year": "87-81",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W250",
+        "year": "82-81",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W250",
+        "year": "88-84",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W300",
+        "year": "78-75",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W300",
+        "year": "1980",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W300",
+        "year": "78-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W300",
+        "year": "80-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W300",
+        "year": "78-76",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W300",
+        "year": "78-75",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W350",
+        "year": "83-82",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "W350",
+        "year": "88-81",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CHRYSLER",
+        "model": "V8-360 5.9L",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CHRYSLER",
+        "model": "V8-360 5.9L",
+        "year": "88-82",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CHRYSLER",
+        "model": "V8-360-1",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CHRYSLER",
+        "model": "V8-360-1",
+        "year": "88-82",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CHRYSLER",
+        "model": "V8-360-3",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CHRYSLER",
+        "model": "V8-360-3",
+        "year": "88-82",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "CARAVELLE",
+        "year": "83-80",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "CARAVELLE",
+        "year": "89-80",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "DUSTER",
+        "year": "76-75",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "DUSTER",
+        "year": "76-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "DUSTER",
+        "year": "76-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "FURY",
+        "year": "78-75",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "FURY",
+        "year": "78-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "FURY",
+        "year": "78-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "FURY",
+        "year": "78-74",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "FURY",
+        "year": "1975",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "FURY",
+        "year": "78-77",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "FURY I",
+        "year": "1974",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "FURY II",
+        "year": "1974",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "FURY III",
+        "year": "1974",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "GRAN FURY",
+        "year": "83-80",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "GRAN FURY",
+        "year": "77-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "GRAN FURY",
+        "year": "89-80",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "GRAN FURY",
+        "year": "1980",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "GRAN FURY",
+        "year": "77-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "GRAN FURY",
+        "year": "77-75",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "GRAN FURY",
+        "year": "77-75",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "PB100",
+        "year": "80-75",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "PB100",
+        "year": "80-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "PB100",
+        "year": "78-76",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "PB150",
+        "year": "83-81",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "PB150",
+        "year": "1981",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "PB150",
+        "year": "1983",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "PB200",
+        "year": "1980",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "PB200",
+        "year": "78-75",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "PB200",
+        "year": "80-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "PB200",
+        "year": "80-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "PB200",
+        "year": "78-76",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "PB200",
+        "year": "78-76",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "PB250",
+        "year": "83-81",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "PB250",
+        "year": "83-81",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "PB250",
+        "year": "1981",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "PB300",
+        "year": "80-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "PB300",
+        "year": "80-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "PB300",
+        "year": "78-76",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "PB300",
+        "year": "78-76",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "PB350",
+        "year": "83-81",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "PB350",
+        "year": "83-81",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "ROAD RUNNER",
+        "year": "1975",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "SCAMP",
+        "year": "76-75",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "SCAMP",
+        "year": "76-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "TRAILDUSTER",
+        "year": "80-75",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "TRAILDUSTER",
+        "year": "81-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "TRAILDUSTER",
+        "year": "81-75",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "TRAILDUSTER",
+        "year": "78-77",
+        "engine": "V8-6.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "TRAILDUSTER",
+        "year": "78-75",
+        "engine": "V8-7.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "TURISMO",
+        "year": "86-84",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "TURISMO 2.2",
+        "year": "1986",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "VALIANT",
+        "year": "76-75",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "VALIANT",
+        "year": "76-75",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "VALIANT",
+        "year": "1976",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "VOLARE",
+        "year": "80-76",
+        "engine": "L6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "VOLARE",
+        "year": "80-76",
+        "engine": "V8-5.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "VOLARE",
+        "year": "80-76",
+        "engine": "V8-5.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF480",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Atlas",
+        "part_number": "FF-20",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Autopar - Archived",
+        "part_number": "FE197",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Autopar - Archived",
+        "part_number": "FE185",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Avatar",
+        "part_number": "FF-513",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF865",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF865-K",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Barad",
+        "part_number": "GFC-607",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "95054",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86054",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CG3499",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "G474",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G474",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "GF12",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4041540",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4049224",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "3879782",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "387054",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Delphi",
+        "part_number": "FF1001",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "FF421",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550474",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Dynalife",
+        "part_number": "CNG-3499",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Filko",
+        "part_number": "FF-52",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Flag",
+        "part_number": "F-3499",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "FF239",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "FF5669",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "FFR-8239",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Goodyear",
+        "part_number": "222-4659",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Goodyear",
+        "part_number": "G3499",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "G474",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "F20030",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF84",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "G3499",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "ITM",
+        "part_number": "11-37602",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "KEM",
+        "part_number": "GF531",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Kendall",
+        "part_number": "KG9",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Lee",
+        "part_number": "LG-474",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G474",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Master Parts",
+        "part_number": "G-474",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "L-610",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "PF30",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "L-613",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "L-609",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FG-797",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3054BP",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3054",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Niehoff",
+        "part_number": "FS-312",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Parr",
+        "part_number": "4735",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Pro-Tec",
+        "part_number": "508",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F20030",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "QSG3499",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Rockhill",
+        "part_number": "63054",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Sears",
+        "part_number": "45157",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "F20030",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Sunoco",
+        "part_number": "G-12",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Trust",
+        "part_number": "G474",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Unocal 76",
+        "part_number": "UF482",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VG-13",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "WALMI",
+        "part_number": "GFC-607",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "WALMI",
+        "part_number": "WG-8",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "WALMI",
+        "part_number": "WG-8M",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G474",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33054",
+        "source_part_number": "G3499",
+        "part_key": "000944279",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

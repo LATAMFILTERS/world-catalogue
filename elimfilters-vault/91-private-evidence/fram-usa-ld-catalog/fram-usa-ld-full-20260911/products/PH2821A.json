@@ -1,0 +1,6747 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH2821A",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH2821A",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 3.691,
+      "outer_diameter_mm": 93.75,
+      "height_in": 5.374,
+      "height_mm": 136.5,
+      "thread_size": "3/4-16",
+      "gasket_od_in": 2.81,
+      "gasket_od_mm": 71.37,
+      "gasket_id_in": 2.46,
+      "gasket_id_mm": 62.48,
+      "gasket_thickness_in": 0.203,
+      "gasket_thickness_mm": 5.16,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "Yes",
+      "bypass_relief_valve": "Yes",
+      "bypass_setting_psi": 8,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "AGCO",
+        "part_number": "4223058M1"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "9Y4479"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "7W6221"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "649229E"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "7W2327"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "2I3898"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "9Y-4479"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "694229"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "E8NN6714BA"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "E8NN-6714-BA"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "F87E-6714-AA"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "A730X-6714-BA"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25011133"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25067094"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25011131"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "7984292"
+      },
+      {
+        "manufacturer": "Genie",
+        "part_number": "62427"
+      },
+      {
+        "manufacturer": "Hyster",
+        "part_number": "259964"
+      },
+      {
+        "manufacturer": "Hyster",
+        "part_number": "3000231"
+      },
+      {
+        "manufacturer": "Kubota",
+        "part_number": "70000-14653"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "1447048M1"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "1447048M91"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "1447982M1"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "3621101M1"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "1447048M92"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "1447048-M1"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "3819837M1"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF42"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF939"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7403"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B336"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7467"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT216"
+      },
+      {
+        "manufacturer": "Filtron",
+        "part_number": "OP549"
+      },
+      {
+        "manufacturer": "Filtron",
+        "part_number": "OP563/1"
+      },
+      {
+        "manufacturer": "Filtron",
+        "part_number": "OP563"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "H17W06"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OC37"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W940/27"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W934"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W940/67"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W940/1"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W940/24"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-329"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1806MP"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1806"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Albajar",
+        "part_number": "BC1031"
+      },
+      {
+        "manufacturer": "AP Lockheed",
+        "part_number": "LK1051"
+      },
+      {
+        "manufacturer": "Bepco",
+        "part_number": "97/6"
+      },
+      {
+        "manufacturer": "Bepco",
+        "part_number": "97/2"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92806"
+      },
+      {
+        "manufacturer": "Bowes",
+        "part_number": "PH4403"
+      },
+      {
+        "manufacturer": "British Leyland",
+        "part_number": "GFE116"
+      },
+      {
+        "manufacturer": "British Leyland",
+        "part_number": "GEE-135"
+      },
+      {
+        "manufacturer": "British Leyland",
+        "part_number": "GFE-116"
+      },
+      {
+        "manufacturer": "British Leyland",
+        "part_number": "554329"
+      },
+      {
+        "manufacturer": "Calsa",
+        "part_number": "E103999"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85806"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "K966687"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "285451A1"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "422253A1"
+      },
+      {
+        "manufacturer": "Claas",
+        "part_number": "1472250"
+      },
+      {
+        "manufacturer": "Claas",
+        "part_number": "1472240"
+      },
+      {
+        "manufacturer": "Claas",
+        "part_number": "1472230"
+      },
+      {
+        "manufacturer": "Clark Equipment",
+        "part_number": "6511766"
+      },
+      {
+        "manufacturer": "Clark Equipment",
+        "part_number": "910535"
+      },
+      {
+        "manufacturer": "Clark Equipment",
+        "part_number": "369256"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "AZL109"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "Z7"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "P554403"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "532"
+      },
+      {
+        "manufacturer": "Cyclone",
+        "part_number": "PM-513"
+      },
+      {
+        "manufacturer": "Daewoo",
+        "part_number": "D160552A"
+      },
+      {
+        "manufacturer": "Diamond",
+        "part_number": "FD26A"
+      },
+      {
+        "manufacturer": "Ditch Witch",
+        "part_number": "15595"
+      },
+      {
+        "manufacturer": "Ditch Witch",
+        "part_number": "155955"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P779152"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P16-8090"
+      },
+      {
+        "manufacturer": "Donit",
+        "part_number": "431087"
+      },
+      {
+        "manufacturer": "Epagri",
+        "part_number": "EFH5004"
+      },
+      {
+        "manufacturer": "Europarts",
+        "part_number": "9022310202"
+      },
+      {
+        "manufacturer": "Fapofil",
+        "part_number": "OR520"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "60507213"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "734988"
+      },
+      {
+        "manufacturer": "Fiatagri",
+        "part_number": "734988"
+      },
+      {
+        "manufacturer": "Finn Filter",
+        "part_number": "1OM2531"
+      },
+      {
+        "manufacturer": "Flag",
+        "part_number": "C-8"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF701"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3505"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8701"
+      },
+      {
+        "manufacturer": "Fluitek",
+        "part_number": "H370610M11"
+      },
+      {
+        "manufacturer": "Furukawa",
+        "part_number": "5568656314"
+      },
+      {
+        "manufacturer": "Gehl",
+        "part_number": "550002654403"
+      },
+      {
+        "manufacturer": "Gehl",
+        "part_number": "206854"
+      },
+      {
+        "manufacturer": "Gehl",
+        "part_number": "78849"
+      },
+      {
+        "manufacturer": "Gehl",
+        "part_number": "L98601"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GP-30"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GP30M"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GP30"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GP-2821A"
+      },
+      {
+        "manufacturer": "GRADALL",
+        "part_number": "91034006"
+      },
+      {
+        "manufacturer": "Guardian",
+        "part_number": "G05-1806"
+      },
+      {
+        "manufacturer": "Harmo",
+        "part_number": "S818"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF436"
+      },
+      {
+        "manufacturer": "Heden",
+        "part_number": "29800133"
+      },
+      {
+        "manufacturer": "Hesston",
+        "part_number": "700002503"
+      },
+      {
+        "manufacturer": "Hymac",
+        "part_number": "2700191"
+      },
+      {
+        "manufacturer": "ITM",
+        "part_number": "11-15402"
+      },
+      {
+        "manufacturer": "Kalmar",
+        "part_number": "9211040001"
+      },
+      {
+        "manufacturer": "Kalmar",
+        "part_number": "1316602"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "AW66"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "FO355"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "OC37"
+      },
+      {
+        "manufacturer": "Koehring",
+        "part_number": "8320242"
+      },
+      {
+        "manufacturer": "Koehring",
+        "part_number": "8320244"
+      },
+      {
+        "manufacturer": "Koehring",
+        "part_number": "8030103"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "6810515130"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "20501K1470"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L64"
+      },
+      {
+        "manufacturer": "Kramer",
+        "part_number": "1000000322"
+      },
+      {
+        "manufacturer": "Kramer",
+        "part_number": "1000000368"
+      },
+      {
+        "manufacturer": "Kramer",
+        "part_number": "801592"
+      },
+      {
+        "manufacturer": "Land Rover",
+        "part_number": "GEE-135"
+      },
+      {
+        "manufacturer": "Land Rover",
+        "part_number": "554329"
+      },
+      {
+        "manufacturer": "Lautrette",
+        "part_number": "ELH4193"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH4403"
+      },
+      {
+        "manufacturer": "M Filter",
+        "part_number": "MH302"
+      },
+      {
+        "manufacturer": "M Filter",
+        "part_number": "MH301"
+      },
+      {
+        "manufacturer": "M3",
+        "part_number": "M3354"
+      },
+      {
+        "manufacturer": "Manitou",
+        "part_number": "133755"
+      },
+      {
+        "manufacturer": "Manitou",
+        "part_number": "105548"
+      },
+      {
+        "manufacturer": "Manitou",
+        "part_number": "171548"
+      },
+      {
+        "manufacturer": "Maste",
+        "part_number": "DK54"
+      },
+      {
+        "manufacturer": "McCormick",
+        "part_number": "3118119R1"
+      },
+      {
+        "manufacturer": "McCormick",
+        "part_number": "701898A1"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "L-526"
+      },
+      {
+        "manufacturer": "Morbark",
+        "part_number": "29234525"
+      },
+      {
+        "manufacturer": "Motaquip",
+        "part_number": "VFL135"
+      },
+      {
+        "manufacturer": "Motaquip",
+        "part_number": "VFL139"
+      },
+      {
+        "manufacturer": "Motori VM",
+        "part_number": "4115065"
+      },
+      {
+        "manufacturer": "Motori VM",
+        "part_number": "41150065A"
+      },
+      {
+        "manufacturer": "Motori VM",
+        "part_number": "41150068A"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "PH2821A",
+    "source_part_key": "000944149",
+    "source_totals": {
+      "attributes": 39,
+      "applications": 496,
+      "cross_references": 142
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, PH2821A, HD Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Spin-on Oil Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "Yes",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "Yes",
+        "recno": "81"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "84"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Standard",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Orange",
+        "recno": "89"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Drain Plug Included",
+        "value": "No",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100421951",
+        "recno": "92"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Oil Filter",
+        "recno": "94"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "95"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "5.374",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "3.691",
+        "recno": "97"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "2.460",
+        "recno": "98"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "2.810",
+        "recno": "99"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.203",
+        "recno": "100"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Inch)",
+        "value": "3/4-16",
+        "recno": "101"
+      },
+      {
+        "attribute": "Bypass Relief Valve Setting (Pounds per Square Inch)",
+        "value": "8-12",
+        "recno": "102"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "103"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "104"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "105"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.2500",
+        "recno": "109"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "7.5000",
+        "recno": "110"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "5.5100",
+        "recno": "111"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "6.0630",
+        "recno": "112"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.9110",
+        "recno": "113"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "12.4380",
+        "recno": "114"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.9110",
+        "recno": "115"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "8.3130",
+        "recno": "116"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.25,
+        "case_weight_lb": 7.5,
+        "unit_height_in": 5.51,
+        "unit_length_in": 3.911,
+        "unit_width_in": 3.911,
+        "case_height_in": 6.063,
+        "case_length_in": 12.438,
+        "case_width_in": 8.313,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 15,
+        "estimated_case_dimensions": {
+          "length_in": 16.584,
+          "width_in": 12.47,
+          "height_in": 6.063,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 496,
+    "all_cross_references_observed": 142,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:17:02.914Z",
+  "discovered_from": "PH2821A",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "ARC WELDER MILLER ELECTRIC",
+        "model": "Big D2 w/Perkins 4.108 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARC WELDER MILLER ELECTRIC",
+        "model": "Big D2 w/Perkins 4.108 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ASPHALT PAVER BLAW KNOX",
+        "model": "PF35 w/Perkins 4.108 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ASPHALT PAVER BLAW KNOX",
+        "model": "PF35 w/Perkins 4.108 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER FORD",
+        "model": "555C",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER FORD",
+        "model": "555C",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER FORD",
+        "model": "655C, 655D",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER FORD",
+        "model": "655C, 655D",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "675E",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "675E",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "LB110 w/Ford BSD450T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "LB110 w/Ford BSD450T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "LB115",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "LB115",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "LB115B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "LB115B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "LB75B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "LB75B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "LB85 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "LB85 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "LB90 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "LB90 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "LB95 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BACKHOE LOADER NEW HOLLAND",
+        "model": "LB95 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1426 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BALE WAGON NEW HOLLAND",
+        "model": "1426 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY AVIA",
+        "model": "2500, 4006 (w/Perkins 4.203 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY AVIA",
+        "model": "2500, 4006 (w/Perkins 4.203 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY AVIA",
+        "model": "2500, 4006 (w/Perkins 6.305 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY AVIA",
+        "model": "2500, 4006 (w/Perkins 6.305 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY PEGASO",
+        "model": "5035NA",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY PEGASO",
+        "model": "5035NA",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY PEGASO",
+        "model": "5036",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY PEGASO",
+        "model": "5036",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY PEGASO",
+        "model": "5036S",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY PEGASO",
+        "model": "5036S",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY PEGASO",
+        "model": "6100",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY PEGASO",
+        "model": "6100",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CHIPPER & MULCHER BANDIT INDUSTRIES",
+        "model": "1290 Drum Chipper w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "CHIPPER & MULCHER BANDIT INDUSTRIES",
+        "model": "1290 Drum Chipper w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "CHIPPER & MULCHER BANDIT INDUSTRIES",
+        "model": "1690 Drum Chipper w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "CHIPPER & MULCHER BANDIT INDUSTRIES",
+        "model": "1690 Drum Chipper w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "MF540",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "MF540",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "MF750 w/Perkins 6.354 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "MF750 w/Perkins 6.354 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "MF760 w/Perkins 6.3544 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "MF760 w/Perkins 6.3544 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "MF850 w/Perkins 6.354 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "MF850 w/Perkins 6.354 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "MF855",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "MF855",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "MF860 w/Perkins 6.354 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "MF860 w/Perkins 6.354 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "MF865",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "MF865",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE WHITE",
+        "model": "8900, 8920 w/Perkins 6.354 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE WHITE",
+        "model": "8900, 8920 w/Perkins 6.354 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR HYSTER",
+        "model": "C340A-D w/Perkins 4-236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR HYSTER",
+        "model": "C340A-D w/Perkins 4-236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR HYSTER",
+        "model": "C350B-D w/Perkins 4-236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR HYSTER",
+        "model": "C350B-D w/Perkins 4-236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR HYSTER",
+        "model": "C-610A w/Perkins 4.236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR HYSTER",
+        "model": "C-610A w/Perkins 4.236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR HYSTER",
+        "model": "C-610B w/Perkins 4.236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR HYSTER",
+        "model": "C-610B w/Perkins 4.236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR HYSTER",
+        "model": "C-615A w/Perkins 4.236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR HYSTER",
+        "model": "C-615A w/Perkins 4.236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR HYSTER",
+        "model": "C-615B w/Perkins 4.236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR HYSTER",
+        "model": "C-615B w/Perkins 4.236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR HYSTER",
+        "model": "C-620B w/Perkins 4.236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR HYSTER",
+        "model": "C-620B w/Perkins 4.236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR HYSTER",
+        "model": "C-625A w/Perkins 4.236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR HYSTER",
+        "model": "C-625A w/Perkins 4.236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR HYSTER",
+        "model": "C-625B w/Perkins 4.236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR HYSTER",
+        "model": "C-625B w/Perkins 4.236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR HYSTER",
+        "model": "C-627B w/Perkins 4.236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR HYSTER",
+        "model": "C-627B w/Perkins 4.236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DETROIT DIESEL",
+        "model": "6.0 Liter Phaser Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DETROIT DIESEL",
+        "model": "6.0 Liter Phaser Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KUBOTA",
+        "model": "V3307 3.3L TIER4",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE KUBOTA",
+        "model": "V3307 3.3L TIER4",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "1000 Phaser",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "1000 Phaser",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "1004.40T Turbo-Charged 3.99L",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "1004.40T Turbo-Charged 3.99L",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "1004.42",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "1004.42",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "3.152, 3.152Y",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "3.152, 3.152Y",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "3AB152",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "3AB152",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "4.107, 4.107M",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "4.107, 4.107M",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "4.108",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "4.108",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "4.154",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "4.154",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "4.165",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "4.165",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "4.236, 4.236M",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "4.236, 4.236M",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "4.248",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "4.248",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "4.318",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "4.318",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "4.40 Phaser",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "4.40 Phaser",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "4A236",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "4A236",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "6.247",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "6.247",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "6.354, 6.354M",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "6.354, 6.354M",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "6.354.2",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "6.354.2",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "6.60 Phaser",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "6.60 Phaser",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "704-30",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "704-30",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "A4.212",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "A4.212",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "A4.248",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "A4.248",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "A4.318",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "A4.318",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "AD3.152",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "AD3.152",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "AD4.248",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "AD4.248",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "AG3.152",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "AG3.152",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "AG4.212",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "AG4.212",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "H6.354, H6.354M",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "H6.354, H6.354M",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "HT6.354, HT6.354M",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "HT6.354, HT6.354M",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "T6.354, T6.354M",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE PERKINS",
+        "model": "T6.354, T6.354M",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT LULL",
+        "model": "1522 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT LULL",
+        "model": "1522 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT LULL",
+        "model": "522 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT LULL",
+        "model": "522 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "35AWS w/Perkins 4.248 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "35AWS w/Perkins 4.248 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT VERMEER",
+        "model": "V434 Trencher w/Perkins 4.108 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT VERMEER",
+        "model": "V434 Trencher w/Perkins 4.108 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FARM EQUIPMENT MASSEY FERGUSON",
+        "model": "MF775",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FARM EQUIPMENT MASSEY FERGUSON",
+        "model": "MF775",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FARM EQUIPMENT MASSEY FERGUSON",
+        "model": "MF785",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FARM EQUIPMENT MASSEY FERGUSON",
+        "model": "MF785",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FARM EQUIPMENT MASSEY FERGUSON",
+        "model": "MF885 w/A-1 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FARM EQUIPMENT MASSEY FERGUSON",
+        "model": "MF885 w/A-1 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FARM EQUIPMENT NEW IDEA",
+        "model": "800 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FARM EQUIPMENT NEW IDEA",
+        "model": "800 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER HESSTON",
+        "model": "6650 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER HESSTON",
+        "model": "6650 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER HESSTON",
+        "model": "6655 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORAGE HARVESTER HESSTON",
+        "model": "6655 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HAULER INDUSTRIAL THWAITES",
+        "model": "5 Tonne MK1 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HAULER INDUSTRIAL THWAITES",
+        "model": "5 Tonne MK1 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HAULER INDUSTRIAL THWAITES",
+        "model": "5 Tonne MK1, 5 Tonne MK2 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HAULER INDUSTRIAL THWAITES",
+        "model": "5 Tonne MK1, 5 Tonne MK2 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HAULER INDUSTRIAL THWAITES",
+        "model": "5 Tonne MK2 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HAULER INDUSTRIAL THWAITES",
+        "model": "5 Tonne MK2 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JENSEN",
+        "model": "INTERCEPTOR",
+        "year": "76-72",
+        "engine": "V8-7.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JACOBSEN",
+        "model": "F-10 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JACOBSEN",
+        "model": "F-10 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JACOBSEN",
+        "model": "HF-15, HR-15 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JACOBSEN",
+        "model": "HF-15, HR-15 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "EX Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK KOMATSU",
+        "model": "EX Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK MASSEY FERGUSON",
+        "model": "MF6500 w/Perkins 4.236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK MASSEY FERGUSON",
+        "model": "MF6500 w/Perkins 4.236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK OWATONNA",
+        "model": "285 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK OWATONNA",
+        "model": "285 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK WIGGINS",
+        "model": "W46, W56, W66, W46ATS, W56ATS, W66ATS, W356LW w/Perkins 4.203 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK WIGGINS",
+        "model": "W46, W56, W66, W46ATS, W56ATS, W66ATS, W356LW w/Perkins 4.203 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER DYNAMIC",
+        "model": "140 w/Perkins 4.108 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER DYNAMIC",
+        "model": "140 w/Perkins 4.108 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER GEHL",
+        "model": "418 Loader, 418T Loader w/Perkins 704-30 3.0L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER GEHL",
+        "model": "418 Loader, 418T Loader w/Perkins 704-30 3.0L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER GEHL",
+        "model": "4600 w/Perkins 4.108 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER GEHL",
+        "model": "4600 w/Perkins 4.108 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER GEHL",
+        "model": "CT5-16 w/Kubota V3307 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER GEHL",
+        "model": "CT5-16 w/Kubota V3307 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER GENERAL INC.",
+        "model": "Power Commander w/Perkins 4.108 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER GENERAL INC.",
+        "model": "Power Commander w/Perkins 4.108 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER HITACHI",
+        "model": "W50 Loader w/Perkins 704-30 3.0L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER HITACHI",
+        "model": "W50 Loader w/Perkins 704-30 3.0L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER HITACHI",
+        "model": "W50 Loader, W60 Loader, W70 Loader w/Perkins 704-30 3.0L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER HITACHI",
+        "model": "W50 Loader, W60 Loader, W70 Loader w/Perkins 704-30 3.0L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER HITACHI",
+        "model": "W60 Loader w/Perkins 704-30 3.0L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER HITACHI",
+        "model": "W60 Loader w/Perkins 704-30 3.0L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER HITACHI",
+        "model": "W70 Loader w/Perkins 704-30 3.0L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER HITACHI",
+        "model": "W70 Loader w/Perkins 704-30 3.0L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER O & K",
+        "model": "L10.5 Loader w/Perkins 1004.42 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER O & K",
+        "model": "L10.5 Loader w/Perkins 1004.42 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER O & K",
+        "model": "L10.5 w/Perkins 1004.42 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER O & K",
+        "model": "L10.5 w/Perkins 1004.42 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER O & K",
+        "model": "L5.5 Loader w/Perkins 704-30 3.0L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER O & K",
+        "model": "L5.5 Loader w/Perkins 704-30 3.0L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER O & K",
+        "model": "L5.5 Loader w/Perkins 704-30 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER O & K",
+        "model": "L5.5 Loader w/Perkins 704-30 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER O & K",
+        "model": "L6.5 Loader w/Perkins 704-30 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER O & K",
+        "model": "L6.5 Loader w/Perkins 704-30 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER O & K",
+        "model": "L8.5 Loader w/Perkins 704-30 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER O & K",
+        "model": "L8.5 Loader w/Perkins 704-30 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MOWER CONDITIONER NEW HOLLAND",
+        "model": "1495 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MOWER CONDITIONER NEW HOLLAND",
+        "model": "1495 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MOWER CONDITIONER NEW HOLLAND",
+        "model": "1496 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MOWER CONDITIONER NEW HOLLAND",
+        "model": "1496 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PAVER ALLATT",
+        "model": "750P Paver w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PAVER ALLATT",
+        "model": "750P Paver w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PAVER ALLEN ENGINEERING CORP.",
+        "model": "12-34-TC w/Caterpillar 3054 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PAVER ALLEN ENGINEERING CORP.",
+        "model": "12-34-TC w/Caterpillar 3054 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROVER",
+        "model": "2000",
+        "year": "73-63",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER BOBCAT",
+        "model": "174 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER BOBCAT",
+        "model": "174 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER GEHL",
+        "model": "418 Loader w/Perkins 704-30 3.0L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER GEHL",
+        "model": "418 Loader w/Perkins 704-30 3.0L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER GEHL",
+        "model": "418T Loader w/Perkins 704-30 3.0L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER GEHL",
+        "model": "418T Loader w/Perkins 704-30 3.0L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L555 w/Perkins 4.108 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "L555 w/Perkins 4.108 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "LX865",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER NEW HOLLAND",
+        "model": "LX865",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER SCHAEFF",
+        "model": "SKL873 w/Perkins 1006-60T 6.0L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER SCHAEFF",
+        "model": "SKL873 w/Perkins 1006-60T 6.0L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER SCHAEFF",
+        "model": "SKL873 w/Perkins 1006-60T 6.0L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER SCHAEFF",
+        "model": "SKL873 w/Perkins 1006-60T 6.0L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER TEREX",
+        "model": "SKL873 w/Perkins 1006-60T 6.0L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER TEREX",
+        "model": "SKL873 w/Perkins 1006-60T 6.0L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER TEREX",
+        "model": "SLK873 w/Perkins 1006-60T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER TEREX",
+        "model": "SLK873 w/Perkins 1006-60T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER VOLVO",
+        "model": "MC110 w/Perkins 1004.42 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER VOLVO",
+        "model": "MC110 w/Perkins 1004.42 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER VOLVO",
+        "model": "MC80, MC90, MC110 w/Perkins 1004.42 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER VOLVO",
+        "model": "MC80, MC90, MC110 w/Perkins 1004.42 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS HAGIE",
+        "model": "470 w/Perkins 4.154 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS HAGIE",
+        "model": "470 w/Perkins 4.154 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS HAGIE",
+        "model": "8400 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS HAGIE",
+        "model": "8400 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS SPRA-COUPE",
+        "model": "7650 w/Perkins 1106C 6.6L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS SPRA-COUPE",
+        "model": "7650 w/Perkins 1106C 6.6L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS SPRA-COUPE",
+        "model": "7650, 7655 w/Perkins 1106C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS SPRA-COUPE",
+        "model": "7650, 7655 w/Perkins 1106C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS HESSTON",
+        "model": "6400 w/Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS HESSTON",
+        "model": "6400 w/Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS HESSTON",
+        "model": "6600, 6610 w/Perkins Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS HESSTON",
+        "model": "6600, 6610 w/Perkins Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS NEW HOLLAND",
+        "model": "1100 w/Perkins 236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS NEW HOLLAND",
+        "model": "1100 w/Perkins 236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS NEW HOLLAND",
+        "model": "1116 w/Perkins 4-236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SWATHERS & WINDROWERS NEW HOLLAND",
+        "model": "1116 w/Perkins 4-236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TELESCOPIC HANDLER MANITOU",
+        "model": "MLT523 w/Perkins 1103C-33 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TELESCOPIC HANDLER MANITOU",
+        "model": "MLT523 w/Perkins 1103C-33 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TELESCOPIC HANDLER NEW HOLLAND",
+        "model": "LM-840 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TELESCOPIC HANDLER NEW HOLLAND",
+        "model": "LM-840 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TELESCOPIC HANDLER NEW HOLLAND",
+        "model": "LW80 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TELESCOPIC HANDLER NEW HOLLAND",
+        "model": "LW80 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TELESCOPIC HANDLER NEW HOLLAND",
+        "model": "LW80, LW80.B w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TELESCOPIC HANDLER NEW HOLLAND",
+        "model": "LW80, LW80.B w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TELESCOPIC HANDLER NEW HOLLAND",
+        "model": "LW80.B w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TELESCOPIC HANDLER NEW HOLLAND",
+        "model": "LW80.B w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CBT",
+        "model": "8240 w/Perkins A4.248 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CBT",
+        "model": "8240 w/Perkins A4.248 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "7600, 7700 w/Ford 256 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "7600, 7700 w/Ford 256 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "7600, 7700 w/Ford 256 Gasoline Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "7600, 7700 w/Ford 256 Gasoline Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "7610, 7710",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "7610, 7710",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "7700",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "7700",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR IMT",
+        "model": "539",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR IMT",
+        "model": "539",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR IMT",
+        "model": "542",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR IMT",
+        "model": "542",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR IMT",
+        "model": "560",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR IMT",
+        "model": "560",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR IMT",
+        "model": "577DV",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR IMT",
+        "model": "577DV",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KIOTI",
+        "model": "DK65 w/903-27 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KIOTI",
+        "model": "DK65 w/903-27 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "7860 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "7860 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "8860 w/Perkins A4.248 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "8860 w/Perkins A4.248 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Advantage 65V/GT w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Advantage 65V/GT w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Advantage 85F/GT w/Perkins 4.248 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Advantage 85F/GT w/Perkins 4.248 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Atlas 80 w/Perkins 1004.42 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Atlas 80 w/Perkins 1004.42 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Blizzard 75 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Blizzard 75 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Blizzard 75 w/Perkins 4.248 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Blizzard 75 w/Perkins 4.248 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Blizzard 85 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Blizzard 85 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Blizzard 85 w/Perkins 4.248 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Blizzard 85 w/Perkins 4.248 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Ghibli 100 w/Perkins 1004.40 Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Ghibli 100 w/Perkins 1004.40 Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Ghibli 80 w/Perkins 1004.42 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Ghibli 80 w/Perkins 1004.42 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Ghibli 90 w/Perkins 1004.40 Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Ghibli 90 w/Perkins 1004.40 Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Globus 50 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Globus 50 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Globus 60 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Globus 60 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Globus 65 w/Perkins 1004.40 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Globus 65 w/Perkins 1004.40 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Globus 75 w/Perkins 1004.42 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Globus 75 w/Perkins 1004.42 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Globus 75, Globus 80 w/Perkins 1004.42 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Globus 75, Globus 80 w/Perkins 1004.42 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Globus 80 w/Perkins 1004.42 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Globus 80 w/Perkins 1004.42 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "R-DT 14500",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "R-DT 14500",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "R-DT 6530",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "R-DT 6530",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "R-DT 8550",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "R-DT 8550",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "REX 80GE w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "REX 80GE w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Trekker 70 w/Perkins 1004-40 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Trekker 70 w/Perkins 1004-40 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Trekker 80 w/Perkins 1004.42 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR LANDINI",
+        "model": "Trekker 80 w/Perkins 1004.42 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "174-4S",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "174-4S",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "194-4F",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "194-4F",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "2210 Tractor w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "2210 Tractor w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "2210 Tractor, 2220 Tractor w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "2210 Tractor, 2220 Tractor w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "2220 Tractor w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "2220 Tractor w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "2225 Tractor w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "2225 Tractor w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "2230 Tractor w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "2230 Tractor w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "2230 Tractor, 2235 Tractor w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "2230 Tractor, 2235 Tractor w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "2235 Tractor w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "2235 Tractor w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "283",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "283",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "3070",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "3070",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "3630",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "3630",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "3650",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "3650",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "393/2 393/4 Series Tractor w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "393/2 393/4 Series Tractor w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "650 w/Perkins 1006-6T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "650 w/Perkins 1006-6T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "650, 660 w/Perkins 1006-6T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "650, 660 w/Perkins 1006-6T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "660 w/Perkins 1006-6T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "660 w/Perkins 1006-6T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "8120 w/Perkins 1006-6T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "8120 w/Perkins 1006-6T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF1085 wPerkins A4.318 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF1085 wPerkins A4.318 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF1100 w/Perkins 6.354 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF1100 w/Perkins 6.354 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF1130 w/Perkins 6.354 Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF1130 w/Perkins 6.354 Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF1135 w/Perkins AT6-354 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF1135 w/Perkins AT6-354 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF142",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF142",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF175 w/Perkins AD4-236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF175 w/Perkins AD4-236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF175 w/Perkins AG4-236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF175 w/Perkins AG4-236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF180 w/Perkins AD4-236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF180 w/Perkins AD4-236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF180 w/Perkins AG4-236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF180 w/Perkins AG4-236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF225 w/Perkins Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF225 w/Perkins Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF25 w/A-1 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF25 w/A-1 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF255 w/Perkins AD4-236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF255 w/Perkins AD4-236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF265 w/Perkins 4.236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF265 w/Perkins 4.236 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF265 w/Perkins 4.236 Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF265 w/Perkins 4.236 Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF270 w/Perkins AD4-236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF270 w/Perkins AD4-236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF275 w/Perkins A4.248 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF275 w/Perkins A4.248 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF285 w/Perkins A4.318 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF285 w/Perkins A4.318 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF30 INDUSTRIAL TRACTOR w/A-1 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF30 INDUSTRIAL TRACTOR w/A-1 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF30 INDUSTRIAL TRACTOR w/Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF30 INDUSTRIAL TRACTOR w/Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF3140 w/Perkins 365 6L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF3140 w/Perkins 365 6L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF3306 w/Perkins 4.300 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF3306 w/Perkins 4.300 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF362 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF362 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF3660 w/Perkins 365 6L",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF3660 w/Perkins 365 6L",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF373 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF373 w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF373, MF394FQ, MF394GE, MF394SQ w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF373, MF394FQ, MF394GE, MF394SQ w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF375 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF375 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF383 w/Perkins 4.248 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF383 w/Perkins 4.248 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF394FQ w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF394FQ w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF394GE w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF394GE w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF394SQ w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF394SQ w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF398 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF398 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF450 w/Perkins 6.354 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF450 w/Perkins 6.354 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF450S w/Perkins 6.354 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF450S w/Perkins 6.354 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF50C INDUSTRIAL TRACTOR",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF50C INDUSTRIAL TRACTOR",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF50D INDUSTRIAL TRACTOR",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF50D INDUSTRIAL TRACTOR",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF50E INDUSTRIAL TRACTOR",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF50E INDUSTRIAL TRACTOR",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF50F INDUSTRIAL TRACTOR",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF50F INDUSTRIAL TRACTOR",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF50H/HX INDUSTRIAL TRACTOR",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF50H/HX INDUSTRIAL TRACTOR",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF60 INDUSTRIAL TRACTOR",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF60 INDUSTRIAL TRACTOR",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF60H INDUSTRIAL TRACTOR",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF60H INDUSTRIAL TRACTOR",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF811 w/Perkins 4.108 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF811 w/Perkins 4.108 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF8120",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MASSEY FERGUSON",
+        "model": "MF8120",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MCCORMICK",
+        "model": "C60 MAX w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MCCORMICK",
+        "model": "C60 MAX w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MCCORMICK",
+        "model": "F100 w/Perkins 1004.40 Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MCCORMICK",
+        "model": "F100 w/Perkins 1004.40 Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MCCORMICK",
+        "model": "F100,F105 F/GE/XL T3 w/1104D-44T Tier 3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MCCORMICK",
+        "model": "F100,F105 F/GE/XL T3 w/1104D-44T Tier 3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MCCORMICK",
+        "model": "F105 w/Perkins 1104D-44T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MCCORMICK",
+        "model": "F105 w/Perkins 1104D-44T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MCCORMICK",
+        "model": "F70 Series w/Perkins 1004.40 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MCCORMICK",
+        "model": "F70 Series w/Perkins 1004.40 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MCCORMICK",
+        "model": "F80 Series w/Perkins 1004.42 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MCCORMICK",
+        "model": "F80 Series w/Perkins 1004.42 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MCCORMICK",
+        "model": "w/C60 MAX Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MCCORMICK",
+        "model": "w/C60 MAX Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MUIR HILL",
+        "model": "MH111 w/Perkins 6.354 diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR MUIR HILL",
+        "model": "MH111 w/Perkins 6.354 diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "150 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "150 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "256 w/Cummins 4BT3.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "256 w/Cummins 4BT3.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "256 w/Cummins 4BTA3.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "256 w/Cummins 4BTA3.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "276 w/Cummins 4BT3.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "276 w/Cummins 4BT3.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "276 w/Cummins 4BTA3.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "276 w/Cummins 4BTA3.9 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "276II w/Ford 4.4L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "276II w/Ford 4.4L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "9030 w/Ford 4.4L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR VERSATILE",
+        "model": "9030 w/Ford 4.4L Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER LDV",
+        "model": "Convoy 400 (VH C35) (w/Andoria 4CT90-1/A7 3.5 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER LDV",
+        "model": "Convoy 400 (VH C35) (w/Andoria 4CT90-1/A7 3.5 Engine)",
+        "year": "05-93",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER LDV",
+        "model": "Convoy 400 (VH C35) (w/Andoria 4CT90-1/BEA07 3.5 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER LDV",
+        "model": "Convoy 400 (VH C35) (w/Andoria 4CT90-1/BEA07 3.5 Engine)",
+        "year": "05-98",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY THWAITES",
+        "model": "4 Tonne MK1 (w/Perkins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY THWAITES",
+        "model": "4 Tonne MK1 (w/Perkins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY THWAITES",
+        "model": "4 Tonne MK2 (w/Perkins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY THWAITES",
+        "model": "4 Tonne MK2 (w/Perkins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER OWATONNA",
+        "model": "780 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER OWATONNA",
+        "model": "780 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER OWATONNA",
+        "model": "880 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER OWATONNA",
+        "model": "880 w/Perkins 4.236 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF42",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF939",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "AGCO",
+        "part_number": "4223058M1",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Albajar",
+        "part_number": "BC1031",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "AP Lockheed",
+        "part_number": "LK1051",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7403",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B336",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7467",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT216",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bepco",
+        "part_number": "97/6",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bepco",
+        "part_number": "97/2",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92806",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bowes",
+        "part_number": "PH4403",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "British Leyland",
+        "part_number": "GFE116",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "British Leyland",
+        "part_number": "GEE-135",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "British Leyland",
+        "part_number": "GFE-116",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "British Leyland",
+        "part_number": "554329",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Calsa",
+        "part_number": "E103999",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85806",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "K966687",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "285451A1",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "422253A1",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "9Y4479",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "7W6221",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "649229E",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "7W2327",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "2I3898",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "9Y-4479",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "694229",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Claas",
+        "part_number": "1472250",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Claas",
+        "part_number": "1472240",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Claas",
+        "part_number": "1472230",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Clark Equipment",
+        "part_number": "6511766",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Clark Equipment",
+        "part_number": "910535",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Clark Equipment",
+        "part_number": "369256",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "AZL109",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "Z7",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "P554403",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "532",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Cyclone",
+        "part_number": "PM-513",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Daewoo",
+        "part_number": "D160552A",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Diamond",
+        "part_number": "FD26A",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ditch Witch",
+        "part_number": "15595",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ditch Witch",
+        "part_number": "155955",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P779152",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P16-8090",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donit",
+        "part_number": "431087",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Epagri",
+        "part_number": "EFH5004",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Europarts",
+        "part_number": "9022310202",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fapofil",
+        "part_number": "OR520",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "60507213",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fiat",
+        "part_number": "734988",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fiatagri",
+        "part_number": "734988",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Filtron",
+        "part_number": "OP549",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Filtron",
+        "part_number": "OP563/1",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Filtron",
+        "part_number": "OP563",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Finn Filter",
+        "part_number": "1OM2531",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Flag",
+        "part_number": "C-8",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF701",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3505",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8701",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fluitek",
+        "part_number": "H370610M11",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "E8NN6714BA",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "E8NN-6714-BA",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "F87E-6714-AA",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "A730X-6714-BA",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Furukawa",
+        "part_number": "5568656314",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Gehl",
+        "part_number": "550002654403",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Gehl",
+        "part_number": "206854",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Gehl",
+        "part_number": "78849",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Gehl",
+        "part_number": "L98601",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25011133",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25067094",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25011131",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "7984292",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Genie",
+        "part_number": "62427",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GP-30",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GP30M",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GP30",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GP-2821A",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "GRADALL",
+        "part_number": "91034006",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Guardian",
+        "part_number": "G05-1806",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Harmo",
+        "part_number": "S818",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF436",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Heden",
+        "part_number": "29800133",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "H17W06",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hesston",
+        "part_number": "700002503",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hymac",
+        "part_number": "2700191",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hyster",
+        "part_number": "259964",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hyster",
+        "part_number": "3000231",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ITM",
+        "part_number": "11-15402",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kalmar",
+        "part_number": "9211040001",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kalmar",
+        "part_number": "1316602",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "AW66",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "FO355",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "OC37",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Koehring",
+        "part_number": "8320242",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Koehring",
+        "part_number": "8320244",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Koehring",
+        "part_number": "8030103",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "6810515130",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "20501K1470",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L64",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kramer",
+        "part_number": "1000000322",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kramer",
+        "part_number": "1000000368",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kramer",
+        "part_number": "801592",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kubota",
+        "part_number": "70000-14653",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Land Rover",
+        "part_number": "GEE-135",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Land Rover",
+        "part_number": "554329",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Lautrette",
+        "part_number": "ELH4193",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH4403",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "M Filter",
+        "part_number": "MH302",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "M Filter",
+        "part_number": "MH301",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "M3",
+        "part_number": "M3354",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OC37",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Manitou",
+        "part_number": "133755",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Manitou",
+        "part_number": "105548",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Manitou",
+        "part_number": "171548",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W940/27",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W934",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W940/67",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W940/1",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W940/24",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "1447048M1",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "1447048M91",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "1447982M1",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "3621101M1",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "1447048M92",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "1447048-M1",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "3819837M1",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Maste",
+        "part_number": "DK54",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "McCormick",
+        "part_number": "3118119R1",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "McCormick",
+        "part_number": "701898A1",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "L-526",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Morbark",
+        "part_number": "29234525",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Motaquip",
+        "part_number": "VFL135",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Motaquip",
+        "part_number": "VFL139",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-329",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Motori VM",
+        "part_number": "4115065",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Motori VM",
+        "part_number": "41150065A",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Motori VM",
+        "part_number": "41150068A",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1806MP",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1806",
+        "source_part_number": "PH2821A",
+        "part_key": "000944149",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

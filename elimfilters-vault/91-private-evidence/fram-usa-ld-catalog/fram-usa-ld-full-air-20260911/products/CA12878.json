@@ -1,0 +1,504 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA12878",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA12878",
+    "product_type": "Engine Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 6.89,
+      "height_mm": 175.01,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Flexible Panel Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Ford",
+        "part_number": "MB3Z9601A"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "AF9224"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FA2022"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "97360"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "E-0634"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "AF6022"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PA99846"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "part_number": "A21527"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "AF9224"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "SA50145"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "26-21",
+        "make": "FORD",
+        "model": "BRONCO",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "FORD",
+        "model": "BRONCO",
+        "engine": "V6-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "FORD",
+        "model": "RANGER",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "FORD",
+        "model": "RANGER",
+        "engine": "V6-2.7L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CA12878",
+    "source_part_key": "011493872",
+    "source_totals": {
+      "attributes": 39,
+      "applications": 4,
+      "cross_references": 11
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® engine air filters are engineered to protect your engine from harmful contaminants. Replacing an air filter with FRAM Extra Guard can help improve horsepower, acceleration, and engine performance. To prevent engine wear, FRAM recommends changing your air filter every 12 months.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs quickly in as little as 5 minutes",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA12878, Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Keep your engine running smoothly by preventing damaging particles from entering your vehicle’s engine",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Ensures maximum airflow to prevent engine wear",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Flexible Panel Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Protects up to 12 months or 12,000 miles (19,000 kilometers)",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "82"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "84"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Flexible",
+        "recno": "85"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "86"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "88"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Air Filter",
+        "recno": "89"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "6.89",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00840357606940",
+        "recno": "92"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "3.465",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "6.339",
+        "recno": "94"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "3.465",
+        "recno": "95"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "6.339",
+        "recno": "96"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "97"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "98"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "99"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "100"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.5020",
+        "recno": "104"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "3.0040",
+        "recno": "105"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "7.0870",
+        "recno": "106"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "7.4800",
+        "recno": "107"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "6.4170",
+        "recno": "108"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "13.3860",
+        "recno": "109"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "6.4170",
+        "recno": "110"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "6.8900",
+        "recno": "111"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.502,
+        "case_weight_lb": 3.004,
+        "unit_height_in": 7.087,
+        "unit_length_in": 6.417,
+        "unit_width_in": 6.417,
+        "case_height_in": 7.48,
+        "case_length_in": 13.386,
+        "case_width_in": 6.89,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 18.024,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 4,
+    "all_cross_references_observed": 11,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:05:07.177Z",
+  "discovered_from": "CA12878",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "FORD",
+        "model": "BRONCO",
+        "year": "26-21",
+        "engine": "L4-2.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "BRONCO",
+        "year": "26-21",
+        "engine": "V6-2.7L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "RANGER",
+        "year": "26-24",
+        "engine": "L4-2.3L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "RANGER",
+        "year": "26-24",
+        "engine": "V6-2.7L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "97360",
+        "source_part_number": "CA12878",
+        "part_key": "011493872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "MB3Z9601A",
+        "source_part_number": "CA12878",
+        "part_key": "011493872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "FRAM Extra Guard",
+        "part_number": "CA12878",
+        "source_part_number": "CA12878",
+        "part_key": "011493872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "E-0634",
+        "source_part_number": "CA12878",
+        "part_key": "011493872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "AF6022",
+        "source_part_number": "CA12878",
+        "part_key": "011493872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "AF9224",
+        "source_part_number": "CA12878",
+        "part_key": "011493872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FA2022",
+        "source_part_number": "CA12878",
+        "part_key": "011493872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PA99846",
+        "source_part_number": "CA12878",
+        "part_key": "011493872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "part_number": "A21527",
+        "source_part_number": "CA12878",
+        "part_key": "011493872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "AF9224",
+        "source_part_number": "CA12878",
+        "part_key": "011493872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "SA50145",
+        "source_part_number": "CA12878",
+        "part_key": "011493872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

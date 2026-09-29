@@ -1,0 +1,24 @@
+{
+  "mode": "execute",
+  "map": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-ld-extended-namespace\\fram-ld-extended-map-2026-09-14T02-18-22-468Z.json",
+  "targets": 526,
+  "preflight": {
+    "public_rows": 526,
+    "product_element": 0,
+    "product_model": 0
+  },
+  "deleted": {
+    "ld_catalog.ld_competitor_cross_references": 3389,
+    "ld_catalog.ld_oem_cross_references": 1222,
+    "ld_catalog.ld_vehicle_applications": 10395,
+    "ld_catalog.ld_product_specifications": 2547,
+    "ld_catalog.ld_production_readiness": 526,
+    "ld_catalog.ld_canonical_product_identity": 526,
+    "ld_catalog.ld_product_catalog": 526,
+    "public_catalog": 526
+  },
+  "audit": {
+    "remaining_public": 0
+  },
+  "transaction": "COMMIT"
+}

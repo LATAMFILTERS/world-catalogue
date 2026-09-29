@@ -1,0 +1,27 @@
+{
+  "mode": "dry-run",
+  "sku": "EL32821",
+  "authority": "CH2821B",
+  "deleted": {
+    "ld_catalog.ld_competitor_cross_references": 1,
+    "ld_catalog.ld_oem_cross_references": 0,
+    "ld_catalog.ld_vehicle_applications": 2,
+    "ld_catalog.ld_product_specifications": 1,
+    "ld_catalog.ld_production_readiness": 1,
+    "ld_catalog.ld_canonical_product_identity": 1,
+    "ld_catalog.ld_product_catalog": 1,
+    "public_catalog": 1
+  },
+  "audit": {
+    "remaining_public": 0
+  },
+  "before": {
+    "sku": "EL32821",
+    "codigo_base": "CH2821B",
+    "canonical_source_brand": "FRAM",
+    "canonical_source_code": "CH2821B",
+    "duty": "LIGHT_DUTY",
+    "filter_type": "oil"
+  },
+  "transaction": "ROLLBACK"
+}

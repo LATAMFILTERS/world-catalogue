@@ -1,0 +1,3650 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH7405A",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH7405A",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 4.39,
+      "outer_diameter_mm": 111.51,
+      "height_in": 8.875,
+      "height_mm": 225.42,
+      "thread_size": "1 1/8-16",
+      "gasket_od_in": 3.343,
+      "gasket_od_mm": 84.91,
+      "gasket_id_in": 2.969,
+      "gasket_id_mm": 75.41,
+      "gasket_thickness_in": 0.25,
+      "gasket_thickness_mm": 6.35,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25014507"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25014505"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "23518480"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2100"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B495"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B495-SS"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B495-MPG"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BK6941"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W12102"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1971"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L54836"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51971MP"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51971"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51971XD"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51971EC"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Alliance Parts",
+        "part_number": "ABP/N10G-LF3620"
+      },
+      {
+        "manufacturer": "Alliance Parts",
+        "part_number": "ABP/N10G-LF3671"
+      },
+      {
+        "manufacturer": "Alliance Parts",
+        "part_number": "ABP/N10G-LF9620"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "SDF77"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92971"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85971XD"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85971"
+      },
+      {
+        "manufacturer": "Coach Guard",
+        "part_number": "T08-1043"
+      },
+      {
+        "manufacturer": "Detroit Diesel",
+        "part_number": "23530573"
+      },
+      {
+        "manufacturer": "Detroit Diesel",
+        "part_number": "23527033"
+      },
+      {
+        "manufacturer": "Detroit Diesel",
+        "part_number": "25014505"
+      },
+      {
+        "manufacturer": "Detroit Diesel",
+        "part_number": "23518480"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559250"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559301"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559299"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P552100"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559596"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P173998"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559620"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559309"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "ELF3998"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559245"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559246"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559605"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559618"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3671"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3620"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "MK13045"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF9620"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-83620"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GP193"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF250XS"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF250"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "AL7405A"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L278"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP2160"
+      },
+      {
+        "manufacturer": "Tamrock",
+        "part_number": "4521030"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "3915586"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "3946299"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "98-96",
+        "make": "FORD",
+        "model": "A9513",
+        "engine": "L6-11.1L",
+        "quantity": 1
+      },
+      {
+        "year": "98-96",
+        "make": "FORD",
+        "model": "A9513",
+        "engine": "L6-12.7L",
+        "quantity": 1
+      },
+      {
+        "year": "1997",
+        "make": "FORD",
+        "model": "A9522",
+        "engine": "L6-12.7L",
+        "quantity": 1
+      },
+      {
+        "year": "98-96",
+        "make": "FORD",
+        "model": "AT9513",
+        "engine": "L6-11.1L",
+        "quantity": 1
+      },
+      {
+        "year": "98-96",
+        "make": "FORD",
+        "model": "AT9513",
+        "engine": "L6-12.7L",
+        "quantity": 1
+      },
+      {
+        "year": "1998",
+        "make": "FORD",
+        "model": "AT9522",
+        "engine": "L6-11.1L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "FORD",
+        "model": "AT9522",
+        "engine": "L6-12.7L",
+        "quantity": 1
+      },
+      {
+        "year": "97-93",
+        "make": "FORD",
+        "model": "L9000",
+        "engine": "L6-11.1L",
+        "quantity": 1
+      },
+      {
+        "year": "1997",
+        "make": "FORD",
+        "model": "L9000",
+        "engine": "L6-12.7L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "FORD",
+        "model": "L9513",
+        "engine": "L6-11.1L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "FORD",
+        "model": "L9513",
+        "engine": "L6-12.7L",
+        "quantity": 1
+      },
+      {
+        "year": "97-91",
+        "make": "FORD",
+        "model": "LA9000",
+        "engine": "L6-11.1L",
+        "quantity": 2
+      },
+      {
+        "year": "1996",
+        "make": "FORD",
+        "model": "LA9000",
+        "engine": "L6-12.7L",
+        "quantity": 2
+      },
+      {
+        "year": "94-92",
+        "make": "FORD",
+        "model": "LA9000",
+        "engine": "L6-12.7L",
+        "quantity": 2
+      },
+      {
+        "year": "96-92",
+        "make": "FORD",
+        "model": "LLA9000",
+        "engine": "L6-11.1L",
+        "quantity": 2
+      },
+      {
+        "year": "1994",
+        "make": "FORD",
+        "model": "LLS9000",
+        "engine": "L6-11.1L",
+        "quantity": 2
+      },
+      {
+        "year": "1991",
+        "make": "FORD",
+        "model": "LS9000",
+        "engine": "L6-11.1L",
+        "quantity": 2
+      },
+      {
+        "year": "97-93",
+        "make": "FORD",
+        "model": "LS9000",
+        "engine": "L6-11.1L",
+        "quantity": 2
+      },
+      {
+        "year": "97-92",
+        "make": "FORD",
+        "model": "LT9000",
+        "engine": "L6-11.1L",
+        "quantity": 1
+      },
+      {
+        "year": "97-92",
+        "make": "FORD",
+        "model": "LT9000",
+        "engine": "L6-12.7L",
+        "quantity": 1
+      },
+      {
+        "year": "1998",
+        "make": "FORD",
+        "model": "LT9501",
+        "engine": "L6-11.1L",
+        "quantity": 1
+      },
+      {
+        "year": "1998",
+        "make": "FORD",
+        "model": "LT9501",
+        "engine": "L6-12.7L",
+        "quantity": 1
+      },
+      {
+        "year": "1998",
+        "make": "FORD",
+        "model": "LT9511",
+        "engine": "L6-11.1L",
+        "quantity": 1
+      },
+      {
+        "year": "1998",
+        "make": "FORD",
+        "model": "LT9511",
+        "engine": "L6-12.7L",
+        "quantity": 1
+      },
+      {
+        "year": "98-96",
+        "make": "FORD",
+        "model": "LT9513",
+        "engine": "L6-11.1L",
+        "quantity": 1
+      },
+      {
+        "year": "98-96",
+        "make": "FORD",
+        "model": "LT9513",
+        "engine": "L6-12.7L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "FORD",
+        "model": "LT9522",
+        "engine": "L6-12.7L",
+        "quantity": 1
+      },
+      {
+        "year": "97-93",
+        "make": "FORD",
+        "model": "LTA9000",
+        "engine": "L6-11.1L",
+        "quantity": 2
+      },
+      {
+        "year": "97-93",
+        "make": "FORD",
+        "model": "LTA9000",
+        "engine": "L6-12.7L",
+        "quantity": 1
+      },
+      {
+        "year": "97-93",
+        "make": "FORD",
+        "model": "LTLA9000",
+        "engine": "L6-11.1L",
+        "quantity": 2
+      },
+      {
+        "year": "97-93",
+        "make": "FORD",
+        "model": "LTLA9000",
+        "engine": "L6-12.7L",
+        "quantity": 1
+      },
+      {
+        "year": "95-94",
+        "make": "FORD",
+        "model": "LTLS9000",
+        "engine": "L6-11.1L",
+        "quantity": 2
+      },
+      {
+        "year": "96-93",
+        "make": "FORD",
+        "model": "LTLS9000",
+        "engine": "L6-12.7L",
+        "quantity": 1
+      },
+      {
+        "year": "97-92",
+        "make": "FORD",
+        "model": "LTS9000",
+        "engine": "L6-11.1L",
+        "quantity": 2
+      },
+      {
+        "year": "97-92",
+        "make": "FORD",
+        "model": "LTS9000",
+        "engine": "L6-12.7L",
+        "quantity": 2
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "PH7405A",
+    "source_part_key": "001509584",
+    "source_totals": {
+      "attributes": 38,
+      "applications": 262,
+      "cross_references": 54
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, PH7405A, HD Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Spin-on Oil Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "84"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Standard",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Orange",
+        "recno": "89"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Drain Plug Included",
+        "value": "No",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100024466",
+        "recno": "92"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Oil Filter",
+        "recno": "94"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "95"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "8.875",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "4.390",
+        "recno": "97"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "2.969",
+        "recno": "98"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "3.343",
+        "recno": "99"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.250",
+        "recno": "100"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Inch)",
+        "value": "1 1/8-16",
+        "recno": "101"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "102"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "103"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "104"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "3.0750",
+        "recno": "108"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "18.4500",
+        "recno": "109"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "10.8220",
+        "recno": "110"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "11.7500",
+        "recno": "111"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "5.0990",
+        "recno": "112"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "16.6880",
+        "recno": "113"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "5.0990",
+        "recno": "114"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "11.0630",
+        "recno": "115"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 3.075,
+        "case_weight_lb": 18.45,
+        "unit_height_in": 10.822,
+        "unit_length_in": 5.099,
+        "unit_width_in": 5.099,
+        "case_height_in": 11.75,
+        "case_length_in": 16.688,
+        "case_width_in": 11.063,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 36.9,
+        "estimated_case_dimensions": {
+          "length_in": 22.251,
+          "width_in": 16.595,
+          "height_in": 11.75,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 262,
+    "all_cross_references_observed": 54,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:11:44.095Z",
+  "discovered_from": "PH7405A",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "ADVANCE MIXER",
+        "model": "ADVANCE MIXER",
+        "year": "06-00",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ADVANCE MIXER",
+        "model": "GLIDER",
+        "year": "1997",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ADVANCE MIXER",
+        "model": "GLIDER",
+        "year": "95-94",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ADVANCE MIXER",
+        "model": "M",
+        "year": "99-96",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ADVANCE MIXER",
+        "model": "S",
+        "year": "1993",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ADVANCE MIXER",
+        "model": "S",
+        "year": "90-88",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ADVANCE MIXER",
+        "model": "S",
+        "year": "98-95",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AMERICAN LAFRANCE",
+        "model": "ALF EAGLE",
+        "year": "08-97",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AMERICAN LAFRANCE",
+        "model": "ALF EAGLE",
+        "year": "09-03",
+        "engine": "L6-14.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY BLUE BIRD",
+        "model": "XPRESS 4000/4500 Coach (w/Detroit 60-Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY BLUE BIRD",
+        "model": "XPRESS 4000/4500 Coach (w/Detroit 60-Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Setra S228DT (w/OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Setra S228DT (w/OM442LA Engine)",
+        "year": "96-89",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Setra S417 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY EVOBUS",
+        "model": "Setra S417 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GILLIG",
+        "model": "Low Floor (w/Detroit Diesel 50 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GILLIG",
+        "model": "Low Floor (w/Detroit Diesel 50 Series Engine)",
+        "year": "05-",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY MOTOR COACH INDUSTRIES",
+        "model": "102DL3, 500 Series (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY MOTOR COACH INDUSTRIES",
+        "model": "102DL3, 500 Series (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY MOTOR COACH INDUSTRIES",
+        "model": "Commuter Coach (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY MOTOR COACH INDUSTRIES",
+        "model": "Commuter Coach (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY MOTOR COACH INDUSTRIES",
+        "model": "D4005 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY MOTOR COACH INDUSTRIES",
+        "model": "D4005 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY MOTOR COACH INDUSTRIES",
+        "model": "D4505 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY MOTOR COACH INDUSTRIES",
+        "model": "D4505 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY MOTOR COACH INDUSTRIES",
+        "model": "E4500 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY MOTOR COACH INDUSTRIES",
+        "model": "E4500 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY MOTOR COACH INDUSTRIES",
+        "model": "G4500 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY MOTOR COACH INDUSTRIES",
+        "model": "G4500 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY MOTOR COACH INDUSTRIES",
+        "model": "J4500 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY MOTOR COACH INDUSTRIES",
+        "model": "J4500 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY NEOPLAN BUS",
+        "model": "AN440LF Transliner (w/Detroit Diesel 50 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY NEOPLAN BUS",
+        "model": "AN440LF Transliner (w/Detroit Diesel 50 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY NEOPLAN BUS",
+        "model": "AN440LF Transliner (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY NEOPLAN BUS",
+        "model": "AN440LF Transliner (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY NEOPLAN BUS",
+        "model": "AN460, AN460LF Articulated Transit (w/Detroit Diesel 50 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY NEOPLAN BUS",
+        "model": "AN460, AN460LF Articulated Transit (w/Detroit Diesel 50 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY PREVOST",
+        "model": "H-Series Coach Bus (W/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY PREVOST",
+        "model": "H-Series Coach Bus (W/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY PREVOST",
+        "model": "LE Mirage (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY PREVOST",
+        "model": "LE Mirage (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY PREVOST",
+        "model": "XLII-Series (W/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY PREVOST",
+        "model": "XLII-Series (W/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY PREVOST",
+        "model": "XL-Series (W/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY PREVOST",
+        "model": "XL-Series (W/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY VAN HOOL",
+        "model": "C2045 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY VAN HOOL",
+        "model": "C2045 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY VAN HOOL",
+        "model": "T2145 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY VAN HOOL",
+        "model": "T2145 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER ADVANCE MIXER",
+        "model": "Concrete Mixers w/Detroit Diesel 50-Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER ADVANCE MIXER",
+        "model": "Concrete Mixers w/Detroit Diesel 50-Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER ADVANCE MIXER",
+        "model": "Concrete Mixers w/Detroit Diesel 60 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CONCRETE MIXER ADVANCE MIXER",
+        "model": "Concrete Mixers w/Detroit Diesel 60 Series Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK TAMROCK",
+        "model": "Supra 80 Side Dump Haul Truck",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK TAMROCK",
+        "model": "Supra 80 Side Dump Haul Truck",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DETROIT DIESEL",
+        "model": "50 (8.5L) Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DETROIT DIESEL",
+        "model": "50 (8.5L) Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DETROIT DIESEL",
+        "model": "60 (11.1L, 12.7L, 14L) Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DETROIT DIESEL",
+        "model": "60 (11.1L, 12.7L, 14L) Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "FIRE TRUCK SPARTAN CHASSIS INC.",
+        "model": "Gladiator (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "FIRE TRUCK SPARTAN CHASSIS INC.",
+        "model": "Gladiator (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "A9513",
+        "year": "98-96",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "A9513",
+        "year": "98-96",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "A9522",
+        "year": "1997",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "AT9513",
+        "year": "98-96",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "AT9513",
+        "year": "98-96",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "AT9522",
+        "year": "1998",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "AT9522",
+        "year": "98-97",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "L9000",
+        "year": "97-93",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "L9000",
+        "year": "1997",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "L9513",
+        "year": "98-97",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "L9513",
+        "year": "98-97",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LA9000",
+        "year": "97-91",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FORD",
+        "model": "LA9000",
+        "year": "1996",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FORD",
+        "model": "LA9000",
+        "year": "94-92",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FORD",
+        "model": "LLA9000",
+        "year": "96-92",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FORD",
+        "model": "LLS9000",
+        "year": "1994",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FORD",
+        "model": "LS9000",
+        "year": "1991",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FORD",
+        "model": "LS9000",
+        "year": "97-93",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FORD",
+        "model": "LT9000",
+        "year": "97-92",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LT9000",
+        "year": "97-92",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LT9501",
+        "year": "1998",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LT9501",
+        "year": "1998",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LT9511",
+        "year": "1998",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LT9511",
+        "year": "1998",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LT9513",
+        "year": "98-96",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LT9513",
+        "year": "98-96",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LT9522",
+        "year": "98-97",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LTA9000",
+        "year": "97-93",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FORD",
+        "model": "LTA9000",
+        "year": "97-93",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LTLA9000",
+        "year": "97-93",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FORD",
+        "model": "LTLA9000",
+        "year": "97-93",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LTLS9000",
+        "year": "95-94",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FORD",
+        "model": "LTLS9000",
+        "year": "96-93",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LTS9000",
+        "year": "97-92",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FORD",
+        "model": "LTS9000",
+        "year": "97-92",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "ARGOSY",
+        "year": "03-99",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "ARGOSY",
+        "year": "09-99",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "ARGOSY",
+        "year": "15-14",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "ARGOSY",
+        "year": "11-00",
+        "engine": "L6-14.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "ARGOSY",
+        "year": "2015",
+        "engine": "L6-14.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CASCADIA",
+        "year": "11-08",
+        "engine": "L6-14.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CASCADIA",
+        "year": "14-13",
+        "engine": "L6-14.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CENTURY CLASS",
+        "year": "02-01",
+        "engine": "L4-8.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CENTURY CLASS",
+        "year": "1998",
+        "engine": "L4-8.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CENTURY CLASS",
+        "year": "02-97",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CENTURY CLASS",
+        "year": "07-96",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CENTURY CLASS",
+        "year": "11-02",
+        "engine": "L6-14.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CENTURY CLASS",
+        "year": "2000",
+        "engine": "L6-14.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CLASSIC",
+        "year": "02-01",
+        "engine": "L6-11.1L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CLASSIC",
+        "year": "07-01",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CLASSIC",
+        "year": "2003",
+        "engine": "L6-14.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "GILLIG",
+        "model": "LOW FLOOR",
+        "year": "05-03",
+        "engine": "L4-8.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "C500",
+        "year": "03-89",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "C550",
+        "year": "1994",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "K100E",
+        "year": "03-88",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T2000",
+        "year": "03-97",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T400",
+        "year": "98-95",
+        "engine": "L4-8.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T400",
+        "year": "1992",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T450",
+        "year": "96-95",
+        "engine": "L4-8.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T600A",
+        "year": "2001",
+        "engine": "L4-8.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T600A",
+        "year": "03-93",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "T800",
+        "year": "03-93",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "KENWORTH",
+        "model": "W900",
+        "year": "03-93",
+        "engine": "L6-12.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MOTOR HOME PREVOST",
+        "model": "H-Series Recreational Vehicle (W/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MOTOR HOME PREVOST",
+        "model": "H-Series Recreational Vehicle (W/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AMERICAN LAFRANCE",
+        "model": "Eagle ALF 134 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AMERICAN LAFRANCE",
+        "model": "Eagle ALF 134 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "ACL64 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "ACL64 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "Aeromax AT9513 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "Aeromax AT9513 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LA9000 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LA9000 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LTA9000 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LTA9000 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Argosy (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Argosy (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Cascadia (w/Detroit Diesel 60 Series engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Cascadia (w/Detroit Diesel 60 Series engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century C120 (w/Detroit Diesel 50 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century C120 (w/Detroit Diesel 50 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century Class S/T (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century Class S/T (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century CST120 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century CST120 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Classic, Classic XL (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Classic, Classic XL (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Columbia (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Columbia (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Columbia Class (w/Detroit Diesel DD15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Columbia Class (w/Detroit Diesel DD15 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Condor (Refuse Truck) (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Condor (Refuse Truck) (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Coronado (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Coronado (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Coronado CC132 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Coronado CC132 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "CST120 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "CST120 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLD (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLD (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLD120SD (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLD120SD (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLL (w/Detroit Diesel 50 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLL (w/Detroit Diesel 50 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLL (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLL (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLT (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLT (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100 (w/Detroit Diesel 50 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8100 (w/Detroit Diesel 50 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8200, 8300 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "8200, 8300 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200i, Eagle (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9200i, Eagle (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400i, Eagle (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9400i, Eagle (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9900i, ix, Eagle (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "9900i, ix, Eagle (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "K100 (w/Detroit Diesel 12V-71 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "K100 (w/Detroit Diesel 12V-71 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "K100 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "K100 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "K100E (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "K100E (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T2000 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T2000 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T600, T600A (w/Detroit Diesel Series 60 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T600, T600A (w/Detroit Diesel Series 60 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "T800 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "W900 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "W900 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "W900B (w/Detroit Diesel Series 60 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "W900B (w/Detroit Diesel Series 60 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "362 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "362 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "372 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "372 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "377 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "377 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "379 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY PETERBILT",
+        "model": "379 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "A/AT9500, L/LT9500 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "A/AT9500, L/LT9500 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "ALine (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "ALine (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "AT9513 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "AT9513 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "AT9522 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "AT9522 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L Line (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L Line (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L Line 9500 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L Line 9500 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L7500 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "L7500 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT7500 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "LT7500 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "SilverStar (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "SilverStar (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "ST9500 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY STERLING",
+        "model": "ST9500 (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "VN 420 Cab (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "VN 420 Cab (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "VN 610 Cab (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "VN 610 Cab (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "VN 660 Cab (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "VN 660 Cab (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "VN 770 Cab (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "VN 770 Cab (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "VNL DayCab (w/Detroit Diesel 60 Series)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "VNL DayCab (w/Detroit Diesel 60 Series)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "VNM (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "VNM (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "WG42 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "WG42 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "WG64 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY VOLVO",
+        "model": "WG64 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "4900 Series (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "4900 Series (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "Constellation 4964EX (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "Constellation 4964EX (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "Constellation 4964F (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "Constellation 4964F (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "Constellation 4964FX (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "Constellation 4964FX (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "Constellation 4964SX (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "Constellation 4964SX (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "Constellation 6964SX (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "Constellation 6964SX (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "SOLAR SERIES 5964SS (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WESTERN STAR",
+        "model": "SOLAR SERIES 5964SS (w/Detroit 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WHITE",
+        "model": "WG42 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WHITE",
+        "model": "WG42 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WHITE",
+        "model": "WG64 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY WHITE",
+        "model": "WG64 (w/Detroit Diesel 60 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2100",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Alliance Parts",
+        "part_number": "ABP/N10G-LF3620",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Alliance Parts",
+        "part_number": "ABP/N10G-LF3671",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Alliance Parts",
+        "part_number": "ABP/N10G-LF9620",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "SDF77",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B495",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B495-SS",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B495-MPG",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BK6941",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92971",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85971XD",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85971",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Coach Guard",
+        "part_number": "T08-1043",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Detroit Diesel",
+        "part_number": "23530573",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Detroit Diesel",
+        "part_number": "23527033",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Detroit Diesel",
+        "part_number": "25014505",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Detroit Diesel",
+        "part_number": "23518480",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559250",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559301",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559299",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P552100",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559596",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P173998",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559620",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559309",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "ELF3998",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559245",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559246",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559605",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559618",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3671",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3620",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "MK13045",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF9620",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-83620",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25014507",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25014505",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "23518480",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GP193",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF250XS",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF250",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "AL7405A",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L278",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP2160",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W12102",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1971",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L54836",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Tamrock",
+        "part_number": "4521030",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "3915586",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "3946299",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51971MP",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51971",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51971XD",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51971EC",
+        "source_part_number": "PH7405A",
+        "part_key": "001509584",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

@@ -1,0 +1,2533 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "CH10075",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CH10075",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 3.113,
+      "height_mm": 79.07,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Cartridge",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [
+      "FD10075",
+      "FF10075",
+      "FE10075",
+      "FS10075",
+      "TG10075",
+      "XG10075"
+    ],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF461G"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "3307"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "COC10075"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX 387D ECO"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX387DECO"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU8011Z"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU816X"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "7327"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "27327"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "PL15607"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L15607"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57327XP"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57327"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Auto Extra",
+        "part_number": "61857327"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 7 541 827"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 8 683 204"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 8 683 196"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 7 953 125"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 7 566 327"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 7 854 049"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 7 953 129"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 7 854 445"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 7 640 862"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "R84327"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "84327"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "P969"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "part_number": "COC10075"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DL10075"
+      },
+      {
+        "manufacturer": "Driveworks",
+        "part_number": "DW-5607"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "X5607"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "X11643"
+      },
+      {
+        "manufacturer": "FERGUSON",
+        "part_number": "G7327"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "G7327"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "V5607"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF634"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "PS-7014"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "HP-7014"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P969"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "MGL10075"
+      },
+      {
+        "manufacturer": "MicroGard Select",
+        "part_number": "MSL57327"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "MX969"
+      },
+      {
+        "manufacturer": "Mileguard",
+        "part_number": "MO10075"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "MO-969"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1C-155A"
+      },
+      {
+        "manufacturer": "NAPA Platinum Filters",
+        "part_number": "47327"
+      },
+      {
+        "manufacturer": "NAPA Silver Filters",
+        "part_number": "37327"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "67327X"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "67327"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ163"
+      },
+      {
+        "manufacturer": "Pentius",
+        "part_number": "PCB10075"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PO-163"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PG5607"
+      },
+      {
+        "manufacturer": "Premium Guard Extended Life",
+        "part_number": "PG5607EX"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "PH5607"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PO-5670"
+      },
+      {
+        "manufacturer": "PureZone",
+        "part_number": "8-57327"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PBL15607"
+      },
+      {
+        "manufacturer": "Purolator PureONE",
+        "part_number": "PL15607"
+      },
+      {
+        "manufacturer": "Purolator TECH",
+        "part_number": "TL15607"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "part_number": "PL15607"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "QS163"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "CF10075"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S10075XL"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S10075"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S10075ML"
+      },
+      {
+        "manufacturer": "Ultra",
+        "part_number": "XG10075"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-91"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "2011",
+        "make": "BMW",
+        "model": "1 SERIES M",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "13-08",
+        "make": "BMW",
+        "model": "128I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "13-08",
+        "make": "BMW",
+        "model": "135I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2013",
+        "make": "BMW",
+        "model": "135IS",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "228I",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "BMW",
+        "model": "228I XDRIVE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-12",
+        "make": "BMW",
+        "model": "320I",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-13",
+        "make": "BMW",
+        "model": "320I XDRIVE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "11-06",
+        "make": "BMW",
+        "model": "323I",
+        "engine": "L6-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "BMW",
+        "model": "325I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "BMW",
+        "model": "325XI",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-12",
+        "make": "BMW",
+        "model": "328I",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "13-07",
+        "make": "BMW",
+        "model": "328I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "328I GT XDRIVE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-13",
+        "make": "BMW",
+        "model": "328I XDRIVE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "13-09",
+        "make": "BMW",
+        "model": "328I XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "08-07",
+        "make": "BMW",
+        "model": "328XI",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "BMW",
+        "model": "330CI",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "BMW",
+        "model": "330I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "BMW",
+        "model": "330XI",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-07",
+        "make": "BMW",
+        "model": "335I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "335I GT XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-09",
+        "make": "BMW",
+        "model": "335I XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "13-11",
+        "make": "BMW",
+        "model": "335IS",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "08-07",
+        "make": "BMW",
+        "model": "335XI",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "428I",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "BMW",
+        "model": "428I GRAN COUPE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "428I XDRIVE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "BMW",
+        "model": "428I XDRIVE GRAN COUPE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "435I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "BMW",
+        "model": "435I GRAN COUPE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "435I XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "BMW",
+        "model": "435I XDRIVE GRAN COUPE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "07-06",
+        "make": "BMW",
+        "model": "525I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "07-06",
+        "make": "BMW",
+        "model": "525XI",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-12",
+        "make": "BMW",
+        "model": "528I",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "11-08",
+        "make": "BMW",
+        "model": "528I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-12",
+        "make": "BMW",
+        "model": "528I XDRIVE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "10-09",
+        "make": "BMW",
+        "model": "528I XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2008",
+        "make": "BMW",
+        "model": "528XI",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "07-06",
+        "make": "BMW",
+        "model": "530I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "07-06",
+        "make": "BMW",
+        "model": "530XI",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-08",
+        "make": "BMW",
+        "model": "535I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "17-10",
+        "make": "BMW",
+        "model": "535I GT",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "17-11",
+        "make": "BMW",
+        "model": "535I GT XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-09",
+        "make": "BMW",
+        "model": "535I XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2008",
+        "make": "BMW",
+        "model": "535XI",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-12",
+        "make": "BMW",
+        "model": "640I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-13",
+        "make": "BMW",
+        "model": "640I GRAN COUPE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-14",
+        "make": "BMW",
+        "model": "640I XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-14",
+        "make": "BMW",
+        "model": "640I XDRIVE GRAN COUPE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-11",
+        "make": "BMW",
+        "model": "740I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-11",
+        "make": "BMW",
+        "model": "740LI",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-13",
+        "make": "BMW",
+        "model": "740LI XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-13",
+        "make": "BMW",
+        "model": "ACTIVEHYBRID 3",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-12",
+        "make": "BMW",
+        "model": "ACTIVEHYBRID 5",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-13",
+        "make": "BMW",
+        "model": "ACTIVEHYBRID 7",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-16",
+        "make": "BMW",
+        "model": "M2",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "M235I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "BMW",
+        "model": "M235I XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-15",
+        "make": "BMW",
+        "model": "M3",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-15",
+        "make": "BMW",
+        "model": "M4",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-12",
+        "make": "BMW",
+        "model": "X1",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-13",
+        "make": "BMW",
+        "model": "X1",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "17-13",
+        "make": "BMW",
+        "model": "X3",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "17-07",
+        "make": "BMW",
+        "model": "X3",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-15",
+        "make": "BMW",
+        "model": "X4",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-15",
+        "make": "BMW",
+        "model": "X4",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-16",
+        "make": "BMW",
+        "model": "X5",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-07",
+        "make": "BMW",
+        "model": "X5",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-08",
+        "make": "BMW",
+        "model": "X6",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-12",
+        "make": "BMW",
+        "model": "Z4",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-06",
+        "make": "BMW",
+        "model": "Z4",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CH10075",
+    "source_part_key": "000991604",
+    "source_totals": {
+      "attributes": 52,
+      "applications": 73,
+      "cross_references": 73
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® oil filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE (original equipment) recommended intervals. Engineered for conventional and synthetic motor oil, Extra Guard offers proven engine protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Proven protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CH10075, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filter media is a blend of fiber and resin that captures 95%?of the dirt particles",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Includes gaskets and O-rings manufactured to endure the high pressures and high temperatures in today’s engines",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Cartridge Oil Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "The perfect balance of dirt-trapping efficiency and dirt-holding capacity",
+        "recno": "4"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Engineered for use with synthetic or conventional motor oils",
+        "recno": "5"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Cartridge",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "NA",
+        "recno": "89"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100530127",
+        "recno": "92"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "3.113",
+        "recno": "93"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "94"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "1.615",
+        "recno": "95"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "2.876",
+        "recno": "96"
+      },
+      {
+        "attribute": "O-Ring Inside Diameter (Inch)",
+        "value": "3.172",
+        "recno": "97"
+      },
+      {
+        "attribute": "O-Ring Outside Diameter (Inch)",
+        "value": "3.310",
+        "recno": "98"
+      },
+      {
+        "attribute": "O-Ring Thickness (Inch)",
+        "value": "0.138",
+        "recno": "99"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "1.615",
+        "recno": "100"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "2.876",
+        "recno": "101"
+      },
+      {
+        "attribute": "Washer Thickness (Inch)",
+        "value": "0.055",
+        "recno": "102"
+      },
+      {
+        "attribute": "Washer Inside Diameter (Inch)",
+        "value": "0.473",
+        "recno": "103"
+      },
+      {
+        "attribute": "Washer Outside Diameter (Inch)",
+        "value": "0.587",
+        "recno": "104"
+      },
+      {
+        "attribute": "O-Rings Included",
+        "value": "Yes",
+        "recno": "105"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "106"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "107"
+      },
+      {
+        "attribute": "O-Ring (1) Inside Diameter (Inch)",
+        "value": "0.473",
+        "recno": "108"
+      },
+      {
+        "attribute": "O-Ring (1) Outside Diameter (Inch)",
+        "value": "0.587",
+        "recno": "109"
+      },
+      {
+        "attribute": "O-Ring (1) Thickness (Inch)",
+        "value": "0.055",
+        "recno": "110"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "111"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "112"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.2250",
+        "recno": "116"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.3500",
+        "recno": "117"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "3.3100",
+        "recno": "118"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.3500",
+        "recno": "119"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.1500",
+        "recno": "120"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "9.9900",
+        "recno": "121"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.1500",
+        "recno": "122"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "6.7400",
+        "recno": "123"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.225,
+        "case_weight_lb": 1.35,
+        "unit_height_in": 3.31,
+        "unit_length_in": 3.15,
+        "unit_width_in": 3.15,
+        "case_height_in": 4.35,
+        "case_length_in": 9.99,
+        "case_width_in": 6.74,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 2.7,
+        "estimated_case_dimensions": {
+          "length_in": 13.32,
+          "width_in": 10.11,
+          "height_in": 4.35,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 73,
+    "all_cross_references_observed": 73,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:12:40.298Z",
+  "discovered_from": "CH10075",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BMW",
+        "model": "1 SERIES M",
+        "year": "2011",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "128I",
+        "year": "13-08",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "135I",
+        "year": "13-08",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "135IS",
+        "year": "2013",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "228I",
+        "year": "16-14",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "228I XDRIVE",
+        "year": "16-15",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "320I",
+        "year": "18-12",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "320I XDRIVE",
+        "year": "18-13",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "323I",
+        "year": "11-06",
+        "engine": "L6-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "325I",
+        "year": "2006",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "325XI",
+        "year": "2006",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328I",
+        "year": "16-12",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328I",
+        "year": "13-07",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328I GT XDRIVE",
+        "year": "16-14",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328I XDRIVE",
+        "year": "16-13",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328I XDRIVE",
+        "year": "13-09",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328XI",
+        "year": "08-07",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "330CI",
+        "year": "2006",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "330I",
+        "year": "2006",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "330XI",
+        "year": "2006",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "335I",
+        "year": "15-07",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "335I GT XDRIVE",
+        "year": "16-14",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "335I XDRIVE",
+        "year": "15-09",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "335IS",
+        "year": "13-11",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "335XI",
+        "year": "08-07",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "428I",
+        "year": "16-14",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "428I GRAN COUPE",
+        "year": "16-15",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "428I XDRIVE",
+        "year": "16-14",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "428I XDRIVE GRAN COUPE",
+        "year": "16-15",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "435I",
+        "year": "16-14",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "435I GRAN COUPE",
+        "year": "16-15",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "435I XDRIVE",
+        "year": "16-14",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "435I XDRIVE GRAN COUPE",
+        "year": "16-15",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "525I",
+        "year": "07-06",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "525XI",
+        "year": "07-06",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "528I",
+        "year": "16-12",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "528I",
+        "year": "11-08",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "528I XDRIVE",
+        "year": "16-12",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "528I XDRIVE",
+        "year": "10-09",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "528XI",
+        "year": "2008",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "530I",
+        "year": "07-06",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "530XI",
+        "year": "07-06",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "535I",
+        "year": "16-08",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "535I GT",
+        "year": "17-10",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "535I GT XDRIVE",
+        "year": "17-11",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "535I XDRIVE",
+        "year": "16-09",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "535XI",
+        "year": "2008",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "640I",
+        "year": "18-12",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "640I GRAN COUPE",
+        "year": "19-13",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "640I XDRIVE",
+        "year": "18-14",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "640I XDRIVE GRAN COUPE",
+        "year": "19-14",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "740I",
+        "year": "15-11",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "740LI",
+        "year": "15-11",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "740LI XDRIVE",
+        "year": "15-13",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "ACTIVEHYBRID 3",
+        "year": "15-13",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "ACTIVEHYBRID 5",
+        "year": "16-12",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "ACTIVEHYBRID 7",
+        "year": "15-13",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M2",
+        "year": "21-16",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M235I",
+        "year": "16-14",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M235I XDRIVE",
+        "year": "16-15",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M3",
+        "year": "18-15",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M4",
+        "year": "20-15",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "X1",
+        "year": "15-12",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "X1",
+        "year": "15-13",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "X3",
+        "year": "17-13",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "X3",
+        "year": "17-07",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "X4",
+        "year": "18-15",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "X4",
+        "year": "18-15",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "X5",
+        "year": "18-16",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "X5",
+        "year": "18-07",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "X6",
+        "year": "19-08",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "Z4",
+        "year": "16-12",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "Z4",
+        "year": "16-06",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF461G",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Auto Extra",
+        "part_number": "61857327",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 7 541 827",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 8 683 204",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 8 683 196",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 7 953 125",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 7 566 327",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 7 854 049",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 7 953 129",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 7 854 445",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 7 640 862",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "3307",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "R84327",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "84327",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "P969",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "COC10075",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "part_number": "COC10075",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DL10075",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Driveworks",
+        "part_number": "DW-5607",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "X5607",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "X11643",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FERGUSON",
+        "part_number": "G7327",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Drive",
+        "part_number": "FD10075",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Force",
+        "part_number": "FF10075",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Synthetic Endurance",
+        "part_number": "FE10075",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Titanium",
+        "part_number": "FS10075",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Tough Guard",
+        "part_number": "TG10075",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Ultra Synthetic",
+        "part_number": "XG10075",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "G7327",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "V5607",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF634",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "PS-7014",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "HP-7014",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P969",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX 387D ECO",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX387DECO",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU8011Z",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU816X",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "MGL10075",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MicroGard Select",
+        "part_number": "MSL57327",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "MX969",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mileguard",
+        "part_number": "MO10075",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "MO-969",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1C-155A",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "7327",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "27327",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA Platinum Filters",
+        "part_number": "47327",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA Silver Filters",
+        "part_number": "37327",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "67327X",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "67327",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ163",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pentius",
+        "part_number": "PCB10075",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PO-163",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PG5607",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Premium Guard Extended Life",
+        "part_number": "PG5607EX",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "PH5607",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PO-5670",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "PureZone",
+        "part_number": "8-57327",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "PL15607",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L15607",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PBL15607",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator PureONE",
+        "part_number": "PL15607",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator TECH",
+        "part_number": "TL15607",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "part_number": "PL15607",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "QS163",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "CF10075",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S10075XL",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S10075",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S10075ML",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ultra",
+        "part_number": "XG10075",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-91",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57327XP",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57327",
+        "source_part_number": "CH10075",
+        "part_key": "000991604",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

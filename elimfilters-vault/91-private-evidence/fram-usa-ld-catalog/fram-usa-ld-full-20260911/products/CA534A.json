@@ -1,0 +1,1652 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA534A",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA534A",
+    "product_type": "Air Filter, Air",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 12.375,
+      "height_mm": 314.32,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Metal End Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "4N-0326"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "4N-326X"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "8994558"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AT65296"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AR43942"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AR43940"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AR43605"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AR43941"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A611C"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA3698"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "LL1926"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA1926"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A53175"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42917"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42104"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Air Maze",
+        "part_number": "202633-826"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "10433"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-43605"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-722"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "10171"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-43941"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "93917"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87917"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P120058"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P528226"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P119575"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P181163"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P116143"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P136253"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P136254"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P181119"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P133470"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P133525"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF921M"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF1659"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-81659"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-8921M"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-84736"
+      },
+      {
+        "manufacturer": "Guardian",
+        "part_number": "G-4N326X"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF234"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF490"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "HDA-326"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "A-326"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "A-6254"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "HDA-6254"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA431"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA773"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF8550"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "70813N"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "84670S"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "84767S"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA534A",
+    "source_part_key": "001509504",
+    "source_totals": {
+      "attributes": 32,
+      "applications": 76,
+      "cross_references": 51
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA534A, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Metal End Air Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "82"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "84"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "85"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "86"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "87"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "88"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "89"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "12.375",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100523471",
+        "recno": "92"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "0.875",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "6.844",
+        "recno": "94"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "3.469",
+        "recno": "95"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "6.844",
+        "recno": "96"
+      },
+      {
+        "attribute": "Washer Thickness (Inch)",
+        "value": "0.125",
+        "recno": "97"
+      },
+      {
+        "attribute": "Washer Inside Diameter (Inch)",
+        "value": "0.563",
+        "recno": "98"
+      },
+      {
+        "attribute": "Washer Outside Diameter (Inch)",
+        "value": "1.250",
+        "recno": "99"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "100"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "101"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Turkey",
+        "recno": "102"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "3.0500",
+        "recno": "106"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "13.4920",
+        "recno": "107"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "7.7300",
+        "recno": "108"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "7.7300",
+        "recno": "109"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": 3.05,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": 13.492,
+        "case_length_in": 7.73,
+        "case_width_in": 7.73,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 76,
+    "all_cross_references_observed": 51,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:47:40.945Z",
+  "discovered_from": "CA534A",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3, D3B w/Caterpillar 3204 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3, D3B w/Caterpillar 3204 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3BLGP",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3BLGP",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3C Series II w/Caterpillar 3204 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3C Series II w/Caterpillar 3204 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3C w/Caterpillar 3046 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3C w/Caterpillar 3046 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3CHY Series III w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3CHY Series III w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3CLGP",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3CLGP",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3CLGP Series II",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3CLGP Series II",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3CLGP XL Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3CLGP XL Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D4B",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D4B",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D4C w/Caterpillar 3046 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D4C w/Caterpillar 3046 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D4C, D4C LPG, D4CXL Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D4C, D4C LPG, D4CXL Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D4C, D4C XL Series II w/Caterpillar 3204 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D4C, D4C XL Series II w/Caterpillar 3204 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D5C, D5CLPG, D5C XL Series III w/Caterpillar 3046 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D5C, D5CLPG, D5C XL Series III w/Caterpillar 3046 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931B LGP",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931B LGP",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931B w/Caterpillar 3204 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931B w/Caterpillar 3204 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931C LGP",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931C LGP",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931C LGP Series II",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931C LGP Series II",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931C Series II",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931C Series II",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "933 w/Caterpillar 3046 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "933 w/Caterpillar 3046 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "933, 933C, 933LGP, 933CLGP w/Caterpillar 3046 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "933, 933C, 933LGP, 933CLGP w/Caterpillar 3046 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "933CHS w/Caterpillar 3046 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "933CHS w/Caterpillar 3046 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "935B w/Caterpillar 3204 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "935B w/Caterpillar 3204 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "935C Series II",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "935C Series II",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "935C, 935C Series II w/Caterpillar 3204 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "935C, 935C Series II w/Caterpillar 3204 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "939",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "939",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "939C w/Caterpillar 3046T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "939C w/Caterpillar 3046T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "939CHS w/Caterpillar 3046 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "939CHS w/Caterpillar 3046 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR CATERPILLAR",
+        "model": "D3B",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR CATERPILLAR",
+        "model": "D3B",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "3204",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "3204",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "EL180",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "EL180",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR JOHN DEERE",
+        "model": "690, 690A w/John Deere 6404T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR JOHN DEERE",
+        "model": "690, 690A w/John Deere 6404T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER ROYAL",
+        "model": "80 w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER ROYAL",
+        "model": "80 w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INTEGRATED TOOLCARRIER CATERPILLAR",
+        "model": "IT12",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INTEGRATED TOOLCARRIER CATERPILLAR",
+        "model": "IT12",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "4520 w/John Deere 404 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "4520 w/John Deere 404 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "910",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "910",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "931",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "931",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "G910",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "G910",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A611C",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Maze",
+        "part_number": "202633-826",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "10433",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-43605",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-722",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "10171",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-43941",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA3698",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "LL1926",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA1926",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "93917",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87917",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "4N-0326",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "4N-326X",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P120058",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P528226",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P119575",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P181163",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P116143",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P136253",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P136254",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P181119",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P133470",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P133525",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF921M",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF1659",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-81659",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-8921M",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-84736",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "8994558",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Guardian",
+        "part_number": "G-4N326X",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF234",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF490",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "HDA-326",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "A-326",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "A-6254",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "HDA-6254",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AT65296",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AR43942",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AR43940",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AR43605",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AR43941",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA431",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA773",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF8550",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "70813N",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "84670S",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "84767S",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A53175",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42917",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42104",
+        "source_part_number": "CA534A",
+        "part_key": "001509504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

@@ -1,0 +1,2415 @@
+{
+  "generated_at": "2026-09-13T19:56:17.279Z",
+  "harvested": 341,
+  "counts": {
+    "REAL_GAP_CREATE_SAFE": 341
+  },
+  "by_family": {
+    "AIR": {
+      "REAL_GAP_CREATE_SAFE": 259
+    },
+    "CABIN": {
+      "REAL_GAP_CREATE_SAFE": 41
+    },
+    "LUBE": {
+      "REAL_GAP_CREATE_SAFE": 34
+    },
+    "FUEL": {
+      "REAL_GAP_CREATE_SAFE": 7
+    }
+  },
+  "existing_covered": 0,
+  "variants": 0,
+  "create_safe": 341,
+  "quarantine": 0,
+  "safe_candidates": [
+    {
+      "family": "AIR",
+      "authority": "CA10014",
+      "sku": "EA33928",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10014.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10015",
+      "sku": "EA35578",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10015.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10029",
+      "sku": "EA36791",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10029.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10029SY",
+      "sku": "EA36523",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10029SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10031",
+      "sku": "EA30108",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10031.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10071",
+      "sku": "EA39378",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10071.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10088",
+      "sku": "EA30552",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10088.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA101",
+      "sku": "EA31742",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA101.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10118",
+      "sku": "EA38249",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10118.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10159",
+      "sku": "EA35504",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10159.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10161",
+      "sku": "EA32280",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10161.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10163",
+      "sku": "EA30981",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10163.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10170",
+      "sku": "EA37256",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10170.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10171",
+      "sku": "EA30104",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10171.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10192",
+      "sku": "EA36650",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10192.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10193",
+      "sku": "EA31514",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10193.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA102",
+      "sku": "EA38415",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA102.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10228",
+      "sku": "EA32406",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10228.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10271",
+      "sku": "EA32457",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10271.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10305",
+      "sku": "EA31873",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10305.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10328",
+      "sku": "EA36277",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10328.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10346",
+      "sku": "EA32205",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10346.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10347",
+      "sku": "EA34891",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10347.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10432",
+      "sku": "EA34032",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10432.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10500",
+      "sku": "EA35423",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10500.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10542",
+      "sku": "EA31384",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10542.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10551",
+      "sku": "EA33104",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10551.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10573",
+      "sku": "EA31312",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10573.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10661",
+      "sku": "EA31726",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10661.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10762",
+      "sku": "EA32032",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10762.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10881",
+      "sku": "EA33180",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10881.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10901",
+      "sku": "EA35644",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10901.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10910",
+      "sku": "EA36583",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10910.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10982",
+      "sku": "EA30982",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10982.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA10982SY",
+      "sku": "EA32727",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA10982SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11001",
+      "sku": "EA31594",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11001.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11002",
+      "sku": "EA33134",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11002.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11004",
+      "sku": "EA35817",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11004.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11005",
+      "sku": "EA38573",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11005.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11011",
+      "sku": "EA31590",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11011.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11013",
+      "sku": "EA33591",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11013.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11027",
+      "sku": "EA35799",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11027.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11030",
+      "sku": "EA36975",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11030.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11031",
+      "sku": "EA39403",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11031.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11034",
+      "sku": "EA33568",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11034.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11041",
+      "sku": "EA33063",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11041.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11042",
+      "sku": "EA37463",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11042.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11049",
+      "sku": "EA35546",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11049.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11050",
+      "sku": "EA31703",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11050.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11109",
+      "sku": "EA38056",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11109.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11113",
+      "sku": "EA34576",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11113.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11116",
+      "sku": "EA30828",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11116.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11121",
+      "sku": "EA39660",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11121.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11154",
+      "sku": "EA31736",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11154.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11170",
+      "sku": "EA37315",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11170.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11215",
+      "sku": "EA31518",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11215.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11227",
+      "sku": "EA37117",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11227.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11233",
+      "sku": "EA39494",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11233.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11250",
+      "sku": "EA37891",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11250.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11251",
+      "sku": "EA34680",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11251.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11256",
+      "sku": "EA38552",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11256.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11257",
+      "sku": "EA36307",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11257.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11287",
+      "sku": "EA30915",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11287.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11295",
+      "sku": "EA31395",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11295.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11295SY",
+      "sku": "EA35756",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11295SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11305",
+      "sku": "EA33362",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11305.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11345",
+      "sku": "EA35714",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11345.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11345SY",
+      "sku": "EA31074",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11345SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11420",
+      "sku": "EA36888",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11420.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11422",
+      "sku": "EA36026",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11422.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11431",
+      "sku": "EA39458",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11431.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11450",
+      "sku": "EA35819",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11450.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11456",
+      "sku": "EA31828",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11456.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11476",
+      "sku": "EA31504",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11476.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11480",
+      "sku": "EA31479",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11480.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11500",
+      "sku": "EA32118",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11500.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11519",
+      "sku": "EA30660",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11519.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11541",
+      "sku": "EA32426",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11541.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11565",
+      "sku": "EA39726",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11565.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11581SY",
+      "sku": "EA38030",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11581SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11759",
+      "sku": "EA30815",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11759.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11861",
+      "sku": "EA39888",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11861.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11877",
+      "sku": "EA35741",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11877.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11895",
+      "sku": "EA32271",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11895.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11942",
+      "sku": "EA39946",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11942.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11945",
+      "sku": "EA34936",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11945.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA11952",
+      "sku": "EA31615",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA11952.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12050",
+      "sku": "EA31576",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12050.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12057",
+      "sku": "EA37602",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12057.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12061",
+      "sku": "EA39651",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12061.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12062",
+      "sku": "EA38764",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12062.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12065",
+      "sku": "EA32189",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12065.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12071",
+      "sku": "EA35383",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12071.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12112",
+      "sku": "EA30509",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12112.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA122",
+      "sku": "EA36524",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA122.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12260",
+      "sku": "EA37756",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12260.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12290",
+      "sku": "EA39819",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12290.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12293",
+      "sku": "EA34552",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12293.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12295",
+      "sku": "EA34119",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12295.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12368",
+      "sku": "EA37932",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12368.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12371",
+      "sku": "EA39649",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12371.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12372",
+      "sku": "EA34753",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12372.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12376",
+      "sku": "EA30289",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12376.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12404",
+      "sku": "EA33262",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12404.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA124A",
+      "sku": "EA39390",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA124A.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12535",
+      "sku": "EA30993",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12535.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12619",
+      "sku": "EA30095",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12619.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12666",
+      "sku": "EA32266",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12666.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12668",
+      "sku": "EA33182",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12668.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12841",
+      "sku": "EA37058",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12841.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12863",
+      "sku": "EA39351",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12863.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12868",
+      "sku": "EA33408",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12868.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12878",
+      "sku": "EA39914",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12878.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12879",
+      "sku": "EA30747",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12879.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12931",
+      "sku": "EA37757",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12931.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12934",
+      "sku": "EA39897",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12934.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12940",
+      "sku": "EA39805",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12940.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12941",
+      "sku": "EA33167",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12941.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12952",
+      "sku": "EA37499",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12952.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12953",
+      "sku": "EA36329",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12953.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12954",
+      "sku": "EA36034",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12954.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA12987",
+      "sku": "EA31316",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA12987.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA148",
+      "sku": "EA35270",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA148.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA15",
+      "sku": "EA31755",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA15.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA151",
+      "sku": "EA36526",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA151.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA1519",
+      "sku": "EA30506",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA1519.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA1531SY",
+      "sku": "EA35579",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA1531SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA1532SY",
+      "sku": "EA36609",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA1532SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA1537",
+      "sku": "EA32185",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA1537.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA1543",
+      "sku": "EA31543",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA1543.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA1543SY",
+      "sku": "EA33648",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA1543SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA1562",
+      "sku": "EA39950",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA1562.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA1562SY",
+      "sku": "EA35539",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA1562SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA1565",
+      "sku": "EA31565",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA1565.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA1574",
+      "sku": "EA35305",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA1574.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA1580ASY",
+      "sku": "EA30964",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA1580ASY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA1581",
+      "sku": "EA39809",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA1581.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA1588",
+      "sku": "EA33036",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA1588.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA1588SY",
+      "sku": "EA33247",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA1588SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA159",
+      "sku": "EA30159",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA159.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA1591",
+      "sku": "EA33923",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA1591.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA1592",
+      "sku": "EA34417",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA1592.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA1596",
+      "sku": "EA39699",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA1596.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA187",
+      "sku": "EA35179",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA187.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA189",
+      "sku": "EA31026",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA189.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA192",
+      "sku": "EA30192",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA192.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA198",
+      "sku": "EA38066",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA198.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA21",
+      "sku": "EA31403",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA21.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA228",
+      "sku": "EA30228",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA228.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA240",
+      "sku": "EA35542",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA240.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA240PLHD",
+      "sku": "EA38042",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA240PLHD.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA2512SY",
+      "sku": "EA31193",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA2512SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA2517",
+      "sku": "EA35080",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA2517.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA2519",
+      "sku": "EA36903",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA2519.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA2519SY",
+      "sku": "EA31346",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA2519SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA2520",
+      "sku": "EA39127",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA2520.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA2541",
+      "sku": "EA32682",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA2541.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA2542",
+      "sku": "EA34986",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA2542.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA2548",
+      "sku": "EA30592",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA2548.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA2548SY",
+      "sku": "EA39615",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA2548SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA2555SY",
+      "sku": "EA39716",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA2555SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA2557SY",
+      "sku": "EA34382",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA2557SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA2561",
+      "sku": "EA35698",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA2561.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA2565",
+      "sku": "EA31125",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA2565.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA2565SY",
+      "sku": "EA33258",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA2565SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA2580",
+      "sku": "EA31920",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA2580.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA2580SY",
+      "sku": "EA34555",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA2580SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA2740",
+      "sku": "EA38651",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA2740.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA29",
+      "sku": "EA31419",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA29.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA30",
+      "sku": "EA33531",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA30.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA305",
+      "sku": "EA38633",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA305.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA311",
+      "sku": "EA34224",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA311.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA313",
+      "sku": "EA38414",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA313.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA314",
+      "sku": "EA30243",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA314.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA3146",
+      "sku": "EA36291",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA3146.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA324A",
+      "sku": "EA35980",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA324A.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA325",
+      "sku": "EA30273",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA325.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA326",
+      "sku": "EA39820",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA326.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA3273",
+      "sku": "EA35861",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA3273.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA3273SY",
+      "sku": "EA30134",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA3273SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA328",
+      "sku": "EA30328",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA328.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA3324",
+      "sku": "EA39382",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA3324.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA345",
+      "sku": "EA31684",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA345.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA346",
+      "sku": "EA30346",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA346.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA347",
+      "sku": "EA30347",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA347.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA3565",
+      "sku": "EA33630",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA3565.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA3566",
+      "sku": "EA33222",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA3566.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA3602",
+      "sku": "EA33626",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA3602.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA3621",
+      "sku": "EA38542",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA3621.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA381",
+      "sku": "EA36135",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA381.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA3874",
+      "sku": "EA35224",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA3874.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA4282",
+      "sku": "EA37974",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA4282.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA4369",
+      "sku": "EA34472",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA4369.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA5021",
+      "sku": "EA37043",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA5021.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA5021SY",
+      "sku": "EA35713",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA5021SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA5067",
+      "sku": "EA35515",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA5067.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA511A",
+      "sku": "EA35113",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA511A.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA542",
+      "sku": "EA30542",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA542.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA551",
+      "sku": "EA36062",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA551.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA5522",
+      "sku": "EA36775",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA5522.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA563",
+      "sku": "EA30563",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA563.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA563SY",
+      "sku": "EA37820",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA563SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA573",
+      "sku": "EA30573",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA573.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA6304",
+      "sku": "EA35848",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA6304.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA6319",
+      "sku": "EA36319",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA6319.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA6319SY",
+      "sku": "EA34935",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA6319SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA6327",
+      "sku": "EA36327",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA6327.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA6327SY",
+      "sku": "EA37603",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA6327SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA6334",
+      "sku": "EA30357",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA6334.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA6816",
+      "sku": "EA33316",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA6816.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA6821",
+      "sku": "EA39510",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA6821.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA7007",
+      "sku": "EA32291",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA7007.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA7017",
+      "sku": "EA32876",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA7017.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA7110",
+      "sku": "EA38416",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA7110.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA7110SY",
+      "sku": "EA37504",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA7110SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA7111SY",
+      "sku": "EA30953",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA7111SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA7140",
+      "sku": "EA33853",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA7140.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA7140SY",
+      "sku": "EA36561",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA7140SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA7230",
+      "sku": "EA32479",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA7230.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA74",
+      "sku": "EA38236",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA74.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA7478",
+      "sku": "EA37478",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA7478.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA7478SY",
+      "sku": "EA39664",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA7478SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA7486",
+      "sku": "EA37486",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA7486.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA7486SY",
+      "sku": "EA31954",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA7486SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA7495",
+      "sku": "EA37495",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA7495.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA7495SY",
+      "sku": "EA33771",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA7495SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA79",
+      "sku": "EA37758",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA79.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA8003",
+      "sku": "EA38399",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA8003.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA8010",
+      "sku": "EA35147",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA8010.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA8014",
+      "sku": "EA38175",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA8014.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA8029",
+      "sku": "EA31458",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA8029.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA8037",
+      "sku": "EA30219",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA8037.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA8121",
+      "sku": "EA37794",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA8121.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA8130",
+      "sku": "EA37455",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA8130.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA8133",
+      "sku": "EA32047",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA8133.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA8162",
+      "sku": "EA38123",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA8162.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA8331",
+      "sku": "EA34317",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA8331.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA8507",
+      "sku": "EA35746",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA8507.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA8601",
+      "sku": "EA39928",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA8601.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA8602",
+      "sku": "EA38508",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA8602.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA8606",
+      "sku": "EA30793",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA8606.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA8731",
+      "sku": "EA37243",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA8731.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA8960",
+      "sku": "EA36314",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA8960.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA9002SY",
+      "sku": "EA37677",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA9002SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA9003",
+      "sku": "EA30524",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA9003.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA9003SY",
+      "sku": "EA34619",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA9003SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA9121",
+      "sku": "EA33547",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA9121.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA9122",
+      "sku": "EA35495",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA9122.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA9352SY",
+      "sku": "EA37575",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA9352SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA9501",
+      "sku": "EA33878",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA9501.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA9550",
+      "sku": "EA38230",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA9550.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA9550S",
+      "sku": "EA37623",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA9550S.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA9872",
+      "sku": "EA39872",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA9872.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA9872SY",
+      "sku": "EA32736",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA9872SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA9901",
+      "sku": "EA34183",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA9901.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA9901SY",
+      "sku": "EA37204",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA9901SY.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA9912",
+      "sku": "EA36838",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA9912.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA9966",
+      "sku": "EA39966",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA9966.json"
+    },
+    {
+      "family": "AIR",
+      "authority": "CA9966SY",
+      "sku": "EA39701",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CA9966SY.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF10138",
+      "sku": "EC30138",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF10138.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF10360",
+      "sku": "EC30360",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF10360.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF10364",
+      "sku": "EC30364",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF10364.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF10370",
+      "sku": "EC30370",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF10370.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF10373",
+      "sku": "EC30373",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF10373.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF10388",
+      "sku": "EC30388",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF10388.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF10436",
+      "sku": "EC30436",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF10436.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF10550",
+      "sku": "EC30550",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF10550.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF10727",
+      "sku": "EC30727",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF10727.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF10775",
+      "sku": "EC30775",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF10775.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF11183",
+      "sku": "EC31183",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF11183.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF11643",
+      "sku": "EC31643",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF11643.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF11719",
+      "sku": "EC31719",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF11719.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF11810",
+      "sku": "EC30819",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF11810.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF11919",
+      "sku": "EC31240",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF11919.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF11966",
+      "sku": "EC31966",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF11966.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF12000",
+      "sku": "EC36108",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF12000.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF12002",
+      "sku": "EC39437",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF12002.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF12150",
+      "sku": "EC32150",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF12150.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF12159",
+      "sku": "EC32159",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF12159.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF12436",
+      "sku": "EC36399",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF12436.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF12450",
+      "sku": "EC33584",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF12450.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CF8392A",
+      "sku": "EC38392",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CF8392A.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "CH10855",
+      "sku": "EL30855",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CH10855.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "CH11008",
+      "sku": "EL34563",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CH11008.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "CH11242",
+      "sku": "EL32432",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CH11242.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "CH11934",
+      "sku": "EL31934",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CH11934.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "CH14PL",
+      "sku": "EL33601",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CH14PL.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "CH200PL",
+      "sku": "EL32077",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CH200PL.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "CH211A",
+      "sku": "EL32116",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CH211A.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "CH236APL",
+      "sku": "EL33857",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CH236APL.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "CH6004",
+      "sku": "EL34870",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CH6004.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "CH6007",
+      "sku": "EL39910",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CH6007.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "CH6009",
+      "sku": "EL38900",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CH6009.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "CH6012",
+      "sku": "EL33707",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CH6012.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "CH6014",
+      "sku": "EL33397",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CH6014.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "CH6015",
+      "sku": "EL33208",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CH6015.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "CH6103",
+      "sku": "EL34821",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CH6103.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "CH820PL",
+      "sku": "EL30895",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CH820PL.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "CH8481",
+      "sku": "EL36049",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CH8481.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "CH9301",
+      "sku": "EL30253",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CH9301.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "CH962PL",
+      "sku": "EL30762",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CH962PL.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CV10138",
+      "sku": "EC31843",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CV10138.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "CV8392A",
+      "sku": "EC34900",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\CV8392A.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "FDC10360C",
+      "sku": "EC31092",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\FDC10360C.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "FDC10364C",
+      "sku": "EC39500",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\FDC10364C.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "FDC10370C",
+      "sku": "EC35474",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\FDC10370C.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "FDC10373C",
+      "sku": "EC34455",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\FDC10373C.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "FDC10388C",
+      "sku": "EC35684",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\FDC10388C.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "FDC10436C",
+      "sku": "EC36220",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\FDC10436C.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "FDC10550C",
+      "sku": "EC33194",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\FDC10550C.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "FDC10727C",
+      "sku": "EC39585",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\FDC10727C.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "FDC10775C",
+      "sku": "EC34730",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\FDC10775C.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "FDC11183C",
+      "sku": "EC34317",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\FDC11183C.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "FDC11643C",
+      "sku": "EC37061",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\FDC11643C.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "FDC11719C",
+      "sku": "EC30347",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\FDC11719C.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "FDC11810C",
+      "sku": "EC30669",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\FDC11810C.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "FDC11966C",
+      "sku": "EC38903",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\FDC11966C.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "FDC12150C",
+      "sku": "EC38590",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\FDC12150C.json"
+    },
+    {
+      "family": "CABIN",
+      "authority": "FDC12159C",
+      "sku": "EC33296",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\FDC12159C.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "FF10855",
+      "sku": "EL37389",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\FF10855.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "FF11934",
+      "sku": "EL31535",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\FF11934.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "FS10855",
+      "sku": "EL35628",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\FS10855.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "FS11934",
+      "sku": "EL32041",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\FS11934.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "FS8481",
+      "sku": "EL34229",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\FS8481.json"
+    },
+    {
+      "family": "FUEL",
+      "authority": "G7196DP",
+      "sku": "EF32119",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\G7196DP.json"
+    },
+    {
+      "family": "FUEL",
+      "authority": "G8008",
+      "sku": "EF36005",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\G8008.json"
+    },
+    {
+      "family": "FUEL",
+      "authority": "G8018DP",
+      "sku": "EF37580",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\G8018DP.json"
+    },
+    {
+      "family": "FUEL",
+      "authority": "G8086",
+      "sku": "EF32578",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\G8086.json"
+    },
+    {
+      "family": "FUEL",
+      "authority": "G8116",
+      "sku": "EF38709",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\G8116.json"
+    },
+    {
+      "family": "FUEL",
+      "authority": "G8122",
+      "sku": "EF35113",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\G8122.json"
+    },
+    {
+      "family": "FUEL",
+      "authority": "G8228",
+      "sku": "EF37036",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\G8228.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "PH10027",
+      "sku": "EL39408",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\PH10027.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "PH10220",
+      "sku": "EL34375",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\PH10220.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "PH10792",
+      "sku": "EL35183",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\PH10792.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "PH10950",
+      "sku": "EL34576",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\PH10950.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "PH10951",
+      "sku": "EL30399",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\PH10951.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "PH11605",
+      "sku": "EL36817",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\PH11605.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "PH21",
+      "sku": "EL38158",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\PH21.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "PH2883",
+      "sku": "EL38478",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\PH2883.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "PH6019",
+      "sku": "EL32491",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\PH6019.json"
+    },
+    {
+      "family": "LUBE",
+      "authority": "PH9100",
+      "sku": "EL38492",
+      "variants": [],
+      "file": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-usa-ld-catalog\\fram-usa-ld-full-20260911\\products\\PH9100.json"
+    }
+  ],
+  "results": []
+}

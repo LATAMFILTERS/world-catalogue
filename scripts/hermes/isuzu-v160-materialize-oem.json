@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "products": [
+    {
+      "sku": "EF93410",
+      "base": "8982373410",
+      "filter_type": "fuel",
+      "sub_type": "Fuel/Water Separator - High Efficiency",
+      "technology": "HYDROCORE™",
+      "installation": "Cartridge",
+      "thread": null,
+      "od": null,
+      "height": null,
+      "god": null,
+      "gid": null,
+      "brand": "ISUZU",
+      "url": "https://www.isuzucv.com/pdfs/FVGenuineCrossRef.pdf",
+      "method": "ISUZU_GENUINE_FLEETVALUE_2022_PLUS__DONALDSON_FLEETGUARD_EXACT_CROSS_NOT_FOUND",
+      "description": "ELIMFILTERS® High-efficiency fuel/water separator cartridge for Isuzu N-Series diesel applications, 2022 onward.",
+      "donaldson_absence_verified": true,
+      "meta": {
+        "oem_reference": "ISUZU 8982373410",
+        "fleetvalue_part": "1876170160",
+        "application_window": "N-Series 2022 onward",
+        "style": "FUEL_WATER_SEPARATOR_HIGH_EFFICIENCY"
+      }
+    }
+  ]
+}

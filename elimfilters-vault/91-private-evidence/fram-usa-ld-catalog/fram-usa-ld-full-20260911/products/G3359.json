@@ -1,0 +1,666 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "FUEL",
+  "authority": {
+    "part_number": "G3359",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "G3359",
+    "product_type": "Fuel Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": null,
+      "height_mm": null,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": null,
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [],
+    "unresolved_cross_reference_candidates": [],
+    "vehicle_application_candidates": [
+      {
+        "year": "72-71",
+        "make": "DODGE",
+        "model": "COLT",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "73-71",
+        "make": "NISSAN",
+        "model": "1200",
+        "engine": "L4-1.2L",
+        "quantity": 1
+      },
+      {
+        "year": "73-72",
+        "make": "NISSAN",
+        "model": "1300",
+        "engine": "L4-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "70-66",
+        "make": "NISSAN",
+        "model": "1600",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "70-67",
+        "make": "NISSAN",
+        "model": "2000",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "79-77",
+        "make": "NISSAN",
+        "model": "200SX",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "82-79",
+        "make": "NISSAN",
+        "model": "210",
+        "engine": "L4-1.2L",
+        "quantity": 1
+      },
+      {
+        "year": "82-79",
+        "make": "NISSAN",
+        "model": "210",
+        "engine": "L4-1.4L",
+        "quantity": 1
+      },
+      {
+        "year": "82-79",
+        "make": "NISSAN",
+        "model": "210",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "80-79",
+        "make": "NISSAN",
+        "model": "310",
+        "engine": "L4-1.4L",
+        "quantity": 1
+      },
+      {
+        "year": "82-81",
+        "make": "NISSAN",
+        "model": "310",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "65-63",
+        "make": "NISSAN",
+        "model": "410",
+        "engine": "L4-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "67-63",
+        "make": "NISSAN",
+        "model": "411",
+        "engine": "L4-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "67-66",
+        "make": "NISSAN",
+        "model": "411",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "73-68",
+        "make": "NISSAN",
+        "model": "510",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "81-78",
+        "make": "NISSAN",
+        "model": "510",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "68-65",
+        "make": "NISSAN",
+        "model": "520 PICKUP",
+        "engine": "L4-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "69-68",
+        "make": "NISSAN",
+        "model": "521 PICKUP",
+        "engine": "L4-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "72-69",
+        "make": "NISSAN",
+        "model": "521 PICKUP",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "1973",
+        "make": "NISSAN",
+        "model": "610",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "76-74",
+        "make": "NISSAN",
+        "model": "610",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "79-75",
+        "make": "NISSAN",
+        "model": "620",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "73-72",
+        "make": "NISSAN",
+        "model": "620 PICKUP",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "1974",
+        "make": "NISSAN",
+        "model": "620 PICKUP",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "1974",
+        "make": "NISSAN",
+        "model": "710",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "77-75",
+        "make": "NISSAN",
+        "model": "710",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "73-71",
+        "make": "NISSAN",
+        "model": "B110",
+        "engine": "L4-1.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1974",
+        "make": "NISSAN",
+        "model": "B210",
+        "engine": "L4-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "78-75",
+        "make": "NISSAN",
+        "model": "B210",
+        "engine": "L4-1.4L",
+        "quantity": 1
+      },
+      {
+        "year": "1963",
+        "make": "NISSAN",
+        "model": "BLUEBIRD",
+        "engine": "L4-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "78-76",
+        "make": "NISSAN",
+        "model": "F10",
+        "engine": "L4-1.4L",
+        "quantity": 1
+      },
+      {
+        "year": "91-84",
+        "make": "NISSAN",
+        "model": "MICRA",
+        "engine": "L4-1.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1983",
+        "make": "NISSAN",
+        "model": "PULSAR",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "85-83",
+        "make": "NISSAN",
+        "model": "PULSAR NX",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "83-82",
+        "make": "NISSAN",
+        "model": "SENTRA",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "85-83",
+        "make": "NISSAN",
+        "model": "SENTRA",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "G3359",
+    "source_part_key": "000944103",
+    "source_totals": {
+      "attributes": 0,
+      "applications": 36,
+      "cross_references": 0
+    },
+    "raw_attributes": [],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": null,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": null,
+        "case_length_in": null,
+        "case_width_in": null,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 36,
+    "all_cross_references_observed": 0,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T06:02:30.304Z",
+  "discovered_from": "G3359",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "DODGE",
+        "model": "COLT",
+        "year": "72-71",
+        "engine": "L4-1.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "1200",
+        "year": "73-71",
+        "engine": "L4-1.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "1300",
+        "year": "73-72",
+        "engine": "L4-1.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "1600",
+        "year": "70-66",
+        "engine": "L4-1.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "2000",
+        "year": "70-67",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "200SX",
+        "year": "79-77",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "210",
+        "year": "82-79",
+        "engine": "L4-1.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "210",
+        "year": "82-79",
+        "engine": "L4-1.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "210",
+        "year": "82-79",
+        "engine": "L4-1.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "310",
+        "year": "80-79",
+        "engine": "L4-1.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "310",
+        "year": "82-81",
+        "engine": "L4-1.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "410",
+        "year": "65-63",
+        "engine": "L4-1.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "411",
+        "year": "67-63",
+        "engine": "L4-1.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "411",
+        "year": "67-66",
+        "engine": "L4-1.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "510",
+        "year": "73-68",
+        "engine": "L4-1.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "510",
+        "year": "81-78",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "520 PICKUP",
+        "year": "68-65",
+        "engine": "L4-1.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "521 PICKUP",
+        "year": "69-68",
+        "engine": "L4-1.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "521 PICKUP",
+        "year": "72-69",
+        "engine": "L4-1.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "610",
+        "year": "1973",
+        "engine": "L4-1.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "610",
+        "year": "76-74",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "620",
+        "year": "79-75",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "620 PICKUP",
+        "year": "73-72",
+        "engine": "L4-1.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "620 PICKUP",
+        "year": "1974",
+        "engine": "L4-1.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "710",
+        "year": "1974",
+        "engine": "L4-1.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "710",
+        "year": "77-75",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "B110",
+        "year": "73-71",
+        "engine": "L4-1.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "B210",
+        "year": "1974",
+        "engine": "L4-1.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "B210",
+        "year": "78-75",
+        "engine": "L4-1.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "BLUEBIRD",
+        "year": "1963",
+        "engine": "L4-1.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "F10",
+        "year": "78-76",
+        "engine": "L4-1.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "MICRA",
+        "year": "91-84",
+        "engine": "L4-1.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "PULSAR",
+        "year": "1983",
+        "engine": "L4-1.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "PULSAR NX",
+        "year": "85-83",
+        "engine": "L4-1.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "SENTRA",
+        "year": "83-82",
+        "engine": "L4-1.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "SENTRA",
+        "year": "85-83",
+        "engine": "L4-1.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

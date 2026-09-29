@@ -1,0 +1,19 @@
+{
+  "phase": "ISUZU_V160_MATRIX_RELEASE",
+  "apply": true,
+  "database_write": true,
+  "rows": [
+    {
+      "sku": "EF92564",
+      "status": "READY",
+      "exact_positions": 4,
+      "added_ranges": 4
+    }
+  ],
+  "backup_path": "hermes/backups/isuzu-v160/prewrite-2026-09-29T14-33-54-175Z.json",
+  "summary": {
+    "skus": 1,
+    "exact_positions": 4,
+    "database_write": true
+  }
+}

@@ -1,0 +1,721 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH5101",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH5101",
+    "product_type": "Engine Oil Filter, Oil",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 4.312,
+      "outer_diameter_mm": 109.52,
+      "height_in": 8.359,
+      "height_mm": 212.32,
+      "thread_size": "Metric",
+      "gasket_od_in": 3.984,
+      "gasket_od_mm": 101.19,
+      "gasket_id_in": 3.625,
+      "gasket_id_mm": 92.07,
+      "gasket_thickness_in": 0.063,
+      "gasket_thickness_mm": 1.6,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2060"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BD325"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1429"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51429"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Big A",
+        "part_number": "92429"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85429"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "2138"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "2137"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550342"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3594"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3482"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF420"
+      },
+      {
+        "manufacturer": "Iveco",
+        "part_number": "1930542"
+      },
+      {
+        "manufacturer": "Iveco",
+        "part_number": "1903715"
+      },
+      {
+        "manufacturer": "Iveco",
+        "part_number": "1907584"
+      },
+      {
+        "manufacturer": "Iveco",
+        "part_number": "1907581"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "OC226"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "OC228"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP8982"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP8597"
+      },
+      {
+        "manufacturer": "Tecnocar",
+        "part_number": "RD3005"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "PH5101",
+    "source_part_key": "001510299",
+    "source_totals": {
+      "attributes": 38,
+      "applications": 16,
+      "cross_references": 21
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, PH5101, HD Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Spin-on Combination By-Pass Oil Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "84"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Metric",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "White",
+        "recno": "89"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Drain Plug Included",
+        "value": "No",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100020703",
+        "recno": "92"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Oil Filter",
+        "recno": "94"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "95"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "8.359",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "4.312",
+        "recno": "97"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "3.625",
+        "recno": "98"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "3.984",
+        "recno": "99"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.063",
+        "recno": "100"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Millimeter)",
+        "value": "M30x2.0",
+        "recno": "101"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "102"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "103"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "France",
+        "recno": "104"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "2.6900",
+        "recno": "108"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "26.9000",
+        "recno": "109"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "8.9110",
+        "recno": "110"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "10.2800",
+        "recno": "111"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "4.5740",
+        "recno": "112"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "24.1950",
+        "recno": "113"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "4.5740",
+        "recno": "114"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "10.8450",
+        "recno": "115"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 2.69,
+        "case_weight_lb": 26.9,
+        "unit_height_in": 8.911,
+        "unit_length_in": 4.574,
+        "unit_width_in": 4.574,
+        "case_height_in": 10.28,
+        "case_length_in": 24.195,
+        "case_width_in": 10.845,
+        "inferred_case_qty": 10
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 32.28,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 16,
+    "all_cross_references_observed": 21,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:10:52.202Z",
+  "discovered_from": "PH5101",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "Lorraine 240, Lorraine 300",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY IVECO",
+        "model": "Lorraine 240, Lorraine 300",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER FIAT-ALLIS",
+        "model": "FD14E w/Fiat 8365 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER FIAT-ALLIS",
+        "model": "FD14E w/Fiat 8365 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER FIAT-ALLIS",
+        "model": "FD175",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER FIAT-ALLIS",
+        "model": "FD175",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER FIAT-ALLIS",
+        "model": "FL14E w/Fiat 8365 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER FIAT-ALLIS",
+        "model": "FL14E w/Fiat 8365 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER FIAT-ALLIS",
+        "model": "FL175",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER FIAT-ALLIS",
+        "model": "FL175",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR FIAT-ALLIS",
+        "model": "FH220 w/Fiat 8065 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR FIAT-ALLIS",
+        "model": "FH220 w/Fiat 8065 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER FIAT-ALLIS",
+        "model": "FR15, FR15B w/Fiat 8365 turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER FIAT-ALLIS",
+        "model": "FR15, FR15B w/Fiat 8365 turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER FIAT-ALLIS",
+        "model": "FR160, FR160.2 w/Iveco 8365.25.584 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER FIAT-ALLIS",
+        "model": "FR160, FR160.2 w/Iveco 8365.25.584 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2060",
+        "source_part_number": "PH5101",
+        "part_key": "001510299",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BD325",
+        "source_part_number": "PH5101",
+        "part_key": "001510299",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92429",
+        "source_part_number": "PH5101",
+        "part_key": "001510299",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85429",
+        "source_part_number": "PH5101",
+        "part_key": "001510299",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "2138",
+        "source_part_number": "PH5101",
+        "part_key": "001510299",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "2137",
+        "source_part_number": "PH5101",
+        "part_key": "001510299",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550342",
+        "source_part_number": "PH5101",
+        "part_key": "001510299",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3594",
+        "source_part_number": "PH5101",
+        "part_key": "001510299",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3482",
+        "source_part_number": "PH5101",
+        "part_key": "001510299",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF420",
+        "source_part_number": "PH5101",
+        "part_key": "001510299",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Iveco",
+        "part_number": "1930542",
+        "source_part_number": "PH5101",
+        "part_key": "001510299",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Iveco",
+        "part_number": "1903715",
+        "source_part_number": "PH5101",
+        "part_key": "001510299",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Iveco",
+        "part_number": "1907584",
+        "source_part_number": "PH5101",
+        "part_key": "001510299",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Iveco",
+        "part_number": "1907581",
+        "source_part_number": "PH5101",
+        "part_key": "001510299",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "OC226",
+        "source_part_number": "PH5101",
+        "part_key": "001510299",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "OC228",
+        "source_part_number": "PH5101",
+        "part_key": "001510299",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP8982",
+        "source_part_number": "PH5101",
+        "part_key": "001510299",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP8597",
+        "source_part_number": "PH5101",
+        "part_key": "001510299",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1429",
+        "source_part_number": "PH5101",
+        "part_key": "001510299",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Tecnocar",
+        "part_number": "RD3005",
+        "source_part_number": "PH5101",
+        "part_key": "001510299",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51429",
+        "source_part_number": "PH5101",
+        "part_key": "001510299",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "phase": "ISUZU_V160_MATRIX_RELEASE",
+  "apply": true,
+  "database_write": true,
+  "rows": [],
+  "backup_path": "hermes/backups/isuzu-v160/prewrite-2026-09-29T13-58-12-909Z.json",
+  "summary": {
+    "skus": 0,
+    "exact_positions": 0,
+    "database_write": true
+  }
+}

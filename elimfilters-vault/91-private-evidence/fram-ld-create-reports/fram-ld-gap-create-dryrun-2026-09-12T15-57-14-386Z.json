@@ -1,0 +1,15 @@
+{
+  "mode": "dry-run",
+  "gap_report": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-ld-gap-analysis\\fram-ld-gap-2026-09-12T15-38-14-369Z.json",
+  "candidates": 1042,
+  "planned": {
+    "competitor": 6935,
+    "oem": 1574,
+    "applications": 10755,
+    "specifications": 4885
+  },
+  "inserted": {},
+  "skipped": {},
+  "audit": {},
+  "error": "SAFE_SET_STALE: 172 FRAM authorities now resolve"
+}

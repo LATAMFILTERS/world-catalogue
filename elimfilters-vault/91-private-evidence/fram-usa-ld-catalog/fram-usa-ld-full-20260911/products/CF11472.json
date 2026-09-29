@@ -1,0 +1,2331 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF11472",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF11472",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.614,
+      "height_mm": 41,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK25001"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CU25001"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK25011"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4255"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A31382"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24255"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-267"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "64 11 9 237 554"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "64 11 9 237 555"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "90289C"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1615"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1913P"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1913C"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4086"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "4255"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "228I",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "228I",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "BMW",
+        "model": "228I XDRIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "BMW",
+        "model": "228I XDRIVE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-17",
+        "make": "BMW",
+        "model": "230I",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "21-17",
+        "make": "BMW",
+        "model": "230I",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-17",
+        "make": "BMW",
+        "model": "230I XDRIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "21-17",
+        "make": "BMW",
+        "model": "230I XDRIVE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-13",
+        "make": "BMW",
+        "model": "320I",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-13",
+        "make": "BMW",
+        "model": "320I",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-13",
+        "make": "BMW",
+        "model": "320I XDRIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-13",
+        "make": "BMW",
+        "model": "320I XDRIVE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-14",
+        "make": "BMW",
+        "model": "328D",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-14",
+        "make": "BMW",
+        "model": "328D",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-14",
+        "make": "BMW",
+        "model": "328D XDRIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-14",
+        "make": "BMW",
+        "model": "328D XDRIVE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "328I",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "328I",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "328I GT XDRIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "328I GT XDRIVE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-13",
+        "make": "BMW",
+        "model": "328I XDRIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-13",
+        "make": "BMW",
+        "model": "328I XDRIVE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-16",
+        "make": "BMW",
+        "model": "330E",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-16",
+        "make": "BMW",
+        "model": "330E",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "BMW",
+        "model": "330I",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "BMW",
+        "model": "330I",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "BMW",
+        "model": "330I GT XDRIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "BMW",
+        "model": "330I GT XDRIVE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "BMW",
+        "model": "330I XDRIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "BMW",
+        "model": "330I XDRIVE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-14",
+        "make": "BMW",
+        "model": "335I",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "15-14",
+        "make": "BMW",
+        "model": "335I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "335I GT XDRIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "335I GT XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-14",
+        "make": "BMW",
+        "model": "335I XDRIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "15-14",
+        "make": "BMW",
+        "model": "335I XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-16",
+        "make": "BMW",
+        "model": "340I",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-16",
+        "make": "BMW",
+        "model": "340I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "BMW",
+        "model": "340I GT XDRIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "BMW",
+        "model": "340I GT XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-16",
+        "make": "BMW",
+        "model": "340I XDRIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-16",
+        "make": "BMW",
+        "model": "340I XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "428I",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "428I",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "BMW",
+        "model": "428I GRAN COUPE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "BMW",
+        "model": "428I GRAN COUPE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "428I XDRIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "428I XDRIVE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "BMW",
+        "model": "428I XDRIVE GRAN COUPE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "BMW",
+        "model": "428I XDRIVE GRAN COUPE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "430I",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "430I",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "430I GRAN COUPE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "430I GRAN COUPE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "430I XDRIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "430I XDRIVE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "430I XDRIVE GRAN COUPE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "430I XDRIVE GRAN COUPE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "435I",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "435I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "BMW",
+        "model": "435I GRAN COUPE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "BMW",
+        "model": "435I GRAN COUPE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "435I XDRIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "435I XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2016",
+        "make": "BMW",
+        "model": "435I XDRIVE GRAN COUPE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2016",
+        "make": "BMW",
+        "model": "435I XDRIVE GRAN COUPE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "440I",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "440I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "440I GRAN COUPE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "440I GRAN COUPE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "440I XDRIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "440I XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "440I XDRIVE GRAN COUPE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "440I XDRIVE GRAN COUPE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-13",
+        "make": "BMW",
+        "model": "ACTIVEHYBRID 3",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "15-13",
+        "make": "BMW",
+        "model": "ACTIVEHYBRID 3",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-16",
+        "make": "BMW",
+        "model": "M2",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "21-16",
+        "make": "BMW",
+        "model": "M2",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "M235I",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "BMW",
+        "model": "M235I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "BMW",
+        "model": "M235I XDRIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "BMW",
+        "model": "M235I XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-17",
+        "make": "BMW",
+        "model": "M240I",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "21-17",
+        "make": "BMW",
+        "model": "M240I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-17",
+        "make": "BMW",
+        "model": "M240I XDRIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "21-17",
+        "make": "BMW",
+        "model": "M240I XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-15",
+        "make": "BMW",
+        "model": "M3",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-15",
+        "make": "BMW",
+        "model": "M3",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-15",
+        "make": "BMW",
+        "model": "M4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-15",
+        "make": "BMW",
+        "model": "M4",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2005",
+        "make": "MERCEDES-BENZ",
+        "model": "E320",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2005",
+        "make": "MERCEDES-BENZ",
+        "model": "E320",
+        "engine": "L6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "25-17",
+        "make": "PORSCHE",
+        "model": "718 BOXSTER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-17",
+        "make": "PORSCHE",
+        "model": "718 BOXSTER",
+        "engine": "H4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-17",
+        "make": "PORSCHE",
+        "model": "718 BOXSTER",
+        "engine": "H4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "25-21",
+        "make": "PORSCHE",
+        "model": "718 BOXSTER",
+        "engine": "H6-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-17",
+        "make": "PORSCHE",
+        "model": "718 CAYMAN",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-17",
+        "make": "PORSCHE",
+        "model": "718 CAYMAN",
+        "engine": "H4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-17",
+        "make": "PORSCHE",
+        "model": "718 CAYMAN",
+        "engine": "H4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "25-20",
+        "make": "PORSCHE",
+        "model": "718 CAYMAN",
+        "engine": "H6-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "23-20",
+        "make": "PORSCHE",
+        "model": "718 SPYDER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-20",
+        "make": "PORSCHE",
+        "model": "718 SPYDER",
+        "engine": "H6-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-16",
+        "make": "PORSCHE",
+        "model": "911",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-17",
+        "make": "PORSCHE",
+        "model": "911",
+        "engine": "H6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2016",
+        "make": "PORSCHE",
+        "model": "911",
+        "engine": "H6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "25-21",
+        "make": "PORSCHE",
+        "model": "911",
+        "engine": "H6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "19-16",
+        "make": "PORSCHE",
+        "model": "911",
+        "engine": "H6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "19-16",
+        "make": "PORSCHE",
+        "model": "911",
+        "engine": "H6-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-22",
+        "make": "PORSCHE",
+        "model": "911",
+        "engine": "H6-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "PORSCHE",
+        "model": "BOXSTER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "PORSCHE",
+        "model": "BOXSTER",
+        "engine": "H6-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "PORSCHE",
+        "model": "BOXSTER",
+        "engine": "H6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "2016",
+        "make": "PORSCHE",
+        "model": "BOXSTER",
+        "engine": "H6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "PORSCHE",
+        "model": "CAYMAN",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "PORSCHE",
+        "model": "CAYMAN",
+        "engine": "H6-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "PORSCHE",
+        "model": "CAYMAN",
+        "engine": "H6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "2016",
+        "make": "PORSCHE",
+        "model": "CAYMAN",
+        "engine": "H6-3.8L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF11472",
+    "source_part_key": "006210513",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 117,
+      "cross_references": 15
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF11472, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.614",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "9.724",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "7.795",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "15",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Under Glove Box",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100559036",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Thailand",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.8750",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.7500",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "10.3520",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.3580",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "8.3060",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "10.8400",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.8060",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "8.6750",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.875,
+        "case_weight_lb": 1.75,
+        "unit_height_in": 10.352,
+        "unit_length_in": 8.306,
+        "unit_width_in": 1.806,
+        "case_height_in": 4.358,
+        "case_length_in": 10.84,
+        "case_width_in": 8.675,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 10.5,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 117,
+    "all_cross_references_observed": 15,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:58:01.689Z",
+  "discovered_from": "CF11472",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BMW",
+        "model": "228I",
+        "year": "16-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "228I",
+        "year": "16-14",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "228I XDRIVE",
+        "year": "16-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "228I XDRIVE",
+        "year": "16-15",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "230I",
+        "year": "21-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "230I",
+        "year": "21-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "230I XDRIVE",
+        "year": "21-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "230I XDRIVE",
+        "year": "21-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "320I",
+        "year": "18-13",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "320I",
+        "year": "18-13",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "320I XDRIVE",
+        "year": "18-13",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "320I XDRIVE",
+        "year": "18-13",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328D",
+        "year": "18-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328D",
+        "year": "18-14",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328D XDRIVE",
+        "year": "18-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328D XDRIVE",
+        "year": "18-14",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328I",
+        "year": "16-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328I",
+        "year": "16-14",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328I GT XDRIVE",
+        "year": "16-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328I GT XDRIVE",
+        "year": "16-14",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328I XDRIVE",
+        "year": "16-13",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328I XDRIVE",
+        "year": "16-13",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "330E",
+        "year": "18-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "330E",
+        "year": "18-16",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "330I",
+        "year": "19-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "330I",
+        "year": "19-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "330I GT XDRIVE",
+        "year": "19-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "330I GT XDRIVE",
+        "year": "19-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "330I XDRIVE",
+        "year": "19-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "330I XDRIVE",
+        "year": "19-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "335I",
+        "year": "15-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "335I",
+        "year": "15-14",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "335I GT XDRIVE",
+        "year": "16-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "335I GT XDRIVE",
+        "year": "16-14",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "335I XDRIVE",
+        "year": "15-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "335I XDRIVE",
+        "year": "15-14",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "340I",
+        "year": "18-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "340I",
+        "year": "18-16",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "340I GT XDRIVE",
+        "year": "19-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "340I GT XDRIVE",
+        "year": "19-17",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "340I XDRIVE",
+        "year": "18-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "340I XDRIVE",
+        "year": "18-16",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "428I",
+        "year": "16-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "428I",
+        "year": "16-14",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "428I GRAN COUPE",
+        "year": "16-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "428I GRAN COUPE",
+        "year": "16-15",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "428I XDRIVE",
+        "year": "16-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "428I XDRIVE",
+        "year": "16-14",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "428I XDRIVE GRAN COUPE",
+        "year": "16-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "428I XDRIVE GRAN COUPE",
+        "year": "16-15",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "430I",
+        "year": "20-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "430I",
+        "year": "20-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "430I GRAN COUPE",
+        "year": "20-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "430I GRAN COUPE",
+        "year": "20-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "430I XDRIVE",
+        "year": "20-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "430I XDRIVE",
+        "year": "20-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "430I XDRIVE GRAN COUPE",
+        "year": "20-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "430I XDRIVE GRAN COUPE",
+        "year": "20-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "435I",
+        "year": "16-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "435I",
+        "year": "16-14",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "435I GRAN COUPE",
+        "year": "16-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "435I GRAN COUPE",
+        "year": "16-15",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "435I XDRIVE",
+        "year": "16-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "435I XDRIVE",
+        "year": "16-14",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "435I XDRIVE GRAN COUPE",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "435I XDRIVE GRAN COUPE",
+        "year": "2016",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "440I",
+        "year": "20-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "440I",
+        "year": "20-17",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "440I GRAN COUPE",
+        "year": "20-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "440I GRAN COUPE",
+        "year": "20-17",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "440I XDRIVE",
+        "year": "20-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "440I XDRIVE",
+        "year": "20-17",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "440I XDRIVE GRAN COUPE",
+        "year": "20-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "440I XDRIVE GRAN COUPE",
+        "year": "20-17",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "ACTIVEHYBRID 3",
+        "year": "15-13",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "ACTIVEHYBRID 3",
+        "year": "15-13",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M2",
+        "year": "21-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M2",
+        "year": "21-16",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M235I",
+        "year": "16-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M235I",
+        "year": "16-14",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M235I XDRIVE",
+        "year": "16-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M235I XDRIVE",
+        "year": "16-15",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M240I",
+        "year": "21-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M240I",
+        "year": "21-17",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M240I XDRIVE",
+        "year": "21-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M240I XDRIVE",
+        "year": "21-17",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M3",
+        "year": "18-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M3",
+        "year": "18-15",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M4",
+        "year": "20-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M4",
+        "year": "20-15",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E320",
+        "year": "2005",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E320",
+        "year": "2005",
+        "engine": "L6-3.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "718 BOXSTER",
+        "year": "25-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "718 BOXSTER",
+        "year": "25-17",
+        "engine": "H4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "718 BOXSTER",
+        "year": "25-17",
+        "engine": "H4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "718 BOXSTER",
+        "year": "25-21",
+        "engine": "H6-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "718 CAYMAN",
+        "year": "25-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "718 CAYMAN",
+        "year": "25-17",
+        "engine": "H4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "718 CAYMAN",
+        "year": "25-17",
+        "engine": "H4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "718 CAYMAN",
+        "year": "25-20",
+        "engine": "H6-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "718 SPYDER",
+        "year": "23-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "718 SPYDER",
+        "year": "23-20",
+        "engine": "H6-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "911",
+        "year": "25-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "911",
+        "year": "25-17",
+        "engine": "H6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "911",
+        "year": "2016",
+        "engine": "H6-3.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "911",
+        "year": "25-21",
+        "engine": "H6-3.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "911",
+        "year": "19-16",
+        "engine": "H6-3.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "911",
+        "year": "19-16",
+        "engine": "H6-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "911",
+        "year": "25-22",
+        "engine": "H6-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "BOXSTER",
+        "year": "16-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "BOXSTER",
+        "year": "16-14",
+        "engine": "H6-2.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "BOXSTER",
+        "year": "16-14",
+        "engine": "H6-3.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "BOXSTER",
+        "year": "2016",
+        "engine": "H6-3.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "CAYMAN",
+        "year": "16-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "CAYMAN",
+        "year": "16-14",
+        "engine": "H6-2.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "CAYMAN",
+        "year": "16-14",
+        "engine": "H6-3.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "CAYMAN",
+        "year": "2016",
+        "engine": "H6-3.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-267",
+        "source_part_number": "CF11472",
+        "part_key": "006210513",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "64 11 9 237 554",
+        "source_part_number": "CF11472",
+        "part_key": "006210513",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "64 11 9 237 555",
+        "source_part_number": "CF11472",
+        "part_key": "006210513",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "90289C",
+        "source_part_number": "CF11472",
+        "part_key": "006210513",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1615",
+        "source_part_number": "CF11472",
+        "part_key": "006210513",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1913P",
+        "source_part_number": "CF11472",
+        "part_key": "006210513",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1913C",
+        "source_part_number": "CF11472",
+        "part_key": "006210513",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK25001",
+        "source_part_number": "CF11472",
+        "part_key": "006210513",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CU25001",
+        "source_part_number": "CF11472",
+        "part_key": "006210513",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK25011",
+        "source_part_number": "CF11472",
+        "part_key": "006210513",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4086",
+        "source_part_number": "CF11472",
+        "part_key": "006210513",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4255",
+        "source_part_number": "CF11472",
+        "part_key": "006210513",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "4255",
+        "source_part_number": "CF11472",
+        "part_key": "006210513",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A31382",
+        "source_part_number": "CF11472",
+        "part_key": "006210513",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24255",
+        "source_part_number": "CF11472",
+        "part_key": "006210513",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

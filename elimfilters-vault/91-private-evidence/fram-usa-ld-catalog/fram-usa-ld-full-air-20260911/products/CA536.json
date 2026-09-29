@@ -1,0 +1,3004 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA536",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA536",
+    "product_type": "Air Filter, Air",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 18.375,
+      "height_mm": 466.72,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Metal End Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "6N-6071"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "1N-8165"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "SFD-45-252"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "9035992"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "9038900"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A425C"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A425CF"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "LL1894"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA1894"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FA-192"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "2128"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A72201"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42128"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-10-9155"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-18-1039"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "10529"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "93128"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87128"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "45252"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "45252S1"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "S224637"
+      },
+      {
+        "manufacturer": "Chicago Pneumatic",
+        "part_number": "68PS-4670"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "AZA509"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "9514"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P154517"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "EGB160063"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P128356"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P117441"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P119236"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "EAF5039"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P181039"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P115029"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P119242"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P109155"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P153336"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P128515"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "XLP182039"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P185039"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P151529"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P182039"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P145522"
+      },
+      {
+        "manufacturer": "Euclid",
+        "part_number": "9038900"
+      },
+      {
+        "manufacturer": "Euclid",
+        "part_number": "4012356"
+      },
+      {
+        "manufacturer": "Euclid",
+        "part_number": "9035992"
+      },
+      {
+        "manufacturer": "Euclid",
+        "part_number": "9035866"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF851M"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF851"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AA2900"
+      },
+      {
+        "manufacturer": "Fleetlife",
+        "part_number": "6487015"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-8851M"
+      },
+      {
+        "manufacturer": "Gardner Denver",
+        "part_number": "5B469"
+      },
+      {
+        "manufacturer": "Gardner Denver",
+        "part_number": "5000694"
+      },
+      {
+        "manufacturer": "Gardner Denver",
+        "part_number": "2010507"
+      },
+      {
+        "manufacturer": "Gardner Denver",
+        "part_number": "172995"
+      },
+      {
+        "manufacturer": "Gardner Denver",
+        "part_number": "2010122"
+      },
+      {
+        "manufacturer": "Gardner Denver",
+        "part_number": "152736"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GA356"
+      },
+      {
+        "manufacturer": "Guardian",
+        "part_number": "G10-9155"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF240"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "A-9155"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "942626C1"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "4003012R1"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "423218C1"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "400301R2"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA387"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF9155"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF9155MXM"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "109155"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "70274N"
+      },
+      {
+        "manufacturer": "Nu-Tech",
+        "part_number": "N2062"
+      },
+      {
+        "manufacturer": "Nu-Tech",
+        "part_number": "S2062"
+      },
+      {
+        "manufacturer": "Perry",
+        "part_number": "PA-9155"
+      },
+      {
+        "manufacturer": "Raygo",
+        "part_number": "67000044"
+      },
+      {
+        "manufacturer": "Raygo",
+        "part_number": "67000015"
+      },
+      {
+        "manufacturer": "Tamrock",
+        "part_number": "81824639"
+      },
+      {
+        "manufacturer": "Tru-Air",
+        "part_number": "T-10-9155"
+      },
+      {
+        "manufacturer": "VME",
+        "part_number": "4881174-9"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "488174-9"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "04881174-9"
+      },
+      {
+        "manufacturer": "WABCO - Archived",
+        "part_number": "VJ-5139"
+      },
+      {
+        "manufacturer": "WGB",
+        "part_number": "SA-325"
+      },
+      {
+        "manufacturer": "Woods & Copeland",
+        "part_number": "450613"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA536",
+    "source_part_key": "001509843",
+    "source_totals": {
+      "attributes": 32,
+      "applications": 178,
+      "cross_references": 82
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA536, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Metal End Air Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "82"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "84"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "85"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "86"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "87"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "88"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "89"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "18.375",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100523181",
+        "recno": "92"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "0.938",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "13.813",
+        "recno": "94"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "9.438",
+        "recno": "95"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "13.813",
+        "recno": "96"
+      },
+      {
+        "attribute": "Washer Thickness (Inch)",
+        "value": "0.125",
+        "recno": "97"
+      },
+      {
+        "attribute": "Washer Inside Diameter (Inch)",
+        "value": "0.813",
+        "recno": "98"
+      },
+      {
+        "attribute": "Washer Outside Diameter (Inch)",
+        "value": "1.500",
+        "recno": "99"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "100"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "101"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "102"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "11.3000",
+        "recno": "106"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "19.4380",
+        "recno": "107"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "14.3750",
+        "recno": "108"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "14.3750",
+        "recno": "109"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": 11.3,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": 19.438,
+        "case_length_in": 14.375,
+        "case_width_in": 14.375,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 178,
+    "all_cross_references_observed": 82,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:10:20.833Z",
+  "discovered_from": "CA536",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "AIR COMPRESSOR GARDNER-DENVER",
+        "model": "SP1200 w/Caterpillar D343 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR GARDNER-DENVER",
+        "model": "SP1200 w/Caterpillar D343 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR GARDNER-DENVER",
+        "model": "SP1200 w/Detroit Diesel 12V-71 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AIR COMPRESSOR GARDNER-DENVER",
+        "model": "SP1200 w/Detroit Diesel 12V-71 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK LETOURNEAU-WESTINGHOUSE",
+        "model": "LW-27, LW-30 w/Cummins NT-335 Engine; LW-32, LW-35 w/Cummins NT-380 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK LETOURNEAU-WESTINGHOUSE",
+        "model": "LW-27, LW-30 w/Cummins NT-335 Engine; LW-32, LW-35 w/Cummins NT-380 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK VOLVO BM",
+        "model": "A35 w/Volvo TD122GA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK VOLVO BM",
+        "model": "A35 w/Volvo TD122GA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK WABCO",
+        "model": "75C w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK WABCO",
+        "model": "75C w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK WABCO",
+        "model": "75C w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK WABCO",
+        "model": "75C w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK WABCO",
+        "model": "85C Haulpak w/Detroit Diesel 16V92T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK WABCO",
+        "model": "85C Haulpak w/Detroit Diesel 16V92T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE CATERPILLAR",
+        "model": "680B w/Caterpillar C13 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE CATERPILLAR",
+        "model": "680B w/Caterpillar C13 12.5L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE GLEANER",
+        "model": "A85 w/Caterpillar C13 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE GLEANER",
+        "model": "A85 w/Caterpillar C13 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE GLEANER",
+        "model": "A86 w/Caterpillar C13 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE GLEANER",
+        "model": "A86 w/Caterpillar C13 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "9895 w/Caterpillar C13 Acert 12.5L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE MASSEY FERGUSON",
+        "model": "9895 w/Caterpillar C13 Acert 12.5L Turbo Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT CMI",
+        "model": "PR750, PR750A Profiler w/Caterpillar 3412 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT CMI",
+        "model": "PR750, PR750A Profiler w/Caterpillar 3412 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT RAYGO",
+        "model": "Barcomill 700 w/Caterpillar 3408 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT RAYGO",
+        "model": "Barcomill 700 w/Caterpillar 3408 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DRILL INDUSTRIAL CHICAGO PNEUMATIC",
+        "model": "C700 w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DRILL INDUSTRIAL CHICAGO PNEUMATIC",
+        "model": "C700 w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EJECTALL HAULING VEHICLE ISCO",
+        "model": "IC-235, IC-235 R, IC-240, IC240C, IC-245, IC-245R, IC250, IC-250C w/Cummins NTA-855-C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EJECTALL HAULING VEHICLE ISCO",
+        "model": "IC-235, IC-235 R, IC-240, IC240C, IC-245, IC-245R, IC250, IC-250C w/Cummins NTA-855-C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EJECTALL HAULING VEHICLE ISCO",
+        "model": "IC-235, IC-235 R, IC-240, IC240C, IC-245, IC-245R, IC250, IC-250C w/Detroit Diesel 12V-71 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EJECTALL HAULING VEHICLE ISCO",
+        "model": "IC-235, IC-235 R, IC-240, IC240C, IC-245, IC-245R, IC250, IC-250C w/Detroit Diesel 12V-71 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "110-15 w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "110-15 w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "210HB w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "210HB w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "275C w/Cummins KT1150 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "275C w/Cummins KT1150 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "675B w/Cummins VT-1710 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "675B w/Cummins VT-1710 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "L270 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "L270 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "L270B w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "L270B w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "L320 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "L320 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "L480 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "L480 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "L480T w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "L480T w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "CX700B w/Isuzu AH6WG1X Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "CX700B w/Isuzu AH6WG1X Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "CX800B w/Isuzu AH6WG1X Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "CX800B w/Isuzu AH6WG1X Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR DROTT",
+        "model": "120 w/Detroit Diesel 12V-71 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR DROTT",
+        "model": "120 w/Detroit Diesel 12V-71 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR O & K",
+        "model": "RH30 w/Cummins VT903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR O & K",
+        "model": "RH30 w/Cummins VT903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR O & K",
+        "model": "RH75 w/2 Cummins NTA855C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR O & K",
+        "model": "RH75 w/2 Cummins NTA855C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HAULER INDUSTRIAL WABCO",
+        "model": "35C Haulpak w/Cummins NTA855C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HAULER INDUSTRIAL WABCO",
+        "model": "35C Haulpak w/Cummins NTA855C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HAULER INDUSTRIAL WABCO",
+        "model": "35D Haulpack w/Cummins NTA855C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HAULER INDUSTRIAL WABCO",
+        "model": "35D Haulpack w/Cummins NTA855C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HAULER INDUSTRIAL WABCO",
+        "model": "60B w/Cummins VTA1710C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HAULER INDUSTRIAL WABCO",
+        "model": "60B w/Cummins VTA1710C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HAULER INDUSTRIAL WABCO",
+        "model": "85C w/Cummins KT2300C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HAULER INDUSTRIAL WABCO",
+        "model": "85C w/Cummins KT2300C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK EUCLID",
+        "model": "R30, R35 Series; Model TD w/Detroit Diesel 12V-71 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK EUCLID",
+        "model": "R30, R35 Series; Model TD w/Detroit Diesel 12V-71 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK EUCLID",
+        "model": "R30, R35 Series; Model TD w/Detroit Diesel 6-110 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK EUCLID",
+        "model": "R30, R35 Series; Model TD w/Detroit Diesel 6-110 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK EUCLID",
+        "model": "R35 Ser.; Model TD w/Cummins NTA380 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK EUCLID",
+        "model": "R35 Ser.; Model TD w/Cummins NTA380 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK EUCLID",
+        "model": "R35 Ser.; Model TD w/Cummins NTA855C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK EUCLID",
+        "model": "R35 Ser.; Model TD w/Cummins NTA855C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK EUCLID",
+        "model": "R35 Ser.; Model TD w/Detroit Diesel 12V-71N Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK EUCLID",
+        "model": "R35 Ser.; Model TD w/Detroit Diesel 12V-71N Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PAVER CATERPILLAR",
+        "model": "SS250",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PAVER CATERPILLAR",
+        "model": "SS250",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROAD BUILDING MACHINERY CATERPILLAR",
+        "model": "PR1000C w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROAD BUILDING MACHINERY CATERPILLAR",
+        "model": "PR1000C w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROAD BUILDING MACHINERY CATERPILLAR",
+        "model": "RR250",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROAD BUILDING MACHINERY CATERPILLAR",
+        "model": "RR250",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER TEREX",
+        "model": "S-23E w/Detroit Diesel 8V-71T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER TEREX",
+        "model": "S-23E w/Detroit Diesel 8V-71T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER TEREX",
+        "model": "S-24B w/Detroit Diesel 12V-71 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER TEREX",
+        "model": "S-24B w/Detroit Diesel 12V-71 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER TEREX",
+        "model": "TS18 w/Detroit Diesel 8V-71N Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER TEREX",
+        "model": "TS18 w/Detroit Diesel 8V-71N Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER TEREX",
+        "model": "TS24 w/Detroit Diesel 12V-71 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER TEREX",
+        "model": "TS24 w/Detroit Diesel 12V-71 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER TEREX",
+        "model": "TS24B w/Detroit Diesel 12V-71 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER TEREX",
+        "model": "TS24B w/Detroit Diesel 12V-71 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER TEREX",
+        "model": "TS24B w/Detroit Diesel 6V-71T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER TEREX",
+        "model": "TS24B w/Detroit Diesel 6V-71T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER WABCO",
+        "model": "222G w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER WABCO",
+        "model": "222G w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER WABCO",
+        "model": "222H, 229H w/Detroit Diesel 8V71 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER WABCO",
+        "model": "222H, 229H w/Detroit Diesel 8V71 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER WABCO",
+        "model": "353FT w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER WABCO",
+        "model": "353FT w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BIG BUD",
+        "model": "360, 375 w/Cummins NTA855 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BIG BUD",
+        "model": "360, 375 w/Cummins NTA855 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BIG BUD",
+        "model": "400 w/Detroit Diesel 8V92T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BIG BUD",
+        "model": "400 w/Detroit Diesel 8V92T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BIG BUD",
+        "model": "450, 525 w/Cummins KT1150 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BIG BUD",
+        "model": "450, 525 w/Cummins KT1150 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BIG BUD",
+        "model": "747 w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR BIG BUD",
+        "model": "747 w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "4994 w/866 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE INTERNATIONAL",
+        "model": "4994 w/866 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "FW30, FW40 w/Cummins V-903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "FW30, FW40 w/Cummins V-903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "FW60 w/Cummins V-903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR FORD",
+        "model": "FW60 w/Cummins V-903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KNUDSON",
+        "model": "310 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KNUDSON",
+        "model": "310 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KNUDSON",
+        "model": "360 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KNUDSON",
+        "model": "360 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ROME",
+        "model": "450C w/Cummins KT1150C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ROME",
+        "model": "450C w/Cummins KT1150C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ROME",
+        "model": "475C w/Caterpillar 3408 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ROME",
+        "model": "475C w/Caterpillar 3408 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Bearcat Series w/Caterpillar 3306 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Bearcat Series w/Caterpillar 3306 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Cougar Series w/Cummins NT-855 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Cougar Series w/Cummins NT-855 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Cougar Series w/Cummins NTA-855-C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Cougar Series w/Cummins NTA-855-C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Industrial Series w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Industrial Series w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Industrial Series w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Industrial Series w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Panther 1000 w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Panther 1000 w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Panther 1000 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Panther 1000 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Panther III w/Caterpillar 3406 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Panther III w/Caterpillar 3406 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Panther III w/Cummins VT903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Panther III w/Cummins VT903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Panther PT325 w/Caterpillar 3406 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Panther PT325 w/Caterpillar 3406 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Panther PTA310 w/Cummins NTA855C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Panther PTA310 w/Cummins NTA855C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Panther ST310 w/Cummins NTA855C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Panther ST310 w/Cummins NTA855C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "PT350 Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "PT350 Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "PTA251 Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "PTA251 Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "PTA280 w/Cummins 855 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "PTA280 w/Cummins 855 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST251 Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST251 Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST280 w/Caterpillar 3406 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST280 w/Caterpillar 3406 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST280 w/Cummins NT855 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST280 w/Cummins NT855 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST350",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST350",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST350 Panther w/Cummins V903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST350 Panther w/Cummins V903 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST350 Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST350 Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Tiger III ST450, Tiger III ST470 w/Caterpillar 3408 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Tiger III ST450, Tiger III ST470 w/Caterpillar 3408 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Tiger III ST450, Tiger III ST470 w/Cummins KTA1150C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Tiger III ST450, Tiger III ST470 w/Cummins KTA1150C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR WOODS & COPELAND",
+        "model": "320, 450, 450C w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR WOODS & COPELAND",
+        "model": "320, 450, 450C w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "548",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "548",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "953 6x6",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY KENWORTH",
+        "model": "953 6x6",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER DRESSER",
+        "model": "580 w/Detroit Diesel 12V-149TI Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER DRESSER",
+        "model": "580 w/Detroit Diesel 12V-149TI Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A425C",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A425CF",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-10-9155",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-18-1039",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "10529",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "LL1894",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA1894",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "93128",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87128",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "45252",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "45252S1",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "S224637",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "6N-6071",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "1N-8165",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Chicago Pneumatic",
+        "part_number": "68PS-4670",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "AZA509",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "9514",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P154517",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "EGB160063",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P128356",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P117441",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P119236",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "EAF5039",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P181039",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P115029",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P119242",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P109155",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P153336",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P128515",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "XLP182039",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P185039",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P151529",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P182039",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P145522",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Euclid",
+        "part_number": "9038900",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Euclid",
+        "part_number": "4012356",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Euclid",
+        "part_number": "9035992",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Euclid",
+        "part_number": "9035866",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF851M",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF851",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AA2900",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetlife",
+        "part_number": "6487015",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-8851M",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "SFD-45-252",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Gardner Denver",
+        "part_number": "5B469",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Gardner Denver",
+        "part_number": "5000694",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Gardner Denver",
+        "part_number": "2010507",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Gardner Denver",
+        "part_number": "172995",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Gardner Denver",
+        "part_number": "2010122",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Gardner Denver",
+        "part_number": "152736",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "9035992",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "9038900",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GA356",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Guardian",
+        "part_number": "G10-9155",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF240",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "A-9155",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "942626C1",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "4003012R1",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "423218C1",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "400301R2",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA387",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF9155",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF9155MXM",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FA-192",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "2128",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "109155",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "70274N",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Nu-Tech",
+        "part_number": "N2062",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Nu-Tech",
+        "part_number": "S2062",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Perry",
+        "part_number": "PA-9155",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A72201",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Raygo",
+        "part_number": "67000044",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Raygo",
+        "part_number": "67000015",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Tamrock",
+        "part_number": "81824639",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Tru-Air",
+        "part_number": "T-10-9155",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "VME",
+        "part_number": "4881174-9",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "488174-9",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "04881174-9",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "WABCO - Archived",
+        "part_number": "VJ-5139",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "WGB",
+        "part_number": "SA-325",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42128",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Woods & Copeland",
+        "part_number": "450613",
+        "source_part_number": "CA536",
+        "part_key": "001509843",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

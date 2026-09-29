@@ -1,0 +1,1190 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA3325",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA3325",
+    "product_type": "Engine Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": null,
+      "height_mm": null,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": null,
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [],
+    "unresolved_cross_reference_candidates": [],
+    "vehicle_application_candidates": [
+      {
+        "year": "89-80",
+        "make": "FORD",
+        "model": "B-600",
+        "engine": "V8-6.1L",
+        "quantity": 1
+      },
+      {
+        "year": "89-88",
+        "make": "FORD",
+        "model": "B-600",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "87-80",
+        "make": "FORD",
+        "model": "B-600",
+        "engine": "V8-8.2L",
+        "quantity": 1
+      },
+      {
+        "year": "89-80",
+        "make": "FORD",
+        "model": "B-700",
+        "engine": "V8-6.1L",
+        "quantity": 1
+      },
+      {
+        "year": "89-80",
+        "make": "FORD",
+        "model": "B-700",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "87-80",
+        "make": "FORD",
+        "model": "B-700",
+        "engine": "V8-8.2L",
+        "quantity": 1
+      },
+      {
+        "year": "86-80",
+        "make": "FORD",
+        "model": "C600",
+        "engine": "V8-6.1L",
+        "quantity": 1
+      },
+      {
+        "year": "86-80",
+        "make": "FORD",
+        "model": "C600",
+        "engine": "V8-8.2L",
+        "quantity": 1
+      },
+      {
+        "year": "86-80",
+        "make": "FORD",
+        "model": "C700",
+        "engine": "V8-6.1L",
+        "quantity": 1
+      },
+      {
+        "year": "86-80",
+        "make": "FORD",
+        "model": "C700",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "86-80",
+        "make": "FORD",
+        "model": "C700",
+        "engine": "V8-8.2L",
+        "quantity": 1
+      },
+      {
+        "year": "87-80",
+        "make": "FORD",
+        "model": "C800",
+        "engine": "V8-6.1L",
+        "quantity": 1
+      },
+      {
+        "year": "87-80",
+        "make": "FORD",
+        "model": "C800",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "89-80",
+        "make": "FORD",
+        "model": "C800",
+        "engine": "V8-8.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1989",
+        "make": "FORD",
+        "model": "C8000",
+        "engine": "V8-8.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1981",
+        "make": "FORD",
+        "model": "C900",
+        "engine": "V8-7.8L",
+        "quantity": 1
+      },
+      {
+        "year": "1981",
+        "make": "FORD",
+        "model": "C900",
+        "engine": "V8-8.8L",
+        "quantity": 1
+      },
+      {
+        "year": "82-81",
+        "make": "FORD",
+        "model": "CT800D",
+        "engine": "V8-8.2L",
+        "quantity": 1
+      },
+      {
+        "year": "89-80",
+        "make": "FORD",
+        "model": "F-600",
+        "engine": "V8-6.1L",
+        "quantity": 1
+      },
+      {
+        "year": "87-82",
+        "make": "FORD",
+        "model": "F-600",
+        "engine": "V8-8.2L",
+        "quantity": 1
+      },
+      {
+        "year": "94-90",
+        "make": "FORD",
+        "model": "F-600 LPO",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "89-80",
+        "make": "FORD",
+        "model": "F-700",
+        "engine": "V8-6.1L",
+        "quantity": 1
+      },
+      {
+        "year": "87-82",
+        "make": "FORD",
+        "model": "F-700",
+        "engine": "V8-8.2L",
+        "quantity": 1
+      },
+      {
+        "year": "89-80",
+        "make": "FORD",
+        "model": "F-800",
+        "engine": "V8-6.1L",
+        "quantity": 1
+      },
+      {
+        "year": "87-82",
+        "make": "FORD",
+        "model": "F-800",
+        "engine": "V8-8.2L",
+        "quantity": 1
+      },
+      {
+        "year": "86-80",
+        "make": "FORD",
+        "model": "FT800",
+        "engine": "V8-6.1L",
+        "quantity": 1
+      },
+      {
+        "year": "90-88",
+        "make": "FORD",
+        "model": "FT800",
+        "engine": "V8-6.1L",
+        "quantity": 1
+      },
+      {
+        "year": "87-85",
+        "make": "FORD",
+        "model": "FT900",
+        "engine": "V8-8.2L",
+        "quantity": 1
+      },
+      {
+        "year": "85-80",
+        "make": "FORD",
+        "model": "L800",
+        "engine": "V8-6.1L",
+        "quantity": 1
+      },
+      {
+        "year": "85-80",
+        "make": "FORD",
+        "model": "L800",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "1981",
+        "make": "FORD",
+        "model": "L900",
+        "engine": "V8-7.8L",
+        "quantity": 1
+      },
+      {
+        "year": "1981",
+        "make": "FORD",
+        "model": "L900",
+        "engine": "V8-8.8L",
+        "quantity": 1
+      },
+      {
+        "year": "85-80",
+        "make": "FORD",
+        "model": "LN600",
+        "engine": "V8-6.1L",
+        "quantity": 1
+      },
+      {
+        "year": "85-81",
+        "make": "FORD",
+        "model": "LN600",
+        "engine": "V8-8.2L",
+        "quantity": 1
+      },
+      {
+        "year": "85-80",
+        "make": "FORD",
+        "model": "LN700",
+        "engine": "V8-6.1L",
+        "quantity": 1
+      },
+      {
+        "year": "85-80",
+        "make": "FORD",
+        "model": "LN700",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "86-80",
+        "make": "FORD",
+        "model": "LN700",
+        "engine": "V8-8.2L",
+        "quantity": 1
+      },
+      {
+        "year": "85-80",
+        "make": "FORD",
+        "model": "LN800",
+        "engine": "V8-6.1L",
+        "quantity": 1
+      },
+      {
+        "year": "85-80",
+        "make": "FORD",
+        "model": "LN800",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "85-80",
+        "make": "FORD",
+        "model": "LN800",
+        "engine": "V8-8.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1981",
+        "make": "FORD",
+        "model": "LN900",
+        "engine": "V8-7.8L",
+        "quantity": 1
+      },
+      {
+        "year": "1981",
+        "make": "FORD",
+        "model": "LN900",
+        "engine": "V8-8.8L",
+        "quantity": 1
+      },
+      {
+        "year": "1981",
+        "make": "FORD",
+        "model": "LNT900",
+        "engine": "V8-7.8L",
+        "quantity": 1
+      },
+      {
+        "year": "1981",
+        "make": "FORD",
+        "model": "LT800",
+        "engine": "V8-6.1L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CA3325",
+    "source_part_key": "001509908",
+    "source_totals": {
+      "attributes": 0,
+      "applications": 88,
+      "cross_references": 0
+    },
+    "raw_attributes": [],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": null,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": null,
+        "case_length_in": null,
+        "case_width_in": null,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 88,
+    "all_cross_references_observed": 0,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:08:12.949Z",
+  "discovered_from": "CA3325",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BUS HEAVY DUTY FORD",
+        "model": "B600, B700 School Bus (w/Detroit Diesel 8.2L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY FORD",
+        "model": "B600, B700 School Bus (w/Detroit Diesel 8.2L Engine)",
+        "year": "87-80",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY FORD",
+        "model": "B600, B700 School Bus (w/Ford 370 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY FORD",
+        "model": "B600, B700 School Bus (w/Ford 370 Gas Engine)",
+        "year": "89-80",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY FORD",
+        "model": "B600, B700 School Bus (w/Ford 429 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY FORD",
+        "model": "B600, B700 School Bus (w/Ford 429 Gas Engine)",
+        "year": "89-80",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY FORD",
+        "model": "B600-750 (w/Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY FORD",
+        "model": "B600-750 (w/Gas Engine)",
+        "year": "78-75",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "B-600",
+        "year": "89-80",
+        "engine": "V8-6.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "B-600",
+        "year": "89-88",
+        "engine": "V8-7.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "B-600",
+        "year": "87-80",
+        "engine": "V8-8.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "B-700",
+        "year": "89-80",
+        "engine": "V8-6.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "B-700",
+        "year": "89-80",
+        "engine": "V8-7.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "B-700",
+        "year": "87-80",
+        "engine": "V8-8.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "C600",
+        "year": "86-80",
+        "engine": "V8-6.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "C600",
+        "year": "86-80",
+        "engine": "V8-8.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "C700",
+        "year": "86-80",
+        "engine": "V8-6.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "C700",
+        "year": "86-80",
+        "engine": "V8-7.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "C700",
+        "year": "86-80",
+        "engine": "V8-8.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "C800",
+        "year": "87-80",
+        "engine": "V8-6.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "C800",
+        "year": "87-80",
+        "engine": "V8-7.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "C800",
+        "year": "89-80",
+        "engine": "V8-8.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "C8000",
+        "year": "1989",
+        "engine": "V8-8.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "C900",
+        "year": "1981",
+        "engine": "V8-7.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "C900",
+        "year": "1981",
+        "engine": "V8-8.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "CT800D",
+        "year": "82-81",
+        "engine": "V8-8.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-600",
+        "year": "89-80",
+        "engine": "V8-6.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-600",
+        "year": "87-82",
+        "engine": "V8-8.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-600 LPO",
+        "year": "94-90",
+        "engine": "V8-7.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-700",
+        "year": "89-80",
+        "engine": "V8-6.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-700",
+        "year": "87-82",
+        "engine": "V8-8.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-800",
+        "year": "89-80",
+        "engine": "V8-6.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-800",
+        "year": "87-82",
+        "engine": "V8-8.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "FT800",
+        "year": "86-80",
+        "engine": "V8-6.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "FT800",
+        "year": "90-88",
+        "engine": "V8-6.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "FT900",
+        "year": "87-85",
+        "engine": "V8-8.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "L800",
+        "year": "85-80",
+        "engine": "V8-6.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "L800",
+        "year": "85-80",
+        "engine": "V8-7.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "L900",
+        "year": "1981",
+        "engine": "V8-7.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "L900",
+        "year": "1981",
+        "engine": "V8-8.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LN600",
+        "year": "85-80",
+        "engine": "V8-6.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LN600",
+        "year": "85-81",
+        "engine": "V8-8.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LN700",
+        "year": "85-80",
+        "engine": "V8-6.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LN700",
+        "year": "85-80",
+        "engine": "V8-7.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LN700",
+        "year": "86-80",
+        "engine": "V8-8.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LN800",
+        "year": "85-80",
+        "engine": "V8-6.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LN800",
+        "year": "85-80",
+        "engine": "V8-7.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LN800",
+        "year": "85-80",
+        "engine": "V8-8.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LN900",
+        "year": "1981",
+        "engine": "V8-7.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LN900",
+        "year": "1981",
+        "engine": "V8-8.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LNT900",
+        "year": "1981",
+        "engine": "V8-7.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "LT800",
+        "year": "1981",
+        "engine": "V8-6.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK FORD",
+        "model": "C600, C700, C800 (w/Detroit Diesel 8.2L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK FORD",
+        "model": "C600, C700, C800 (w/Detroit Diesel 8.2L Engine)",
+        "year": "86-80",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "B600, B6000 (w/Detroit 8.2L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "B600, B6000 (w/Detroit 8.2L Engine)",
+        "year": "89-82",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "B600, B6000 (w/Ford V8-370 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "B600, B6000 (w/Ford V8-370 Gas Engine)",
+        "year": "89-79",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "B600, B6000 (w/Ford V8-429 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "B600, B6000 (w/Ford V8-429 Gas Engine)",
+        "year": "89-79",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "B700, B7000 (w/Detroit 8.2L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "B700, B7000 (w/Detroit 8.2L Engine)",
+        "year": "89-82",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "B700, B7000 (w/Ford V8-370 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "B700, B7000 (w/Ford V8-370 Gas Engine)",
+        "year": "89-79",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "B700, B7000 (w/Ford V8-429 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "B700, B7000 (w/Ford V8-429 Gas Engine)",
+        "year": "89-79",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "CT600-900 (w/Detroit 8.2L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "CT600-900 (w/Detroit 8.2L Engine)",
+        "year": "89-82",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "CT600-900 (w/Detroit 8.2L Turbo Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "CT600-900 (w/Detroit 8.2L Turbo Engine)",
+        "year": "89-81",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "CT600-900 (w/Ford V8-370 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "CT600-900 (w/Ford V8-370 Gas Engine)",
+        "year": "89-76",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "CT600-900 (w/Ford V8-429 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "CT600-900 (w/Ford V8-429 Gas Engine)",
+        "year": "89-76",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "F/ FT600-900 (w/Detroit Diesel 8.2L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "F/ FT600-900 (w/Detroit Diesel 8.2L Engine)",
+        "year": "89-",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L, LN, LNT, LT, LTS Series (w/Detroit Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L, LN, LNT, LT, LTS Series (w/Detroit Diesel Engine)",
+        "year": "89-80",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L, LN, LNT, LT, LTS Series (w/Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L, LN, LNT, LT, LTS Series (w/Gas Engine)",
+        "year": "80-",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L, LN600, L, LN700, L, LN800 (w/Ford 370 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L, LN600, L, LN700, L, LN800 (w/Ford 370 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L, LN600, L, LN700, L, LN800 (w/Ford 429 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L, LN600, L, LN700, L, LN800 (w/Ford 429 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L900, LN900 (w/Ford Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "L900, LN900 (w/Ford Gas Engine)",
+        "year": "86-77",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LN600, LN700, LN800 (w/Detroit Diesel 8.2L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LN600, LN700, LN800 (w/Detroit Diesel 8.2L Engine)",
+        "year": "80-",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

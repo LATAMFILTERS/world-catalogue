@@ -1,0 +1,406 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA11609",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA11609",
+    "product_type": "Air Filter, Air",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 17.02,
+      "height_mm": 432.31,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "HD RADIAL SEAL AIR FILTER",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AT225338"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "RS4676"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "9138"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "49138"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "83138"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P611856"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P600072"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF27682"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "RS4676"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF6114"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA11609",
+    "source_part_key": "007122167",
+    "source_totals": {
+      "attributes": 20,
+      "applications": 8,
+      "cross_references": 10
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA11609, Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "HD RADIAL SEAL AIR FILTER",
+        "recno": "2"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "83"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "84"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "85"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "17.020",
+        "recno": "86"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "5.160",
+        "recno": "87"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "9.250",
+        "recno": "88"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "89"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100553287",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "5.0000",
+        "recno": "94"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "9.8060",
+        "recno": "95"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "19.0560",
+        "recno": "96"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "9.8060",
+        "recno": "97"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": 5,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": 9.806,
+        "case_length_in": 19.056,
+        "case_width_in": 9.806,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 8,
+    "all_cross_references_observed": 10,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:02:24.842Z",
+  "discovered_from": "CA11609",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "CRAWLER DOZER JOHN DEERE",
+        "model": "750C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER JOHN DEERE",
+        "model": "750C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR DIAMOND PRODUCTS",
+        "model": "CC-HG-SK Hydra-Gen w/John Deere 4045T Tier II Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR DIAMOND PRODUCTS",
+        "model": "CC-HG-SK Hydra-Gen w/John Deere 4045T Tier II Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR DIAMOND PRODUCTS",
+        "model": "CC-HG-SK Hydra-Gen w/John Deere 4045T Tier III Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR DIAMOND PRODUCTS",
+        "model": "CC-HG-SK Hydra-Gen w/John Deere 4045T Tier III Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKIDDER JOHN DEERE",
+        "model": "740G, 748G w/John Deere 6076 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKIDDER JOHN DEERE",
+        "model": "740G, 748G w/John Deere 6076 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "RS4676",
+        "source_part_number": "CA11609",
+        "part_key": "007122167",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "83138",
+        "source_part_number": "CA11609",
+        "part_key": "007122167",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P611856",
+        "source_part_number": "CA11609",
+        "part_key": "007122167",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P600072",
+        "source_part_number": "CA11609",
+        "part_key": "007122167",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF27682",
+        "source_part_number": "CA11609",
+        "part_key": "007122167",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "RS4676",
+        "source_part_number": "CA11609",
+        "part_key": "007122167",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AT225338",
+        "source_part_number": "CA11609",
+        "part_key": "007122167",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF6114",
+        "source_part_number": "CA11609",
+        "part_key": "007122167",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "9138",
+        "source_part_number": "CA11609",
+        "part_key": "007122167",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "49138",
+        "source_part_number": "CA11609",
+        "part_key": "007122167",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

@@ -1,0 +1,312 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA7457",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA7457",
+    "product_type": "Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 25.6,
+      "height_mm": 650.24,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Disposable",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Farr",
+        "part_number": "C-94973-002H"
+      },
+      {
+        "manufacturer": "Farr",
+        "part_number": "94973-002"
+      },
+      {
+        "manufacturer": "Farr",
+        "part_number": "C-94973-002"
+      },
+      {
+        "manufacturer": "Farr",
+        "part_number": "C94973-002-8H"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA7457",
+    "source_part_key": "007121915",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 1,
+      "cross_references": 4
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA7457, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Disposable Air Housing",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose",
+        "recno": "80"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Disposable",
+        "recno": "81"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "83"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "85"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "86"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Universal",
+        "recno": "87"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Top Inside Diameter",
+        "value": "Closed",
+        "recno": "89"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100528025",
+        "recno": "92"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "25.600",
+        "recno": "93"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "94"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "13.500",
+        "recno": "95"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "7.000",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "13.500",
+        "recno": "97"
+      },
+      {
+        "attribute": "Inlet Flange Diameter (Inch)",
+        "value": "7.000",
+        "recno": "98"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "99"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "100"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "101"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "23.1500",
+        "recno": "105"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "26.1300",
+        "recno": "106"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "15.8800",
+        "recno": "107"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "13.8800",
+        "recno": "108"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": 23.15,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": 26.13,
+        "case_length_in": 15.88,
+        "case_width_in": 13.88,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 1,
+    "all_cross_references_observed": 4,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:12:42.722Z",
+  "discovered_from": "CA7457",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "NA",
+        "model": "NA",
+        "year": "NA",
+        "engine": "NA",
+        "part_type": "NA",
+        "application_type": "NA",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Farr",
+        "part_number": "C-94973-002H",
+        "source_part_number": "CA7457",
+        "part_key": "007121915",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Farr",
+        "part_number": "94973-002",
+        "source_part_number": "CA7457",
+        "part_key": "007121915",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Farr",
+        "part_number": "C-94973-002",
+        "source_part_number": "CA7457",
+        "part_key": "007121915",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Farr",
+        "part_number": "C94973-002-8H",
+        "source_part_number": "CA7457",
+        "part_key": "007121915",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

@@ -1,0 +1,4146 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "CH8081",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CH8081",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 4.094,
+      "height_mm": 103.99,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Cartridge",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [
+      "FD8081",
+      "FS8081"
+    ],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF1073"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2248G"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "P7138"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "72202"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "COC8081"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX154/1DECO"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU925/3X"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU925/4"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU925/4X"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1223"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L25247"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51223"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Auto Extra",
+        "part_number": "61851223"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "041-8149"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "91609"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 1 427 908"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 7 512 301"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "75 09 4 30"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 7 512 430"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 1 740 534"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 7 512 300"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 7 509 430"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "R85223MP"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "R85223"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85223"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "85223"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CF482"
+      },
+      {
+        "manufacturer": "Certified",
+        "part_number": "CCH8081"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "P8170"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "part_number": "COC8081"
+      },
+      {
+        "manufacturer": "Citgo Petroleum",
+        "part_number": "P8170"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DL8081"
+      },
+      {
+        "manufacturer": "Driveworks",
+        "part_number": "DW-5247"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "X5247"
+      },
+      {
+        "manufacturer": "FERGUSON",
+        "part_number": "G1223"
+      },
+      {
+        "manufacturer": "Firestone",
+        "part_number": "P8170"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "G1223"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "V5247"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF482"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF482F"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "AL8081"
+      },
+      {
+        "manufacturer": "Jiffy Lube",
+        "part_number": "HL8081"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "PS-7007"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P8170"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "MGL8081"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "MGL51223"
+      },
+      {
+        "manufacturer": "MicroGard Select",
+        "part_number": "MSL51223"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "M8170"
+      },
+      {
+        "manufacturer": "Mileguard",
+        "part_number": "MO8081"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "L25247"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "P8170"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1C-252"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "PH5247"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1C-252A"
+      },
+      {
+        "manufacturer": "MotoMaster",
+        "part_number": "MCH8081"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "61223"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "61223BP"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "P8170"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ63"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ-63"
+      },
+      {
+        "manufacturer": "Pentius",
+        "part_number": "PCB8081"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PO-63"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PG5247"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "PH5247"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PO-5247"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PBL25247"
+      },
+      {
+        "manufacturer": "Purolator PureONE",
+        "part_number": "PL25247"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "part_number": "PL25247"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "QS8081"
+      },
+      {
+        "manufacturer": "Qualitee International",
+        "part_number": "HL8081"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "CF5247"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "M5247"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "CF5247"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "L25247"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "SH52"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "S8081"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S8081"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S8081XL"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "LC-8170"
+      },
+      {
+        "manufacturer": "VIPER",
+        "part_number": "8081"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "P8170"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "P8170"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "05-01",
+        "make": "BMW",
+        "model": "320I",
+        "engine": "L6-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "2000",
+        "make": "BMW",
+        "model": "323CI",
+        "engine": "L6-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "00-98",
+        "make": "BMW",
+        "model": "323I",
+        "engine": "L6-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "BMW",
+        "model": "323I",
+        "engine": "L6-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "99-98",
+        "make": "BMW",
+        "model": "323IS",
+        "engine": "L6-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "BMW",
+        "model": "325CI",
+        "engine": "L6-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "05-01",
+        "make": "BMW",
+        "model": "325I",
+        "engine": "L6-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "BMW",
+        "model": "325I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "05-01",
+        "make": "BMW",
+        "model": "325XI",
+        "engine": "L6-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "BMW",
+        "model": "325XI",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2000",
+        "make": "BMW",
+        "model": "328CI",
+        "engine": "L6-2.8L",
+        "quantity": 1
+      },
+      {
+        "year": "00-96",
+        "make": "BMW",
+        "model": "328I",
+        "engine": "L6-2.8L",
+        "quantity": 1
+      },
+      {
+        "year": "99-96",
+        "make": "BMW",
+        "model": "328IS",
+        "engine": "L6-2.8L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "BMW",
+        "model": "330CI",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "BMW",
+        "model": "330I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "BMW",
+        "model": "330XI",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "05-01",
+        "make": "BMW",
+        "model": "525I",
+        "engine": "L6-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "BMW",
+        "model": "525I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "BMW",
+        "model": "525XI",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "00-97",
+        "make": "BMW",
+        "model": "528I",
+        "engine": "L6-2.8L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "BMW",
+        "model": "530I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "BMW",
+        "model": "530XI",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "06-04",
+        "make": "BMW",
+        "model": "X3",
+        "engine": "L6-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "06-04",
+        "make": "BMW",
+        "model": "X3",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "BMW",
+        "model": "X5",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "BMW",
+        "model": "Z3",
+        "engine": "L6-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "00-97",
+        "make": "BMW",
+        "model": "Z3",
+        "engine": "L6-2.8L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "BMW",
+        "model": "Z3",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "05-03",
+        "make": "BMW",
+        "model": "Z4",
+        "engine": "L6-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "05-03",
+        "make": "BMW",
+        "model": "Z4",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "06-05",
+        "make": "FORD",
+        "model": "GT",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CH8081",
+    "source_part_key": "000991223",
+    "source_totals": {
+      "attributes": 51,
+      "applications": 267,
+      "cross_references": 84
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® oil filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE (original equipment) recommended intervals. Engineered for conventional and synthetic motor oil, Extra Guard offers proven engine protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Includes gaskets and O-rings manufactured to endure the high pressures and high temperatures in today’s engines",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CH8081, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Proven protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filter media is a blend of fiber and resin that captures 95%?of the dirt particles",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Cartridge Oil Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Engineered for use with synthetic or conventional motor oils",
+        "recno": "4"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "The perfect balance of dirt-trapping efficiency and dirt-holding capacity",
+        "recno": "5"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Cartridge",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Cover",
+        "recno": "89"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "NA",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100002778",
+        "recno": "92"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "93"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "94"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "4.094",
+        "recno": "95"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "96"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "1.656",
+        "recno": "97"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "3.250",
+        "recno": "98"
+      },
+      {
+        "attribute": "O-Ring Inside Diameter (Inch)",
+        "value": "3.622",
+        "recno": "99"
+      },
+      {
+        "attribute": "O-Ring Outside Diameter (Inch)",
+        "value": "3.783",
+        "recno": "100"
+      },
+      {
+        "attribute": "O-Ring Thickness (Inch)",
+        "value": "0.161",
+        "recno": "101"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "1.656",
+        "recno": "102"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "3.250",
+        "recno": "103"
+      },
+      {
+        "attribute": "Washer Thickness (Inch)",
+        "value": "0.472",
+        "recno": "104"
+      },
+      {
+        "attribute": "Washer Inside Diameter (Inch)",
+        "value": "0.472",
+        "recno": "105"
+      },
+      {
+        "attribute": "Washer Outside Diameter (Inch)",
+        "value": "0.656",
+        "recno": "106"
+      },
+      {
+        "attribute": "O-Rings Included",
+        "value": "Yes",
+        "recno": "107"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "108"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "109"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "110"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "111"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.2750",
+        "recno": "115"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.6500",
+        "recno": "116"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "4.3300",
+        "recno": "117"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.8000",
+        "recno": "118"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.3500",
+        "recno": "119"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "10.3500",
+        "recno": "120"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.3500",
+        "recno": "121"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "7.0100",
+        "recno": "122"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.275,
+        "case_weight_lb": 1.65,
+        "unit_height_in": 4.33,
+        "unit_length_in": 3.35,
+        "unit_width_in": 3.35,
+        "case_height_in": 4.8,
+        "case_length_in": 10.35,
+        "case_width_in": 7.01,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 3.3,
+        "estimated_case_dimensions": {
+          "length_in": 13.8,
+          "width_in": 10.515,
+          "height_in": 4.8,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 267,
+    "all_cross_references_observed": 84,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:14:58.368Z",
+  "discovered_from": "CH8081",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BMW",
+        "model": "320I",
+        "year": "05-01",
+        "engine": "L6-2.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "323CI",
+        "year": "2000",
+        "engine": "L6-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "323I",
+        "year": "00-98",
+        "engine": "L6-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "323I",
+        "year": "2006",
+        "engine": "L6-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "323IS",
+        "year": "99-98",
+        "engine": "L6-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "325CI",
+        "year": "06-01",
+        "engine": "L6-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "325I",
+        "year": "05-01",
+        "engine": "L6-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "325I",
+        "year": "2006",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "325XI",
+        "year": "05-01",
+        "engine": "L6-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "325XI",
+        "year": "2006",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328CI",
+        "year": "2000",
+        "engine": "L6-2.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328I",
+        "year": "00-96",
+        "engine": "L6-2.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328IS",
+        "year": "99-96",
+        "engine": "L6-2.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "330CI",
+        "year": "06-01",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "330I",
+        "year": "06-01",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "330XI",
+        "year": "06-01",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "525I",
+        "year": "05-01",
+        "engine": "L6-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "525I",
+        "year": "2006",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "525XI",
+        "year": "2006",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "528I",
+        "year": "00-97",
+        "engine": "L6-2.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "530I",
+        "year": "06-01",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "530XI",
+        "year": "2006",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "X3",
+        "year": "06-04",
+        "engine": "L6-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "X3",
+        "year": "06-04",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "X5",
+        "year": "06-01",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "Z3",
+        "year": "02-99",
+        "engine": "L6-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "Z3",
+        "year": "00-97",
+        "engine": "L6-2.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "Z3",
+        "year": "02-01",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "Z4",
+        "year": "05-03",
+        "engine": "L6-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "Z4",
+        "year": "05-03",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM402",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM402",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM403",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM403",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM421",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM421",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM422",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM422",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM422A",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM422A",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM422LA",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM422LA",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM423",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM423",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM423LA",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM423LA",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM426LA",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM426LA",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM442",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM442",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM442A",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM442A",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM442LA",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM442LA",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM443LA",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MERCEDES-BENZ",
+        "model": "OM443LA",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "GT",
+        "year": "06-05",
+        "engine": "V8-5.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1222 (w/Mercedes-Benz OM421 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1222 (w/Mercedes-Benz OM421 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1422 (w/Mercedes-Benz OM421 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1422 (w/Mercedes-Benz OM421 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1424 (w/Mercedes-Benz OM402 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1424 (w/Mercedes-Benz OM402 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1425 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1425 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1426 (w/Mercedes-Benz OM442 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1426 (w/Mercedes-Benz OM442 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1622 (w/Mercedes-Benz OM421 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1622 (w/Mercedes-Benz OM421 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1624 (w/Mercedes-Benz OM402 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1624 (w/Mercedes-Benz OM402 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1625 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1625 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1626 (w/Mercedes-Benz OM402 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1626 (w/Mercedes-Benz OM402 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1626 (w/Mercedes-Benz OM403 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1626 (w/Mercedes-Benz OM403 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1628 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1628 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1632 (w/Mercedes-Benz OM403 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1632 (w/Mercedes-Benz OM403 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1633 (w/Mercedes-Benz OM422A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1633 (w/Mercedes-Benz OM422A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1635 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1635 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1635 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1635 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1636 (w/Mercedes-Benz OM423 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1636 (w/Mercedes-Benz OM423 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1638 (w/Mercedes-Benz OM422LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1638 (w/Mercedes-Benz OM422LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1644 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1644 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1726 (w/Mercedes-Benz OM442 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1726 (w/Mercedes-Benz OM442 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1729 (w/Mercedes-Benz OM442 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1729 (w/Mercedes-Benz OM442 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1735 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1735 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1735 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1735 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1748 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1748 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1844 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1844 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1922 (w/Mercedes-Benz OM421 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1922 (w/Mercedes-Benz OM421 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1926 (w/Mercedes-Benz OM402 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1926 (w/Mercedes-Benz OM402 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1926 (w/Mercedes-Benz OM403 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1926 (w/Mercedes-Benz OM403 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1928 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1928 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1929 (w/Mercedes-Benz OM442 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1929 (w/Mercedes-Benz OM442 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1932 (w/Mercedes-Benz OM403 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1932 (w/Mercedes-Benz OM403 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1933 (w/Mercedes-Benz OM422A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1933 (w/Mercedes-Benz OM422A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1935 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1935 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1935 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1935 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1936 (w/Mercedes-Benz OM423 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1936 (w/Mercedes-Benz OM423 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1938 (w/Mercedes-Benz OM422LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1938 (w/Mercedes-Benz OM422LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1944 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1944 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1948 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "1948 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2025 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2025 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2026 (w/Mercedes-Benz OM402 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2026 (w/Mercedes-Benz OM402 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2028 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2028 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2028LS (w/Mercedes-Benz OM422A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2028LS (w/Mercedes-Benz OM422A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2033 (w/Mercedes-Benz OM422A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2033 (w/Mercedes-Benz OM422A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2033LS (w/Mercedes-Benz OM422A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2033LS (w/Mercedes-Benz OM422A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2035 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2035 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2035 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2035 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2036 (w/Mercedes-Benz OM423 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2036 (w/Mercedes-Benz OM423 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2044 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2044 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2222 (w/Mercedes-Benz OM421 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2222 (w/Mercedes-Benz OM421 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2224 (w/Mercedes-Benz OM402 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2224 (w/Mercedes-Benz OM402 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2225 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2225 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2226 (w/Mercedes-Benz OM402 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2226 (w/Mercedes-Benz OM402 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2226 (w/Mercedes-Benz OM403 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2226 (w/Mercedes-Benz OM403 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2228 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2228 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2232 (w/Mercedes-Benz OM403 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2232 (w/Mercedes-Benz OM403 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2233 (w/Mercedes-Benz OM422A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2233 (w/Mercedes-Benz OM422A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2235 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2235 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2235 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2235 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2236 (w/Mercedes-Benz OM423 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2236 (w/Mercedes-Benz OM423 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2238 (w/Mercedes-Benz OM422LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2238 (w/Mercedes-Benz OM422LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2244 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2244 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2422 (w/Mercedes-Benz OM421 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2422 (w/Mercedes-Benz OM421 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2426 (w/Mercedes-Benz OM442 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2426 (w/Mercedes-Benz OM442 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2428 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2428 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2429 (w/Mercedes-Benz OM442 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2429 (w/Mercedes-Benz OM442 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2435 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2435 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2435 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2435 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2448 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2448 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2533 (w/Mercedes-Benz OM422A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2533 (w/Mercedes-Benz OM422A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2544 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2544 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2626 (w/Mercedes-Benz OM402 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2626 (w/Mercedes-Benz OM402 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2628 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2628 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2629 (w/Mercedes-Benz OM442 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2629 (w/Mercedes-Benz OM442 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2632 (w/Mercedes-Benz OM403 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2632 (w/Mercedes-Benz OM403 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2633 (w/Mercedes-Benz OM422A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2633 (w/Mercedes-Benz OM422A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2635 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2635 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2635 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2635 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2636 (w/Mercedes-Benz OM423 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2636 (w/Mercedes-Benz OM423 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2638 (w/Mercedes-Benz OM422LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2638 (w/Mercedes-Benz OM422LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2644 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2644 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2648 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "2648 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3025 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3025 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3028 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3028 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3032 (w/Mercedes-Benz OM403 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3032 (w/Mercedes-Benz OM403 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3033 (w/Mercedes-Benz OM422A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3033 (w/Mercedes-Benz OM422A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3229 (w/Mercedes-Benz OM442 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3229 (w/Mercedes-Benz OM442 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3235 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3235 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3235 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3235 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3244 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3244 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3250 (w/Mercedes-Benz OM426LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3250 (w/Mercedes-Benz OM426LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3250 (w/Mercedes-Benz OM443LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3250 (w/Mercedes-Benz OM443LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3328 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3328 (w/Mercedes-Benz OM422 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3333 (w/Mercedes-Benz OM422A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3333 (w/Mercedes-Benz OM422A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3336 (w/Mercedes-Benz OM423 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3336 (w/Mercedes-Benz OM423 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3535 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3535 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3535 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3535 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3536 (w/Mercedes-Benz OM423 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3536 (w/Mercedes-Benz OM423 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3544 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3544 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3548 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3548 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3850 (w/Mercedes-Benz OM426LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3850 (w/Mercedes-Benz OM426LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3850 (w/Mercedes-Benz OM443LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3850 (w/Mercedes-Benz OM443LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3850AS (w/Mercedes-Benz OM423LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "3850AS (w/Mercedes-Benz OM423LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "4435 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "4435 (w/Mercedes-Benz OM442A Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "4435 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "4435 (w/Mercedes-Benz OM442LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "4436 (w/Mercedes-Benz OM423 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "4436 (w/Mercedes-Benz OM423 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "5038 (w/Mercedes-Benz OM422LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MERCEDES-BENZ",
+        "model": "5038 (w/Mercedes-Benz OM422LA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF1073",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2248G",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Auto Extra",
+        "part_number": "61851223",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "P7138",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "041-8149",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "91609",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 1 427 908",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 7 512 301",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "75 09 4 30",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 7 512 430",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 1 740 534",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 7 512 300",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "11 42 7 509 430",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "72202",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "R85223MP",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "R85223",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85223",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "85223",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CF482",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Certified",
+        "part_number": "CCH8081",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "P8170",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "COC8081",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "part_number": "COC8081",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Citgo Petroleum",
+        "part_number": "P8170",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DL8081",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Driveworks",
+        "part_number": "DW-5247",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "X5247",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FERGUSON",
+        "part_number": "G1223",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Firestone",
+        "part_number": "P8170",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Drive",
+        "part_number": "FD8081",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Titanium",
+        "part_number": "FS8081",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "G1223",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "V5247",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF482",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF482F",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "AL8081",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Jiffy Lube",
+        "part_number": "HL8081",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "PS-7007",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P8170",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX154/1DECO",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU925/3X",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU925/4",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU925/4X",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "MGL8081",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "MGL51223",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MicroGard Select",
+        "part_number": "MSL51223",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "M8170",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mileguard",
+        "part_number": "MO8081",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "L25247",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "P8170",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1C-252",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "PH5247",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1C-252A",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MotoMaster",
+        "part_number": "MCH8081",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1223",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "61223",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "61223BP",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "P8170",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ63",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ-63",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pentius",
+        "part_number": "PCB8081",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PO-63",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PG5247",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "PH5247",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PO-5247",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L25247",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PBL25247",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator PureONE",
+        "part_number": "PL25247",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "part_number": "PL25247",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "QS8081",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Qualitee International",
+        "part_number": "HL8081",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "CF5247",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "M5247",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "CF5247",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "L25247",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "SH52",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "S8081",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S8081",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S8081XL",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "LC-8170",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "VIPER",
+        "part_number": "8081",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "P8170",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "P8170",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51223",
+        "source_part_number": "CH8081",
+        "part_key": "000991223",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

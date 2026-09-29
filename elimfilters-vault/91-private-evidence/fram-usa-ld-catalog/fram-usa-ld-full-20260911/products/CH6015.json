@@ -1,0 +1,2582 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "CH6015",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CH6015",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.484,
+      "height_mm": 37.69,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Cartridge",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "Yes",
+      "bypass_setting_psi": 18,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "52010-1053"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "K5201-01053"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2148"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "P7132"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX410"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4944"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "ML16815"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24944"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Big A",
+        "part_number": "96944"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89944"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "P7013"
+      },
+      {
+        "manufacturer": "Emgo",
+        "part_number": "10-99200"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF474"
+      },
+      {
+        "manufacturer": "HiFlo",
+        "part_number": "HF112"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15410-KYJ-901"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15412-HM5-A10"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15410-KF0-315"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15412-KF0-000"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15412-KF0-010"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15412-KF0-020"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15410-KF0-305"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "KN-112"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P7013"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1MC-173"
+      },
+      {
+        "manufacturer": "Polaris",
+        "part_number": "3088036"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "P7013"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "P7013"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "87-85",
+        "make": "HONDA",
+        "model": "ATC250ES BIG RED",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "87-85",
+        "make": "HONDA",
+        "model": "ATC250SX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-15",
+        "make": "HONDA",
+        "model": "CB300F",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-17",
+        "make": "HONDA",
+        "model": "CB300F ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2019",
+        "make": "HONDA",
+        "model": "CB300R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-19",
+        "make": "HONDA",
+        "model": "CB300R ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-11",
+        "make": "HONDA",
+        "model": "CBR250R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2015",
+        "make": "HONDA",
+        "model": "CBR250R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-11",
+        "make": "HONDA",
+        "model": "CBR250R ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2015",
+        "make": "HONDA",
+        "model": "CBR250R REPSOL",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "22-15",
+        "make": "HONDA",
+        "model": "CBR300R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "22-15",
+        "make": "HONDA",
+        "model": "CBR300R ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "22-17",
+        "make": "HONDA",
+        "model": "CMX300 REBEL 300",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "22-17",
+        "make": "HONDA",
+        "model": "CMX300 REBEL 300 ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "HONDA",
+        "model": "CRF250F",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-13",
+        "make": "HONDA",
+        "model": "CRF250L",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "HONDA",
+        "model": "CRF250L ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "HONDA",
+        "model": "CRF250L RALLY",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "HONDA",
+        "model": "CRF250L RALLY ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "90-89",
+        "make": "HONDA",
+        "model": "GB500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "90-88",
+        "make": "HONDA",
+        "model": "NX250",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "89-88",
+        "make": "HONDA",
+        "model": "NX650",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-15",
+        "make": "HONDA",
+        "model": "SXS500M2 PIONEER 500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-22",
+        "make": "HONDA",
+        "model": "SXS500M2 PIONEER 500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2025",
+        "make": "HONDA",
+        "model": "SXS520M2 PIONEER 520",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-21",
+        "make": "HONDA",
+        "model": "SXS520M2 PIONEER 520",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "00-88",
+        "make": "HONDA",
+        "model": "TRX300 FOURTRAX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "08-93",
+        "make": "HONDA",
+        "model": "TRX300EX SPORTRAX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "00-90",
+        "make": "HONDA",
+        "model": "TRX300FW FOURTRAX 4X4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1988",
+        "make": "HONDA",
+        "model": "TRX300FW FOURTRAX 4X4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2009",
+        "make": "HONDA",
+        "model": "TRX300X",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1989",
+        "make": "HONDA",
+        "model": "TRX350",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "87-86",
+        "make": "HONDA",
+        "model": "TRX350",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "89-87",
+        "make": "HONDA",
+        "model": "TRX350D",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-00",
+        "make": "HONDA",
+        "model": "TRX350FE FOURTRAX RANCHER 4X4 ES",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-00",
+        "make": "HONDA",
+        "model": "TRX350FM FOURTRAX RANCHER 4X4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-00",
+        "make": "HONDA",
+        "model": "TRX350TE FOURTRAX RANCHER ES",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-00",
+        "make": "HONDA",
+        "model": "TRX350TM FOURTRAX RANCHER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "08-99",
+        "make": "HONDA",
+        "model": "TRX400EX SPORTRAX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "03-95",
+        "make": "HONDA",
+        "model": "TRX400FW FOREMAN 4X4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "14-12",
+        "make": "HONDA",
+        "model": "TRX400X",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2009",
+        "make": "HONDA",
+        "model": "TRX400X",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-07",
+        "make": "HONDA",
+        "model": "TRX420FE FOURTRAX RANCHER 4X4 ES",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-14",
+        "make": "HONDA",
+        "model": "TRX420FE1 FOURTRAX RANCHER 4X4 ES",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-07",
+        "make": "HONDA",
+        "model": "TRX420FM FOURTRAX RANCHER 4X4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-14",
+        "make": "HONDA",
+        "model": "TRX420FM1 FOURTRAX RANCHER 4X4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "HONDA",
+        "model": "TRX420FM2 FOURTRAX RANCHER 4X4 WITH EPS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-20",
+        "make": "HONDA",
+        "model": "TRX420FM2 FOURTRAX RANCHER 4X4 WITH EPS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-09",
+        "make": "HONDA",
+        "model": "TRX420FPE RANCHER ES 4X4 W/ POWER STEERING",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-09",
+        "make": "HONDA",
+        "model": "TRX420FPM RANCHER 4X4 W/ POWER STEERING",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-07",
+        "make": "HONDA",
+        "model": "TRX420TE FOURTRAX RANCHER ES",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "HONDA",
+        "model": "TRX420TE1 FOURTRAX RANCHER ES",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-20",
+        "make": "HONDA",
+        "model": "TRX420TE1 FOURTRAX RANCHER ES",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-07",
+        "make": "HONDA",
+        "model": "TRX420TM FOURTRAX RANCHER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-14",
+        "make": "HONDA",
+        "model": "TRX420TM1 FOURTRAX RANCHER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "04-98",
+        "make": "HONDA",
+        "model": "TRX450FE FOURTRAX FOREMAN ES",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "04-98",
+        "make": "HONDA",
+        "model": "TRX450FM FOURTRAX FOREMAN S",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-05",
+        "make": "HONDA",
+        "model": "TRX500FE FOURTRAX FOREMAN 4X4 ES",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-11",
+        "make": "HONDA",
+        "model": "TRX500FE FOURTRAX FOREMAN 4X4 ES",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "HONDA",
+        "model": "TRX500FE1 FOURTRAX FOREMAN 4X4 ES",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-14",
+        "make": "HONDA",
+        "model": "TRX500FE2 FOURTRAX FOREMAN 4X4 ES WITH EPS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-05",
+        "make": "HONDA",
+        "model": "TRX500FM FOURTRAX FOREMAN 4X4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-11",
+        "make": "HONDA",
+        "model": "TRX500FM FOURTRAX FOREMAN 4X4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-14",
+        "make": "HONDA",
+        "model": "TRX500FM1 FOURTRAX FOREMAN 4X4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "HONDA",
+        "model": "TRX500FM2 FOURTRAX FOREMAN 4X4 WITH EPS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "HONDA",
+        "model": "TRX500FM5 FOURTRAX FOREMAN RUBICON",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-15",
+        "make": "HONDA",
+        "model": "TRX500FM6 FOURTRAX FOREMAN RUBICON EPS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2015",
+        "make": "HONDA",
+        "model": "TRX500FM6D FOURTRAX FOREMAN RUBICON EPS DLX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2016",
+        "make": "HONDA",
+        "model": "TRX500FM7 FOURTRAX FOREMAN RUBICON EPS DLX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-07",
+        "make": "HONDA",
+        "model": "TRX500FPE FOURTRAX FOREMAN 4X4 ES W/ POWER STEERIN",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-11",
+        "make": "HONDA",
+        "model": "TRX500FPE FOURTRAX FOREMAN 4X4 ES W/ POWER STEERIN",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-08",
+        "make": "HONDA",
+        "model": "TRX500FPM FOURTRAX FOREMAN 4X4 W/ POWER STEERING",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-11",
+        "make": "HONDA",
+        "model": "TRX500FPM FOURTRAX FOREMAN 4X4 W/ POWER STEERING",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-05",
+        "make": "HONDA",
+        "model": "TRX500TM FOURTRAX FOREMAN",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-20",
+        "make": "HONDA",
+        "model": "TRX520FE2 FOURTRAX FOREMAN 4X4 ES EPS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "HONDA",
+        "model": "TRX520FM1 FOURTRAX FOREMAN 4X4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "HONDA",
+        "model": "TRX520FM2 FOURTRAX FOREMAN 4X4 EPS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "HONDA",
+        "model": "TRX520FM6 FOURTRAX FOREMAN RUBICON EPS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-08",
+        "make": "HONDA",
+        "model": "TRX700XX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "87-84",
+        "make": "HONDA",
+        "model": "XL250R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "85-84",
+        "make": "HONDA",
+        "model": "XL350R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "87-83",
+        "make": "HONDA",
+        "model": "XL600R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "01-84",
+        "make": "HONDA",
+        "model": "XR200R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "96-91",
+        "make": "HONDA",
+        "model": "XR250L",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "04-84",
+        "make": "HONDA",
+        "model": "XR250R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "85-83",
+        "make": "HONDA",
+        "model": "XR350R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "04-96",
+        "make": "HONDA",
+        "model": "XR400R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "84-81",
+        "make": "HONDA",
+        "model": "XR500R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "00-85",
+        "make": "HONDA",
+        "model": "XR600R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-93",
+        "make": "HONDA",
+        "model": "XR650L",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-12",
+        "make": "HONDA",
+        "model": "XR650L",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "07-00",
+        "make": "HONDA",
+        "model": "XR650R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "05-03",
+        "make": "SUZUKI",
+        "model": "DR-Z110",
+        "engine": "All",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CH6015",
+    "source_part_key": "001470312",
+    "source_totals": {
+      "attributes": 42,
+      "applications": 138,
+      "cross_references": 27
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® oil filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE (original equipment) recommended intervals. Engineered for conventional and synthetic motor oil, Extra Guard offers proven engine protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "0"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CH6015, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Motorcycle Full-Flow Lube Cartridge",
+        "recno": "3"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "Yes",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Cartridge",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "NA",
+        "recno": "89"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100382016",
+        "recno": "92"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.484",
+        "recno": "93"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "94"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "0.469",
+        "recno": "95"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "1.969",
+        "recno": "96"
+      },
+      {
+        "attribute": "O-Ring Inside Diameter (Inch)",
+        "value": "2.094",
+        "recno": "97"
+      },
+      {
+        "attribute": "O-Ring Outside Diameter (Inch)",
+        "value": "2.296",
+        "recno": "98"
+      },
+      {
+        "attribute": "O-Ring Thickness (Inch)",
+        "value": "0.094",
+        "recno": "99"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "0.469",
+        "recno": "100"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "1.969",
+        "recno": "101"
+      },
+      {
+        "attribute": "O-Rings Included",
+        "value": "Yes",
+        "recno": "102"
+      },
+      {
+        "attribute": "Bypass Relief Valve Setting (Pounds per Square Inch)",
+        "value": "18-22",
+        "recno": "103"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "104"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "105"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "106"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "107"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.1250",
+        "recno": "111"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "0.7500",
+        "recno": "112"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "1.7500",
+        "recno": "113"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "3.4800",
+        "recno": "114"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "2.2500",
+        "recno": "115"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "8.9900",
+        "recno": "116"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "2.2500",
+        "recno": "117"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "6.2400",
+        "recno": "118"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.125,
+        "case_weight_lb": 0.75,
+        "unit_height_in": 1.75,
+        "unit_length_in": 2.25,
+        "unit_width_in": 2.25,
+        "case_height_in": 3.48,
+        "case_length_in": 8.99,
+        "case_width_in": 6.24,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 1.5,
+        "estimated_case_dimensions": {
+          "length_in": 11.987,
+          "width_in": 9.36,
+          "height_in": 3.48,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 138,
+    "all_cross_references_observed": 27,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:23:10.110Z",
+  "discovered_from": "CH6015",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "HONDA",
+        "model": "ATC250ES BIG RED",
+        "year": "87-85",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "ATC250SX",
+        "year": "87-85",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CB300F",
+        "year": "18-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CB300F ABS",
+        "year": "18-17",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CB300R",
+        "year": "2019",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CB300R ABS",
+        "year": "20-19",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CBR250R",
+        "year": "13-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CBR250R",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CBR250R ABS",
+        "year": "13-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CBR250R REPSOL",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CBR300R",
+        "year": "22-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CBR300R ABS",
+        "year": "22-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CMX300 REBEL 300",
+        "year": "22-17",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CMX300 REBEL 300 ABS",
+        "year": "22-17",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF250F",
+        "year": "25-19",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF250L",
+        "year": "20-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF250L ABS",
+        "year": "20-17",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF250L RALLY",
+        "year": "20-17",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF250L RALLY ABS",
+        "year": "20-17",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "GB500",
+        "year": "90-89",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "NX250",
+        "year": "90-88",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "NX650",
+        "year": "89-88",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "SXS500M2 PIONEER 500",
+        "year": "20-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "SXS500M2 PIONEER 500",
+        "year": "23-22",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "SXS520M2 PIONEER 520",
+        "year": "2025",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "SXS520M2 PIONEER 520",
+        "year": "23-21",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX300 FOURTRAX",
+        "year": "00-88",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX300EX SPORTRAX",
+        "year": "08-93",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX300FW FOURTRAX 4X4",
+        "year": "00-90",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX300FW FOURTRAX 4X4",
+        "year": "1988",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX300X",
+        "year": "2009",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX350",
+        "year": "1989",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX350",
+        "year": "87-86",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX350D",
+        "year": "89-87",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX350FE FOURTRAX RANCHER 4X4 ES",
+        "year": "06-00",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX350FM FOURTRAX RANCHER 4X4",
+        "year": "06-00",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX350TE FOURTRAX RANCHER ES",
+        "year": "06-00",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX350TM FOURTRAX RANCHER",
+        "year": "06-00",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX400EX SPORTRAX",
+        "year": "08-99",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX400FW FOREMAN 4X4",
+        "year": "03-95",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX400X",
+        "year": "14-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX400X",
+        "year": "2009",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX420FE FOURTRAX RANCHER 4X4 ES",
+        "year": "13-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX420FE1 FOURTRAX RANCHER 4X4 ES",
+        "year": "24-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX420FM FOURTRAX RANCHER 4X4",
+        "year": "13-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX420FM1 FOURTRAX RANCHER 4X4",
+        "year": "26-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX420FM2 FOURTRAX RANCHER 4X4 WITH EPS",
+        "year": "16-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX420FM2 FOURTRAX RANCHER 4X4 WITH EPS",
+        "year": "24-20",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX420FPE RANCHER ES 4X4 W/ POWER STEERING",
+        "year": "13-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX420FPM RANCHER 4X4 W/ POWER STEERING",
+        "year": "13-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX420TE FOURTRAX RANCHER ES",
+        "year": "13-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX420TE1 FOURTRAX RANCHER ES",
+        "year": "16-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX420TE1 FOURTRAX RANCHER ES",
+        "year": "24-20",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX420TM FOURTRAX RANCHER",
+        "year": "13-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX420TM1 FOURTRAX RANCHER",
+        "year": "26-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX450FE FOURTRAX FOREMAN ES",
+        "year": "04-98",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX450FM FOURTRAX FOREMAN S",
+        "year": "04-98",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FE FOURTRAX FOREMAN 4X4 ES",
+        "year": "09-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FE FOURTRAX FOREMAN 4X4 ES",
+        "year": "13-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FE1 FOURTRAX FOREMAN 4X4 ES",
+        "year": "16-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FE2 FOURTRAX FOREMAN 4X4 ES WITH EPS",
+        "year": "19-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FM FOURTRAX FOREMAN 4X4",
+        "year": "09-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FM FOURTRAX FOREMAN 4X4",
+        "year": "13-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FM1 FOURTRAX FOREMAN 4X4",
+        "year": "19-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FM2 FOURTRAX FOREMAN 4X4 WITH EPS",
+        "year": "16-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FM5 FOURTRAX FOREMAN RUBICON",
+        "year": "16-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FM6 FOURTRAX FOREMAN RUBICON EPS",
+        "year": "19-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FM6D FOURTRAX FOREMAN RUBICON EPS DLX",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FM7 FOURTRAX FOREMAN RUBICON EPS DLX",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FPE FOURTRAX FOREMAN 4X4 ES W/ POWER STEERIN",
+        "year": "09-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FPE FOURTRAX FOREMAN 4X4 ES W/ POWER STEERIN",
+        "year": "13-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FPM FOURTRAX FOREMAN 4X4 W/ POWER STEERING",
+        "year": "09-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FPM FOURTRAX FOREMAN 4X4 W/ POWER STEERING",
+        "year": "13-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500TM FOURTRAX FOREMAN",
+        "year": "06-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX520FE2 FOURTRAX FOREMAN 4X4 ES EPS",
+        "year": "24-20",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX520FM1 FOURTRAX FOREMAN 4X4",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX520FM2 FOURTRAX FOREMAN 4X4 EPS",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX520FM6 FOURTRAX FOREMAN RUBICON EPS",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX700XX",
+        "year": "09-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "XL250R",
+        "year": "87-84",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "XL350R",
+        "year": "85-84",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "XL600R",
+        "year": "87-83",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "XR200R",
+        "year": "01-84",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "XR250L",
+        "year": "96-91",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "XR250R",
+        "year": "04-84",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "XR350R",
+        "year": "85-83",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "XR400R",
+        "year": "04-96",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "XR500R",
+        "year": "84-81",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "XR600R",
+        "year": "00-85",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "XR650L",
+        "year": "09-93",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "XR650L",
+        "year": "25-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "XR650R",
+        "year": "07-00",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "BN125 ELIMINATOR",
+        "year": "09-01",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "BR125 Z125 PRO",
+        "year": "19-17",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "BR125 Z125 PRO KRT EDITION",
+        "year": "18-17",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "BR125 Z125 PRO SE",
+        "year": "2018",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KFX450R",
+        "year": "14-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KL250 SUPER SHERPA",
+        "year": "03-00",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KL250 SUPER SHERPA",
+        "year": "10-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX110",
+        "year": "21-02",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX110L",
+        "year": "21-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX140",
+        "year": "20-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX140G",
+        "year": "20-17",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX140L",
+        "year": "20-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX140R",
+        "year": "2025",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX140R",
+        "year": "23-21",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX140R F",
+        "year": "2025",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX140R F",
+        "year": "23-21",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX140R L",
+        "year": "2025",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX140R L",
+        "year": "23-21",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX230",
+        "year": "23-20",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX230 ABS",
+        "year": "21-20",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX230 SE",
+        "year": "2022",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX230R",
+        "year": "25-20",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX230R S",
+        "year": "2025",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX230R S",
+        "year": "23-21",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX230S",
+        "year": "25-22",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX230S ABS",
+        "year": "25-22",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX230SM",
+        "year": "2023",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX230SM ABS",
+        "year": "25-23",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX250",
+        "year": "20-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX250 CAMO",
+        "year": "20-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX250R",
+        "year": "96-94",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX250S",
+        "year": "07-06",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX250S",
+        "year": "10-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX250S",
+        "year": "14-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX250SF",
+        "year": "10-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX300",
+        "year": "25-21",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX300R",
+        "year": "08-97",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX300R",
+        "year": "25-20",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX300SM",
+        "year": "2025",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX300SM",
+        "year": "23-21",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX450R",
+        "year": "09-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KLX450R",
+        "year": "20-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KAWASAKI",
+        "model": "KX450F",
+        "year": "15-06",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "POLARIS",
+        "model": "OUTLAW 500",
+        "year": "07-06",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "POLARIS",
+        "model": "PREDATOR 500",
+        "year": "07-03",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DR-Z110",
+        "year": "05-03",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2148",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "P7132",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "96944",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89944",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "P7013",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Emgo",
+        "part_number": "10-99200",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF474",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "HiFlo",
+        "part_number": "HF112",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15410-KYJ-901",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15412-HM5-A10",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15410-KF0-315",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15412-KF0-000",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15412-KF0-010",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15412-KF0-020",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15410-KF0-305",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "KN-112",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "52010-1053",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P7013",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX410",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1MC-173",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4944",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Polaris",
+        "part_number": "3088036",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "ML16815",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "P7013",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "K5201-01053",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "P7013",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24944",
+        "source_part_number": "CH6015",
+        "part_key": "001470312",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

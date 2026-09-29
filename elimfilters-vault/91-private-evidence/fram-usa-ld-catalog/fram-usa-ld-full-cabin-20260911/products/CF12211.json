@@ -1,0 +1,1767 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF12211",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF12211",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 0.787,
+      "height_mm": 19.99,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E4931LC"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK31003"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C31391C"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10337"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1960C"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "XC10582C"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1960C"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4120"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "CAF1960C"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC99334C"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "CAF1960"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF15012P"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF15012M"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "4M0-819-439"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "4M0-819-439B"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "4M0-819-439A"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WCAF1960"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "20-17",
+        "make": "AUDI",
+        "model": "A4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "AUDI",
+        "model": "A4",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-17",
+        "make": "AUDI",
+        "model": "A4 ALLROAD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-17",
+        "make": "AUDI",
+        "model": "A4 ALLROAD",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-17",
+        "make": "AUDI",
+        "model": "A4 QUATTRO",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-17",
+        "make": "AUDI",
+        "model": "A4 QUATTRO",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-18",
+        "make": "AUDI",
+        "model": "A5 QUATTRO",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-18",
+        "make": "AUDI",
+        "model": "A5 QUATTRO",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-18",
+        "make": "AUDI",
+        "model": "A5 SPORTBACK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-18",
+        "make": "AUDI",
+        "model": "A5 SPORTBACK",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "AUDI",
+        "model": "A6 ALLROAD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "AUDI",
+        "model": "A6 ALLROAD",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "AUDI",
+        "model": "A6 QUATTRO",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "AUDI",
+        "model": "A6 QUATTRO",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "AUDI",
+        "model": "A6 QUATTRO",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "AUDI",
+        "model": "A7 SPORTBACK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-21",
+        "make": "AUDI",
+        "model": "A7 SPORTBACK",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "AUDI",
+        "model": "A7 SPORTBACK",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-19",
+        "make": "AUDI",
+        "model": "A8 QUATTRO",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-19",
+        "make": "AUDI",
+        "model": "A8 QUATTRO",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-19",
+        "make": "AUDI",
+        "model": "A8 QUATTRO",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "23-19",
+        "make": "AUDI",
+        "model": "E-TRON QUATTRO",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-22",
+        "make": "AUDI",
+        "model": "E-TRON S",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-22",
+        "make": "AUDI",
+        "model": "E-TRON S SPORTBACK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-20",
+        "make": "AUDI",
+        "model": "E-TRON SPORTBACK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-18",
+        "make": "AUDI",
+        "model": "Q5",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-18",
+        "make": "AUDI",
+        "model": "Q5",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-20",
+        "make": "AUDI",
+        "model": "Q5 PHEV",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-20",
+        "make": "AUDI",
+        "model": "Q5 PHEV",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-21",
+        "make": "AUDI",
+        "model": "Q5 SPORTBACK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-21",
+        "make": "AUDI",
+        "model": "Q5 SPORTBACK",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-17",
+        "make": "AUDI",
+        "model": "Q7",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-17",
+        "make": "AUDI",
+        "model": "Q7",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-17",
+        "make": "AUDI",
+        "model": "Q7",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-19",
+        "make": "AUDI",
+        "model": "Q8",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-19",
+        "make": "AUDI",
+        "model": "Q8",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2024",
+        "make": "AUDI",
+        "model": "Q8 E-TRON",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-24",
+        "make": "AUDI",
+        "model": "Q8 E-TRON SPORTBACK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "AUDI",
+        "model": "RS Q8",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "AUDI",
+        "model": "RS Q8",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-18",
+        "make": "AUDI",
+        "model": "RS5",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-21",
+        "make": "AUDI",
+        "model": "RS5",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-18",
+        "make": "AUDI",
+        "model": "RS5",
+        "engine": "V6-2.9L",
+        "quantity": 1
+      },
+      {
+        "year": "25-21",
+        "make": "AUDI",
+        "model": "RS5",
+        "engine": "V6-2.9L",
+        "quantity": 1
+      },
+      {
+        "year": "2019",
+        "make": "AUDI",
+        "model": "RS5 SPORTBACK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-21",
+        "make": "AUDI",
+        "model": "RS5 SPORTBACK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2019",
+        "make": "AUDI",
+        "model": "RS5 SPORTBACK",
+        "engine": "V6-2.9L",
+        "quantity": 1
+      },
+      {
+        "year": "25-21",
+        "make": "AUDI",
+        "model": "RS5 SPORTBACK",
+        "engine": "V6-2.9L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "AUDI",
+        "model": "RS6 AVANT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "AUDI",
+        "model": "RS6 AVANT",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "AUDI",
+        "model": "RS7 SPORTBACK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "AUDI",
+        "model": "RS7 SPORTBACK",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-18",
+        "make": "AUDI",
+        "model": "S4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-18",
+        "make": "AUDI",
+        "model": "S4",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "24-19",
+        "make": "AUDI",
+        "model": "S5",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-19",
+        "make": "AUDI",
+        "model": "S5",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "AUDI",
+        "model": "S5 SPORTBACK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "AUDI",
+        "model": "S5 SPORTBACK",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-20",
+        "make": "AUDI",
+        "model": "S6",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-20",
+        "make": "AUDI",
+        "model": "S6",
+        "engine": "V6-2.9L",
+        "quantity": 1
+      },
+      {
+        "year": "2020",
+        "make": "AUDI",
+        "model": "S7",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2020",
+        "make": "AUDI",
+        "model": "S7",
+        "engine": "V6-2.9L",
+        "quantity": 1
+      },
+      {
+        "year": "25-20",
+        "make": "AUDI",
+        "model": "S7 SPORTBACK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-20",
+        "make": "AUDI",
+        "model": "S7 SPORTBACK",
+        "engine": "V6-2.9L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "AUDI",
+        "model": "S8",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "AUDI",
+        "model": "S8",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-18",
+        "make": "AUDI",
+        "model": "SQ5",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-18",
+        "make": "AUDI",
+        "model": "SQ5",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-21",
+        "make": "AUDI",
+        "model": "SQ5 SPORTBACK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-21",
+        "make": "AUDI",
+        "model": "SQ5 SPORTBACK",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "AUDI",
+        "model": "SQ7",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "AUDI",
+        "model": "SQ7",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "AUDI",
+        "model": "SQ8",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "AUDI",
+        "model": "SQ8",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2024",
+        "make": "AUDI",
+        "model": "SQ8 E-TRON",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-24",
+        "make": "AUDI",
+        "model": "SQ8 E-TRON SPORTBACK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "PORSCHE",
+        "model": "CAYENNE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-19",
+        "make": "PORSCHE",
+        "model": "CAYENNE",
+        "engine": "V6-2.9L",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "PORSCHE",
+        "model": "CAYENNE",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "PORSCHE",
+        "model": "CAYENNE",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF12211",
+    "source_part_key": "008621835",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 80,
+      "cross_references": 17
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF12211, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "0.787",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "8.504",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "9.213",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Location",
+        "value": "Under Glove box",
+        "recno": "89"
+      },
+      {
+        "attribute": "Installation Time",
+        "value": "20",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100564047",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Thailand",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.8250",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.6500",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "12.4820",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "3.6500",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "8.8980",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "12.9670",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.4180",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "9.4230",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.825,
+        "case_weight_lb": 1.65,
+        "unit_height_in": 12.482,
+        "unit_length_in": 8.898,
+        "unit_width_in": 1.418,
+        "case_height_in": 3.65,
+        "case_length_in": 12.967,
+        "case_width_in": 9.423,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 9.9,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 80,
+    "all_cross_references_observed": 17,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:01:28.934Z",
+  "discovered_from": "CF12211",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "AUDI",
+        "model": "A4",
+        "year": "20-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A4",
+        "year": "20-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A4 ALLROAD",
+        "year": "25-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A4 ALLROAD",
+        "year": "25-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A4 QUATTRO",
+        "year": "25-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A4 QUATTRO",
+        "year": "25-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A5 QUATTRO",
+        "year": "25-18",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A5 QUATTRO",
+        "year": "25-18",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A5 SPORTBACK",
+        "year": "25-18",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A5 SPORTBACK",
+        "year": "25-18",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A6 ALLROAD",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A6 ALLROAD",
+        "year": "26-20",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A6 QUATTRO",
+        "year": "25-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A6 QUATTRO",
+        "year": "25-19",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A6 QUATTRO",
+        "year": "25-19",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A7 SPORTBACK",
+        "year": "25-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A7 SPORTBACK",
+        "year": "23-21",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A7 SPORTBACK",
+        "year": "25-19",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A8 QUATTRO",
+        "year": "26-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A8 QUATTRO",
+        "year": "26-19",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A8 QUATTRO",
+        "year": "21-19",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "E-TRON QUATTRO",
+        "year": "23-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "E-TRON S",
+        "year": "23-22",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "E-TRON S SPORTBACK",
+        "year": "23-22",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "E-TRON SPORTBACK",
+        "year": "23-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "Q5",
+        "year": "25-18",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "Q5",
+        "year": "25-18",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "Q5 PHEV",
+        "year": "25-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "Q5 PHEV",
+        "year": "25-20",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "Q5 SPORTBACK",
+        "year": "25-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "Q5 SPORTBACK",
+        "year": "25-21",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "Q7",
+        "year": "26-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "Q7",
+        "year": "26-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "Q7",
+        "year": "26-17",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "Q8",
+        "year": "26-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "Q8",
+        "year": "26-19",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "Q8 E-TRON",
+        "year": "2024",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "Q8 E-TRON SPORTBACK",
+        "year": "25-24",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "RS Q8",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "RS Q8",
+        "year": "26-20",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "RS5",
+        "year": "19-18",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "RS5",
+        "year": "25-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "RS5",
+        "year": "19-18",
+        "engine": "V6-2.9L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "RS5",
+        "year": "25-21",
+        "engine": "V6-2.9L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "RS5 SPORTBACK",
+        "year": "2019",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "RS5 SPORTBACK",
+        "year": "25-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "RS5 SPORTBACK",
+        "year": "2019",
+        "engine": "V6-2.9L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "RS5 SPORTBACK",
+        "year": "25-21",
+        "engine": "V6-2.9L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "RS6 AVANT",
+        "year": "26-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "RS6 AVANT",
+        "year": "26-21",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "RS7 SPORTBACK",
+        "year": "26-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "RS7 SPORTBACK",
+        "year": "26-21",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S4",
+        "year": "25-18",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S4",
+        "year": "25-18",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S5",
+        "year": "24-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S5",
+        "year": "24-19",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S5 SPORTBACK",
+        "year": "25-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S5 SPORTBACK",
+        "year": "25-19",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S6",
+        "year": "25-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S6",
+        "year": "25-20",
+        "engine": "V6-2.9L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S7",
+        "year": "2020",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S7",
+        "year": "2020",
+        "engine": "V6-2.9L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S7 SPORTBACK",
+        "year": "25-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S7 SPORTBACK",
+        "year": "25-20",
+        "engine": "V6-2.9L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S8",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S8",
+        "year": "26-20",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "SQ5",
+        "year": "25-18",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "SQ5",
+        "year": "25-18",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "SQ5 SPORTBACK",
+        "year": "25-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "SQ5 SPORTBACK",
+        "year": "25-21",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "SQ7",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "SQ7",
+        "year": "26-20",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "SQ8",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "SQ8",
+        "year": "26-20",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "SQ8 E-TRON",
+        "year": "2024",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "SQ8 E-TRON SPORTBACK",
+        "year": "25-24",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "CAYENNE",
+        "year": "25-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "CAYENNE",
+        "year": "23-19",
+        "engine": "V6-2.9L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "CAYENNE",
+        "year": "25-19",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "CAYENNE",
+        "year": "25-19",
+        "engine": "V8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1960C",
+        "source_part_number": "CF12211",
+        "part_key": "008621835",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "XC10582C",
+        "source_part_number": "CF12211",
+        "part_key": "008621835",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E4931LC",
+        "source_part_number": "CF12211",
+        "part_key": "008621835",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1960C",
+        "source_part_number": "CF12211",
+        "part_key": "008621835",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK31003",
+        "source_part_number": "CF12211",
+        "part_key": "008621835",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4120",
+        "source_part_number": "CF12211",
+        "part_key": "008621835",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "CAF1960C",
+        "source_part_number": "CF12211",
+        "part_key": "008621835",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC99334C",
+        "source_part_number": "CF12211",
+        "part_key": "008621835",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C31391C",
+        "source_part_number": "CF12211",
+        "part_key": "008621835",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "CAF1960",
+        "source_part_number": "CF12211",
+        "part_key": "008621835",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF15012P",
+        "source_part_number": "CF12211",
+        "part_key": "008621835",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF15012M",
+        "source_part_number": "CF12211",
+        "part_key": "008621835",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "4M0-819-439",
+        "source_part_number": "CF12211",
+        "part_key": "008621835",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "4M0-819-439B",
+        "source_part_number": "CF12211",
+        "part_key": "008621835",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "4M0-819-439A",
+        "source_part_number": "CF12211",
+        "part_key": "008621835",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WCAF1960",
+        "source_part_number": "CF12211",
+        "part_key": "008621835",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10337",
+        "source_part_number": "CF12211",
+        "part_key": "008621835",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

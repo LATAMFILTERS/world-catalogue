@@ -1,0 +1,1437 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA563SY",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA563SY",
+    "product_type": "Air Filter, Air",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 12.375,
+      "height_mm": 314.32,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Metal End Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I-0124"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "8994774"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "6487846"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "9038408"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "6487246"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A446C"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A834C"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA1906"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FA-802"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FA-295"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "2928"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A52199"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42928"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "10532"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-12-8251"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-10-9206"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "93928"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87928"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "A43657"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "N6655"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "45212"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "AZA513"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P128251"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P119371"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P136990"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P142751"
+      },
+      {
+        "manufacturer": "Euclid",
+        "part_number": "4012358"
+      },
+      {
+        "manufacturer": "Euclid",
+        "part_number": "4001156"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF938"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF822M"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF4820"
+      },
+      {
+        "manufacturer": "Fleetlife",
+        "part_number": "FA-10-9206"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-8822M"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-84820"
+      },
+      {
+        "manufacturer": "Guardian",
+        "part_number": "G10-9206"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF328"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "HDA-9206"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "A-9206"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "A-8251"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA437"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF8513"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "70071N"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "70791N"
+      },
+      {
+        "manufacturer": "Nu-Tech",
+        "part_number": "SS003"
+      },
+      {
+        "manufacturer": "Raygo",
+        "part_number": "216917"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA563SY",
+    "source_part_key": "001509805",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 62,
+      "cross_references": 45
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA563SY, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Metal End Air Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Safety",
+        "recno": "81"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "83"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "84"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "85"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "86"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "87"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "88"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "89"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "12.375",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100523617",
+        "recno": "92"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "0.875",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "5.938",
+        "recno": "93"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "4.813",
+        "recno": "94"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "5.938",
+        "recno": "95"
+      },
+      {
+        "attribute": "Washer Thickness (Inch)",
+        "value": "0.125",
+        "recno": "96"
+      },
+      {
+        "attribute": "Washer Inside Diameter (Inch)",
+        "value": "0.813",
+        "recno": "97"
+      },
+      {
+        "attribute": "Washer Outside Diameter (Inch)",
+        "value": "1.500",
+        "recno": "98"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "99"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "100"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "101"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "2.2000",
+        "recno": "105"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "13.3750",
+        "recno": "106"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "6.5000",
+        "recno": "107"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "6.5000",
+        "recno": "108"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": 2.2,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": 13.375,
+        "case_length_in": 6.5,
+        "case_width_in": 6.5,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 62,
+    "all_cross_references_observed": 45,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:47:58.040Z",
+  "discovered_from": "CA563SY",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "CONSTRUCTION EQUIPMENT VERMEER",
+        "model": "T658 w/Caterpillar 3304 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CONSTRUCTION EQUIPMENT VERMEER",
+        "model": "T658 w/Caterpillar 3304 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER FIAT-ALLIS",
+        "model": "16B w/16000 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER FIAT-ALLIS",
+        "model": "16B w/16000 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER FIAT-ALLIS",
+        "model": "16B w/HD-844 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER FIAT-ALLIS",
+        "model": "16B w/HD-844 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR ALLIS-CHALMERS",
+        "model": "HD-16, HD-16 Series B, HD-16D, HD-16DC, HD-16DP, HD-16G w/HD-844 or 16000 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR ALLIS-CHALMERS",
+        "model": "HD-16, HD-16 Series B, HD-16D, HD-16DC, HD-16DP, HD-16G w/HD-844 or 16000 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "110-11B Cummins V-504 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "110-11B Cummins V-504 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "110-9, 110-9B, 110-11B w/Cummins V-504C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT MICHIGAN",
+        "model": "110-9, 110-9B, 110-11B w/Cummins V-504C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "115, 115P w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "115, 115P w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "125CK Crawler Series-B",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "125CK Crawler Series-B",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "125PB w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "125PB w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "160CK CRAWLER w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "160CK CRAWLER w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "170B w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "170B w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "170C w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CASE",
+        "model": "170C w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR DROTT",
+        "model": "115, 115P, 126CK, 125P-B w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR DROTT",
+        "model": "115, 115P, 126CK, 125P-B w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CLEVELAND",
+        "model": "715A w/Detroit Diesel 4-71 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER CLEVELAND",
+        "model": "715A w/Detroit Diesel 4-71 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK EUCLID",
+        "model": "R22 Ser.; Model TD w/Detroit Diesel 6-71 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK EUCLID",
+        "model": "R22 Ser.; Model TD w/Detroit Diesel 6-71 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER TEREX",
+        "model": "TS14 w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER TEREX",
+        "model": "TS14 w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-16 w/16000 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-16 w/16000 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-16 w/HD-844 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-16 w/HD-844 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-16D w/16000 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-16D w/16000 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-16D w/HD-844 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-16D w/HD-844 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-16DC w/16000 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-16DC w/16000 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-16DC w/HD-844 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-16DC w/HD-844 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-16DP w/16000 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-16DP w/16000 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-16DP w/HD-844 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-16DP w/HD-844 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-16G w/16000 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-16G w/16000 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-16G w/HD-844 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR ALLIS-CHALMERS",
+        "model": "HD-16G w/HD-844 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE",
+        "model": "1450B-T",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR CASE",
+        "model": "1450B-T",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "RC210 Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "RC210 Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST210 Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST210 Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST220 Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "ST220 Series III",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Wildcat III w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR STEIGER",
+        "model": "Wildcat III w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A446C",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A834C",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "10532",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-12-8251",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-10-9206",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA1906",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "93928",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87928",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "A43657",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "N6655",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "45212",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I-0124",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "AZA513",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P128251",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P119371",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P136990",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P142751",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Euclid",
+        "part_number": "4012358",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Euclid",
+        "part_number": "4001156",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF938",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF822M",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF4820",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetlife",
+        "part_number": "FA-10-9206",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-8822M",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-84820",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "8994774",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "6487846",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "9038408",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "6487246",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Guardian",
+        "part_number": "G10-9206",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF328",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "HDA-9206",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "A-9206",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "A-8251",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA437",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF8513",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FA-802",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FA-295",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "2928",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "70071N",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "70791N",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Nu-Tech",
+        "part_number": "SS003",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A52199",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Raygo",
+        "part_number": "216917",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42928",
+        "source_part_number": "CA563SY",
+        "part_key": "001509805",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

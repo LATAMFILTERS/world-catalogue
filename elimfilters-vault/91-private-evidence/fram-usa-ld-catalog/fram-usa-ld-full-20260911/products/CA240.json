@@ -1,0 +1,1593 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA240",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA240",
+    "product_type": "Air Filter, Air",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": 10.625,
+      "outer_diameter_mm": 269.88,
+      "height_in": 12.031,
+      "height_mm": 305.59,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Metal End Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "General Motors",
+        "part_number": "15585879"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "15586879"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "5648079"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25099506"
+      },
+      {
+        "manufacturer": "Hyster",
+        "part_number": "202951"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A140C"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA616"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA1913"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "2250"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "2252"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A50050"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42252"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42250"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "49345"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-5-1"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-50"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "10085"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-297"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "10023"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "10006"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "93250"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "93252"
+      },
+      {
+        "manufacturer": "Brockway",
+        "part_number": "221137"
+      },
+      {
+        "manufacturer": "Brockway",
+        "part_number": "221140"
+      },
+      {
+        "manufacturer": "Brockway",
+        "part_number": "221144"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87252"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87250"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "A22140"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "AZA088"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "925"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "106832"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "221144"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "105067"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "299253"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "3001690"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "106837"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "106833"
+      },
+      {
+        "manufacturer": "Diamond Reo",
+        "part_number": "P-2113"
+      },
+      {
+        "manufacturer": "Diamond Reo",
+        "part_number": "N-44580"
+      },
+      {
+        "manufacturer": "Diamond Reo",
+        "part_number": "P-2175"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P015838"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P616648"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF4139"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF253"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-8253"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-84139"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GA37"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GA37M"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF30"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "966355R91"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "MD-389"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA38"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF1966"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF240"
+      },
+      {
+        "manufacturer": "Mack",
+        "part_number": "81SD14"
+      },
+      {
+        "manufacturer": "Mack",
+        "part_number": "221144"
+      },
+      {
+        "manufacturer": "Mack",
+        "part_number": "83SB14"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "L-181"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "L-167"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "70082N"
+      },
+      {
+        "manufacturer": "Nu-Tech",
+        "part_number": "N1549"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "335285"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "42445"
+      },
+      {
+        "manufacturer": "WGB",
+        "part_number": "SA-36"
+      },
+      {
+        "manufacturer": "White",
+        "part_number": "878472"
+      },
+      {
+        "manufacturer": "White",
+        "part_number": "856773"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA240",
+    "source_part_key": "001510396",
+    "source_totals": {
+      "attributes": 25,
+      "applications": 50,
+      "cross_references": 66
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA240, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Metal End Air Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "83"
+      },
+      {
+        "attribute": "Inside Diameter",
+        "value": "Closed",
+        "recno": "84"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "85"
+      },
+      {
+        "attribute": "Top Inside Diameter",
+        "value": "Closed",
+        "recno": "86"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "87"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "12.031",
+        "recno": "89"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "10.625",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available Only While Supplies Last",
+        "recno": "91"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "10.625",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100522313",
+        "recno": "92"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "7.828",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "10.625",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "94"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "95"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "4.5400",
+        "recno": "99"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "13.0000",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "10.9380",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "10.9380",
+        "recno": "102"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": 4.54,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": 13,
+        "case_length_in": 10.938,
+        "case_width_in": 10.938,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 50,
+    "all_cross_references_observed": 66,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:44:32.696Z",
+  "discovered_from": "CA240",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "CARRIER HYSTER",
+        "model": "M200E",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CARRIER HYSTER",
+        "model": "M200E",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CARRIER HYSTER",
+        "model": "M200F",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CARRIER HYSTER",
+        "model": "M200F",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CARRIER HYSTER",
+        "model": "M300E",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CARRIER HYSTER",
+        "model": "M300E",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CARRIER HYSTER",
+        "model": "M300F",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CARRIER HYSTER",
+        "model": "M300F",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT LORAIN",
+        "model": "MC790 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EQUIPMENT LORAIN",
+        "model": "MC790 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "H250F",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "H250F",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "H300E",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "H300E",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "H360A w/Continental Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "H360A w/Continental Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "H360A w/Continental Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "H360A w/Continental Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "H400A w/Continental Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "H400A w/Continental Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "H400A w/Continental Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "H400A w/Continental Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "H460A w/Continental Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "H460A w/Continental Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "H460A w/Continental Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "H460A w/Continental Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "RC150",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "RC150",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "RC160",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "RC160",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "RC180",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "RC180",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "SC150",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "SC150",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "SC160",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "SC160",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "SC180",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "SC180",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "SC200",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "SC200",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "TC150",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "TC150",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "TC160",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "TC160",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "TC165",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "TC165",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "TC180",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "TC180",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "TC200",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK HYSTER",
+        "model": "TC200",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A140C",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-5-1",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-50",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "10085",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-297",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "10023",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "10006",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA616",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA1913",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "93250",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "93252",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Brockway",
+        "part_number": "221137",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Brockway",
+        "part_number": "221140",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Brockway",
+        "part_number": "221144",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87252",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87250",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "A22140",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "AZA088",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "925",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "106832",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "221144",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "105067",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "299253",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "3001690",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "106837",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Cummins",
+        "part_number": "106833",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Diamond Reo",
+        "part_number": "P-2113",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Diamond Reo",
+        "part_number": "N-44580",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Diamond Reo",
+        "part_number": "P-2175",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P015838",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P616648",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF4139",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF253",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-8253",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-84139",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "15585879",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "15586879",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "5648079",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25099506",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GA37",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GA37M",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF30",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Hyster",
+        "part_number": "202951",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "966355R91",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "MD-389",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA38",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF1966",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF240",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Mack",
+        "part_number": "81SD14",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Mack",
+        "part_number": "221144",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Mack",
+        "part_number": "83SB14",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "L-181",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "L-167",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "2250",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "2252",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "70082N",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Nu-Tech",
+        "part_number": "N1549",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A50050",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "335285",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "42445",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "WGB",
+        "part_number": "SA-36",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "White",
+        "part_number": "878472",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "White",
+        "part_number": "856773",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42252",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42250",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "49345",
+        "source_part_number": "CA240",
+        "part_key": "001510396",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

@@ -1,0 +1,1279 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF10435",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF10435",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.221,
+      "height_mm": 31.01,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK2733"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CU2733"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C25840C"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "49355"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP9309"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-276"
+      },
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-148"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "90212C"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1840C"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1840P"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F9355"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F30767024"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F9355C"
+      },
+      {
+        "manufacturer": "Land Rover",
+        "part_number": "LR056138"
+      },
+      {
+        "manufacturer": "Land Rover",
+        "part_number": "LR000901"
+      },
+      {
+        "manufacturer": "Land Rover",
+        "part_number": "LR039612"
+      },
+      {
+        "manufacturer": "Land Rover",
+        "part_number": "6G9N-19N619-BD"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1840C"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1840P"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3738"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "CAF1840C"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC5840"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1158"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1108"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "31366124"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "31449209"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "31390880"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "3136612-3"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "3076702-4"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "19-15",
+        "make": "LAND ROVER",
+        "model": "DISCOVERY SPORT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-15",
+        "make": "LAND ROVER",
+        "model": "DISCOVERY SPORT",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-08",
+        "make": "LAND ROVER",
+        "model": "LR2",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "15-13",
+        "make": "LAND ROVER",
+        "model": "LR2",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "12-08",
+        "make": "LAND ROVER",
+        "model": "LR2",
+        "engine": "L6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "19-12",
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER EVOQUE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-12",
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER EVOQUE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-11",
+        "make": "VOLVO",
+        "model": "S60",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-15",
+        "make": "VOLVO",
+        "model": "S60",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-12",
+        "make": "VOLVO",
+        "model": "S60",
+        "engine": "L5-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "16-11",
+        "make": "VOLVO",
+        "model": "S60",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-16",
+        "make": "VOLVO",
+        "model": "S60 CROSS COUNTRY",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-17",
+        "make": "VOLVO",
+        "model": "S60 CROSS COUNTRY",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2016",
+        "make": "VOLVO",
+        "model": "S60 CROSS COUNTRY",
+        "engine": "L5-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "16-07",
+        "make": "VOLVO",
+        "model": "S80",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "VOLVO",
+        "model": "S80",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-08",
+        "make": "VOLVO",
+        "model": "S80",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "14-07",
+        "make": "VOLVO",
+        "model": "S80",
+        "engine": "L6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "10-07",
+        "make": "VOLVO",
+        "model": "S80",
+        "engine": "V8-4.4L",
+        "quantity": 1
+      },
+      {
+        "year": "18-15",
+        "make": "VOLVO",
+        "model": "V60",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-15",
+        "make": "VOLVO",
+        "model": "V60",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "VOLVO",
+        "model": "V60",
+        "engine": "L5-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "VOLVO",
+        "model": "V60",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "VOLVO",
+        "model": "V60 CROSS COUNTRY",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2015",
+        "make": "VOLVO",
+        "model": "V60 CROSS COUNTRY",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "VOLVO",
+        "model": "V60 CROSS COUNTRY",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2015",
+        "make": "VOLVO",
+        "model": "V60 CROSS COUNTRY",
+        "engine": "L5-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "10-08",
+        "make": "VOLVO",
+        "model": "V70",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "10-08",
+        "make": "VOLVO",
+        "model": "V70",
+        "engine": "L6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "17-10",
+        "make": "VOLVO",
+        "model": "XC60",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "17-15",
+        "make": "VOLVO",
+        "model": "XC60",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "VOLVO",
+        "model": "XC60",
+        "engine": "L5-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "16-10",
+        "make": "VOLVO",
+        "model": "XC60",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-10",
+        "make": "VOLVO",
+        "model": "XC60",
+        "engine": "L6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "16-08",
+        "make": "VOLVO",
+        "model": "XC70",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "VOLVO",
+        "model": "XC70",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2016",
+        "make": "VOLVO",
+        "model": "XC70",
+        "engine": "L5-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "15-09",
+        "make": "VOLVO",
+        "model": "XC70",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-08",
+        "make": "VOLVO",
+        "model": "XC70",
+        "engine": "L6-3.2L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF10435",
+    "source_part_key": "002179865",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 39,
+      "cross_references": 29
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF10435, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.221",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "10.874",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "7.722",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "20",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Under Glove Box",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100554307",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Thailand",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.9000",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.8000",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "11.1030",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "3.6500",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "8.0040",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "11.9000",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.4110",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "8.7500",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.9,
+        "case_weight_lb": 1.8,
+        "unit_height_in": 11.103,
+        "unit_length_in": 8.004,
+        "unit_width_in": 1.411,
+        "case_height_in": 3.65,
+        "case_length_in": 11.9,
+        "case_width_in": 8.75,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 10.8,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 39,
+    "all_cross_references_observed": 29,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:57:02.279Z",
+  "discovered_from": "CF10435",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "LAND ROVER",
+        "model": "DISCOVERY SPORT",
+        "year": "19-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "DISCOVERY SPORT",
+        "year": "19-15",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "LR2",
+        "year": "15-08",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "LR2",
+        "year": "15-13",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "LR2",
+        "year": "12-08",
+        "engine": "L6-3.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER EVOQUE",
+        "year": "19-12",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER EVOQUE",
+        "year": "19-12",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "S60",
+        "year": "18-11",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "S60",
+        "year": "18-15",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "S60",
+        "year": "16-12",
+        "engine": "L5-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "S60",
+        "year": "16-11",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "S60 CROSS COUNTRY",
+        "year": "18-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "S60 CROSS COUNTRY",
+        "year": "18-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "S60 CROSS COUNTRY",
+        "year": "2016",
+        "engine": "L5-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "S80",
+        "year": "16-07",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "S80",
+        "year": "16-15",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "S80",
+        "year": "15-08",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "S80",
+        "year": "14-07",
+        "engine": "L6-3.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "S80",
+        "year": "10-07",
+        "engine": "V8-4.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "V60",
+        "year": "18-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "V60",
+        "year": "18-15",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "V60",
+        "year": "16-15",
+        "engine": "L5-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "V60",
+        "year": "16-15",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "V60 CROSS COUNTRY",
+        "year": "19-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "V60 CROSS COUNTRY",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "V60 CROSS COUNTRY",
+        "year": "19-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "V60 CROSS COUNTRY",
+        "year": "2015",
+        "engine": "L5-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "V70",
+        "year": "10-08",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "V70",
+        "year": "10-08",
+        "engine": "L6-3.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "XC60",
+        "year": "17-10",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "XC60",
+        "year": "17-15",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "XC60",
+        "year": "16-15",
+        "engine": "L5-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "XC60",
+        "year": "16-10",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "XC60",
+        "year": "15-10",
+        "engine": "L6-3.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "XC70",
+        "year": "16-08",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "XC70",
+        "year": "16-15",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "XC70",
+        "year": "2016",
+        "engine": "L5-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "XC70",
+        "year": "15-09",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLVO",
+        "model": "XC70",
+        "year": "15-08",
+        "engine": "L6-3.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-276",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-148",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "90212C",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1840C",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1840P",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F9355",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F30767024",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F9355C",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Land Rover",
+        "part_number": "LR056138",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Land Rover",
+        "part_number": "LR000901",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Land Rover",
+        "part_number": "LR039612",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Land Rover",
+        "part_number": "6G9N-19N619-BD",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1840C",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1840P",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK2733",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CU2733",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3738",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "CAF1840C",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC5840",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C25840C",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1158",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1108",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "31366124",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "31449209",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "31390880",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "3136612-3",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "3076702-4",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "49355",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP9309",
+        "source_part_number": "CF10435",
+        "part_key": "002179865",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

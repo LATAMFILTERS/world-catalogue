@@ -1,0 +1,858 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "CH6096",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CH6096",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.41,
+      "height_mm": 35.81,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Cartridge",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX793"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57671"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "84671"
+      },
+      {
+        "manufacturer": "HiFlo",
+        "part_number": "HF116"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15412-MEN-671"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15412-MEB-671"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "KN-116"
+      },
+      {
+        "manufacturer": "Polaris",
+        "part_number": "2521231"
+      },
+      {
+        "manufacturer": "Sudco",
+        "part_number": "SF-1009"
+      },
+      {
+        "manufacturer": "Vesrah",
+        "part_number": "SF-1009"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "09-07",
+        "make": "HONDA",
+        "model": "CRF150R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-12",
+        "make": "HONDA",
+        "model": "CRF150R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-07",
+        "make": "HONDA",
+        "model": "CRF150R EXPERT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-12",
+        "make": "HONDA",
+        "model": "CRF150R EXPERT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-04",
+        "make": "HONDA",
+        "model": "CRF250R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2025",
+        "make": "HONDA",
+        "model": "CRF250RWE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "HONDA",
+        "model": "CRF250RX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-04",
+        "make": "HONDA",
+        "model": "CRF250X",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-12",
+        "make": "HONDA",
+        "model": "CRF250X",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "17-15",
+        "make": "HONDA",
+        "model": "CRF250X",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-19",
+        "make": "HONDA",
+        "model": "CRF450L",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-02",
+        "make": "HONDA",
+        "model": "CRF450R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2023",
+        "make": "HONDA",
+        "model": "CRF450R 50TH ANNIVERSARY EDITION",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-21",
+        "make": "HONDA",
+        "model": "CRF450RL",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-22",
+        "make": "HONDA",
+        "model": "CRF450R-S",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "HONDA",
+        "model": "CRF450RWE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-17",
+        "make": "HONDA",
+        "model": "CRF450RX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-05",
+        "make": "HONDA",
+        "model": "CRF450X",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "17-12",
+        "make": "HONDA",
+        "model": "CRF450X",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "HONDA",
+        "model": "CRF450X",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-06",
+        "make": "HONDA",
+        "model": "TRX450ER ELECTRIC START",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2012",
+        "make": "HONDA",
+        "model": "TRX450ER ELECTRIC START",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-04",
+        "make": "HONDA",
+        "model": "TRX450R",
+        "engine": "All",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CH6096",
+    "source_part_key": "001470313",
+    "source_totals": {
+      "attributes": 41,
+      "applications": 28,
+      "cross_references": 10
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® oil filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE (original equipment) recommended intervals. Engineered for conventional and synthetic motor oil, Extra Guard offers proven engine protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "0"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CH6096, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Motorcycle Full-Flow Lube Cartridge",
+        "recno": "3"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Cartridge",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "NA",
+        "recno": "89"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100537867",
+        "recno": "92"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.410",
+        "recno": "93"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "94"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "0.433",
+        "recno": "95"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "1.496",
+        "recno": "96"
+      },
+      {
+        "attribute": "O-Ring Inside Diameter (Inch)",
+        "value": "1.574",
+        "recno": "97"
+      },
+      {
+        "attribute": "O-Ring Outside Diameter (Inch)",
+        "value": "1.652",
+        "recno": "98"
+      },
+      {
+        "attribute": "O-Ring Thickness (Inch)",
+        "value": "0.078",
+        "recno": "99"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "0.472",
+        "recno": "100"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "1.496",
+        "recno": "101"
+      },
+      {
+        "attribute": "O-Rings Included",
+        "value": "Yes",
+        "recno": "102"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "103"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "104"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "105"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "106"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.1000",
+        "recno": "110"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "0.6000",
+        "recno": "111"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "1.6020",
+        "recno": "112"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "2.6120",
+        "recno": "113"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "1.7700",
+        "recno": "114"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "6.0560",
+        "recno": "115"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.7700",
+        "recno": "116"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "4.3060",
+        "recno": "117"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.1,
+        "case_weight_lb": 0.6,
+        "unit_height_in": 1.602,
+        "unit_length_in": 1.77,
+        "unit_width_in": 1.77,
+        "case_height_in": 2.612,
+        "case_length_in": 6.056,
+        "case_width_in": 4.306,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 1.2,
+        "estimated_case_dimensions": {
+          "length_in": 8.075,
+          "width_in": 6.459,
+          "height_in": 2.612,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 28,
+    "all_cross_references_observed": 10,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:14:44.271Z",
+  "discovered_from": "CH6096",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "HONDA",
+        "model": "CRF150R",
+        "year": "09-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF150R",
+        "year": "19-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF150R EXPERT",
+        "year": "09-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF150R EXPERT",
+        "year": "19-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF250R",
+        "year": "25-04",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF250RWE",
+        "year": "2025",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF250RX",
+        "year": "25-19",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF250X",
+        "year": "09-04",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF250X",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF250X",
+        "year": "17-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF450L",
+        "year": "20-19",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF450R",
+        "year": "25-02",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF450R 50TH ANNIVERSARY EDITION",
+        "year": "2023",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF450RL",
+        "year": "25-21",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF450R-S",
+        "year": "24-22",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF450RWE",
+        "year": "25-19",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF450RX",
+        "year": "25-17",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF450X",
+        "year": "09-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF450X",
+        "year": "17-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CRF450X",
+        "year": "25-19",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX450ER ELECTRIC START",
+        "year": "09-06",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX450ER ELECTRIC START",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX450R",
+        "year": "09-04",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "POLARIS",
+        "model": "ACE",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "POLARIS",
+        "model": "M1400",
+        "year": "16-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "POLARIS",
+        "model": "RANGER ETX",
+        "year": "16-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "POLARIS",
+        "model": "SPORTSMAN ACE",
+        "year": "15-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "POLARIS",
+        "model": "SPORTSMAN ETX",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "84671",
+        "source_part_number": "CH6096",
+        "part_key": "001470313",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "HiFlo",
+        "part_number": "HF116",
+        "source_part_number": "CH6096",
+        "part_key": "001470313",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15412-MEN-671",
+        "source_part_number": "CH6096",
+        "part_key": "001470313",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15412-MEB-671",
+        "source_part_number": "CH6096",
+        "part_key": "001470313",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "KN-116",
+        "source_part_number": "CH6096",
+        "part_key": "001470313",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX793",
+        "source_part_number": "CH6096",
+        "part_key": "001470313",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Polaris",
+        "part_number": "2521231",
+        "source_part_number": "CH6096",
+        "part_key": "001470313",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Sudco",
+        "part_number": "SF-1009",
+        "source_part_number": "CH6096",
+        "part_key": "001470313",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Vesrah",
+        "part_number": "SF-1009",
+        "source_part_number": "CH6096",
+        "part_key": "001470313",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57671",
+        "source_part_number": "CH6096",
+        "part_key": "001470313",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

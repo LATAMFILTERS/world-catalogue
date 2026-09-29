@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "source": "ISUZU_US_V161_FVR_DERATE_ENGINE_EQUIVALENCE",
+  "evidence": {
+    "vehicle": "Isuzu FVR Derate is mechanically identical to FVR and uses Cummins B6.7",
+    "fuel": "Donaldson P553009 = Cummins B6.7 secondary fuel filter",
+    "oil": "Donaldson P550428 = Cummins B6.7 full-flow lube filter"
+  },
+  "skus": [
+    {
+      "sku": "EF93009",
+      "applications": [
+        {"make":"ISUZU","model":"FVR DERATE","equipment":"FVR DERATE","type":"TRUCK","engine":"Cummins B6.7","year_from":"2022","year_to":"2026"}
+      ]
+    },
+    {
+      "sku": "EL80428",
+      "applications": [
+        {"make":"ISUZU","model":"FVR DERATE","equipment":"FVR DERATE","type":"TRUCK","engine":"Cummins B6.7","year_from":"2022","year_to":"2026"}
+      ]
+    }
+  ]
+}

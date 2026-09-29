@@ -1,0 +1,1228 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "FS8481",
+    "line": "TITANIUM"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "FS8481",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": null,
+      "height_mm": null,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": null,
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [],
+    "unresolved_cross_reference_candidates": [],
+    "vehicle_application_candidates": [
+      {
+        "year": "08-04",
+        "make": "CHRYSLER",
+        "model": "CROSSFIRE",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "08-07",
+        "make": "DODGE",
+        "model": "SPRINTER 2500",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "08-07",
+        "make": "DODGE",
+        "model": "SPRINTER 3500",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "09-06",
+        "make": "MERCEDES-BENZ",
+        "model": "C230",
+        "engine": "V6-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "05-01",
+        "make": "MERCEDES-BENZ",
+        "model": "C240",
+        "engine": "V6-2.6L",
+        "quantity": 1
+      },
+      {
+        "year": "12-10",
+        "make": "MERCEDES-BENZ",
+        "model": "C250",
+        "engine": "V6-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "00-98",
+        "make": "MERCEDES-BENZ",
+        "model": "C280",
+        "engine": "V6-2.8L",
+        "quantity": 1
+      },
+      {
+        "year": "07-06",
+        "make": "MERCEDES-BENZ",
+        "model": "C280",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "12-08",
+        "make": "MERCEDES-BENZ",
+        "model": "C300",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "04-02",
+        "make": "MERCEDES-BENZ",
+        "model": "C32 AMG",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "05-01",
+        "make": "MERCEDES-BENZ",
+        "model": "C320",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "11-06",
+        "make": "MERCEDES-BENZ",
+        "model": "C350",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "00-98",
+        "make": "MERCEDES-BENZ",
+        "model": "C43 AMG",
+        "engine": "V8-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "06-05",
+        "make": "MERCEDES-BENZ",
+        "model": "C55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "MERCEDES-BENZ",
+        "model": "CL500",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "MERCEDES-BENZ",
+        "model": "CL55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "10-07",
+        "make": "MERCEDES-BENZ",
+        "model": "CL550",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "MERCEDES-BENZ",
+        "model": "CL600",
+        "engine": "V12-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "MERCEDES-BENZ",
+        "model": "CL600",
+        "engine": "V12-5.8L",
+        "quantity": 1
+      },
+      {
+        "year": "05-98",
+        "make": "MERCEDES-BENZ",
+        "model": "CLK320",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "09-06",
+        "make": "MERCEDES-BENZ",
+        "model": "CLK350",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "03-99",
+        "make": "MERCEDES-BENZ",
+        "model": "CLK430",
+        "engine": "V8-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "06-03",
+        "make": "MERCEDES-BENZ",
+        "model": "CLK500",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "MERCEDES-BENZ",
+        "model": "CLK55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "09-07",
+        "make": "MERCEDES-BENZ",
+        "model": "CLK550",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "MERCEDES-BENZ",
+        "model": "CLS500",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "MERCEDES-BENZ",
+        "model": "CLS55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "11-07",
+        "make": "MERCEDES-BENZ",
+        "model": "CLS550",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "2007",
+        "make": "MERCEDES-BENZ",
+        "model": "E280",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "09-08",
+        "make": "MERCEDES-BENZ",
+        "model": "E300",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "05-98",
+        "make": "MERCEDES-BENZ",
+        "model": "E320",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "11-06",
+        "make": "MERCEDES-BENZ",
+        "model": "E350",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "02-98",
+        "make": "MERCEDES-BENZ",
+        "model": "E430",
+        "engine": "V8-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "06-03",
+        "make": "MERCEDES-BENZ",
+        "model": "E500",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "06-99",
+        "make": "MERCEDES-BENZ",
+        "model": "E55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "11-07",
+        "make": "MERCEDES-BENZ",
+        "model": "E550",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "08-02",
+        "make": "MERCEDES-BENZ",
+        "model": "G500",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "11-03",
+        "make": "MERCEDES-BENZ",
+        "model": "G55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "15-09",
+        "make": "MERCEDES-BENZ",
+        "model": "G550",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "12-07",
+        "make": "MERCEDES-BENZ",
+        "model": "GL450",
+        "engine": "V8-4.7L",
+        "quantity": 1
+      },
+      {
+        "year": "12-08",
+        "make": "MERCEDES-BENZ",
+        "model": "GL550",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "12-10",
+        "make": "MERCEDES-BENZ",
+        "model": "GLK350",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "03-98",
+        "make": "MERCEDES-BENZ",
+        "model": "ML320",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "11-06",
+        "make": "MERCEDES-BENZ",
+        "model": "ML350",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "05-03",
+        "make": "MERCEDES-BENZ",
+        "model": "ML350",
+        "engine": "V6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "01-99",
+        "make": "MERCEDES-BENZ",
+        "model": "ML430",
+        "engine": "V8-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "11-10",
+        "make": "MERCEDES-BENZ",
+        "model": "ML450",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "07-02",
+        "make": "MERCEDES-BENZ",
+        "model": "ML500",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "03-00",
+        "make": "MERCEDES-BENZ",
+        "model": "ML55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "11-08",
+        "make": "MERCEDES-BENZ",
+        "model": "ML550",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "11-06",
+        "make": "MERCEDES-BENZ",
+        "model": "R350",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "07-06",
+        "make": "MERCEDES-BENZ",
+        "model": "R500",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2008",
+        "make": "MERCEDES-BENZ",
+        "model": "R550",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "MERCEDES-BENZ",
+        "model": "S350",
+        "engine": "V6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "13-10",
+        "make": "MERCEDES-BENZ",
+        "model": "S400",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "06-00",
+        "make": "MERCEDES-BENZ",
+        "model": "S430",
+        "engine": "V8-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "11-08",
+        "make": "MERCEDES-BENZ",
+        "model": "S450",
+        "engine": "V8-4.7L",
+        "quantity": 1
+      },
+      {
+        "year": "06-00",
+        "make": "MERCEDES-BENZ",
+        "model": "S500",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "MERCEDES-BENZ",
+        "model": "S55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "11-07",
+        "make": "MERCEDES-BENZ",
+        "model": "S550",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "MERCEDES-BENZ",
+        "model": "S600",
+        "engine": "V12-5.8L",
+        "quantity": 1
+      },
+      {
+        "year": "06-99",
+        "make": "MERCEDES-BENZ",
+        "model": "SL500",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "08-03",
+        "make": "MERCEDES-BENZ",
+        "model": "SL55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "12-07",
+        "make": "MERCEDES-BENZ",
+        "model": "SL550",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "08-06",
+        "make": "MERCEDES-BENZ",
+        "model": "SLK280",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "11-09",
+        "make": "MERCEDES-BENZ",
+        "model": "SLK300",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "04-02",
+        "make": "MERCEDES-BENZ",
+        "model": "SLK32 AMG",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "04-01",
+        "make": "MERCEDES-BENZ",
+        "model": "SLK320",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "11-05",
+        "make": "MERCEDES-BENZ",
+        "model": "SLK350",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "06-05",
+        "make": "MERCEDES-BENZ",
+        "model": "SLK55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "FS8481",
+    "source_part_key": "011295090",
+    "source_totals": {
+      "attributes": 0,
+      "applications": 72,
+      "cross_references": 0
+    },
+    "raw_attributes": [],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": null,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": null,
+        "case_length_in": null,
+        "case_width_in": null,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 72,
+    "all_cross_references_observed": 0,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:33:23.355Z",
+  "discovered_from": "FS8481",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "CHRYSLER",
+        "model": "CROSSFIRE",
+        "year": "08-04",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "SPRINTER 2500",
+        "year": "08-07",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "SPRINTER 3500",
+        "year": "08-07",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "SPRINTER 2500",
+        "year": "08-07",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "SPRINTER 3500",
+        "year": "08-07",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C230",
+        "year": "09-06",
+        "engine": "V6-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C240",
+        "year": "05-01",
+        "engine": "V6-2.6L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C250",
+        "year": "12-10",
+        "engine": "V6-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C280",
+        "year": "00-98",
+        "engine": "V6-2.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C280",
+        "year": "07-06",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C300",
+        "year": "12-08",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C32 AMG",
+        "year": "04-02",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C320",
+        "year": "05-01",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C350",
+        "year": "11-06",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C43 AMG",
+        "year": "00-98",
+        "engine": "V8-4.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C55 AMG",
+        "year": "06-05",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CL500",
+        "year": "06-01",
+        "engine": "V8-5.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CL55 AMG",
+        "year": "06-01",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CL550",
+        "year": "10-07",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CL600",
+        "year": "2003",
+        "engine": "V12-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CL600",
+        "year": "02-01",
+        "engine": "V12-5.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLK320",
+        "year": "05-98",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLK350",
+        "year": "09-06",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLK430",
+        "year": "03-99",
+        "engine": "V8-4.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLK500",
+        "year": "06-03",
+        "engine": "V8-5.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLK55 AMG",
+        "year": "06-01",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLK550",
+        "year": "09-07",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLS500",
+        "year": "2006",
+        "engine": "V8-5.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLS55 AMG",
+        "year": "2006",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLS550",
+        "year": "11-07",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E280",
+        "year": "2007",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E300",
+        "year": "09-08",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E320",
+        "year": "05-98",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E350",
+        "year": "11-06",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E430",
+        "year": "02-98",
+        "engine": "V8-4.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E500",
+        "year": "06-03",
+        "engine": "V8-5.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E55 AMG",
+        "year": "06-99",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E550",
+        "year": "11-07",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "G500",
+        "year": "08-02",
+        "engine": "V8-5.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "G55 AMG",
+        "year": "11-03",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "G550",
+        "year": "15-09",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GL450",
+        "year": "12-07",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GL550",
+        "year": "12-08",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLK350",
+        "year": "12-10",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "ML320",
+        "year": "03-98",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "ML350",
+        "year": "11-06",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "ML350",
+        "year": "05-03",
+        "engine": "V6-3.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "ML430",
+        "year": "01-99",
+        "engine": "V8-4.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "ML450",
+        "year": "11-10",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "ML500",
+        "year": "07-02",
+        "engine": "V8-5.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "ML55 AMG",
+        "year": "03-00",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "ML550",
+        "year": "11-08",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "R350",
+        "year": "11-06",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "R500",
+        "year": "07-06",
+        "engine": "V8-5.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "R550",
+        "year": "2008",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S350",
+        "year": "2006",
+        "engine": "V6-3.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S400",
+        "year": "13-10",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S430",
+        "year": "06-00",
+        "engine": "V8-4.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S450",
+        "year": "11-08",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S500",
+        "year": "06-00",
+        "engine": "V8-5.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S55 AMG",
+        "year": "06-01",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S550",
+        "year": "11-07",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S600",
+        "year": "02-01",
+        "engine": "V12-5.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SL500",
+        "year": "06-99",
+        "engine": "V8-5.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SL55 AMG",
+        "year": "08-03",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SL550",
+        "year": "12-07",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SLK280",
+        "year": "08-06",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SLK300",
+        "year": "11-09",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SLK32 AMG",
+        "year": "04-02",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SLK320",
+        "year": "04-01",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SLK350",
+        "year": "11-05",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SLK55 AMG",
+        "year": "06-05",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

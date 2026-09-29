@@ -1,0 +1,803 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "FUEL",
+  "authority": {
+    "part_number": "G10243",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "G10243",
+    "product_type": "Fuel Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 2.411,
+      "outer_diameter_mm": 61.24,
+      "height_in": 6.473,
+      "height_mm": 164.41,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "In Line",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Hengst",
+        "part_number": "H280WK"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "KL572"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "WK69"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3833"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3814"
+      },
+      {
+        "manufacturer": "UFI",
+        "part_number": "3184000"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33814"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "043-1056"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86814"
+      },
+      {
+        "manufacturer": "Duralast",
+        "part_number": "FF877DL"
+      },
+      {
+        "manufacturer": "GK Industries",
+        "part_number": "GF9112"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G6391"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "23833"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "59184"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "1K0 201 051B"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "1K0 201 051C"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "1K0 201 051K"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G6391"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "12-05",
+        "make": "AUDI",
+        "model": "A3",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "12-09",
+        "make": "AUDI",
+        "model": "A3 QUATTRO",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "13-08",
+        "make": "AUDI",
+        "model": "TT",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-10",
+        "make": "AUDI",
+        "model": "TT QUATTRO",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-14",
+        "make": "VOLKSWAGEN",
+        "model": "BEETLE",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "16-08",
+        "make": "VOLKSWAGEN",
+        "model": "EOS",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "08-07",
+        "make": "VOLKSWAGEN",
+        "model": "EOS",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "2008",
+        "make": "VOLKSWAGEN",
+        "model": "GOLF CITY",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "14-07",
+        "make": "VOLKSWAGEN",
+        "model": "GTI",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-13",
+        "make": "VOLKSWAGEN",
+        "model": "JETTA",
+        "engine": "L4-1.4L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "VOLKSWAGEN",
+        "model": "JETTA",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "10-06",
+        "make": "VOLKSWAGEN",
+        "model": "JETTA",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-13",
+        "make": "VOLKSWAGEN",
+        "model": "JETTA",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2008",
+        "make": "VOLKSWAGEN",
+        "model": "JETTA CITY",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "VOLKSWAGEN",
+        "model": "RABBIT",
+        "engine": "L5-2.5L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "G10243",
+    "source_part_key": "000991602",
+    "source_totals": {
+      "attributes": 29,
+      "applications": 23,
+      "cross_references": 18
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, G10243, Fuel Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "In-Line Fuel Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "In Line",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Metal",
+        "recno": "82"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Tube Connector",
+        "recno": "83"
+      },
+      {
+        "attribute": "Fuel Type",
+        "value": "Gasoline",
+        "recno": "84"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "85"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Fuel Filter",
+        "recno": "86"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "6.473",
+        "recno": "88"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "2.411",
+        "recno": "89"
+      },
+      {
+        "attribute": "Housing Material",
+        "value": "Metal",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Return Line Size (Millimeter)",
+        "value": "8",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100543912",
+        "recno": "92"
+      },
+      {
+        "attribute": "Inlet Line Size (Millimeter)",
+        "value": "8",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outlet Line Size (Millimeter)",
+        "value": "8",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "94"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "95"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.1100",
+        "recno": "99"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "3.0960",
+        "recno": "100"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "6.9550",
+        "recno": "101"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "7.5000",
+        "recno": "102"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "2.6020",
+        "recno": "103"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "8.1870",
+        "recno": "104"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "2.6020",
+        "recno": "105"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "5.6250",
+        "recno": "106"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.11,
+        "case_weight_lb": 3.096,
+        "unit_height_in": 6.955,
+        "unit_length_in": 2.602,
+        "unit_width_in": 2.602,
+        "case_height_in": 7.5,
+        "case_length_in": 8.187,
+        "case_width_in": 5.625,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 1.32,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 23,
+    "all_cross_references_observed": 18,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:10:03.791Z",
+  "discovered_from": "G10243",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "AUDI",
+        "model": "A3",
+        "year": "12-05",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A3 QUATTRO",
+        "year": "12-09",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "TT",
+        "year": "13-08",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "TT QUATTRO",
+        "year": "15-10",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Altea/XL, Freetrack 1.4 TSI (5P1) (w/CAXC Engine) 9/07-",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Altea/XL, Freetrack 1.4 TSI (5P1) (w/CAXC Engine) 9/07-",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Altea/XL, Freetrack 1.8 Turbo FSI (5P1) (w/BYT, BZB Engine) 11/06-",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Altea/XL, Freetrack 1.8 Turbo FSI (5P1) (w/BYT, BZB Engine) 11/06-",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Altea/XL, Freetrack 2.0 FSI (5P1) (w/BHD, BLR, BLY, BVY, BVZ Engine) 4/04-",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Altea/XL, Freetrack 2.0 FSI (5P1) (w/BHD, BLR, BLY, BVY, BVZ Engine) 4/04-",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Altea/XL, Freetrack 2.0 Turbo FSI (5P1) (w/BWA Engine) 5/06-",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Altea/XL, Freetrack 2.0 Turbo FSI (5P1) (w/BWA Engine) 5/06-",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "BEETLE",
+        "year": "15-14",
+        "engine": "L4-1.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "EOS",
+        "year": "16-08",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "EOS",
+        "year": "08-07",
+        "engine": "V6-3.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "GOLF CITY",
+        "year": "2008",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "GTI",
+        "year": "14-07",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "JETTA",
+        "year": "16-13",
+        "engine": "L4-1.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "JETTA",
+        "year": "16-14",
+        "engine": "L4-1.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "JETTA",
+        "year": "10-06",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "JETTA",
+        "year": "15-13",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "JETTA CITY",
+        "year": "2008",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "RABBIT",
+        "year": "2006",
+        "engine": "L5-2.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "043-1056",
+        "source_part_number": "G10243",
+        "part_key": "000991602",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86814",
+        "source_part_number": "G10243",
+        "part_key": "000991602",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Duralast",
+        "part_number": "FF877DL",
+        "source_part_number": "G10243",
+        "part_key": "000991602",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "GK Industries",
+        "part_number": "GF9112",
+        "source_part_number": "G10243",
+        "part_key": "000991602",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "H280WK",
+        "source_part_number": "G10243",
+        "part_key": "000991602",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G6391",
+        "source_part_number": "G10243",
+        "part_key": "000991602",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "KL572",
+        "source_part_number": "G10243",
+        "part_key": "000991602",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "WK69",
+        "source_part_number": "G10243",
+        "part_key": "000991602",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3833",
+        "source_part_number": "G10243",
+        "part_key": "000991602",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3814",
+        "source_part_number": "G10243",
+        "part_key": "000991602",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "23833",
+        "source_part_number": "G10243",
+        "part_key": "000991602",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "59184",
+        "source_part_number": "G10243",
+        "part_key": "000991602",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "UFI",
+        "part_number": "3184000",
+        "source_part_number": "G10243",
+        "part_key": "000991602",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "1K0 201 051B",
+        "source_part_number": "G10243",
+        "part_key": "000991602",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "1K0 201 051C",
+        "source_part_number": "G10243",
+        "part_key": "000991602",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "1K0 201 051K",
+        "source_part_number": "G10243",
+        "part_key": "000991602",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G6391",
+        "source_part_number": "G10243",
+        "part_key": "000991602",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33814",
+        "source_part_number": "G10243",
+        "part_key": "000991602",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

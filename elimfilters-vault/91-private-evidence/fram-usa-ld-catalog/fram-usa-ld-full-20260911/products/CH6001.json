@@ -1,0 +1,872 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "CH6001",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CH6001",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 2.547,
+      "height_mm": 64.69,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Cartridge",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-45040"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16500-45810"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1220"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4932"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "ML16800"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "ML16801"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24932"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Auto-Tune",
+        "part_number": "E5201"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92220"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "96932"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89932"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85220"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "P7001"
+      },
+      {
+        "manufacturer": "Dorcy",
+        "part_number": "21-8010"
+      },
+      {
+        "manufacturer": "Emgo",
+        "part_number": "10-29800"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF570"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF581"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P7001"
+      },
+      {
+        "manufacturer": "Master Parts",
+        "part_number": "P-302"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "P7001"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "P7001"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "1982",
+        "make": "SUZUKI",
+        "model": "GS1000S KATANA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "83-80",
+        "make": "SUZUKI",
+        "model": "GS1100E",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1983",
+        "make": "SUZUKI",
+        "model": "GS1100ES",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "83-82",
+        "make": "SUZUKI",
+        "model": "GS1100G",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "83-82",
+        "make": "SUZUKI",
+        "model": "GS1100GK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "83-82",
+        "make": "SUZUKI",
+        "model": "GS1100GL",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1980",
+        "make": "SUZUKI",
+        "model": "GS1100L",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1983",
+        "make": "SUZUKI",
+        "model": "GS1100S KATANA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "86-84",
+        "make": "SUZUKI",
+        "model": "GS1150E",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1985",
+        "make": "SUZUKI",
+        "model": "GS1150ES",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1983",
+        "make": "SUZUKI",
+        "model": "GS300L",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1985",
+        "make": "SUZUKI",
+        "model": "GS300L",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-04",
+        "make": "SUZUKI",
+        "model": "GS500F",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "82-80",
+        "make": "SUZUKI",
+        "model": "GS750E",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "81-80",
+        "make": "SUZUKI",
+        "model": "GS750L",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1983",
+        "make": "SUZUKI",
+        "model": "GS750S KATANA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "83-82",
+        "make": "SUZUKI",
+        "model": "GS750T",
+        "engine": "All",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CH6001",
+    "source_part_key": "001481525",
+    "source_totals": {
+      "attributes": 41,
+      "applications": 17,
+      "cross_references": 21
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® oil filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE (original equipment) recommended intervals. Engineered for conventional and synthetic motor oil, Extra Guard offers proven engine protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "0"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CH6001, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Motorcycle Full-Flow Lube Cartridge",
+        "recno": "3"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Cartridge",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "NA",
+        "recno": "89"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100381347",
+        "recno": "92"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "2.547",
+        "recno": "93"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "94"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "0.765",
+        "recno": "95"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "2.828",
+        "recno": "96"
+      },
+      {
+        "attribute": "O-Ring Inside Diameter (Inch)",
+        "value": "3.890",
+        "recno": "97"
+      },
+      {
+        "attribute": "O-Ring Outside Diameter (Inch)",
+        "value": "4.000",
+        "recno": "98"
+      },
+      {
+        "attribute": "O-Ring Thickness (Inch)",
+        "value": "0.110",
+        "recno": "99"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "0.765",
+        "recno": "100"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "2.828",
+        "recno": "101"
+      },
+      {
+        "attribute": "O-Rings Included",
+        "value": "Yes",
+        "recno": "102"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "103"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "104"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "105"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "106"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.1000",
+        "recno": "110"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "0.6000",
+        "recno": "111"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "3.4370",
+        "recno": "112"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.3120",
+        "recno": "113"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.0980",
+        "recno": "114"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "9.8120",
+        "recno": "115"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.0980",
+        "recno": "116"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "6.7500",
+        "recno": "117"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.1,
+        "case_weight_lb": 0.6,
+        "unit_height_in": 3.437,
+        "unit_length_in": 3.098,
+        "unit_width_in": 3.098,
+        "case_height_in": 4.312,
+        "case_length_in": 9.812,
+        "case_width_in": 6.75,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 1.2,
+        "estimated_case_dimensions": {
+          "length_in": 13.083,
+          "width_in": 10.125,
+          "height_in": 4.312,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 17,
+    "all_cross_references_observed": 21,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:23:00.739Z",
+  "discovered_from": "CH6001",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "SUZUKI",
+        "model": "GS1000S KATANA",
+        "year": "1982",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GS1100E",
+        "year": "83-80",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GS1100ES",
+        "year": "1983",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GS1100G",
+        "year": "83-82",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GS1100GK",
+        "year": "83-82",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GS1100GL",
+        "year": "83-82",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GS1100L",
+        "year": "1980",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GS1100S KATANA",
+        "year": "1983",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GS1150E",
+        "year": "86-84",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GS1150ES",
+        "year": "1985",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GS300L",
+        "year": "1983",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GS300L",
+        "year": "1985",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GS500F",
+        "year": "09-04",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GS750E",
+        "year": "82-80",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GS750L",
+        "year": "81-80",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GS750S KATANA",
+        "year": "1983",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GS750T",
+        "year": "83-82",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Auto-Tune",
+        "part_number": "E5201",
+        "source_part_number": "CH6001",
+        "part_key": "001481525",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92220",
+        "source_part_number": "CH6001",
+        "part_key": "001481525",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "96932",
+        "source_part_number": "CH6001",
+        "part_key": "001481525",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89932",
+        "source_part_number": "CH6001",
+        "part_key": "001481525",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85220",
+        "source_part_number": "CH6001",
+        "part_key": "001481525",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "P7001",
+        "source_part_number": "CH6001",
+        "part_key": "001481525",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Dorcy",
+        "part_number": "21-8010",
+        "source_part_number": "CH6001",
+        "part_key": "001481525",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Emgo",
+        "part_number": "10-29800",
+        "source_part_number": "CH6001",
+        "part_key": "001481525",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF570",
+        "source_part_number": "CH6001",
+        "part_key": "001481525",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF581",
+        "source_part_number": "CH6001",
+        "part_key": "001481525",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P7001",
+        "source_part_number": "CH6001",
+        "part_key": "001481525",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Master Parts",
+        "part_number": "P-302",
+        "source_part_number": "CH6001",
+        "part_key": "001481525",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1220",
+        "source_part_number": "CH6001",
+        "part_key": "001481525",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4932",
+        "source_part_number": "CH6001",
+        "part_key": "001481525",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "ML16800",
+        "source_part_number": "CH6001",
+        "part_key": "001481525",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "ML16801",
+        "source_part_number": "CH6001",
+        "part_key": "001481525",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "P7001",
+        "source_part_number": "CH6001",
+        "part_key": "001481525",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-45040",
+        "source_part_number": "CH6001",
+        "part_key": "001481525",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16500-45810",
+        "source_part_number": "CH6001",
+        "part_key": "001481525",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "P7001",
+        "source_part_number": "CH6001",
+        "part_key": "001481525",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24932",
+        "source_part_number": "CH6001",
+        "part_key": "001481525",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

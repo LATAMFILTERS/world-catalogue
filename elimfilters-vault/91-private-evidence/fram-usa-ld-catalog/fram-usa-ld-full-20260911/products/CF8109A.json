@@ -1,0 +1,1030 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF8109A",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF8109A",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.143,
+      "height_mm": 29.03,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Ford",
+        "part_number": "F6DZ-19N619-BA"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "F7DZ-19N619-A"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "F7DH-19N619-AA"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "F6DZ-19N619-C"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "12489484"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "12489481"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF112"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA4112"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3760"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3760WS"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "C3760WS"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LAK759"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "MC 1004"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FP-6"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FP-14"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FP-54"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FA-1628"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4773"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C25082"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24773"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "FA-1"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "96773"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89773"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1703"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DC003"
+      },
+      {
+        "manufacturer": "Driveworks",
+        "part_number": "DW-25082"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4773"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4773C"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "C25082"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1004"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "CF1006"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF7703"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1703"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF7703"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1703"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1703"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF7703"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3970"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "FD96102"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "C25082"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94773"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "E1AC1001"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "PC-3"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "C25082"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C25082"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "MC25082"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "C25082"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1703"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1001"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "CAF1703"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "07-96",
+        "make": "FORD",
+        "model": "TAURUS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "07-96",
+        "make": "FORD",
+        "model": "TAURUS",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "99-96",
+        "make": "FORD",
+        "model": "TAURUS",
+        "engine": "V8-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "05-96",
+        "make": "MERCURY",
+        "model": "SABLE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "05-96",
+        "make": "MERCURY",
+        "model": "SABLE",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF8109A",
+    "source_part_key": "000991233",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 5,
+      "cross_references": 50
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF8109A, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Trapezoid",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.143",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "11.071",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "6.659",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "15",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Under Hood",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100531780",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.5500",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.1000",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "11.2670",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "2.7560",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "7.2900",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "11.6140",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.2270",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "7.6770",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.55,
+        "case_weight_lb": 1.1,
+        "unit_height_in": 11.267,
+        "unit_length_in": 7.29,
+        "unit_width_in": 1.227,
+        "case_height_in": 2.756,
+        "case_length_in": 11.614,
+        "case_width_in": 7.677,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 6.6,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 5,
+    "all_cross_references_observed": 50,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:59:11.624Z",
+  "discovered_from": "CF8109A",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "FORD",
+        "model": "TAURUS",
+        "year": "07-96",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "TAURUS",
+        "year": "07-96",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "TAURUS",
+        "year": "99-96",
+        "engine": "V8-3.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCURY",
+        "model": "SABLE",
+        "year": "05-96",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCURY",
+        "model": "SABLE",
+        "year": "05-96",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF112",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ATP",
+        "part_number": "FA-1",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA4112",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "96773",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3760",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3760WS",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "C3760WS",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89773",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1703",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DC003",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Driveworks",
+        "part_number": "DW-25082",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "F6DZ-19N619-BA",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "F7DZ-19N619-A",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "F7DH-19N619-AA",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "F6DZ-19N619-C",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4773",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4773C",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "12489484",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "12489481",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "C25082",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1004",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "CF1006",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF7703",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1703",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF7703",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1703",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1703",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF7703",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LAK759",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "MC 1004",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3970",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "FD96102",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "C25082",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FP-6",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FP-14",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FP-54",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FA-1628",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4773",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94773",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "E1AC1001",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C25082",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "PC-3",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "C25082",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C25082",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "MC25082",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "C25082",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1703",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1001",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "CAF1703",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24773",
+        "source_part_number": "CF8109A",
+        "part_key": "000991233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

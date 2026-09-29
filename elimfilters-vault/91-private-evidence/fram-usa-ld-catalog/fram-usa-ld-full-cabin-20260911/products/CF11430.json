@@ -1,0 +1,735 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF11430",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF11430",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.653,
+      "height_mm": 41.99,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA10036"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E2993LC"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK26007"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "230130"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10130"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2209"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "507630"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1916C"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1685"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1916C"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "246 830 00 18"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "CAF1916C"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC99011C"
+      },
+      {
+        "manufacturer": "PUREFLOW",
+        "part_number": "CAF1916C"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "part_number": "PC99011X"
+      },
+      {
+        "manufacturer": "Purolator PureONE",
+        "part_number": "C48187C"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C48187"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF90182C"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF90182M"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VA-2040"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WCAF1916C"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "15-14",
+        "make": "MERCEDES-BENZ",
+        "model": "B ELECTRIC DRIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-13",
+        "make": "MERCEDES-BENZ",
+        "model": "B250",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-13",
+        "make": "MERCEDES-BENZ",
+        "model": "B250",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "17-16",
+        "make": "MERCEDES-BENZ",
+        "model": "B250E",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-14",
+        "make": "MERCEDES-BENZ",
+        "model": "CLA250",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-14",
+        "make": "MERCEDES-BENZ",
+        "model": "CLA250",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-14",
+        "make": "MERCEDES-BENZ",
+        "model": "CLA45 AMG",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-14",
+        "make": "MERCEDES-BENZ",
+        "model": "CLA45 AMG",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-15",
+        "make": "MERCEDES-BENZ",
+        "model": "GLA250",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-15",
+        "make": "MERCEDES-BENZ",
+        "model": "GLA250",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-15",
+        "make": "MERCEDES-BENZ",
+        "model": "GLA45 AMG",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-15",
+        "make": "MERCEDES-BENZ",
+        "model": "GLA45 AMG",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF11430",
+    "source_part_key": "010740350",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 12,
+      "cross_references": 21
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF11430, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Square",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.653",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "9.449",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "9.961",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "10",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Passenger Side Foor Well",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100576255",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Thailand",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.1500",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "2.3000",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "1.8110",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.5270",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "10.1960",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "10.8260",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "9.8030",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "10.4330",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.15,
+        "case_weight_lb": 2.3,
+        "unit_height_in": 1.811,
+        "unit_length_in": 10.196,
+        "unit_width_in": 9.803,
+        "case_height_in": 4.527,
+        "case_length_in": 10.826,
+        "case_width_in": 10.433,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 13.8,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 12,
+    "all_cross_references_observed": 21,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:00:37.458Z",
+  "discovered_from": "CF11430",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "B ELECTRIC DRIVE",
+        "year": "15-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "B250",
+        "year": "19-13",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "B250",
+        "year": "19-13",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "B250E",
+        "year": "17-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLA250",
+        "year": "19-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLA250",
+        "year": "19-14",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLA45 AMG",
+        "year": "19-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLA45 AMG",
+        "year": "19-14",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLA250",
+        "year": "20-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLA250",
+        "year": "20-15",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLA45 AMG",
+        "year": "19-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLA45 AMG",
+        "year": "19-15",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA10036",
+        "source_part_number": "CF11430",
+        "part_key": "010740350",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2209",
+        "source_part_number": "CF11430",
+        "part_key": "010740350",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "507630",
+        "source_part_number": "CF11430",
+        "part_key": "010740350",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1916C",
+        "source_part_number": "CF11430",
+        "part_key": "010740350",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1685",
+        "source_part_number": "CF11430",
+        "part_key": "010740350",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E2993LC",
+        "source_part_number": "CF11430",
+        "part_key": "010740350",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1916C",
+        "source_part_number": "CF11430",
+        "part_key": "010740350",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK26007",
+        "source_part_number": "CF11430",
+        "part_key": "010740350",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "246 830 00 18",
+        "source_part_number": "CF11430",
+        "part_key": "010740350",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "CAF1916C",
+        "source_part_number": "CF11430",
+        "part_key": "010740350",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "230130",
+        "source_part_number": "CF11430",
+        "part_key": "010740350",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC99011C",
+        "source_part_number": "CF11430",
+        "part_key": "010740350",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "PUREFLOW",
+        "part_number": "CAF1916C",
+        "source_part_number": "CF11430",
+        "part_key": "010740350",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "part_number": "PC99011X",
+        "source_part_number": "CF11430",
+        "part_key": "010740350",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator PureONE",
+        "part_number": "C48187C",
+        "source_part_number": "CF11430",
+        "part_key": "010740350",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C48187",
+        "source_part_number": "CF11430",
+        "part_key": "010740350",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF90182C",
+        "source_part_number": "CF11430",
+        "part_key": "010740350",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF90182M",
+        "source_part_number": "CF11430",
+        "part_key": "010740350",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VA-2040",
+        "source_part_number": "CF11430",
+        "part_key": "010740350",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WCAF1916C",
+        "source_part_number": "CF11430",
+        "part_key": "010740350",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10130",
+        "source_part_number": "CF11430",
+        "part_key": "010740350",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

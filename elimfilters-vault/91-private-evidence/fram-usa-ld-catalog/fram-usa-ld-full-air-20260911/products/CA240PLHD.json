@@ -1,0 +1,805 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA240PLHD",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA240PLHD",
+    "product_type": "Air Filter, Air",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": 9.593,
+      "outer_diameter_mm": 243.66,
+      "height_in": 11.656,
+      "height_mm": 296.06,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Metal-End Air",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "4051918"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "40519188"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25043239"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A1440C"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A922C"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA1701"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6400"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A52155"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46400"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "10070"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-240PLHD"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "94400"
+      },
+      {
+        "manufacturer": "Brockway",
+        "part_number": "221184"
+      },
+      {
+        "manufacturer": "Brockway",
+        "part_number": "38004"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88400"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "2458253"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P133676"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P133712"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF1650"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-81650"
+      },
+      {
+        "manufacturer": "Franklin Equipment",
+        "part_number": "1502185"
+      },
+      {
+        "manufacturer": "FWD",
+        "part_number": "48A2849"
+      },
+      {
+        "manufacturer": "FWD",
+        "part_number": "195563"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GA237"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GA237M"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF2002"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "FAF30"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "A-3712-1"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "HDA-3712-1"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "165935H1"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "896412C1"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA182"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA120PLHD"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF240HD"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "133712"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "70212N"
+      },
+      {
+        "manufacturer": "Nu-Tech",
+        "part_number": "N1329"
+      },
+      {
+        "manufacturer": "WGB",
+        "part_number": "SA-312"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA240PLHD",
+    "source_part_key": "001509454",
+    "source_totals": {
+      "attributes": 25,
+      "applications": 6,
+      "cross_references": 38
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA240PLHD, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Metal-End Air",
+        "recno": "2"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "83"
+      },
+      {
+        "attribute": "Inside Diameter",
+        "value": "Closed",
+        "recno": "84"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "85"
+      },
+      {
+        "attribute": "Top Inside Diameter",
+        "value": "Closed",
+        "recno": "86"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "87"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "11.656",
+        "recno": "89"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "9.593",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "9.593",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100522320",
+        "recno": "92"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "5.200",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "9.593",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "94"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "95"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "4.8000",
+        "recno": "99"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "12.6250",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "10.1250",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "10.1250",
+        "recno": "102"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": 4.8,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": 12.625,
+        "case_length_in": 10.125,
+        "case_width_in": 10.125,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 6,
+    "all_cross_references_observed": 38,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:06:45.603Z",
+  "discovered_from": "CA240PLHD",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "ENGINE DIESEL ALLIS-CHALMERS",
+        "model": "16000 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL ALLIS-CHALMERS",
+        "model": "16000 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL ALLIS-CHALMERS",
+        "model": "17000 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE DIESEL ALLIS-CHALMERS",
+        "model": "17000 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE ALLIS-CHALMERS",
+        "model": "16000 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE MARINE ALLIS-CHALMERS",
+        "model": "16000 Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A1440C",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A922C",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "10070",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-240PLHD",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "4051918",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "40519188",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA1701",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "94400",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Brockway",
+        "part_number": "221184",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Brockway",
+        "part_number": "38004",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88400",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "2458253",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P133676",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P133712",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF1650",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-81650",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Franklin Equipment",
+        "part_number": "1502185",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "FWD",
+        "part_number": "48A2849",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "FWD",
+        "part_number": "195563",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25043239",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GA237",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GA237M",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF2002",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "FAF30",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "A-3712-1",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "HDA-3712-1",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "165935H1",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "896412C1",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA182",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA120PLHD",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF240HD",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6400",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "133712",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "70212N",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Nu-Tech",
+        "part_number": "N1329",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A52155",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "WGB",
+        "part_number": "SA-312",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46400",
+        "source_part_number": "CA240PLHD",
+        "part_key": "001509454",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

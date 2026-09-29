@@ -1,0 +1,1875 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF8644A",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF8644A",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.143,
+      "height_mm": 29.03,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF141"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA4331"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "C3853WS"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF7702"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CU2882"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK 2862"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK2862"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4822"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4322"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C45383"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24322"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2008"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "90009C"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89822"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF7702"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1721"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1702"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DC008C"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4322C"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4322"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "C45383"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1167"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "CU2882"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF2012"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF7702"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1702"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1702"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF7702"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF7702"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1702"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3882"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "VW98126"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "VW94120"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "C45383"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94822"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94473"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PC-5383"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "C45383"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C45383"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "MC45383"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "C45383"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF7702"
+      },
+      {
+        "manufacturer": "SUPERTECH",
+        "part_number": "7500"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1166"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1026"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "E1AC2026"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "06-00",
+        "make": "AUDI",
+        "model": "TT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-00",
+        "make": "AUDI",
+        "model": "TT",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "06-00",
+        "make": "AUDI",
+        "model": "TT QUATTRO",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-00",
+        "make": "AUDI",
+        "model": "TT QUATTRO",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "06-04",
+        "make": "AUDI",
+        "model": "TT QUATTRO",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "10-98",
+        "make": "VOLKSWAGEN",
+        "model": "BEETLE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "05-99",
+        "make": "VOLKSWAGEN",
+        "model": "BEETLE",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "06-98",
+        "make": "VOLKSWAGEN",
+        "model": "BEETLE",
+        "engine": "L4-1.9L",
+        "quantity": 1
+      },
+      {
+        "year": "05-98",
+        "make": "VOLKSWAGEN",
+        "model": "BEETLE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "10-06",
+        "make": "VOLKSWAGEN",
+        "model": "BEETLE",
+        "engine": "L5-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "02-95",
+        "make": "VOLKSWAGEN",
+        "model": "CABRIO",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-95",
+        "make": "VOLKSWAGEN",
+        "model": "CABRIO",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "06-93",
+        "make": "VOLKSWAGEN",
+        "model": "GOLF",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-00",
+        "make": "VOLKSWAGEN",
+        "model": "GOLF",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "98-93",
+        "make": "VOLKSWAGEN",
+        "model": "GOLF",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "06-93",
+        "make": "VOLKSWAGEN",
+        "model": "GOLF",
+        "engine": "L4-1.9L",
+        "quantity": 1
+      },
+      {
+        "year": "06-93",
+        "make": "VOLKSWAGEN",
+        "model": "GOLF",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "05-95",
+        "make": "VOLKSWAGEN",
+        "model": "GOLF",
+        "engine": "V6-2.8L",
+        "quantity": 1
+      },
+      {
+        "year": "05-93",
+        "make": "VOLKSWAGEN",
+        "model": "JETTA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "05-00",
+        "make": "VOLKSWAGEN",
+        "model": "JETTA",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "95-93",
+        "make": "VOLKSWAGEN",
+        "model": "JETTA",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "05-93",
+        "make": "VOLKSWAGEN",
+        "model": "JETTA",
+        "engine": "L4-1.9L",
+        "quantity": 1
+      },
+      {
+        "year": "05-93",
+        "make": "VOLKSWAGEN",
+        "model": "JETTA",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "04-94",
+        "make": "VOLKSWAGEN",
+        "model": "JETTA",
+        "engine": "V6-2.8L",
+        "quantity": 1
+      },
+      {
+        "year": "05-01",
+        "make": "VOLKSWAGEN",
+        "model": "PASSAT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "05-01",
+        "make": "VOLKSWAGEN",
+        "model": "PASSAT",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "05-04",
+        "make": "VOLKSWAGEN",
+        "model": "PASSAT",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "05-01",
+        "make": "VOLKSWAGEN",
+        "model": "PASSAT",
+        "engine": "V6-2.8L",
+        "quantity": 1
+      },
+      {
+        "year": "04-02",
+        "make": "VOLKSWAGEN",
+        "model": "PASSAT",
+        "engine": "W8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2004",
+        "make": "VOLKSWAGEN",
+        "model": "R32",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2004",
+        "make": "VOLKSWAGEN",
+        "model": "R32",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF8644A",
+    "source_part_key": "000991104",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 85,
+      "cross_references": 46
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF8644A, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.143",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "11.111",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "8.116",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "15",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Under Hood",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100531865",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.7750",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.5500",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "11.2670",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "3.3070",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "8.2900",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "11.5750",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.3830",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "8.7010",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.775,
+        "case_weight_lb": 1.55,
+        "unit_height_in": 11.267,
+        "unit_length_in": 8.29,
+        "unit_width_in": 1.383,
+        "case_height_in": 3.307,
+        "case_length_in": 11.575,
+        "case_width_in": 8.701,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 9.3,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 85,
+    "all_cross_references_observed": 46,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:59:18.642Z",
+  "discovered_from": "CF8644A",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "AUDI",
+        "model": "TT",
+        "year": "06-00",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "TT",
+        "year": "06-00",
+        "engine": "L4-1.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "TT QUATTRO",
+        "year": "06-00",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "TT QUATTRO",
+        "year": "06-00",
+        "engine": "L4-1.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "TT QUATTRO",
+        "year": "06-04",
+        "engine": "V6-3.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Inca 1.4 16V (9KSF) (w/APE Engine) 4/00-2/04",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Inca 1.4 16V (9KSF) (w/APE Engine) 4/00-2/04",
+        "year": "04-00",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Inca 1.4I (w/AEX Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Inca 1.4I (w/AEX Engine)",
+        "year": "04-95",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Inca 1.6I (w/1F Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Inca 1.6I (w/1F Engine)",
+        "year": "00-95",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Inca 1.7D (w/AHB Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Inca 1.7D (w/AHB Engine)",
+        "year": "04-96",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Inca 1.9D (w/1Y Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Inca 1.9D (w/1Y Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Inca 1.9D (w/AEY Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Inca 1.9D (w/AEY Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Inca 1.9D (w/AQY Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Inca 1.9D (w/AQY Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Inca 1.9SDI (w/1Y Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Inca 1.9SDI (w/1Y Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Inca 1.9SDI (w/AEY Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Inca 1.9SDI (w/AEY Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Inca 1.9SDI (w/AQY Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Inca 1.9SDI (w/AQY Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Inca 1.9TDI (w/AHU Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER SEAT",
+        "model": "Inca 1.9TDI (w/AHU Engine)",
+        "year": "04-96",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.4 AEX Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.4 AEX Engine)",
+        "year": "04-95",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.4 AKV Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.4 AKV Engine)",
+        "year": "04-95",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.4 APQ Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.4 APQ Engine)",
+        "year": "04-95",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.4 AUD Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.4 AUD Engine)",
+        "year": "04-95",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.6 1F Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.6 1F Engine)",
+        "year": "04-95",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.6 AEE Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.6 AEE Engine)",
+        "year": "04-95",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.7 SDI AHB Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.7 SDI AHB Engine)",
+        "year": "04-96",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.9 1Y Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.9 1Y Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.9 AEF Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.9 AEF Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.9 AYQ Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.9 AYQ Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.9 SD Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.9 SD Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.9 SDI AEY Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.9 SDI AEY Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.9 TDi (w/1Z Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.9 TDi (w/1Z Engine)",
+        "year": "04-96",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.9 TDi (w/AHU Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.9 TDi (w/AHU Engine)",
+        "year": "04-96",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.9 TDi (w/ALE Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.9 TDi (w/ALE Engine)",
+        "year": "04-96",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.9 TDi (w/ALH Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy II (w/1.9 TDi (w/ALH Engine)",
+        "year": "04-96",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "BEETLE",
+        "year": "10-98",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "BEETLE",
+        "year": "05-99",
+        "engine": "L4-1.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "BEETLE",
+        "year": "06-98",
+        "engine": "L4-1.9L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "BEETLE",
+        "year": "05-98",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "BEETLE",
+        "year": "10-06",
+        "engine": "L5-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "CABRIO",
+        "year": "02-95",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "CABRIO",
+        "year": "02-95",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "GOLF",
+        "year": "06-93",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "GOLF",
+        "year": "06-00",
+        "engine": "L4-1.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "GOLF",
+        "year": "98-93",
+        "engine": "L4-1.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "GOLF",
+        "year": "06-93",
+        "engine": "L4-1.9L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "GOLF",
+        "year": "06-93",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "GOLF",
+        "year": "05-95",
+        "engine": "V6-2.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "JETTA",
+        "year": "05-93",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "JETTA",
+        "year": "05-00",
+        "engine": "L4-1.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "JETTA",
+        "year": "95-93",
+        "engine": "L4-1.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "JETTA",
+        "year": "05-93",
+        "engine": "L4-1.9L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "JETTA",
+        "year": "05-93",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "JETTA",
+        "year": "04-94",
+        "engine": "V6-2.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "PASSAT",
+        "year": "05-01",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "PASSAT",
+        "year": "05-01",
+        "engine": "L4-1.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "PASSAT",
+        "year": "05-04",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "PASSAT",
+        "year": "05-01",
+        "engine": "V6-2.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "PASSAT",
+        "year": "04-02",
+        "engine": "W8-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "R32",
+        "year": "2004",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "R32",
+        "year": "2004",
+        "engine": "V6-3.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF141",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA4331",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2008",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "C3853WS",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "90009C",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89822",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF7702",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1721",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1702",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF7702",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DC008C",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4322C",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4322",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "C45383",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1167",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "CU2882",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF2012",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF7702",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1702",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1702",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF7702",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF7702",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1702",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CU2882",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK 2862",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK2862",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3882",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "VW98126",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "VW94120",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "C45383",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4822",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4322",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94822",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94473",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PC-5383",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C45383",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "C45383",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C45383",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "MC45383",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "C45383",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF7702",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "SUPERTECH",
+        "part_number": "7500",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1166",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1026",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "E1AC2026",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24322",
+        "source_part_number": "CF8644A",
+        "part_key": "000991104",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

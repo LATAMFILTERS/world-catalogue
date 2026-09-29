@@ -1,0 +1,3065 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA5021",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA5021",
+    "product_type": "Engine Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 15.797,
+      "height_mm": 401.24,
+      "thread_size": null,
+      "gasket_od_in": 1.5,
+      "gasket_od_mm": 38.1,
+      "gasket_id_in": 0.813,
+      "gasket_id_mm": 20.65,
+      "gasket_thickness_in": 0.125,
+      "gasket_thickness_mm": 3.17,
+      "media_type": "Genuine Media",
+      "style": "Metal End Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "General Motors",
+        "part_number": "94058235"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25096438"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "94048865"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "12386667"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "841061600"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "T52223"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "D6546-Z9009"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "BF546Z9009"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A1075C"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2577"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6544"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A63517"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46544"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "10781"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-13-4353"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "94544"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88544"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "9786"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P526428"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P533445"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P777776"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P127310"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P136252"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P134353"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P526433"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "X006253"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P148392"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF1862M"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF4903"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-81682M"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-81862M"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF653"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "HDA-6252"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "A-6252"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "HDA-4353"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "A-4353"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "1-14215-152-0"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "1-14215-181-0"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "8-12386-667-0"
+      },
+      {
+        "manufacturer": "Kobelco",
+        "part_number": "2446U191S3"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "600-181-1660"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "600-181-1580"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA959"
+      },
+      {
+        "manufacturer": "Link-Belt",
+        "part_number": "3W0913"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF1834"
+      },
+      {
+        "manufacturer": "Mitsubishi",
+        "part_number": "ME063130"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "84928S"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "70510N"
+      },
+      {
+        "manufacturer": "Timberjack",
+        "part_number": "8410616"
+      },
+      {
+        "manufacturer": "Timberjack",
+        "part_number": "410616"
+      },
+      {
+        "manufacturer": "Timberjack",
+        "part_number": "841061600"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "98-97",
+        "make": "CHEVROLET",
+        "model": "T6500",
+        "engine": "L6-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "02-98",
+        "make": "CHEVROLET",
+        "model": "T6500",
+        "engine": "L6-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "CHEVROLET",
+        "model": "T6500",
+        "engine": "L6-7.8L",
+        "quantity": 1
+      },
+      {
+        "year": "09-04",
+        "make": "CHEVROLET",
+        "model": "T6500",
+        "engine": "L6-7.8L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "CHEVROLET",
+        "model": "T7500",
+        "engine": "L6-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "02-98",
+        "make": "CHEVROLET",
+        "model": "T7500",
+        "engine": "L6-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "CHEVROLET",
+        "model": "T7500",
+        "engine": "L6-7.8L",
+        "quantity": 1
+      },
+      {
+        "year": "09-04",
+        "make": "CHEVROLET",
+        "model": "T7500",
+        "engine": "L6-7.8L",
+        "quantity": 1
+      },
+      {
+        "year": "09-04",
+        "make": "CHEVROLET",
+        "model": "T8500",
+        "engine": "L6-7.8L",
+        "quantity": 1
+      },
+      {
+        "year": "98-95",
+        "make": "CHEVROLET",
+        "model": "W5500 TILTMASTER",
+        "engine": "L6-7.1L",
+        "quantity": 1
+      },
+      {
+        "year": "04-00",
+        "make": "CHEVROLET",
+        "model": "W5500 TILTMASTER",
+        "engine": "L6-7.8L",
+        "quantity": 1
+      },
+      {
+        "year": "96-95",
+        "make": "CHEVROLET",
+        "model": "W6500 TILTMASTER",
+        "engine": "L6-7.1L",
+        "quantity": 1
+      },
+      {
+        "year": "96-95",
+        "make": "CHEVROLET",
+        "model": "W7500 TILTMASTER",
+        "engine": "L6-7.1L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "GMC",
+        "model": "T6500",
+        "engine": "L6-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "02-98",
+        "make": "GMC",
+        "model": "T6500",
+        "engine": "L6-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "GMC",
+        "model": "T6500",
+        "engine": "L6-7.8L",
+        "quantity": 1
+      },
+      {
+        "year": "09-04",
+        "make": "GMC",
+        "model": "T6500",
+        "engine": "L6-7.8L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "GMC",
+        "model": "T7500",
+        "engine": "L6-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "02-98",
+        "make": "GMC",
+        "model": "T7500",
+        "engine": "L6-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "GMC",
+        "model": "T7500",
+        "engine": "L6-7.8L",
+        "quantity": 1
+      },
+      {
+        "year": "09-04",
+        "make": "GMC",
+        "model": "T7500",
+        "engine": "L6-7.8L",
+        "quantity": 1
+      },
+      {
+        "year": "98-95",
+        "make": "GMC",
+        "model": "W5500 FORWARD",
+        "engine": "L6-7.1L",
+        "quantity": 1
+      },
+      {
+        "year": "04-00",
+        "make": "GMC",
+        "model": "W5500 FORWARD",
+        "engine": "L6-7.8L",
+        "quantity": 1
+      },
+      {
+        "year": "96-95",
+        "make": "GMC",
+        "model": "W6500 FORWARD",
+        "engine": "L6-7.1L",
+        "quantity": 1
+      },
+      {
+        "year": "96-95",
+        "make": "GMC",
+        "model": "W7500 FORWARD",
+        "engine": "L6-7.1L",
+        "quantity": 1
+      },
+      {
+        "year": "98-95",
+        "make": "ISUZU",
+        "model": "FRR",
+        "engine": "L6-7.1L",
+        "quantity": 1
+      },
+      {
+        "year": "04-00",
+        "make": "ISUZU",
+        "model": "FRR",
+        "engine": "L6-7.8L",
+        "quantity": 1
+      },
+      {
+        "year": "98-95",
+        "make": "ISUZU",
+        "model": "FSR",
+        "engine": "L6-7.1L",
+        "quantity": 1
+      },
+      {
+        "year": "98-95",
+        "make": "ISUZU",
+        "model": "FTR",
+        "engine": "L6-7.1L",
+        "quantity": 1
+      },
+      {
+        "year": "1989",
+        "make": "ISUZU",
+        "model": "FVR",
+        "engine": "L6-6.5L",
+        "quantity": 1
+      },
+      {
+        "year": "98-95",
+        "make": "ISUZU",
+        "model": "FVR",
+        "engine": "L6-7.1L",
+        "quantity": 1
+      },
+      {
+        "year": "90-88",
+        "make": "ISUZU",
+        "model": "FVR",
+        "engine": "L6-8.4L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CA5021",
+    "source_part_key": "001510128",
+    "source_totals": {
+      "attributes": 32,
+      "applications": 208,
+      "cross_references": 51
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA5021, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Metal End Air Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "82"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "84"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "85"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "86"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "87"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "88"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "89"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "15.797",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100526069",
+        "recno": "92"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "0.813",
+        "recno": "93"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "1.500",
+        "recno": "94"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.125",
+        "recno": "95"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "0.859",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "0.859",
+        "recno": "97"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "6.500",
+        "recno": "98"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "0.859",
+        "recno": "99"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "100"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "101"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "South Africa",
+        "recno": "102"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "7.3000",
+        "recno": "106"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "11.9170",
+        "recno": "107"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "11.6670",
+        "recno": "108"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "17.0610",
+        "recno": "109"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": 7.3,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": 11.917,
+        "case_length_in": 11.667,
+        "case_width_in": 17.061,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 208,
+    "all_cross_references_observed": 51,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:10:06.205Z",
+  "discovered_from": "CA5021",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "CHEVROLET",
+        "model": "T6500",
+        "year": "98-97",
+        "engine": "L6-6.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "T6500",
+        "year": "02-98",
+        "engine": "L6-7.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "T6500",
+        "year": "02-99",
+        "engine": "L6-7.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "T6500",
+        "year": "09-04",
+        "engine": "L6-7.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "T7500",
+        "year": "98-97",
+        "engine": "L6-6.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "T7500",
+        "year": "02-98",
+        "engine": "L6-7.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "T7500",
+        "year": "02-99",
+        "engine": "L6-7.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "T7500",
+        "year": "09-04",
+        "engine": "L6-7.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "T8500",
+        "year": "09-04",
+        "engine": "L6-7.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "W5500 TILTMASTER",
+        "year": "98-95",
+        "engine": "L6-7.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "W5500 TILTMASTER",
+        "year": "04-00",
+        "engine": "L6-7.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "W6500 TILTMASTER",
+        "year": "96-95",
+        "engine": "L6-7.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "W7500 TILTMASTER",
+        "year": "96-95",
+        "engine": "L6-7.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR KOMATSU",
+        "model": "WF450T-1 w/Komatsu S6D125-1 S/N 10001-up",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR KOMATSU",
+        "model": "WF450T-1 w/Komatsu S6D125-1 S/N 10001-up",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRANE TADANO",
+        "model": "TL250",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRANE TADANO",
+        "model": "TL250",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER JOHN DEERE",
+        "model": "850 w/John Deere 6619A Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER JOHN DEERE",
+        "model": "850 w/John Deere 6619A Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER JOHN DEERE",
+        "model": "850B",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER JOHN DEERE",
+        "model": "850B",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER JOHN DEERE",
+        "model": "855 CRAWLER LOADER",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER JOHN DEERE",
+        "model": "855 CRAWLER LOADER",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK KOMATSU",
+        "model": "HD255-5 w/SA6D125E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK KOMATSU",
+        "model": "HD255-5 w/SA6D125E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK KOMATSU",
+        "model": "HD325-6 w/SA6D140 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK KOMATSU",
+        "model": "HD325-6 w/SA6D140 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK KOMATSU",
+        "model": "HD405-6 w/Komatsu SAA6D140E-2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DUMP TRUCK KOMATSU",
+        "model": "HD405-6 w/Komatsu SAA6D140E-2 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR DRESSER",
+        "model": "6400LC w/Cummins LTA10C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR DRESSER",
+        "model": "6400LC w/Cummins LTA10C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX300-2 w/Isuzu 6SDIT Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX300-2 w/Isuzu 6SDIT Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX300-3 w/Isuzu 6SD1T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX300-3 w/Isuzu 6SD1T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX300-3C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX300-3C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX300H-3C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR HITACHI",
+        "model": "EX300H-3C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR JOHN DEERE",
+        "model": "230LC",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR JOHN DEERE",
+        "model": "230LC",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR JOHN DEERE",
+        "model": "270 LC (w/6068H Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR JOHN DEERE",
+        "model": "270 LC (w/6068H Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR JOHN DEERE",
+        "model": "270C LC w/John Deere 6068H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR JOHN DEERE",
+        "model": "270C LC w/John Deere 6068H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR JOHN DEERE",
+        "model": "790E LC",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR JOHN DEERE",
+        "model": "790E LC",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR JOHN DEERE",
+        "model": "792D LC",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR JOHN DEERE",
+        "model": "792D LC",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "K909A w/Mitsubishi 6D22C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "K909A w/Mitsubishi 6D22C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "K912A, K912ALC w/Mitsubishi 6D22T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "K912A, K912ALC w/Mitsubishi 6D22T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "K912LC II w/Mitsubishi 6D22CT Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "K912LC II w/Mitsubishi 6D22CT Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "K916, K916LC w/Mitsubishi 6D22T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "K916, K916LC w/Mitsubishi 6D22T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "MD300LC w/Mitsubishi 6D22CT Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "MD300LC w/Mitsubishi 6D22CT Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "MD320BLC w/Mitsubishi 6D22CT Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "MD320BLC w/Mitsubishi 6D22CT Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "MD400LC w/Mitsubishi 6D22T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "MD400LC w/Mitsubishi 6D22T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "SK300LCII w/Mitsubishi 6D22CT Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "SK300LCII w/Mitsubishi 6D22CT Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "SK300LCIII, SK300LCIV w/Mitsubishi 6D22T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOBELCO",
+        "model": "SK300LCIII, SK300LCIV w/Mitsubishi 6D22T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOMATSU",
+        "model": "PC340-6K",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOMATSU",
+        "model": "PC340-6K",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOMATSU",
+        "model": "PC400-5, PC400LC-5 w/Komatsu S6D125 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR KOMATSU",
+        "model": "PC400-5, PC400LC-5 w/Komatsu S6D125 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "LS4300 w/Isuzu 6SA1T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "LS4300 w/Isuzu 6SA1T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "LS4300C w/Isuzu 6SA1T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "LS4300C w/Isuzu 6SA1T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "LS4300CII w/Isuzu 6SA1T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "LS4300CII w/Isuzu 6SA1T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "LS5800A w/Isuzu 6RB1T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "LS5800A w/Isuzu 6RB1T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "LS5800C w/Isuzu 6RB1T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR LINK BELT",
+        "model": "LS5800C w/Isuzu 6RB1T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FELLER BUNCHER JOHN DEERE",
+        "model": "753G, 753GL w/Cummins 6CT8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FELLER BUNCHER JOHN DEERE",
+        "model": "753G, 753GL w/Cummins 6CT8.3L Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FELLER BUNCHER JOHN DEERE",
+        "model": "753GL w/Cummins 6CTA8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FELLER BUNCHER JOHN DEERE",
+        "model": "753GL w/Cummins 6CTA8.3 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "T6500",
+        "year": "98-97",
+        "engine": "L6-6.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "T6500",
+        "year": "02-98",
+        "engine": "L6-7.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "T6500",
+        "year": "02-99",
+        "engine": "L6-7.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "T6500",
+        "year": "09-04",
+        "engine": "L6-7.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "T7500",
+        "year": "98-97",
+        "engine": "L6-6.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "T7500",
+        "year": "02-98",
+        "engine": "L6-7.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "T7500",
+        "year": "02-99",
+        "engine": "L6-7.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "T7500",
+        "year": "09-04",
+        "engine": "L6-7.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "W5500 FORWARD",
+        "year": "98-95",
+        "engine": "L6-7.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "W5500 FORWARD",
+        "year": "04-00",
+        "engine": "L6-7.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "W6500 FORWARD",
+        "year": "96-95",
+        "engine": "L6-7.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "W7500 FORWARD",
+        "year": "96-95",
+        "engine": "L6-7.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER JOHN DEERE",
+        "model": "770A w/John Deere 6531 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER JOHN DEERE",
+        "model": "770A w/John Deere 6531 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER JOHN DEERE",
+        "model": "772A w/John Deere 6531 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GRADER JOHN DEERE",
+        "model": "772A w/John Deere 6531 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "FRR",
+        "year": "98-95",
+        "engine": "L6-7.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "FRR",
+        "year": "04-00",
+        "engine": "L6-7.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "FSR",
+        "year": "98-95",
+        "engine": "L6-7.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "FTR",
+        "year": "98-95",
+        "engine": "L6-7.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "FVR",
+        "year": "1989",
+        "engine": "L6-6.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "FVR",
+        "year": "98-95",
+        "engine": "L6-7.1L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "FVR",
+        "year": "90-88",
+        "engine": "L6-8.4L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK CLARK",
+        "model": "665D w/Detroit Diesel 3-53T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK CLARK",
+        "model": "665D w/Detroit Diesel 3-53T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT JOHN DEERE",
+        "model": "2054 w/John Deere 6068T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT JOHN DEERE",
+        "model": "2054 w/John Deere 6068T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT JOHN DEERE",
+        "model": "2554 w/John Deere Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT JOHN DEERE",
+        "model": "2554 w/John Deere Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBCO",
+        "model": "T435",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBCO",
+        "model": "T435",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBCO",
+        "model": "T435C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBCO",
+        "model": "T435C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBCO",
+        "model": "T445",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBCO",
+        "model": "T445",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBCO",
+        "model": "T445B",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBCO",
+        "model": "T445B",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBCO",
+        "model": "T445C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBCO",
+        "model": "T445C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBCO",
+        "model": "T450C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBCO",
+        "model": "T450C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBCO",
+        "model": "T455C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBCO",
+        "model": "T455C",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBERJACK",
+        "model": "350 w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBERJACK",
+        "model": "350 w/Detroit Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBERJACK",
+        "model": "450 w/Detroit Diesel 4-53N Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBERJACK",
+        "model": "450 w/Detroit Diesel 4-53N Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBERJACK",
+        "model": "520 w/Detroit Diesel 6V-53 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT TIMBERJACK",
+        "model": "520 w/Detroit Diesel 6V-53 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "T6500, T7500, T8500 (w/Caterpillar 3116 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "T6500, T7500, T8500 (w/Caterpillar 3116 Engine)",
+        "year": "05-97",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "T6500, T7500, T8500 (w/Caterpillar 3126 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "T6500, T7500, T8500 (w/Caterpillar 3126 Engine)",
+        "year": "05-97",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "T6500, T7500, T8500 (w/Duramax 7.8L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "T6500, T7500, T8500 (w/Duramax 7.8L Engine)",
+        "year": "09-99",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "W5 Forward (w/Isuzu Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "W5 Forward (w/Isuzu Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "W7H Forward (w/Isuzu Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "W7H Forward (w/Isuzu Diesel Engine)",
+        "year": "91-86",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "W7T Forward (w/Isuzu Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "W7T Forward (w/Isuzu Diesel Engine)",
+        "year": "88-87",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "W7T Forward (w/Isuzu Diesel Engine)",
+        "year": "91-90",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "T6500, T7500, T8500 (w/Caterpillar 3116 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "T6500, T7500, T8500 (w/Caterpillar 3116 Engine)",
+        "year": "05-97",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "T6500, T7500, T8500 (w/Caterpillar 3126 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "T6500, T7500, T8500 (w/Caterpillar 3126 Engine)",
+        "year": "05-97",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "T6500, T7500, T8500 (w/Duramax 7.8L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "T6500, T7500, T8500 (w/Duramax 7.8L Engine)",
+        "year": "09-99",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "W5 Forward (w/Isuzu 4HK1-TC 5.2L Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "W5 Forward (w/Isuzu 4HK1-TC 5.2L Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "W5 Forward (w/Isuzu Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "W5 Forward (w/Isuzu Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "W7H Forward (w/Isuzu Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "W7H Forward (w/Isuzu Diesel Engine)",
+        "year": "91-86",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "W7T Forward (w/Isuzu Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "W7T Forward (w/Isuzu Diesel Engine)",
+        "year": "88-87",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "W7T Forward (w/Isuzu Diesel Engine)",
+        "year": "91-90",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "WT5500 (w/6HK1-TC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "WT5500 (w/6HK1-TC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK ISUZU",
+        "model": "FRR, FSR, FTR, FVR (w/6HE1TC 7.8L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK ISUZU",
+        "model": "FRR, FSR, FTR, FVR (w/6HE1TC 7.8L Engine)",
+        "year": "98-95",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK ISUZU",
+        "model": "FRR, FSR, FTR, FVR (w/6HK1TC 7.8L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK ISUZU",
+        "model": "FRR, FSR, FTR, FVR (w/6HK1TC 7.8L Engine)",
+        "year": "07-98",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK ISUZU",
+        "model": "FSR, FTR, FVR (w/6BD1 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK ISUZU",
+        "model": "FSR, FTR, FVR (w/6BD1 Engine)",
+        "year": "94-86",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK ISUZU",
+        "model": "FSR, FTR, FVR (w/6BG1 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK ISUZU",
+        "model": "FSR, FTR, FVR (w/6BG1 Engine)",
+        "year": "94-86",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK ISUZU",
+        "model": "FVR (w/Isuzu 6SA1 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK ISUZU",
+        "model": "FVR (w/Isuzu 6SA1 Engine)",
+        "year": "90-88",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK UD",
+        "model": "UD3000HD (w/NE6TA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK UD",
+        "model": "UD3000HD (w/NE6TA Engine)",
+        "year": "94-92",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK UD",
+        "model": "UD3300 (w/FE6TA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK UD",
+        "model": "UD3300 (w/FE6TA Engine)",
+        "year": "04-99",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK UD",
+        "model": "UD600T (w/NE6TA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK UD",
+        "model": "UD600T (w/NE6TA Engine)",
+        "year": "94-92",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "F6B042 T-Series (Tilt Cab) (w/Caterpillar 3116 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "F6B042 T-Series (Tilt Cab) (w/Caterpillar 3116 Engine)",
+        "year": "98-97",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "F6B042 T-Series (Tilt Cab) (w/Isuzu 7.1L Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "F6B042 T-Series (Tilt Cab) (w/Isuzu 7.1L Diesel Engine)",
+        "year": "98-97",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "F7B042 T-Series (Tilt Cab) (w/Caterpillar 3116 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "F7B042 T-Series (Tilt Cab) (w/Caterpillar 3116 Engine)",
+        "year": "98-97",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "F7B042 T-Series (Tilt Cab) (w/Isuzu 7.1L Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "F7B042 T-Series (Tilt Cab) (w/Isuzu 7.1L Diesel Engine)",
+        "year": "98-97",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER DRESSER",
+        "model": "538 w/John Deere KDC 614T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER DRESSER",
+        "model": "538 w/John Deere KDC 614T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER DRESSER",
+        "model": "542 w/John Deere KDC 614TA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER DRESSER",
+        "model": "542 w/John Deere KDC 614TA Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER DRESSER",
+        "model": "545 w/Cummins LTA10C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER DRESSER",
+        "model": "545 w/Cummins LTA10C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "WA380-1 w/Komatsu /Dresser 614T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "WA380-1 w/Komatsu /Dresser 614T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "WA420-1 w/Komatsu /Dresser 614T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "WA420-1 w/Komatsu /Dresser 614T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "WA450-1, WA470-1 w/Komatsu S6D125-1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "WA450-1, WA470-1 w/Komatsu S6D125-1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "WA450-2 w/Cummins LTA10C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "WA450-2 w/Cummins LTA10C Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "WA450-3LL w/Komatsu S6D125-1",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "WA450-3LL w/Komatsu S6D125-1",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "WA470-1 w/Komatsu S6D125-1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "WA470-1 w/Komatsu S6D125-1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "WA470-3 w/Komatsu S6D125-1",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER KOMATSU",
+        "model": "WA470-3 w/Komatsu S6D125-1",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A1075C",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "10781",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-13-4353",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2577",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "94544",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88544",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "9786",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P526428",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P533445",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P777776",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P127310",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P136252",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P134353",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P526433",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "X006253",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P148392",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF1862M",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF4903",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-81682M",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-81862M",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "94058235",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25096438",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "94048865",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "12386667",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF653",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "HDA-6252",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "A-6252",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "HDA-4353",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "A-4353",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "1-14215-152-0",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "1-14215-181-0",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "8-12386-667-0",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "841061600",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "T52223",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Kobelco",
+        "part_number": "2446U191S3",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "600-181-1660",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "600-181-1580",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA959",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Link-Belt",
+        "part_number": "3W0913",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF1834",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Mitsubishi",
+        "part_number": "ME063130",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6544",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "84928S",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "70510N",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "D6546-Z9009",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "BF546Z9009",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A63517",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Timberjack",
+        "part_number": "8410616",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Timberjack",
+        "part_number": "410616",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Timberjack",
+        "part_number": "841061600",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46544",
+        "source_part_number": "CA5021",
+        "part_key": "001510128",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

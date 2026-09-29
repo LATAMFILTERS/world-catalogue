@@ -1,0 +1,19 @@
+{
+  "phase": "ISUZU_V160_MATRIX_RELEASE",
+  "apply": true,
+  "database_write": true,
+  "rows": [
+    {
+      "sku": "EF90390",
+      "status": "READY",
+      "exact_positions": 1,
+      "added_ranges": 1
+    }
+  ],
+  "backup_path": "hermes/backups/isuzu-v160/prewrite-2026-09-29T14-28-38-887Z.json",
+  "summary": {
+    "skus": 1,
+    "exact_positions": 1,
+    "database_write": true
+  }
+}

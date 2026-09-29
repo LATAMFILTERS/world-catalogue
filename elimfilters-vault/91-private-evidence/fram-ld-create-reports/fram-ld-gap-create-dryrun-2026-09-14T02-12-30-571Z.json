@@ -1,0 +1,18 @@
+{
+  "mode": "dry-run",
+  "gap_report": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-ld-extended-namespace\\fram-ld-extended-gap-2026-09-14T02-06-22-848Z.json",
+  "candidates": 524,
+  "planned": {
+    "competitor": 3854,
+    "oem": 1197,
+    "applications": 10395,
+    "specifications": 2527
+  },
+  "inserted": {},
+  "skipped": {
+    "competitor_existing_conflicts": 89,
+    "competitor_intra_plan_conflicts": 392
+  },
+  "audit": {},
+  "error": "new row for relation \"elimfilters_catalog\" violates check constraint \"sku_strict_format\""
+}

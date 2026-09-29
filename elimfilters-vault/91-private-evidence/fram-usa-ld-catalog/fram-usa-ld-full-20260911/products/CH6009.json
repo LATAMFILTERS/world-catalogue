@@ -1,0 +1,1214 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "CH6009",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CH6009",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 2.218,
+      "height_mm": 56.34,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Cartridge",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2170"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "P148"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX61D"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1216"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4940"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "ML16809"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51216"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24940"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Auto-Tune",
+        "part_number": "E5202"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92216"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "96940"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89940"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85216"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "CO3000"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "P7009"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "P300"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "D4022"
+      },
+      {
+        "manufacturer": "Ducati",
+        "part_number": "252.004.0799"
+      },
+      {
+        "manufacturer": "Emgo",
+        "part_number": "10-37500"
+      },
+      {
+        "manufacturer": "Emgo",
+        "part_number": "10-20300"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "P300"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF571"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF603"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15412-300-024"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15410-422-000"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15410-426-000"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15410-426-010"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15412-300-325"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P300"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P7009"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1MC-171"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "P7009"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "P7009"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "1983",
+        "make": "HONDA",
+        "model": "CB1000C CUSTOM",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1983",
+        "make": "HONDA",
+        "model": "CB1100F",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "77-75",
+        "make": "HONDA",
+        "model": "CB400F SUPER SPORT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "77-76",
+        "make": "HONDA",
+        "model": "CB550F SUPER SPORT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "78-76",
+        "make": "HONDA",
+        "model": "CB550K",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1983",
+        "make": "HONDA",
+        "model": "CB550SC NIGHTHAWK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "82-79",
+        "make": "HONDA",
+        "model": "CB650",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "81-80",
+        "make": "HONDA",
+        "model": "CB650C CUSTOM",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "85-82",
+        "make": "HONDA",
+        "model": "CB650SC NIGHTHAWK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "78-76",
+        "make": "HONDA",
+        "model": "CB750A AUTOMATIC",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "82-80",
+        "make": "HONDA",
+        "model": "CB750C CUSTOM",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "82-76",
+        "make": "HONDA",
+        "model": "CB750F SUPER SPORT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "82-69",
+        "make": "HONDA",
+        "model": "CB750K",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1979",
+        "make": "HONDA",
+        "model": "CB750L",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "83-82",
+        "make": "HONDA",
+        "model": "CB750SC NIGHTHAWK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "82-80",
+        "make": "HONDA",
+        "model": "CB900C CUSTOM",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "82-81",
+        "make": "HONDA",
+        "model": "CB900F SUPER SPORT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "82-79",
+        "make": "HONDA",
+        "model": "CBX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "79-75",
+        "make": "HONDA",
+        "model": "GL1000 GOLD WING",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "83-80",
+        "make": "HONDA",
+        "model": "GL1100 GOLD WING",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "83-82",
+        "make": "HONDA",
+        "model": "GL1100A GOLD WING ASPENCADE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "83-80",
+        "make": "HONDA",
+        "model": "GL1100I GOLD WING INTERSTATE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1984",
+        "make": "HONDA",
+        "model": "GL1200 GOLD WING",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "87-84",
+        "make": "HONDA",
+        "model": "GL1200A GOLD WING ASPENCADE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "87-84",
+        "make": "HONDA",
+        "model": "GL1200I GOLD WING INTERSTATE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1985",
+        "make": "HONDA",
+        "model": "GL1200L GOLD WING LIMITED",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1986",
+        "make": "HONDA",
+        "model": "GL1200SEI GOLD WING ASPENCADE",
+        "engine": "All",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CH6009",
+    "source_part_key": "001481531",
+    "source_totals": {
+      "attributes": 44,
+      "applications": 27,
+      "cross_references": 33
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® oil filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE (original equipment) recommended intervals. Engineered for conventional and synthetic motor oil, Extra Guard offers proven engine protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "0"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CH6009, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Motorcycle Full-Flow Lube Cartridge",
+        "recno": "3"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Cartridge",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "NA",
+        "recno": "89"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100546180",
+        "recno": "92"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "2.218",
+        "recno": "93"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "94"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "0.765",
+        "recno": "95"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "3.031",
+        "recno": "96"
+      },
+      {
+        "attribute": "O-Ring Inside Diameter (Inch)",
+        "value": "3.500",
+        "recno": "97"
+      },
+      {
+        "attribute": "O-Ring Outside Diameter (Inch)",
+        "value": "3.859",
+        "recno": "98"
+      },
+      {
+        "attribute": "O-Ring Thickness (Inch)",
+        "value": "0.172",
+        "recno": "99"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "0.765",
+        "recno": "100"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "3.031",
+        "recno": "101"
+      },
+      {
+        "attribute": "O-Rings Included",
+        "value": "Yes",
+        "recno": "102"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "103"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "104"
+      },
+      {
+        "attribute": "O-Ring (1) Inside Diameter (Inch)",
+        "value": "0.609",
+        "recno": "105"
+      },
+      {
+        "attribute": "O-Ring (1) Outside Diameter (Inch)",
+        "value": "0.813",
+        "recno": "106"
+      },
+      {
+        "attribute": "O-Ring (1) Thickness (Inch)",
+        "value": "0.109",
+        "recno": "107"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "108"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "109"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.3250",
+        "recno": "113"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.9500",
+        "recno": "114"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "2.4860",
+        "recno": "115"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "3.3750",
+        "recno": "116"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.2900",
+        "recno": "117"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "10.5620",
+        "recno": "118"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.2900",
+        "recno": "119"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "7.1870",
+        "recno": "120"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.325,
+        "case_weight_lb": 1.95,
+        "unit_height_in": 2.486,
+        "unit_length_in": 3.29,
+        "unit_width_in": 3.29,
+        "case_height_in": 3.375,
+        "case_length_in": 10.562,
+        "case_width_in": 7.187,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 3.9,
+        "estimated_case_dimensions": {
+          "length_in": 14.083,
+          "width_in": 10.78,
+          "height_in": 3.375,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 27,
+    "all_cross_references_observed": 33,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:23:06.475Z",
+  "discovered_from": "CH6009",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "HONDA",
+        "model": "CB1000C CUSTOM",
+        "year": "1983",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CB1100F",
+        "year": "1983",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CB400F SUPER SPORT",
+        "year": "77-75",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CB550F SUPER SPORT",
+        "year": "77-76",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CB550K",
+        "year": "78-76",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CB550SC NIGHTHAWK",
+        "year": "1983",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CB650",
+        "year": "82-79",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CB650C CUSTOM",
+        "year": "81-80",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CB650SC NIGHTHAWK",
+        "year": "85-82",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CB750A AUTOMATIC",
+        "year": "78-76",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CB750C CUSTOM",
+        "year": "82-80",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CB750F SUPER SPORT",
+        "year": "82-76",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CB750K",
+        "year": "82-69",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CB750L",
+        "year": "1979",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CB750SC NIGHTHAWK",
+        "year": "83-82",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CB900C CUSTOM",
+        "year": "82-80",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CB900F SUPER SPORT",
+        "year": "82-81",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CBX",
+        "year": "82-79",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "GL1000 GOLD WING",
+        "year": "79-75",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "GL1100 GOLD WING",
+        "year": "83-80",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "GL1100A GOLD WING ASPENCADE",
+        "year": "83-82",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "GL1100I GOLD WING INTERSTATE",
+        "year": "83-80",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "GL1200 GOLD WING",
+        "year": "1984",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "GL1200A GOLD WING ASPENCADE",
+        "year": "87-84",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "GL1200I GOLD WING INTERSTATE",
+        "year": "87-84",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "GL1200L GOLD WING LIMITED",
+        "year": "1985",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "GL1200SEI GOLD WING ASPENCADE",
+        "year": "1986",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2170",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Auto-Tune",
+        "part_number": "E5202",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "P148",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92216",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "96940",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89940",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85216",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "CO3000",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "P7009",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "P300",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "D4022",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ducati",
+        "part_number": "252.004.0799",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Emgo",
+        "part_number": "10-37500",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Emgo",
+        "part_number": "10-20300",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "P300",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF571",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF603",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15412-300-024",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15410-422-000",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15410-426-000",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15410-426-010",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15412-300-325",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P300",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P7009",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX61D",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1MC-171",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1216",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4940",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "ML16809",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "P7009",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "P7009",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51216",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24940",
+        "source_part_number": "CH6009",
+        "part_key": "001481531",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

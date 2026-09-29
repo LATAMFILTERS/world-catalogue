@@ -1,0 +1,33 @@
+{
+  "migration": "100_LD_LEGACY_PREFIX_5_TO_3",
+  "mode": "dry-run",
+  "plan": {
+    "safe": 4632,
+    "quarantine": 5,
+    "by_status": {
+      "SAFE_PUBLIC_PLACEHOLDER": 3247,
+      "SAFE_EMPTY_TARGET": 433,
+      "SAFE_TARGET_CROSSES_SOURCE": 883,
+      "SAFE_APPLICATION_MATCH": 69,
+      "OCCUPIED_UNPROVEN": 5
+    },
+    "direct_renames": 4497,
+    "merge_targets": 135
+  },
+  "before": {
+    "competitor": 65019,
+    "oem": 6374,
+    "applications": 284992,
+    "specifications": 2182,
+    "safe_parents": 4632,
+    "legacy_identity_rows": 0,
+    "competitor_source_rows": 63641
+  },
+  "mutations": {
+    "quarantine_snapshots": 5,
+    "competitor_quarantined": 51926
+  },
+  "audit": {},
+  "transaction": "ROLLBACK",
+  "error": "insert or update on table \"ld_competitor_cross_references\" violates foreign key constraint \"ld_competitor_cross_references_elimfilters_sku_fkey\""
+}

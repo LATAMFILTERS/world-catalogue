@@ -1,0 +1,42 @@
+{
+  "phase": "ISUZU_V160_MATRIX_RELEASE",
+  "apply": false,
+  "database_write": false,
+  "rows": [
+    {
+      "sku": "EA13614",
+      "status": "READY",
+      "exact_positions": 3,
+      "added_ranges": 3
+    },
+    {
+      "sku": "EF92427",
+      "status": "READY",
+      "exact_positions": 6,
+      "added_ranges": 6
+    },
+    {
+      "sku": "EF93009",
+      "status": "READY",
+      "exact_positions": 5,
+      "added_ranges": 5
+    },
+    {
+      "sku": "EL80428",
+      "status": "READY",
+      "exact_positions": 20,
+      "added_ranges": 15
+    },
+    {
+      "sku": "EL80408",
+      "status": "READY",
+      "exact_positions": 3,
+      "added_ranges": 3
+    }
+  ],
+  "summary": {
+    "skus": 5,
+    "exact_positions": 37,
+    "database_write": false
+  }
+}

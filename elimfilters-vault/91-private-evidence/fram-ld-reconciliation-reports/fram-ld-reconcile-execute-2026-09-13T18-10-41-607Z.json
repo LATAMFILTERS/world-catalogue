@@ -1,0 +1,29 @@
+{
+  "mode": "execute",
+  "gap_report": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-ld-gap-analysis\\fram-ld-gap-2026-09-13T17-58-15-238Z.json",
+  "map": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-ld-reconciliation-map.json",
+  "authorities": 3,
+  "targets": 3,
+  "planned": {
+    "competitor": 3,
+    "oem": 0,
+    "applications": 281,
+    "specifications": 3
+  },
+  "inserted": {
+    "competitor": 3,
+    "oem": 0,
+    "applications": 2,
+    "specifications": 0,
+    "readiness_updated": 3
+  },
+  "skipped": {
+    "competitor_conflicts": 0
+  },
+  "audit": {
+    "direct_authorities": 3,
+    "direct_failures": [],
+    "heavy_duty_rows": 0
+  },
+  "transaction": "COMMIT"
+}

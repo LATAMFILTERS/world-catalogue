@@ -1,0 +1,2415 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "FUEL",
+  "authority": {
+    "part_number": "G8018",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "G8018",
+    "product_type": "Fuel Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 2.125,
+      "outer_diameter_mm": 53.97,
+      "height_in": 7.156,
+      "height_mm": 181.76,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "In Line",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Ford",
+        "part_number": "2M5Z-9155-CA"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "5L1Z-9155-AA"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "F89E-9155-AA"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "F0TZ-9155-B"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "F89Z-9155-A"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "F85Z-9155-AAGF"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25176309"
+      },
+      {
+        "manufacturer": "Mazda",
+        "part_number": "ZZP1-13-480"
+      },
+      {
+        "manufacturer": "Mazda",
+        "part_number": "ZZP1-13-470"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF832"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF7768"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF7668"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "KL181"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "WK512/1"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "MF 1003"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FG-986"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FG-1114"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FG-986B"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3595"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3595MP"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3704"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F65277"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33595"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33595MP"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86595"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G6593"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "G6593"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P551772"
+      },
+      {
+        "manufacturer": "Duralast",
+        "part_number": "FF749DL"
+      },
+      {
+        "manufacturer": "Duralast",
+        "part_number": "FF686DL"
+      },
+      {
+        "manufacturer": "Firestone",
+        "part_number": "FF-6593"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "FF5455"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "F65277"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF362"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF326"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "G8018"
+      },
+      {
+        "manufacturer": "Jaguar",
+        "part_number": "XR81775"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "PF-2000"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G6593"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G1114"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "23595"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "73595"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "G6593"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PF8018"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "F65277"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "G8018"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "F65277"
+      },
+      {
+        "manufacturer": "Tires Plus",
+        "part_number": "FF-6593"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G6593"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "11-98",
+        "make": "FORD",
+        "model": "CROWN VICTORIA",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "FORD",
+        "model": "E-150",
+        "engine": "V6-4.2L",
+        "quantity": 1
+      },
+      {
+        "year": "13-03",
+        "make": "FORD",
+        "model": "E-150",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "13-03",
+        "make": "FORD",
+        "model": "E-150",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "FORD",
+        "model": "E-150 CLUB WAGON",
+        "engine": "V6-4.2L",
+        "quantity": 1
+      },
+      {
+        "year": "05-03",
+        "make": "FORD",
+        "model": "E-150 CLUB WAGON",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "05-03",
+        "make": "FORD",
+        "model": "E-150 CLUB WAGON",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "FORD",
+        "model": "E-150 ECONOLINE",
+        "engine": "V6-4.2L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "FORD",
+        "model": "E-150 ECONOLINE CLUB WAGON",
+        "engine": "V6-4.2L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "FORD",
+        "model": "E-250",
+        "engine": "V6-4.2L",
+        "quantity": 1
+      },
+      {
+        "year": "13-03",
+        "make": "FORD",
+        "model": "E-250",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "13-03",
+        "make": "FORD",
+        "model": "E-250",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "FORD",
+        "model": "E-250 ECONOLINE",
+        "engine": "V6-4.2L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "FORD",
+        "model": "E-350 CLUB WAGON",
+        "engine": "V10-6.8L",
+        "quantity": 1
+      },
+      {
+        "year": "2005",
+        "make": "FORD",
+        "model": "E-350 CLUB WAGON",
+        "engine": "V10-6.8L",
+        "quantity": 1
+      },
+      {
+        "year": "05-03",
+        "make": "FORD",
+        "model": "E-350 CLUB WAGON",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "08-07",
+        "make": "FORD",
+        "model": "E-350 ECONOLINE",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "13-01",
+        "make": "FORD",
+        "model": "E-350 SUPER DUTY",
+        "engine": "V10-6.8L",
+        "quantity": 1
+      },
+      {
+        "year": "13-03",
+        "make": "FORD",
+        "model": "E-350 SUPER DUTY",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "13-04",
+        "make": "FORD",
+        "model": "E-450 SUPER DUTY",
+        "engine": "V10-6.8L",
+        "quantity": 1
+      },
+      {
+        "year": "04-03",
+        "make": "FORD",
+        "model": "E-450 SUPER DUTY",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "16-06",
+        "make": "FORD",
+        "model": "E-450 SUPER DUTY",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "FORD",
+        "model": "E-550 SUPER DUTY",
+        "engine": "V10-6.8L",
+        "quantity": 1
+      },
+      {
+        "year": "01-00",
+        "make": "FORD",
+        "model": "EXCURSION",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "FORD",
+        "model": "EXPEDITION",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "2004",
+        "make": "FORD",
+        "model": "EXPEDITION",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "FORD",
+        "model": "EXPEDITION",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "06-05",
+        "make": "FORD",
+        "model": "EXPEDITION",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "01-99",
+        "make": "FORD",
+        "model": "EXPLORER",
+        "engine": "V6-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "01-99",
+        "make": "FORD",
+        "model": "EXPLORER",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2001",
+        "make": "FORD",
+        "model": "EXPLORER SPORT",
+        "engine": "V6-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2001",
+        "make": "FORD",
+        "model": "EXPLORER SPORT TRAC",
+        "engine": "V6-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "03-99",
+        "make": "FORD",
+        "model": "F-150",
+        "engine": "V6-4.2L",
+        "quantity": 1
+      },
+      {
+        "year": "06-05",
+        "make": "FORD",
+        "model": "F-150",
+        "engine": "V6-4.2L",
+        "quantity": 1
+      },
+      {
+        "year": "06-99",
+        "make": "FORD",
+        "model": "F-150",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "06-98",
+        "make": "FORD",
+        "model": "F-150",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "2004",
+        "make": "FORD",
+        "model": "F-150 HERITAGE",
+        "engine": "V6-4.2L",
+        "quantity": 1
+      },
+      {
+        "year": "2004",
+        "make": "FORD",
+        "model": "F-150 HERITAGE",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "2004",
+        "make": "FORD",
+        "model": "F-150 HERITAGE",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "1999",
+        "make": "FORD",
+        "model": "F-250",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "99-98",
+        "make": "FORD",
+        "model": "F-250",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "03-00",
+        "make": "FORD",
+        "model": "F-250 SUPER DUTY",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "06-05",
+        "make": "FORD",
+        "model": "F-250 SUPER DUTY",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "03-00",
+        "make": "FORD",
+        "model": "F-350 SUPER DUTY",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "06-05",
+        "make": "FORD",
+        "model": "F-350 SUPER DUTY",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "07-05",
+        "make": "FORD",
+        "model": "FIVE HUNDRED",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "07-00",
+        "make": "FORD",
+        "model": "FOCUS",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "07-03",
+        "make": "FORD",
+        "model": "FOCUS",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "05-04",
+        "make": "FORD",
+        "model": "FREESTAR",
+        "engine": "V6-3.9L",
+        "quantity": 1
+      },
+      {
+        "year": "05-04",
+        "make": "FORD",
+        "model": "FREESTAR",
+        "engine": "V6-4.2L",
+        "quantity": 1
+      },
+      {
+        "year": "07-05",
+        "make": "FORD",
+        "model": "FREESTYLE",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "04-98",
+        "make": "FORD",
+        "model": "MUSTANG",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "2004",
+        "make": "FORD",
+        "model": "MUSTANG",
+        "engine": "V6-3.9L",
+        "quantity": 1
+      },
+      {
+        "year": "04-98",
+        "make": "FORD",
+        "model": "MUSTANG",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "2000",
+        "make": "FORD",
+        "model": "MUSTANG",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "99-98",
+        "make": "FORD",
+        "model": "RANGER",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "99-98",
+        "make": "FORD",
+        "model": "RANGER",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "99-98",
+        "make": "FORD",
+        "model": "RANGER",
+        "engine": "V6-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2002",
+        "make": "FORD",
+        "model": "THUNDERBIRD",
+        "engine": "V8-3.9L",
+        "quantity": 1
+      },
+      {
+        "year": "00-99",
+        "make": "FORD",
+        "model": "WINDSTAR",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "03-99",
+        "make": "FORD",
+        "model": "WINDSTAR",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "08-00",
+        "make": "JAGUAR",
+        "model": "S-TYPE",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2002",
+        "make": "JAGUAR",
+        "model": "S-TYPE",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "08-03",
+        "make": "JAGUAR",
+        "model": "S-TYPE",
+        "engine": "V8-4.2L",
+        "quantity": 1
+      },
+      {
+        "year": "06-05",
+        "make": "JAGUAR",
+        "model": "SUPER V8",
+        "engine": "V8-4.2L",
+        "quantity": 1
+      },
+      {
+        "year": "2009",
+        "make": "JAGUAR",
+        "model": "XF",
+        "engine": "V8-4.2L",
+        "quantity": 1
+      },
+      {
+        "year": "2002",
+        "make": "LINCOLN",
+        "model": "BLACKWOOD",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "02-00",
+        "make": "LINCOLN",
+        "model": "LS",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "02-00",
+        "make": "LINCOLN",
+        "model": "LS",
+        "engine": "V8-3.9L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "LINCOLN",
+        "model": "MARK LT",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "2016",
+        "make": "LINCOLN",
+        "model": "MKZ",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "LINCOLN",
+        "model": "MKZ",
+        "engine": "V6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "LINCOLN",
+        "model": "NAVIGATOR",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "06-05",
+        "make": "LINCOLN",
+        "model": "NAVIGATOR",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "11-98",
+        "make": "LINCOLN",
+        "model": "TOWN CAR",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "99-98",
+        "make": "MAZDA",
+        "model": "B2500",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "99-98",
+        "make": "MAZDA",
+        "model": "B3000",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "99-98",
+        "make": "MAZDA",
+        "model": "B4000",
+        "engine": "V6-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "11-98",
+        "make": "MERCURY",
+        "model": "GRAND MARQUIS",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "04-03",
+        "make": "MERCURY",
+        "model": "MARAUDER",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "07-05",
+        "make": "MERCURY",
+        "model": "MONTEGO",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "05-04",
+        "make": "MERCURY",
+        "model": "MONTEREY",
+        "engine": "V6-4.2L",
+        "quantity": 1
+      },
+      {
+        "year": "01-99",
+        "make": "MERCURY",
+        "model": "MOUNTAINEER",
+        "engine": "V6-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "01-99",
+        "make": "MERCURY",
+        "model": "MOUNTAINEER",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "G8018",
+    "source_part_key": "000991295",
+    "source_totals": {
+      "attributes": 28,
+      "applications": 100,
+      "cross_references": 49
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, G8018, Fuel Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "In-Line Fuel Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "In Line",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Metal",
+        "recno": "82"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Tube Connector",
+        "recno": "83"
+      },
+      {
+        "attribute": "Fuel Type",
+        "value": "Gasoline",
+        "recno": "84"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "85"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Fuel Filter",
+        "recno": "86"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "7.156",
+        "recno": "88"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "2.125",
+        "recno": "89"
+      },
+      {
+        "attribute": "Housing Material",
+        "value": "Metal",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Inlet Line Size (Inch)",
+        "value": "5/16",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100018878",
+        "recno": "92"
+      },
+      {
+        "attribute": "Outlet Line Size (Inch)",
+        "value": "5/16",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "94"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.4930",
+        "recno": "98"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "2.9580",
+        "recno": "99"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "6.7500",
+        "recno": "100"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "7.2450",
+        "recno": "101"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.0600",
+        "recno": "102"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "10.0500",
+        "recno": "103"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.0600",
+        "recno": "104"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "6.8700",
+        "recno": "105"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.493,
+        "case_weight_lb": 2.958,
+        "unit_height_in": 6.75,
+        "unit_length_in": 3.06,
+        "unit_width_in": 3.06,
+        "case_height_in": 7.245,
+        "case_length_in": 10.05,
+        "case_width_in": 6.87,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 5.916,
+        "estimated_case_dimensions": {
+          "length_in": 13.4,
+          "width_in": 10.305,
+          "height_in": 7.245,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 100,
+    "all_cross_references_observed": 49,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T06:04:02.730Z",
+  "discovered_from": "G8018",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "ENGINE FORD",
+        "model": "V8-4.6L TRITON",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE FORD",
+        "model": "V8-4.6L TRITON",
+        "year": "04-99",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE FORD",
+        "model": "V8-5.4L TRITON 12V",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE FORD",
+        "model": "V8-5.4L TRITON 12V",
+        "year": "04-99",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE FORD",
+        "model": "V8-5.4L TRITON 24V",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE FORD",
+        "model": "V8-5.4L TRITON 24V",
+        "year": "2004",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL FORD",
+        "model": "302 5.0L, 351 5.8L, 400 6.6L cid",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL FORD",
+        "model": "302 5.0L, 351 5.8L, 400 6.6L cid",
+        "year": "01-99",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "CROWN VICTORIA",
+        "year": "11-98",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-150",
+        "year": "2003",
+        "engine": "V6-4.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-150",
+        "year": "13-03",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-150",
+        "year": "13-03",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-150 CLUB WAGON",
+        "year": "2003",
+        "engine": "V6-4.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-150 CLUB WAGON",
+        "year": "05-03",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-150 CLUB WAGON",
+        "year": "05-03",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-150 ECONOLINE",
+        "year": "02-01",
+        "engine": "V6-4.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-150 ECONOLINE CLUB WAGON",
+        "year": "02-01",
+        "engine": "V6-4.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-250",
+        "year": "2003",
+        "engine": "V6-4.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-250",
+        "year": "13-03",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-250",
+        "year": "13-03",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-250 ECONOLINE",
+        "year": "02-01",
+        "engine": "V6-4.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-350 CLUB WAGON",
+        "year": "2003",
+        "engine": "V10-6.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-350 CLUB WAGON",
+        "year": "2005",
+        "engine": "V10-6.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-350 CLUB WAGON",
+        "year": "05-03",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-350 ECONOLINE",
+        "year": "08-07",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-350 SUPER DUTY",
+        "year": "13-01",
+        "engine": "V10-6.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-350 SUPER DUTY",
+        "year": "13-03",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-450 SUPER DUTY",
+        "year": "13-04",
+        "engine": "V10-6.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-450 SUPER DUTY",
+        "year": "04-03",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-450 SUPER DUTY",
+        "year": "16-06",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "E-550 SUPER DUTY",
+        "year": "2003",
+        "engine": "V10-6.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "EXCURSION",
+        "year": "01-00",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "EXPEDITION",
+        "year": "02-99",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "EXPEDITION",
+        "year": "2004",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "EXPEDITION",
+        "year": "02-99",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "EXPEDITION",
+        "year": "06-05",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "EXPLORER",
+        "year": "01-99",
+        "engine": "V6-4.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "EXPLORER",
+        "year": "01-99",
+        "engine": "V8-5.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "EXPLORER SPORT",
+        "year": "2001",
+        "engine": "V6-4.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "EXPLORER SPORT TRAC",
+        "year": "2001",
+        "engine": "V6-4.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-150",
+        "year": "03-99",
+        "engine": "V6-4.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-150",
+        "year": "06-05",
+        "engine": "V6-4.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-150",
+        "year": "06-99",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-150",
+        "year": "06-98",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-150 HERITAGE",
+        "year": "2004",
+        "engine": "V6-4.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-150 HERITAGE",
+        "year": "2004",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-150 HERITAGE",
+        "year": "2004",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-250",
+        "year": "1999",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-250",
+        "year": "99-98",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-250 SUPER DUTY",
+        "year": "03-00",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-250 SUPER DUTY",
+        "year": "06-05",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-350 SUPER DUTY",
+        "year": "03-00",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-350 SUPER DUTY",
+        "year": "06-05",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "FIVE HUNDRED",
+        "year": "07-05",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "FOCUS",
+        "year": "07-00",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "FOCUS",
+        "year": "07-03",
+        "engine": "L4-2.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "FREESTAR",
+        "year": "05-04",
+        "engine": "V6-3.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "FREESTAR",
+        "year": "05-04",
+        "engine": "V6-4.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "FREESTYLE",
+        "year": "07-05",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "MUSTANG",
+        "year": "04-98",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "MUSTANG",
+        "year": "2004",
+        "engine": "V6-3.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "MUSTANG",
+        "year": "04-98",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "MUSTANG",
+        "year": "2000",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "RANGER",
+        "year": "99-98",
+        "engine": "L4-2.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "RANGER",
+        "year": "99-98",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "RANGER",
+        "year": "99-98",
+        "engine": "V6-4.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "THUNDERBIRD",
+        "year": "2002",
+        "engine": "V8-3.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "WINDSTAR",
+        "year": "00-99",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "WINDSTAR",
+        "year": "03-99",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JAGUAR",
+        "model": "S-TYPE",
+        "year": "08-00",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JAGUAR",
+        "model": "S-TYPE",
+        "year": "2002",
+        "engine": "V8-4.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JAGUAR",
+        "model": "S-TYPE",
+        "year": "08-03",
+        "engine": "V8-4.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JAGUAR",
+        "model": "SUPER V8",
+        "year": "06-05",
+        "engine": "V8-4.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JAGUAR",
+        "model": "XF",
+        "year": "2009",
+        "engine": "V8-4.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "BLACKWOOD",
+        "year": "2002",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "LS",
+        "year": "02-00",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "LS",
+        "year": "02-00",
+        "engine": "V8-3.9L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "MARK LT",
+        "year": "2006",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "MKZ",
+        "year": "2016",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "MKZ",
+        "year": "16-15",
+        "engine": "V6-3.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "NAVIGATOR",
+        "year": "02-99",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "NAVIGATOR",
+        "year": "06-05",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "TOWN CAR",
+        "year": "11-98",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MAZDA",
+        "model": "B2500",
+        "year": "99-98",
+        "engine": "L4-2.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MAZDA",
+        "model": "B3000",
+        "year": "99-98",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MAZDA",
+        "model": "B4000",
+        "year": "99-98",
+        "engine": "V6-4.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCURY",
+        "model": "GRAND MARQUIS",
+        "year": "11-98",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCURY",
+        "model": "MARAUDER",
+        "year": "04-03",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCURY",
+        "model": "MONTEGO",
+        "year": "07-05",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCURY",
+        "model": "MONTEREY",
+        "year": "05-04",
+        "engine": "V6-4.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCURY",
+        "model": "MOUNTAINEER",
+        "year": "01-99",
+        "engine": "V6-4.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCURY",
+        "model": "MOUNTAINEER",
+        "year": "01-99",
+        "engine": "V8-5.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FORD (EUROPE)",
+        "model": "Tourneo Connect (w/1.8 16V EYPA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FORD (EUROPE)",
+        "model": "Tourneo Connect (w/1.8 16V EYPA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FORD (EUROPE)",
+        "model": "Tourneo Connect (w/1.8 16V EYPC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FORD (EUROPE)",
+        "model": "Tourneo Connect (w/1.8 16V EYPC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FORD (EUROPE)",
+        "model": "Transit Connect (w/1.8 16V EYPA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FORD (EUROPE)",
+        "model": "Transit Connect (w/1.8 16V EYPA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FORD (EUROPE)",
+        "model": "Transit Connect (w/1.8 16V EYPC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FORD (EUROPE)",
+        "model": "Transit Connect (w/1.8 16V EYPC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF832",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF7768",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF7668",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86595",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G6593",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "G6593",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P551772",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Duralast",
+        "part_number": "FF749DL",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Duralast",
+        "part_number": "FF686DL",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Firestone",
+        "part_number": "FF-6593",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "FF5455",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "2M5Z-9155-CA",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "5L1Z-9155-AA",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "F89E-9155-AA",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "F0TZ-9155-B",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "F89Z-9155-A",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "F85Z-9155-AAGF",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25176309",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "F65277",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF362",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF326",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "G8018",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Jaguar",
+        "part_number": "XR81775",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "PF-2000",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G6593",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G1114",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "KL181",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "WK512/1",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "MF 1003",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Mazda",
+        "part_number": "ZZP1-13-480",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Mazda",
+        "part_number": "ZZP1-13-470",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FG-986",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FG-1114",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FG-986B",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3595",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3595MP",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3704",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "23595",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "73595",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "G6593",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PF8018",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F65277",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "F65277",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "G8018",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "F65277",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Tires Plus",
+        "part_number": "FF-6593",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G6593",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33595",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33595MP",
+        "source_part_number": "G8018",
+        "part_key": "000991295",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

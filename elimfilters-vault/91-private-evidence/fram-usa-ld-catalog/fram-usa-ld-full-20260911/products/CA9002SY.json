@@ -1,0 +1,733 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA9002SY",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA9002SY",
+    "product_type": "Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 13.396,
+      "height_mm": 340.26,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Radial Seal Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "AGCO",
+        "part_number": "V82642000"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AZ55541"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "3901476-M1"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "055125R1"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "3901476M1"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "RS3923"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E1800LS"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CF400"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6829"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46829"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Ahlmann",
+        "part_number": "4110552A"
+      },
+      {
+        "manufacturer": "Atlas-Copco",
+        "part_number": "1615-8927-00"
+      },
+      {
+        "manufacturer": "Atlas-Copco",
+        "part_number": "2914-9307-00"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88829"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "LAF9100"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "AES2805"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "8299"
+      },
+      {
+        "manufacturer": "Deutz",
+        "part_number": "118 0871"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P780012"
+      },
+      {
+        "manufacturer": "Eurofilter",
+        "part_number": "220081"
+      },
+      {
+        "manufacturer": "Fendt",
+        "part_number": "F117200090160"
+      },
+      {
+        "manufacturer": "Fendt",
+        "part_number": "F117200090020"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF25722"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF26394"
+      },
+      {
+        "manufacturer": "Gehl",
+        "part_number": "137501"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF2385"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "RS3923"
+      },
+      {
+        "manufacturer": "JCB",
+        "part_number": "32/918902"
+      },
+      {
+        "manufacturer": "JCB",
+        "part_number": "32/917805"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "LXS258"
+      },
+      {
+        "manufacturer": "Liebherr",
+        "part_number": "7621452"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF9100"
+      },
+      {
+        "manufacturer": "Schaeff",
+        "part_number": "5501660924"
+      },
+      {
+        "manufacturer": "Terex",
+        "part_number": "710914"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "11705111"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA9002SY",
+    "source_part_key": "012836598",
+    "source_totals": {
+      "attributes": 28,
+      "applications": 1,
+      "cross_references": 35
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA9002SY, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Radial Seal Air Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Safety",
+        "recno": "81"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "83"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "84"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "85"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Top Inside Diameter",
+        "value": "Closed",
+        "recno": "87"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "88"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "89"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available Only While Supplies Last",
+        "recno": "91"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "13.396",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100545299",
+        "recno": "92"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "3.349",
+        "recno": "93"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "2.758",
+        "recno": "94"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "3.369",
+        "recno": "95"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "96"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "97"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "98"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "0.7000",
+        "recno": "102"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "16.0000",
+        "recno": "103"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "3.8120",
+        "recno": "104"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "3.8120",
+        "recno": "105"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": 0.7,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": 16,
+        "case_length_in": 3.812,
+        "case_width_in": 3.812,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 1,
+    "all_cross_references_observed": 35,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:52:27.750Z",
+  "discovered_from": "CA9002SY",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "NA",
+        "model": "NA",
+        "year": "NA",
+        "engine": "NA",
+        "part_type": "NA",
+        "application_type": "NA",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "AGCO",
+        "part_number": "V82642000",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Ahlmann",
+        "part_number": "4110552A",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Atlas-Copco",
+        "part_number": "1615-8927-00",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Atlas-Copco",
+        "part_number": "2914-9307-00",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "RS3923",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88829",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "LAF9100",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "AES2805",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "8299",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Deutz",
+        "part_number": "118 0871",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P780012",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Eurofilter",
+        "part_number": "220081",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Fendt",
+        "part_number": "F117200090160",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Fendt",
+        "part_number": "F117200090020",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF25722",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF26394",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Gehl",
+        "part_number": "137501",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF2385",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "RS3923",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E1800LS",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "JCB",
+        "part_number": "32/918902",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "JCB",
+        "part_number": "32/917805",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AZ55541",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "LXS258",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Liebherr",
+        "part_number": "7621452",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF9100",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CF400",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "3901476-M1",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "055125R1",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Massey Ferguson",
+        "part_number": "3901476M1",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6829",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Schaeff",
+        "part_number": "5501660924",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Terex",
+        "part_number": "710914",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "11705111",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46829",
+        "source_part_number": "CA9002SY",
+        "part_key": "012836598",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

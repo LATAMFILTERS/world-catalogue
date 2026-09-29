@@ -1,0 +1,440 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA7699SY",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA7699SY",
+    "product_type": "Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 25.625,
+      "height_mm": 650.88,
+      "thread_size": null,
+      "gasket_od_in": 7.156,
+      "gasket_od_mm": 181.76,
+      "gasket_id_in": 6.406,
+      "gasket_id_mm": 162.71,
+      "gasket_thickness_in": 0.343,
+      "gasket_thickness_mm": 8.71,
+      "media_type": "Genuine Media",
+      "style": "HD Metal-End Air Filter - Inner",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A1521C"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2745"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6856"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46856"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Air Maze",
+        "part_number": "CD-1628610-827"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-827"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "94856"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88856"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P546613"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF4675"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "PA2745"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA1577"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA7699SY",
+    "source_part_key": "007121919",
+    "source_totals": {
+      "attributes": 34,
+      "applications": 1,
+      "cross_references": 12
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA7699SY, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "HD Metal-End Air Filter - Inner",
+        "recno": "2"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Safety",
+        "recno": "81"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "83"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "84"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "85"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "86"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "87"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "88"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "89"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "25.625",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100528926",
+        "recno": "92"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "6.406",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "7.156",
+        "recno": "93"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.343",
+        "recno": "94"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "0.656",
+        "recno": "95"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "7.406",
+        "recno": "96"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "6.094",
+        "recno": "97"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "7.406",
+        "recno": "98"
+      },
+      {
+        "attribute": "Washer Thickness (Inch)",
+        "value": "0.125",
+        "recno": "99"
+      },
+      {
+        "attribute": "Washer Inside Diameter (Inch)",
+        "value": "0.563",
+        "recno": "100"
+      },
+      {
+        "attribute": "Washer Outside Diameter (Inch)",
+        "value": "1.250",
+        "recno": "101"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "102"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "103"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "104"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "5.1000",
+        "recno": "108"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "29.1250",
+        "recno": "109"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "8.7130",
+        "recno": "110"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "8.7130",
+        "recno": "111"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": 5.1,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": 29.125,
+        "case_length_in": 8.713,
+        "case_width_in": 8.713,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 1,
+    "all_cross_references_observed": 12,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:13:27.254Z",
+  "discovered_from": "CA7699SY",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "NA",
+        "model": "NA",
+        "year": "NA",
+        "engine": "NA",
+        "part_type": "NA",
+        "application_type": "NA",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A1521C",
+        "source_part_number": "CA7699SY",
+        "part_key": "007121919",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Air Maze",
+        "part_number": "CD-1628610-827",
+        "source_part_number": "CA7699SY",
+        "part_key": "007121919",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARM-827",
+        "source_part_number": "CA7699SY",
+        "part_key": "007121919",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2745",
+        "source_part_number": "CA7699SY",
+        "part_key": "007121919",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "94856",
+        "source_part_number": "CA7699SY",
+        "part_key": "007121919",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88856",
+        "source_part_number": "CA7699SY",
+        "part_key": "007121919",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P546613",
+        "source_part_number": "CA7699SY",
+        "part_key": "007121919",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF4675",
+        "source_part_number": "CA7699SY",
+        "part_key": "007121919",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "PA2745",
+        "source_part_number": "CA7699SY",
+        "part_key": "007121919",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA1577",
+        "source_part_number": "CA7699SY",
+        "part_key": "007121919",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6856",
+        "source_part_number": "CA7699SY",
+        "part_key": "007121919",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46856",
+        "source_part_number": "CA7699SY",
+        "part_key": "007121919",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

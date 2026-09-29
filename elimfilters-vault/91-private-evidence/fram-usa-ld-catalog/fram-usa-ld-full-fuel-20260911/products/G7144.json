@@ -1,0 +1,2742 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "FUEL",
+  "authority": {
+    "part_number": "G7144",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "G7144",
+    "product_type": "Fuel Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 1.39,
+      "outer_diameter_mm": 35.31,
+      "height_in": 3.14,
+      "height_mm": 79.76,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "In Line",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AM116304"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AM116178"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "GY20709"
+      },
+      {
+        "manufacturer": "Kubota",
+        "part_number": "E7185-82320"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF833"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3010"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33011"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "G266"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G115"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "G7144",
+    "source_part_key": "001510502",
+    "source_totals": {
+      "attributes": 28,
+      "applications": 264,
+      "cross_references": 9
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, G7144, Fuel Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "In-Line Fuel Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "In Line",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Clear",
+        "recno": "82"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Tube Connector",
+        "recno": "83"
+      },
+      {
+        "attribute": "Fuel Type",
+        "value": "Gasoline",
+        "recno": "84"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "85"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Fuel Filter",
+        "recno": "86"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "3.140",
+        "recno": "88"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "1.390",
+        "recno": "89"
+      },
+      {
+        "attribute": "Housing Material",
+        "value": "Nylon",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Inlet Line Size (Inch)",
+        "value": "1/4",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100353306",
+        "recno": "92"
+      },
+      {
+        "attribute": "Outlet Line Size (Inch)",
+        "value": "1/4",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "94"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.0750",
+        "recno": "98"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "0.4500",
+        "recno": "99"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "3.6540",
+        "recno": "100"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.2790",
+        "recno": "101"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "1.6500",
+        "recno": "102"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "5.2890",
+        "recno": "103"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.6500",
+        "recno": "104"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "3.6750",
+        "recno": "105"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.075,
+        "case_weight_lb": 0.45,
+        "unit_height_in": 3.654,
+        "unit_length_in": 1.65,
+        "unit_width_in": 1.65,
+        "case_height_in": 4.279,
+        "case_length_in": 5.289,
+        "case_width_in": 3.675,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 0.9,
+        "estimated_case_dimensions": {
+          "length_in": 7.052,
+          "width_in": 5.512,
+          "height_in": 4.279,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 264,
+    "all_cross_references_observed": 9,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:11:25.883Z",
+  "discovered_from": "G7144",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "JOHN DEERE",
+        "model": "GATOR CX 4X2",
+        "year": "15-10",
+        "engine": "All",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JOHN DEERE",
+        "model": "GATOR HPX 4X4",
+        "year": "15-04",
+        "engine": "All",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "240, 245 w/Kawasaki 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "240, 245 w/Kawasaki 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "316 w/Kohler K341A 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "316 w/Kohler K341A 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "317 w/Kohler KT17 17 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "317 w/Kohler KT17 17 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "318 w/Onan Performer P218G 18 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "318 w/Onan Performer P218G 18 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "32 Inch Commercial Mower w/Kawasaki FB460V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "32 Inch Commercial Mower w/Kawasaki FB460V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "335 w/Kawasaki 17 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "335 w/Kawasaki 17 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "36 Inch Commercial Mower w/Kawasaki FB460V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "36 Inch Commercial Mower w/Kawasaki FB460V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "425 w/Kawasaki 20 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "425 w/Kawasaki 20 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "48 Inch Commercial Mower w/Kawasaki FB460V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "48 Inch Commercial Mower w/Kawasaki FB460V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "48 Inch Mower w/Kawasaki FC540V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "48 Inch Mower w/Kawasaki FC540V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "52 Inch Commercial Mower w/Kawasaki FB460V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "52 Inch Commercial Mower w/Kawasaki FB460V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "52 Inch Mower w/Kawasaki FC540V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "52 Inch Mower w/Kawasaki FC540V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "647, 647A w/Kawasaki 19 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "647, 647A w/Kawasaki 19 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "657, 657A, 667, 667A w/Kawasaki 23 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "657, 657A, 667, 667A w/Kawasaki 23 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "667A w/Kawasaki 23 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "667A w/Kawasaki 23 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "737, 757 Z-Trak w/Kawasaki 23 & 25 hp Engines",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "737, 757 Z-Trak w/Kawasaki 23 & 25 hp Engines",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "777, 797 Z-Trac w/Kawasaki 27 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "777, 797 Z-Trac w/Kawasaki 27 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "797 Z-Trac w/Kawasaki 29 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "797 Z-Trac w/Kawasaki 29 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "7G18 w/Kohler Command Pro 18 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "7G18 w/Kohler Command Pro 18 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "7H17, 7H19 w/Kawasaki 17 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "7H17, 7H19 w/Kawasaki 17 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "7H19 w/Kawasaki 19 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "7H19 w/Kawasaki 19 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "D105 w/B&S 17.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "D105 w/B&S 17.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "D110 w/B&S 19 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "D110 w/B&S 19 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "D120 w/B&S 21 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "D120 w/B&S 21 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "D125 w/B&S 20 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "D125 w/B&S 20 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "D130 w/B&S 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "D130 w/B&S 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "D140 w/B&S 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "D140 w/B&S 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "D150 w/B&S 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "D150 w/B&S 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "D155 w/B&S 24 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "D155 w/B&S 24 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "D160 w/B&S 24 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "D160 w/B&S 24 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "D170 w/B&S 26 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "D170 w/B&S 26 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F510 Front Mower w/Kawasaki 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F510 Front Mower w/Kawasaki 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F525 Front Mower w/Kawasaki 17 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F525 Front Mower w/Kawasaki 17 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F620, F680 Z-Trak w/Kohler Command 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F620, F680 Z-Trak w/Kohler Command 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F710 Front Mower w/Kawasaki 17.5 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F710 Front Mower w/Kawasaki 17.5 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F910 Front Mower w/Onan P220G 20 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F910 Front Mower w/Onan P220G 20 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F911 Front Mower w/Kawasaki 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F911 Front Mower w/Kawasaki 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F930 Front Mower w/Onan Performer P224G 24 hp Twin Cyl. Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F930 Front Mower w/Onan Performer P224G 24 hp Twin Cyl. Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "G15, G18 w/Kohler Command Pro 15 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "G15, G18 w/Kohler Command Pro 15 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GS25",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GS25",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GS30",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GS30",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GS45",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GS45",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GS75, HD75 w/Kawasaki 17 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GS75, HD75 w/Kawasaki 17 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GT225 w/Kohler Command 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GT225 w/Kohler Command 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GT235 w/B&S Vanguard 18 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GT235 w/B&S Vanguard 18 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GT242, GT262, GT275 w/Kawasaki 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GT242, GT262, GT275 w/Kawasaki 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GT262 w/Kawasaki 17 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GT262 w/Kawasaki 17 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GT275 w/Kawasaki 17 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GT275 w/Kawasaki 17 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GT275 w/Kawasaki 17 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GT275 w/Kawasaki 17 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GX255 w/Kawasaki 20 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GX255 w/Kawasaki 20 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GX255 w/Kawasaki 20 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GX255 w/Kawasaki 20 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GX70, GX75, GX85, GX95, SRX75",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "GX70, GX75, GX85, GX95, SRX75",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "HD45 w/Kawasaki 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "HD45 w/Kawasaki 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "HD75 w/Kawasaki 17 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "HD75 w/Kawasaki 17 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LA105 w/B&S Intek 19.5 hp OHV Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LA105 w/B&S Intek 19.5 hp OHV Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LA115 w/B&S Intek 19.5 hp OHV Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LA115 w/B&S Intek 19.5 hp OHV Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LA120, LA130 w/B&S 21 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LA120, LA130 w/B&S 21 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LA125 w/B&S Intek 21 hp OHV Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LA125 w/B&S Intek 21 hp OHV Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LA135, LA135SE w/B&S 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LA135, LA135SE w/B&S 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LA135SE w/B&S Intek 22 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LA135SE w/B&S Intek 22 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LA145 w/B&S Intek 22 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LA145 w/B&S Intek 22 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LA155 w/B&S ELS 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LA155 w/B&S ELS 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LA155 w/B&S ELS 24 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LA155 w/B&S ELS 24 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LA165 w/B&S ELS 24 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LA165 w/B&S ELS 24 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LA175 w/B&S 26 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LA175 w/B&S 26 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LT166, LTR166 w/B&S 16 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LT166, LTR166 w/B&S 16 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LX172, LX176 w/Kawasaki 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LX172, LX176 w/Kawasaki 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LX176 w/Kawasaki 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LX176 w/Kawasaki 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LX178 w/Kawasaki 15 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LX178 w/Kawasaki 15 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LX186 w/Kawasaki 17 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LX186 w/Kawasaki 17 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LX188 w/Kawasaki 17 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LX188 w/Kawasaki 17 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LX255 w/Kohler Command Pro 15 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LX255 w/Kohler Command Pro 15 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LX277, LX279 w/Kawasaki 17 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LX277, LX279 w/Kawasaki 17 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LX279 w/Kawasaki 17 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LX279 w/Kawasaki 17 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LX288 w/B&S Vanguard 18 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "LX288 w/B&S Vanguard 18 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "M653 Z-Trak w/Kohler Command 23 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "M653 Z-Trak w/Kohler Command 23 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "M655, M665 Z-Trak w/Kohler Command 25 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "M655, M665 Z-Trak w/Kohler Command 25 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "S240 w/Kawasaki FS600V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "S240 w/Kawasaki FS600V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "SRX75",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "SRX75",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "SRX95",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "SRX95",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "SST15 w/Kohler Command Pro 15 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "SST15 w/Kohler Command Pro 15 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "SST16, SST18 w/B&S 16 & 18 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "SST16, SST18 w/B&S 16 & 18 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X300, X300R, X304 w/Kawasaki FH491V 17 HP Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X300, X300R, X304 w/Kawasaki FH491V 17 HP Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X304 w/Kawasaki 17 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X304 w/Kawasaki 17 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X320, X324 w/Kawasaki 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X320, X324 w/Kawasaki 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X330 w/John Deere 44J6 Cyclonic Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X330 w/John Deere 44J6 Cyclonic Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X340 w/Kawasaki 25 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X340 w/Kawasaki 25 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X350 w/Kawasaki FS600V 18.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X350 w/Kawasaki FS600V 18.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X350R w/Kawasaki FS600V 18.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X350R w/Kawasaki FS600V 18.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X354 w/Kawasaki FS600V 18.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X354 w/Kawasaki FS600V 18.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X360 w/Kawasaki 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X360 w/Kawasaki 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X370 w/Kawasaki FS600V 18.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X370 w/Kawasaki FS600V 18.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X380 w/Kawasaki FS651V 22 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X380 w/Kawasaki FS651V 22 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X384 w/Kawasaki FS651V 22 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X384 w/Kawasaki FS651V 22 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X390 w/Kawasaki FS651V 22 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X390 w/Kawasaki FS651V 22 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X394 w/Kawasaki FS651V 22 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X394 w/Kawasaki FS651V 22 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X500, X530, X534 w/Kawasaki FH721V 25 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X500, X530, X534 w/Kawasaki FH721V 25 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X520, X540 w/Kawasaki 26 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X520, X540 w/Kawasaki 26 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X534 w/Kawasaki 25 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X534 w/Kawasaki 25 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X540 w/Kawasaki 26 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X540 w/Kawasaki 26 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X570 w/Kawasaki FS730V 24 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X570 w/Kawasaki FS730V 24 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X580 w/Kawasaki FS730V 24 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X580 w/Kawasaki FS730V 24 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X584 w/Kawasaki FS730V 24 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X584 w/Kawasaki FS730V 24 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X590 w/Kawasaki FS730 EFI 25.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X590 w/Kawasaki FS730 EFI 25.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X700 w/Kawasaki 23 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X700 w/Kawasaki 23 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z225, Z510A, Z520A",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z225, Z510A, Z520A",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z245 EZ-Trak w/B&S 23 hp V Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z245 EZ-Trak w/B&S 23 hp V Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z335E w/M40 Intek Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z335E w/M40 Intek Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z355E w/M44 Intek Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z355E w/M44 Intek Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z425 w/B&S Vanguard 23 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z425 w/B&S Vanguard 23 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z445 w/Kawasaki 25 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z445 w/Kawasaki 25 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z465 EX-Trak w/Kawasaki 25 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z465 EX-Trak w/Kawasaki 25 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z510A EZ-Trak w/Kohler 22 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z510A EZ-Trak w/Kohler 22 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z520A EZ-Trak w/Kohler 25 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z520A EZ-Trak w/Kohler 25 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z525E w/M44 ELS Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z525E w/M44 ELS Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z535M w/M44 Cyclonic Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z535M w/M44 Cyclonic Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z535R w/M44 Cyclonic Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z535R w/M44 Cyclonic Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z540M, Z540R w/Kawasaki FS730V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z540M, Z540R w/Kawasaki FS730V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z915B w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z915B w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z920M w/Kawasaki Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z920M w/Kawasaki Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z920R w/Kawasaki Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z920R w/Kawasaki Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z930M w/Kawasaki FX801V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z930M w/Kawasaki FX801V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z930R w/Kawasaki FX801V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z930R w/Kawasaki FX801V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z950M w/Kawasaki FX850V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z950M w/Kawasaki FX850V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z950R w/Kawasaki FX850V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z950R w/Kawasaki FX850V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z960M w/Kawasaki FX921V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z960M w/Kawasaki FX921V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z960R w/Kawasaki FX921V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z960R w/Kawasaki FX921V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z970R w/Kawasaki FX1000V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "Z970R w/Kawasaki FX1000V Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "ZG123S Kommander w/Kohler 23 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KUBOTA",
+        "model": "ZG123S Kommander w/Kohler 23 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER JOHN DEERE",
+        "model": "570 w/Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER JOHN DEERE",
+        "model": "570 w/Gas Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "1026R w/Yanmar 3TNV76  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR JOHN DEERE",
+        "model": "1026R w/Yanmar 3TNV76  Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF833",
+        "source_part_number": "G7144",
+        "part_key": "001510502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AM116304",
+        "source_part_number": "G7144",
+        "part_key": "001510502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AM116178",
+        "source_part_number": "G7144",
+        "part_key": "001510502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "GY20709",
+        "source_part_number": "G7144",
+        "part_key": "001510502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "G266",
+        "source_part_number": "G7144",
+        "part_key": "001510502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Kubota",
+        "part_number": "E7185-82320",
+        "source_part_number": "G7144",
+        "part_key": "001510502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3010",
+        "source_part_number": "G7144",
+        "part_key": "001510502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G115",
+        "source_part_number": "G7144",
+        "part_key": "001510502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33011",
+        "source_part_number": "G7144",
+        "part_key": "001510502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

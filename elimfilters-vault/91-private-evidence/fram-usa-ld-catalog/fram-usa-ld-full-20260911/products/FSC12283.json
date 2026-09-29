@@ -1,0 +1,584 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "FSC12283",
+    "line": "TITANIUM"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "FSC12283",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 0.79,
+      "height_mm": 20.07,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Titanium Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [
+      "FDC12283C",
+      "CF12283",
+      "CV12283"
+    ],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C49187C"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10316"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68597396AA"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68308950AA"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68606186AA"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68308950AB"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1957C"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4114"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "230316"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC99238C"
+      },
+      {
+        "manufacturer": "Premium Guard PUREFLOW",
+        "part_number": "PC99238HX"
+      },
+      {
+        "manufacturer": "Premium Guard PUREFLOW",
+        "part_number": "PC99238X"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "CAF1597"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF1957M"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WCAF1957"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "26-21",
+        "make": "CHRYSLER",
+        "model": "GRAND CARAVAN",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "CHRYSLER",
+        "model": "GRAND CARAVAN",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-17",
+        "make": "CHRYSLER",
+        "model": "PACIFICA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-17",
+        "make": "CHRYSLER",
+        "model": "PACIFICA",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CHRYSLER",
+        "model": "VOYAGER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "CHRYSLER",
+        "model": "VOYAGER",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "FSC12283",
+    "source_part_key": "011333666",
+    "source_totals": {
+      "attributes": 30,
+      "applications": 6,
+      "cross_references": 18
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM TITANIUM® Premium Cabin Air Filter features advanced N95 grade filter media* that cleans the air flowing through your vehicle’s HVAC system. FRAM TITANIUM®’s dual-layer, anti-viral† and anti-bacterial†† protection is engineered and tested to capture 95% of microscopic airborne particles as small as 0.3 microns, as well as keeping out 99% of dirt and other contaminants from your ventilation system.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM recommends changing your cabin air filter every 12 months to ensure optimal air flow and filtration efficiency.",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, FSC12283, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Engineered and tested to capture 95% of microscopic airborne particles as small as 0.3 microns.",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "N95 grade dual-layered filter media offers proven anti-bacterial and anti-viral protection.",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Titanium Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "N95 grade - Anti-Bacterial",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "0.79",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "8.3",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "9.9",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Ultimate",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "10",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Under Glove Box",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00840357606643",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Thailand",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.4130",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.2390",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "11.9000",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "11.4800",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "10.7500",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "12.7400",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.3100",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "4.7400",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.413,
+        "case_weight_lb": 1.239,
+        "unit_height_in": 11.9,
+        "unit_length_in": 10.75,
+        "unit_width_in": 1.31,
+        "case_height_in": 11.48,
+        "case_length_in": 12.74,
+        "case_width_in": 4.74,
+        "inferred_case_qty": 3
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 4.956,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 6,
+    "all_cross_references_observed": 18,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:58:45.353Z",
+  "discovered_from": "CF12283",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "CHRYSLER",
+        "model": "GRAND CARAVAN",
+        "year": "26-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "GRAND CARAVAN",
+        "year": "26-21",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "PACIFICA",
+        "year": "26-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "PACIFICA",
+        "year": "26-17",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "VOYAGER",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "VOYAGER",
+        "year": "26-20",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68597396AA",
+        "source_part_number": "FSC12283",
+        "part_key": "011333666",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68308950AA",
+        "source_part_number": "FSC12283",
+        "part_key": "011333666",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68606186AA",
+        "source_part_number": "FSC12283",
+        "part_key": "011333666",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68308950AB",
+        "source_part_number": "FSC12283",
+        "part_key": "011333666",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FRAM Drive",
+        "part_number": "FDC12283C",
+        "source_part_number": "FSC12283",
+        "part_key": "011333666",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FRAM Fresh Breeze",
+        "part_number": "CF12283",
+        "source_part_number": "FSC12283",
+        "part_key": "011333666",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FRAM TrueAir",
+        "part_number": "CV12283",
+        "source_part_number": "FSC12283",
+        "part_key": "011333666",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1957C",
+        "source_part_number": "FSC12283",
+        "part_key": "011333666",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4114",
+        "source_part_number": "FSC12283",
+        "part_key": "011333666",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "230316",
+        "source_part_number": "FSC12283",
+        "part_key": "011333666",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC99238C",
+        "source_part_number": "FSC12283",
+        "part_key": "011333666",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard PUREFLOW",
+        "part_number": "PC99238HX",
+        "source_part_number": "FSC12283",
+        "part_key": "011333666",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard PUREFLOW",
+        "part_number": "PC99238X",
+        "source_part_number": "FSC12283",
+        "part_key": "011333666",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C49187C",
+        "source_part_number": "FSC12283",
+        "part_key": "011333666",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "CAF1597",
+        "source_part_number": "FSC12283",
+        "part_key": "011333666",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF1957M",
+        "source_part_number": "FSC12283",
+        "part_key": "011333666",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WCAF1957",
+        "source_part_number": "FSC12283",
+        "part_key": "011333666",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10316",
+        "source_part_number": "FSC12283",
+        "part_key": "011333666",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

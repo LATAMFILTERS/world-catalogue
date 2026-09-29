@@ -1,0 +1,7309 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH6018",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH6018",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 2.688,
+      "outer_diameter_mm": 68.28,
+      "height_in": 2.641,
+      "height_mm": 67.08,
+      "thread_size": "Metric",
+      "gasket_od_in": 2.5,
+      "gasket_od_mm": 63.5,
+      "gasket_id_in": 2.234,
+      "gasket_id_mm": 56.74,
+      "gasket_thickness_in": 0.203,
+      "gasket_thickness_mm": 5.16,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "Yes",
+      "bypass_relief_valve": "Yes",
+      "bypass_setting_psi": 12,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "2670-440"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "3007-170"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "3007-171"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "0812-005"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "0436-001"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "3436-021"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "3402-155"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "3007-915"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "0436-146"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "0812-034"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "0812-029"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "2670-436"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-03G00"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-07J00"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-3G00X07"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-44D10"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-44D00"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-03G00-X07"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-06B00"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-34E00"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-07-J00"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-06B01"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OC574"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1359"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "ML16818"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57937"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51359"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "EAOM109"
+      },
+      {
+        "manufacturer": "Aprilia",
+        "part_number": "857187"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92359"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85359"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "PH7016"
+      },
+      {
+        "manufacturer": "Emgo",
+        "part_number": "10-55660"
+      },
+      {
+        "manufacturer": "Emgo",
+        "part_number": "5703-0540"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF588"
+      },
+      {
+        "manufacturer": "HiFlo",
+        "part_number": "HF138"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "KN-138"
+      },
+      {
+        "manufacturer": "KYMCO",
+        "part_number": "1541A-PWB1-900"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH7016"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1MC-133"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "PH7016"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "PH7016"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "09-03",
+        "make": "SUZUKI",
+        "model": "AN650 BURGMAN",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "15-13",
+        "make": "SUZUKI",
+        "model": "AN650A BURGMAN ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-16",
+        "make": "SUZUKI",
+        "model": "AN650A BURGMAN ABS EXECUTIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-06",
+        "make": "SUZUKI",
+        "model": "AN650A BURGMAN EXECUTIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "12-11",
+        "make": "SUZUKI",
+        "model": "AN650A BURGMAN EXECUTIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-08",
+        "make": "SUZUKI",
+        "model": "C109R BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-08",
+        "make": "SUZUKI",
+        "model": "C109RT BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-05",
+        "make": "SUZUKI",
+        "model": "C50 BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2013",
+        "make": "SUZUKI",
+        "model": "C50 BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-15",
+        "make": "SUZUKI",
+        "model": "C50 BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2014",
+        "make": "SUZUKI",
+        "model": "C50 BOULEVARD B.O.S.S.",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2009",
+        "make": "SUZUKI",
+        "model": "C50 BOULEVARD SE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2013",
+        "make": "SUZUKI",
+        "model": "C50 BOULEVARD SE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "08-05",
+        "make": "SUZUKI",
+        "model": "C50B BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "08-06",
+        "make": "SUZUKI",
+        "model": "C50C BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-05",
+        "make": "SUZUKI",
+        "model": "C50T BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-11",
+        "make": "SUZUKI",
+        "model": "C50T BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2012",
+        "make": "SUZUKI",
+        "model": "C50T BOULEVARD CLASSIC",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2025",
+        "make": "SUZUKI",
+        "model": "C50T BOULEVARD SPECIAL",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-05",
+        "make": "SUZUKI",
+        "model": "C90 BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2013",
+        "make": "SUZUKI",
+        "model": "C90 BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-13",
+        "make": "SUZUKI",
+        "model": "C90 BOULEVARD B.O.S.S.",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "08-05",
+        "make": "SUZUKI",
+        "model": "C90B BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-05",
+        "make": "SUZUKI",
+        "model": "C90T BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-15",
+        "make": "SUZUKI",
+        "model": "C90T BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2013",
+        "make": "SUZUKI",
+        "model": "C90T BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2013",
+        "make": "SUZUKI",
+        "model": "C90T BOULEVARD B.O.S.S.",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-02",
+        "make": "SUZUKI",
+        "model": "DL1000 V-STROM",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-18",
+        "make": "SUZUKI",
+        "model": "DL1000 V-STROM",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2012",
+        "make": "SUZUKI",
+        "model": "DL1000 V-STROM",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "SUZUKI",
+        "model": "DL1000 V-STROM ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "SUZUKI",
+        "model": "DL1000 V-STROM ABS ADVENTURE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2012",
+        "make": "SUZUKI",
+        "model": "DL1000 V-STROM ADVENTURE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2018",
+        "make": "SUZUKI",
+        "model": "DL1000 V-STROM XT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2019",
+        "make": "SUZUKI",
+        "model": "DL1000 V-STROM XT ADVENTURE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2020",
+        "make": "SUZUKI",
+        "model": "DL1050 V-STROM 1050",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-23",
+        "make": "SUZUKI",
+        "model": "DL1050 V-STROM 1050",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-23",
+        "make": "SUZUKI",
+        "model": "DL1050 V-STROM 1050DE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2023",
+        "make": "SUZUKI",
+        "model": "DL1050 V-STROM 1050DE ADVENTURE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2020",
+        "make": "SUZUKI",
+        "model": "DL1050 V-STROM 1050XT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2022",
+        "make": "SUZUKI",
+        "model": "DL1050 V-STROM 1050XT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2020",
+        "make": "SUZUKI",
+        "model": "DL1050 V-STROM 1050XT ADVENTURE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2022",
+        "make": "SUZUKI",
+        "model": "DL1050 V-STROM 1050XT ADVENTURE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-04",
+        "make": "SUZUKI",
+        "model": "DL650 V-STROM",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2011",
+        "make": "SUZUKI",
+        "model": "DL650 V-STROM",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "21-11",
+        "make": "SUZUKI",
+        "model": "DL650 V-STROM ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-21",
+        "make": "SUZUKI",
+        "model": "DL650A V-STROM 650 ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-21",
+        "make": "SUZUKI",
+        "model": "DL650A V-STROM 650XT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-21",
+        "make": "SUZUKI",
+        "model": "DL650A V-STROM 650XT ADVENTURE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-07",
+        "make": "SUZUKI",
+        "model": "DL650A V-STROM ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-11",
+        "make": "SUZUKI",
+        "model": "DL650A V-STROM ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "15-12",
+        "make": "SUZUKI",
+        "model": "DL650A V-STROM ABS ADVENTURE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-19",
+        "make": "SUZUKI",
+        "model": "DL650A V-STROM XT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-15",
+        "make": "SUZUKI",
+        "model": "DL650A V-STROM XT ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2020",
+        "make": "SUZUKI",
+        "model": "DL650A V-STROM XT ADVENTURE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2019",
+        "make": "SUZUKI",
+        "model": "DL650A V-STROM XT TOURING",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-24",
+        "make": "SUZUKI",
+        "model": "DL800 V-STROM 800",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2024",
+        "make": "SUZUKI",
+        "model": "DL800 V-STROM 800 TOURING",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-23",
+        "make": "SUZUKI",
+        "model": "DL800 V-STROM 800DE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-23",
+        "make": "SUZUKI",
+        "model": "DL800 V-STROM 800DE ADVENTURE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "05-97",
+        "make": "SUZUKI",
+        "model": "GSF1200S BANDIT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-07",
+        "make": "SUZUKI",
+        "model": "GSF1250S BANDIT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-07",
+        "make": "SUZUKI",
+        "model": "GSF1250SA BANDIT ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "03-96",
+        "make": "SUZUKI",
+        "model": "GSF600S BANDIT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "93-88",
+        "make": "SUZUKI",
+        "model": "GSX1100F KATANA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "93-91",
+        "make": "SUZUKI",
+        "model": "GSX1100G",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2011",
+        "make": "SUZUKI",
+        "model": "GSX1250FA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2008",
+        "make": "SUZUKI",
+        "model": "GSX1300BK B-KING",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-99",
+        "make": "SUZUKI",
+        "model": "GSX1300R HAYABUSA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-11",
+        "make": "SUZUKI",
+        "model": "GSX1300R HAYABUSA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-22",
+        "make": "SUZUKI",
+        "model": "GSX1300R HAYABUSA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2024",
+        "make": "SUZUKI",
+        "model": "GSX1300R HAYABUSA 25TH ANNIVERSARY",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2014",
+        "make": "SUZUKI",
+        "model": "GSX1300R HAYABUSA 50TH ANN. EDITION",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-12",
+        "make": "SUZUKI",
+        "model": "GSX1300R HAYABUSA LIMITED EDITION",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "SUZUKI",
+        "model": "GSX1300R HAYABUSA LIMITED EDITION",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2016",
+        "make": "SUZUKI",
+        "model": "GSX1300RA  HAYABUSA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-18",
+        "make": "SUZUKI",
+        "model": "GSX250R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "22-19",
+        "make": "SUZUKI",
+        "model": "GSX250R ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-24",
+        "make": "SUZUKI",
+        "model": "GSX250R ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-88",
+        "make": "SUZUKI",
+        "model": "GSX600F KATANA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-08",
+        "make": "SUZUKI",
+        "model": "GSX650F",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-89",
+        "make": "SUZUKI",
+        "model": "GSX750F KATANA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-24",
+        "make": "SUZUKI",
+        "model": "GSX-8R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-23",
+        "make": "SUZUKI",
+        "model": "GSX-8S",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-01",
+        "make": "SUZUKI",
+        "model": "GSX-R1000",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-11",
+        "make": "SUZUKI",
+        "model": "GSX-R1000",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-20",
+        "make": "SUZUKI",
+        "model": "GSX-R1000",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-17",
+        "make": "SUZUKI",
+        "model": "GSX-R1000 ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-17",
+        "make": "SUZUKI",
+        "model": "GSX-R1000R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2021",
+        "make": "SUZUKI",
+        "model": "GSX-R1000R 100TH ANNIVERSARY EDITION",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-22",
+        "make": "SUZUKI",
+        "model": "GSX-R1000RZ",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "98-86",
+        "make": "SUZUKI",
+        "model": "GSX-R1100",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-97",
+        "make": "SUZUKI",
+        "model": "GSX-R600",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-11",
+        "make": "SUZUKI",
+        "model": "GSX-R600",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2021",
+        "make": "SUZUKI",
+        "model": "GSX-R600 100TH ANNIVERSARY EDITION",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-22",
+        "make": "SUZUKI",
+        "model": "GSX-R600Z",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-96",
+        "make": "SUZUKI",
+        "model": "GSX-R750",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-11",
+        "make": "SUZUKI",
+        "model": "GSX-R750",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "92-88",
+        "make": "SUZUKI",
+        "model": "GSX-R750",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2021",
+        "make": "SUZUKI",
+        "model": "GSX-R750 100TH ANNIVERSARY EDITION",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-22",
+        "make": "SUZUKI",
+        "model": "GSX-R750Z",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "17-16",
+        "make": "SUZUKI",
+        "model": "GSX-S1000",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-16",
+        "make": "SUZUKI",
+        "model": "GSX-S1000 ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-22",
+        "make": "SUZUKI",
+        "model": "GSX-S1000 ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-16",
+        "make": "SUZUKI",
+        "model": "GSX-S1000F ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2020",
+        "make": "SUZUKI",
+        "model": "GSX-S1000F ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2019",
+        "make": "SUZUKI",
+        "model": "GSX-S1000FZ",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-22",
+        "make": "SUZUKI",
+        "model": "GSX-S1000GT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-22",
+        "make": "SUZUKI",
+        "model": "GSX-S1000GT+",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-24",
+        "make": "SUZUKI",
+        "model": "GSX-S1000GX+",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2020",
+        "make": "SUZUKI",
+        "model": "GSX-S1000S KATANA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-18",
+        "make": "SUZUKI",
+        "model": "GSX-S1000Z",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "SUZUKI",
+        "model": "GSX-S750",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2018",
+        "make": "SUZUKI",
+        "model": "GSX-S750",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2020",
+        "make": "SUZUKI",
+        "model": "GSX-S750",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2022",
+        "make": "SUZUKI",
+        "model": "GSX-S750",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2019",
+        "make": "SUZUKI",
+        "model": "GSX-S750 ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-18",
+        "make": "SUZUKI",
+        "model": "GSX-S750Z",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2015",
+        "make": "SUZUKI",
+        "model": "GSX-S750Z",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2021",
+        "make": "SUZUKI",
+        "model": "GSX-S750Z",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2023",
+        "make": "SUZUKI",
+        "model": "GSX-S750Z",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-20",
+        "make": "SUZUKI",
+        "model": "GSX-S750Z ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "88-87",
+        "make": "SUZUKI",
+        "model": "GV1400 CAVALCADE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2013",
+        "make": "SUZUKI",
+        "model": "GW250",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2015",
+        "make": "SUZUKI",
+        "model": "GW250",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2017",
+        "make": "SUZUKI",
+        "model": "GW250",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "07-02",
+        "make": "SUZUKI",
+        "model": "LT-A400 EIGER 2X4 AUTO",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "07-02",
+        "make": "SUZUKI",
+        "model": "LT-A400F EIGER 4X4 AUTO",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "10-08",
+        "make": "SUZUKI",
+        "model": "LT-A400F KINGQUAD AS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-11",
+        "make": "SUZUKI",
+        "model": "LT-A400F KINGQUAD ASI",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2014",
+        "make": "SUZUKI",
+        "model": "LT-A400F KINGQUAD ASI LE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2016",
+        "make": "SUZUKI",
+        "model": "LT-A400F KINGQUAD ASI LE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-17",
+        "make": "SUZUKI",
+        "model": "LT-A400F KINGQUAD ASI SE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-24",
+        "make": "SUZUKI",
+        "model": "LT-A400F KINGQUAD ASI SE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-21",
+        "make": "SUZUKI",
+        "model": "LT-A400F KINGQUAD ASI SE+",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-19",
+        "make": "SUZUKI",
+        "model": "LT-A400F KINGQUAD ASI+",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "10-07",
+        "make": "SUZUKI",
+        "model": "LT-A450X KINGQUAD AXI 4X4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-11",
+        "make": "SUZUKI",
+        "model": "LT-A500 KINGQUAD AXI",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2009",
+        "make": "SUZUKI",
+        "model": "LT-A500 KINGQUAD AXI POWER STEERING",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-11",
+        "make": "SUZUKI",
+        "model": "LT-A500 KINGQUAD AXI POWER STEERING",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2020",
+        "make": "SUZUKI",
+        "model": "LT-A500 KINGQUAD AXI POWER STEERING RUGGED",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-16",
+        "make": "SUZUKI",
+        "model": "LT-A500 KINGQUAD AXI POWER STEERING SE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-22",
+        "make": "SUZUKI",
+        "model": "LT-A500 KINGQUAD AXI POWER STEERING SE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2017",
+        "make": "SUZUKI",
+        "model": "LT-A500 KINGQUAD AXI POWER STEERING SE RUGGED",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2025",
+        "make": "SUZUKI",
+        "model": "LT-A500 KINGQUAD AXI POWER STEERING SE+",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-19",
+        "make": "SUZUKI",
+        "model": "LT-A500 KINGQUAD AXI POWER STEERING SE+",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2020",
+        "make": "SUZUKI",
+        "model": "LT-A500 KINGQUAD AXI POWER STEERING SE+ RUGGED",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "01-00",
+        "make": "SUZUKI",
+        "model": "LT-A500F QUADMASTER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "07-02",
+        "make": "SUZUKI",
+        "model": "LT-A500F VINSON 500 4X4 AUTO",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "07-05",
+        "make": "SUZUKI",
+        "model": "LT-A700X KINGQUAD 4X4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "SUZUKI",
+        "model": "LT-A750 KINGQUAD 4X4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2025",
+        "make": "SUZUKI",
+        "model": "LT-A750 KINGQUAD AXI 4X4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-11",
+        "make": "SUZUKI",
+        "model": "LT-A750 KINGQUAD AXI POWER STEERING",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "15-14",
+        "make": "SUZUKI",
+        "model": "LT-A750 KINGQUAD AXI POWER STEERING LE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2020",
+        "make": "SUZUKI",
+        "model": "LT-A750 KINGQUAD AXI POWER STEERING RUGGED",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-16",
+        "make": "SUZUKI",
+        "model": "LT-A750 KINGQUAD AXI POWER STEERING SE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2017",
+        "make": "SUZUKI",
+        "model": "LT-A750 KINGQUAD AXI POWER STEERING SE RUGGED",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "SUZUKI",
+        "model": "LT-A750 KINGQUAD AXI POWER STEERING SE+",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2020",
+        "make": "SUZUKI",
+        "model": "LT-A750 KINGQUAD AXI POWER STEERING SE+ RUGGED",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2024",
+        "make": "SUZUKI",
+        "model": "LT-A750 KINGQUAD AXI POWER STEERING SE+ RUGGED",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-08",
+        "make": "SUZUKI",
+        "model": "LT-A750X KINGQUAD AXI 4X4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-11",
+        "make": "SUZUKI",
+        "model": "LT-A750X KINGQUAD AXI 4X4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2014",
+        "make": "SUZUKI",
+        "model": "LT-A750X KINGQUAD AXI 4X4 LE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "07-02",
+        "make": "SUZUKI",
+        "model": "LT-F400 EIGER 2X4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "07-02",
+        "make": "SUZUKI",
+        "model": "LT-F400F EIGER 4X4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "10-08",
+        "make": "SUZUKI",
+        "model": "LT-F400F KINGQUAD FS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-11",
+        "make": "SUZUKI",
+        "model": "LT-F400F KINGQUAD FSI",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2014",
+        "make": "SUZUKI",
+        "model": "LT-F400F KINGQUAD FSI LE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-98",
+        "make": "SUZUKI",
+        "model": "LT-F500F QUADRUNNER 4X4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "07-03",
+        "make": "SUZUKI",
+        "model": "LT-F500F VINSON 500 4X4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "05-04",
+        "make": "SUZUKI",
+        "model": "LT-V700F TWIN PEAKS 700 4X4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-06",
+        "make": "SUZUKI",
+        "model": "M109R BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "14-11",
+        "make": "SUZUKI",
+        "model": "M109R BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-24",
+        "make": "SUZUKI",
+        "model": "M109R BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-15",
+        "make": "SUZUKI",
+        "model": "M109R BOULEVARD B.O.S.S.",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-05",
+        "make": "SUZUKI",
+        "model": "M50 BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-13",
+        "make": "SUZUKI",
+        "model": "M50 BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2007",
+        "make": "SUZUKI",
+        "model": "M50 BOULEVARD LIMITED",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2009",
+        "make": "SUZUKI",
+        "model": "M50 BOULEVARD SE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-05",
+        "make": "SUZUKI",
+        "model": "M50B BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-15",
+        "make": "SUZUKI",
+        "model": "M90 BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2009",
+        "make": "SUZUKI",
+        "model": "M90 BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "96-94",
+        "make": "SUZUKI",
+        "model": "RF600",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "96-94",
+        "make": "SUZUKI",
+        "model": "RF900",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-05",
+        "make": "SUZUKI",
+        "model": "S50 BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "08-05",
+        "make": "SUZUKI",
+        "model": "S83 BOULEVARD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-13",
+        "make": "SUZUKI",
+        "model": "SFV650",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-09",
+        "make": "SUZUKI",
+        "model": "SFV650 GLADIUS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "07-03",
+        "make": "SUZUKI",
+        "model": "SV1000/S",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "08-99",
+        "make": "SUZUKI",
+        "model": "SV650",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-15",
+        "make": "SUZUKI",
+        "model": "SV650",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-22",
+        "make": "SUZUKI",
+        "model": "SV650",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-17",
+        "make": "SUZUKI",
+        "model": "SV650 ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "17-09",
+        "make": "SUZUKI",
+        "model": "SV650A ABS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-04",
+        "make": "SUZUKI",
+        "model": "SV650S",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-19",
+        "make": "SUZUKI",
+        "model": "SV650X",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "03-98",
+        "make": "SUZUKI",
+        "model": "TL1000R",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "00-97",
+        "make": "SUZUKI",
+        "model": "TL1000S",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "04-98",
+        "make": "SUZUKI",
+        "model": "VL1500 INTRUDER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "04-01",
+        "make": "SUZUKI",
+        "model": "VL800 INTRUDER VOLUSIA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "04-87",
+        "make": "SUZUKI",
+        "model": "VS1400GL INTRUDER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1987",
+        "make": "SUZUKI",
+        "model": "VS700 INTRUDER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "91-88",
+        "make": "SUZUKI",
+        "model": "VS750GL INTRUDER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "03-92",
+        "make": "SUZUKI",
+        "model": "VS800GL INTRUDER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "93-90",
+        "make": "SUZUKI",
+        "model": "VX800",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "04-97",
+        "make": "SUZUKI",
+        "model": "VZ800 MARAUDER",
+        "engine": "All",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "PH6018",
+    "source_part_key": "001470305",
+    "source_totals": {
+      "attributes": 42,
+      "applications": 552,
+      "cross_references": 42
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® oil filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE (original equipment) recommended intervals. Equipped with SureGrip® technology, FRAM Extra Guard® oil filters provide a non-slip surface allowing for easy install and removal.\\nThe silicone anti-drain back valve ensures safe engine startups, extending the life of the oil filter for up to 10,000 miles (16,000 kilometers).",
+        "recno": "0"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, PH6018, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Motorcycle Full-Flow Spin-on Oil Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "Yes",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "Yes",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "85"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Metric",
+        "recno": "86"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "88"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base",
+        "recno": "89"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Black",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100545428",
+        "recno": "92"
+      },
+      {
+        "attribute": "Attachment Type",
+        "value": "Spin-On",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "94"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "95"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "2.641",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "2.688",
+        "recno": "97"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "98"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "2.234",
+        "recno": "99"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "2.500",
+        "recno": "100"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.203",
+        "recno": "101"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Millimeter)",
+        "value": "M20x1.0",
+        "recno": "102"
+      },
+      {
+        "attribute": "Bypass Relief Valve Setting (Pounds per Square Inch)",
+        "value": "12",
+        "recno": "103"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "104"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "105"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "106"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "107"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.4080",
+        "recno": "111"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "2.4480",
+        "recno": "112"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "2.6870",
+        "recno": "113"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "8.5000",
+        "recno": "114"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "2.7500",
+        "recno": "115"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "5.7500",
+        "recno": "116"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "2.7500",
+        "recno": "117"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "2.7500",
+        "recno": "118"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.408,
+        "case_weight_lb": 2.448,
+        "unit_height_in": 2.687,
+        "unit_length_in": 2.75,
+        "unit_width_in": 2.75,
+        "case_height_in": 8.5,
+        "case_length_in": 5.75,
+        "case_width_in": 2.75,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 4.896,
+        "estimated_case_dimensions": {
+          "length_in": 7.667,
+          "width_in": 4.125,
+          "height_in": 8.5,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 552,
+    "all_cross_references_observed": 42,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:19:48.588Z",
+  "discovered_from": "PH6018",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "APRILIA",
+        "model": "RSV4 1100 FACTORY",
+        "year": "2019",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APRILIA",
+        "model": "RSV4 FACTORY",
+        "year": "2010",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APRILIA",
+        "model": "RSV4 FACTORY APRC ABS",
+        "year": "15-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APRILIA",
+        "model": "RSV4 FACTORY SE",
+        "year": "12-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APRILIA",
+        "model": "RSV4 R",
+        "year": "12-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APRILIA",
+        "model": "RSV4 R APRC ABS",
+        "year": "15-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APRILIA",
+        "model": "RSV4 RF",
+        "year": "18-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APRILIA",
+        "model": "RSV4 RF LE",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APRILIA",
+        "model": "TUONO V4",
+        "year": "2022",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APRILIA",
+        "model": "TUONO V4 1100 FACTORY",
+        "year": "21-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APRILIA",
+        "model": "TUONO V4 1100 FACTORY ABS",
+        "year": "17-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APRILIA",
+        "model": "TUONO V4 1100 RR",
+        "year": "21-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APRILIA",
+        "model": "TUONO V4 1100 RR ABS",
+        "year": "17-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APRILIA",
+        "model": "TUONO V4 1100 RR MISANO",
+        "year": "2020",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APRILIA",
+        "model": "TUONO V4 FACTORY",
+        "year": "2022",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "1000 EFI H2 4X4 AUTO MUD PRO",
+        "year": "11-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "1000 EFI H2 4X4 AUTO TRV",
+        "year": "11-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "1000 LTD",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "1000 TRV CRUISER",
+        "year": "11-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "1000 XT",
+        "year": "17-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "1000I GT",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "350",
+        "year": "12-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "366 4X4 AUTO",
+        "year": "09-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "366 4X4 AUTO SE",
+        "year": "11-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "375 AUTO 2X4",
+        "year": "2002",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "375 AUTO 4X4",
+        "year": "2002",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "400",
+        "year": "15-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "400 2X4",
+        "year": "04-98",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "400 2X4 AUTO",
+        "year": "04-03",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "400 2X4 FIS",
+        "year": "2002",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "400 4X4",
+        "year": "07-98",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "400 4X4 ACT",
+        "year": "04-03",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "400 4X4 AUTO",
+        "year": "08-02",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "400 4X4 AUTO ACT",
+        "year": "04-03",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "400 4X4 AUTO LE",
+        "year": "07-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "400 4X4 AUTO MRP",
+        "year": "04-03",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "400 4X4 AUTO TBX",
+        "year": "06-04",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "400 4X4 AUTO TRV",
+        "year": "10-06",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "400 4X4 AUTO TRV PLUS",
+        "year": "2007",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "400 4X4 AUTO VP",
+        "year": "06-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "400 4X4 FIS",
+        "year": "2002",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "400 4X4 MRP",
+        "year": "04-03",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "400 4X4 VP",
+        "year": "06-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "400 CORE",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "425",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "425I",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "425I SE",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "450",
+        "year": "15-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "450",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "450 CORE",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "450 EFI H1 4X4 AUTO",
+        "year": "2010",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "450 LTD",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "450 TRV",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "450I",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "450I GT",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "500",
+        "year": "17-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "500 4X4",
+        "year": "09-98",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "500 4X4 AUTO",
+        "year": "01-00",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "500 4X4 AUTO",
+        "year": "09-03",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "500 4X4 AUTO FIS",
+        "year": "2002",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "500 4X4 AUTO LE",
+        "year": "06-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "500 4X4 AUTO M4",
+        "year": "2008",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "500 4X4 AUTO MRP",
+        "year": "04-03",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "500 4X4 AUTO TBX",
+        "year": "06-02",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "500 4X4 AUTO TRV",
+        "year": "06-03",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "500 4X4 AUTO TRV",
+        "year": "2008",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "500 4X4 FIS",
+        "year": "2002",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "500 4X4 MRP",
+        "year": "04-03",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "500 CORE",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "500 XT",
+        "year": "14-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "550",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "550",
+        "year": "2014",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "550 4X4 AUTO",
+        "year": "11-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "550 4X4 AUTO LE",
+        "year": "10-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "550 4X4 AUTO TRV",
+        "year": "11-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "550 4X4 AUTO TRV LE",
+        "year": "2009",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "550 CORE",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "550 H1 EFI",
+        "year": "2009",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "550 LTD",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "550 LTD",
+        "year": "2014",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "550 S",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "550 TRV CRUISER",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "550 TRV GT",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "550 TRV S GT",
+        "year": "2010",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "550 XT",
+        "year": "14-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "550I GT",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "550I LTD",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "650 4X4 AUTO TBX",
+        "year": "2009",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "650 H1 4X4 AUTO",
+        "year": "08-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "650 H1 4X4 AUTO",
+        "year": "11-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "650 H1 4X4 AUTO LE",
+        "year": "2007",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "650 H1 4X4 AUTO MUD PRO",
+        "year": "11-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "650 H1 4X4 AUTO SE",
+        "year": "2006",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "650 H1 4X4 AUTO TBX",
+        "year": "2007",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "650 H1 4X4 AUTO TRV",
+        "year": "09-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "650 H1 4X4 AUTO TRV PLUS",
+        "year": "2007",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "650 H1 4X4 AUTO TRV PLUS LE",
+        "year": "2007",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700",
+        "year": "2014",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700 CORE",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700 EFI 4X4 AUTO",
+        "year": "08-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700 EFI 4X4 AUTO LE",
+        "year": "2007",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700 EFI 4X4 AUTO M4",
+        "year": "2008",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700 EFI 4X4 AUTO SE",
+        "year": "2006",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700 EFI 4X4 AUTO TRV CRUISER",
+        "year": "11-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700 EFI 4X4 AUTO TRV LE",
+        "year": "2008",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700 EFI H1 4X4 AUTO",
+        "year": "10-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700 EFI H1 4X4 AUTO LE",
+        "year": "10-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700 EFI H1 4X4 AUTO MUD PRO",
+        "year": "11-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700 EFI H1 4X4 AUTO SE",
+        "year": "09-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700 EFI H1 4X4 AUTO TBX",
+        "year": "2010",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700 EFI H1 4X4 AUTO TRV",
+        "year": "11-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700 LTD",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700 LTD",
+        "year": "2014",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700 S",
+        "year": "11-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700 TRV GT",
+        "year": "11-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700 XT",
+        "year": "14-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700I",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700I GT",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "700I LTD",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 400",
+        "year": "17-16",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 450",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 450",
+        "year": "24-21",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 500",
+        "year": "2017",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 500 XT",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 550",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 550 XT",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 570",
+        "year": "2020",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 570 EPS",
+        "year": "21-20",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 570 EPS SE",
+        "year": "2021",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 600 BLACK HILLS EDITION",
+        "year": "24-23",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 600 EPS",
+        "year": "24-22",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 600 LTD",
+        "year": "24-22",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 600 MUD PRO",
+        "year": "24-23",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 600 SE",
+        "year": "23-22",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 600 TRV EPS",
+        "year": "24-23",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 600 TRV LTD",
+        "year": "24-23",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 600 TRV XT",
+        "year": "24-23",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 600 XT",
+        "year": "24-22",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 700",
+        "year": "17-16",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 700",
+        "year": "2020",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 700 EPS SE",
+        "year": "2021",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA 700 XT",
+        "year": "17-16",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA TBX 700",
+        "year": "2020",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA TRV 1000 XT",
+        "year": "2017",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA TRV 500",
+        "year": "20-17",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA TRV 550 XT",
+        "year": "17-16",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA TRV 700",
+        "year": "21-20",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA TRV 700 EPS",
+        "year": "2022",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ALTERRA TRV 700 XT",
+        "year": "2017",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "BEARCAT 3000 LT",
+        "year": "17-16",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "BEARCAT 454 2X4",
+        "year": "98-97",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "BEARCAT 454 4X4",
+        "year": "98-96",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "BEARCAT 5000 XT",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "BEARCAT 5000 XT GS",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "BEARCAT 5000 XT LIMITED",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "BEARCAT Z1 XT",
+        "year": "14-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "BEARCAT Z1 XT GS",
+        "year": "14-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "BEARCAT Z1 XT LIMITED",
+        "year": "14-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "HDX 500 XT",
+        "year": "17-16",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "HDX 700 CREW XT",
+        "year": "2017",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "HDX 700 SE HUNTER EDITION",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "HDX 700 XT",
+        "year": "17-16",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "JAGUAR Z1 1100 EFI",
+        "year": "08-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "JAGUAR Z1 1100 EFI SNO PRO",
+        "year": "2008",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "JAGUAR Z1 EARLY BUILD",
+        "year": "2007",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "M 9000 153",
+        "year": "2014",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "M 9000 HCR 162",
+        "year": "15-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "M 9000 LIMITED 162",
+        "year": "16-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "M 9000 SNO PRO 162",
+        "year": "2014",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "M 9000 SNO PRO 162",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "MUDPRO 1000",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "MUDPRO 1000 LTD",
+        "year": "15-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "MUDPRO 1000 LTD",
+        "year": "2017",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "MUDPRO 1000 SE",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "MUDPRO 700",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "MUDPRO 700 LTD",
+        "year": "17-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "MUDPRO 700I",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PANTERA 3000",
+        "year": "17-16",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCLIMB M 1100",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCLIMB M 1100 SNO PRO",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCLIMB M 1100 SNO PRO 50TH",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCLIMB M 1100 SNO PRO LIMITED",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCLIMB M 1100 TURBO",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCLIMB M 1100 TURBO HCR",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCLIMB M 1100 TURBO SNO PRO",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCLIMB M 1100 TURBO SNO PRO 50TH",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCLIMB M 1100 TURBO SNO PRO LIMITED",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCLIMB XF 1100 TURBO SNO PRO HIGH COUNTRY",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCLIMB XF 1100 TURBO SNO PRO HIGH COUNTRY LTD",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCROSS F 1100 LXR",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCROSS F 1100 SNO PRO",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCROSS F 1100 SNO PRO 50TH",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCROSS F 1100 SNO PRO LIMITED",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCROSS F 1100 TURBO LXR",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCROSS F 1100 TURBO SNO PRO",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCROSS F 1100 TURBO SNO PRO 50TH",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCROSS F 1100 TURBO SNO PRO LIMITED",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCROSS F 1100 TURBO SNO PRO RR",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCROSS XF 1100 CROSSTOUR",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCROSS XF 1100 LXR",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCROSS XF 1100 SNO PRO",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCROSS XF 1100 SNO PRO 50TH",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCROSS XF 1100 SNO PRO LIMITED",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCROSS XF 1100 TURBO CROSSTOUR",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCROSS XF 1100 TURBO LXR",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCROSS XF 1100 TURBO SNO PRO",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCROSS XF 1100 TURBO SNO PRO 50TH",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROCROSS XF 1100 TURBO SNO PRO LIMITED",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER 500",
+        "year": "2017",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER 500",
+        "year": "22-20",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER 550",
+        "year": "2009",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER 650 4X4 AUTO",
+        "year": "2008",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER 650 H1",
+        "year": "07-06",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER HDX 500",
+        "year": "15-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER HDX 500 LIMITED",
+        "year": "2014",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER HDX 500 XT",
+        "year": "2014",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER HDX 700",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER HDX 700 LIMITED",
+        "year": "2014",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER HDX 700 XT",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER XT 1000",
+        "year": "17-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER XT 550",
+        "year": "11-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER XT 550",
+        "year": "15-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER XT 550I",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER XT 650 4X4 AUTO",
+        "year": "2008",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER XT 650 4X4 AUTO M4",
+        "year": "2008",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER XT 650 H1",
+        "year": "07-06",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER XT 650 H1",
+        "year": "2009",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER XT 700",
+        "year": "17-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER XT 700",
+        "year": "2009",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER XTX 700",
+        "year": "11-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER XTX 700",
+        "year": "2014",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER XTX 700 H1 EFI",
+        "year": "11-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER XTX 700 LE",
+        "year": "09-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER XTX 700I",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER XTZ 1000",
+        "year": "11-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER XTZ 1000",
+        "year": "2014",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER XTZ 1000 BAJA",
+        "year": "2009",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER XTZ 1000 H2 EFI",
+        "year": "11-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "PROWLER XTZ 1000I",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TBX 700",
+        "year": "17-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TBX 700 LTD",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TBX 700 SE",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TBX 700 XT",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TBX 700I GT",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "THUNDERCAT 1000 4X4 AUTO",
+        "year": "10-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "THUNDERCAT 1000 4X4 AUTO LE",
+        "year": "2010",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TRV 1000 LTD",
+        "year": "15-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TRV 1000 XT",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TRV 1000I CRUISER",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TRV 1000I GT",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TRV 400",
+        "year": "2014",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TRV 400 CORE",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TRV 450I",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TRV 450I GT",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TRV 550 LTD",
+        "year": "15-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TRV 550 XT",
+        "year": "15-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TRV 550I CRUSIER",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TRV 550I GT",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TRV 700 LTD",
+        "year": "15-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TRV 700 SE",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TRV 700 XT",
+        "year": "15-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TRV 700I CRUISER",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TRV 700I GT",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TZ1",
+        "year": "14-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TZ1 LXR",
+        "year": "14-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TZ1 PARK",
+        "year": "2009",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TZ1 TOURING",
+        "year": "10-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TZ1 TOURING LXR",
+        "year": "10-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TZ1 TURBO LXR",
+        "year": "14-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TZ1 TURBO LXR LE",
+        "year": "10-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "TZ1 TURBO TOURING LXR",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "VLX 700",
+        "year": "2017",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "WILDCAT 1000",
+        "year": "15-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "WILDCAT 1000 LTD",
+        "year": "14-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "WILDCAT 4 1000",
+        "year": "14-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "WILDCAT 4 LIMITED",
+        "year": "2014",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "WILDCAT 4X",
+        "year": "17-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "WILDCAT 4X LIMITED",
+        "year": "15-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "WILDCAT SPORT",
+        "year": "16-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "WILDCAT SPORT LIMITED",
+        "year": "17-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "WILDCAT SPORT SE",
+        "year": "2017",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "WILDCAT SPORT XT",
+        "year": "17-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "WILDCAT TRAIL",
+        "year": "17-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "WILDCAT TRAIL LIMITED",
+        "year": "17-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "WILDCAT TRAIL SE",
+        "year": "17-16",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "WILDCAT TRAIL XT",
+        "year": "17-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "WILDCAT X",
+        "year": "17-16",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "WILDCAT X 1000",
+        "year": "15-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "WILDCAT X LIMITED",
+        "year": "17-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "WILDCAT X SE",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "XC 450",
+        "year": "17-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "XC 450I",
+        "year": "12-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "XC 450I",
+        "year": "2014",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "XF 9000 CROSS COUNTRY",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "XF 9000 CROSS COUNTRY LIMITED",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "XF 9000 CROSS COUNTRY SNO PRO",
+        "year": "2014",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "XF 9000 CROSSTOUR",
+        "year": "15-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "XF 9000 HIGH COUNTRY",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "XF 9000 HIGH COUNTRY LIMITED",
+        "year": "15-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "XF 9000 HIGH COUNTRY SNO PRO",
+        "year": "2014",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "XF 9000 LIMITED",
+        "year": "15-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "XF 9000 LXR",
+        "year": "15-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "XF 9000 SNO PRO",
+        "year": "15-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "XR 500",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "XR 550",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "XR 550 LTD",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "XR 550 XT",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "XR 700",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "XR 700 LTD",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "XR 700 XT",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "Z1 1100 EFI",
+        "year": "10-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "Z1 1100 EFI LXR",
+        "year": "11-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "Z1 SNO PRO",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "Z1 TURBO",
+        "year": "10-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "Z1 TURBO EXT",
+        "year": "11-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "Z1 TURBO LXR",
+        "year": "11-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "Z1 TURBO LXR LE",
+        "year": "2009",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "Z1 TURBO SNO PRO",
+        "year": "11-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "Z1 TURBO SNO PRO LIMITED",
+        "year": "11-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ZR 3000 LXR",
+        "year": "2017",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ZR 5000 LXR",
+        "year": "17-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ZR 9000 EL TIGRE",
+        "year": "16-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ZR 9000 LIMITED",
+        "year": "15-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ZR 9000 LIMITED 129",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ZR 9000 LIMITED 137",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ZR 9000 LXR",
+        "year": "16-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ZR 9000 RR",
+        "year": "16-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ZR 9000 SNO PRO",
+        "year": "15-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ZR 9000 SNO PRO 129",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARCTIC CAT",
+        "model": "ZR 9000 SNO PRO 137",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KYMCO",
+        "model": "MAXXER 375 4X4 IRS",
+        "year": "2010",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KYMCO",
+        "model": "MAXXER 450I 4X4",
+        "year": "16-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KYMCO",
+        "model": "MXU375 4X4 IRS",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KYMCO",
+        "model": "MXU375 IRS",
+        "year": "11-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KYMCO",
+        "model": "MXU375 IRS LE",
+        "year": "11-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KYMCO",
+        "model": "MXU450I",
+        "year": "16-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KYMCO",
+        "model": "MXU450I 4X4 IRS",
+        "year": "14-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KYMCO",
+        "model": "MXU450I 4X4 IRS LE",
+        "year": "14-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KYMCO",
+        "model": "MXU450I LE",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KYMCO",
+        "model": "MXU450I LE 50TH ANNIVERSARY",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KYMCO",
+        "model": "UXV 450I",
+        "year": "16-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KYMCO",
+        "model": "UXV 450I CAMO",
+        "year": "16-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KYMCO",
+        "model": "UXV 450I LE",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KYMCO",
+        "model": "UXV 450I LE 50TH ANNIVERSARY",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KYMCO",
+        "model": "UXV 450I TURF",
+        "year": "16-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "AN650 BURGMAN",
+        "year": "09-03",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "AN650A BURGMAN ABS",
+        "year": "15-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "AN650A BURGMAN ABS EXECUTIVE",
+        "year": "18-16",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "AN650A BURGMAN EXECUTIVE",
+        "year": "09-06",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "AN650A BURGMAN EXECUTIVE",
+        "year": "12-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "C109R BOULEVARD",
+        "year": "09-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "C109RT BOULEVARD",
+        "year": "09-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "C50 BOULEVARD",
+        "year": "09-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "C50 BOULEVARD",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "C50 BOULEVARD",
+        "year": "25-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "C50 BOULEVARD B.O.S.S.",
+        "year": "2014",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "C50 BOULEVARD SE",
+        "year": "2009",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "C50 BOULEVARD SE",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "C50B BOULEVARD",
+        "year": "08-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "C50C BOULEVARD",
+        "year": "08-06",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "C50T BOULEVARD",
+        "year": "09-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "C50T BOULEVARD",
+        "year": "23-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "C50T BOULEVARD CLASSIC",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "C50T BOULEVARD SPECIAL",
+        "year": "2025",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "C90 BOULEVARD",
+        "year": "09-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "C90 BOULEVARD",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "C90 BOULEVARD B.O.S.S.",
+        "year": "19-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "C90B BOULEVARD",
+        "year": "08-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "C90T BOULEVARD",
+        "year": "09-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "C90T BOULEVARD",
+        "year": "19-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "C90T BOULEVARD",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "C90T BOULEVARD B.O.S.S.",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL1000 V-STROM",
+        "year": "09-02",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL1000 V-STROM",
+        "year": "19-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL1000 V-STROM",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL1000 V-STROM ABS",
+        "year": "16-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL1000 V-STROM ABS ADVENTURE",
+        "year": "16-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL1000 V-STROM ADVENTURE",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL1000 V-STROM XT",
+        "year": "2018",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL1000 V-STROM XT ADVENTURE",
+        "year": "2019",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL1050 V-STROM 1050",
+        "year": "2020",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL1050 V-STROM 1050",
+        "year": "25-23",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL1050 V-STROM 1050DE",
+        "year": "25-23",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL1050 V-STROM 1050DE ADVENTURE",
+        "year": "2023",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL1050 V-STROM 1050XT",
+        "year": "2020",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL1050 V-STROM 1050XT",
+        "year": "2022",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL1050 V-STROM 1050XT ADVENTURE",
+        "year": "2020",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL1050 V-STROM 1050XT ADVENTURE",
+        "year": "2022",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL650 V-STROM",
+        "year": "09-04",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL650 V-STROM",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL650 V-STROM ABS",
+        "year": "21-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL650A V-STROM 650 ABS",
+        "year": "25-21",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL650A V-STROM 650XT",
+        "year": "25-21",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL650A V-STROM 650XT ADVENTURE",
+        "year": "25-21",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL650A V-STROM ABS",
+        "year": "09-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL650A V-STROM ABS",
+        "year": "20-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL650A V-STROM ABS ADVENTURE",
+        "year": "15-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL650A V-STROM XT",
+        "year": "20-19",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL650A V-STROM XT ABS",
+        "year": "18-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL650A V-STROM XT ADVENTURE",
+        "year": "2020",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL650A V-STROM XT TOURING",
+        "year": "2019",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL800 V-STROM 800",
+        "year": "25-24",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL800 V-STROM 800 TOURING",
+        "year": "2024",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL800 V-STROM 800DE",
+        "year": "25-23",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "DL800 V-STROM 800DE ADVENTURE",
+        "year": "25-23",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSF1200S BANDIT",
+        "year": "05-97",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSF1250S BANDIT",
+        "year": "09-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSF1250SA BANDIT ABS",
+        "year": "09-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSF600S BANDIT",
+        "year": "03-96",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX1100F KATANA",
+        "year": "93-88",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX1100G",
+        "year": "93-91",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX1250FA",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX1300BK B-KING",
+        "year": "2008",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX1300R HAYABUSA",
+        "year": "09-99",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX1300R HAYABUSA",
+        "year": "20-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX1300R HAYABUSA",
+        "year": "25-22",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX1300R HAYABUSA 25TH ANNIVERSARY",
+        "year": "2024",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX1300R HAYABUSA 50TH ANN. EDITION",
+        "year": "2014",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX1300R HAYABUSA LIMITED EDITION",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX1300R HAYABUSA LIMITED EDITION",
+        "year": "2006",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX1300RA  HAYABUSA",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX250R",
+        "year": "20-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX250R ABS",
+        "year": "22-19",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX250R ABS",
+        "year": "25-24",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX600F KATANA",
+        "year": "06-88",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX650F",
+        "year": "09-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX750F KATANA",
+        "year": "06-89",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-8R",
+        "year": "25-24",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-8S",
+        "year": "25-23",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-R1000",
+        "year": "09-01",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-R1000",
+        "year": "18-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-R1000",
+        "year": "25-20",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-R1000 ABS",
+        "year": "18-17",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-R1000R",
+        "year": "25-17",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-R1000R 100TH ANNIVERSARY EDITION",
+        "year": "2021",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-R1000RZ",
+        "year": "25-22",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-R1100",
+        "year": "98-86",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-R600",
+        "year": "09-97",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-R600",
+        "year": "24-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-R600 100TH ANNIVERSARY EDITION",
+        "year": "2021",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-R600Z",
+        "year": "25-22",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-R750",
+        "year": "09-96",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-R750",
+        "year": "25-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-R750",
+        "year": "92-88",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-R750 100TH ANNIVERSARY EDITION",
+        "year": "2021",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-R750Z",
+        "year": "25-22",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-S1000",
+        "year": "17-16",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-S1000 ABS",
+        "year": "20-16",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-S1000 ABS",
+        "year": "25-22",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-S1000F ABS",
+        "year": "18-16",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-S1000F ABS",
+        "year": "2020",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-S1000FZ",
+        "year": "2019",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-S1000GT",
+        "year": "24-22",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-S1000GT+",
+        "year": "25-22",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-S1000GX+",
+        "year": "25-24",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-S1000S KATANA",
+        "year": "2020",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-S1000Z",
+        "year": "19-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-S750",
+        "year": "16-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-S750",
+        "year": "2018",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-S750",
+        "year": "2020",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-S750",
+        "year": "2022",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-S750 ABS",
+        "year": "2019",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-S750Z",
+        "year": "19-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-S750Z",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-S750Z",
+        "year": "2021",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-S750Z",
+        "year": "2023",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GSX-S750Z ABS",
+        "year": "23-20",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GV1400 CAVALCADE",
+        "year": "88-87",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GW250",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GW250",
+        "year": "2015",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GW250",
+        "year": "2017",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A400 EIGER 2X4 AUTO",
+        "year": "07-02",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A400F EIGER 4X4 AUTO",
+        "year": "07-02",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A400F KINGQUAD AS",
+        "year": "10-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A400F KINGQUAD ASI",
+        "year": "25-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A400F KINGQUAD ASI LE",
+        "year": "2014",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A400F KINGQUAD ASI LE",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A400F KINGQUAD ASI SE",
+        "year": "18-17",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A400F KINGQUAD ASI SE",
+        "year": "25-24",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A400F KINGQUAD ASI SE+",
+        "year": "23-21",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A400F KINGQUAD ASI+",
+        "year": "20-19",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A450X KINGQUAD AXI 4X4",
+        "year": "10-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A500 KINGQUAD AXI",
+        "year": "25-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A500 KINGQUAD AXI POWER STEERING",
+        "year": "2009",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A500 KINGQUAD AXI POWER STEERING",
+        "year": "25-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A500 KINGQUAD AXI POWER STEERING RUGGED",
+        "year": "2020",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A500 KINGQUAD AXI POWER STEERING SE",
+        "year": "20-16",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A500 KINGQUAD AXI POWER STEERING SE",
+        "year": "25-22",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A500 KINGQUAD AXI POWER STEERING SE RUGGED",
+        "year": "2017",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A500 KINGQUAD AXI POWER STEERING SE+",
+        "year": "2025",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A500 KINGQUAD AXI POWER STEERING SE+",
+        "year": "23-19",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A500 KINGQUAD AXI POWER STEERING SE+ RUGGED",
+        "year": "2020",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A500F QUADMASTER",
+        "year": "01-00",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A500F VINSON 500 4X4 AUTO",
+        "year": "07-02",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A700X KINGQUAD 4X4",
+        "year": "07-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A750 KINGQUAD 4X4",
+        "year": "16-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A750 KINGQUAD AXI 4X4",
+        "year": "2025",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A750 KINGQUAD AXI POWER STEERING",
+        "year": "25-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A750 KINGQUAD AXI POWER STEERING LE",
+        "year": "15-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A750 KINGQUAD AXI POWER STEERING RUGGED",
+        "year": "2020",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A750 KINGQUAD AXI POWER STEERING SE",
+        "year": "25-16",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A750 KINGQUAD AXI POWER STEERING SE RUGGED",
+        "year": "2017",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A750 KINGQUAD AXI POWER STEERING SE+",
+        "year": "25-19",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A750 KINGQUAD AXI POWER STEERING SE+ RUGGED",
+        "year": "2020",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A750 KINGQUAD AXI POWER STEERING SE+ RUGGED",
+        "year": "2024",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A750X KINGQUAD AXI 4X4",
+        "year": "09-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A750X KINGQUAD AXI 4X4",
+        "year": "24-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-A750X KINGQUAD AXI 4X4 LE",
+        "year": "2014",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-F400 EIGER 2X4",
+        "year": "07-02",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-F400F EIGER 4X4",
+        "year": "07-02",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-F400F KINGQUAD FS",
+        "year": "10-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-F400F KINGQUAD FSI",
+        "year": "25-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-F400F KINGQUAD FSI LE",
+        "year": "2014",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-F500F QUADRUNNER 4X4",
+        "year": "02-98",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-F500F VINSON 500 4X4",
+        "year": "07-03",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "LT-V700F TWIN PEAKS 700 4X4",
+        "year": "05-04",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "M109R BOULEVARD",
+        "year": "09-06",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "M109R BOULEVARD",
+        "year": "14-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "M109R BOULEVARD",
+        "year": "25-24",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "M109R BOULEVARD B.O.S.S.",
+        "year": "23-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "M50 BOULEVARD",
+        "year": "09-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "M50 BOULEVARD",
+        "year": "19-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "M50 BOULEVARD LIMITED",
+        "year": "2007",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "M50 BOULEVARD SE",
+        "year": "2009",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "M50B BOULEVARD",
+        "year": "06-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "M90 BOULEVARD",
+        "year": "19-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "M90 BOULEVARD",
+        "year": "2009",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "RF600",
+        "year": "96-94",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "RF900",
+        "year": "96-94",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "S50 BOULEVARD",
+        "year": "09-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "S83 BOULEVARD",
+        "year": "08-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "SFV650",
+        "year": "16-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "SFV650 GLADIUS",
+        "year": "16-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "SV1000/S",
+        "year": "07-03",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "SV650",
+        "year": "08-99",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "SV650",
+        "year": "20-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "SV650",
+        "year": "23-22",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "SV650 ABS",
+        "year": "25-17",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "SV650A ABS",
+        "year": "17-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "SV650S",
+        "year": "09-04",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "SV650X",
+        "year": "20-19",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "TL1000R",
+        "year": "03-98",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "TL1000S",
+        "year": "00-97",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "VL1500 INTRUDER",
+        "year": "04-98",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "VL800 INTRUDER VOLUSIA",
+        "year": "04-01",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "VS1400GL INTRUDER",
+        "year": "04-87",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "VS700 INTRUDER",
+        "year": "1987",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "VS750GL INTRUDER",
+        "year": "91-88",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "VS800GL INTRUDER",
+        "year": "03-92",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "VX800",
+        "year": "93-90",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "VZ800 MARAUDER",
+        "year": "04-97",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "EAOM109",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Aprilia",
+        "part_number": "857187",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "2670-440",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "3007-170",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "3007-171",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "0812-005",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "0436-001",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "3436-021",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "3402-155",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "3007-915",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "0436-146",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "0812-034",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "0812-029",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "2670-436",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92359",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85359",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "PH7016",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Emgo",
+        "part_number": "10-55660",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Emgo",
+        "part_number": "5703-0540",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF588",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "HiFlo",
+        "part_number": "HF138",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "KN-138",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "KYMCO",
+        "part_number": "1541A-PWB1-900",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH7016",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OC574",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1MC-133",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1359",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "ML16818",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "PH7016",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-03G00",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-07J00",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-3G00X07",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-44D10",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-44D00",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-03G00-X07",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-06B00",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-34E00",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-07-J00",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-06B01",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "PH7016",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57937",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51359",
+        "source_part_number": "PH6018",
+        "part_key": "001470305",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

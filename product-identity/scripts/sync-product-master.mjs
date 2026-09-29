@@ -7,14 +7,14 @@ import pg from 'pg';
 const { Pool } = pg;
 
 const FAMILY_MAP = {
-  oil: { family: 'oil_filter', authorityCategory: 'LUBE_OIL', defaultTechnology: 'SINTRAX®' },
-  lube: { family: 'oil_filter', authorityCategory: 'LUBE_OIL', defaultTechnology: 'SINTRAX®' },
-  fuel: { family: 'fuel_filter', authorityCategory: 'FUEL', defaultTechnology: 'SYNTAPORE®' },
-  'fuel/water separator': { family: 'fuel_water_separator', authorityCategory: 'FUEL_WATER_SEPARATOR', defaultTechnology: 'HYDRACORE®' },
-  'fuel water separator': { family: 'fuel_water_separator', authorityCategory: 'FUEL_WATER_SEPARATOR', defaultTechnology: 'HYDRACORE®' },
-  hydraulic: { family: 'hydraulic_filter', authorityCategory: 'HYDRAULIC', defaultTechnology: 'NANOFORCE®' },
-  coolant: { family: 'coolant_filter', authorityCategory: 'COOLANT', defaultTechnology: 'THERMACORE®' },
-  'air dryer': { family: 'air_dryer', authorityCategory: 'AIR_DRYER', defaultTechnology: 'DRYCORE®' }
+  oil: { family: 'oil_filter', authorityCategory: 'LUBE_OIL', defaultTechnology: 'SYNTRAX™', technologyDescriptor: 'Powered Filtration' },
+  lube: { family: 'oil_filter', authorityCategory: 'LUBE_OIL', defaultTechnology: 'SYNTRAX™', technologyDescriptor: 'Powered Filtration' },
+  fuel: { family: 'fuel_filter', authorityCategory: 'FUEL', defaultTechnology: 'SYNTAPORE™', technologyDescriptor: 'Fuel System Protection' },
+  'fuel/water separator': { family: 'fuel_water_separator', authorityCategory: 'FUEL_WATER_SEPARATOR', defaultTechnology: 'HYDROCORE™', technologyDescriptor: null },
+  'fuel water separator': { family: 'fuel_water_separator', authorityCategory: 'FUEL_WATER_SEPARATOR', defaultTechnology: 'HYDROCORE™', technologyDescriptor: null },
+  hydraulic: { family: 'hydraulic_filter', authorityCategory: 'HYDRAULIC', defaultTechnology: 'NANOFORCE™', technologyDescriptor: null },
+  coolant: { family: 'coolant_filter', authorityCategory: 'COOLANT', defaultTechnology: 'THERMACORE™', technologyDescriptor: null },
+  'air dryer': { family: 'air_dryer', authorityCategory: 'AIR_DRYER', defaultTechnology: 'DRYCORE', technologyDescriptor: null }
 };
 
 function normalizeFamily(filterType = '') {
@@ -22,7 +22,7 @@ function normalizeFamily(filterType = '') {
   for (const [key, value] of Object.entries(FAMILY_MAP)) {
     if (normalized.includes(key)) return value;
   }
-  return { family: normalized.replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '') || 'unknown', authorityCategory: null, defaultTechnology: null };
+  return { family: normalized.replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '') || 'unknown', authorityCategory: null, defaultTechnology: null, technologyDescriptor: null };
 }
 
 function normalizeCrossrefs(row) {
@@ -67,7 +67,9 @@ function buildMaster(row, existing = {}) {
     authority_category: familyInfo.authorityCategory,
     construction,
     technology,
+    technology_descriptor: familyInfo.technologyDescriptor,
     authority_file: 'data/product-identity/authorities/cylindrical-print-layout-authority.json',
+    source_geometry: existing.source_geometry ?? null,
     technical_source: {
       source: 'world_catalogue.elimfilters_catalog',
       verified: true,
@@ -96,11 +98,11 @@ function buildMaster(row, existing = {}) {
       same_artwork_both_sides: true,
       elements: [
         'OFFICIAL_LOGO:frontend/public/assets/logo-elimfilters.png',
-        'TOTAL ASSET PROTECTION',
+        'TOTAL ASSETS PROTECTION',
         row.sku,
         descriptor,
         technology,
-        'Powered Filtration',
+        familyInfo.technologyDescriptor,
         'Installation Rotation Direction Marks'
       ].filter(Boolean),
       container_color_hex: '#414141',
@@ -108,14 +110,18 @@ function buildMaster(row, existing = {}) {
       extra_text_allowed: false,
       qr_allowed: false,
       oem_equivalence_text_allowed: false,
-      technical_spec_panel_allowed: false
+      technical_spec_panel_allowed: false,
+      technology_asset: existing.lithography?.technology_asset ?? null,
+      preserve_layout_from_approved_master: existing.lithography?.preserve_layout_from_approved_master ?? false
     },
     media: {
+      ...(existing.media || {}),
       geometry_locked: true,
       real_source_image_required: true,
       synthetic_geometry_reference_forbidden: true,
       official_logo_asset_required: 'frontend/public/assets/logo-elimfilters.png',
       approved_master_image: existing.media?.approved_master_image ?? null,
+      approved_master_sha256: existing.media?.approved_master_sha256 ?? null,
       explicit_user_image_approval_required: true
     }
   };

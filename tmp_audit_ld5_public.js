@@ -1,0 +1,6 @@
+'use strict';
+const {Client}=require('pg');
+(async()=>{const c=new Client({connectionString:process.env.CATALOG_DATABASE_URL,ssl:{rejectUnauthorized:false}});await c.connect();
+const a=await c.query(`SELECT substring(sku from 1 for 3) prefix,count(*)::int n FROM public.elimfilters_catalog WHERE sku ~ '^(EA5|EC5|EF5|EL5)' GROUP BY 1 ORDER BY 1`);
+const f=await c.query(`SELECT tc.table_name,kcu.column_name,rc.update_rule,rc.delete_rule FROM information_schema.referential_constraints rc JOIN information_schema.table_constraints tc ON tc.constraint_name=rc.constraint_name AND tc.constraint_schema=rc.constraint_schema JOIN information_schema.key_column_usage kcu ON kcu.constraint_name=rc.constraint_name AND kcu.constraint_schema=rc.constraint_schema WHERE rc.unique_constraint_schema='ld_catalog' AND rc.unique_constraint_name='ld_product_catalog_pkey' ORDER BY tc.table_name`);
+console.log(JSON.stringify({public_ld5:a.rows,fks_to_ld_parent:f.rows},null,2));await c.end();})().catch(e=>{console.error(e);process.exit(1)});

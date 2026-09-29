@@ -1,0 +1,1345 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "CH11473",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CH11473",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 3.33,
+      "height_mm": 84.58,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Cartridge",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [
+      "FD11473",
+      "FF11473",
+      "FS11473"
+    ],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "INFINITI",
+        "part_number": "15208-92C09"
+      },
+      {
+        "manufacturer": "INFINITI",
+        "part_number": "15208-HG00D"
+      },
+      {
+        "manufacturer": "INFINITI",
+        "part_number": "15208-92C0N"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "15208-92C09"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "15208-HG00D"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "15208-92C0N"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E818HD236"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX 982D ECO"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU711/6Z"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU 7044 Z"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L18182"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WL7515"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "94715"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "95515"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "95515"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "P1016"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "X10259"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P1016"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "2701840025"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "2701840225"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "270 184 0025"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "270 184 0125"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "270 180 0109"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "2701800009"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A270 180 0109"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "2701840125"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "2701800109"
+      },
+      {
+        "manufacturer": "MicroGard Select",
+        "part_number": "MSL7515"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "MX9022"
+      },
+      {
+        "manufacturer": "Motomaster OE Plus",
+        "part_number": "MOCH11473"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ-193"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "WP1016"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C8182"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S11473"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S11473XL"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-164"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WP1016"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "WP1016"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "19-16",
+        "make": "INFINITI",
+        "model": "Q50",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-17",
+        "make": "INFINITI",
+        "model": "Q60",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "INFINITI",
+        "model": "QX30",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-19",
+        "make": "MERCEDES-BENZ",
+        "model": "A220",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-19",
+        "make": "MERCEDES-BENZ",
+        "model": "A250",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-20",
+        "make": "MERCEDES-BENZ",
+        "model": "A35 AMG",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-13",
+        "make": "MERCEDES-BENZ",
+        "model": "B250",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "23-15",
+        "make": "MERCEDES-BENZ",
+        "model": "C300",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-16",
+        "make": "MERCEDES-BENZ",
+        "model": "C350E",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-14",
+        "make": "MERCEDES-BENZ",
+        "model": "CLA250",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "MERCEDES-BENZ",
+        "model": "CLA35 AMG",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "MERCEDES-BENZ",
+        "model": "E300",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "23-20",
+        "make": "MERCEDES-BENZ",
+        "model": "E350",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-15",
+        "make": "MERCEDES-BENZ",
+        "model": "GLA250",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "MERCEDES-BENZ",
+        "model": "GLA35 AMG",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "MERCEDES-BENZ",
+        "model": "GLB250",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "MERCEDES-BENZ",
+        "model": "GLB35 AMG",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "23-16",
+        "make": "MERCEDES-BENZ",
+        "model": "GLC300",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-18",
+        "make": "MERCEDES-BENZ",
+        "model": "GLC350E",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "23-20",
+        "make": "MERCEDES-BENZ",
+        "model": "GLE350",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "23-16",
+        "make": "MERCEDES-BENZ",
+        "model": "METRIS",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "MERCEDES-BENZ",
+        "model": "SLC300",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2016",
+        "make": "MERCEDES-BENZ",
+        "model": "SLK300",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "23-19",
+        "make": "MERCEDES-BENZ",
+        "model": "SPRINTER 1500",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "23-19",
+        "make": "MERCEDES-BENZ",
+        "model": "SPRINTER 2500",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CH11473",
+    "source_part_key": "006973145",
+    "source_totals": {
+      "attributes": 52,
+      "applications": 27,
+      "cross_references": 41
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® oil filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE (original equipment) recommended intervals. Engineered for conventional and synthetic motor oil, Extra Guard offers proven engine protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Includes gaskets and O-rings manufactured to endure the high pressures and high temperatures in today’s engines",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CH11473, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Engineered for use with synthetic or conventional motor oils",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filter media is a blend of fiber and resin that captures 95%?of the dirt particles",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Cartridge Oil Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Proven protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "4"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "The perfect balance of dirt-trapping efficiency and dirt-holding capacity",
+        "recno": "5"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Cartridge",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "NA",
+        "recno": "89"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100559760",
+        "recno": "92"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "3.330",
+        "recno": "93"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "94"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "1.228",
+        "recno": "95"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "2.570",
+        "recno": "96"
+      },
+      {
+        "attribute": "O-Ring Inside Diameter (Inch)",
+        "value": "2.716",
+        "recno": "97"
+      },
+      {
+        "attribute": "O-Ring Outside Diameter (Inch)",
+        "value": "2.874",
+        "recno": "98"
+      },
+      {
+        "attribute": "O-Ring Thickness (Inch)",
+        "value": "0.157",
+        "recno": "99"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "1.228",
+        "recno": "100"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "2.570",
+        "recno": "101"
+      },
+      {
+        "attribute": "O-Rings Included",
+        "value": "Yes",
+        "recno": "102"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "103"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "104"
+      },
+      {
+        "attribute": "O-Ring (1) Inside Diameter (Inch)",
+        "value": "0.622",
+        "recno": "105"
+      },
+      {
+        "attribute": "O-Ring (1) Outside Diameter (Inch)",
+        "value": "0.740",
+        "recno": "106"
+      },
+      {
+        "attribute": "O-Ring (1) Thickness (Inch)",
+        "value": "0.118",
+        "recno": "107"
+      },
+      {
+        "attribute": "O-Ring (2) Inside Diameter (Inch)",
+        "value": "0.393",
+        "recno": "108"
+      },
+      {
+        "attribute": "O-Ring (2) Outside Diameter (Inch)",
+        "value": "0.492",
+        "recno": "109"
+      },
+      {
+        "attribute": "O-Ring (2) Thickness (Inch)",
+        "value": "0.098",
+        "recno": "110"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "111"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "112"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.2080",
+        "recno": "116"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.2480",
+        "recno": "117"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "4.0090",
+        "recno": "118"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "5.0280",
+        "recno": "119"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "2.9890",
+        "recno": "120"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "9.6990",
+        "recno": "121"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "2.9890",
+        "recno": "122"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "6.7460",
+        "recno": "123"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.208,
+        "case_weight_lb": 1.248,
+        "unit_height_in": 4.009,
+        "unit_length_in": 2.989,
+        "unit_width_in": 2.989,
+        "case_height_in": 5.028,
+        "case_length_in": 9.699,
+        "case_width_in": 6.746,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 2.496,
+        "estimated_case_dimensions": {
+          "length_in": 12.932,
+          "width_in": 10.119,
+          "height_in": 5.028,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 27,
+    "all_cross_references_observed": 41,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:13:24.296Z",
+  "discovered_from": "CH11473",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "FREIGHTLINER",
+        "model": "SPRINTER 1500",
+        "year": "20-19",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "SPRINTER 2500",
+        "year": "21-19",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INFINITI",
+        "model": "Q50",
+        "year": "19-16",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INFINITI",
+        "model": "Q60",
+        "year": "18-17",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INFINITI",
+        "model": "QX30",
+        "year": "19-17",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "A220",
+        "year": "22-19",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "A250",
+        "year": "22-19",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "A35 AMG",
+        "year": "22-20",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "B250",
+        "year": "19-13",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C300",
+        "year": "23-15",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C350E",
+        "year": "18-16",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLA250",
+        "year": "26-14",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLA35 AMG",
+        "year": "26-20",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E300",
+        "year": "19-17",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E350",
+        "year": "23-20",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLA250",
+        "year": "25-15",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLA35 AMG",
+        "year": "26-21",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLB250",
+        "year": "26-20",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLB35 AMG",
+        "year": "26-21",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLC300",
+        "year": "23-16",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLC350E",
+        "year": "20-18",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLE350",
+        "year": "23-20",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "METRIS",
+        "year": "23-16",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SLC300",
+        "year": "19-17",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SLK300",
+        "year": "2016",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SPRINTER 1500",
+        "year": "23-19",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SPRINTER 2500",
+        "year": "23-19",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "94715",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "95515",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "95515",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "P1016",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "X10259",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Drive",
+        "part_number": "FD11473",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Force",
+        "part_number": "FF11473",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Titanium",
+        "part_number": "FS11473",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E818HD236",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "INFINITI",
+        "part_number": "15208-92C09",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "INFINITI",
+        "part_number": "15208-HG00D",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "INFINITI",
+        "part_number": "15208-92C0N",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P1016",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX 982D ECO",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU711/6Z",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU 7044 Z",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "2701840025",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "2701840225",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "270 184 0025",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "270 184 0125",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "270 180 0109",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "2701800009",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A270 180 0109",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "2701840125",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "2701800109",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MicroGard Select",
+        "part_number": "MSL7515",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "MX9022",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Motomaster OE Plus",
+        "part_number": "MOCH11473",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "15208-92C09",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "15208-HG00D",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "15208-92C0N",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ-193",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L18182",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "WP1016",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C8182",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S11473",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S11473XL",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-164",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WP1016",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "WP1016",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WL7515",
+        "source_part_number": "CH11473",
+        "part_key": "006973145",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

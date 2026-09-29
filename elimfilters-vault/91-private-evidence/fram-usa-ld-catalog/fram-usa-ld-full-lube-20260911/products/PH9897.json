@@ -1,0 +1,1858 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH9897",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH9897",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 2.98,
+      "outer_diameter_mm": 75.69,
+      "height_in": 3.381,
+      "height_mm": 85.88,
+      "thread_size": "Metric",
+      "gasket_od_in": 2.98,
+      "gasket_od_mm": 75.69,
+      "gasket_id_in": 2.453,
+      "gasket_id_mm": 62.31,
+      "gasket_thickness_in": 0.203,
+      "gasket_thickness_mm": 5.16,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "Yes",
+      "bypass_relief_valve": "Yes",
+      "bypass_setting_psi": 9,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "General Motors",
+        "part_number": "96389188"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-86Z00"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7167"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT310"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "COS9897"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W712/8"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W610/81"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "7046"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L17662"
+      },
+      {
+        "manufacturer": "Sakura",
+        "part_number": "C-2105"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57046"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51083"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "84046"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "84046"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CF487"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "PH2903"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "part_number": "COS9897"
+      },
+      {
+        "manufacturer": "Daewoo",
+        "part_number": "96389188"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DL9897"
+      },
+      {
+        "manufacturer": "Deutz",
+        "part_number": "12850069"
+      },
+      {
+        "manufacturer": "Driveworks",
+        "part_number": "DW-7662"
+      },
+      {
+        "manufacturer": "FERGUSON",
+        "part_number": "R7046"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "R7046"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "V7662"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "B7167"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF648"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15400-PR3-003"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "AL9897"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L7046"
+      },
+      {
+        "manufacturer": "Lombardini",
+        "part_number": "2175.131"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH2903"
+      },
+      {
+        "manufacturer": "Melroe Bobcat",
+        "part_number": "6661011"
+      },
+      {
+        "manufacturer": "Pentius",
+        "part_number": "PLB9897"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PO-7662"
+      },
+      {
+        "manufacturer": "Purflux",
+        "part_number": "LS867B"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "S2903"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S2903"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-52"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "2900776"
+      },
+      {
+        "manufacturer": "Yale And Towne",
+        "part_number": "150017600"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "06-04",
+        "make": "CHEVROLET",
+        "model": "EPICA",
+        "engine": "L6-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "06-04",
+        "make": "SUZUKI",
+        "model": "VERONA",
+        "engine": "L6-2.5L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "PH9897",
+    "source_part_key": "000991541",
+    "source_totals": {
+      "attributes": 47,
+      "applications": 106,
+      "cross_references": 40
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® oil filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE (original equipment) recommended intervals. Equipped with SureGrip® technology, FRAM Extra Guard® oil filters provide a non-slip surface allowing for easy install and removal.\\nThe silicone anti-drain back valve ensures safe engine startups, extending the life of the oil filter for up to 10,000 miles (16,000 kilometers).",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "SureGrip® technology for easy install and removal",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, PH9897, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Engineered for use with synthetic or conventional motor oils",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Proven protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Spin-on Oil Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Silicone anti-drain back valve helps ensure safe engine start up",
+        "recno": "4"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filter media is a blend of fiber and resin that captures 95% of the dirt particles",
+        "recno": "5"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "Yes",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "Yes",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "Yes",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "85"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Metric",
+        "recno": "86"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "88"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base",
+        "recno": "89"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Orange",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100045461",
+        "recno": "92"
+      },
+      {
+        "attribute": "Attachment Type",
+        "value": "Spin-On",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "94"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "95"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "3.381",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "2.980",
+        "recno": "97"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "98"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "2.453",
+        "recno": "99"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "2.980",
+        "recno": "100"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.203",
+        "recno": "101"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Millimeter)",
+        "value": "M20x1.5",
+        "recno": "102"
+      },
+      {
+        "attribute": "Bypass Relief Valve Setting (Pounds per Square Inch)",
+        "value": "9-12",
+        "recno": "103"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "104"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "105"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "106"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "107"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.5540",
+        "recno": "111"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "6.6480",
+        "recno": "112"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "3.4370",
+        "recno": "113"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "3.5600",
+        "recno": "114"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.0620",
+        "recno": "115"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "12.4400",
+        "recno": "116"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.0620",
+        "recno": "117"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "9.4400",
+        "recno": "118"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.554,
+        "case_weight_lb": 6.648,
+        "unit_height_in": 3.437,
+        "unit_length_in": 3.062,
+        "unit_width_in": 3.062,
+        "case_height_in": 3.56,
+        "case_length_in": 12.44,
+        "case_width_in": 9.44,
+        "inferred_case_qty": 12
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 6.648,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 106,
+    "all_cross_references_observed": 40,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:12:36.790Z",
+  "discovered_from": "PH9897",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "CHEVROLET",
+        "model": "EPICA",
+        "year": "06-04",
+        "engine": "L6-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER BOBCAT",
+        "model": "653 w/Peugeot Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER BOBCAT",
+        "model": "653 w/Peugeot Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "VERONA",
+        "year": "06-04",
+        "engine": "L6-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumper I Relay (w/D8C XUD9UTF 1.9L Turbo Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumper I Relay (w/D8C XUD9UTF 1.9L Turbo Diesel Engine)",
+        "year": "02-94",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumper I Relay (w/D9B XUD9 1.9 Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumper I Relay (w/D9B XUD9 1.9 Diesel Engine)",
+        "year": "02-94",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumper I Relay (w/DHX 1.9L Turbo Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumper I Relay (w/DHX 1.9L Turbo Diesel Engine)",
+        "year": "02-94",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumper I Relay (w/DW10TD 2.0 HDi Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumper I Relay (w/DW10TD 2.0 HDi Engine)",
+        "year": "02-94",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumper I Relay (w/RFW XU10J2U 2.0L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumper I Relay (w/RFW XU10J2U 2.0L Engine)",
+        "year": "02-94",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumper II (w/DW10TD 2.0 HDi Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumper II (w/DW10TD 2.0 HDi Engine)",
+        "year": "06-02",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumper II (w/DW12TED 2.2 HDi Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumper II (w/DW12TED 2.2 HDi Engine)",
+        "year": "06-02",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumper II (w/XU10J2 2.0i Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumper II (w/XU10J2 2.0i Engine)",
+        "year": "06-02",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumpy I Dispatch I (w/220 A2.000 1.6 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumpy I Dispatch I (w/220 A2.000 1.6 Engine)",
+        "year": "07-96",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumpy I Dispatch I (w/D8B XUD9TF 1.9 TD Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumpy I Dispatch I (w/D8B XUD9TF 1.9 TD Engine)",
+        "year": "07-96",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumpy I Dispatch I (w/D9B XUD9A 1.9 D Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumpy I Dispatch I (w/D9B XUD9A 1.9 D Engine)",
+        "year": "98-96",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumpy I Dispatch I (w/DHX XUD9TF 1.9 TD Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumpy I Dispatch I (w/DHX XUD9TF 1.9 TD Engine)",
+        "year": "07-96",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumpy I Dispatch I (w/DW10 A/CTED 2.0 HDi Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumpy I Dispatch I (w/DW10 A/CTED 2.0 HDi Engine)",
+        "year": "07-00",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumpy I Dispatch I (w/DW10BTED RHX 2.0 HDi Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumpy I Dispatch I (w/DW10BTED RHX 2.0 HDi Engine)",
+        "year": "07-00",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumpy I Dispatch I (w/DW8 WJZ 1.9 D Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumpy I Dispatch I (w/DW8 WJZ 1.9 D Engine)",
+        "year": "07-98",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumpy I Dispatch I (w/RFN EW10J4 2.0 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER CITROEN",
+        "model": "Jumpy I Dispatch I (w/RFN EW10J4 2.0 Engine)",
+        "year": "07-00",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER DAF",
+        "model": "428-435 Series (w/2.5D Peugeot EN55 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER DAF",
+        "model": "428-435 Series (w/2.5D Peugeot EN55 Engine)",
+        "year": "93-87",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FIAT",
+        "model": "Ducato (w/170B 2.0 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FIAT",
+        "model": "Ducato (w/170B 2.0 Engine)",
+        "year": "94-85",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FIAT",
+        "model": "Ducato (w/RFL 2.0i Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FIAT",
+        "model": "Ducato (w/RFL 2.0i Engine)",
+        "year": "06-02",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FIAT",
+        "model": "Ducato (w/RHV DW10 2.0 JTD Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FIAT",
+        "model": "Ducato (w/RHV DW10 2.0 JTD Engine)",
+        "year": "06-02",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FIAT",
+        "model": "Scudo I (w/220 A2.000 1.6 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FIAT",
+        "model": "Scudo I (w/220 A2.000 1.6 Engine)",
+        "year": "07-96",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FIAT",
+        "model": "Scudo I (w/D8B 1.9 TD Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FIAT",
+        "model": "Scudo I (w/D8B 1.9 TD Engine)",
+        "year": "07-96",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FIAT",
+        "model": "Scudo I (w/D9B 1.9 D Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FIAT",
+        "model": "Scudo I (w/D9B 1.9 D Engine)",
+        "year": "98-96",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FIAT",
+        "model": "Scudo I (w/DHX XUD9TF/L 1.9 TD Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FIAT",
+        "model": "Scudo I (w/DHX XUD9TF/L 1.9 TD Engine)",
+        "year": "07-95",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FIAT",
+        "model": "Scudo I (w/RFN 2.0 16V Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FIAT",
+        "model": "Scudo I (w/RFN 2.0 16V Engine)",
+        "year": "07-00",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FIAT",
+        "model": "Scudo I (w/RHW, RHZ 2.0 JTD Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FIAT",
+        "model": "Scudo I (w/RHW, RHZ 2.0 JTD Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FIAT",
+        "model": "Scudo I (w/RHX 2.0 JTD Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FIAT",
+        "model": "Scudo I (w/RHX 2.0 JTD Engine)",
+        "year": "07-00",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FIAT",
+        "model": "Scudo I (w/RHZ DW10ATED4 2.0 JTD 16V Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FIAT",
+        "model": "Scudo I (w/RHZ DW10ATED4 2.0 JTD 16V Engine)",
+        "year": "07-04",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER LDV",
+        "model": "Convoy 400 (VH C35) (w/Peugeot 2.5 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER LDV",
+        "model": "Convoy 400 (VH C35) (w/Peugeot 2.5 Engine)",
+        "year": "98-96",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER LDV",
+        "model": "Pilot 1.9D (w/Peugeot UXD Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER LDV",
+        "model": "Pilot 1.9D (w/Peugeot UXD Engine)",
+        "year": "05-96",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Boxer I (w/1.9 Diesel XUD9AU Engine) 1994-02",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Boxer I (w/1.9 Diesel XUD9AU Engine) 1994-02",
+        "year": "02-94",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Boxer I (w/1.9TD XUD9UTF, XUD9TE Engine) 1994-02",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Boxer I (w/1.9TD XUD9UTF, XUD9TE Engine) 1994-02",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Boxer I (w/2.0HDI DW10TD Engine) 2001-02",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Boxer I (w/2.0HDI DW10TD Engine) 2001-02",
+        "year": "02-01",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Boxer I (w/2.0i RFW XU10J2U Engine) 1994-02",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Boxer I (w/2.0i RFW XU10J2U Engine) 1994-02",
+        "year": "02-94",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Boxer I (w/2.5D T9A DJ5 Engine) 1994-02",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Boxer I (w/2.5D T9A DJ5 Engine) 1994-02",
+        "year": "02-94",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Expert I (w/222A2 1.6 Engine) 2/96-1/07",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Expert I (w/222A2 1.6 Engine) 2/96-1/07",
+        "year": "07-96",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Expert I (w/D8B/DHX 1.9 TD Engine) 2/96-1/07",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Expert I (w/D8B/DHX 1.9 TD Engine) 2/96-1/07",
+        "year": "07-96",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Expert I (w/D9B 1.9D Engine) 2/96-4/98",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Expert I (w/D9B 1.9D Engine) 2/96-4/98",
+        "year": "98-96",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Expert I (w/DW10BTED4 2.0 HDi Engine) 2/00-1/07",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Expert I (w/DW10BTED4 2.0 HDi Engine) 2/00-1/07",
+        "year": "07-00",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Expert I (w/DW8 WJY/WJZ 1.9D Engine) 4/98-1/07",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Expert I (w/DW8 WJY/WJZ 1.9D Engine) 4/98-1/07",
+        "year": "07-98",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Expert I (w/RFN 2.0 16V Engine) 3/00-1/07",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Expert I (w/RFN 2.0 16V Engine) 3/00-1/07",
+        "year": "07-00",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Expert I (w/RHW/RHZ 2.0 HDi Engine) 2/00-1/07",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Expert I (w/RHW/RHZ 2.0 HDi Engine) 2/00-1/07",
+        "year": "07-00",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Partner Ranch (w/DJY 1.9 D Engine) 6/96-12/98",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Partner Ranch (w/DJY 1.9 D Engine) 6/96-12/98",
+        "year": "98-96",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Partner Ranch (w/LFX 1.8 Engine) 5/97-12/02",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Partner Ranch (w/LFX 1.8 Engine) 5/97-12/02",
+        "year": "02-97",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Partner Ranch (w/RHY 2.0 HDi Engine) 6/99-8/05",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Partner Ranch (w/RHY 2.0 HDi Engine) 6/99-8/05",
+        "year": "05-99",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Partner Ranch (w/WJY/WJZ 1.9 D Engine) 12/98-5/08",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER PEUGEOT",
+        "model": "Partner Ranch (w/WJY/WJZ 1.9 D Engine) 12/98-5/08",
+        "year": "08-98",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER RENAULT",
+        "model": "Master I (w/J5R 2.2 Engine) 10/86-7/98",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER RENAULT",
+        "model": "Master I (w/J5R 2.2 Engine) 10/86-7/98",
+        "year": "98-86",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER RENAULT",
+        "model": "Master I (w/J5R 718, 728 2.0 Q..2 Engine) 10/86-7/98",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER RENAULT",
+        "model": "Master I (w/J5R 718, 728 2.0 Q..2 Engine) 10/86-7/98",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER RENAULT",
+        "model": "Master I (w/J7T 2.2i Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER RENAULT",
+        "model": "Master I (w/J7T 2.2i Engine)",
+        "year": "98-80",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER RENAULT",
+        "model": "Trafic I (w/F1N 1.7 T..8 Engine) 10/84-2/89",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER RENAULT",
+        "model": "Trafic I (w/F1N 1.7 T..8 Engine) 10/84-2/89",
+        "year": "89-84",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER RENAULT",
+        "model": "Trafic I (w/J7T 2.2 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER RENAULT",
+        "model": "Trafic I (w/J7T 2.2 Engine)",
+        "year": "97-89",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7167",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT310",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "84046",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "84046",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CF487",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "PH2903",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "COS9897",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "part_number": "COS9897",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Daewoo",
+        "part_number": "96389188",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DL9897",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Deutz",
+        "part_number": "12850069",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Driveworks",
+        "part_number": "DW-7662",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FERGUSON",
+        "part_number": "R7046",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "R7046",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "96389188",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "V7662",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "B7167",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF648",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15400-PR3-003",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "AL9897",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L7046",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Lombardini",
+        "part_number": "2175.131",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH2903",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W712/8",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W610/81",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Melroe Bobcat",
+        "part_number": "6661011",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "7046",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pentius",
+        "part_number": "PLB9897",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PO-7662",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purflux",
+        "part_number": "LS867B",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L17662",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Sakura",
+        "part_number": "C-2105",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "S2903",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S2903",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-86Z00",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-52",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "2900776",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57046",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51083",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Yale And Towne",
+        "part_number": "150017600",
+        "source_part_number": "PH9897",
+        "part_key": "000991541",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

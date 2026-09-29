@@ -1,0 +1,23 @@
+{
+  "phase": "ISUZU_V152_EF98204_CORRECTION",
+  "source": "ISUZU_US_V152_EF98204_CORRECTION",
+  "apply": false,
+  "database_write": false,
+  "rows": [
+    {
+      "sku": "ES90128",
+      "status": "READY",
+      "before": 4,
+      "after": 5,
+      "added_ranges": 1,
+      "exact_positions": 2
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "ready": 1,
+    "added_ranges": 1,
+    "exact_positions": 2,
+    "database_write": false
+  }
+}

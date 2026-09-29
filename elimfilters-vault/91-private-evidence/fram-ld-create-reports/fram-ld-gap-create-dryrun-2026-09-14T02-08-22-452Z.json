@@ -1,0 +1,15 @@
+{
+  "mode": "dry-run",
+  "gap_report": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-ld-extended-namespace\\fram-ld-extended-gap-2026-09-14T02-06-22-848Z.json",
+  "candidates": 524,
+  "planned": {
+    "competitor": 3854,
+    "oem": 1197,
+    "applications": 10395,
+    "specifications": 2527
+  },
+  "inserted": {},
+  "skipped": {},
+  "audit": {},
+  "error": "CANONICAL_PLAN_CONFLICT CF10360"
+}

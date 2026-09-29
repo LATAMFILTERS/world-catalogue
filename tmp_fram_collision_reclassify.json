@@ -1,0 +1,1154 @@
+{
+  "all": [
+    {
+      "sku": "EA30159",
+      "authorities": [
+        "CA10159",
+        "CA159"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "style"
+          ],
+          "spec_conf": 1,
+          "app_i": 0,
+          "app_a": 1,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA30162",
+      "authorities": [
+        "CA10162",
+        "CA162"
+      ],
+      "state": "unresolved",
+      "pairs": [
+        {
+          "diffs": [],
+          "spec_conf": 0,
+          "app_i": 0,
+          "app_a": 3,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA30192",
+      "authorities": [
+        "CA10192",
+        "CA192"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "style",
+            "raw_media"
+          ],
+          "spec_conf": 1,
+          "app_i": 0,
+          "app_a": 1,
+          "app_b": 369,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA30228",
+      "authorities": [
+        "CA10228",
+        "CA228"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "style"
+          ],
+          "spec_conf": 1,
+          "app_i": 0,
+          "app_a": 3,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA30281",
+      "authorities": [
+        "CA10281",
+        "CA10281SY"
+      ],
+      "state": "unresolved",
+      "pairs": [
+        {
+          "diffs": [],
+          "spec_conf": 0,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA30283",
+      "authorities": [
+        "CA10283",
+        "CA283"
+      ],
+      "state": "unresolved",
+      "pairs": [
+        {
+          "diffs": [],
+          "spec_conf": 0,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA30328",
+      "authorities": [
+        "CA10328",
+        "CA328"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "style",
+            "raw_media"
+          ],
+          "spec_conf": 1,
+          "app_i": 0,
+          "app_a": 8,
+          "app_b": 105,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA30346",
+      "authorities": [
+        "CA10346",
+        "CA346"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "style"
+          ],
+          "spec_conf": 1,
+          "app_i": 0,
+          "app_a": 1,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA30347",
+      "authorities": [
+        "CA10347",
+        "CA347"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "style",
+            "raw_media"
+          ],
+          "spec_conf": 1,
+          "app_i": 0,
+          "app_a": 4,
+          "app_b": 95,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA30542",
+      "authorities": [
+        "CA10542",
+        "CA542"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "style",
+            "raw_media"
+          ],
+          "spec_conf": 1,
+          "app_i": 0,
+          "app_a": 1,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA30573",
+      "authorities": [
+        "CA10573",
+        "CA573"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "style"
+          ],
+          "spec_conf": 1,
+          "app_i": 0,
+          "app_a": 2,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA30790",
+      "authorities": [
+        "CA10790",
+        "CA10790SY"
+      ],
+      "state": "unresolved",
+      "pairs": [
+        {
+          "diffs": [],
+          "spec_conf": 0,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA30982",
+      "authorities": [
+        "CA10982",
+        "CA10982SY"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "style"
+          ],
+          "spec_conf": 2,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA31565",
+      "authorities": [
+        "CA11565",
+        "CA1565"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "style"
+          ],
+          "spec_conf": 2,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA31514",
+      "authorities": [
+        "CA1514",
+        "CA1514SY"
+      ],
+      "state": "unresolved",
+      "pairs": [
+        {
+          "diffs": [],
+          "spec_conf": 0,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA31543",
+      "authorities": [
+        "CA1543",
+        "CA1543SY"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [],
+          "spec_conf": 2,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA32522",
+      "authorities": [
+        "CA2522",
+        "CA2522SY"
+      ],
+      "state": "unresolved",
+      "pairs": [
+        {
+          "diffs": [],
+          "spec_conf": 0,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA30563",
+      "authorities": [
+        "CA563",
+        "CA563SY"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "grade"
+          ],
+          "spec_conf": 1,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA30572",
+      "authorities": [
+        "CA572",
+        "CA572SY"
+      ],
+      "state": "unresolved",
+      "pairs": [
+        {
+          "diffs": [],
+          "spec_conf": 0,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA36319",
+      "authorities": [
+        "CA6319",
+        "CA6319SY"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "grade"
+          ],
+          "spec_conf": 1,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA36327",
+      "authorities": [
+        "CA6327",
+        "CA6327SY"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "grade"
+          ],
+          "spec_conf": 1,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA37139",
+      "authorities": [
+        "CA7139",
+        "CA7139SY"
+      ],
+      "state": "unresolved",
+      "pairs": [
+        {
+          "diffs": [],
+          "spec_conf": 0,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA37458",
+      "authorities": [
+        "CA7458",
+        "CA7458SY"
+      ],
+      "state": "unresolved",
+      "pairs": [
+        {
+          "diffs": [],
+          "spec_conf": 0,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA37478",
+      "authorities": [
+        "CA7478",
+        "CA7478SY"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "style",
+            "grade"
+          ],
+          "spec_conf": 1,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA37484",
+      "authorities": [
+        "CA7484",
+        "CA7484SY"
+      ],
+      "state": "unresolved",
+      "pairs": [
+        {
+          "diffs": [],
+          "spec_conf": 0,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA37486",
+      "authorities": [
+        "CA7486",
+        "CA7486SY"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "style",
+            "grade"
+          ],
+          "spec_conf": 1,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA37495",
+      "authorities": [
+        "CA7495",
+        "CA7495SY"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "grade"
+          ],
+          "spec_conf": 1,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA37710",
+      "authorities": [
+        "CA7710",
+        "CA7710SY"
+      ],
+      "state": "unresolved",
+      "pairs": [
+        {
+          "diffs": [],
+          "spec_conf": 0,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA38596",
+      "authorities": [
+        "CA8596",
+        "CA8596SY"
+      ],
+      "state": "unresolved",
+      "pairs": [
+        {
+          "diffs": [],
+          "spec_conf": 0,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA38621",
+      "authorities": [
+        "CA8621",
+        "CA8621SY"
+      ],
+      "state": "unresolved",
+      "pairs": [
+        {
+          "diffs": [],
+          "spec_conf": 0,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA39736",
+      "authorities": [
+        "CA9736",
+        "CA9736SY"
+      ],
+      "state": "unresolved",
+      "pairs": [
+        {
+          "diffs": [],
+          "spec_conf": 0,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA39872",
+      "authorities": [
+        "CA9872",
+        "CA9872SY"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "grade"
+          ],
+          "spec_conf": 1,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA39873",
+      "authorities": [
+        "CA9873",
+        "CA9873SY"
+      ],
+      "state": "unresolved",
+      "pairs": [
+        {
+          "diffs": [],
+          "spec_conf": 0,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EA39966",
+      "authorities": [
+        "CA9966",
+        "CA9966SY"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "grade"
+          ],
+          "spec_conf": 1,
+          "app_i": 0,
+          "app_a": 0,
+          "app_b": 0,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EC30138",
+      "authorities": [
+        "CF10138",
+        "CV10138"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "style",
+            "raw_media"
+          ],
+          "spec_conf": 0,
+          "app_i": 8,
+          "app_a": 8,
+          "app_b": 8,
+          "ref_i": 11,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EC30360",
+      "authorities": [
+        "CF10360",
+        "FDC10360C"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "line",
+            "style"
+          ],
+          "spec_conf": 0,
+          "app_i": 60,
+          "app_a": 60,
+          "app_b": 60,
+          "ref_i": 6,
+          "alt": true
+        }
+      ]
+    },
+    {
+      "sku": "EC30364",
+      "authorities": [
+        "CF10364",
+        "FDC10364C"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "line",
+            "style"
+          ],
+          "spec_conf": 1,
+          "app_i": 19,
+          "app_a": 19,
+          "app_b": 19,
+          "ref_i": 10,
+          "alt": true
+        }
+      ]
+    },
+    {
+      "sku": "EC30370",
+      "authorities": [
+        "CF10370",
+        "FDC10370C"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "line",
+            "style"
+          ],
+          "spec_conf": 0,
+          "app_i": 7,
+          "app_a": 7,
+          "app_b": 7,
+          "ref_i": 10,
+          "alt": true
+        }
+      ]
+    },
+    {
+      "sku": "EC30373",
+      "authorities": [
+        "CF10373",
+        "FDC10373C"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "line",
+            "style"
+          ],
+          "spec_conf": 1,
+          "app_i": 60,
+          "app_a": 60,
+          "app_b": 60,
+          "ref_i": 10,
+          "alt": true
+        }
+      ]
+    },
+    {
+      "sku": "EC30388",
+      "authorities": [
+        "CF10388",
+        "FDC10388C"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "line",
+            "style"
+          ],
+          "spec_conf": 0,
+          "app_i": 10,
+          "app_a": 10,
+          "app_b": 10,
+          "ref_i": 13,
+          "alt": true
+        }
+      ]
+    },
+    {
+      "sku": "EC30436",
+      "authorities": [
+        "CF10436",
+        "FDC10436C"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "line",
+            "style"
+          ],
+          "spec_conf": 1,
+          "app_i": 12,
+          "app_a": 12,
+          "app_b": 12,
+          "ref_i": 5,
+          "alt": true
+        }
+      ]
+    },
+    {
+      "sku": "EC30550",
+      "authorities": [
+        "CF10550",
+        "FDC10550C"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "line",
+            "style"
+          ],
+          "spec_conf": 1,
+          "app_i": 7,
+          "app_a": 7,
+          "app_b": 7,
+          "ref_i": 14,
+          "alt": true
+        }
+      ]
+    },
+    {
+      "sku": "EC30727",
+      "authorities": [
+        "CF10727",
+        "FDC10727C"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "line",
+            "style"
+          ],
+          "spec_conf": 0,
+          "app_i": 37,
+          "app_a": 37,
+          "app_b": 37,
+          "ref_i": 7,
+          "alt": true
+        }
+      ]
+    },
+    {
+      "sku": "EC30775",
+      "authorities": [
+        "CF10775",
+        "FDC10775C"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "line",
+            "style"
+          ],
+          "spec_conf": 0,
+          "app_i": 57,
+          "app_a": 57,
+          "app_b": 57,
+          "ref_i": 22,
+          "alt": true
+        }
+      ]
+    },
+    {
+      "sku": "EC31183",
+      "authorities": [
+        "CF11183",
+        "FDC11183C"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "line",
+            "style"
+          ],
+          "spec_conf": 1,
+          "app_i": 14,
+          "app_a": 14,
+          "app_b": 14,
+          "ref_i": 7,
+          "alt": true
+        }
+      ]
+    },
+    {
+      "sku": "EC31643",
+      "authorities": [
+        "CF11643",
+        "FDC11643C"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "line",
+            "style"
+          ],
+          "spec_conf": 1,
+          "app_i": 60,
+          "app_a": 60,
+          "app_b": 60,
+          "ref_i": 4,
+          "alt": true
+        }
+      ]
+    },
+    {
+      "sku": "EC31719",
+      "authorities": [
+        "CF11719",
+        "FDC11719C"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "line",
+            "style"
+          ],
+          "spec_conf": 1,
+          "app_i": 52,
+          "app_a": 114,
+          "app_b": 72,
+          "ref_i": 6,
+          "alt": true
+        }
+      ]
+    },
+    {
+      "sku": "EC31966",
+      "authorities": [
+        "CF11966",
+        "FDC11966C"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "line",
+            "style"
+          ],
+          "spec_conf": 0,
+          "app_i": 177,
+          "app_a": 177,
+          "app_b": 177,
+          "ref_i": 20,
+          "alt": true
+        }
+      ]
+    },
+    {
+      "sku": "EC32150",
+      "authorities": [
+        "CF12150",
+        "FDC12150C"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "line",
+            "style"
+          ],
+          "spec_conf": 0,
+          "app_i": 32,
+          "app_a": 36,
+          "app_b": 34,
+          "ref_i": 4,
+          "alt": true
+        }
+      ]
+    },
+    {
+      "sku": "EC32159",
+      "authorities": [
+        "CF12159",
+        "FDC12159C"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "line",
+            "style"
+          ],
+          "spec_conf": 0,
+          "app_i": 9,
+          "app_a": 11,
+          "app_b": 11,
+          "ref_i": 1,
+          "alt": true
+        }
+      ]
+    },
+    {
+      "sku": "EC38392",
+      "authorities": [
+        "CF8392A",
+        "CV8392A"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "style",
+            "raw_media"
+          ],
+          "spec_conf": 1,
+          "app_i": 35,
+          "app_a": 35,
+          "app_b": 35,
+          "ref_i": 22,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EL30855",
+      "authorities": [
+        "CH10855",
+        "FF10855",
+        "FS10855"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "line"
+          ],
+          "spec_conf": 0,
+          "app_i": 10,
+          "app_a": 10,
+          "app_b": 10,
+          "ref_i": 0,
+          "alt": false
+        },
+        {
+          "diffs": [
+            "line"
+          ],
+          "spec_conf": 0,
+          "app_i": 10,
+          "app_a": 10,
+          "app_b": 10,
+          "ref_i": 0,
+          "alt": false
+        },
+        {
+          "diffs": [
+            "line"
+          ],
+          "spec_conf": 0,
+          "app_i": 10,
+          "app_a": 10,
+          "app_b": 10,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    },
+    {
+      "sku": "EL31934",
+      "authorities": [
+        "CH11934",
+        "FF11934",
+        "FS11934"
+      ],
+      "state": "distinct",
+      "pairs": [
+        {
+          "diffs": [
+            "line"
+          ],
+          "spec_conf": 0,
+          "app_i": 7,
+          "app_a": 7,
+          "app_b": 7,
+          "ref_i": 0,
+          "alt": true
+        },
+        {
+          "diffs": [
+            "line"
+          ],
+          "spec_conf": 0,
+          "app_i": 7,
+          "app_a": 7,
+          "app_b": 7,
+          "ref_i": 0,
+          "alt": true
+        },
+        {
+          "diffs": [
+            "line"
+          ],
+          "spec_conf": 0,
+          "app_i": 7,
+          "app_a": 7,
+          "app_b": 7,
+          "ref_i": 0,
+          "alt": false
+        }
+      ]
+    }
+  ]
+}

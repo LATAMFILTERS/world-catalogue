@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0.0",
+  "source": "ISUZU_US_V158_OFFICIAL_OEM_WINDOW_REVALIDATION",
+  "evidence": {
+    "EF92599": {
+      "codigo_base": "P502599",
+      "isuzu_oem": ["8975425390","8981475250","2945611040","2945611041"],
+      "official_window": "2013-2021",
+      "source": "Isuzu FVGenuineCrossRef + P502599 cross-reference"
+    },
+    "EF92564": {
+      "codigo_base": "P552564",
+      "isuzu_oem": ["1132400791","1132400740","2945611011"],
+      "official_window": "1998-; Diesel/4HE",
+      "source": "Isuzu FVGenuineCrossRef + P552564 cross-reference"
+    },
+    "EF92427": {
+      "codigo_base": "P502427",
+      "isuzu_oem": ["8980370110","8982035990","8981628970","2945611050","2945611052"],
+      "official_window": "2013-2021",
+      "source": "Isuzu FVGenuineCrossRef + P502427 cross-reference"
+    }
+  },
+  "skus": [
+    {
+      "sku": "EF92599",
+      "applications": [
+        {"make":"ISUZU","model":"FTR","equipment":"FTR","type":"TRUCK","engine":"4HK1-TC","year_from":"2018","year_to":"2021"},
+        {"make":"ISUZU","model":"NPR","equipment":"NPR","type":"TRUCK","engine":"4JJ1-TC","year_from":"2017","year_to":"2018"},
+        {"make":"ISUZU","model":"NPR-HD","equipment":"NPR-HD","type":"TRUCK","engine":"4HK1-TC","year_from":"2018","year_to":"2021"},
+        {"make":"ISUZU","model":"NPR-XD","equipment":"NPR-XD","type":"TRUCK","engine":"4HK1-TC","year_from":"2018","year_to":"2021"},
+        {"make":"ISUZU","model":"NQR","equipment":"NQR","type":"TRUCK","engine":"4HK1-TC","year":"2021"}
+      ]
+    },
+    {
+      "sku": "EF92564",
+      "applications": [
+        {"make":"ISUZU","model":"NPR","equipment":"NPR","type":"TRUCK","engine":"4HE1-TC","year_from":"2000","year_to":"2004"},
+        {"make":"ISUZU","model":"NPR-HD","equipment":"NPR-HD","type":"TRUCK","engine":"4HE1-TC","year_from":"2000","year_to":"2004"},
+        {"make":"ISUZU","model":"NQR","equipment":"NQR","type":"TRUCK","engine":"4HE1-TC","year_from":"2000","year_to":"2004"}
+      ]
+    },
+    {
+      "sku": "EF92427",
+      "applications": [
+        {"make":"ISUZU","model":"NPR","equipment":"NPR","type":"TRUCK","engine":"4JJ1-TC","year_from":"2013","year_to":"2016"}
+      ]
+    }
+  ]
+}

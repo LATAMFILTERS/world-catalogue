@@ -1,0 +1,2456 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA3647",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA3647",
+    "product_type": "Engine Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": 8.516,
+      "outer_diameter_mm": 216.31,
+      "height_in": 2.5,
+      "height_mm": 63.5,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Round Plastisol Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "79008170"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I-1015"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25043317"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25040881"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "TY22048"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A913C"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A785C"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A913CK"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A785CK"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2109"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2132"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "5238WS"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "AF12"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "MA 1022"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FA-989"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6036"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6085"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A33380"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46036"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46036MP"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARP-785"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "TS41"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "LT41"
+      },
+      {
+        "manufacturer": "Atlas",
+        "part_number": "A-70"
+      },
+      {
+        "manufacturer": "Autopar - Archived",
+        "part_number": "AC222"
+      },
+      {
+        "manufacturer": "Autopar - Archived",
+        "part_number": "AC238"
+      },
+      {
+        "manufacturer": "Autopro",
+        "part_number": "4036"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-1513"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "94085"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "94036"
+      },
+      {
+        "manufacturer": "Cam2",
+        "part_number": "CA3380"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88085"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88036"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "BA3380"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CFA3647"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "CA7850"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "AF785"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DA3647"
+      },
+      {
+        "manufacturer": "Delphi",
+        "part_number": "AF1046"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "A857"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P524386"
+      },
+      {
+        "manufacturer": "Dynalife",
+        "part_number": "CNA-3647"
+      },
+      {
+        "manufacturer": "Econo-lube",
+        "part_number": "A33380"
+      },
+      {
+        "manufacturer": "Evergard",
+        "part_number": "EA3380"
+      },
+      {
+        "manufacturer": "Firestone",
+        "part_number": "CF-785"
+      },
+      {
+        "manufacturer": "Flag",
+        "part_number": "A-3647"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF1785"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-81785"
+      },
+      {
+        "manufacturer": "Goodyear",
+        "part_number": "JLA3380"
+      },
+      {
+        "manufacturer": "Goodyear",
+        "part_number": "222-4588"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "AF785"
+      },
+      {
+        "manufacturer": "Grease Monkey",
+        "part_number": "GMA33380"
+      },
+      {
+        "manufacturer": "Grease Monkey",
+        "part_number": "GMA785"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "VA3380"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF838"
+      },
+      {
+        "manufacturer": "Havoline",
+        "part_number": "TA-48"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "AE3647"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "E-1025"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "E-1015"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA1085"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA49"
+      },
+      {
+        "manufacturer": "Lee",
+        "part_number": "AFL-785"
+      },
+      {
+        "manufacturer": "Lee",
+        "part_number": "AF785"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "AF785"
+      },
+      {
+        "manufacturer": "Marathon",
+        "part_number": "AF785"
+      },
+      {
+        "manufacturer": "Master Parts",
+        "part_number": "AF-785"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "MGA3647"
+      },
+      {
+        "manufacturer": "Minit-Lube",
+        "part_number": "AF785"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "MA3380"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "26036"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "84866S"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "66036"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "AF785"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZA-109"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PA-109"
+      },
+      {
+        "manufacturer": "Phillips 66",
+        "part_number": "PA3380"
+      },
+      {
+        "manufacturer": "Pit Stop",
+        "part_number": "PSA19"
+      },
+      {
+        "manufacturer": "Power Flo",
+        "part_number": "SA33380"
+      },
+      {
+        "manufacturer": "Precision Tune",
+        "part_number": "AF-3380"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PA3380"
+      },
+      {
+        "manufacturer": "Professionals Choice - Archived",
+        "part_number": "QA3380"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "AF3380"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PA-3647"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PA-3380"
+      },
+      {
+        "manufacturer": "Pro-Tec",
+        "part_number": "210"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "QSA3647"
+      },
+      {
+        "manufacturer": "Rockhill",
+        "part_number": "66036"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "MA3380"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "SHA48"
+      },
+      {
+        "manufacturer": "Sieg",
+        "part_number": "AS3647"
+      },
+      {
+        "manufacturer": "Silverline",
+        "part_number": "26036"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "SA3647"
+      },
+      {
+        "manufacturer": "Sunoco",
+        "part_number": "A-47"
+      },
+      {
+        "manufacturer": "Trust",
+        "part_number": "AF785"
+      },
+      {
+        "manufacturer": "Unocal 76",
+        "part_number": "875"
+      },
+      {
+        "manufacturer": "Unocal 76",
+        "part_number": "785"
+      },
+      {
+        "manufacturer": "Valu-test",
+        "part_number": "V4036"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VA44"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VA-44"
+      },
+      {
+        "manufacturer": "VIPER",
+        "part_number": "3647"
+      },
+      {
+        "manufacturer": "Wal-Mart",
+        "part_number": "WAF-785"
+      },
+      {
+        "manufacturer": "WALMI",
+        "part_number": "WA-3647"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "AF785"
+      },
+      {
+        "manufacturer": "Western Auto",
+        "part_number": "74-5984-5"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "92-82",
+        "make": "BUICK",
+        "model": "CENTURY",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "86-82",
+        "make": "BUICK",
+        "model": "SKYHAWK",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "88-83",
+        "make": "BUICK",
+        "model": "SKYHAWK",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "91-82",
+        "make": "BUICK",
+        "model": "SKYLARK",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "87-86",
+        "make": "BUICK",
+        "model": "SOMERSET",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "1985",
+        "make": "BUICK",
+        "model": "SOMERSET REGAL",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "86-83",
+        "make": "CADILLAC",
+        "model": "CIMARRON",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "90-85",
+        "make": "CHEVROLET",
+        "model": "ASTRO",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "91-90",
+        "make": "CHEVROLET",
+        "model": "BERETTA",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "86-82",
+        "make": "CHEVROLET",
+        "model": "CAMARO",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "86-83",
+        "make": "CHEVROLET",
+        "model": "CAVALIER",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "91-90",
+        "make": "CHEVROLET",
+        "model": "CAVALIER",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "90-82",
+        "make": "CHEVROLET",
+        "model": "CELEBRITY",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "83-82",
+        "make": "CHEVROLET",
+        "model": "CITATION",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "85-84",
+        "make": "CHEVROLET",
+        "model": "CITATION II",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "91-90",
+        "make": "CHEVROLET",
+        "model": "CORSICA",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "93-87",
+        "make": "CHEVROLET",
+        "model": "LLV",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "93-85",
+        "make": "CHEVROLET",
+        "model": "S10",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "88-85",
+        "make": "CHEVROLET",
+        "model": "S10 BLAZER",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "90-85",
+        "make": "GMC",
+        "model": "S15",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "88-85",
+        "make": "GMC",
+        "model": "S15 JIMMY",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "90-85",
+        "make": "GMC",
+        "model": "SAFARI",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "93-91",
+        "make": "GMC",
+        "model": "SONOMA",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "87-85",
+        "make": "OLDSMOBILE",
+        "model": "CALAIS",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "91-88",
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS CALAIS",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "92-82",
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS CIERA",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "1992",
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS CRUISER",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "90-87",
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS CRUISER",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "86-82",
+        "make": "OLDSMOBILE",
+        "model": "FIRENZA",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "88-83",
+        "make": "OLDSMOBILE",
+        "model": "FIRENZA",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "84-82",
+        "make": "OLDSMOBILE",
+        "model": "OMEGA",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "91-82",
+        "make": "PONTIAC",
+        "model": "6000",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "88-84",
+        "make": "PONTIAC",
+        "model": "FIERO",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "86-82",
+        "make": "PONTIAC",
+        "model": "FIREBIRD",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "91-85",
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "83-82",
+        "make": "PONTIAC",
+        "model": "J2000",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "1983",
+        "make": "PONTIAC",
+        "model": "J2000",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "85-84",
+        "make": "PONTIAC",
+        "model": "J2000 SUNBIRD",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "85-84",
+        "make": "PONTIAC",
+        "model": "J2000 SUNBIRD",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "90-89",
+        "make": "PONTIAC",
+        "model": "LEMANS",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "90-88",
+        "make": "PONTIAC",
+        "model": "OPTIMA",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "84-82",
+        "make": "PONTIAC",
+        "model": "PHOENIX",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "1986",
+        "make": "PONTIAC",
+        "model": "SUNBIRD",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "91-86",
+        "make": "PONTIAC",
+        "model": "SUNBIRD",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "91-90",
+        "make": "PONTIAC",
+        "model": "TEMPEST",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CA3647",
+    "source_part_key": "000990516",
+    "source_totals": {
+      "attributes": 37,
+      "applications": 45,
+      "cross_references": 104
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® engine air filters are engineered to protect your engine from harmful contaminants. Replacing an air filter with FRAM Extra Guard can help improve horsepower, acceleration, and engine performance. To prevent engine wear, FRAM recommends changing your air filter every 12 months.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Ensures maximum airflow to prevent engine wear",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA3647, Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs quickly in as little as 5 minutes",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Protects up to 12 months or 12,000 miles (19,000 kilometers)",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Round Plastisol Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Keep your engine running smoothly by preventing damaging particles from entering your vehicle’s engine",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "82"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "84"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Flexible",
+        "recno": "85"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "86"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "88"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Air Filter",
+        "recno": "89"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "2.500",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100501646",
+        "recno": "92"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "8.516",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Inside Diameter (Inch)",
+        "value": "6.906",
+        "recno": "94"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "95"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "96"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "97"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "98"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.8000",
+        "recno": "102"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.6000",
+        "recno": "103"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "8.5000",
+        "recno": "104"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "7.5600",
+        "recno": "105"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "8.5000",
+        "recno": "106"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "8.7500",
+        "recno": "107"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.4300",
+        "recno": "108"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "8.7500",
+        "recno": "109"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.8,
+        "case_weight_lb": 1.6,
+        "unit_height_in": 8.5,
+        "unit_length_in": 8.5,
+        "unit_width_in": 3.43,
+        "case_height_in": 7.56,
+        "case_length_in": 8.75,
+        "case_width_in": 8.75,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 9.6,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 45,
+    "all_cross_references_observed": 104,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:08:59.174Z",
+  "discovered_from": "CA3647",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BUICK",
+        "model": "CENTURY",
+        "year": "92-82",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "SKYHAWK",
+        "year": "86-82",
+        "engine": "L4-1.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "SKYHAWK",
+        "year": "88-83",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "SKYLARK",
+        "year": "91-82",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "SOMERSET",
+        "year": "87-86",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "SOMERSET REGAL",
+        "year": "1985",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CIMARRON",
+        "year": "86-83",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "ASTRO",
+        "year": "90-85",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "BERETTA",
+        "year": "91-90",
+        "engine": "L4-2.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CAMARO",
+        "year": "86-82",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CAVALIER",
+        "year": "86-83",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CAVALIER",
+        "year": "91-90",
+        "engine": "L4-2.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CELEBRITY",
+        "year": "90-82",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CITATION",
+        "year": "83-82",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CITATION II",
+        "year": "85-84",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CORSICA",
+        "year": "91-90",
+        "engine": "L4-2.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "LLV",
+        "year": "93-87",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "S10",
+        "year": "93-85",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "S10 BLAZER",
+        "year": "88-85",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "S15",
+        "year": "90-85",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "S15 JIMMY",
+        "year": "88-85",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SAFARI",
+        "year": "90-85",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SONOMA",
+        "year": "93-91",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "CALAIS",
+        "year": "87-85",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS CALAIS",
+        "year": "91-88",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS CIERA",
+        "year": "92-82",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS CRUISER",
+        "year": "1992",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS CRUISER",
+        "year": "90-87",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "FIRENZA",
+        "year": "86-82",
+        "engine": "L4-1.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "FIRENZA",
+        "year": "88-83",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "OMEGA",
+        "year": "84-82",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "6000",
+        "year": "91-82",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "FIERO",
+        "year": "88-84",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "FIREBIRD",
+        "year": "86-82",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "year": "91-85",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "J2000",
+        "year": "83-82",
+        "engine": "L4-1.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "J2000",
+        "year": "1983",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "J2000 SUNBIRD",
+        "year": "85-84",
+        "engine": "L4-1.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "J2000 SUNBIRD",
+        "year": "85-84",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "LEMANS",
+        "year": "90-89",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "OPTIMA",
+        "year": "90-88",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "PHOENIX",
+        "year": "84-82",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "SUNBIRD",
+        "year": "1986",
+        "engine": "L4-1.8L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "SUNBIRD",
+        "year": "91-86",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "TEMPEST",
+        "year": "91-90",
+        "engine": "L4-2.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A913C",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A785C",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A913CK",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A785CK",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Air Refiner",
+        "part_number": "ARP-785",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "79008170",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "TS41",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "LT41",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Atlas",
+        "part_number": "A-70",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Autopar - Archived",
+        "part_number": "AC222",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Autopar - Archived",
+        "part_number": "AC238",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Autopro",
+        "part_number": "4036",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2109",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2132",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-1513",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "94085",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "94036",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "5238WS",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Cam2",
+        "part_number": "CA3380",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88085",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88036",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "BA3380",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CFA3647",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I-1015",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "CA7850",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "AF785",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "AF12",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DA3647",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Delphi",
+        "part_number": "AF1046",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "A857",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P524386",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Dynalife",
+        "part_number": "CNA-3647",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Econo-lube",
+        "part_number": "A33380",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Evergard",
+        "part_number": "EA3380",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Firestone",
+        "part_number": "CF-785",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Flag",
+        "part_number": "A-3647",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF1785",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AFR-81785",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25043317",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25040881",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Goodyear",
+        "part_number": "JLA3380",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Goodyear",
+        "part_number": "222-4588",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "AF785",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Grease Monkey",
+        "part_number": "GMA33380",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Grease Monkey",
+        "part_number": "GMA785",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "VA3380",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF838",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Havoline",
+        "part_number": "TA-48",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "AE3647",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "TY22048",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "E-1025",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "E-1015",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA1085",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA49",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Lee",
+        "part_number": "AFL-785",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Lee",
+        "part_number": "AF785",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "AF785",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "MA 1022",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Marathon",
+        "part_number": "AF785",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Master Parts",
+        "part_number": "AF-785",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "MGA3647",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Minit-Lube",
+        "part_number": "AF785",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "MA3380",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FA-989",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6036",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6085",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "26036",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Nelson",
+        "part_number": "84866S",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "66036",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "AF785",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZA-109",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PA-109",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Phillips 66",
+        "part_number": "PA3380",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Pit Stop",
+        "part_number": "PSA19",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Power Flo",
+        "part_number": "SA33380",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Precision Tune",
+        "part_number": "AF-3380",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PA3380",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Professionals Choice - Archived",
+        "part_number": "QA3380",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "AF3380",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PA-3647",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PA-3380",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Pro-Tec",
+        "part_number": "210",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A33380",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "QSA3647",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Rockhill",
+        "part_number": "66036",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "MA3380",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "SHA48",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Sieg",
+        "part_number": "AS3647",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Silverline",
+        "part_number": "26036",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "SA3647",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Sunoco",
+        "part_number": "A-47",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Trust",
+        "part_number": "AF785",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Unocal 76",
+        "part_number": "875",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Unocal 76",
+        "part_number": "785",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Valu-test",
+        "part_number": "V4036",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VA44",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VA-44",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "VIPER",
+        "part_number": "3647",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Wal-Mart",
+        "part_number": "WAF-785",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "WALMI",
+        "part_number": "WA-3647",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "AF785",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Western Auto",
+        "part_number": "74-5984-5",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46036",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46036MP",
+        "source_part_number": "CA3647",
+        "part_key": "000990516",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

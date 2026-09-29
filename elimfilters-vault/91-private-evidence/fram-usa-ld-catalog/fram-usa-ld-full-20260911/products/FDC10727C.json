@@ -1,0 +1,1268 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "FDC10727C",
+    "line": "DRIVE"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "FDC10727C",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.08,
+      "height_mm": 27.43,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Drive Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [
+      "CF10727"
+    ],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Bosch",
+        "part_number": "C3723WS"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF1810"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LAK248"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK8430"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C25624"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C25624C"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "49371"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-167"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2070"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "64 31 9 142 115"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "64 31 6 946 628"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "64 31 9 313 519"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "64 31 6 962 549"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "64 31 6 962 553"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1810C"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F9371C"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F9371"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1513"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1810C"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1810P"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1810P"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1810C"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1810C"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1810P"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3710"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC5624C"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "C25835P"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PC-5624C"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C25624"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1103"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "2011",
+        "make": "BMW",
+        "model": "1 SERIES M",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2011",
+        "make": "BMW",
+        "model": "1 SERIES M",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "13-08",
+        "make": "BMW",
+        "model": "128I",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-08",
+        "make": "BMW",
+        "model": "128I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "13-08",
+        "make": "BMW",
+        "model": "135I",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-08",
+        "make": "BMW",
+        "model": "135I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2013",
+        "make": "BMW",
+        "model": "135IS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2013",
+        "make": "BMW",
+        "model": "135IS",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "11-06",
+        "make": "BMW",
+        "model": "323I",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "11-06",
+        "make": "BMW",
+        "model": "323I",
+        "engine": "L6-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "BMW",
+        "model": "325I",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "BMW",
+        "model": "325I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "BMW",
+        "model": "325XI",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "BMW",
+        "model": "325XI",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "13-07",
+        "make": "BMW",
+        "model": "328I",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-07",
+        "make": "BMW",
+        "model": "328I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "13-09",
+        "make": "BMW",
+        "model": "328I XDRIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-09",
+        "make": "BMW",
+        "model": "328I XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "08-07",
+        "make": "BMW",
+        "model": "328XI",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "08-07",
+        "make": "BMW",
+        "model": "328XI",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "BMW",
+        "model": "330I",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "BMW",
+        "model": "330I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "BMW",
+        "model": "330XI",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "BMW",
+        "model": "330XI",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "11-09",
+        "make": "BMW",
+        "model": "335D",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "11-09",
+        "make": "BMW",
+        "model": "335D",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "13-07",
+        "make": "BMW",
+        "model": "335I",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-07",
+        "make": "BMW",
+        "model": "335I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "13-09",
+        "make": "BMW",
+        "model": "335I XDRIVE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-09",
+        "make": "BMW",
+        "model": "335I XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "13-11",
+        "make": "BMW",
+        "model": "335IS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-11",
+        "make": "BMW",
+        "model": "335IS",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "08-07",
+        "make": "BMW",
+        "model": "335XI",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "08-07",
+        "make": "BMW",
+        "model": "335XI",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-12",
+        "make": "BMW",
+        "model": "X1",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-12",
+        "make": "BMW",
+        "model": "X1",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-13",
+        "make": "BMW",
+        "model": "X1",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "FDC10727C",
+    "source_part_key": "010740127",
+    "source_totals": {
+      "attributes": 30,
+      "applications": 37,
+      "cross_references": 31
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Drive™cabin air filters prevent harmful airborne particles from entering your vehicle’s cabin. It is engineered to filter the air before it gets to you, removing dust, pollen, and other pollutants. Replacing a dirty cabin air filter with a new FRAM Drive cabin air filter can optimize clean air flow and maintain peak HVAC system performance. FRAM recommends changing your cabin air filter every 12 months.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Optimizes airflow and maintains HVAC performance",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, FDC10727C, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Removes dust, pollen, and other pollutants",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Up to 12 months or 12,000 mile (19,000 kilometer) protection",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Drive Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.08",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "32.8",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "6.16",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "15",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Under Hood",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100578655",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.7500",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.7500",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "32.7170",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.0000",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "6.1020",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "36.0000",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "0.7870",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "8.0000",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.75,
+        "case_weight_lb": 1.75,
+        "unit_height_in": 32.717,
+        "unit_length_in": 6.102,
+        "unit_width_in": 0.787,
+        "case_height_in": 4,
+        "case_length_in": 36,
+        "case_width_in": 8,
+        "inferred_case_qty": 1
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 21,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 37,
+    "all_cross_references_observed": 31,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T06:00:13.489Z",
+  "discovered_from": "FDC10727C",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BMW",
+        "model": "1 SERIES M",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "1 SERIES M",
+        "year": "2011",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "128I",
+        "year": "13-08",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "128I",
+        "year": "13-08",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "135I",
+        "year": "13-08",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "135I",
+        "year": "13-08",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "135IS",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "135IS",
+        "year": "2013",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "323I",
+        "year": "11-06",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "323I",
+        "year": "11-06",
+        "engine": "L6-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "325I",
+        "year": "2006",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "325I",
+        "year": "2006",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "325XI",
+        "year": "2006",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "325XI",
+        "year": "2006",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328I",
+        "year": "13-07",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328I",
+        "year": "13-07",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328I XDRIVE",
+        "year": "13-09",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328I XDRIVE",
+        "year": "13-09",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328XI",
+        "year": "08-07",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "328XI",
+        "year": "08-07",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "330I",
+        "year": "2006",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "330I",
+        "year": "2006",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "330XI",
+        "year": "2006",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "330XI",
+        "year": "2006",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "335D",
+        "year": "11-09",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "335D",
+        "year": "11-09",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "335I",
+        "year": "13-07",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "335I",
+        "year": "13-07",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "335I XDRIVE",
+        "year": "13-09",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "335I XDRIVE",
+        "year": "13-09",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "335IS",
+        "year": "13-11",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "335IS",
+        "year": "13-11",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "335XI",
+        "year": "08-07",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "335XI",
+        "year": "08-07",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "X1",
+        "year": "16-12",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "X1",
+        "year": "16-12",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "X1",
+        "year": "15-13",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-167",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2070",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "64 31 9 142 115",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "64 31 6 946 628",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "64 31 9 313 519",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "64 31 6 962 549",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "64 31 6 962 553",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "C3723WS",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1810C",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF1810",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FRAM Fresh Breeze",
+        "part_number": "CF10727",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F9371C",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F9371",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1513",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1810C",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1810P",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1810P",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1810C",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1810C",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1810P",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LAK248",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK8430",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3710",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC5624C",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "C25835P",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PC-5624C",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C25624",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C25624C",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C25624",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1103",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "49371",
+        "source_part_number": "FDC10727C",
+        "part_key": "010740127",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

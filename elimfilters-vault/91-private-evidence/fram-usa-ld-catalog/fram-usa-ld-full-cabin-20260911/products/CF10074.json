@@ -1,0 +1,838 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF10074",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF10074",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.141,
+      "height_mm": 28.98,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Lexus",
+        "part_number": "87139-30100"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-30100"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-YZZ38"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C59188C"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10099"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1726"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4097"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3018"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C35402"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WCAF1726"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "20-16",
+        "make": "LEXUS",
+        "model": "GS F",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-16",
+        "make": "LEXUS",
+        "model": "GS F",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "17-16",
+        "make": "LEXUS",
+        "model": "GS200T",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "17-16",
+        "make": "LEXUS",
+        "model": "GS200T",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-13",
+        "make": "LEXUS",
+        "model": "GS350",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-13",
+        "make": "LEXUS",
+        "model": "GS350",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "18-13",
+        "make": "LEXUS",
+        "model": "GS450H",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-13",
+        "make": "LEXUS",
+        "model": "GS450H",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "17-16",
+        "make": "LEXUS",
+        "model": "IS200T",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "17-16",
+        "make": "LEXUS",
+        "model": "IS200T",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "15-14",
+        "make": "LEXUS",
+        "model": "IS250",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "15-14",
+        "make": "LEXUS",
+        "model": "IS250",
+        "engine": "V6-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "25-16",
+        "make": "LEXUS",
+        "model": "IS300",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-18",
+        "make": "LEXUS",
+        "model": "IS300",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-16",
+        "make": "LEXUS",
+        "model": "IS300",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-14",
+        "make": "LEXUS",
+        "model": "IS350",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-14",
+        "make": "LEXUS",
+        "model": "IS350",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "25-22",
+        "make": "LEXUS",
+        "model": "IS500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-22",
+        "make": "LEXUS",
+        "model": "IS500",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-15",
+        "make": "LEXUS",
+        "model": "RC F",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-15",
+        "make": "LEXUS",
+        "model": "RC F",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "17-16",
+        "make": "LEXUS",
+        "model": "RC200T",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "17-16",
+        "make": "LEXUS",
+        "model": "RC200T",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-16",
+        "make": "LEXUS",
+        "model": "RC300",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-18",
+        "make": "LEXUS",
+        "model": "RC300",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-16",
+        "make": "LEXUS",
+        "model": "RC300",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "25-15",
+        "make": "LEXUS",
+        "model": "RC350",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-15",
+        "make": "LEXUS",
+        "model": "RC350",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF10074",
+    "source_part_key": "007775782",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 28,
+      "cross_references": 10
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF10074, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Square",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.141",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "8.700",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "7.913",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "10",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Behind Glove Box",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100562494",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.5250",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.0500",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "9.0600",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "3.3600",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "8.0700",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "11.4900",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.3800",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "8.7400",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.525,
+        "case_weight_lb": 1.05,
+        "unit_height_in": 9.06,
+        "unit_length_in": 8.07,
+        "unit_width_in": 1.38,
+        "case_height_in": 3.36,
+        "case_length_in": 11.49,
+        "case_width_in": 8.74,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 6.3,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 28,
+    "all_cross_references_observed": 10,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T04:58:52.942Z",
+  "discovered_from": "CF10074",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "LEXUS",
+        "model": "GS F",
+        "year": "20-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "GS F",
+        "year": "20-16",
+        "engine": "V8-5.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "GS200T",
+        "year": "17-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "GS200T",
+        "year": "17-16",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "GS350",
+        "year": "20-13",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "GS350",
+        "year": "20-13",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "GS450H",
+        "year": "18-13",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "GS450H",
+        "year": "18-13",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "IS200T",
+        "year": "17-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "IS200T",
+        "year": "17-16",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "IS250",
+        "year": "15-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "IS250",
+        "year": "15-14",
+        "engine": "V6-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "IS300",
+        "year": "25-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "IS300",
+        "year": "25-18",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "IS300",
+        "year": "25-16",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "IS350",
+        "year": "26-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "IS350",
+        "year": "26-14",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "IS500",
+        "year": "25-22",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "IS500",
+        "year": "25-22",
+        "engine": "V8-5.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "RC F",
+        "year": "25-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "RC F",
+        "year": "25-15",
+        "engine": "V8-5.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "RC200T",
+        "year": "17-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "RC200T",
+        "year": "17-16",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "RC300",
+        "year": "25-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "RC300",
+        "year": "25-18",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "RC300",
+        "year": "25-16",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "RC350",
+        "year": "25-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "RC350",
+        "year": "25-15",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Lexus",
+        "part_number": "87139-30100",
+        "source_part_number": "CF10074",
+        "part_key": "007775782",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1726",
+        "source_part_number": "CF10074",
+        "part_key": "007775782",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4097",
+        "source_part_number": "CF10074",
+        "part_key": "007775782",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3018",
+        "source_part_number": "CF10074",
+        "part_key": "007775782",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C59188C",
+        "source_part_number": "CF10074",
+        "part_key": "007775782",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C35402",
+        "source_part_number": "CF10074",
+        "part_key": "007775782",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-30100",
+        "source_part_number": "CF10074",
+        "part_key": "007775782",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-YZZ38",
+        "source_part_number": "CF10074",
+        "part_key": "007775782",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WCAF1726",
+        "source_part_number": "CF10074",
+        "part_key": "007775782",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10099",
+        "source_part_number": "CF10074",
+        "part_key": "007775782",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "phase": "ISUZU_V154_EA16773_REVALIDATION",
+  "source": "ISUZU_US_V154_EA16773_REVALIDATION",
+  "apply": false,
+  "database_write": false,
+  "rows": [
+    {
+      "sku": "EA16773",
+      "status": "READY",
+      "before": 52,
+      "after": 59,
+      "added_ranges": 7,
+      "exact_positions": 20
+    }
+  ],
+  "summary": {
+    "total": 1,
+    "ready": 1,
+    "added_ranges": 7,
+    "exact_positions": 20,
+    "database_write": false
+  }
+}

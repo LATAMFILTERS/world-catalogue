@@ -1,0 +1,693 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF10383",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF10383",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.567,
+      "height_mm": 39.8,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF1808"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C35872"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4875C"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4875"
+      },
+      {
+        "manufacturer": "GK Industries",
+        "part_number": "CF1086"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1808P"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1808C"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1808P"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1808C"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1808C"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1808P"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3666"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "SB00999"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "SAMP027"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC4010"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC5872"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1808P"
+      },
+      {
+        "manufacturer": "Subaru",
+        "part_number": "72880-AE080"
+      },
+      {
+        "manufacturer": "Subaru",
+        "part_number": "63210-AE000"
+      },
+      {
+        "manufacturer": "Subaru",
+        "part_number": "63210-AE100"
+      },
+      {
+        "manufacturer": "Subaru",
+        "part_number": "72880-AE090"
+      },
+      {
+        "manufacturer": "Subaru",
+        "part_number": "G3210-AE000"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1145"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "06-03",
+        "make": "SUBARU",
+        "model": "BAJA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-03",
+        "make": "SUBARU",
+        "model": "BAJA",
+        "engine": "H4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "04-00",
+        "make": "SUBARU",
+        "model": "LEGACY",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "04-00",
+        "make": "SUBARU",
+        "model": "LEGACY",
+        "engine": "H4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "04-00",
+        "make": "SUBARU",
+        "model": "OUTBACK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "04-00",
+        "make": "SUBARU",
+        "model": "OUTBACK",
+        "engine": "H4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "04-01",
+        "make": "SUBARU",
+        "model": "OUTBACK",
+        "engine": "H6-3.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF10383",
+    "source_part_key": "000991408",
+    "source_totals": {
+      "attributes": 33,
+      "applications": 7,
+      "cross_references": 23
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF10383, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.567",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "8.662",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "4.370",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "15",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Behind Glove Box",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "length (1) (Inch)",
+        "value": "7.283",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100537768",
+        "recno": "92"
+      },
+      {
+        "attribute": "Width (1) (Inch)",
+        "value": "4.251",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "94"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.7250",
+        "recno": "98"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.4500",
+        "recno": "99"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "8.7810",
+        "recno": "100"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "7.1650",
+        "recno": "101"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "4.5680",
+        "recno": "102"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "9.4490",
+        "recno": "103"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.3080",
+        "recno": "104"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "4.9210",
+        "recno": "105"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.725,
+        "case_weight_lb": 1.45,
+        "unit_height_in": 8.781,
+        "unit_length_in": 4.568,
+        "unit_width_in": 3.308,
+        "case_height_in": 7.165,
+        "case_length_in": 9.449,
+        "case_width_in": 4.921,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 8.7,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 7,
+    "all_cross_references_observed": 23,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T04:59:30.257Z",
+  "discovered_from": "CF10383",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "SUBARU",
+        "model": "BAJA",
+        "year": "06-03",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUBARU",
+        "model": "BAJA",
+        "year": "06-03",
+        "engine": "H4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUBARU",
+        "model": "LEGACY",
+        "year": "04-00",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUBARU",
+        "model": "LEGACY",
+        "year": "04-00",
+        "engine": "H4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUBARU",
+        "model": "OUTBACK",
+        "year": "04-00",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUBARU",
+        "model": "OUTBACK",
+        "year": "04-00",
+        "engine": "H4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUBARU",
+        "model": "OUTBACK",
+        "year": "04-01",
+        "engine": "H6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF1808",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4875C",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4875",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "GK Industries",
+        "part_number": "CF1086",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1808P",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1808C",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1808P",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1808C",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1808C",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1808P",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3666",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "SB00999",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "SAMP027",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC4010",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC5872",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C35872",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1808P",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Subaru",
+        "part_number": "72880-AE080",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Subaru",
+        "part_number": "63210-AE000",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Subaru",
+        "part_number": "63210-AE100",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Subaru",
+        "part_number": "72880-AE090",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Subaru",
+        "part_number": "G3210-AE000",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1145",
+        "source_part_number": "CF10383",
+        "part_key": "000991408",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

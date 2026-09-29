@@ -1,0 +1,1255 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF10735",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF10735",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.18,
+      "height_mm": 29.97,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF1867"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LA618"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4300"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C36067"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24300"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2147"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "XC11714"
+      },
+      {
+        "manufacturer": "Forecast",
+        "part_number": "CAF242P"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4300"
+      },
+      {
+        "manufacturer": "GK Industries",
+        "part_number": "CF1179"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1503"
+      },
+      {
+        "manufacturer": "Hyundai",
+        "part_number": "08790-3M000A"
+      },
+      {
+        "manufacturer": "Hyundai",
+        "part_number": "97133-3M000"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF2061"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1867P"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1867P"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1876P"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4012"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "HY05999"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "CAF2075"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1867P"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF1876MHP"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF1876M"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF1876P"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1062"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "25-23",
+        "make": "GENESIS",
+        "model": "ELECTRIFIED G80",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-19",
+        "make": "GENESIS",
+        "model": "G70",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-19",
+        "make": "GENESIS",
+        "model": "G70",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2024",
+        "make": "GENESIS",
+        "model": "G70",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "23-19",
+        "make": "GENESIS",
+        "model": "G70",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "24-17",
+        "make": "GENESIS",
+        "model": "G80",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-21",
+        "make": "GENESIS",
+        "model": "G80",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "20-18",
+        "make": "GENESIS",
+        "model": "G80",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "24-21",
+        "make": "GENESIS",
+        "model": "G80",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "GENESIS",
+        "model": "G80",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "GENESIS",
+        "model": "G80",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-17",
+        "make": "GENESIS",
+        "model": "G90",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "22-17",
+        "make": "GENESIS",
+        "model": "G90",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "GENESIS",
+        "model": "G90",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "21-17",
+        "make": "GENESIS",
+        "model": "G90",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "GENESIS",
+        "model": "GV70",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "GENESIS",
+        "model": "GV70",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "GENESIS",
+        "model": "GV70",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "GENESIS",
+        "model": "GV80",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "GENESIS",
+        "model": "GV80",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "GENESIS",
+        "model": "GV80",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "GENESIS",
+        "model": "GV80 COUPE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "GENESIS",
+        "model": "GV80 COUPE",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "16-11",
+        "make": "HYUNDAI",
+        "model": "EQUUS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2011",
+        "make": "HYUNDAI",
+        "model": "EQUUS",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "16-12",
+        "make": "HYUNDAI",
+        "model": "EQUUS",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-09",
+        "make": "HYUNDAI",
+        "model": "GENESIS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-09",
+        "make": "HYUNDAI",
+        "model": "GENESIS",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "12-09",
+        "make": "HYUNDAI",
+        "model": "GENESIS",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "16-12",
+        "make": "HYUNDAI",
+        "model": "GENESIS",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-19",
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-19",
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-19",
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "20-19",
+        "make": "KIA",
+        "model": "K900",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-19",
+        "make": "KIA",
+        "model": "K900",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "23-18",
+        "make": "KIA",
+        "model": "STINGER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "21-18",
+        "make": "KIA",
+        "model": "STINGER",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "23-22",
+        "make": "KIA",
+        "model": "STINGER",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "23-18",
+        "make": "KIA",
+        "model": "STINGER",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "25-20",
+        "make": "KIA",
+        "model": "TELLURIDE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-20",
+        "make": "KIA",
+        "model": "TELLURIDE",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF10735",
+    "source_part_key": "000991717",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 41,
+      "cross_references": 25
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF10735, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.180",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "10.200",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "9.020",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Location",
+        "value": "Behind Glove Box",
+        "recno": "89"
+      },
+      {
+        "attribute": "Installation Time",
+        "value": "10",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100543592",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Thailand",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.7450",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.4900",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "10.5120",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "3.5430",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "9.4490",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "11.1420",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.3780",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "9.9210",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.745,
+        "case_weight_lb": 1.49,
+        "unit_height_in": 10.512,
+        "unit_length_in": 9.449,
+        "unit_width_in": 1.378,
+        "case_height_in": 3.543,
+        "case_length_in": 11.142,
+        "case_width_in": 9.921,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 8.94,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 41,
+    "all_cross_references_observed": 25,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:57:28.855Z",
+  "discovered_from": "CF10735",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "GENESIS",
+        "model": "ELECTRIFIED G80",
+        "year": "25-23",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENESIS",
+        "model": "G70",
+        "year": "24-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENESIS",
+        "model": "G70",
+        "year": "23-19",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENESIS",
+        "model": "G70",
+        "year": "2024",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENESIS",
+        "model": "G70",
+        "year": "23-19",
+        "engine": "V6-3.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENESIS",
+        "model": "G80",
+        "year": "24-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENESIS",
+        "model": "G80",
+        "year": "24-21",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENESIS",
+        "model": "G80",
+        "year": "20-18",
+        "engine": "V6-3.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENESIS",
+        "model": "G80",
+        "year": "24-21",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENESIS",
+        "model": "G80",
+        "year": "20-17",
+        "engine": "V6-3.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENESIS",
+        "model": "G80",
+        "year": "20-17",
+        "engine": "V8-5.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENESIS",
+        "model": "G90",
+        "year": "26-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENESIS",
+        "model": "G90",
+        "year": "22-17",
+        "engine": "V6-3.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENESIS",
+        "model": "G90",
+        "year": "26-23",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENESIS",
+        "model": "G90",
+        "year": "21-17",
+        "engine": "V8-5.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENESIS",
+        "model": "GV70",
+        "year": "26-22",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENESIS",
+        "model": "GV70",
+        "year": "26-22",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENESIS",
+        "model": "GV70",
+        "year": "26-22",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENESIS",
+        "model": "GV80",
+        "year": "26-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENESIS",
+        "model": "GV80",
+        "year": "26-21",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENESIS",
+        "model": "GV80",
+        "year": "26-21",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENESIS",
+        "model": "GV80 COUPE",
+        "year": "26-25",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENESIS",
+        "model": "GV80 COUPE",
+        "year": "26-25",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "EQUUS",
+        "year": "16-11",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "EQUUS",
+        "year": "2011",
+        "engine": "V8-4.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "EQUUS",
+        "year": "16-12",
+        "engine": "V8-5.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "GENESIS",
+        "year": "16-09",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "GENESIS",
+        "year": "16-09",
+        "engine": "V6-3.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "GENESIS",
+        "year": "12-09",
+        "engine": "V8-4.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "GENESIS",
+        "year": "16-12",
+        "engine": "V8-5.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "year": "20-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "year": "20-19",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "year": "20-19",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "K900",
+        "year": "20-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "K900",
+        "year": "20-19",
+        "engine": "V6-3.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "STINGER",
+        "year": "23-18",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "STINGER",
+        "year": "21-18",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "STINGER",
+        "year": "23-22",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "STINGER",
+        "year": "23-18",
+        "engine": "V6-3.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "TELLURIDE",
+        "year": "25-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "TELLURIDE",
+        "year": "25-20",
+        "engine": "V6-3.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2147",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF1867",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "XC11714",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Forecast",
+        "part_number": "CAF242P",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4300",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "GK Industries",
+        "part_number": "CF1179",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1503",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hyundai",
+        "part_number": "08790-3M000A",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hyundai",
+        "part_number": "97133-3M000",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF2061",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1867P",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1867P",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1876P",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LA618",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4012",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "HY05999",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "CAF2075",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4300",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C36067",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1867P",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF1876MHP",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF1876M",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF1876P",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1062",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24300",
+        "source_part_number": "CF10735",
+        "part_key": "000991717",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

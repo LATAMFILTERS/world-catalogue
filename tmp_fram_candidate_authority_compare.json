@@ -1,0 +1,2690 @@
+{
+  "all": [
+    {
+      "authority": "CA10191",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA38766",
+          "evidenceCount": 1,
+          "targetCanonical": "FRAM:CA8766",
+          "targetHarvestFound": true,
+          "specComparable": 6,
+          "specMatches": 5,
+          "specConflicts": 1,
+          "sourceApps": 6,
+          "targetApps": 9,
+          "appIntersection": 0,
+          "sourceRefs": 8,
+          "targetRefs": 9,
+          "refIntersection": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA10253",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA34137",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 13,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 8,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CA10755",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA32377",
+          "evidenceCount": 1,
+          "targetCanonical": "FRAM:CA12377",
+          "targetHarvestFound": true,
+          "specComparable": 6,
+          "specMatches": 5,
+          "specConflicts": 1,
+          "sourceApps": 20,
+          "targetApps": 15,
+          "appIntersection": 0,
+          "sourceRefs": 8,
+          "targetRefs": 3,
+          "refIntersection": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA10986",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA31415",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 0,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 5,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CA11003",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA37597",
+          "evidenceCount": 1,
+          "targetCanonical": "FRAM:CA7597",
+          "targetHarvestFound": true,
+          "specComparable": 6,
+          "specMatches": 5,
+          "specConflicts": 1,
+          "sourceApps": 3,
+          "targetApps": 42,
+          "appIntersection": 0,
+          "sourceRefs": 5,
+          "targetRefs": 24,
+          "refIntersection": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA11054",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA30626",
+          "evidenceCount": 1,
+          "targetCanonical": "FRAM:CA10626",
+          "targetHarvestFound": true,
+          "specComparable": 6,
+          "specMatches": 5,
+          "specConflicts": 1,
+          "sourceApps": 1,
+          "targetApps": 3,
+          "appIntersection": 0,
+          "sourceRefs": 5,
+          "targetRefs": 8,
+          "refIntersection": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA11426",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA38023",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 5,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 4,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CA258",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA38009",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 0,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CA3373",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA33690",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 42,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 22,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EA33437",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 42,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 22,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CA3399",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA31171",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 37,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 15,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CA3660",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA38601",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 100,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 24,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CA376",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA32262",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 5,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 18,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CA3782SY",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA30272",
+          "evidenceCount": 1,
+          "targetCanonical": "FRAM:CA272",
+          "targetHarvestFound": true,
+          "specComparable": 6,
+          "specMatches": 4,
+          "specConflicts": 2,
+          "sourceApps": 0,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 10,
+          "targetRefs": 8,
+          "refIntersection": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA3873",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA31091",
+          "evidenceCount": 1,
+          "targetCanonical": "MANN-FILTER:C251091",
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 16,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 7,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CA4576",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA36110",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 16,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 9,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CA6324",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA33989",
+          "evidenceCount": 1,
+          "targetCanonical": "FRAM:CA3989",
+          "targetHarvestFound": true,
+          "specComparable": 6,
+          "specMatches": 5,
+          "specConflicts": 1,
+          "sourceApps": 0,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 15,
+          "refIntersection": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA6545",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA31152",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 19,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 8,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CA7094",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA37688",
+          "evidenceCount": 1,
+          "targetCanonical": "FRAM:CA7688",
+          "targetHarvestFound": true,
+          "specComparable": 6,
+          "specMatches": 2,
+          "specConflicts": 4,
+          "sourceApps": 8,
+          "targetApps": 2,
+          "appIntersection": 0,
+          "sourceRefs": 11,
+          "targetRefs": 11,
+          "refIntersection": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA7137SY",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA31553",
+          "evidenceCount": 1,
+          "targetCanonical": "FRAM:CA1553SY",
+          "targetHarvestFound": true,
+          "specComparable": 6,
+          "specMatches": 4,
+          "specConflicts": 2,
+          "sourceApps": 0,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 5,
+          "targetRefs": 16,
+          "refIntersection": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA7614",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA39108",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 9,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 8,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CA8038",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA33902",
+          "evidenceCount": 1,
+          "targetCanonical": "FRAM:CA3902",
+          "targetHarvestFound": true,
+          "specComparable": 6,
+          "specMatches": 3,
+          "specConflicts": 3,
+          "sourceApps": 73,
+          "targetApps": 13,
+          "appIntersection": 0,
+          "sourceRefs": 14,
+          "targetRefs": 10,
+          "refIntersection": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA8040",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA32329",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 2,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 10,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CA8094",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA38613",
+          "evidenceCount": 1,
+          "targetCanonical": "FRAM:CA8613",
+          "targetHarvestFound": true,
+          "specComparable": 6,
+          "specMatches": 5,
+          "specConflicts": 1,
+          "sourceApps": 1,
+          "targetApps": 2,
+          "appIntersection": 0,
+          "sourceRefs": 8,
+          "targetRefs": 8,
+          "refIntersection": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA8720",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA31109",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 7,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 7,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CA8754",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA37008",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 13,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 10,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CA8768",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA33698",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 51,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 7,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CA9115",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA32517",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 3,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 10,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CA9246SY",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA39269",
+          "evidenceCount": 1,
+          "targetCanonical": "FRAM:CA9269SY",
+          "targetHarvestFound": true,
+          "specComparable": 6,
+          "specMatches": 4,
+          "specConflicts": 2,
+          "sourceApps": 0,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 11,
+          "targetRefs": 18,
+          "refIntersection": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA9269",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA31831",
+          "evidenceCount": 1,
+          "targetCanonical": "FRAM:CA11831",
+          "targetHarvestFound": true,
+          "specComparable": 6,
+          "specMatches": 3,
+          "specConflicts": 3,
+          "sourceApps": 30,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 24,
+          "targetRefs": 6,
+          "refIntersection": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA9401",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA31960",
+          "evidenceCount": 1,
+          "targetCanonical": "FRAM:CA11960",
+          "targetHarvestFound": true,
+          "specComparable": 6,
+          "specMatches": 5,
+          "specConflicts": 1,
+          "sourceApps": 18,
+          "targetApps": 6,
+          "appIntersection": 0,
+          "sourceRefs": 8,
+          "targetRefs": 3,
+          "refIntersection": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA9634",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA30153",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 8,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 7,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CF10074",
+      "family": "CABIN",
+      "candidates": [
+        {
+          "sku": "EC32368",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 28,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 5,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CF10133",
+      "family": "CABIN",
+      "candidates": [
+        {
+          "sku": "EC32131",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 4,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 9,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CF10135",
+      "family": "CABIN",
+      "candidates": [
+        {
+          "sku": "EC33272",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 16,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 10,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CF10208",
+      "family": "CABIN",
+      "candidates": [
+        {
+          "sku": "EC33023",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 14,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 8,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CF11173",
+      "family": "CABIN",
+      "candidates": [
+        {
+          "sku": "EC30555",
+          "evidenceCount": 1,
+          "targetCanonical": "FRAM:CF10555",
+          "targetHarvestFound": true,
+          "specComparable": 6,
+          "specMatches": 5,
+          "specConflicts": 1,
+          "sourceApps": 9,
+          "targetApps": 12,
+          "appIntersection": 0,
+          "sourceRefs": 11,
+          "targetRefs": 15,
+          "refIntersection": 1
+        }
+      ]
+    },
+    {
+      "authority": "CF11663",
+      "family": "CABIN",
+      "candidates": [
+        {
+          "sku": "EC31776",
+          "evidenceCount": 1,
+          "targetCanonical": "FRAM:CF11776",
+          "targetHarvestFound": true,
+          "specComparable": 6,
+          "specMatches": 5,
+          "specConflicts": 1,
+          "sourceApps": 10,
+          "targetApps": 16,
+          "appIntersection": 0,
+          "sourceRefs": 8,
+          "targetRefs": 9,
+          "refIntersection": 1
+        }
+      ]
+    },
+    {
+      "authority": "CF5972A",
+      "family": "CABIN",
+      "candidates": [
+        {
+          "sku": "EC32745",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 33,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 8,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CF8770A",
+      "family": "CABIN",
+      "candidates": [
+        {
+          "sku": "EC38971",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 25,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 9,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CH11038",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL36122",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 14,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 9,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CH11665",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL38005",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 27,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 11,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "CH6006",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL34797",
+          "evidenceCount": 1,
+          "targetCanonical": "FRAM:CH4797",
+          "targetHarvestFound": true,
+          "specComparable": 6,
+          "specMatches": 5,
+          "specConflicts": 1,
+          "sourceApps": 0,
+          "targetApps": 2,
+          "appIntersection": 0,
+          "sourceRefs": 5,
+          "targetRefs": 12,
+          "refIntersection": 1
+        }
+      ]
+    },
+    {
+      "authority": "FD5618",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL31329",
+          "evidenceCount": 1,
+          "targetCanonical": "MANN-FILTER:W71329",
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 14,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 13,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "FDC11173C",
+      "family": "CABIN",
+      "candidates": [
+        {
+          "sku": "EC30555",
+          "evidenceCount": 1,
+          "targetCanonical": "FRAM:CF10555",
+          "targetHarvestFound": true,
+          "specComparable": 6,
+          "specMatches": 4,
+          "specConflicts": 2,
+          "sourceApps": 9,
+          "targetApps": 12,
+          "appIntersection": 0,
+          "sourceRefs": 11,
+          "targetRefs": 15,
+          "refIntersection": 1
+        }
+      ]
+    },
+    {
+      "authority": "FDC11663C",
+      "family": "CABIN",
+      "candidates": [
+        {
+          "sku": "EC31776",
+          "evidenceCount": 1,
+          "targetCanonical": "FRAM:CF11776",
+          "targetHarvestFound": true,
+          "specComparable": 6,
+          "specMatches": 4,
+          "specConflicts": 2,
+          "sourceApps": 10,
+          "targetApps": 16,
+          "appIntersection": 0,
+          "sourceRefs": 8,
+          "targetRefs": 9,
+          "refIntersection": 1
+        }
+      ]
+    },
+    {
+      "authority": "G3802AFP",
+      "family": "FUEL",
+      "candidates": [
+        {
+          "sku": "EF33802",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 0,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 2,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "G3831",
+      "family": "FUEL",
+      "candidates": [
+        {
+          "sku": "EF33010",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 17,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EF38309",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 17,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "G6462",
+      "family": "FUEL",
+      "candidates": [
+        {
+          "sku": "EF31426",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 11,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 30,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "G7194",
+      "family": "FUEL",
+      "candidates": [
+        {
+          "sku": "EF36612",
+          "evidenceCount": 1,
+          "targetCanonical": "FRAM:G6612",
+          "targetHarvestFound": true,
+          "specComparable": 6,
+          "specMatches": 4,
+          "specConflicts": 2,
+          "sourceApps": 2,
+          "targetApps": 7,
+          "appIntersection": 0,
+          "sourceRefs": 13,
+          "targetRefs": 8,
+          "refIntersection": 1
+        },
+        {
+          "sku": "EF31426",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 2,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 13,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "G7355",
+      "family": "FUEL",
+      "candidates": [
+        {
+          "sku": "EF31426",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 13,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 7,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "G7766",
+      "family": "FUEL",
+      "candidates": [
+        {
+          "sku": "EF31426",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 4,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 7,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "PH10890",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL32941",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 10,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "PH2815",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL32013",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32016",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32021",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL30610",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL34011",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL34022",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32012",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39201",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32018",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32019",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39202",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32022",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32025",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32026",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39203",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32036",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39204",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39205",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32081",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39209",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39301",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL33014",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL33019",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39302",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39304",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39308",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL34012",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL34015",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL34016",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL34017",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL34023",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL34025",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32510",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL34032",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL34048",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL30510",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL35110",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39407",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL34070",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39409",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32015",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 12,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "PH3506",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL30060",
+          "evidenceCount": 1,
+          "targetCanonical": "FRAM:PH10060",
+          "targetHarvestFound": true,
+          "specComparable": 7,
+          "specMatches": 5,
+          "specConflicts": 2,
+          "sourceApps": 239,
+          "targetApps": 191,
+          "appIntersection": 0,
+          "sourceRefs": 33,
+          "targetRefs": 28,
+          "refIntersection": 1
+        },
+        {
+          "sku": "EL31222",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 239,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 33,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "PH3569",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL30830",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32013",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32016",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32021",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL30610",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32012",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39201",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32018",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32019",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39202",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32022",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32025",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32026",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39203",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32036",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39204",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39205",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32081",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39209",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39301",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL33014",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL33019",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39302",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39304",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39308",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32015",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 22,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 34,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "PH3616",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL31180",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 0,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 5,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "PH3675",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL39362",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 180,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 39,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL30060",
+          "evidenceCount": 1,
+          "targetCanonical": "FRAM:PH10060",
+          "targetHarvestFound": true,
+          "specComparable": 7,
+          "specMatches": 5,
+          "specConflicts": 2,
+          "sourceApps": 180,
+          "targetApps": 191,
+          "appIntersection": 0,
+          "sourceRefs": 39,
+          "targetRefs": 28,
+          "refIntersection": 1
+        }
+      ]
+    },
+    {
+      "authority": "PH3690",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL32205",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 0,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 17,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "PH46",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL37181",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 13,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 15,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "PH5343",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL30671",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 8,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 12,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL37023",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 8,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 12,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "PH7136",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL31701",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 0,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 23,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL31702",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 0,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 23,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "PH7317",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL36019",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 204,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 51,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "PH9376",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL30234",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 0,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 8,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "PH977A",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL34011",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 36,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 40,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL34022",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 36,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 40,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL34012",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 36,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 40,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL34015",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 36,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 40,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL34016",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 36,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 40,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL34017",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 36,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 40,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL34023",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 36,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 40,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL34025",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 36,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 40,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL32510",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 36,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 40,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL34032",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 36,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 40,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL34048",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 36,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 40,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL30510",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 36,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 40,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL35110",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 36,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 40,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39407",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 36,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 40,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL34070",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 36,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 40,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL39409",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 36,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 40,
+          "targetRefs": 0,
+          "refIntersection": 0
+        }
+      ]
+    },
+    {
+      "authority": "PH9837",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL39362",
+          "evidenceCount": 1,
+          "targetCanonical": null,
+          "targetHarvestFound": false,
+          "specComparable": 0,
+          "specMatches": 0,
+          "specConflicts": 0,
+          "sourceApps": 42,
+          "targetApps": 0,
+          "appIntersection": 0,
+          "sourceRefs": 13,
+          "targetRefs": 0,
+          "refIntersection": 0
+        },
+        {
+          "sku": "EL30060",
+          "evidenceCount": 1,
+          "targetCanonical": "FRAM:PH10060",
+          "targetHarvestFound": true,
+          "specComparable": 7,
+          "specMatches": 5,
+          "specConflicts": 2,
+          "sourceApps": 42,
+          "targetApps": 191,
+          "appIntersection": 0,
+          "sourceRefs": 13,
+          "targetRefs": 28,
+          "refIntersection": 1
+        }
+      ]
+    }
+  ],
+  "strong": []
+}

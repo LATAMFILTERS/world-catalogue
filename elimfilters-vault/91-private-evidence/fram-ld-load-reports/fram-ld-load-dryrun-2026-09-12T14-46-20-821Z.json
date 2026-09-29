@@ -1,0 +1,15 @@
+{
+  "mode": "dry-run",
+  "matched_authorities": 179,
+  "matched_skus": 165,
+  "planned": {
+    "comp": 1910,
+    "oem": 748,
+    "apps": 4206,
+    "specs": 1292,
+    "valid_apps": 4206
+  },
+  "inserted": {},
+  "audit": {},
+  "error": "LD_REFERENCE_INTEGRITY: FRAM CA10495 already resolves to SKU EA53012, cannot also resolve to EA30020"
+}

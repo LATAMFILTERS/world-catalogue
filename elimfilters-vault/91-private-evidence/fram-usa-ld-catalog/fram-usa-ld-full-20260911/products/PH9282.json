@@ -1,0 +1,471 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH9282",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH9282",
+    "product_type": "Engine Oil Filter, Oil",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 3.69,
+      "outer_diameter_mm": 93.73,
+      "height_in": 8.18,
+      "height_mm": 207.77,
+      "thread_size": "1-12",
+      "gasket_od_in": 2.81,
+      "gasket_od_mm": 71.37,
+      "gasket_id_in": 2.46,
+      "gasket_id_mm": 62.48,
+      "gasket_thickness_in": 0.218,
+      "gasket_thickness_mm": 5.54,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Nissan",
+        "part_number": "BF209-29D01"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "15209-29D00"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "1520929D00"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "BF20929D00"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "BF209-29D00"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT8443"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51772"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P564050"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550255"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3932"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "BT8443"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP8761"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "PH9282",
+    "source_part_key": "001510332",
+    "source_totals": {
+      "attributes": 37,
+      "applications": 2,
+      "cross_references": 12
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, PH9282, HD Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Spin-on Oil Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "84"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Standard",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Orange",
+        "recno": "89"
+      },
+      {
+        "attribute": "Drain Plug Included",
+        "value": "No",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available Only While Supplies Last",
+        "recno": "91"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100029157",
+        "recno": "92"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Oil Filter",
+        "recno": "93"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "94"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "8.180",
+        "recno": "95"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "3.690",
+        "recno": "96"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "2.460",
+        "recno": "97"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "2.810",
+        "recno": "98"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.218",
+        "recno": "99"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Inch)",
+        "value": "1-12",
+        "recno": "100"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "101"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "102"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "103"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.6130",
+        "recno": "107"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "9.6780",
+        "recno": "108"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "8.2900",
+        "recno": "109"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "9.1250",
+        "recno": "110"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.8520",
+        "recno": "111"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "12.0620",
+        "recno": "112"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.8520",
+        "recno": "113"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "8.2500",
+        "recno": "114"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.613,
+        "case_weight_lb": 9.678,
+        "unit_height_in": 8.29,
+        "unit_length_in": 3.852,
+        "unit_width_in": 3.852,
+        "case_height_in": 9.125,
+        "case_length_in": 12.062,
+        "case_width_in": 8.25,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 19.356,
+        "estimated_case_dimensions": {
+          "length_in": 16.083,
+          "width_in": 12.375,
+          "height_in": 9.125,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 2,
+    "all_cross_references_observed": 12,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:21:00.471Z",
+  "discovered_from": "PH9282",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "MEDIUM DUTY TRUCK UD",
+        "model": "UD1200, UD1400, UD1800CS (w/FD46TA Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK UD",
+        "model": "UD1200, UD1400, UD1800CS (w/FD46TA Engine)",
+        "year": "04-99",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT8443",
+        "source_part_number": "PH9282",
+        "part_key": "001510332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P564050",
+        "source_part_number": "PH9282",
+        "part_key": "001510332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550255",
+        "source_part_number": "PH9282",
+        "part_key": "001510332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3932",
+        "source_part_number": "PH9282",
+        "part_key": "001510332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "BT8443",
+        "source_part_number": "PH9282",
+        "part_key": "001510332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP8761",
+        "source_part_number": "PH9282",
+        "part_key": "001510332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "BF209-29D01",
+        "source_part_number": "PH9282",
+        "part_key": "001510332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "15209-29D00",
+        "source_part_number": "PH9282",
+        "part_key": "001510332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "1520929D00",
+        "source_part_number": "PH9282",
+        "part_key": "001510332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "BF20929D00",
+        "source_part_number": "PH9282",
+        "part_key": "001510332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "BF209-29D00",
+        "source_part_number": "PH9282",
+        "part_key": "001510332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51772",
+        "source_part_number": "PH9282",
+        "part_key": "001510332",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter, Oil"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

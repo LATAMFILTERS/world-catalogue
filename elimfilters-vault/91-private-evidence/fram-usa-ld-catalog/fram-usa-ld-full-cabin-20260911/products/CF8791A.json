@@ -1,0 +1,1952 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF8791A",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF8791A",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 0.946,
+      "height_mm": 24.03,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "General Motors",
+        "part_number": "52473340"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF107C"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3730WS"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "C3730WS"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF7707"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4805"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C15388"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24805"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "90006CT"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1707"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DC031"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4805"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4805C"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "C15388P"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1114"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF1000"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1707"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF7707"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF7707"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1707"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF7707"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1707"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3012"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "GM99105"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "C15388P"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PC-5388"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "part_number": "C15388"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PBC15388"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C15388"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "MC15388"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1707"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF7707"
+      },
+      {
+        "manufacturer": "SUPERTECH",
+        "part_number": "5515"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1003"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "E1AC1003"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "2002",
+        "make": "CADILLAC",
+        "model": "ESCALADE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2002",
+        "make": "CADILLAC",
+        "model": "ESCALADE",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "2002",
+        "make": "CADILLAC",
+        "model": "ESCALADE",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2002",
+        "make": "CADILLAC",
+        "model": "ESCALADE EXT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2002",
+        "make": "CADILLAC",
+        "model": "ESCALADE EXT",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2002",
+        "make": "CHEVROLET",
+        "model": "AVALANCHE 1500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2002",
+        "make": "CHEVROLET",
+        "model": "AVALANCHE 1500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "2002",
+        "make": "CHEVROLET",
+        "model": "AVALANCHE 2500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2002",
+        "make": "CHEVROLET",
+        "model": "AVALANCHE 2500",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "CHEVROLET",
+        "model": "C3500HD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "CHEVROLET",
+        "model": "C3500HD",
+        "engine": "V8-6.5L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "CHEVROLET",
+        "model": "C3500HD",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "engine": "V6-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "engine": "V8-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 HD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 HD",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500 HD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500 HD",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500 HD",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500 HD",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      },
+      {
+        "year": "02-00",
+        "make": "CHEVROLET",
+        "model": "SUBURBAN 1500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-00",
+        "make": "CHEVROLET",
+        "model": "SUBURBAN 1500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "02-00",
+        "make": "CHEVROLET",
+        "model": "SUBURBAN 2500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-00",
+        "make": "CHEVROLET",
+        "model": "SUBURBAN 2500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "CHEVROLET",
+        "model": "SUBURBAN 2500",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      },
+      {
+        "year": "02-00",
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-00",
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "engine": "V8-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "02-00",
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "GMC",
+        "model": "C3500HD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "GMC",
+        "model": "C3500HD",
+        "engine": "V8-6.5L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "GMC",
+        "model": "C3500HD",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "engine": "V6-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "engine": "V8-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "GMC",
+        "model": "SIERRA 1500 HD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "GMC",
+        "model": "SIERRA 1500 HD",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "GMC",
+        "model": "SIERRA 2500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "00-99",
+        "make": "GMC",
+        "model": "SIERRA 2500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "GMC",
+        "model": "SIERRA 2500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "GMC",
+        "model": "SIERRA 2500 HD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "GMC",
+        "model": "SIERRA 2500 HD",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "GMC",
+        "model": "SIERRA 2500 HD",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "GMC",
+        "model": "SIERRA 2500 HD",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "GMC",
+        "model": "SIERRA 3500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "GMC",
+        "model": "SIERRA 3500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "GMC",
+        "model": "SIERRA 3500",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "GMC",
+        "model": "SIERRA 3500",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      },
+      {
+        "year": "02-00",
+        "make": "GMC",
+        "model": "YUKON",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-00",
+        "make": "GMC",
+        "model": "YUKON",
+        "engine": "V8-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "02-00",
+        "make": "GMC",
+        "model": "YUKON",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "2000",
+        "make": "GMC",
+        "model": "YUKON",
+        "engine": "V8-5.7L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "GMC",
+        "model": "YUKON",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "02-00",
+        "make": "GMC",
+        "model": "YUKON XL 1500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-00",
+        "make": "GMC",
+        "model": "YUKON XL 1500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "GMC",
+        "model": "YUKON XL 1500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "02-00",
+        "make": "GMC",
+        "model": "YUKON XL 2500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-00",
+        "make": "GMC",
+        "model": "YUKON XL 2500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "GMC",
+        "model": "YUKON XL 2500",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF8791A",
+    "source_part_key": "000991336",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 81,
+      "cross_references": 35
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF8791A, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "0.946",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "9.298",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "5.358",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "15",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Behind Glove Box",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100531841",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "120.0000",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "0.2400",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "10.0000",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "11.2400",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "7.0000",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "8.4900",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.5000",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "3.6000",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 120,
+        "case_weight_lb": 0.24,
+        "unit_height_in": 10,
+        "unit_length_in": 7,
+        "unit_width_in": 1.5,
+        "case_height_in": 11.24,
+        "case_length_in": 8.49,
+        "case_width_in": 3.6,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 1440,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 81,
+    "all_cross_references_observed": 35,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:02:20.430Z",
+  "discovered_from": "CF8791A",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE",
+        "year": "2002",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE",
+        "year": "2002",
+        "engine": "V8-5.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE",
+        "year": "2002",
+        "engine": "V8-6.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE EXT",
+        "year": "2002",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "ESCALADE EXT",
+        "year": "2002",
+        "engine": "V8-6.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "AVALANCHE 1500",
+        "year": "2002",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "AVALANCHE 1500",
+        "year": "2002",
+        "engine": "V8-5.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "AVALANCHE 2500",
+        "year": "2002",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "AVALANCHE 2500",
+        "year": "2002",
+        "engine": "V8-8.1L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "C3500HD",
+        "year": "02-01",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "C3500HD",
+        "year": "02-01",
+        "engine": "V8-6.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "C3500HD",
+        "year": "02-01",
+        "engine": "V8-8.1L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "year": "02-99",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "year": "02-99",
+        "engine": "V6-4.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "year": "02-99",
+        "engine": "V8-4.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500",
+        "year": "02-99",
+        "engine": "V8-5.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 HD",
+        "year": "02-01",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 1500 HD",
+        "year": "02-01",
+        "engine": "V8-6.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500",
+        "year": "02-99",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500",
+        "year": "02-99",
+        "engine": "V8-5.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500",
+        "year": "02-99",
+        "engine": "V8-6.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500 HD",
+        "year": "02-01",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500 HD",
+        "year": "02-01",
+        "engine": "V8-6.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500 HD",
+        "year": "02-01",
+        "engine": "V8-6.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 2500 HD",
+        "year": "02-01",
+        "engine": "V8-8.1L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500",
+        "year": "02-01",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500",
+        "year": "02-01",
+        "engine": "V8-6.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500",
+        "year": "02-01",
+        "engine": "V8-6.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SILVERADO 3500",
+        "year": "02-01",
+        "engine": "V8-8.1L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SUBURBAN 1500",
+        "year": "02-00",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SUBURBAN 1500",
+        "year": "02-00",
+        "engine": "V8-5.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SUBURBAN 2500",
+        "year": "02-00",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SUBURBAN 2500",
+        "year": "02-00",
+        "engine": "V8-6.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "SUBURBAN 2500",
+        "year": "02-01",
+        "engine": "V8-8.1L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "year": "02-00",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "year": "02-00",
+        "engine": "V8-4.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TAHOE",
+        "year": "02-00",
+        "engine": "V8-5.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C3500HD",
+        "year": "02-01",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C3500HD",
+        "year": "02-01",
+        "engine": "V8-6.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C3500HD",
+        "year": "02-01",
+        "engine": "V8-8.1L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "year": "02-99",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "year": "02-99",
+        "engine": "V6-4.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "year": "02-99",
+        "engine": "V8-4.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "year": "02-99",
+        "engine": "V8-5.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500",
+        "year": "02-01",
+        "engine": "V8-6.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500 HD",
+        "year": "02-01",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 1500 HD",
+        "year": "02-01",
+        "engine": "V8-6.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 2500",
+        "year": "02-99",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 2500",
+        "year": "00-99",
+        "engine": "V8-5.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 2500",
+        "year": "02-99",
+        "engine": "V8-6.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 2500 HD",
+        "year": "02-01",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 2500 HD",
+        "year": "02-01",
+        "engine": "V8-6.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 2500 HD",
+        "year": "02-01",
+        "engine": "V8-6.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 2500 HD",
+        "year": "02-01",
+        "engine": "V8-8.1L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 3500",
+        "year": "02-01",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 3500",
+        "year": "02-01",
+        "engine": "V8-6.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 3500",
+        "year": "02-01",
+        "engine": "V8-6.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SIERRA 3500",
+        "year": "02-01",
+        "engine": "V8-8.1L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON",
+        "year": "02-00",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON",
+        "year": "02-00",
+        "engine": "V8-4.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON",
+        "year": "02-00",
+        "engine": "V8-5.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON",
+        "year": "2000",
+        "engine": "V8-5.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON",
+        "year": "02-01",
+        "engine": "V8-6.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON XL 1500",
+        "year": "02-00",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON XL 1500",
+        "year": "02-00",
+        "engine": "V8-5.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON XL 1500",
+        "year": "02-01",
+        "engine": "V8-6.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON XL 2500",
+        "year": "02-00",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON XL 2500",
+        "year": "02-00",
+        "engine": "V8-6.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "YUKON XL 2500",
+        "year": "02-01",
+        "engine": "V8-8.1L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-5.7L F/inj. R Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-5.7L F/inj. R Engine",
+        "year": "2000",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-6.0L F/inj. LQ4 U Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-6.0L F/inj. LQ4 U Engine",
+        "year": "02-01",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-6.5L Diesel Turbo HO F Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-6.5L Diesel Turbo HO F Engine",
+        "year": "2000",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-6.6L Diesel LB7 Turbo 1 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-6.6L Diesel LB7 Turbo 1 Engine",
+        "year": "02-01",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-7.4L F/inj. J Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-7.4L F/inj. J Engine",
+        "year": "2000",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-8.1L F/inj. L18 G Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "Z",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK GMC",
+        "model": "Sierra 3500 w/V8-8.1L F/inj. L18 G Engine",
+        "year": "02-01",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "Z",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF107C",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3730WS",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "C3730WS",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "90006CT",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1707",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF7707",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DC031",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4805",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4805C",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "52473340",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "C15388P",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1114",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF1000",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1707",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF7707",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF7707",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1707",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF7707",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1707",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3012",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "GM99105",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4805",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "C15388P",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PC-5388",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "part_number": "C15388",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C15388",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PBC15388",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C15388",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "MC15388",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1707",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF7707",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "SUPERTECH",
+        "part_number": "5515",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1003",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "E1AC1003",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24805",
+        "source_part_number": "CF8791A",
+        "part_key": "000991336",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

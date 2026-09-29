@@ -1,0 +1,1426 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "CH11792",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CH11792",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 5.787,
+      "height_mm": 146.99,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Cartridge",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E155H D122"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU6008Z"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CU 6008 Z"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L31389"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WL10077"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "041-0866"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "P1018"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P1018"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "278 184 0125"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A278 180 0009"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "278 180 0009"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A278 184 0125"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "M9003"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "WL610077"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "WP1018"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "S11792"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S11792"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S11792XL"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WP1018"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "WP1018"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "21-17",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2023",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-19",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2023",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63 S",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-19",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63 S",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-18",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT C",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-18",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT R",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-16",
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT S",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-16",
+        "make": "MERCEDES-BENZ",
+        "model": "C63 AMG",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2023",
+        "make": "MERCEDES-BENZ",
+        "model": "C63 AMG S",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-15",
+        "make": "MERCEDES-BENZ",
+        "model": "C63 AMG S",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "14-11",
+        "make": "MERCEDES-BENZ",
+        "model": "CL63 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "19-14",
+        "make": "MERCEDES-BENZ",
+        "model": "CLA45 AMG",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-12",
+        "make": "MERCEDES-BENZ",
+        "model": "CLS550",
+        "engine": "V8-4.7L",
+        "quantity": 1
+      },
+      {
+        "year": "14-12",
+        "make": "MERCEDES-BENZ",
+        "model": "CLS63 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "18-14",
+        "make": "MERCEDES-BENZ",
+        "model": "CLS63 AMG S",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "15-12",
+        "make": "MERCEDES-BENZ",
+        "model": "E550",
+        "engine": "V8-4.7L",
+        "quantity": 1
+      },
+      {
+        "year": "2017",
+        "make": "MERCEDES-BENZ",
+        "model": "E550",
+        "engine": "V8-4.7L",
+        "quantity": 1
+      },
+      {
+        "year": "16-12",
+        "make": "MERCEDES-BENZ",
+        "model": "E63 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "2023",
+        "make": "MERCEDES-BENZ",
+        "model": "E63 AMG S",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-18",
+        "make": "MERCEDES-BENZ",
+        "model": "E63 AMG S",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-14",
+        "make": "MERCEDES-BENZ",
+        "model": "E63 AMG S",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "18-16",
+        "make": "MERCEDES-BENZ",
+        "model": "G550",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-17",
+        "make": "MERCEDES-BENZ",
+        "model": "G550 4X4",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "24-19",
+        "make": "MERCEDES-BENZ",
+        "model": "G63 AMG",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-13",
+        "make": "MERCEDES-BENZ",
+        "model": "G63 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "16-15",
+        "make": "MERCEDES-BENZ",
+        "model": "GL550",
+        "engine": "V8-4.7L",
+        "quantity": 1
+      },
+      {
+        "year": "16-13",
+        "make": "MERCEDES-BENZ",
+        "model": "GL63 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "19-15",
+        "make": "MERCEDES-BENZ",
+        "model": "GLA45 AMG",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-18",
+        "make": "MERCEDES-BENZ",
+        "model": "GLC63 AMG",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-18",
+        "make": "MERCEDES-BENZ",
+        "model": "GLC63 AMG S",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2016",
+        "make": "MERCEDES-BENZ",
+        "model": "GLE550",
+        "engine": "V8-4.7L",
+        "quantity": 1
+      },
+      {
+        "year": "25-24",
+        "make": "MERCEDES-BENZ",
+        "model": "GLE580",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-16",
+        "make": "MERCEDES-BENZ",
+        "model": "GLE63 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "MERCEDES-BENZ",
+        "model": "GLE63 AMG S",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-16",
+        "make": "MERCEDES-BENZ",
+        "model": "GLE63 AMG S",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "MERCEDES-BENZ",
+        "model": "GLE63 AMG S SUV",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "MERCEDES-BENZ",
+        "model": "GLS550",
+        "engine": "V8-4.7L",
+        "quantity": 1
+      },
+      {
+        "year": "25-24",
+        "make": "MERCEDES-BENZ",
+        "model": "GLS580",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "MERCEDES-BENZ",
+        "model": "GLS63 AMG",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "MERCEDES-BENZ",
+        "model": "GLS63 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "MERCEDES-BENZ",
+        "model": "MAYBACH GLS600",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2017",
+        "make": "MERCEDES-BENZ",
+        "model": "MAYBACH S550",
+        "engine": "V8-4.7L",
+        "quantity": 1
+      },
+      {
+        "year": "15-14",
+        "make": "MERCEDES-BENZ",
+        "model": "ML550",
+        "engine": "V8-4.7L",
+        "quantity": 1
+      },
+      {
+        "year": "15-12",
+        "make": "MERCEDES-BENZ",
+        "model": "ML63 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "17-16",
+        "make": "MERCEDES-BENZ",
+        "model": "S550",
+        "engine": "V8-4.7L",
+        "quantity": 1
+      },
+      {
+        "year": "19-18",
+        "make": "MERCEDES-BENZ",
+        "model": "S63 AMG",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "17-11",
+        "make": "MERCEDES-BENZ",
+        "model": "S63 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "20-13",
+        "make": "MERCEDES-BENZ",
+        "model": "SL550",
+        "engine": "V8-4.7L",
+        "quantity": 1
+      },
+      {
+        "year": "19-13",
+        "make": "MERCEDES-BENZ",
+        "model": "SL63 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "16-12",
+        "make": "MERCEDES-BENZ",
+        "model": "SLK55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CH11792",
+    "source_part_key": "006210504",
+    "source_totals": {
+      "attributes": 46,
+      "applications": 51,
+      "cross_references": 20
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® oil filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE (original equipment) recommended intervals. Engineered for conventional and synthetic motor oil, Extra Guard offers proven engine protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Engineered for use with synthetic or conventional motor oils",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CH11792, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "The perfect balance of dirt-trapping efficiency and dirt-holding capacity",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Proven protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Cartridge Oil Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Includes gaskets and O-rings manufactured to endure the high pressures and high temperatures in today’s engines",
+        "recno": "4"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filter media is a blend of fiber and resin that captures 95%?of the dirt particles",
+        "recno": "5"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Cartridge",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "NA",
+        "recno": "89"
+      },
+      {
+        "attribute": "Top Inside Diameter",
+        "value": "Closed",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100555434",
+        "recno": "92"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "93"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "5.787",
+        "recno": "94"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "95"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "2.244",
+        "recno": "96"
+      },
+      {
+        "attribute": "O-Ring Inside Diameter (Inch)",
+        "value": "2.362",
+        "recno": "97"
+      },
+      {
+        "attribute": "O-Ring Outside Diameter (Inch)",
+        "value": "2.500",
+        "recno": "98"
+      },
+      {
+        "attribute": "O-Ring Thickness (Inch)",
+        "value": "0.138",
+        "recno": "99"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "0.866",
+        "recno": "100"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "2.244",
+        "recno": "101"
+      },
+      {
+        "attribute": "O-Rings Included",
+        "value": "Yes",
+        "recno": "102"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "103"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "104"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "105"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "106"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.1920",
+        "recno": "110"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.1520",
+        "recno": "111"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "6.0760",
+        "recno": "112"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "6.8780",
+        "recno": "113"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "2.5320",
+        "recno": "114"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "7.6250",
+        "recno": "115"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "2.5320",
+        "recno": "116"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "5.2890",
+        "recno": "117"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.192,
+        "case_weight_lb": 1.152,
+        "unit_height_in": 6.076,
+        "unit_length_in": 2.532,
+        "unit_width_in": 2.532,
+        "case_height_in": 6.878,
+        "case_length_in": 7.625,
+        "case_width_in": 5.289,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 2.304,
+        "estimated_case_dimensions": {
+          "length_in": 10.167,
+          "width_in": 7.933,
+          "height_in": 6.878,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 51,
+    "all_cross_references_observed": 20,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:22:08.322Z",
+  "discovered_from": "CH11792",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT",
+        "year": "21-17",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63",
+        "year": "2023",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63",
+        "year": "21-19",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63 S",
+        "year": "2023",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT 63 S",
+        "year": "21-19",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT C",
+        "year": "19-18",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT R",
+        "year": "19-18",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "AMG GT S",
+        "year": "19-16",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C63 AMG",
+        "year": "21-16",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C63 AMG S",
+        "year": "2023",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C63 AMG S",
+        "year": "21-15",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CL63 AMG",
+        "year": "14-11",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLA45 AMG",
+        "year": "19-14",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLS550",
+        "year": "18-12",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLS63 AMG",
+        "year": "14-12",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLS63 AMG S",
+        "year": "18-14",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E550",
+        "year": "15-12",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E550",
+        "year": "2017",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E63 AMG",
+        "year": "16-12",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E63 AMG S",
+        "year": "2023",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E63 AMG S",
+        "year": "21-18",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E63 AMG S",
+        "year": "16-14",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "G550",
+        "year": "18-16",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "G550 4X4",
+        "year": "18-17",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "G63 AMG",
+        "year": "24-19",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "G63 AMG",
+        "year": "18-13",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GL550",
+        "year": "16-15",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GL63 AMG",
+        "year": "16-13",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLA45 AMG",
+        "year": "19-15",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLC63 AMG",
+        "year": "21-18",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLC63 AMG S",
+        "year": "21-18",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLE550",
+        "year": "2016",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLE580",
+        "year": "25-24",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLE63 AMG",
+        "year": "19-16",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLE63 AMG S",
+        "year": "26-21",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLE63 AMG S",
+        "year": "19-16",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLE63 AMG S SUV",
+        "year": "26-21",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLS550",
+        "year": "19-17",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLS580",
+        "year": "25-24",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLS63 AMG",
+        "year": "26-21",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLS63 AMG",
+        "year": "19-17",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "MAYBACH GLS600",
+        "year": "26-21",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "MAYBACH S550",
+        "year": "2017",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "ML550",
+        "year": "15-14",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "ML63 AMG",
+        "year": "15-12",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S550",
+        "year": "17-16",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S63 AMG",
+        "year": "19-18",
+        "engine": "V8-4.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S63 AMG",
+        "year": "17-11",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SL550",
+        "year": "20-13",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SL63 AMG",
+        "year": "19-13",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SLK55 AMG",
+        "year": "16-12",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "041-0866",
+        "source_part_number": "CH11792",
+        "part_key": "006210504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "P1018",
+        "source_part_number": "CH11792",
+        "part_key": "006210504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E155H D122",
+        "source_part_number": "CH11792",
+        "part_key": "006210504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P1018",
+        "source_part_number": "CH11792",
+        "part_key": "006210504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU6008Z",
+        "source_part_number": "CH11792",
+        "part_key": "006210504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CU 6008 Z",
+        "source_part_number": "CH11792",
+        "part_key": "006210504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "278 184 0125",
+        "source_part_number": "CH11792",
+        "part_key": "006210504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A278 180 0009",
+        "source_part_number": "CH11792",
+        "part_key": "006210504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "278 180 0009",
+        "source_part_number": "CH11792",
+        "part_key": "006210504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A278 184 0125",
+        "source_part_number": "CH11792",
+        "part_key": "006210504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "M9003",
+        "source_part_number": "CH11792",
+        "part_key": "006210504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "WL610077",
+        "source_part_number": "CH11792",
+        "part_key": "006210504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L31389",
+        "source_part_number": "CH11792",
+        "part_key": "006210504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "WP1018",
+        "source_part_number": "CH11792",
+        "part_key": "006210504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "S11792",
+        "source_part_number": "CH11792",
+        "part_key": "006210504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S11792",
+        "source_part_number": "CH11792",
+        "part_key": "006210504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S11792XL",
+        "source_part_number": "CH11792",
+        "part_key": "006210504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WP1018",
+        "source_part_number": "CH11792",
+        "part_key": "006210504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "WP1018",
+        "source_part_number": "CH11792",
+        "part_key": "006210504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WL10077",
+        "source_part_number": "CH11792",
+        "part_key": "006210504",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

@@ -1,0 +1,831 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA11970",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA11970",
+    "product_type": "Engine Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.87,
+      "height_mm": 47.5,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Flexible Panel Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "C3397"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A19154"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "49704"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "83704"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1564"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "33-2474"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "AF5696"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "278 094 0004"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "A90028"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "9704"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "part_number": "A95696"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "SA11970"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "14-11",
+        "make": "MERCEDES-BENZ",
+        "model": "CL550",
+        "engine": "V8-4.7L",
+        "quantity": 2
+      },
+      {
+        "year": "14-11",
+        "make": "MERCEDES-BENZ",
+        "model": "CL63 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 2
+      },
+      {
+        "year": "18-12",
+        "make": "MERCEDES-BENZ",
+        "model": "CLS550",
+        "engine": "V8-4.7L",
+        "quantity": 2
+      },
+      {
+        "year": "14-12",
+        "make": "MERCEDES-BENZ",
+        "model": "CLS63 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 2
+      },
+      {
+        "year": "18-14",
+        "make": "MERCEDES-BENZ",
+        "model": "CLS63 AMG S",
+        "engine": "V8-5.5L",
+        "quantity": 2
+      },
+      {
+        "year": "17-12",
+        "make": "MERCEDES-BENZ",
+        "model": "E550",
+        "engine": "V8-4.7L",
+        "quantity": 2
+      },
+      {
+        "year": "16-12",
+        "make": "MERCEDES-BENZ",
+        "model": "E63 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 2
+      },
+      {
+        "year": "16-14",
+        "make": "MERCEDES-BENZ",
+        "model": "E63 AMG S",
+        "engine": "V8-5.5L",
+        "quantity": 2
+      },
+      {
+        "year": "18-13",
+        "make": "MERCEDES-BENZ",
+        "model": "G63 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 2
+      },
+      {
+        "year": "14-13",
+        "make": "MERCEDES-BENZ",
+        "model": "GL450",
+        "engine": "V8-4.7L",
+        "quantity": 2
+      },
+      {
+        "year": "16-13",
+        "make": "MERCEDES-BENZ",
+        "model": "GL550",
+        "engine": "V8-4.7L",
+        "quantity": 2
+      },
+      {
+        "year": "16-13",
+        "make": "MERCEDES-BENZ",
+        "model": "GL63 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 2
+      },
+      {
+        "year": "19-16",
+        "make": "MERCEDES-BENZ",
+        "model": "GLE63 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 2
+      },
+      {
+        "year": "19-16",
+        "make": "MERCEDES-BENZ",
+        "model": "GLE63 AMG S",
+        "engine": "V8-5.5L",
+        "quantity": 2
+      },
+      {
+        "year": "19-17",
+        "make": "MERCEDES-BENZ",
+        "model": "GLS550",
+        "engine": "V8-4.7L",
+        "quantity": 2
+      },
+      {
+        "year": "19-17",
+        "make": "MERCEDES-BENZ",
+        "model": "GLS63 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 2
+      },
+      {
+        "year": "2017",
+        "make": "MERCEDES-BENZ",
+        "model": "MAYBACH S550",
+        "engine": "V8-4.7L",
+        "quantity": 2
+      },
+      {
+        "year": "14-12",
+        "make": "MERCEDES-BENZ",
+        "model": "ML550",
+        "engine": "V8-4.7L",
+        "quantity": 2
+      },
+      {
+        "year": "15-12",
+        "make": "MERCEDES-BENZ",
+        "model": "ML63 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 2
+      },
+      {
+        "year": "2013",
+        "make": "MERCEDES-BENZ",
+        "model": "R350",
+        "engine": "V6-3.5L",
+        "quantity": 2
+      },
+      {
+        "year": "17-12",
+        "make": "MERCEDES-BENZ",
+        "model": "S550",
+        "engine": "V8-4.7L",
+        "quantity": 2
+      },
+      {
+        "year": "17-11",
+        "make": "MERCEDES-BENZ",
+        "model": "S63 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 2
+      },
+      {
+        "year": "20-13",
+        "make": "MERCEDES-BENZ",
+        "model": "SL550",
+        "engine": "V8-4.7L",
+        "quantity": 2
+      },
+      {
+        "year": "19-13",
+        "make": "MERCEDES-BENZ",
+        "model": "SL63 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 2
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CA11970",
+    "source_part_key": "009404133",
+    "source_totals": {
+      "attributes": 37,
+      "applications": 24,
+      "cross_references": 12
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® engine air filters are engineered to protect your engine from harmful contaminants. Replacing an air filter with FRAM Extra Guard can help improve horsepower, acceleration, and engine performance. To prevent engine wear, FRAM recommends changing your air filter every 12 months.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Protects up to 12 months or 12,000 miles (19,000 kilometers)",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA11970, Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Keep your engine running smoothly by preventing damaging particles from entering your vehicle’s engine",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs quickly in as little as 5 minutes",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Flexible Panel Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Ensures maximum airflow to prevent engine wear",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "82"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangular",
+        "recno": "84"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Flexible",
+        "recno": "85"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "86"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "88"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Air Filter",
+        "recno": "89"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.87",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100575890",
+        "recno": "92"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "12.637",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "5.275",
+        "recno": "93"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "94"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "95"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "96"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "97"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "98"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.6500",
+        "recno": "102"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.3000",
+        "recno": "103"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "12.7950",
+        "recno": "104"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.4480",
+        "recno": "105"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "5.3930",
+        "recno": "106"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "13.1880",
+        "recno": "107"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.9680",
+        "recno": "108"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "5.9050",
+        "recno": "109"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.65,
+        "case_weight_lb": 1.3,
+        "unit_height_in": 12.795,
+        "unit_length_in": 5.393,
+        "unit_width_in": 1.968,
+        "case_height_in": 4.448,
+        "case_length_in": 13.188,
+        "case_width_in": 5.905,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 7.8,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 24,
+    "all_cross_references_observed": 12,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:42:02.962Z",
+  "discovered_from": "CA11970",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CL550",
+        "year": "14-11",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CL63 AMG",
+        "year": "14-11",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLS550",
+        "year": "18-12",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLS63 AMG",
+        "year": "14-12",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLS63 AMG S",
+        "year": "18-14",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E550",
+        "year": "17-12",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E63 AMG",
+        "year": "16-12",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E63 AMG S",
+        "year": "16-14",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "G63 AMG",
+        "year": "18-13",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GL450",
+        "year": "14-13",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GL550",
+        "year": "16-13",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GL63 AMG",
+        "year": "16-13",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLE63 AMG",
+        "year": "19-16",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLE63 AMG S",
+        "year": "19-16",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLS550",
+        "year": "19-17",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLS63 AMG",
+        "year": "19-17",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "MAYBACH S550",
+        "year": "2017",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "ML550",
+        "year": "14-12",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "ML63 AMG",
+        "year": "15-12",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "R350",
+        "year": "2013",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S550",
+        "year": "17-12",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S63 AMG",
+        "year": "17-11",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SL550",
+        "year": "20-13",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SL63 AMG",
+        "year": "19-13",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 2
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "83704",
+        "source_part_number": "CA11970",
+        "part_key": "009404133",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1564",
+        "source_part_number": "CA11970",
+        "part_key": "009404133",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "33-2474",
+        "source_part_number": "CA11970",
+        "part_key": "009404133",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "AF5696",
+        "source_part_number": "CA11970",
+        "part_key": "009404133",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "C3397",
+        "source_part_number": "CA11970",
+        "part_key": "009404133",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "278 094 0004",
+        "source_part_number": "CA11970",
+        "part_key": "009404133",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "A90028",
+        "source_part_number": "CA11970",
+        "part_key": "009404133",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "9704",
+        "source_part_number": "CA11970",
+        "part_key": "009404133",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "part_number": "A95696",
+        "source_part_number": "CA11970",
+        "part_key": "009404133",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A19154",
+        "source_part_number": "CA11970",
+        "part_key": "009404133",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "SA11970",
+        "source_part_number": "CA11970",
+        "part_key": "009404133",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "49704",
+        "source_part_number": "CA11970",
+        "part_key": "009404133",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

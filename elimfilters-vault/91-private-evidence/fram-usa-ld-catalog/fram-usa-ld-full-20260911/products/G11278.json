@@ -1,0 +1,499 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "FUEL",
+  "authority": {
+    "part_number": "G11278",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "G11278",
+    "product_type": "Fuel Filter, Fuel",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 1.714,
+      "outer_diameter_mm": 43.54,
+      "height_in": 4.334,
+      "height_mm": 110.08,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "In Line",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25055347"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF791"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF509"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF7691"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3299"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33299"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Big A",
+        "part_number": "95299"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86299"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P551771"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P104325"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "FF5621"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF333"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G8219"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "G11278",
+    "source_part_key": "007121957",
+    "source_totals": {
+      "attributes": 29,
+      "applications": 8,
+      "cross_references": 13
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, G11278, Fuel Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "In-Line Fuel Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "In Line",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Metal",
+        "recno": "82"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Tube Connector",
+        "recno": "83"
+      },
+      {
+        "attribute": "Fuel Type",
+        "value": "Diesel",
+        "recno": "84"
+      },
+      {
+        "attribute": "Fuel Type",
+        "value": "Gasoline",
+        "recno": "85"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "86"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Fuel Filter",
+        "recno": "87"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "4.334",
+        "recno": "89"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "1.714",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Housing Material",
+        "value": "Metal",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100550651",
+        "recno": "92"
+      },
+      {
+        "attribute": "Inlet Line Size (Inch)",
+        "value": "1/2",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outlet Line Size (Inch)",
+        "value": "1/2",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "94"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Taiwan",
+        "recno": "95"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.1830",
+        "recno": "99"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.0980",
+        "recno": "100"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "4.5180",
+        "recno": "101"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.6120",
+        "recno": "102"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "2.0090",
+        "recno": "103"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "6.8060",
+        "recno": "104"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "2.0090",
+        "recno": "105"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "5.0560",
+        "recno": "106"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.183,
+        "case_weight_lb": 1.098,
+        "unit_height_in": 4.518,
+        "unit_length_in": 2.009,
+        "unit_width_in": 2.009,
+        "case_height_in": 4.612,
+        "case_length_in": 6.806,
+        "case_width_in": 5.056,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 2.196,
+        "estimated_case_dimensions": {
+          "length_in": 9.075,
+          "width_in": 7.584,
+          "height_in": 4.612,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 8,
+    "all_cross_references_observed": 13,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T06:02:28.819Z",
+  "discovered_from": "G11278",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "SPRAYERS APACHE",
+        "model": "AS1000 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS APACHE",
+        "model": "AS1000 w/Cummins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS APACHE",
+        "model": "AS1010, AS1210 w/Cummins ISB series engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS APACHE",
+        "model": "AS1010, AS1210 w/Cummins ISB series engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS APACHE",
+        "model": "AS1200 w/Cummins 275 hp Tier 2 engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS APACHE",
+        "model": "AS1200 w/Cummins 275 hp Tier 2 engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "Motorhomes (w/V8-454 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "Motorhomes (w/V8-454 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF791",
+        "source_part_number": "G11278",
+        "part_key": "007121957",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter, Fuel"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF509",
+        "source_part_number": "G11278",
+        "part_key": "007121957",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter, Fuel"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF7691",
+        "source_part_number": "G11278",
+        "part_key": "007121957",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter, Fuel"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "95299",
+        "source_part_number": "G11278",
+        "part_key": "007121957",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter, Fuel"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86299",
+        "source_part_number": "G11278",
+        "part_key": "007121957",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter, Fuel"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P551771",
+        "source_part_number": "G11278",
+        "part_key": "007121957",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter, Fuel"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P104325",
+        "source_part_number": "G11278",
+        "part_key": "007121957",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter, Fuel"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "FF5621",
+        "source_part_number": "G11278",
+        "part_key": "007121957",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter, Fuel"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25055347",
+        "source_part_number": "G11278",
+        "part_key": "007121957",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter, Fuel"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF333",
+        "source_part_number": "G11278",
+        "part_key": "007121957",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter, Fuel"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G8219",
+        "source_part_number": "G11278",
+        "part_key": "007121957",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter, Fuel"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3299",
+        "source_part_number": "G11278",
+        "part_key": "007121957",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter, Fuel"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33299",
+        "source_part_number": "G11278",
+        "part_key": "007121957",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter, Fuel"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

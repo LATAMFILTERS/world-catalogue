@@ -1,0 +1,1340 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA9856",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA9856",
+    "product_type": "Engine Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 11.426,
+      "height_mm": 290.22,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Radial Seal Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "General Motors",
+        "part_number": "97062294"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "RS5434"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6932"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46932"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88932"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P543614"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P828633"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF27693"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "RS5434"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF2445"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "2-94561-113-0"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "8-97062-294-0"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "8-98177-271-0"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF5633"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "SA9856"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "20-16",
+        "make": "CHEVROLET",
+        "model": "LCF 3500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "CHEVROLET",
+        "model": "LCF 3500HG",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "19-16",
+        "make": "CHEVROLET",
+        "model": "LCF 4500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-20",
+        "make": "CHEVROLET",
+        "model": "LCF 4500",
+        "engine": "V8-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "22-17",
+        "make": "CHEVROLET",
+        "model": "LCF 4500HD",
+        "engine": "L4-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "22-17",
+        "make": "CHEVROLET",
+        "model": "LCF 4500XD",
+        "engine": "L4-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "22-17",
+        "make": "CHEVROLET",
+        "model": "LCF 5500HD",
+        "engine": "L4-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "22-17",
+        "make": "CHEVROLET",
+        "model": "LCF 5500XD",
+        "engine": "L4-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "21-18",
+        "make": "CHEVROLET",
+        "model": "LCF 6500XD",
+        "engine": "L4-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "09-08",
+        "make": "CHEVROLET",
+        "model": "W3500 TILTMASTER",
+        "engine": "L4-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "09-07",
+        "make": "CHEVROLET",
+        "model": "W3500 TILTMASTER",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "10-08",
+        "make": "CHEVROLET",
+        "model": "W4500 TILTMASTER",
+        "engine": "L4-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "10-07",
+        "make": "CHEVROLET",
+        "model": "W4500 TILTMASTER",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "10-08",
+        "make": "CHEVROLET",
+        "model": "W5500 TILTMASTER",
+        "engine": "L4-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "09-08",
+        "make": "CHEVROLET",
+        "model": "W5500HD TILTMASTER",
+        "engine": "L4-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "2008",
+        "make": "GMC",
+        "model": "W3500 FORWARD",
+        "engine": "L4-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "08-07",
+        "make": "GMC",
+        "model": "W3500 FORWARD",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "10-08",
+        "make": "GMC",
+        "model": "W4500 FORWARD",
+        "engine": "L4-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "10-07",
+        "make": "GMC",
+        "model": "W4500 FORWARD",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "10-08",
+        "make": "GMC",
+        "model": "W5500 FORWARD",
+        "engine": "L4-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "09-08",
+        "make": "GMC",
+        "model": "W5500HD FORWARD",
+        "engine": "L4-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "15-11",
+        "make": "ISUZU",
+        "model": "NPR",
+        "engine": "L4-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "09-05",
+        "make": "ISUZU",
+        "model": "NPR",
+        "engine": "L4-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "16-08",
+        "make": "ISUZU",
+        "model": "NPR",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-05",
+        "make": "ISUZU",
+        "model": "NPR-HD",
+        "engine": "L4-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "09-08",
+        "make": "ISUZU",
+        "model": "NPR-HD",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-12",
+        "make": "ISUZU",
+        "model": "NPR-HD",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-05",
+        "make": "ISUZU",
+        "model": "NQR",
+        "engine": "L4-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "2022",
+        "make": "ISUZU",
+        "model": "NQR",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-05",
+        "make": "ISUZU",
+        "model": "NRR",
+        "engine": "L4-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "2022",
+        "make": "ISUZU",
+        "model": "NRR",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "13-11",
+        "make": "ISUZU",
+        "model": "REACH",
+        "engine": "L4-3.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CA9856",
+    "source_part_key": "001509935",
+    "source_totals": {
+      "attributes": 29,
+      "applications": 74,
+      "cross_references": 15
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA9856, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Radial Seal Air Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "82"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "84"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Flexible",
+        "recno": "85"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "86"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Top Inside Diameter",
+        "value": "Closed",
+        "recno": "88"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "89"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100543301",
+        "recno": "92"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "11.426",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "9.298",
+        "recno": "94"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "5.161",
+        "recno": "95"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "9.298",
+        "recno": "96"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "97"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "98"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "99"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "3.4500",
+        "recno": "103"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "13.8270",
+        "recno": "104"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "10.0070",
+        "recno": "105"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "10.0070",
+        "recno": "106"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": 3.45,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": 13.827,
+        "case_length_in": 10.007,
+        "case_width_in": 10.007,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 74,
+    "all_cross_references_observed": 15,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:17:20.402Z",
+  "discovered_from": "CA9856",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "CHEVROLET",
+        "model": "LCF 3500",
+        "year": "20-16",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "LCF 3500HG",
+        "year": "26-24",
+        "engine": "V8-6.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "LCF 4500",
+        "year": "19-16",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "LCF 4500",
+        "year": "22-20",
+        "engine": "V8-6.6L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "LCF 4500HD",
+        "year": "22-17",
+        "engine": "L4-5.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "LCF 4500XD",
+        "year": "22-17",
+        "engine": "L4-5.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "LCF 5500HD",
+        "year": "22-17",
+        "engine": "L4-5.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "LCF 5500XD",
+        "year": "22-17",
+        "engine": "L4-5.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "LCF 6500XD",
+        "year": "21-18",
+        "engine": "L4-5.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "W3500 TILTMASTER",
+        "year": "09-08",
+        "engine": "L4-5.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "W3500 TILTMASTER",
+        "year": "09-07",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "W4500 TILTMASTER",
+        "year": "10-08",
+        "engine": "L4-5.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "W4500 TILTMASTER",
+        "year": "10-07",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "W5500 TILTMASTER",
+        "year": "10-08",
+        "engine": "L4-5.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "W5500HD TILTMASTER",
+        "year": "09-08",
+        "engine": "L4-5.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE GASOLINE GMC",
+        "model": "V8-6.0L 364 CID",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE GASOLINE GMC",
+        "model": "V8-6.0L 364 CID",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL & MARINE ISUZU",
+        "model": "4HE1-TC4.8L",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL & MARINE ISUZU",
+        "model": "4HE1-TC4.8L",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL & MARINE ISUZU",
+        "model": "4HG1",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL & MARINE ISUZU",
+        "model": "4HG1",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL & MARINE ISUZU",
+        "model": "4HK1-TC",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL & MARINE ISUZU",
+        "model": "4HK1-TC",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL & MARINE ISUZU",
+        "model": "4JJ1-TC",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE INDUSTRIAL & MARINE ISUZU",
+        "model": "4JJ1-TC",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "W3500 FORWARD",
+        "year": "2008",
+        "engine": "L4-5.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "W3500 FORWARD",
+        "year": "08-07",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "W4500 FORWARD",
+        "year": "10-08",
+        "engine": "L4-5.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "W4500 FORWARD",
+        "year": "10-07",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "W5500 FORWARD",
+        "year": "10-08",
+        "engine": "L4-5.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "W5500HD FORWARD",
+        "year": "09-08",
+        "engine": "L4-5.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "NPR",
+        "year": "15-11",
+        "engine": "L4-3.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "NPR",
+        "year": "09-05",
+        "engine": "L4-5.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "NPR",
+        "year": "16-08",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "NPR-HD",
+        "year": "22-05",
+        "engine": "L4-5.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "NPR-HD",
+        "year": "09-08",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "NPR-HD",
+        "year": "20-12",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "NQR",
+        "year": "22-05",
+        "engine": "L4-5.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "NQR",
+        "year": "2022",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "NRR",
+        "year": "22-05",
+        "engine": "L4-5.2L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "NRR",
+        "year": "2022",
+        "engine": "V8-6.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "REACH",
+        "year": "13-11",
+        "engine": "L4-3.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "W3500, W4500 (w/6.0L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "W3500, W4500 (w/6.0L Gas Engine)",
+        "year": "09-07",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "W3500, W4500, W5500, W5500HD (w/4HK1-TC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "W3500, W4500, W5500, W5500HD (w/4HK1-TC Engine)",
+        "year": "09-08",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "W3500, W4500 (w/6.0L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "W3500, W4500 (w/6.0L Gas Engine)",
+        "year": "09-07",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "W3500, W4500, W5500, W5500HD (w/4HK1-TC Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "W3500, W4500, W5500, W5500HD (w/4HK1-TC Engine)",
+        "year": "09-08",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK ISUZU",
+        "model": "NPR (w/4JJ1TC 3.0L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK ISUZU",
+        "model": "NPR (w/4JJ1TC 3.0L Engine)",
+        "year": "16-11",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK ISUZU",
+        "model": "NPR (w/GM V8-6.0L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK ISUZU",
+        "model": "NPR (w/GM V8-6.0L Gas Engine)",
+        "year": "17-07",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK ISUZU",
+        "model": "NPR, NQR, NRR (w/Isuzu 4HK1 5.2L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK ISUZU",
+        "model": "NPR, NQR, NRR (w/Isuzu 4HK1 5.2L Engine)",
+        "year": "16-08",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ISUZU",
+        "model": "ELF200/300 (w/Isuzu 4JJ1TC 3.0L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ISUZU",
+        "model": "ELF200/300 (w/Isuzu 4JJ1TC 3.0L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ISUZU",
+        "model": "ELF400/500/600 (w/Isuzu 4HK1-TC 5.2L Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ISUZU",
+        "model": "ELF400/500/600 (w/Isuzu 4HK1-TC 5.2L Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ISUZU",
+        "model": "NPR400 (w/Isuzu 4BD1 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ISUZU",
+        "model": "NPR400 (w/Isuzu 4BD1 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ISUZU",
+        "model": "NPR400 (w/Isuzu 4BD1T 3.8L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ISUZU",
+        "model": "NPR400 (w/Isuzu 4BD1T 3.8L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ISUZU",
+        "model": "NPR400 (w/Isuzu 4HF1 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ISUZU",
+        "model": "NPR400 (w/Isuzu 4HF1 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ISUZU",
+        "model": "NPR400 (w/Isuzu 4HG1 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ISUZU",
+        "model": "NPR400 (w/Isuzu 4HG1 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ISUZU",
+        "model": "NPR70 (w/Isuzu 4HE1TC 4.8L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ISUZU",
+        "model": "NPR70 (w/Isuzu 4HE1TC 4.8L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ISUZU",
+        "model": "NPR71 (w/Isuzu 4HG1 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ISUZU",
+        "model": "NPR71 (w/Isuzu 4HG1 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ISUZU",
+        "model": "U-NPR70 (w/Isuzu 4HF1T Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY ISUZU",
+        "model": "U-NPR70 (w/Isuzu 4HF1T Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "RS5434",
+        "source_part_number": "CA9856",
+        "part_key": "001509935",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88932",
+        "source_part_number": "CA9856",
+        "part_key": "001509935",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P543614",
+        "source_part_number": "CA9856",
+        "part_key": "001509935",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P828633",
+        "source_part_number": "CA9856",
+        "part_key": "001509935",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF27693",
+        "source_part_number": "CA9856",
+        "part_key": "001509935",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "97062294",
+        "source_part_number": "CA9856",
+        "part_key": "001509935",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "RS5434",
+        "source_part_number": "CA9856",
+        "part_key": "001509935",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF2445",
+        "source_part_number": "CA9856",
+        "part_key": "001509935",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "2-94561-113-0",
+        "source_part_number": "CA9856",
+        "part_key": "001509935",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "8-97062-294-0",
+        "source_part_number": "CA9856",
+        "part_key": "001509935",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "8-98177-271-0",
+        "source_part_number": "CA9856",
+        "part_key": "001509935",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF5633",
+        "source_part_number": "CA9856",
+        "part_key": "001509935",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6932",
+        "source_part_number": "CA9856",
+        "part_key": "001509935",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "SA9856",
+        "source_part_number": "CA9856",
+        "part_key": "001509935",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46932",
+        "source_part_number": "CA9856",
+        "part_key": "001509935",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

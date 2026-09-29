@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "source": "ISUZU_US_V151_PHASE2_MATERIALIZED_SKUS",
+  "skus": [
+    {"sku":"ED41466","applications":[{"make":"ISUZU","model":"FTR","equipment":"FTR","type":"TRUCK","engine":"6HK1-TC","year_from":"2007","year_to":"2009"},{"make":"ISUZU","model":"FVR","equipment":"FVR","type":"TRUCK","engine":"6HK1-TC","year_from":"2008","year_to":"2009"},{"make":"ISUZU","model":"FXR","equipment":"FXR","type":"TRUCK","engine":"6HK1-TC","year_from":"2004","year_to":"2010"}]},
+    {"sku":"EF96095","applications":[{"make":"ISUZU","model":"NQR","equipment":"NQR","type":"TRUCK","engine":"4HK1-TC","year_from":"2013","year_to":"2020"}]},
+    {"sku":"EL80408","applications":[{"make":"ISUZU","model":"FRR","equipment":"FRR","type":"TRUCK","engine":"6HK1-TC","year_from":"2000","year_to":"2004"},{"make":"ISUZU","model":"FSR","equipment":"FSR","type":"TRUCK","engine":"6HK1-TC","year_from":"2000","year_to":"2004"},{"make":"ISUZU","model":"FTR","equipment":"FTR","type":"TRUCK","engine":"6HK1-TC","year_from":"2000","year_to":"2007"},{"make":"ISUZU","model":"FVR","equipment":"FVR","type":"TRUCK","engine":"6HK1-TC","year_from":"2000","year_to":"2007"}]},
+    {"sku":"ES90128","applications":[{"make":"ISUZU","model":"NPR-HD","equipment":"NPR-HD","type":"TRUCK","engine":"4HK1-TC","year_from":"2011","year_to":"2017"},{"make":"ISUZU","model":"NPR-XD","equipment":"NPR-XD","type":"TRUCK","engine":"4HK1-TC","year_from":"2015","year_to":"2017"},{"make":"ISUZU","model":"NQR","equipment":"NQR","type":"TRUCK","engine":"4HK1-TC","year_from":"2011","year_to":"2020"},{"make":"ISUZU","model":"NRR","equipment":"NRR","type":"TRUCK","engine":"4HK1-TC","year_from":"2011","year_to":"2019"}]}
+  ]
+}

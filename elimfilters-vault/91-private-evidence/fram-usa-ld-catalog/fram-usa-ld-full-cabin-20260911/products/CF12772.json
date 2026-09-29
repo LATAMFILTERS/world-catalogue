@@ -1,0 +1,1048 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF12772",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF12772",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.57,
+      "height_mm": 39.88,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [
+      "CV12772"
+    ],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Ford",
+        "part_number": "JX6Z-19N619-G"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "JX6Z-19N619-BA"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "MB3Z-19N619-A"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA10440"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FP-93"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FP-90"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FP-89"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10019"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF10059P"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC99542X"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC99542HX"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC99542P"
+      },
+      {
+        "manufacturer": "Purolator PureONE",
+        "part_number": "C31449"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "CAF10059P"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-2509"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "26-21",
+        "make": "FORD",
+        "model": "BRONCO",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "FORD",
+        "model": "BRONCO",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "FORD",
+        "model": "BRONCO",
+        "engine": "V6-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "FORD",
+        "model": "BRONCO",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "FORD",
+        "model": "BRONCO SPORT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "FORD",
+        "model": "BRONCO SPORT",
+        "engine": "L3-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "FORD",
+        "model": "BRONCO SPORT",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "FORD",
+        "model": "ESCAPE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "FORD",
+        "model": "ESCAPE",
+        "engine": "L3-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "FORD",
+        "model": "ESCAPE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "FORD",
+        "model": "ESCAPE",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "FORD",
+        "model": "EXPLORER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "FORD",
+        "model": "EXPLORER",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "FORD",
+        "model": "EXPLORER",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "23-20",
+        "make": "FORD",
+        "model": "EXPLORER",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "FORD",
+        "model": "MAVERICK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-22",
+        "make": "FORD",
+        "model": "MAVERICK",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "FORD",
+        "model": "MAVERICK",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "FORD",
+        "model": "MUSTANG MACH-E",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "FORD",
+        "model": "POLICE INTERCEPTOR UTILITY",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "FORD",
+        "model": "POLICE INTERCEPTOR UTILITY",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "FORD",
+        "model": "POLICE INTERCEPTOR UTILITY",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "FORD",
+        "model": "RANGER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "FORD",
+        "model": "RANGER",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "FORD",
+        "model": "RANGER",
+        "engine": "V6-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "FORD",
+        "model": "RANGER",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "LINCOLN",
+        "model": "AVIATOR",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "LINCOLN",
+        "model": "AVIATOR",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "LINCOLN",
+        "model": "CORSAIR",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "LINCOLN",
+        "model": "CORSAIR",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-20",
+        "make": "LINCOLN",
+        "model": "CORSAIR",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "LINCOLN",
+        "model": "CORSAIR",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "LINCOLN",
+        "model": "NAUTILUS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "LINCOLN",
+        "model": "NAUTILUS",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "LINCOLN",
+        "model": "NAVIGATOR",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "LINCOLN",
+        "model": "NAVIGATOR",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF12772",
+    "source_part_key": "010740446",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 36,
+      "cross_references": 16
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF12772, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.57",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "8.86",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "10.91",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "10",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Behind Glove Box",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100576507",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.8500",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.7000",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "11.0000",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.3600",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "9.0000",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "12.6200",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.7500",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "9.7400",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.85,
+        "case_weight_lb": 1.7,
+        "unit_height_in": 11,
+        "unit_length_in": 9,
+        "unit_width_in": 1.75,
+        "case_height_in": 4.36,
+        "case_length_in": 12.62,
+        "case_width_in": 9.74,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 10.2,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 36,
+    "all_cross_references_observed": 16,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:01:48.618Z",
+  "discovered_from": "CF12772",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "FORD",
+        "model": "BRONCO",
+        "year": "26-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "BRONCO",
+        "year": "26-21",
+        "engine": "L4-2.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "BRONCO",
+        "year": "26-21",
+        "engine": "V6-2.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "BRONCO",
+        "year": "26-22",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "BRONCO SPORT",
+        "year": "26-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "BRONCO SPORT",
+        "year": "26-21",
+        "engine": "L3-1.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "BRONCO SPORT",
+        "year": "26-21",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "ESCAPE",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "ESCAPE",
+        "year": "26-20",
+        "engine": "L3-1.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "ESCAPE",
+        "year": "26-20",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "ESCAPE",
+        "year": "26-20",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "EXPLORER",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "EXPLORER",
+        "year": "26-20",
+        "engine": "L4-2.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "EXPLORER",
+        "year": "26-20",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "EXPLORER",
+        "year": "23-20",
+        "engine": "V6-3.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "MAVERICK",
+        "year": "26-22",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "MAVERICK",
+        "year": "24-22",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "MAVERICK",
+        "year": "26-22",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "MUSTANG MACH-E",
+        "year": "26-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "POLICE INTERCEPTOR UTILITY",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "POLICE INTERCEPTOR UTILITY",
+        "year": "26-20",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "POLICE INTERCEPTOR UTILITY",
+        "year": "26-20",
+        "engine": "V6-3.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "RANGER",
+        "year": "26-24",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "RANGER",
+        "year": "26-24",
+        "engine": "L4-2.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "RANGER",
+        "year": "26-24",
+        "engine": "V6-2.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "RANGER",
+        "year": "26-24",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "AVIATOR",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "AVIATOR",
+        "year": "26-20",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "CORSAIR",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "CORSAIR",
+        "year": "26-20",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "CORSAIR",
+        "year": "22-20",
+        "engine": "L4-2.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "CORSAIR",
+        "year": "26-21",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "NAUTILUS",
+        "year": "26-24",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "NAUTILUS",
+        "year": "26-24",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "NAVIGATOR",
+        "year": "26-25",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "NAVIGATOR",
+        "year": "26-25",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA10440",
+        "source_part_number": "CF12772",
+        "part_key": "010740446",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "JX6Z-19N619-G",
+        "source_part_number": "CF12772",
+        "part_key": "010740446",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "JX6Z-19N619-BA",
+        "source_part_number": "CF12772",
+        "part_key": "010740446",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "MB3Z-19N619-A",
+        "source_part_number": "CF12772",
+        "part_key": "010740446",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FRAM TrueAir",
+        "part_number": "CV12772",
+        "source_part_number": "CF12772",
+        "part_key": "010740446",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF10059P",
+        "source_part_number": "CF12772",
+        "part_key": "010740446",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FP-93",
+        "source_part_number": "CF12772",
+        "part_key": "010740446",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FP-90",
+        "source_part_number": "CF12772",
+        "part_key": "010740446",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FP-89",
+        "source_part_number": "CF12772",
+        "part_key": "010740446",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC99542X",
+        "source_part_number": "CF12772",
+        "part_key": "010740446",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC99542HX",
+        "source_part_number": "CF12772",
+        "part_key": "010740446",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC99542P",
+        "source_part_number": "CF12772",
+        "part_key": "010740446",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator PureONE",
+        "part_number": "C31449",
+        "source_part_number": "CF12772",
+        "part_key": "010740446",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "CAF10059P",
+        "source_part_number": "CF12772",
+        "part_key": "010740446",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-2509",
+        "source_part_number": "CF12772",
+        "part_key": "010740446",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10019",
+        "source_part_number": "CF12772",
+        "part_key": "010740446",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

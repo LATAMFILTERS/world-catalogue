@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "source": "ISUZU_US_V152_EF98204_CORRECTION",
+  "reason": "Retire erroneous EF98204 chain. Isuzu 8981653750 maps to WIX WF10233 / Fleetguard FS20128; canonical ELIMFILTERS owner is ES90128. Donaldson P848204 is F-Series-only and is not part of this N-Series chain.",
+  "skus": [
+    {
+      "sku": "ES90128",
+      "applications": [
+        {"make":"ISUZU","model":"NRR DERATE","equipment":"NRR DERATE","type":"TRUCK","engine":"4HK1-TC","year_from":"2025","year_to":"2026"}
+      ]
+    }
+  ]
+}

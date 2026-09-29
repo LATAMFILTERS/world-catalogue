@@ -1,0 +1,591 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "CH12812",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CH12812",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 2.5,
+      "height_mm": 63.5,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Cartridge",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [
+      "TG12812",
+      "XG12812"
+    ],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Wix",
+        "part_number": "WL10521"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "95332"
+      },
+      {
+        "manufacturer": "Hyundai",
+        "part_number": "263502J000"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P1099"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "100521"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PG99602EX"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "part_number": "PL11760"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "CF1760"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S45028"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S45028XL"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-216"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "26-21",
+        "make": "HYUNDAI",
+        "model": "ELANTRA",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "HYUNDAI",
+        "model": "KONA",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "HYUNDAI",
+        "model": "SONATA",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "KIA",
+        "model": "K4",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CH12812",
+    "source_part_key": "011410302",
+    "source_totals": {
+      "attributes": 50,
+      "applications": 4,
+      "cross_references": 13
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® oil filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE (original equipment) recommended intervals. Engineered for conventional and synthetic motor oil, Extra Guard offers proven engine protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "The perfect balance of dirt-trapping efficiency and dirt-holding capacity",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CH12812, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Includes gaskets and O-rings manufactured to endure the high pressures and high temperatures in today’s engines",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Engineered for use with synthetic or conventional motor oils",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Cartridge Oil Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Proven protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "4"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filter media is a blend of fiber and resin that captures 95%?of the dirt particles",
+        "recno": "5"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Cartridge",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "NA",
+        "recno": "89"
+      },
+      {
+        "attribute": "Drain Plug Included",
+        "value": "Yes",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100579287",
+        "recno": "92"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "93"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "2.5",
+        "recno": "94"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "95"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "0.984",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "2.579",
+        "recno": "97"
+      },
+      {
+        "attribute": "O-Ring Inside Diameter (Inch)",
+        "value": "0.591",
+        "recno": "98"
+      },
+      {
+        "attribute": "O-Ring Outside Diameter (Inch)",
+        "value": "0.709",
+        "recno": "99"
+      },
+      {
+        "attribute": "O-Ring Thickness (Inch)",
+        "value": "0.118",
+        "recno": "100"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "0.984",
+        "recno": "101"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "2.579",
+        "recno": "102"
+      },
+      {
+        "attribute": "Washer Thickness (Inch)",
+        "value": "0.059",
+        "recno": "103"
+      },
+      {
+        "attribute": "Washer Inside Diameter (Inch)",
+        "value": "0.563",
+        "recno": "104"
+      },
+      {
+        "attribute": "Washer Outside Diameter (Inch)",
+        "value": "0.768",
+        "recno": "105"
+      },
+      {
+        "attribute": "O-Rings Included",
+        "value": "Yes",
+        "recno": "106"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "107"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "108"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "109"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "110"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.2000",
+        "recno": "114"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.2000",
+        "recno": "115"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "3.5430",
+        "recno": "116"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.0160",
+        "recno": "117"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "2.7560",
+        "recno": "118"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "8.5830",
+        "recno": "119"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "2.7560",
+        "recno": "120"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "5.8270",
+        "recno": "121"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.2,
+        "case_weight_lb": 1.2,
+        "unit_height_in": 3.543,
+        "unit_length_in": 2.756,
+        "unit_width_in": 2.756,
+        "case_height_in": 4.016,
+        "case_length_in": 8.583,
+        "case_width_in": 5.827,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 2.4,
+        "estimated_case_dimensions": {
+          "length_in": 11.444,
+          "width_in": 8.741,
+          "height_in": 4.016,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 4,
+    "all_cross_references_observed": 13,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:13:53.821Z",
+  "discovered_from": "CH12812",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "HYUNDAI",
+        "model": "ELANTRA",
+        "year": "26-21",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "KONA",
+        "year": "26-22",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SONATA",
+        "year": "26-20",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "K4",
+        "year": "26-25",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "95332",
+        "source_part_number": "CH12812",
+        "part_key": "011410302",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Tough Guard",
+        "part_number": "TG12812",
+        "source_part_number": "CH12812",
+        "part_key": "011410302",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Ultra Synthetic",
+        "part_number": "XG12812",
+        "source_part_number": "CH12812",
+        "part_key": "011410302",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hyundai",
+        "part_number": "263502J000",
+        "source_part_number": "CH12812",
+        "part_key": "011410302",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P1099",
+        "source_part_number": "CH12812",
+        "part_key": "011410302",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "100521",
+        "source_part_number": "CH12812",
+        "part_key": "011410302",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PG99602EX",
+        "source_part_number": "CH12812",
+        "part_key": "011410302",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "part_number": "PL11760",
+        "source_part_number": "CH12812",
+        "part_key": "011410302",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "CF1760",
+        "source_part_number": "CH12812",
+        "part_key": "011410302",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S45028",
+        "source_part_number": "CH12812",
+        "part_key": "011410302",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S45028XL",
+        "source_part_number": "CH12812",
+        "part_key": "011410302",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-216",
+        "source_part_number": "CH12812",
+        "part_key": "011410302",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WL10521",
+        "source_part_number": "CH12812",
+        "part_key": "011410302",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

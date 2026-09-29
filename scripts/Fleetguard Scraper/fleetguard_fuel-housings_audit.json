@@ -1,0 +1,61 @@
+{
+  "source_category": "https://www.fleetguard.com/es/category/productos/filtraci%C3%B3n-de-combustible/procesadores-de-combustible/0ZGPL0000000FSi4AM",
+  "fleetguard_reported_total": 180,
+  "api_page_size": 20,
+  "api_pages": 9,
+  "page_log": [
+    {
+      "page": 0,
+      "count": 20
+    },
+    {
+      "page": 1,
+      "count": 20
+    },
+    {
+      "page": 2,
+      "count": 20
+    },
+    {
+      "page": 3,
+      "count": 20
+    },
+    {
+      "page": 4,
+      "count": 20
+    },
+    {
+      "page": 5,
+      "count": 20
+    },
+    {
+      "page": 6,
+      "count": 20
+    },
+    {
+      "page": 7,
+      "count": 20
+    },
+    {
+      "page": 8,
+      "count": 20
+    }
+  ],
+  "metadata_records": 180,
+  "accepted_fuel_filter_housings": 96,
+  "excluded_non_housings": 84,
+  "strict_classification_aliases": [
+    "carcasa de combustible",
+    "carcasa del filtro de combustible",
+    "carcasa de filtro de combustible",
+    "fuel filter housing",
+    "fuel housing"
+  ],
+  "suspicious_fhb_not_text_classified": [],
+  "collisions": [],
+  "errors": [],
+  "import_ready": true,
+  "sku_rule": "ET9 + last 4 numeric digits of Fleetguard code; alphabetic suffixes remain only in codigo_base",
+  "technology": "TURBOCORE™",
+  "generated_at": "2026-09-17T22:13:37.886Z"
+}

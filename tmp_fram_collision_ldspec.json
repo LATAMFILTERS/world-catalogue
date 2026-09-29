@@ -1,0 +1,3189 @@
+{
+  "all": [
+    {
+      "authority": "CA10014",
+      "family": "AIR",
+      "sku": "EA30014",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10015",
+      "family": "AIR",
+      "sku": "EA30015",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10022",
+      "family": "AIR",
+      "sku": "EA30022",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10029",
+      "family": "AIR",
+      "sku": "EA30029",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10029SY",
+      "family": "AIR",
+      "sku": "EA30029",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10031",
+      "family": "AIR",
+      "sku": "EA30031",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10034",
+      "family": "AIR",
+      "sku": "EA30034",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10065",
+      "family": "AIR",
+      "sku": "EA30065",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10071",
+      "family": "AIR",
+      "sku": "EA30071",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10083",
+      "family": "AIR",
+      "sku": "EA30083",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10084",
+      "family": "AIR",
+      "sku": "EA30084",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10085",
+      "family": "AIR",
+      "sku": "EA30085",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10088",
+      "family": "AIR",
+      "sku": "EA30088",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10092",
+      "family": "AIR",
+      "sku": "EA30092",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10093",
+      "family": "AIR",
+      "sku": "EA30093",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA101",
+      "family": "AIR",
+      "sku": "EA30101",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10110",
+      "family": "AIR",
+      "sku": "EA30110",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10118",
+      "family": "AIR",
+      "sku": "EA30118",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10161",
+      "family": "AIR",
+      "sku": "EA30161",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10163",
+      "family": "AIR",
+      "sku": "EA30163",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10170",
+      "family": "AIR",
+      "sku": "EA30170",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10171",
+      "family": "AIR",
+      "sku": "EA30171",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10193",
+      "family": "AIR",
+      "sku": "EA30193",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA102",
+      "family": "AIR",
+      "sku": "EA30102",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10242",
+      "family": "AIR",
+      "sku": "EA30242",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10262",
+      "family": "AIR",
+      "sku": "EA30262",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10271",
+      "family": "AIR",
+      "sku": "EA30271",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10305",
+      "family": "AIR",
+      "sku": "EA30305",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10432",
+      "family": "AIR",
+      "sku": "EA30432",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10500",
+      "family": "AIR",
+      "sku": "EA30500",
+      "comparable": 3,
+      "matches": 1,
+      "conflicts": 2,
+      "detail": {
+        "height_mm": {
+          "a": 51.31,
+          "b": "399.54",
+          "ok": false
+        },
+        "media_type": {
+          "a": "Genuine Media",
+          "b": "Genuine Media",
+          "ok": true
+        },
+        "style": {
+          "a": "Flexible Panel Air Filter",
+          "b": "Radial Seal Air Filter",
+          "ok": false
+        }
+      }
+    },
+    {
+      "authority": "CA10522",
+      "family": "AIR",
+      "sku": "EA30522",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10551",
+      "family": "AIR",
+      "sku": "EA30551",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10661",
+      "family": "AIR",
+      "sku": "EA30661",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10722",
+      "family": "AIR",
+      "sku": "EA30722",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10762",
+      "family": "AIR",
+      "sku": "EA30762",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10781",
+      "family": "AIR",
+      "sku": "EA30781",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10784",
+      "family": "AIR",
+      "sku": "EA30784",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10785",
+      "family": "AIR",
+      "sku": "EA30785",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10800",
+      "family": "AIR",
+      "sku": "EA30800",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10881",
+      "family": "AIR",
+      "sku": "EA30881",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10901",
+      "family": "AIR",
+      "sku": "EA30901",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10910",
+      "family": "AIR",
+      "sku": "EA30910",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA10990",
+      "family": "AIR",
+      "sku": "EA30990",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11001",
+      "family": "AIR",
+      "sku": "EA31001",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11002",
+      "family": "AIR",
+      "sku": "EA31002",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11004",
+      "family": "AIR",
+      "sku": "EA31004",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11005",
+      "family": "AIR",
+      "sku": "EA31005",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11006",
+      "family": "AIR",
+      "sku": "EA31006",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11010",
+      "family": "AIR",
+      "sku": "EA31010",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11011",
+      "family": "AIR",
+      "sku": "EA31011",
+      "comparable": 3,
+      "matches": 1,
+      "conflicts": 2,
+      "detail": {
+        "height_mm": {
+          "a": 32.54,
+          "b": "42.06",
+          "ok": false
+        },
+        "media_type": {
+          "a": "Genuine Media",
+          "b": "Genuine Media",
+          "ok": true
+        },
+        "style": {
+          "a": "Flexible Panel Air Filter",
+          "b": "Rigid Panel Air Filter",
+          "ok": false
+        }
+      }
+    },
+    {
+      "authority": "CA11013",
+      "family": "AIR",
+      "sku": "EA31013",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11027",
+      "family": "AIR",
+      "sku": "EA31027",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11030",
+      "family": "AIR",
+      "sku": "EA31030",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11031",
+      "family": "AIR",
+      "sku": "EA31031",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11034",
+      "family": "AIR",
+      "sku": "EA31034",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11041",
+      "family": "AIR",
+      "sku": "EA31041",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11042",
+      "family": "AIR",
+      "sku": "EA31042",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11049",
+      "family": "AIR",
+      "sku": "EA31049",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11050",
+      "family": "AIR",
+      "sku": "EA31050",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11053A",
+      "family": "AIR",
+      "sku": "EA31053",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11062",
+      "family": "AIR",
+      "sku": "EA31062",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11109",
+      "family": "AIR",
+      "sku": "EA31109",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11113",
+      "family": "AIR",
+      "sku": "EA31113",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11116",
+      "family": "AIR",
+      "sku": "EA31116",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11118",
+      "family": "AIR",
+      "sku": "EA31118",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11121",
+      "family": "AIR",
+      "sku": "EA31121",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11154",
+      "family": "AIR",
+      "sku": "EA31154",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11170",
+      "family": "AIR",
+      "sku": "EA31170",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11215",
+      "family": "AIR",
+      "sku": "EA31215",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11222",
+      "family": "AIR",
+      "sku": "EA31222",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11227",
+      "family": "AIR",
+      "sku": "EA31227",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11233",
+      "family": "AIR",
+      "sku": "EA31233",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11250",
+      "family": "AIR",
+      "sku": "EA31250",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11251",
+      "family": "AIR",
+      "sku": "EA31251",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11256",
+      "family": "AIR",
+      "sku": "EA31256",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11257",
+      "family": "AIR",
+      "sku": "EA31257",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11287",
+      "family": "AIR",
+      "sku": "EA31287",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11295",
+      "family": "AIR",
+      "sku": "EA31295",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11295SY",
+      "family": "AIR",
+      "sku": "EA31295",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11305",
+      "family": "AIR",
+      "sku": "EA31305",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11345",
+      "family": "AIR",
+      "sku": "EA31345",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11345SY",
+      "family": "AIR",
+      "sku": "EA31345",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11413",
+      "family": "AIR",
+      "sku": "EA31413",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11420",
+      "family": "AIR",
+      "sku": "EA31420",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11421",
+      "family": "AIR",
+      "sku": "EA31421",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11422",
+      "family": "AIR",
+      "sku": "EA31422",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11431",
+      "family": "AIR",
+      "sku": "EA31431",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11450",
+      "family": "AIR",
+      "sku": "EA31450",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11456",
+      "family": "AIR",
+      "sku": "EA31456",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11476",
+      "family": "AIR",
+      "sku": "EA31476",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11480",
+      "family": "AIR",
+      "sku": "EA31480",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11500",
+      "family": "AIR",
+      "sku": "EA31500",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11519",
+      "family": "AIR",
+      "sku": "EA31519",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11541",
+      "family": "AIR",
+      "sku": "EA31541",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11581SY",
+      "family": "AIR",
+      "sku": "EA31581",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11608",
+      "family": "AIR",
+      "sku": "EA31608",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11759",
+      "family": "AIR",
+      "sku": "EA31759",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11861",
+      "family": "AIR",
+      "sku": "EA31861",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11877",
+      "family": "AIR",
+      "sku": "EA31877",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11895",
+      "family": "AIR",
+      "sku": "EA31895",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11940",
+      "family": "AIR",
+      "sku": "EA31940",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11941",
+      "family": "AIR",
+      "sku": "EA31941",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11942",
+      "family": "AIR",
+      "sku": "EA31942",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11945",
+      "family": "AIR",
+      "sku": "EA31945",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA11952",
+      "family": "AIR",
+      "sku": "EA31952",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12050",
+      "family": "AIR",
+      "sku": "EA32050",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12051",
+      "family": "AIR",
+      "sku": "EA32051",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12052",
+      "family": "AIR",
+      "sku": "EA32052",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12057",
+      "family": "AIR",
+      "sku": "EA32057",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12061",
+      "family": "AIR",
+      "sku": "EA32061",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12062",
+      "family": "AIR",
+      "sku": "EA32062",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12064",
+      "family": "AIR",
+      "sku": "EA32064",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12065",
+      "family": "AIR",
+      "sku": "EA32065",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12071",
+      "family": "AIR",
+      "sku": "EA32071",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12072",
+      "family": "AIR",
+      "sku": "EA32072",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12085",
+      "family": "AIR",
+      "sku": "EA32085",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12112",
+      "family": "AIR",
+      "sku": "EA32112",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA122",
+      "family": "AIR",
+      "sku": "EA30122",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12260",
+      "family": "AIR",
+      "sku": "EA32260",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12290",
+      "family": "AIR",
+      "sku": "EA32290",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12293",
+      "family": "AIR",
+      "sku": "EA32293",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12295",
+      "family": "AIR",
+      "sku": "EA32295",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12315",
+      "family": "AIR",
+      "sku": "EA32315",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12368",
+      "family": "AIR",
+      "sku": "EA32368",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12371",
+      "family": "AIR",
+      "sku": "EA32371",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12372",
+      "family": "AIR",
+      "sku": "EA32372",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12376",
+      "family": "AIR",
+      "sku": "EA32376",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12404",
+      "family": "AIR",
+      "sku": "EA32404",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA124A",
+      "family": "AIR",
+      "sku": "EA30124",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12535",
+      "family": "AIR",
+      "sku": "EA32535",
+      "comparable": 3,
+      "matches": 2,
+      "conflicts": 1,
+      "detail": {
+        "height_mm": {
+          "a": 50.29,
+          "b": "50.01",
+          "ok": true
+        },
+        "media_type": {
+          "a": "Genuine Media",
+          "b": "Genuine Media",
+          "ok": true
+        },
+        "style": {
+          "a": "Flexible Panel Air Filter",
+          "b": "Rigid Panel Air Filter",
+          "ok": false
+        }
+      }
+    },
+    {
+      "authority": "CA12619",
+      "family": "AIR",
+      "sku": "EA32619",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12666",
+      "family": "AIR",
+      "sku": "EA32666",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12668",
+      "family": "AIR",
+      "sku": "EA32668",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12841",
+      "family": "AIR",
+      "sku": "EA32841",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12863",
+      "family": "AIR",
+      "sku": "EA32863",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12868",
+      "family": "AIR",
+      "sku": "EA32868",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12878",
+      "family": "AIR",
+      "sku": "EA32878",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12879",
+      "family": "AIR",
+      "sku": "EA32879",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12931",
+      "family": "AIR",
+      "sku": "EA32931",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12934",
+      "family": "AIR",
+      "sku": "EA32934",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12940",
+      "family": "AIR",
+      "sku": "EA32940",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12941",
+      "family": "AIR",
+      "sku": "EA32941",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12952",
+      "family": "AIR",
+      "sku": "EA32952",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12953",
+      "family": "AIR",
+      "sku": "EA32953",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12954",
+      "family": "AIR",
+      "sku": "EA32954",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA12987",
+      "family": "AIR",
+      "sku": "EA32987",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA136",
+      "family": "AIR",
+      "sku": "EA30136",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA148",
+      "family": "AIR",
+      "sku": "EA30148",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA15",
+      "family": "AIR",
+      "sku": "EA30015",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA151",
+      "family": "AIR",
+      "sku": "EA30151",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA1519",
+      "family": "AIR",
+      "sku": "EA31519",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA1531SY",
+      "family": "AIR",
+      "sku": "EA31531",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA1532SY",
+      "family": "AIR",
+      "sku": "EA31532",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA1537",
+      "family": "AIR",
+      "sku": "EA31537",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA1550",
+      "family": "AIR",
+      "sku": "EA31550",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA1562",
+      "family": "AIR",
+      "sku": "EA31562",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA1562SY",
+      "family": "AIR",
+      "sku": "EA31562",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA1574",
+      "family": "AIR",
+      "sku": "EA31574",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA1580ASY",
+      "family": "AIR",
+      "sku": "EA31580",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA1581",
+      "family": "AIR",
+      "sku": "EA31581",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA1588",
+      "family": "AIR",
+      "sku": "EA31588",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA1588SY",
+      "family": "AIR",
+      "sku": "EA31588",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA1591",
+      "family": "AIR",
+      "sku": "EA31591",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA1592",
+      "family": "AIR",
+      "sku": "EA31592",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA1596",
+      "family": "AIR",
+      "sku": "EA31596",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA187",
+      "family": "AIR",
+      "sku": "EA30187",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA189",
+      "family": "AIR",
+      "sku": "EA30189",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA198",
+      "family": "AIR",
+      "sku": "EA30198",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA21",
+      "family": "AIR",
+      "sku": "EA30021",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA232",
+      "family": "AIR",
+      "sku": "EA30232",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA240",
+      "family": "AIR",
+      "sku": "EA30240",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA240PLHD",
+      "family": "AIR",
+      "sku": "EA30240",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA2512SY",
+      "family": "AIR",
+      "sku": "EA32512",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA2517",
+      "family": "AIR",
+      "sku": "EA32517",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA2519",
+      "family": "AIR",
+      "sku": "EA32519",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA2519SY",
+      "family": "AIR",
+      "sku": "EA32519",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA252",
+      "family": "AIR",
+      "sku": "EA30252",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA2520",
+      "family": "AIR",
+      "sku": "EA32520",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA2541",
+      "family": "AIR",
+      "sku": "EA32541",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA2542",
+      "family": "AIR",
+      "sku": "EA32542",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA2548",
+      "family": "AIR",
+      "sku": "EA32548",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA2548SY",
+      "family": "AIR",
+      "sku": "EA32548",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA2550",
+      "family": "AIR",
+      "sku": "EA32550",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA2555SY",
+      "family": "AIR",
+      "sku": "EA32555",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA2557SY",
+      "family": "AIR",
+      "sku": "EA32557",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA2561",
+      "family": "AIR",
+      "sku": "EA32561",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA2565",
+      "family": "AIR",
+      "sku": "EA32565",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA2565SY",
+      "family": "AIR",
+      "sku": "EA32565",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA2580",
+      "family": "AIR",
+      "sku": "EA32580",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA2580SY",
+      "family": "AIR",
+      "sku": "EA32580",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA2709A",
+      "family": "AIR",
+      "sku": "EA32709",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA2740",
+      "family": "AIR",
+      "sku": "EA32740",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA29",
+      "family": "AIR",
+      "sku": "EA30029",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA30",
+      "family": "AIR",
+      "sku": "EA30030",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA305",
+      "family": "AIR",
+      "sku": "EA30305",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA310",
+      "family": "AIR",
+      "sku": "EA30310",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA311",
+      "family": "AIR",
+      "sku": "EA30311",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA313",
+      "family": "AIR",
+      "sku": "EA30313",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA314",
+      "family": "AIR",
+      "sku": "EA30314",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA3146",
+      "family": "AIR",
+      "sku": "EA33146",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA324A",
+      "family": "AIR",
+      "sku": "EA30324",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA325",
+      "family": "AIR",
+      "sku": "EA30325",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA326",
+      "family": "AIR",
+      "sku": "EA30326",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA327",
+      "family": "AIR",
+      "sku": "EA30327",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA3273",
+      "family": "AIR",
+      "sku": "EA33273",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA3273SY",
+      "family": "AIR",
+      "sku": "EA33273",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA3324",
+      "family": "AIR",
+      "sku": "EA33324",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA3371",
+      "family": "AIR",
+      "sku": "EA33371",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA345",
+      "family": "AIR",
+      "sku": "EA30345",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA3518",
+      "family": "AIR",
+      "sku": "EA33518",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA352",
+      "family": "AIR",
+      "sku": "EA30352",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA3565",
+      "family": "AIR",
+      "sku": "EA33565",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA3566",
+      "family": "AIR",
+      "sku": "EA33566",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA3588",
+      "family": "AIR",
+      "sku": "EA33588",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA3602",
+      "family": "AIR",
+      "sku": "EA33602",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA3621",
+      "family": "AIR",
+      "sku": "EA33621",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA3649",
+      "family": "AIR",
+      "sku": "EA33649",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA3688",
+      "family": "AIR",
+      "sku": "EA33688",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA381",
+      "family": "AIR",
+      "sku": "EA30381",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA3874",
+      "family": "AIR",
+      "sku": "EA33874",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA4282",
+      "family": "AIR",
+      "sku": "EA34282",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA4369",
+      "family": "AIR",
+      "sku": "EA34369",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA5021",
+      "family": "AIR",
+      "sku": "EA35021",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA5021SY",
+      "family": "AIR",
+      "sku": "EA35021",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA5030",
+      "family": "AIR",
+      "sku": "EA35030",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA5056",
+      "family": "AIR",
+      "sku": "EA35056",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA5057",
+      "family": "AIR",
+      "sku": "EA35057",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA5058",
+      "family": "AIR",
+      "sku": "EA35058",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA5067",
+      "family": "AIR",
+      "sku": "EA35067",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA511A",
+      "family": "AIR",
+      "sku": "EA30511",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA536",
+      "family": "AIR",
+      "sku": "EA30536",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA551",
+      "family": "AIR",
+      "sku": "EA30551",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA5522",
+      "family": "AIR",
+      "sku": "EA35522",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA6304",
+      "family": "AIR",
+      "sku": "EA36304",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA6328",
+      "family": "AIR",
+      "sku": "EA36328",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA6334",
+      "family": "AIR",
+      "sku": "EA36334",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA6816",
+      "family": "AIR",
+      "sku": "EA36816",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA6821",
+      "family": "AIR",
+      "sku": "EA36821",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA7007",
+      "family": "AIR",
+      "sku": "EA37007",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA7017",
+      "family": "AIR",
+      "sku": "EA37017",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA7088",
+      "family": "AIR",
+      "sku": "EA37088",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA7110",
+      "family": "AIR",
+      "sku": "EA37110",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA7110SY",
+      "family": "AIR",
+      "sku": "EA37110",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA7111SY",
+      "family": "AIR",
+      "sku": "EA37111",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA7113",
+      "family": "AIR",
+      "sku": "EA37113",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA7140",
+      "family": "AIR",
+      "sku": "EA37140",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA7140SY",
+      "family": "AIR",
+      "sku": "EA37140",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA7218",
+      "family": "AIR",
+      "sku": "EA37218",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA7230",
+      "family": "AIR",
+      "sku": "EA37230",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA74",
+      "family": "AIR",
+      "sku": "EA30074",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA79",
+      "family": "AIR",
+      "sku": "EA30079",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA8003",
+      "family": "AIR",
+      "sku": "EA38003",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA8010",
+      "family": "AIR",
+      "sku": "EA38010",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA8014",
+      "family": "AIR",
+      "sku": "EA38014",
+      "comparable": 1,
+      "matches": 1,
+      "conflicts": 0,
+      "detail": {
+        "media_type": {
+          "a": "Genuine Media",
+          "b": "Genuine Media",
+          "ok": true
+        }
+      }
+    },
+    {
+      "authority": "CA8029",
+      "family": "AIR",
+      "sku": "EA38029",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA8037",
+      "family": "AIR",
+      "sku": "EA38037",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA8039",
+      "family": "AIR",
+      "sku": "EA38039",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA8097",
+      "family": "AIR",
+      "sku": "EA38097",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA8121",
+      "family": "AIR",
+      "sku": "EA38121",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA8130",
+      "family": "AIR",
+      "sku": "EA38130",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA8133",
+      "family": "AIR",
+      "sku": "EA38133",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA8162",
+      "family": "AIR",
+      "sku": "EA38162",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA8180",
+      "family": "AIR",
+      "sku": "EA38180",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA8235",
+      "family": "AIR",
+      "sku": "EA38235",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA8269",
+      "family": "AIR",
+      "sku": "EA38269",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA8331",
+      "family": "AIR",
+      "sku": "EA38331",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA8507",
+      "family": "AIR",
+      "sku": "EA38507",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA8562",
+      "family": "AIR",
+      "sku": "EA38562",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA8601",
+      "family": "AIR",
+      "sku": "EA38601",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA8602",
+      "family": "AIR",
+      "sku": "EA38602",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA8606",
+      "family": "AIR",
+      "sku": "EA38606",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA8731",
+      "family": "AIR",
+      "sku": "EA38731",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA8960",
+      "family": "AIR",
+      "sku": "EA38960",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA9002SY",
+      "family": "AIR",
+      "sku": "EA39002",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA9003",
+      "family": "AIR",
+      "sku": "EA39003",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA9003SY",
+      "family": "AIR",
+      "sku": "EA39003",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA9054",
+      "family": "AIR",
+      "sku": "EA39054",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA9121",
+      "family": "AIR",
+      "sku": "EA39121",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA9122",
+      "family": "AIR",
+      "sku": "EA39122",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA9352SY",
+      "family": "AIR",
+      "sku": "EA39352",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA9402",
+      "family": "AIR",
+      "sku": "EA39402",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA9492",
+      "family": "AIR",
+      "sku": "EA39492",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA9493",
+      "family": "AIR",
+      "sku": "EA39493",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA9501",
+      "family": "AIR",
+      "sku": "EA39501",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA9550",
+      "family": "AIR",
+      "sku": "EA39550",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA9550S",
+      "family": "AIR",
+      "sku": "EA39550",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA9901",
+      "family": "AIR",
+      "sku": "EA39901",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA9901SY",
+      "family": "AIR",
+      "sku": "EA39901",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA9902",
+      "family": "AIR",
+      "sku": "EA39902",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CA9912",
+      "family": "AIR",
+      "sku": "EA39912",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CF10372",
+      "family": "CABIN",
+      "sku": "EC30372",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CF10612",
+      "family": "CABIN",
+      "sku": "EC30612",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CF11810",
+      "family": "CABIN",
+      "sku": "EC31810",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CF11919",
+      "family": "CABIN",
+      "sku": "EC31919",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CF12000",
+      "family": "CABIN",
+      "sku": "EC32000",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CF12002",
+      "family": "CABIN",
+      "sku": "EC32002",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CF12436",
+      "family": "CABIN",
+      "sku": "EC32436",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CF12450",
+      "family": "CABIN",
+      "sku": "EC32450",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CH10075",
+      "family": "LUBE",
+      "sku": "EL30075",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CH10384",
+      "family": "LUBE",
+      "sku": "EL30384",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CH10952",
+      "family": "LUBE",
+      "sku": "EL30952",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CH11008",
+      "family": "LUBE",
+      "sku": "EL31008",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CH11242",
+      "family": "LUBE",
+      "sku": "EL31242",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CH14PL",
+      "family": "LUBE",
+      "sku": "EL30014",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CH191APL",
+      "family": "LUBE",
+      "sku": "EL30191",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CH200PL",
+      "family": "LUBE",
+      "sku": "EL30200",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CH211A",
+      "family": "LUBE",
+      "sku": "EL30211",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CH236APL",
+      "family": "LUBE",
+      "sku": "EL30236",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CH6003",
+      "family": "LUBE",
+      "sku": "EL36003",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CH6004",
+      "family": "LUBE",
+      "sku": "EL36004",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CH6007",
+      "family": "LUBE",
+      "sku": "EL36007",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CH6009",
+      "family": "LUBE",
+      "sku": "EL36009",
+      "comparable": 3,
+      "matches": 2,
+      "conflicts": 1,
+      "detail": {
+        "height_mm": {
+          "a": 56.34,
+          "b": "138.23",
+          "ok": false
+        },
+        "media_type": {
+          "a": "Genuine Media",
+          "b": "Genuine Media",
+          "ok": true
+        },
+        "style": {
+          "a": "Cartridge",
+          "b": "Cartridge",
+          "ok": true
+        }
+      }
+    },
+    {
+      "authority": "CH6012",
+      "family": "LUBE",
+      "sku": "EL36012",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CH6014",
+      "family": "LUBE",
+      "sku": "EL36014",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CH6015",
+      "family": "LUBE",
+      "sku": "EL36015",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CH6103",
+      "family": "LUBE",
+      "sku": "EL36103",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CH820PL",
+      "family": "LUBE",
+      "sku": "EL30820",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CH8481",
+      "family": "LUBE",
+      "sku": "EL38481",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CH9301",
+      "family": "LUBE",
+      "sku": "EL39301",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "CH962PL",
+      "family": "LUBE",
+      "sku": "EL30962",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "FDC11810C",
+      "family": "CABIN",
+      "sku": "EC31810",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "FS8481",
+      "family": "LUBE",
+      "sku": "EL38481",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "G7196DP",
+      "family": "FUEL",
+      "sku": "EF37196",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "G8008",
+      "family": "FUEL",
+      "sku": "EF38008",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "G8018DP",
+      "family": "FUEL",
+      "sku": "EF38018",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "G8086",
+      "family": "FUEL",
+      "sku": "EF38086",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "G8116",
+      "family": "FUEL",
+      "sku": "EF38116",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "G8122",
+      "family": "FUEL",
+      "sku": "EF38122",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "G8219",
+      "family": "FUEL",
+      "sku": "EF38219",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "G8228",
+      "family": "FUEL",
+      "sku": "EF38228",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "PH10027",
+      "family": "LUBE",
+      "sku": "EL30027",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "PH10220",
+      "family": "LUBE",
+      "sku": "EL30220",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "PH10792",
+      "family": "LUBE",
+      "sku": "EL30792",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "PH10950",
+      "family": "LUBE",
+      "sku": "EL30950",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "PH10951",
+      "family": "LUBE",
+      "sku": "EL30951",
+      "comparable": 7,
+      "matches": 4,
+      "conflicts": 3,
+      "detail": {
+        "height_mm": {
+          "a": 136.5,
+          "b": "171.83",
+          "ok": false
+        },
+        "outer_diameter_mm": {
+          "a": 93.73,
+          "b": "93.68",
+          "ok": true
+        },
+        "gasket_od_mm": {
+          "a": 71.37,
+          "b": "71.37",
+          "ok": true
+        },
+        "gasket_id_mm": {
+          "a": 62.48,
+          "b": "62.48",
+          "ok": true
+        },
+        "thread_size": {
+          "a": "1-16",
+          "b": "1 1/8-16",
+          "ok": false
+        },
+        "media_type": {
+          "a": "Genuine Media",
+          "b": "Genuine Media",
+          "ok": true
+        },
+        "style": {
+          "a": "Spin-On Canister",
+          "b": "Cartridge",
+          "ok": false
+        }
+      }
+    },
+    {
+      "authority": "PH11605",
+      "family": "LUBE",
+      "sku": "EL31605",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "PH12747",
+      "family": "LUBE",
+      "sku": "EL32747",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "PH21",
+      "family": "LUBE",
+      "sku": "EL30021",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "PH2883",
+      "family": "LUBE",
+      "sku": "EL32883",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "PH6019",
+      "family": "LUBE",
+      "sku": "EL36019",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "PH7138",
+      "family": "LUBE",
+      "sku": "EL37138",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    },
+    {
+      "authority": "PH9100",
+      "family": "LUBE",
+      "sku": "EL39100",
+      "comparable": 0,
+      "matches": 0,
+      "conflicts": 0,
+      "detail": {}
+    }
+  ],
+  "strong": []
+}

@@ -1,0 +1,1614 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "FUEL",
+  "authority": {
+    "part_number": "G9279",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "G9279",
+    "product_type": "Fuel Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 2.171,
+      "outer_diameter_mm": 55.14,
+      "height_in": 4.438,
+      "height_mm": 112.73,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "In Line",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF638"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF763"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF692"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF1057"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF1167"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF1168"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "MF 1049"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3335"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "PF9279"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3302"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F44705M"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F44705"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33335"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33302"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33227"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Autopar - Archived",
+        "part_number": "FE330"
+      },
+      {
+        "manufacturer": "Autopar - Archived",
+        "part_number": "FE293"
+      },
+      {
+        "manufacturer": "Autopar - Archived",
+        "part_number": "FE299"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "95302"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "95335"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "95227"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86302"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86227"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86335"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "G6361"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G6361"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4636686"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4554076"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4636687"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4682004"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4495781"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4495662"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4638390"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4638387"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4682003"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4495780"
+      },
+      {
+        "manufacturer": "Delphi",
+        "part_number": "FF1053"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "FF664"
+      },
+      {
+        "manufacturer": "Firestone",
+        "part_number": "FF-4705"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GG7019"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GG7018"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "G6361"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "F44705"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF244"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF339"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF243"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF293"
+      },
+      {
+        "manufacturer": "KEM",
+        "part_number": "GF908"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "G187"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "G225"
+      },
+      {
+        "manufacturer": "Lee",
+        "part_number": "LG-8361"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G6361"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "23227"
+      },
+      {
+        "manufacturer": "Parr",
+        "part_number": "4955/4F"
+      },
+      {
+        "manufacturer": "Parr",
+        "part_number": "4955/2"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "73227"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "73335"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "73302"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "F44705"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "F44705"
+      },
+      {
+        "manufacturer": "Trust",
+        "part_number": "G6361"
+      },
+      {
+        "manufacturer": "Unocal 76",
+        "part_number": "UF463"
+      },
+      {
+        "manufacturer": "WALMI",
+        "part_number": "WG-7018"
+      },
+      {
+        "manufacturer": "WALMI",
+        "part_number": "WG-7019"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G6361"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "93-92",
+        "make": "CHRYSLER",
+        "model": "DAYTONA",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "93-90",
+        "make": "CHRYSLER",
+        "model": "DAYTONA",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "93-91",
+        "make": "CHRYSLER",
+        "model": "DAYTONA",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "93-91",
+        "make": "CHRYSLER",
+        "model": "DYNASTY",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "93-91",
+        "make": "CHRYSLER",
+        "model": "DYNASTY",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "1991",
+        "make": "CHRYSLER",
+        "model": "IMPERIAL",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "93-91",
+        "make": "CHRYSLER",
+        "model": "IMPERIAL",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "94-91",
+        "make": "CHRYSLER",
+        "model": "LEBARON",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "95-91",
+        "make": "CHRYSLER",
+        "model": "LEBARON",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "93-91",
+        "make": "CHRYSLER",
+        "model": "NEW YORKER",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "93-91",
+        "make": "CHRYSLER",
+        "model": "NEW YORKER",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "1991",
+        "make": "CHRYSLER",
+        "model": "TOWN & COUNTRY",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "93-92",
+        "make": "DODGE",
+        "model": "DAYTONA",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "93-91",
+        "make": "DODGE",
+        "model": "DAYTONA",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "93-91",
+        "make": "DODGE",
+        "model": "DAYTONA",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "93-91",
+        "make": "DODGE",
+        "model": "DYNASTY",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "93-91",
+        "make": "DODGE",
+        "model": "DYNASTY",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "93-91",
+        "make": "DODGE",
+        "model": "DYNASTY",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "94-91",
+        "make": "DODGE",
+        "model": "SHADOW",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "94-91",
+        "make": "DODGE",
+        "model": "SHADOW",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "94-92",
+        "make": "DODGE",
+        "model": "SHADOW",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "92-91",
+        "make": "DODGE",
+        "model": "SPIRIT",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "95-91",
+        "make": "DODGE",
+        "model": "SPIRIT",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "95-91",
+        "make": "DODGE",
+        "model": "SPIRIT",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "95-91",
+        "make": "PLYMOUTH",
+        "model": "ACCLAIM",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "95-91",
+        "make": "PLYMOUTH",
+        "model": "ACCLAIM",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "94-91",
+        "make": "PLYMOUTH",
+        "model": "SUNDANCE",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "94-91",
+        "make": "PLYMOUTH",
+        "model": "SUNDANCE",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "94-92",
+        "make": "PLYMOUTH",
+        "model": "SUNDANCE",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "G9279",
+    "source_part_key": "000990924",
+    "source_totals": {
+      "attributes": 28,
+      "applications": 29,
+      "cross_references": 65
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, G9279, Fuel Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "In-Line Fuel Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "In Line",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Metal",
+        "recno": "82"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Tube Connector",
+        "recno": "83"
+      },
+      {
+        "attribute": "Fuel Type",
+        "value": "Gasoline",
+        "recno": "84"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "85"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Fuel Filter",
+        "recno": "86"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "4.438",
+        "recno": "88"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "2.171",
+        "recno": "89"
+      },
+      {
+        "attribute": "Housing Material",
+        "value": "Metal",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Inlet Line Size (Inch)",
+        "value": "5/16",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100029058",
+        "recno": "92"
+      },
+      {
+        "attribute": "Outlet Line Size (Inch)",
+        "value": "5/16",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "94"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.5600",
+        "recno": "98"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "3.3600",
+        "recno": "99"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "3.4780",
+        "recno": "100"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "8.2500",
+        "recno": "101"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "7.6250",
+        "recno": "102"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "14.2500",
+        "recno": "103"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "7.6250",
+        "recno": "104"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "7.2500",
+        "recno": "105"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.56,
+        "case_weight_lb": 3.36,
+        "unit_height_in": 3.478,
+        "unit_length_in": 7.625,
+        "unit_width_in": 7.625,
+        "case_height_in": 8.25,
+        "case_length_in": 14.25,
+        "case_width_in": 7.25,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 6.72,
+        "estimated_case_dimensions": {
+          "length_in": 19,
+          "width_in": 10.875,
+          "height_in": 8.25,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 29,
+    "all_cross_references_observed": 65,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T06:04:17.093Z",
+  "discovered_from": "G9279",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "CHRYSLER",
+        "model": "DAYTONA",
+        "year": "93-92",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "DAYTONA",
+        "year": "93-90",
+        "engine": "L4-2.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "DAYTONA",
+        "year": "93-91",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "DYNASTY",
+        "year": "93-91",
+        "engine": "L4-2.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "DYNASTY",
+        "year": "93-91",
+        "engine": "V6-3.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "IMPERIAL",
+        "year": "1991",
+        "engine": "V6-3.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "IMPERIAL",
+        "year": "93-91",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "LEBARON",
+        "year": "94-91",
+        "engine": "L4-2.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "LEBARON",
+        "year": "95-91",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "NEW YORKER",
+        "year": "93-91",
+        "engine": "V6-3.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "NEW YORKER",
+        "year": "93-91",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "TOWN & COUNTRY",
+        "year": "1991",
+        "engine": "V6-3.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "DAYTONA",
+        "year": "93-92",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "DAYTONA",
+        "year": "93-91",
+        "engine": "L4-2.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "DAYTONA",
+        "year": "93-91",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "DYNASTY",
+        "year": "93-91",
+        "engine": "L4-2.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "DYNASTY",
+        "year": "93-91",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "DYNASTY",
+        "year": "93-91",
+        "engine": "V6-3.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "SHADOW",
+        "year": "94-91",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "SHADOW",
+        "year": "94-91",
+        "engine": "L4-2.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "SHADOW",
+        "year": "94-92",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "SPIRIT",
+        "year": "92-91",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "SPIRIT",
+        "year": "95-91",
+        "engine": "L4-2.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "SPIRIT",
+        "year": "95-91",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "ACCLAIM",
+        "year": "95-91",
+        "engine": "L4-2.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "ACCLAIM",
+        "year": "95-91",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "SUNDANCE",
+        "year": "94-91",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "SUNDANCE",
+        "year": "94-91",
+        "engine": "L4-2.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "SUNDANCE",
+        "year": "94-92",
+        "engine": "V6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF638",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF763",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF692",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Autopar - Archived",
+        "part_number": "FE330",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Autopar - Archived",
+        "part_number": "FE293",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Autopar - Archived",
+        "part_number": "FE299",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF1057",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF1167",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF1168",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "95302",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "95335",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "95227",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86302",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86227",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86335",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "G6361",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G6361",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4636686",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4554076",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4636687",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4682004",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4495781",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4495662",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4638390",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4638387",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4682003",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4495780",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Delphi",
+        "part_number": "FF1053",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "FF664",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Firestone",
+        "part_number": "FF-4705",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GG7019",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GG7018",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "G6361",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "F44705",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF244",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF339",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF243",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF293",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "KEM",
+        "part_number": "GF908",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "G187",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "G225",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Lee",
+        "part_number": "LG-8361",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G6361",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "MF 1049",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3335",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "PF9279",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3302",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "23227",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Parr",
+        "part_number": "4955/4F",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Parr",
+        "part_number": "4955/2",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "73227",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "73335",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "73302",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F44705M",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F44705",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "F44705",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "F44705",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Trust",
+        "part_number": "G6361",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Unocal 76",
+        "part_number": "UF463",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "WALMI",
+        "part_number": "WG-7018",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "WALMI",
+        "part_number": "WG-7019",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G6361",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33335",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33302",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33227",
+        "source_part_number": "G9279",
+        "part_key": "000990924",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

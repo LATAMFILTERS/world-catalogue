@@ -1,0 +1,795 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA11565",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA11565",
+    "product_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": 4.5,
+      "outer_diameter_mm": 114.3,
+      "height_in": 5.88,
+      "height_mm": 149.35,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Disposable Air Filter Housing",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "AGCO",
+        "part_number": "71356376"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "71356376"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "8X-4575"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "89002617"
+      },
+      {
+        "manufacturer": "Hyster",
+        "part_number": "S-00758552"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A2348C"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA3643"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6332"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A24865"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46332"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88332"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "C045001"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AH19001"
+      },
+      {
+        "manufacturer": "FMC",
+        "part_number": "30-9093"
+      },
+      {
+        "manufacturer": "Generac",
+        "part_number": "OE9581"
+      },
+      {
+        "manufacturer": "Generac",
+        "part_number": "70941"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF2359"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF5810"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "1402667"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "140-2667"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA11565",
+    "source_part_key": "007122163",
+    "source_totals": {
+      "attributes": 29,
+      "applications": 30,
+      "cross_references": 20
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA11565, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Disposable Air Filter Housing",
+        "recno": "2"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "83"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "84"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "85"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "5.880",
+        "recno": "87"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "4.500",
+        "recno": "88"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "1.500",
+        "recno": "89"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "4.500",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available Only While Supplies Last",
+        "recno": "91"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "1.500",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100552907",
+        "recno": "92"
+      },
+      {
+        "attribute": "Inside Diameter (Inch)",
+        "value": "1.500",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "4.500",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "94"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "95"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.6660",
+        "recno": "99"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "3.9960",
+        "recno": "100"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "6.0400",
+        "recno": "101"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "6.6200",
+        "recno": "102"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "4.6600",
+        "recno": "103"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "14.7500",
+        "recno": "104"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "4.6600",
+        "recno": "105"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "10.0000",
+        "recno": "106"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.666,
+        "case_weight_lb": 3.996,
+        "unit_height_in": 6.04,
+        "unit_length_in": 4.66,
+        "unit_width_in": 4.66,
+        "case_height_in": 6.62,
+        "case_length_in": 14.75,
+        "case_width_in": 10,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 7.992,
+        "estimated_case_dimensions": {
+          "length_in": 19.667,
+          "width_in": 15,
+          "height_in": 6.62,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 30,
+    "all_cross_references_observed": 20,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:03:54.836Z",
+  "discovered_from": "CA11565",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "ARTICULATED DUMP TRUCK CATERPILLAR",
+        "model": "AD55B w/Caterpillar C27 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Breather",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ARTICULATED DUMP TRUCK CATERPILLAR",
+        "model": "AD55B w/Caterpillar C27 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Crankcase Breather Element",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUXILIARY POWER UNIT RIG MASTER",
+        "model": "MTST4-LG200 (w/Caterpillar or Perkins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "AUXILIARY POWER UNIT RIG MASTER",
+        "model": "MTST4-LG200 (w/Caterpillar or Perkins Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "AUXILIARY POWER UNIT RIG MASTER",
+        "model": "RMP10-40 (w/Perkins 402-05 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "AUXILIARY POWER UNIT RIG MASTER",
+        "model": "RMP10-40 (w/Perkins 402-05 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "AUXILIARY POWER UNIT RIG MASTER",
+        "model": "RMP110 (w/Perkins 402-05 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "AUXILIARY POWER UNIT RIG MASTER",
+        "model": "RMP110 (w/Perkins 402-05 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE GLEANER",
+        "model": "R40, R50 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE GLEANER",
+        "model": "R40, R50 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE GLEANER",
+        "model": "R60, R70 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE GLEANER",
+        "model": "R60, R70 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE GLEANER",
+        "model": "R62, R72 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMBINE GLEANER",
+        "model": "R62, R72 w/Deutz Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR GENERAC",
+        "model": "Guardian 4079 Series 10kW w/GN724 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR GENERAC",
+        "model": "Guardian 4079 Series 10kW w/GN724 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR GENERAC",
+        "model": "Guardian 4109 Series 8kW w/GN724 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR GENERAC",
+        "model": "Guardian 4109 Series 8kW w/GN724 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR GENERAC",
+        "model": "NP65D, NP75D, NP80D",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR GENERAC",
+        "model": "NP65D, NP75D, NP80D",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR GENERAC",
+        "model": "NP75 w/Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GENERATOR GENERAC",
+        "model": "NP75 w/Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MINING EQUIPMENT CATERPILLAR",
+        "model": "AD45B w/Caterpillar C18 Acent Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Breather",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MINING EQUIPMENT CATERPILLAR",
+        "model": "AD45B w/Caterpillar C18 Acent Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Crankcase Breather Element",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "775B w/Caterpillar 3412 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Breather",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "775B w/Caterpillar 3412 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Crankcase Breather Element",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "775D w/Caterpillar 3412E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Breather",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "775D w/Caterpillar 3412E Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Crankcase Breather Element",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "777D w/Caterpillar 3508 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Breather",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OFF HIGHWAY TRUCK CATERPILLAR",
+        "model": "777D w/Caterpillar 3508 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Crankcase Breather Element",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A2348C",
+        "source_part_number": "CA11565",
+        "part_key": "007122163",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "AGCO",
+        "part_number": "71356376",
+        "source_part_number": "CA11565",
+        "part_key": "007122163",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "71356376",
+        "source_part_number": "CA11565",
+        "part_key": "007122163",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA3643",
+        "source_part_number": "CA11565",
+        "part_key": "007122163",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "88332",
+        "source_part_number": "CA11565",
+        "part_key": "007122163",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "8X-4575",
+        "source_part_number": "CA11565",
+        "part_key": "007122163",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "C045001",
+        "source_part_number": "CA11565",
+        "part_key": "007122163",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AH19001",
+        "source_part_number": "CA11565",
+        "part_key": "007122163",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "FMC",
+        "part_number": "30-9093",
+        "source_part_number": "CA11565",
+        "part_key": "007122163",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Generac",
+        "part_number": "OE9581",
+        "source_part_number": "CA11565",
+        "part_key": "007122163",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Generac",
+        "part_number": "70941",
+        "source_part_number": "CA11565",
+        "part_key": "007122163",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "89002617",
+        "source_part_number": "CA11565",
+        "part_key": "007122163",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF2359",
+        "source_part_number": "CA11565",
+        "part_key": "007122163",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Hyster",
+        "part_number": "S-00758552",
+        "source_part_number": "CA11565",
+        "part_key": "007122163",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF5810",
+        "source_part_number": "CA11565",
+        "part_key": "007122163",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "6332",
+        "source_part_number": "CA11565",
+        "part_key": "007122163",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "1402667",
+        "source_part_number": "CA11565",
+        "part_key": "007122163",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "140-2667",
+        "source_part_number": "CA11565",
+        "part_key": "007122163",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A24865",
+        "source_part_number": "CA11565",
+        "part_key": "007122163",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "46332",
+        "source_part_number": "CA11565",
+        "part_key": "007122163",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Crankcase Breather Element, Air Filter, Air, Breather"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

@@ -1,0 +1,897 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF12554",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF12554",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.22,
+      "height_mm": 30.99,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E3950LC-2"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LAK1156/S"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK23015-2"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP2131"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2219"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "64 31 6 835 405"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "64 31 6 835 406"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "527999"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1962C"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "XC10389C"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1962C"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "CAF2166"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "CAF1962C"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "232131"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC9976"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "CAF1962"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C11383C"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF1946C"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF1946M"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WCAF1962"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "24-21",
+        "make": "BMW",
+        "model": "228I GRAN COUPE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-21",
+        "make": "BMW",
+        "model": "228I GRAN COUPE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "24-20",
+        "make": "BMW",
+        "model": "228I XDRIVE GRAN COUPE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-20",
+        "make": "BMW",
+        "model": "228I XDRIVE GRAN COUPE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-17",
+        "make": "BMW",
+        "model": "I3",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "21-17",
+        "make": "BMW",
+        "model": "I3",
+        "engine": "L2-0.6L",
+        "quantity": 1
+      },
+      {
+        "year": "22-18",
+        "make": "BMW",
+        "model": "I3S",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "21-18",
+        "make": "BMW",
+        "model": "I3S",
+        "engine": "L2-0.6L",
+        "quantity": 1
+      },
+      {
+        "year": "25-20",
+        "make": "BMW",
+        "model": "M235I XDRIVE GRAN COUPE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-20",
+        "make": "BMW",
+        "model": "M235I XDRIVE GRAN COUPE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-17",
+        "make": "BMW",
+        "model": "X1",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "22-17",
+        "make": "BMW",
+        "model": "X1",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "23-18",
+        "make": "BMW",
+        "model": "X2",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-18",
+        "make": "BMW",
+        "model": "X2",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "24-17",
+        "make": "MINI",
+        "model": "COOPER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-17",
+        "make": "MINI",
+        "model": "COOPER",
+        "engine": "L3-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "24-19",
+        "make": "MINI",
+        "model": "COOPER",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "23-17",
+        "make": "MINI",
+        "model": "COOPER CLUBMAN",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-18",
+        "make": "MINI",
+        "model": "COOPER CLUBMAN",
+        "engine": "L3-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "23-17",
+        "make": "MINI",
+        "model": "COOPER CLUBMAN",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "24-17",
+        "make": "MINI",
+        "model": "COOPER COUNTRYMAN",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-17",
+        "make": "MINI",
+        "model": "COOPER COUNTRYMAN",
+        "engine": "L3-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "24-17",
+        "make": "MINI",
+        "model": "COOPER COUNTRYMAN",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF12554",
+    "source_part_key": "008621837",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 23,
+      "cross_references": 20
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF12554, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.22",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "0.094",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "4.528",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Location",
+        "value": "Under Glove Box",
+        "recno": "89"
+      },
+      {
+        "attribute": "Installation Time",
+        "value": "20",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100570420",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Thailand",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.8250",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.6500",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "9.3310",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "3.7280",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "9.2910",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "9.8170",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.4570",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "9.8170",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.825,
+        "case_weight_lb": 1.65,
+        "unit_height_in": 9.331,
+        "unit_length_in": 9.291,
+        "unit_width_in": 1.457,
+        "case_height_in": 3.728,
+        "case_length_in": 9.817,
+        "case_width_in": 9.817,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 9.9,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 23,
+    "all_cross_references_observed": 20,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:58:56.421Z",
+  "discovered_from": "CF12554",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BMW",
+        "model": "228I GRAN COUPE",
+        "year": "24-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "228I GRAN COUPE",
+        "year": "24-21",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "228I XDRIVE GRAN COUPE",
+        "year": "24-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "228I XDRIVE GRAN COUPE",
+        "year": "24-20",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "I3",
+        "year": "21-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "I3",
+        "year": "21-17",
+        "engine": "L2-0.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "I3S",
+        "year": "22-18",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "I3S",
+        "year": "21-18",
+        "engine": "L2-0.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M235I XDRIVE GRAN COUPE",
+        "year": "25-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M235I XDRIVE GRAN COUPE",
+        "year": "25-20",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "X1",
+        "year": "22-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "X1",
+        "year": "22-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "X2",
+        "year": "23-18",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "X2",
+        "year": "23-18",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MINI",
+        "model": "COOPER",
+        "year": "24-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MINI",
+        "model": "COOPER",
+        "year": "24-17",
+        "engine": "L3-1.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MINI",
+        "model": "COOPER",
+        "year": "24-19",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MINI",
+        "model": "COOPER CLUBMAN",
+        "year": "23-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MINI",
+        "model": "COOPER CLUBMAN",
+        "year": "20-18",
+        "engine": "L3-1.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MINI",
+        "model": "COOPER CLUBMAN",
+        "year": "23-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MINI",
+        "model": "COOPER COUNTRYMAN",
+        "year": "24-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MINI",
+        "model": "COOPER COUNTRYMAN",
+        "year": "24-17",
+        "engine": "L3-1.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MINI",
+        "model": "COOPER COUNTRYMAN",
+        "year": "24-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2219",
+        "source_part_number": "CF12554",
+        "part_key": "008621837",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "64 31 6 835 405",
+        "source_part_number": "CF12554",
+        "part_key": "008621837",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "64 31 6 835 406",
+        "source_part_number": "CF12554",
+        "part_key": "008621837",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "527999",
+        "source_part_number": "CF12554",
+        "part_key": "008621837",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1962C",
+        "source_part_number": "CF12554",
+        "part_key": "008621837",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "XC10389C",
+        "source_part_number": "CF12554",
+        "part_key": "008621837",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E3950LC-2",
+        "source_part_number": "CF12554",
+        "part_key": "008621837",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1962C",
+        "source_part_number": "CF12554",
+        "part_key": "008621837",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LAK1156/S",
+        "source_part_number": "CF12554",
+        "part_key": "008621837",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK23015-2",
+        "source_part_number": "CF12554",
+        "part_key": "008621837",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "CAF2166",
+        "source_part_number": "CF12554",
+        "part_key": "008621837",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "CAF1962C",
+        "source_part_number": "CF12554",
+        "part_key": "008621837",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "232131",
+        "source_part_number": "CF12554",
+        "part_key": "008621837",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC9976",
+        "source_part_number": "CF12554",
+        "part_key": "008621837",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "CAF1962",
+        "source_part_number": "CF12554",
+        "part_key": "008621837",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C11383C",
+        "source_part_number": "CF12554",
+        "part_key": "008621837",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF1946C",
+        "source_part_number": "CF12554",
+        "part_key": "008621837",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF1946M",
+        "source_part_number": "CF12554",
+        "part_key": "008621837",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WCAF1962",
+        "source_part_number": "CF12554",
+        "part_key": "008621837",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP2131",
+        "source_part_number": "CF12554",
+        "part_key": "008621837",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

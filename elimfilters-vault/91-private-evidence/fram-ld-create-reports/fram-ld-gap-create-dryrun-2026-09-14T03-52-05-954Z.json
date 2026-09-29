@@ -1,0 +1,58 @@
+{
+  "mode": "dry-run",
+  "gap_report": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-ld-gap-analysis\\curated-PH2821A-gap.json",
+  "candidates": 1,
+  "planned": {
+    "competitor": 20,
+    "oem": 24,
+    "applications": 0,
+    "specifications": 16,
+    "valid_applications": 0,
+    "valid_oem": 24,
+    "valid_competitor": 14,
+    "valid_specifications": 16
+  },
+  "inserted": {
+    "public_catalog": 1,
+    "ld_parents": 1,
+    "readiness": 1,
+    "identities": 1,
+    "competitor": 14,
+    "oem": 24,
+    "applications": 0,
+    "specifications": 16,
+    "readiness_updated": 1
+  },
+  "skipped": {
+    "competitor_existing_conflicts": 6,
+    "competitor_intra_plan_conflicts": 0
+  },
+  "audit": {
+    "public": {
+      "total": 1,
+      "ld": 1,
+      "hd": 0,
+      "bad_prefix": 0
+    },
+    "canonical_identity": {
+      "total": 1,
+      "valid": 1
+    },
+    "layers": {
+      "parents": 1,
+      "readiness": 1,
+      "competitor": 14,
+      "oem": 24,
+      "applications": 0,
+      "specifications": 16
+    },
+    "direct_fram_authorities": 1,
+    "source_rows_on_hd": {
+      "competitor_hd": 0,
+      "oem_hd": 0,
+      "applications_hd": 0,
+      "specifications_hd": 0
+    }
+  },
+  "transaction": "ROLLBACK"
+}

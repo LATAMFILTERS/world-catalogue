@@ -1,0 +1,1223 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF5972A",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF5972A",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.103,
+      "height_mm": 28.02,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3651"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF1729"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF7729"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LA47/S"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CU2745-2"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4783"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C18153"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24783"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-61"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4783C"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4778"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4783"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1150"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1147"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1729"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1729"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1729"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "210 830 1018"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "210 830 00 18"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3022"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3894"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "MB96135"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "MB01137"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "224783"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94783"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC5520"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC8153"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1729"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "06-00",
+        "make": "MERCEDES-BENZ",
+        "model": "CL500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-00",
+        "make": "MERCEDES-BENZ",
+        "model": "CL500",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "MERCEDES-BENZ",
+        "model": "CL55 AMG",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "MERCEDES-BENZ",
+        "model": "CL55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "MERCEDES-BENZ",
+        "model": "CL600",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-03",
+        "make": "MERCEDES-BENZ",
+        "model": "CL600",
+        "engine": "V12-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "MERCEDES-BENZ",
+        "model": "CL600",
+        "engine": "V12-5.8L",
+        "quantity": 1
+      },
+      {
+        "year": "06-05",
+        "make": "MERCEDES-BENZ",
+        "model": "CL65 AMG",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-05",
+        "make": "MERCEDES-BENZ",
+        "model": "CL65 AMG",
+        "engine": "V12-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "99-95",
+        "make": "MERCEDES-BENZ",
+        "model": "E300",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "99-95",
+        "make": "MERCEDES-BENZ",
+        "model": "E300",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "02-96",
+        "make": "MERCEDES-BENZ",
+        "model": "E320",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "97-96",
+        "make": "MERCEDES-BENZ",
+        "model": "E320",
+        "engine": "L6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "02-98",
+        "make": "MERCEDES-BENZ",
+        "model": "E320",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1997",
+        "make": "MERCEDES-BENZ",
+        "model": "E420",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1997",
+        "make": "MERCEDES-BENZ",
+        "model": "E420",
+        "engine": "V8-4.2L",
+        "quantity": 1
+      },
+      {
+        "year": "02-98",
+        "make": "MERCEDES-BENZ",
+        "model": "E430",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-98",
+        "make": "MERCEDES-BENZ",
+        "model": "E430",
+        "engine": "V8-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "MERCEDES-BENZ",
+        "model": "E55 AMG",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "MERCEDES-BENZ",
+        "model": "E55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "MERCEDES-BENZ",
+        "model": "S350",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "MERCEDES-BENZ",
+        "model": "S350",
+        "engine": "V6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "06-00",
+        "make": "MERCEDES-BENZ",
+        "model": "S430",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-00",
+        "make": "MERCEDES-BENZ",
+        "model": "S430",
+        "engine": "V8-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "06-00",
+        "make": "MERCEDES-BENZ",
+        "model": "S500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-00",
+        "make": "MERCEDES-BENZ",
+        "model": "S500",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "MERCEDES-BENZ",
+        "model": "S55 AMG",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "MERCEDES-BENZ",
+        "model": "S55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "MERCEDES-BENZ",
+        "model": "S600",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-03",
+        "make": "MERCEDES-BENZ",
+        "model": "S600",
+        "engine": "V12-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "MERCEDES-BENZ",
+        "model": "S600",
+        "engine": "V12-5.8L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "MERCEDES-BENZ",
+        "model": "S65 AMG",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "MERCEDES-BENZ",
+        "model": "S65 AMG",
+        "engine": "V12-6.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF5972A",
+    "source_part_key": "000991204",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 39,
+      "cross_references": 28
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF5972A, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.103",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "10.359",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "4.964",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "20",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Behind Glove Box",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100537737",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Thailand",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.0500",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "2.1000",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "1.8110",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.4090",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "10.4330",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "11.2200",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "10.0390",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "10.6300",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.05,
+        "case_weight_lb": 2.1,
+        "unit_height_in": 1.811,
+        "unit_length_in": 10.433,
+        "unit_width_in": 10.039,
+        "case_height_in": 4.409,
+        "case_length_in": 11.22,
+        "case_width_in": 10.63,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 12.6,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 39,
+    "all_cross_references_observed": 28,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:02:01.246Z",
+  "discovered_from": "CF5972A",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "MAYBACH",
+        "model": "57",
+        "year": "12-03",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MAYBACH",
+        "model": "57",
+        "year": "12-03",
+        "engine": "V12-5.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MAYBACH",
+        "model": "57",
+        "year": "12-06",
+        "engine": "V12-6.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MAYBACH",
+        "model": "62",
+        "year": "12-03",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MAYBACH",
+        "model": "62",
+        "year": "12-03",
+        "engine": "V12-5.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MAYBACH",
+        "model": "62",
+        "year": "12-07",
+        "engine": "V12-6.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CL500",
+        "year": "06-00",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CL500",
+        "year": "06-00",
+        "engine": "V8-5.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CL55 AMG",
+        "year": "06-01",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CL55 AMG",
+        "year": "06-01",
+        "engine": "V8-5.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CL600",
+        "year": "06-01",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CL600",
+        "year": "06-03",
+        "engine": "V12-5.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CL600",
+        "year": "02-01",
+        "engine": "V12-5.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CL65 AMG",
+        "year": "06-05",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CL65 AMG",
+        "year": "06-05",
+        "engine": "V12-6.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E300",
+        "year": "99-95",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E300",
+        "year": "99-95",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E320",
+        "year": "02-96",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E320",
+        "year": "97-96",
+        "engine": "L6-3.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E320",
+        "year": "02-98",
+        "engine": "V6-3.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E420",
+        "year": "1997",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E420",
+        "year": "1997",
+        "engine": "V8-4.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E430",
+        "year": "02-98",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E430",
+        "year": "02-98",
+        "engine": "V8-4.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E55 AMG",
+        "year": "02-99",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E55 AMG",
+        "year": "02-99",
+        "engine": "V8-5.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S350",
+        "year": "2006",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S350",
+        "year": "2006",
+        "engine": "V6-3.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S430",
+        "year": "06-00",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S430",
+        "year": "06-00",
+        "engine": "V8-4.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S500",
+        "year": "06-00",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S500",
+        "year": "06-00",
+        "engine": "V8-5.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S55 AMG",
+        "year": "06-01",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S55 AMG",
+        "year": "06-01",
+        "engine": "V8-5.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S600",
+        "year": "06-01",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S600",
+        "year": "06-03",
+        "engine": "V12-5.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S600",
+        "year": "02-01",
+        "engine": "V12-5.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S65 AMG",
+        "year": "2006",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S65 AMG",
+        "year": "2006",
+        "engine": "V12-6.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-61",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3651",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF1729",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF7729",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4783C",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4778",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4783",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1150",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1147",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1729",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1729",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1729",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LA47/S",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CU2745-2",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "210 830 1018",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "210 830 00 18",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3022",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3894",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "MB96135",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "MB01137",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4783",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "224783",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94783",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC5520",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC8153",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C18153",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1729",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24783",
+        "source_part_number": "CF5972A",
+        "part_key": "000991204",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

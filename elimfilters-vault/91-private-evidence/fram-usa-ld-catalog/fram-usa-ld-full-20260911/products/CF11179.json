@@ -1,0 +1,1149 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF11179",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF11179",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.379,
+      "height_mm": 35.03,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LAK386"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LA386"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK2450/1"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK2450"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4227"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C36071C"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24227"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Audi",
+        "part_number": "8K0819439"
+      },
+      {
+        "manufacturer": "Audi",
+        "part_number": "8K0819439A"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2150"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1857P"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4227"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4227C"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF3009"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1857P"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1857P"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1857C"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1857P"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF1857M"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF1857P"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "8K0 819 439"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "8K0 819 439A"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "16-09",
+        "make": "AUDI",
+        "model": "A4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-09",
+        "make": "AUDI",
+        "model": "A4",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-13",
+        "make": "AUDI",
+        "model": "A4 ALLROAD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-13",
+        "make": "AUDI",
+        "model": "A4 ALLROAD",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "16-09",
+        "make": "AUDI",
+        "model": "A4 QUATTRO",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-09",
+        "make": "AUDI",
+        "model": "A4 QUATTRO",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2013",
+        "make": "AUDI",
+        "model": "A4 QUATTRO",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "12-09",
+        "make": "AUDI",
+        "model": "A4 QUATTRO",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "16-10",
+        "make": "AUDI",
+        "model": "A5",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2015",
+        "make": "AUDI",
+        "model": "A5",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "16-10",
+        "make": "AUDI",
+        "model": "A5",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2015",
+        "make": "AUDI",
+        "model": "A5",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "17-08",
+        "make": "AUDI",
+        "model": "A5 QUATTRO",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "17-10",
+        "make": "AUDI",
+        "model": "A5 QUATTRO",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "10-08",
+        "make": "AUDI",
+        "model": "A5 QUATTRO",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "16-13",
+        "make": "AUDI",
+        "model": "ALLROAD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-13",
+        "make": "AUDI",
+        "model": "ALLROAD",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "17-09",
+        "make": "AUDI",
+        "model": "Q5",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "17-11",
+        "make": "AUDI",
+        "model": "Q5",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "17-13",
+        "make": "AUDI",
+        "model": "Q5",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "12-09",
+        "make": "AUDI",
+        "model": "Q5",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "15-13",
+        "make": "AUDI",
+        "model": "RS5",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "15-13",
+        "make": "AUDI",
+        "model": "RS5",
+        "engine": "V8-4.2L",
+        "quantity": 1
+      },
+      {
+        "year": "16-10",
+        "make": "AUDI",
+        "model": "S4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-10",
+        "make": "AUDI",
+        "model": "S4",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-08",
+        "make": "AUDI",
+        "model": "S5",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-10",
+        "make": "AUDI",
+        "model": "S5",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "12-08",
+        "make": "AUDI",
+        "model": "S5",
+        "engine": "V8-4.2L",
+        "quantity": 1
+      },
+      {
+        "year": "2018",
+        "make": "AUDI",
+        "model": "S5 SPORTBACK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2018",
+        "make": "AUDI",
+        "model": "S5 SPORTBACK",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "17-14",
+        "make": "AUDI",
+        "model": "SQ5",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "17-14",
+        "make": "AUDI",
+        "model": "SQ5",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-15",
+        "make": "PORSCHE",
+        "model": "MACAN",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-17",
+        "make": "PORSCHE",
+        "model": "MACAN",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-20",
+        "make": "PORSCHE",
+        "model": "MACAN",
+        "engine": "V6-2.9L",
+        "quantity": 1
+      },
+      {
+        "year": "21-15",
+        "make": "PORSCHE",
+        "model": "MACAN",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-15",
+        "make": "PORSCHE",
+        "model": "MACAN",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF11179",
+    "source_part_key": "001538452",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 37,
+      "cross_references": 22
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF11179, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.379",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "9.417",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "11.032",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "45",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Under Glove Box",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100548955",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.0500",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "2.1000",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "11.2900",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.2500",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "9.6920",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "12.0620",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.5980",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "10.2500",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.05,
+        "case_weight_lb": 2.1,
+        "unit_height_in": 11.29,
+        "unit_length_in": 9.692,
+        "unit_width_in": 1.598,
+        "case_height_in": 4.25,
+        "case_length_in": 12.062,
+        "case_width_in": 10.25,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 12.6,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 37,
+    "all_cross_references_observed": 22,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:57:52.806Z",
+  "discovered_from": "CF11179",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "AUDI",
+        "model": "A4",
+        "year": "16-09",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A4",
+        "year": "16-09",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A4 ALLROAD",
+        "year": "16-13",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A4 ALLROAD",
+        "year": "16-13",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A4 QUATTRO",
+        "year": "16-09",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A4 QUATTRO",
+        "year": "16-09",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A4 QUATTRO",
+        "year": "2013",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A4 QUATTRO",
+        "year": "12-09",
+        "engine": "V6-3.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A5",
+        "year": "16-10",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A5",
+        "year": "2015",
+        "engine": "L4-1.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A5",
+        "year": "16-10",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A5",
+        "year": "2015",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A5 QUATTRO",
+        "year": "17-08",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A5 QUATTRO",
+        "year": "17-10",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "A5 QUATTRO",
+        "year": "10-08",
+        "engine": "V6-3.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "ALLROAD",
+        "year": "16-13",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "ALLROAD",
+        "year": "16-13",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "Q5",
+        "year": "17-09",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "Q5",
+        "year": "17-11",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "Q5",
+        "year": "17-13",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "Q5",
+        "year": "12-09",
+        "engine": "V6-3.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "RS5",
+        "year": "15-13",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "RS5",
+        "year": "15-13",
+        "engine": "V8-4.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S4",
+        "year": "16-10",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S4",
+        "year": "16-10",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S5",
+        "year": "18-08",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S5",
+        "year": "18-10",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S5",
+        "year": "12-08",
+        "engine": "V8-4.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S5 SPORTBACK",
+        "year": "2018",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "S5 SPORTBACK",
+        "year": "2018",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "SQ5",
+        "year": "17-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "AUDI",
+        "model": "SQ5",
+        "year": "17-14",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "MACAN",
+        "year": "25-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "MACAN",
+        "year": "25-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "MACAN",
+        "year": "25-20",
+        "engine": "V6-2.9L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "MACAN",
+        "year": "21-15",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "MACAN",
+        "year": "18-15",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Audi",
+        "part_number": "8K0819439",
+        "source_part_number": "CF11179",
+        "part_key": "001538452",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Audi",
+        "part_number": "8K0819439A",
+        "source_part_number": "CF11179",
+        "part_key": "001538452",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2150",
+        "source_part_number": "CF11179",
+        "part_key": "001538452",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1857P",
+        "source_part_number": "CF11179",
+        "part_key": "001538452",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4227",
+        "source_part_number": "CF11179",
+        "part_key": "001538452",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4227C",
+        "source_part_number": "CF11179",
+        "part_key": "001538452",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF3009",
+        "source_part_number": "CF11179",
+        "part_key": "001538452",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1857P",
+        "source_part_number": "CF11179",
+        "part_key": "001538452",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1857P",
+        "source_part_number": "CF11179",
+        "part_key": "001538452",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1857C",
+        "source_part_number": "CF11179",
+        "part_key": "001538452",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1857P",
+        "source_part_number": "CF11179",
+        "part_key": "001538452",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LAK386",
+        "source_part_number": "CF11179",
+        "part_key": "001538452",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LA386",
+        "source_part_number": "CF11179",
+        "part_key": "001538452",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK2450/1",
+        "source_part_number": "CF11179",
+        "part_key": "001538452",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK2450",
+        "source_part_number": "CF11179",
+        "part_key": "001538452",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4227",
+        "source_part_number": "CF11179",
+        "part_key": "001538452",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C36071C",
+        "source_part_number": "CF11179",
+        "part_key": "001538452",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF1857M",
+        "source_part_number": "CF11179",
+        "part_key": "001538452",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF1857P",
+        "source_part_number": "CF11179",
+        "part_key": "001538452",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "8K0 819 439",
+        "source_part_number": "CF11179",
+        "part_key": "001538452",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "8K0 819 439A",
+        "source_part_number": "CF11179",
+        "part_key": "001538452",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24227",
+        "source_part_number": "CF11179",
+        "part_key": "001538452",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

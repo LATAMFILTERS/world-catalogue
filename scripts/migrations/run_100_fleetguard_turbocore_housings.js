@@ -46,6 +46,15 @@ async function applyFleetguardTurbocoreHousings() {
     // (e.g. a Fleetguard code already registered as an alternate on a
     // different SKU) doesn't block the rest of the batch.
     for (const { sku, codigo_base } of NEW_HOUSINGS) {
+      const fhMatch = codigo_base.toUpperCase().match(/^FH(\d{5})(?:[A-Z]+)?$/);
+      if (fhMatch) {
+        const expectedSku = `ET9${fhMatch[1].slice(-4)}`;
+        if (sku !== expectedSku) {
+          report.rejected.push({ sku, codigo_base, reason: `SKU_RULE_MISMATCH expected=${expectedSku}` });
+          continue;
+        }
+      }
+
       const description = `ELIMFILTERS® ${sku} Turbine-series fuel/water separator housing. `
         + `TURBOCORE™ three-stage coalescing media removes water and fine particulate from diesel fuel `
         + `before it reaches the engine, protecting injectors from corrosion and abrasive wear. `
@@ -81,11 +90,26 @@ async function applyFleetguardTurbocoreHousings() {
       const enrichmentData = JSON.stringify({ codigo_base_governance: governance });
 
       try {
+        const collision = await client.query(
+          `SELECT sku, codigo_base FROM elimfilters_catalog
+           WHERE sku = $1 AND upper(coalesce(codigo_base, '')) <> upper($2)
+           LIMIT 1`,
+          [sku, codigo_base]
+        );
+        if (collision.rowCount) {
+          report.rejected.push({
+            sku,
+            codigo_base,
+            reason: `SKU_COLLISION existing_codigo_base=${collision.rows[0].codigo_base}`,
+          });
+          continue;
+        }
+
         await client.query('BEGIN');
         const { rows } = await client.query(
           `INSERT INTO elimfilters_catalog
              (sku, codigo_base, filter_type, technology, duty, description, installation_type, oem_codes, competitor_codes, enrichment_data, created_at)
-           VALUES ($1, $2, 'fuel', 'TURBOCORE™', 'HEAVY_DUTY', $3, 'Replacement Cartridge Element', '[]'::jsonb, '[]'::jsonb, $4::jsonb, now())
+           VALUES ($1, $2, 'fuel', 'TURBOCORE™', 'HEAVY_DUTY', $3, 'Fuel Filter Housing', '[]'::jsonb, '[]'::jsonb, $4::jsonb, now())
            ON CONFLICT (sku) DO NOTHING
            RETURNING sku`,
           [sku, codigo_base, description, enrichmentData]

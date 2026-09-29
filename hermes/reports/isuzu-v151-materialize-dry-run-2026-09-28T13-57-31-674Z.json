@@ -1,0 +1,19 @@
+{
+  "phase": "ISUZU_V151_PRODUCT_MATERIALIZATION",
+  "apply": false,
+  "rows": [
+    {
+      "sku": "EA21938",
+      "status": "READY_TO_INSERT",
+      "codigo_base": "P821938",
+      "technology": "MACROCORE™"
+    }
+  ],
+  "database_write": false,
+  "summary": {
+    "total": 1,
+    "ready": 1,
+    "inserted": 0,
+    "database_write": false
+  }
+}

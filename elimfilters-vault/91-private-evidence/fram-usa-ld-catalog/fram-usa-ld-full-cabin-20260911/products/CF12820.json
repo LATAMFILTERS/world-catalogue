@@ -1,0 +1,1266 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF12820",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF12820",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.12,
+      "height_mm": 28.45,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [
+      "CV12820"
+    ],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10651"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2261"
+      },
+      {
+        "manufacturer": "Hyundai",
+        "part_number": "97133-L1000"
+      },
+      {
+        "manufacturer": "Hyundai",
+        "part_number": "97133-L0000"
+      },
+      {
+        "manufacturer": "Hyundai",
+        "part_number": "97133-N9100"
+      },
+      {
+        "manufacturer": "Hyundai",
+        "part_number": "N9C79-AC101"
+      },
+      {
+        "manufacturer": "Hyundai",
+        "part_number": "97133-N9000"
+      },
+      {
+        "manufacturer": "Hyundai",
+        "part_number": "KLC79-AC001"
+      },
+      {
+        "manufacturer": "Hyundai",
+        "part_number": "97133-AO000"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF2085"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF10079C"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF10079P"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4132"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC99554P"
+      },
+      {
+        "manufacturer": "Premium Guard PUREFLOW",
+        "part_number": "PC99594HX"
+      },
+      {
+        "manufacturer": "Premium Guard PUREFLOW",
+        "part_number": "PC99594X"
+      },
+      {
+        "manufacturer": "Purolator PureONE",
+        "part_number": "C31813C"
+      },
+      {
+        "manufacturer": "Purolator TECH",
+        "part_number": "TC31813"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "CAF10079P"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF15054P"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF15054M"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-2061"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WCAF10079"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "26-23",
+        "make": "GENESIS",
+        "model": "GV60",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "HYUNDAI",
+        "model": "ELANTRA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "HYUNDAI",
+        "model": "ELANTRA",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "HYUNDAI",
+        "model": "ELANTRA",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "HYUNDAI",
+        "model": "ELANTRA N",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "HYUNDAI",
+        "model": "ELANTRA N",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "HYUNDAI",
+        "model": "IONIQ 5",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "HYUNDAI",
+        "model": "IONIQ 5 N",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-23",
+        "make": "HYUNDAI",
+        "model": "IONIQ 6",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2026",
+        "make": "HYUNDAI",
+        "model": "IONIQ 9",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "HYUNDAI",
+        "model": "KONA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "HYUNDAI",
+        "model": "KONA",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "HYUNDAI",
+        "model": "KONA",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "HYUNDAI",
+        "model": "KONA ELECTRIC",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "HYUNDAI",
+        "model": "SANTA CRUZ",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "HYUNDAI",
+        "model": "SANTA CRUZ",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "HYUNDAI",
+        "model": "SONATA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-20",
+        "make": "HYUNDAI",
+        "model": "SONATA",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "HYUNDAI",
+        "model": "SONATA",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "HYUNDAI",
+        "model": "SONATA",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "HYUNDAI",
+        "model": "TUCSON",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "HYUNDAI",
+        "model": "TUCSON",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "HYUNDAI",
+        "model": "TUCSON",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "KIA",
+        "model": "EV6",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "KIA",
+        "model": "EV9",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "KIA",
+        "model": "K4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "KIA",
+        "model": "K4",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "KIA",
+        "model": "K4",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "KIA",
+        "model": "K5",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-21",
+        "make": "KIA",
+        "model": "K5",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "KIA",
+        "model": "K5",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "KIA",
+        "model": "NIRO",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "KIA",
+        "model": "NIRO",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "KIA",
+        "model": "NIRO EV",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "KIA",
+        "model": "SORENTO",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "KIA",
+        "model": "SORENTO",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "KIA",
+        "model": "SORENTO",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "KIA",
+        "model": "SPORTAGE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "KIA",
+        "model": "SPORTAGE",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "KIA",
+        "model": "SPORTAGE",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF12820",
+    "source_part_key": "010986281",
+    "source_totals": {
+      "attributes": 30,
+      "applications": 43,
+      "cross_references": 24
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF12820, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "4"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Square",
+        "recno": "81"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "82"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.12",
+        "recno": "84"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "8.29",
+        "recno": "85"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "8.83",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "87"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "10",
+        "recno": "88"
+      },
+      {
+        "attribute": "Location",
+        "value": "Behind Glove Box",
+        "recno": "89"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100579843",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.6000",
+        "recno": "95"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.2000",
+        "recno": "96"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "9.7500",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "3.4800",
+        "recno": "98"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "8.9300",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "10.4900",
+        "recno": "100"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.3100",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "9.4900",
+        "recno": "102"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.6,
+        "case_weight_lb": 1.2,
+        "unit_height_in": 9.75,
+        "unit_length_in": 8.93,
+        "unit_width_in": 1.31,
+        "case_height_in": 3.48,
+        "case_length_in": 10.49,
+        "case_width_in": 9.49,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 7.2,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 43,
+    "all_cross_references_observed": 24,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:01:54.039Z",
+  "discovered_from": "CF12820",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "GENESIS",
+        "model": "GV60",
+        "year": "26-23",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "ELANTRA",
+        "year": "26-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "ELANTRA",
+        "year": "26-21",
+        "engine": "L4-1.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "ELANTRA",
+        "year": "26-21",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "ELANTRA N",
+        "year": "26-22",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "ELANTRA N",
+        "year": "26-22",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "IONIQ 5",
+        "year": "26-22",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "IONIQ 5 N",
+        "year": "26-25",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "IONIQ 6",
+        "year": "25-23",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "IONIQ 9",
+        "year": "2026",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "KONA",
+        "year": "26-24",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "KONA",
+        "year": "26-24",
+        "engine": "L4-1.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "KONA",
+        "year": "26-24",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "KONA ELECTRIC",
+        "year": "26-24",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SANTA CRUZ",
+        "year": "26-22",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SANTA CRUZ",
+        "year": "26-22",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "year": "26-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "year": "26-21",
+        "engine": "L4-1.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "year": "26-21",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SONATA",
+        "year": "26-20",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SONATA",
+        "year": "23-20",
+        "engine": "L4-1.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SONATA",
+        "year": "26-20",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SONATA",
+        "year": "26-20",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "TUCSON",
+        "year": "26-22",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "TUCSON",
+        "year": "26-22",
+        "engine": "L4-1.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "TUCSON",
+        "year": "26-22",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "EV6",
+        "year": "26-22",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "EV9",
+        "year": "26-24",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "K4",
+        "year": "26-25",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "K4",
+        "year": "26-25",
+        "engine": "L4-1.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "K4",
+        "year": "26-25",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "K5",
+        "year": "26-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "K5",
+        "year": "24-21",
+        "engine": "L4-1.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "K5",
+        "year": "26-21",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "NIRO",
+        "year": "26-23",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "NIRO",
+        "year": "26-23",
+        "engine": "L4-1.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "NIRO EV",
+        "year": "26-23",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "SORENTO",
+        "year": "26-21",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "SORENTO",
+        "year": "26-21",
+        "engine": "L4-1.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "SORENTO",
+        "year": "26-21",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "SPORTAGE",
+        "year": "26-23",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "SPORTAGE",
+        "year": "26-23",
+        "engine": "L4-1.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "SPORTAGE",
+        "year": "26-23",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2261",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FRAM TrueAir",
+        "part_number": "CV12820",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hyundai",
+        "part_number": "97133-L1000",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hyundai",
+        "part_number": "97133-L0000",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hyundai",
+        "part_number": "97133-N9100",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hyundai",
+        "part_number": "N9C79-AC101",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hyundai",
+        "part_number": "97133-N9000",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hyundai",
+        "part_number": "KLC79-AC001",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hyundai",
+        "part_number": "97133-AO000",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF2085",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF10079C",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF10079P",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4132",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC99554P",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard PUREFLOW",
+        "part_number": "PC99594HX",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard PUREFLOW",
+        "part_number": "PC99594X",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator PureONE",
+        "part_number": "C31813C",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator TECH",
+        "part_number": "TC31813",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "CAF10079P",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF15054P",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF15054M",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-2061",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WCAF10079",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10651",
+        "source_part_number": "CF12820",
+        "part_key": "010986281",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

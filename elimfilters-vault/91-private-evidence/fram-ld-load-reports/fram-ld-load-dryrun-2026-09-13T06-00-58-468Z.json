@@ -1,0 +1,123 @@
+{
+  "mode": "dry-run",
+  "candidate_authorities": 179,
+  "excluded_authority_conflicts": [
+    {
+      "authority": "CA10495",
+      "proposed_sku": "EA30020",
+      "existing_skus": [
+        "EA33012"
+      ]
+    },
+    {
+      "authority": "CA5125",
+      "proposed_sku": "EA32568",
+      "existing_skus": [
+        "EA35262"
+      ]
+    },
+    {
+      "authority": "CA6828",
+      "proposed_sku": "EA35522",
+      "existing_skus": [
+        "EA31381"
+      ]
+    },
+    {
+      "authority": "CA9244",
+      "proposed_sku": "EA36422",
+      "existing_skus": [
+        "EA34039"
+      ]
+    },
+    {
+      "authority": "CH10530",
+      "proposed_sku": "EL30823",
+      "existing_skus": [
+        "EL38231"
+      ]
+    },
+    {
+      "authority": "CH11784",
+      "proposed_sku": "EL36013",
+      "existing_skus": [
+        "EL36002"
+      ]
+    },
+    {
+      "authority": "PH2842",
+      "proposed_sku": "EL34029",
+      "existing_skus": [
+        "EL32181"
+      ]
+    },
+    {
+      "authority": "PH3567",
+      "proposed_sku": "EL33012",
+      "existing_skus": [
+        "EL32371"
+      ]
+    },
+    {
+      "authority": "PH3612",
+      "proposed_sku": "EL31294",
+      "existing_skus": [
+        "EL32941"
+      ]
+    },
+    {
+      "authority": "PH6349A",
+      "proposed_sku": "EL32300",
+      "existing_skus": [
+        "EL33001"
+      ]
+    }
+  ],
+  "matched_authorities": 169,
+  "matched_skus": 155,
+  "planned": {
+    "comp": 1789,
+    "oem": 703,
+    "apps": 4073,
+    "specs": 1232,
+    "skipped_competitor_conflicts": 48,
+    "valid_apps": 4073
+  },
+  "inserted": {
+    "parents": 0,
+    "readiness_created": 0,
+    "competitor": 75,
+    "oem": 7,
+    "applications": 24,
+    "specifications": 25,
+    "readiness_updated": 155
+  },
+  "audit": {
+    "heavy_duty_targets": 0,
+    "target_filter_types": [
+      {
+        "filter_type": "air",
+        "n": 44
+      },
+      {
+        "filter_type": "cabin",
+        "n": 5
+      },
+      {
+        "filter_type": "fuel",
+        "n": 5
+      },
+      {
+        "filter_type": "oil",
+        "n": 101
+      }
+    ],
+    "preexisting_or_external_source_rows_on_hd": {
+      "competitor_hd": 0,
+      "oem_hd": 0,
+      "specs_hd": 0,
+      "apps_hd": 0
+    }
+  },
+  "transaction": "ROLLBACK"
+}

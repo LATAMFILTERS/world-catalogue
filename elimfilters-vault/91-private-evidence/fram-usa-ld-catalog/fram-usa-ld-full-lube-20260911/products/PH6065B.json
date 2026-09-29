@@ -1,0 +1,3005 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH6065B",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH6065B",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 2.994,
+      "outer_diameter_mm": 76.05,
+      "height_in": 3.625,
+      "height_mm": 92.07,
+      "thread_size": "3/4-16",
+      "gasket_od_in": 2.758,
+      "gasket_od_mm": 70.05,
+      "gasket_id_in": 2.364,
+      "gasket_id_mm": 60.05,
+      "gasket_thickness_in": 0.205,
+      "gasket_thickness_mm": 5.21,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "Yes",
+      "bypass_relief_valve": "Yes",
+      "bypass_setting_psi": 7,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF1786"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1215"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "ML16822C"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51215"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51225"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57348"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "EAOM134C"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "EAOM135C"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "EAO33"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92225"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92215"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85225"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85215"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "PH7022"
+      },
+      {
+        "manufacturer": "Exmark",
+        "part_number": "523541"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF600"
+      },
+      {
+        "manufacturer": "HiFlo",
+        "part_number": "HF171CRC"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "KN-171C"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "KN-170C"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH7022"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "PH7022"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "PH7022"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "PH6065B",
+    "source_part_key": "001481547",
+    "source_totals": {
+      "attributes": 42,
+      "applications": 266,
+      "cross_references": 22
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® oil filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE (original equipment) recommended intervals. Equipped with SureGrip® technology, FRAM Extra Guard® oil filters provide a non-slip surface allowing for easy install and removal.\\nThe silicone anti-drain back valve ensures safe engine startups, extending the life of the oil filter for up to 10,000 miles (16,000 kilometers).",
+        "recno": "0"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, PH6065B, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Motorcycle Full-Flow Spin-on Oil Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "Yes",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "Yes",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "85"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Standard",
+        "recno": "86"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "88"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base",
+        "recno": "89"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Chrome",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100046864",
+        "recno": "92"
+      },
+      {
+        "attribute": "Attachment Type",
+        "value": "Spin-On",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "94"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "95"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "3.625",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "2.994",
+        "recno": "97"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "98"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "2.364",
+        "recno": "99"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "2.758",
+        "recno": "100"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.205",
+        "recno": "101"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Inch)",
+        "value": "3/4-16",
+        "recno": "102"
+      },
+      {
+        "attribute": "Bypass Relief Valve Setting (Pounds per Square Inch)",
+        "value": "7-9",
+        "recno": "103"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "104"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "105"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "106"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Taiwan",
+        "recno": "107"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.7660",
+        "recno": "111"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "2.2980",
+        "recno": "112"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "3.6540",
+        "recno": "113"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.5550",
+        "recno": "114"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.1850",
+        "recno": "115"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "10.0130",
+        "recno": "116"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.1850",
+        "recno": "117"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "3.8320",
+        "recno": "118"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.766,
+        "case_weight_lb": 2.298,
+        "unit_height_in": 3.654,
+        "unit_length_in": 3.185,
+        "unit_width_in": 3.185,
+        "case_height_in": 4.555,
+        "case_length_in": 10.013,
+        "case_width_in": 3.832,
+        "inferred_case_qty": 3
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 9.192,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 266,
+    "all_cross_references_observed": 22,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:11:09.476Z",
+  "discovered_from": "PH6065B",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BUELL",
+        "model": "RR1200",
+        "year": "1990",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUELL",
+        "model": "RS1200",
+        "year": "93-90",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUELL",
+        "model": "RSS1200",
+        "year": "93-92",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUELL",
+        "model": "S1 LIGHTNING",
+        "year": "98-96",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUELL",
+        "model": "S2 THUNDERBOLT",
+        "year": "96-95",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUELL",
+        "model": "S2T THUNDERBOLT",
+        "year": "1996",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUELL",
+        "model": "S3 THUNDERBOLT",
+        "year": "01-97",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUELL",
+        "model": "S3T THUNDERBOLT",
+        "year": "01-97",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUELL",
+        "model": "X1 LIGHTNING",
+        "year": "02-99",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLD SWITCHBACK",
+        "year": "16-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLDE DELUXE 107",
+        "year": "20-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLFB FAT BOY 107",
+        "year": "20-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLFBS FAT BOY 114",
+        "year": "24-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLH ELECTRA GLIDE",
+        "year": "85-79",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLH ELECTRA GLIDE REVIVAL",
+        "year": "2021",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHC ELECTRA GLIDE CLASSIC",
+        "year": "81-79",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHC HERITAGE CLASSIC 107",
+        "year": "21-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHCS HERITAGE CLASSIC 114",
+        "year": "24-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHR ROAD KING",
+        "year": "22-94",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHRC ROAD KING CLASSIC",
+        "year": "13-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHRCI ROAD KING CLASSIC",
+        "year": "06-98",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHRI ROAD KING",
+        "year": "06-00",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHRI ROAD KING",
+        "year": "97-96",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHRS ROAD KING CUSTOM",
+        "year": "06-04",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHRSE3 SCREAMIN EAGLE ROAD KING",
+        "year": "2007",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHRSE4 SCREAMIN EAGLE ROAD KING",
+        "year": "2008",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHRSE5 CVO ROAD KING",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHRSE6 CVO ROAD KING",
+        "year": "2014",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHRSEI SCREAMIN EAGLE ROAD KING",
+        "year": "2002",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHRSEI2 SCREAMIN EAGLE ROAD KING 2",
+        "year": "2003",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHRSI ROAD KING CUSTOM",
+        "year": "06-04",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHRXS ROAD KING SPECIAL",
+        "year": "25-17",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHS ELECTRA GLIDE SPORT",
+        "year": "1984",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHS ELECTRA GLIDE SPORT",
+        "year": "81-80",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHS ELECTRA GLIDE SPORT",
+        "year": "93-87",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHT ELECTRA GLIDE STANDARD",
+        "year": "09-00",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHT ELECTRA GLIDE STANDARD",
+        "year": "22-19",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHT ELECTRA GLIDE STANDARD",
+        "year": "87-86",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHT ELECTRA GLIDE STANDARD",
+        "year": "98-95",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTC ELECTRA GLIDE CLASSIC",
+        "year": "05-83",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTC ELECTRA GLIDE CLASSIC",
+        "year": "13-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTCI ELECTRA GLIDE CLASSIC",
+        "year": "06-96",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTCSE SCREAMIN EAGLE ELECTRA GLIDE",
+        "year": "2004",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTCSE2 SCREAMIN EAGLE ELECTRA GLIDE 2",
+        "year": "2005",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTCU ELECTRA GLIDE ULTRA CLASSIC",
+        "year": "19-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTCU ELECTRA GLIDE ULTRA CLASSIC",
+        "year": "97-89",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTCUI ELECTRA GLIDE ULTRA CLASSIC",
+        "year": "06-95",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTCUL ELECTRA GLIDE ULTRA CLASSIC LOW",
+        "year": "16-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTCUSE SCREAMIN EAGLE ULTRA CLASSIC ELECTRA GLID",
+        "year": "2006",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTCUSE2 SCREAMIN EAGLE ULTRA CLASSIC ELECTRA GLI",
+        "year": "2007",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTCUSE3 SCREAMIN EAGLE ULTRA CLASSIC ELECTRA GLI",
+        "year": "2008",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTCUSE4 CVO ULTRA CLASSIC ELECTRA GLIDE",
+        "year": "2009",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTCUSE5 CVO ULTRA CLASSIC ELECTRA GLIDE",
+        "year": "2010",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTCUSE6 CVO ULTRA CLASSIC ELECTRA GLIDE",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTCUSE7 CVO ULTRA CLASSIC ELECTRA GLIDE",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTCUSE8 CVO ULTRA CLASSIC ELECTRA GLIDE",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTCUTG TRI GLIDE ULTRA",
+        "year": "16-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTCUTG TRI GLIDE ULTRA",
+        "year": "25-19",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTCUTG TRI GLIDE ULTRA CLASSIC",
+        "year": "13-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTCUTG TRI GLIDE ULTRA G.I.",
+        "year": "2022",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTCUTGSE CVO TRI GLIDE",
+        "year": "22-20",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTI ELECTRA GLIDE STANDARD",
+        "year": "06-03",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTK ELECTRA GLIDE ULTRA LIMITED",
+        "year": "14-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTK ULTRA LIMITED",
+        "year": "24-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTKL ULTRA LIMITED LOW",
+        "year": "19-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTKSE CVO LIMITED",
+        "year": "17-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHTKSE CVO LIMITED",
+        "year": "21-19",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHX ELECTRA GLIDE SPECIAL",
+        "year": "85-84",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHX STREET GLIDE",
+        "year": "25-06",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHXI STREET GLIDE",
+        "year": "2006",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHXS STREET GLIDE SPECIAL",
+        "year": "23-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHXSE CVO STREET GLIDE",
+        "year": "2010",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHXSE CVO STREET GLIDE",
+        "year": "25-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHXSE2 CVO STREET GLIDE",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHXSE3 CVO STREET GLIDE",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHXST STREET GLIDE ST",
+        "year": "23-22",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLHXXX STREET GLIDE TRIKE",
+        "year": "11-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLI HYDRA-GLIDE REVIVAL",
+        "year": "2024",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLRT FREEWHEELER",
+        "year": "25-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLS SOFTAIL SLIM",
+        "year": "17-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSB SPORT GLIDE 107",
+        "year": "20-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSL SOFTAIL SLIM 107",
+        "year": "21-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSS SOFTAIL SLIM S",
+        "year": "17-16",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLST HERITAGE SOFTAIL",
+        "year": "2006",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLST HERITAGE SOFTAIL",
+        "year": "90-86",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSTC HERITAGE SOFTAIL CLASSIC",
+        "year": "17-88",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSTCI HERITAGE SOFTAIL CLASSIC",
+        "year": "06-01",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSTF FAT BOY",
+        "year": "17-90",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSTFB FAT BOY LO",
+        "year": "16-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSTFBS FAT BOY S",
+        "year": "17-16",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSTFI FAT BOY",
+        "year": "06-01",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSTFSE SCREAMIN EAGLE FAT BOY",
+        "year": "2005",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSTFSE2 SCREAMIN EAGLE FAT BOY",
+        "year": "2006",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSTI HERITAGE SOFTAIL",
+        "year": "2006",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSTN HERITAGE SOFTAIL NOSTALGIA",
+        "year": "1993",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSTN HERITAGE SOFTAIL SPECIAL",
+        "year": "96-94",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSTN SOFTAIL DELUXE",
+        "year": "17-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSTNI SOFTAIL DELUXE",
+        "year": "06-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSTNSE CVO SOFTAIL DELUXE",
+        "year": "15-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSTS HERITAGE SPRINGER",
+        "year": "03-97",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSTSB CROSS BONES",
+        "year": "11-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSTSC SOFTAIL SPRINGER CLASSIC",
+        "year": "07-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSTSCI SOFTAIL SPRINGER CLASSIC",
+        "year": "06-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSTSE CVO SOFTAIL CONVERTIBLE",
+        "year": "2010",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSTSE2 CVO SOFTAIL CONVERTIBLE",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSTSE3 CVO SOFTAIL CONVERTIBLE",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLSTSI HERITAGE SPRINGER",
+        "year": "03-01",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLT TOUR GLIDE",
+        "year": "83-80",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTC TOUR GLIDE CLASSIC",
+        "year": "91-81",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTCU TOUR GLIDE ULTRA CLASSIC",
+        "year": "95-89",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTCUI TOUR GLIDE ULTRA CLASSIC",
+        "year": "1996",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTR ROAD GLIDE",
+        "year": "02-98",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTR ROAD GLIDE",
+        "year": "09-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTRI ROAD GLIDE",
+        "year": "06-98",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTRK ROAD GLIDE LIMITED",
+        "year": "24-20",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTRKSE CVO ROAD GLIDE LIMITED",
+        "year": "23-22",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTRSE3 CVO ROAD GLIDE",
+        "year": "2009",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTRSEI SCREAMIN EAGLE ROAD GLIDE",
+        "year": "2000",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTRSEI2 SCREAMIN EAGLE ROAD GLIDE 2",
+        "year": "2001",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTRT ROAD GLIDE 3",
+        "year": "25-23",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTRU ROAD GLIDE ULTRA",
+        "year": "13-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTRU ROAD GLIDE ULTRA",
+        "year": "19-16",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTRUSE CVO ROAD GLIDE ULTRA",
+        "year": "16-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTRUSE CVO ROAD GLIDE ULTRA",
+        "year": "2011",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTRX ROAD GLIDE",
+        "year": "25-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTRX ROAD GLIDE CUSTOM",
+        "year": "13-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTRXRRSE CVO ROAD GLIDE RR",
+        "year": "2025",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTRXS ROAD GLIDE SPECIAL",
+        "year": "23-15",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTRXSE CVO ROAD GLIDE",
+        "year": "22-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTRXSE CVO ROAD GLIDE",
+        "year": "25-24",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTRXSE CVO ROAD GLIDE CUSTOM",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTRXSE2 CVO ROAD GLIDE CUSTOM",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTRXST ROAD GLIDE ST",
+        "year": "23-22",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FLTRXSTSE CVO ROAD GLIDE ST",
+        "year": "25-24",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXBB STREET BOB 107",
+        "year": "20-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXBBS STREET BOB 114",
+        "year": "24-21",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXBR BREAKOUT 107",
+        "year": "19-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXBR BREAKOUT 117",
+        "year": "24-23",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXBRS BREAKOUT 114",
+        "year": "20-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXCW ROCKER",
+        "year": "09-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXCWC ROCKER C",
+        "year": "11-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXD DYNA SUPER GLIDE",
+        "year": "05-99",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXD DYNA SUPER GLIDE",
+        "year": "10-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDB STREET BOB",
+        "year": "09-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDB STREET BOB",
+        "year": "17-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDBI STREET BOB",
+        "year": "2006",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDC SUPER GLIDE CUSTOM",
+        "year": "14-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDC SUPER GLIDE CUSTOM",
+        "year": "2005",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDCI SUPER GLIDE CUSTOM",
+        "year": "06-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDF FAT BOB",
+        "year": "11-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDF FAT BOB",
+        "year": "17-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDFSE CVO DYNA FAT BOB",
+        "year": "2009",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDFSE2 CVO DYNA FAT BOB",
+        "year": "2010",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDG DISC GLIDE",
+        "year": "1983",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDI DYNA SUPER GLIDE",
+        "year": "2004",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDI DYNA SUPER GLIDE",
+        "year": "2006",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDI35 DYNA 35TH ANNIVERSARY SUPER GLIDE",
+        "year": "2006",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDL DYNA LOW RIDER",
+        "year": "05-99",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDL DYNA LOW RIDER",
+        "year": "09-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDL DYNA LOW RIDER",
+        "year": "2017",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDL LOW RIDER",
+        "year": "17-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDLI DYNA LOW RIDER",
+        "year": "06-04",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDLS LOW RIDER S",
+        "year": "17-16",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDRS FXDR 114",
+        "year": "20-19",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDS-CONV DYNA CONVERTIBLE",
+        "year": "00-99",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDSE SCREAMIN EAGLE DYNA",
+        "year": "2007",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDSE2 SCREAMIN EAGLE DYNA",
+        "year": "2008",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDWG DYNA WIDE GLIDE",
+        "year": "05-99",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDWG DYNA WIDE GLIDE",
+        "year": "08-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDWG DYNA WIDE GLIDE",
+        "year": "17-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDWG2 CVO DYNA WIDE GLIDE",
+        "year": "2001",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDWG3 CVO DYNA WIDE GLIDE",
+        "year": "2002",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDWGI DYNA WIDE GLIDE",
+        "year": "06-04",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDX DYNA SUPER GLIDE SPORT",
+        "year": "05-99",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDXI DYNA SUPER GLIDE SPORT",
+        "year": "05-04",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXDXT DYNA SUPER GLIDE T-SPORT",
+        "year": "03-01",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXE SUPER GLIDE",
+        "year": "84-83",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXEF FAT BOB",
+        "year": "1985",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXFB FAT BOB 107",
+        "year": "20-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXFBS FAT BOB 114",
+        "year": "23-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXLR LOW RIDER 107",
+        "year": "20-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXLR LOW RIDER CUSTOM",
+        "year": "94-87",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXLRS LOW RIDER S 114",
+        "year": "21-20",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXLRS LOW RIDER S 117",
+        "year": "24-22",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXLRST LOW RIDER ST 117",
+        "year": "24-22",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXR SUPER GLIDE II",
+        "year": "83-82",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXR SUPER GLIDE II",
+        "year": "94-86",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXR2",
+        "year": "1999",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXR3",
+        "year": "1999",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXR4",
+        "year": "2000",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXRC LOW RIDER CHROME",
+        "year": "1985",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXRC LOW RIDER CHROME",
+        "year": "1987",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXRD SPORT GLIDE GRAND TOURING",
+        "year": "1986",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXRDG DISC GLIDE",
+        "year": "1984",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXRS LOW GLIDE",
+        "year": "92-82",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXRS-CONV LOW RIDER SPORT CONVERTIBLE",
+        "year": "93-90",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXRS-SP LOW RIDER SPORT",
+        "year": "93-86",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXRST LOW RIDER EL DIABLO 117",
+        "year": "2022",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXRT SPORT GLIDE",
+        "year": "92-83",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXS BLACKLINE",
+        "year": "13-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXS LOW RIDER",
+        "year": "82-79",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXSB BREAKOUT",
+        "year": "17-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXSB LOW RIDER - BELT",
+        "year": "85-83",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXSBSE CVO BREAKOUT",
+        "year": "14-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXSE CVO PRO STREET BREAKOUT",
+        "year": "17-16",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXST SOFTAIL STANDARD",
+        "year": "07-99",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXST SOFTAIL STANDARD",
+        "year": "90-84",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXST SOFTAIL STANDARD 107",
+        "year": "24-20",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXSTB NIGHT TRAIN",
+        "year": "09-99",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXSTBI NIGHT TRAIN",
+        "year": "06-01",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXSTC SOFTAIL CUSTOM",
+        "year": "10-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXSTC SOFTAIL CUSTOM",
+        "year": "99-86",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXSTD SOFTAIL DEUCE",
+        "year": "07-00",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXSTDI SOFTAIL DEUCE",
+        "year": "06-01",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXSTDSE SCREAMIN EAGLE SOFTAIL DEUCE",
+        "year": "2003",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXSTDSE2 SCREAMIN EAGLE SOFTAIL DEUCE 2",
+        "year": "2004",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXSTI SOFTAIL STANDARD",
+        "year": "06-01",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXSTS SPRINGER SOFTAIL",
+        "year": "06-88",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXSTSB BAD BOY",
+        "year": "97-95",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXSTSI SPRINGER SOFTAIL",
+        "year": "06-01",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXSTSSE SCREAMIN EAGLE SOFTAIL SPRINGER",
+        "year": "2007",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXSTSSE2 SCREAMIN EAGLE SOFTAIL SPRINGER",
+        "year": "2008",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXSTSSE3 CVO SOFTAIL SPRINGER",
+        "year": "2009",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "FXWG WIDE GLIDE",
+        "year": "86-80",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XL1200C SPORTSTER 1200 CUSTOM",
+        "year": "19-96",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XL1200CX ROADSTER",
+        "year": "20-16",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XL1200L SPORTSTER 1200 LOW",
+        "year": "11-06",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XL1200N SPORTSTER 1200 NIGHTSTER",
+        "year": "12-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XL1200NS IRON 1200",
+        "year": "21-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XL1200R SPORTSTER 1200 ROADSTER",
+        "year": "08-04",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XL1200S SPORTSTER 1200 SPORT",
+        "year": "03-96",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XL1200T SUPERLOW 1200T",
+        "year": "19-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XL1200V SEVENTY-TWO",
+        "year": "16-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XL1200X FORTY-EIGHT",
+        "year": "22-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XL1200XS FORTY-EIGHT SPECIAL",
+        "year": "19-18",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XL50 50TH ANNIVERSARY SPORTSTER",
+        "year": "2007",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XL883 SPORTSTER",
+        "year": "08-04",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XL883C SPORTSTER 883 CUSTOM",
+        "year": "09-99",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XL883L SPORTSTER 883 LOW",
+        "year": "10-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XL883L SUPERLOW",
+        "year": "19-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XL883N IRON 883",
+        "year": "22-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XL883R SPORTSTER 883 ROADSTER",
+        "year": "03-02",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XL883R SPORTSTER 883 ROADSTER",
+        "year": "07-05",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XLH1000",
+        "year": "85-84",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XLH1100",
+        "year": "87-86",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XLH1200",
+        "year": "03-88",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XLH883",
+        "year": "03-86",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XLH883DLX SPORTSTER 883 DELUXE",
+        "year": "95-86",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XLH883HUG SPORTSTER 883 HUGGER",
+        "year": "03-87",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XLS ROADSTER",
+        "year": "85-84",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XLX 1000",
+        "year": "85-84",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XR1000",
+        "year": "85-84",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XR1200",
+        "year": "10-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HARLEY-DAVIDSON",
+        "model": "XR1200X",
+        "year": "12-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INDIAN",
+        "model": "CHIEF",
+        "year": "03-99",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INDIAN",
+        "model": "SCOUT",
+        "year": "03-01",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INDIAN",
+        "model": "SPIRIT",
+        "year": "03-01",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MOTO GUZZI",
+        "model": "1100 CALIFORNIA",
+        "year": "96-95",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MOTO GUZZI",
+        "model": "1100 SPORT",
+        "year": "96-95",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MOTO GUZZI",
+        "model": "BREVA 1100",
+        "year": "08-06",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MOTO GUZZI",
+        "model": "CALIFORNIA VINTAGE",
+        "year": "08-06",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MOTO GUZZI",
+        "model": "GRISO 1100",
+        "year": "08-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MOTO GUZZI",
+        "model": "GRISO 1200",
+        "year": "08-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MOTO GUZZI",
+        "model": "NORGE 1200",
+        "year": "09-07",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MOTO GUZZI",
+        "model": "SPORT 1200",
+        "year": "08-06",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MOTO GUZZI",
+        "model": "V11 QUOTA",
+        "year": "00-99",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF1786",
+        "source_part_number": "PH6065B",
+        "part_key": "001481547",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "EAOM134C",
+        "source_part_number": "PH6065B",
+        "part_key": "001481547",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "EAOM135C",
+        "source_part_number": "PH6065B",
+        "part_key": "001481547",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "EAO33",
+        "source_part_number": "PH6065B",
+        "part_key": "001481547",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92225",
+        "source_part_number": "PH6065B",
+        "part_key": "001481547",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92215",
+        "source_part_number": "PH6065B",
+        "part_key": "001481547",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85225",
+        "source_part_number": "PH6065B",
+        "part_key": "001481547",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85215",
+        "source_part_number": "PH6065B",
+        "part_key": "001481547",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "PH7022",
+        "source_part_number": "PH6065B",
+        "part_key": "001481547",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Exmark",
+        "part_number": "523541",
+        "source_part_number": "PH6065B",
+        "part_key": "001481547",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF600",
+        "source_part_number": "PH6065B",
+        "part_key": "001481547",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "HiFlo",
+        "part_number": "HF171CRC",
+        "source_part_number": "PH6065B",
+        "part_key": "001481547",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "KN-171C",
+        "source_part_number": "PH6065B",
+        "part_key": "001481547",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "KN-170C",
+        "source_part_number": "PH6065B",
+        "part_key": "001481547",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH7022",
+        "source_part_number": "PH6065B",
+        "part_key": "001481547",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1215",
+        "source_part_number": "PH6065B",
+        "part_key": "001481547",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "ML16822C",
+        "source_part_number": "PH6065B",
+        "part_key": "001481547",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "PH7022",
+        "source_part_number": "PH6065B",
+        "part_key": "001481547",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "PH7022",
+        "source_part_number": "PH6065B",
+        "part_key": "001481547",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51215",
+        "source_part_number": "PH6065B",
+        "part_key": "001481547",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51225",
+        "source_part_number": "PH6065B",
+        "part_key": "001481547",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57348",
+        "source_part_number": "PH6065B",
+        "part_key": "001481547",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

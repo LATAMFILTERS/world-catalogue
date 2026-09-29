@@ -1,0 +1,24 @@
+{
+  "phase": "ISUZU_V153_EA13614_REVALIDATION",
+  "source": "ISUZU_US_V153_EA13614_REVALIDATION",
+  "apply": true,
+  "database_write": true,
+  "rows": [
+    {
+      "sku": "EA13614",
+      "status": "READY",
+      "before": 45,
+      "after": 49,
+      "added_ranges": 4,
+      "exact_positions": 53
+    }
+  ],
+  "backup_path": "hermes/backups/isuzu-v153/prewrite-2026-09-28T04-05-16-216Z.json",
+  "summary": {
+    "total": 1,
+    "ready": 1,
+    "added_ranges": 4,
+    "exact_positions": 53,
+    "database_write": true
+  }
+}

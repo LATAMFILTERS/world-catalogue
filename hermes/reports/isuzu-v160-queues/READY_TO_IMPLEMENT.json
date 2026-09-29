@@ -1,0 +1,196 @@
+{
+  "queue": "READY_TO_IMPLEMENT",
+  "count": 10,
+  "rows": [
+    {
+      "sku": "EF93009",
+      "make": "ISUZU",
+      "model": "FVR DERATE",
+      "equipment": "FVR DERATE",
+      "type": "TRUCK",
+      "engine": "Cummins B6.7",
+      "year": 2022,
+      "base": "P553009",
+      "lane": "READY_TO_IMPLEMENT",
+      "action": "Apply verified application through catalog application write service",
+      "write_allowed": true,
+      "evidence": {
+        "canonical_base": "P553009",
+        "vehicle_source": "Isuzu F-Series specs + State of Washington contract: FVR Derate mechanically identical to FVR",
+        "filter_source": "Donaldson P553009 B6.7 secondary fuel filter"
+      },
+      "release": "ISUZU_V161_FVR_DERATE_ENGINE_EQUIVALENCE"
+    },
+    {
+      "sku": "EF93009",
+      "make": "ISUZU",
+      "model": "FVR DERATE",
+      "equipment": "FVR DERATE",
+      "type": "TRUCK",
+      "engine": "Cummins B6.7",
+      "year": 2023,
+      "base": "P553009",
+      "lane": "READY_TO_IMPLEMENT",
+      "action": "Apply verified application through catalog application write service",
+      "write_allowed": true,
+      "evidence": {
+        "canonical_base": "P553009",
+        "vehicle_source": "Isuzu F-Series specs + State of Washington contract: FVR Derate mechanically identical to FVR",
+        "filter_source": "Donaldson P553009 B6.7 secondary fuel filter"
+      },
+      "release": "ISUZU_V161_FVR_DERATE_ENGINE_EQUIVALENCE"
+    },
+    {
+      "sku": "EF93009",
+      "make": "ISUZU",
+      "model": "FVR DERATE",
+      "equipment": "FVR DERATE",
+      "type": "TRUCK",
+      "engine": "Cummins B6.7",
+      "year": 2024,
+      "base": "P553009",
+      "lane": "READY_TO_IMPLEMENT",
+      "action": "Apply verified application through catalog application write service",
+      "write_allowed": true,
+      "evidence": {
+        "canonical_base": "P553009",
+        "vehicle_source": "Isuzu F-Series specs + State of Washington contract: FVR Derate mechanically identical to FVR",
+        "filter_source": "Donaldson P553009 B6.7 secondary fuel filter"
+      },
+      "release": "ISUZU_V161_FVR_DERATE_ENGINE_EQUIVALENCE"
+    },
+    {
+      "sku": "EF93009",
+      "make": "ISUZU",
+      "model": "FVR DERATE",
+      "equipment": "FVR DERATE",
+      "type": "TRUCK",
+      "engine": "Cummins B6.7",
+      "year": 2025,
+      "base": "P553009",
+      "lane": "READY_TO_IMPLEMENT",
+      "action": "Apply verified application through catalog application write service",
+      "write_allowed": true,
+      "evidence": {
+        "canonical_base": "P553009",
+        "vehicle_source": "Isuzu F-Series specs + State of Washington contract: FVR Derate mechanically identical to FVR",
+        "filter_source": "Donaldson P553009 B6.7 secondary fuel filter"
+      },
+      "release": "ISUZU_V161_FVR_DERATE_ENGINE_EQUIVALENCE"
+    },
+    {
+      "sku": "EF93009",
+      "make": "ISUZU",
+      "model": "FVR DERATE",
+      "equipment": "FVR DERATE",
+      "type": "TRUCK",
+      "engine": "Cummins B6.7",
+      "year": 2026,
+      "base": "P553009",
+      "lane": "READY_TO_IMPLEMENT",
+      "action": "Apply verified application through catalog application write service",
+      "write_allowed": true,
+      "evidence": {
+        "canonical_base": "P553009",
+        "vehicle_source": "Isuzu F-Series specs + State of Washington contract: FVR Derate mechanically identical to FVR",
+        "filter_source": "Donaldson P553009 B6.7 secondary fuel filter"
+      },
+      "release": "ISUZU_V161_FVR_DERATE_ENGINE_EQUIVALENCE"
+    },
+    {
+      "sku": "EL80428",
+      "make": "ISUZU",
+      "model": "FVR DERATE",
+      "equipment": "FVR DERATE",
+      "type": "TRUCK",
+      "engine": "Cummins B6.7",
+      "year": 2022,
+      "base": "P550428",
+      "lane": "READY_TO_IMPLEMENT",
+      "action": "Apply verified application through catalog application write service",
+      "write_allowed": true,
+      "evidence": {
+        "canonical_base": "P550428",
+        "vehicle_source": "Isuzu F-Series specs + State of Washington contract: FVR Derate mechanically identical to FVR",
+        "filter_source": "Donaldson P550428 B6.7 full-flow lube filter"
+      },
+      "release": "ISUZU_V161_FVR_DERATE_ENGINE_EQUIVALENCE"
+    },
+    {
+      "sku": "EL80428",
+      "make": "ISUZU",
+      "model": "FVR DERATE",
+      "equipment": "FVR DERATE",
+      "type": "TRUCK",
+      "engine": "Cummins B6.7",
+      "year": 2023,
+      "base": "P550428",
+      "lane": "READY_TO_IMPLEMENT",
+      "action": "Apply verified application through catalog application write service",
+      "write_allowed": true,
+      "evidence": {
+        "canonical_base": "P550428",
+        "vehicle_source": "Isuzu F-Series specs + State of Washington contract: FVR Derate mechanically identical to FVR",
+        "filter_source": "Donaldson P550428 B6.7 full-flow lube filter"
+      },
+      "release": "ISUZU_V161_FVR_DERATE_ENGINE_EQUIVALENCE"
+    },
+    {
+      "sku": "EL80428",
+      "make": "ISUZU",
+      "model": "FVR DERATE",
+      "equipment": "FVR DERATE",
+      "type": "TRUCK",
+      "engine": "Cummins B6.7",
+      "year": 2024,
+      "base": "P550428",
+      "lane": "READY_TO_IMPLEMENT",
+      "action": "Apply verified application through catalog application write service",
+      "write_allowed": true,
+      "evidence": {
+        "canonical_base": "P550428",
+        "vehicle_source": "Isuzu F-Series specs + State of Washington contract: FVR Derate mechanically identical to FVR",
+        "filter_source": "Donaldson P550428 B6.7 full-flow lube filter"
+      },
+      "release": "ISUZU_V161_FVR_DERATE_ENGINE_EQUIVALENCE"
+    },
+    {
+      "sku": "EL80428",
+      "make": "ISUZU",
+      "model": "FVR DERATE",
+      "equipment": "FVR DERATE",
+      "type": "TRUCK",
+      "engine": "Cummins B6.7",
+      "year": 2025,
+      "base": "P550428",
+      "lane": "READY_TO_IMPLEMENT",
+      "action": "Apply verified application through catalog application write service",
+      "write_allowed": true,
+      "evidence": {
+        "canonical_base": "P550428",
+        "vehicle_source": "Isuzu F-Series specs + State of Washington contract: FVR Derate mechanically identical to FVR",
+        "filter_source": "Donaldson P550428 B6.7 full-flow lube filter"
+      },
+      "release": "ISUZU_V161_FVR_DERATE_ENGINE_EQUIVALENCE"
+    },
+    {
+      "sku": "EL80428",
+      "make": "ISUZU",
+      "model": "FVR DERATE",
+      "equipment": "FVR DERATE",
+      "type": "TRUCK",
+      "engine": "Cummins B6.7",
+      "year": 2026,
+      "base": "P550428",
+      "lane": "READY_TO_IMPLEMENT",
+      "action": "Apply verified application through catalog application write service",
+      "write_allowed": true,
+      "evidence": {
+        "canonical_base": "P550428",
+        "vehicle_source": "Isuzu F-Series specs + State of Washington contract: FVR Derate mechanically identical to FVR",
+        "filter_source": "Donaldson P550428 B6.7 full-flow lube filter"
+      },
+      "release": "ISUZU_V161_FVR_DERATE_ENGINE_EQUIVALENCE"
+    }
+  ]
+}

@@ -1,0 +1,1072 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF11176",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF11176",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 0.984,
+      "height_mm": 24.99,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Ford",
+        "part_number": "AE9Z-19N619-A"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3910WS"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF1885"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LA720"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FP-68"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4068"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C26155"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24068"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-221"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "90273P"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1885P"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4068"
+      },
+      {
+        "manufacturer": "GK Industries",
+        "part_number": "CF1230"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1500"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF1011"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1885P"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1885P"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4018"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "CAF2127"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PC-113"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC4068"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "C26155P"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PC-4068"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PBC26155"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C26155"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1885P"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1885M"
+      },
+      {
+        "manufacturer": "SUPERTECH",
+        "part_number": "5255"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1118"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "19-11",
+        "make": "FORD",
+        "model": "EXPLORER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "15-12",
+        "make": "FORD",
+        "model": "EXPLORER",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-16",
+        "make": "FORD",
+        "model": "EXPLORER",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "19-11",
+        "make": "FORD",
+        "model": "EXPLORER",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "19-10",
+        "make": "FORD",
+        "model": "FLEX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-10",
+        "make": "FORD",
+        "model": "FLEX",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "19-13",
+        "make": "FORD",
+        "model": "POLICE INTERCEPTOR SEDAN",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-13",
+        "make": "FORD",
+        "model": "POLICE INTERCEPTOR SEDAN",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "19-13",
+        "make": "FORD",
+        "model": "POLICE INTERCEPTOR SEDAN",
+        "engine": "V6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "19-13",
+        "make": "FORD",
+        "model": "POLICE INTERCEPTOR UTILITY",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-14",
+        "make": "FORD",
+        "model": "POLICE INTERCEPTOR UTILITY",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "19-13",
+        "make": "FORD",
+        "model": "POLICE INTERCEPTOR UTILITY",
+        "engine": "V6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "20-19",
+        "make": "FORD",
+        "model": "POLICE RESPONDER HYBRID",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-19",
+        "make": "FORD",
+        "model": "POLICE RESPONDER HYBRID",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-14",
+        "make": "FORD",
+        "model": "SPECIAL SERVICE POLICE SEDAN",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-14",
+        "make": "FORD",
+        "model": "SPECIAL SERVICE POLICE SEDAN",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-09",
+        "make": "FORD",
+        "model": "TAURUS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "17-13",
+        "make": "FORD",
+        "model": "TAURUS",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-09",
+        "make": "FORD",
+        "model": "TAURUS",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "16-10",
+        "make": "LINCOLN",
+        "model": "MKS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-10",
+        "make": "LINCOLN",
+        "model": "MKS",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "16-10",
+        "make": "LINCOLN",
+        "model": "MKS",
+        "engine": "V6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "19-10",
+        "make": "LINCOLN",
+        "model": "MKT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-13",
+        "make": "LINCOLN",
+        "model": "MKT",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-10",
+        "make": "LINCOLN",
+        "model": "MKT",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "19-10",
+        "make": "LINCOLN",
+        "model": "MKT",
+        "engine": "V6-3.7L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF11176",
+    "source_part_key": "001538498",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 26,
+      "cross_references": 29
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF11176, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "0.984",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "8.865",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "7.447",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "15",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Behind Glove Box",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100548924",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.4750",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "0.9500",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "9.0600",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "11.4900",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "8.0700",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "8.7400",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.3800",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "3.3600",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.475,
+        "case_weight_lb": 0.95,
+        "unit_height_in": 9.06,
+        "unit_length_in": 8.07,
+        "unit_width_in": 1.38,
+        "case_height_in": 11.49,
+        "case_length_in": 8.74,
+        "case_width_in": 3.36,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 5.7,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 26,
+    "all_cross_references_observed": 29,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:57:50.994Z",
+  "discovered_from": "CF11176",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "FORD",
+        "model": "EXPLORER",
+        "year": "19-11",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "EXPLORER",
+        "year": "15-12",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "EXPLORER",
+        "year": "19-16",
+        "engine": "L4-2.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "EXPLORER",
+        "year": "19-11",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "FLEX",
+        "year": "19-10",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "FLEX",
+        "year": "19-10",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "POLICE INTERCEPTOR SEDAN",
+        "year": "19-13",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "POLICE INTERCEPTOR SEDAN",
+        "year": "19-13",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "POLICE INTERCEPTOR SEDAN",
+        "year": "19-13",
+        "engine": "V6-3.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "POLICE INTERCEPTOR UTILITY",
+        "year": "19-13",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "POLICE INTERCEPTOR UTILITY",
+        "year": "19-14",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "POLICE INTERCEPTOR UTILITY",
+        "year": "19-13",
+        "engine": "V6-3.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "POLICE RESPONDER HYBRID",
+        "year": "20-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "POLICE RESPONDER HYBRID",
+        "year": "20-19",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "SPECIAL SERVICE POLICE SEDAN",
+        "year": "18-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "SPECIAL SERVICE POLICE SEDAN",
+        "year": "18-14",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "TAURUS",
+        "year": "19-09",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "TAURUS",
+        "year": "17-13",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "TAURUS",
+        "year": "19-09",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "MKS",
+        "year": "16-10",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "MKS",
+        "year": "16-10",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "MKS",
+        "year": "16-10",
+        "engine": "V6-3.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "MKT",
+        "year": "19-10",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "MKT",
+        "year": "16-13",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "MKT",
+        "year": "19-10",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LINCOLN",
+        "model": "MKT",
+        "year": "19-10",
+        "engine": "V6-3.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-221",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3910WS",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "90273P",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1885P",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF1885",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "AE9Z-19N619-A",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4068",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "GK Industries",
+        "part_number": "CF1230",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1500",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF1011",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1885P",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1885P",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LA720",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4018",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "CAF2127",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FP-68",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4068",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PC-113",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC4068",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "C26155P",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PC-4068",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C26155",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PBC26155",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C26155",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1885P",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1885M",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "SUPERTECH",
+        "part_number": "5255",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1118",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24068",
+        "source_part_number": "CF11176",
+        "part_key": "001538498",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

@@ -1,0 +1,994 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF10138",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF10138",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 0.788,
+      "height_mm": 20.02,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Lexus",
+        "part_number": "87139-YZZ04"
+      },
+      {
+        "manufacturer": "Lexus",
+        "part_number": "87139-48020"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-48020"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-48020-83"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3755WS"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF7774"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LA199"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4901"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C38222"
+      },
+      {
+        "manufacturer": "Valeo",
+        "part_number": "715542"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24901"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-48"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2027"
+      },
+      {
+        "manufacturer": "Blue Print",
+        "part_number": "ADT32502"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89901"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1774"
+      },
+      {
+        "manufacturer": "Corteco",
+        "part_number": "80000162"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DC062"
+      },
+      {
+        "manufacturer": "Driveworks",
+        "part_number": "DW-38222"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4901"
+      },
+      {
+        "manufacturer": "GK Industries",
+        "part_number": "CF1051"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "C38222P"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1245"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1245"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF2008"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1774"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1774"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF7774"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1774"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3964"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "TY98163"
+      },
+      {
+        "manufacturer": "Nipparts",
+        "part_number": "J1342004"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94901"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PC-62"
+      },
+      {
+        "manufacturer": "Power Train",
+        "part_number": "3964"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC8222"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "C38222P"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PC-8222"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "part_number": "C38222"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C38222"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "MC38222"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1774"
+      },
+      {
+        "manufacturer": "SUPERTECH",
+        "part_number": "7275"
+      },
+      {
+        "manufacturer": "VIPER",
+        "part_number": "10138C"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "05-01",
+        "make": "LEXUS",
+        "model": "IS300",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "05-01",
+        "make": "LEXUS",
+        "model": "IS300",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "03-99",
+        "make": "LEXUS",
+        "model": "RX300",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "03-99",
+        "make": "LEXUS",
+        "model": "RX300",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "07-01",
+        "make": "TOYOTA",
+        "model": "HIGHLANDER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "07-01",
+        "make": "TOYOTA",
+        "model": "HIGHLANDER",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "03-01",
+        "make": "TOYOTA",
+        "model": "HIGHLANDER",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "07-04",
+        "make": "TOYOTA",
+        "model": "HIGHLANDER",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF10138",
+    "source_part_key": "000991356",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 8,
+      "cross_references": 44
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF10138, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "0.788",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "10.717",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "8.471",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "10",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Behind Glove Box",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100531926",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Thailand",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.5500",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.1000",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "8.9700",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "2.3900",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "9.7600",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "10.2500",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "0.9020",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "9.4630",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.55,
+        "case_weight_lb": 1.1,
+        "unit_height_in": 8.97,
+        "unit_length_in": 9.76,
+        "unit_width_in": 0.902,
+        "case_height_in": 2.39,
+        "case_length_in": 10.25,
+        "case_width_in": 9.463,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 6.6,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 8,
+    "all_cross_references_observed": 44,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T04:59:01.467Z",
+  "discovered_from": "CF10138",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "LEXUS",
+        "model": "IS300",
+        "year": "05-01",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "IS300",
+        "year": "05-01",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "RX300",
+        "year": "03-99",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "RX300",
+        "year": "03-99",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "HIGHLANDER",
+        "year": "07-01",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "HIGHLANDER",
+        "year": "07-01",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "HIGHLANDER",
+        "year": "03-01",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "HIGHLANDER",
+        "year": "07-04",
+        "engine": "V6-3.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-48",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2027",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Blue Print",
+        "part_number": "ADT32502",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3755WS",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89901",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1774",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF7774",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Corteco",
+        "part_number": "80000162",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DC062",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Driveworks",
+        "part_number": "DW-38222",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4901",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "GK Industries",
+        "part_number": "CF1051",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "C38222P",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1245",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1245",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF2008",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1774",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1774",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Lexus",
+        "part_number": "87139-YZZ04",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Lexus",
+        "part_number": "87139-48020",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF7774",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1774",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LA199",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3964",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "TY98163",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4901",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Nipparts",
+        "part_number": "J1342004",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94901",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PC-62",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Power Train",
+        "part_number": "3964",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC8222",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "C38222P",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PC-8222",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "part_number": "C38222",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C38222",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C38222",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "MC38222",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1774",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "SUPERTECH",
+        "part_number": "7275",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-48020",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-48020-83",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valeo",
+        "part_number": "715542",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "VIPER",
+        "part_number": "10138C",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24901",
+        "source_part_number": "CF10138",
+        "part_key": "000991356",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

@@ -1,0 +1,742 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA12071",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA12071",
+    "product_type": "Engine Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.85,
+      "height_mm": 46.99,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Flexible Panel Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A41367"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WA10422"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "BMW",
+        "part_number": "13 71 8 632 502"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "93896"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "AF3626"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "AF3626"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "200422"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "AF1367"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "SA90206"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WAF3626"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "21-17",
+        "make": "BMW",
+        "model": "230I",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-17",
+        "make": "BMW",
+        "model": "230I XDRIVE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-16",
+        "make": "BMW",
+        "model": "330E",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "BMW",
+        "model": "330I",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "BMW",
+        "model": "330I GT XDRIVE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "BMW",
+        "model": "330I XDRIVE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-16",
+        "make": "BMW",
+        "model": "340I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "BMW",
+        "model": "340I GT XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-17",
+        "make": "BMW",
+        "model": "340I XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "430I",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "430I GRAN COUPE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "430I XDRIVE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "430I XDRIVE GRAN COUPE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "440I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-17",
+        "make": "BMW",
+        "model": "440I GRAN COUPE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "440I XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "BMW",
+        "model": "440I XDRIVE GRAN COUPE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-17",
+        "make": "BMW",
+        "model": "M240I",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-17",
+        "make": "BMW",
+        "model": "M240I XDRIVE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CA12071",
+    "source_part_key": "009404139",
+    "source_totals": {
+      "attributes": 39,
+      "applications": 20,
+      "cross_references": 10
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® engine air filters are engineered to protect your engine from harmful contaminants. Replacing an air filter with FRAM Extra Guard can help improve horsepower, acceleration, and engine performance. To prevent engine wear, FRAM recommends changing your air filter every 12 months.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Ensures maximum airflow to prevent engine wear",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA12071, Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Keep your engine running smoothly by preventing damaging particles from entering your vehicle’s engine",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Protects up to 12 months or 12,000 miles (19,000 kilometers)",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Flexible Panel Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs quickly in as little as 5 minutes",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "82"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Irregular Pentagon",
+        "recno": "84"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Flexible",
+        "recno": "85"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "86"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "88"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Air Filter",
+        "recno": "89"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.85",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100575975",
+        "recno": "92"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "10.748",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "10.354",
+        "recno": "93"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "94"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "95"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "96"
+      },
+      {
+        "attribute": "Width (W1) (Inch)",
+        "value": "5.826",
+        "recno": "97"
+      },
+      {
+        "attribute": "Length (L1) (Inch)",
+        "value": "4.448",
+        "recno": "98"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "99"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "100"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.1300",
+        "recno": "104"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "2.2600",
+        "recno": "105"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "10.6300",
+        "recno": "106"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "6.3600",
+        "recno": "107"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "7.0870",
+        "recno": "108"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "12.7400",
+        "recno": "109"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "2.5590",
+        "recno": "110"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "12.2400",
+        "recno": "111"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.13,
+        "case_weight_lb": 2.26,
+        "unit_height_in": 10.63,
+        "unit_length_in": 7.087,
+        "unit_width_in": 2.559,
+        "case_height_in": 6.36,
+        "case_length_in": 12.74,
+        "case_width_in": 12.24,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 13.56,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 20,
+    "all_cross_references_observed": 10,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:04:05.818Z",
+  "discovered_from": "CA12071",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BMW",
+        "model": "230I",
+        "year": "21-17",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "230I XDRIVE",
+        "year": "21-17",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "330E",
+        "year": "18-16",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "330I",
+        "year": "19-17",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "330I GT XDRIVE",
+        "year": "19-17",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "330I XDRIVE",
+        "year": "19-17",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "340I",
+        "year": "18-16",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "340I GT XDRIVE",
+        "year": "19-17",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "340I XDRIVE",
+        "year": "18-17",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "430I",
+        "year": "20-17",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "430I GRAN COUPE",
+        "year": "20-17",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "430I XDRIVE",
+        "year": "20-17",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "430I XDRIVE GRAN COUPE",
+        "year": "20-17",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "440I",
+        "year": "20-17",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "440I GRAN COUPE",
+        "year": "21-17",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "440I XDRIVE",
+        "year": "20-17",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "440I XDRIVE GRAN COUPE",
+        "year": "20-17",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M240I",
+        "year": "21-17",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "M240I XDRIVE",
+        "year": "21-17",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INEOS",
+        "model": "GRENADIER",
+        "year": "25-24",
+        "engine": "L6-3.0L",
+        "part_type": "Engine Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "BMW",
+        "part_number": "13 71 8 632 502",
+        "source_part_number": "CA12071",
+        "part_key": "009404139",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "93896",
+        "source_part_number": "CA12071",
+        "part_key": "009404139",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "AF3626",
+        "source_part_number": "CA12071",
+        "part_key": "009404139",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "AF3626",
+        "source_part_number": "CA12071",
+        "part_key": "009404139",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "200422",
+        "source_part_number": "CA12071",
+        "part_key": "009404139",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "A41367",
+        "source_part_number": "CA12071",
+        "part_key": "009404139",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "AF1367",
+        "source_part_number": "CA12071",
+        "part_key": "009404139",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "SA90206",
+        "source_part_number": "CA12071",
+        "part_key": "009404139",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WAF3626",
+        "source_part_number": "CA12071",
+        "part_key": "009404139",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WA10422",
+        "source_part_number": "CA12071",
+        "part_key": "009404139",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

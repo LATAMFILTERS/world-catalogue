@@ -1,0 +1,18 @@
+{
+  "phase": "ISUZU_V151_PRODUCT_MATERIALIZATION",
+  "apply": true,
+  "rows": [
+    {
+      "sku": "EF93410",
+      "status": "ALREADY_PRESENT",
+      "codigo_base": "8982373410"
+    }
+  ],
+  "database_write": true,
+  "summary": {
+    "total": 1,
+    "ready": 1,
+    "inserted": 0,
+    "database_write": true
+  }
+}

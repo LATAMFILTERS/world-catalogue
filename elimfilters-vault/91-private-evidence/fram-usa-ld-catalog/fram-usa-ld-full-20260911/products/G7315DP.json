@@ -1,0 +1,1710 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "FUEL",
+  "authority": {
+    "part_number": "G7315DP",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "G7315DP",
+    "product_type": "Fuel Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": null,
+      "height_mm": null,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": null,
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [],
+    "unresolved_cross_reference_candidates": [],
+    "vehicle_application_candidates": [
+      {
+        "year": "2005",
+        "make": "BUICK",
+        "model": "ALLURE",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "2005",
+        "make": "BUICK",
+        "model": "ALLURE",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "05-97",
+        "make": "BUICK",
+        "model": "CENTURY",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "2005",
+        "make": "BUICK",
+        "model": "LACROSSE",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "2005",
+        "make": "BUICK",
+        "model": "LACROSSE",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "05-94",
+        "make": "BUICK",
+        "model": "LESABRE",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "05-94",
+        "make": "BUICK",
+        "model": "PARK AVENUE",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "BUICK",
+        "model": "REGAL",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "04-92",
+        "make": "BUICK",
+        "model": "REGAL",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "99-95",
+        "make": "BUICK",
+        "model": "RIVIERA",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "95-92",
+        "make": "BUICK",
+        "model": "SKYLARK",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "98-96",
+        "make": "BUICK",
+        "model": "SKYLARK",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "98-94",
+        "make": "BUICK",
+        "model": "SKYLARK",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "93-92",
+        "make": "BUICK",
+        "model": "SKYLARK",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "04-03",
+        "make": "CADILLAC",
+        "model": "CTS",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "05-99",
+        "make": "CADILLAC",
+        "model": "DEVILLE",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "CADILLAC",
+        "model": "DTS",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "04-98",
+        "make": "CADILLAC",
+        "model": "SEVILLE",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "2004",
+        "make": "CADILLAC",
+        "model": "XLR",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "96-93",
+        "make": "CHEVROLET",
+        "model": "BERETTA",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "94-93",
+        "make": "CHEVROLET",
+        "model": "BERETTA",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "96-93",
+        "make": "CHEVROLET",
+        "model": "BERETTA",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "95-93",
+        "make": "CHEVROLET",
+        "model": "CAMARO",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "02-95",
+        "make": "CHEVROLET",
+        "model": "CAMARO",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "02-93",
+        "make": "CHEVROLET",
+        "model": "CAMARO",
+        "engine": "V8-5.7L",
+        "quantity": 1
+      },
+      {
+        "year": "05-92",
+        "make": "CHEVROLET",
+        "model": "CAVALIER",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1995",
+        "make": "CHEVROLET",
+        "model": "CAVALIER",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "02-96",
+        "make": "CHEVROLET",
+        "model": "CAVALIER",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "94-92",
+        "make": "CHEVROLET",
+        "model": "CAVALIER",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "05-04",
+        "make": "CHEVROLET",
+        "model": "CLASSIC",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "96-93",
+        "make": "CHEVROLET",
+        "model": "CORSICA",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "96-93",
+        "make": "CHEVROLET",
+        "model": "CORSICA",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "CHEVROLET",
+        "model": "EXPRESS 1500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "CHEVROLET",
+        "model": "EXPRESS 2500",
+        "engine": "V8-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "CHEVROLET",
+        "model": "EXPRESS 2500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "04-03",
+        "make": "CHEVROLET",
+        "model": "EXPRESS 2500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "04-03",
+        "make": "CHEVROLET",
+        "model": "EXPRESS 3500",
+        "engine": "V8-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "04-03",
+        "make": "CHEVROLET",
+        "model": "EXPRESS 3500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "05-00",
+        "make": "CHEVROLET",
+        "model": "IMPALA",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "05-00",
+        "make": "CHEVROLET",
+        "model": "IMPALA",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "1993",
+        "make": "CHEVROLET",
+        "model": "LUMINA",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1992",
+        "make": "CHEVROLET",
+        "model": "LUMINA",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "01-92",
+        "make": "CHEVROLET",
+        "model": "LUMINA",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "97-92",
+        "make": "CHEVROLET",
+        "model": "LUMINA",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "99-98",
+        "make": "CHEVROLET",
+        "model": "LUMINA",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "99-97",
+        "make": "CHEVROLET",
+        "model": "MALIBU",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "03-97",
+        "make": "CHEVROLET",
+        "model": "MALIBU",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "99-95",
+        "make": "CHEVROLET",
+        "model": "MONTE CARLO",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "05-00",
+        "make": "CHEVROLET",
+        "model": "MONTE CARLO",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "97-95",
+        "make": "CHEVROLET",
+        "model": "MONTE CARLO",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "05-98",
+        "make": "CHEVROLET",
+        "model": "MONTE CARLO",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "GMC",
+        "model": "SAVANA 1500",
+        "engine": "V6-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "GMC",
+        "model": "SAVANA 1500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "GMC",
+        "model": "SAVANA 2500",
+        "engine": "V8-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "GMC",
+        "model": "SAVANA 2500",
+        "engine": "V8-5.3L",
+        "quantity": 1
+      },
+      {
+        "year": "04-03",
+        "make": "GMC",
+        "model": "SAVANA 2500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "04-03",
+        "make": "GMC",
+        "model": "SAVANA 3500",
+        "engine": "V8-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "GMC",
+        "model": "SAVANA 3500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "99-94",
+        "make": "OLDSMOBILE",
+        "model": "88",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "96-94",
+        "make": "OLDSMOBILE",
+        "model": "98",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "95-92",
+        "make": "OLDSMOBILE",
+        "model": "ACHIEVA",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "98-96",
+        "make": "OLDSMOBILE",
+        "model": "ACHIEVA",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "98-94",
+        "make": "OLDSMOBILE",
+        "model": "ACHIEVA",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "93-92",
+        "make": "OLDSMOBILE",
+        "model": "ACHIEVA",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "04-02",
+        "make": "OLDSMOBILE",
+        "model": "ALERO",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "01-99",
+        "make": "OLDSMOBILE",
+        "model": "ALERO",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "04-99",
+        "make": "OLDSMOBILE",
+        "model": "ALERO",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "OLDSMOBILE",
+        "model": "AURORA",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "03-01",
+        "make": "OLDSMOBILE",
+        "model": "AURORA",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "99-95",
+        "make": "OLDSMOBILE",
+        "model": "AURORA",
+        "engine": "V8-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "99-97",
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "1994",
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS CRUISER",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "97-92",
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS SUPREME",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS SUPREME",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "OLDSMOBILE",
+        "model": "INTRIGUE",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "99-98",
+        "make": "OLDSMOBILE",
+        "model": "INTRIGUE",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "99-96",
+        "make": "OLDSMOBILE",
+        "model": "LSS",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "OLDSMOBILE",
+        "model": "REGENCY",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "05-94",
+        "make": "PONTIAC",
+        "model": "BONNEVILLE",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "05-04",
+        "make": "PONTIAC",
+        "model": "BONNEVILLE",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "95-93",
+        "make": "PONTIAC",
+        "model": "FIREBIRD",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "02-95",
+        "make": "PONTIAC",
+        "model": "FIREBIRD",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "02-93",
+        "make": "PONTIAC",
+        "model": "FIREBIRD",
+        "engine": "V8-5.7L",
+        "quantity": 1
+      },
+      {
+        "year": "00-96",
+        "make": "PONTIAC",
+        "model": "FIREFLY",
+        "engine": "L3-1.0L",
+        "quantity": 1
+      },
+      {
+        "year": "00-96",
+        "make": "PONTIAC",
+        "model": "FIREFLY",
+        "engine": "L4-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "05-02",
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "95-92",
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "01-96",
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "98-94",
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "93-92",
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "05-99",
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "03-92",
+        "make": "PONTIAC",
+        "model": "GRAND PRIX",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "96-92",
+        "make": "PONTIAC",
+        "model": "GRAND PRIX",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "03-97",
+        "make": "PONTIAC",
+        "model": "GRAND PRIX",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "94-92",
+        "make": "PONTIAC",
+        "model": "SUNBIRD",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "94-92",
+        "make": "PONTIAC",
+        "model": "SUNBIRD",
+        "engine": "V6-3.1L",
+        "quantity": 1
+      },
+      {
+        "year": "05-95",
+        "make": "PONTIAC",
+        "model": "SUNFIRE",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1995",
+        "make": "PONTIAC",
+        "model": "SUNFIRE",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "02-96",
+        "make": "PONTIAC",
+        "model": "SUNFIRE",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "G7315DP",
+    "source_part_key": "001491766",
+    "source_totals": {
+      "attributes": 0,
+      "applications": 103,
+      "cross_references": 0
+    },
+    "raw_attributes": [],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": null,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": null,
+        "case_length_in": null,
+        "case_width_in": null,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 103,
+    "all_cross_references_observed": 0,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T06:03:41.607Z",
+  "discovered_from": "G7315DP",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BUICK",
+        "model": "ALLURE",
+        "year": "2005",
+        "engine": "V6-3.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "ALLURE",
+        "year": "2005",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "CENTURY",
+        "year": "05-97",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "LACROSSE",
+        "year": "2005",
+        "engine": "V6-3.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "LACROSSE",
+        "year": "2005",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "LESABRE",
+        "year": "05-94",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "PARK AVENUE",
+        "year": "05-94",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "REGAL",
+        "year": "96-92",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "REGAL",
+        "year": "04-92",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "RIVIERA",
+        "year": "99-95",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "SKYLARK",
+        "year": "95-92",
+        "engine": "L4-2.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "SKYLARK",
+        "year": "98-96",
+        "engine": "L4-2.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "SKYLARK",
+        "year": "98-94",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUICK",
+        "model": "SKYLARK",
+        "year": "93-92",
+        "engine": "V6-3.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "CTS",
+        "year": "04-03",
+        "engine": "V6-3.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "DEVILLE",
+        "year": "05-99",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "DTS",
+        "year": "2006",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "SEVILLE",
+        "year": "04-98",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CADILLAC",
+        "model": "XLR",
+        "year": "2004",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "BERETTA",
+        "year": "96-93",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "BERETTA",
+        "year": "94-93",
+        "engine": "L4-2.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "BERETTA",
+        "year": "96-93",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CAMARO",
+        "year": "95-93",
+        "engine": "V6-3.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CAMARO",
+        "year": "02-95",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CAMARO",
+        "year": "02-93",
+        "engine": "V8-5.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CAVALIER",
+        "year": "05-92",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CAVALIER",
+        "year": "1995",
+        "engine": "L4-2.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CAVALIER",
+        "year": "02-96",
+        "engine": "L4-2.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CAVALIER",
+        "year": "94-92",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CLASSIC",
+        "year": "05-04",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CORSICA",
+        "year": "96-93",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "CORSICA",
+        "year": "96-93",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "EXPRESS 1500",
+        "year": "2003",
+        "engine": "V8-5.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "EXPRESS 2500",
+        "year": "2003",
+        "engine": "V8-4.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "EXPRESS 2500",
+        "year": "2003",
+        "engine": "V8-5.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "EXPRESS 2500",
+        "year": "04-03",
+        "engine": "V8-6.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "EXPRESS 3500",
+        "year": "04-03",
+        "engine": "V8-4.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "EXPRESS 3500",
+        "year": "04-03",
+        "engine": "V8-6.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "IMPALA",
+        "year": "05-00",
+        "engine": "V6-3.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "IMPALA",
+        "year": "05-00",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "LUMINA",
+        "year": "1993",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "LUMINA",
+        "year": "1992",
+        "engine": "L4-2.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "LUMINA",
+        "year": "01-92",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "LUMINA",
+        "year": "97-92",
+        "engine": "V6-3.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "LUMINA",
+        "year": "99-98",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "MALIBU",
+        "year": "99-97",
+        "engine": "L4-2.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "MALIBU",
+        "year": "03-97",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "MONTE CARLO",
+        "year": "99-95",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "MONTE CARLO",
+        "year": "05-00",
+        "engine": "V6-3.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "MONTE CARLO",
+        "year": "97-95",
+        "engine": "V6-3.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "MONTE CARLO",
+        "year": "05-98",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SAVANA 1500",
+        "year": "2003",
+        "engine": "V6-4.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SAVANA 1500",
+        "year": "2003",
+        "engine": "V8-5.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SAVANA 2500",
+        "year": "2003",
+        "engine": "V8-4.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SAVANA 2500",
+        "year": "2003",
+        "engine": "V8-5.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SAVANA 2500",
+        "year": "04-03",
+        "engine": "V8-6.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SAVANA 3500",
+        "year": "04-03",
+        "engine": "V8-4.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "SAVANA 3500",
+        "year": "2003",
+        "engine": "V8-6.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "88",
+        "year": "99-94",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "98",
+        "year": "96-94",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "ACHIEVA",
+        "year": "95-92",
+        "engine": "L4-2.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "ACHIEVA",
+        "year": "98-96",
+        "engine": "L4-2.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "ACHIEVA",
+        "year": "98-94",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "ACHIEVA",
+        "year": "93-92",
+        "engine": "V6-3.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "ALERO",
+        "year": "04-02",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "ALERO",
+        "year": "01-99",
+        "engine": "L4-2.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "ALERO",
+        "year": "04-99",
+        "engine": "V6-3.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "AURORA",
+        "year": "02-01",
+        "engine": "V6-3.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "AURORA",
+        "year": "03-01",
+        "engine": "V8-4.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "AURORA",
+        "year": "99-95",
+        "engine": "V8-4.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS",
+        "year": "99-97",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS CRUISER",
+        "year": "1994",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS SUPREME",
+        "year": "97-92",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "CUTLASS SUPREME",
+        "year": "96-92",
+        "engine": "V6-3.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "INTRIGUE",
+        "year": "02-99",
+        "engine": "V6-3.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "INTRIGUE",
+        "year": "99-98",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "LSS",
+        "year": "99-96",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "OLDSMOBILE",
+        "model": "REGENCY",
+        "year": "98-97",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "BONNEVILLE",
+        "year": "05-94",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "BONNEVILLE",
+        "year": "05-04",
+        "engine": "V8-4.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "FIREBIRD",
+        "year": "95-93",
+        "engine": "V6-3.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "FIREBIRD",
+        "year": "02-95",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "FIREBIRD",
+        "year": "02-93",
+        "engine": "V8-5.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "FIREFLY",
+        "year": "00-96",
+        "engine": "L3-1.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "FIREFLY",
+        "year": "00-96",
+        "engine": "L4-1.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "year": "05-02",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "year": "95-92",
+        "engine": "L4-2.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "year": "01-96",
+        "engine": "L4-2.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "year": "98-94",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "year": "93-92",
+        "engine": "V6-3.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "GRAND AM",
+        "year": "05-99",
+        "engine": "V6-3.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "GRAND PRIX",
+        "year": "03-92",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "GRAND PRIX",
+        "year": "96-92",
+        "engine": "V6-3.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "GRAND PRIX",
+        "year": "03-97",
+        "engine": "V6-3.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "SUNBIRD",
+        "year": "94-92",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "SUNBIRD",
+        "year": "94-92",
+        "engine": "V6-3.1L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "SUNFIRE",
+        "year": "05-95",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "SUNFIRE",
+        "year": "1995",
+        "engine": "L4-2.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "SUNFIRE",
+        "year": "02-96",
+        "engine": "L4-2.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MID BUS",
+        "model": "Cut-Away Chassis (w/General Motors V8-4.8L Vortec Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MID BUS",
+        "model": "Cut-Away Chassis (w/General Motors V8-4.8L Vortec Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MID BUS",
+        "model": "Cut-Away Chassis (w/General Motors V8-6.0L Vortec Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MID BUS",
+        "model": "Cut-Away Chassis (w/General Motors V8-6.0L Vortec Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

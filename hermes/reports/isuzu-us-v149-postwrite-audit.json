@@ -1,0 +1,222 @@
+{
+  "source": "ISUZU_US_DIESEL_MODEL_YEAR_MATRIX_V149_EXISTING_SKUS_ONLY",
+  "checked_at": "2026-09-27T22:27:09.347Z",
+  "skus": [
+    {
+      "sku": "EA14353",
+      "duty": "HEAVY_DUTY",
+      "equipment_count": 26,
+      "vehicle_count": 0,
+      "batch_apps": 1,
+      "missing_batch_apps": 0,
+      "duplicate_exact_rows": 0,
+      "db_hash_matches": true,
+      "engine_hash_matches": true,
+      "evidence_kinds": [
+        "ENGINE",
+        "EQUIPMENT"
+      ],
+      "ok": true
+    },
+    {
+      "sku": "EA17283",
+      "duty": "HEAVY_DUTY",
+      "equipment_count": 86,
+      "vehicle_count": 0,
+      "batch_apps": 3,
+      "missing_batch_apps": 0,
+      "duplicate_exact_rows": 0,
+      "db_hash_matches": true,
+      "engine_hash_matches": true,
+      "evidence_kinds": [
+        "ENGINE",
+        "EQUIPMENT"
+      ],
+      "ok": true
+    },
+    {
+      "sku": "EA13930",
+      "duty": "HEAVY_DUTY",
+      "equipment_count": 59,
+      "vehicle_count": 0,
+      "batch_apps": 2,
+      "missing_batch_apps": 0,
+      "duplicate_exact_rows": 5,
+      "db_hash_matches": true,
+      "engine_hash_matches": true,
+      "evidence_kinds": [
+        "ENGINE",
+        "EQUIPMENT"
+      ],
+      "ok": true
+    },
+    {
+      "sku": "ED41413",
+      "duty": "HEAVY_DUTY",
+      "equipment_count": 3959,
+      "vehicle_count": 0,
+      "batch_apps": 1,
+      "missing_batch_apps": 0,
+      "duplicate_exact_rows": 192,
+      "db_hash_matches": true,
+      "engine_hash_matches": true,
+      "evidence_kinds": [
+        "ENGINE",
+        "EQUIPMENT"
+      ],
+      "ok": true
+    },
+    {
+      "sku": "EF90390",
+      "duty": "HEAVY_DUTY",
+      "equipment_count": 14,
+      "vehicle_count": 0,
+      "batch_apps": 9,
+      "missing_batch_apps": 0,
+      "duplicate_exact_rows": 0,
+      "db_hash_matches": true,
+      "engine_hash_matches": true,
+      "evidence_kinds": [
+        "ENGINE",
+        "EQUIPMENT"
+      ],
+      "ok": true
+    },
+    {
+      "sku": "EF91840",
+      "duty": "HEAVY_DUTY",
+      "equipment_count": 8,
+      "vehicle_count": 0,
+      "batch_apps": 5,
+      "missing_batch_apps": 0,
+      "duplicate_exact_rows": 0,
+      "db_hash_matches": true,
+      "engine_hash_matches": true,
+      "evidence_kinds": [
+        "ENGINE",
+        "EQUIPMENT"
+      ],
+      "ok": true
+    },
+    {
+      "sku": "EF92226",
+      "duty": "HEAVY_DUTY",
+      "equipment_count": 111,
+      "vehicle_count": 0,
+      "batch_apps": 4,
+      "missing_batch_apps": 0,
+      "duplicate_exact_rows": 6,
+      "db_hash_matches": true,
+      "engine_hash_matches": true,
+      "evidence_kinds": [
+        "ENGINE",
+        "EQUIPMENT"
+      ],
+      "ok": true
+    },
+    {
+      "sku": "EF92564",
+      "duty": "HEAVY_DUTY",
+      "equipment_count": 292,
+      "vehicle_count": 0,
+      "batch_apps": 7,
+      "missing_batch_apps": 0,
+      "duplicate_exact_rows": 5,
+      "db_hash_matches": true,
+      "engine_hash_matches": true,
+      "evidence_kinds": [
+        "ENGINE",
+        "EQUIPMENT"
+      ],
+      "ok": true
+    },
+    {
+      "sku": "EF92599",
+      "duty": "HEAVY_DUTY",
+      "equipment_count": 14,
+      "vehicle_count": 0,
+      "batch_apps": 5,
+      "missing_batch_apps": 0,
+      "duplicate_exact_rows": 0,
+      "db_hash_matches": true,
+      "engine_hash_matches": true,
+      "evidence_kinds": [
+        "ENGINE",
+        "EQUIPMENT"
+      ],
+      "ok": true
+    },
+    {
+      "sku": "EL80008",
+      "duty": "HEAVY_DUTY",
+      "equipment_count": 2052,
+      "vehicle_count": 0,
+      "batch_apps": 10,
+      "missing_batch_apps": 0,
+      "duplicate_exact_rows": 382,
+      "db_hash_matches": true,
+      "engine_hash_matches": true,
+      "evidence_kinds": [
+        "ENGINE",
+        "EQUIPMENT"
+      ],
+      "ok": true
+    },
+    {
+      "sku": "EL80606",
+      "duty": "HEAVY_DUTY",
+      "equipment_count": 100,
+      "vehicle_count": 0,
+      "batch_apps": 6,
+      "missing_batch_apps": 0,
+      "duplicate_exact_rows": 0,
+      "db_hash_matches": true,
+      "engine_hash_matches": true,
+      "evidence_kinds": [
+        "ENGINE",
+        "EQUIPMENT"
+      ],
+      "ok": true
+    },
+    {
+      "sku": "EL82042",
+      "duty": "HEAVY_DUTY",
+      "equipment_count": 89,
+      "vehicle_count": 0,
+      "batch_apps": 7,
+      "missing_batch_apps": 0,
+      "duplicate_exact_rows": 8,
+      "db_hash_matches": true,
+      "engine_hash_matches": true,
+      "evidence_kinds": [
+        "ENGINE",
+        "EQUIPMENT"
+      ],
+      "ok": true
+    },
+    {
+      "sku": "EL88076",
+      "duty": "HEAVY_DUTY",
+      "equipment_count": 12,
+      "vehicle_count": 0,
+      "batch_apps": 6,
+      "missing_batch_apps": 0,
+      "duplicate_exact_rows": 0,
+      "db_hash_matches": true,
+      "engine_hash_matches": true,
+      "evidence_kinds": [
+        "ENGINE",
+        "EQUIPMENT"
+      ],
+      "ok": true
+    }
+  ],
+  "errors": [],
+  "summary": {
+    "total": 13,
+    "ok": 13,
+    "errors": 0,
+    "total_missing": 0,
+    "vehicle_rows": 0
+  }
+}

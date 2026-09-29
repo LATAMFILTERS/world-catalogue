@@ -1,0 +1,532 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "AIR",
+  "authority": {
+    "part_number": "CA6816",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CA6816",
+    "product_type": "Air Filter, Air",
+    "duty": "LIGHT_DUTY",
+    "technology": "MACROCORE™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 7.375,
+      "height_mm": 187.32,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Disposable",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25177210"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A1475C"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2830"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "2791"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42791"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87791"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "ECC105003"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "C105003"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "ECC105008"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AH1140"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AHR-81140"
+      },
+      {
+        "manufacturer": "Generac",
+        "part_number": "0C2725"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "PA2830"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA1588"
+      },
+      {
+        "manufacturer": "Leroi",
+        "part_number": "438673"
+      },
+      {
+        "manufacturer": "Leroi",
+        "part_number": "43-867-3"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF8671"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "2791"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CA6816",
+    "source_part_key": "007121907",
+    "source_totals": {
+      "attributes": 30,
+      "applications": 4,
+      "cross_references": 18
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CA6816, HD Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Disposable Air Housing",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose",
+        "recno": "80"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Disposable",
+        "recno": "81"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "83"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Round",
+        "recno": "85"
+      },
+      {
+        "attribute": "Flexible or Rigid",
+        "value": "Rigid",
+        "recno": "86"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "87"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Top Inside Diameter",
+        "value": "Closed",
+        "recno": "89"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Air Filter",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100521736",
+        "recno": "92"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "7.375",
+        "recno": "93"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "94"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "10.500",
+        "recno": "95"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "4.000",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "10.500",
+        "recno": "97"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "98"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "99"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "100"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "2.6000",
+        "recno": "104"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "8.3750",
+        "recno": "105"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "11.0000",
+        "recno": "106"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "11.0000",
+        "recno": "107"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": 2.6,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": 8.375,
+        "case_length_in": 11,
+        "case_width_in": 11,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 4,
+    "all_cross_references_observed": 18,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:49:05.625Z",
+  "discovered_from": "CA6816",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "PUMP INDUSTRIAL GODWIN",
+        "model": "CD150M w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PUMP INDUSTRIAL GODWIN",
+        "model": "CD150M w/Perkins Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PUMP INDUSTRIAL GODWIN",
+        "model": "HL4M w/John Deere 4045 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PUMP INDUSTRIAL GODWIN",
+        "model": "HL4M w/John Deere 4045 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Air",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "A1475C",
+        "source_part_number": "CA6816",
+        "part_key": "007121907",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA2830",
+        "source_part_number": "CA6816",
+        "part_key": "007121907",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "87791",
+        "source_part_number": "CA6816",
+        "part_key": "007121907",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "ECC105003",
+        "source_part_number": "CA6816",
+        "part_key": "007121907",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "C105003",
+        "source_part_number": "CA6816",
+        "part_key": "007121907",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "ECC105008",
+        "source_part_number": "CA6816",
+        "part_key": "007121907",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AH1140",
+        "source_part_number": "CA6816",
+        "part_key": "007121907",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "AHR-81140",
+        "source_part_number": "CA6816",
+        "part_key": "007121907",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Generac",
+        "part_number": "0C2725",
+        "source_part_number": "CA6816",
+        "part_key": "007121907",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25177210",
+        "source_part_number": "CA6816",
+        "part_key": "007121907",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "PA2830",
+        "source_part_number": "CA6816",
+        "part_key": "007121907",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "LA1588",
+        "source_part_number": "CA6816",
+        "part_key": "007121907",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Leroi",
+        "part_number": "438673",
+        "source_part_number": "CA6816",
+        "part_key": "007121907",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Leroi",
+        "part_number": "43-867-3",
+        "source_part_number": "CA6816",
+        "part_key": "007121907",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LAF8671",
+        "source_part_number": "CA6816",
+        "part_key": "007121907",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "2791",
+        "source_part_number": "CA6816",
+        "part_key": "007121907",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "2791",
+        "source_part_number": "CA6816",
+        "part_key": "007121907",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "42791",
+        "source_part_number": "CA6816",
+        "part_key": "007121907",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Air Filter, Air"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

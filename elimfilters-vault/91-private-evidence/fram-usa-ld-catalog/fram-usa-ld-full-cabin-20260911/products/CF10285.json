@@ -1,0 +1,3910 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF10285",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF10285",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.143,
+      "height_mm": 29.03,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "General Motors",
+        "part_number": "19184673"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-YZZ10"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-50100"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-02090"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-08030"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-47010"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-52020"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-0D070"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-76010"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-02020"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-06040"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-48020"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-60020"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-06080"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "7255"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-07010"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-07020"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-30040"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-52040"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-YZZ08"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-47010-83"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-YZZ20"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-30070"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-0D010"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-YZZ16"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA4393"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3502WS"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF1816"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E2945LI"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LAK490"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LA395"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK1919"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4488"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4483"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C35667C"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C35667"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C25851"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24483"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24488"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24511"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-80"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2082"
+      },
+      {
+        "manufacturer": "Blue Print",
+        "part_number": "ADT32514"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "90146C"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "90146P"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1816P"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "XC10036C"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "XC25851"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4483C"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4483"
+      },
+      {
+        "manufacturer": "GK Industries",
+        "part_number": "CF1096"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1289"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1352"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1334"
+      },
+      {
+        "manufacturer": "Jaguar",
+        "part_number": "T2H34776"
+      },
+      {
+        "manufacturer": "Jaguar",
+        "part_number": "C2S 52338"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF2000"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1816P"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1816C"
+      },
+      {
+        "manufacturer": "Land Rover",
+        "part_number": "LR036369"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1816C"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1816P"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3684"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3679"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3686HP"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3686"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "TY05190"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "CAF2024"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "224160"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "224483"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94483"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94488"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94577"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PC-89"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PC-83"
+      },
+      {
+        "manufacturer": "Power Train",
+        "part_number": "3685"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC5667"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC5667C"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "CAF1816M"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "C35667P"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PC-5667"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PBC35667"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1816P"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF1816C"
+      },
+      {
+        "manufacturer": "Subaru",
+        "part_number": "SEDNF-29110"
+      },
+      {
+        "manufacturer": "Subaru",
+        "part_number": "72880-AJ000"
+      },
+      {
+        "manufacturer": "Subaru",
+        "part_number": "SEDNF-29100"
+      },
+      {
+        "manufacturer": "Subaru",
+        "part_number": "87139-52020"
+      },
+      {
+        "manufacturer": "Subaru",
+        "part_number": "72880-AJ00A"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1031"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "25-17",
+        "make": "JAGUAR",
+        "model": "F-PACE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-17",
+        "make": "JAGUAR",
+        "model": "F-PACE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-21",
+        "make": "JAGUAR",
+        "model": "F-PACE",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "JAGUAR",
+        "model": "F-PACE",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "JAGUAR",
+        "model": "F-PACE",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-19",
+        "make": "JAGUAR",
+        "model": "I-PACE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-24",
+        "make": "JAGUAR",
+        "model": "I-PACE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "JAGUAR",
+        "model": "XE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "JAGUAR",
+        "model": "XE",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-17",
+        "make": "JAGUAR",
+        "model": "XE",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2019",
+        "make": "JAGUAR",
+        "model": "XE",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "24-16",
+        "make": "JAGUAR",
+        "model": "XF",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "24-17",
+        "make": "JAGUAR",
+        "model": "XF",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-16",
+        "make": "JAGUAR",
+        "model": "XF",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "LAND ROVER",
+        "model": "DISCOVERY",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "20-17",
+        "make": "LAND ROVER",
+        "model": "DISCOVERY",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-14",
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "21-20",
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-20",
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-14",
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-14",
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-14",
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER SPORT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "21-19",
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER SPORT",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-19",
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER SPORT",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-14",
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER SPORT",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-14",
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER SPORT",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-18",
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER VELAR",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-18",
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER VELAR",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-21",
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER VELAR",
+        "engine": "L6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "20-18",
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER VELAR",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2020",
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER VELAR",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "17-11",
+        "make": "LEXUS",
+        "model": "CT200H",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "17-11",
+        "make": "LEXUS",
+        "model": "CT200H",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "18-13",
+        "make": "LEXUS",
+        "model": "ES300H",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-13",
+        "make": "LEXUS",
+        "model": "ES300H",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "18-07",
+        "make": "LEXUS",
+        "model": "ES350",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-07",
+        "make": "LEXUS",
+        "model": "ES350",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "LEXUS",
+        "model": "GS300",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "LEXUS",
+        "model": "GS300",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "11-07",
+        "make": "LEXUS",
+        "model": "GS350",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "11-07",
+        "make": "LEXUS",
+        "model": "GS350",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "07-06",
+        "make": "LEXUS",
+        "model": "GS430",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "07-06",
+        "make": "LEXUS",
+        "model": "GS430",
+        "engine": "V8-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "11-07",
+        "make": "LEXUS",
+        "model": "GS450H",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "11-07",
+        "make": "LEXUS",
+        "model": "GS450H",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "11-08",
+        "make": "LEXUS",
+        "model": "GS460",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "11-08",
+        "make": "LEXUS",
+        "model": "GS460",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "23-10",
+        "make": "LEXUS",
+        "model": "GX460",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-10",
+        "make": "LEXUS",
+        "model": "GX460",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "12-10",
+        "make": "LEXUS",
+        "model": "HS250H",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "12-10",
+        "make": "LEXUS",
+        "model": "HS250H",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "14-08",
+        "make": "LEXUS",
+        "model": "IS F",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "14-08",
+        "make": "LEXUS",
+        "model": "IS F",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "13-06",
+        "make": "LEXUS",
+        "model": "IS250",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-06",
+        "make": "LEXUS",
+        "model": "IS250",
+        "engine": "V6-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "13-06",
+        "make": "LEXUS",
+        "model": "IS350",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-06",
+        "make": "LEXUS",
+        "model": "IS350",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "2012",
+        "make": "LEXUS",
+        "model": "LFA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2012",
+        "make": "LEXUS",
+        "model": "LFA",
+        "engine": "V10-4.8L",
+        "quantity": 1
+      },
+      {
+        "year": "17-07",
+        "make": "LEXUS",
+        "model": "LS460",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "17-07",
+        "make": "LEXUS",
+        "model": "LS460",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "16-08",
+        "make": "LEXUS",
+        "model": "LS600H",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-08",
+        "make": "LEXUS",
+        "model": "LS600H",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "11-08",
+        "make": "LEXUS",
+        "model": "LX570",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "21-13",
+        "make": "LEXUS",
+        "model": "LX570",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "11-08",
+        "make": "LEXUS",
+        "model": "LX570",
+        "engine": "V8-5.7L",
+        "quantity": 1
+      },
+      {
+        "year": "21-13",
+        "make": "LEXUS",
+        "model": "LX570",
+        "engine": "V8-5.7L",
+        "quantity": 1
+      },
+      {
+        "year": "17-15",
+        "make": "LEXUS",
+        "model": "NX200T",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "17-15",
+        "make": "LEXUS",
+        "model": "NX200T",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-18",
+        "make": "LEXUS",
+        "model": "NX300",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "21-18",
+        "make": "LEXUS",
+        "model": "NX300",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-15",
+        "make": "LEXUS",
+        "model": "NX300H",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "21-15",
+        "make": "LEXUS",
+        "model": "NX300H",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "15-10",
+        "make": "LEXUS",
+        "model": "RX350",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "15-10",
+        "make": "LEXUS",
+        "model": "RX350",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "15-10",
+        "make": "LEXUS",
+        "model": "RX450H",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "15-10",
+        "make": "LEXUS",
+        "model": "RX450H",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "10-09",
+        "make": "PONTIAC",
+        "model": "VIBE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "10-09",
+        "make": "PONTIAC",
+        "model": "VIBE",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "10-09",
+        "make": "PONTIAC",
+        "model": "VIBE",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "2016",
+        "make": "SCION",
+        "model": "IM",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2016",
+        "make": "SCION",
+        "model": "IM",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "16-11",
+        "make": "SCION",
+        "model": "TC",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-11",
+        "make": "SCION",
+        "model": "TC",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "15-08",
+        "make": "SCION",
+        "model": "XB",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "15-08",
+        "make": "SCION",
+        "model": "XB",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "14-08",
+        "make": "SCION",
+        "model": "XD",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "14-08",
+        "make": "SCION",
+        "model": "XD",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "19-10",
+        "make": "SUBARU",
+        "model": "LEGACY",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-10",
+        "make": "SUBARU",
+        "model": "LEGACY",
+        "engine": "H4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "19-10",
+        "make": "SUBARU",
+        "model": "LEGACY",
+        "engine": "H6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "19-10",
+        "make": "SUBARU",
+        "model": "OUTBACK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-10",
+        "make": "SUBARU",
+        "model": "OUTBACK",
+        "engine": "H4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "19-10",
+        "make": "SUBARU",
+        "model": "OUTBACK",
+        "engine": "H6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "24-10",
+        "make": "TOYOTA",
+        "model": "4RUNNER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2010",
+        "make": "TOYOTA",
+        "model": "4RUNNER",
+        "engine": "L4-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "24-10",
+        "make": "TOYOTA",
+        "model": "4RUNNER",
+        "engine": "V6-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-05",
+        "make": "TOYOTA",
+        "model": "AVALON",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-13",
+        "make": "TOYOTA",
+        "model": "AVALON",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "18-05",
+        "make": "TOYOTA",
+        "model": "AVALON",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "17-07",
+        "make": "TOYOTA",
+        "model": "CAMRY",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "11-07",
+        "make": "TOYOTA",
+        "model": "CAMRY",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "17-10",
+        "make": "TOYOTA",
+        "model": "CAMRY",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "17-07",
+        "make": "TOYOTA",
+        "model": "CAMRY",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "19-09",
+        "make": "TOYOTA",
+        "model": "COROLLA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-09",
+        "make": "TOYOTA",
+        "model": "COROLLA",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "13-09",
+        "make": "TOYOTA",
+        "model": "COROLLA",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "18-17",
+        "make": "TOYOTA",
+        "model": "COROLLA IM",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-17",
+        "make": "TOYOTA",
+        "model": "COROLLA IM",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "19-08",
+        "make": "TOYOTA",
+        "model": "HIGHLANDER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-09",
+        "make": "TOYOTA",
+        "model": "HIGHLANDER",
+        "engine": "L4-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "10-08",
+        "make": "TOYOTA",
+        "model": "HIGHLANDER",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "19-08",
+        "make": "TOYOTA",
+        "model": "HIGHLANDER",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "11-08",
+        "make": "TOYOTA",
+        "model": "LAND CRUISER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "21-13",
+        "make": "TOYOTA",
+        "model": "LAND CRUISER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "11-08",
+        "make": "TOYOTA",
+        "model": "LAND CRUISER",
+        "engine": "V8-5.7L",
+        "quantity": 1
+      },
+      {
+        "year": "21-13",
+        "make": "TOYOTA",
+        "model": "LAND CRUISER",
+        "engine": "V8-5.7L",
+        "quantity": 1
+      },
+      {
+        "year": "14-09",
+        "make": "TOYOTA",
+        "model": "MATRIX",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "14-09",
+        "make": "TOYOTA",
+        "model": "MATRIX",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "13-09",
+        "make": "TOYOTA",
+        "model": "MATRIX",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "20-16",
+        "make": "TOYOTA",
+        "model": "MIRAI",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-10",
+        "make": "TOYOTA",
+        "model": "PRIUS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-10",
+        "make": "TOYOTA",
+        "model": "PRIUS",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "19-12",
+        "make": "TOYOTA",
+        "model": "PRIUS C",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-12",
+        "make": "TOYOTA",
+        "model": "PRIUS C",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "15-12",
+        "make": "TOYOTA",
+        "model": "PRIUS PLUG-IN",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "15-12",
+        "make": "TOYOTA",
+        "model": "PRIUS PLUG-IN",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "18-12",
+        "make": "TOYOTA",
+        "model": "PRIUS V",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-12",
+        "make": "TOYOTA",
+        "model": "PRIUS V",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "18-06",
+        "make": "TOYOTA",
+        "model": "RAV4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "08-06",
+        "make": "TOYOTA",
+        "model": "RAV4",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "18-09",
+        "make": "TOYOTA",
+        "model": "RAV4",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "12-06",
+        "make": "TOYOTA",
+        "model": "RAV4",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "22-08",
+        "make": "TOYOTA",
+        "model": "SEQUOIA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "12-10",
+        "make": "TOYOTA",
+        "model": "SEQUOIA",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "09-08",
+        "make": "TOYOTA",
+        "model": "SEQUOIA",
+        "engine": "V8-4.7L",
+        "quantity": 1
+      },
+      {
+        "year": "22-08",
+        "make": "TOYOTA",
+        "model": "SEQUOIA",
+        "engine": "V8-5.7L",
+        "quantity": 1
+      },
+      {
+        "year": "20-11",
+        "make": "TOYOTA",
+        "model": "SIENNA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-11",
+        "make": "TOYOTA",
+        "model": "SIENNA",
+        "engine": "L4-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "20-11",
+        "make": "TOYOTA",
+        "model": "SIENNA",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "21-07",
+        "make": "TOYOTA",
+        "model": "TUNDRA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "14-07",
+        "make": "TOYOTA",
+        "model": "TUNDRA",
+        "engine": "V6-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "19-10",
+        "make": "TOYOTA",
+        "model": "TUNDRA",
+        "engine": "V8-4.6L",
+        "quantity": 1
+      },
+      {
+        "year": "09-07",
+        "make": "TOYOTA",
+        "model": "TUNDRA",
+        "engine": "V8-4.7L",
+        "quantity": 1
+      },
+      {
+        "year": "21-07",
+        "make": "TOYOTA",
+        "model": "TUNDRA",
+        "engine": "V8-5.7L",
+        "quantity": 1
+      },
+      {
+        "year": "16-09",
+        "make": "TOYOTA",
+        "model": "VENZA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "16-09",
+        "make": "TOYOTA",
+        "model": "VENZA",
+        "engine": "L4-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "16-09",
+        "make": "TOYOTA",
+        "model": "VENZA",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "18-06",
+        "make": "TOYOTA",
+        "model": "YARIS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-06",
+        "make": "TOYOTA",
+        "model": "YARIS",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF10285",
+    "source_part_key": "000991596",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 150,
+      "cross_references": 90
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF10285, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.143",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "8.471",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "7.644",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "15",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Behind Glove Box",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100537652",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.5000",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.0000",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "9.0600",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "3.3600",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "8.0700",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "11.4900",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.3800",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "8.7400",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.5,
+        "case_weight_lb": 1,
+        "unit_height_in": 9.06,
+        "unit_length_in": 8.07,
+        "unit_width_in": 1.38,
+        "case_height_in": 3.36,
+        "case_length_in": 11.49,
+        "case_width_in": 8.74,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 6,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 150,
+    "all_cross_references_observed": 90,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T04:59:11.009Z",
+  "discovered_from": "CF10285",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "JAGUAR",
+        "model": "F-PACE",
+        "year": "25-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JAGUAR",
+        "model": "F-PACE",
+        "year": "25-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JAGUAR",
+        "model": "F-PACE",
+        "year": "25-21",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JAGUAR",
+        "model": "F-PACE",
+        "year": "20-17",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JAGUAR",
+        "model": "F-PACE",
+        "year": "25-19",
+        "engine": "V8-5.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JAGUAR",
+        "model": "I-PACE",
+        "year": "22-19",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JAGUAR",
+        "model": "I-PACE",
+        "year": "25-24",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JAGUAR",
+        "model": "XE",
+        "year": "20-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JAGUAR",
+        "model": "XE",
+        "year": "20-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JAGUAR",
+        "model": "XE",
+        "year": "19-17",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JAGUAR",
+        "model": "XE",
+        "year": "2019",
+        "engine": "V8-5.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JAGUAR",
+        "model": "XF",
+        "year": "24-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JAGUAR",
+        "model": "XF",
+        "year": "24-17",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JAGUAR",
+        "model": "XF",
+        "year": "20-16",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "DISCOVERY",
+        "year": "20-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "DISCOVERY",
+        "year": "20-17",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER",
+        "year": "22-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER",
+        "year": "21-20",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER",
+        "year": "22-20",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER",
+        "year": "21-14",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER",
+        "year": "22-14",
+        "engine": "V8-5.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER SPORT",
+        "year": "22-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER SPORT",
+        "year": "21-19",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER SPORT",
+        "year": "22-19",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER SPORT",
+        "year": "21-14",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER SPORT",
+        "year": "22-14",
+        "engine": "V8-5.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER VELAR",
+        "year": "26-18",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER VELAR",
+        "year": "26-18",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER VELAR",
+        "year": "25-21",
+        "engine": "L6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER VELAR",
+        "year": "20-18",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LAND ROVER",
+        "model": "RANGE ROVER VELAR",
+        "year": "2020",
+        "engine": "V8-5.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "CT200H",
+        "year": "17-11",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "CT200H",
+        "year": "17-11",
+        "engine": "L4-1.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "ES300H",
+        "year": "18-13",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "ES300H",
+        "year": "18-13",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "ES350",
+        "year": "18-07",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "ES350",
+        "year": "18-07",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "GS300",
+        "year": "2006",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "GS300",
+        "year": "2006",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "GS350",
+        "year": "11-07",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "GS350",
+        "year": "11-07",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "GS430",
+        "year": "07-06",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "GS430",
+        "year": "07-06",
+        "engine": "V8-4.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "GS450H",
+        "year": "11-07",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "GS450H",
+        "year": "11-07",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "GS460",
+        "year": "11-08",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "GS460",
+        "year": "11-08",
+        "engine": "V8-4.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "GX460",
+        "year": "23-10",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "GX460",
+        "year": "23-10",
+        "engine": "V8-4.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "HS250H",
+        "year": "12-10",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "HS250H",
+        "year": "12-10",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "IS F",
+        "year": "14-08",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "IS F",
+        "year": "14-08",
+        "engine": "V8-5.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "IS250",
+        "year": "13-06",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "IS250",
+        "year": "13-06",
+        "engine": "V6-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "IS350",
+        "year": "13-06",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "IS350",
+        "year": "13-06",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "LFA",
+        "year": "2012",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "LFA",
+        "year": "2012",
+        "engine": "V10-4.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "LS460",
+        "year": "17-07",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "LS460",
+        "year": "17-07",
+        "engine": "V8-4.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "LS600H",
+        "year": "16-08",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "LS600H",
+        "year": "16-08",
+        "engine": "V8-5.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "LX570",
+        "year": "11-08",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "LX570",
+        "year": "21-13",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "LX570",
+        "year": "11-08",
+        "engine": "V8-5.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "LX570",
+        "year": "21-13",
+        "engine": "V8-5.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "NX200T",
+        "year": "17-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "NX200T",
+        "year": "17-15",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "NX300",
+        "year": "21-18",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "NX300",
+        "year": "21-18",
+        "engine": "L4-2.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "NX300H",
+        "year": "21-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "NX300H",
+        "year": "21-15",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "RX350",
+        "year": "15-10",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "RX350",
+        "year": "15-10",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "RX450H",
+        "year": "15-10",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "RX450H",
+        "year": "15-10",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "VIBE",
+        "year": "10-09",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "VIBE",
+        "year": "10-09",
+        "engine": "L4-1.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "VIBE",
+        "year": "10-09",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCION",
+        "model": "IM",
+        "year": "2016",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCION",
+        "model": "IM",
+        "year": "2016",
+        "engine": "L4-1.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCION",
+        "model": "TC",
+        "year": "16-11",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCION",
+        "model": "TC",
+        "year": "16-11",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCION",
+        "model": "XB",
+        "year": "15-08",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCION",
+        "model": "XB",
+        "year": "15-08",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCION",
+        "model": "XD",
+        "year": "14-08",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCION",
+        "model": "XD",
+        "year": "14-08",
+        "engine": "L4-1.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUBARU",
+        "model": "LEGACY",
+        "year": "19-10",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUBARU",
+        "model": "LEGACY",
+        "year": "19-10",
+        "engine": "H4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUBARU",
+        "model": "LEGACY",
+        "year": "19-10",
+        "engine": "H6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUBARU",
+        "model": "OUTBACK",
+        "year": "19-10",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUBARU",
+        "model": "OUTBACK",
+        "year": "19-10",
+        "engine": "H4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUBARU",
+        "model": "OUTBACK",
+        "year": "19-10",
+        "engine": "H6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "4RUNNER",
+        "year": "24-10",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "4RUNNER",
+        "year": "2010",
+        "engine": "L4-2.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "4RUNNER",
+        "year": "24-10",
+        "engine": "V6-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "AVALON",
+        "year": "18-05",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "AVALON",
+        "year": "18-13",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "AVALON",
+        "year": "18-05",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "CAMRY",
+        "year": "17-07",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "CAMRY",
+        "year": "11-07",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "CAMRY",
+        "year": "17-10",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "CAMRY",
+        "year": "17-07",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "COROLLA",
+        "year": "19-09",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "COROLLA",
+        "year": "19-09",
+        "engine": "L4-1.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "COROLLA",
+        "year": "13-09",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "COROLLA IM",
+        "year": "18-17",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "COROLLA IM",
+        "year": "18-17",
+        "engine": "L4-1.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "HIGHLANDER",
+        "year": "19-08",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "HIGHLANDER",
+        "year": "19-09",
+        "engine": "L4-2.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "HIGHLANDER",
+        "year": "10-08",
+        "engine": "V6-3.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "HIGHLANDER",
+        "year": "19-08",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "LAND CRUISER",
+        "year": "11-08",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "LAND CRUISER",
+        "year": "21-13",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "LAND CRUISER",
+        "year": "11-08",
+        "engine": "V8-5.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "LAND CRUISER",
+        "year": "21-13",
+        "engine": "V8-5.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "MATRIX",
+        "year": "14-09",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "MATRIX",
+        "year": "14-09",
+        "engine": "L4-1.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "MATRIX",
+        "year": "13-09",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "MIRAI",
+        "year": "20-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "PRIUS",
+        "year": "16-10",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "PRIUS",
+        "year": "16-10",
+        "engine": "L4-1.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "PRIUS C",
+        "year": "19-12",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "PRIUS C",
+        "year": "19-12",
+        "engine": "L4-1.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "PRIUS PLUG-IN",
+        "year": "15-12",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "PRIUS PLUG-IN",
+        "year": "15-12",
+        "engine": "L4-1.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "PRIUS V",
+        "year": "18-12",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "PRIUS V",
+        "year": "18-12",
+        "engine": "L4-1.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "RAV4",
+        "year": "18-06",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "RAV4",
+        "year": "08-06",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "RAV4",
+        "year": "18-09",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "RAV4",
+        "year": "12-06",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "SEQUOIA",
+        "year": "22-08",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "SEQUOIA",
+        "year": "12-10",
+        "engine": "V8-4.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "SEQUOIA",
+        "year": "09-08",
+        "engine": "V8-4.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "SEQUOIA",
+        "year": "22-08",
+        "engine": "V8-5.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "SIENNA",
+        "year": "20-11",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "SIENNA",
+        "year": "13-11",
+        "engine": "L4-2.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "SIENNA",
+        "year": "20-11",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "TUNDRA",
+        "year": "21-07",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "TUNDRA",
+        "year": "14-07",
+        "engine": "V6-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "TUNDRA",
+        "year": "19-10",
+        "engine": "V8-4.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "TUNDRA",
+        "year": "09-07",
+        "engine": "V8-4.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "TUNDRA",
+        "year": "21-07",
+        "engine": "V8-5.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "VENZA",
+        "year": "16-09",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "VENZA",
+        "year": "16-09",
+        "engine": "L4-2.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "VENZA",
+        "year": "16-09",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "YARIS",
+        "year": "18-06",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "YARIS",
+        "year": "18-06",
+        "engine": "L4-1.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-80",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA4393",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2082",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Blue Print",
+        "part_number": "ADT32514",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3502WS",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "90146C",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "90146P",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1816P",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF1816",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "XC10036C",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "XC25851",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4483C",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4483",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "19184673",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "GK Industries",
+        "part_number": "CF1096",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1289",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1352",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1334",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E2945LI",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Jaguar",
+        "part_number": "T2H34776",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Jaguar",
+        "part_number": "C2S 52338",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF2000",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1816P",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1816C",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Land Rover",
+        "part_number": "LR036369",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1816C",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1816P",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LAK490",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LA395",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK1919",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3684",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3679",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3686HP",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3686",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "TY05190",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "CAF2024",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4488",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4483",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "224160",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "224483",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94483",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94488",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94577",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PC-89",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PC-83",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Power Train",
+        "part_number": "3685",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC5667",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC5667C",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "CAF1816M",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "C35667P",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PC-5667",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C35667C",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C35667",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C25851",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PBC35667",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1816P",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "CAF1816C",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Subaru",
+        "part_number": "SEDNF-29110",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Subaru",
+        "part_number": "72880-AJ000",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Subaru",
+        "part_number": "SEDNF-29100",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Subaru",
+        "part_number": "87139-52020",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Subaru",
+        "part_number": "72880-AJ00A",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-YZZ10",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-50100",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-02090",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-08030",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-47010",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-52020",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-0D070",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-76010",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-02020",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-06040",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-48020",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-60020",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-06080",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "7255",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-07010",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-07020",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-30040",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-52040",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-YZZ08",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-47010-83",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-YZZ20",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-30070",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-0D010",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "87139-YZZ16",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1031",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24483",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24488",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24511",
+        "source_part_number": "CF10285",
+        "part_key": "000991596",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

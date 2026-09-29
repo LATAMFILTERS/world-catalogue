@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0.0",
+  "source": "ISUZU_US_V157_MULTI_SKU_REVALIDATION",
+  "evidence": {
+    "EL80428": {
+      "codigo_base": "P550428",
+      "cross_reference": "WIX 57182",
+      "scope": "ISUZU FTR/FVR Cummins B6.7; excludes FVR DERATE"
+    },
+    "EF93009": {
+      "codigo_base": "P553009",
+      "cross_reference": "WIX WF10564 / Cummins 5303743-5304214 family",
+      "scope": "ISUZU FTR/FVR Cummins B6.7; excludes FVR DERATE"
+    },
+    "EL82597": {
+      "codigo_base": "P502597",
+      "cross_reference": "WIX WL10007",
+      "scope": "ISUZU NPR 4JJ1 2011-2018"
+    }
+  },
+  "skus": [
+    {
+      "sku": "EL80428",
+      "applications": [
+        {"make":"ISUZU","model":"FTR","equipment":"FTR","type":"TRUCK","engine":"Cummins B6.7","year_from":"2022","year_to":"2026"},
+        {"make":"ISUZU","model":"FVR","equipment":"FVR","type":"TRUCK","engine":"Cummins B6.7","year_from":"2022","year_to":"2026"}
+      ]
+    },
+    {
+      "sku": "EF93009",
+      "applications": [
+        {"make":"ISUZU","model":"FTR","equipment":"FTR","type":"TRUCK","engine":"Cummins B6.7","year_from":"2022","year_to":"2026"},
+        {"make":"ISUZU","model":"FVR","equipment":"FVR","type":"TRUCK","engine":"Cummins B6.7","year_from":"2022","year_to":"2026"}
+      ]
+    },
+    {
+      "sku": "EL82597",
+      "applications": [
+        {"make":"ISUZU","model":"NPR","equipment":"NPR","type":"TRUCK","engine":"4JJ1-TC","year_from":"2011","year_to":"2018"}
+      ]
+    }
+  ]
+}

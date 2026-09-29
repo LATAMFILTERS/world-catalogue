@@ -1,0 +1,2573 @@
+{
+  "all": [
+    {
+      "authority": "CA10191",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA38766",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 2,
+          "spec_conflicts": 1,
+          "detail": {
+            "height_mm": {
+              "a": 44.04,
+              "b": "42.06",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Flexible Panel Air Filter",
+              "b": "Flexible Panel Air Filter",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CA10253",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA34137",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "CA10755",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA32377",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 2,
+          "spec_conflicts": 1,
+          "detail": {
+            "height_mm": {
+              "a": 55.88,
+              "b": "46.48",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Flexible Panel Air Filter",
+              "b": "Flexible Panel Air Filter",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CA10986",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA31415",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "CA11003",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA37597",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 2,
+          "spec_conflicts": 1,
+          "detail": {
+            "height_mm": {
+              "a": 41.17,
+              "b": "43.26",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Flexible Panel Air Filter",
+              "b": "Flexible Panel Air Filter",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CA11054",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA30626",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 2,
+          "spec_conflicts": 1,
+          "detail": {
+            "height_mm": {
+              "a": 49.17,
+              "b": "54.1",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Flexible Panel Air Filter",
+              "b": "Flexible Panel Air Filter",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CA11426",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA38023",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "CA258",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA38009",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 2,
+          "spec_conflicts": 1,
+          "detail": {
+            "height_mm": {
+              "a": 310.74,
+              "b": "314.32",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Metal End Air Filter",
+              "b": "Metal End Air Filter",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CA3373",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA33690",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EA33437",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "CA3399",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA31171",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "CA3660",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA38601",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "CA376",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA32262",
+          "evidenceCount": 1,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2,
+          "detail": {
+            "height_mm": {
+              "a": 145.26,
+              "b": "51.21",
+              "ok": false
+            },
+            "outer_diameter_mm": {
+              "a": 226.21,
+              "b": "309.96",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Round Plastisol Air Filter",
+              "b": "Round Plastisol Air Filter",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CA3782SY",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA30272",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 2,
+          "spec_conflicts": 1,
+          "detail": {
+            "height_mm": {
+              "a": 495.3,
+              "b": "365.13",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Metal End Air Filter",
+              "b": "Metal End Air Filter",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CA3873",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA31091",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "CA4576",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA36110",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "CA6324",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA33989",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 2,
+          "spec_conflicts": 1,
+          "detail": {
+            "height_mm": {
+              "a": 469.9,
+              "b": "444.5",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Metal End Air Filter",
+              "b": "Metal End Air Filter",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CA6545",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA31152",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "CA7094",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA37688",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 1,
+          "spec_conflicts": 2,
+          "detail": {
+            "height_mm": {
+              "a": 52.4,
+              "b": "352.42",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Rigid Panel Air Filter",
+              "b": "Metal End Air Filter",
+              "ok": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CA7137SY",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA31553",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 2,
+          "spec_conflicts": 1,
+          "detail": {
+            "height_mm": {
+              "a": 387.35,
+              "b": "361.95",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Metal End Air Filter",
+              "b": "Metal End Air Filter",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CA7614",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA39108",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "CA8038",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA33902",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 1,
+          "spec_conflicts": 2,
+          "detail": {
+            "height_mm": {
+              "a": 282.57,
+              "b": "150.83",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Radial Seal Air Filter",
+              "b": "Round Plastisol Air Filter",
+              "ok": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CA8040",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA32329",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 1,
+          "spec_conflicts": 2,
+          "detail": {
+            "height_mm": {
+              "a": 32.92,
+              "b": "30.94",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Flexible Panel Air Filter",
+              "b": "Rigid Panel Air Filter",
+              "ok": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CA8094",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA38613",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 2,
+          "spec_conflicts": 1,
+          "detail": {
+            "height_mm": {
+              "a": 51.99,
+              "b": "53.19",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Rigid Panel Air Filter",
+              "b": "Rigid Panel Air Filter",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CA8720",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA31109",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "CA8754",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA37008",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "CA8768",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA33698",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "CA9115",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA32517",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "CA9246SY",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA39269",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 1,
+          "spec_conflicts": 2,
+          "detail": {
+            "height_mm": {
+              "a": 300.23,
+              "b": "320.24",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Radial Seal Inner Air Filter",
+              "b": "Radial Seal Air Filter",
+              "ok": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CA9269",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA31831",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 1,
+          "spec_conflicts": 2,
+          "detail": {
+            "height_mm": {
+              "a": 335.79,
+              "b": "334.01",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Radial Seal Air Filter Outer",
+              "b": "HD Radial Seal Air Outer",
+              "ok": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CA9401",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA31960",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 2,
+          "spec_conflicts": 1,
+          "detail": {
+            "height_mm": {
+              "a": 51.21,
+              "b": "58.78",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Flexible Panel Air Filter",
+              "b": "Flexible Panel Air Filter",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CA9634",
+      "family": "AIR",
+      "candidates": [
+        {
+          "sku": "EA30153",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "CF10074",
+      "family": "CABIN",
+      "candidates": [
+        {
+          "sku": "EC32368",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "CF10133",
+      "family": "CABIN",
+      "candidates": [
+        {
+          "sku": "EC32131",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 2,
+          "spec_conflicts": 1,
+          "detail": {
+            "height_mm": {
+              "a": 19,
+              "b": "18.01",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Fresh Breeze Cabin Air Filter",
+              "b": "Fresh Breeze Cabin Air Filter",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CF10135",
+      "family": "CABIN",
+      "candidates": [
+        {
+          "sku": "EC33272",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "CF10208",
+      "family": "CABIN",
+      "candidates": [
+        {
+          "sku": "EC33023",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "CF11173",
+      "family": "CABIN",
+      "candidates": [
+        {
+          "sku": "EC30555",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 2,
+          "spec_conflicts": 1,
+          "detail": {
+            "height_mm": {
+              "a": 20.02,
+              "b": "24.03",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Fresh Breeze Cabin Air Filter",
+              "b": "Fresh Breeze Cabin Air Filter",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CF11663",
+      "family": "CABIN",
+      "candidates": [
+        {
+          "sku": "EC31776",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 2,
+          "spec_conflicts": 1,
+          "detail": {
+            "height_mm": {
+              "a": 18.01,
+              "b": "20.02",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Fresh Breeze Cabin Air Filter",
+              "b": "Fresh Breeze Cabin Air Filter",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CF5972A",
+      "family": "CABIN",
+      "candidates": [
+        {
+          "sku": "EC32745",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "CF8770A",
+      "family": "CABIN",
+      "candidates": [
+        {
+          "sku": "EC38971",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "CH11038",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL36122",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 2,
+          "spec_conflicts": 1,
+          "detail": {
+            "height_mm": {
+              "a": 107.52,
+              "b": "105",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Cartridge",
+              "b": "Cartridge",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CH11665",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL38005",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 2,
+          "spec_conflicts": 1,
+          "detail": {
+            "height_mm": {
+              "a": 155.63,
+              "b": "127.48",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Cartridge",
+              "b": "Cartridge",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "CH6006",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL34797",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 2,
+          "spec_conflicts": 1,
+          "detail": {
+            "height_mm": {
+              "a": 56.74,
+              "b": "104.77",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Cartridge",
+              "b": "Cartridge",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "FD5618",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL31329",
+          "evidenceCount": 1,
+          "spec_comparable": 7,
+          "spec_matches": 4,
+          "spec_conflicts": 3,
+          "detail": {
+            "height_mm": {
+              "a": 120.24,
+              "b": "103.12",
+              "ok": false
+            },
+            "outer_diameter_mm": {
+              "a": 78.59,
+              "b": "75.69",
+              "ok": false
+            },
+            "gasket_od_mm": {
+              "a": 66.37,
+              "b": "70.1",
+              "ok": false
+            },
+            "gasket_id_mm": {
+              "a": 62.71,
+              "b": "62.23",
+              "ok": true
+            },
+            "thread_size": {
+              "a": "1-12",
+              "b": "1-12",
+              "ok": true
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Spin-On Canister",
+              "b": "Spin-On Canister",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "FDC11173C",
+      "family": "CABIN",
+      "candidates": [
+        {
+          "sku": "EC30555",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 1,
+          "spec_conflicts": 2,
+          "detail": {
+            "height_mm": {
+              "a": 19.05,
+              "b": "24.03",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Drive Cabin Air Filter",
+              "b": "Fresh Breeze Cabin Air Filter",
+              "ok": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "FDC11663C",
+      "family": "CABIN",
+      "candidates": [
+        {
+          "sku": "EC31776",
+          "evidenceCount": 1,
+          "spec_comparable": 3,
+          "spec_matches": 1,
+          "spec_conflicts": 2,
+          "detail": {
+            "height_mm": {
+              "a": 17.02,
+              "b": "20.02",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Drive Cabin Air Filter",
+              "b": "Fresh Breeze Cabin Air Filter",
+              "ok": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "G3727FP",
+      "family": "FUEL",
+      "candidates": [
+        {
+          "sku": "EF33802",
+          "evidenceCount": 1,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "detail": {
+            "height_mm": {
+              "a": 109.86,
+              "b": "109.86",
+              "ok": true
+            },
+            "outer_diameter_mm": {
+              "a": 58.88,
+              "b": "58.88",
+              "ok": true
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "In Line",
+              "b": "In Line",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "G3802AFP",
+      "family": "FUEL",
+      "candidates": [
+        {
+          "sku": "EF33802",
+          "evidenceCount": 1,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2,
+          "detail": {
+            "height_mm": {
+              "a": 147.12,
+              "b": "109.86",
+              "ok": false
+            },
+            "outer_diameter_mm": {
+              "a": 77.8,
+              "b": "58.88",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "In Line",
+              "b": "In Line",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "G3831",
+      "family": "FUEL",
+      "candidates": [
+        {
+          "sku": "EF33010",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EF38309",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "G6462",
+      "family": "FUEL",
+      "candidates": [
+        {
+          "sku": "EF31426",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "G7194",
+      "family": "FUEL",
+      "candidates": [
+        {
+          "sku": "EF36612",
+          "evidenceCount": 1,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2,
+          "detail": {
+            "height_mm": {
+              "a": 117.07,
+              "b": "164.34",
+              "ok": false
+            },
+            "outer_diameter_mm": {
+              "a": 71.04,
+              "b": "54.86",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "In Line",
+              "b": "In Line",
+              "ok": true
+            }
+          }
+        },
+        {
+          "sku": "EF31426",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "G7355",
+      "family": "FUEL",
+      "candidates": [
+        {
+          "sku": "EF31426",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "G7766",
+      "family": "FUEL",
+      "candidates": [
+        {
+          "sku": "EF31426",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "PH10890",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL32941",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "PH2815",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL32013",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32016",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32021",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL30610",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34011",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34022",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32012",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39201",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32018",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32019",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39202",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32022",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32025",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32026",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39203",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32036",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39204",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39205",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32081",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39209",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39301",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL33014",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL33019",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39302",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39304",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39308",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34012",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34015",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34016",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34017",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34023",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34025",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32510",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34032",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34048",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL30510",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL35110",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39407",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34070",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39409",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32015",
+          "evidenceCount": 1,
+          "spec_comparable": 6,
+          "spec_matches": 1,
+          "spec_conflicts": 5,
+          "detail": {
+            "height_mm": {
+              "a": 138.84,
+              "b": "148.69",
+              "ok": false
+            },
+            "outer_diameter_mm": {
+              "a": 93.68,
+              "b": "120.65",
+              "ok": false
+            },
+            "gasket_od_mm": {
+              "a": 71.45,
+              "b": "106.38",
+              "ok": false
+            },
+            "gasket_id_mm": {
+              "a": 62.71,
+              "b": "92.2",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Spin-On Canister",
+              "b": "Cartridge",
+              "ok": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "PH3506",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL30060",
+          "evidenceCount": 1,
+          "spec_comparable": 7,
+          "spec_matches": 5,
+          "spec_conflicts": 2,
+          "detail": {
+            "height_mm": {
+              "a": 85.32,
+              "b": "84.58",
+              "ok": false
+            },
+            "outer_diameter_mm": {
+              "a": 75.79,
+              "b": "76.2",
+              "ok": true
+            },
+            "gasket_od_mm": {
+              "a": 69.85,
+              "b": "70.1",
+              "ok": true
+            },
+            "gasket_id_mm": {
+              "a": 62.71,
+              "b": "62.23",
+              "ok": true
+            },
+            "thread_size": {
+              "a": "13/16-16",
+              "b": "Metric",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Spin-On Canister",
+              "b": "Spin-On Canister",
+              "ok": true
+            }
+          }
+        },
+        {
+          "sku": "EL31222",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "PH3569",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL30830",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32013",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32016",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32021",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL30610",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32012",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39201",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32018",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32019",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39202",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32022",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32025",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32026",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39203",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32036",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39204",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39205",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32081",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39209",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39301",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL33014",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL33019",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39302",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39304",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39308",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32015",
+          "evidenceCount": 1,
+          "spec_comparable": 6,
+          "spec_matches": 1,
+          "spec_conflicts": 5,
+          "detail": {
+            "height_mm": {
+              "a": 131.37,
+              "b": "148.69",
+              "ok": false
+            },
+            "outer_diameter_mm": {
+              "a": 93.68,
+              "b": "120.65",
+              "ok": false
+            },
+            "gasket_od_mm": {
+              "a": 71.45,
+              "b": "106.38",
+              "ok": false
+            },
+            "gasket_id_mm": {
+              "a": 61.52,
+              "b": "92.2",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Spin-On Canister",
+              "b": "Cartridge",
+              "ok": false
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "PH3616",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL31180",
+          "evidenceCount": 1,
+          "spec_comparable": 7,
+          "spec_matches": 5,
+          "spec_conflicts": 2,
+          "detail": {
+            "height_mm": {
+              "a": 130.56,
+              "b": "78.59",
+              "ok": false
+            },
+            "outer_diameter_mm": {
+              "a": 96.04,
+              "b": "92.86",
+              "ok": false
+            },
+            "gasket_od_mm": {
+              "a": 71.45,
+              "b": "71.04",
+              "ok": true
+            },
+            "gasket_id_mm": {
+              "a": 61.52,
+              "b": "61.52",
+              "ok": true
+            },
+            "thread_size": {
+              "a": "Metric",
+              "b": "Metric",
+              "ok": true
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Spin-On Canister",
+              "b": "Spin-On Canister",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "PH3675",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL39362",
+          "evidenceCount": 1,
+          "spec_comparable": 7,
+          "spec_matches": 3,
+          "spec_conflicts": 4,
+          "detail": {
+            "height_mm": {
+              "a": 103.58,
+              "b": "102.79",
+              "ok": false
+            },
+            "outer_diameter_mm": {
+              "a": 75.79,
+              "b": "96.04",
+              "ok": false
+            },
+            "gasket_od_mm": {
+              "a": 69.85,
+              "b": "71.04",
+              "ok": false
+            },
+            "gasket_id_mm": {
+              "a": 62.31,
+              "b": "61.47",
+              "ok": false
+            },
+            "thread_size": {
+              "a": "13/16-16",
+              "b": "13/16-16",
+              "ok": true
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Spin-On Canister",
+              "b": "Spin-On Canister",
+              "ok": true
+            }
+          }
+        },
+        {
+          "sku": "EL30060",
+          "evidenceCount": 1,
+          "spec_comparable": 7,
+          "spec_matches": 5,
+          "spec_conflicts": 2,
+          "detail": {
+            "height_mm": {
+              "a": 103.58,
+              "b": "84.58",
+              "ok": false
+            },
+            "outer_diameter_mm": {
+              "a": 75.79,
+              "b": "76.2",
+              "ok": true
+            },
+            "gasket_od_mm": {
+              "a": 69.85,
+              "b": "70.1",
+              "ok": true
+            },
+            "gasket_id_mm": {
+              "a": 62.31,
+              "b": "62.23",
+              "ok": true
+            },
+            "thread_size": {
+              "a": "13/16-16",
+              "b": "Metric",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Spin-On Canister",
+              "b": "Spin-On Canister",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "PH3690",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL32205",
+          "evidenceCount": 1,
+          "spec_comparable": 7,
+          "spec_matches": 4,
+          "spec_conflicts": 3,
+          "detail": {
+            "height_mm": {
+              "a": 159.77,
+              "b": "205.74",
+              "ok": false
+            },
+            "outer_diameter_mm": {
+              "a": 118.36,
+              "b": "118.36",
+              "ok": true
+            },
+            "gasket_od_mm": {
+              "a": 109.98,
+              "b": "103.12",
+              "ok": false
+            },
+            "gasket_id_mm": {
+              "a": 97.79,
+              "b": "97.79",
+              "ok": true
+            },
+            "thread_size": {
+              "a": "1-12",
+              "b": "1 1/2-12",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Spin-On Canister",
+              "b": "Spin-On Canister",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "PH46",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL37181",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "PH5343",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL30671",
+          "evidenceCount": 1,
+          "spec_comparable": 7,
+          "spec_matches": 3,
+          "spec_conflicts": 4,
+          "detail": {
+            "height_mm": {
+              "a": 88.11,
+              "b": "85.32",
+              "ok": false
+            },
+            "outer_diameter_mm": {
+              "a": 68.28,
+              "b": "76.2",
+              "ok": false
+            },
+            "gasket_od_mm": {
+              "a": 59.36,
+              "b": "61.47",
+              "ok": false
+            },
+            "gasket_id_mm": {
+              "a": 55.8,
+              "b": "53.97",
+              "ok": false
+            },
+            "thread_size": {
+              "a": "Metric",
+              "b": "Metric",
+              "ok": true
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Spin-On Canister",
+              "b": "Spin-On Canister",
+              "ok": true
+            }
+          }
+        },
+        {
+          "sku": "EL37023",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "PH7136",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL31701",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31702",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "PH7317",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL36019",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "PH9376",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL30234",
+          "evidenceCount": 1,
+          "spec_comparable": 7,
+          "spec_matches": 6,
+          "spec_conflicts": 1,
+          "detail": {
+            "height_mm": {
+              "a": 250.6,
+              "b": "264.57",
+              "ok": false
+            },
+            "outer_diameter_mm": {
+              "a": 108,
+              "b": "108.2",
+              "ok": true
+            },
+            "gasket_od_mm": {
+              "a": 101.5,
+              "b": "101.09",
+              "ok": true
+            },
+            "gasket_id_mm": {
+              "a": 91.49,
+              "b": "91.19",
+              "ok": true
+            },
+            "thread_size": {
+              "a": "1 1/8-16",
+              "b": "1 1/8-16",
+              "ok": true
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Spin-On Canister",
+              "b": "Spin-On Canister",
+              "ok": true
+            }
+          }
+        }
+      ]
+    },
+    {
+      "authority": "PH977A",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL34011",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34022",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34012",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34015",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34016",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34017",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34023",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34025",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32510",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34032",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34048",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL30510",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL35110",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39407",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34070",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39409",
+          "evidenceCount": 1,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ]
+    },
+    {
+      "authority": "PH9837",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL39362",
+          "evidenceCount": 1,
+          "spec_comparable": 7,
+          "spec_matches": 4,
+          "spec_conflicts": 3,
+          "detail": {
+            "height_mm": {
+              "a": 103.12,
+              "b": "102.79",
+              "ok": true
+            },
+            "outer_diameter_mm": {
+              "a": 75.69,
+              "b": "96.04",
+              "ok": false
+            },
+            "gasket_od_mm": {
+              "a": 70.26,
+              "b": "71.04",
+              "ok": false
+            },
+            "gasket_id_mm": {
+              "a": 62.31,
+              "b": "61.47",
+              "ok": false
+            },
+            "thread_size": {
+              "a": "13/16-16",
+              "b": "13/16-16",
+              "ok": true
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Spin-On Canister",
+              "b": "Spin-On Canister",
+              "ok": true
+            }
+          }
+        },
+        {
+          "sku": "EL30060",
+          "evidenceCount": 1,
+          "spec_comparable": 7,
+          "spec_matches": 5,
+          "spec_conflicts": 2,
+          "detail": {
+            "height_mm": {
+              "a": 103.12,
+              "b": "84.58",
+              "ok": false
+            },
+            "outer_diameter_mm": {
+              "a": 75.69,
+              "b": "76.2",
+              "ok": true
+            },
+            "gasket_od_mm": {
+              "a": 70.26,
+              "b": "70.1",
+              "ok": true
+            },
+            "gasket_id_mm": {
+              "a": 62.31,
+              "b": "62.23",
+              "ok": true
+            },
+            "thread_size": {
+              "a": "13/16-16",
+              "b": "Metric",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Spin-On Canister",
+              "b": "Spin-On Canister",
+              "ok": true
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "strong": [
+    {
+      "authority": "G3727FP",
+      "family": "FUEL",
+      "candidates": [
+        {
+          "sku": "EF33802",
+          "evidenceCount": 1,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "detail": {
+            "height_mm": {
+              "a": 109.86,
+              "b": "109.86",
+              "ok": true
+            },
+            "outer_diameter_mm": {
+              "a": 58.88,
+              "b": "58.88",
+              "ok": true
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "In Line",
+              "b": "In Line",
+              "ok": true
+            }
+          }
+        }
+      ],
+      "resolvedSku": "EF33802",
+      "evidence": {
+        "sku": "EF33802",
+        "evidenceCount": 1,
+        "spec_comparable": 4,
+        "spec_matches": 4,
+        "spec_conflicts": 0,
+        "detail": {
+          "height_mm": {
+            "a": 109.86,
+            "b": "109.86",
+            "ok": true
+          },
+          "outer_diameter_mm": {
+            "a": 58.88,
+            "b": "58.88",
+            "ok": true
+          },
+          "media_type": {
+            "a": "Genuine Media",
+            "b": "Genuine Media",
+            "ok": true
+          },
+          "style": {
+            "a": "In Line",
+            "b": "In Line",
+            "ok": true
+          }
+        }
+      }
+    }
+  ]
+}

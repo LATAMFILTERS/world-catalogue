@@ -1,0 +1,24 @@
+{
+  "phase": "ISUZU_MASTER_READY",
+  "apply": true,
+  "database_write": true,
+  "rows": [
+    {
+      "sku": "EF93009",
+      "ready_positions": 5,
+      "added_ranges": 0
+    },
+    {
+      "sku": "EL80428",
+      "ready_positions": 5,
+      "added_ranges": 0
+    }
+  ],
+  "backup_path": "hermes/backups/isuzu-master/prewrite-2026-09-28T13-40-34-261Z.json",
+  "summary": {
+    "skus": 2,
+    "ready_positions": 10,
+    "added_ranges": 0,
+    "database_write": true
+  }
+}

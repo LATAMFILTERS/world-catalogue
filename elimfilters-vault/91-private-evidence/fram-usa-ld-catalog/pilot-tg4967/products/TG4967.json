@@ -1,0 +1,6403 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "USA_NORTH_AMERICA",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "TG4967",
+    "line": "TOUGH_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "TG4967",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 2.688,
+      "outer_diameter_mm": 68.28,
+      "height_in": 2.922,
+      "height_mm": 74.22,
+      "thread_size": "3/4-16",
+      "gasket_od_in": 2.438,
+      "gasket_od_mm": 61.93,
+      "gasket_id_in": 2.188,
+      "gasket_id_mm": 55.58,
+      "gasket_thickness_in": 0.188,
+      "gasket_thickness_mm": 4.78,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "Yes",
+      "bypass_relief_valve": "Yes",
+      "bypass_setting_psi": 12,
+      "burst_pressure_psi": 350
+    },
+    "alternatives": [
+      "COR4967ACC",
+      "FD4967",
+      "FF4967",
+      "FP4967BP",
+      "FE4967",
+      "FS4967",
+      "XG4967"
+    ],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "3005-948"
+      },
+      {
+        "manufacturer": "Ariens",
+        "part_number": "21527000"
+      },
+      {
+        "manufacturer": "Ariens",
+        "part_number": "21380000"
+      },
+      {
+        "manufacturer": "Ariens",
+        "part_number": "21535800"
+      },
+      {
+        "manufacturer": "Briggs & Stratton",
+        "part_number": "692513"
+      },
+      {
+        "manufacturer": "Briggs & Stratton",
+        "part_number": "499532"
+      },
+      {
+        "manufacturer": "Briggs & Stratton",
+        "part_number": "820314"
+      },
+      {
+        "manufacturer": "Club Car",
+        "part_number": "1016467"
+      },
+      {
+        "manufacturer": "Daihatsu",
+        "part_number": "15601-87204-000"
+      },
+      {
+        "manufacturer": "Daihatsu",
+        "part_number": "15601-87107"
+      },
+      {
+        "manufacturer": "Daihatsu",
+        "part_number": "15601-87703"
+      },
+      {
+        "manufacturer": "Geely",
+        "part_number": "JX0604"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "94853643"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25161880"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "94847351"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "94858995"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "94851874"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "88971573"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AM39687"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "ET15499"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AM107423"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AM105555"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "49065-2075"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "16097-1069"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "49065-7004"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "49065-2060"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "16097-0010"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "49065-2081"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "49065-2071"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "49065-2078"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "49065-7010"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "49065-0724"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "49065-2076"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "45065-2071"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "49065-2077"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "49065-2068"
+      },
+      {
+        "manufacturer": "Mazda",
+        "part_number": "CWA1-14-302"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-82703"
+      },
+      {
+        "manufacturer": "Toro",
+        "part_number": "KW10761"
+      },
+      {
+        "manufacturer": "Toro",
+        "part_number": "NN10684"
+      },
+      {
+        "manufacturer": "Toro",
+        "part_number": "136-7848"
+      },
+      {
+        "manufacturer": "Toro",
+        "part_number": "120-4276"
+      },
+      {
+        "manufacturer": "Toro",
+        "part_number": "127-9222"
+      },
+      {
+        "manufacturer": "Toro",
+        "part_number": "KW10586"
+      },
+      {
+        "manufacturer": "Toro",
+        "part_number": "108-3842"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-10001"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-10009"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-YZZF8"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90080-91034"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-03001"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "08922-02002"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-TA002"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-10003"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-YZZN1"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-10004"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90080-91058"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "08922-02005"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-YZZA2"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-TA001"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90080-91210"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "C0120-00013"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-YZZF2"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-YZZM1"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "15600-16020"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2127"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF1233"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2128"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2246"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B33"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7165"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "72167"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "3311"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "D3311"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "COS4967"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "41394T"
+      },
+      {
+        "manufacturer": "DENSO",
+        "part_number": "115010-1291"
+      },
+      {
+        "manufacturer": "DENSO",
+        "part_number": "115010-5480"
+      },
+      {
+        "manufacturer": "DENSO",
+        "part_number": "150-1000"
+      },
+      {
+        "manufacturer": "DENSO",
+        "part_number": "115010-1780"
+      },
+      {
+        "manufacturer": "DENSO",
+        "part_number": "115010-16020"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OC340"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W68/80"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "ML 1009"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W68/1"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-836"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1394"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1065"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1395"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L14476"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "PL14476"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "PSL14476"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51395"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51394XP"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WL10332"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51394"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "American SportWorks",
+        "part_number": "2-20159"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "ASF10"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "EAO09"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "SDF10"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "EA15K09"
+      },
+      {
+        "manufacturer": "Autopar - Archived",
+        "part_number": "FE308"
+      },
+      {
+        "manufacturer": "Autopar - Archived",
+        "part_number": "FE254"
+      },
+      {
+        "manufacturer": "Autopro",
+        "part_number": "2394"
+      },
+      {
+        "manufacturer": "Bad Boy Mowers",
+        "part_number": "063-2090"
+      },
+      {
+        "manufacturer": "Bad Boy Mowers",
+        "part_number": "063-8017-00"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "041-0750"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "041-8066"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92394"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92395"
+      },
+      {
+        "manufacturer": "Cam2",
+        "part_number": "C4476"
+      },
+      {
+        "manufacturer": "Canada Tire",
+        "part_number": "17-1717-2"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85394"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "R85394"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85395"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "85394"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CF308"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CF410"
+      },
+      {
+        "manufacturer": "Castrol",
+        "part_number": "CAS4967"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "CO2840"
+      },
+      {
+        "manufacturer": "Certified",
+        "part_number": "CPH4967"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "PH2840"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "PH3656"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "part_number": "41394T"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "part_number": "COS4967"
+      },
+      {
+        "manufacturer": "Chery",
+        "part_number": "372-1012010"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "2077"
+      },
+      {
+        "manufacturer": "Cub Cadet",
+        "part_number": "15200-003-0000"
+      },
+      {
+        "manufacturer": "Cub Cadet",
+        "part_number": "490-201-0001"
+      },
+      {
+        "manufacturer": "Cushman",
+        "part_number": "D368"
+      },
+      {
+        "manufacturer": "Cushman",
+        "part_number": "833438"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DL4967"
+      },
+      {
+        "manufacturer": "Delphi",
+        "part_number": "FX1006"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "D368"
+      },
+      {
+        "manufacturer": "Distance Plus",
+        "part_number": "D3311"
+      },
+      {
+        "manufacturer": "Distance Plus",
+        "part_number": "D3325"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P502024"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P502015"
+      },
+      {
+        "manufacturer": "Driveworks",
+        "part_number": "DW-4476"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "S5608"
+      },
+      {
+        "manufacturer": "Econo-lube",
+        "part_number": "L22821"
+      },
+      {
+        "manufacturer": "Evergard",
+        "part_number": "E4476"
+      },
+      {
+        "manufacturer": "FERGUSON",
+        "part_number": "F2840"
+      },
+      {
+        "manufacturer": "Ferris",
+        "part_number": "5021334X1"
+      },
+      {
+        "manufacturer": "Firestone",
+        "part_number": "TF4477"
+      },
+      {
+        "manufacturer": "Flag",
+        "part_number": "C-4967"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "C-4967"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3614"
+      },
+      {
+        "manufacturer": "Fuji Heavy Industrial",
+        "part_number": "248-65801-00"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F2840"
+      },
+      {
+        "manufacturer": "Generac",
+        "part_number": "070185B"
+      },
+      {
+        "manufacturer": "Generac",
+        "part_number": "070185BS"
+      },
+      {
+        "manufacturer": "Generac",
+        "part_number": "070185D"
+      },
+      {
+        "manufacturer": "Generac",
+        "part_number": "070185"
+      },
+      {
+        "manufacturer": "Generac",
+        "part_number": "1323"
+      },
+      {
+        "manufacturer": "Generac",
+        "part_number": "70185"
+      },
+      {
+        "manufacturer": "Girling",
+        "part_number": "F6586"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "PH2840"
+      },
+      {
+        "manufacturer": "Grasshopper",
+        "part_number": "100806"
+      },
+      {
+        "manufacturer": "Gravely",
+        "part_number": "43594"
+      },
+      {
+        "manufacturer": "Grease Monkey",
+        "part_number": "GM22821"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "PL14476"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "V4476"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "V4477"
+      },
+      {
+        "manufacturer": "Harley Davidson",
+        "part_number": "63806-00Y"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF410F"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF410"
+      },
+      {
+        "manufacturer": "Hesston",
+        "part_number": "72859"
+      },
+      {
+        "manufacturer": "HiFlo",
+        "part_number": "HF177"
+      },
+      {
+        "manufacturer": "HiFlo",
+        "part_number": "HF128"
+      },
+      {
+        "manufacturer": "Husqvarna",
+        "part_number": "531 30 73-88"
+      },
+      {
+        "manufacturer": "Hustler",
+        "part_number": "772079"
+      },
+      {
+        "manufacturer": "IAPCO",
+        "part_number": "OF1"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "AL4967"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "ML4967"
+      },
+      {
+        "manufacturer": "IPD",
+        "part_number": "10131"
+      },
+      {
+        "manufacturer": "ITM",
+        "part_number": "11-11514"
+      },
+      {
+        "manufacturer": "ITM Autoparts",
+        "part_number": "11-11514"
+      },
+      {
+        "manufacturer": "Jacobsen",
+        "part_number": "2701908"
+      },
+      {
+        "manufacturer": "Jiffy Lube",
+        "part_number": "JL4476"
+      },
+      {
+        "manufacturer": "Jiffy Lube",
+        "part_number": "HL4967"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "HP-1003"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "PS-1003"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "KN-128"
+      },
+      {
+        "manufacturer": "Kees",
+        "part_number": "1992581"
+      },
+      {
+        "manufacturer": "Kees",
+        "part_number": "7077288YP"
+      },
+      {
+        "manufacturer": "Kees",
+        "part_number": "7-7355"
+      },
+      {
+        "manufacturer": "Kees",
+        "part_number": "7077288"
+      },
+      {
+        "manufacturer": "Kees",
+        "part_number": "77288"
+      },
+      {
+        "manufacturer": "Koehler",
+        "part_number": "359771"
+      },
+      {
+        "manufacturer": "Kohler",
+        "part_number": "359771"
+      },
+      {
+        "manufacturer": "Lazorlite",
+        "part_number": "L11-1899"
+      },
+      {
+        "manufacturer": "Lee",
+        "part_number": "LF-2840"
+      },
+      {
+        "manufacturer": "Lee",
+        "part_number": "LF-2840HP"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH2840"
+      },
+      {
+        "manufacturer": "Magneti Marelli",
+        "part_number": "1AMFL00007"
+      },
+      {
+        "manufacturer": "Master Parts",
+        "part_number": "PH-2840"
+      },
+      {
+        "manufacturer": "Mercury",
+        "part_number": "35-8222626Q15"
+      },
+      {
+        "manufacturer": "Mercury",
+        "part_number": "Q15"
+      },
+      {
+        "manufacturer": "Mercury",
+        "part_number": "35-822626T7"
+      },
+      {
+        "manufacturer": "Mercury",
+        "part_number": "T653945"
+      },
+      {
+        "manufacturer": "Mercury Marine",
+        "part_number": "35-8222626Q15"
+      },
+      {
+        "manufacturer": "Mercury Marine",
+        "part_number": "T653945"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "MGL4967"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "MGL10332"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "T4477SP"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "M4477"
+      },
+      {
+        "manufacturer": "Mileguard",
+        "part_number": "MO4967"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "MO4477"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1-103A"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1-103"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "FE00308"
+      },
+      {
+        "manufacturer": "MotoMaster",
+        "part_number": "MPH4967"
+      },
+      {
+        "manufacturer": "MTD Products",
+        "part_number": "15200-003-0000"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "1394"
+      },
+      {
+        "manufacturer": "NAPA Platinum Filters",
+        "part_number": "41394"
+      },
+      {
+        "manufacturer": "NAPA Silver Filters",
+        "part_number": "21394"
+      },
+      {
+        "manufacturer": "OE+",
+        "part_number": "OF-440"
+      },
+      {
+        "manufacturer": "OMC",
+        "part_number": "5033539"
+      },
+      {
+        "manufacturer": "OMC",
+        "part_number": "434839"
+      },
+      {
+        "manufacturer": "OMC",
+        "part_number": "778886"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "122-0737-02"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "122-0737"
+      },
+      {
+        "manufacturer": "One Performance",
+        "part_number": "122-0737-02"
+      },
+      {
+        "manufacturer": "One Performance",
+        "part_number": "122-0737"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "WL610332X"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "61396"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "61394"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "61394X"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "PH2840"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ-197"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ-39"
+      },
+      {
+        "manufacturer": "Pentius",
+        "part_number": "PLB4967"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PO-39"
+      },
+      {
+        "manufacturer": "Phillips 66",
+        "part_number": "PO1394"
+      },
+      {
+        "manufacturer": "Power Flo",
+        "part_number": "SL14477"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PG4476"
+      },
+      {
+        "manufacturer": "Prime Guard Filters - Archived",
+        "part_number": "POF4476"
+      },
+      {
+        "manufacturer": "Professionals Choice - Archived",
+        "part_number": "Q4476"
+      },
+      {
+        "manufacturer": "Pro-Gauge",
+        "part_number": "PGO-4476"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "PH4476"
+      },
+      {
+        "manufacturer": "Pro-Tec",
+        "part_number": "154"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PBL14476"
+      },
+      {
+        "manufacturer": "Purolator PureONE",
+        "part_number": "PL22821"
+      },
+      {
+        "manufacturer": "Purolator PureONE",
+        "part_number": "PL14476"
+      },
+      {
+        "manufacturer": "Purolator TECH",
+        "part_number": "TL14476"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "part_number": "PL14476"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "part_number": "PL11411"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "part_number": "PL22821"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "PL14476"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "QS4967"
+      },
+      {
+        "manufacturer": "Robin",
+        "part_number": "261-65902-AO"
+      },
+      {
+        "manufacturer": "Robin",
+        "part_number": "248-65801-00"
+      },
+      {
+        "manufacturer": "Rockhill",
+        "part_number": "61394"
+      },
+      {
+        "manufacturer": "Rotary Lifts",
+        "part_number": "6600"
+      },
+      {
+        "manufacturer": "Security Filters",
+        "part_number": "SO2840"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "M4476"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "SH525"
+      },
+      {
+        "manufacturer": "Sierra",
+        "part_number": "18-7897"
+      },
+      {
+        "manufacturer": "Sierra",
+        "part_number": "18-7906-1"
+      },
+      {
+        "manufacturer": "Sierra",
+        "part_number": "18-7916"
+      },
+      {
+        "manufacturer": "Sierra",
+        "part_number": "18-7906"
+      },
+      {
+        "manufacturer": "Silverline",
+        "part_number": "21394"
+      },
+      {
+        "manufacturer": "Snapper",
+        "part_number": "77288"
+      },
+      {
+        "manufacturer": "Snapper",
+        "part_number": "7077288YP"
+      },
+      {
+        "manufacturer": "Snapper",
+        "part_number": "7077288"
+      },
+      {
+        "manufacturer": "Snapper",
+        "part_number": "5021334X1"
+      },
+      {
+        "manufacturer": "Snapper",
+        "part_number": "1992581"
+      },
+      {
+        "manufacturer": "Snapper",
+        "part_number": "7-7355"
+      },
+      {
+        "manufacturer": "Stens",
+        "part_number": "120-634"
+      },
+      {
+        "manufacturer": "Stens",
+        "part_number": "054-067"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "S2878XL"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "S4967ML"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "S4967XL"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S2878"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S4967ML"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S2878XL"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S4967"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S4967XL"
+      },
+      {
+        "manufacturer": "Super Tech Filters",
+        "part_number": "ST4967"
+      },
+      {
+        "manufacturer": "SUPERTECH",
+        "part_number": "ST4967"
+      },
+      {
+        "manufacturer": "TCI Automotive",
+        "part_number": "C0120-00013"
+      },
+      {
+        "manufacturer": "Tecumseh/Lauson",
+        "part_number": "36262"
+      },
+      {
+        "manufacturer": "Tokyo-Roki",
+        "part_number": "LFS706"
+      },
+      {
+        "manufacturer": "Trust",
+        "part_number": "PH2840"
+      },
+      {
+        "manufacturer": "Ultra",
+        "part_number": "XG4967"
+      },
+      {
+        "manufacturer": "Unocal 76",
+        "part_number": "PF2874"
+      },
+      {
+        "manufacturer": "Valucraft",
+        "part_number": "V4967"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-40"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-40BP"
+      },
+      {
+        "manufacturer": "Vera",
+        "part_number": "10-01618"
+      },
+      {
+        "manufacturer": "VIPER",
+        "part_number": "4967"
+      },
+      {
+        "manufacturer": "Wako",
+        "part_number": "LO-430K"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "PH2840"
+      },
+      {
+        "manufacturer": "Web",
+        "part_number": "W4967"
+      },
+      {
+        "manufacturer": "Web",
+        "part_number": "W4386"
+      },
+      {
+        "manufacturer": "Woods",
+        "part_number": "72859"
+      },
+      {
+        "manufacturer": "Yamaha",
+        "part_number": "YA2-48658-01-00"
+      },
+      {
+        "manufacturer": "Yamaha",
+        "part_number": "YA2-48658-01"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "1988",
+        "make": "CHEVROLET",
+        "model": "NOVA",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "02-98",
+        "make": "CHEVROLET",
+        "model": "PRIZM",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "02-00",
+        "make": "CHEVROLET",
+        "model": "TRACKER",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "03-99",
+        "make": "CHEVROLET",
+        "model": "TRACKER",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "97-89",
+        "make": "GEO",
+        "model": "PRIZM",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "97-93",
+        "make": "GEO",
+        "model": "PRIZM",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "96-91",
+        "make": "INFINITI",
+        "model": "G20",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "25-21",
+        "make": "LEXUS",
+        "model": "ES250",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "LEXUS",
+        "model": "ES300H",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "LEXUS",
+        "model": "GX550",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "12-10",
+        "make": "LEXUS",
+        "model": "HS250H",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "25-19",
+        "make": "LEXUS",
+        "model": "LS500",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "LEXUS",
+        "model": "LX600",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "LEXUS",
+        "model": "LX700H",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "25-22",
+        "make": "LEXUS",
+        "model": "NX250",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "LEXUS",
+        "model": "NX350",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "LEXUS",
+        "model": "NX350H",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "LEXUS",
+        "model": "NX450H+",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "LEXUS",
+        "model": "RX350",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "LEXUS",
+        "model": "RX350H",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "LEXUS",
+        "model": "RX450H+",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "LEXUS",
+        "model": "RX500H",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "LEXUS",
+        "model": "TX350",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "LEXUS",
+        "model": "TX500H",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "22-19",
+        "make": "LEXUS",
+        "model": "UX200",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "24-19",
+        "make": "LEXUS",
+        "model": "UX250H",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "LEXUS",
+        "model": "UX300H",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "11-05",
+        "make": "LOTUS",
+        "model": "ELISE",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "10-06",
+        "make": "LOTUS",
+        "model": "EXIGE",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "MAZDA",
+        "model": "CX-50",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "91-84",
+        "make": "NISSAN",
+        "model": "MICRA",
+        "engine": "L4-1.2L",
+        "quantity": 1
+      },
+      {
+        "year": "93-91",
+        "make": "NISSAN",
+        "model": "NX",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "94-91",
+        "make": "NISSAN",
+        "model": "SENTRA",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "08-03",
+        "make": "PONTIAC",
+        "model": "VIBE",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "10-09",
+        "make": "PONTIAC",
+        "model": "VIBE",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "10-05",
+        "make": "SCION",
+        "model": "TC",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "06-04",
+        "make": "SCION",
+        "model": "XA",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "06-04",
+        "make": "SCION",
+        "model": "XB",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "15-08",
+        "make": "SCION",
+        "model": "XB",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "03-02",
+        "make": "SUZUKI",
+        "model": "AERIO",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "07-04",
+        "make": "SUZUKI",
+        "model": "AERIO",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "SUZUKI",
+        "model": "ESTEEM",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "13-09",
+        "make": "SUZUKI",
+        "model": "GRAND VITARA",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "13-10",
+        "make": "SUZUKI",
+        "model": "KIZASHI",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "95-90",
+        "make": "SUZUKI",
+        "model": "SAMURAI",
+        "engine": "L4-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "1989",
+        "make": "SUZUKI",
+        "model": "SIDEKICK",
+        "engine": "L4-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "98-96",
+        "make": "SUZUKI",
+        "model": "SIDEKICK",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "1989",
+        "make": "SUZUKI",
+        "model": "SWIFT",
+        "engine": "L4-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "2001",
+        "make": "SUZUKI",
+        "model": "SWIFT",
+        "engine": "L4-1.3L",
+        "quantity": 1
+      },
+      {
+        "year": "2013",
+        "make": "SUZUKI",
+        "model": "SWIFT",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "13-07",
+        "make": "SUZUKI",
+        "model": "SX4",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2012",
+        "make": "SUZUKI",
+        "model": "SX4 CROSSOVER",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "02-99",
+        "make": "SUZUKI",
+        "model": "VITARA",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "03-99",
+        "make": "SUZUKI",
+        "model": "VITARA",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "TOYOTA",
+        "model": "4RUNNER",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "22-19",
+        "make": "TOYOTA",
+        "model": "AVALON",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "91-88",
+        "make": "TOYOTA",
+        "model": "CAMRY",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "01-92",
+        "make": "TOYOTA",
+        "model": "CAMRY",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "11-02",
+        "make": "TOYOTA",
+        "model": "CAMRY",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "26-18",
+        "make": "TOYOTA",
+        "model": "CAMRY",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "93-90",
+        "make": "TOYOTA",
+        "model": "CELICA",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "05-00",
+        "make": "TOYOTA",
+        "model": "CELICA",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "97-94",
+        "make": "TOYOTA",
+        "model": "CELICA",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "93-88",
+        "make": "TOYOTA",
+        "model": "CELICA",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "99-90",
+        "make": "TOYOTA",
+        "model": "CELICA",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "22-18",
+        "make": "TOYOTA",
+        "model": "C-HR",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "97-87",
+        "make": "TOYOTA",
+        "model": "COROLLA",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "08-93",
+        "make": "TOYOTA",
+        "model": "COROLLA",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "26-16",
+        "make": "TOYOTA",
+        "model": "COROLLA",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "26-19",
+        "make": "TOYOTA",
+        "model": "COROLLA",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "13-09",
+        "make": "TOYOTA",
+        "model": "COROLLA",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "TOYOTA",
+        "model": "COROLLA CROSS",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-17",
+        "make": "TOYOTA",
+        "model": "COROLLA IM",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "TOYOTA",
+        "model": "CROWN",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "TOYOTA",
+        "model": "CROWN",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "TOYOTA",
+        "model": "CROWN SIGNIA",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "05-00",
+        "make": "TOYOTA",
+        "model": "ECHO",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "TOYOTA",
+        "model": "GR COROLLA",
+        "engine": "L3-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "TOYOTA",
+        "model": "GRAND HIGHLANDER",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "TOYOTA",
+        "model": "GRAND HIGHLANDER",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "07-01",
+        "make": "TOYOTA",
+        "model": "HIGHLANDER",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "TOYOTA",
+        "model": "HIGHLANDER",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "26-20",
+        "make": "TOYOTA",
+        "model": "HIGHLANDER",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "TOYOTA",
+        "model": "LAND CRUISER",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "08-03",
+        "make": "TOYOTA",
+        "model": "MATRIX",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "13-09",
+        "make": "TOYOTA",
+        "model": "MATRIX",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "89-88",
+        "make": "TOYOTA",
+        "model": "MR2",
+        "engine": "L4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "95-91",
+        "make": "TOYOTA",
+        "model": "MR2",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "95-91",
+        "make": "TOYOTA",
+        "model": "MR2",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "05-00",
+        "make": "TOYOTA",
+        "model": "MR2 SPYDER",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "99-92",
+        "make": "TOYOTA",
+        "model": "PASEO",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "09-01",
+        "make": "TOYOTA",
+        "model": "PRIUS",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "22-17",
+        "make": "TOYOTA",
+        "model": "PRIUS",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "TOYOTA",
+        "model": "PRIUS",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-19",
+        "make": "TOYOTA",
+        "model": "PRIUS AWD-E",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "19-12",
+        "make": "TOYOTA",
+        "model": "PRIUS C",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "22-17",
+        "make": "TOYOTA",
+        "model": "PRIUS PRIME",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "24-23",
+        "make": "TOYOTA",
+        "model": "PRIUS PRIME",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "03-96",
+        "make": "TOYOTA",
+        "model": "RAV4",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "08-04",
+        "make": "TOYOTA",
+        "model": "RAV4",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "26-19",
+        "make": "TOYOTA",
+        "model": "RAV4",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "24-21",
+        "make": "TOYOTA",
+        "model": "RAV4 PRIME",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "TOYOTA",
+        "model": "SEQUOIA",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "26-21",
+        "make": "TOYOTA",
+        "model": "SIENNA",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "01-99",
+        "make": "TOYOTA",
+        "model": "SOLARA",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "08-02",
+        "make": "TOYOTA",
+        "model": "SOLARA",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "26-24",
+        "make": "TOYOTA",
+        "model": "TACOMA",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "99-87",
+        "make": "TOYOTA",
+        "model": "TERCEL",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      },
+      {
+        "year": "26-22",
+        "make": "TOYOTA",
+        "model": "TUNDRA",
+        "engine": "V6-3.4L",
+        "quantity": 1
+      },
+      {
+        "year": "24-21",
+        "make": "TOYOTA",
+        "model": "VENZA",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "19-06",
+        "make": "TOYOTA",
+        "model": "YARIS",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "TG4967",
+    "source_part_key": "007121872",
+    "source_totals": {
+      "attributes": 48,
+      "applications": 114,
+      "cross_references": 306
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Tough Guard® oil filters are designed for tough driving conditions, stop and go traffic, and hot and cold temperatures. The synthetic blend media is engineered to perform with conventional and synthetic motor oil. Equipped with SureGrip® technology, FRAM Tough Guard oil filters provide a non-slip surface allowing for easy install and removal. The silicone anti-drain back valve ensures safe engine startups, extending the life of the oil filter for up to 15,000 miles (24,000 kilometers).",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Proven protection for up to 15,000 miles (24,000 kilometers)",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, TG4967, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Engineered for tough driving conditions, stop and go traffic, and hot and cold temperatures",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "SureGrip®?technology for easy install and removal",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Spin-on Oil Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Silicone anti-drain back valve helps ensure safe engine start up",
+        "recno": "4"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Synthetic blend media provides 99% dirt holding capacity",
+        "recno": "5"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "Yes",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "Yes",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "Yes",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "85"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Standard",
+        "recno": "86"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base",
+        "recno": "89"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Silver",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100560506",
+        "recno": "92"
+      },
+      {
+        "attribute": "Attachment Type",
+        "value": "Spin-On",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "94"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "95"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "2.922",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "2.688",
+        "recno": "97"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "98"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "2.188",
+        "recno": "99"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "2.438",
+        "recno": "100"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.188",
+        "recno": "101"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Inch)",
+        "value": "3/4-16",
+        "recno": "102"
+      },
+      {
+        "attribute": "Bypass Relief Valve Setting (Pounds per Square Inch)",
+        "value": "12",
+        "recno": "103"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "104"
+      },
+      {
+        "attribute": "Burst Pressure (Pounds per Square Inch)",
+        "value": "350.000",
+        "recno": "105"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "106"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "107"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "108"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.4250",
+        "recno": "112"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "2.5500",
+        "recno": "113"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "2.8100",
+        "recno": "114"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "3.3700",
+        "recno": "115"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "2.7500",
+        "recno": "116"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "8.9300",
+        "recno": "117"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "2.7500",
+        "recno": "118"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "6.1200",
+        "recno": "119"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.425,
+        "case_weight_lb": 2.55,
+        "unit_height_in": 2.81,
+        "unit_length_in": 2.75,
+        "unit_width_in": 2.75,
+        "case_height_in": 3.37,
+        "case_length_in": 8.93,
+        "case_width_in": 6.12,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 5.1,
+        "estimated_case_dimensions": {
+          "length_in": 11.907,
+          "width_in": 9.18,
+          "height_in": 3.37,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 114,
+    "all_cross_references_observed": 306,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T04:33:30.954Z",
+  "discovered_from": "TG4967",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "CHEVROLET",
+        "model": "NOVA",
+        "year": "1988",
+        "engine": "L4-1.6L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "PRIZM",
+        "year": "02-98",
+        "engine": "L4-1.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TRACKER",
+        "year": "02-00",
+        "engine": "L4-1.6L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "TRACKER",
+        "year": "03-99",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DAIHATSU",
+        "model": "CHARADE",
+        "year": "92-88",
+        "engine": "L3-1.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DAIHATSU",
+        "model": "CHARADE",
+        "year": "92-89",
+        "engine": "L4-1.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DAIHATSU",
+        "model": "ROCKY",
+        "year": "92-90",
+        "engine": "L4-1.6L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GEO",
+        "model": "PRIZM",
+        "year": "97-89",
+        "engine": "L4-1.6L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GEO",
+        "model": "PRIZM",
+        "year": "97-93",
+        "engine": "L4-1.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INFINITI",
+        "model": "G20",
+        "year": "96-91",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "ES250",
+        "year": "25-21",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "ES300H",
+        "year": "25-19",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "GX550",
+        "year": "26-24",
+        "engine": "V6-3.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "HS250H",
+        "year": "12-10",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "LS500",
+        "year": "25-19",
+        "engine": "V6-3.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "LX600",
+        "year": "26-22",
+        "engine": "V6-3.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "LX700H",
+        "year": "26-25",
+        "engine": "V6-3.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "NX250",
+        "year": "25-22",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "NX350",
+        "year": "26-22",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "NX350H",
+        "year": "26-22",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "NX450H+",
+        "year": "26-22",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "RX350",
+        "year": "26-23",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "RX350H",
+        "year": "26-23",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "RX450H+",
+        "year": "26-24",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "RX500H",
+        "year": "26-23",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "TX350",
+        "year": "26-24",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "TX500H",
+        "year": "26-24",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "UX200",
+        "year": "22-19",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "UX250H",
+        "year": "24-19",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LEXUS",
+        "model": "UX300H",
+        "year": "26-25",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOTUS",
+        "model": "ELISE",
+        "year": "11-05",
+        "engine": "L4-1.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOTUS",
+        "model": "EXIGE",
+        "year": "10-06",
+        "engine": "L4-1.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MAZDA",
+        "model": "CX-50",
+        "year": "26-25",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "MICRA",
+        "year": "91-84",
+        "engine": "L4-1.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "NX",
+        "year": "93-91",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "SENTRA",
+        "year": "94-91",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "VIBE",
+        "year": "08-03",
+        "engine": "L4-1.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PONTIAC",
+        "model": "VIBE",
+        "year": "10-09",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCION",
+        "model": "TC",
+        "year": "10-05",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCION",
+        "model": "XA",
+        "year": "06-04",
+        "engine": "L4-1.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCION",
+        "model": "XB",
+        "year": "06-04",
+        "engine": "L4-1.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCION",
+        "model": "XB",
+        "year": "15-08",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "AERIO",
+        "year": "03-02",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "AERIO",
+        "year": "07-04",
+        "engine": "L4-2.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "ESTEEM",
+        "year": "02-99",
+        "engine": "L4-1.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "GRAND VITARA",
+        "year": "13-09",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "KIZASHI",
+        "year": "13-10",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "SAMURAI",
+        "year": "95-90",
+        "engine": "L4-1.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "SIDEKICK",
+        "year": "1989",
+        "engine": "L4-1.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "SIDEKICK",
+        "year": "98-96",
+        "engine": "L4-1.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "SWIFT",
+        "year": "1989",
+        "engine": "L4-1.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "SWIFT",
+        "year": "2001",
+        "engine": "L4-1.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "SWIFT",
+        "year": "2013",
+        "engine": "L4-1.6L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "SX4",
+        "year": "13-07",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "SX4 CROSSOVER",
+        "year": "2012",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "VITARA",
+        "year": "02-99",
+        "engine": "L4-1.6L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SUZUKI",
+        "model": "VITARA",
+        "year": "03-99",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "4RUNNER",
+        "year": "26-25",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "AVALON",
+        "year": "22-19",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "CAMRY",
+        "year": "91-88",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "CAMRY",
+        "year": "01-92",
+        "engine": "L4-2.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "CAMRY",
+        "year": "11-02",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "CAMRY",
+        "year": "26-18",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "CELICA",
+        "year": "93-90",
+        "engine": "L4-1.6L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "CELICA",
+        "year": "05-00",
+        "engine": "L4-1.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "CELICA",
+        "year": "97-94",
+        "engine": "L4-1.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "CELICA",
+        "year": "93-88",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "CELICA",
+        "year": "99-90",
+        "engine": "L4-2.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "C-HR",
+        "year": "22-18",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "COROLLA",
+        "year": "97-87",
+        "engine": "L4-1.6L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "COROLLA",
+        "year": "08-93",
+        "engine": "L4-1.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "COROLLA",
+        "year": "26-16",
+        "engine": "L4-1.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "COROLLA",
+        "year": "26-19",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "COROLLA",
+        "year": "13-09",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "COROLLA CROSS",
+        "year": "26-22",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "COROLLA IM",
+        "year": "18-17",
+        "engine": "L4-1.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "CROWN",
+        "year": "26-23",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "CROWN",
+        "year": "26-23",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "CROWN SIGNIA",
+        "year": "26-25",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "ECHO",
+        "year": "05-00",
+        "engine": "L4-1.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "GR COROLLA",
+        "year": "26-23",
+        "engine": "L3-1.6L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "GRAND HIGHLANDER",
+        "year": "26-24",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "GRAND HIGHLANDER",
+        "year": "26-24",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "HIGHLANDER",
+        "year": "07-01",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "HIGHLANDER",
+        "year": "26-23",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "HIGHLANDER",
+        "year": "26-20",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "LAND CRUISER",
+        "year": "26-24",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "MATRIX",
+        "year": "08-03",
+        "engine": "L4-1.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "MATRIX",
+        "year": "13-09",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "MR2",
+        "year": "89-88",
+        "engine": "L4-1.6L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "MR2",
+        "year": "95-91",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "MR2",
+        "year": "95-91",
+        "engine": "L4-2.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "MR2 SPYDER",
+        "year": "05-00",
+        "engine": "L4-1.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "PASEO",
+        "year": "99-92",
+        "engine": "L4-1.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "PRIUS",
+        "year": "09-01",
+        "engine": "L4-1.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "PRIUS",
+        "year": "22-17",
+        "engine": "L4-1.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "PRIUS",
+        "year": "26-23",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "PRIUS AWD-E",
+        "year": "22-19",
+        "engine": "L4-1.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "PRIUS C",
+        "year": "19-12",
+        "engine": "L4-1.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "PRIUS PRIME",
+        "year": "22-17",
+        "engine": "L4-1.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "PRIUS PRIME",
+        "year": "24-23",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "RAV4",
+        "year": "03-96",
+        "engine": "L4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "RAV4",
+        "year": "08-04",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "RAV4",
+        "year": "26-19",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "RAV4 PRIME",
+        "year": "24-21",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "SEQUOIA",
+        "year": "26-23",
+        "engine": "V6-3.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "SIENNA",
+        "year": "26-21",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "SOLARA",
+        "year": "01-99",
+        "engine": "L4-2.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "SOLARA",
+        "year": "08-02",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "TACOMA",
+        "year": "26-24",
+        "engine": "L4-2.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "TERCEL",
+        "year": "99-87",
+        "engine": "L4-1.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "TUNDRA",
+        "year": "26-22",
+        "engine": "V6-3.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "VENZA",
+        "year": "24-21",
+        "engine": "L4-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "YARIS",
+        "year": "19-06",
+        "engine": "L4-1.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2127",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF1233",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2128",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2246",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "American SportWorks",
+        "part_number": "2-20159",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "ASF10",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "EAO09",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "SDF10",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "EA15K09",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Arctic Cat",
+        "part_number": "3005-948",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ariens",
+        "part_number": "21527000",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ariens",
+        "part_number": "21380000",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ariens",
+        "part_number": "21535800",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Autopar - Archived",
+        "part_number": "FE308",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Autopar - Archived",
+        "part_number": "FE254",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Autopro",
+        "part_number": "2394",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bad Boy Mowers",
+        "part_number": "063-2090",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bad Boy Mowers",
+        "part_number": "063-8017-00",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B33",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "B7165",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "041-0750",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "041-8066",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92394",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92395",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "72167",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "3311",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "D3311",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Briggs & Stratton",
+        "part_number": "692513",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Briggs & Stratton",
+        "part_number": "499532",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Briggs & Stratton",
+        "part_number": "820314",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Cam2",
+        "part_number": "C4476",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Canada Tire",
+        "part_number": "17-1717-2",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85394",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "R85394",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85395",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "85394",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CF308",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CF410",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Castrol",
+        "part_number": "CAS4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "CO2840",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Certified",
+        "part_number": "CPH4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "PH2840",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "PH3656",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "COS4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "41394T",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "part_number": "41394T",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "part_number": "COS4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Chery",
+        "part_number": "372-1012010",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Club Car",
+        "part_number": "1016467",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "2077",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Cub Cadet",
+        "part_number": "15200-003-0000",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Cub Cadet",
+        "part_number": "490-201-0001",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Cushman",
+        "part_number": "D368",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Cushman",
+        "part_number": "833438",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Daihatsu",
+        "part_number": "15601-87204-000",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Daihatsu",
+        "part_number": "15601-87107",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Daihatsu",
+        "part_number": "15601-87703",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DL4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Delphi",
+        "part_number": "FX1006",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "DENSO",
+        "part_number": "115010-1291",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "DENSO",
+        "part_number": "115010-5480",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "DENSO",
+        "part_number": "150-1000",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "DENSO",
+        "part_number": "115010-1780",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "DENSO",
+        "part_number": "115010-16020",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "D368",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Distance Plus",
+        "part_number": "D3311",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Distance Plus",
+        "part_number": "D3325",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P502024",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P502015",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Driveworks",
+        "part_number": "DW-4476",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "S5608",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Econo-lube",
+        "part_number": "L22821",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Evergard",
+        "part_number": "E4476",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FERGUSON",
+        "part_number": "F2840",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ferris",
+        "part_number": "5021334X1",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Firestone",
+        "part_number": "TF4477",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Flag",
+        "part_number": "C-4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "C-4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3614",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Core",
+        "part_number": "COR4967ACC",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Drive",
+        "part_number": "FD4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Force",
+        "part_number": "FF4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Pro",
+        "part_number": "FP4967BP",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Synthetic Endurance",
+        "part_number": "FE4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Titanium",
+        "part_number": "FS4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Tough Guard",
+        "part_number": "TG4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Ultra Synthetic",
+        "part_number": "XG4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fuji Heavy Industrial",
+        "part_number": "248-65801-00",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F2840",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Geely",
+        "part_number": "JX0604",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Generac",
+        "part_number": "070185B",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Generac",
+        "part_number": "070185BS",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Generac",
+        "part_number": "070185D",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Generac",
+        "part_number": "070185",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Generac",
+        "part_number": "1323",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Generac",
+        "part_number": "70185",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "94853643",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25161880",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "94847351",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "94858995",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "94851874",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "88971573",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Girling",
+        "part_number": "F6586",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "PH2840",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Grasshopper",
+        "part_number": "100806",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Gravely",
+        "part_number": "43594",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Grease Monkey",
+        "part_number": "GM22821",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "PL14476",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "V4476",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "V4477",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Harley Davidson",
+        "part_number": "63806-00Y",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF410F",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF410",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hesston",
+        "part_number": "72859",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "HiFlo",
+        "part_number": "HF177",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "HiFlo",
+        "part_number": "HF128",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Husqvarna",
+        "part_number": "531 30 73-88",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hustler",
+        "part_number": "772079",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "IAPCO",
+        "part_number": "OF1",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "AL4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "ML4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "IPD",
+        "part_number": "10131",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ITM",
+        "part_number": "11-11514",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ITM Autoparts",
+        "part_number": "11-11514",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Jacobsen",
+        "part_number": "2701908",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Jiffy Lube",
+        "part_number": "JL4476",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Jiffy Lube",
+        "part_number": "HL4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AM39687",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "ET15499",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AM107423",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AM105555",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "HP-1003",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "PS-1003",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "KN-128",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "49065-2075",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "16097-1069",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "49065-7004",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "49065-2060",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "16097-0010",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "49065-2081",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "49065-2071",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "49065-2078",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "49065-7010",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "49065-0724",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "49065-2076",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "45065-2071",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "49065-2077",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kawasaki",
+        "part_number": "49065-2068",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kees",
+        "part_number": "1992581",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kees",
+        "part_number": "7077288YP",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kees",
+        "part_number": "7-7355",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kees",
+        "part_number": "7077288",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kees",
+        "part_number": "77288",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Koehler",
+        "part_number": "359771",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kohler",
+        "part_number": "359771",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Lazorlite",
+        "part_number": "L11-1899",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Lee",
+        "part_number": "LF-2840",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Lee",
+        "part_number": "LF-2840HP",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH2840",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Magneti Marelli",
+        "part_number": "1AMFL00007",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OC340",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W68/80",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "ML 1009",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W68/1",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Master Parts",
+        "part_number": "PH-2840",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mazda",
+        "part_number": "CWA1-14-302",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercury",
+        "part_number": "35-8222626Q15",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercury",
+        "part_number": "Q15",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercury",
+        "part_number": "35-822626T7",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercury",
+        "part_number": "T653945",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercury Marine",
+        "part_number": "35-8222626Q15",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercury Marine",
+        "part_number": "T653945",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "MGL4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "MGL10332",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "T4477SP",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "M4477",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mileguard",
+        "part_number": "MO4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "MO4477",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1-103A",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1-103",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "FE00308",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MotoMaster",
+        "part_number": "MPH4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-836",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MTD Products",
+        "part_number": "15200-003-0000",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1394",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1065",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1395",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "1394",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA Platinum Filters",
+        "part_number": "41394",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA Silver Filters",
+        "part_number": "21394",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "OE+",
+        "part_number": "OF-440",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "OMC",
+        "part_number": "5033539",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "OMC",
+        "part_number": "434839",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "OMC",
+        "part_number": "778886",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "122-0737-02",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Onan",
+        "part_number": "122-0737",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "One Performance",
+        "part_number": "122-0737-02",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "One Performance",
+        "part_number": "122-0737",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "WL610332X",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "61396",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "61394",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "61394X",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "PH2840",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ-197",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ-39",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pentius",
+        "part_number": "PLB4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PO-39",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Phillips 66",
+        "part_number": "PO1394",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Power Flo",
+        "part_number": "SL14477",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PG4476",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Prime Guard Filters - Archived",
+        "part_number": "POF4476",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Professionals Choice - Archived",
+        "part_number": "Q4476",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pro-Gauge",
+        "part_number": "PGO-4476",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "PH4476",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pro-Tec",
+        "part_number": "154",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L14476",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "PL14476",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "PSL14476",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PBL14476",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator PureONE",
+        "part_number": "PL22821",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator PureONE",
+        "part_number": "PL14476",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator TECH",
+        "part_number": "TL14476",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "part_number": "PL14476",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "part_number": "PL11411",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "part_number": "PL22821",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "PL14476",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "QS4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Robin",
+        "part_number": "261-65902-AO",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Robin",
+        "part_number": "248-65801-00",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Rockhill",
+        "part_number": "61394",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Rotary Lifts",
+        "part_number": "6600",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Security Filters",
+        "part_number": "SO2840",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "M4476",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "SH525",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Sierra",
+        "part_number": "18-7897",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Sierra",
+        "part_number": "18-7906-1",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Sierra",
+        "part_number": "18-7916",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Sierra",
+        "part_number": "18-7906",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Silverline",
+        "part_number": "21394",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Snapper",
+        "part_number": "77288",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Snapper",
+        "part_number": "7077288YP",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Snapper",
+        "part_number": "7077288",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Snapper",
+        "part_number": "5021334X1",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Snapper",
+        "part_number": "1992581",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Snapper",
+        "part_number": "7-7355",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Stens",
+        "part_number": "120-634",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Stens",
+        "part_number": "054-067",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "S2878XL",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "S4967ML",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "S4967XL",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S2878",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S4967ML",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S2878XL",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S4967XL",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Super Tech Filters",
+        "part_number": "ST4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "SUPERTECH",
+        "part_number": "ST4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Suzuki",
+        "part_number": "16510-82703",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "TCI Automotive",
+        "part_number": "C0120-00013",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Tecumseh/Lauson",
+        "part_number": "36262",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Tokyo-Roki",
+        "part_number": "LFS706",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toro",
+        "part_number": "KW10761",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toro",
+        "part_number": "NN10684",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toro",
+        "part_number": "136-7848",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toro",
+        "part_number": "120-4276",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toro",
+        "part_number": "127-9222",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toro",
+        "part_number": "KW10586",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toro",
+        "part_number": "108-3842",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-10001",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-10009",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-YZZF8",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90080-91034",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-03001",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "08922-02002",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-TA002",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-10003",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-YZZN1",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-10004",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90080-91058",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "08922-02005",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-YZZA2",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-TA001",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90080-91210",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "C0120-00013",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-YZZF2",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "90915-YZZM1",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "15600-16020",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Trust",
+        "part_number": "PH2840",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ultra",
+        "part_number": "XG4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Unocal 76",
+        "part_number": "PF2874",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Valucraft",
+        "part_number": "V4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-40",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-40BP",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Vera",
+        "part_number": "10-01618",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "VIPER",
+        "part_number": "4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wako",
+        "part_number": "LO-430K",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "PH2840",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Web",
+        "part_number": "W4967",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Web",
+        "part_number": "W4386",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51395",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51394XP",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WL10332",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51394",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Woods",
+        "part_number": "72859",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Yamaha",
+        "part_number": "YA2-48658-01-00",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Yamaha",
+        "part_number": "YA2-48658-01",
+        "source_part_number": "TG4967",
+        "part_key": "007121872",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

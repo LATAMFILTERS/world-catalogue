@@ -1,0 +1,3488 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH2844",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH2844",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 3.656,
+      "outer_diameter_mm": 92.86,
+      "height_in": 3.734,
+      "height_mm": 94.84,
+      "thread_size": "3/4-16",
+      "gasket_od_in": 2.813,
+      "gasket_od_mm": 71.45,
+      "gasket_id_in": 2.438,
+      "gasket_id_mm": 61.93,
+      "gasket_thickness_in": 0.156,
+      "gasket_thickness_mm": 3.96,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [
+      "P3761"
+    ],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "1650954"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25012648"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "9700836"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AET10701"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AM39653"
+      },
+      {
+        "manufacturer": "Toro",
+        "part_number": "79-5270"
+      },
+      {
+        "manufacturer": "Toro",
+        "part_number": "23-2300"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2049"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT8301"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT8486"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "3402"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "451103012"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "72137"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "OF23"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W920/17"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "F6466"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "6750358426"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W9.20/17"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "WD920"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-268"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1410"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57102"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51410"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "ASF42"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "041-8137"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "041-0729"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92410"
+      },
+      {
+        "manufacturer": "Bolens",
+        "part_number": "1726450"
+      },
+      {
+        "manufacturer": "Cam2",
+        "part_number": "C18"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85410"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85319"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "H334540"
+      },
+      {
+        "manufacturer": "Case IH",
+        "part_number": "H334540"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CF18"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "CO496"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "PH2820A"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "part_number": "OF23"
+      },
+      {
+        "manufacturer": "Citgo Petroleum",
+        "part_number": "C18"
+      },
+      {
+        "manufacturer": "Co-op",
+        "part_number": "PM-411"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "FT4761"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "661"
+      },
+      {
+        "manufacturer": "Cub Cadet",
+        "part_number": "923-3014"
+      },
+      {
+        "manufacturer": "Cub Cadet",
+        "part_number": "723-3014"
+      },
+      {
+        "manufacturer": "Delphi",
+        "part_number": "FX1009"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "D404"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550210"
+      },
+      {
+        "manufacturer": "Evergard",
+        "part_number": "E18"
+      },
+      {
+        "manufacturer": "Facet Industrial",
+        "part_number": "2844"
+      },
+      {
+        "manufacturer": "Flag",
+        "part_number": "C-2844"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "HF6446"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "HF6096"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "HF6164"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF4015"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8784"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "HFR-86164"
+      },
+      {
+        "manufacturer": "Girling",
+        "part_number": "F6466"
+      },
+      {
+        "manufacturer": "Girling",
+        "part_number": "F622"
+      },
+      {
+        "manufacturer": "Goodyear",
+        "part_number": "222-4524"
+      },
+      {
+        "manufacturer": "Goodyear",
+        "part_number": "L2844"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "PH2820A"
+      },
+      {
+        "manufacturer": "Grease Monkey",
+        "part_number": "GM2844"
+      },
+      {
+        "manufacturer": "GUD Filters",
+        "part_number": "Z80"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "BT8486"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AM39653"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF155"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF379"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF379F"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "HF784"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF155F"
+      },
+      {
+        "manufacturer": "IAPCO",
+        "part_number": "OF45"
+      },
+      {
+        "manufacturer": "IAPCO",
+        "part_number": "A-0249-002"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "7233014"
+      },
+      {
+        "manufacturer": "International Parts Service",
+        "part_number": "4-1044"
+      },
+      {
+        "manufacturer": "ITM",
+        "part_number": "111-2051"
+      },
+      {
+        "manufacturer": "ITM",
+        "part_number": "11-12051"
+      },
+      {
+        "manufacturer": "ITM Autoparts",
+        "part_number": "111-2051"
+      },
+      {
+        "manufacturer": "ITM Autoparts",
+        "part_number": "11-12051"
+      },
+      {
+        "manufacturer": "Jiffy Lube",
+        "part_number": "L10017"
+      },
+      {
+        "manufacturer": "Jiffy Lube",
+        "part_number": "JL18"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "AW18"
+      },
+      {
+        "manufacturer": "Lee",
+        "part_number": "LF-2820HP"
+      },
+      {
+        "manufacturer": "Lee",
+        "part_number": "LF-2820A"
+      },
+      {
+        "manufacturer": "Letourneau",
+        "part_number": "PH2820"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH710"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFH22052"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH253"
+      },
+      {
+        "manufacturer": "Marathon",
+        "part_number": "PH2820"
+      },
+      {
+        "manufacturer": "Master Parts",
+        "part_number": "PH-2820"
+      },
+      {
+        "manufacturer": "Master Parts",
+        "part_number": "PH-2820A"
+      },
+      {
+        "manufacturer": "MICRO",
+        "part_number": "F-18"
+      },
+      {
+        "manufacturer": "Micro Filters",
+        "part_number": "F-18"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "M2904"
+      },
+      {
+        "manufacturer": "Minit-Lube",
+        "part_number": "PH2820"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "MO18"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1-204"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1-204A"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "L-530"
+      },
+      {
+        "manufacturer": "MPA",
+        "part_number": "2205"
+      },
+      {
+        "manufacturer": "Navistar",
+        "part_number": "7233014"
+      },
+      {
+        "manufacturer": "OE+",
+        "part_number": "OF-655"
+      },
+      {
+        "manufacturer": "Parker-Hannifin",
+        "part_number": "932054"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "61348"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "PH253"
+      },
+      {
+        "manufacturer": "Pentius",
+        "part_number": "PLB16"
+      },
+      {
+        "manufacturer": "Power Flo",
+        "part_number": "SL14670"
+      },
+      {
+        "manufacturer": "Precision Tune",
+        "part_number": "OF-109"
+      },
+      {
+        "manufacturer": "Purflux",
+        "part_number": "LS149"
+      },
+      {
+        "manufacturer": "Purolator PureONE",
+        "part_number": "PL20081"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "part_number": "PL20081"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "QS16"
+      },
+      {
+        "manufacturer": "Security Filters",
+        "part_number": "SO2820A"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "SH35"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "S16"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S16"
+      },
+      {
+        "manufacturer": "Sundstrand",
+        "part_number": "9700314"
+      },
+      {
+        "manufacturer": "Trust",
+        "part_number": "PH2820A"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-95BP"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-95"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-45"
+      },
+      {
+        "manufacturer": "Vera",
+        "part_number": "10-00363"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "PH253"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "PH2820A"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "PH2820"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "PH2820A"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "PH2820"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "PH253"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "1976",
+        "make": "PORSCHE",
+        "model": "912",
+        "engine": "H4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "73-70",
+        "make": "PORSCHE",
+        "model": "914",
+        "engine": "H4-1.7L",
+        "quantity": 1
+      },
+      {
+        "year": "75-74",
+        "make": "PORSCHE",
+        "model": "914",
+        "engine": "H4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "76-75",
+        "make": "PORSCHE",
+        "model": "914",
+        "engine": "H4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "73-71",
+        "make": "VOLKSWAGEN",
+        "model": "411",
+        "engine": "H4-1.7L",
+        "quantity": 1
+      },
+      {
+        "year": "74-73",
+        "make": "VOLKSWAGEN",
+        "model": "412",
+        "engine": "H4-1.7L",
+        "quantity": 1
+      },
+      {
+        "year": "1974",
+        "make": "VOLKSWAGEN",
+        "model": "412",
+        "engine": "H4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "71-70",
+        "make": "VOLKSWAGEN",
+        "model": "CAMPMOBILE",
+        "engine": "H4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "73-72",
+        "make": "VOLKSWAGEN",
+        "model": "CAMPMOBILE",
+        "engine": "H4-1.7L",
+        "quantity": 1
+      },
+      {
+        "year": "1974",
+        "make": "VOLKSWAGEN",
+        "model": "CAMPMOBILE",
+        "engine": "H4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "74-70",
+        "make": "VOLKSWAGEN",
+        "model": "TRANSPORTER",
+        "engine": "H4-1.6L",
+        "quantity": 1
+      },
+      {
+        "year": "73-72",
+        "make": "VOLKSWAGEN",
+        "model": "TRANSPORTER",
+        "engine": "H4-1.7L",
+        "quantity": 1
+      },
+      {
+        "year": "75-74",
+        "make": "VOLKSWAGEN",
+        "model": "TRANSPORTER",
+        "engine": "H4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "79-76",
+        "make": "VOLKSWAGEN",
+        "model": "TRANSPORTER",
+        "engine": "H4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "83-80",
+        "make": "VOLKSWAGEN",
+        "model": "VANAGON",
+        "engine": "H4-2.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "PH2844",
+    "source_part_key": "000944233",
+    "source_totals": {
+      "attributes": 45,
+      "applications": 143,
+      "cross_references": 127
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® oil filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE (original equipment) recommended intervals. Equipped with SureGrip® technology, FRAM Extra Guard® oil filters provide a non-slip surface allowing for easy install and removal.\\nThe silicone anti-drain back valve ensures safe engine startups, extending the life of the oil filter for up to 10,000 miles (16,000 kilometers).",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Engineered for use with synthetic or conventional motor oils",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, PH2844, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Proven protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "The perfect balance of dirt-trapping efficiency and dirt-holding capacity",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Spin-on Oil Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filter media is a blend of fiber and resin that captures 95%?of the dirt particles",
+        "recno": "4"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "Yes",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "85"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Standard",
+        "recno": "86"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "88"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base",
+        "recno": "89"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Orange",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100380753",
+        "recno": "92"
+      },
+      {
+        "attribute": "Attachment Type",
+        "value": "Spin-On",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "93"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "94"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "95"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "3.734",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "3.656",
+        "recno": "97"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "98"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "2.438",
+        "recno": "99"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "2.813",
+        "recno": "100"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.156",
+        "recno": "101"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Inch)",
+        "value": "3/4-16",
+        "recno": "102"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "103"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "104"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "105"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "106"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.8080",
+        "recno": "110"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "9.6960",
+        "recno": "111"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "3.8760",
+        "recno": "112"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.1870",
+        "recno": "113"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.8440",
+        "recno": "114"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "15.9370",
+        "recno": "115"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.8440",
+        "recno": "116"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "11.9370",
+        "recno": "117"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.808,
+        "case_weight_lb": 9.696,
+        "unit_height_in": 3.876,
+        "unit_length_in": 3.844,
+        "unit_width_in": 3.844,
+        "case_height_in": 4.187,
+        "case_length_in": 15.937,
+        "case_width_in": 11.937,
+        "inferred_case_qty": 12
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 9.696,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 143,
+    "all_cross_references_observed": 127,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:17:08.998Z",
+  "discovered_from": "PH2844",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "LAWN & TURF EQUIPMENT TORO",
+        "model": "228D Groundsmaster w/Kubota Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN & TURF EQUIPMENT TORO",
+        "model": "228D Groundsmaster w/Kubota Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN & TURF EQUIPMENT TORO",
+        "model": "320HD Groundsmaster w/Kubota Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN & TURF EQUIPMENT TORO",
+        "model": "320HD Groundsmaster w/Kubota Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN & TURF EQUIPMENT TORO",
+        "model": "325D Groundsmaster w/Mitsubishi K3D 25 hp Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN & TURF EQUIPMENT TORO",
+        "model": "325D Groundsmaster w/Mitsubishi K3D 25 hp Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN & TURF EQUIPMENT TORO",
+        "model": "3280D Groundsmaster w/Kubota Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN & TURF EQUIPMENT TORO",
+        "model": "3280D Groundsmaster w/Kubota Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN & TURF EQUIPMENT TORO",
+        "model": "328D Groundsmaster w/Kubota Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN & TURF EQUIPMENT TORO",
+        "model": "328D Groundsmaster w/Kubota Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR ALLIS-CHALMERS",
+        "model": "920",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR ALLIS-CHALMERS",
+        "model": "920",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BOLENS",
+        "model": "5117H w/Kohler 17 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BOLENS",
+        "model": "5117H w/Kohler 17 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BOLENS",
+        "model": "5118H w/Kohler 18 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BOLENS",
+        "model": "5118H w/Kohler 18 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BOLENS",
+        "model": "HT20 w/Kohler K532S 20 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR BOLENS",
+        "model": "HT20 w/Kohler K532S 20 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "1440 w/B&S Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "1440 w/B&S Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "1641 w/B&S Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "1641 w/B&S Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "1811, 1820",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "1811, 1820",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "1863, 1864 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "1863, 1864 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "2135 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "2135 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "2145 w/Onan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "2145 w/Onan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "2165 w/B&S Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "2165 w/B&S Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "2182 Super w/Kubota 21 hp Diesel",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "2182 Super w/Kubota 21 hp Diesel",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "2182 w/Kubota 21 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "2182 w/Kubota 21 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "2185 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "2185 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "2284 w/Kohler 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "2284 w/Kohler 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "3225 w/Kohler 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "3225 w/Kohler 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "5252 w/Kohler 25 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "5252 w/Kohler 25 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "6284D w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "6284D w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "120 w/Kohler K301 12 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "120 w/Kohler K301 12 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "140 w/Kohler K301 12 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "140 w/Kohler K301 12 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "2243 w/Kawasaki 18 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "2243 w/Kawasaki 18 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "2243 w/Yanmar 18 hp OHV Diesel",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "2243 w/Yanmar 18 hp OHV Diesel",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "300 w/Kohler K341 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "300 w/Kohler K341 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "312 w/Kohler K301 12 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "312 w/Kohler K301 12 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "312 w/Kohler K301 12 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "312 w/Kohler K301 12 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "314 w/Kohler K341 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "314 w/Kohler K341 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "316 w/Kohler K341A 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "316 w/Kohler K341A 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "317 w/Kohler KT17 17 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "317 w/Kohler KT17 17 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "318 w/Onan Performer P218G 18 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "318 w/Onan Performer P218G 18 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "322 w/Yanmar 18 hp OHV Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "322 w/Yanmar 18 hp OHV Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "330, 332 w/Yanmar 16 hp OHV Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "330, 332 w/Yanmar 16 hp OHV Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "420 w/Onan B48G 20 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "420 w/Onan B48G 20 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "430 w/Yanmar 20 hp OHV Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "430 w/Yanmar 20 hp OHV Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "737, 757 Z-Trak w/Kawasaki 23 & 25 hp Engines",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "737, 757 Z-Trak w/Kawasaki 23 & 25 hp Engines",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F620, F680 Z-Trak w/Kohler Command 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F620, F680 Z-Trak w/Kohler Command 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F910 Front Mower w/Onan P220G 20 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F910 Front Mower w/Onan P220G 20 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F911 Front Mower w/Kawasaki 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F911 Front Mower w/Kawasaki 22 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F912 Front Mower w/Yanmar 20 hp OHV Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F912 Front Mower w/Yanmar 20 hp OHV Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F915 Front Mower w/Yanmar 17 hp OHV Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F915 Front Mower w/Yanmar 17 hp OHV Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F925 Front Mower w/Yanmar 22 hp OHV Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F925 Front Mower w/Yanmar 22 hp OHV Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F930 Front Mower w/Onan Performer P224G 24 hp Twin Cyl. Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F930 Front Mower w/Onan Performer P224G 24 hp Twin Cyl. Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F932 Front Mower w/Yanmar 28 hp Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F932 Front Mower w/Yanmar 28 hp Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F935 Front Mower w/Yanmar 22 hp OHV Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "F935 Front Mower w/Yanmar 22 hp OHV Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR MTD",
+        "model": "1668 w/B&S 16 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR MTD",
+        "model": "1668 w/B&S 16 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR MTD",
+        "model": "5017H w/Kohler KT17 17 hp Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR MTD",
+        "model": "5017H w/Kohler KT17 17 hp Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR MTD",
+        "model": "5120H w/Mitsubishi 20 hp Diesel",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR MTD",
+        "model": "5120H w/Mitsubishi 20 hp Diesel",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR TORO",
+        "model": "416H w/Onan Performer P216G 16 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR TORO",
+        "model": "416H w/Onan Performer P216G 16 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR TORO",
+        "model": "Wheel Horse Tractor 73501520H w/Onan Performer P220G 20 hp Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR TORO",
+        "model": "Wheel Horse Tractor 73501520H w/Onan Performer P220G 20 hp Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT JOHN DEERE",
+        "model": "624H LL w/John Deere 6068 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOGGING EQUIPMENT JOHN DEERE",
+        "model": "624H LL w/John Deere 6068 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "912",
+        "year": "1976",
+        "engine": "H4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "914",
+        "year": "73-70",
+        "engine": "H4-1.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "914",
+        "year": "75-74",
+        "engine": "H4-1.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "914",
+        "year": "76-75",
+        "engine": "H4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER HITACHI",
+        "model": "LX120-5 w/John Deere 6068T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER HITACHI",
+        "model": "LX120-5 w/John Deere 6068T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRENCHER INDUSTRIAL CASE",
+        "model": "16 + 4 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRENCHER INDUSTRIAL CASE",
+        "model": "16 + 4 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRENCHER INDUSTRIAL CASE",
+        "model": "25 + 4 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRENCHER INDUSTRIAL CASE",
+        "model": "25 + 4 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "411",
+        "year": "73-71",
+        "engine": "H4-1.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "412",
+        "year": "74-73",
+        "engine": "H4-1.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "412",
+        "year": "1974",
+        "engine": "H4-1.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "CAMPMOBILE",
+        "year": "71-70",
+        "engine": "H4-1.6L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "CAMPMOBILE",
+        "year": "73-72",
+        "engine": "H4-1.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "CAMPMOBILE",
+        "year": "1974",
+        "engine": "H4-1.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "TRANSPORTER",
+        "year": "74-70",
+        "engine": "H4-1.6L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "TRANSPORTER",
+        "year": "73-72",
+        "engine": "H4-1.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "TRANSPORTER",
+        "year": "75-74",
+        "engine": "H4-1.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "TRANSPORTER",
+        "year": "79-76",
+        "engine": "H4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "VOLKSWAGEN",
+        "model": "VANAGON",
+        "year": "83-80",
+        "engine": "H4-2.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER JOHN DEERE",
+        "model": "544G, 544GTC",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER JOHN DEERE",
+        "model": "544G, 544GTC",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER JOHN DEERE",
+        "model": "624G",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER JOHN DEERE",
+        "model": "624G",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER JOHN DEERE",
+        "model": "624H w/John Deere 6068 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER JOHN DEERE",
+        "model": "624H w/John Deere 6068 Power Tech Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER JOHN DEERE",
+        "model": "644G",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER JOHN DEERE",
+        "model": "644G",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER JOHN DEERE",
+        "model": "7224J",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER JOHN DEERE",
+        "model": "7224J",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER JOHN DEERE",
+        "model": "744J w/John Deere 6125H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER JOHN DEERE",
+        "model": "744J w/John Deere 6125H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER JOHN DEERE",
+        "model": "824J w/John Deere 6125H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER JOHN DEERE",
+        "model": "824J w/John Deere 6125H Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2049",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Allis Chalmers",
+        "part_number": "1650954",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Amsoil",
+        "part_number": "ASF42",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT8301",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT8486",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "041-8137",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "041-0729",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92410",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bolens",
+        "part_number": "1726450",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "3402",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "451103012",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "72137",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Cam2",
+        "part_number": "C18",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85410",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85319",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Case",
+        "part_number": "H334540",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Case IH",
+        "part_number": "H334540",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CF18",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "CO496",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "PH2820A",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "OF23",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "part_number": "OF23",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Citgo Petroleum",
+        "part_number": "C18",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Co-op",
+        "part_number": "PM-411",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "FT4761",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "661",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Cub Cadet",
+        "part_number": "923-3014",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Cub Cadet",
+        "part_number": "723-3014",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Delphi",
+        "part_number": "FX1009",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "D404",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550210",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Evergard",
+        "part_number": "E18",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Facet Industrial",
+        "part_number": "2844",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Flag",
+        "part_number": "C-2844",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "HF6446",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "HF6096",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "HF6164",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF4015",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8784",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "HFR-86164",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM",
+        "part_number": "P3761",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25012648",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Girling",
+        "part_number": "F6466",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Girling",
+        "part_number": "F622",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Goodyear",
+        "part_number": "222-4524",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Goodyear",
+        "part_number": "L2844",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "PH2820A",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Grease Monkey",
+        "part_number": "GM2844",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "GUD Filters",
+        "part_number": "Z80",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "BT8486",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AM39653",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF155",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF379",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF379F",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "HF784",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF155F",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "IAPCO",
+        "part_number": "OF45",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "IAPCO",
+        "part_number": "A-0249-002",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "7233014",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "International Parts Service",
+        "part_number": "4-1044",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ITM",
+        "part_number": "111-2051",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ITM",
+        "part_number": "11-12051",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ITM Autoparts",
+        "part_number": "111-2051",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ITM Autoparts",
+        "part_number": "11-12051",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Jiffy Lube",
+        "part_number": "L10017",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Jiffy Lube",
+        "part_number": "JL18",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "9700836",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AET10701",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "John Deere",
+        "part_number": "AM39653",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "AW18",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Lee",
+        "part_number": "LF-2820HP",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Lee",
+        "part_number": "LF-2820A",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Letourneau",
+        "part_number": "PH2820",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH710",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFH22052",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "PH253",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W920/17",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "F6466",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "6750358426",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W9.20/17",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "WD920",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Marathon",
+        "part_number": "PH2820",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Master Parts",
+        "part_number": "PH-2820",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Master Parts",
+        "part_number": "PH-2820A",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MICRO",
+        "part_number": "F-18",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Micro Filters",
+        "part_number": "F-18",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "M2904",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Minit-Lube",
+        "part_number": "PH2820",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "MO18",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1-204",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1-204A",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mopar",
+        "part_number": "L-530",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-268",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MPA",
+        "part_number": "2205",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1410",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Navistar",
+        "part_number": "7233014",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "OE+",
+        "part_number": "OF-655",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Parker-Hannifin",
+        "part_number": "932054",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "61348",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "PH253",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pentius",
+        "part_number": "PLB16",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Power Flo",
+        "part_number": "SL14670",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Precision Tune",
+        "part_number": "OF-109",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purflux",
+        "part_number": "LS149",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator PureONE",
+        "part_number": "PL20081",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "part_number": "PL20081",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "QS16",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Security Filters",
+        "part_number": "SO2820A",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "SH35",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "S16",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S16",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Sundstrand",
+        "part_number": "9700314",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toro",
+        "part_number": "79-5270",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Toro",
+        "part_number": "23-2300",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Trust",
+        "part_number": "PH2820A",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-95BP",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-95",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-45",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Vera",
+        "part_number": "10-00363",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "PH253",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "PH2820A",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "PH2820",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "PH2820A",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "PH2820",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "PH253",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57102",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51410",
+        "source_part_number": "PH2844",
+        "part_key": "000944233",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

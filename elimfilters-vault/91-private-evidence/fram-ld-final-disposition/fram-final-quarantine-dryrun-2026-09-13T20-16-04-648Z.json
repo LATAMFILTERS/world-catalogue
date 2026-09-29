@@ -1,0 +1,11 @@
+{
+  "mode": "dry-run",
+  "matrix": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-ld-final-disposition\\fram-ld-final-matrix-2026-09-13T20-08-34-102Z.json",
+  "planned": 525,
+  "upserted": 525,
+  "audit": {
+    "total": 525,
+    "policy_rows": 525
+  },
+  "transaction": "ROLLBACK"
+}

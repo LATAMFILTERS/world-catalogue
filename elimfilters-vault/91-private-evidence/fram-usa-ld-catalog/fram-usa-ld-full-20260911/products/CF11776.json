@@ -1,0 +1,884 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF11776",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF11776",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 0.788,
+      "height_mm": 20.02,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Nissan",
+        "part_number": "27277-9NM0A"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "27277-3JC1B"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "27277-3JC2A"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "27277-3JC1A"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "27277-3JC1C"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF3290"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "230013"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C48162"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10009"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-263"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "479950"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1903C"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "XC10020"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F0009"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1903C"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1903P"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4068"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "CAF2098"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "CAF1903P"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "2230013"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PC122"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PBC48162"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "CAF1903"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1903P"
+      },
+      {
+        "manufacturer": "SUPERTECH",
+        "part_number": "6755"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1082"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WCA1903"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "2013",
+        "make": "INFINITI",
+        "model": "JX35",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2013",
+        "make": "INFINITI",
+        "model": "JX35",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "20-14",
+        "make": "INFINITI",
+        "model": "QX60",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "17-14",
+        "make": "INFINITI",
+        "model": "QX60",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "20-14",
+        "make": "INFINITI",
+        "model": "QX60",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "18-13",
+        "make": "NISSAN",
+        "model": "ALTIMA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "18-13",
+        "make": "NISSAN",
+        "model": "ALTIMA",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "18-13",
+        "make": "NISSAN",
+        "model": "ALTIMA",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "23-16",
+        "make": "NISSAN",
+        "model": "MAXIMA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-16",
+        "make": "NISSAN",
+        "model": "MAXIMA",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "24-15",
+        "make": "NISSAN",
+        "model": "MURANO",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2016",
+        "make": "NISSAN",
+        "model": "MURANO",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "24-15",
+        "make": "NISSAN",
+        "model": "MURANO",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "20-13",
+        "make": "NISSAN",
+        "model": "PATHFINDER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "15-14",
+        "make": "NISSAN",
+        "model": "PATHFINDER",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "20-13",
+        "make": "NISSAN",
+        "model": "PATHFINDER",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF11776",
+    "source_part_key": "005923693",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 16,
+      "cross_references": 27
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF11776, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "0.788",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "11.091",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "9.614",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "10",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Behind Glove Box",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100555274",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.7000",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.4000",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "11.9060",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "3.4800",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "10.7500",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "12.4900",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.3120",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "11.2400",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.7,
+        "case_weight_lb": 1.4,
+        "unit_height_in": 11.906,
+        "unit_length_in": 10.75,
+        "unit_width_in": 1.312,
+        "case_height_in": 3.48,
+        "case_length_in": 12.49,
+        "case_width_in": 11.24,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 8.4,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 16,
+    "all_cross_references_observed": 27,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:58:14.168Z",
+  "discovered_from": "CF11776",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "INFINITI",
+        "model": "JX35",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INFINITI",
+        "model": "JX35",
+        "year": "2013",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INFINITI",
+        "model": "QX60",
+        "year": "20-14",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INFINITI",
+        "model": "QX60",
+        "year": "17-14",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INFINITI",
+        "model": "QX60",
+        "year": "20-14",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "ALTIMA",
+        "year": "18-13",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "ALTIMA",
+        "year": "18-13",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "ALTIMA",
+        "year": "18-13",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "MAXIMA",
+        "year": "23-16",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "MAXIMA",
+        "year": "23-16",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "MURANO",
+        "year": "24-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "MURANO",
+        "year": "2016",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "MURANO",
+        "year": "24-15",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "PATHFINDER",
+        "year": "20-13",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "PATHFINDER",
+        "year": "15-14",
+        "engine": "L4-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "NISSAN",
+        "model": "PATHFINDER",
+        "year": "20-13",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF3290",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-263",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "479950",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1903C",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "XC10020",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F0009",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1903C",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1903P",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4068",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "CAF2098",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "CAF1903P",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "230013",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "2230013",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "27277-9NM0A",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "27277-3JC1B",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "27277-3JC2A",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "27277-3JC1A",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Nissan",
+        "part_number": "27277-3JC1C",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PC122",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C48162",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PBC48162",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "CAF1903",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1903P",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "SUPERTECH",
+        "part_number": "6755",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1082",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WCA1903",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10009",
+        "source_part_number": "CF11776",
+        "part_key": "005923693",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

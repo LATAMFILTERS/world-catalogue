@@ -1,0 +1,1556 @@
+{
+  "all": [
+    {
+      "sku": "EA30159",
+      "authorities": [
+        "CA10159",
+        "CA159"
+      ],
+      "pairs": [
+        {
+          "a": "CA10159",
+          "b": "CA159",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2,
+          "a_apps": 1,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA30162",
+      "authorities": [
+        "CA10162",
+        "CA162"
+      ],
+      "pairs": [
+        {
+          "a": "CA10162",
+          "b": "CA162",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 3,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA30192",
+      "authorities": [
+        "CA10192",
+        "CA192"
+      ],
+      "pairs": [
+        {
+          "a": "CA10192",
+          "b": "CA192",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 1,
+          "b_apps": 369,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA30228",
+      "authorities": [
+        "CA10228",
+        "CA228"
+      ],
+      "pairs": [
+        {
+          "a": "CA10228",
+          "b": "CA228",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2,
+          "a_apps": 3,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA30281",
+      "authorities": [
+        "CA10281",
+        "CA10281SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA10281",
+          "b": "CA10281SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA30283",
+      "authorities": [
+        "CA10283",
+        "CA283"
+      ],
+      "pairs": [
+        {
+          "a": "CA10283",
+          "b": "CA283",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA30328",
+      "authorities": [
+        "CA10328",
+        "CA328"
+      ],
+      "pairs": [
+        {
+          "a": "CA10328",
+          "b": "CA328",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2,
+          "a_apps": 8,
+          "b_apps": 105,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA30346",
+      "authorities": [
+        "CA10346",
+        "CA346"
+      ],
+      "pairs": [
+        {
+          "a": "CA10346",
+          "b": "CA346",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 1,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA30347",
+      "authorities": [
+        "CA10347",
+        "CA347"
+      ],
+      "pairs": [
+        {
+          "a": "CA10347",
+          "b": "CA347",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2,
+          "a_apps": 4,
+          "b_apps": 95,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA30542",
+      "authorities": [
+        "CA10542",
+        "CA542"
+      ],
+      "pairs": [
+        {
+          "a": "CA10542",
+          "b": "CA542",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 1,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA30573",
+      "authorities": [
+        "CA10573",
+        "CA573"
+      ],
+      "pairs": [
+        {
+          "a": "CA10573",
+          "b": "CA573",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 2,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA30790",
+      "authorities": [
+        "CA10790",
+        "CA10790SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA10790",
+          "b": "CA10790SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA30982",
+      "authorities": [
+        "CA10982",
+        "CA10982SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA10982",
+          "b": "CA10982SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA31565",
+      "authorities": [
+        "CA11565",
+        "CA1565"
+      ],
+      "pairs": [
+        {
+          "a": "CA11565",
+          "b": "CA1565",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA31514",
+      "authorities": [
+        "CA1514",
+        "CA1514SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA1514",
+          "b": "CA1514SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA31543",
+      "authorities": [
+        "CA1543",
+        "CA1543SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA1543",
+          "b": "CA1543SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA32522",
+      "authorities": [
+        "CA2522",
+        "CA2522SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA2522",
+          "b": "CA2522SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA30563",
+      "authorities": [
+        "CA563",
+        "CA563SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA563",
+          "b": "CA563SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA30572",
+      "authorities": [
+        "CA572",
+        "CA572SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA572",
+          "b": "CA572SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA36319",
+      "authorities": [
+        "CA6319",
+        "CA6319SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA6319",
+          "b": "CA6319SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA36327",
+      "authorities": [
+        "CA6327",
+        "CA6327SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA6327",
+          "b": "CA6327SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA37139",
+      "authorities": [
+        "CA7139",
+        "CA7139SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA7139",
+          "b": "CA7139SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA37458",
+      "authorities": [
+        "CA7458",
+        "CA7458SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA7458",
+          "b": "CA7458SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA37478",
+      "authorities": [
+        "CA7478",
+        "CA7478SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA7478",
+          "b": "CA7478SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA37484",
+      "authorities": [
+        "CA7484",
+        "CA7484SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA7484",
+          "b": "CA7484SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA37486",
+      "authorities": [
+        "CA7486",
+        "CA7486SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA7486",
+          "b": "CA7486SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA37495",
+      "authorities": [
+        "CA7495",
+        "CA7495SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA7495",
+          "b": "CA7495SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA37710",
+      "authorities": [
+        "CA7710",
+        "CA7710SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA7710",
+          "b": "CA7710SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA38596",
+      "authorities": [
+        "CA8596",
+        "CA8596SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA8596",
+          "b": "CA8596SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA38621",
+      "authorities": [
+        "CA8621",
+        "CA8621SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA8621",
+          "b": "CA8621SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA39736",
+      "authorities": [
+        "CA9736",
+        "CA9736SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA9736",
+          "b": "CA9736SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA39872",
+      "authorities": [
+        "CA9872",
+        "CA9872SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA9872",
+          "b": "CA9872SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA39873",
+      "authorities": [
+        "CA9873",
+        "CA9873SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA9873",
+          "b": "CA9873SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EA39966",
+      "authorities": [
+        "CA9966",
+        "CA9966SY"
+      ],
+      "pairs": [
+        {
+          "a": "CA9966",
+          "b": "CA9966SY",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 0,
+          "b_apps": 0,
+          "app_intersection": 0,
+          "app_ratio_small": 0,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EC30138",
+      "authorities": [
+        "CF10138",
+        "CV10138"
+      ],
+      "pairs": [
+        {
+          "a": "CF10138",
+          "b": "CV10138",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 8,
+          "b_apps": 8,
+          "app_intersection": 8,
+          "app_ratio_small": 1,
+          "ref_intersection": 11
+        }
+      ]
+    },
+    {
+      "sku": "EC30360",
+      "authorities": [
+        "CF10360",
+        "FDC10360C"
+      ],
+      "pairs": [
+        {
+          "a": "CF10360",
+          "b": "FDC10360C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 60,
+          "b_apps": 60,
+          "app_intersection": 60,
+          "app_ratio_small": 1,
+          "ref_intersection": 6
+        }
+      ]
+    },
+    {
+      "sku": "EC30364",
+      "authorities": [
+        "CF10364",
+        "FDC10364C"
+      ],
+      "pairs": [
+        {
+          "a": "CF10364",
+          "b": "FDC10364C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 19,
+          "b_apps": 19,
+          "app_intersection": 19,
+          "app_ratio_small": 1,
+          "ref_intersection": 10
+        }
+      ]
+    },
+    {
+      "sku": "EC30370",
+      "authorities": [
+        "CF10370",
+        "FDC10370C"
+      ],
+      "pairs": [
+        {
+          "a": "CF10370",
+          "b": "FDC10370C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 7,
+          "b_apps": 7,
+          "app_intersection": 7,
+          "app_ratio_small": 1,
+          "ref_intersection": 10
+        }
+      ]
+    },
+    {
+      "sku": "EC30373",
+      "authorities": [
+        "CF10373",
+        "FDC10373C"
+      ],
+      "pairs": [
+        {
+          "a": "CF10373",
+          "b": "FDC10373C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 60,
+          "b_apps": 60,
+          "app_intersection": 60,
+          "app_ratio_small": 1,
+          "ref_intersection": 10
+        }
+      ]
+    },
+    {
+      "sku": "EC30388",
+      "authorities": [
+        "CF10388",
+        "FDC10388C"
+      ],
+      "pairs": [
+        {
+          "a": "CF10388",
+          "b": "FDC10388C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 10,
+          "b_apps": 10,
+          "app_intersection": 10,
+          "app_ratio_small": 1,
+          "ref_intersection": 13
+        }
+      ]
+    },
+    {
+      "sku": "EC30436",
+      "authorities": [
+        "CF10436",
+        "FDC10436C"
+      ],
+      "pairs": [
+        {
+          "a": "CF10436",
+          "b": "FDC10436C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 12,
+          "b_apps": 12,
+          "app_intersection": 12,
+          "app_ratio_small": 1,
+          "ref_intersection": 5
+        }
+      ]
+    },
+    {
+      "sku": "EC30550",
+      "authorities": [
+        "CF10550",
+        "FDC10550C"
+      ],
+      "pairs": [
+        {
+          "a": "CF10550",
+          "b": "FDC10550C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 7,
+          "b_apps": 7,
+          "app_intersection": 7,
+          "app_ratio_small": 1,
+          "ref_intersection": 14
+        }
+      ]
+    },
+    {
+      "sku": "EC30727",
+      "authorities": [
+        "CF10727",
+        "FDC10727C"
+      ],
+      "pairs": [
+        {
+          "a": "CF10727",
+          "b": "FDC10727C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 37,
+          "b_apps": 37,
+          "app_intersection": 37,
+          "app_ratio_small": 1,
+          "ref_intersection": 7
+        }
+      ]
+    },
+    {
+      "sku": "EC30775",
+      "authorities": [
+        "CF10775",
+        "FDC10775C"
+      ],
+      "pairs": [
+        {
+          "a": "CF10775",
+          "b": "FDC10775C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 57,
+          "b_apps": 57,
+          "app_intersection": 57,
+          "app_ratio_small": 1,
+          "ref_intersection": 22
+        }
+      ]
+    },
+    {
+      "sku": "EC31183",
+      "authorities": [
+        "CF11183",
+        "FDC11183C"
+      ],
+      "pairs": [
+        {
+          "a": "CF11183",
+          "b": "FDC11183C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 14,
+          "b_apps": 14,
+          "app_intersection": 14,
+          "app_ratio_small": 1,
+          "ref_intersection": 7
+        }
+      ]
+    },
+    {
+      "sku": "EC31643",
+      "authorities": [
+        "CF11643",
+        "FDC11643C"
+      ],
+      "pairs": [
+        {
+          "a": "CF11643",
+          "b": "FDC11643C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 60,
+          "b_apps": 60,
+          "app_intersection": 60,
+          "app_ratio_small": 1,
+          "ref_intersection": 4
+        }
+      ]
+    },
+    {
+      "sku": "EC31719",
+      "authorities": [
+        "CF11719",
+        "FDC11719C"
+      ],
+      "pairs": [
+        {
+          "a": "CF11719",
+          "b": "FDC11719C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 114,
+          "b_apps": 72,
+          "app_intersection": 52,
+          "app_ratio_small": 0.45614035087719296,
+          "ref_intersection": 6
+        }
+      ]
+    },
+    {
+      "sku": "EC31966",
+      "authorities": [
+        "CF11966",
+        "FDC11966C"
+      ],
+      "pairs": [
+        {
+          "a": "CF11966",
+          "b": "FDC11966C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 177,
+          "b_apps": 177,
+          "app_intersection": 177,
+          "app_ratio_small": 1,
+          "ref_intersection": 20
+        }
+      ]
+    },
+    {
+      "sku": "EC32150",
+      "authorities": [
+        "CF12150",
+        "FDC12150C"
+      ],
+      "pairs": [
+        {
+          "a": "CF12150",
+          "b": "FDC12150C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 36,
+          "b_apps": 34,
+          "app_intersection": 32,
+          "app_ratio_small": 0.8888888888888888,
+          "ref_intersection": 4
+        }
+      ]
+    },
+    {
+      "sku": "EC32159",
+      "authorities": [
+        "CF12159",
+        "FDC12159C"
+      ],
+      "pairs": [
+        {
+          "a": "CF12159",
+          "b": "FDC12159C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 11,
+          "b_apps": 11,
+          "app_intersection": 9,
+          "app_ratio_small": 0.8181818181818182,
+          "ref_intersection": 1
+        }
+      ]
+    },
+    {
+      "sku": "EC38392",
+      "authorities": [
+        "CF8392A",
+        "CV8392A"
+      ],
+      "pairs": [
+        {
+          "a": "CF8392A",
+          "b": "CV8392A",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 35,
+          "b_apps": 35,
+          "app_intersection": 35,
+          "app_ratio_small": 1,
+          "ref_intersection": 22
+        }
+      ]
+    },
+    {
+      "sku": "EL30855",
+      "authorities": [
+        "CH10855",
+        "FF10855",
+        "FS10855"
+      ],
+      "pairs": [
+        {
+          "a": "CH10855",
+          "b": "FF10855",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 10,
+          "b_apps": 10,
+          "app_intersection": 10,
+          "app_ratio_small": 1,
+          "ref_intersection": 0
+        },
+        {
+          "a": "CH10855",
+          "b": "FS10855",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 10,
+          "b_apps": 10,
+          "app_intersection": 10,
+          "app_ratio_small": 1,
+          "ref_intersection": 0
+        },
+        {
+          "a": "FF10855",
+          "b": "FS10855",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 10,
+          "b_apps": 10,
+          "app_intersection": 10,
+          "app_ratio_small": 1,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EL31934",
+      "authorities": [
+        "CH11934",
+        "FF11934",
+        "FS11934"
+      ],
+      "pairs": [
+        {
+          "a": "CH11934",
+          "b": "FF11934",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 7,
+          "b_apps": 7,
+          "app_intersection": 7,
+          "app_ratio_small": 1,
+          "ref_intersection": 0
+        },
+        {
+          "a": "CH11934",
+          "b": "FS11934",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1,
+          "a_apps": 7,
+          "b_apps": 7,
+          "app_intersection": 7,
+          "app_ratio_small": 1,
+          "ref_intersection": 0
+        },
+        {
+          "a": "FF11934",
+          "b": "FS11934",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 7,
+          "b_apps": 7,
+          "app_intersection": 7,
+          "app_ratio_small": 1,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EF33499",
+      "authorities": [
+        "G3499",
+        "G3499DP"
+      ],
+      "pairs": [
+        {
+          "a": "G3499",
+          "b": "G3499DP",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2,
+          "a_apps": 222,
+          "b_apps": 222,
+          "app_intersection": 220,
+          "app_ratio_small": 0.990990990990991,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EF33850",
+      "authorities": [
+        "G3850",
+        "G3850DP"
+      ],
+      "pairs": [
+        {
+          "a": "G3850",
+          "b": "G3850DP",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 109,
+          "b_apps": 97,
+          "app_intersection": 97,
+          "app_ratio_small": 0.8899082568807339,
+          "ref_intersection": 2
+        }
+      ]
+    },
+    {
+      "sku": "EF34143",
+      "authorities": [
+        "G4143",
+        "G4143DP"
+      ],
+      "pairs": [
+        {
+          "a": "G4143",
+          "b": "G4143DP",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2,
+          "a_apps": 53,
+          "b_apps": 53,
+          "app_intersection": 53,
+          "app_ratio_small": 1,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EF35237",
+      "authorities": [
+        "G5237",
+        "G5237DP"
+      ],
+      "pairs": [
+        {
+          "a": "G5237",
+          "b": "G5237DP",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2,
+          "a_apps": 6,
+          "b_apps": 6,
+          "app_intersection": 6,
+          "app_ratio_small": 1,
+          "ref_intersection": 0
+        }
+      ]
+    },
+    {
+      "sku": "EF37596",
+      "authorities": [
+        "G7596",
+        "G7596DP"
+      ],
+      "pairs": [
+        {
+          "a": "G7596",
+          "b": "G7596DP",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 7,
+          "b_apps": 7,
+          "app_intersection": 7,
+          "app_ratio_small": 1,
+          "ref_intersection": 1
+        }
+      ]
+    }
+  ],
+  "safe": [
+    {
+      "sku": "EC30138",
+      "authorities": [
+        "CF10138",
+        "CV10138"
+      ],
+      "pairs": [
+        {
+          "a": "CF10138",
+          "b": "CV10138",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 8,
+          "b_apps": 8,
+          "app_intersection": 8,
+          "app_ratio_small": 1,
+          "ref_intersection": 11
+        }
+      ]
+    },
+    {
+      "sku": "EC30360",
+      "authorities": [
+        "CF10360",
+        "FDC10360C"
+      ],
+      "pairs": [
+        {
+          "a": "CF10360",
+          "b": "FDC10360C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 60,
+          "b_apps": 60,
+          "app_intersection": 60,
+          "app_ratio_small": 1,
+          "ref_intersection": 6
+        }
+      ]
+    },
+    {
+      "sku": "EC30370",
+      "authorities": [
+        "CF10370",
+        "FDC10370C"
+      ],
+      "pairs": [
+        {
+          "a": "CF10370",
+          "b": "FDC10370C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 7,
+          "b_apps": 7,
+          "app_intersection": 7,
+          "app_ratio_small": 1,
+          "ref_intersection": 10
+        }
+      ]
+    },
+    {
+      "sku": "EC30388",
+      "authorities": [
+        "CF10388",
+        "FDC10388C"
+      ],
+      "pairs": [
+        {
+          "a": "CF10388",
+          "b": "FDC10388C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 10,
+          "b_apps": 10,
+          "app_intersection": 10,
+          "app_ratio_small": 1,
+          "ref_intersection": 13
+        }
+      ]
+    },
+    {
+      "sku": "EC30727",
+      "authorities": [
+        "CF10727",
+        "FDC10727C"
+      ],
+      "pairs": [
+        {
+          "a": "CF10727",
+          "b": "FDC10727C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 37,
+          "b_apps": 37,
+          "app_intersection": 37,
+          "app_ratio_small": 1,
+          "ref_intersection": 7
+        }
+      ]
+    },
+    {
+      "sku": "EC30775",
+      "authorities": [
+        "CF10775",
+        "FDC10775C"
+      ],
+      "pairs": [
+        {
+          "a": "CF10775",
+          "b": "FDC10775C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 57,
+          "b_apps": 57,
+          "app_intersection": 57,
+          "app_ratio_small": 1,
+          "ref_intersection": 22
+        }
+      ]
+    },
+    {
+      "sku": "EC31966",
+      "authorities": [
+        "CF11966",
+        "FDC11966C"
+      ],
+      "pairs": [
+        {
+          "a": "CF11966",
+          "b": "FDC11966C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 177,
+          "b_apps": 177,
+          "app_intersection": 177,
+          "app_ratio_small": 1,
+          "ref_intersection": 20
+        }
+      ]
+    },
+    {
+      "sku": "EC32150",
+      "authorities": [
+        "CF12150",
+        "FDC12150C"
+      ],
+      "pairs": [
+        {
+          "a": "CF12150",
+          "b": "FDC12150C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 36,
+          "b_apps": 34,
+          "app_intersection": 32,
+          "app_ratio_small": 0.8888888888888888,
+          "ref_intersection": 4
+        }
+      ]
+    },
+    {
+      "sku": "EC32159",
+      "authorities": [
+        "CF12159",
+        "FDC12159C"
+      ],
+      "pairs": [
+        {
+          "a": "CF12159",
+          "b": "FDC12159C",
+          "alt": true,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 11,
+          "b_apps": 11,
+          "app_intersection": 9,
+          "app_ratio_small": 0.8181818181818182,
+          "ref_intersection": 1
+        }
+      ]
+    },
+    {
+      "sku": "EF33850",
+      "authorities": [
+        "G3850",
+        "G3850DP"
+      ],
+      "pairs": [
+        {
+          "a": "G3850",
+          "b": "G3850DP",
+          "alt": false,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0,
+          "a_apps": 109,
+          "b_apps": 97,
+          "app_intersection": 97,
+          "app_ratio_small": 0.8899082568807339,
+          "ref_intersection": 2
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "fram-ld-graphql-2026-09-11T20-35-04-691Z",
+  "source": "FRAM_MAGENTO_GRAPHQL",
+  "endpoint": "https://www.fram.com/graphql",
+  "total_catalog_products": 3281,
+  "raw_products": 3281,
+  "unique_products": 3281,
+  "allowed_families": [
+    "LUBE",
+    "AIR",
+    "CABIN",
+    "FUEL"
+  ],
+  "europe_promotion_allowed": false,
+  "mann_filter_non_europe_role": "Cross Reference Competitor",
+  "ld_candidate_count": 2499,
+  "by_family": {
+    "LUBE": 626,
+    "AIR": 1154,
+    "CABIN": 435,
+    "FUEL": 284
+  },
+  "record_file": "fram-ld-graphql-2026-09-11T20-35-04-691Z.json"
+}

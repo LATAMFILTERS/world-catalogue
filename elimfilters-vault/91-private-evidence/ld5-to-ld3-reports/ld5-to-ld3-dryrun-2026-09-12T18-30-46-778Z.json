@@ -1,0 +1,10 @@
+{
+  "migration": "100_LD_LEGACY_PREFIX_5_TO_3",
+  "mode": "dry-run",
+  "plan": {},
+  "before": {},
+  "mutations": {},
+  "audit": {},
+  "transaction": "ROLLBACK",
+  "error": "LD5_PLAN_CHANGED: safe=4632 quarantine=5"
+}

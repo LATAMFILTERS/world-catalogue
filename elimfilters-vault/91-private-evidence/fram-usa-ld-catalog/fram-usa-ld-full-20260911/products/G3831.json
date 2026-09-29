@@ -1,0 +1,1268 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "FUEL",
+  "authority": {
+    "part_number": "G3831",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "G3831",
+    "product_type": "Fuel Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 3.25,
+      "outer_diameter_mm": 82.55,
+      "height_in": 4.906,
+      "height_mm": 124.61,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "In Line",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF885"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF766"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "450905084"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "71017"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "71033"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "71027"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "GF35"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "KL21"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "KL22"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "KL10"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "WK830/9"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "WK830/2"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "WK830/10"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3276"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3238"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F64607"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33238"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Barad",
+        "part_number": "GFB-2012"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "043-0744"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "043-0849"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "043-0787"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "043-0998"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "043-0983"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "95238"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "95276"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "13 32 1 269 244"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "13 32 1 270 039"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "13 72 1 270 039"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "1269244"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "13 31 1 269 244"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86238"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86276"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "G2939"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G2939"
+      },
+      {
+        "manufacturer": "Cobra",
+        "part_number": "WCF609"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "FF683"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "G2939"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF203"
+      },
+      {
+        "manufacturer": "IAPCO",
+        "part_number": "A-0310-005"
+      },
+      {
+        "manufacturer": "IAPCO",
+        "part_number": "FF906"
+      },
+      {
+        "manufacturer": "ITM",
+        "part_number": "11-32301"
+      },
+      {
+        "manufacturer": "ITM",
+        "part_number": "11-33107"
+      },
+      {
+        "manufacturer": "ITM",
+        "part_number": "11-33100"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "FB684"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "KL10"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G2939"
+      },
+      {
+        "manufacturer": "Master Parts",
+        "part_number": "G-2939"
+      },
+      {
+        "manufacturer": "MPA",
+        "part_number": "931 110 149 00"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "73276"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "73238"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PF3831"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "928 110 147 05"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "928 110 147 04"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G2939"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "83-80",
+        "make": "BMW",
+        "model": "320I",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "1979",
+        "make": "BMW",
+        "model": "320I",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "83-81",
+        "make": "PORSCHE",
+        "model": "911",
+        "engine": "H6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "89-84",
+        "make": "PORSCHE",
+        "model": "911",
+        "engine": "H6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "83-81",
+        "make": "PORSCHE",
+        "model": "911",
+        "engine": "H6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "89-86",
+        "make": "PORSCHE",
+        "model": "911",
+        "engine": "H6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "92-91",
+        "make": "PORSCHE",
+        "model": "911",
+        "engine": "H6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "98-89",
+        "make": "PORSCHE",
+        "model": "911",
+        "engine": "H6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "82-80",
+        "make": "PORSCHE",
+        "model": "924",
+        "engine": "L4-2.0L",
+        "quantity": 1
+      },
+      {
+        "year": "88-87",
+        "make": "PORSCHE",
+        "model": "924",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "82-78",
+        "make": "PORSCHE",
+        "model": "928",
+        "engine": "V8-4.5L",
+        "quantity": 1
+      },
+      {
+        "year": "84-83",
+        "make": "PORSCHE",
+        "model": "928",
+        "engine": "V8-4.7L",
+        "quantity": 1
+      },
+      {
+        "year": "91-85",
+        "make": "PORSCHE",
+        "model": "928",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "95-93",
+        "make": "PORSCHE",
+        "model": "928",
+        "engine": "V8-5.4L",
+        "quantity": 1
+      },
+      {
+        "year": "89-83",
+        "make": "PORSCHE",
+        "model": "944",
+        "engine": "L4-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "1989",
+        "make": "PORSCHE",
+        "model": "944",
+        "engine": "L4-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "91-89",
+        "make": "PORSCHE",
+        "model": "944",
+        "engine": "L4-3.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "G3831",
+    "source_part_key": "000944372",
+    "source_totals": {
+      "attributes": 28,
+      "applications": 17,
+      "cross_references": 54
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, G3831, Fuel Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "In-Line Fuel Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "In Line",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Metal",
+        "recno": "82"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "83"
+      },
+      {
+        "attribute": "Fuel Type",
+        "value": "Gasoline",
+        "recno": "84"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "85"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Fuel Filter",
+        "recno": "86"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "4.906",
+        "recno": "88"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "3.250",
+        "recno": "89"
+      },
+      {
+        "attribute": "Housing Material",
+        "value": "Metal",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Obsolete\t- Obsolescence protection has expired on this part. It will no longer appear in catalogs, price lists.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Inlet Line Size (Millimeter)",
+        "value": "M14x1.5",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100351449",
+        "recno": "92"
+      },
+      {
+        "attribute": "Outlet Line Size (Millimeter)",
+        "value": "M14x1.5",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Bulgaria",
+        "recno": "94"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.7580",
+        "recno": "98"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "4.5480",
+        "recno": "99"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "5.2900",
+        "recno": "100"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "6.1250",
+        "recno": "101"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.8520",
+        "recno": "102"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "12.0620",
+        "recno": "103"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.8520",
+        "recno": "104"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "8.2500",
+        "recno": "105"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.758,
+        "case_weight_lb": 4.548,
+        "unit_height_in": 5.29,
+        "unit_length_in": 3.852,
+        "unit_width_in": 3.852,
+        "case_height_in": 6.125,
+        "case_length_in": 12.062,
+        "case_width_in": 8.25,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 9.096,
+        "estimated_case_dimensions": {
+          "length_in": 16.083,
+          "width_in": 12.375,
+          "height_in": 6.125,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 17,
+    "all_cross_references_observed": 54,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T06:02:50.749Z",
+  "discovered_from": "G3831",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BMW",
+        "model": "320I",
+        "year": "83-80",
+        "engine": "L4-1.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BMW",
+        "model": "320I",
+        "year": "1979",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "911",
+        "year": "83-81",
+        "engine": "H6-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "911",
+        "year": "89-84",
+        "engine": "H6-3.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "911",
+        "year": "83-81",
+        "engine": "H6-3.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "911",
+        "year": "89-86",
+        "engine": "H6-3.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "911",
+        "year": "92-91",
+        "engine": "H6-3.3L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "911",
+        "year": "98-89",
+        "engine": "H6-3.6L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "924",
+        "year": "82-80",
+        "engine": "L4-2.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "924",
+        "year": "88-87",
+        "engine": "L4-2.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "928",
+        "year": "82-78",
+        "engine": "V8-4.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "928",
+        "year": "84-83",
+        "engine": "V8-4.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "928",
+        "year": "91-85",
+        "engine": "V8-5.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "928",
+        "year": "95-93",
+        "engine": "V8-5.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "944",
+        "year": "89-83",
+        "engine": "L4-2.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "944",
+        "year": "1989",
+        "engine": "L4-2.7L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PORSCHE",
+        "model": "944",
+        "year": "91-89",
+        "engine": "L4-3.0L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF885",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF766",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Barad",
+        "part_number": "GFB-2012",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "043-0744",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "043-0849",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "043-0787",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "043-0998",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "043-0983",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "95238",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "95276",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "13 32 1 269 244",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "13 32 1 270 039",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "13 72 1 270 039",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "1269244",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "BMW",
+        "part_number": "13 31 1 269 244",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "450905084",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "71017",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "71033",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "71027",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86238",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86276",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "G2939",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G2939",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "GF35",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Cobra",
+        "part_number": "WCF609",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "FF683",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "G2939",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF203",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "IAPCO",
+        "part_number": "A-0310-005",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "IAPCO",
+        "part_number": "FF906",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "ITM",
+        "part_number": "11-32301",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "ITM",
+        "part_number": "11-33107",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "ITM",
+        "part_number": "11-33100",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "FB684",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "KL10",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G2939",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "KL21",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "KL22",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "KL10",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "WK830/9",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "WK830/2",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "WK830/10",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Master Parts",
+        "part_number": "G-2939",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "MPA",
+        "part_number": "931 110 149 00",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3276",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3238",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "73276",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "73238",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PF3831",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F64607",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "928 110 147 05",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "928 110 147 04",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G2939",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33238",
+        "source_part_number": "G3831",
+        "part_key": "000944372",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

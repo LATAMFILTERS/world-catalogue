@@ -1,0 +1,1024 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "FDC10436C",
+    "line": "DRIVE"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "FDC10436C",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.34,
+      "height_mm": 34.04,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Drive Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [
+      "CF10436"
+    ],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA4336"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E2916LC"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CU3569"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK3569"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "49366"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Air Source",
+        "part_number": "7968"
+      },
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-130"
+      },
+      {
+        "manufacturer": "ATP",
+        "part_number": "TA6"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2205"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "90216C"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1847C"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68012876AA"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P616898"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "XC35834C"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF26462"
+      },
+      {
+        "manufacturer": "Freightliner",
+        "part_number": "9068300218"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F9366"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F9366C"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1340"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1340"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1372"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1847C"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "906 830 03 18"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "906 830 02 18"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3736"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "CAF1847C"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "9366"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "99366"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC9366"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "C35834P"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "part_number": "C35834"
+      },
+      {
+        "manufacturer": "Purolator TECH",
+        "part_number": "TC35834"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "part_number": "C35834"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1847C"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1142"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "2E0-819-638A"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "09-07",
+        "make": "DODGE",
+        "model": "SPRINTER 2500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-07",
+        "make": "DODGE",
+        "model": "SPRINTER 2500",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "08-07",
+        "make": "DODGE",
+        "model": "SPRINTER 2500",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "09-07",
+        "make": "DODGE",
+        "model": "SPRINTER 3500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-07",
+        "make": "DODGE",
+        "model": "SPRINTER 3500",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "08-07",
+        "make": "DODGE",
+        "model": "SPRINTER 3500",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "18-10",
+        "make": "MERCEDES-BENZ",
+        "model": "SPRINTER 2500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "17-14",
+        "make": "MERCEDES-BENZ",
+        "model": "SPRINTER 2500",
+        "engine": "L4-2.1L",
+        "quantity": 1
+      },
+      {
+        "year": "18-10",
+        "make": "MERCEDES-BENZ",
+        "model": "SPRINTER 2500",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "18-10",
+        "make": "MERCEDES-BENZ",
+        "model": "SPRINTER 3500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "17-14",
+        "make": "MERCEDES-BENZ",
+        "model": "SPRINTER 3500",
+        "engine": "L4-2.1L",
+        "quantity": 1
+      },
+      {
+        "year": "18-10",
+        "make": "MERCEDES-BENZ",
+        "model": "SPRINTER 3500",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "FDC10436C",
+    "source_part_key": "010740210",
+    "source_totals": {
+      "attributes": 30,
+      "applications": 20,
+      "cross_references": 37
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Drive™cabin air filters prevent harmful airborne particles from entering your vehicle’s cabin. It is engineered to filter the air before it gets to you, removing dust, pollen, and other pollutants. Replacing a dirty cabin air filter with a new FRAM Drive cabin air filter can optimize clean air flow and maintain peak HVAC system performance. FRAM recommends changing your cabin air filter every 12 months.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Up to 12 months or 12,000 mile (19,000 kilometer) protection",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, FDC10436C, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Removes dust, pollen, and other pollutants",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Optimizes airflow and maintains HVAC performance",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Drive Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.34",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "13.94",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "9.17",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "10",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Under Hood",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100578846",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.1860",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "3.5580",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "14.3800",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "6.6000",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "9.2500",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "14.7400",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.6300",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "9.9900",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.186,
+        "case_weight_lb": 3.558,
+        "unit_height_in": 14.38,
+        "unit_length_in": 9.25,
+        "unit_width_in": 1.63,
+        "case_height_in": 6.6,
+        "case_length_in": 14.74,
+        "case_width_in": 9.99,
+        "inferred_case_qty": 3
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 14.232,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 20,
+    "all_cross_references_observed": 37,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T06:00:04.911Z",
+  "discovered_from": "FDC10436C",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "DODGE",
+        "model": "SPRINTER 2500",
+        "year": "09-07",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "SPRINTER 2500",
+        "year": "09-07",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "SPRINTER 2500",
+        "year": "08-07",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "SPRINTER 3500",
+        "year": "09-07",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "SPRINTER 3500",
+        "year": "09-07",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "SPRINTER 3500",
+        "year": "08-07",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "SPRINTER 2500",
+        "year": "19-07",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "SPRINTER 2500",
+        "year": "17-14",
+        "engine": "L4-2.1L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "SPRINTER 2500",
+        "year": "19-07",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "SPRINTER 2500",
+        "year": "08-07",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "SPRINTER 3500",
+        "year": "19-07",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "SPRINTER 3500",
+        "year": "17-14",
+        "engine": "L4-2.1L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "SPRINTER 3500",
+        "year": "19-07",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "SPRINTER 3500",
+        "year": "08-07",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SPRINTER 2500",
+        "year": "18-10",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SPRINTER 2500",
+        "year": "17-14",
+        "engine": "L4-2.1L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SPRINTER 2500",
+        "year": "18-10",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SPRINTER 3500",
+        "year": "18-10",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SPRINTER 3500",
+        "year": "17-14",
+        "engine": "L4-2.1L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SPRINTER 3500",
+        "year": "18-10",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Air Source",
+        "part_number": "7968",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-130",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ATP",
+        "part_number": "TA6",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA4336",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2205",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "90216C",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1847C",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68012876AA",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P616898",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "XC35834C",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "AF26462",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FRAM Fresh Breeze",
+        "part_number": "CF10436",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Freightliner",
+        "part_number": "9068300218",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F9366",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F9366C",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1340",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1340",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1372",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "E2916LC",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1847C",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CU3569",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CUK3569",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "906 830 03 18",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "906 830 02 18",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3736",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "CAF1847C",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "9366",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "99366",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC9366",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "C35834P",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "part_number": "C35834",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator TECH",
+        "part_number": "TC35834",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "part_number": "C35834",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1847C",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1142",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Volkswagen",
+        "part_number": "2E0-819-638A",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "49366",
+        "source_part_number": "FDC10436C",
+        "part_key": "010740210",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

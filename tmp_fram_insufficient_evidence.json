@@ -1,0 +1,2712 @@
+{
+  "all": [
+    {
+      "authority": "CA10191",
+      "family": "AIR",
+      "proposedSku": "EA30191",
+      "candidates": [
+        {
+          "sku": "EA38766",
+          "evidenceCount": 1,
+          "source_apps": 6,
+          "target_apps": 9,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 2,
+          "loose_ratio": 0.6666666666666666,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA10253",
+      "family": "AIR",
+      "proposedSku": "EA30253",
+      "candidates": [
+        {
+          "sku": "EA34137",
+          "evidenceCount": 1,
+          "source_apps": 13,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA10755",
+      "family": "AIR",
+      "proposedSku": "EA30755",
+      "candidates": [
+        {
+          "sku": "EA32377",
+          "evidenceCount": 1,
+          "source_apps": 20,
+          "target_apps": 15,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 5,
+          "loose_ratio": 0.35714285714285715,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA10986",
+      "family": "AIR",
+      "proposedSku": "EA30986",
+      "candidates": [
+        {
+          "sku": "EA31415",
+          "evidenceCount": 1,
+          "source_apps": 0,
+          "target_apps": 51,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        }
+      ]
+    },
+    {
+      "authority": "CA11003",
+      "family": "AIR",
+      "proposedSku": "EA31003",
+      "candidates": [
+        {
+          "sku": "EA37597",
+          "evidenceCount": 1,
+          "source_apps": 3,
+          "target_apps": 42,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 2,
+          "loose_ratio": 1,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA11054",
+      "family": "AIR",
+      "proposedSku": "EA31054",
+      "candidates": [
+        {
+          "sku": "EA30626",
+          "evidenceCount": 1,
+          "source_apps": 1,
+          "target_apps": 3,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 1,
+          "loose_ratio": 1,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA11426",
+      "family": "AIR",
+      "proposedSku": "EA31426",
+      "candidates": [
+        {
+          "sku": "EA38023",
+          "evidenceCount": 1,
+          "source_apps": 5,
+          "target_apps": 1,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        }
+      ]
+    },
+    {
+      "authority": "CA258",
+      "family": "AIR",
+      "proposedSku": "EA30258",
+      "candidates": [
+        {
+          "sku": "EA38009",
+          "evidenceCount": 1,
+          "source_apps": 0,
+          "target_apps": 101,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        }
+      ]
+    },
+    {
+      "authority": "CA3373",
+      "family": "AIR",
+      "proposedSku": "EA33373",
+      "candidates": [
+        {
+          "sku": "EA33690",
+          "evidenceCount": 1,
+          "source_apps": 42,
+          "target_apps": 5,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        },
+        {
+          "sku": "EA33437",
+          "evidenceCount": 1,
+          "source_apps": 42,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA3399",
+      "family": "AIR",
+      "proposedSku": "EA33399",
+      "candidates": [
+        {
+          "sku": "EA31171",
+          "evidenceCount": 1,
+          "source_apps": 37,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA3660",
+      "family": "AIR",
+      "proposedSku": "EA33660",
+      "candidates": [
+        {
+          "sku": "EA38601",
+          "evidenceCount": 1,
+          "source_apps": 100,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA376",
+      "family": "AIR",
+      "proposedSku": "EA30376",
+      "candidates": [
+        {
+          "sku": "EA32262",
+          "evidenceCount": 1,
+          "source_apps": 5,
+          "target_apps": 45,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 1,
+          "loose_ratio": 0.5,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        }
+      ]
+    },
+    {
+      "authority": "CA3782SY",
+      "family": "AIR",
+      "proposedSku": "EA33782",
+      "candidates": [
+        {
+          "sku": "EA30272",
+          "evidenceCount": 1,
+          "source_apps": 0,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2
+        }
+      ]
+    },
+    {
+      "authority": "CA3873",
+      "family": "AIR",
+      "proposedSku": "EA33873",
+      "candidates": [
+        {
+          "sku": "EA31091",
+          "evidenceCount": 1,
+          "source_apps": 16,
+          "target_apps": 5,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA4576",
+      "family": "AIR",
+      "proposedSku": "EA34576",
+      "candidates": [
+        {
+          "sku": "EA36110",
+          "evidenceCount": 1,
+          "source_apps": 16,
+          "target_apps": 13,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA6324",
+      "family": "AIR",
+      "proposedSku": "EA36324",
+      "candidates": [
+        {
+          "sku": "EA33989",
+          "evidenceCount": 1,
+          "source_apps": 0,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA6545",
+      "family": "AIR",
+      "proposedSku": "EA36545",
+      "candidates": [
+        {
+          "sku": "EA31152",
+          "evidenceCount": 1,
+          "source_apps": 19,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2
+        }
+      ]
+    },
+    {
+      "authority": "CA7094",
+      "family": "AIR",
+      "proposedSku": "EA37094",
+      "candidates": [
+        {
+          "sku": "EA37688",
+          "evidenceCount": 1,
+          "source_apps": 8,
+          "target_apps": 2,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        }
+      ]
+    },
+    {
+      "authority": "CA7137SY",
+      "family": "AIR",
+      "proposedSku": "EA37137",
+      "candidates": [
+        {
+          "sku": "EA31553",
+          "evidenceCount": 1,
+          "source_apps": 0,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2
+        }
+      ]
+    },
+    {
+      "authority": "CA7480SY",
+      "family": "AIR",
+      "proposedSku": "EA37480",
+      "candidates": [
+        {
+          "sku": "EA37476",
+          "evidenceCount": 1,
+          "source_apps": 0,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0
+        }
+      ]
+    },
+    {
+      "authority": "CA7614",
+      "family": "AIR",
+      "proposedSku": "EA37614",
+      "candidates": [
+        {
+          "sku": "EA39108",
+          "evidenceCount": 1,
+          "source_apps": 9,
+          "target_apps": 39,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        }
+      ]
+    },
+    {
+      "authority": "CA8038",
+      "family": "AIR",
+      "proposedSku": "EA38038",
+      "candidates": [
+        {
+          "sku": "EA33902",
+          "evidenceCount": 1,
+          "source_apps": 73,
+          "target_apps": 13,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2
+        }
+      ]
+    },
+    {
+      "authority": "CA8040",
+      "family": "AIR",
+      "proposedSku": "EA38040",
+      "candidates": [
+        {
+          "sku": "EA32329",
+          "evidenceCount": 1,
+          "source_apps": 2,
+          "target_apps": 119,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        }
+      ]
+    },
+    {
+      "authority": "CA8094",
+      "family": "AIR",
+      "proposedSku": "EA38094",
+      "candidates": [
+        {
+          "sku": "EA38613",
+          "evidenceCount": 1,
+          "source_apps": 1,
+          "target_apps": 2,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 1,
+          "loose_ratio": 1,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA8720",
+      "family": "AIR",
+      "proposedSku": "EA38720",
+      "candidates": [
+        {
+          "sku": "EA31109",
+          "evidenceCount": 1,
+          "source_apps": 7,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA8754",
+      "family": "AIR",
+      "proposedSku": "EA38754",
+      "candidates": [
+        {
+          "sku": "EA37008",
+          "evidenceCount": 1,
+          "source_apps": 13,
+          "target_apps": 29,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        }
+      ]
+    },
+    {
+      "authority": "CA8768",
+      "family": "AIR",
+      "proposedSku": "EA38768",
+      "candidates": [
+        {
+          "sku": "EA33698",
+          "evidenceCount": 1,
+          "source_apps": 51,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA9115",
+      "family": "AIR",
+      "proposedSku": "EA39115",
+      "candidates": [
+        {
+          "sku": "EA32517",
+          "evidenceCount": 1,
+          "source_apps": 3,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA9246SY",
+      "family": "AIR",
+      "proposedSku": "EA39246",
+      "candidates": [
+        {
+          "sku": "EA39269",
+          "evidenceCount": 1,
+          "source_apps": 0,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA9269",
+      "family": "AIR",
+      "proposedSku": "EA39269",
+      "candidates": [
+        {
+          "sku": "EA31831",
+          "evidenceCount": 1,
+          "source_apps": 30,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2
+        }
+      ]
+    },
+    {
+      "authority": "CA9401",
+      "family": "AIR",
+      "proposedSku": "EA39401",
+      "candidates": [
+        {
+          "sku": "EA31960",
+          "evidenceCount": 1,
+          "source_apps": 18,
+          "target_apps": 6,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 4,
+          "loose_ratio": 0.5714285714285714,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CA9634",
+      "family": "AIR",
+      "proposedSku": "EA39634",
+      "candidates": [
+        {
+          "sku": "EA30153",
+          "evidenceCount": 1,
+          "source_apps": 8,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CF10074",
+      "family": "CABIN",
+      "proposedSku": "EC30074",
+      "candidates": [
+        {
+          "sku": "EC32368",
+          "evidenceCount": 1,
+          "source_apps": 28,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0
+        }
+      ]
+    },
+    {
+      "authority": "CF10133",
+      "family": "CABIN",
+      "proposedSku": "EC30133",
+      "candidates": [
+        {
+          "sku": "EC32131",
+          "evidenceCount": 1,
+          "source_apps": 4,
+          "target_apps": 325,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 1,
+          "loose_ratio": 0.5,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CF10135",
+      "family": "CABIN",
+      "proposedSku": "EC30135",
+      "candidates": [
+        {
+          "sku": "EC33272",
+          "evidenceCount": 1,
+          "source_apps": 16,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CF10208",
+      "family": "CABIN",
+      "proposedSku": "EC30208",
+      "candidates": [
+        {
+          "sku": "EC33023",
+          "evidenceCount": 1,
+          "source_apps": 14,
+          "target_apps": 1,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CF11173",
+      "family": "CABIN",
+      "proposedSku": "EC31173",
+      "candidates": [
+        {
+          "sku": "EC30555",
+          "evidenceCount": 1,
+          "source_apps": 9,
+          "target_apps": 12,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 1,
+          "loose_ratio": 0.25,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CF11663",
+      "family": "CABIN",
+      "proposedSku": "EC31663",
+      "candidates": [
+        {
+          "sku": "EC31776",
+          "evidenceCount": 1,
+          "source_apps": 10,
+          "target_apps": 16,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CF12552",
+      "family": "CABIN",
+      "proposedSku": "EC32552",
+      "candidates": [
+        {
+          "sku": "EC32312",
+          "evidenceCount": 1,
+          "source_apps": 17,
+          "target_apps": 10,
+          "exact_intersection": 2,
+          "source_ratio": 0.11764705882352941,
+          "loose_intersection": 1,
+          "loose_ratio": 0.14285714285714285,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0
+        }
+      ]
+    },
+    {
+      "authority": "CF5972A",
+      "family": "CABIN",
+      "proposedSku": "EC35972",
+      "candidates": [
+        {
+          "sku": "EC32745",
+          "evidenceCount": 1,
+          "source_apps": 33,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CF8045A",
+      "family": "CABIN",
+      "proposedSku": "EC38045",
+      "candidates": [
+        {
+          "sku": "EC38109",
+          "evidenceCount": 1,
+          "source_apps": 2,
+          "target_apps": 5,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0
+        },
+        {
+          "sku": "EC38391",
+          "evidenceCount": 1,
+          "source_apps": 2,
+          "target_apps": 4,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "CF8770A",
+      "family": "CABIN",
+      "proposedSku": "EC38770",
+      "candidates": [
+        {
+          "sku": "EC38971",
+          "evidenceCount": 1,
+          "source_apps": 25,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0
+        }
+      ]
+    },
+    {
+      "authority": "CH11038",
+      "family": "LUBE",
+      "proposedSku": "EL31038",
+      "candidates": [
+        {
+          "sku": "EL36122",
+          "evidenceCount": 1,
+          "source_apps": 14,
+          "target_apps": 30,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        }
+      ]
+    },
+    {
+      "authority": "CH11665",
+      "family": "LUBE",
+      "proposedSku": "EL31665",
+      "candidates": [
+        {
+          "sku": "EL38005",
+          "evidenceCount": 1,
+          "source_apps": 27,
+          "target_apps": 315,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2
+        }
+      ]
+    },
+    {
+      "authority": "CH6006",
+      "family": "LUBE",
+      "proposedSku": "EL36006",
+      "candidates": [
+        {
+          "sku": "EL34797",
+          "evidenceCount": 1,
+          "source_apps": 0,
+          "target_apps": 2,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "FD5618",
+      "family": "LUBE",
+      "proposedSku": "EL35618",
+      "candidates": [
+        {
+          "sku": "EL31329",
+          "evidenceCount": 1,
+          "source_apps": 14,
+          "target_apps": 89,
+          "exact_intersection": 7,
+          "source_ratio": 0.5,
+          "loose_intersection": 8,
+          "loose_ratio": 1,
+          "spec_comparable": 5,
+          "spec_matches": 0,
+          "spec_conflicts": 5
+        }
+      ]
+    },
+    {
+      "authority": "FDC11173C",
+      "family": "CABIN",
+      "proposedSku": "EC31173",
+      "candidates": [
+        {
+          "sku": "EC30555",
+          "evidenceCount": 1,
+          "source_apps": 9,
+          "target_apps": 12,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 1,
+          "loose_ratio": 0.25,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "FDC11663C",
+      "family": "CABIN",
+      "proposedSku": "EC31663",
+      "candidates": [
+        {
+          "sku": "EC31776",
+          "evidenceCount": 1,
+          "source_apps": 10,
+          "target_apps": 16,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ]
+    },
+    {
+      "authority": "FDC12552C",
+      "family": "CABIN",
+      "proposedSku": "EC32552",
+      "candidates": [
+        {
+          "sku": "EC32312",
+          "evidenceCount": 1,
+          "source_apps": 17,
+          "target_apps": 10,
+          "exact_intersection": 2,
+          "source_ratio": 0.11764705882352941,
+          "loose_intersection": 1,
+          "loose_ratio": 0.14285714285714285,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0
+        }
+      ]
+    },
+    {
+      "authority": "G3727FP",
+      "family": "FUEL",
+      "proposedSku": "EF33727",
+      "candidates": [
+        {
+          "sku": "EF33802",
+          "evidenceCount": 1,
+          "source_apps": 0,
+          "target_apps": 559,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2
+        }
+      ]
+    },
+    {
+      "authority": "G3802AFP",
+      "family": "FUEL",
+      "proposedSku": "EF33802",
+      "candidates": [
+        {
+          "sku": "EF33802",
+          "evidenceCount": 1,
+          "source_apps": 0,
+          "target_apps": 559,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2
+        }
+      ]
+    },
+    {
+      "authority": "G3831",
+      "family": "FUEL",
+      "proposedSku": "EF33831",
+      "candidates": [
+        {
+          "sku": "EF33010",
+          "evidenceCount": 1,
+          "source_apps": 17,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2
+        },
+        {
+          "sku": "EF38309",
+          "evidenceCount": 1,
+          "source_apps": 17,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2
+        }
+      ]
+    },
+    {
+      "authority": "G6462",
+      "family": "FUEL",
+      "proposedSku": "EF36462",
+      "candidates": [
+        {
+          "sku": "EF31426",
+          "evidenceCount": 1,
+          "source_apps": 11,
+          "target_apps": 8,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        }
+      ]
+    },
+    {
+      "authority": "G7194",
+      "family": "FUEL",
+      "proposedSku": "EF37194",
+      "candidates": [
+        {
+          "sku": "EF36612",
+          "evidenceCount": 1,
+          "source_apps": 2,
+          "target_apps": 7,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 2,
+          "spec_conflicts": 2
+        },
+        {
+          "sku": "EF31426",
+          "evidenceCount": 1,
+          "source_apps": 2,
+          "target_apps": 8,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        }
+      ]
+    },
+    {
+      "authority": "G7355",
+      "family": "FUEL",
+      "proposedSku": "EF37355",
+      "candidates": [
+        {
+          "sku": "EF31426",
+          "evidenceCount": 1,
+          "source_apps": 13,
+          "target_apps": 8,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        }
+      ]
+    },
+    {
+      "authority": "G7766",
+      "family": "FUEL",
+      "proposedSku": "EF37766",
+      "candidates": [
+        {
+          "sku": "EF31426",
+          "evidenceCount": 1,
+          "source_apps": 4,
+          "target_apps": 8,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 1,
+          "loose_ratio": 0.3333333333333333,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        }
+      ]
+    },
+    {
+      "authority": "PH10890",
+      "family": "LUBE",
+      "proposedSku": "EL30890",
+      "candidates": [
+        {
+          "sku": "EL32941",
+          "evidenceCount": 1,
+          "source_apps": 10,
+          "target_apps": 1,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        }
+      ]
+    },
+    {
+      "authority": "PH2815",
+      "family": "LUBE",
+      "proposedSku": "EL32815",
+      "candidates": [
+        {
+          "sku": "EL32013",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 8,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL32016",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 8,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        },
+        {
+          "sku": "EL32021",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 106,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 5,
+          "spec_matches": 1,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL30610",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 12,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL34011",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 182,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        },
+        {
+          "sku": "EL34022",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 138,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 5,
+          "spec_matches": 0,
+          "spec_conflicts": 5
+        },
+        {
+          "sku": "EL32012",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 8,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL39201",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 7,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL32018",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 7,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL32019",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 7,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL39202",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 7,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL32022",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 7,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL32025",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 7,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL32026",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 7,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL39203",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 11,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL32036",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 7,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL39204",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 7,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL39205",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 8,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL32081",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 7,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL39209",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 40,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 5,
+          "spec_matches": 0,
+          "spec_conflicts": 5
+        },
+        {
+          "sku": "EL39301",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 13,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL33014",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 36,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL33019",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 13,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL39302",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 13,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL39304",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 13,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL39308",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 13,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL34012",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 67,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        },
+        {
+          "sku": "EL34015",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 110,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL34016",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 65,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL34017",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 76,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        },
+        {
+          "sku": "EL34023",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 65,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL34025",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 150,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL32510",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 65,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL34032",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 65,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL34048",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 65,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL30510",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 65,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL35110",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 65,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL39407",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 186,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 5,
+          "spec_matches": 1,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL34070",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 65,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL39409",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 212,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 5,
+          "spec_matches": 1,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL32015",
+          "evidenceCount": 1,
+          "source_apps": 12,
+          "target_apps": 175,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        }
+      ]
+    },
+    {
+      "authority": "PH3506",
+      "family": "LUBE",
+      "proposedSku": "EL33506",
+      "candidates": [
+        {
+          "sku": "EL30060",
+          "evidenceCount": 1,
+          "source_apps": 239,
+          "target_apps": 191,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 44,
+          "loose_ratio": 0.38596491228070173,
+          "spec_comparable": 5,
+          "spec_matches": 3,
+          "spec_conflicts": 2
+        },
+        {
+          "sku": "EL31222",
+          "evidenceCount": 1,
+          "source_apps": 239,
+          "target_apps": 394,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        }
+      ]
+    },
+    {
+      "authority": "PH3569",
+      "family": "LUBE",
+      "proposedSku": "EL33569",
+      "candidates": [
+        {
+          "sku": "EL30830",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL32013",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 8,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL32016",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 8,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        },
+        {
+          "sku": "EL32021",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 106,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 5,
+          "spec_matches": 1,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL30610",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 12,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL32012",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 8,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL39201",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 7,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL32018",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 7,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL32019",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 7,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL39202",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 7,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL32022",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 7,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL32025",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 7,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL32026",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 7,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL39203",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 11,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL32036",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 7,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL39204",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 7,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL39205",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 8,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL32081",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 7,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL39209",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 40,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 5,
+          "spec_matches": 0,
+          "spec_conflicts": 5
+        },
+        {
+          "sku": "EL39301",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 13,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL33014",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 36,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL33019",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 13,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL39302",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 13,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL39304",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 13,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL39308",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 13,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL32015",
+          "evidenceCount": 1,
+          "source_apps": 22,
+          "target_apps": 175,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        }
+      ]
+    },
+    {
+      "authority": "PH3616",
+      "family": "LUBE",
+      "proposedSku": "EL33616",
+      "candidates": [
+        {
+          "sku": "EL31180",
+          "evidenceCount": 1,
+          "source_apps": 0,
+          "target_apps": 894,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 5,
+          "spec_matches": 0,
+          "spec_conflicts": 5
+        }
+      ]
+    },
+    {
+      "authority": "PH3675",
+      "family": "LUBE",
+      "proposedSku": "EL33675",
+      "candidates": [
+        {
+          "sku": "EL39362",
+          "evidenceCount": 1,
+          "source_apps": 180,
+          "target_apps": 338,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 35,
+          "loose_ratio": 0.42168674698795183,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL30060",
+          "evidenceCount": 1,
+          "source_apps": 180,
+          "target_apps": 191,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 25,
+          "loose_ratio": 0.30120481927710846,
+          "spec_comparable": 5,
+          "spec_matches": 3,
+          "spec_conflicts": 2
+        }
+      ]
+    },
+    {
+      "authority": "PH3690",
+      "family": "LUBE",
+      "proposedSku": "EL33690",
+      "candidates": [
+        {
+          "sku": "EL32205",
+          "evidenceCount": 1,
+          "source_apps": 0,
+          "target_apps": 103,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 5,
+          "spec_matches": 0,
+          "spec_conflicts": 5
+        }
+      ]
+    },
+    {
+      "authority": "PH46",
+      "family": "LUBE",
+      "proposedSku": "EL30046",
+      "candidates": [
+        {
+          "sku": "EL37181",
+          "evidenceCount": 1,
+          "source_apps": 13,
+          "target_apps": 89,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        }
+      ]
+    },
+    {
+      "authority": "PH5343",
+      "family": "LUBE",
+      "proposedSku": "EL35343",
+      "candidates": [
+        {
+          "sku": "EL30671",
+          "evidenceCount": 1,
+          "source_apps": 8,
+          "target_apps": 364,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 5,
+          "loose_ratio": 1,
+          "spec_comparable": 5,
+          "spec_matches": 0,
+          "spec_conflicts": 5
+        },
+        {
+          "sku": "EL37023",
+          "evidenceCount": 1,
+          "source_apps": 8,
+          "target_apps": 92,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 5,
+          "spec_matches": 0,
+          "spec_conflicts": 5
+        }
+      ]
+    },
+    {
+      "authority": "PH7136",
+      "family": "LUBE",
+      "proposedSku": "EL37136",
+      "candidates": [
+        {
+          "sku": "EL31701",
+          "evidenceCount": 1,
+          "source_apps": 0,
+          "target_apps": 2,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL31702",
+          "evidenceCount": 1,
+          "source_apps": 0,
+          "target_apps": 2,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        }
+      ]
+    },
+    {
+      "authority": "PH7317",
+      "family": "LUBE",
+      "proposedSku": "EL37317",
+      "candidates": [
+        {
+          "sku": "EL36019",
+          "evidenceCount": 1,
+          "source_apps": 204,
+          "target_apps": 40,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        }
+      ]
+    },
+    {
+      "authority": "PH9376",
+      "family": "LUBE",
+      "proposedSku": "EL39376",
+      "candidates": [
+        {
+          "sku": "EL30234",
+          "evidenceCount": 1,
+          "source_apps": 0,
+          "target_apps": 247,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        }
+      ]
+    },
+    {
+      "authority": "PH977A",
+      "family": "LUBE",
+      "proposedSku": "EL30977",
+      "candidates": [
+        {
+          "sku": "EL34011",
+          "evidenceCount": 1,
+          "source_apps": 36,
+          "target_apps": 182,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        },
+        {
+          "sku": "EL34022",
+          "evidenceCount": 1,
+          "source_apps": 36,
+          "target_apps": 138,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 5,
+          "spec_matches": 0,
+          "spec_conflicts": 5
+        },
+        {
+          "sku": "EL34012",
+          "evidenceCount": 1,
+          "source_apps": 36,
+          "target_apps": 67,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        },
+        {
+          "sku": "EL34015",
+          "evidenceCount": 1,
+          "source_apps": 36,
+          "target_apps": 110,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL34016",
+          "evidenceCount": 1,
+          "source_apps": 36,
+          "target_apps": 65,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL34017",
+          "evidenceCount": 1,
+          "source_apps": 36,
+          "target_apps": 76,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 1,
+          "spec_conflicts": 3
+        },
+        {
+          "sku": "EL34023",
+          "evidenceCount": 1,
+          "source_apps": 36,
+          "target_apps": 65,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL34025",
+          "evidenceCount": 1,
+          "source_apps": 36,
+          "target_apps": 150,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL32510",
+          "evidenceCount": 1,
+          "source_apps": 36,
+          "target_apps": 65,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL34032",
+          "evidenceCount": 1,
+          "source_apps": 36,
+          "target_apps": 65,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL34048",
+          "evidenceCount": 1,
+          "source_apps": 36,
+          "target_apps": 65,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL30510",
+          "evidenceCount": 1,
+          "source_apps": 36,
+          "target_apps": 65,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL35110",
+          "evidenceCount": 1,
+          "source_apps": 36,
+          "target_apps": 65,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL39407",
+          "evidenceCount": 1,
+          "source_apps": 36,
+          "target_apps": 186,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 5,
+          "spec_matches": 1,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL34070",
+          "evidenceCount": 1,
+          "source_apps": 36,
+          "target_apps": 65,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL39409",
+          "evidenceCount": 1,
+          "source_apps": 36,
+          "target_apps": 212,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 5,
+          "spec_matches": 1,
+          "spec_conflicts": 4
+        }
+      ]
+    },
+    {
+      "authority": "PH9837",
+      "family": "LUBE",
+      "proposedSku": "EL39837",
+      "candidates": [
+        {
+          "sku": "EL39362",
+          "evidenceCount": 1,
+          "source_apps": 42,
+          "target_apps": 338,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 0,
+          "spec_conflicts": 4
+        },
+        {
+          "sku": "EL30060",
+          "evidenceCount": 1,
+          "source_apps": 42,
+          "target_apps": 191,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 17,
+          "loose_ratio": 0.5,
+          "spec_comparable": 5,
+          "spec_matches": 3,
+          "spec_conflicts": 2
+        }
+      ]
+    }
+  ],
+  "resolved": [
+    {
+      "authority": "CA7480SY",
+      "family": "AIR",
+      "proposedSku": "EA37480",
+      "candidates": [
+        {
+          "sku": "EA37476",
+          "evidenceCount": 1,
+          "source_apps": 0,
+          "target_apps": 0,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0
+        }
+      ],
+      "resolvedSku": "EA37476",
+      "evidence": {
+        "sku": "EA37476",
+        "evidenceCount": 1,
+        "source_apps": 0,
+        "target_apps": 0,
+        "exact_intersection": 0,
+        "source_ratio": 0,
+        "loose_intersection": 0,
+        "loose_ratio": 0,
+        "spec_comparable": 4,
+        "spec_matches": 4,
+        "spec_conflicts": 0
+      }
+    },
+    {
+      "authority": "CF12552",
+      "family": "CABIN",
+      "proposedSku": "EC32552",
+      "candidates": [
+        {
+          "sku": "EC32312",
+          "evidenceCount": 1,
+          "source_apps": 17,
+          "target_apps": 10,
+          "exact_intersection": 2,
+          "source_ratio": 0.11764705882352941,
+          "loose_intersection": 1,
+          "loose_ratio": 0.14285714285714285,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0
+        }
+      ],
+      "resolvedSku": "EC32312",
+      "evidence": {
+        "sku": "EC32312",
+        "evidenceCount": 1,
+        "source_apps": 17,
+        "target_apps": 10,
+        "exact_intersection": 2,
+        "source_ratio": 0.11764705882352941,
+        "loose_intersection": 1,
+        "loose_ratio": 0.14285714285714285,
+        "spec_comparable": 4,
+        "spec_matches": 4,
+        "spec_conflicts": 0
+      }
+    },
+    {
+      "authority": "CF8045A",
+      "family": "CABIN",
+      "proposedSku": "EC38045",
+      "candidates": [
+        {
+          "sku": "EC38109",
+          "evidenceCount": 1,
+          "source_apps": 2,
+          "target_apps": 5,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0
+        },
+        {
+          "sku": "EC38391",
+          "evidenceCount": 1,
+          "source_apps": 2,
+          "target_apps": 4,
+          "exact_intersection": 0,
+          "source_ratio": 0,
+          "loose_intersection": 0,
+          "loose_ratio": 0,
+          "spec_comparable": 4,
+          "spec_matches": 3,
+          "spec_conflicts": 1
+        }
+      ],
+      "resolvedSku": "EC38109",
+      "evidence": {
+        "sku": "EC38109",
+        "evidenceCount": 1,
+        "source_apps": 2,
+        "target_apps": 5,
+        "exact_intersection": 0,
+        "source_ratio": 0,
+        "loose_intersection": 0,
+        "loose_ratio": 0,
+        "spec_comparable": 4,
+        "spec_matches": 4,
+        "spec_conflicts": 0
+      }
+    },
+    {
+      "authority": "FDC12552C",
+      "family": "CABIN",
+      "proposedSku": "EC32552",
+      "candidates": [
+        {
+          "sku": "EC32312",
+          "evidenceCount": 1,
+          "source_apps": 17,
+          "target_apps": 10,
+          "exact_intersection": 2,
+          "source_ratio": 0.11764705882352941,
+          "loose_intersection": 1,
+          "loose_ratio": 0.14285714285714285,
+          "spec_comparable": 4,
+          "spec_matches": 4,
+          "spec_conflicts": 0
+        }
+      ],
+      "resolvedSku": "EC32312",
+      "evidence": {
+        "sku": "EC32312",
+        "evidenceCount": 1,
+        "source_apps": 17,
+        "target_apps": 10,
+        "exact_intersection": 2,
+        "source_ratio": 0.11764705882352941,
+        "loose_intersection": 1,
+        "loose_ratio": 0.14285714285714285,
+        "spec_comparable": 4,
+        "spec_matches": 4,
+        "spec_conflicts": 0
+      }
+    }
+  ]
+}

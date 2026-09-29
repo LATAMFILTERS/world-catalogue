@@ -1,0 +1,1175 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF9597A",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF9597A",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 0.926,
+      "height_mm": 23.52,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF146"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA4159"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3945WS"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "C3872WS"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "C3872"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF7749"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "MC 1007"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4864"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C35494"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C35494C"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89864"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF7749"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "82205905"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4885955AA"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DC049C"
+      },
+      {
+        "manufacturer": "Driveworks",
+        "part_number": "DW-35494"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4864C"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4864"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "C35494P"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1203"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1203"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "CF1038"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF3005"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF7749"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF7749"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1749"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF7749"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3038"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "CY01147"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94864"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC5494"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "C35494P"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PC-5494"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "part_number": "C35494"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C35494"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "MC35494"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF7749"
+      },
+      {
+        "manufacturer": "SUPERTECH",
+        "part_number": "5020"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "E1AC1010"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1010"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1168"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "2000",
+        "make": "CHRYSLER",
+        "model": "GRAND VOYAGER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2000",
+        "make": "CHRYSLER",
+        "model": "GRAND VOYAGER",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2000",
+        "make": "CHRYSLER",
+        "model": "GRAND VOYAGER",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "08-04",
+        "make": "CHRYSLER",
+        "model": "PACIFICA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-04",
+        "make": "CHRYSLER",
+        "model": "PACIFICA",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "08-05",
+        "make": "CHRYSLER",
+        "model": "PACIFICA",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "08-07",
+        "make": "CHRYSLER",
+        "model": "PACIFICA",
+        "engine": "V6-4.0L",
+        "quantity": 1
+      },
+      {
+        "year": "07-01",
+        "make": "CHRYSLER",
+        "model": "TOWN & COUNTRY",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "07-01",
+        "make": "CHRYSLER",
+        "model": "TOWN & COUNTRY",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "07-01",
+        "make": "CHRYSLER",
+        "model": "TOWN & COUNTRY",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "03-00",
+        "make": "CHRYSLER",
+        "model": "VOYAGER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "03-00",
+        "make": "CHRYSLER",
+        "model": "VOYAGER",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "2000",
+        "make": "CHRYSLER",
+        "model": "VOYAGER",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "03-00",
+        "make": "CHRYSLER",
+        "model": "VOYAGER",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "07-01",
+        "make": "DODGE",
+        "model": "CARAVAN",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "07-01",
+        "make": "DODGE",
+        "model": "CARAVAN",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "07-01",
+        "make": "DODGE",
+        "model": "CARAVAN",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "07-01",
+        "make": "DODGE",
+        "model": "GRAND CARAVAN",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "07-01",
+        "make": "DODGE",
+        "model": "GRAND CARAVAN",
+        "engine": "V6-3.3L",
+        "quantity": 1
+      },
+      {
+        "year": "07-01",
+        "make": "DODGE",
+        "model": "GRAND CARAVAN",
+        "engine": "V6-3.8L",
+        "quantity": 1
+      },
+      {
+        "year": "2000",
+        "make": "PLYMOUTH",
+        "model": "GRAND VOYAGER",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2000",
+        "make": "PLYMOUTH",
+        "model": "GRAND VOYAGER",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF9597A",
+    "source_part_key": "000991433",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 22,
+      "cross_references": 41
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF9597A, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "0.926",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "12.253",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "9.298",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "10",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Under Glove Box",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100531797",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.8250",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.6500",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "12.3530",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "2.5620",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "9.4110",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "12.6870",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.0980",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "9.9370",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.825,
+        "case_weight_lb": 1.65,
+        "unit_height_in": 12.353,
+        "unit_length_in": 9.411,
+        "unit_width_in": 1.098,
+        "case_height_in": 2.562,
+        "case_length_in": 12.687,
+        "case_width_in": 9.937,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 9.9,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 22,
+    "all_cross_references_observed": 41,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:59:34.456Z",
+  "discovered_from": "CF9597A",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "CHRYSLER",
+        "model": "GRAND VOYAGER",
+        "year": "2000",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "GRAND VOYAGER",
+        "year": "2000",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "GRAND VOYAGER",
+        "year": "2000",
+        "engine": "V6-3.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "PACIFICA",
+        "year": "08-04",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "PACIFICA",
+        "year": "06-04",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "PACIFICA",
+        "year": "08-05",
+        "engine": "V6-3.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "PACIFICA",
+        "year": "08-07",
+        "engine": "V6-4.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "TOWN & COUNTRY",
+        "year": "07-01",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "TOWN & COUNTRY",
+        "year": "07-01",
+        "engine": "V6-3.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "TOWN & COUNTRY",
+        "year": "07-01",
+        "engine": "V6-3.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "VOYAGER",
+        "year": "03-00",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "VOYAGER",
+        "year": "03-00",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "VOYAGER",
+        "year": "2000",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHRYSLER",
+        "model": "VOYAGER",
+        "year": "03-00",
+        "engine": "V6-3.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "CARAVAN",
+        "year": "07-01",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "CARAVAN",
+        "year": "07-01",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "CARAVAN",
+        "year": "07-01",
+        "engine": "V6-3.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "GRAND CARAVAN",
+        "year": "07-01",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "GRAND CARAVAN",
+        "year": "07-01",
+        "engine": "V6-3.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "GRAND CARAVAN",
+        "year": "07-01",
+        "engine": "V6-3.8L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "GRAND VOYAGER",
+        "year": "2000",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PLYMOUTH",
+        "model": "GRAND VOYAGER",
+        "year": "2000",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "CF146",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA4159",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3945WS",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "C3872WS",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "C3872",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89864",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF7749",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF7749",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "82205905",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "4885955AA",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DC049C",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Driveworks",
+        "part_number": "DW-35494",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4864C",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4864",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "C35494P",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1203",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1203",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "CF1038",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF3005",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF7749",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF7749",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1749",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF7749",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "MC 1007",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3038",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Micronair",
+        "part_number": "CY01147",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4864",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94864",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC5494",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "C35494P",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PC-5494",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "part_number": "C35494",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C35494",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C35494C",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C35494",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "MC35494",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF7749",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "SUPERTECH",
+        "part_number": "5020",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "E1AC1010",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1010",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1168",
+        "source_part_number": "CF9597A",
+        "part_key": "000991433",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

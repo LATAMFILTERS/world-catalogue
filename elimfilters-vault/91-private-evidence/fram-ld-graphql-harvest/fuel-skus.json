@@ -1,0 +1,4858 @@
+[
+  {
+    "sku": "C7503",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-c7503",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "C7321",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-c7321",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "C1125PL",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-c1125pl",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "C3601",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-c3601",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "C10517",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-c10517",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G9370",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g9370",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G8216",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g8216",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G8086",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g8086",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G8018DP",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g8018dp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7769",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g7769",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7611",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g7611",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7315DP",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g7315dp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7196DP",
+    "name": "FRAM Fuel Filter,Fuel Filter-Universal",
+    "url_key": "fram-fuel-filterfuel-filter-universal-g7196dp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7071",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g7071",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6826DP",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g6826dp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6681",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g6681",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6561",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g6561",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6537",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g6537",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6495",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g6495",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6460",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g6460",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6442",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g6442",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6435",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g6435",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6429",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g6429",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6426",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g6426",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6405",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g6405",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6346",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g6346",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G5237DP",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g5237dp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G4177",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g4177",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G4167",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g4167",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G4166",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g4166",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G4143DP",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g4143dp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G3941",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g3941",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G3841",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g3841",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G3724",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g3724",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G3606DP",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g3606dp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G3587",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g3587",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G3499DP",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g3499dp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G3359",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g3359",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G23",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g23",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G22ADP",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g22adp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G1DP",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g1dp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G12DP",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g12dp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G10617",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fram-fuel-filter-g10617",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "C10448",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-c10448",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS9794",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-ps9794",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS9707",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-ps9707",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS9263",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-ps9263",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS9059B",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps9059b",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS9039",
+    "name": "FRAM Fuel Water Separator Snap-Lock",
+    "url_key": "fuel-water-separator-ps9039",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS8688",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-ps8688",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS8605FP",
+    "name": "FRAM Fuel Water Separator Snap-Lock",
+    "url_key": "fuel-water-separator-ps8605fp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS8554",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps8554",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS8450",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-ps8450",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS8322",
+    "name": "FRAM Fuel Water Separator Snap-Lock",
+    "url_key": "fuel-water-separator-ps8322",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS8239",
+    "name": "FRAM Fuel Water Separator Snap-Lock",
+    "url_key": "fuel-water-separator-ps8239",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS8187",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-ps8187",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS8186",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-ps8186",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS8047",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-ps8047",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS7714",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-ps7714",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS7568",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-ps7568",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS7407A",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-ps7407a",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS7358",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-ps7358",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS7171",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-ps7171",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS6831",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-ps6831",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS6829",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-ps6829",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS6643",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-ps6643",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS5896",
+    "name": "FRAM Diesel Filter In-Line",
+    "url_key": "fuel-filter-ps5896",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS4922",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-ps4922",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS4886",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-ps4886",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS4836",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-ps4836",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS3808",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-ps3808",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS3712",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-ps3712",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS3607A",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-ps3607a",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS11607",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps11607",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS11566",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps11566",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS11543",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps11543",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS11226",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps11226",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS11225",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps11225",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS11224",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps11224",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS11185",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps11185",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS11143",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps11143",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS11142",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps11142",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS11025",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps11025",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS10980",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps10980",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS10979",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps10979",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS10978",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps10978",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS10975",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps10975",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS10974",
+    "name": "FRAM Fuel Water Separator Snap-Lock",
+    "url_key": "fuel-water-separator-ps10974",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS10971",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps10971",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS10967",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps10967",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS10964",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps10964",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS10962",
+    "name": "FRAM Fuel Water Separator Snap-Lock",
+    "url_key": "fuel-water-separator-ps10962",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS10961",
+    "name": "FRAM Fuel Water Separator Snap-Lock",
+    "url_key": "fuel-water-separator-ps10961",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS10884",
+    "name": "FRAM Fuel Water Separator Snap-Lock",
+    "url_key": "fuel-water-separator-ps10884",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS10872",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps10872",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS10856",
+    "name": "FRAM Fuel Water Separator Snap-Lock",
+    "url_key": "fuel-water-separator-ps10856",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS10810",
+    "name": "FRAM Fuel Water Separator Snap-Lock",
+    "url_key": "fuel-water-separator-ps10810",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS10713",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-ps10713",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS10701",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps10701",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS10678",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps10678",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PS10264",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-ps10264",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PG3349",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-pg3349",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PCS11533",
+    "name": "FRAM Fuel Water Separator Spin-On",
+    "url_key": "fuel-water-separator-pcs11533",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "PCS1144",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-pcs1144",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P9644",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p9644",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P9258",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p9258",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P9072FP",
+    "name": "FRAM Fuel Filter Spin-On Secondary",
+    "url_key": "fuel-filter-p9072fp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P9072",
+    "name": "FRAM Fuel Filter Spin-On Secondary",
+    "url_key": "fuel-filter-p9072",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P9064",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p9064",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P8430",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p8430",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P8336",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p8336",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P8335FP",
+    "name": "FRAM Fuel Filter Spin-On Fleet Pack",
+    "url_key": "fuel-filter-p8335fp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P8264FP",
+    "name": "FRAM Fuel Filter Spin-On Fleet Pack",
+    "url_key": "fuel-filter-p8264fp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P8264",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p8264",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P8050",
+    "name": "FRAM Fuel Filter Spin-On Secondary",
+    "url_key": "fuel-filter-p8050",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P8043",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p8043",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P8001",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p8001",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P7514",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p7514",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P7513",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p7513",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P7402",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p7402",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P7357",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-p7357",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P7163",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-p7163",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P6503",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p6503",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P6444",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p6444",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P5694",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p5694",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P5157",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p5157",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P4105",
+    "name": "FRAM Transmission Filter",
+    "url_key": "trans-filter-p4105",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Trans Filter",
+        "url_path": "trans-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P4102A",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p4102a",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P3940AFP",
+    "name": "FRAM Fuel Filter Spin-On Fleet Pack",
+    "url_key": "fuel-filter-p3940afp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P3940A",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-p3940a",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P3805",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p3805",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P3804",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p3804",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P3643",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p3643",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P3627FP",
+    "name": "FRAM Fuel Filter Spin-On Fleet Pack",
+    "url_key": "fuel-filter-p3627fp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P3528A",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p3528a",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P3431FP",
+    "name": "FRAM Fuel Filter Spin-On Fleet Pack",
+    "url_key": "fuel-filter-p3431fp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P3430A",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p3430a",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P3401FP",
+    "name": "FRAM Fuel Filter Spin-On Fleet Pack",
+    "url_key": "fuel-filter-p3401fp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P3401",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p3401",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P3380FP",
+    "name": "FRAM Fuel Filter Spin-On Fleet Pack",
+    "url_key": "fuel-filter-p3380fp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P3380",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p3380",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P3376",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p3376",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P3375",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-p3375",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P11750",
+    "name": "FRAM Fuel Filter In-line",
+    "url_key": "fram-fuel-filter-in-line-p11750",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P11749",
+    "name": "FRAM Diesel Filter In-Line",
+    "url_key": "fuel-filter-p11749",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P1147GFP",
+    "name": "FRAM Fuel Filter Spin-On Fleet Pack",
+    "url_key": "fuel-filter-p1147gfp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P1146GFP",
+    "name": "FRAM Fuel Filter Spin-On Fleet Pack",
+    "url_key": "fuel-filter-p1146gfp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P1145A",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p1145a",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P1131",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p1131",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P1121",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p1121",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P1120",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p1120",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P1119",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p1119",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P1116",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p1116",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P1109FP",
+    "name": "FRAM Fuel Filter Spin-On Fleet Pack",
+    "url_key": "fuel-filter-p1109fp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P1109",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p1109",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P1107",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p1107",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P1105",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p1105",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P1103A",
+    "name": "FRAM Fuel Filter Spin-On",
+    "url_key": "fuel-filter-p1103a",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P11039",
+    "name": "FRAM Diesel Filter In-Line",
+    "url_key": "fuel-filter-p11039",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "P10712",
+    "name": "FRAM Diesel Filter In-Line",
+    "url_key": "fuel-filter-p10712",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "K3374",
+    "name": "Filter Conv. Kit",
+    "url_key": "filter-conv-kit-k3374",
+    "categories": [
+      {
+        "name": "Fuel Conversion Kit",
+        "url_path": "fuel-conversion-kit"
+      },
+      {
+        "name": "Filter Conv. Kit",
+        "url_path": "filter-conv-kit"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "K11101",
+    "name": "FRAM Fuel Filter Cart. Kit",
+    "url_key": "fuel-filter-k11101",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "K10489A",
+    "name": "FRAM Fuel Filter Cart. Kit",
+    "url_key": "fuel-filter-k10489a",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G9795",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g9795",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G9343",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g9343",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G9279",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g9279",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G9272",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g9272",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G8861A",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g8861a",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G8758",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g8758",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G8757",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g8757",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G8711",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g8711",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G8615",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g8615",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G8415",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g8415",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G8414",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g8414",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G8228",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g8228",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G8219",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g8219",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G8122",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g8122",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G8116",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g8116",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G8075",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g8075",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G8018",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g8018",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G8008",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g8008",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7766",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g7766",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7740",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g7740",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7739",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g7739",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7735",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g7735",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7647",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g7647",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7610",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g7610",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7609",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g7609",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7599",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g7599",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7596DP",
+    "name": "FRAM Fuel Filter In-Line Display Pack",
+    "url_key": "fuel-filter-g7596dp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7596",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g7596",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7418",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g7418",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7416",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g7416",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7399",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g7399",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7393",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g7393",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7356",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g7356",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7355",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g7355",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7333",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g7333",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7315",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g7315",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7296",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g7296",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7194",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g7194",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G7144",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g7144",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6897",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g6897",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6896",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g6896",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6859",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g6859",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6689",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g6689",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6612",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g6612",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6566",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g6566",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6534",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g6534",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6507",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g6507",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6462",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g6462",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6451",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g6451",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6440",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g6440",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6436",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g6436",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6431",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g6431",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6348",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g6348",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G6343",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g6343",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G5982",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g5982",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G5870",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g5870",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G5237",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g5237",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G4926",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g4926",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G4777",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g4777",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G4776",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g4776",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "C11941",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-c11941",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G4774",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g4774",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G4773",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g4773",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G4191",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g4191",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G4143",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g4143",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G3850DP",
+    "name": "FRAM Fuel Filter In-Line Display Pack",
+    "url_key": "fuel-filter-g3850dp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G3850",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g3850",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G3831",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g3831",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G3802AFP",
+    "name": "FRAM Fuel Filter In-Line Fleet Pack",
+    "url_key": "fuel-filter-g3802afp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G3802ADP",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g3802adp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G3802A",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g3802a",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G3727",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g3727",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G3692",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g3692",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G3641",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g3641",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G3499",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g3499",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G3",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g3",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G2FP",
+    "name": "FRAM Fuel Filter In-Line Fleet Pack",
+    "url_key": "fuel-filter-g2fp",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G2",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g2",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G12",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g12",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G11995",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g11995",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G11278",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g11278",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G10902",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g10902",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G10243",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g10243",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G10166",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g10166",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G1000",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g1000",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "G1",
+    "name": "FRAM Fuel Filter In-Line",
+    "url_key": "fuel-filter-g1",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "C1191A",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-c1191a",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "C1188PL",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-c1188pl",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "FK7787",
+    "name": "Fleet Maint. Kit",
+    "url_key": "fleet-maint-kit-fk7787",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fleet Maint. Kit",
+        "url_path": "fleet-maint-kit"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "FK7646",
+    "name": "Fleet Maint. Kit",
+    "url_key": "fleet-maint-kit-fk7646",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fleet Maint. Kit",
+        "url_path": "fleet-maint-kit"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "FK7131",
+    "name": "Fleet Maint. Kit",
+    "url_key": "fleet-maint-kit-fk7131",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fleet Maint. Kit",
+        "url_path": "fleet-maint-kit"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "FK7120",
+    "name": "Fleet Maint. Kit",
+    "url_key": "fleet-maint-kit-fk7120",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fleet Maint. Kit",
+        "url_path": "fleet-maint-kit"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "FK11080",
+    "name": "Fleet Maint. Kit",
+    "url_key": "fleet-maint-kit-fk11080",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fleet Maint. Kit",
+        "url_path": "fleet-maint-kit"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "FCS10726",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-fcs10726",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "CS9864",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-cs9864",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "CS9699",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-cs9699",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "CS9667A",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-cs9667a",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "CS8941",
+    "name": "FRAM Fuel Filter",
+    "url_key": "fuel-filter-cs8941",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "CS8629A",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-cs8629a",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "CS7772B",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-cs7772b",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "CS7715A",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-cs7715a",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "CS7711",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-cs7711",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "CS5043",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-cs5043",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "CS12228",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-cs12228",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "CS11999",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-cs11999",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "CS11997",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-cs11997",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "CS11947",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-cs11947",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "CS1133PL",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-cs1133pl",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "CS10263A",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-cs10263a",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "CS10145",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-cs10145",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "C1174PL",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-c1174pl",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "CG5",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-cg5",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "CG3388",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-cg3388",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "CG20",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-cg20",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "C1166PL",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-c1166pl",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "CC1133PL",
+    "name": "FRAM Fuel Water Separator",
+    "url_key": "fuel-water-separator-cc1133pl",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Fuel/Water Separator",
+        "url_path": "fuel-water-separator"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "C1163PL",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-c1163pl",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "C9771",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-c9771",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "C9243",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-c9243",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "Transmission Filter",
+        "url_path": "transmission-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "transmission-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "C8292",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-c8292",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      }
+    ],
+    "family": "FUEL"
+  },
+  {
+    "sku": "C7523",
+    "name": "FRAM Fuel Filter Cartridge",
+    "url_key": "fuel-filter-c7523",
+    "categories": [
+      {
+        "name": "Fuel Filter",
+        "url_path": "fuel-filter"
+      },
+      {
+        "name": "FRAM",
+        "url_path": "fuel-filter/fram"
+      }
+    ],
+    "family": "FUEL"
+  }
+]

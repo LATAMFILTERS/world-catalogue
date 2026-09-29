@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0.0",
+  "source": "ISUZU_US_DIESEL_MODEL_YEAR_MATRIX_V149_EXISTING_SKUS_ONLY",
+  "generated_at": "2026-09-27T22:24:21.215Z",
+  "apply": false,
+  "database_write": false,
+  "rows": [
+    {
+      "sku": "EA14353",
+      "status": "READY",
+      "field": "equipment_applications",
+      "before": 25,
+      "after": 26,
+      "added": 1
+    },
+    {
+      "sku": "EA17283",
+      "status": "READY",
+      "field": "equipment_applications",
+      "before": 83,
+      "after": 86,
+      "added": 3
+    },
+    {
+      "sku": "EA13930",
+      "status": "READY",
+      "field": "equipment_applications",
+      "before": 57,
+      "after": 59,
+      "added": 2
+    },
+    {
+      "sku": "ED41413",
+      "status": "READY",
+      "field": "equipment_applications",
+      "before": 3958,
+      "after": 3959,
+      "added": 1
+    },
+    {
+      "sku": "EF90390",
+      "status": "READY",
+      "field": "equipment_applications",
+      "before": 5,
+      "after": 14,
+      "added": 9
+    },
+    {
+      "sku": "EF91840",
+      "status": "READY",
+      "field": "equipment_applications",
+      "before": 3,
+      "after": 8,
+      "added": 5
+    },
+    {
+      "sku": "EF92226",
+      "status": "READY",
+      "field": "equipment_applications",
+      "before": 107,
+      "after": 111,
+      "added": 4
+    },
+    {
+      "sku": "EF92564",
+      "status": "READY",
+      "field": "equipment_applications",
+      "before": 285,
+      "after": 292,
+      "added": 7
+    },
+    {
+      "sku": "EF92599",
+      "status": "READY",
+      "field": "equipment_applications",
+      "before": 9,
+      "after": 14,
+      "added": 5
+    },
+    {
+      "sku": "EL80008",
+      "status": "READY",
+      "field": "equipment_applications",
+      "before": 2042,
+      "after": 2052,
+      "added": 10
+    },
+    {
+      "sku": "EL80606",
+      "status": "READY",
+      "field": "equipment_applications",
+      "before": 94,
+      "after": 100,
+      "added": 6
+    },
+    {
+      "sku": "EL82042",
+      "status": "READY",
+      "field": "equipment_applications",
+      "before": 82,
+      "after": 89,
+      "added": 7
+    },
+    {
+      "sku": "EL88076",
+      "status": "READY",
+      "field": "equipment_applications",
+      "before": 6,
+      "after": 12,
+      "added": 6
+    }
+  ],
+  "summary": {
+    "total": 13,
+    "ready": 13,
+    "added": 66,
+    "database_write": false
+  }
+}

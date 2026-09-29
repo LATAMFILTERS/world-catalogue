@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "pilot-ph4967",
+  "harvested_at": "2026-09-12T04:32:33.852Z",
+  "market_scope": "USA_NORTH_AMERICA",
+  "allowed_families": [
+    "LUBE",
+    "AIR",
+    "CABIN",
+    "FUEL"
+  ],
+  "case_pack_policy": 12,
+  "public_media_policy": "Genuine Media",
+  "gtin_promoted": false,
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "candidates": 1,
+  "unique_authorities": 1,
+  "ok": 1,
+  "errors": 0,
+  "skipped": 0,
+  "by_family": {
+    "LUBE": 1,
+    "AIR": 0,
+    "CABIN": 0,
+    "FUEL": 0
+  },
+  "results": [
+    {
+      "status": "OK",
+      "discovered_from": "PH4967",
+      "authority_part_number": "PH4967",
+      "family": "LUBE",
+      "output": "elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/pilot-ph4967/products/PH4967.json"
+    }
+  ]
+}

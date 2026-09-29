@@ -1,0 +1,58 @@
+{
+  "mode": "execute",
+  "gap_report": "C:\\Users\\ELIMSERVER\\world-catalogue\\elimfilters-vault\\91-private-evidence\\fram-ld-gap-analysis\\fram-ld-gap-2026-09-13T06-20-25-098Z.json",
+  "candidates": 1,
+  "planned": {
+    "competitor": 8,
+    "oem": 6,
+    "applications": 0,
+    "specifications": 4,
+    "valid_applications": 0,
+    "valid_oem": 6,
+    "valid_competitor": 8,
+    "valid_specifications": 4
+  },
+  "inserted": {
+    "public_catalog": 1,
+    "ld_parents": 1,
+    "readiness": 1,
+    "identities": 1,
+    "competitor": 8,
+    "oem": 6,
+    "applications": 0,
+    "specifications": 4,
+    "readiness_updated": 1
+  },
+  "skipped": {
+    "competitor_existing_conflicts": 0,
+    "competitor_intra_plan_conflicts": 0
+  },
+  "audit": {
+    "public": {
+      "total": 1,
+      "ld": 1,
+      "hd": 0,
+      "bad_prefix": 0
+    },
+    "canonical_identity": {
+      "total": 1,
+      "valid": 1
+    },
+    "layers": {
+      "parents": 1,
+      "readiness": 1,
+      "competitor": 8,
+      "oem": 6,
+      "applications": 0,
+      "specifications": 4
+    },
+    "direct_fram_authorities": 1,
+    "source_rows_on_hd": {
+      "competitor_hd": 0,
+      "oem_hd": 0,
+      "applications_hd": 0,
+      "specifications_hd": 0
+    }
+  },
+  "transaction": "COMMIT"
+}

@@ -1,0 +1,953 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "FDC11183C",
+    "line": "DRIVE"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "FDC11183C",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.122,
+      "height_mm": 28.5,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Drive Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [
+      "CF11183",
+      "CV11183"
+    ],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA4462"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3934WS"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LA780"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CU27008"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4017"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C36156"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24017"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-244"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "90266P"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1890P"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68079487AA"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68079487AB"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68606182AA"
+      },
+      {
+        "manufacturer": "Corteco",
+        "part_number": "80001785"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "XC36156"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4017"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1501"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF3012"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1890P"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4031"
+      },
+      {
+        "manufacturer": "MotoMaster",
+        "part_number": "MCF11183"
+      },
+      {
+        "manufacturer": "Muller Filter",
+        "part_number": "FC470"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PC-120"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "C36156P"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PC-6156"
+      },
+      {
+        "manufacturer": "Pro-Series",
+        "part_number": "PCF11183"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PCB36156"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PBC36156"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C36156"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1890P"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1890M"
+      },
+      {
+        "manufacturer": "SUPERTECH",
+        "part_number": "5010"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1073"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "26-11",
+        "make": "DODGE",
+        "model": "DURANGO",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-11",
+        "make": "DODGE",
+        "model": "DURANGO",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "26-11",
+        "make": "DODGE",
+        "model": "DURANGO",
+        "engine": "V8-5.7L",
+        "quantity": 1
+      },
+      {
+        "year": "2021",
+        "make": "DODGE",
+        "model": "DURANGO",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "26-23",
+        "make": "DODGE",
+        "model": "DURANGO",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "24-18",
+        "make": "DODGE",
+        "model": "DURANGO",
+        "engine": "V8-6.4L",
+        "quantity": 1
+      },
+      {
+        "year": "21-11",
+        "make": "JEEP",
+        "model": "GRAND CHEROKEE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "19-14",
+        "make": "JEEP",
+        "model": "GRAND CHEROKEE",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "21-11",
+        "make": "JEEP",
+        "model": "GRAND CHEROKEE",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      },
+      {
+        "year": "21-11",
+        "make": "JEEP",
+        "model": "GRAND CHEROKEE",
+        "engine": "V8-5.7L",
+        "quantity": 1
+      },
+      {
+        "year": "21-18",
+        "make": "JEEP",
+        "model": "GRAND CHEROKEE",
+        "engine": "V8-6.2L",
+        "quantity": 1
+      },
+      {
+        "year": "21-12",
+        "make": "JEEP",
+        "model": "GRAND CHEROKEE",
+        "engine": "V8-6.4L",
+        "quantity": 1
+      },
+      {
+        "year": "2022",
+        "make": "JEEP",
+        "model": "GRAND CHEROKEE WK",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2022",
+        "make": "JEEP",
+        "model": "GRAND CHEROKEE WK",
+        "engine": "V6-3.6L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "FDC11183C",
+    "source_part_key": "010740272",
+    "source_totals": {
+      "attributes": 30,
+      "applications": 14,
+      "cross_references": 35
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Drive™cabin air filters prevent harmful airborne particles from entering your vehicle’s cabin. It is engineered to filter the air before it gets to you, removing dust, pollen, and other pollutants. Replacing a dirty cabin air filter with a new FRAM Drive cabin air filter can optimize clean air flow and maintain peak HVAC system performance. FRAM recommends changing your cabin air filter every 12 months.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Optimizes airflow and maintains HVAC performance",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, FDC11183C, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Up to 12 months or 12,000 mile (19,000 kilometer) protection",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Removes dust, pollen, and other pollutants",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Drive Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.122",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "10.29",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "9.57",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "15",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Behind Glove Box",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100578532",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "United States",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.4930",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.4790",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "10.6200",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "5.5000",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "10.0300",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "11.6000",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.6100",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "10.7500",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.493,
+        "case_weight_lb": 1.479,
+        "unit_height_in": 10.62,
+        "unit_length_in": 10.03,
+        "unit_width_in": 1.61,
+        "case_height_in": 5.5,
+        "case_length_in": 11.6,
+        "case_width_in": 10.75,
+        "inferred_case_qty": 3
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 5.916,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 14,
+    "all_cross_references_observed": 35,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T06:00:31.481Z",
+  "discovered_from": "FDC11183C",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "DODGE",
+        "model": "DURANGO",
+        "year": "26-11",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "DURANGO",
+        "year": "26-11",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "DURANGO",
+        "year": "26-11",
+        "engine": "V8-5.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "DURANGO",
+        "year": "2021",
+        "engine": "V8-6.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "DURANGO",
+        "year": "26-23",
+        "engine": "V8-6.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "DURANGO",
+        "year": "24-18",
+        "engine": "V8-6.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JEEP",
+        "model": "GRAND CHEROKEE",
+        "year": "21-11",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JEEP",
+        "model": "GRAND CHEROKEE",
+        "year": "19-14",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JEEP",
+        "model": "GRAND CHEROKEE",
+        "year": "21-11",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JEEP",
+        "model": "GRAND CHEROKEE",
+        "year": "21-11",
+        "engine": "V8-5.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JEEP",
+        "model": "GRAND CHEROKEE",
+        "year": "21-18",
+        "engine": "V8-6.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JEEP",
+        "model": "GRAND CHEROKEE",
+        "year": "21-12",
+        "engine": "V8-6.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JEEP",
+        "model": "GRAND CHEROKEE WK",
+        "year": "2022",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "JEEP",
+        "model": "GRAND CHEROKEE WK",
+        "year": "2022",
+        "engine": "V6-3.6L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-244",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "PA4462",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3934WS",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "90266P",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1890P",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68079487AA",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68079487AB",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "68606182AA",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Corteco",
+        "part_number": "80001785",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "XC36156",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FRAM Fresh Breeze",
+        "part_number": "CF11183",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FRAM TrueAir",
+        "part_number": "CV11183",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4017",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1501",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "VF3012",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1890P",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "LA780",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "CU27008",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4031",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MotoMaster",
+        "part_number": "MCF11183",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Muller Filter",
+        "part_number": "FC470",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4017",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PC-120",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "C36156P",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PC-6156",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Pro-Series",
+        "part_number": "PCF11183",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C36156",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PCB36156",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PBC36156",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C36156",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1890P",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "CAF1890M",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "SUPERTECH",
+        "part_number": "5010",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1073",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24017",
+        "source_part_number": "FDC11183C",
+        "part_key": "010740272",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

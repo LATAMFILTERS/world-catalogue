@@ -1,0 +1,871 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF11171",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF11171",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.478,
+      "height_mm": 37.54,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3790WS"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF1801"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4881"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C35675"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24881"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-63"
+      },
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-6"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2018"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1801P"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4853"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1223"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1288"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1223"
+      },
+      {
+        "manufacturer": "Hyundai",
+        "part_number": "97619-38000"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1801P"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1801P"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1801P"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3899"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3893"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "224853"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94881"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94853"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC5675"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PC-5675"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C35675"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1139"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "06-01",
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "engine": "V6-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "06-03",
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "05-99",
+        "make": "HYUNDAI",
+        "model": "SONATA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "05-99",
+        "make": "HYUNDAI",
+        "model": "SONATA",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "01-99",
+        "make": "HYUNDAI",
+        "model": "SONATA",
+        "engine": "V6-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "05-02",
+        "make": "HYUNDAI",
+        "model": "SONATA",
+        "engine": "V6-2.7L",
+        "quantity": 1
+      },
+      {
+        "year": "2001",
+        "make": "HYUNDAI",
+        "model": "XG300",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2001",
+        "make": "HYUNDAI",
+        "model": "XG300",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "05-02",
+        "make": "HYUNDAI",
+        "model": "XG350",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "05-02",
+        "make": "HYUNDAI",
+        "model": "XG350",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "06-05",
+        "make": "KIA",
+        "model": "OPTIMA",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "06-05",
+        "make": "KIA",
+        "model": "OPTIMA",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "06-05",
+        "make": "KIA",
+        "model": "OPTIMA",
+        "engine": "V6-2.7L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF11171",
+    "source_part_key": "001538518",
+    "source_totals": {
+      "attributes": 31,
+      "applications": 17,
+      "cross_references": 26
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF11171, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "82"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "83"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.478",
+        "recno": "85"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "10.126",
+        "recno": "86"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "7.683",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "88"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "10",
+        "recno": "89"
+      },
+      {
+        "attribute": "Location",
+        "value": "Behind Glove Box",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100548962",
+        "recno": "92"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Thailand",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.9000",
+        "recno": "96"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.8000",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "10.2360",
+        "recno": "98"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.2130",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "7.7950",
+        "recno": "100"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "10.8270",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "1.7320",
+        "recno": "102"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "8.3860",
+        "recno": "103"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.9,
+        "case_weight_lb": 1.8,
+        "unit_height_in": 10.236,
+        "unit_length_in": 7.795,
+        "unit_width_in": 1.732,
+        "case_height_in": 4.213,
+        "case_length_in": 10.827,
+        "case_width_in": 8.386,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 10.8,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 17,
+    "all_cross_references_observed": 26,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:00:22.633Z",
+  "discovered_from": "CF11171",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "year": "06-01",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "year": "06-01",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "year": "06-01",
+        "engine": "V6-2.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SANTA FE",
+        "year": "06-03",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SONATA",
+        "year": "05-99",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SONATA",
+        "year": "05-99",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SONATA",
+        "year": "01-99",
+        "engine": "V6-2.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "SONATA",
+        "year": "05-02",
+        "engine": "V6-2.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "XG300",
+        "year": "2001",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "XG300",
+        "year": "2001",
+        "engine": "V6-3.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "XG350",
+        "year": "05-02",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HYUNDAI",
+        "model": "XG350",
+        "year": "05-02",
+        "engine": "V6-3.5L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "OPTIMA",
+        "year": "06-05",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "OPTIMA",
+        "year": "06-05",
+        "engine": "L4-2.4L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KIA",
+        "model": "OPTIMA",
+        "year": "06-05",
+        "engine": "V6-2.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER HYUNDAI",
+        "model": "Trajet 2.0i (FO)",
+        "year": "",
+        "engine": "",
+        "part_type": "Cabin Air Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER HYUNDAI",
+        "model": "Trajet 2.0i (FO)",
+        "year": "04-00",
+        "engine": "",
+        "part_type": "Cabin Air",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-63",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-6",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "042-2018",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "P3790WS",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "CAF1801P",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "CCF1801",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "F4853",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AF1223",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1288",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "AFC1223",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Hyundai",
+        "part_number": "97619-38000",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "CAF1801P",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Kleener",
+        "part_number": "FCAF1801P",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1801P",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3899",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "3893",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4881",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "224853",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94881",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "94853",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PC5675",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PC-5675",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C35675",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C35675",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VCA-1139",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24881",
+        "source_part_number": "CF11171",
+        "part_key": "001538518",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

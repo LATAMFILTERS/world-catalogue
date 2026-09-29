@@ -1,0 +1,6531 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "PH3519A",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "PH3519A",
+    "product_type": "Transmission Oil Filter, Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 3.656,
+      "outer_diameter_mm": 92.86,
+      "height_in": 5.156,
+      "height_mm": 130.96,
+      "thread_size": "1 1/8-16",
+      "gasket_od_in": 2.797,
+      "gasket_od_mm": 71.04,
+      "gasket_id_in": 2.422,
+      "gasket_id_mm": 61.52,
+      "gasket_thickness_in": 0.047,
+      "gasket_thickness_mm": 1.19,
+      "media_type": "Genuine Media",
+      "style": "Spin-On Canister",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "AGCO",
+        "part_number": "303498409"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I0721"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "9N9586"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I-1327"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "1W2638"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "8N-9586"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "8N9586"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "6V5875"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "9N-5570"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "1R0713"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I1327"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "8T7427"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "8N9856"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "9N5570"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "1N3224"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "778190"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "D9HZ-6731-A"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "D9HZ-6731-B"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "H370725M22"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25312506"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "12490155"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25011122"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "94054051"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25011099"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25011159"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25011165"
+      },
+      {
+        "manufacturer": "Kubota",
+        "part_number": "66361-37950"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PM13-16"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF897F"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF897"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT230"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BK6240"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "HO512"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "H17W21"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W940/28"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W929/3"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-337"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1268"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1248"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1268MP"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L30215"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51268"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51268MP"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "AG Chem",
+        "part_number": "707419"
+      },
+      {
+        "manufacturer": "Alliance Parts",
+        "part_number": "ABP/N10G-LF3342"
+      },
+      {
+        "manufacturer": "Asahi",
+        "part_number": "HO-8001"
+      },
+      {
+        "manufacturer": "Asahi",
+        "part_number": "KO-8001"
+      },
+      {
+        "manufacturer": "ASAS",
+        "part_number": "SP463"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92248"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92268"
+      },
+      {
+        "manufacturer": "Bowes",
+        "part_number": "LFP5570"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85268"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "LFP5570"
+      },
+      {
+        "manufacturer": "Coach Guard",
+        "part_number": "T17-1053"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "LFS5170"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "LSF5015"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "2113"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P166508"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "HF7551"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559310"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "LFP555570"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559305"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P168070"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P779218"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559087"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P555570"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3789"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "MK12405"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3342"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8766"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-83342"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GP-9586"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GP-95"
+      },
+      {
+        "manufacturer": "Grove",
+        "part_number": "9-414-100136"
+      },
+      {
+        "manufacturer": "Grove",
+        "part_number": "9-414-100601"
+      },
+      {
+        "manufacturer": "Guardian",
+        "part_number": "G05-1268"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF364"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "HDA-15010"
+      },
+      {
+        "manufacturer": "Hino",
+        "part_number": "34926-1041"
+      },
+      {
+        "manufacturer": "Hino",
+        "part_number": "34926-1041A"
+      },
+      {
+        "manufacturer": "Hino",
+        "part_number": "34926-1040"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "3243493R1"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "1-32569-021-0"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "8-25011-122-0"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "8124901550"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "8-250011-159-0"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "8-25011-159-0"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "HP-1018"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "OC87"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "3ED6611330"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L251"
+      },
+      {
+        "manufacturer": "Link-Belt",
+        "part_number": "47A3025"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP5570"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFH7551"
+      },
+      {
+        "manufacturer": "MICRO",
+        "part_number": "PHM-1656"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "LFP5570"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1-304"
+      },
+      {
+        "manufacturer": "Morbark",
+        "part_number": "29245027"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "1268MP"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "1268"
+      },
+      {
+        "manufacturer": "Poclain",
+        "part_number": "P1850501"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "QS3519"
+      },
+      {
+        "manufacturer": "Renault",
+        "part_number": "5000816061"
+      },
+      {
+        "manufacturer": "Ryco",
+        "part_number": "HDZ209"
+      },
+      {
+        "manufacturer": "Separ",
+        "part_number": "20230"
+      },
+      {
+        "manufacturer": "Sierra",
+        "part_number": "18-7881"
+      },
+      {
+        "manufacturer": "Sofima",
+        "part_number": "SFS06162"
+      },
+      {
+        "manufacturer": "Texaco",
+        "part_number": "HDO-4"
+      },
+      {
+        "manufacturer": "Universal Coach",
+        "part_number": "T171053"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "1193976"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "V1111842"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "3130942"
+      },
+      {
+        "manufacturer": "WALMI",
+        "part_number": "WS-3519"
+      },
+      {
+        "manufacturer": "Wirtgen",
+        "part_number": "1881"
+      },
+      {
+        "manufacturer": "Woodgate",
+        "part_number": "WGL3342"
+      },
+      {
+        "manufacturer": "Yamashin",
+        "part_number": "PFP08H10"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "98-93",
+        "make": "CHEVROLET",
+        "model": "B7",
+        "engine": "L6-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "02-98",
+        "make": "CHEVROLET",
+        "model": "B7",
+        "engine": "L6-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "98-93",
+        "make": "CHEVROLET",
+        "model": "B7",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "CHEVROLET",
+        "model": "B7",
+        "engine": "V8-6.5L",
+        "quantity": 1
+      },
+      {
+        "year": "98-94",
+        "make": "CHEVROLET",
+        "model": "B7",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "00-99",
+        "make": "CHEVROLET",
+        "model": "B7",
+        "engine": "V8-7.4L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "CHEVROLET",
+        "model": "B7",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      },
+      {
+        "year": "90-80",
+        "make": "CHEVROLET",
+        "model": "C70",
+        "engine": "V8-10.4L",
+        "quantity": 2
+      },
+      {
+        "year": "90-80",
+        "make": "CHEVROLET",
+        "model": "C70",
+        "engine": "V8-8.2L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "CHEVROLET",
+        "model": "T6500",
+        "engine": "L6-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "02-98",
+        "make": "CHEVROLET",
+        "model": "T6500",
+        "engine": "L6-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "CHEVROLET",
+        "model": "T6500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "CHEVROLET",
+        "model": "T7500",
+        "engine": "L6-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "02-98",
+        "make": "CHEVROLET",
+        "model": "T7500",
+        "engine": "L6-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "CHEVROLET",
+        "model": "T7500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "87-80",
+        "make": "FORD",
+        "model": "B-600",
+        "engine": "V8-8.2L",
+        "quantity": 1
+      },
+      {
+        "year": "87-80",
+        "make": "FORD",
+        "model": "B-700",
+        "engine": "V8-8.2L",
+        "quantity": 1
+      },
+      {
+        "year": "87-83",
+        "make": "FORD",
+        "model": "B-7000",
+        "engine": "V8-10.4L",
+        "quantity": 2
+      },
+      {
+        "year": "86-80",
+        "make": "FORD",
+        "model": "C7000",
+        "engine": "V8-10.4L",
+        "quantity": 2
+      },
+      {
+        "year": "90-80",
+        "make": "FORD",
+        "model": "C8000",
+        "engine": "V8-10.4L",
+        "quantity": 2
+      },
+      {
+        "year": "87-80",
+        "make": "FORD",
+        "model": "F-600",
+        "engine": "V8-8.2L",
+        "quantity": 1
+      },
+      {
+        "year": "1980",
+        "make": "FORD",
+        "model": "F-700",
+        "engine": "V8-10.4L",
+        "quantity": 2
+      },
+      {
+        "year": "1983",
+        "make": "FORD",
+        "model": "F-700",
+        "engine": "V8-10.4L",
+        "quantity": 1
+      },
+      {
+        "year": "89-87",
+        "make": "FORD",
+        "model": "F-700",
+        "engine": "V8-10.4L",
+        "quantity": 1
+      },
+      {
+        "year": "87-80",
+        "make": "FORD",
+        "model": "F-700",
+        "engine": "V8-8.2L",
+        "quantity": 1
+      },
+      {
+        "year": "87-83",
+        "make": "FORD",
+        "model": "F-7000",
+        "engine": "V8-10.4L",
+        "quantity": 1
+      },
+      {
+        "year": "87-80",
+        "make": "FORD",
+        "model": "F-800",
+        "engine": "V8-8.2L",
+        "quantity": 1
+      },
+      {
+        "year": "87-83",
+        "make": "FORD",
+        "model": "F-8000",
+        "engine": "V8-10.4L",
+        "quantity": 1
+      },
+      {
+        "year": "87-83",
+        "make": "FORD",
+        "model": "FT8000",
+        "engine": "V8-10.4L",
+        "quantity": 1
+      },
+      {
+        "year": "87-85",
+        "make": "FORD",
+        "model": "FT900",
+        "engine": "V8-8.2L",
+        "quantity": 1
+      },
+      {
+        "year": "88-81",
+        "make": "FORD",
+        "model": "L8000",
+        "engine": "V8-10.4L",
+        "quantity": 2
+      },
+      {
+        "year": "87-81",
+        "make": "FORD",
+        "model": "LN7000",
+        "engine": "V8-10.4L",
+        "quantity": 2
+      },
+      {
+        "year": "89-81",
+        "make": "FORD",
+        "model": "LN8000",
+        "engine": "V8-10.4L",
+        "quantity": 2
+      },
+      {
+        "year": "89-81",
+        "make": "FORD",
+        "model": "LNT8000",
+        "engine": "V8-10.4L",
+        "quantity": 2
+      },
+      {
+        "year": "1981",
+        "make": "FORD",
+        "model": "LNT9000",
+        "engine": "V8-10.4L",
+        "quantity": 2
+      },
+      {
+        "year": "89-87",
+        "make": "FORD",
+        "model": "LS8000",
+        "engine": "V8-10.4L",
+        "quantity": 2
+      },
+      {
+        "year": "88-81",
+        "make": "FORD",
+        "model": "LT8000",
+        "engine": "V8-10.4L",
+        "quantity": 2
+      },
+      {
+        "year": "89-81",
+        "make": "FORD",
+        "model": "LTS8000",
+        "engine": "V8-10.4L",
+        "quantity": 2
+      },
+      {
+        "year": "98-93",
+        "make": "GMC",
+        "model": "B7",
+        "engine": "L6-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "02-98",
+        "make": "GMC",
+        "model": "B7",
+        "engine": "L6-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "98-93",
+        "make": "GMC",
+        "model": "B7",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "GMC",
+        "model": "B7",
+        "engine": "V8-6.5L",
+        "quantity": 1
+      },
+      {
+        "year": "98-94",
+        "make": "GMC",
+        "model": "B7",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "00-99",
+        "make": "GMC",
+        "model": "B7",
+        "engine": "V8-7.4L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "GMC",
+        "model": "B7",
+        "engine": "V8-8.1L",
+        "quantity": 1
+      },
+      {
+        "year": "91-90",
+        "make": "GMC",
+        "model": "C5000 TOPKICK",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "96-90",
+        "make": "GMC",
+        "model": "C6000 TOPKICK",
+        "engine": "L6-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "96-90",
+        "make": "GMC",
+        "model": "C6000 TOPKICK",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "96-90",
+        "make": "GMC",
+        "model": "C6000 TOPKICK",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "GMC",
+        "model": "C6500 TOPKICK",
+        "engine": "L6-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "GMC",
+        "model": "C6500 TOPKICK",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "GMC",
+        "model": "C6500 TOPKICK",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "90-80",
+        "make": "GMC",
+        "model": "C7000",
+        "engine": "V8-10.4L",
+        "quantity": 2
+      },
+      {
+        "year": "1990",
+        "make": "GMC",
+        "model": "C7000",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "1990",
+        "make": "GMC",
+        "model": "C7000",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "96-90",
+        "make": "GMC",
+        "model": "C7000 TOPKICK",
+        "engine": "L6-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "96-90",
+        "make": "GMC",
+        "model": "C7000 TOPKICK",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "96-90",
+        "make": "GMC",
+        "model": "C7000 TOPKICK",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "GMC",
+        "model": "C7500 TOPKICK",
+        "engine": "L6-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "GMC",
+        "model": "C7500 TOPKICK",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "GMC",
+        "model": "C7500 TOPKICK",
+        "engine": "V8-7.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "GMC",
+        "model": "T6500",
+        "engine": "L6-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "02-98",
+        "make": "GMC",
+        "model": "T6500",
+        "engine": "L6-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "GMC",
+        "model": "T6500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "GMC",
+        "model": "T7500",
+        "engine": "L6-6.6L",
+        "quantity": 1
+      },
+      {
+        "year": "02-98",
+        "make": "GMC",
+        "model": "T7500",
+        "engine": "L6-7.2L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "GMC",
+        "model": "T7500",
+        "engine": "V8-6.0L",
+        "quantity": 1
+      },
+      {
+        "year": "01-00",
+        "make": "ISUZU",
+        "model": "FRR",
+        "engine": "L6-7.8L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "ISUZU",
+        "model": "FSR",
+        "engine": "L6-7.1L",
+        "quantity": 1
+      },
+      {
+        "year": "02-98",
+        "make": "ISUZU",
+        "model": "FSR",
+        "engine": "L6-7.8L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "ISUZU",
+        "model": "FTR",
+        "engine": "L6-7.1L",
+        "quantity": 1
+      },
+      {
+        "year": "02-98",
+        "make": "ISUZU",
+        "model": "FTR",
+        "engine": "L6-7.8L",
+        "quantity": 1
+      },
+      {
+        "year": "98-97",
+        "make": "ISUZU",
+        "model": "FVR",
+        "engine": "L6-7.1L",
+        "quantity": 1
+      },
+      {
+        "year": "02-98",
+        "make": "ISUZU",
+        "model": "FVR",
+        "engine": "L6-7.8L",
+        "quantity": 1
+      },
+      {
+        "year": "94-90",
+        "make": "ISUZU",
+        "model": "NRR",
+        "engine": "L6-6.5L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "PH3519A",
+    "source_part_key": "001509502",
+    "source_totals": {
+      "attributes": 39,
+      "applications": 454,
+      "cross_references": 116
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, PH3519A, HD Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Spin-on Oil Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "82"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Spin-On Canister",
+        "recno": "84"
+      },
+      {
+        "attribute": "Marine Approved",
+        "value": "No",
+        "recno": "85"
+      },
+      {
+        "attribute": "Thread Size",
+        "value": "Standard",
+        "recno": "86"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "88"
+      },
+      {
+        "attribute": "Gasket Type",
+        "value": "Base",
+        "recno": "89"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Orange",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available Only While Supplies Last",
+        "recno": "91"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Threaded",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100024190",
+        "recno": "92"
+      },
+      {
+        "attribute": "Drain Plug Included",
+        "value": "No",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "93"
+      },
+      {
+        "attribute": "Gasket Or Seal Included",
+        "value": "Yes",
+        "recno": "94"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "HD Oil Filter",
+        "recno": "95"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "96"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "5.156",
+        "recno": "97"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "3.656",
+        "recno": "98"
+      },
+      {
+        "attribute": "Gasket Inside Diameter (Inch)",
+        "value": "2.422",
+        "recno": "99"
+      },
+      {
+        "attribute": "Gasket Outside Diameter (Inch)",
+        "value": "2.797",
+        "recno": "100"
+      },
+      {
+        "attribute": "Gasket Thickness (Inch)",
+        "value": "0.047",
+        "recno": "101"
+      },
+      {
+        "attribute": "Inner Thread Diameter (Inch)",
+        "value": "1 1/8-16",
+        "recno": "102"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "103"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "104"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "105"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.4500",
+        "recno": "109"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "8.7000",
+        "recno": "110"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "5.3870",
+        "recno": "111"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "5.8150",
+        "recno": "112"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "3.7760",
+        "recno": "113"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "11.4700",
+        "recno": "114"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "3.7760",
+        "recno": "115"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "7.7300",
+        "recno": "116"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.45,
+        "case_weight_lb": 8.7,
+        "unit_height_in": 5.387,
+        "unit_length_in": 3.776,
+        "unit_width_in": 3.776,
+        "case_height_in": 5.815,
+        "case_length_in": 11.47,
+        "case_width_in": 7.73,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 17.4,
+        "estimated_case_dimensions": {
+          "length_in": 15.293,
+          "width_in": 11.595,
+          "height_in": 5.815,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 454,
+    "all_cross_references_observed": 116,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:09:12.909Z",
+  "discovered_from": "PH3519A",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "BERING",
+        "model": "LD15A",
+        "year": "2000",
+        "engine": "6-3.8L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B6P School Bus Chassis (w/350 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B6P School Bus Chassis (w/350 Gas Engine)",
+        "year": "92-80",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B6P School Bus Chassis (w/366 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B6P School Bus Chassis (w/366 Gas Engine)",
+        "year": "92-80",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B6P School Bus Chassis (w/427 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B6P School Bus Chassis (w/427 Gas Engine)",
+        "year": "92-80",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B6P School Bus Chassis (w/Detroit Diesel 8.2L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B6P School Bus Chassis (w/Detroit Diesel 8.2L Engine)",
+        "year": "91-81",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B7 School Bus Chassis (w/Caterpillar 3116 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B7 School Bus Chassis (w/Caterpillar 3116 Engine)",
+        "year": "02-93",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B7 School Bus Chassis (w/Caterpillar 3126 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B7 School Bus Chassis (w/Caterpillar 3126 Engine)",
+        "year": "02-93",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B7 School Bus Chassis (w/GM 6.5L Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B7 School Bus Chassis (w/GM 6.5L Diesel Engine)",
+        "year": "98-97",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B7 School Bus Chassis (w/GM V8 6.0L 366 FI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B7 School Bus Chassis (w/GM V8 6.0L 366 FI Engine)",
+        "year": "98-93",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B7 School Bus Chassis (w/GM V8 7.0L 427 FI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B7 School Bus Chassis (w/GM V8 7.0L 427 FI Engine)",
+        "year": "98-93",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B7 School Bus Chassis (w/GM V8 7.4L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B7 School Bus Chassis (w/GM V8 7.4L Gas Engine)",
+        "year": "02-99",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B7 School Bus Chassis (w/GM V8 8.1L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY CHEVROLET",
+        "model": "B7 School Bus Chassis (w/GM V8 8.1L Gas Engine)",
+        "year": "02-99",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY FORD",
+        "model": "B600, B700 School Bus (w/Detroit Diesel 8.2L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY FORD",
+        "model": "B600, B700 School Bus (w/Detroit Diesel 8.2L Engine)",
+        "year": "87-80",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B6P School Bus Chassis (w/350 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B6P School Bus Chassis (w/350 Gas Engine)",
+        "year": "92-80",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B6P School Bus Chassis (w/366 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B6P School Bus Chassis (w/366 Gas Engine)",
+        "year": "92-80",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B6P School Bus Chassis (w/427 Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B6P School Bus Chassis (w/427 Gas Engine)",
+        "year": "92-80",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B6P School Bus Chassis (w/Detroit Diesel 8.2L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B6P School Bus Chassis (w/Detroit Diesel 8.2L Engine)",
+        "year": "91-81",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B7 School Bus Chassis (w/Caterpillar 3116 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B7 School Bus Chassis (w/Caterpillar 3116 Engine)",
+        "year": "02-93",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B7 School Bus Chassis (w/Caterpillar 3126 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B7 School Bus Chassis (w/Caterpillar 3126 Engine)",
+        "year": "02-93",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B7 School Bus Chassis (w/General Motors 6.5L diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B7 School Bus Chassis (w/General Motors 6.5L diesel Engine)",
+        "year": "98-97",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B7 School Bus Chassis (w/General Motors V8 6.0L 366 FI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B7 School Bus Chassis (w/General Motors V8 6.0L 366 FI Engine)",
+        "year": "98-93",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B7 School Bus Chassis (w/General Motors V8 7.0L 427 FI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B7 School Bus Chassis (w/General Motors V8 7.0L 427 FI Engine)",
+        "year": "98-93",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B7 School Bus Chassis (w/General Motors V8 7.4L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B7 School Bus Chassis (w/General Motors V8 7.4L Gas Engine)",
+        "year": "02-99",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B7 School Bus Chassis (w/General Motors V8 8.1L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY GMC",
+        "model": "B7 School Bus Chassis (w/General Motors V8 8.1L Gas Engine)",
+        "year": "02-99",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY VOLVO",
+        "model": "B10R (w/Volvo THD100DB Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY VOLVO",
+        "model": "B10R (w/Volvo THD100DB Engine)",
+        "year": "92-78",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY VOLVO",
+        "model": "B9M, B10M",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "BUS HEAVY DUTY VOLVO",
+        "model": "B9M, B10M",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "B7",
+        "year": "98-93",
+        "engine": "L6-6.6L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "B7",
+        "year": "02-98",
+        "engine": "L6-7.2L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "B7",
+        "year": "98-93",
+        "engine": "V8-6.0L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "B7",
+        "year": "98-97",
+        "engine": "V8-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "B7",
+        "year": "98-94",
+        "engine": "V8-7.0L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "B7",
+        "year": "00-99",
+        "engine": "V8-7.4L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "B7",
+        "year": "02-01",
+        "engine": "V8-8.1L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "C70",
+        "year": "90-80",
+        "engine": "V8-10.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "C70",
+        "year": "90-80",
+        "engine": "V8-8.2L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "T6500",
+        "year": "98-97",
+        "engine": "L6-6.6L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "T6500",
+        "year": "02-98",
+        "engine": "L6-7.2L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "T6500",
+        "year": "98-97",
+        "engine": "V8-6.0L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "T7500",
+        "year": "98-97",
+        "engine": "L6-6.6L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "T7500",
+        "year": "02-98",
+        "engine": "L6-7.2L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CHEVROLET",
+        "model": "T7500",
+        "year": "98-97",
+        "engine": "V8-6.0L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR CATERPILLAR",
+        "model": "CS553",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR CATERPILLAR",
+        "model": "CS553",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER CATERPILLAR",
+        "model": "CB614, CB624",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER CATERPILLAR",
+        "model": "CB614, CB624",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER CATERPILLAR",
+        "model": "CP533",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER CATERPILLAR",
+        "model": "CP533",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER CATERPILLAR",
+        "model": "CS551, CS553",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER CATERPILLAR",
+        "model": "CS551, CS553",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER CATERPILLAR",
+        "model": "PS500",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "COMPACTOR ROLLER CATERPILLAR",
+        "model": "PS500",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3BLGP",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3BLGP",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3C Series II w/Caterpillar 3204 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3C Series II w/Caterpillar 3204 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3C w/Caterpillar 3046 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3C w/Caterpillar 3046 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3CLGP",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3CLGP",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3CLGP Series II",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D3CLGP Series II",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D4B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D4B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D4C w/Caterpillar 3046 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D4C w/Caterpillar 3046 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D4C, D4C XL Series II w/Caterpillar 3204 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D4C, D4C XL Series II w/Caterpillar 3204 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D5C, D5CLPG, D5C XL Series III w/Caterpillar 3046 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER DOZER CATERPILLAR",
+        "model": "D5C, D5CLPG, D5C XL Series III w/Caterpillar 3046 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931B LGP",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931B LGP",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931B w/Caterpillar 3204 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931B w/Caterpillar 3204 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931C",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931C",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931C LGP",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931C LGP",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931C LGP Series II",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931C LGP Series II",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931C Series II",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "931C Series II",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "935B w/Caterpillar 3204 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "935B w/Caterpillar 3204 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "935C Series II",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "935C Series II",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "935C, 935C Series II w/Caterpillar 3204 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER LOADER CATERPILLAR",
+        "model": "935C, 935C Series II w/Caterpillar 3204 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR CATERPILLAR",
+        "model": "D3B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CRAWLER TRACTOR CATERPILLAR",
+        "model": "D3B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "3176",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "3176",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "3208",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "3208",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "3208T",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "3208T",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "3208TA",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE CATERPILLAR",
+        "model": "3208TA",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "225",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "225",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "225BLC",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "225BLC",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "225D",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "225D",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "227",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "227",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "229",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "EXCAVATOR CATERPILLAR",
+        "model": "229",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "B-600",
+        "year": "87-80",
+        "engine": "V8-8.2L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "B-700",
+        "year": "87-80",
+        "engine": "V8-8.2L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "B-7000",
+        "year": "87-83",
+        "engine": "V8-10.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FORD",
+        "model": "C7000",
+        "year": "86-80",
+        "engine": "V8-10.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FORD",
+        "model": "C8000",
+        "year": "90-80",
+        "engine": "V8-10.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FORD",
+        "model": "F-600",
+        "year": "87-80",
+        "engine": "V8-8.2L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-700",
+        "year": "1980",
+        "engine": "V8-10.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FORD",
+        "model": "F-700",
+        "year": "1983",
+        "engine": "V8-10.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-700",
+        "year": "89-87",
+        "engine": "V8-10.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-700",
+        "year": "87-80",
+        "engine": "V8-8.2L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-7000",
+        "year": "87-83",
+        "engine": "V8-10.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-800",
+        "year": "87-80",
+        "engine": "V8-8.2L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "F-8000",
+        "year": "87-83",
+        "engine": "V8-10.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "FT8000",
+        "year": "87-83",
+        "engine": "V8-10.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "FT900",
+        "year": "87-85",
+        "engine": "V8-8.2L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "L8000",
+        "year": "88-81",
+        "engine": "V8-10.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FORD",
+        "model": "LN7000",
+        "year": "87-81",
+        "engine": "V8-10.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FORD",
+        "model": "LN8000",
+        "year": "89-81",
+        "engine": "V8-10.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FORD",
+        "model": "LNT8000",
+        "year": "89-81",
+        "engine": "V8-10.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FORD",
+        "model": "LNT9000",
+        "year": "1981",
+        "engine": "V8-10.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FORD",
+        "model": "LS8000",
+        "year": "89-87",
+        "engine": "V8-10.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FORD",
+        "model": "LT8000",
+        "year": "88-81",
+        "engine": "V8-10.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FORD",
+        "model": "LTS8000",
+        "year": "89-81",
+        "engine": "V8-10.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "CENTURY CLASS",
+        "year": "2001",
+        "engine": "6-10.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "FS65",
+        "year": "04-99",
+        "engine": "L6-5.9L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "B7",
+        "year": "98-93",
+        "engine": "L6-6.6L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "B7",
+        "year": "02-98",
+        "engine": "L6-7.2L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "B7",
+        "year": "98-93",
+        "engine": "V8-6.0L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "B7",
+        "year": "98-97",
+        "engine": "V8-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "B7",
+        "year": "98-94",
+        "engine": "V8-7.0L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "B7",
+        "year": "00-99",
+        "engine": "V8-7.4L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "B7",
+        "year": "02-01",
+        "engine": "V8-8.1L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C5000 TOPKICK",
+        "year": "91-90",
+        "engine": "V8-6.0L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C6000 TOPKICK",
+        "year": "96-90",
+        "engine": "L6-6.6L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C6000 TOPKICK",
+        "year": "96-90",
+        "engine": "V8-6.0L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C6000 TOPKICK",
+        "year": "96-90",
+        "engine": "V8-7.0L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C6500 TOPKICK",
+        "year": "98-97",
+        "engine": "L6-6.6L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C6500 TOPKICK",
+        "year": "98-97",
+        "engine": "V8-6.0L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C6500 TOPKICK",
+        "year": "98-97",
+        "engine": "V8-7.0L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C7000",
+        "year": "90-80",
+        "engine": "V8-10.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "GMC",
+        "model": "C7000",
+        "year": "1990",
+        "engine": "V8-6.0L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C7000",
+        "year": "1990",
+        "engine": "V8-7.0L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C7000 TOPKICK",
+        "year": "96-90",
+        "engine": "L6-6.6L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C7000 TOPKICK",
+        "year": "96-90",
+        "engine": "V8-6.0L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C7000 TOPKICK",
+        "year": "96-90",
+        "engine": "V8-7.0L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C7500 TOPKICK",
+        "year": "98-97",
+        "engine": "L6-6.6L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C7500 TOPKICK",
+        "year": "98-97",
+        "engine": "V8-6.0L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "C7500 TOPKICK",
+        "year": "98-97",
+        "engine": "V8-7.0L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "T6500",
+        "year": "98-97",
+        "engine": "L6-6.6L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "T6500",
+        "year": "02-98",
+        "engine": "L6-7.2L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "T6500",
+        "year": "98-97",
+        "engine": "V8-6.0L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "T7500",
+        "year": "98-97",
+        "engine": "L6-6.6L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "T7500",
+        "year": "02-98",
+        "engine": "L6-7.2L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "GMC",
+        "model": "T7500",
+        "year": "98-97",
+        "engine": "V8-6.0L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FA14",
+        "year": "91-89",
+        "engine": "L4-3.8L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FA15",
+        "year": "1992",
+        "engine": "L4-3.8L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FA1517",
+        "year": "04-98",
+        "engine": "L4-5.3L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FB14",
+        "year": "91-87",
+        "engine": "L4-3.8L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FB15",
+        "year": "1992",
+        "engine": "L4-3.8L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FB1817",
+        "year": "04-98",
+        "engine": "L4-5.3L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FD16",
+        "year": "87-86",
+        "engine": "L6-5.8L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FD17",
+        "year": "92-88",
+        "engine": "L6-6.7L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FD20",
+        "year": "1992",
+        "engine": "L6-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FD2218",
+        "year": "97-93",
+        "engine": "L6-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FD2218LP",
+        "year": "97-93",
+        "engine": "L6-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FE16",
+        "year": "87-86",
+        "engine": "L6-5.8L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FE17",
+        "year": "92-84",
+        "engine": "L6-6.7L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FE19",
+        "year": "92-85",
+        "engine": "L6-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FE20",
+        "year": "1992",
+        "engine": "L6-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FE2618",
+        "year": "97-93",
+        "engine": "L6-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FF17",
+        "year": "91-84",
+        "engine": "L6-6.7L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FF19",
+        "year": "92-84",
+        "engine": "L6-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FF20",
+        "year": "1992",
+        "engine": "L6-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FF23",
+        "year": "1992",
+        "engine": "L6-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FF3018",
+        "year": "97-95",
+        "engine": "L6-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FF3020",
+        "year": "97-95",
+        "engine": "L6-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FG19",
+        "year": "86-85",
+        "engine": "L6-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "FG22",
+        "year": "85-84",
+        "engine": "L6-9.4L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "GC17",
+        "year": "91-90",
+        "engine": "L6-6.7L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "GC20",
+        "year": "1992",
+        "engine": "L6-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SF17",
+        "year": "1989",
+        "engine": "L6-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG19",
+        "year": "92-86",
+        "engine": "L6-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG20",
+        "year": "1992",
+        "engine": "L6-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG22",
+        "year": "87-86",
+        "engine": "L6-9.4L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG23",
+        "year": "92-86",
+        "engine": "L6-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG231",
+        "year": "92-89",
+        "engine": "L6-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG3320",
+        "year": "97-93",
+        "engine": "L6-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG3320",
+        "year": "02-98",
+        "engine": "L6-8.0L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG3320",
+        "year": "2004",
+        "engine": "L6-8.0L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG3323",
+        "year": "97-93",
+        "engine": "L6-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG3325",
+        "year": "01-00",
+        "engine": "L6-8.0L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HINO",
+        "model": "SG5523",
+        "year": "96-93",
+        "engine": "L6-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INTEGRATED TOOLCARRIER CATERPILLAR",
+        "model": "IT12",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "INTEGRATED TOOLCARRIER CATERPILLAR",
+        "model": "IT12",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "FRR",
+        "year": "01-00",
+        "engine": "L6-7.8L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "FSR",
+        "year": "98-97",
+        "engine": "L6-7.1L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "FSR",
+        "year": "02-98",
+        "engine": "L6-7.8L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "FTR",
+        "year": "98-97",
+        "engine": "L6-7.1L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "FTR",
+        "year": "02-98",
+        "engine": "L6-7.8L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "FVR",
+        "year": "98-97",
+        "engine": "L6-7.1L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "FVR",
+        "year": "02-98",
+        "engine": "L6-7.8L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ISUZU",
+        "model": "NRR",
+        "year": "94-90",
+        "engine": "L6-6.5L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "K300",
+        "year": "96-93",
+        "engine": "L6-5.9L",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "KENWORTH",
+        "model": "L700",
+        "year": "1982",
+        "engine": "V8-10.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "KENWORTH",
+        "model": "L700",
+        "year": "86-84",
+        "engine": "V8-10.4L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 2
+      },
+      {
+        "make": "LIFT TRUCK CATERPILLAR",
+        "model": "V550-V620 w/Caterpillar 3208 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK CATERPILLAR",
+        "model": "V550-V620 w/Caterpillar 3208 Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK CATERPILLAR",
+        "model": "V700 thru V800 w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK CATERPILLAR",
+        "model": "V700 thru V800 w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK CATERPILLAR",
+        "model": "V900CH w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK CATERPILLAR",
+        "model": "V900CH w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK CATERPILLAR",
+        "model": "V925, V925 LH w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LIFT TRUCK CATERPILLAR",
+        "model": "V925, V925 LH w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "T6500, T7500, T8500 (w/Caterpillar 3116 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "T6500, T7500, T8500 (w/Caterpillar 3116 Engine)",
+        "year": "05-97",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "T6500, T7500, T8500 (w/Caterpillar 3126 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK CHEVROLET",
+        "model": "T6500, T7500, T8500 (w/Caterpillar 3126 Engine)",
+        "year": "05-97",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK FORD",
+        "model": "C600, C700, C800 (w/Caterpillar 3208 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK FORD",
+        "model": "C600, C700, C800 (w/Caterpillar 3208 Engine)",
+        "year": "89-73",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK FORD",
+        "model": "C7000, C8000 (w/Caterpillar 3208 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK FORD",
+        "model": "C7000, C8000 (w/Caterpillar 3208 Engine)",
+        "year": "89-87",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK FORD",
+        "model": "F7000, F8000 (w/Caterpillar 3208 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK FORD",
+        "model": "F7000, F8000 (w/Caterpillar 3208 Engine)",
+        "year": "87-83",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "C6000, C7000, C8000 (w/Caterpillar 3208 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "C6000, C7000, C8000 (w/Caterpillar 3208 Engine)",
+        "year": "90-80",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "C6000, C7000, C8000 (w/Detroit Diesel 8.2L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "C6000, C7000, C8000 (w/Detroit Diesel 8.2L Engine)",
+        "year": "90-80",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "T6500, T7500, T8500 (w/Caterpillar 3116 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "T6500, T7500, T8500 (w/Caterpillar 3116 Engine)",
+        "year": "05-97",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "T6500, T7500, T8500 (w/Caterpillar 3126 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK GMC",
+        "model": "T6500, T7500, T8500 (w/Caterpillar 3126 Engine)",
+        "year": "05-97",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FA14 (w/Hino W04CTD Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FA14 (w/Hino W04CTD Engine)",
+        "year": "91-87",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FA15 (w/Hino W04CTI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FA15 (w/Hino W04CTI Engine)",
+        "year": "1992",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FA1517 (w/Hino J05CTB Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FA1517 (w/Hino J05CTB Engine)",
+        "year": "04-98",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FA1517 (w/Hino J05CTD Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FA1517 (w/Hino J05CTD Engine)",
+        "year": "04-98",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FB14 (w/Hino W04CTD Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FB14 (w/Hino W04CTD Engine)",
+        "year": "91-87",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FB15 (w/W04CTH Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FB15 (w/W04CTH Engine)",
+        "year": "97-92",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FB1817 (w/Hino J05CTB Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FB1817 (w/Hino J05CTB Engine)",
+        "year": "04-98",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD16, FE16 (w/Hino W06E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD16, FE16 (w/Hino W06E Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD17 (w/H07CF Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD17 (w/H07CF Engine)",
+        "year": "91-88",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD20 (w/H06CTI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FD20 (w/H06CTI Engine)",
+        "year": "97-92",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE16",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE16",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE17",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE17",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE19 (w/Hino H06CTJ Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE19 (w/Hino H06CTJ Engine)",
+        "year": "91-85",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE19, FE20 (w/H06C Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE19, FE20 (w/H06C Engine)",
+        "year": "1992",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE2618 (w/H06CTP Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE2618 (w/H06CTP Engine)",
+        "year": "97-93",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE2618 (w/H06CTT Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FE2618 (w/H06CTT Engine)",
+        "year": "97-93",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF17 (w/Hino H07CF Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF17 (w/Hino H07CF Engine)",
+        "year": "91-84",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF19 (w/Hino H06CTJ Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF19 (w/Hino H06CTJ Engine)",
+        "year": "91-84",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF20 (w/H06CTI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF20 (w/H06CTI Engine)",
+        "year": "93-92",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF23 (w/H06CTI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FF23 (w/H06CTI Engine)",
+        "year": "93-92",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FG19 (w/Hino H06CTJ Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FG19 (w/Hino H06CTJ Engine)",
+        "year": "85-84",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FG22",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "FG22",
+        "year": "85-84",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "GC17 (w/Hino H07C-F Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "GC17 (w/Hino H07C-F Engine)",
+        "year": "92-90",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "GC20 (w/H06C-TI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "GC20 (w/H06C-TI Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG19 (w/H06C-TJ Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG19 (w/H06C-TJ Engine)",
+        "year": "91-84",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG19, SG20,SG23 (w/HO6CT Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG19, SG20,SG23 (w/HO6CT Engine)",
+        "year": "1992",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG22 (w/EM100 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG22 (w/EM100 Engine)",
+        "year": "1986",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG23 (w/H06C-T Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG23 (w/H06C-T Engine)",
+        "year": "91-87",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG3320, SG3325 (w/J08CTD Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "MEDIUM DUTY TRUCK HINO",
+        "model": "SG3320, SG3325 (w/J08CTD Engine)",
+        "year": "04-98",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "PAVER CATERPILLAR",
+        "model": "SF175, SF250",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PAVER CATERPILLAR",
+        "model": "SF175, SF250",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PAVER CATERPILLAR",
+        "model": "SF176",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PAVER CATERPILLAR",
+        "model": "SF176",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PAVER CATERPILLAR",
+        "model": "SF250",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "PAVER CATERPILLAR",
+        "model": "SF250",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROAD BUILDING MACHINERY CATERPILLAR",
+        "model": "TR225B w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROAD BUILDING MACHINERY CATERPILLAR",
+        "model": "TR225B w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROAD BUILDING MACHINERY CATERPILLAR",
+        "model": "TR500",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "ROAD BUILDING MACHINERY CATERPILLAR",
+        "model": "TR500",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "613, 613B",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "613, 613B",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "613C w/Caterpillar 3116 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "613C w/Caterpillar 3116 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "613C w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SCRAPER CATERPILLAR",
+        "model": "613C w/Caterpillar 3208 Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS OMC",
+        "model": "2X35 Sprayer w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SPRAYERS OMC",
+        "model": "2X35 Sprayer w/Caterpillar Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B20 w/Kubota D950-A-T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B20 w/Kubota D950-A-T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B20 w/Kubota D950-A-T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B20 w/Kubota D950-A-T Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B2150D",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B2150D",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B2150HSE",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B2150HSE",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B8200, B8200HSD, B8200HSE, B8200HST",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B8200, B8200HSD, B8200HSE, B8200HST",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B9200, B9200HST",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRACTOR KUBOTA",
+        "model": "B9200, B9200HST",
+        "year": "",
+        "engine": "",
+        "part_type": "Hydraulic Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSMISSION ALLISON",
+        "model": "AT-540, AT-542, AT-543, AT-545",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSMISSION ALLISON",
+        "model": "AT-540, AT-542, AT-543, AT-545",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSMISSION ALLISON",
+        "model": "MT-643, MT-644, MT-647, MT-650, MT-653, MT-654",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSMISSION ALLISON",
+        "model": "MT-643, MT-644, MT-647, MT-650, MT-653, MT-654",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSMISSION ALLISON",
+        "model": "MTB-640, MTB-643, MTB-644, MTB-647, MTB-650, MTB-653",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSMISSION ALLISON",
+        "model": "MTB-640, MTB-643, MTB-644, MTB-647, MTB-650, MTB-653",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "ACL64 (w/Caterpillar 3176 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY AUTOCAR",
+        "model": "ACL64 (w/Caterpillar 3176 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY BERING",
+        "model": "LD15A (w/Detroit Diesel D638 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY BERING",
+        "model": "LD15A (w/Detroit Diesel D638 Engine)",
+        "year": "01-00",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY CHEVROLET",
+        "model": "C60, C70, C80 (w/Caterpillar 3208 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY CHEVROLET",
+        "model": "C60, C70, C80 (w/Caterpillar 3208 Engine)",
+        "year": "1990",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY CHEVROLET",
+        "model": "C60, C70, C80 (w/Detroit Diesel 8.2L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY CHEVROLET",
+        "model": "C60, C70, C80 (w/Detroit Diesel 8.2L Engine)",
+        "year": "1987",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY CHEVROLET",
+        "model": "T8500 T/F-Series Tilt Cab (w/Caterpillar 3126B Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY CHEVROLET",
+        "model": "T8500 T/F-Series Tilt Cab (w/Caterpillar 3126B Diesel Engine)",
+        "year": "02-98",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY CHEVROLET",
+        "model": "T8500 T/F-Series Tilt Cab (w/General Motors 7.8L Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY CHEVROLET",
+        "model": "T8500 T/F-Series Tilt Cab (w/General Motors 7.8L Diesel Engine)",
+        "year": "03-98",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "B7000 School Bus (w/Caterpillar 3208 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "B7000 School Bus (w/Caterpillar 3208 Engine)",
+        "year": "1983",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "F/ FT600-900 (w/Caterpillar 3208 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "F/ FT600-900 (w/Caterpillar 3208 Engine)",
+        "year": "1980",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "F/ FT600-900 (w/Detroit Diesel 8.2L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "F/ FT600-900 (w/Detroit Diesel 8.2L Engine)",
+        "year": "1980",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "F/ FT600-900 (w/Detroit Diesel 8.2L Engine)",
+        "year": "1987",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LN7000, L/LN/LT/LTS8000 (w/Caterpillar 3208 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FORD",
+        "model": "LN7000, L/LN/LT/LTS8000 (w/Caterpillar 3208 Engine)",
+        "year": "1981",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century C112 (w/Caterpillar 3176 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "Century C112 (w/Caterpillar 3176 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLL (w/Caterpillar 3176 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "FLL (w/Caterpillar 3176 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B6P042 School Bus (w/Detroit 8.2L Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B6P042 School Bus (w/Detroit 8.2L Engine)",
+        "year": "91-83",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/Caterpillar 3116 Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/Caterpillar 3116 Diesel Engine)",
+        "year": "02-01",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/Caterpillar 3116 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/Caterpillar 3116 Engine)",
+        "year": "00-93",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/Caterpillar 3126 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/Caterpillar 3126 Engine)",
+        "year": "2000",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/Caterpillar 3126B Diesel)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/Caterpillar 3126B Diesel)",
+        "year": "02-01",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/General Motors 6.0L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/General Motors 6.0L Gas Engine)",
+        "year": "99-93",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/General Motors 6.5L Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/General Motors 6.5L Diesel Engine)",
+        "year": "99-97",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/General Motors 7.0L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/General Motors 7.0L Gas Engine)",
+        "year": "99-93",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/General Motors 7.4L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/General Motors 7.4L Gas Engine)",
+        "year": "00-99",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/V8-8.1L F/inj. Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/V8-8.1L F/inj. Engine)",
+        "year": "2002",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/V8-8.1L F/inj. L18 (G) Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "B7T042 School Bus (w/V8-8.1L F/inj. L18 (G) Engine)",
+        "year": "2001",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C5H042 (w/Opt Filters)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C5H042 (w/Opt Filters)",
+        "year": "1990",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C6H042",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C6H042",
+        "year": "98-90",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C7H042",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C7H042",
+        "year": "98-90",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C8500 TopKick (w/Caterpillar 3126B Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C8500 TopKick (w/Caterpillar 3126B Diesel Engine)",
+        "year": "01-00",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C8500 TopKick (w/General Motors 7.4L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C8500 TopKick (w/General Motors 7.4L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C8500 TopKick (w/General Motors 7.4L Gas Engine)",
+        "year": "2000",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "C8500 TopKick (w/General Motors 7.4L Gas Engine)",
+        "year": "2000",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "F6B042 T-Series (Tilt Cab) (w/Caterpillar 3116 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "F6B042 T-Series (Tilt Cab) (w/Caterpillar 3116 Engine)",
+        "year": "98-97",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "F6B042 T-Series (Tilt Cab) (w/General Motors 6.0L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "F6B042 T-Series (Tilt Cab) (w/General Motors 6.0L Gas Engine)",
+        "year": "98-97",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "F6B042 T-Series (Tilt Cab) (w/Isuzu 7.1L Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "F6B042 T-Series (Tilt Cab) (w/Isuzu 7.1L Diesel Engine)",
+        "year": "98-97",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "F7B042 T-Series (Tilt Cab) (w/Caterpillar 3116 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "F7B042 T-Series (Tilt Cab) (w/Caterpillar 3116 Engine)",
+        "year": "98-97",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "F7B042 T-Series (Tilt Cab) (w/General Motors 6.0L Gas Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "F7B042 T-Series (Tilt Cab) (w/General Motors 6.0L Gas Engine)",
+        "year": "98-97",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "F7B042 T-Series (Tilt Cab) (w/Isuzu 7.1L Diesel Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "F7B042 T-Series (Tilt Cab) (w/Isuzu 7.1L Diesel Engine)",
+        "year": "98-97",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "P6T042",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY GMC",
+        "model": "P6T042",
+        "year": "90-83",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY HINO",
+        "model": "FB1817 (w/Hino J05CTD Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY HINO",
+        "model": "FB1817 (w/Hino J05CTD Engine)",
+        "year": "01-98",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY HINO",
+        "model": "SF17 (w/Hino H07C-F Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY HINO",
+        "model": "SF17 (w/Hino H07C-F Engine)",
+        "year": "91-84",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "F5050 Paystar Series (w/Caterpillar 3208 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "F5050 Paystar Series (w/Caterpillar 3208 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "F5070 Paystar Series (w/Caterpillar 3208 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "F5070 Paystar Series (w/Caterpillar 3208 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "F5070 Paystar Series (w/Detroit Diesel 8V-92 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY INTERNATIONAL",
+        "model": "F5070 Paystar Series (w/Detroit Diesel 8V-92 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "CS200",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "CS200",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "CS300",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "CS300",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "MS200",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "MS200",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "MS250",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "MS250",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "MS300",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY MACK",
+        "model": "MS300",
+        "year": "",
+        "engine": "",
+        "part_type": "Transmission",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "910",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "910",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "G910",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "WHEEL LOADER CATERPILLAR",
+        "model": "G910",
+        "year": "",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PM13-16",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF897F",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF897",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "AG Chem",
+        "part_number": "707419",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "AGCO",
+        "part_number": "303498409",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Alliance Parts",
+        "part_number": "ABP/N10G-LF3342",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Asahi",
+        "part_number": "HO-8001",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Asahi",
+        "part_number": "KO-8001",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ASAS",
+        "part_number": "SP463",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BT230",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BK6240",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92248",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92268",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bowes",
+        "part_number": "LFP5570",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85268",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I0721",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "9N9586",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I-1327",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "1W2638",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "8N-9586",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "8N9586",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "6V5875",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "9N-5570",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "1R0713",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "3I1327",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "8T7427",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "8N9856",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "9N5570",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "1N3224",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Caterpillar",
+        "part_number": "778190",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "LFP5570",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "HO512",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Coach Guard",
+        "part_number": "T17-1053",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "LFS5170",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Coopers",
+        "part_number": "LSF5015",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "2113",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P166508",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "HF7551",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559310",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "LFP555570",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559305",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P168070",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P779218",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P559087",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P555570",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3789",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "MK12405",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "LF3342",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-8766",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Fleetrite",
+        "part_number": "LFR-83342",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "D9HZ-6731-A",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "D9HZ-6731-B",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "H370725M22",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25312506",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "12490155",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25011122",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "94054051",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25011099",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25011159",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "General Motors",
+        "part_number": "25011165",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GP-9586",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Gonher",
+        "part_number": "GP-95",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Grove",
+        "part_number": "9-414-100136",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Grove",
+        "part_number": "9-414-100601",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Guardian",
+        "part_number": "G05-1268",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF364",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Heavy Duty Air",
+        "part_number": "HDA-15010",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hengst",
+        "part_number": "H17W21",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hino",
+        "part_number": "34926-1041",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hino",
+        "part_number": "34926-1041A",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hino",
+        "part_number": "34926-1040",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "International Harvester IHC",
+        "part_number": "3243493R1",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "1-32569-021-0",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "8-25011-122-0",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "8124901550",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "8-250011-159-0",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Isuzu",
+        "part_number": "8-25011-159-0",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "HP-1018",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "OC87",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Komatsu",
+        "part_number": "3ED6611330",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "L251",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Kubota",
+        "part_number": "66361-37950",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Link-Belt",
+        "part_number": "47A3025",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFP5570",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LFH7551",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W940/28",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "W929/3",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MICRO",
+        "part_number": "PHM-1656",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "LFP5570",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1-304",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Morbark",
+        "part_number": "29245027",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FL-337",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1268",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1248",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1268MP",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "1268MP",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA Gold Filters",
+        "part_number": "1268",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Poclain",
+        "part_number": "P1850501",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L30215",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "QS3519",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Renault",
+        "part_number": "5000816061",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ryco",
+        "part_number": "HDZ209",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Separ",
+        "part_number": "20230",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Sierra",
+        "part_number": "18-7881",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Sofima",
+        "part_number": "SFS06162",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Texaco",
+        "part_number": "HDO-4",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Universal Coach",
+        "part_number": "T171053",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "1193976",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "V1111842",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Volvo",
+        "part_number": "3130942",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "WALMI",
+        "part_number": "WS-3519",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wirtgen",
+        "part_number": "1881",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51268",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51268MP",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Woodgate",
+        "part_number": "WGL3342",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Yamashin",
+        "part_number": "PFP08H10",
+        "source_part_number": "PH3519A",
+        "part_key": "001509502",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Transmission Oil Filter, Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

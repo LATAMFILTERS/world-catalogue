@@ -1,0 +1,52 @@
+{
+  "queue": "RETIRE_REMAP",
+  "count": 2,
+  "rows": [
+    {
+      "id": "ISUZU-0201",
+      "sku": "EF98204",
+      "make": "ISUZU",
+      "model": "NRR",
+      "equipment": "NRR",
+      "type": "TRUCK",
+      "engine": "4HK1-TC",
+      "year": 2020,
+      "base": "",
+      "lane": "RETIRE_REMAP",
+      "action": "Never materialize; remap to verified canonical owner",
+      "write_allowed": false,
+      "decision": "HOLD",
+      "target_sku": "EF98204",
+      "target_codigo_base": null,
+      "evidence_authority": null,
+      "evidence_url": null,
+      "evidence_reference": null,
+      "evidence_verified": false,
+      "reviewer_note": "Never materialize; remap to verified canonical owner",
+      "resolution_state": "TARGET_MISSING"
+    },
+    {
+      "id": "ISUZU-0202",
+      "sku": "EF98204",
+      "make": "ISUZU",
+      "model": "NRR",
+      "equipment": "NRR",
+      "type": "TRUCK",
+      "engine": "4HK1-TC",
+      "year": 2021,
+      "base": "",
+      "lane": "RETIRE_REMAP",
+      "action": "Never materialize; remap to verified canonical owner",
+      "write_allowed": false,
+      "decision": "HOLD",
+      "target_sku": "EF98204",
+      "target_codigo_base": null,
+      "evidence_authority": null,
+      "evidence_url": null,
+      "evidence_reference": null,
+      "evidence_verified": false,
+      "reviewer_note": "Never materialize; remap to verified canonical owner",
+      "resolution_state": "TARGET_MISSING"
+    }
+  ]
+}

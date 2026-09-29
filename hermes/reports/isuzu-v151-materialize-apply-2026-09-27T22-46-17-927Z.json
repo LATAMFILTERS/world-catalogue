@@ -1,0 +1,37 @@
+{
+  "phase": "ISUZU_V151_PRODUCT_MATERIALIZATION",
+  "apply": true,
+  "rows": [
+    {
+      "sku": "ED41466",
+      "status": "INSERTED",
+      "codigo_base": "P781466",
+      "technology": "DRYCORE™"
+    },
+    {
+      "sku": "EF96095",
+      "status": "INSERTED",
+      "codigo_base": "P506095",
+      "technology": "SYNTAPORE™"
+    },
+    {
+      "sku": "EL80408",
+      "status": "INSERTED",
+      "codigo_base": "P550408",
+      "technology": "SYNTRAX™"
+    },
+    {
+      "sku": "ES90128",
+      "status": "INSERTED",
+      "codigo_base": "FS20128",
+      "technology": "HYDROCORE™"
+    }
+  ],
+  "database_write": true,
+  "summary": {
+    "total": 4,
+    "ready": 4,
+    "inserted": 4,
+    "database_write": true
+  }
+}

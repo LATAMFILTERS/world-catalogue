@@ -1,0 +1,1466 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "FUEL",
+  "authority": {
+    "part_number": "G4164",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "G4164",
+    "product_type": "Fuel Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": null,
+      "height_mm": null,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": null,
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [],
+    "unresolved_cross_reference_candidates": [],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "G4164",
+    "source_part_key": "000944026",
+    "source_totals": {
+      "attributes": 0,
+      "applications": 153,
+      "cross_references": 0
+    },
+    "raw_attributes": [],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": null,
+        "case_weight_lb": null,
+        "unit_height_in": null,
+        "unit_length_in": null,
+        "unit_width_in": null,
+        "case_height_in": null,
+        "case_length_in": null,
+        "case_width_in": null,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": null,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 153,
+    "all_cross_references_observed": 0,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:10:40.873Z",
+  "discovered_from": "G4164",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "195400 Series 8 H.P",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "196700 Series 8.5 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "221400 Series 10 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "233400 Series 9 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "243400 Series 10 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "252400 Series 11 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "253700 Series 11 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "254400 Series 11 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "255400 Series 11 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "281700 Series 12 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "286700 Series 12.5 H.P",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "28P700 Series 14 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "290400 Series 12.5 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "294400 Series 14 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "294700 Series 14 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "303400 Series 16 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "303700 Series 16 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "350400 Series 18 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "350700 Series 18 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "351700 Series 20 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "380400 Series 23 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "381400 Series 21 hp V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "400400 Series 14 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "400700 Series 14 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "402400 Series 16 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "402700 Series 16 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "403400 Series 16 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT BRIGGS & STRATTON",
+        "model": "422400 Series 18 hp",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT KAWASAKI",
+        "model": "FB460V",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT KAWASAKI",
+        "model": "FC420V",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT KOHLER",
+        "model": "CH14, CV14 Command OHV",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT KOHLER",
+        "model": "CH18, CV18 V-Twin Command OHV",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT KOHLER",
+        "model": "CH20, CV20 V-Twin Command OHV",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT KOHLER",
+        "model": "Confidant Series",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT KOHLER",
+        "model": "CV12.5T 12.5 hp Command",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT KOHLER",
+        "model": "CV18S 18 hp Command V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT KOHLER",
+        "model": "CV20S 20 hp Command V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT KOHLER",
+        "model": "CV25 25 hp Command V-Twin",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "B48M-GAO19.9",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "B48M-GAO20",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "NHC",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "NHCV",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "P216G Twin Performer",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "P218G, P218V Twin Performer",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "P220G, P220V Twin Performer",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "ENGINE POWER EQUIPMENT ONAN",
+        "model": "P224G Twin Performer",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "E",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "XT1 Enduro Series (w/Kohler 7000 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "XT2 Enduro Series (w/Kohler 7000 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR CUB CADET",
+        "model": "XT3 Enduro Series (w/Kohler Command V-Twin Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR DIXON",
+        "model": "ZTR 2301, ZTR 4422 w/Kohler CV14S 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "32-12.5K-5 w/Kawasaki FB460 12.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "32-12.5K-5 w/Kohler CV12.5T 12.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "32-8.5-5 w/B&S 196702 8.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Explorer EXS-20KC w/Kohler Command 20 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Explorer EXS-20KC-2 w/Kohler Command 20 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Metro M36-12.5K-5 w/Kawasaki FB460V 12.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Metro M36-12.5KO-5 w/Kohler CV12.5T 12.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Metro M36-14K-5 w/Kawasaki FC420V 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Metro M36-14KO-5 w/Kohler CV14T 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Metro M48-12.5K-5 w/Kawasaki FB460V 12.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Metro M48-12.5KO-5 w/Kohler CV12.5T 12.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Metro M48-14K-5 w/Kawasaki FC420V 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Metro M48-14KO-5 w/Kohler CV14T 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Metro M48-16BV-5 w/B&S 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Metro M52-14K-5 w/Kawasaki FC420V 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Metro M52-14KO-5 w/Kohler CV14T 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Metro M52-16BV-5 w/B&S 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Turf Ranger TR20KC w/Kohler Command 20 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Turf Tracer TT16BV, TTH16BV w/B&S 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Turf Tracer TT18KC w/Kohler Command 18 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Turf Tracer TT20KC w/Kohler Command 20 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Turf Tracer TTH18KC w/Kohler Command 18 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Turf Tracer TTH20KC w/Kohler Command 20 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Viking V3612.5K5 w/Kawasaki FB460V 12.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Viking V3612.5KO5 w/Kohler CV12.5T 12.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Viking V3614K5 w/Kawasaki FC420V 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Viking V3614KH w/Kawasaki FC420V 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Viking V3614KO5 w/Kohler CV14T 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Viking V3614KOH w/Kohler CV14T 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Viking V4812.5K5 w/Kawasaki FB460V 12.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Viking V4812.5KO5 w/Kohler CV12.5T 12.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Viking V4814K5 w/Kawasaki FC420V 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Viking V4814KH w/Kawasaki FC420V 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Viking V4814KO5 w/Kohler CV14T 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Viking V4814KOH w/Kohler CV14T 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Viking V4816BVH w/B&S 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Viking V5214K5 w/Kawasaki FC420V 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Viking V5214KH w/Kawasaki FC420V 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Viking V5214KO5 w/Kohler CV14T 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Viking V5214KOH w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR EXMARK",
+        "model": "Viking V5216BVH w/B&S 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSQVARNA",
+        "model": "2042LS, 2246LS, 2348LS w/B&S Endurance 20-23 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSQVARNA",
+        "model": "2146GLS w/B&S Vanguard 21 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSQVARNA",
+        "model": "2348LS w/B&S Vanguard 21 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSQVARNA",
+        "model": "2354GXLS w/B&S Vanguard 23 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSQVARNA",
+        "model": "iZ-5223 w/B&S Vanguard 23 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSQVARNA",
+        "model": "IZC-5223 w/B&S V-Twin 23 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSTLER",
+        "model": "Mini Z w/Kawasaki 23 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSTLER",
+        "model": "Raptor (w/Kohler 7000 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR HUSTLER",
+        "model": "Raptor SD (w/Kohler 7000 Series Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "1212G, 1212H",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "1214",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "3012, 3014, 4014 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "3014 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "3018 PS w/Onan Performer P218G 18 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "3118 w/Onan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "4014 w/Kohler Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "4018 PS w/Onan Performer P218G 18 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "4020 PS w/Onan Performer P220G 20 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "4118 w/Onan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "4120 w/Onan Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "6018 w/Onan Performer P218G 18 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR INGERSOLL-RAND",
+        "model": "810",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR JOHN DEERE",
+        "model": "X300, X300R, X304 w/Kawasaki FS541V 18 HP Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KEE",
+        "model": "HKH52181 w/Kohler Command CV18S 18 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KEE",
+        "model": "HKH61201 w/Kohler Command CV20S 20 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KEE",
+        "model": "HKW36141 w/Kawasaki FB420V 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KEE",
+        "model": "HKW48141 w/Kawasaki FB420V 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KEE",
+        "model": "HKW52141 w/Kawasaki FB420V 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KEE",
+        "model": "HVG48161 w/B&S Vanguard 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KEE",
+        "model": "HVG52161 w/B&S Vanguard 16 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KEE",
+        "model": "HVG61201 w/B&S Vanguard 20 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KEE",
+        "model": "MKW36121 w/Kawasaki FB460V 12.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KEE",
+        "model": "MKW36141 w/Kawasaki FB420V 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KEE",
+        "model": "MKW48121 w/Kawasaki FB460V 12.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KEE",
+        "model": "MKW48141 w/Kawasaki FP420V 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR KEE",
+        "model": "MKW48141 w/Kohler Command CV14S 14 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR POULAN",
+        "model": "PRO11, PRO12",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR SIMPLICITY",
+        "model": "Axion w/B&S ELS 18.5 hp Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR SIMPLICITY",
+        "model": "Axion w/B&S ELS 20 & 24 hp Engines",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR SIMPLICITY",
+        "model": "Champion w/B&S ELS 26 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR SIMPLICITY",
+        "model": "Conquest w/B&S Vanguard 21 & 23 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR SIMPLICITY",
+        "model": "Regent w/B&S Vanguard 20, 22 & 24 hp Engines",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR SIMPLICITY",
+        "model": "ZT 3000 w/B&S ELS 24 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR SIMPLICITY",
+        "model": "ZT 3000 w/B&S ELS 26 hp V-Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR STEINER",
+        "model": "Model 420 w/Onan Performer P220G 20 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LAWN MOWER & GARDEN TRACTOR STEINER",
+        "model": "Model 425 w/Onan Performer P224G 24 hp Twin Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "L",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER GEHL",
+        "model": "480 Loader, 480T Loader w/Deutz F4M2011F Diesel Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER GEHL",
+        "model": "480, 480T Loader w/Deutz F4M2011F Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "LOADER GEHL",
+        "model": "680 Loader w/Deutz BF4M1011F Turbo Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "SKID STEER LOADER GEHL",
+        "model": "680 Loader w/Deutz BF4M1011F Engine",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER FORD (EUROPE)",
+        "model": "Transit 86 (w/LAT 1.6 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER RENAULT",
+        "model": "Master I (w/829 730, 731 2.0 Engine) 9/80-9/86",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER RENAULT",
+        "model": "Master I (w/J5R 2.2 Engine) 10/86-7/98",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER RENAULT",
+        "model": "Master I (w/J5R 718, 728 2.0 Q..2 Engine) 10/86-7/98",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER RENAULT",
+        "model": "Trafic I (w/F1N 1.7 P3.8 Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER RENAULT",
+        "model": "Trafic I (w/F1N 1.7 T..8 Engine) 10/84-2/89",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy I (w/1.5 JB Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy I (w/1.6 1F Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy I (w/1.6 EM Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy I (w/1.6 EW Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Caddy I (w/1.6 HN Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER VOLKSWAGEN",
+        "model": "Transporter (T4) (w/1.8 PD Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

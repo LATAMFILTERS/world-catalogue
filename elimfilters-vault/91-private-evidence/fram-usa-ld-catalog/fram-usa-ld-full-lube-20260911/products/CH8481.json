@@ -1,0 +1,3519 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "CH8481",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CH8481",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 4.531,
+      "height_mm": 115.09,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Cartridge",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [
+      "FD8481",
+      "FF8481",
+      "XG8481"
+    ],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2247G"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "P1443"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "72244WS"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "3477"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "72204WS"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "72204"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "55226T"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "COC8481"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "P985"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX345"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX153/7"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "000 180 2609"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX153/7DECO"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX345/7DECO"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "H718/1X"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "ML1033"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "ML 1033"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU718/5X"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU718/4"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU718/1Y"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU718/4X"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU718/5"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1226"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "7078"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L25276"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L25277"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51226"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57078"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Auto Extra",
+        "part_number": "61857078"
+      },
+      {
+        "manufacturer": "Auto Extra",
+        "part_number": "61851226MP"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "041-8169"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85226"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "R84078"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "84078"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "85226"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "84078"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CF530"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "P8153"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "part_number": "COC8481"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "part_number": "55226T"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "part_number": "P985"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "5183748AA"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "5080244AA"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "5102905AB"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "05183748AA"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "5102905AA"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "05080244AA"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DL8481"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550564"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550798"
+      },
+      {
+        "manufacturer": "Driveworks",
+        "part_number": "DW-5276"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "S5277"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "X5276"
+      },
+      {
+        "manufacturer": "FERGUSON",
+        "part_number": "G1226"
+      },
+      {
+        "manufacturer": "Firestone",
+        "part_number": "P8153"
+      },
+      {
+        "manufacturer": "Freightliner",
+        "part_number": "5086301AA"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "G1226"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "V5276"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF530F"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF660"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF530"
+      },
+      {
+        "manufacturer": "Havoline",
+        "part_number": "T-54"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "AL8481"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "HP-7004"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "OX153"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P8153"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LP4854"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P985"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "001 184 9425"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "000 180 2209"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A112 184 0325"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "000 180 3109"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "112 184 0225"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A 112 184 05 25"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A112 184 0425"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A112 180 0009"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A664 180 0009"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "112 184 0025"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A611 180 0009"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "112 184 0525"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A112 184 0025"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "112 184 0625"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A000 180 2609"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "611 180 09 67"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "000 180 2309"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "112 094 00 04"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "664 180 0009"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "112 180 0009"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A112 184 0225"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "000 180 2609"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "MGL8481"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "MGL51226"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "MGL57078"
+      },
+      {
+        "manufacturer": "MicroGard Select",
+        "part_number": "MSL57038"
+      },
+      {
+        "manufacturer": "MicroGard Select",
+        "part_number": "MSL57078"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "M8153"
+      },
+      {
+        "manufacturer": "Mileguard",
+        "part_number": "MO8481"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "MO985"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "MO8153"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "L25276"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1C-253"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1C-253A"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "61226"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "61226BP"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "67078"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ-60"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ60"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ176"
+      },
+      {
+        "manufacturer": "Pentius",
+        "part_number": "PCB8481"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PO-176"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PO-166"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PO-60"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PG5276"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PG5277"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "PH5536"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "PH5276"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PO-5276"
+      },
+      {
+        "manufacturer": "Pro-Tec",
+        "part_number": "179"
+      },
+      {
+        "manufacturer": "PureZone",
+        "part_number": "8-57078"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PBL25277"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "part_number": "PL25277"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "part_number": "PL25276"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "QS8481"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "L25276"
+      },
+      {
+        "manufacturer": "Qualitee International",
+        "part_number": "HL8481"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "CF5277"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "M5276"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "SH54"
+      },
+      {
+        "manufacturer": "Silverline",
+        "part_number": "27078"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "S8481"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S8481XL"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S8481"
+      },
+      {
+        "manufacturer": "Ultra",
+        "part_number": "XG8481"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-103"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-69"
+      },
+      {
+        "manufacturer": "VIPER",
+        "part_number": "8481"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "P8153"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WP985"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "P8153"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "WP985"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "08-04",
+        "make": "CHRYSLER",
+        "model": "CROSSFIRE",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "08-07",
+        "make": "DODGE",
+        "model": "SPRINTER 2500",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "08-07",
+        "make": "DODGE",
+        "model": "SPRINTER 3500",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "09-06",
+        "make": "MERCEDES-BENZ",
+        "model": "C230",
+        "engine": "V6-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "05-01",
+        "make": "MERCEDES-BENZ",
+        "model": "C240",
+        "engine": "V6-2.6L",
+        "quantity": 1
+      },
+      {
+        "year": "12-10",
+        "make": "MERCEDES-BENZ",
+        "model": "C250",
+        "engine": "V6-2.5L",
+        "quantity": 1
+      },
+      {
+        "year": "00-98",
+        "make": "MERCEDES-BENZ",
+        "model": "C280",
+        "engine": "V6-2.8L",
+        "quantity": 1
+      },
+      {
+        "year": "07-06",
+        "make": "MERCEDES-BENZ",
+        "model": "C280",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "12-08",
+        "make": "MERCEDES-BENZ",
+        "model": "C300",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "04-02",
+        "make": "MERCEDES-BENZ",
+        "model": "C32 AMG",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "05-01",
+        "make": "MERCEDES-BENZ",
+        "model": "C320",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "11-06",
+        "make": "MERCEDES-BENZ",
+        "model": "C350",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "00-98",
+        "make": "MERCEDES-BENZ",
+        "model": "C43 AMG",
+        "engine": "V8-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "06-05",
+        "make": "MERCEDES-BENZ",
+        "model": "C55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "MERCEDES-BENZ",
+        "model": "CL500",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "MERCEDES-BENZ",
+        "model": "CL55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "10-07",
+        "make": "MERCEDES-BENZ",
+        "model": "CL550",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "2003",
+        "make": "MERCEDES-BENZ",
+        "model": "CL600",
+        "engine": "V12-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "MERCEDES-BENZ",
+        "model": "CL600",
+        "engine": "V12-5.8L",
+        "quantity": 1
+      },
+      {
+        "year": "05-98",
+        "make": "MERCEDES-BENZ",
+        "model": "CLK320",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "09-06",
+        "make": "MERCEDES-BENZ",
+        "model": "CLK350",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "03-99",
+        "make": "MERCEDES-BENZ",
+        "model": "CLK430",
+        "engine": "V8-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "06-03",
+        "make": "MERCEDES-BENZ",
+        "model": "CLK500",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "MERCEDES-BENZ",
+        "model": "CLK55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "09-07",
+        "make": "MERCEDES-BENZ",
+        "model": "CLK550",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "MERCEDES-BENZ",
+        "model": "CLS500",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "MERCEDES-BENZ",
+        "model": "CLS55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "11-07",
+        "make": "MERCEDES-BENZ",
+        "model": "CLS550",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "2007",
+        "make": "MERCEDES-BENZ",
+        "model": "E280",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "09-08",
+        "make": "MERCEDES-BENZ",
+        "model": "E300",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "05-98",
+        "make": "MERCEDES-BENZ",
+        "model": "E320",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "11-06",
+        "make": "MERCEDES-BENZ",
+        "model": "E350",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "02-98",
+        "make": "MERCEDES-BENZ",
+        "model": "E430",
+        "engine": "V8-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "06-03",
+        "make": "MERCEDES-BENZ",
+        "model": "E500",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "06-99",
+        "make": "MERCEDES-BENZ",
+        "model": "E55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "11-07",
+        "make": "MERCEDES-BENZ",
+        "model": "E550",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "08-02",
+        "make": "MERCEDES-BENZ",
+        "model": "G500",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "11-03",
+        "make": "MERCEDES-BENZ",
+        "model": "G55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "15-09",
+        "make": "MERCEDES-BENZ",
+        "model": "G550",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "12-07",
+        "make": "MERCEDES-BENZ",
+        "model": "GL450",
+        "engine": "V8-4.7L",
+        "quantity": 1
+      },
+      {
+        "year": "12-08",
+        "make": "MERCEDES-BENZ",
+        "model": "GL550",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "12-10",
+        "make": "MERCEDES-BENZ",
+        "model": "GLK350",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "03-98",
+        "make": "MERCEDES-BENZ",
+        "model": "ML320",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "11-06",
+        "make": "MERCEDES-BENZ",
+        "model": "ML350",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "05-03",
+        "make": "MERCEDES-BENZ",
+        "model": "ML350",
+        "engine": "V6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "01-99",
+        "make": "MERCEDES-BENZ",
+        "model": "ML430",
+        "engine": "V8-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "11-10",
+        "make": "MERCEDES-BENZ",
+        "model": "ML450",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "07-02",
+        "make": "MERCEDES-BENZ",
+        "model": "ML500",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "03-00",
+        "make": "MERCEDES-BENZ",
+        "model": "ML55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "11-08",
+        "make": "MERCEDES-BENZ",
+        "model": "ML550",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "11-06",
+        "make": "MERCEDES-BENZ",
+        "model": "R350",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "07-06",
+        "make": "MERCEDES-BENZ",
+        "model": "R500",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "2008",
+        "make": "MERCEDES-BENZ",
+        "model": "R550",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "2006",
+        "make": "MERCEDES-BENZ",
+        "model": "S350",
+        "engine": "V6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "13-10",
+        "make": "MERCEDES-BENZ",
+        "model": "S400",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "06-00",
+        "make": "MERCEDES-BENZ",
+        "model": "S430",
+        "engine": "V8-4.3L",
+        "quantity": 1
+      },
+      {
+        "year": "11-08",
+        "make": "MERCEDES-BENZ",
+        "model": "S450",
+        "engine": "V8-4.7L",
+        "quantity": 1
+      },
+      {
+        "year": "06-00",
+        "make": "MERCEDES-BENZ",
+        "model": "S500",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "06-01",
+        "make": "MERCEDES-BENZ",
+        "model": "S55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "11-07",
+        "make": "MERCEDES-BENZ",
+        "model": "S550",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "02-01",
+        "make": "MERCEDES-BENZ",
+        "model": "S600",
+        "engine": "V12-5.8L",
+        "quantity": 1
+      },
+      {
+        "year": "06-99",
+        "make": "MERCEDES-BENZ",
+        "model": "SL500",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "08-03",
+        "make": "MERCEDES-BENZ",
+        "model": "SL55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "12-07",
+        "make": "MERCEDES-BENZ",
+        "model": "SL550",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      },
+      {
+        "year": "08-06",
+        "make": "MERCEDES-BENZ",
+        "model": "SLK280",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "11-09",
+        "make": "MERCEDES-BENZ",
+        "model": "SLK300",
+        "engine": "V6-3.0L",
+        "quantity": 1
+      },
+      {
+        "year": "04-02",
+        "make": "MERCEDES-BENZ",
+        "model": "SLK32 AMG",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "04-01",
+        "make": "MERCEDES-BENZ",
+        "model": "SLK320",
+        "engine": "V6-3.2L",
+        "quantity": 1
+      },
+      {
+        "year": "11-05",
+        "make": "MERCEDES-BENZ",
+        "model": "SLK350",
+        "engine": "V6-3.5L",
+        "quantity": 1
+      },
+      {
+        "year": "06-05",
+        "make": "MERCEDES-BENZ",
+        "model": "SLK55 AMG",
+        "engine": "V8-5.5L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CH8481",
+    "source_part_key": "000991316",
+    "source_totals": {
+      "attributes": 55,
+      "applications": 74,
+      "cross_references": 143
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® oil filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE (original equipment) recommended intervals. Engineered for conventional and synthetic motor oil, Extra Guard offers proven engine protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Engineered for use with synthetic or conventional motor oils",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CH8481, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Proven protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "The perfect balance of dirt-trapping efficiency and dirt-holding capacity",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Cartridge Oil Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filter media is a blend of fiber and resin that captures 95%?of the dirt particles",
+        "recno": "4"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Includes gaskets and O-rings manufactured to endure the high pressures and high temperatures in today’s engines",
+        "recno": "5"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Cartridge",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "NA",
+        "recno": "89"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100018113",
+        "recno": "92"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "4.531",
+        "recno": "93"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "94"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "1.203",
+        "recno": "95"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "2.516",
+        "recno": "96"
+      },
+      {
+        "attribute": "O-Ring Inside Diameter (Inch)",
+        "value": "2.866",
+        "recno": "97"
+      },
+      {
+        "attribute": "O-Ring Outside Diameter (Inch)",
+        "value": "3.008",
+        "recno": "98"
+      },
+      {
+        "attribute": "O-Ring Thickness (Inch)",
+        "value": "0.142",
+        "recno": "99"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "1.203",
+        "recno": "100"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "2.516",
+        "recno": "101"
+      },
+      {
+        "attribute": "O-Rings Included",
+        "value": "Yes",
+        "recno": "102"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "103"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "104"
+      },
+      {
+        "attribute": "O-Ring (1) Inside Diameter (Inch)",
+        "value": "0.828",
+        "recno": "105"
+      },
+      {
+        "attribute": "O-Ring (1) Outside Diameter (Inch)",
+        "value": "0.945",
+        "recno": "106"
+      },
+      {
+        "attribute": "O-Ring (1) Thickness (Inch)",
+        "value": "0.118",
+        "recno": "107"
+      },
+      {
+        "attribute": "O-Ring (2) Inside Diameter (Inch)",
+        "value": "0.394",
+        "recno": "108"
+      },
+      {
+        "attribute": "O-Ring (2) Outside Diameter (Inch)",
+        "value": "0.492",
+        "recno": "109"
+      },
+      {
+        "attribute": "O-Ring (2) Thickness (Inch)",
+        "value": "0.098",
+        "recno": "110"
+      },
+      {
+        "attribute": "O-Ring (3) Inside Diameter (Inch)",
+        "value": "0.630",
+        "recno": "111"
+      },
+      {
+        "attribute": "O-Ring (3) Outside Diameter (Inch)",
+        "value": "0.748",
+        "recno": "112"
+      },
+      {
+        "attribute": "O-Ring (3) Thickness (Inch)",
+        "value": "0.118",
+        "recno": "113"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "114"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Mexico",
+        "recno": "115"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "1.0980",
+        "recno": "119"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "0.1830",
+        "recno": "120"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "5.4800",
+        "recno": "121"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.5400",
+        "recno": "122"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "8.7400",
+        "recno": "123"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "1.2200",
+        "recno": "124"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "5.9900",
+        "recno": "125"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "1.2200",
+        "recno": "126"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 1.098,
+        "case_weight_lb": 0.183,
+        "unit_height_in": 5.48,
+        "unit_length_in": 8.74,
+        "unit_width_in": 5.99,
+        "case_height_in": 4.54,
+        "case_length_in": 1.22,
+        "case_width_in": 1.22,
+        "inferred_case_qty": null
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 13.176,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 74,
+    "all_cross_references_observed": 143,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:15:09.063Z",
+  "discovered_from": "CH8481",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "CHRYSLER",
+        "model": "CROSSFIRE",
+        "year": "08-04",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "SPRINTER 2500",
+        "year": "08-07",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "DODGE",
+        "model": "SPRINTER 3500",
+        "year": "08-07",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "SPRINTER 2500",
+        "year": "08-07",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FREIGHTLINER",
+        "model": "SPRINTER 3500",
+        "year": "08-07",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C230",
+        "year": "09-06",
+        "engine": "V6-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C240",
+        "year": "05-01",
+        "engine": "V6-2.6L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C250",
+        "year": "12-10",
+        "engine": "V6-2.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C280",
+        "year": "00-98",
+        "engine": "V6-2.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C280",
+        "year": "07-06",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C300",
+        "year": "12-08",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C32 AMG",
+        "year": "04-02",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C320",
+        "year": "05-01",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C350",
+        "year": "11-06",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C43 AMG",
+        "year": "00-98",
+        "engine": "V8-4.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "C55 AMG",
+        "year": "06-05",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CL500",
+        "year": "06-01",
+        "engine": "V8-5.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CL55 AMG",
+        "year": "06-01",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CL550",
+        "year": "10-07",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CL600",
+        "year": "2003",
+        "engine": "V12-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CL600",
+        "year": "02-01",
+        "engine": "V12-5.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLK320",
+        "year": "05-98",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLK350",
+        "year": "09-06",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLK430",
+        "year": "03-99",
+        "engine": "V8-4.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLK500",
+        "year": "06-03",
+        "engine": "V8-5.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLK55 AMG",
+        "year": "06-01",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLK550",
+        "year": "09-07",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLS500",
+        "year": "2006",
+        "engine": "V8-5.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLS55 AMG",
+        "year": "2006",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "CLS550",
+        "year": "11-07",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E280",
+        "year": "2007",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E300",
+        "year": "09-08",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E320",
+        "year": "05-98",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E350",
+        "year": "11-06",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E430",
+        "year": "02-98",
+        "engine": "V8-4.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E500",
+        "year": "06-03",
+        "engine": "V8-5.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E55 AMG",
+        "year": "06-99",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "E550",
+        "year": "11-07",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "G500",
+        "year": "08-02",
+        "engine": "V8-5.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "G55 AMG",
+        "year": "11-03",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "G550",
+        "year": "15-09",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GL450",
+        "year": "12-07",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GL550",
+        "year": "12-08",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "GLK350",
+        "year": "12-10",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "ML320",
+        "year": "03-98",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "ML350",
+        "year": "11-06",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "ML350",
+        "year": "05-03",
+        "engine": "V6-3.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "ML430",
+        "year": "01-99",
+        "engine": "V8-4.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "ML450",
+        "year": "11-10",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "ML500",
+        "year": "07-02",
+        "engine": "V8-5.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "ML55 AMG",
+        "year": "03-00",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "ML550",
+        "year": "11-08",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "R350",
+        "year": "11-06",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "R500",
+        "year": "07-06",
+        "engine": "V8-5.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "R550",
+        "year": "2008",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S350",
+        "year": "2006",
+        "engine": "V6-3.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S400",
+        "year": "13-10",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S430",
+        "year": "06-00",
+        "engine": "V8-4.3L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S450",
+        "year": "11-08",
+        "engine": "V8-4.7L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S500",
+        "year": "06-00",
+        "engine": "V8-5.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S55 AMG",
+        "year": "06-01",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S550",
+        "year": "11-07",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "S600",
+        "year": "02-01",
+        "engine": "V12-5.8L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SL500",
+        "year": "06-99",
+        "engine": "V8-5.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SL55 AMG",
+        "year": "08-03",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SL550",
+        "year": "12-07",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SLK280",
+        "year": "08-06",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SLK300",
+        "year": "11-09",
+        "engine": "V6-3.0L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SLK32 AMG",
+        "year": "04-02",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SLK320",
+        "year": "04-01",
+        "engine": "V6-3.2L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SLK350",
+        "year": "11-05",
+        "engine": "V6-3.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "MERCEDES-BENZ",
+        "model": "SLK55 AMG",
+        "year": "06-05",
+        "engine": "V8-5.5L",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "SPRINTER CARGO/PASSENGER VAN (w/V6-3.5L F/inj. (24V) DOHC (6))",
+        "year": "",
+        "engine": "",
+        "part_type": "Engine Oil Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRUCK HEAVY DUTY FREIGHTLINER",
+        "model": "SPRINTER CARGO/PASSENGER VAN (w/V6-3.5L F/inj. (24V) DOHC (6))",
+        "year": "08-07",
+        "engine": "",
+        "part_type": "Oil",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "PF2247G",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Auto Extra",
+        "part_number": "61857078",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Auto Extra",
+        "part_number": "61851226MP",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "P1443",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Beck/Arnley",
+        "part_number": "041-8169",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "72244WS",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "3477",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "72204WS",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "72204",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "85226",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "R84078",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "84078",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "85226",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest Premium Filters",
+        "part_number": "84078",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CF530",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "P8153",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "55226T",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "COC8481",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "P985",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "part_number": "COC8481",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "part_number": "55226T",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champion Filters",
+        "part_number": "P985",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "5183748AA",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "5080244AA",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "5102905AB",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "05183748AA",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "5102905AA",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Chrysler",
+        "part_number": "05080244AA",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Defense Filters",
+        "part_number": "DL8481",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550564",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550798",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Driveworks",
+        "part_number": "DW-5276",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "S5277",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "ECOGARD",
+        "part_number": "X5276",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FERGUSON",
+        "part_number": "G1226",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Firestone",
+        "part_number": "P8153",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Drive",
+        "part_number": "FD8481",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Force",
+        "part_number": "FF8481",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FRAM Ultra Synthetic",
+        "part_number": "XG8481",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Freightliner",
+        "part_number": "5086301AA",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "FVP",
+        "part_number": "G1226",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "V5276",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF530F",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF660",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF530",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Havoline",
+        "part_number": "T-54",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "AL8481",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "HP-7004",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Knecht",
+        "part_number": "OX153",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P8153",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "LP4854",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P985",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX345",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX153/7",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "000 180 2609",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX153/7DECO",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MAHLE",
+        "part_number": "OX345/7DECO",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "H718/1X",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "ML1033",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "ML 1033",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU718/5X",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU718/4",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU718/1Y",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU718/4X",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "HU718/5",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "001 184 9425",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "000 180 2209",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A112 184 0325",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "000 180 3109",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "112 184 0225",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A 112 184 05 25",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A112 184 0425",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A112 180 0009",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A664 180 0009",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "112 184 0025",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A611 180 0009",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "112 184 0525",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A112 184 0025",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "112 184 0625",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A000 180 2609",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "611 180 09 67",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "000 180 2309",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "112 094 00 04",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "664 180 0009",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "112 180 0009",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "A112 184 0225",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mercedes-Benz",
+        "part_number": "000 180 2609",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "MGL8481",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "MGL51226",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "MGL57078",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MicroGard Select",
+        "part_number": "MSL57038",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "MicroGard Select",
+        "part_number": "MSL57078",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mighty Distributing System",
+        "part_number": "M8153",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mileguard",
+        "part_number": "MO8481",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "MO985",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "MO8153",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "L25276",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1C-253",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Mobil 1",
+        "part_number": "M1C-253A",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1226",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "7078",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "61226",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "61226BP",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "67078",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ-60",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ60",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pennzoil",
+        "part_number": "PZ176",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pentius",
+        "part_number": "PCB8481",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PO-176",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PO-166",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Performax",
+        "part_number": "PO-60",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PG5276",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PG5277",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "PH5536",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Promotive",
+        "part_number": "PH5276",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pronto",
+        "part_number": "PO-5276",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Pro-Tec",
+        "part_number": "179",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "PureZone",
+        "part_number": "8-57078",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L25276",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "L25277",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator BOSS",
+        "part_number": "PBL25277",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "part_number": "PL25277",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "PurolatorONE",
+        "part_number": "PL25276",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "QS8481",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Quaker State",
+        "part_number": "L25276",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Qualitee International",
+        "part_number": "HL8481",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "CF5277",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Service Pro",
+        "part_number": "M5276",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "SH54",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Silverline",
+        "part_number": "27078",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "S8481",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S8481XL",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP Filters",
+        "part_number": "S8481",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Ultra",
+        "part_number": "XG8481",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-103",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Valvoline",
+        "part_number": "VO-69",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "VIPER",
+        "part_number": "8481",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "P8153",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WP985",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "P8153",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner Filters",
+        "part_number": "WP985",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "51226",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57078",
+        "source_part_number": "CH8481",
+        "part_key": "000991316",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

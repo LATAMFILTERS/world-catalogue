@@ -45,7 +45,7 @@ Executable source acquisition: `product-identity/scripts/acquire-manufacturer-so
 
 Phase 1: geometry only. Preserve source silhouette, proportions, seams, rim, baseplate/open end, thread, gasket, inlet-hole/support pattern, central support/perforation pattern, perspective, relative scale, crop and composition.
 
-Phase 2: only paint + authorized lithography over approved Phase-1 master. Container `#414141`; lithography `#CBCBCB`; official ELIMFILTERS logo; TOTAL ASSET PROTECTION; exact DB SKU; product descriptor; exact official technology; Powered Filtration; approved installation marks.
+Phase 2: only paint + authorized lithography over approved Phase-1 master. Container `#414141`; lithography `#CBCBCB`; official ELIMFILTERS logo; TOTAL ASSETS PROTECTION; exact DB SKU; product descriptor; exact official technology; technology descriptor resolved from the product/technology authority (for SYNTAPORE™: Fuel System Protection; for SYNTRAX™: Powered Filtration); approved installation marks.
 
 Phase 3: only explicitly requested micro-adjustment. Declare target view/property. A whole-composition regeneration for a one-view correction is invalid.
 
@@ -62,6 +62,7 @@ Any gate failure sets manifest `FAIL`, disables image generation and returns the
 - `product-identity/scripts/preflight-product-image.mjs`
 - `product-identity/scripts/validate-render-manifest.mjs`
 - `product-identity/scripts/run-image-phase.mjs`
+- `product-identity/scripts/prepare-approved-master-regeneration.mjs`
 - `product-identity/scripts/validate-render-result.mjs`
 
 Machine contract: `product-identity/pipelines/manufacturer-source-rebrand.v2.json`.

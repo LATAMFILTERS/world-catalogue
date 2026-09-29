@@ -1,0 +1,588 @@
+[
+  {
+    "id": "01t5x00000KLUH1AAP",
+    "code": "3959745",
+    "short_description": "Fitting",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GcvpAAC",
+    "code": "3893030S",
+    "short_description": "Combustible, Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GcvmAAC",
+    "code": "250879S",
+    "short_description": "Combustible, Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GcviAAC",
+    "code": "3923653S",
+    "short_description": "Cabeza del Filtro de Combustible",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GcuPAAS",
+    "code": "3946703S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GcuIAAS",
+    "code": "3946705S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GcqWAAS",
+    "code": "3959755S",
+    "short_description": "Kit de Calefactor",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GcqVAAS",
+    "code": "3959754S",
+    "short_description": "Kit de Calefactor",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GcqUAAS",
+    "code": "3959753S",
+    "short_description": "Kit de Calefactor",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GclRAAS",
+    "code": "3979660S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GclQAAS",
+    "code": "3976892S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GclPAAS",
+    "code": "3972249S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GclOAAS",
+    "code": "3972255S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GclNAAS",
+    "code": "3972254S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GckuAAC",
+    "code": "3976891S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GchoAAC",
+    "code": "3895084S",
+    "short_description": "Elemento de Calefacción de Repuesto",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GcR7AAK",
+    "code": "3917132S",
+    "short_description": "Kit de Calefactor",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GbwsAAC",
+    "code": "3904554S",
+    "short_description": "Junta de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GbwoAAC",
+    "code": "3901608S",
+    "short_description": "Primavera",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GbVAAA0",
+    "code": "3944460S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GbT7AAK",
+    "code": "3960976S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GbSbAAK",
+    "code": "3944901S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GbQaAAK",
+    "code": "3945960S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GbQXAA0",
+    "code": "3945216S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GbNUAA0",
+    "code": "3945058S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GbNRAA0",
+    "code": "3945151S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008GbGhAAK",
+    "code": "3951841S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FMtQAAW",
+    "code": "SP72027",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FMm7AAG",
+    "code": "3985088",
+    "short_description": "Service Part",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FMlIAAW",
+    "code": "3911940",
+    "short_description": "Service Part",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FMcAAAW",
+    "code": "SP72256",
+    "short_description": "Service Part, Probe Heater",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FMc9AAG",
+    "code": "SP72254",
+    "short_description": "Service Part, Probe Heater",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FG39AAG",
+    "code": "3904554",
+    "short_description": "Junta",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FENHAA4",
+    "code": "SP1289",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FEM5AAO",
+    "code": "3951210S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FELVAA4",
+    "code": "3954138S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FEJ1AAO",
+    "code": "3954136S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FEIAAA4",
+    "code": "3945140S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FEBRAA4",
+    "code": "3962607S",
+    "short_description": "WIF (Wi-Fi en inglés)",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FE6cAAG",
+    "code": "SP1286",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FE2nAAG",
+    "code": "SP1285",
+    "short_description": "Junta",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FE2lAAG",
+    "code": "SP1283",
+    "short_description": "Junta",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FDmtAAG",
+    "code": "SP72030",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FDevAAG",
+    "code": "SP1298",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FDeuAAG",
+    "code": "SP1297",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FDetAAG",
+    "code": "SP1296",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FDWPAA4",
+    "code": "3945064S",
+    "short_description": "Termostato",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FDCvAAO",
+    "code": "3944450S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCWGAA4",
+    "code": "3968222S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCWFAA4",
+    "code": "3968221S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCWEAA4",
+    "code": "3968220S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCWDAA4",
+    "code": "3968219S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCWCAA4",
+    "code": "3968218S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCWBAA4",
+    "code": "3968217S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCWAAA4",
+    "code": "3968216S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCW9AAO",
+    "code": "3968215S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCW8AAO",
+    "code": "3968213S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCW7AAO",
+    "code": "3968212S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCW6AAO",
+    "code": "3968211S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCW5AAO",
+    "code": "3968210S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCW3AAO",
+    "code": "3968208S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCW2AAO",
+    "code": "3968207S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCW1AAO",
+    "code": "3968206S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCW0AAO",
+    "code": "3968205S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCVzAAO",
+    "code": "3968204S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCVvAAO",
+    "code": "3967965S",
+    "short_description": "Kit de Calefactor",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCVcAAO",
+    "code": "3962094S",
+    "short_description": "Kit de Calefactor",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCSzAAO",
+    "code": "3923650S",
+    "short_description": "Combustible, Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCDzAAO",
+    "code": "3959745S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCCCAA4",
+    "code": "3959752S",
+    "short_description": "Kit de Calefactor",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCCBAA4",
+    "code": "3959751S",
+    "short_description": "Kit de Calefactor",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCCAAA4",
+    "code": "3959750S",
+    "short_description": "Kit de Calefactor",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCC9AAO",
+    "code": "3959749S",
+    "short_description": "Kit de Calefactor",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FCC8AAO",
+    "code": "3959748S",
+    "short_description": "Kit de Calefactor",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FBzgAAG",
+    "code": "3970959S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FBu0AAG",
+    "code": "3973690S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FBtnAAG",
+    "code": "3979758S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FBqGAAW",
+    "code": "3977798S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FBqFAAW",
+    "code": "3977800S",
+    "short_description": "Parte de Servicio",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "short_description": null,
+    "class_code": null,
+    "class_description": null
+  },
+  {
+    "id": "01t5x000008FBnTAAW",
+    "code": "3956093S",
+    "short_description": "Kit de Calefactor",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FBf1AAG",
+    "code": "91284N",
+    "short_description": "Combustible, Ensamblaje",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FBf0AAG",
+    "code": "88589A",
+    "short_description": "Coalescente de Combustible",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  },
+  {
+    "id": "01t5x000008FBezAAG",
+    "code": "88472N",
+    "short_description": "Combustible",
+    "class_code": "FHF",
+    "class_description": "Fuel Processor Service Part"
+  }
+]

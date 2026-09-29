@@ -1,0 +1,2024 @@
+{
+  "target": "https://www.fram.com/partFinder/search/index/?car-type=car-truck&category=Oil_Filter&engine=V8~6.2L~376~&make=0009&model=0161&type=Any+Type&year=2014",
+  "captured_at": "2026-09-11T20:18:06.767Z",
+  "title": "404 Not Found | FRAM",
+  "url": "https://www.fram.com/partFinder/search/index/?car-type=car-truck&category=Oil_Filter&engine=V8~6.2L~376~&make=0009&model=0161&type=Any+Type&year=2014",
+  "events": [
+    {
+      "type": "document",
+      "status": 404,
+      "url": "https://www.fram.com/partFinder/search/index/?car-type=car-truck&category=Oil_Filter&engine=V8~6.2L~376~&make=0009&model=0161&type=Any+Type&year=2014",
+      "method": "GET",
+      "content_type": "text/html; charset=UTF-8",
+      "body": "<!doctype html>\n<html lang=\"en\">\n    <head >\n        <script>\n    var LOCALE = 'en\\u002DUS';\n    var BASE_URL = 'https\\u003A\\u002F\\u002Fwww.fram.com\\u002F';\n    var require = {\n        'baseUrl': 'https\\u003A\\u002F\\u002Fwww.fram.com\\u002Fstatic\\u002Fversion1788780815\\u002Ffrontend\\u002FFram\\u002Fluma_child\\u002Fen_US'\n    };</script>        <meta charset=\"utf-8\"/>\n<meta name=\"title\" content=\"404 Not Found | FRAM\"/>\n<meta name=\"description\" content=\"Page description\"/>\n<meta name=\"robots\" content=\"NOINDEX,NOFOLLOW\"/>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1, maximum-scale=1\"/>\n<meta name=\"format-detection\" content=\"telephone=no\"/>\n<title>404 Not Found | FRAM</title>\n<link  rel=\"stylesheet\" type=\"text/css\"  media=\"all\" href=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/calendar.css\" />\n<link  rel=\"stylesheet\" type=\"text/css\"  media=\"all\" href=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/css/styles-m.css\" />\n<link  rel=\"stylesheet\" type=\"text/css\"  media=\"all\" href=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/fonts/fontawesome/css/all.css\" />\n<link  rel=\"stylesheet\" type=\"text/css\"  media=\"all\" href=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/uppy/dist/uppy-custom.css\" />\n<link  rel=\"stylesheet\" type=\"text/css\"  media=\"all\" href=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Amasty_Storelocator/vendor/chosen/chosen.min.css\" />\n<link  rel=\"stylesheet\" type=\"text/css\"  media=\"all\" href=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magefan_Blog/css/blog-m.css\" />\n<link  rel=\"stylesheet\" type=\"text/css\"  media=\"all\" href=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magefan_Blog/css/blog-new.css\" />\n<link  rel=\"stylesheet\" type=\"text/css\"  media=\"all\" href=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magefan_Blog/css/blog-custom.css\" />\n<link  rel=\"stylesheet\" type=\"text/css\"  media=\"all\" href=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magefan_SecondBlog/css/secondblog-m.css\" />\n<link  rel=\"stylesheet\" type=\"text/css\"  media=\"all\" href=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magefan_SecondBlog/css/secondblog-new.css\" />\n<link  rel=\"stylesheet\" type=\"text/css\"  media=\"all\" href=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magefan_SecondBlog/css/secondblog-custom.css\" />\n<link  rel=\"stylesheet\" type=\"text/css\"  media=\"screen and (min-width: 768px)\" href=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/css/styles-l.css\" />\n<link  rel=\"stylesheet\" type=\"text/css\"  media=\"print\" href=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/css/print.css\" />\n<script  type=\"text/javascript\"  src=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/requirejs/require.js\"></script>\n<script  type=\"text/javascript\"  src=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/requirejs/mixins.js\"></script>\n<script  type=\"text/javascript\"  src=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/requirejs-config.js\"></script>\n<script  type=\"text/javascript\"  src=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/js/scripts.js\"></script>\n<script  type=\"text/javascript\"  src=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Webkul_GoogleTagManager/js/pixel_core.js\"></script>\n<script  type=\"text/javascript\"  src=\"https://cdn.weglot.com/weglot.min.js\"></script>\n<link rel=\"preload\" as=\"font\" crossorigin=\"anonymous\" href=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/fonts/opensans/light/opensans-300.woff2\" />\n<link rel=\"preload\" as=\"font\" crossorigin=\"anonymous\" href=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/fonts/opensans/regular/opensans-400.woff2\" />\n<link rel=\"preload\" as=\"font\" crossorigin=\"anonymous\" href=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/fonts/opensans/semibold/opensans-600.woff2\" />\n<link rel=\"preload\" as=\"font\" crossorigin=\"anonymous\" href=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/fonts/opensans/bold/opensans-700.woff2\" />\n<link rel=\"preload\" as=\"font\" crossorigin=\"anonymous\" href=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/fonts/Luma-Icons.woff2\" />\n<link  rel=\"stylesheet\" type=\"text/css\" href=\"https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&\" />\n<link  rel=\"icon\" type=\"image/x-icon\" href=\"https://www.fram.com/media/favicon/stores/1/favicon.png\" />\n<link  rel=\"shortcut icon\" type=\"image/x-icon\" href=\"https://www.fram.com/media/favicon/stores/1/favicon.png\" />\n<!-- Google Tag Manager -->\r\n<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':\r\nnew Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],\r\nj=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=\r\n'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);\r\n})(window,document,'script','dataLayer','GTM-T8NSLKXW');</script>\r\n<!-- End Google Tag Manager -->\r\n<meta name=\"msvalidate.01\" content=\"7C3102A0A8CF7A0668B1D4CBD3F0C867\" />\r\n<style>\r\n    @media (min-width: 769px), print {\r\n        .cms-fram-grassroots-racing div#part_finder,\r\n        .cms-daniel-suarez div#part_finder,\r\n        .cms-about-us div#part_finder,\r\n        .cms-srx div#part_finder,\r\n        .cms-contact-us div#part_finder {\r\n            display: none !important;\r\n        }\r\n    }\r\n</style>            <script type=\"text/x-magento-init\">\n        {\n            \"*\": {\n                \"Magento_PageCache/js/form-key-provider\": {\n                    \"isPaginationCacheEnabled\":\n                        0                }\n            }\n        }\n    </script>\n<link rel=\"canonical\" href=\"https://www.fram.com/no-route\" /><script type=\"application/ld+json\">{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"WebSite\",\"url\":\"https:\\/\\/www.fram.com\\/\",\"potentialAction\":{\"@type\":\"SearchAction\",\"target\":\"https:\\/\\/www.fram.com\\/catalogsearch\\/result\\/index\\/?q={search_term_string}\",\"query-input\":\"required name=search_term_string\"}}</script><script type=\"application/ld+json\">{\"@context\":\"https:\\/\\/schema.org\\/\",\"@type\":\"Organization\",\"image\":\"\",\"name\":\"Organization\",\"url\":\"https:\\/\\/www.fram.com\\/\",\"address\":{\"@type\":\"PostalAddress\",\"addressCountry\":null,\"addressLocality\":null,\"addressRegion\":\"\",\"postalCode\":null,\"streetAddress\":\"\"},\"email\":\"sales@example.com\",\"sameAs\":[\"https:\\/\\/www.facebook.com\\/framfiltration\",\"https:\\/\\/twitter.com\\/FRAM_Filters\",\"https:\\/\\/www.instagram.com\\/fram_filters\\/\",\"https:\\/\\/www.youtube.com\\/user\\/fram\",\"https:\\/\\/www.pinterest.com\\/FRAMfilters\\/_created\\/\",\"https:\\/\\/www.linkedin.com\\/company\\/framfilters\\/about\\/\"]}</script><script  type=\"text/javascript\" src=\"https://fram_ymm.apacatapult.com/assets/jquery/js/apa_autocomplete.min.js?v=202637\"></script>\r\n<script  type=\"text/javascript\" src=\"https://fram_ymm.apacatapult.com/assets/jquery/js/apa_angular.min.js\"></script>\r\n<script  type=\"text/javascript\" src=\"https://fram_ymm.apacatapult.com/assets/jquery/js/apa_ymmwidget.min.js?v=202637\"></script>    </head>\n    <body data-container=\"body\"\n          data-mage-init='{\"loaderAjax\": {}, \"loader\": { \"icon\": \"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/images/loader-2.gif\"}}'\n        id=\"html-body\" class=\"cms-no-route cms-noroute-index page-layout-2columns-right\">\n        \n<script type=\"text/x-magento-init\">\n    {\n        \"*\": {\n            \"Magento_PageBuilder/js/widget-initializer\": {\n                \"config\": {\"[data-content-type=\\\"slider\\\"][data-appearance=\\\"default\\\"]\":{\"Magento_PageBuilder\\/js\\/content-type\\/slider\\/appearance\\/default\\/widget\":false},\"[data-content-type=\\\"map\\\"]\":{\"Magento_PageBuilder\\/js\\/content-type\\/map\\/appearance\\/default\\/widget\":false},\"[data-content-type=\\\"row\\\"]\":{\"Magento_PageBuilder\\/js\\/content-type\\/row\\/appearance\\/default\\/widget\":false},\"[data-content-type=\\\"tabs\\\"]\":{\"Magento_PageBuilder\\/js\\/content-type\\/tabs\\/appearance\\/default\\/widget\":false},\"[data-content-type=\\\"slide\\\"]\":{\"Magento_PageBuilder\\/js\\/content-type\\/slide\\/appearance\\/default\\/widget\":{\"buttonSelector\":\".pagebuilder-slide-button\",\"showOverlay\":\"hover\",\"dataRole\":\"slide\"}},\"[data-content-type=\\\"banner\\\"]\":{\"Magento_PageBuilder\\/js\\/content-type\\/banner\\/appearance\\/default\\/widget\":{\"buttonSelector\":\".pagebuilder-banner-button\",\"showOverlay\":\"hover\",\"dataRole\":\"banner\"}},\"[data-content-type=\\\"buttons\\\"]\":{\"Magento_PageBuilder\\/js\\/content-type\\/buttons\\/appearance\\/inline\\/widget\":false},\"[data-content-type=\\\"products\\\"][data-appearance=\\\"carousel\\\"]\":{\"Magento_PageBuilder\\/js\\/content-type\\/products\\/appearance\\/carousel\\/widget\":false}},\n                \"breakpoints\": {\"desktop\":{\"label\":\"Desktop\",\"stage\":true,\"default\":true,\"class\":\"desktop-switcher\",\"icon\":\"Magento_PageBuilder::css\\/images\\/switcher\\/switcher-desktop.svg\",\"conditions\":{\"min-width\":\"1024px\"},\"options\":{\"products\":{\"default\":{\"slidesToShow\":\"5\"}}}},\"tablet\":{\"conditions\":{\"max-width\":\"1024px\",\"min-width\":\"768px\"},\"options\":{\"products\":{\"default\":{\"slidesToShow\":\"4\"},\"continuous\":{\"slidesToShow\":\"3\"}}}},\"mobile\":{\"label\":\"Mobile\",\"stage\":true,\"class\":\"mobile-switcher\",\"icon\":\"Magento_PageBuilder::css\\/images\\/switcher\\/switcher-mobile.svg\",\"media\":\"only screen and (max-width: 768px)\",\"conditions\":{\"max-width\":\"768px\",\"min-width\":\"640px\"},\"options\":{\"products\":{\"default\":{\"slidesToShow\":\"3\"}}}},\"mobile-small\":{\"conditions\":{\"max-width\":\"640px\"},\"options\":{\"products\":{\"default\":{\"slidesToShow\":\"2\"},\"continuous\":{\"slidesToShow\":\"1\"}}}}}            }\n        }\n    }\n</script>\n\n<div class=\"cookie-status-message\" id=\"cookie-status\">\n    The store will not work correctly when cookies are disabled.</div>\n<script type=\"text&#x2F;javascript\">document.querySelector(\"#cookie-status\").style.display = \"none\";</script>\n<script type=\"text/x-magento-init\">\n    {\n        \"*\": {\n            \"cookieStatus\": {}\n        }\n    }\n</script>\n\n<script type=\"text/x-magento-init\">\n    {\n        \"*\": {\n            \"mage/cookies\": {\n                \"expires\": null,\n                \"path\": \"\\u002F\",\n                \"domain\": \".www.fram.com\",\n                \"secure\": true,\n                \"lifetime\": \"86400\"\n            }\n        }\n    }\n</script>\n    <noscript>\n        <div class=\"message global noscript\">\n            <div class=\"content\">\n                <p>\n                    <strong>JavaScript seems to be disabled in your browser.</strong>\n                    <span>\n                        For the best experience on our site, be sure to turn on Javascript in your browser.                    </span>\n                </p>\n            </div>\n        </div>\n    </noscript>\n\n<script>\n    window.cookiesConfig = window.cookiesConfig || {};\n    window.cookiesConfig.secure = true;\n</script><script>    require.config({\n        map: {\n            '*': {\n                wysiwygAdapter: 'mage/adminhtml/wysiwyg/tiny_mce/tinymceAdapter'\n            }\n        }\n    });</script><script>    require.config({\n        paths: {\n            googleMaps: 'https\\u003A\\u002F\\u002Fmaps.googleapis.com\\u002Fmaps\\u002Fapi\\u002Fjs\\u003Fv\\u003D3.53\\u0026key\\u003D'\n        },\n        config: {\n            'Magento_PageBuilder/js/utils/map': {\n                style: '',\n            },\n            'Magento_PageBuilder/js/content-type/map/preview': {\n                apiKey: '',\n                apiKeyErrorMessage: 'You\\u0020must\\u0020provide\\u0020a\\u0020valid\\u0020\\u003Ca\\u0020href\\u003D\\u0027https\\u003A\\u002F\\u002Fwww.fram.com\\u002Fadminhtml\\u002Fsystem_config\\u002Fedit\\u002Fsection\\u002Fcms\\u002F\\u0023cms_pagebuilder\\u0027\\u0020target\\u003D\\u0027_blank\\u0027\\u003EGoogle\\u0020Maps\\u0020API\\u0020key\\u003C\\u002Fa\\u003E\\u0020to\\u0020use\\u0020a\\u0020map.'\n            },\n            'Magento_PageBuilder/js/form/element/map': {\n                apiKey: '',\n                apiKeyErrorMessage: 'You\\u0020must\\u0020provide\\u0020a\\u0020valid\\u0020\\u003Ca\\u0020href\\u003D\\u0027https\\u003A\\u002F\\u002Fwww.fram.com\\u002Fadminhtml\\u002Fsystem_config\\u002Fedit\\u002Fsection\\u002Fcms\\u002F\\u0023cms_pagebuilder\\u0027\\u0020target\\u003D\\u0027_blank\\u0027\\u003EGoogle\\u0020Maps\\u0020API\\u0020key\\u003C\\u002Fa\\u003E\\u0020to\\u0020use\\u0020a\\u0020map.'\n            },\n        }\n    });</script><script>\n    require.config({\n        shim: {\n            'Magento_PageBuilder/js/utils/map': {\n                deps: ['googleMaps']\n            }\n        }\n    });</script>\n<!-- Google Tag Manager by Webkul -->\n<noscript><iframe src=\"//www.googletagmanager.com/ns.html?id=\"\nheight=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></noscript>\n<!-- End Google Tag Manager by Webkul -->\n<div class=\"page-wrapper\"><header class=\"page-header\"><div class=\"header content\"><span data-action=\"toggle-nav\" class=\"action nav-toggle\"><span>Toggle Nav</span></span>\r\n<a\r\n    class=\"logo\"\r\n    href=\"https://www.fram.com/\"\r\n    title=\"FRAM&#x20;logo&#x20;in&#x20;white\"\r\n    aria-label=\"store logo\">\r\n    <img src=\"https://www.fram.com/media/logo/stores/1/logo_white.png\"\r\n         title=\"FRAM&#x20;logo&#x20;in&#x20;white\"\r\n         alt=\"FRAM&#x20;logo&#x20;in&#x20;white\"\r\n            width=\"300\"                />\r\n</a>\r\n<!-- Part Search for Mobile -->\r\n<div class=\"mobileonly partsearch\">\r\n    <a>\r\n        <div class=\"partsearchOpen\">\r\n            PARTS SEARCH\r\n        </div>\r\n        <div class=\"partsearchClose\">\r\n            <i class=\"fa-solid fa-xmark\"></i>\r\n        </div>\r\n    </a>\r\n</div><ul class=\"compare wrapper\"><li class=\"item link compare\" data-bind=\"scope: 'compareProducts'\" data-role=\"compare-products-link\">\n    <a class=\"action compare no-display\" title=\"Compare&#x20;Products\"\n       data-bind=\"attr: {'href': compareProducts().listUrl}, css: {'no-display': !compareProducts().count}\"\n    >\n        Compare Products        <span class=\"counter qty\" data-bind=\"text: compareProducts().countCaption\"></span>\n    </a>\n</li>\n<script type=\"text/x-magento-init\">\n{\"[data-role=compare-products-link]\": {\"Magento_Ui/js/core/app\": {\"components\":{\"compareProducts\":{\"component\":\"Magento_Catalog\\/js\\/view\\/compare-products\"}}}}}\n</script>\n</ul>    \n    <div class=\"mainmenu__mobile\">\n        <svg title=\"icon-arrow-down\" class=\"mainmenu__mobile-icon\">\n            <use xlink:href=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/images/icon-sprite.svg#icon-mobile-menu\"></use>\n        </svg>\n    </div>\n\n    <nav class=\"mainmenu\">\n        <ul class=\"mainmenu__list\">\n                                            <li class=\"mainmenu__item  mainmenu__item--parent productsNav\">\n                    \n<a\n    href=\"https://www.fram.com/products\"\n    class=\"mainmenu__link\"\n     data-menu=\"menu-1\">\n    Products</a>\n                            <ul  class=\"mainmenu__inner-list mainmenu__inner-list--level1\" data-menu=\"menu-1\">\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--all mainmenu__inner-item--level1\">\n                \n<a\n    href=\"https://www.fram.com/products\"\n    class=\"mainmenu__inner-link\"\n    >\n    View All</a>\n            </li>\n        \n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level1 mainmenu__inner-item--parent col subnav-col\">\n                <div data-menu=\"menu-51\" class=\"mainmenu__inner-link\"></div>\n                        <ul  class=\"mainmenu__inner-list mainmenu__inner-list--level2\" data-menu=\"menu-51\">\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--all mainmenu__inner-item--level2\">\n                <div class=\"mainmenu__inner-link\"></div>\n            </li>\n        \n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level2 mainmenu__inner-item--parent oilFiltersNav\">\n                \n<a\n    href=\"https://www.fram.com/products/oil-filters\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-2\">\n    Oil Filters</a>\n                        <ul  class=\"mainmenu__inner-list mainmenu__inner-list--level3\" data-menu=\"menu-2\">\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--all mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/oil-filters\"\n    class=\"mainmenu__inner-link\"\n    >\n    View All</a>\n            </li>\n        \n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/oil-filters/synthetic-endurance\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-225\">\n    Synthetic Endurance™</a>\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/oil-filters/titanium\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-62\">\n    FRAM Titanium™</a>\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/oil-filters/ultra-synthetic\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-61\">\n    FRAM Ultra Synthetic®</a>\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/oil-filters/diesel\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-238\">\n    FRAM Diesel™</a>\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/oil-filters/force\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-10\">\n    FRAM Force™</a>\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/oil-filters/tough-guard/\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-11\">\n    FRAM Tough Guard®</a>\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/oil-filters/extra-guard\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-12\">\n    FRAM Extra Guard®</a>\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/oil-filters/drive\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-13\">\n    FRAM Drive™</a>\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/oil-filters/racing\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-16\">\n    FRAM Racing®</a>\n                            </li>\n            </ul>\n            </li>\n            </ul>\n            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level1 mainmenu__inner-item--parent col subnav-col\">\n                <div data-menu=\"menu-52\" class=\"mainmenu__inner-link\"></div>\n                        <ul  class=\"mainmenu__inner-list mainmenu__inner-list--level2\" data-menu=\"menu-52\">\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--all mainmenu__inner-item--level2\">\n                <div class=\"mainmenu__inner-link\"></div>\n            </li>\n        \n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level2 mainmenu__inner-item--parent airFiltersNav\">\n                \n<a\n    href=\"https://www.fram.com/products/air-filters\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-3\">\n    Air Filters</a>\n                        <ul  class=\"mainmenu__inner-list mainmenu__inner-list--level3\" data-menu=\"menu-3\">\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--all mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/air-filters\"\n    class=\"mainmenu__inner-link\"\n    >\n    View All</a>\n            </li>\n        \n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/air-filters/titanium\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-226\">\n    FRAM Titanium®</a>\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/air-filters/ultra-air\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-20\">\n    FRAM Ultra Air™</a>\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/air-filters/tough-guard\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-63\">\n    FRAM Tough Guard®</a>\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/air-filters/extra-guard\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-64\">\n    FRAM Extra Guard®</a>\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/air-filters/drive\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-65\">\n    FRAM Drive™</a>\n                            </li>\n            </ul>\n            </li>\n            </ul>\n            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level1 mainmenu__inner-item--parent col subnav-col\">\n                <div data-menu=\"menu-53\" class=\"mainmenu__inner-link\"></div>\n                        <ul  class=\"mainmenu__inner-list mainmenu__inner-list--level2\" data-menu=\"menu-53\">\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--all mainmenu__inner-item--level2\">\n                <div class=\"mainmenu__inner-link\"></div>\n            </li>\n        \n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level2 mainmenu__inner-item--parent cabinFiltersNav\">\n                \n<a\n    href=\"https://www.fram.com/products/cabin-air-filters\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-4\">\n    Cabin Air Filters</a>\n                        <ul  class=\"mainmenu__inner-list mainmenu__inner-list--level3\" data-menu=\"menu-4\">\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--all mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/cabin-air-filters\"\n    class=\"mainmenu__inner-link\"\n    >\n    View All</a>\n            </li>\n        \n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/cabin-air-filters/titanium\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-227\">\n    FRAM Titanium®</a>\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/cabin-air-filters/fram-trueair\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-21\">\n    FRAM TrueAir™</a>\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/cabin-air-filters/fram-fresh-breeze\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-22\">\n    FRAM Fresh Breeze®</a>\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/cabin-air-filters/drive\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-66\">\n    FRAM Drive™</a>\n                            </li>\n            </ul>\n            </li>\n            </ul>\n            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level1 mainmenu__inner-item--parent col subnav-col\">\n                <div data-menu=\"menu-54\" class=\"mainmenu__inner-link\"></div>\n                        <ul  class=\"mainmenu__inner-list mainmenu__inner-list--level2\" data-menu=\"menu-54\">\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--all mainmenu__inner-item--level2\">\n                <div class=\"mainmenu__inner-link\"></div>\n            </li>\n        \n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level2 mainmenu__inner-item--parent fluidsNav\">\n                \n<a\n    href=\"https://www.fram.com/products/fluids\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-5\">\n    Fluids</a>\n                        <ul  class=\"mainmenu__inner-list mainmenu__inner-list--level3\" data-menu=\"menu-5\">\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--all mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/fluids\"\n    class=\"mainmenu__inner-link\"\n    >\n    View All</a>\n            </li>\n        \n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/fluids\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-23\">\n    Motor Oil</a>\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/fluids\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-24\">\n    Automatic Transmission Fluid</a>\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/fluids\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-25\">\n    Performance Chemicals</a>\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/fluids\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-26\">\n    Small Engine</a>\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/fluids\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-27\">\n    Anitfreeze</a>\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/fluids\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-28\">\n    Grease & Gear Oil</a>\n                            </li>\n            </ul>\n            </li>\n            </ul>\n            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level1 mainmenu__inner-item--parent col subnav-col\">\n                <div data-menu=\"menu-55\" class=\"mainmenu__inner-link\"></div>\n                        <ul  class=\"mainmenu__inner-list mainmenu__inner-list--level2\" data-menu=\"menu-55\">\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--all mainmenu__inner-item--level2\">\n                <div class=\"mainmenu__inner-link\"></div>\n            </li>\n        \n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level2\">\n                \n<a\n    href=\"https://www.fram.com/products/heavy-duty\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-6\">\n    Heavy Duty</a>\n                            </li>\n            </ul>\n            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level1 mainmenu__inner-item--parent col subnav-col\">\n                <div data-menu=\"menu-234\" class=\"mainmenu__inner-link\"></div>\n                        <ul  class=\"mainmenu__inner-list mainmenu__inner-list--level2\" data-menu=\"menu-234\">\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--all mainmenu__inner-item--level2\">\n                <div class=\"mainmenu__inner-link\"></div>\n            </li>\n        \n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level2 mainmenu__inner-item--parent other-productsNav\">\n                    <a\n        href=\"#\"\n        data-menu=\"menu-235\" class=\"mainmenu__inner-link\"    >\n        Other Products    </a>\n\n                        <ul  class=\"mainmenu__inner-list mainmenu__inner-list--level3\" data-menu=\"menu-235\">\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--all mainmenu__inner-item--level3\">\n                    <a\n        href=\"#\"\n        class=\"mainmenu__inner-link\"    >\n        View All    </a>\n\n            </li>\n        \n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/other-products/fram-buddie\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-236\">\n    FRAM Buddie™ Air Purifier</a>\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level3\">\n                \n<a\n    href=\"https://www.fram.com/products/other-products/fram-car-cleaning-kit\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-237\">\n    FRAM Car Cleaning Kit</a>\n                            </li>\n            </ul>\n            </li>\n            </ul>\n            </li>\n            </ul>\n                </li>\n                                            <li class=\"mainmenu__item \">\n                    \n<a\n    href=\"https://www.fram.com/where-to-shop\"\n    class=\"mainmenu__link\"\n     data-menu=\"menu-30\">\n    Where to Shop</a>\n                                    </li>\n                                            <li class=\"mainmenu__item  mainmenu__item--parent resourcesNav\">\n                    \n<a\n    href=\"#\"\n    class=\"mainmenu__link\"\n     data-menu=\"menu-32\">\n    Resources</a>\n\n                            <ul  class=\"mainmenu__inner-list mainmenu__inner-list--level1\" data-menu=\"menu-32\">\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--all mainmenu__inner-item--level1\">\n                \n<a\n    href=\"#\"\n    class=\"mainmenu__inner-link\"\n    >\n    View All</a>\n\n            </li>\n        \n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level1\">\n                    <a\n        href=\"/vehicle-maintenance-center\"\n        data-menu=\"menu-222\" class=\"mainmenu__inner-link\"    >\n        Vehicle Maintenance Center    </a>\n\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level1\">\n                \n<a\n    href=\"https://www.fram.com/resources/knowledge-base\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-34\">\n    Knowledge Base</a>\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level1\">\n                    <a\n        href=\"/news\"\n        data-menu=\"menu-33\" class=\"mainmenu__inner-link\"    >\n        News    </a>\n\n                            </li>\n                    \n            <li  class=\"mainmenu__inner-item mainmenu__inner-item--level1\">\n                \n<a\n    href=\"https://www.fram.com/resources/faqs\"\n    class=\"mainmenu__inner-link\"\n     data-menu=\"menu-57\">\n    FAQs</a>\n                            </li>\n            </ul>\n                </li>\n                    </ul>\n        <div class=\"mainmenu__mobile-bg\"></div>\n    </nav>\n<div class=\"APAsection apa_home_search_block\">\n    <form class=\"form apasearchform\" action=https://www.fram.com/partFinder/page/index/>\n        <div class=\"APAform-field\">\n            <div class=\"APAinput-group\">\n                <input name=\"q\"\n                       autocomplete=\"off\"\n                       type=\"text\"\n                       class=\"APAform-control search_query_adv apatags form-input\"\n                       value=\"\"\n                       placeholder=\"Search by FRAM/Competitor PN\">\n                <button class=\"apa-fa-search fa fa-search\" type=\"submit\" value=\"submit\"></button>\n            </div>\n        </div>\n    </form>\n</div>\n<script type=\"text/x-magento-init\">\n    {\n        \".search_query_adv\" : {\n            \"Concentrix_Catalog/js/auxsearchpage\" : {\n            }\n        }\n    }\n</script>\n<div class=\"APAsection m-t-b-25\" id=\"apa-ymm-container\" ng-app=\"ewdymmApp\" ng-controller=\"ewdymmController\"></div>\r\n\r\n<!-- Calling the Advance Search widget, (for test) -->\r\n<style>#html-body [data-pb-style=Q6XY0UK]{justify-content:flex-start;display:flex;flex-direction:column;background-position:left top;background-size:cover;background-repeat:no-repeat;background-attachment:scroll}</style><div data-content-type=\"row\" data-appearance=\"contained\" data-element=\"main\"><div data-enable-parallax=\"0\" data-parallax-speed=\"0.5\" data-background-images=\"{}\" data-background-type=\"image\" data-video-loop=\"true\" data-video-play-only-visible=\"true\" data-video-lazy-load=\"true\" data-video-fallback-src=\"\" data-element=\"inner\" data-pb-style=\"Q6XY0UK\"><div data-content-type=\"html\" data-appearance=\"default\" data-element=\"main\" data-decoded=\"true\"><div class=\"m-t-b-25 APAsection\" id=\"apa-ymm-container\" ng-app=\"ewdymmApp\" ng-controller=\"ewdymmController\" ng-cloak></div></div></div></div></div></header>    <div class=\"sections nav-sections\">\n                <div class=\"section-items nav-sections-items\"\n             data-mage-init='{\"tabs\":{\"openedState\":\"active\"}}'>\n                                            <div class=\"section-item-title nav-sections-item-title\"\n                     data-role=\"collapsible\">\n                    <a class=\"nav-sections-item-switch\"\n                       data-toggle=\"switch\" href=\"#store.menu\">\n                        Menu                    </a>\n                </div>\n                <div class=\"section-item-content nav-sections-item-content\"\n                     id=\"store.menu\"\n                     data-role=\"content\">\n                    \n<nav class=\"navigation\" data-action=\"navigation\">\n    <ul data-mage-init='{\"menu\":{\"responsive\":true, \"expanded\":true, \"position\":{\"my\":\"left top\",\"at\":\"left bottom\"}}}'>\n                    </ul>\n</nav>\n                </div>\n                                            <div class=\"section-item-title nav-sections-item-title\"\n                     data-role=\"collapsible\">\n                    <a class=\"nav-sections-item-switch\"\n                       data-toggle=\"switch\" href=\"#store.links\">\n                        Account                    </a>\n                </div>\n                <div class=\"section-item-content nav-sections-item-content\"\n                     id=\"store.links\"\n                     data-role=\"content\">\n                    <!-- Account links -->                </div>\n                                            <div class=\"section-item-title nav-sections-item-title\"\n                     data-role=\"collapsible\">\n                    <a class=\"nav-sections-item-switch\"\n                       data-toggle=\"switch\" href=\"#store.settings\">\n                        Settings                    </a>\n                </div>\n                <div class=\"section-item-content nav-sections-item-content\"\n                     id=\"store.settings\"\n                     data-role=\"content\">\n                            <div class=\"switcher language switcher-language\" data-ui-id=\"language-switcher\" id=\"switcher-language-nav\">\r\n        <strong class=\"label switcher-label\"><span>Language</span></strong>\r\n        <div class=\"actions dropdown options switcher-options\">\r\n            <div class=\"action toggle switcher-trigger\"\r\n                 id=\"switcher-language-trigger-nav\"\r\n                 data-mage-init='{\"dropdown\":{}}'\r\n                 data-toggle=\"dropdown\"\r\n                 data-trigger-keypress-button=\"true\">\r\n                <strong class=\"view-en\">\r\n                    <span>English</span>\r\n                </strong>\r\n            </div>\r\n            <ul class=\"dropdown switcher-dropdown\"\r\n                data-target=\"dropdown\">\r\n                                                                                                <li class=\"view-fr switcher-option\">\r\n                            <a href=\"javascript:void(0)\" data-post='{\"action\":\"https:\\/\\/www.fram.com\\/stores\\/store\\/redirect\\/\",\"data\":{\"___store\":\"fr\",\"___from_store\":\"en\",\"uenc\":\"aHR0cHM6Ly93d3cuZnJhbS5jb20vZnIvcGFydEZpbmRlci9zZWFyY2gvaW5kZXgvP2Nhci10eXBlPWNhci10cnVjayZjYXRlZ29yeT1PaWxfRmlsdGVyJmVuZ2luZT1WOCU3RTYuMkwlN0UzNzYlN0UmbWFrZT0wMDA5Jm1vZGVsPTAxNjEmdHlwZT1BbnkrVHlwZSZ5ZWFyPTIwMTQ~\"}}'>\r\n                                French                            </a>\r\n                        </li>\r\n                                                                                <li class=\"view-es switcher-option\">\r\n                            <a href=\"javascript:void(0)\" data-post='{\"action\":\"https:\\/\\/www.fram.com\\/stores\\/store\\/redirect\\/\",\"data\":{\"___store\":\"es\",\"___from_store\":\"en\",\"uenc\":\"aHR0cHM6Ly93d3cuZnJhbS5jb20vZXMvcGFydEZpbmRlci9zZWFyY2gvaW5kZXgvP2Nhci10eXBlPWNhci10cnVjayZjYXRlZ29yeT1PaWxfRmlsdGVyJmVuZ2luZT1WOCU3RTYuMkwlN0UzNzYlN0UmbWFrZT0wMDA5Jm1vZGVsPTAxNjEmdHlwZT1BbnkrVHlwZSZ5ZWFyPTIwMTQ~\"}}'>\r\n                                Spanish                            </a>\r\n                        </li>\r\n                                                </ul>\r\n        </div>\r\n    </div>\r\n                </div>\n                    </div>\n    </div>\n<main id=\"maincontent\" class=\"page-main\"><a id=\"contentarea\" tabindex=\"-1\"></a>\n    <div class=\"page-title-wrapper\">\n        <h1 class=\"page-title\"\n                        >\n            <span class=\"base\" data-ui-id=\"page-title-wrapper\" >Whoops, our bad...</span>        </h1>\n            </div>\n<div class=\"page messages\"><div data-placeholder=\"messages\"></div>\n<div data-bind=\"scope: 'messages'\">\n    <!-- ko if: cookieMessagesObservable() && cookieMessagesObservable().length > 0 -->\n    <div aria-atomic=\"true\" role=\"alert\" class=\"messages\" data-bind=\"foreach: {\n        data: cookieMessagesObservable(), as: 'message'\n    }\">\n        <div data-bind=\"attr: {\n            class: 'message-' + message.type + ' ' + message.type + ' message',\n            'data-ui-id': 'message-' + message.type\n        }\">\n            <div data-bind=\"html: $parent.prepareMessageForHtml(message.text)\"></div>\n        </div>\n    </div>\n    <!-- /ko -->\n\n    <div aria-atomic=\"true\" role=\"alert\" class=\"messages\" data-bind=\"foreach: {\n        data: messages().messages, as: 'message'\n    }, afterRender: purgeMessages\">\n        <div data-bind=\"attr: {\n            class: 'message-' + message.type + ' ' + message.type + ' message',\n            'data-ui-id': 'message-' + message.type\n        }\">\n            <div data-bind=\"html: $parent.prepareMessageForHtml(message.text)\"></div>\n        </div>\n    </div>\n</div>\n\n<script type=\"text/x-magento-init\">\n    {\n        \"*\": {\n            \"Magento_Ui/js/core/app\": {\n                \"components\": {\n                        \"messages\": {\n                            \"component\": \"Magento_Theme/js/view/messages\"\n                        }\n                    }\n                }\n            }\n    }\n</script>\n</div><div class=\"columns\"><div class=\"column main\"><script  type=\"text/x-magento-init\">\n    {\n        \"*\":{\n            \"productDetails\": {\"url\":\"https:\\/\\/www.fram.com\\/googletagmanager\\/productinfo\\/index\\/\"}        }\n    }\n</script><input name=\"form_key\" type=\"hidden\" value=\"AJgmpr1HJrtfR6wN\" /><div id=\"authenticationPopup\" data-bind=\"scope:'authenticationPopup', style: {display: 'none'}\">\n        <script>window.authenticationPopup = {\"autocomplete\":\"off\",\"customerRegisterUrl\":\"https:\\/\\/www.fram.com\\/customer\\/account\\/create\\/\",\"customerForgotPasswordUrl\":\"https:\\/\\/www.fram.com\\/customer\\/account\\/forgotpassword\\/\",\"baseUrl\":\"https:\\/\\/www.fram.com\\/\",\"customerLoginUrl\":\"https:\\/\\/www.fram.com\\/customer\\/ajax\\/login\\/\"}</script>    <!-- ko template: getTemplate() --><!-- /ko -->\n        <script type=\"text/x-magento-init\">\n        {\n            \"#authenticationPopup\": {\n                \"Magento_Ui/js/core/app\": {\"components\":{\"authenticationPopup\":{\"component\":\"Magento_Customer\\/js\\/view\\/authentication-popup\",\"children\":{\"messages\":{\"component\":\"Magento_Ui\\/js\\/view\\/messages\",\"displayArea\":\"messages\"},\"captcha\":{\"component\":\"Magento_Captcha\\/js\\/view\\/checkout\\/loginCaptcha\",\"displayArea\":\"additional-login-form-fields\",\"formId\":\"user_login\",\"configSource\":\"checkout\"}}}}}            },\n            \"*\": {\n                \"Magento_Ui/js/block-loader\": \"https\\u003A\\u002F\\u002Fwww.fram.com\\u002Fstatic\\u002Fversion1788780815\\u002Ffrontend\\u002FFram\\u002Fluma_child\\u002Fen_US\\u002Fimages\\u002Floader\\u002D1.gif\"\n                            }\n        }\n    </script>\n</div>\n<script type=\"text/x-magento-init\">\n    {\n        \"*\": {\n            \"Magento_Customer/js/section-config\": {\n                \"sections\": {\"stores\\/store\\/switch\":[\"*\"],\"stores\\/store\\/switchrequest\":[\"*\"],\"directory\\/currency\\/switch\":[\"*\"],\"*\":[\"messages\"],\"customer\\/account\\/logout\":[\"*\",\"recently_viewed_product\",\"recently_compared_product\",\"persistent\"],\"customer\\/account\\/loginpost\":[\"*\"],\"customer\\/account\\/createpost\":[\"*\"],\"customer\\/account\\/editpost\":[\"*\"],\"customer\\/ajax\\/login\":[\"checkout-data\",\"cart\",\"captcha\"],\"catalog\\/product_compare\\/add\":[\"compare-products\"],\"catalog\\/product_compare\\/remove\":[\"compare-products\"],\"catalog\\/product_compare\\/clear\":[\"compare-products\"],\"sales\\/guest\\/reorder\":[\"cart\"],\"sales\\/order\\/reorder\":[\"cart\"],\"checkout\\/cart\\/add\":[\"cart\",\"directory-data\"],\"checkout\\/cart\\/delete\":[\"cart\"],\"checkout\\/cart\\/updatepost\":[\"cart\"],\"checkout\\/cart\\/updateitemoptions\":[\"cart\"],\"checkout\\/cart\\/couponpost\":[\"cart\"],\"checkout\\/cart\\/estimatepost\":[\"cart\"],\"checkout\\/cart\\/estimateupdatepost\":[\"cart\"],\"checkout\\/onepage\\/saveorder\":[\"cart\",\"checkout-data\",\"last-ordered-items\"],\"checkout\\/sidebar\\/removeitem\":[\"cart\"],\"checkout\\/sidebar\\/updateitemqty\":[\"cart\"],\"rest\\/*\\/v1\\/carts\\/*\\/payment-information\":[\"cart\",\"last-ordered-items\",\"captcha\",\"instant-purchase\"],\"rest\\/*\\/v1\\/guest-carts\\/*\\/payment-information\":[\"cart\",\"captcha\"],\"rest\\/*\\/v1\\/guest-carts\\/*\\/selected-payment-method\":[\"cart\",\"checkout-data\"],\"rest\\/*\\/v1\\/carts\\/*\\/selected-payment-method\":[\"cart\",\"checkout-data\",\"instant-purchase\"],\"customer\\/address\\/*\":[\"instant-purchase\"],\"customer\\/account\\/*\":[\"instant-purchase\"],\"vault\\/cards\\/deleteaction\":[\"instant-purchase\"],\"multishipping\\/checkout\\/overviewpost\":[\"cart\"],\"paypal\\/express\\/placeorder\":[\"cart\",\"checkout-data\"],\"paypal\\/payflowexpress\\/placeorder\":[\"cart\",\"checkout-data\"],\"paypal\\/express\\/onauthorization\":[\"cart\",\"checkout-data\"],\"persistent\\/index\\/unsetcookie\":[\"persistent\"],\"review\\/product\\/post\":[\"review\"],\"paymentservicespaypal\\/smartbuttons\\/placeorder\":[\"cart\",\"checkout-data\"],\"paymentservicespaypal\\/smartbuttons\\/cancel\":[\"cart\",\"checkout-data\"],\"wishlist\\/index\\/add\":[\"wishlist\"],\"wishlist\\/index\\/remove\":[\"wishlist\"],\"wishlist\\/index\\/updateitemoptions\":[\"wishlist\"],\"wishlist\\/index\\/update\":[\"wishlist\"],\"wishlist\\/index\\/cart\":[\"wishlist\",\"cart\"],\"wishlist\\/index\\/fromcart\":[\"wishlist\",\"cart\"],\"wishlist\\/index\\/allcart\":[\"wishlist\",\"cart\"],\"wishlist\\/shared\\/allcart\":[\"wishlist\",\"cart\"],\"wishlist\\/shared\\/cart\":[\"cart\"],\"braintree\\/paypal\\/placeorder\":[\"cart\",\"checkout-data\"],\"braintree\\/googlepay\\/placeorder\":[\"cart\",\"checkout-data\"],\"checkout\\/cart\\/index\":[\"cart\"]},\n                \"clientSideSections\": [\"checkout-data\",\"cart-data\"],\n                \"baseUrls\": [\"https:\\/\\/www.fram.com\\/\"],\n                \"sectionNames\": [\"messages\",\"customer\",\"compare-products\",\"last-ordered-items\",\"cart\",\"directory-data\",\"captcha\",\"instant-purchase\",\"loggedAsCustomer\",\"persistent\",\"review\",\"payments\",\"wishlist\",\"recently_viewed_product\",\"recently_compared_product\",\"product_data_storage\",\"paypal-billing-agreement\"]            }\n        }\n    }\n</script>\n<script type=\"text/x-magento-init\">\n    {\n        \"*\": {\n            \"Magento_Customer/js/customer-data\": {\n                \"sectionLoadUrl\": \"https\\u003A\\u002F\\u002Fwww.fram.com\\u002Fcustomer\\u002Fsection\\u002Fload\\u002F\",\n                \"expirableSectionLifetime\": 60,\n                \"expirableSectionNames\": [\"cart\",\"persistent\"],\n                \"cookieLifeTime\": \"86400\",\n                \"cookieDomain\": \"www.fram.com\",\n                \"updateSessionUrl\": \"https\\u003A\\u002F\\u002Fwww.fram.com\\u002Fcustomer\\u002Faccount\\u002FupdateSession\\u002F\",\n                \"isLoggedIn\": \"\"\n            }\n        }\n    }\n</script>\n<script type=\"text/x-magento-init\">\n    {\n        \"*\": {\n            \"Magento_Customer/js/invalidation-processor\": {\n                \"invalidationRules\": {\n                    \"website-rule\": {\n                        \"Magento_Customer/js/invalidation-rules/website-rule\": {\n                            \"scopeConfig\": {\n                                \"websiteId\": \"1\"\n                            }\n                        }\n                    }\n                }\n            }\n        }\n    }\n</script>\n<script type=\"text/x-magento-init\">\n    {\n        \"body\": {\n            \"pageCache\": {\"url\":\"https:\\/\\/www.fram.com\\/page_cache\\/block\\/render\\/?car-type=car-truck&category=Oil_Filter&engine=V8%7E6.2L%7E376%7E&make=0009&model=0161&type=Any+Type&year=2014\",\"handles\":[\"default\",\"cms_noroute_index\",\"cms_page_view\",\"cms_noroute_index_id_no-route\",\"blog_css\",\"secondblog_css\"],\"originalRequest\":{\"route\":\"cms\",\"controller\":\"noroute\",\"action\":\"index\",\"uri\":\"\\/partFinder\\/search\\/index\\/?car-type=car-truck&category=Oil_Filter&engine=V8~6.2L~376~&make=0009&model=0161&type=Any+Type&year=2014\"},\"versionCookieName\":\"private_content_version\"}        }\n    }\n</script>\n\n<script type=\"text/javascript\">\n    function setCookie(name, value, days) {\n        var expires = \"\";\n        if (days) {\n            var date = new Date();\n            date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));\n            expires = \"; expires=\" + date.toUTCString();\n        }\n        document.cookie = name + \"=\" + (value || \"\") + expires + \"; path=/\";\n    }\n    setCookie('lookup_vary', 'eyJsb29rdXAiOnRydWUsInNlc3Npb24iOiI3In0=', 7);\n</script>\n\n                    <script>\n            require(['jquery', 'domReady!'], function($){\n                if ($('.mfblogunveil').length) {\n                    require(['Magefan_Blog/js/lib/mfblogunveil'], function(){\n                        $('.mfblogunveil').mfblogunveil();\n                    });\n                }\n            });\n        </script>\n                    <script>\n            require(['jquery', 'domReady!'], function($){\n                if ($('.mfsecondblogunveil').length) {\n                    require(['Magefan_SecondBlog/js/lib/mfsecondblogunveil'], function(){\n                        $('.mfsecondblogunveil').mfsecondblogunveil();\n                    });\n                }\n            });\n        </script><div data-content-type=\"html\" data-appearance=\"default\" data-element=\"main\" data-decoded=\"true\"><dl>\r\n<dt>The page you requested was not found, and we have a fine guess why.</dt>\r\n<dd>\r\n<ul class=\"disc\">\r\n<li>If you typed the URL directly, please make sure the spelling is correct.</li>\r\n<li>If you clicked on a link to get here, the link is outdated.</li>\r\n</ul></dd>\r\n</dl>\r\n<dl>\r\n<dt>What can you do?</dt>\r\n<dd>Have no fear, help is near! There are many ways you can get back on track with Magento Store.</dd>\r\n<dd>\r\n<ul class=\"disc\">\r\n<li><a href=\"#\" onclick=\"history.go(-1); return false;\">Go back</a> to the previous page.</li>\r\n<li>Use the search bar at the top of the page to search for your products.</li>\r\n<li>Follow these links to get you back on track!<br /><a href=\"https://www.fram.com/\">Home</a> </li></ul></dd></dl>\r\n</div></div><div class=\"sidebar sidebar-additional\"><div class=\"block block-compare\" data-bind=\"scope: 'compareProducts'\" data-role=\"compare-products-sidebar\">\n    <div class=\"block-title\">\n        <strong id=\"block-compare-heading\" role=\"heading\" aria-level=\"2\">Compare Products</strong>\n        <span class=\"counter qty no-display\" data-bind=\"text: compareProducts().countCaption, css: {'no-display': !compareProducts().count}\"></span>\n    </div>\n    <!-- ko if: compareProducts().count -->\n    <div class=\"block-content no-display\" aria-labelledby=\"block-compare-heading\" data-bind=\"css: {'no-display': !compareProducts().count}\">\n        <ol id=\"compare-items\" class=\"product-items product-items-names\" data-bind=\"foreach: compareProducts().items\">\n                <li class=\"product-item\">\n                    <input type=\"hidden\" class=\"compare-item-id\" data-bind=\"value: id\"/>\n                    <strong class=\"product-item-name\">\n                        <a data-bind=\"attr: {href: product_url}, html: name\" class=\"product-item-link\"></a>\n                    </strong>\n                    <a href=\"#\"\n                       data-bind=\"attr: {'data-post': remove_url}\"\n                       title=\"Remove&#x20;This&#x20;Item\"\n                       class=\"action delete\">\n                        <span>Remove This Item</span>\n                    </a>\n                </li>\n        </ol>\n        <div class=\"actions-toolbar\">\n            <div class=\"primary\">\n                <a data-bind=\"attr: {'href': compareProducts().listUrl}\" class=\"action compare primary\"><span>Compare</span></a>\n            </div>\n            <div class=\"secondary\">\n                <a id=\"compare-clear-all\" href=\"#\" class=\"action clear\" data-post=\"{&quot;action&quot;:&quot;https:\\/\\/www.fram.com\\/catalog\\/product_compare\\/clear\\/&quot;,&quot;data&quot;:{&quot;uenc&quot;:&quot;&quot;,&quot;confirmation&quot;:true,&quot;confirmationMessage&quot;:&quot;Are you sure you want to remove all items from your Compare Products list?&quot;}}\">\n                    <span>Clear All</span>\n                </a>\n            </div>\n        </div>\n    </div>\n    <!-- /ko -->\n    <!-- ko ifnot: compareProducts().count -->\n    <div class=\"empty\">You have no items to compare.</div>\n    <!-- /ko -->\n</div>\n<script type=\"text/x-magento-init\">\n{\"[data-role=compare-products-sidebar]\": {\"Magento_Ui/js/core/app\": {\"components\":{\"compareProducts\":{\"component\":\"Magento_Catalog\\/js\\/view\\/compare-products\"}}}}}\n</script>\n    <div class=\"block block-wishlist\" data-bind=\"scope: 'wishlist'\">\n        <div class=\"block-title\">\n            <strong role=\"heading\" aria-level=\"2\">My Wish List</strong>\n            <!-- ko if: wishlist().counter -->\n            <span data-bind=\"text: wishlist().counter\" class=\"counter\"></span>\n            <!-- /ko -->\n        </div>\n        <div class=\"block-content\">\n            <strong class=\"subtitle\">Last Added Items</strong>\n            <!-- ko if: wishlist().counter -->\n                <ol class=\"product-items no-display\"\n                    id=\"wishlist-sidebar\"\n                    data-bind=\"foreach: wishlist().items, css: {'no-display': null}\">\n                    <li class=\"product-item\">\n                        <div class=\"product-item-info\">\n                            <a class=\"product-item-photo\" data-bind=\"attr: { href: product_url, title: product_name }\">\n                                <!-- ko template: {name: $data.image.template, data: $data.image} --><!-- /ko -->\n                            </a>\n                            <div class=\"product-item-details\">\n                                <strong class=\"product-item-name\">\n                                    <a data-bind=\"attr: { href: product_url }\" class=\"product-item-link\">\n                                        <span data-bind=\"text: product_name\"></span>\n                                    </a>\n                                </strong>\n                                <div data-bind=\"html: product_price\"></div>\n                                <div class=\"product-item-actions\">\n                                    <!-- ko if: product_is_saleable_and_visible -->\n                                    <div class=\"actions-primary\">\n                                        <!-- ko if: product_has_required_options -->\n                                        <a href=\"#\"\n                                           data-bind=\"attr: {'data-post': add_to_cart_params}\"\n                                           class=\"action tocart primary\">\n                                            <span>Add to Cart</span>\n                                        </a>\n                                        <!-- /ko -->\n                                        <!-- ko ifnot: product_has_required_options -->\n                                            <button type=\"button\"\n                                                    class=\"action tocart primary\"\n                                                    data-bind=\"attr: {'data-post': add_to_cart_params}\">\n                                                <span>Add to Cart</span>\n                                            </button>\n                                        <!-- /ko -->\n                                    </div>\n                                    <!-- /ko -->\n                                    <div class=\"actions-secondary\">\n                                        <a href=\"#\"  data-bind=\"attr: {'data-post': delete_item_params}\"\n                                           title=\"Remove&#x20;This&#x20;Item\"\n                                           class=\"btn-remove action delete\">\n                                            <span>Remove This Item</span>\n                                        </a>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </li>\n                </ol>\n                <div class=\"actions-toolbar no-display\" data-bind=\"css: {'no-display': null}\">\n                    <div class=\"primary\">\n                        <a class=\"action details\"\n                           href=\"https://www.fram.com/wishlist/\"\n                           title=\"Go&#x20;to&#x20;Wish&#x20;List\">\n                            <span>Go to Wish List</span>\n                        </a>\n                    </div>\n                </div>\n            <!-- /ko -->\n            <!-- ko ifnot: wishlist().counter -->\n                <div class=\"empty\">You have no items in your wish list.</div>\n            <!-- /ko -->\n        </div>\n    </div>\n<script type=\"text/x-magento-init\">\n    {\n        \"*\": {\n            \"Magento_Ui/js/core/app\": {\n                \"components\": {\n                    \"wishlist\": {\n                        \"component\": \"Magento_Wishlist/js/view/wishlist\"\n                    }\n                }\n            }\n        }\n    }\n</script>\n</div></div></main><footer class=\"page-footer\"><div class=\"footer content\">        <div class=\"switcher language switcher-language\" data-ui-id=\"language-switcher\" id=\"switcher-language\">\r\n        <strong class=\"label switcher-label\"><span>Language</span></strong>\r\n        <div class=\"actions dropdown options switcher-options\">\r\n            <div class=\"action toggle switcher-trigger\"\r\n                 id=\"switcher-language-trigger\"\r\n                 data-mage-init='{\"dropdown\":{}}'\r\n                 data-toggle=\"dropdown\"\r\n                 data-trigger-keypress-button=\"true\">\r\n                <strong class=\"view-en\">\r\n                    <span>English</span>\r\n                </strong>\r\n            </div>\r\n            <ul class=\"dropdown switcher-dropdown\"\r\n                data-target=\"dropdown\">\r\n                                                                                                <li class=\"view-fr switcher-option\">\r\n                            <a href=\"javascript:void(0)\" data-post='{\"action\":\"https:\\/\\/www.fram.com\\/stores\\/store\\/redirect\\/\",\"data\":{\"___store\":\"fr\",\"___from_store\":\"en\",\"uenc\":\"aHR0cHM6Ly93d3cuZnJhbS5jb20vZnIvcGFydEZpbmRlci9zZWFyY2gvaW5kZXgvP2Nhci10eXBlPWNhci10cnVjayZjYXRlZ29yeT1PaWxfRmlsdGVyJmVuZ2luZT1WOCU3RTYuMkwlN0UzNzYlN0UmbWFrZT0wMDA5Jm1vZGVsPTAxNjEmdHlwZT1BbnkrVHlwZSZ5ZWFyPTIwMTQ~\"}}'>\r\n                                French                            </a>\r\n                        </li>\r\n                                                                                <li class=\"view-es switcher-option\">\r\n                            <a href=\"javascript:void(0)\" data-post='{\"action\":\"https:\\/\\/www.fram.com\\/stores\\/store\\/redirect\\/\",\"data\":{\"___store\":\"es\",\"___from_store\":\"en\",\"uenc\":\"aHR0cHM6Ly93d3cuZnJhbS5jb20vZXMvcGFydEZpbmRlci9zZWFyY2gvaW5kZXgvP2Nhci10eXBlPWNhci10cnVjayZjYXRlZ29yeT1PaWxfRmlsdGVyJmVuZ2luZT1WOCU3RTYuMkwlN0UzNzYlN0UmbWFrZT0wMDA5Jm1vZGVsPTAxNjEmdHlwZT1BbnkrVHlwZSZ5ZWFyPTIwMTQ~\"}}'>\r\n                                Spanish                            </a>\r\n                        </li>\r\n                                                </ul>\r\n        </div>\r\n    </div>\r\n<div class=\"footerLeft\">    \n    <div class=\"socialmenu__mobile\">\n        <svg\n            title=\"icon-arrow-down\"\n            class=\"socialmenu__mobile-icon\"\n        >\n            <use xlink:href=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/images/icon-sprite.svg#icon-mobile-menu\"></use>\n        </svg>\n    </div>\n\n    <nav\n        class=\"socialmenu\"\n        data-mage-init='{\"snowdogMenu\": {}}'\n    >\n        <ul class=\"socialmenu__list\">\n                                            <li class=\"socialmenu__item  facebook\">\n                        <a\n        href=\"https://www.facebook.com/framfiltration\"\n        data-menu=\"menu-45\" class=\"socialmenu__link\" target=\"_blank\" rel=\"noopener\"    >\n        Facebook    </a>\n\n                                    </li>\n                                            <li class=\"socialmenu__item  twitter\">\n                        <a\n        href=\"https://twitter.com/FRAM_Filters\"\n        data-menu=\"menu-46\" class=\"socialmenu__link\" target=\"_blank\" rel=\"noopener\"    >\n        Twitter    </a>\n\n                                    </li>\n                                            <li class=\"socialmenu__item  instagram\">\n                        <a\n        href=\"https://www.instagram.com/fram_filters/\"\n        data-menu=\"menu-47\" class=\"socialmenu__link\" target=\"_blank\" rel=\"noopener\"    >\n        Instagram    </a>\n\n                                    </li>\n                                            <li class=\"socialmenu__item  youtube\">\n                        <a\n        href=\"https://www.youtube.com/user/fram\"\n        data-menu=\"menu-48\" class=\"socialmenu__link\" target=\"_blank\" rel=\"noopener\"    >\n        YouTube    </a>\n\n                                    </li>\n                                            <li class=\"socialmenu__item  linkedin\">\n                        <a\n        href=\"https://www.linkedin.com/company/framfilters/about/\"\n        data-menu=\"menu-49\" class=\"socialmenu__link\" target=\"_blank\" rel=\"noopener\"    >\n        Linkedin    </a>\n\n                                    </li>\n                                            <li class=\"socialmenu__item  pinterest\">\n                        <a\n        href=\"https://www.pinterest.com/FRAMfilters/_created/\"\n        data-menu=\"menu-50\" class=\"socialmenu__link\" target=\"_blank\" rel=\"noopener\"    >\n        Pinterest    </a>\n\n                                    </li>\n                    </ul>\n        <div class=\"socialmenu__mobile-bg\"></div>\n    </nav>\n</div><div class=\"footerRight\">    \n    <div class=\"footermenu1__mobile\">\n        <svg\n            title=\"icon-arrow-down\"\n            class=\"footermenu1__mobile-icon\"\n        >\n            <use xlink:href=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/images/icon-sprite.svg#icon-mobile-menu\"></use>\n        </svg>\n    </div>\n\n    <nav\n        class=\"footermenu1\"\n        data-mage-init='{\"snowdogMenu\": {}}'\n    >\n        <ul class=\"footermenu1__list\">\n                                            <li class=\"footermenu1__item \">\n                    \n<a\n    href=\"https://www.fram.com/products\"\n    class=\"footermenu1__link\"\n     data-menu=\"menu-35\">\n    Products</a>\n                                    </li>\n                                            <li class=\"footermenu1__item \">\n                    \n<a\n    href=\"https://www.fram.com/about-us\"\n    class=\"footermenu1__link\"\n     data-menu=\"menu-38\">\n    About Us</a>\n                                    </li>\n                                            <li class=\"footermenu1__item \">\n                    \n<a\n    href=\"https://www.fram.com/contact-us\"\n    class=\"footermenu1__link\"\n     data-menu=\"menu-39\">\n    Contact Us</a>\n                                    </li>\n                    </ul>\n        <div class=\"footermenu1__mobile-bg\"></div>\n    </nav>\n    \n    <div class=\"footermenu2__mobile\">\n        <svg\n            title=\"icon-arrow-down\"\n            class=\"footermenu2__mobile-icon\"\n        >\n            <use xlink:href=\"https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/images/icon-sprite.svg#icon-mobile-menu\"></use>\n        </svg>\n    </div>\n\n    <nav\n        class=\"footermenu2\"\n        data-mage-init='{\"snowdogMenu\": {}}'\n    >\n        <ul class=\"footermenu2__list\">\n                                            <li class=\"footermenu2__item \">\n                    \n<a\n    href=\"https://www.fram.com/international\"\n    class=\"footermenu2__link\"\n     data-menu=\"menu-40\">\n    FRAM International</a>\n                                    </li>\n                                            <li class=\"footermenu2__item \">\n                    \n<a\n    href=\"https://www.fram.com/privacy-policy\"\n    class=\"footermenu2__link\"\n     data-menu=\"menu-41\">\n    Privacy Policy</a>\n                                    </li>\n                                            <li class=\"footermenu2__item \">\n                    \n<a\n    href=\"https://www.fram.com/california-transparency-in-supply-chain-act\"\n    class=\"footermenu2__link\"\n     data-menu=\"menu-43\">\n    California Transparency In Supply Chain</a>\n                                    </li>\n                    </ul>\n        <div class=\"footermenu2__mobile-bg\"></div>\n    </nav>\n<small class=\"copyright\">\n    <span>©2025 FIRST BRANDS GROUP LLC.</span>\n</small>\n</div> <!-- Start of LiveChat (www.livechatinc.com) code -->\r\n<script type=\"text/javascript\">\r\n    window.__lc = window.__lc || {};\r\n    window.__lc.license = 9065305;\r\n    (function () {\r\n        var lc = document.createElement('script');\r\n        lc.type = 'text/javascript';\r\n        lc.async = true;\r\n        lc.src = ('https:' == document.location.protocol ? 'https://' : 'http://') +\r\n            'cdn.livechatinc.com/tracking.js';\r\n        var s = document.getElementsByTagName('script')[0];\r\n        s.parentNode.insertBefore(lc, s);\r\n    })();\r\n</script>\r\n<!-- End of LiveChat code --></div></footer><script type=\"text/x-magento-init\">\n        {\n            \"*\": {\n                \"Magento_Ui/js/core/app\": {\n                    \"components\": {\n                        \"storage-manager\": {\n                            \"component\": \"Magento_Catalog/js/storage-manager\",\n                            \"appendTo\": \"\",\n                            \"storagesConfiguration\" : {\"recently_viewed_product\":{\"requestConfig\":{\"syncUrl\":\"https:\\/\\/www.fram.com\\/catalog\\/product\\/frontend_action_synchronize\\/\"},\"lifetime\":\"1000\",\"allowToSendRequest\":null},\"recently_compared_product\":{\"requestConfig\":{\"syncUrl\":\"https:\\/\\/www.fram.com\\/catalog\\/product\\/frontend_action_synchronize\\/\"},\"lifetime\":\"1000\",\"allowToSendRequest\":null},\"product_data_storage\":{\"updateRequestConfig\":{\"url\":\"https:\\/\\/www.fram.com\\/rest\\/en\\/V1\\/products-render-info\"},\"requestConfig\":{\"syncUrl\":\"https:\\/\\/www.fram.com\\/catalog\\/product\\/frontend_action_synchronize\\/\"},\"allowToSendRequest\":null}}                        }\n                    }\n                }\n            }\n        }\n</script>\n<!-- Google Tag Manager (noscript) -->\r\n<noscript><iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-KMFH94L\"\r\nheight=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></noscript>\r\n<!-- End Google Tag Manager (noscript) -->\r\n\r\n<!-- Google Tag Manager (noscript) -->\r\n<noscript><iframe src=\"https://www.googletagmanager.com/ns.html?id=GTM-T8NSLKXW\"\r\nheight=\"0\" width=\"0\" style=\"display:none;visibility:hidden\"></iframe></noscript>\r\n<!-- End Google Tag Manager (noscript) --></div>    </body>\n</html>\n"
+    },
+    {
+      "type": "stylesheet",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/calendar.css",
+      "method": "GET",
+      "content_type": "text/css",
+      "body": null
+    },
+    {
+      "type": "stylesheet",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magefan_SecondBlog/css/secondblog-custom.css",
+      "method": "GET",
+      "content_type": "text/css",
+      "body": null
+    },
+    {
+      "type": "stylesheet",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magefan_Blog/css/blog-m.css",
+      "method": "GET",
+      "content_type": "text/css",
+      "body": null
+    },
+    {
+      "type": "stylesheet",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magefan_Blog/css/blog-new.css",
+      "method": "GET",
+      "content_type": "text/css",
+      "body": null
+    },
+    {
+      "type": "stylesheet",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magefan_Blog/css/blog-custom.css",
+      "method": "GET",
+      "content_type": "text/css",
+      "body": null
+    },
+    {
+      "type": "stylesheet",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magefan_SecondBlog/css/secondblog-m.css",
+      "method": "GET",
+      "content_type": "text/css",
+      "body": null
+    },
+    {
+      "type": "stylesheet",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/uppy/dist/uppy-custom.css",
+      "method": "GET",
+      "content_type": "text/css",
+      "body": null
+    },
+    {
+      "type": "stylesheet",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Amasty_Storelocator/vendor/chosen/chosen.min.css",
+      "method": "GET",
+      "content_type": "text/css",
+      "body": null
+    },
+    {
+      "type": "stylesheet",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/fonts/fontawesome/css/all.css",
+      "method": "GET",
+      "content_type": "text/css",
+      "body": null
+    },
+    {
+      "type": "stylesheet",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magefan_SecondBlog/css/secondblog-new.css",
+      "method": "GET",
+      "content_type": "text/css",
+      "body": null
+    },
+    {
+      "type": "image",
+      "status": 200,
+      "url": "https://www.fram.com/media/logo/stores/1/logo_white.png",
+      "method": "GET",
+      "content_type": "image/png",
+      "body": null
+    },
+    {
+      "type": "stylesheet",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/css/styles-l.css",
+      "method": "GET",
+      "content_type": "text/css",
+      "body": null
+    },
+    {
+      "type": "stylesheet",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/css/styles-m.css",
+      "method": "GET",
+      "content_type": "text/css",
+      "body": null
+    },
+    {
+      "type": "font",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/fonts/opensans/light/opensans-300.woff2",
+      "method": "GET",
+      "content_type": "font/woff2",
+      "body": null
+    },
+    {
+      "type": "font",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/fonts/Luma-Icons.woff2",
+      "method": "GET",
+      "content_type": "font/woff2",
+      "body": null
+    },
+    {
+      "type": "font",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/fonts/opensans/semibold/opensans-600.woff2",
+      "method": "GET",
+      "content_type": "font/woff2",
+      "body": null
+    },
+    {
+      "type": "font",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/fonts/opensans/regular/opensans-400.woff2",
+      "method": "GET",
+      "content_type": "font/woff2",
+      "body": null
+    },
+    {
+      "type": "font",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/fonts/opensans/bold/opensans-700.woff2",
+      "method": "GET",
+      "content_type": "font/woff2",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/requirejs/mixins.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/requirejs/require.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/js/scripts.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Webkul_GoogleTagManager/js/pixel_core.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/requirejs-config.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "stylesheet",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/css/print.css",
+      "method": "GET",
+      "content_type": "text/css",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/common.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/bootstrap.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/dataPost.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/core/app.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Theme/js/theme.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "other",
+      "status": 404,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/images/icon-sprite.svg",
+      "method": "GET",
+      "content_type": "text/html; charset=UTF-8",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Translation/js/mage-translation-dictionary.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_PageCache/js/form-key-provider.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/requirejs/domReady.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/template.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/apply/main.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "font",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/fonts/fontawesome/webfonts/fa-regular-400.woff2",
+      "method": "GET",
+      "content_type": "font/woff2",
+      "body": null
+    },
+    {
+      "type": "font",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/fonts/fontawesome/webfonts/fa-brands-400.woff2",
+      "method": "GET",
+      "content_type": "font/woff2",
+      "body": null
+    },
+    {
+      "type": "font",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/fonts/fontawesome/webfonts/fa-solid-900.woff2",
+      "method": "GET",
+      "content_type": "font/woff2",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/bootstrap.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/modal/confirm.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/smart-keyboard-handler.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/widget.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/mage.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_ReCaptchaWebapiUi/js/jquery-mixin.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/core/renderer/types.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/requirejs/text.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/core/renderer/layout.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/underscore.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/apply/scripts.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/utils/main.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/translate.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/bindings/bootstrap.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/template/engine.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/extender/observable_array.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/version.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/extender/bound-nodes.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/knockoutjs/knockout.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/logger/console-logger.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/knockoutjs/knockout-es5.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/utils/wrapper.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/modal/modal.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/registry/registry.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "xhr",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/js-translation.json",
+      "method": "GET",
+      "content_type": "application/json",
+      "body": "[]"
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/knockoutjs/knockout-repeat.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/knockoutjs/knockout-fast-foreach.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/utils/arrays.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/utils/objects.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/utils/misc.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/template/renderer.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/utils/compare.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/utils/strings.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/utils/template.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/bindings/i18n.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/bindings/resizable.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/bindings/mage-init.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/bindings/range.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/bindings/scope.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/bindings/optgroup.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/bindings/after-render.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/bindings/keyboard.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/bindings/autoselect.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/bindings/fadeVisible.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/bindings/collapsible.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/bindings/datepicker.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/bindings/staticChecked.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/bindings/outer_click.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/bindings/bind-html.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/bindings/simple-checked.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/bindings/color-picker.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/bindings/tooltip.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/template/observable_source.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/core/events.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/key-codes.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/core.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/logger/entry-factory.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/logger/logger.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/core/storage/local.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/z-index.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/logger/formatter.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/logger/console-output-handler.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/logger/logger-utils.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/logger/levels-pool.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/logger/message-pool.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://api.livechatinc.com/v3.6/customer/action/get_dynamic_configuration?x-region=us-south1&license_id=9065305&client_id=c5e4f61e1a6c3b1521b541bc5c5a2ac5&url=https%3A%2F%2Fwww.fram.com%2FpartFinder%2Fsearch%2Findex%2F%3Fcar-type%3Dcar-truck%26category%3DOil_Filter%26engine%3DV8~6.2L~376~%26make%3D0009%26model%3D0161%26type%3DAny%2BType%26year%3D2014&channel_type=code&jsonp=__yw69b43y0y9",
+      "method": "GET",
+      "content_type": "application/javascript; charset=UTF-8",
+      "body": null
+    },
+    {
+      "type": "xhr",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/templates/modal/modal-custom.html",
+      "method": "GET",
+      "content_type": "text/html",
+      "body": "<!--\n/**\n * Copyright © Magento, Inc. All rights reserved.\n * See COPYING.txt for license details.\n */\n-->\n\n<aside role=\"dialog\"\n       class=\"modal-<%- data.type %> <%- data.modalClass %>\n       <% if(data.responsive){ %><%- data.responsiveClass %><% } %>\n       <% if(data.innerScroll){ %><%- data.innerScrollClass %><% } %>\"\n       <% if(data.title){ %> aria-labelledby=\"modal-title-<%- data.id %>\"<% } %>\n       aria-describedby=\"modal-content-<%- data.id %>\"\n       data-role=\"modal\"\n       data-type=\"<%- data.type %>\"\n       tabindex=\"0\">\n    <div data-role=\"focusable-start\" tabindex=\"0\"></div>\n    <div class=\"modal-inner-wrap\"\n         data-role=\"focusable-scope\">\n        <header class=\"modal-header\">\n            <% if(data.title || data.subTitle){ %>\n            <h1 id=\"modal-title-<%- data.id %>\" class=\"modal-title\"\n                data-role=\"title\">\n                <% if(data.title){ %>\n                    <%= data.title %>\n                <% } %>\n\n                <% if(data.subTitle){ %>\n                <span class=\"modal-subtitle\"\n                      data-role=\"subTitle\">\n                    <%= data.subTitle %>\n                </span>\n                <% } %>\n            </h1>\n            <% } %>\n            <button\n                class=\"action-close\"\n                data-role=\"closeBtn\"\n                type=\"button\">\n                <span><%= data.closeText %></span>\n            </button>\n        </header>\n        <div id=\"modal-content-<%- data.id %>\" class=\"modal-content\" data-role=\"content\"></div>\n        <% if(data.buttons.length > 0){ %>\n        <footer class=\"modal-footer\">\n            <% _.each(data.buttons, function(button) { %>\n            <button class=\"<%- button.class %>\"\n                    type=\"button\"\n                    data-role=\"action\">\n                <span><%= button.text %></span>\n            </button>\n            <% }); %>\n        </footer>\n        <% } %>\n    </div>\n    <div data-role=\"focusable-end\" tabindex=\"0\"></div>\n</aside>\n"
+    },
+    {
+      "type": "xhr",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/templates/modal/modal-slide.html",
+      "method": "GET",
+      "content_type": "text/html",
+      "body": "<!--\n/**\n * Copyright © Magento, Inc. All rights reserved.\n * See COPYING.txt for license details.\n */\n-->\n\n<aside role=\"dialog\"\n       class=\"modal-<%- data.type %> <%- data.modalClass %>\n               <% if(data.innerScroll){ %><%- data.innerScrollClass %><% } %>\"\n       <% if(data.title){ %> aria-labelledby=\"modal-title-<%- data.id %>\"<% } %>\n       aria-describedby=\"modal-content-<%- data.id %>\"\n       data-role=\"modal\"\n       data-type=\"<%- data.type %>\"\n       tabindex=\"0\">\n    <div data-role=\"focusable-start\" tabindex=\"0\"></div>\n    <div class=\"modal-inner-wrap\"\n         data-role=\"focusable-scope\">\n        <header class=\"modal-header\">\n            <% if(data.title || data.subTitle){ %>\n            <h1 id=\"modal-title-<%- data.id %>\" class=\"modal-title\"\n                data-role=\"title\">\n                <% if(data.title){ %>\n                    <%= data.title %>\n                <% } %>\n\n                <% if(data.subTitle){ %>\n                <span class=\"modal-subtitle\"\n                      data-role=\"subTitle\">\n                    <%= data.subTitle %>\n                </span>\n                <% } %>\n            </h1>\n            <% } %>\n            <button\n                class=\"action-close\"\n                data-role=\"closeBtn\"\n                type=\"button\">\n                <span><%= data.closeText %></span>\n            </button>\n            <% if(data.buttons.length > 0){ %>\n            <div class=\"page-main-actions\">\n                <div class=\"page-actions\">\n                    <div class=\"page-actions-buttons\">\n                        <% _.each(data.buttons, function(button) { %>\n                        <button\n                            class=\"<%- button.class %>\"\n                            type=\"button\"\n                            data-role=\"action\"><span><%= button.text %></span>\n                        </button>\n                        <% }); %>\n                    </div>\n                </div>\n            </div>\n            <% } %>\n        </header>\n        <div id=\"modal-content-<%- data.id %>\" class=\"modal-content\" data-role=\"content\"></div>\n    </div>\n    <div data-role=\"focusable-end\" tabindex=\"0\"></div>\n</aside>\n"
+    },
+    {
+      "type": "xhr",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/templates/modal/modal-popup.html",
+      "method": "GET",
+      "content_type": "text/html",
+      "body": "<!--\n/**\n * Copyright © Magento, Inc. All rights reserved.\n * See COPYING.txt for license details.\n */\n-->\n\n<aside role=\"dialog\"\n       class=\"modal-<%- data.type %> <%- data.modalClass %>\n               <% if(data.responsive){ %><%- data.responsiveClass %><% } %>\n               <% if(data.innerScroll){ %><%- data.innerScrollClass %><% } %>\"\n       <% if(data.title){ %> aria-labelledby=\"modal-title-<%- data.id %>\"<% } %>\n       aria-describedby=\"modal-content-<%- data.id %>\"\n       data-role=\"modal\"\n       data-type=\"<%- data.type %>\"\n       tabindex=\"0\">\n    <div data-role=\"focusable-start\" tabindex=\"0\"></div>\n    <div class=\"modal-inner-wrap\"\n         data-role=\"focusable-scope\">\n        <header class=\"modal-header\">\n            <% if(data.title || data.subTitle){ %>\n            <h1 id=\"modal-title-<%- data.id %>\" class=\"modal-title\"\n                data-role=\"title\">\n                <% if(data.title){ %>\n                    <%= data.title %>\n                <% } %>\n\n                <% if(data.subTitle){ %>\n                <span class=\"modal-subtitle\"\n                      data-role=\"subTitle\">\n                    <%= data.subTitle %>\n                </span>\n                <% } %>\n            </h1>\n            <% } %>\n            <button\n                class=\"action-close\"\n                data-role=\"closeBtn\"\n                type=\"button\">\n                <span><%= data.closeText %></span>\n            </button>\n        </header>\n        <div id=\"modal-content-<%- data.id %>\"\n            class=\"modal-content\"\n            data-role=\"content\"></div>\n        <% if(data.buttons.length > 0){ %>\n        <footer class=\"modal-footer\">\n            <% _.each(data.buttons, function(button) { %>\n            <button\n                class=\"<%- button.class %>\"\n                type=\"button\"\n                data-role=\"action\"><span><%= button.text %></span></button>\n            <% }); %>\n        </footer>\n        <% } %>\n    </div>\n    <div data-role=\"focusable-end\" tabindex=\"0\"></div>\n</aside>\n"
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/view/utils/async.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/knockout/template/loader.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/spectrum/tinycolor.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/spectrum/spectrum.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/ie.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "xhr",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/templates/tooltip/tooltip.html",
+      "method": "GET",
+      "content_type": "text/html",
+      "body": "<!--\n/**\n * Copyright © Magento, Inc. All rights reserved.\n * See COPYING.txt for license details.\n */\n-->\n<div data-tooltip=\"tooltip-wrapper\" class=\"data-tooltip-wrapper <%= data.tooltipClasses %>\">\n    <div class=\"data-tooltip-tail\"></div>\n    <div class=\"data-tooltip\">\n        <% if(data.closeButton){ %>\n            <button type=\"button\" class=\"action-close\">\n                <span translate=\"'Close'\"></span>\n            </button>\n        <% } %>\n        <div class=\"data-tooltip-content\"></div>\n    </div>\n</div>\n"
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/disable-selection.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/form.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/jquery-patch.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/labels.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/keycode.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/core/class.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/data.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/focusable.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/safe-active-element.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/plugin.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/logger/entry.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/tabbable.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/unique-id.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/scroll-parent.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/safe-blur.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/moment.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/view/utils/bindings.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/view/utils/dom-observer.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "fetch",
+      "status": 204,
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-5WYF1Z9VN5&gtm=45je6992h1v9181858431z89181849363za20gzb9181849363zd9181849363&_p=1789157874728&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=1008149294.1789157875&frm=0&ngs=1&pscdl=noapi&rcb=10&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253DA%253FBrand%3B99.0.0.0%7CHeadlessChrome%3B151.0.7922.34%7CChromium%3B151.0.7922.34&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&_s=1&tag_exp=115938466~115938469~118897920~118897930~120213116~120385423~120469145~120469153&sid=1789157875&sct=1&seg=0&dl=https%3A%2F%2Fwww.fram.com%2FpartFinder%2Fsearch%2Findex%2F%3Fcar-type%3Dcar-truck%26category%3DOil_Filter%26engine%3DV8~6.2L~376~%26make%3D0009%26model%3D0161%26type%3DAny%2BType%26year%3D2014&dt=404%20Not%20Found%20%7C%20FRAM&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=4351",
+      "method": "POST",
+      "content_type": "text/plain",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/loader.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_PageCache/js/page-cache.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Concentrix_Catalog/js/auxsearchpage.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Snowdog_Menu/js/snowdog-menu.babel.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/tabs.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/dropdowns.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/menu.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Webkul_GoogleTagManager/js/ProductDetail.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_PageBuilder/js/widget-initializer.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/cookies.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Theme/js/cookie-status.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/block-loader.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Customer/js/section-config.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Customer/js/invalidation-processor.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Customer/js/customer-data.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Persistent/js/view/customer-data-mixin.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Catalog/js/view/compare-products.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Wishlist/js/view/wishlist.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Customer/js/view/authentication-popup.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Captcha/js/view/checkout/loginCaptcha.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Theme/js/view/messages.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Catalog/js/storage-manager.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/view/messages.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_ReCaptchaFrontendUi/js/ui-messages-mixin.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/widgets/tabs.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/compat.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/collapsible.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/widgets/menu.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/js-cookie/cookie-wrapper.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/matchMedia.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/url.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/js-storage/storage-wrapper.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/core/element/element.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/storage.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "xhr",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/templates/block-loader.html",
+      "method": "GET",
+      "content_type": "text/html",
+      "body": "<!--\n/**\n * Copyright © Magento, Inc. All rights reserved.\n * See COPYING.txt for license details.\n */\n-->\n<div data-role=\"loader\" class=\"loading-mask\" style=\"position: absolute;\">\n    <div class=\"loader\">\n        <img src=\"<%= loaderImageHref %>\" alt=\"Loading...\" title=\"Loading...\" style=\"position: absolute;\">\n    </div>\n</div>\n"
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_PageBuilder/js/content-type/row/appearance/default/widget.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/core/collection.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/decorate.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Customer/js/action/login.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/form/form.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Captcha/js/model/captchaList.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/modal/alert.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_PaypalCaptcha/js/view/checkout/defaultCaptcha-mixin.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Security/js/escaper.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/model/messageList.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Customer/js/model/authentication-popup.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Captcha/js/view/checkout/defaultCaptcha.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Catalog/js/product/storage/storage-service.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_ReCaptchaFrontendUi/js/registry.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Bundle/js/validation.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/validation.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/effects/effect-blind.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/widgets/accordion.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/widgets/autocomplete.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/widgets/dialog.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/effects/effect-bounce.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/effects/effect-drop.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/widgets/datepicker.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/effects/effect-fade.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/widgets/draggable.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/widgets/button.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/effects/effect-pulsate.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/effects/effect-clip.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/widgets/droppable.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/effects/effect-explode.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/effects/effect-highlight.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/effects/effect-fold.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/effects/effect-scale.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/effects/effect-transfer.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/effects/effect-shake.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/effects/effect-slide.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/widgets/mouse.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/widgets/selectable.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/effect.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/widgets/progressbar.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/position.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/widgets/slider.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/js-cookie/js.cookie.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/widgets/spinner.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/widgets/resizable.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/widgets/sortable.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/js-storage/js.storage.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/widgets/tooltip.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/timepicker.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/core/element/links.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "image",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/images/loader-1.gif",
+      "method": "GET",
+      "content_type": "image/gif",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_PageBuilder/js/widget/video-background.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/lib/spinner.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_PageBuilder/js/resource/jarallax/jarallax.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/mage/requirejs/resolver.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Captcha/js/model/captcha.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_PaypalCaptcha/js/model/skipRefreshCaptcha.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Catalog/js/product/storage/ids-storage-compare.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Catalog/js/product/storage/data-storage.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Catalog/js/product/storage/ids-storage.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/form/adapter.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/model/messages.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/jquery.validate.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/widgets/controlgroup.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/widgets/checkboxradio.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/jquery-var-for-color.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/effects/effect-size.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/jquery.cookie.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/vendor/jquery-color/jquery.color.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/vimeo/vimeo-wrapper.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_PageBuilder/js/resource/jarallax/jarallax-wrapper.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Captcha/js/action/refresh.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/js/form/adapter/buttons.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Catalog/js/product/query-builder.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/jquery.metadata.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/jquery/ui-modules/form-reset-mixin.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Customer/js/invalidation-rules/website-rule.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/vimeo/player.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "xhr",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Customer/template/authentication-popup.html",
+      "method": "GET",
+      "content_type": "text/html",
+      "body": "<!--\n/**\n * Copyright © Magento, Inc. All rights reserved.\n * See COPYING.txt for license details.\n */\n -->\n\n<div class=\"block-authentication\"\n     data-bind=\"afterRender: setModalElement, blockLoader: isLoading\"\n     style=\"display: none\">\n    <div class=\"block block-new-customer\"\n         data-bind=\"attr: {'data-label': $t('or')}\">\n        <div class=\"block-title\">\n            <strong id=\"block-new-customer-heading\"\n                    role=\"heading\"\n                    aria-level=\"2\"\n                    data-bind=\"i18n: 'Checkout as a new customer'\"></strong>\n        </div>\n        <div class=\"block-content\" aria-labelledby=\"block-new-customer-heading\">\n            <p data-bind=\"i18n: 'Creating an account has many benefits:'\"></p>\n            <ul>\n                <li data-bind=\"i18n: 'See order and shipping status'\"></li>\n                <li data-bind=\"i18n: 'Track order history'\"></li>\n                <li data-bind=\"i18n: 'Check out faster'\"></li>\n            </ul>\n            <div class=\"actions-toolbar\">\n                <div class=\"primary\">\n                    <a class=\"action action-register primary\" data-bind=\"attr: {href: registerUrl}\">\n                        <span data-bind=\"i18n: 'Create an Account'\"></span>\n                    </a>\n                </div>\n            </div>\n        </div>\n    </div>\n\n    <div class=\"block block-customer-login\"\n         data-bind=\"attr: {'data-label': $t('or')}\">\n        <div class=\"block-title\">\n            <strong id=\"block-customer-login-heading\"\n                    role=\"heading\"\n                    aria-level=\"2\"\n                    data-bind=\"i18n: 'Checkout using your account'\"></strong>\n        </div>\n        <!-- ko foreach: getRegion('messages') -->\n        <!-- ko template: getTemplate() --><!-- /ko -->\n        <!--/ko-->\n        <!-- ko foreach: getRegion('before') -->\n        <!-- ko template: getTemplate() --><!-- /ko -->\n        <!-- /ko -->\n        <div class=\"block-content\" aria-labelledby=\"block-customer-login-heading\">\n            <form class=\"form form-login\"\n                  method=\"post\"\n                  data-bind=\"event: {submit: login }\"\n                  id=\"login-form\">\n                <div class=\"fieldset login\" data-bind=\"attr: {'data-hasrequired': $t('* Required Fields')}\">\n                    <div class=\"field email required\">\n                        <label class=\"label\" for=\"customer-email\"><span data-bind=\"i18n: 'Email Address'\"></span></label>\n                        <div class=\"control\">\n                            <input name=\"username\"\n                                   id=\"customer-email\"\n                                   type=\"email\"\n                                   class=\"input-text\"\n                                   data-mage-init='{\"mage/trim-input\":{}}'\n                                   data-bind=\"attr: {autocomplete: autocomplete}\"\n                                   data-validate=\"{required:true, 'validate-email':true}\">\n                        </div>\n                    </div>\n                    <div class=\"field password required\">\n                        <label for=\"pass\" class=\"label\"><span data-bind=\"i18n: 'Password'\"></span></label>\n                        <div class=\"control\">\n                            <input name=\"password\"\n                                   type=\"password\"\n                                   class=\"input-text\"\n                                   id=\"pass\"\n                                   data-bind=\"attr: {autocomplete: autocomplete}\"\n                                   data-validate=\"{required:true}\">\n                        </div>\n                    </div>\n                    <!-- ko foreach: getRegion('additional-login-form-fields') -->\n                    <!-- ko template: getTemplate() --><!-- /ko -->\n                    <!-- /ko -->\n                    <div class=\"actions-toolbar\">\n                        <input name=\"context\" type=\"hidden\" value=\"checkout\" />\n                        <div class=\"primary\">\n                            <button type=\"submit\" class=\"action action-login secondary\" name=\"send\" id=\"send2\">\n                                <span data-bind=\"i18n: 'Sign In'\"></span>\n                            </button>\n                        </div>\n                        <div class=\"secondary\">\n                            <a class=\"action\" data-bind=\"attr: {href: forgotPasswordUrl}\">\n                                <span data-bind=\"i18n: 'Forgot Your Password?'\"></span>\n                            </a>\n                        </div>\n                    </div>\n                </div>\n            </form>\n        </div>\n    </div>\n</div>\n"
+    },
+    {
+      "type": "script",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_PageBuilder/js/resource/jarallax/jarallax-video.js",
+      "method": "GET",
+      "content_type": "application/javascript",
+      "body": null
+    },
+    {
+      "type": "xhr",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Ui/template/messages.html",
+      "method": "GET",
+      "content_type": "text/html",
+      "body": "<!--\n/**\n * Copyright © Magento, Inc. All rights reserved.\n * See COPYING.txt for license details.\n */\n-->\n<div data-role=\"checkout-messages\" class=\"messages\" data-bind=\"visible: isVisible(), click: removeAll\">\n    <!-- ko foreach: messageContainer.getErrorMessages() -->\n    <div aria-atomic=\"true\" role=\"alert\" class=\"message message-error error\">\n        <div data-ui-id=\"checkout-cart-validationmessages-message-error\" data-bind=\"text: $data\"></div>\n    </div>\n    <!--/ko-->\n    <!-- ko foreach: messageContainer.getSuccessMessages() -->\n    <div aria-atomic=\"true\" role=\"alert\" class=\"message message-success success\">\n        <div data-ui-id=\"checkout-cart-validationmessages-message-success\" data-bind=\"text: $data\"></div>\n    </div>\n    <!--/ko-->\n</div>\n"
+    },
+    {
+      "type": "xhr",
+      "status": 200,
+      "url": "https://www.fram.com/static/version1788780815/frontend/Fram/luma_child/en_US/Magento_Captcha/template/checkout/captcha.html",
+      "method": "GET",
+      "content_type": "text/html",
+      "body": "<!--\n/**\n * Copyright © Magento, Inc. All rights reserved.\n * See COPYING.txt for license details.\n */\n-->\n<input name=\"captcha_form_id\" type=\"hidden\" data-bind=\"value: formId,  attr: {'data-scope': dataScope}\" />\n<!-- ko if: (isRequired() && getIsVisible())-->\n<div class=\"field captcha required\" data-bind=\"blockLoader: getIsLoading()\">\n    <label data-bind=\"attr: {for: 'captcha_' + formId}\" class=\"label\"><span data-bind=\"i18n: 'Please type the letters and numbers below'\"></span></label>\n    <div class=\"control captcha\">\n        <input name=\"captcha_string\" type=\"text\" class=\"input-text required-entry\" data-bind=\"value: captchaValue(), attr: {id: 'captcha_' + formId, 'data-scope': dataScope}\" autocomplete=\"off\"/>\n        <div class=\"nested\">\n            <div class=\"field captcha no-label\">\n                <div class=\"control captcha-image\">\n                    <img data-bind=\"attr: {\n                                        alt: $t('Please type the letters and numbers below'),\n                                        title: $t('Please type the letters and numbers below'),\n                                        height: imageHeight(),\n                                        src: getImageSource(),\n                                        }\"\n                         class=\"captcha-img\"/>\n                    <button type=\"button\" class=\"action reload captcha-reload\" data-bind=\"attr: {title: $t('Reload captcha')}, click: refresh\">\n                        <span data-bind=\"i18n: 'Reload captcha'\"></span>\n                    </button>\n                </div>\n            </div>\n            <!-- ko if: isCaseSensitive()-->\n            <div class=\"captcha-note note\" data-bind=\"i18n: 'Attention: Captcha is case sensitive.'\"></div>\n            <!-- /ko -->\n        </div>\n    </div>\n</div>\n<!-- /ko -->\n"
+    },
+    {
+      "type": "fetch",
+      "status": 204,
+      "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-5WYF1Z9VN5&gtm=45je6992h1v9181858431z89181849363za20gzb9181849363zd9181849363&_p=1789157874728&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AAAAAAQ&are=1&cid=1008149294.1789157875&frm=0&ngs=1&pscdl=noapi&rcb=10&sr=1280x720&uaa=x86&uab=64&uafvl=Not%253DA%253FBrand%3B99.0.0.0%7CHeadlessChrome%3B151.0.7922.34%7CChromium%3B151.0.7922.34&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&_s=2&tag_exp=115938466~115938469~118897920~118897930~120213116~120385423~120469145~120469153&sid=1789157875&sct=1&seg=0&dl=https%3A%2F%2Fwww.fram.com%2FpartFinder%2Fsearch%2Findex%2F%3Fcar-type%3Dcar-truck%26category%3DOil_Filter%26engine%3DV8~6.2L~376~%26make%3D0009%26model%3D0161%26type%3DAny%2BType%26year%3D2014&dt=404%20Not%20Found%20%7C%20FRAM&en=PartSearch&ep.Make=&ep.Model=&ep.Year=&_et=4&tfd=9374",
+      "method": "POST",
+      "content_type": "text/plain",
+      "body": null
+    }
+  ]
+}

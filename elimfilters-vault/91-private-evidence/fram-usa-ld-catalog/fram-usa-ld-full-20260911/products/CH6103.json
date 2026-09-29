@@ -1,0 +1,674 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "CH6103",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CH6103",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 3.964,
+      "height_mm": 100.69,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Cartridge",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Aprilia",
+        "part_number": "0956745"
+      },
+      {
+        "manufacturer": "Aprilia",
+        "part_number": "956745"
+      },
+      {
+        "manufacturer": "Aprilia",
+        "part_number": "AP0956745"
+      },
+      {
+        "manufacturer": "Buell",
+        "part_number": "Q0064.10AZ"
+      },
+      {
+        "manufacturer": "Buell",
+        "part_number": "Q1064.1AM"
+      },
+      {
+        "manufacturer": "HiFlo",
+        "part_number": "HF564"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "KN-564"
+      }
+    ],
+    "vehicle_application_candidates": []
+  },
+  "internal_evidence": {
+    "source_part_number": "CH6103",
+    "source_part_key": "007121942",
+    "source_totals": {
+      "attributes": 38,
+      "applications": 32,
+      "cross_references": 7
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® oil filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE (original equipment) recommended intervals. Engineered for conventional and synthetic motor oil, Extra Guard offers proven engine protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "0"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CH6103, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Motorcycle Full-Flow Lube Cartridge",
+        "recno": "3"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Cartridge",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "NA",
+        "recno": "89"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100548832",
+        "recno": "92"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "3.964",
+        "recno": "93"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "94"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "0.965",
+        "recno": "95"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "2.224",
+        "recno": "96"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "2.224",
+        "recno": "97"
+      },
+      {
+        "attribute": "O-Rings Included",
+        "value": "No",
+        "recno": "98"
+      },
+      {
+        "attribute": "Bottom Inside Diameter",
+        "value": "Closed",
+        "recno": "99"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "100"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "101"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "102"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "103"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.2330",
+        "recno": "107"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.3980",
+        "recno": "108"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "4.2500",
+        "recno": "109"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "5.0000",
+        "recno": "110"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "2.4680",
+        "recno": "111"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "7.8120",
+        "recno": "112"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "2.4680",
+        "recno": "113"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "5.4370",
+        "recno": "114"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.233,
+        "case_weight_lb": 1.398,
+        "unit_height_in": 4.25,
+        "unit_length_in": 2.468,
+        "unit_width_in": 2.468,
+        "case_height_in": 5,
+        "case_length_in": 7.812,
+        "case_width_in": 5.437,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 2.796,
+        "estimated_case_dimensions": {
+          "length_in": 10.416,
+          "width_in": 8.155,
+          "height_in": 5,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 32,
+    "all_cross_references_observed": 7,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:23:14.844Z",
+  "discovered_from": "CH6103",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "APRILIA",
+        "model": "RSV 1000 R",
+        "year": "09-06",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APRILIA",
+        "model": "RSV 1000 R FACTORY",
+        "year": "09-06",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "APRILIA",
+        "model": "RSV 1000 R FACTORY",
+        "year": "2004",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUELL",
+        "model": "1125CR",
+        "year": "10-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "BUELL",
+        "model": "1125R",
+        "year": "10-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "MAVERICK R",
+        "year": "25-24",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "MAVERICK R MAX",
+        "year": "2025",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "MAVERICK R MAX X",
+        "year": "2025",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "MAVERICK R MAX X RS",
+        "year": "2025",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "MAVERICK R MAX X RS SMART-SHOX",
+        "year": "2025",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "MAVERICK R X",
+        "year": "25-24",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "MAVERICK R X RS",
+        "year": "25-24",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "MAVERICK R X RS SMART-SHOX",
+        "year": "25-24",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "SPYDER GS (SE5)",
+        "year": "2008",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "SPYDER GS (SM5)",
+        "year": "09-08",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "SPYDER RS (SE5)",
+        "year": "15-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "SPYDER RS (SM5)",
+        "year": "16-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "SPYDER RS-S (SE5)",
+        "year": "16-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "SPYDER RS-S (SM5)",
+        "year": "16-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "SPYDER RT (SE5)",
+        "year": "11-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "SPYDER RT (SE5)",
+        "year": "2013",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "SPYDER RT (SE5) AUDIO/CONVENIENCE",
+        "year": "12-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "SPYDER RT (SM5)",
+        "year": "13-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "SPYDER RT (SM5) AUDIO/CONVENIENCE",
+        "year": "12-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "SPYDER RT LIMITED (SE5)",
+        "year": "13-10",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "SPYDER RT-S (SE5)",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "SPYDER RT-S (SM5)",
+        "year": "13-12",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "SPYDER ST (SE5)",
+        "year": "15-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "SPYDER ST (SM5)",
+        "year": "15-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "SPYDER ST LIMITED (SE5)",
+        "year": "15-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "SPYDER ST-S (SE5)",
+        "year": "16-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "CAN-AM",
+        "model": "SPYDER ST-S (SM5)",
+        "year": "15-13",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Aprilia",
+        "part_number": "0956745",
+        "source_part_number": "CH6103",
+        "part_key": "007121942",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Aprilia",
+        "part_number": "956745",
+        "source_part_number": "CH6103",
+        "part_key": "007121942",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Aprilia",
+        "part_number": "AP0956745",
+        "source_part_number": "CH6103",
+        "part_key": "007121942",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Buell",
+        "part_number": "Q0064.10AZ",
+        "source_part_number": "CH6103",
+        "part_key": "007121942",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Buell",
+        "part_number": "Q1064.1AM",
+        "source_part_number": "CH6103",
+        "part_key": "007121942",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "HiFlo",
+        "part_number": "HF564",
+        "source_part_number": "CH6103",
+        "part_key": "007121942",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "KN-564",
+        "source_part_number": "CH6103",
+        "part_key": "007121942",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

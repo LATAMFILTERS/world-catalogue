@@ -1,0 +1,1259 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "FUEL",
+  "authority": {
+    "part_number": "G4191",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "G4191",
+    "product_type": "Fuel Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": 2.234,
+      "outer_diameter_mm": 56.74,
+      "height_in": 2.281,
+      "height_mm": 57.94,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "In Line",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Toyota",
+        "part_number": "23300-34100"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF496"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF805"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "71918"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "986450018"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "GF62"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "WK42/10"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FG-817"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3085BP"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3085"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F29157"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33085"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Atlas",
+        "part_number": "FF-29"
+      },
+      {
+        "manufacturer": "Autopar - Archived",
+        "part_number": "FE219"
+      },
+      {
+        "manufacturer": "Avatar",
+        "part_number": "FF-553"
+      },
+      {
+        "manufacturer": "Barad",
+        "part_number": "GFT-469"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "95085"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86085"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CG4191"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "G341"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G341"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "6666"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "FF417"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550404"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P552399"
+      },
+      {
+        "manufacturer": "Filko",
+        "part_number": "FF-59"
+      },
+      {
+        "manufacturer": "Firestone",
+        "part_number": "FF-157"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "FF5174"
+      },
+      {
+        "manufacturer": "Goodyear",
+        "part_number": "G157"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "G341"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "F29157"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF101"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF124"
+      },
+      {
+        "manufacturer": "IAPCO",
+        "part_number": "A-0361-021"
+      },
+      {
+        "manufacturer": "IAPCO",
+        "part_number": "FF75"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "G4191"
+      },
+      {
+        "manufacturer": "ITM",
+        "part_number": "11-31504"
+      },
+      {
+        "manufacturer": "KEM",
+        "part_number": "GF559"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "G73"
+      },
+      {
+        "manufacturer": "Lazorlite",
+        "part_number": "L11-5282"
+      },
+      {
+        "manufacturer": "Lee",
+        "part_number": "LG-341"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G341"
+      },
+      {
+        "manufacturer": "Master Parts",
+        "part_number": "G-341"
+      },
+      {
+        "manufacturer": "MPA",
+        "part_number": "59060"
+      },
+      {
+        "manufacturer": "Niehoff",
+        "part_number": "FS-320"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "73085"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "G341"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PF4191"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "F29157"
+      },
+      {
+        "manufacturer": "Trust",
+        "part_number": "G341"
+      },
+      {
+        "manufacturer": "Unocal 76",
+        "part_number": "UF496"
+      },
+      {
+        "manufacturer": "Vera",
+        "part_number": "12-00971"
+      },
+      {
+        "manufacturer": "Vera",
+        "part_number": "VG-17"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G341"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "1984",
+        "make": "TOYOTA",
+        "model": "4RUNNER",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "1986",
+        "make": "TOYOTA",
+        "model": "4RUNNER",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "80-78",
+        "make": "TOYOTA",
+        "model": "CELICA",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "83-81",
+        "make": "TOYOTA",
+        "model": "CELICA",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "82-80",
+        "make": "TOYOTA",
+        "model": "COROLLA",
+        "engine": "L4-1.8L",
+        "quantity": 1
+      },
+      {
+        "year": "80-79",
+        "make": "TOYOTA",
+        "model": "CORONA",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "82-81",
+        "make": "TOYOTA",
+        "model": "CORONA",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "80-79",
+        "make": "TOYOTA",
+        "model": "PICKUP",
+        "engine": "L4-2.2L",
+        "quantity": 1
+      },
+      {
+        "year": "90-84",
+        "make": "TOYOTA",
+        "model": "PICKUP",
+        "engine": "L4-2.4L",
+        "quantity": 1
+      },
+      {
+        "year": "88-80",
+        "make": "TOYOTA",
+        "model": "TERCEL",
+        "engine": "L4-1.5L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "G4191",
+    "source_part_key": "000944374",
+    "source_totals": {
+      "attributes": 28,
+      "applications": 22,
+      "cross_references": 54
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, G4191, Fuel Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "In-Line Fuel Filter",
+        "recno": "2"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "In Line",
+        "recno": "80"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "81"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "Clear",
+        "recno": "82"
+      },
+      {
+        "attribute": "Inlet Type",
+        "value": "Tube Connector",
+        "recno": "83"
+      },
+      {
+        "attribute": "Fuel Type",
+        "value": "Gasoline",
+        "recno": "84"
+      },
+      {
+        "attribute": "Universal Or Specific Fit",
+        "value": "Specific",
+        "recno": "85"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Fuel Filter",
+        "recno": "86"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "87"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "2.281",
+        "recno": "88"
+      },
+      {
+        "attribute": "Outside Diameter (Inch)",
+        "value": "2.234",
+        "recno": "89"
+      },
+      {
+        "attribute": "Housing Material",
+        "value": "Nylon",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Inlet Line Size (Inch)",
+        "value": "9/32",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100350770",
+        "recno": "92"
+      },
+      {
+        "attribute": "Outlet Line Size (Inch)",
+        "value": "9/32",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "94"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.1500",
+        "recno": "98"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.8000",
+        "recno": "99"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "3.6520",
+        "recno": "100"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "4.4000",
+        "recno": "101"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "2.3960",
+        "recno": "102"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "10.1000",
+        "recno": "103"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "2.3960",
+        "recno": "104"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "7.7000",
+        "recno": "105"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.15,
+        "case_weight_lb": 1.8,
+        "unit_height_in": 3.652,
+        "unit_length_in": 2.396,
+        "unit_width_in": 2.396,
+        "case_height_in": 4.4,
+        "case_length_in": 10.1,
+        "case_width_in": 7.7,
+        "inferred_case_qty": 12
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 1.8,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 22,
+    "all_cross_references_observed": 54,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T06:03:01.315Z",
+  "discovered_from": "G4191",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "TOYOTA",
+        "model": "4RUNNER",
+        "year": "1984",
+        "engine": "L4-2.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "4RUNNER",
+        "year": "1986",
+        "engine": "L4-2.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "CELICA",
+        "year": "80-78",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "CELICA",
+        "year": "83-81",
+        "engine": "L4-2.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "COROLLA",
+        "year": "82-80",
+        "engine": "L4-1.8L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "CORONA",
+        "year": "80-79",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "CORONA",
+        "year": "82-81",
+        "engine": "L4-2.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "PICKUP",
+        "year": "80-79",
+        "engine": "L4-2.2L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "PICKUP",
+        "year": "90-84",
+        "engine": "L4-2.4L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TOYOTA",
+        "model": "TERCEL",
+        "year": "88-80",
+        "engine": "L4-1.5L",
+        "part_type": "Fuel Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER TOYOTA",
+        "model": "Hiace (RH25/32) (w/2.0 18R Engine)",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER TOYOTA",
+        "model": "Hiace (RH25/32) (w/2.0 18R Engine)",
+        "year": "83-77",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER TOYOTA",
+        "model": "HiLux (RN25/40) (w/1.6 12R Engine) 1978-83",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER TOYOTA",
+        "model": "HiLux (RN25/40) (w/1.6 12R Engine) 1978-83",
+        "year": "83-78",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER TOYOTA",
+        "model": "HiLux (RN46) (w/2.0 18R Engine) 1975-84",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER TOYOTA",
+        "model": "HiLux (RN46) (w/2.0 18R Engine) 1975-84",
+        "year": "84-75",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER TOYOTA",
+        "model": "HiLux (w/2.0 3Y Engine) 1984-86",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER TOYOTA",
+        "model": "HiLux (w/2.0 3Y Engine) 1984-86",
+        "year": "86-84",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER TOYOTA",
+        "model": "HiLux (YN56) (w/1.8 2Y Engine) 1983-89",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER TOYOTA",
+        "model": "HiLux (YN56) (w/1.8 2Y Engine) 1983-89",
+        "year": "89-83",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER TOYOTA",
+        "model": "HiLux (YN85) (w/1.8 2Y Engine) 1989-93",
+        "year": "",
+        "engine": "",
+        "part_type": "Fuel Filter",
+        "application_type": "H",
+        "quantity": 1
+      },
+      {
+        "make": "TRANSPORTER TOYOTA",
+        "model": "HiLux (YN85) (w/1.8 2Y Engine) 1989-93",
+        "year": "93-89",
+        "engine": "",
+        "part_type": "Fuel",
+        "application_type": "H",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ACDelco",
+        "part_number": "GF496",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Atlas",
+        "part_number": "FF-29",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Autopar - Archived",
+        "part_number": "FE219",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Avatar",
+        "part_number": "FF-553",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Baldwin",
+        "part_number": "BF805",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Barad",
+        "part_number": "GFT-469",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "95085",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "71918",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Bosch",
+        "part_number": "986450018",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "86085",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Casite Filters",
+        "part_number": "CG4191",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Cenex",
+        "part_number": "G341",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "G341",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Champion",
+        "part_number": "GF62",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Crosland",
+        "part_number": "6666",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Deutsch",
+        "part_number": "FF417",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P550404",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Donaldson",
+        "part_number": "P552399",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Filko",
+        "part_number": "FF-59",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Firestone",
+        "part_number": "FF-157",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Fleetguard",
+        "part_number": "FF5174",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Goodyear",
+        "part_number": "G157",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Grand Prix",
+        "part_number": "G341",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Group 7",
+        "part_number": "F29157",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF101",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "GF124",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "IAPCO",
+        "part_number": "A-0361-021",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "IAPCO",
+        "part_number": "FF75",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Installer Edge",
+        "part_number": "G4191",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "ITM",
+        "part_number": "11-31504",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "KEM",
+        "part_number": "GF559",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Kralinator",
+        "part_number": "G73",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Lazorlite",
+        "part_number": "L11-5282",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Lee",
+        "part_number": "LG-341",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "G341",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Mann-Filter",
+        "part_number": "WK42/10",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Master Parts",
+        "part_number": "G-341",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FG-817",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "MPA",
+        "part_number": "59060",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3085BP",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "3085",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Niehoff",
+        "part_number": "FS-320",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Parts Master",
+        "part_number": "73085",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Parts Plus",
+        "part_number": "G341",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Premium Guard",
+        "part_number": "PF4191",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "F29157",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Shell - Archived",
+        "part_number": "F29157",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Toyota",
+        "part_number": "23300-34100",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Trust",
+        "part_number": "G341",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Unocal 76",
+        "part_number": "UF496",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Vera",
+        "part_number": "12-00971",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Vera",
+        "part_number": "VG-17",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "G341",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "33085",
+        "source_part_number": "G4191",
+        "part_key": "000944374",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Fuel Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

@@ -1,0 +1,4556 @@
+{
+  "patterns": [
+    {
+      "pattern": "PH00*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH01*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH02*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH03*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH04*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH05*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH06*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH07*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH08*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH09*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH10*",
+      "total_records": 32,
+      "fram_records": 21
+    },
+    {
+      "pattern": "PH11*",
+      "total_records": 7,
+      "fram_records": 7
+    },
+    {
+      "pattern": "PH12*",
+      "total_records": 9,
+      "fram_records": 5
+    },
+    {
+      "pattern": "PH13*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH14*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH15*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH16*",
+      "total_records": 3,
+      "fram_records": 3
+    },
+    {
+      "pattern": "PH17*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH18*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH19*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH20*",
+      "total_records": 9,
+      "fram_records": 1
+    },
+    {
+      "pattern": "PH21*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "PH22*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH23*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH24*",
+      "total_records": 3,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH25*",
+      "total_records": 6,
+      "fram_records": 1
+    },
+    {
+      "pattern": "PH26*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH27*",
+      "total_records": 3,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH28*",
+      "total_records": 103,
+      "fram_records": 13
+    },
+    {
+      "pattern": "PH29*",
+      "total_records": 21,
+      "fram_records": 7
+    },
+    {
+      "pattern": "PH30*",
+      "total_records": 3,
+      "fram_records": 3
+    },
+    {
+      "pattern": "PH31*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH32*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH33*",
+      "total_records": 7,
+      "fram_records": 7
+    },
+    {
+      "pattern": "PH34*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "PH35*",
+      "total_records": 13,
+      "fram_records": 13
+    },
+    {
+      "pattern": "PH36*",
+      "total_records": 22,
+      "fram_records": 17
+    },
+    {
+      "pattern": "PH37*",
+      "total_records": 10,
+      "fram_records": 10
+    },
+    {
+      "pattern": "PH38*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH39*",
+      "total_records": 17,
+      "fram_records": 12
+    },
+    {
+      "pattern": "PH40*",
+      "total_records": 6,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH41*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH42*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "PH43*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "PH44*",
+      "total_records": 10,
+      "fram_records": 1
+    },
+    {
+      "pattern": "PH45*",
+      "total_records": 6,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH46*",
+      "total_records": 4,
+      "fram_records": 2
+    },
+    {
+      "pattern": "PH47*",
+      "total_records": 13,
+      "fram_records": 2
+    },
+    {
+      "pattern": "PH48*",
+      "total_records": 9,
+      "fram_records": 1
+    },
+    {
+      "pattern": "PH49*",
+      "total_records": 4,
+      "fram_records": 4
+    },
+    {
+      "pattern": "PH50*",
+      "total_records": 7,
+      "fram_records": 1
+    },
+    {
+      "pattern": "PH51*",
+      "total_records": 5,
+      "fram_records": 1
+    },
+    {
+      "pattern": "PH52*",
+      "total_records": 3,
+      "fram_records": 1
+    },
+    {
+      "pattern": "PH53*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "PH54*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH55*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH56*",
+      "total_records": 5,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH57*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH58*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH59*",
+      "total_records": 7,
+      "fram_records": 1
+    },
+    {
+      "pattern": "PH60*",
+      "total_records": 9,
+      "fram_records": 9
+    },
+    {
+      "pattern": "PH61*",
+      "total_records": 5,
+      "fram_records": 1
+    },
+    {
+      "pattern": "PH62*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH63*",
+      "total_records": 5,
+      "fram_records": 5
+    },
+    {
+      "pattern": "PH64*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH65*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH66*",
+      "total_records": 6,
+      "fram_records": 6
+    },
+    {
+      "pattern": "PH67*",
+      "total_records": 6,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH68*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH69*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "PH70*",
+      "total_records": 29,
+      "fram_records": 1
+    },
+    {
+      "pattern": "PH71*",
+      "total_records": 5,
+      "fram_records": 3
+    },
+    {
+      "pattern": "PH72*",
+      "total_records": 5,
+      "fram_records": 1
+    },
+    {
+      "pattern": "PH73*",
+      "total_records": 6,
+      "fram_records": 6
+    },
+    {
+      "pattern": "PH74*",
+      "total_records": 4,
+      "fram_records": 4
+    },
+    {
+      "pattern": "PH75*",
+      "total_records": 4,
+      "fram_records": 3
+    },
+    {
+      "pattern": "PH76*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "PH77*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH78*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH79*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH80*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH81*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "PH82*",
+      "total_records": 7,
+      "fram_records": 1
+    },
+    {
+      "pattern": "PH83*",
+      "total_records": 3,
+      "fram_records": 1
+    },
+    {
+      "pattern": "PH84*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "PH85*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "PH86*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "PH87*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH88*",
+      "total_records": 7,
+      "fram_records": 5
+    },
+    {
+      "pattern": "PH89*",
+      "total_records": 9,
+      "fram_records": 5
+    },
+    {
+      "pattern": "PH90*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "PH91*",
+      "total_records": 5,
+      "fram_records": 3
+    },
+    {
+      "pattern": "PH92*",
+      "total_records": 3,
+      "fram_records": 1
+    },
+    {
+      "pattern": "PH93*",
+      "total_records": 5,
+      "fram_records": 3
+    },
+    {
+      "pattern": "PH94*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH95*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "PH96*",
+      "total_records": 3,
+      "fram_records": 3
+    },
+    {
+      "pattern": "PH97*",
+      "total_records": 3,
+      "fram_records": 3
+    },
+    {
+      "pattern": "PH98*",
+      "total_records": 4,
+      "fram_records": 4
+    },
+    {
+      "pattern": "PH99*",
+      "total_records": 3,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CH00*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH01*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH02*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH03*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH04*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH05*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH06*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH07*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH08*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH09*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH10*",
+      "total_records": 126,
+      "fram_records": 29
+    },
+    {
+      "pattern": "CH11*",
+      "total_records": 38,
+      "fram_records": 28
+    },
+    {
+      "pattern": "CH12*",
+      "total_records": 17,
+      "fram_records": 15
+    },
+    {
+      "pattern": "CH13*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH14*",
+      "total_records": 2,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CH15*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH16*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH17*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH18*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH19*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CH20*",
+      "total_records": 81,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CH21*",
+      "total_records": 38,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CH22*",
+      "total_records": 12,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CH23*",
+      "total_records": 14,
+      "fram_records": 2
+    },
+    {
+      "pattern": "CH24*",
+      "total_records": 3,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH25*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH26*",
+      "total_records": 5,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH27*",
+      "total_records": 14,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH28*",
+      "total_records": 12,
+      "fram_records": 2
+    },
+    {
+      "pattern": "CH29*",
+      "total_records": 19,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CH30*",
+      "total_records": 88,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH31*",
+      "total_records": 52,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH32*",
+      "total_records": 15,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH33*",
+      "total_records": 5,
+      "fram_records": 5
+    },
+    {
+      "pattern": "CH34*",
+      "total_records": 2,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CH35*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "CH36*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH37*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH38*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH39*",
+      "total_records": 2,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CH40*",
+      "total_records": 28,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH41*",
+      "total_records": 6,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH42*",
+      "total_records": 5,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH43*",
+      "total_records": 8,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH44*",
+      "total_records": 9,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH45*",
+      "total_records": 9,
+      "fram_records": 2
+    },
+    {
+      "pattern": "CH46*",
+      "total_records": 7,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH47*",
+      "total_records": 5,
+      "fram_records": 2
+    },
+    {
+      "pattern": "CH48*",
+      "total_records": 29,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH49*",
+      "total_records": 14,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH50*",
+      "total_records": 14,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH51*",
+      "total_records": 33,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH52*",
+      "total_records": 11,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH53*",
+      "total_records": 12,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CH54*",
+      "total_records": 21,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH55*",
+      "total_records": 14,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH56*",
+      "total_records": 25,
+      "fram_records": 2
+    },
+    {
+      "pattern": "CH57*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH58*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH59*",
+      "total_records": 9,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH60*",
+      "total_records": 110,
+      "fram_records": 22
+    },
+    {
+      "pattern": "CH61*",
+      "total_records": 30,
+      "fram_records": 5
+    },
+    {
+      "pattern": "CH62*",
+      "total_records": 6,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH63*",
+      "total_records": 7,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH64*",
+      "total_records": 6,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CH65*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CH66*",
+      "total_records": 3,
+      "fram_records": 3
+    },
+    {
+      "pattern": "CH67*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH68*",
+      "total_records": 3,
+      "fram_records": 3
+    },
+    {
+      "pattern": "CH69*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH70*",
+      "total_records": 16,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CH71*",
+      "total_records": 27,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH72*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH73*",
+      "total_records": 4,
+      "fram_records": 2
+    },
+    {
+      "pattern": "CH74*",
+      "total_records": 167,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH75*",
+      "total_records": 7,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH76*",
+      "total_records": 124,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH77*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CH78*",
+      "total_records": 41,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH79*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH80*",
+      "total_records": 62,
+      "fram_records": 3
+    },
+    {
+      "pattern": "CH81*",
+      "total_records": 5,
+      "fram_records": 2
+    },
+    {
+      "pattern": "CH82*",
+      "total_records": 9,
+      "fram_records": 3
+    },
+    {
+      "pattern": "CH83*",
+      "total_records": 10,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CH84*",
+      "total_records": 16,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CH85*",
+      "total_records": 7,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CH86*",
+      "total_records": 49,
+      "fram_records": 2
+    },
+    {
+      "pattern": "CH87*",
+      "total_records": 27,
+      "fram_records": 4
+    },
+    {
+      "pattern": "CH88*",
+      "total_records": 32,
+      "fram_records": 2
+    },
+    {
+      "pattern": "CH89*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH90*",
+      "total_records": 3,
+      "fram_records": 3
+    },
+    {
+      "pattern": "CH91*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH92*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CH93*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "CH94*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "CH95*",
+      "total_records": 3,
+      "fram_records": 3
+    },
+    {
+      "pattern": "CH96*",
+      "total_records": 4,
+      "fram_records": 4
+    },
+    {
+      "pattern": "CH97*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CH98*",
+      "total_records": 9,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CH99*",
+      "total_records": 56,
+      "fram_records": 11
+    },
+    {
+      "pattern": "TG00*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG01*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG02*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG03*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG04*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG05*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG06*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG07*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG08*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG09*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG10*",
+      "total_records": 30,
+      "fram_records": 24
+    },
+    {
+      "pattern": "TG11*",
+      "total_records": 15,
+      "fram_records": 9
+    },
+    {
+      "pattern": "TG12*",
+      "total_records": 7,
+      "fram_records": 7
+    },
+    {
+      "pattern": "TG13*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG14*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG15*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG16*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "TG17*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG18*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG19*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG20*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG21*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG22*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG23*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG24*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG25*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG26*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG27*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG28*",
+      "total_records": 2,
+      "fram_records": 1
+    },
+    {
+      "pattern": "TG29*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "TG30*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "TG31*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG32*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG33*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "TG34*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG35*",
+      "total_records": 4,
+      "fram_records": 4
+    },
+    {
+      "pattern": "TG36*",
+      "total_records": 6,
+      "fram_records": 6
+    },
+    {
+      "pattern": "TG37*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "TG38*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG39*",
+      "total_records": 6,
+      "fram_records": 6
+    },
+    {
+      "pattern": "TG40*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG41*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG42*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG43*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "TG44*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG45*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG46*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG47*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG48*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG49*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "TG50*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG51*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG52*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG53*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG54*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG55*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG56*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG57*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG58*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG59*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG60*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG61*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG62*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG63*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG64*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG65*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG66*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "TG67*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG68*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG69*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG70*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG71*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG72*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG73*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "TG74*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG75*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG76*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG77*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG78*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG79*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG80*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "TG81*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG82*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG83*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "TG84*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "TG85*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "TG86*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG87*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "TG88*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG89*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG90*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "TG91*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "TG92*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG93*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "TG94*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "TG95*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "TG96*",
+      "total_records": 3,
+      "fram_records": 3
+    },
+    {
+      "pattern": "TG97*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "TG98*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "TG99*",
+      "total_records": 5,
+      "fram_records": 5
+    },
+    {
+      "pattern": "FE00*",
+      "total_records": 11,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE01*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE02*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE03*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE04*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE05*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE06*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE07*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE08*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE09*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE10*",
+      "total_records": 9,
+      "fram_records": 8
+    },
+    {
+      "pattern": "FE11*",
+      "total_records": 4,
+      "fram_records": 3
+    },
+    {
+      "pattern": "FE12*",
+      "total_records": 3,
+      "fram_records": 2
+    },
+    {
+      "pattern": "FE13*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE14*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE15*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE16*",
+      "total_records": 2,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FE17*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE18*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE19*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE20*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE21*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE22*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE23*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE24*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE25*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE26*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE27*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE28*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE29*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE30*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE31*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE32*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE33*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FE34*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE35*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FE36*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "FE37*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE38*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE39*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "FE40*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE41*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE42*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE43*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE44*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE45*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE46*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE47*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE48*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE49*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FE50*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE51*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE52*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE53*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE54*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE55*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE56*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE57*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE58*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE59*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE60*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE61*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE62*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE63*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE64*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE65*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE66*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FE67*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE68*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE69*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE70*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE71*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE72*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE73*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FE74*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE75*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE76*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE77*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE78*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE79*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE80*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE81*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE82*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE83*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE84*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE85*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE86*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE87*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE88*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE89*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE90*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FE91*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FE92*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE93*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE94*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE95*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE96*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FE97*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FE98*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FE99*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "XG00*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG01*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG02*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG03*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG04*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG05*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG06*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG07*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG08*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG09*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG10*",
+      "total_records": 23,
+      "fram_records": 23
+    },
+    {
+      "pattern": "XG11*",
+      "total_records": 13,
+      "fram_records": 13
+    },
+    {
+      "pattern": "XG12*",
+      "total_records": 8,
+      "fram_records": 8
+    },
+    {
+      "pattern": "XG13*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG14*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG15*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG16*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "XG17*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG18*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG19*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG20*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG21*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG22*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG23*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG24*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG25*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG26*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG27*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG28*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "XG29*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG30*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "XG31*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG32*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG33*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "XG34*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG35*",
+      "total_records": 3,
+      "fram_records": 3
+    },
+    {
+      "pattern": "XG36*",
+      "total_records": 6,
+      "fram_records": 6
+    },
+    {
+      "pattern": "XG37*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "XG38*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG39*",
+      "total_records": 5,
+      "fram_records": 5
+    },
+    {
+      "pattern": "XG40*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG41*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG42*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG43*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "XG44*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG45*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG46*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG47*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG48*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG49*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "XG50*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG51*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG52*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG53*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG54*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG55*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG56*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG57*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG58*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG59*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG60*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG61*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG62*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG63*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG64*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG65*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG66*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "XG67*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG68*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG69*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG70*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG71*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG72*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG73*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "XG74*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG75*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG76*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG77*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG78*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG79*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG80*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "XG81*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG82*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG83*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG84*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "XG85*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG86*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG87*",
+      "total_records": 4,
+      "fram_records": 4
+    },
+    {
+      "pattern": "XG88*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG89*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG90*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "XG91*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "XG92*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG93*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG94*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG95*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "XG96*",
+      "total_records": 4,
+      "fram_records": 4
+    },
+    {
+      "pattern": "XG97*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "XG98*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "XG99*",
+      "total_records": 6,
+      "fram_records": 6
+    },
+    {
+      "pattern": "FS00*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS01*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS02*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS03*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS04*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS05*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS06*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS07*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS08*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS09*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS10*",
+      "total_records": 13,
+      "fram_records": 12
+    },
+    {
+      "pattern": "FS11*",
+      "total_records": 9,
+      "fram_records": 6
+    },
+    {
+      "pattern": "FS12*",
+      "total_records": 7,
+      "fram_records": 6
+    },
+    {
+      "pattern": "FS13*",
+      "total_records": 4,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS14*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS15*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS16*",
+      "total_records": 2,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FS17*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS18*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS19*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS20*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS21*",
+      "total_records": 3,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS22*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS23*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS24*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS25*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS26*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS27*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS28*",
+      "total_records": 3,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FS29*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS30*",
+      "total_records": 10,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS31*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS32*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS33*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FS34*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS35*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "FS36*",
+      "total_records": 4,
+      "fram_records": 4
+    },
+    {
+      "pattern": "FS37*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS38*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS39*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "FS40*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS41*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS42*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS43*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FS44*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS45*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS46*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS47*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS48*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS49*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FS50*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS51*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS52*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS53*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS54*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS55*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS56*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS57*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS58*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS59*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS60*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS61*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS62*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS63*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS64*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS65*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS66*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FS67*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS68*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS69*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS70*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS71*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS72*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS73*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FS74*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS75*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS76*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS77*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS78*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS79*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS80*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS81*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS82*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS83*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS84*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FS85*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS86*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS87*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FS88*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS89*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS90*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FS91*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FS92*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS93*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS94*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS95*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS96*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "FS97*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FS98*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FS99*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "FF00*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF01*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF02*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF03*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF04*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF05*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF06*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF07*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF08*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF09*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF10*",
+      "total_records": 12,
+      "fram_records": 12
+    },
+    {
+      "pattern": "FF11*",
+      "total_records": 7,
+      "fram_records": 7
+    },
+    {
+      "pattern": "FF12*",
+      "total_records": 7,
+      "fram_records": 7
+    },
+    {
+      "pattern": "FF13*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF14*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF15*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF16*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FF17*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF18*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF19*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF20*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF21*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF22*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF23*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF24*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF25*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF26*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF27*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF28*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF29*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF30*",
+      "total_records": 26,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF31*",
+      "total_records": 9,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF32*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF33*",
+      "total_records": 64,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FF34*",
+      "total_records": 76,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF35*",
+      "total_records": 17,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FF36*",
+      "total_records": 3,
+      "fram_records": 3
+    },
+    {
+      "pattern": "FF37*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FF38*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF39*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "FF40*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF41*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF42*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF43*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FF44*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF45*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF46*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF47*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF48*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF49*",
+      "total_records": 5,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FF50*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF51*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF52*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF53*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF54*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF55*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF56*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF57*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF58*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF59*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF60*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF61*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF62*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF63*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF64*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF65*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF66*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FF67*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF68*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF69*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF70*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF71*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF72*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF73*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FF74*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF75*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF76*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF77*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF78*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF79*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF80*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF81*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF82*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF83*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF84*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FF85*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF86*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF87*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FF88*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF89*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF90*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FF91*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FF92*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF93*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF94*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF95*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FF96*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "FF97*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FF98*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FF99*",
+      "total_records": 3,
+      "fram_records": 3
+    },
+    {
+      "pattern": "FD00*",
+      "total_records": 98,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD01*",
+      "total_records": 100,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD02*",
+      "total_records": 34,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD03*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD04*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD05*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD06*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD07*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD08*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD09*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD10*",
+      "total_records": 36,
+      "fram_records": 17
+    },
+    {
+      "pattern": "FD11*",
+      "total_records": 22,
+      "fram_records": 13
+    },
+    {
+      "pattern": "FD12*",
+      "total_records": 15,
+      "fram_records": 10
+    },
+    {
+      "pattern": "FD13*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD14*",
+      "total_records": 5,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD15*",
+      "total_records": 9,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD16*",
+      "total_records": 9,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FD17*",
+      "total_records": 9,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD18*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD19*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD20*",
+      "total_records": 12,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD21*",
+      "total_records": 11,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD22*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD23*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD24*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD25*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD26*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD27*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD28*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FD29*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD30*",
+      "total_records": 5,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD31*",
+      "total_records": 4,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD32*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD33*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FD34*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD35*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "FD36*",
+      "total_records": 4,
+      "fram_records": 4
+    },
+    {
+      "pattern": "FD37*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "FD38*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD39*",
+      "total_records": 3,
+      "fram_records": 3
+    },
+    {
+      "pattern": "FD40*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD41*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD42*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD43*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FD44*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD45*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD46*",
+      "total_records": 13,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD47*",
+      "total_records": 5,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD48*",
+      "total_records": 3,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD49*",
+      "total_records": 6,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FD50*",
+      "total_records": 14,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD51*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD52*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD53*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD54*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD55*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD56*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FD57*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD58*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD59*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD60*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD61*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD62*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD63*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD64*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD65*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD66*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FD67*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD68*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD69*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD70*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD71*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD72*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD73*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FD74*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD75*",
+      "total_records": 8,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD76*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD77*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD78*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD79*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD80*",
+      "total_records": 3,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FD81*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD82*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD83*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FD84*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FD85*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FD86*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD87*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "FD88*",
+      "total_records": 21,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FD89*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD90*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "FD91*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FD92*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD93*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FD94*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FD95*",
+      "total_records": 3,
+      "fram_records": 2
+    },
+    {
+      "pattern": "FD96*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "FD97*",
+      "total_records": 8,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FD98*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FD99*",
+      "total_records": 4,
+      "fram_records": 4
+    },
+    {
+      "pattern": "FP00*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP01*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP02*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP03*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP04*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP05*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP06*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP07*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP08*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP09*",
+      "total_records": 3,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP10*",
+      "total_records": 10,
+      "fram_records": 9
+    },
+    {
+      "pattern": "FP11*",
+      "total_records": 7,
+      "fram_records": 2
+    },
+    {
+      "pattern": "FP12*",
+      "total_records": 5,
+      "fram_records": 4
+    },
+    {
+      "pattern": "FP13*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP14*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP15*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP16*",
+      "total_records": 2,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FP17*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP18*",
+      "total_records": 3,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP19*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP20*",
+      "total_records": 4,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP21*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP22*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP23*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP24*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP25*",
+      "total_records": 3,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP26*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP27*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP28*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP29*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP30*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP31*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP32*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP33*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FP34*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP35*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FP36*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FP37*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP38*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP39*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FP40*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP41*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP42*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP43*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP44*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP45*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP46*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP47*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP48*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP49*",
+      "total_records": 2,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FP50*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP51*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP52*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP53*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP54*",
+      "total_records": 3,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP55*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP56*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP57*",
+      "total_records": 4,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP58*",
+      "total_records": 14,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP59*",
+      "total_records": 3,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP60*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP61*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP62*",
+      "total_records": 4,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP63*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP64*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP65*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP66*",
+      "total_records": 3,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FP67*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP68*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP69*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP70*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP71*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP72*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP73*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP74*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP75*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP76*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP77*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP78*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP79*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP80*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP81*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP82*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP83*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP84*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP85*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP86*",
+      "total_records": 4,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP87*",
+      "total_records": 2,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FP88*",
+      "total_records": 10,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP89*",
+      "total_records": 3,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP90*",
+      "total_records": 5,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FP91*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FP92*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP93*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP94*",
+      "total_records": 4,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP95*",
+      "total_records": 3,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP96*",
+      "total_records": 2,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FP97*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP98*",
+      "total_records": 1,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FP99*",
+      "total_records": 3,
+      "fram_records": 2
+    },
+    {
+      "pattern": "COR0*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "COR1*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "COR2*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "COR3*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "COR4*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "COR5*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "COR6*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "COR7*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "COR8*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "COR9*",
+      "total_records": 0,
+      "fram_records": 0
+    }
+  ],
+  "unique_candidates": 808,
+  "legacy_seed_count": 17
+}

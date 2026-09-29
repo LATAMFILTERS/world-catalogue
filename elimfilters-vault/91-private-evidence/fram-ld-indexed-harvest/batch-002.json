@@ -1,0 +1,27 @@
+{
+  "schema_version":"1.0.0",
+  "source":"FRAM_OFFICIAL_INDEXED_PRODUCT_PAGES_AND_INTERNAL_FRAM_CROSSES",
+  "captured_at":"2026-09-11T18:58:00-05:00",
+  "knowledge_domain":"LIGHT_DUTY_KNOWLEDGE_DOMAIN",
+  "industry":"Automotive",
+  "private_evidence_only":true,
+  "allowed_families":["LUBE","AIR","CABIN","FUEL"],
+  "records":[
+    {"sku":"G9344","family":"FUEL","source_url":"https://www.fram.com/fram-fuel-filter-in-line-g9344","discovery":"indexed_product_page","market_status":"REQUIRES_APPLICATION_VALIDATION"},
+    {"sku":"FF10295","family":"LUBE","source_url":"https://www.fram.com/fram-force-spin-on-oil-filter-ff10295","discovery":"indexed_product_page","market_status":"NON_EU_CANDIDATE"},
+    {"sku":"FD10295","family":"LUBE","source_url":"https://www.fram.com/fram-force-spin-on-oil-filter-ff10295","discovery":"fram_internal_cross","market_status":"NON_EU_CANDIDATE"},
+    {"sku":"CH10295","family":"LUBE","source_url":"https://www.fram.com/fram-force-spin-on-oil-filter-ff10295","discovery":"fram_internal_cross","market_status":"NON_EU_CANDIDATE"},
+    {"sku":"FP10295BP","family":"LUBE","source_url":"https://www.fram.com/fram-force-spin-on-oil-filter-ff10295","discovery":"fram_internal_cross","market_status":"NON_EU_CANDIDATE"},
+    {"sku":"FE10295","family":"LUBE","source_url":"https://www.fram.com/fram-force-spin-on-oil-filter-ff10295","discovery":"fram_internal_cross","market_status":"NON_EU_CANDIDATE"},
+    {"sku":"FS10295","family":"LUBE","source_url":"https://www.fram.com/fram-force-spin-on-oil-filter-ff10295","discovery":"fram_internal_cross","market_status":"NON_EU_CANDIDATE"},
+    {"sku":"TG10295","family":"LUBE","source_url":"https://www.fram.com/fram-force-spin-on-oil-filter-ff10295","discovery":"fram_internal_cross","market_status":"NON_EU_CANDIDATE"},
+    {"sku":"XG10295","family":"LUBE","source_url":"https://www.fram.com/fram-force-spin-on-oil-filter-ff10295","discovery":"fram_internal_cross","market_status":"NON_EU_CANDIDATE"},
+    {"sku":"XG10992","family":"LUBE","source_url":"https://www.fram.com/fram-ultra-synthetic-oil-filter-xg10992","discovery":"indexed_product_page","market_status":"EU_ONLY_REJECT_PROMOTION"},
+    {"sku":"CH11935","family":"LUBE","source_url":"https://www.fram.com/fram-extra-guard-oil-filter-cartridge-ch11935","discovery":"indexed_product_page","market_status":"NON_EU_CANDIDATE"},
+    {"sku":"CH8087","family":"LUBE","source_url":"https://www.fram.com/fram-extra-guard-oil-filter-cartridge-ch8087","discovery":"indexed_product_page","market_status":"REQUIRES_APPLICATION_VALIDATION"},
+    {"sku":"CH8158","family":"LUBE","source_url":"https://www.fram.com/fram-extra-guard-oil-filter-cartridge-ch8158","discovery":"indexed_product_page","market_status":"EU_ONLY_REJECT_PROMOTION"},
+    {"sku":"CH6848","family":"LUBE","source_url":"https://www.fram.com/fram-extra-guard-oil-filter-cartridge-ch6848","discovery":"indexed_product_page","market_status":"EU_ONLY_REJECT_PROMOTION"},
+    {"sku":"PH10060","family":"LUBE","source_url":"https://www.fram.com/media/wysiwyg/resources/consumer_tech_docs/gm-fram-ph12060-application-change.pdf","discovery":"official_consumer_technical_bulletin","market_status":"NON_EU_CANDIDATE"},
+    {"sku":"PH12060","family":"LUBE","source_url":"https://www.fram.com/media/wysiwyg/resources/consumer_tech_docs/gm-fram-ph12060-application-change.pdf","discovery":"official_consumer_technical_bulletin","market_status":"NON_EU_CANDIDATE"}
+  ]
+}

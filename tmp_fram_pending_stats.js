@@ -1,0 +1,15 @@
+'use strict';
+const fs=require('fs'),{Client}=require('pg');
+const report=JSON.parse(fs.readFileSync('C:/Users/ELIMSERVER/world-catalogue/elimfilters-vault/91-private-evidence/fram-ld-gap-analysis/fram-ld-gap-2026-09-13T06-38-00-337Z.json','utf8'));
+const rows=report.results.filter(r=>r.status==='SKU_COLLISION_EXISTING');
+const skus=rows.map(r=>r.proposedSku);
+const norm=v=>String(v||'').toUpperCase().replace(/[^A-Z0-9]/g,'');
+const body=a=>{const d=String(a||'').replace(/\D/g,'');return d.slice(-4).padStart(4,'0')};
+(async()=>{const c=new Client({connectionString:process.env.CATALOG_DATABASE_URL,ssl:{rejectUnauthorized:false}});await c.connect();
+const pub=(await c.query(`SELECT sku,codigo_base,canonical_source_brand,canonical_source_code,canonical_source_status,duty,filter_type FROM public.elimfilters_catalog WHERE sku=ANY($1::text[])`,[skus])).rows;
+const ids=(await c.query(`SELECT elimfilters_sku,canonical_brand,canonical_part_number,status FROM ld_catalog.ld_canonical_product_identity WHERE elimfilters_sku=ANY($1::text[]) AND status='ACTIVE'`,[skus])).rows;
+const pmap=new Map(pub.map(x=>[x.sku,x])), imap=new Map(ids.map(x=>[x.elimfilters_sku,x]));
+const out=rows.map(r=>{const p=pmap.get(r.proposedSku)||{},i=imap.get(r.proposedSku);return {...r,target:p,identity:i||null,body:body(r.authority),placeholder:norm(p.codigo_base)===body(r.authority),noIdentity:!i,notVerified:p.canonical_source_status!=='VERIFIED'};});
+const count=f=>out.filter(f).length;
+console.log(JSON.stringify({total:out.length,placeholder:count(x=>x.placeholder),placeholder_no_identity:count(x=>x.placeholder&&x.noIdentity),placeholder_no_identity_not_verified:count(x=>x.placeholder&&x.noIdentity&&x.notVerified),has_identity:count(x=>!x.noIdentity),verified_target:count(x=>!x.notVerified),sample_safe:out.filter(x=>x.placeholder&&x.noIdentity&&x.notVerified).slice(0,10).map(x=>({authority:x.authority,sku:x.proposedSku,codigo_base:x.target.codigo_base,status:x.target.canonical_source_status}))},null,2));
+await c.end();})().catch(e=>{console.error(e);process.exit(1)});

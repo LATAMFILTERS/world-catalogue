@@ -1,0 +1,26 @@
+{
+  "schema_version":"1.0.0","source":"FRAM_OFFICIAL_INDEXED_PRODUCT_PAGES","captured_at":"2026-09-11T15:15:00-05:00","knowledge_domain":"LIGHT_DUTY_KNOWLEDGE_DOMAIN","industry":"Automotive","private_evidence_only":true,
+  "allowed_families":["LUBE","AIR","CABIN","FUEL"],"europe_promotion_allowed":false,"mann_filter_non_europe_role":"Cross Reference Competitor",
+  "records":[
+    {"sku":"FS8A","family":"LUBE","url":"https://www.fram.com/fram-titanium-spin-on-oil-filter-fs8a","height_in":5.105,"outside_diameter_in":3.797,"applications_present":true,"crosses_present":true,"market_status":"MIXED_REQUIRES_NON_EU_FILTER"},
+    {"sku":"XG3950","family":"LUBE","url":"https://www.fram.com/fram-ultra-synthetic-oil-filter-spin-on-xg3950","height_in":3.094,"outside_diameter_in":3.656,"applications_present":true,"crosses_present":true,"market_status":"MIXED_REQUIRES_NON_EU_FILTER"},
+    {"sku":"G7647","family":"FUEL","url":"https://www.fram.com/fram-fuel-filter-in-line-g7647","height_in":4.719,"outside_diameter_in":2.797,"applications_present":true,"crosses_present":true,"market_status":"NON_EU_CANDIDATE"},
+    {"sku":"G7355","family":"FUEL","url":"https://www.fram.com/fram-fuel-filter-in-line-g7355","height_in":4.609,"outside_diameter_in":2.797,"applications_present":true,"crosses_present":true,"market_status":"NON_EU_CANDIDATE"},
+    {"sku":"FDC10138","family":"CABIN","url":"https://www.fram.com/fram-drive-cabin-air-filter-fdc10138","applications_present":true,"market_status":"NON_EU_CANDIDATE"},
+    {"sku":"FDC12161","family":"CABIN","url":"https://www.fram.com/fram-drive-cabin-air-filter-fdc12161","height_in":1.12,"width_in":7.88,"length_in":10.25,"applications_present":true,"crosses_present":true,"market_status":"NON_EU_CANDIDATE"},
+    {"sku":"FDC8392A","family":"CABIN","url":"https://www.fram.com/fram-drive-cabin-air-filter-fdc8392a","height_in":1.22,"width_in":7.17,"length_in":11.18,"applications_present":true,"market_status":"NON_EU_CANDIDATE"},
+    {"sku":"FSC8644A","family":"CABIN","url":"https://www.fram.com/fram-titanium-cabin-air-filter-fsc8644a","height_in":1.181,"width_in":8.13,"length_in":10.965,"market_status":"NON_EU_CANDIDATE"},
+    {"sku":"CF8603A","family":"CABIN","url":"https://www.fram.com/fram-fresh-breeze-cabin-air-filter-cf8603a","height_in":1.182,"width_in":3.822,"length_in":11.603,"market_status":"NON_EU_CANDIDATE"},
+    {"sku":"CF12775","family":"CABIN","url":"https://www.fram.com/cabin-air-filter-cf12775","height_in":1.65,"width_in":8.86,"length_in":8.7,"applications_present":true,"crosses_present":true,"market_status":"NON_EU_CANDIDATE"},
+    {"sku":"CV12772","family":"CABIN","url":"https://www.fram.com/cabin-air-filter-cv12772","height_in":1.574,"width_in":10.9,"length_in":8.858,"market_status":"NON_EU_CANDIDATE"},
+    {"sku":"CA6870","family":"AIR","url":"https://www.fram.com/fram-extra-guard-air-filter-ca6870","applications_present":true,"market_status":"EU_ONLY_REJECT_PROMOTION"},
+    {"sku":"FDA9778","family":"AIR","url":"https://www.fram.com/fram-drive-radial-seal-air-filter-fda9778","height_in":1.546,"applications_present":true,"market_status":"NON_EU_CANDIDATE"},
+    {"sku":"CA6377","family":"AIR","url":"https://www.fram.com/fram-extra-guard-air-filter-axial-flow-ca6377","applications_present":true,"market_status":"NON_EU_CANDIDATE"},
+    {"sku":"CA10193","family":"AIR","url":"https://www.fram.com/fram-extra-guard-air-filter-rigid-panel-ca10193","height_in":1.418,"width_in":8.707,"length_in":11.387,"applications_present":true,"crosses_present":true,"market_status":"NON_EU_CANDIDATE"},
+    {"sku":"CA8010","family":"AIR","url":"https://www.fram.com/fram-extra-guard-air-filter-flex-panel-ca8010","height_in":1.875,"width_in":6.656,"length_in":10.312,"applications_present":true,"market_status":"NON_EU_CANDIDATE"},
+    {"sku":"CA12369","family":"AIR","url":"https://www.fram.com/fram-extra-guard-air-filter-flex-panel-ca12369","height_in":2.79,"width_in":8.48,"length_in":6.34,"applications_present":true,"crosses_present":true,"market_status":"NON_EU_CANDIDATE"},
+    {"sku":"CA8969","family":"AIR","url":"https://www.fram.com/fram-extra-guard-air-filter-flex-panel-ca8969","height_in":1.906,"width_in":5.813,"length_in":10.188,"market_status":"NON_EU_CANDIDATE"},
+    {"sku":"CA3424","family":"AIR","url":"https://www.fram.com/fram-extra-guard-air-filter-round-ca3424","market_status":"REQUIRES_APPLICATION_VALIDATION"},
+    {"sku":"FDA8911","family":"AIR","url":"https://www.fram.com/fram-drive-rigid-panel-air-filter-fda8911","height_in":1.734,"width_in":8.047,"length_in":12.563,"applications_present":true,"crosses_present":true,"market_status":"NON_EU_CANDIDATE"}
+  ]
+}

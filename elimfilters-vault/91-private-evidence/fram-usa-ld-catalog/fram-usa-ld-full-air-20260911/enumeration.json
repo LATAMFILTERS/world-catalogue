@@ -1,0 +1,556 @@
+{
+  "patterns": [
+    {
+      "pattern": "CA00*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CA01*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CA02*",
+      "total_records": 2,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CA03*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CA04*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CA05*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CA06*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CA07*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CA08*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CA09*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CA10*",
+      "total_records": 172,
+      "fram_records": 165
+    },
+    {
+      "pattern": "CA11*",
+      "total_records": 178,
+      "fram_records": 124
+    },
+    {
+      "pattern": "CA12*",
+      "total_records": 181,
+      "fram_records": 101
+    },
+    {
+      "pattern": "CA13*",
+      "total_records": 56,
+      "fram_records": 3
+    },
+    {
+      "pattern": "CA14*",
+      "total_records": 25,
+      "fram_records": 3
+    },
+    {
+      "pattern": "CA15*",
+      "total_records": 40,
+      "fram_records": 38
+    },
+    {
+      "pattern": "CA16*",
+      "total_records": 9,
+      "fram_records": 3
+    },
+    {
+      "pattern": "CA17*",
+      "total_records": 3,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CA18*",
+      "total_records": 3,
+      "fram_records": 3
+    },
+    {
+      "pattern": "CA19*",
+      "total_records": 63,
+      "fram_records": 2
+    },
+    {
+      "pattern": "CA20*",
+      "total_records": 30,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CA21*",
+      "total_records": 8,
+      "fram_records": 4
+    },
+    {
+      "pattern": "CA22*",
+      "total_records": 8,
+      "fram_records": 8
+    },
+    {
+      "pattern": "CA23*",
+      "total_records": 12,
+      "fram_records": 4
+    },
+    {
+      "pattern": "CA24*",
+      "total_records": 4,
+      "fram_records": 3
+    },
+    {
+      "pattern": "CA25*",
+      "total_records": 44,
+      "fram_records": 34
+    },
+    {
+      "pattern": "CA26*",
+      "total_records": 6,
+      "fram_records": 6
+    },
+    {
+      "pattern": "CA27*",
+      "total_records": 5,
+      "fram_records": 5
+    },
+    {
+      "pattern": "CA28*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "CA29*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CA30*",
+      "total_records": 114,
+      "fram_records": 5
+    },
+    {
+      "pattern": "CA31*",
+      "total_records": 47,
+      "fram_records": 9
+    },
+    {
+      "pattern": "CA32*",
+      "total_records": 35,
+      "fram_records": 10
+    },
+    {
+      "pattern": "CA33*",
+      "total_records": 6,
+      "fram_records": 6
+    },
+    {
+      "pattern": "CA34*",
+      "total_records": 10,
+      "fram_records": 10
+    },
+    {
+      "pattern": "CA35*",
+      "total_records": 16,
+      "fram_records": 16
+    },
+    {
+      "pattern": "CA36*",
+      "total_records": 11,
+      "fram_records": 11
+    },
+    {
+      "pattern": "CA37*",
+      "total_records": 12,
+      "fram_records": 11
+    },
+    {
+      "pattern": "CA38*",
+      "total_records": 7,
+      "fram_records": 5
+    },
+    {
+      "pattern": "CA39*",
+      "total_records": 11,
+      "fram_records": 11
+    },
+    {
+      "pattern": "CA40*",
+      "total_records": 10,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CA41*",
+      "total_records": 8,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CA42*",
+      "total_records": 6,
+      "fram_records": 6
+    },
+    {
+      "pattern": "CA43*",
+      "total_records": 13,
+      "fram_records": 13
+    },
+    {
+      "pattern": "CA44*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CA45*",
+      "total_records": 5,
+      "fram_records": 3
+    },
+    {
+      "pattern": "CA46*",
+      "total_records": 4,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CA47*",
+      "total_records": 5,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CA48*",
+      "total_records": 3,
+      "fram_records": 3
+    },
+    {
+      "pattern": "CA49*",
+      "total_records": 7,
+      "fram_records": 5
+    },
+    {
+      "pattern": "CA50*",
+      "total_records": 22,
+      "fram_records": 13
+    },
+    {
+      "pattern": "CA51*",
+      "total_records": 8,
+      "fram_records": 2
+    },
+    {
+      "pattern": "CA52*",
+      "total_records": 3,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CA53*",
+      "total_records": 9,
+      "fram_records": 4
+    },
+    {
+      "pattern": "CA54*",
+      "total_records": 12,
+      "fram_records": 6
+    },
+    {
+      "pattern": "CA55*",
+      "total_records": 7,
+      "fram_records": 4
+    },
+    {
+      "pattern": "CA56*",
+      "total_records": 5,
+      "fram_records": 5
+    },
+    {
+      "pattern": "CA57*",
+      "total_records": 11,
+      "fram_records": 4
+    },
+    {
+      "pattern": "CA58*",
+      "total_records": 7,
+      "fram_records": 2
+    },
+    {
+      "pattern": "CA59*",
+      "total_records": 4,
+      "fram_records": 4
+    },
+    {
+      "pattern": "CA60*",
+      "total_records": 7,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CA61*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CA62*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CA63*",
+      "total_records": 30,
+      "fram_records": 30
+    },
+    {
+      "pattern": "CA64*",
+      "total_records": 3,
+      "fram_records": 3
+    },
+    {
+      "pattern": "CA65*",
+      "total_records": 20,
+      "fram_records": 12
+    },
+    {
+      "pattern": "CA66*",
+      "total_records": 26,
+      "fram_records": 17
+    },
+    {
+      "pattern": "CA67*",
+      "total_records": 10,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CA68*",
+      "total_records": 25,
+      "fram_records": 16
+    },
+    {
+      "pattern": "CA69*",
+      "total_records": 5,
+      "fram_records": 5
+    },
+    {
+      "pattern": "CA70*",
+      "total_records": 8,
+      "fram_records": 7
+    },
+    {
+      "pattern": "CA71*",
+      "total_records": 13,
+      "fram_records": 13
+    },
+    {
+      "pattern": "CA72*",
+      "total_records": 7,
+      "fram_records": 6
+    },
+    {
+      "pattern": "CA73*",
+      "total_records": 7,
+      "fram_records": 7
+    },
+    {
+      "pattern": "CA74*",
+      "total_records": 39,
+      "fram_records": 39
+    },
+    {
+      "pattern": "CA75*",
+      "total_records": 2,
+      "fram_records": 2
+    },
+    {
+      "pattern": "CA76*",
+      "total_records": 26,
+      "fram_records": 26
+    },
+    {
+      "pattern": "CA77*",
+      "total_records": 11,
+      "fram_records": 11
+    },
+    {
+      "pattern": "CA78*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "CA79*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CA80*",
+      "total_records": 58,
+      "fram_records": 20
+    },
+    {
+      "pattern": "CA81*",
+      "total_records": 31,
+      "fram_records": 14
+    },
+    {
+      "pattern": "CA82*",
+      "total_records": 65,
+      "fram_records": 14
+    },
+    {
+      "pattern": "CA83*",
+      "total_records": 24,
+      "fram_records": 1
+    },
+    {
+      "pattern": "CA84*",
+      "total_records": 102,
+      "fram_records": 5
+    },
+    {
+      "pattern": "CA85*",
+      "total_records": 52,
+      "fram_records": 13
+    },
+    {
+      "pattern": "CA86*",
+      "total_records": 68,
+      "fram_records": 10
+    },
+    {
+      "pattern": "CA87*",
+      "total_records": 57,
+      "fram_records": 16
+    },
+    {
+      "pattern": "CA88*",
+      "total_records": 57,
+      "fram_records": 3
+    },
+    {
+      "pattern": "CA89*",
+      "total_records": 87,
+      "fram_records": 12
+    },
+    {
+      "pattern": "CA90*",
+      "total_records": 57,
+      "fram_records": 9
+    },
+    {
+      "pattern": "CA91*",
+      "total_records": 38,
+      "fram_records": 5
+    },
+    {
+      "pattern": "CA92*",
+      "total_records": 20,
+      "fram_records": 16
+    },
+    {
+      "pattern": "CA93*",
+      "total_records": 15,
+      "fram_records": 12
+    },
+    {
+      "pattern": "CA94*",
+      "total_records": 21,
+      "fram_records": 15
+    },
+    {
+      "pattern": "CA95*",
+      "total_records": 24,
+      "fram_records": 16
+    },
+    {
+      "pattern": "CA96*",
+      "total_records": 23,
+      "fram_records": 13
+    },
+    {
+      "pattern": "CA97*",
+      "total_records": 13,
+      "fram_records": 8
+    },
+    {
+      "pattern": "CA98*",
+      "total_records": 22,
+      "fram_records": 15
+    },
+    {
+      "pattern": "CA99*",
+      "total_records": 16,
+      "fram_records": 13
+    },
+    {
+      "pattern": "FDA0*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FDA1*",
+      "total_records": 87,
+      "fram_records": 87
+    },
+    {
+      "pattern": "FDA2*",
+      "total_records": 0,
+      "fram_records": 0
+    },
+    {
+      "pattern": "FDA3*",
+      "total_records": 3,
+      "fram_records": 3
+    },
+    {
+      "pattern": "FDA4*",
+      "total_records": 1,
+      "fram_records": 1
+    },
+    {
+      "pattern": "FDA5*",
+      "total_records": 3,
+      "fram_records": 3
+    },
+    {
+      "pattern": "FDA6*",
+      "total_records": 4,
+      "fram_records": 4
+    },
+    {
+      "pattern": "FDA7*",
+      "total_records": 6,
+      "fram_records": 6
+    },
+    {
+      "pattern": "FDA8*",
+      "total_records": 15,
+      "fram_records": 15
+    },
+    {
+      "pattern": "FDA9*",
+      "total_records": 22,
+      "fram_records": 22
+    }
+  ],
+  "unique_candidates": 1196,
+  "legacy_seed_count": 9
+}

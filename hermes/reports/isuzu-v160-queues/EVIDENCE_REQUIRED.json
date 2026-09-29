@@ -1,0 +1,29 @@
+{
+  "queue": "EVIDENCE_REQUIRED",
+  "count": 1,
+  "rows": [
+    {
+      "id": "ISUZU-0075",
+      "sku": "EF90390",
+      "make": "ISUZU",
+      "model": "FTR",
+      "equipment": "FTR",
+      "type": "TRUCK",
+      "engine": "4HK1-TC",
+      "year": 2021,
+      "base": "P550390",
+      "lane": "EVIDENCE_REQUIRED",
+      "action": "Cross official OEM/Donaldson year windows",
+      "write_allowed": false,
+      "decision": "HOLD",
+      "target_sku": "EF90390",
+      "target_codigo_base": "P550390",
+      "evidence_authority": null,
+      "evidence_url": null,
+      "evidence_reference": null,
+      "evidence_verified": false,
+      "reviewer_note": "Cross official OEM/Donaldson year windows",
+      "resolution_state": "NOT_PRESENT"
+    }
+  ]
+}

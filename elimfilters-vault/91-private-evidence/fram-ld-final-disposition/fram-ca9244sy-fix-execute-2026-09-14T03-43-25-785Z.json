@@ -1,0 +1,17 @@
+{
+  "mode": "execute",
+  "authority": "CA9244SY",
+  "wrong_sku": "EC34005",
+  "before": [
+    {
+      "elimfilters_sku": "EC34005",
+      "competitor_brand": "FRAM",
+      "competitor_part_number": "CA9244SY",
+      "filter_type": "cabin",
+      "duty": "LIGHT_DUTY"
+    }
+  ],
+  "deleted": 1,
+  "after": 0,
+  "transaction": "COMMIT"
+}

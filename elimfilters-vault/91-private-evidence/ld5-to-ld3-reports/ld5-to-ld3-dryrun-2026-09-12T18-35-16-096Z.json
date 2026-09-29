@@ -1,0 +1,10 @@
+{
+  "migration": "100_LD_LEGACY_PREFIX_5_TO_3",
+  "mode": "dry-run",
+  "plan": {},
+  "before": {},
+  "mutations": {},
+  "audit": {},
+  "transaction": "ROLLBACK",
+  "error": "LD5_PLAN_CHANGED: safe=4632 quarantine=5 by_status={\"SAFE_PUBLIC_PLACEHOLDER\":3247,\"SAFE_EMPTY_TARGET\":433,\"SAFE_TARGET_CROSSES_SOURCE\":883,\"SAFE_APPLICATION_MATCH\":69,\"OCCUPIED_UNPROVEN\":5} unresolved=[{\"src\":\"EL50717\",\"dst\":\"EL30717\",\"source_sku\":\"W717\",\"evidence\":{\"source_count\":0,\"target_count\":181,\"intersection\":0,\"source_ratio\":0}},{\"src\":\"EL51881\",\"dst\":\"EL31881\",\"source_sku\":\"W818/81\",\"evidence\":{\"source_count\":1,\"target_count\":2,\"intersection\":1,\"source_ratio\":1}},{\"src\":\"EL59071\",\"dst\":\"EL39071\",\"source_sku\":\"W9071\",\"evidence\":{\"source_count\":1,\"target_count\":2,\"intersection\":1,\"source_ratio\":1}},{\"src\":\"EL50912\",\"dst\":\"EL30912\",\"source_sku\":\"W912\",\"evidence\":{\"source_count\":0,\"target_count\":183,\"intersection\":0,\"source_ratio\":0}},{\"src\":\"EL59147\",\"dst\":\"EL39147\",\"source_sku\":\"W914/7\",\"evidence\":{\"source_count\":0,\"target_count\":1,\"intersection\":0,\"source_ratio\":0}}]"
+}

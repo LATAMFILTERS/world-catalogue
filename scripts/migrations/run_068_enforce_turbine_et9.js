@@ -53,9 +53,17 @@ function turbineVariantFromCodes(row) {
   const variants = new Set();
   for (const code of collectCodes(row)) {
     const m = code.match(/^(2010|2020|2040)(PM|SM|TM)/);
-    if (!m) continue;
-    const letter = m[2] === 'PM' ? 'P' : m[2] === 'SM' ? 'S' : 'T';
-    variants.add(`ET9${m[1]}${letter}`);
+    if (m) {
+      const letter = m[2] === 'PM' ? 'P' : m[2] === 'SM' ? 'S' : 'T';
+      variants.add(`ET9${m[1]}${letter}`);
+      continue;
+    }
+
+    // Fleetguard Fuel Pro housing rule confirmed 2026-09-17:
+    // FH + 5 digits (+ optional suffix letters) -> ET9 + last 4 digits.
+    // Any suffix stays in codigo_base/reference data, never in the ELIMFILTERS SKU.
+    const fh = code.match(/^FH(\d{5})(?:[A-Z]+)?$/);
+    if (fh) variants.add(`ET9${fh[1].slice(-4)}`);
   }
   return variants.size === 1 ? [...variants][0] : null;
 }
@@ -66,7 +74,8 @@ function isTurbineLike(row) {
   const codes = collectCodes(row);
   return codes.some(code =>
     /^(2010|2020|2040)(PM|SM|TM)/.test(code) ||
-    /^(500|900|1000)(FG|FH|FE|FF)/.test(code)
+    /^(500|900|1000)(FG|FH|FE|FF)/.test(code) ||
+    /^FH\d{5}(?:[A-Z]+)?$/.test(code)
   );
 }
 
@@ -172,6 +181,7 @@ async function main() {
         IF upper(coalesce(NEW.technology, '')) = 'TURBOCORE™'
            OR evidence ~ '(^|[^A-Z0-9])(2010|2020|2040)(PM|SM|TM)'
            OR evidence ~ '(^|[^A-Z0-9])(500|900|1000)(FG|FH|FE|FF)'
+           OR evidence ~ '(^|[^A-Z0-9])FH[0-9]{5}[A-Z]*([^A-Z0-9]|$)'
         THEN
           IF NEW.sku !~ '^ET9' THEN
             RAISE EXCEPTION 'Turbine catalog records must use canonical ET9 SKU family; received %', NEW.sku;

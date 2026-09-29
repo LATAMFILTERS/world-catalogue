@@ -1,0 +1,509 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "CABIN",
+  "authority": {
+    "part_number": "CF12152",
+    "line": "FRAM_OTHER"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CF12152",
+    "product_type": "Cabin Air Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "MICROKAPPA™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.259,
+      "height_mm": 31.98,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Fresh Breeze Cabin Air Filter",
+      "anti_drainback_valve": null,
+      "bypass_relief_valve": null,
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [
+      {
+        "manufacturer": "Ford",
+        "part_number": "FR3Z-19N619-A"
+      }
+    ],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FP-78"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C38155"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10195"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-281"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1925P"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4101"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "CAF1925P"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "2230195"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "part_number": "C38155"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C38155"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WCA1925"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "26-15",
+        "make": "FORD",
+        "model": "MUSTANG",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "26-15",
+        "make": "FORD",
+        "model": "MUSTANG",
+        "engine": "L4-2.3L",
+        "quantity": 1
+      },
+      {
+        "year": "17-15",
+        "make": "FORD",
+        "model": "MUSTANG",
+        "engine": "V6-3.7L",
+        "quantity": 1
+      },
+      {
+        "year": "26-15",
+        "make": "FORD",
+        "model": "MUSTANG",
+        "engine": "V8-5.0L",
+        "quantity": 1
+      },
+      {
+        "year": "22-15",
+        "make": "FORD",
+        "model": "MUSTANG",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      },
+      {
+        "year": "26-25",
+        "make": "FORD",
+        "model": "MUSTANG",
+        "engine": "V8-5.2L",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CF12152",
+    "source_part_key": "006686885",
+    "source_totals": {
+      "attributes": 30,
+      "applications": 6,
+      "cross_references": 12
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM® Fresh Breeze cabin air filters can keep up to 98% of road dust and pollen particles from entering a vehicle. The only cabin air filter that uses the natural deodorizing properties of ARM & HAMMER™ baking soda. Contaminants that enter the vehicle with outside air through the vehicle’s air conditioning, heating and ventilation system can become concentrated and expose passengers to road dust, dirt and allergens at higher levels than outside the car.",
+        "recno": "0"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "ARM & HAMMER baking soda combined with carbon embedded in the filter assists in cleaning outside air flowing through the vehicle’s ventilation system",
+        "recno": "1"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CF12152, Cabin Air Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Installs on average in 15 minutes",
+        "recno": "2"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Helps protect your vehicle's heating and air conditioning unit while also keeping it working efficiently",
+        "recno": "3"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Fresh Breeze Cabin Air Filter",
+        "recno": "3"
+      },
+      {
+        "attribute": "Features and Benefits",
+        "value": "Filters up to 98% of dust, pollen and other contaminants",
+        "recno": "4"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Active Carbon",
+        "recno": "80"
+      },
+      {
+        "attribute": "Shape",
+        "value": "Rectangle",
+        "recno": "81"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Cabin Air Filter",
+        "recno": "82"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.259",
+        "recno": "84"
+      },
+      {
+        "attribute": "Length (Inch)",
+        "value": "10.157",
+        "recno": "85"
+      },
+      {
+        "attribute": "Width (Inch)",
+        "value": "7.834",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Premium",
+        "recno": "87"
+      },
+      {
+        "attribute": "Installation Time (Minutes)",
+        "value": "30",
+        "recno": "88"
+      },
+      {
+        "attribute": "Location",
+        "value": "Under Glove Box",
+        "recno": "89"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "Thailand",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100560780",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.6380",
+        "recno": "95"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.2760",
+        "recno": "96"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "1.4960",
+        "recno": "97"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "3.7800",
+        "recno": "98"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "11.3780",
+        "recno": "99"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "11.9690",
+        "recno": "100"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "8.0710",
+        "recno": "101"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "8.6610",
+        "recno": "102"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.638,
+        "case_weight_lb": 1.276,
+        "unit_height_in": 1.496,
+        "unit_length_in": 11.378,
+        "unit_width_in": 8.071,
+        "case_height_in": 3.78,
+        "case_length_in": 11.969,
+        "case_width_in": 8.661,
+        "inferred_case_qty": 2
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 7.656,
+        "estimated_case_dimensions": null,
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 6,
+    "all_cross_references_observed": 12,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:58:35.883Z",
+  "discovered_from": "CF12152",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "FORD",
+        "model": "MUSTANG",
+        "year": "26-15",
+        "engine": "All",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "MUSTANG",
+        "year": "26-15",
+        "engine": "L4-2.3L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "MUSTANG",
+        "year": "17-15",
+        "engine": "V6-3.7L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "MUSTANG",
+        "year": "26-15",
+        "engine": "V8-5.0L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "MUSTANG",
+        "year": "22-15",
+        "engine": "V8-5.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "FORD",
+        "model": "MUSTANG",
+        "year": "26-25",
+        "engine": "V8-5.2L",
+        "part_type": "Cabin Air Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "ATP",
+        "part_number": "CF-281",
+        "source_part_number": "CF12152",
+        "part_key": "006686885",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Ford",
+        "part_number": "FR3Z-19N619-A",
+        "source_part_number": "CF12152",
+        "part_key": "006686885",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "CAF1925P",
+        "source_part_number": "CF12152",
+        "part_key": "006686885",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "MicroGard",
+        "part_number": "4101",
+        "source_part_number": "CF12152",
+        "part_key": "006686885",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Mobil",
+        "part_number": "CAF1925P",
+        "source_part_number": "CF12152",
+        "part_key": "006686885",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Motorcraft",
+        "part_number": "FP-78",
+        "source_part_number": "CF12152",
+        "part_key": "006686885",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "NAPA ProSelect Filters",
+        "part_number": "2230195",
+        "source_part_number": "CF12152",
+        "part_key": "006686885",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "PUREPRO",
+        "part_number": "C38155",
+        "source_part_number": "CF12152",
+        "part_key": "006686885",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "C38155",
+        "source_part_number": "CF12152",
+        "part_key": "006686885",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Service Champ",
+        "part_number": "C38155",
+        "source_part_number": "CF12152",
+        "part_key": "006686885",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "WCA1925",
+        "source_part_number": "CF12152",
+        "part_key": "006686885",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "WP10195",
+        "source_part_number": "CF12152",
+        "part_key": "006686885",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Cabin Air Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

@@ -1,0 +1,1224 @@
+{
+  "schema_version": "1.0.0",
+  "market_scope": "MULTI_REGION",
+  "source_catalog_scope": "FRAM_LD_MULTI_REGION",
+  "duty": "LIGHT_DUTY",
+  "family": "LUBE",
+  "authority": {
+    "part_number": "CH6007",
+    "line": "EXTRA_GUARD"
+  },
+  "public_catalog_proposal": {
+    "lookup_reference": "CH6007",
+    "product_type": "Engine Oil Filter",
+    "duty": "LIGHT_DUTY",
+    "technology": "SYNTRAX™",
+    "technical_specifications": {
+      "outer_diameter_in": null,
+      "outer_diameter_mm": null,
+      "height_in": 1.797,
+      "height_mm": 45.64,
+      "thread_size": null,
+      "gasket_od_in": null,
+      "gasket_od_mm": null,
+      "gasket_id_in": null,
+      "gasket_id_mm": null,
+      "gasket_thickness_in": null,
+      "gasket_thickness_mm": null,
+      "media_type": "Genuine Media",
+      "style": "Cartridge",
+      "anti_drainback_valve": "No",
+      "bypass_relief_valve": "No",
+      "bypass_setting_psi": null,
+      "burst_pressure_psi": null
+    },
+    "alternatives": [],
+    "oem_cross_reference_candidates": [],
+    "competitor_cross_reference_candidates": [
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1217"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4938"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4939"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "ML16807"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "ML16808"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57938"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24938"
+      }
+    ],
+    "unresolved_cross_reference_candidates": [
+      {
+        "manufacturer": "Auto-Tune",
+        "part_number": "E5205"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "96938"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "96939"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92217"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89938"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89939"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "84938"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "P7007"
+      },
+      {
+        "manufacturer": "Dorcy",
+        "part_number": "21-8060"
+      },
+      {
+        "manufacturer": "Emgo",
+        "part_number": "10-30200"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF574"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF657"
+      },
+      {
+        "manufacturer": "HiFlo",
+        "part_number": "HF111"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15412-KEA-003"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15441-413-005"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "154A1-413-005"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15412-413-005"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "KN-111"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P7007"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "P7007"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "P7007"
+      }
+    ],
+    "vehicle_application_candidates": [
+      {
+        "year": "79-78",
+        "make": "HONDA",
+        "model": "CX500",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "82-79",
+        "make": "HONDA",
+        "model": "CX500C CUSTOM",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "81-79",
+        "make": "HONDA",
+        "model": "CX500D DELUXE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1982",
+        "make": "HONDA",
+        "model": "CX500TC TURBO",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1983",
+        "make": "HONDA",
+        "model": "CX650C CUSTOM",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1983",
+        "make": "HONDA",
+        "model": "CX650T TURBO",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "82-81",
+        "make": "HONDA",
+        "model": "GL500 SILVER WING",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "82-81",
+        "make": "HONDA",
+        "model": "GL500I SILVER WING INTERSTATE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1983",
+        "make": "HONDA",
+        "model": "GL650 SILVER WING",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "1983",
+        "make": "HONDA",
+        "model": "GL650I SILVER WING INTERSTATE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "13-09",
+        "make": "HONDA",
+        "model": "MUV700 BIG RED",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-14",
+        "make": "HONDA",
+        "model": "SXS700M2 PIONEER 700",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-17",
+        "make": "HONDA",
+        "model": "SXS700M2 PIONEER 700 DELUXE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-23",
+        "make": "HONDA",
+        "model": "SXS700M2 PIONEER 700 FOREST",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-14",
+        "make": "HONDA",
+        "model": "SXS700M4 PIONEER 700-4",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-17",
+        "make": "HONDA",
+        "model": "SXS700M4 PIONEER 700-4 DELUXE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-23",
+        "make": "HONDA",
+        "model": "SXS700M4 PIONEER 700-4 FOREST",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "07-04",
+        "make": "HONDA",
+        "model": "TRX400FA FOURTRAX RANCHER AT",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "07-04",
+        "make": "HONDA",
+        "model": "TRX400FGA FOURTRAX RANCHER AT GPSCAPE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-01",
+        "make": "HONDA",
+        "model": "TRX500FA FOURTRAX FOREMAN RUBICON",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "14-11",
+        "make": "HONDA",
+        "model": "TRX500FA FOURTRAX FOREMAN RUBICON",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "08-04",
+        "make": "HONDA",
+        "model": "TRX500FGA FOURTRAX FOREMAN RUBICON GPSCAPE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "12-11",
+        "make": "HONDA",
+        "model": "TRX500FPA FOURTRAX FOREMAN 4X4 AT W/ POWER STEERIN",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2009",
+        "make": "HONDA",
+        "model": "TRX500FPA FOURTRAX FOREMAN 4X4 AT W/ POWER STEERIN",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "14-11",
+        "make": "HONDA",
+        "model": "TRX500FPA FOURTRAX FOREMAN RUBICON WITH EPS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "2009",
+        "make": "HONDA",
+        "model": "TRX500FPA FOURTRAX FOREMAN RUBICON WITH EPS",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "05-03",
+        "make": "HONDA",
+        "model": "TRX650FA FOURTRAX RINCON",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "05-04",
+        "make": "HONDA",
+        "model": "TRX650FGA FOURTRAX RINCON GPSCAPE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "23-06",
+        "make": "HONDA",
+        "model": "TRX680FA FOURTRAX RINCON",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "09-06",
+        "make": "HONDA",
+        "model": "TRX680FGA FOURTRAX RINCON GPSCAPE",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "25-24",
+        "make": "HONDA",
+        "model": "TRX700FA FOURTRAX RUBICON 700 4X4 AUTO",
+        "engine": "All",
+        "quantity": 1
+      },
+      {
+        "year": "90-88",
+        "make": "HONDA",
+        "model": "VTR250 INTERCEPTOR",
+        "engine": "All",
+        "quantity": 1
+      }
+    ]
+  },
+  "internal_evidence": {
+    "source_part_number": "CH6007",
+    "source_part_key": "001470309",
+    "source_totals": {
+      "attributes": 44,
+      "applications": 32,
+      "cross_references": 28
+    },
+    "raw_attributes": [
+      {
+        "attribute": "Features and Benefits",
+        "value": "FRAM Extra Guard® oil filters deliver advanced engine protection for everyday drivers who perform routine oil changes at OE (original equipment) recommended intervals. Engineered for conventional and synthetic motor oil, Extra Guard offers proven engine protection for up to 10,000 miles (16,000 kilometers)",
+        "recno": "0"
+      },
+      {
+        "attribute": "Brand Description",
+        "value": "FRAM, CH6007, Oil Filter",
+        "recno": "1"
+      },
+      {
+        "attribute": "Associated Comment",
+        "value": "Motorcycle Full-Flow Lube Cartridge",
+        "recno": "3"
+      },
+      {
+        "attribute": "Anti-Drain Back Valve",
+        "value": "No",
+        "recno": "80"
+      },
+      {
+        "attribute": "Bypass Relief Valve",
+        "value": "No",
+        "recno": "81"
+      },
+      {
+        "attribute": "Filter Media Material",
+        "value": "Cellulose/Synthetic Blend",
+        "recno": "82"
+      },
+      {
+        "attribute": "Non Slip Grip",
+        "value": "No",
+        "recno": "83"
+      },
+      {
+        "attribute": "Torque Nut",
+        "value": "No",
+        "recno": "84"
+      },
+      {
+        "attribute": "Filter Type",
+        "value": "Cartridge",
+        "recno": "85"
+      },
+      {
+        "attribute": "Reusable",
+        "value": "No",
+        "recno": "86"
+      },
+      {
+        "attribute": "Grade Type",
+        "value": "Regular",
+        "recno": "87"
+      },
+      {
+        "attribute": "Washable",
+        "value": "No",
+        "recno": "88"
+      },
+      {
+        "attribute": "Housing Color",
+        "value": "NA",
+        "recno": "89"
+      },
+      {
+        "attribute": "Replaceable Filter",
+        "value": "Yes",
+        "recno": "90"
+      },
+      {
+        "attribute": "Life Cycle Status Description",
+        "value": "Available to Order -\tPart is released to customers for ordering.",
+        "recno": "91"
+      },
+      {
+        "attribute": "Short Description",
+        "value": "Oil Filter",
+        "recno": "91"
+      },
+      {
+        "attribute": "Item Level GTIN",
+        "value": "00009100381309",
+        "recno": "92"
+      },
+      {
+        "attribute": "Hazardous Material",
+        "value": "No",
+        "recno": "92"
+      },
+      {
+        "attribute": "Quantity Per Application",
+        "value": "1",
+        "recno": "93"
+      },
+      {
+        "attribute": "Height (Inch)",
+        "value": "1.797",
+        "recno": "93"
+      },
+      {
+        "attribute": "Meets Or Exceeds Original Equipment Manufacturer S",
+        "value": "Yes",
+        "recno": "94"
+      },
+      {
+        "attribute": "Top Inside Diameter (Inch)",
+        "value": "0.765",
+        "recno": "95"
+      },
+      {
+        "attribute": "Outside Diameter Top (Inch)",
+        "value": "2.703",
+        "recno": "96"
+      },
+      {
+        "attribute": "O-Ring Inside Diameter (Inch)",
+        "value": "3.188",
+        "recno": "97"
+      },
+      {
+        "attribute": "O-Ring Outside Diameter (Inch)",
+        "value": "3.453",
+        "recno": "98"
+      },
+      {
+        "attribute": "O-Ring Thickness (Inch)",
+        "value": "0.172",
+        "recno": "99"
+      },
+      {
+        "attribute": "Bottom Inside Diameter (Inch)",
+        "value": "0.765",
+        "recno": "100"
+      },
+      {
+        "attribute": "Outer Diameter Bottom (Inch)",
+        "value": "2.703",
+        "recno": "101"
+      },
+      {
+        "attribute": "O-Rings Included",
+        "value": "Yes",
+        "recno": "102"
+      },
+      {
+        "attribute": "New or Remanufactured",
+        "value": "New",
+        "recno": "103"
+      },
+      {
+        "attribute": "Grade",
+        "value": "Advanced",
+        "recno": "104"
+      },
+      {
+        "attribute": "O-Ring (1) Inside Diameter (Inch)",
+        "value": "0.609",
+        "recno": "105"
+      },
+      {
+        "attribute": "O-Ring (1) Outside Diameter (Inch)",
+        "value": "0.813",
+        "recno": "106"
+      },
+      {
+        "attribute": "O-Ring (1) Thickness (Inch)",
+        "value": "0.109",
+        "recno": "107"
+      },
+      {
+        "attribute": "Minimum Order Quantity",
+        "value": "1",
+        "recno": "108"
+      },
+      {
+        "attribute": "Country of Origin",
+        "value": "China",
+        "recno": "109"
+      },
+      {
+        "attribute": "Weight - Each (Gross Pounds)",
+        "value": "0.2530",
+        "recno": "113"
+      },
+      {
+        "attribute": "Weight - Case (Gross Pounds)",
+        "value": "1.5180",
+        "recno": "114"
+      },
+      {
+        "attribute": "Height - Each (Inch)",
+        "value": "2.8360",
+        "recno": "115"
+      },
+      {
+        "attribute": "Height - Case (Inch)",
+        "value": "3.4500",
+        "recno": "116"
+      },
+      {
+        "attribute": "Length - Each (Inch)",
+        "value": "2.9930",
+        "recno": "117"
+      },
+      {
+        "attribute": "Length - Case (Inch)",
+        "value": "9.3050",
+        "recno": "118"
+      },
+      {
+        "attribute": "Width - Each (Inch)",
+        "value": "2.9930",
+        "recno": "119"
+      },
+      {
+        "attribute": "Width - Case (Inch)",
+        "value": "6.3520",
+        "recno": "120"
+      }
+    ],
+    "logistics": {
+      "visibility": "INTERNAL_EXECUTIVE_AGENTS_ONLY",
+      "source_packaging": {
+        "unit_weight_lb": 0.253,
+        "case_weight_lb": 1.518,
+        "unit_height_in": 2.836,
+        "unit_length_in": 2.993,
+        "unit_width_in": 2.993,
+        "case_height_in": 3.45,
+        "case_length_in": 9.305,
+        "case_width_in": 6.352,
+        "inferred_case_qty": 6
+      },
+      "elimfilters_packaging": {
+        "case_pack": 12,
+        "estimated_product_weight_lb": 3.036,
+        "estimated_case_dimensions": {
+          "length_in": 12.407,
+          "width_in": 9.528,
+          "height_in": 3.45,
+          "layout": "4x3x1",
+          "status": "ESTIMATED_FROM_SOURCE_6_PACK__FACTORY_VALIDATION_REQUIRED"
+        },
+        "status": "PROVISIONAL__FACTORY_VALIDATION_REQUIRED"
+      }
+    },
+    "all_applications_observed": 32,
+    "all_cross_references_observed": 28,
+    "publication_rule": "LOGISTICS_INTERNAL_ONLY__SOURCE_MEDIA_AND_GTIN_NOT_PUBLIC"
+  },
+  "harvested_at": "2026-09-12T05:14:35.133Z",
+  "discovered_from": "CH6007",
+  "evidence_only": true,
+  "database_write": false,
+  "public_catalog_auto_write": false,
+  "private_source_records": {
+    "applications": [
+      {
+        "make": "HONDA",
+        "model": "CX500",
+        "year": "79-78",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CX500C CUSTOM",
+        "year": "82-79",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CX500D DELUXE",
+        "year": "81-79",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CX500TC TURBO",
+        "year": "1982",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CX650C CUSTOM",
+        "year": "1983",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "CX650T TURBO",
+        "year": "1983",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "GL500 SILVER WING",
+        "year": "82-81",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "GL500I SILVER WING INTERSTATE",
+        "year": "82-81",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "GL650 SILVER WING",
+        "year": "1983",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "GL650I SILVER WING INTERSTATE",
+        "year": "1983",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "MUV700 BIG RED",
+        "year": "13-09",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "SXS700M2 PIONEER 700",
+        "year": "25-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "SXS700M2 PIONEER 700 DELUXE",
+        "year": "25-17",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "SXS700M2 PIONEER 700 FOREST",
+        "year": "25-23",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "SXS700M4 PIONEER 700-4",
+        "year": "25-14",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "SXS700M4 PIONEER 700-4 DELUXE",
+        "year": "25-17",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "SXS700M4 PIONEER 700-4 FOREST",
+        "year": "25-23",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX400FA FOURTRAX RANCHER AT",
+        "year": "07-04",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX400FGA FOURTRAX RANCHER AT GPSCAPE",
+        "year": "07-04",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FA FOURTRAX FOREMAN RUBICON",
+        "year": "09-01",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FA FOURTRAX FOREMAN RUBICON",
+        "year": "14-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FGA FOURTRAX FOREMAN RUBICON GPSCAPE",
+        "year": "08-04",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FPA FOURTRAX FOREMAN 4X4 AT W/ POWER STEERIN",
+        "year": "12-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FPA FOURTRAX FOREMAN 4X4 AT W/ POWER STEERIN",
+        "year": "2009",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FPA FOURTRAX FOREMAN RUBICON WITH EPS",
+        "year": "14-11",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX500FPA FOURTRAX FOREMAN RUBICON WITH EPS",
+        "year": "2009",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX650FA FOURTRAX RINCON",
+        "year": "05-03",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX650FGA FOURTRAX RINCON GPSCAPE",
+        "year": "05-04",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX680FA FOURTRAX RINCON",
+        "year": "23-06",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX680FGA FOURTRAX RINCON GPSCAPE",
+        "year": "09-06",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "TRX700FA FOURTRAX RUBICON 700 4X4 AUTO",
+        "year": "25-24",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      },
+      {
+        "make": "HONDA",
+        "model": "VTR250 INTERCEPTOR",
+        "year": "90-88",
+        "engine": "All",
+        "part_type": "Engine Oil Filter",
+        "application_type": "A",
+        "quantity": 1
+      }
+    ],
+    "cross_references": [
+      {
+        "manufacturer": "Auto-Tune",
+        "part_number": "E5205",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "96938",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "96939",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Big A",
+        "part_number": "92217",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89938",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "89939",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Carquest",
+        "part_number": "84938",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Champ",
+        "part_number": "P7007",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Dorcy",
+        "part_number": "21-8060",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Emgo",
+        "part_number": "10-30200",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF574",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Hastings",
+        "part_number": "LF657",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "HiFlo",
+        "part_number": "HF111",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15412-KEA-003",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15441-413-005",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "154A1-413-005",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Honda",
+        "part_number": "15412-413-005",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "K&N",
+        "part_number": "KN-111",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "LUBER-FINER",
+        "part_number": "P7007",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "1217",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4938",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "NAPA",
+        "part_number": "4939",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "ML16807",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Purolator",
+        "part_number": "ML16808",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "STP",
+        "part_number": "P7007",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Warner",
+        "part_number": "P7007",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "57938",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      },
+      {
+        "manufacturer": "Wix",
+        "part_number": "24938",
+        "source_part_number": "CH6007",
+        "part_key": "001470309",
+        "supplier": "Fram Filters",
+        "brand_id": "FRAM",
+        "aaia_brand_id": "BCWZ",
+        "part_type": "Engine Oil Filter"
+      }
+    ],
+    "source": {
+      "backend": "https://www.showmethepartsdb.com/bin/showmeconnect.exe",
+      "catalog_id": "FUC600QLW",
+      "config_url": "https://showmethefilters.com/Config/ShowMeTheParts.json"
+    }
+  }
+}

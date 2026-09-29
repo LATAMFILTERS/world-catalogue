@@ -5,7 +5,7 @@
   "authority_file": "data/product-identity/authorities/cylindrical-print-layout-authority.json",
   "identity": {
     "primary_logotype_asset": "frontend/public/assets/logo-elimfilters.png",
-    "tagline": "TOTAL ASSET PROTECTION",
+    "tagline": "TOTAL ASSETS PROTECTION",
     "deprecated": ["German Quality", "legacy isotype", "legacy product logo"]
   },
   "cylindrical_product_colors": {

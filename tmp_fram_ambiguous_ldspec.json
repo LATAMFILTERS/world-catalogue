@@ -1,0 +1,1538 @@
+{
+  "all": [
+    {
+      "authority": "CH9641",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL37115",
+          "evidenceCount": 3,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31151",
+          "evidenceCount": 3,
+          "spec_comparable": 3,
+          "spec_matches": 2,
+          "spec_conflicts": 1,
+          "detail": {
+            "height_mm": {
+              "a": 73.56,
+              "b": "69.55",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Cartridge",
+              "b": "Cartridge",
+              "ok": true
+            }
+          }
+        }
+      ],
+      "resolvedSku": null
+    },
+    {
+      "authority": "PH16",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL39202",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32013",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32016",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32021",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL30610",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32012",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39201",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32018",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32019",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32022",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32025",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32026",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39203",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32036",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39204",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39205",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32081",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39209",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39301",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL33014",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL33019",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39302",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39304",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39308",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32015",
+          "evidenceCount": 5,
+          "spec_comparable": 6,
+          "spec_matches": 1,
+          "spec_conflicts": 5,
+          "detail": {
+            "height_mm": {
+              "a": 93.68,
+              "b": "148.69",
+              "ok": false
+            },
+            "outer_diameter_mm": {
+              "a": 92.86,
+              "b": "120.65",
+              "ok": false
+            },
+            "gasket_od_mm": {
+              "a": 71.04,
+              "b": "106.38",
+              "ok": false
+            },
+            "gasket_id_mm": {
+              "a": 61.47,
+              "b": "92.2",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Spin-On Canister",
+              "b": "Cartridge",
+              "ok": false
+            }
+          }
+        },
+        {
+          "sku": "EL37328",
+          "evidenceCount": 4,
+          "spec_comparable": 7,
+          "spec_matches": 6,
+          "spec_conflicts": 1,
+          "detail": {
+            "height_mm": {
+              "a": 93.68,
+              "b": "78.59",
+              "ok": false
+            },
+            "outer_diameter_mm": {
+              "a": 92.86,
+              "b": "92.86",
+              "ok": true
+            },
+            "gasket_od_mm": {
+              "a": 71.04,
+              "b": "71.04",
+              "ok": true
+            },
+            "gasket_id_mm": {
+              "a": 61.47,
+              "b": "61.52",
+              "ok": true
+            },
+            "thread_size": {
+              "a": "3/4-16",
+              "b": "3/4-16",
+              "ok": true
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Spin-On Canister",
+              "b": "Spin-On Canister",
+              "ok": true
+            }
+          }
+        },
+        {
+          "sku": "EL30920",
+          "evidenceCount": 2,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ],
+      "resolvedSku": null
+    },
+    {
+      "authority": "PH2870A",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL31222",
+          "evidenceCount": 14,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31253",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31211",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL37126",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL37127",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL37181",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31261",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31226",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31237",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31294",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL37121",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31212",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31214",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31218",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31219",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL37122",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31224",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL37123",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31234",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL33410",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31235",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31239",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34310",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL37125",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31260",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31273",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31275",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32810",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31281",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31283",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31290",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31292",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39210",
+          "evidenceCount": 12,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31223",
+          "evidenceCount": 12,
+          "spec_comparable": 1,
+          "spec_matches": 1,
+          "spec_conflicts": 0,
+          "detail": {
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            }
+          }
+        }
+      ],
+      "resolvedSku": null
+    },
+    {
+      "authority": "PH3335",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL33125",
+          "evidenceCount": 8,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32104",
+          "evidenceCount": 2,
+          "spec_comparable": 7,
+          "spec_matches": 3,
+          "spec_conflicts": 4,
+          "detail": {
+            "height_mm": {
+              "a": 307.34,
+              "b": "251.87",
+              "ok": false
+            },
+            "outer_diameter_mm": {
+              "a": 138.13,
+              "b": "118.39",
+              "ok": false
+            },
+            "gasket_od_mm": {
+              "a": 108.97,
+              "b": "110.01",
+              "ok": false
+            },
+            "gasket_id_mm": {
+              "a": 94.49,
+              "b": "97.84",
+              "ok": false
+            },
+            "thread_size": {
+              "a": "1 1/2-16",
+              "b": "1 1/2-16",
+              "ok": true
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Spin-On Canister",
+              "b": "Spin-On Canister",
+              "ok": true
+            }
+          }
+        }
+      ],
+      "resolvedSku": null
+    },
+    {
+      "authority": "PH3614",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL31881",
+          "evidenceCount": 7,
+          "spec_comparable": 7,
+          "spec_matches": 7,
+          "spec_conflicts": 0,
+          "detail": {
+            "height_mm": {
+              "a": 87.12,
+              "b": "87.12",
+              "ok": true
+            },
+            "outer_diameter_mm": {
+              "a": 75.79,
+              "b": "75.79",
+              "ok": true
+            },
+            "gasket_od_mm": {
+              "a": 70.1,
+              "b": "70.1",
+              "ok": true
+            },
+            "gasket_id_mm": {
+              "a": 62.23,
+              "b": "62.23",
+              "ok": true
+            },
+            "thread_size": {
+              "a": "3/4-16",
+              "b": "3/4-16",
+              "ok": true
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Spin-On Canister",
+              "b": "Spin-On Canister",
+              "ok": true
+            }
+          }
+        },
+        {
+          "sku": "EL34967",
+          "evidenceCount": 4,
+          "spec_comparable": 7,
+          "spec_matches": 3,
+          "spec_conflicts": 4,
+          "detail": {
+            "height_mm": {
+              "a": 87.12,
+              "b": "85.32",
+              "ok": false
+            },
+            "outer_diameter_mm": {
+              "a": 75.79,
+              "b": "76.61",
+              "ok": false
+            },
+            "gasket_od_mm": {
+              "a": 70.1,
+              "b": "61.52",
+              "ok": false
+            },
+            "gasket_id_mm": {
+              "a": 62.23,
+              "b": "53.97",
+              "ok": false
+            },
+            "thread_size": {
+              "a": "3/4-16",
+              "b": "3/4-16",
+              "ok": true
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Spin-On Canister",
+              "b": "Spin-On Canister",
+              "ok": true
+            }
+          }
+        }
+      ],
+      "resolvedSku": "EL31881"
+    },
+    {
+      "authority": "PH42A",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL33776",
+          "evidenceCount": 2,
+          "spec_comparable": 7,
+          "spec_matches": 5,
+          "spec_conflicts": 2,
+          "detail": {
+            "height_mm": {
+              "a": 180.95,
+              "b": "206.38",
+              "ok": false
+            },
+            "outer_diameter_mm": {
+              "a": 93.73,
+              "b": "96.44",
+              "ok": false
+            },
+            "gasket_od_mm": {
+              "a": 71.37,
+              "b": "71.45",
+              "ok": true
+            },
+            "gasket_id_mm": {
+              "a": 62.48,
+              "b": "62.71",
+              "ok": true
+            },
+            "thread_size": {
+              "a": "1-12",
+              "b": "1-12",
+              "ok": true
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Spin-On Canister",
+              "b": "Spin-On Canister",
+              "ok": true
+            }
+          }
+        },
+        {
+          "sku": "EL32610",
+          "evidenceCount": 2,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL35015",
+          "evidenceCount": 2,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL35040",
+          "evidenceCount": 2,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL35042",
+          "evidenceCount": 2,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL36213",
+          "evidenceCount": 2,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL36232",
+          "evidenceCount": 2,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39627",
+          "evidenceCount": 2,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL36271",
+          "evidenceCount": 2,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ],
+      "resolvedSku": null
+    },
+    {
+      "authority": "PH5964",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL31261",
+          "evidenceCount": 9,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31262",
+          "evidenceCount": 9,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31265",
+          "evidenceCount": 9,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        }
+      ],
+      "resolvedSku": null
+    },
+    {
+      "authority": "PH8A",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL32013",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32016",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32021",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL30610",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32012",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39201",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32018",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32019",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39202",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32022",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32025",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32026",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39203",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32036",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39204",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39205",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32081",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39209",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39301",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL33014",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL33019",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39302",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39304",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39308",
+          "evidenceCount": 5,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32015",
+          "evidenceCount": 5,
+          "spec_comparable": 6,
+          "spec_matches": 1,
+          "spec_conflicts": 5,
+          "detail": {
+            "height_mm": {
+              "a": 129.67,
+              "b": "148.69",
+              "ok": false
+            },
+            "outer_diameter_mm": {
+              "a": 96.44,
+              "b": "120.65",
+              "ok": false
+            },
+            "gasket_od_mm": {
+              "a": 71.04,
+              "b": "106.38",
+              "ok": false
+            },
+            "gasket_id_mm": {
+              "a": 61.52,
+              "b": "92.2",
+              "ok": false
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Spin-On Canister",
+              "b": "Cartridge",
+              "ok": false
+            }
+          }
+        }
+      ],
+      "resolvedSku": null
+    },
+    {
+      "authority": "PH966B",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL31253",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31211",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL37126",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL37127",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL37181",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31261",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31226",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31237",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31294",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL37121",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31212",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31214",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31218",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31219",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL37122",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31222",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31224",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL37123",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31234",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL33410",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31235",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31239",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL34310",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL37125",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31260",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31273",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31275",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL32810",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31281",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31283",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31290",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31292",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL39210",
+          "evidenceCount": 6,
+          "spec_comparable": 0,
+          "spec_matches": 0,
+          "spec_conflicts": 0,
+          "detail": {}
+        },
+        {
+          "sku": "EL31223",
+          "evidenceCount": 6,
+          "spec_comparable": 1,
+          "spec_matches": 1,
+          "spec_conflicts": 0,
+          "detail": {
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            }
+          }
+        }
+      ],
+      "resolvedSku": null
+    }
+  ],
+  "resolved": [
+    {
+      "authority": "PH3614",
+      "family": "LUBE",
+      "candidates": [
+        {
+          "sku": "EL31881",
+          "evidenceCount": 7,
+          "spec_comparable": 7,
+          "spec_matches": 7,
+          "spec_conflicts": 0,
+          "detail": {
+            "height_mm": {
+              "a": 87.12,
+              "b": "87.12",
+              "ok": true
+            },
+            "outer_diameter_mm": {
+              "a": 75.79,
+              "b": "75.79",
+              "ok": true
+            },
+            "gasket_od_mm": {
+              "a": 70.1,
+              "b": "70.1",
+              "ok": true
+            },
+            "gasket_id_mm": {
+              "a": 62.23,
+              "b": "62.23",
+              "ok": true
+            },
+            "thread_size": {
+              "a": "3/4-16",
+              "b": "3/4-16",
+              "ok": true
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Spin-On Canister",
+              "b": "Spin-On Canister",
+              "ok": true
+            }
+          }
+        },
+        {
+          "sku": "EL34967",
+          "evidenceCount": 4,
+          "spec_comparable": 7,
+          "spec_matches": 3,
+          "spec_conflicts": 4,
+          "detail": {
+            "height_mm": {
+              "a": 87.12,
+              "b": "85.32",
+              "ok": false
+            },
+            "outer_diameter_mm": {
+              "a": 75.79,
+              "b": "76.61",
+              "ok": false
+            },
+            "gasket_od_mm": {
+              "a": 70.1,
+              "b": "61.52",
+              "ok": false
+            },
+            "gasket_id_mm": {
+              "a": 62.23,
+              "b": "53.97",
+              "ok": false
+            },
+            "thread_size": {
+              "a": "3/4-16",
+              "b": "3/4-16",
+              "ok": true
+            },
+            "media_type": {
+              "a": "Genuine Media",
+              "b": "Genuine Media",
+              "ok": true
+            },
+            "style": {
+              "a": "Spin-On Canister",
+              "b": "Spin-On Canister",
+              "ok": true
+            }
+          }
+        }
+      ],
+      "resolvedSku": "EL31881"
+    }
+  ]
+}

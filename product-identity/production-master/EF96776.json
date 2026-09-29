@@ -1,0 +1,92 @@
+{
+  "schema_version": "2.0",
+  "sku": "EF96776",
+  "segment": "HD",
+  "family": "fuel_filter",
+  "authority_category": "FUEL",
+  "construction": "spin_on",
+  "technology": "SYNTAPORE™",
+  "technology_descriptor": "Fuel System Protection",
+  "visual_standard": "07.1_SPIN_ON_HD_LITHOGRAPHY_GRID_SYSTEM",
+  "source_geometry": {
+    "manufacturer": "FLEETGUARD",
+    "competitor_code": "FF5776",
+    "category_url": "https://www.fleetguard.com/category/products/fuel-filtration/spin-on-fuel-filters/0ZGPL0000000FTP4A2",
+    "product_url": "https://www.fleetguard.com/product/ff5776/01t5x000008FBwAAAW",
+    "source_role": "USER_VERIFIED_OFFICIAL_FLEETGUARD_GEOMETRY_REFERENCE",
+    "source_image_sha256": "87d80f7cc3f4be65573bc9ac364f5114a17b5be5e330593d8d3217dad76d5586",
+    "source_image_persisted_on_lenovo": false
+  },
+  "technical_source": {
+    "source": "world_catalogue.elimfilters_catalog",
+    "verified": true,
+    "height_mm": 224,
+    "outer_diameter_mm": 118,
+    "thread": "M90 x 2",
+    "gasket": {
+      "od_mm": 119,
+      "id_mm": 102
+    },
+    "crossrefs": [
+      {
+        "brand": "FLEETGUARD",
+        "code": "FF5776",
+        "verified": true
+      },
+      {
+        "brand": "DONALDSON",
+        "code": "P555776",
+        "verified": true
+      },
+      {
+        "brand": "DONALDSON",
+        "code": "DBF6776",
+        "verified": true
+      }
+    ],
+    "standards": []
+  },
+  "production": {
+    "template_id": "07.1_SPIN_ON_HD",
+    "printable_area": {
+      "height_mm": null,
+      "circumference_mm": null
+    },
+    "factory_ready": false
+  },
+  "lithography": {
+    "same_artwork_both_sides": true,
+    "elements": [
+      "OFFICIAL_LOGO:frontend/public/assets/logo-elimfilters.png",
+      "TOTAL ASSETS PROTECTION",
+      "EF96776",
+      "FUEL FILTER",
+      "SYNTAPORE™",
+      "Fuel System Protection",
+      "Installation Rotation Direction Marks"
+    ],
+    "technology_asset": "frontend/public/assets/SYNTAPORE_final.avif",
+    "container_color_hex": "#414141",
+    "print_color_hex": "#CBCBCB",
+    "preserve_layout_from_approved_master": true,
+    "competitor_branding_allowed": false
+  },
+  "media": {
+    "geometry_locked": true,
+    "real_source_image_required": true,
+    "synthetic_geometry_reference_forbidden": true,
+    "official_logo_asset_required": "frontend/public/assets/logo-elimfilters.png",
+    "approved_master_image": null,
+    "approved_master_sha256": "9eaa889d0de7766afa65f7ef1f1ac2853e496faf03558df9e8242c5d620a6459",
+    "explicit_user_image_approval_required": true,
+    "approval_status": "APPROVED",
+    "approved_on": "2026-09-18",
+    "conversation_file_id": "file_00000000172881f6849ca3816fd7139a",
+    "binary_persistence_status": "PENDING_REMOTE_TRANSFER"
+  },
+  "gate": {
+    "image_regeneration_ready": false,
+    "blocking_reason": "APPROVED_MASTER_BINARY_NOT_YET_PERSISTED_ON_LENOVO",
+    "factory_release_allowed": false
+  }
+}
