@@ -99,14 +99,31 @@ async function applyRegionalLdCodigoBasePolicy() {
             RAISE EXCEPTION 'CATALOG_POLICY_V32: no active LD canonical source policy for origin_group %', origin_group_value;
           END IF;
 
-          IF coalesce((gov->>'primary_manufacturer_verified')::boolean, false) IS NOT TRUE THEN
-            RAISE EXCEPTION 'CATALOG_POLICY_V32: LD SKU % requires verified canonical manufacturer authority', NEW.sku;
+          IF coalesce((gov->>'primary_manufacturer_verified')::boolean, false) IS TRUE
+             AND approved_manufacturer = expected_ld_brand
+             AND approved_code_norm = base_norm THEN
+            RETURN NEW;
           END IF;
-          IF approved_manufacturer <> expected_ld_brand THEN
-            RAISE EXCEPTION 'CATALOG_POLICY_V32: LD SKU % origin_group % requires canonical manufacturer %, got %', NEW.sku, origin_group_value, expected_ld_brand, approved_manufacturer;
+
+          IF origin_group_value = 'EUROPEAN' THEN
+            IF coalesce((gov->>'mann_absence_verified')::boolean, false) IS NOT TRUE THEN
+              RAISE EXCEPTION 'CATALOG_POLICY_V32: LD European SKU % requires verified MANN authority or verified MANN manufacturing absence', NEW.sku;
+            END IF;
+          ELSE
+            IF coalesce((gov->>'fram_absence_verified')::boolean, false) IS NOT TRUE THEN
+              RAISE EXCEPTION 'CATALOG_POLICY_V32: LD non-European SKU % requires verified FRAM authority or verified FRAM manufacturing absence', NEW.sku;
+            END IF;
+          END IF;
+
+          IF coalesce((gov->>'fallback_manufacturer_verified')::boolean, false) IS NOT TRUE
+             OR coalesce((gov->>'fallback_commercial_code_verified')::boolean, false) IS NOT TRUE THEN
+            RAISE EXCEPTION 'CATALOG_POLICY_V32: LD SKU % OEM fallback manufacturer and code require verification', NEW.sku;
           END IF;
           IF approved_code_norm = '' OR approved_code_norm <> base_norm THEN
             RAISE EXCEPTION 'CATALOG_POLICY_V32: LD SKU % codigo_base must equal approved_codigo_base', NEW.sku;
+          END IF;
+          IF approved_source <> 'OEM_CODES' THEN
+            RAISE EXCEPTION 'CATALOG_POLICY_V32: LD SKU % fallback must be classified in OEM_CODES', NEW.sku;
           END IF;
           RETURN NEW;
         END IF;
@@ -129,9 +146,17 @@ async function applyRegionalLdCodigoBasePolicy() {
         CASE
           WHEN coalesce(c.enrichment_data->'codigo_base_governance'->>'origin_group','') NOT IN ('EUROPEAN','NON_EUROPEAN') THEN 'ORIGIN_REQUIRED'
           WHEN coalesce(c.enrichment_data->'codigo_base_governance'->>'origin_group','') = 'EUROPEAN'
-               AND upper(regexp_replace(coalesce(c.enrichment_data->'codigo_base_governance'->>'approved_manufacturer',''),'[^A-Z0-9]','','g')) <> 'MANNFILTER' THEN 'MANN_REQUIRED'
+               AND upper(regexp_replace(coalesce(c.enrichment_data->'codigo_base_governance'->>'approved_manufacturer',''),'[^A-Z0-9]','','g')) <> 'MANNFILTER'
+               AND NOT (
+                 coalesce((c.enrichment_data->'codigo_base_governance'->>'mann_absence_verified')::boolean,false)
+                 AND coalesce(c.enrichment_data->'codigo_base_governance'->>'approved_source_column','') = 'OEM_CODES'
+               ) THEN 'MANN_REQUIRED'
           WHEN coalesce(c.enrichment_data->'codigo_base_governance'->>'origin_group','') = 'NON_EUROPEAN'
-               AND upper(regexp_replace(coalesce(c.enrichment_data->'codigo_base_governance'->>'approved_manufacturer',''),'[^A-Z0-9]','','g')) <> 'FRAM' THEN 'FRAM_REQUIRED'
+               AND upper(regexp_replace(coalesce(c.enrichment_data->'codigo_base_governance'->>'approved_manufacturer',''),'[^A-Z0-9]','','g')) <> 'FRAM'
+               AND NOT (
+                 coalesce((c.enrichment_data->'codigo_base_governance'->>'fram_absence_verified')::boolean,false)
+                 AND coalesce(c.enrichment_data->'codigo_base_governance'->>'approved_source_column','') = 'OEM_CODES'
+               ) THEN 'FRAM_REQUIRED'
           ELSE 'POLICY_ALIGNED'
         END AS regional_policy_state
       FROM public.elimfilters_catalog c
