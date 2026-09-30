@@ -249,7 +249,17 @@ async function upsertProduct(client,p,report){
   if(!existing){
     const cols=Object.keys(row);
     const values=cols.map(k=>jsonColumns.has(k)?JSON.stringify(row[k]):row[k]);
-    const placeholders=cols.map((k,i)=>'
+    const placeholders=cols.map((k,i)=>'$'+(i+1)+(jsonColumns.has(k)?'::jsonb':''));
+    const sql='INSERT INTO public.elimfilters_catalog ('+cols.map(k=>'"'+k+'"').join(',')+') VALUES ('+placeholders.join(',')+')';
+    await client.query(sql,values);
+    report.inserted.push(p.sku);
+  } else {
+    const baseMatches=norm(existing.codigo_base)===norm(p.base) || norm(existing.canonical_source_code)===norm(p.base);
+    if(!baseMatches){
+      throw new Error('SKU_IDENTITY_CONFLICT '+p.sku+' existing='+JSON.stringify(existing)+' expected='+p.base);
+    }
+    report.existing.push(p.sku);
+  }
 
   await client.query(
     `INSERT INTO catalog_codigo_base_evidence
