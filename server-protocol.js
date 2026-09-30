@@ -112,6 +112,10 @@ async function start() {
   const descriptionBrandSanitation = await applyDescriptionBrandSanitation();
   console.log('[description-brand-sanitation]', JSON.stringify(descriptionBrandSanitation));
 
+  const { applyDaiLdBatch20260930 } = require('./scripts/migrations/run_120_create_dai_ld_batch_20260930');
+  const daiLdBatch20260930 = await applyDaiLdBatch20260930();
+  console.log('[dai-ld-batch-20260930]', JSON.stringify(daiLdBatch20260930));
+
   const { applyGlobalSkuCertificationAudit } = require('./scripts/migrations/run_093_global_sku_certification_audit');
   const globalSkuCertification = await applyGlobalSkuCertificationAudit();
   console.log('[global-sku-certification-audit]', JSON.stringify(globalSkuCertification));
