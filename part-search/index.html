@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ELIMFILTERS â€” Part Search</title>
+  <title>ELIMFILTERS — Part Search</title>
   <meta name="description" content="Find ELIMFILTERS filters by part number, VIN/vehicle model, or equipment reference. Cross-reference with OEM and competitor codes.">
   <meta name="robots" content="index, follow">
   <meta property="og:title" content="ELIMFILTERS Part Search">
-  <meta property="og:description" content="Industrial filtration cross-reference â€” Part number, VIN, and Equipment search.">
+  <meta property="og:description" content="Industrial filtration cross-reference — Part number, VIN, and Equipment search.">
   <meta name="theme-color" content="#000000">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&family=Barlow+Condensed:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -33,7 +33,7 @@
       overflow-x: hidden;
     }
 
-    /* â”€â”€â”€ SPLASH SCREEN â”€â”€â”€ */
+    /* ─── SPLASH SCREEN ─── */
     #cinematic-splash {
       position: fixed;
       inset: 0;
@@ -66,7 +66,7 @@
       50% { opacity: 0.6; }
     }
 
-    /* â”€â”€â”€ CANVAS â”€â”€â”€ */
+    /* ─── CANVAS ─── */
     #nanoflow {
       position: fixed;
       inset: 0;
@@ -75,7 +75,7 @@
       pointer-events: none;
     }
 
-    /* â”€â”€â”€ LOGO â”€â”€â”€ */
+    /* ─── LOGO ─── */
     #logo {
       position: fixed;
       top: 1.5rem; left: 2rem;
@@ -103,7 +103,7 @@
       padding: 0.15rem 0.4rem;
     }
 
-    /* â”€â”€â”€ SKIP â”€â”€â”€ */
+    /* ─── SKIP ─── */
     #skip-btn {
       position: fixed;
       bottom: 2rem; right: 2rem;
@@ -121,7 +121,7 @@
     }
     #skip-btn:hover { color: rgba(255,255,255,0.55); border-color: rgba(255,255,255,0.2); }
 
-    /* â”€â”€â”€ UI LAYER â”€â”€â”€ */
+    /* ─── UI LAYER ─── */
     #ui {
       position: relative;
       z-index: 10;
@@ -134,7 +134,7 @@
       gap: 0;
     }
 
-    /* â”€â”€â”€ INTRO LABEL â”€â”€â”€ */
+    /* ─── INTRO LABEL ─── */
     .intro-label {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: clamp(1.3rem, 5.2vw, 2.08rem);
@@ -148,7 +148,7 @@
     }
     .intro-label.vis { opacity: 1; transform: translateY(0); }
 
-    /* â”€â”€â”€ SEARCH PANEL â”€â”€â”€ */
+    /* ─── SEARCH PANEL ─── */
     #search-panel {
       width: 100%;
       max-width: 720px;
@@ -163,7 +163,7 @@
       pointer-events: all;
     }
 
-    /* â”€â”€â”€ TAB SWITCHER â”€â”€â”€ */
+    /* ─── TAB SWITCHER ─── */
     .mode-tabs {
       display: flex;
       justify-content: center;
@@ -191,7 +191,7 @@
       border-bottom-color: var(--y);
     }
 
-    /* â”€â”€â”€ FORMS â”€â”€â”€ */
+    /* ─── FORMS ─── */
     .search-form { display: none; flex-direction: column; gap: 0.85rem; }
     .search-form.active { display: flex; }
 
@@ -268,9 +268,9 @@
       appearance: none;
       -webkit-appearance: none;
     }
-    select option { 
-      background: #111; 
-      color: #fff; 
+    select option {
+      background: #111;
+      color: #fff;
       font-family: 'Barlow', sans-serif;
       font-size: 1rem;
     }
@@ -282,7 +282,7 @@
       pointer-events: none;
     }
 
-    /* â”€â”€â”€ SEARCH BUTTON â”€â”€â”€ */
+    /* ─── SEARCH BUTTON ─── */
     .btn-search {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 0.9rem;
@@ -308,7 +308,7 @@
       margin-top: 1rem;
     }
 
-    /* â”€â”€â”€ HINT PILLS â”€â”€â”€ */
+    /* ─── HINT PILLS ─── */
     .hint-row {
       display: flex;
       flex-wrap: wrap;
@@ -328,7 +328,7 @@
     }
     .hint-pill:hover { color: rgba(255,255,255,0.6); border-color: rgba(255,255,255,0.2); }
 
-    /* â”€â”€â”€ AUTOCOMPLETE â”€â”€â”€ */
+    /* ─── AUTOCOMPLETE ─── */
     .autocomplete-dropdown {
       position: absolute;
       top: calc(100% + 6px);
@@ -373,7 +373,7 @@
       letter-spacing: 0.05em;
     }
 
-    /* â”€â”€â”€ RESULTS â”€â”€â”€ */
+    /* ─── RESULTS ─── */
     #results {
       width: 100%;
       max-width: 720px;
@@ -404,7 +404,7 @@
       padding: 0.18rem 0.5rem;
     }
 
-    /* â”€â”€â”€ RESULT CARD â”€â”€â”€ */
+    /* ─── RESULT CARD ─── */
     .result-card {
       border: 1px solid var(--border);
       border-radius: 4px;
@@ -473,7 +473,7 @@
       color: rgba(255,255,255,0.55);
     }
 
-    /* â”€â”€ Duty selector chips â”€â”€ */
+    /* ── Duty selector chips ── */
     .duty-chip {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 0.6rem;
@@ -500,7 +500,7 @@
       position: relative;
     }
 
-    /* â”€â”€â”€ SPECS GRID â”€â”€â”€ */
+    /* ─── SPECS GRID ─── */
     .card-specs {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
@@ -528,7 +528,7 @@
       color: rgba(255,255,255,0.82);
     }
 
-    /* â”€â”€â”€ REFS â”€â”€â”€ */
+    /* ─── REFS ─── */
     .card-refs {
       margin-top: 0.85rem;
       display: flex;
@@ -547,7 +547,7 @@
       margin-right: 0.4rem;
     }
 
-    /* â”€â”€â”€ EQUIPMENT APPS â”€â”€â”€ */
+    /* ─── EQUIPMENT APPS ─── */
     .card-equipment {
       margin-top: 0.85rem;
       padding-top: 0.85rem;
@@ -576,7 +576,7 @@
       padding: 0.18rem 0.5rem;
     }
 
-    /* â”€â”€â”€ STATUS MESSAGES â”€â”€â”€ */
+    /* ─── STATUS MESSAGES ─── */
     .status-msg {
       font-family: 'Barlow Condensed', sans-serif;
       font-size: 0.7rem;
@@ -593,7 +593,7 @@
       color: rgba(255,255,255,0.15);
     }
 
-    /* â”€â”€â”€ LOADING DOTS â”€â”€â”€ */
+    /* ─── LOADING DOTS ─── */
     .loading-dots::after {
       content: '...';
       animation: dots 1.2s steps(3, end) infinite;
@@ -604,7 +604,7 @@
       66%  { content: '...'; }
     }
 
-    /* â”€â”€â”€ KLEO BADGE â”€â”€â”€ */
+    /* ─── KLEO BADGE ─── */
     #kleo-badge {
       position: fixed;
       bottom: 1.5rem;
@@ -632,7 +632,7 @@
       text-transform: uppercase;
     }
 
-    /* â”€â”€â”€ FOOTER â”€â”€â”€ */
+    /* ─── FOOTER ─── */
     #footer {
       position: relative;
       z-index: 10;
@@ -650,7 +650,7 @@
     .footer-line a { color: rgba(255,241,45,0.4); text-decoration: none; }
     .footer-line a:hover { color: var(--y); }
 
-    /* â”€â”€â”€ RESPONSIVE â”€â”€â”€ */
+    /* ─── RESPONSIVE ─── */
     @media (max-width: 640px) {
       .field-row.cols-2,
       .field-row.cols-3 { grid-template-columns: 1fr; }
@@ -658,7 +658,7 @@
       .card-specs { grid-template-columns: repeat(2, 1fr); }
       #logo { top: 1rem; left: 1rem; }
     }
-  
+
 /* ELIMFILTERS mobile viewport lock */
 html,
 body {
@@ -872,7 +872,7 @@ button, input, select, textarea {
 </head>
 <body>
 
-<!-- â”€â”€â”€ CINEMATIC SPLASH â”€â”€â”€ -->
+<!-- ─── CINEMATIC SPLASH ─── -->
 <div id="cinematic-splash" style="display: none;">
   <canvas id="splash-canvas"></canvas>
   <div class="splash-hint" id="splash-hint">Click anywhere to skip</div>
@@ -882,17 +882,17 @@ button, input, select, textarea {
 
 <a href="https://elimfilters.com" id="logo" aria-label="ELIMFILTERS homepage">
   <img src="https://elimfilters.com/assets/elimfilters-logo-white.png" alt="ELIMFILTERS Logo" style="height: 64px; width: auto; object-fit: contain;">
-  <span class="logo-badge" id="logo-badge">PART SEARCH</span>
+  <span class="logo-badge" id="logo-badge">HOME</span>
 </a>
 
-<button id="skip-btn">SKIP INTRO â€º</button>
+<button id="skip-btn">SKIP INTRO ›</button>
 
 
 
 <div id="ui">
   <p class="intro-label" id="intro-label">// ASSET PROTECTION PART SEARCH</p>
 
-  <!-- â”€â”€ SEARCH PANEL â”€â”€ -->
+  <!-- ── SEARCH PANEL ── -->
   <div id="search-panel">
 
     <!-- Mode tabs -->
@@ -902,12 +902,12 @@ button, input, select, textarea {
       <button class="mode-tab" data-mode="equip" role="tab" aria-selected="false" id="tab-equip">EQUIPMENT</button>
     </nav>
 
-    <!-- â”€â”€ FORM: PART NUMBER â”€â”€ -->
+    <!-- ── FORM: PART NUMBER ── -->
     <form class="search-form active" data-form="part" autocomplete="off">
       <div class="field-group">
         <label class="field-label" for="inp-part" id="lbl-part">Part number</label>
         <div class="input-wrap primary">
-          
+
           <input
             type="search"
             id="inp-part"
@@ -920,7 +920,7 @@ button, input, select, textarea {
           <div id="ac-dropdown" class="autocomplete-dropdown"></div>
         </div>
       </div>
-      <!-- Duty selector â€” HD/LD must never mix per system rules -->
+      <!-- Duty selector — HD/LD must never mix per system rules -->
       <div style="display:flex;gap:0.5rem;align-items:center;flex-wrap:wrap;">
         <span style="font-family:'Barlow Condensed',sans-serif;font-size:0.65rem;letter-spacing:0.1em;color:rgba(255,255,255,0.35);text-transform:uppercase;">Equipment class:</span>
         <button type="button" class="duty-chip active" data-duty="" id="duty-all">ALL</button>
@@ -932,13 +932,13 @@ button, input, select, textarea {
       </div>
     </form>
 
-    <!-- â”€â”€ FORM: VIN / MODEL â”€â”€ -->
+    <!-- ── FORM: VIN / MODEL ── -->
     <form class="search-form" data-form="vin" autocomplete="off">
       <div class="field-row cols-2">
         <div class="field-group">
           <label class="field-label" for="inp-vin-model" id="lbl-vin-model">VIN or Vehicle Model</label>
           <div class="input-wrap">
-            <span class="input-icon" aria-hidden="true">â—ˆ</span>
+
             <input
               type="text"
               id="inp-vin-model"
@@ -951,7 +951,7 @@ button, input, select, textarea {
         <div class="field-group">
           <label class="field-label" for="inp-vin-engine" id="lbl-vin-engine">Engine (optional)</label>
           <div class="input-wrap">
-            <span class="input-icon" aria-hidden="true">â—ˆ</span>
+
             <input
               type="text"
               id="inp-vin-engine"
@@ -967,13 +967,13 @@ button, input, select, textarea {
       </div>
     </form>
 
-    <!-- â”€â”€ FORM: EQUIPMENT â”€â”€ -->
+    <!-- ── FORM: EQUIPMENT ── -->
     <form class="search-form" data-form="equip" autocomplete="off">
       <div class="field-row cols-3">
         <div class="field-group">
           <label class="field-label" for="inp-equip-model" id="lbl-equip-model">Equipment Model</label>
           <div class="input-wrap">
-            <span class="input-icon" aria-hidden="true">â—ˆ</span>
+
             <input
               type="text"
               id="inp-equip-model"
@@ -986,7 +986,7 @@ button, input, select, textarea {
         <div class="field-group">
           <label class="field-label" for="inp-equip-type" id="lbl-equip-type">Equipment Type</label>
           <div class="input-wrap">
-            <span class="input-icon" aria-hidden="true">â–¾</span>
+
             <select id="inp-equip-type" name="type">
               <option value="" id="opt-any">Any type</option>
               <option value="EXCAVATOR">Excavator</option>
@@ -1007,7 +1007,7 @@ button, input, select, textarea {
         <div class="field-group">
           <label class="field-label" for="inp-equip-engine" id="lbl-equip-engine">Engine (optional)</label>
           <div class="input-wrap">
-            <span class="input-icon" aria-hidden="true">â—ˆ</span>
+
             <input
               type="text"
               id="inp-equip-engine"
@@ -1025,19 +1025,19 @@ button, input, select, textarea {
 
   </div><!-- /search-panel -->
 
-  <!-- â”€â”€ RESULTS â”€â”€ -->
+  <!-- ── RESULTS ── -->
   <div id="results" role="region" aria-live="polite" aria-label="Search results"></div>
 
 </div><!-- /ui -->
 
 <footer id="footer">
   <p class="footer-line">
-    ELIMFILTERSÂ® INDUSTRIAL FILTRATION &nbsp;Â·&nbsp;
-    <a href="https://elimfilters.com">elimfilters.com</a> &nbsp;Â·&nbsp;
+    ELIMFILTERS® INDUSTRIAL FILTRATION &nbsp;·&nbsp;
+    <a href="https://elimfilters.com">elimfilters.com</a> &nbsp;·&nbsp;
     <a href="https://elimfilters.com/knowledge-center">Knowledge System</a>
   </p>
   <p class="footer-line" style="margin-top:0.75rem; line-height: 1.6; color: rgba(255,255,255,0.1);">
-    All third-party trademarks, brand names, part numbers, and manufacturer references appearing on this site â€” including but not limited to OEM codes and competitor cross-references â€” are the property of their respective owners and are used solely for identification and compatibility reference purposes. ELIMFILTERSÂ® is an independent manufacturer and is not affiliated with, endorsed by, or sponsored by any of the referenced OEM or aftermarket brands. The use of third-party references does not imply any association or authorization.
+    All third-party trademarks, brand names, part numbers, and manufacturer references appearing on this site — including but not limited to OEM codes and competitor cross-references — are the property of their respective owners and are used solely for identification and compatibility reference purposes. ELIMFILTERS® is an independent manufacturer and is not affiliated with, endorsed by, or sponsored by any of the referenced OEM or aftermarket brands. The use of third-party references does not imply any association or authorization.
   </p>
 </footer>
 
@@ -1045,13 +1045,13 @@ button, input, select, textarea {
 <script>
 'use strict';
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// i18n â€” TRANSLATION DICTIONARY
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
+// i18n — TRANSLATION DICTIONARY
+// ─────────────────────────────────────────────────────────────────────────────
 const TRANSLATIONS = {
   en: {
     splashSkip:       'Click anywhere to skip',
-    logoBadge:        'PART SEARCH',
+    logoBadge:        'HOME',
     introLabel:       '// ASSET PROTECTION PART SEARCH',
     tabPart:          'PART NUMBER',
     tabVin:           'VIN / MODEL',
@@ -1071,14 +1071,14 @@ const TRANSLATIONS = {
   },
   es: {
     splashSkip:       'Clic en cualquier lugar para saltar',
-    logoBadge:        'BUSCADOR DE PIEZAS',
-    introLabel:       '// BÃšSqueda de Piezas y Filtros',
-    tabPart:          'NÂ° DE PARTE',
+    logoBadge:        'INICIO',
+    introLabel:       '// BÚSQUEDA DE PIEZAS Y FILTROS',
+    tabPart:          'N° DE PARTE',
     tabVin:           'VIN / MODELO',
     tabEquip:         'EQUIPO',
-    lblPart:          'NÃºmero de parte',
-    phPart:           'Ingresa nÃºmero de parte o cÃ³digo OEM...',
-    lblVinModel:      'VehÃ­culo / Modelo',
+    lblPart:          'Número de parte',
+    phPart:           'Ingresa número de parte o código OEM...',
+    lblVinModel:      'Vehículo / Modelo',
     phVinModel:       'Ej: HILUX, EXCAVADORA 336...',
     lblVinEngine:     'Motor (opcional)',
     phEngine:         'Ej: 3.0L, 1GD...',
@@ -1087,18 +1087,18 @@ const TRANSLATIONS = {
     lblEquipType:     'Tipo de Equipo',
     optAnyType:       'Cualquier tipo',
     lblEquipEngine:   'Motor (opcional)',
-    btnSearch:        'BUSCAR â†’',
+    btnSearch:        'BUSCAR →',
   },
   pt: {
     splashSkip:       'Clique em qualquer lugar para pular',
-    logoBadge:        'BUSCA DE PEÃ‡AS',
-    introLabel:       '// Busca de PeÃ§as e Filtros',
-    tabPart:          'NÂ° DA PEÃ‡A',
+    logoBadge:        'INÍCIO',
+    introLabel:       '// BUSCA DE PEÇAS E FILTROS',
+    tabPart:          'N° DA PEÇA',
     tabVin:           'VIN / MODELO',
     tabEquip:         'EQUIPAMENTO',
-    lblPart:          'NÃºmero da peÃ§a',
-    phPart:           'Digite nÃºmero da peÃ§a ou cÃ³digo OEM...',
-    lblVinModel:      'VeÃ­culo / Modelo',
+    lblPart:          'Número da peça',
+    phPart:           'Digite número da peça ou código OEM...',
+    lblVinModel:      'Veículo / Modelo',
     phVinModel:       'Ex: HILUX, ESCAVADEIRA 336...',
     lblVinEngine:     'Motor (opcional)',
     phEngine:         'Ex: 3.0L, 1GD...',
@@ -1107,7 +1107,7 @@ const TRANSLATIONS = {
     lblEquipType:     'Tipo de Equipamento',
     optAnyType:       'Qualquer tipo',
     lblEquipEngine:   'Motor (opcional)',
-    btnSearch:        'BUSCAR â†’',
+    btnSearch:        'BUSCAR →',
   }
 };
 
@@ -1189,16 +1189,16 @@ detectLang().then(lang => {
   try { sessionStorage.setItem('ef_lang', lang); } catch(_) {}
 });
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 // CONFIG
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 const API = ''; // Use relative path since API is on the same server
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// WARMUP PING â€” fires immediately on page load so Render wakes up before
+// ─────────────────────────────────────────────────────────────────────────────
+// WARMUP PING — fires immediately on page load so Render wakes up before
 // the user submits a search. On free tier, cold start takes 60-90s.
 // Silent background fetch; all errors intentionally ignored.
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 (function warmupServer() {
   try {
     fetch('/api/status', { method: 'GET', cache: 'no-store' })
@@ -1206,9 +1206,9 @@ const API = ''; // Use relative path since API is on the same server
   } catch (_) {}
 })();
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 // CANVAS / FLOW FIELD
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 const canvas = document.getElementById('nanoflow');
 const ctx = canvas.getContext('2d');
 let W, H;
@@ -1228,9 +1228,9 @@ function flowAngle(x, y, t) {
   ) * Math.PI;
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// FILTER SILHOUETTE â€” spin-on oil filter geometry
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
+// FILTER SILHOUETTE — spin-on oil filter geometry
+// ─────────────────────────────────────────────────────────────────────────────
 function buildFilterSilhouette(cx, cy, scale = 2.1) {
   const OW = 180, OH = 300;
   const off = document.createElement('canvas');
@@ -1295,9 +1295,9 @@ function buildFilterSilhouette(cx, cy, scale = 2.1) {
   return pts;
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 // PARTICLE
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 class Particle {
   constructor() {
     this.x  = Math.random() * (W || 800);
@@ -1336,9 +1336,9 @@ class Particle {
   }
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 // ANIMATION SYSTEM
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 const N = 2200;
 let particles = [];
 let phase = 'scatter';
@@ -1454,9 +1454,9 @@ if (localStorage.getItem('ef-ps-v')) {
   });
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 // MODE TABS
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 let currentMode = 'part';
 
 document.querySelectorAll('.mode-tab').forEach(tab => {
@@ -1473,16 +1473,16 @@ document.querySelectorAll('.mode-tab').forEach(tab => {
   });
 });
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// SEARCH STATE â€” this page only collects input and redirects to results.html,
+// ─────────────────────────────────────────────────────────────────────────────
+// SEARCH STATE — this page only collects input and redirects to results.html,
 // which performs the actual search against the API.
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 const resultsEl = document.getElementById('results');
 const _esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#x27;');
 
 function clearResults() { resultsEl.innerHTML = ''; }
 
-// â”€â”€â”€ DUTY CHIP SELECTOR â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── DUTY CHIP SELECTOR ─────────────────────────────────────────────────────
 let selectedDuty = '';
 document.querySelectorAll('.duty-chip').forEach(chip => {
   chip.addEventListener('click', () => {
@@ -1492,9 +1492,9 @@ document.querySelectorAll('.duty-chip').forEach(chip => {
   });
 });
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 // AUTOCOMPLETE
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 const acDropdown = document.getElementById('ac-dropdown');
 const inpPartCode = document.getElementById('inp-part');
 let acTimeout;
@@ -1503,26 +1503,26 @@ if (inpPartCode && acDropdown) {
   inpPartCode.addEventListener('input', e => {
     const q = e.target.value.trim();
     clearTimeout(acTimeout);
-    
+
     if (q.length < 3) {
       acDropdown.classList.remove('active');
       return;
     }
-    
+
     acTimeout = setTimeout(async () => {
       try {
         const res = await fetch(`/api/autocomplete?q=${encodeURIComponent(q)}`);
         const data = await res.json();
-        
+
         if (!data || data.length === 0) {
           acDropdown.classList.remove('active');
           return;
         }
-        
+
         // Escape regex special chars from query
         const safeQ = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
         const regex = new RegExp(`(${safeQ})`, 'gi');
-        
+
         acDropdown.innerHTML = data.map(item => {
           const safeText = _esc(item.text);
           const highlighted = safeText.replace(regex, '<span class="ac-match">$1</span>');
@@ -1531,7 +1531,7 @@ if (inpPartCode && acDropdown) {
                     <span class="ac-type">${_esc(item.type)}</span>
                   </div>`;
         }).join('');
-        
+
         acDropdown.classList.add('active');
       } catch(err) {
         console.error('Autocomplete error:', err);
@@ -1556,9 +1556,9 @@ if (inpPartCode && acDropdown) {
   });
 }
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
-// FORM SUBMIT HANDLERS â€” redirect to results.html
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
+// FORM SUBMIT HANDLERS — redirect to results.html
+// ─────────────────────────────────────────────────────────────────────────────
 document.querySelector('[data-form="part"]').addEventListener('submit', e => {
   e.preventDefault();
   const q = document.getElementById('inp-part').value.trim();
@@ -1595,26 +1595,26 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
   }
 });
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 // CINEMATIC SPLASH SCREEN (NETFLIX MODE)
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 (function initSplash() {
   const splashEl = document.getElementById('cinematic-splash');
   splashEl.style.display = 'flex';
   const cvs = document.getElementById('splash-canvas');
   const ctx = cvs.getContext('2d', { willReadFrequently: true });
-  
+
   const isMobile = window.innerWidth < 768;
   const particleSpacing = isMobile ? 3 : 2; // MÃ¡s espaciado en mÃ³vil para no sobrecargar
   const mouseRadius = isMobile ? 80 : 120;
   let particlesArray = [];
   let mouse = { x: null, y: null, radius: mouseRadius };
-  
+
   splashEl.addEventListener('mousemove', e => { mouse.x = e.clientX; mouse.y = e.clientY; });
   splashEl.addEventListener('mouseout', () => { mouse.x = undefined; mouse.y = undefined; });
   // Soporte tÃ¡ctil en mÃ³vil
   splashEl.addEventListener('touchmove', e => { mouse.x = e.touches[0].clientX; mouse.y = e.touches[0].clientY; }, { passive: true });
-  
+
   function resizeSplash() {
     // clientWidth/Height es mÃ¡s preciso en mÃ³vil (ignora la barra del navegador)
     cvs.width = document.documentElement.clientWidth;
@@ -1705,7 +1705,7 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
       let dx = mouse.x - this.x;
       let dy = mouse.y - this.y;
       let distance = Math.sqrt(dx*dx + dy*dy);
-      
+
       if (distance < mouse.radius) {
         this.x -= (dx/distance) * ((mouse.radius - distance)/mouse.radius) * this.density * 3;
         this.y -= (dy/distance) * ((mouse.radius - distance)/mouse.radius) * this.density * 3;
@@ -1732,7 +1732,7 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
     } else if (newTargets.length < particlesArray.length) {
       for (let i = newTargets.length; i < particlesArray.length; i++) {
         particlesArray[i].baseX = Math.random() * cvs.width * 2 - cvs.width/2;
-        particlesArray[i].baseY = cvs.height + 500; 
+        particlesArray[i].baseY = cvs.height + 500;
         particlesArray[i].active = false;
       }
     }
@@ -1758,7 +1758,7 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
     particlesArray = imageTargets[0].map(t => new Particle(t));
     animateSplash();
 
-    // 2s E â†’ disolver
+    // 2s E → disolver
     sequenceTimeouts.push(setTimeout(() => {
       dissolveAll();
     }, 2000));
@@ -1771,7 +1771,7 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
 
   function animateSplash() {
     animFrameId = requestAnimationFrame(animateSplash);
-    ctx.fillStyle = 'rgba(0, 0, 0, 0.2)'; 
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.2)';
     ctx.fillRect(0, 0, cvs.width, cvs.height);
     for (let i = 0; i < particlesArray.length; i++) {
       particlesArray[i].draw();
@@ -1796,6 +1796,142 @@ document.querySelector('[data-form="equip"]').addEventListener('submit', e => {
 
 </script>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
+<style id="part-search-approved-ui">
+html, body, input, select, textarea { font-family: 'Barlow', sans-serif !important; }
+.intro-label, .mode-tab, .logo-badge, .duty-chip, .btn-search, .field-label,
+.footer-line, .status-msg, .results-count, .results-mode, .ac-val, .ac-type {
+  font-family: 'Chakra Petch', sans-serif !important;
+}
+.input-icon { display: none !important; }
+.input-wrap input {
+  font-family: 'Barlow', sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+  letter-spacing: .01em !important;
+  padding: .95rem 1rem !important;
+}
+#logo {
+  min-width: 260px !important;
+  min-height: 78px !important;
+  overflow: visible !important;
+  left: 50% !important;
+  margin-left: -130px !important;
+}
+.intro-label {
+  font-weight: 700 !important;
+  letter-spacing: -0.055em !important;
+  line-height: 0.88 !important;
+  text-transform: uppercase !important;
+  font-size: clamp(1.55rem, 6vw, 2.4rem) !important;
+  margin-bottom: 3.5rem !important;
+}
+#logo img {
+  width: 260px !important;
+  height: auto !important;
+  max-width: none !important;
+  display: block !important;
+  object-fit: contain !important;
+}
+.logo-badge {
+  position: fixed !important;
+  top: 1.5rem !important;
+  right: 2rem !important;
+  left: auto !important;
+  z-index: 300 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  border-radius: 0 !important;
+  color: rgba(255,255,255,.65) !important;
+  background: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  font-size: .72rem !important;
+  font-weight: 600 !important;
+  letter-spacing: .14em !important;
+  line-height: 1 !important;
+  text-transform: uppercase !important;
+  pointer-events: auto !important;
+  transition: color .2s ease !important;
+}
+.logo-badge:hover { color: #FFF12D !important; }
+.btn-search {
+  min-width: 220px !important;
+  min-height: 56px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: .9rem 2.25rem !important;
+  font-family: 'Chakra Petch', sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  line-height: 1 !important;
+  letter-spacing: .18em !important;
+  text-transform: uppercase !important;
+}
+.btn-search::before, .btn-search::after { content: none !important; display: none !important; }
+@media (max-width: 1024px) {
+  #logo { min-width: 220px !important; min-height: 66px !important; margin-left: -110px !important; }
+  #logo img { width: 220px !important; }
+  .logo-badge { top: 1.25rem !important; right: 1.25rem !important; }
+}
+@media (max-width: 640px) {
+  #ui { justify-content: flex-start !important; padding: 7.5rem 1rem 3rem !important; }
+  #search-panel { width: 100% !important; max-width: 100% !important; }
+  .mode-tabs { display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; }
+  .mode-tab { width: 100% !important; min-width: 0 !important; padding: .7rem .2rem !important; font-size: .78rem !important; }
+  .btn-search { width: min(100%, 360px) !important; min-width: 0 !important; min-height: 58px !important; }
+  #logo { min-width: 165px !important; min-height: 52px !important; top: 1rem !important; left: 50% !important; margin-left: -82px !important; }
+  #logo img { width: 165px !important; }
+  .logo-badge { top: 1rem !important; right: 1rem !important; font-size: .66rem !important; letter-spacing: .12em !important; }
+}
+</style>
+<script>
+(function () {
+  function normalizePartSearch() {
+    document.querySelectorAll('.btn-search').forEach(function (button) {
+      button.replaceChildren(document.createTextNode('SEARCH'));
+    });
+    document.querySelectorAll('.input-icon').forEach(function (icon) { icon.remove(); });
+    document.querySelectorAll('.logo-badge').forEach(function (badge) {
+      badge.replaceChildren(document.createTextNode('HOME'));
+    });
+    var logo = document.getElementById('logo');
+    var logoImg = logo && logo.querySelector('img');
+    if (logoImg) {
+      logoImg.src = 'https://elimfilters.com/assets/elimfilters-logo-white.png';
+      logoImg.alt = 'ELIMFILTERS — Total Asset Protection';
+    }
+  }
+  normalizePartSearch();
+  document.addEventListener('DOMContentLoaded', normalizePartSearch);
+  window.addEventListener('load', normalizePartSearch);
+})();
+</script>
+<!-- PART_SEARCH_UI_BUILD_20260902_LOGO_CENTERED_HERO_FONTS -->
 </body>
 </html>
 

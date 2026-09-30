@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -32,7 +32,7 @@
       overflow-x: hidden;
     }
 
-    /* â”€â”€â”€ HEADER â”€â”€â”€ */
+    /* ─── HEADER ─── */
     .header {
       position: sticky;
       top: 0;
@@ -110,7 +110,7 @@
     }
     .header-back:hover { color: var(--y); }
 
-    /* â”€â”€â”€ RESULTS META â”€â”€â”€ */
+    /* ─── RESULTS META ─── */
     .results-meta {
       padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1rem, 4vw, 3rem) 0;
       max-width: 1600px;
@@ -162,7 +162,7 @@
       margin-top: 1.2rem;
     }
 
-    /* â”€â”€â”€ PRODUCT GRID â”€â”€â”€ */
+    /* ─── PRODUCT GRID ─── */
     .products {
       max-width: 1600px;
       margin: 0 auto;
@@ -172,7 +172,7 @@
       gap: 1.2rem;
     }
 
-    /* â”€â”€â”€ MATCH BADGE â”€â”€â”€ */
+    /* ─── MATCH BADGE ─── */
     .match-badge {
       display: inline-flex;
       align-items: center;
@@ -194,7 +194,7 @@
       opacity: 0.7;
     }
 
-    /* â”€â”€â”€ PRODUCT CARD â”€â”€â”€ */
+    /* ─── PRODUCT CARD ─── */
     .product-card {
       border: 1px solid var(--border);
       border-radius: 6px;
@@ -524,7 +524,7 @@
       border-radius: 2px;
     }
 
-    /* â”€â”€â”€ SEE ALSO â”€â”€â”€ */
+    /* ─── SEE ALSO ─── */
     .see-also {
       border-top: 1px solid var(--border);
       padding-top: 1rem;
@@ -560,7 +560,7 @@
       border-color: rgba(255,241,45,0.55);
     }
 
-    /* â”€â”€â”€ STATUS MESSAGES â”€â”€â”€ */
+    /* ─── STATUS MESSAGES ─── */
     .status-container {
       max-width: 1600px;
       margin: 0 auto;
@@ -607,7 +607,7 @@
     }
     .status-action:hover { background: #ffe800; }
 
-    /* â”€â”€â”€ LOADING ANIMATION â”€â”€â”€ */
+    /* ─── LOADING ANIMATION ─── */
     .scan-line {
       position: fixed;
       top: 72px;
@@ -626,7 +626,7 @@
       100% { transform: translateX(100%); opacity: 0; }
     }
 
-    /* â”€â”€â”€ LOADING DOTS â”€â”€â”€ */
+    /* ─── LOADING DOTS ─── */
     .loading-container {
       max-width: 1600px;
       margin: 0 auto;
@@ -662,7 +662,7 @@
       100% { transform: translateX(350%); }
     }
 
-    /* â”€â”€â”€ FOOTER â”€â”€â”€ */
+    /* ─── FOOTER ─── */
     .footer {
       border-top: 1px solid var(--border);
       text-align: center;
@@ -678,7 +678,7 @@
     .footer-line a { color: rgba(255,241,45,0.4); text-decoration: none; }
     .footer-line a:hover { color: var(--y); }
 
-    /* â”€â”€â”€ KLEO BADGE â”€â”€â”€ */
+    /* ─── KLEO BADGE ─── */
     #kleo-badge {
       position: fixed;
       bottom: 1.5rem;
@@ -706,12 +706,12 @@
       text-transform: uppercase;
     }
 
-    /* â”€â”€â”€ ANIMATIONS â”€â”€â”€ */
+    /* ─── ANIMATIONS ─── */
     @keyframes fadeUp {
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* â”€â”€â”€ RESPONSIVE â”€â”€â”€ */
+    /* ─── RESPONSIVE ─── */
     @media (max-width: 768px) {
       .header { height: 60px; gap: 0.75rem; }
       .header-logo img { height: 32px; }
@@ -732,7 +732,7 @@
       .card-header { flex-direction: column; }
       .specs-grid { grid-template-columns: 1fr 1fr; }
     }
-  
+
 /* ELIMFILTERS mobile viewport lock */
 html,
 body {
@@ -820,7 +820,7 @@ textarea {
 
 <div class="scan-line"></div>
 
-<!-- â”€â”€â”€ HEADER â”€â”€â”€ -->
+<!-- ─── HEADER ─── -->
 <header class="header">
   <a href="https://elimfilters.com" class="header-logo" aria-label="ELIMFILTERS homepage">
     <img src="https://elimfilters.com/assets/elimfilters-logo-white.png" alt="ELIMFILTERS Logo">
@@ -835,21 +835,21 @@ textarea {
   <a href="/index.html" class="header-back">â† BACK TO SEARCH</a>
 </header>
 
-<!-- â”€â”€â”€ KLEO BADGE â”€â”€â”€ -->
+<!-- ─── KLEO BADGE ─── -->
 
 
-<!-- â”€â”€â”€ MAIN CONTENT â”€â”€â”€ -->
+<!-- ─── MAIN CONTENT ─── -->
 <div id="app"></div>
 
-<!-- â”€â”€â”€ FOOTER â”€â”€â”€ -->
+<!-- ─── FOOTER ─── -->
 <footer class="footer">
   <p class="footer-line">
-    ELIMFILTERSÂ® INDUSTRIAL FILTRATION &nbsp;Â·&nbsp;
+    ELIMFILTERS® INDUSTRIAL FILTRATION &nbsp;Â·&nbsp;
     <a href="https://elimfilters.com">elimfilters.com</a> &nbsp;Â·&nbsp;
     <a href="https://elimfilters.com/knowledge-center">Knowledge System</a>
   </p>
   <p class="footer-line" style="margin-top:0.75rem; line-height: 1.6; color: rgba(255,255,255,0.1); font-size: 0.45rem;">
-    All third-party trademarks, brand names, part numbers, and manufacturer references appearing on this site — including but not limited to OEM codes and competitor cross-references — are the property of their respective owners and are used solely for identification and compatibility reference purposes. ELIMFILTERSÂ® is an independent manufacturer and is not affiliated with, endorsed by, or sponsored by any of the referenced OEM or aftermarket brands. The use of third-party references does not imply any association or authorization.
+    All third-party trademarks, brand names, part numbers, and manufacturer references appearing on this site — including but not limited to OEM codes and competitor cross-references — are the property of their respective owners and are used solely for identification and compatibility reference purposes. ELIMFILTERS® is an independent manufacturer and is not affiliated with, endorsed by, or sponsored by any of the referenced OEM or aftermarket brands. The use of third-party references does not imply any association or authorization.
   </p>
 </footer>
 
@@ -857,9 +857,9 @@ textarea {
 <script>
 'use strict';
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 // i18n — TRANSLATION DICTIONARY (results page)
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 const TRANSLATIONS = {
   en: {
     searchPlaceholder: 'Search again...',
@@ -1003,15 +1003,15 @@ detectLang().then(lang => {
   executeSearch();
 });
 
-// â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─────────────────────────────────────────────────────────────────────────────
 
 const API = '';
 const app = document.getElementById('app');
 
-// â”€â”€â”€ HTML escape — prevents XSS from URL parameters injected into innerHTML â”€â”€â”€
+// ─── HTML escape — prevents XSS from URL parameters injected into innerHTML ───
 const _esc = s => String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#x27;');
 
-// â”€â”€â”€ Parse URL parameters â”€â”€â”€
+// ─── Parse URL parameters ───
 const params = new URLSearchParams(window.location.search);
 const query = (params.get('q') || '').trim();
 const mode  = params.get('mode') || 'part';
@@ -1093,7 +1093,7 @@ function showLoading(term) {
     </div>`;
 }
 
-// â”€â”€â”€ Warmup timer: shows message after 8s if server is cold-starting â”€â”€â”€
+// ─── Warmup timer: shows message after 8s if server is cold-starting ───
 function startWarmupTimer(term) {
   return setTimeout(() => {
     const msg = document.getElementById('loading-msg');
@@ -1106,7 +1106,7 @@ function startWarmupTimer(term) {
   }, 8000);
 }
 
-// â”€â”€â”€ Render Empty â”€â”€â”€
+// ─── Render Empty ───
 function showEmpty(term) {
   app.innerHTML = `
     <div class="status-container">
@@ -1159,7 +1159,7 @@ function showEmpty(term) {
     </div>`;
 }
 
-// â”€â”€â”€ Render Error â”€â”€â”€
+// ─── Render Error ───
 function showError() {
   app.innerHTML = `
     <div class="status-container">
@@ -1170,7 +1170,7 @@ function showError() {
     </div>`;
 }
 
-// â”€â”€â”€ HTML escape (XSS prevention) â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// ─── HTML escape (XSS prevention) ───────────────────────────────────────────
 function esc(str) {
   if (str == null) return '';
   return String(str)
@@ -1178,7 +1178,7 @@ function esc(str) {
     .replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#x27;');
 }
 
-// â”€â”€â”€ Parse description (may come as JSON string from API) â”€â”€â”€
+// ─── Parse description (may come as JSON string from API) ───
 function parseDesc(val) {
   if (!val) return null;
   const lang = currentLang;
@@ -1199,16 +1199,16 @@ function parseDesc(val) {
   return val;
 }
 
-// â”€â”€â”€ Format Refs â”€â”€â”€
+// ─── Format Refs ───
 function normalizeBrand(b) {
   if (!b) return '';
-  // Normalize brand name variations (AC-DELCO â†’ AC DELCO, BIG-A â†’ BIG A, etc.)
+  // Normalize brand name variations (AC-DELCO → AC DELCO, BIG-A → BIG A, etc.)
   return b.trim().replace(/-/g, ' ').replace(/\s+/g, ' ').toUpperCase();
 }
 
 function formatRefs(arr, max = Infinity) {
   if (!arr || !arr.length) return [];
-  
+
   let parsed = arr.map(r => {
     let brand = '';
     let code = '';
@@ -1224,7 +1224,7 @@ function formatRefs(arr, max = Infinity) {
       brand = (r.manufacturer || '').toUpperCase() === 'UNKNOWN' ? '' : (r.manufacturer || '');
       code = r.code || r.partNumber || '';
     }
-    
+
     // URL-decode codes (scraper sometimes stores %2F etc.)
     try { code = decodeURIComponent(code); } catch(_) {}
     return { brand: normalizeBrand(brand), code: code.toUpperCase() };
@@ -1268,13 +1268,13 @@ function splitCrossReferences(oemArr, compArr) {
   return { oem, comp };
 }
 
-// â”€â”€â”€ Render Spec Item â”€â”€â”€
+// ─── Render Spec Item ───
 function specHTML(label, value) {
   if (!value) return '';
   return `<div class="spec-item"><span class="spec-label">${label}</span><span class="spec-value">${value}</span></div>`;
 }
 
-// â”€â”€â”€ Render Product Card â”€â”€â”€
+// ─── Render Product Card ───
 function renderCard(p, index) {
   const sku = p.elimfilters_sku || p.sku || '—';
 
@@ -1337,7 +1337,7 @@ function renderCard(p, index) {
       <div class="card-inner">
         <div class="card-header">
           <div class="card-identity">
-            <span style="font-family:'JetBrains Mono',monospace;font-size:0.52rem;letter-spacing:0.18em;color:rgba(255,241,45,0.45);text-transform:uppercase;display:block;margin-bottom:0.2rem;">ELIMFILTERSÂ®</span>
+            <span style="font-family:'JetBrains Mono',monospace;font-size:0.52rem;letter-spacing:0.18em;color:rgba(255,241,45,0.45);text-transform:uppercase;display:block;margin-bottom:0.2rem;">ELIMFILTERS®</span>
             <span class="card-sku">${esc(sku)}</span>
           </div>
           <div class="card-badges">
@@ -1373,7 +1373,7 @@ function renderCard(p, index) {
             <div>
               <p class="refs-title">${T.oemTitle}</p>
               <div class="refs-grid">
-                ${oem.length 
+                ${oem.length
                   ? oem.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${esc(r.brand)}</span>` : '<span></span>'}<span class="ref-code">${esc(r.code)}</span></span>`).join('')
                   : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">${T.specNoRefs}</span>`
                 }
@@ -1384,7 +1384,7 @@ function renderCard(p, index) {
             <div>
               <p class="refs-title">${T.compTitle}</p>
               <div class="refs-grid">
-                ${comp.length 
+                ${comp.length
                   ? comp.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${esc(r.brand)}</span>` : '<span></span>'}<span class="ref-code">${esc(r.code)}</span></span>`).join('')
                   : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">${T.specNoRefs}</span>`
                 }
@@ -1427,7 +1427,7 @@ function renderCard(p, index) {
                         const subLine = [eng, yearType].filter(Boolean).join(' Â· ');
                         return `<span class="equip-chip"><span class="equip-name">${nameLine}</span>${subLine ? `<span class="equip-sub">${esc(subLine)}</span>` : ''}</span>`;
                       }
-                      
+
                       // Fallback for simple string application
                       const simpleStr = String(a);
                       const spaceIdx = simpleStr.indexOf(' ');
@@ -1438,7 +1438,7 @@ function renderCard(p, index) {
                         nameLine = `<span class="equip-mfr">${esc(simpleStr)}</span>`;
                       }
                       return `<span class="equip-chip"><span class="equip-name">${nameLine}</span></span>`;
-                    }).join('') 
+                    }).join('')
                   : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">${T.specNoEquip}</span>`
                 }
               </div>
@@ -1461,7 +1461,7 @@ function renderCard(p, index) {
     </article>`;
 }
 
-// â”€â”€â”€ Render Results â”€â”€â”€
+// ─── Render Results ───
 // Mixed HD/LD duty classes are intercepted earlier by showMixedDutyPrompt()
 // before this function is ever called, so it only ever renders a single,
 // duty-consistent result set.
@@ -1478,14 +1478,14 @@ function renderResults(items, count, searchMode, searchTerm) {
   app.innerHTML = `<div class="products">${items.map((p, i) => renderCard(p, i)).join('')}</div>`;
 }
 
-// â”€â”€â”€ SEARCH EXECUTION â”€â”€â”€
+// ─── SEARCH EXECUTION ───
 async function decodeNHTSA(vin) {
   try {
     const res = await fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/${vin}?format=json`);
     if (!res.ok) return null;
     const data = await res.json();
     if (!data.Results) return null;
-    
+
     let make = '', mod = '', disp = '';
     for (const r of data.Results) {
       if (r.Variable === 'Make' && r.Value) make = r.Value;
@@ -1676,5 +1676,141 @@ async function primaryResultsWithDiscoveredAlternatives(results, rawReference) {
 // executeSearch() is called by detectLang().then() above — no boot call needed
 </script>
 
+
+
+
+
+
+
+
+
+
+<style id="part-search-results-fixes">
+.search-summary-mode { display: none !important; }
+</style>
+<script id="part-search-results-fixes-script">
+(function () {
+  var technologyRoutes = {
+    MACROCORE: 'technologies/macrocore',
+    MICROKAPPA: 'technologies/microkappa',
+    DRYCORE: 'technologies/drycore',
+    INTEKCORE: 'technologies/intekcore',
+    SYNTAPORE: 'technologies/syntapore',
+    HYDROCORE: 'technologies/hydrocore',
+    SYNTRAX: 'technologies/syntrax',
+    NANOFORCE: 'technologies/nanoforce',
+    THERMACORE: 'technologies/thermacore',
+    DURATECH: 'commercial-lines/duratech',
+    MARINECLEAN: 'commercial-lines/marineclean'
+  };
+
+  function canonicalTechnologyName(value) {
+    return String(value || '')
+      .replace(/[™®©]/g, '')
+      .normalize('NFKD')
+      .replace(/[^A-Za-z0-9]/g, '')
+      .toUpperCase();
+  }
+
+  function normalizedSearchQuery() {
+    var params = new URLSearchParams(window.location.search || '');
+    return String(params.get('q') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+  }
+
+  function resultLanguage() {
+    var params = new URLSearchParams(window.location.search || '');
+    var lang = String(params.get('lang') || document.documentElement.lang || 'en').toLowerCase();
+    if (lang.indexOf('es') === 0) return 'es';
+    if (lang.indexOf('pt') === 0) return 'pt';
+    return 'en';
+  }
+
+  function normalizeR90DisambiguationUi(scope) {
+    if (normalizedSearchQuery() !== 'R90') return;
+    var root = scope || document;
+    var title = root.querySelector && root.querySelector('.status-title');
+    var desc = root.querySelector && root.querySelector('.status-desc');
+    if (!title || !desc) {
+      title = document.querySelector('.status-title');
+      desc = document.querySelector('.status-desc');
+    }
+    if (!title || !desc) return;
+
+    var copy = {
+      en: {
+        title: 'MANUFACTURER REQUIRED',
+        desc: 'R90 is used by more than one manufacturer. Enter TECNOCAR R90 for the validated TECNOCAR cross-reference, or enter the complete RACOR element reference R90S, R90T, or R90P.'
+      },
+      es: {
+        title: 'FABRICANTE REQUERIDO',
+        desc: 'R90 es utilizado por más de un fabricante. Ingresa TECNOCAR R90 para la referencia validada de TECNOCAR, o ingresa la referencia completa del elemento RACOR: R90S, R90T o R90P.'
+      },
+      pt: {
+        title: 'FABRICANTE OBRIGATÓRIO',
+        desc: 'R90 é utilizado por mais de um fabricante. Digite TECNOCAR R90 para a referência TECNOCAR validada, ou digite a referência completa do elemento RACOR: R90S, R90T ou R90P.'
+      }
+    }[resultLanguage()];
+
+    title.textContent = copy.title;
+    desc.textContent = copy.desc;
+    title.setAttribute('data-resolution', 'AMBIGUOUS_MANUFACTURER');
+    desc.setAttribute('data-manufacturer-required', 'true');
+  }
+
+  function normalizeResultsUi(root) {
+    var scope = root || document;
+
+    scope.querySelectorAll('.search-summary-mode').forEach(function (node) { node.remove(); });
+
+    scope.querySelectorAll('.header-back').forEach(function (link) {
+      link.textContent = 'BACK TO SEARCH';
+      link.href = '/';
+    });
+
+    scope.querySelectorAll('.badge-tech').forEach(function (badge) {
+      var key = canonicalTechnologyName(badge.textContent);
+      var routePath = technologyRoutes[key];
+      if (!routePath) {
+        badge.remove();
+        return;
+      }
+      var canonicalUrl = 'https://elimfilters.com/' + routePath + '/';
+      badge.href = canonicalUrl;
+      badge.target = '_blank';
+      badge.rel = 'noopener noreferrer';
+      badge.title = 'Learn more about ' + (badge.textContent || key).trim();
+      badge.setAttribute('aria-label', 'Open ' + key + ' technology page');
+    });
+
+    normalizeR90DisambiguationUi(scope);
+  }
+
+  function start() {
+    normalizeResultsUi(document);
+    document.addEventListener('click', function (event) {
+      var badge = event.target.closest && event.target.closest('.badge-tech');
+      if (!badge) return;
+      var key = canonicalTechnologyName(badge.textContent);
+      var routePath = technologyRoutes[key];
+      if (!routePath) return;
+      event.preventDefault();
+      window.open('https://elimfilters.com/' + routePath + '/', '_blank', 'noopener,noreferrer');
+    });
+
+    new MutationObserver(function (mutations) {
+      mutations.forEach(function (mutation) {
+        mutation.addedNodes.forEach(function (node) {
+          if (node.nodeType === 1) normalizeResultsUi(node.matches && node.matches('.badge-tech, .header-back, .search-summary-mode, .status-container, .status-title, .status-desc') ? node.parentNode || document : node);
+        });
+      });
+      normalizeR90DisambiguationUi(document);
+    }).observe(document.body, { childList: true, subtree: true });
+  }
+
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true });
+  else start();
+})();
+</script>
+<!-- PART_SEARCH_RESULTS_FIXES_BUILD_20260909_R90_DISAMBIGUATION -->
 </body>
 </html>
