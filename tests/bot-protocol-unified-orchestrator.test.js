@@ -21,7 +21,7 @@ const {
 } = require('../lib/bot-protocol-catalog');
 
 test('uses one protocol version for unified responses', () => {
-  assert.equal(PROTOCOL_VERSION, '3.3.0');
+  assert.equal(PROTOCOL_VERSION, '3.4.0');
 });
 
 test('detects turbine replacement-element requests', () => {
@@ -33,10 +33,26 @@ test('detects turbine replacement-element requests', () => {
 test('extracts Mack MP8 application entities without treating them as a filter reference', () => {
   assert.deepEqual(extractApplicationEntities('Mack con motor MP8'), {
     brand: 'MACK',
+    model: null,
     engine: 'MP8',
     year: null,
     tokens: ['MACK', 'MP8']
   });
+});
+
+test('extracts Toyota RAV4 year application entities', () => {
+  assert.deepEqual(extractApplicationEntities('Tengo un Toyota RAV4 2022, ¿cuáles filtros usa?'), {
+    brand: 'TOYOTA',
+    model: 'RAV4',
+    engine: null,
+    year: 2022,
+    tokens: ['TOYOTA', 'RAV4']
+  });
+});
+
+test('normalizes common RAV4 voice variants', () => {
+  assert.equal(extractApplicationEntities('Toyota RAV 4 2022, qué filtros usa').model, 'RAV4');
+  assert.equal(extractApplicationEntities('Toyota Rackford 2022, qué filtros usa').model, 'RAV4');
 });
 
 test('persists identified housing in normalized conversation state', () => {
