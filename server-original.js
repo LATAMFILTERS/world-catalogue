@@ -13,6 +13,7 @@ const {
 } = require('./lib/alternative-functional-family');
 const EmailIntentClassifier = require('./lib/email-intent-classifier');
 const TranslationService = require('./lib/translation-service');
+const { resolveDeterministically } = require('./lib/bot-protocol-unified-orchestrator');
 
 // ─── Rate Limiters ────────────────────────────────────────────────────────────
 const searchLimiter = rateLimit({
@@ -789,6 +790,36 @@ app.post('/api/chat', searchLimiter, async (req, res) => {
       session.history = session.history.slice(-20);
       _chatSessions.set(sessionId, session);
       return res.json({reply,outcome:'follow_up',supportRecommended:true,escalated:true});
+    }
+
+    // Resolve catalog/application questions deterministically before knowledge engine or LLM.
+    // This is the authoritative path for vehicle fitment, exact references and governed catalog facts.
+    const deterministic = await resolveDeterministically({
+      message: message.trim(),
+      sessionId,
+      conversation_id: sessionId,
+      channel: 'web',
+      lang
+    });
+    if (deterministic?.answer) {
+      const reply = deterministic.answer;
+      session.unresolvedAttempts = 0;
+      session.history.push(
+        { role: 'user', content: message.trim() },
+        { role: 'assistant', content: reply }
+      );
+      session.history = session.history.slice(-20);
+      session.lastActivity = Date.now();
+      _chatSessions.set(sessionId, session);
+      return res.json({
+        reply,
+        outcome: 'resolved',
+        buyerType: session.buyerType,
+        unresolvedAttempts: 0,
+        supportRecommended: false,
+        escalated: false,
+        source: deterministic.deterministic_router?.source || 'bot_protocol'
+      });
     }
 
     // Attempt to create candidate case for knowledge center workflow
