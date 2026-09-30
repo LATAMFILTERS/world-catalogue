@@ -2,7 +2,7 @@
 
 const crypto = require('crypto');
 const { Client } = require('pg');
-const { assertCanonicalWrite, assertGovernedCatalogPatch } = require('../../lib/catalog-write-gateway');
+const { assertCanonicalWrite } = require('../../lib/catalog-write-gateway');
 const { applyVerifiedApplications } = require('../../lib/catalog-application-write-service');
 
 const MIGRATION = '120_CREATE_DAI_LD_BATCH_20260930';
@@ -249,39 +249,89 @@ async function upsertProduct(client,p,report){
   if(!existing){
     const cols=Object.keys(row);
     const values=cols.map(k=>jsonColumns.has(k)?JSON.stringify(row[k]):row[k]);
-    const placeholders=cols.map((k,i)=>'$'+(i+1)+(jsonColumns.has(k)?'::jsonb':''));
+    const placeholders=cols.map((k,i)=>'
+
+  await client.query(
+    `INSERT INTO catalog_codigo_base_evidence
+      (sku,evidence_kind,authority,manufacturer,reference_code,normalized_reference,source_url,evidence_hash,verified_at,metadata)
+     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,now(),$9::jsonb)
+     ON CONFLICT DO NOTHING`,
+    [
+      p.sku,p.oemFallback?'OEM_FALLBACK':'CROSS_REFERENCE',
+      p.oemFallback?'OEM_VERIFIED_AFTER_FRAM_ABSENCE':'FRAM_REGIONAL_CANONICAL',
+      p.sourceBrand,p.base,norm(p.base),p.source_url,built.evidenceHash,
+      JSON.stringify({migration:MIGRATION,sku:p.sku,origin_group:'NON_EUROPEAN'})
+    ]
+  );
+
+  const appResult=await applyVerifiedApplications(client,{
+    sku:p.sku,
+    equipment_applications:[],
+    vehicle_applications:p.applications,
+    evidence:{
+      authority:p.oemFallback?'OEM_APPLICATION_EVIDENCE':'FRAM_AND_CROSS_VALIDATED_APPLICATION_EVIDENCE',
+      source_url:p.source_url,
+      evidence_hash:sha(p.applications),
+      metadata:{migration:MIGRATION,canonical_base:p.base}
+    }
+  });
+  report.applications[p.sku]=appResult;
+  await client.query('SELECT refresh_crossref_cache_sku($1)',[p.sku]);
+  report.validations[p.sku]=validation;
+}
+
+async function applyDaiLdBatch20260930(){
+  const databaseUrl=process.env.CATALOG_DATABASE_URL||process.env.DATABASE_URL;
+  if(!databaseUrl) throw new Error('Missing CATALOG_DATABASE_URL or DATABASE_URL');
+  const client=new Client({connectionString:databaseUrl,ssl:sslFor(databaseUrl)});
+  const report={migration:MIGRATION,inserted:[],existing:[],applications:{},validations:{},products:PRODUCTS.map(p=>p.sku)};
+  await client.connect();
+  try{
+    await client.query('BEGIN');
+    const legacy=await client.query(
+      "SELECT count(*)::int n FROM public.elimfilters_catalog WHERE left(upper(sku),3)=ANY($1::text[])",
+      [['EA5','EC5','EF5','EL5']]
+    );
+    if(legacy.rows[0].n!==0) throw new Error('RETIRED_LD_PREFIX_ROWS_PRESENT');
+
+    for(const p of PRODUCTS) await upsertProduct(client,p,report);
+
+    const audit=await client.query(
+      'SELECT sku,codigo_base,duty,filter_type,technology FROM public.elimfilters_catalog WHERE sku=ANY($1::text[]) ORDER BY sku',
+      [PRODUCTS.map(p=>p.sku)]
+    );
+    if(audit.rowCount!==PRODUCTS.length) throw new Error(`DAI_BATCH_INCOMPLETE expected=${PRODUCTS.length} got=${audit.rowCount}`);
+    report.audit=audit.rows;
+    await client.query('COMMIT');
+    report.transaction='COMMIT';
+    return report;
+  }catch(error){
+    try{await client.query('ROLLBACK');}catch(_){}
+    report.transaction='ROLLBACK';
+    report.error=error.message;
+    throw error;
+  }finally{
+    await client.end();
+  }
+}
+
+if(require.main===module){
+  applyDaiLdBatch20260930()
+    .then(report=>console.log('[dai-ld-batch-20260930]',JSON.stringify(report,null,2)))
+    .catch(error=>{console.error('[dai-ld-batch-20260930] failed',error.stack||error.message);process.exit(1);});
+}
+
+module.exports={MIGRATION,PRODUCTS,buildRow,applyDaiLdBatch20260930};
++(i+1)+(jsonColumns.has(k)?'::jsonb':''));
     const sql='INSERT INTO public.elimfilters_catalog ('+cols.map(k=>'"'+k+'"').join(',')+') VALUES ('+placeholders.join(',')+')';
     await client.query(sql,values);
     report.inserted.push(p.sku);
   } else {
-    if(norm(existing.codigo_base)!==norm(p.base) && norm(existing.canonical_source_code)!==norm(p.base)){
+    const baseMatches=norm(existing.codigo_base)===norm(p.base) || norm(existing.canonical_source_code)===norm(p.base);
+    if(!baseMatches){
       throw new Error(`SKU_IDENTITY_CONFLICT ${p.sku} existing=${JSON.stringify(existing)} expected=${p.base}`);
     }
-    const patch={
-      codigo_base:row.codigo_base,duty:row.duty,oem_codes:row.oem_codes,
-      competitor_codes:row.competitor_codes,vehicle_applications:[],
-      enrichment_data:row.enrichment_data
-    };
-    assertGovernedCatalogPatch({...row,...existing},patch);
-    await client.query(
-      `UPDATE public.elimfilters_catalog SET
-        codigo_base=$2,name=$3,description=$4,filter_type=$5,sub_type=$6,technology=$7,
-        height_mm=$8,outer_diameter_mm=$9,filter_media=$10,duty=$11,
-        oem_codes=$12::jsonb,competitor_codes=$13::jsonb,specs=$14::jsonb,
-        canonical_source_brand=$15,canonical_source_code=$16,canonical_source_url=$17,
-        canonical_source_status='VERIFIED',canonical_verified_at=$18,
-        canonical_evidence=$19::jsonb,duty_source_brand=$20,duty_source_url=$21,
-        duty_validation_status='VERIFIED',duty_verified_at=$22,duty_evidence=$23::jsonb,
-        enrichment_data=$24::jsonb
-       WHERE sku=$1`,
-      [p.sku,row.codigo_base,row.name,row.description,row.filter_type,row.sub_type,row.technology,
-       row.height_mm,row.outer_diameter_mm,row.filter_media,row.duty,JSON.stringify(row.oem_codes),
-       JSON.stringify(row.competitor_codes),JSON.stringify(row.specs),row.canonical_source_brand,
-       row.canonical_source_code,row.canonical_source_url,row.canonical_verified_at,
-       JSON.stringify(row.canonical_evidence),row.duty_source_brand,row.duty_source_url,
-       row.duty_verified_at,JSON.stringify(row.duty_evidence),JSON.stringify(row.enrichment_data)]
-    );
-    report.updated.push(p.sku);
+    report.existing.push(p.sku);
   }
 
   await client.query(
@@ -317,7 +367,7 @@ async function applyDaiLdBatch20260930(){
   const databaseUrl=process.env.CATALOG_DATABASE_URL||process.env.DATABASE_URL;
   if(!databaseUrl) throw new Error('Missing CATALOG_DATABASE_URL or DATABASE_URL');
   const client=new Client({connectionString:databaseUrl,ssl:sslFor(databaseUrl)});
-  const report={migration:MIGRATION,inserted:[],updated:[],applications:{},validations:{},products:PRODUCTS.map(p=>p.sku)};
+  const report={migration:MIGRATION,inserted:[],existing:[],applications:{},validations:{},products:PRODUCTS.map(p=>p.sku)};
   await client.connect();
   try{
     await client.query('BEGIN');
