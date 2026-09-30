@@ -163,6 +163,7 @@ function norm(v){ return String(v||'').toUpperCase().replace(/[^A-Z0-9]/g,''); }
 function codeRows(items, classification, sourceUrl){
   return items.map(([manufacturer,code])=>({manufacturer,code,classification,source_url:sourceUrl}));
 }
+
 function governance(p){
   if(p.oemFallback){
     return {
@@ -196,24 +197,31 @@ function governance(p){
     evidence_url:p.source_url
   };
 }
+
 function buildRow(p){
-  const oem=codeRows(p.oem,'OEM',p.source_url)
-    .filter(x=>norm(x.code)!==norm(p.base));
-  const competitors=codeRows(p.competitors,'AFTERMARKET',p.source_url)
-    .filter(x=>norm(x.code)!==norm(p.base));
+  const oem=codeRows(p.oem,'OEM',p.source_url).filter(x=>norm(x.code)!==norm(p.base));
+  const competitors=codeRows(p.competitors,'AFTERMARKET',p.source_url).filter(x=>norm(x.code)!==norm(p.base));
   const evidenceHash=sha({sku:p.sku,base:p.base,oem,competitors,specs:p.specs,applications:p.applications});
   const row={
-    sku:p.sku,codigo_base:p.base,
+    sku:p.sku,
+    codigo_base:p.base,
     name:p.sub_type,
-    description:`ELIMFILTERS® ${p.sku} ${p.sub_type}. Governed canonical base: ${p.sourceBrand} ${p.base}.`,
-    filter_type:p.filter_type,sub_type:p.sub_type,technology:p.technology,
+    description:'ELIMFILTERS® '+p.sku+' '+p.sub_type+'. Governed canonical base: '+p.sourceBrand+' '+p.base+'.',
+    filter_type:p.filter_type,
+    sub_type:p.sub_type,
+    technology:p.technology,
     height_mm:p.specs.height_mm||null,
     outer_diameter_mm:p.specs.outer_diameter_mm||null,
     filter_media:p.specs.filter_media||null,
     duty:'LIGHT_DUTY',
-    oem_codes:oem,competitor_codes:competitors,
-    equipment_applications:[],vehicle_applications:[],
-    specs:p.specs,brand_crossrefs:{},alternative_products:[],alternatives:[],
+    oem_codes:oem,
+    competitor_codes:competitors,
+    equipment_applications:[],
+    vehicle_applications:[],
+    specs:p.specs,
+    brand_crossrefs:{},
+    alternative_products:[],
+    alternatives:[],
     is_primary:true,
     canonical_source_brand:p.sourceBrand,
     canonical_source_code:p.base,
@@ -231,21 +239,19 @@ function buildRow(p){
       evidence_source:'HERMES_DAI_LD_BATCH_2026_09_30'
     }
   };
-  return {row,evidenceHash,oem,competitors};
+  return {row,evidenceHash};
 }
 
-async function upsertProduct(client,p,report){
+async function createProduct(client,p,report){
   const built=buildRow(p);
   const row=built.row;
   const validation=assertCanonicalWrite(row);
-  const conflicts=await client.query(
-    'SELECT sku,codigo_base,canonical_source_code FROM public.elimfilters_catalog WHERE sku=$1 OR upper(regexp_replace(coalesce(codigo_base,\'\'),\'[^A-Z0-9]\',\'\',\'g\'))=$2 OR upper(regexp_replace(coalesce(canonical_source_code,\'\'),\'[^A-Z0-9]\',\'\',\'g\'))=$2 FOR UPDATE',
-    [p.sku,norm(p.base)]
-  );
+  const q='SELECT sku,codigo_base,canonical_source_code FROM public.elimfilters_catalog WHERE sku=$1 OR upper(regexp_replace(coalesce(codigo_base,\'\'),\'[^A-Z0-9]\',\'\',\'g\'))=$2 OR upper(regexp_replace(coalesce(canonical_source_code,\'\'),\'[^A-Z0-9]\',\'\',\'g\'))=$2 FOR UPDATE';
+  const conflicts=await client.query(q,[p.sku,norm(p.base)]);
   const other=conflicts.rows.filter(r=>r.sku!==p.sku);
-  if(other.length) throw new Error(`CANONICAL_SOURCE_ALREADY_OWNED ${p.sku} ${JSON.stringify(other)}`);
-
+  if(other.length) throw new Error('CANONICAL_SOURCE_ALREADY_OWNED '+p.sku+' '+JSON.stringify(other));
   const existing=conflicts.rows.find(r=>r.sku===p.sku);
+
   if(!existing){
     const cols=Object.keys(row);
     const values=cols.map(k=>jsonColumns.has(k)?JSON.stringify(row[k]):row[k]);
@@ -253,26 +259,19 @@ async function upsertProduct(client,p,report){
     const sql='INSERT INTO public.elimfilters_catalog ('+cols.map(k=>'"'+k+'"').join(',')+') VALUES ('+placeholders.join(',')+')';
     await client.query(sql,values);
     report.inserted.push(p.sku);
-  } else {
-    const baseMatches=norm(existing.codigo_base)===norm(p.base) || norm(existing.canonical_source_code)===norm(p.base);
-    if(!baseMatches){
-      throw new Error('SKU_IDENTITY_CONFLICT '+p.sku+' existing='+JSON.stringify(existing)+' expected='+p.base);
-    }
+  }else{
+    const baseMatches=norm(existing.codigo_base)===norm(p.base)||norm(existing.canonical_source_code)===norm(p.base);
+    if(!baseMatches) throw new Error('SKU_IDENTITY_CONFLICT '+p.sku+' existing='+JSON.stringify(existing)+' expected='+p.base);
     report.existing.push(p.sku);
   }
 
-  await client.query(
-    `INSERT INTO catalog_codigo_base_evidence
-      (sku,evidence_kind,authority,manufacturer,reference_code,normalized_reference,source_url,evidence_hash,verified_at,metadata)
-     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,now(),$9::jsonb)
-     ON CONFLICT DO NOTHING`,
-    [
-      p.sku,p.oemFallback?'OEM_FALLBACK':'CROSS_REFERENCE',
-      p.oemFallback?'OEM_VERIFIED_AFTER_FRAM_ABSENCE':'FRAM_REGIONAL_CANONICAL',
-      p.sourceBrand,p.base,norm(p.base),p.source_url,built.evidenceHash,
-      JSON.stringify({migration:MIGRATION,sku:p.sku,origin_group:'NON_EUROPEAN'})
-    ]
-  );
+  const evidenceSql='INSERT INTO catalog_codigo_base_evidence (sku,evidence_kind,authority,manufacturer,reference_code,normalized_reference,source_url,evidence_hash,verified_at,metadata) VALUES ($1,\'OFFICIAL_PRODUCT_PAGE\',$2,$3,$4,$5,$6,$7,now(),$8::jsonb) ON CONFLICT DO NOTHING';
+  await client.query(evidenceSql,[
+    p.sku,
+    p.oemFallback?'OEM_VERIFIED_AFTER_FRAM_ABSENCE':'FRAM_REGIONAL_CANONICAL',
+    p.sourceBrand,p.base,norm(p.base),p.source_url,built.evidenceHash,
+    JSON.stringify({migration:MIGRATION,sku:p.sku,origin_group:'NON_EUROPEAN'})
+  ]);
 
   const appResult=await applyVerifiedApplications(client,{
     sku:p.sku,
@@ -298,108 +297,17 @@ async function applyDaiLdBatch20260930(){
   await client.connect();
   try{
     await client.query('BEGIN');
-    const legacy=await client.query(
-      "SELECT count(*)::int n FROM public.elimfilters_catalog WHERE left(upper(sku),3)=ANY($1::text[])",
-      [['EA5','EC5','EF5','EL5']]
-    );
+    const legacy=await client.query("SELECT count(*)::int n FROM public.elimfilters_catalog WHERE left(upper(sku),3)=ANY($1::text[])",[['EA5','EC5','EF5','EL5']]);
     if(legacy.rows[0].n!==0) throw new Error('RETIRED_LD_PREFIX_ROWS_PRESENT');
-
-    for(const p of PRODUCTS) await upsertProduct(client,p,report);
-
-    const audit=await client.query(
-      'SELECT sku,codigo_base,duty,filter_type,technology FROM public.elimfilters_catalog WHERE sku=ANY($1::text[]) ORDER BY sku',
-      [PRODUCTS.map(p=>p.sku)]
-    );
-    if(audit.rowCount!==PRODUCTS.length) throw new Error(`DAI_BATCH_INCOMPLETE expected=${PRODUCTS.length} got=${audit.rowCount}`);
+    for(const p of PRODUCTS) await createProduct(client,p,report);
+    const audit=await client.query('SELECT sku,codigo_base,duty,filter_type,technology FROM public.elimfilters_catalog WHERE sku=ANY($1::text[]) ORDER BY sku',[PRODUCTS.map(p=>p.sku)]);
+    if(audit.rowCount!==PRODUCTS.length) throw new Error('DAI_BATCH_INCOMPLETE expected='+PRODUCTS.length+' got='+audit.rowCount);
     report.audit=audit.rows;
     await client.query('COMMIT');
     report.transaction='COMMIT';
     return report;
   }catch(error){
-    try{await client.query('ROLLBACK');}catch(_){}
-    report.transaction='ROLLBACK';
-    report.error=error.message;
-    throw error;
-  }finally{
-    await client.end();
-  }
-}
-
-if(require.main===module){
-  applyDaiLdBatch20260930()
-    .then(report=>console.log('[dai-ld-batch-20260930]',JSON.stringify(report,null,2)))
-    .catch(error=>{console.error('[dai-ld-batch-20260930] failed',error.stack||error.message);process.exit(1);});
-}
-
-module.exports={MIGRATION,PRODUCTS,buildRow,applyDaiLdBatch20260930};
-+(i+1)+(jsonColumns.has(k)?'::jsonb':''));
-    const sql='INSERT INTO public.elimfilters_catalog ('+cols.map(k=>'"'+k+'"').join(',')+') VALUES ('+placeholders.join(',')+')';
-    await client.query(sql,values);
-    report.inserted.push(p.sku);
-  } else {
-    const baseMatches=norm(existing.codigo_base)===norm(p.base) || norm(existing.canonical_source_code)===norm(p.base);
-    if(!baseMatches){
-      throw new Error(`SKU_IDENTITY_CONFLICT ${p.sku} existing=${JSON.stringify(existing)} expected=${p.base}`);
-    }
-    report.existing.push(p.sku);
-  }
-
-  await client.query(
-    `INSERT INTO catalog_codigo_base_evidence
-      (sku,evidence_kind,authority,manufacturer,reference_code,normalized_reference,source_url,evidence_hash,verified_at,metadata)
-     VALUES ($1,$2,$3,$4,$5,$6,$7,$8,now(),$9::jsonb)
-     ON CONFLICT DO NOTHING`,
-    [
-      p.sku,p.oemFallback?'OEM_FALLBACK':'CROSS_REFERENCE',
-      p.oemFallback?'OEM_VERIFIED_AFTER_FRAM_ABSENCE':'FRAM_REGIONAL_CANONICAL',
-      p.sourceBrand,p.base,norm(p.base),p.source_url,built.evidenceHash,
-      JSON.stringify({migration:MIGRATION,sku:p.sku,origin_group:'NON_EUROPEAN'})
-    ]
-  );
-
-  const appResult=await applyVerifiedApplications(client,{
-    sku:p.sku,
-    equipment_applications:[],
-    vehicle_applications:p.applications,
-    evidence:{
-      authority:p.oemFallback?'OEM_APPLICATION_EVIDENCE':'FRAM_AND_CROSS_VALIDATED_APPLICATION_EVIDENCE',
-      source_url:p.source_url,
-      evidence_hash:sha(p.applications),
-      metadata:{migration:MIGRATION,canonical_base:p.base}
-    }
-  });
-  report.applications[p.sku]=appResult;
-  await client.query('SELECT refresh_crossref_cache_sku($1)',[p.sku]);
-  report.validations[p.sku]=validation;
-}
-
-async function applyDaiLdBatch20260930(){
-  const databaseUrl=process.env.CATALOG_DATABASE_URL||process.env.DATABASE_URL;
-  if(!databaseUrl) throw new Error('Missing CATALOG_DATABASE_URL or DATABASE_URL');
-  const client=new Client({connectionString:databaseUrl,ssl:sslFor(databaseUrl)});
-  const report={migration:MIGRATION,inserted:[],existing:[],applications:{},validations:{},products:PRODUCTS.map(p=>p.sku)};
-  await client.connect();
-  try{
-    await client.query('BEGIN');
-    const legacy=await client.query(
-      "SELECT count(*)::int n FROM public.elimfilters_catalog WHERE left(upper(sku),3)=ANY($1::text[])",
-      [['EA5','EC5','EF5','EL5']]
-    );
-    if(legacy.rows[0].n!==0) throw new Error('RETIRED_LD_PREFIX_ROWS_PRESENT');
-
-    for(const p of PRODUCTS) await upsertProduct(client,p,report);
-
-    const audit=await client.query(
-      'SELECT sku,codigo_base,duty,filter_type,technology FROM public.elimfilters_catalog WHERE sku=ANY($1::text[]) ORDER BY sku',
-      [PRODUCTS.map(p=>p.sku)]
-    );
-    if(audit.rowCount!==PRODUCTS.length) throw new Error(`DAI_BATCH_INCOMPLETE expected=${PRODUCTS.length} got=${audit.rowCount}`);
-    report.audit=audit.rows;
-    await client.query('COMMIT');
-    report.transaction='COMMIT';
-    return report;
-  }catch(error){
-    try{await client.query('ROLLBACK');}catch(_){}
+    try{await client.query('ROLLBACK');}catch(_){ }
     report.transaction='ROLLBACK';
     report.error=error.message;
     throw error;
