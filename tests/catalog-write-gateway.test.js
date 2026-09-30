@@ -209,6 +209,49 @@ test('LD non-European regional authority accepts verified FRAM canonical source'
   assert.equal(validateCanonicalWrite(row).valid, true);
 });
 
+test('LD non-European regional fallback accepts verified OEM only after FRAM absence is documented', () => {
+  const row = {
+    sku: 'EA33603',
+    codigo_base: 'OK6B0-23-603',
+    duty: 'LIGHT_DUTY',
+    oem_codes: [],
+    competitor_codes: [],
+    enrichment_data: { codigo_base_governance: {
+      origin_group: 'NON_EUROPEAN',
+      fram_absence_verified: true,
+      fallback_manufacturer_verified: true,
+      fallback_commercial_code_verified: true,
+      approved_manufacturer: 'KIA',
+      approved_codigo_base: 'OK6B0-23-603',
+      approved_source_column: 'OEM_CODES',
+      primary_manufacturer_verified: false,
+    } },
+  };
+  assert.equal(validateCanonicalWrite(row).valid, true);
+});
+
+test('LD non-European OEM fallback is blocked when FRAM absence is not documented', () => {
+  const row = {
+    sku: 'EA33603',
+    codigo_base: 'OK6B0-23-603',
+    duty: 'LIGHT_DUTY',
+    oem_codes: [],
+    competitor_codes: [],
+    enrichment_data: { codigo_base_governance: {
+      origin_group: 'NON_EUROPEAN',
+      fallback_manufacturer_verified: true,
+      fallback_commercial_code_verified: true,
+      approved_manufacturer: 'KIA',
+      approved_codigo_base: 'OK6B0-23-603',
+      approved_source_column: 'OEM_CODES',
+      primary_manufacturer_verified: false,
+    } },
+  };
+  const result = validateCanonicalWrite(row);
+  assert.equal(result.valid, false);
+  assert.ok(result.reasons.includes('FRAM_ABSENCE_NOT_VERIFIED'));
+});
+
 test('LD fallback requires verified MANN absence and OEM classification', () => {
   const row = {
     sku: 'EF31234', codigo_base: 'OEM1234', duty: 'LIGHT_DUTY', oem_codes: [], competitor_codes: [],
