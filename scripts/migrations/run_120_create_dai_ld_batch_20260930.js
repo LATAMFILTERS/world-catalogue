@@ -197,7 +197,8 @@ function governance(p){
   };
 }
 function buildRow(p){
-  const oem=codeRows(p.oem,'OEM',p.source_url);
+  const oem=codeRows(p.oem,'OEM',p.source_url)
+    .filter(x=>norm(x.code)!==norm(p.base));
   const competitors=codeRows(p.competitors,'AFTERMARKET',p.source_url)
     .filter(x=>norm(x.code)!==norm(p.base));
   const evidenceHash=sha({sku:p.sku,base:p.base,oem,competitors,specs:p.specs,applications:p.applications});
