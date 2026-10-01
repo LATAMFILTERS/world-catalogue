@@ -156,10 +156,13 @@ try {
   }
 
   $vault=Import-Clixml $VaultPath
-  $env:GROQ_API_KEY=Convert-SecureValue $vault.GROQ_API_KEY; $env:AZURE_CLIENT_ID=Convert-SecureValue $vault.AZURE_CLIENT_ID; $env:AZURE_TENANT_ID=Convert-SecureValue $vault.AZURE_TENANT_ID; $env:AZURE_CLIENT_SECRET=Convert-SecureValue $vault.AZURE_CLIENT_SECRET; $env:HERMES_SENDER_EMAIL=Convert-SecureValue $vault.HERMES_SENDER_EMAIL; $env:HERMES_REVIEW_EMAIL=Convert-SecureValue $vault.HERMES_REVIEW_EMAIL
+  $externalResearchEnabled = [string]$env:HERMES_EXTERNAL_RESEARCH_ENABLED -eq 'true'
+  if ($externalResearchEnabled) { $env:GROQ_API_KEY=Convert-SecureValue $vault.GROQ_API_KEY } else { Remove-Item Env:GROQ_API_KEY -ErrorAction SilentlyContinue }
+  $env:AZURE_CLIENT_ID=Convert-SecureValue $vault.AZURE_CLIENT_ID; $env:AZURE_TENANT_ID=Convert-SecureValue $vault.AZURE_TENANT_ID; $env:AZURE_CLIENT_SECRET=Convert-SecureValue $vault.AZURE_CLIENT_SECRET; $env:HERMES_SENDER_EMAIL=Convert-SecureValue $vault.HERMES_SENDER_EMAIL; $env:HERMES_REVIEW_EMAIL=Convert-SecureValue $vault.HERMES_REVIEW_EMAIL
   $env:HERMES_EMAIL_PROVIDER='outlook'; $env:HERMES_EMAIL_LIVE='false'; $env:HERMES_COLLECTION_DRY_RUN='true'; $env:HERMES_BASELINE_MODE='false'; $env:HERMES_MAX_SOURCES_PER_RUN='35'
   $env:HERMES_CYCLE_ID=$cycle; $env:HERMES_STATE_ROOT=$StateRoot
-  $env:HERMES_GROQ_MODEL='groq/compound'; $env:HERMES_SWEEP_MODEL='groq/compound-mini'; $env:HERMES_SWEEP_DOMAIN_BATCH='1'; $env:HERMES_SWEEP_MAX_TOPICS_PER_REQUEST='4'; $env:HERMES_SWEEP_MAX_FINDINGS_PER_DOMAIN='2'; $env:HERMES_SWEEP_MAX_RETRIES='2'; $env:HERMES_SWEEP_MIN_INTERVAL_MS='10000'; $env:HERMES_SWEEP_MIN_429_BACKOFF_MS='10000'; $env:HERMES_SWEEP_BACKOFF_MS='10000'; $env:HERMES_SWEEP_MAX_BACKOFF_MS='60000'; $env:HERMES_SWEEP_BUDGET_MS='2100000'; $env:HERMES_RESEARCH_BUDGET_MS='1800000'; $env:HERMES_RESEARCH_RETRY_DELAY_MS='21600000'; $env:HERMES_GROQ_TPD_FALLBACK='true'
+  if ($externalResearchEnabled) { $env:HERMES_GROQ_MODEL='groq/compound'; $env:HERMES_SWEEP_MODEL='groq/compound-mini' } else { Remove-Item Env:HERMES_GROQ_MODEL,Env:HERMES_SWEEP_MODEL -ErrorAction SilentlyContinue }
+  $env:HERMES_SWEEP_DOMAIN_BATCH='1'; $env:HERMES_SWEEP_MAX_TOPICS_PER_REQUEST='4'; $env:HERMES_SWEEP_MAX_FINDINGS_PER_DOMAIN='2'; $env:HERMES_SWEEP_MAX_RETRIES='2'; $env:HERMES_SWEEP_MIN_INTERVAL_MS='10000'; $env:HERMES_SWEEP_MIN_429_BACKOFF_MS='10000'; $env:HERMES_SWEEP_BACKOFF_MS='10000'; $env:HERMES_SWEEP_MAX_BACKOFF_MS='60000'; $env:HERMES_SWEEP_BUDGET_MS='2100000'; $env:HERMES_RESEARCH_BUDGET_MS='1800000'; $env:HERMES_RESEARCH_RETRY_DELAY_MS='21600000'; $env:HERMES_GROQ_TPD_FALLBACK='true'
 
   $status=[ordered]@{}
   $status.preflight=Invoke-LimitedProcess 'preflight' $npm @('run','hermes:preflight') 5
@@ -172,19 +175,19 @@ try {
   if($plan -contains 'harvestRestore'){ $status.harvestRestore=Invoke-LimitedProcess 'harvest-restore' $npm @('run','hermes:harvest:restore') 10 }
   if($plan -contains 'collect'){ $status.collect=Invoke-LimitedProcess 'collect' $npm @('run','hermes:collect') 30; if(-not $status.collect){Stop-RecoveryAtFailure 'collect'} }
   if($plan -contains 'harvestPersist'){ if($status.collect){$status.harvestPersist=Invoke-LimitedProcess 'harvest-persist' $npm @('run','hermes:harvest:persist') 10}else{$status.harvestPersist=$false} }
-  if($plan -contains 'sweep'){ $status.sweep=Invoke-LimitedProcess 'industry-sweep' $npm @('run','hermes:sweep') 45; if(-not $status.sweep){Stop-RecoveryAtFailure 'sweep'} }
+  if($plan -contains 'sweep'){ if($externalResearchEnabled){ $status.sweep=Invoke-LimitedProcess 'industry-sweep' $npm @('run','hermes:sweep') 45; if(-not $status.sweep){Stop-RecoveryAtFailure 'sweep'} } else { $status.sweep=$true; Write-Log 'SKIP industry-sweep: external AI provider disabled under zero-cost policy' } }
   if($plan -contains 'seoAudit'){ $status.seoAudit=Invoke-LimitedProcess 'seo-audit' $python @('scripts/seo-geo-audit/audit.py','--out-dir','seo-geo-audit-out') 15 }
   if($plan -contains 'seoTriage'){ if($status.seoAudit){$status.seoTriage=Invoke-LimitedProcess 'seo-triage' $python @('scripts/seo-geo-audit/triage_short_pages.py','seo-geo-audit-out/seo-geo-audit.csv','--threshold','250','--out-dir','seo-geo-audit-out') 10}else{$status.seoTriage=$false} }
   if($plan -contains 'seoGaps'){ if($status.seoTriage){$status.seoGaps=Invoke-LimitedProcess 'seo-gaps' $python @('scripts/seo-geo-audit/build_hermes_knowledge_gaps.py','seo-geo-audit-out/short-pages-triage.csv','--out-dir','seo-geo-audit-out') 10}else{$status.seoGaps=$false} }
   if($plan -contains 'seoImport'){ if($status.seoGaps){$status.seoImport=Invoke-LimitedProcess 'seo-import' $node @('scripts/hermes/import-seo-knowledge-gaps.mjs','seo-geo-audit-out/hermes-knowledge-gaps.json') 10}else{$status.seoImport=$false}; if(-not $status.seoImport){Stop-RecoveryAtFailure 'seoImport'} }
-  if($plan -contains 'research'){ $status.research=Invoke-LimitedProcess 'research' $npm @('run','hermes:research') 45; if(-not $status.research){Stop-RecoveryAtFailure 'research'} }
+  if($plan -contains 'research'){ if($externalResearchEnabled){ $status.research=Invoke-LimitedProcess 'research' $npm @('run','hermes:research') 45; if(-not $status.research){Stop-RecoveryAtFailure 'research'} } else { $status.research=$true; Write-Log 'SKIP research: external AI provider disabled under zero-cost policy' } }
   if($plan -contains 'validate'){ $status.validate=Invoke-LimitedProcess 'validate' $npm @('run','hermes:validate:real') 15; if(-not $status.validate){Stop-RecoveryAtFailure 'validate'} }
 
-  $env:HERMES_COLLECT_STATUS=$(if($status.collect){'success'}else{'failure'}); $env:HERMES_SWEEP_STATUS=$(if($status.sweep){'success'}else{'failure'}); $env:HERMES_SEO_GAPS_STATUS=$(if($status.seoImport){'success'}else{'failure'}); $env:HERMES_RESEARCH_STATUS=$(if($status.research){'success'}else{'failure'}); $env:HERMES_VALIDATE_STATUS=$(if($status.validate){'success'}else{'failure'})
+  $env:HERMES_COLLECT_STATUS=$(if($status.collect){'success'}else{'failure'}); $env:HERMES_SWEEP_STATUS=$(if(-not $externalResearchEnabled){'skipped'}elseif($status.sweep){'success'}else{'failure'}); $env:HERMES_SEO_GAPS_STATUS=$(if($status.seoImport){'success'}else{'failure'}); $env:HERMES_RESEARCH_STATUS=$(if(-not $externalResearchEnabled){'skipped'}elseif($status.research){'success'}else{'failure'}); $env:HERMES_VALIDATE_STATUS=$(if($status.validate){'success'}else{'failure'})
   if($plan -contains 'report'){ $status.report=Invoke-LimitedProcess 'report' $npm @('run','hermes:report:real') 10; if(-not $status.report){Stop-RecoveryAtFailure 'report'} }
   if($Mode -eq 'Weekly' -and -not $status.report){New-FallbackReport $status}
 
-  $critical=@('baseline','collect','sweep','seoImport','research','validate','report'); $complete=@($critical|Where-Object{-not $status[$_]}).Count -eq 0
+  $critical=@('baseline','collect','seoImport','validate','report'); if($externalResearchEnabled){$critical+=@('sweep','research')}; $complete=@($critical|Where-Object{-not $status[$_]}).Count -eq 0
   $emailAttempted=$false; $status.email=$false
   if(($Mode -eq 'Weekly') -or (($plan -contains 'email') -and $complete)){ $emailAttempted=$true; $env:HERMES_EMAIL_LIVE='true'; $status.email=Invoke-LimitedProcess 'email' $npm @('run','hermes:email:real') 10; $env:HERMES_EMAIL_LIVE='false' }
   if($Mode -eq 'Weekly' -and $status.email){ @{cycle=$cycle;sentAt=(Get-Date).ToUniversalTime().ToString('o');complete=$complete}|ConvertTo-Json|Set-Content $sentPath -Encoding UTF8 }
