@@ -91,7 +91,7 @@ jobs:
       HERMES_COLLECTION_DRY_RUN: ${{ vars.HERMES_COLLECTION_DRY_RUN || 'true' }}
       HERMES_BASELINE_MODE: ${{ vars.HERMES_BASELINE_MODE || 'false' }}
       HERMES_MAX_SOURCES_PER_RUN: ${{ vars.HERMES_MAX_SOURCES_PER_RUN || '35' }}
-      HERMES_REVIEW_BASE_URL: ${{ vars.HERMES_REVIEW_BASE_URL || 'https://elimfilters-search-pro.onrender.com/hermes/review' }}
+      HERMES_REVIEW_BASE_URL: ${{ vars.HERMES_REVIEW_BASE_URL || 'https://part-search.elimfilters.com/hermes/review' }}
       HERMES_REVIEW_TOKEN_SECRET: ${{ secrets.ADMIN_KEY }}
 
     steps:
