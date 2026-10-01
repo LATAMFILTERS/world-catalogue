@@ -82,8 +82,9 @@ test('application lookup shows ELIMFILTERS SKU without codigo_base and keeps val
     equipment: { brand: 'TOYOTA', model: 'RAV4', year: 2022 }
   });
 
-  assert.match(line, /^• EA37063 — Filtro de aire/m);
+  assert.match(line, /^• SKU ELIMFILTERS: EA37063 — Filtro de aire/m);
   assert.doesNotMatch(line, /EA37063 \/ 7063/);
+  assert.match(line, /SKU ELIMFILTERS: EA37063/);
   assert.match(line, /Aplicación: TOYOTA RAV4/);
   assert.match(line, /Motor: A25A-FKS/);
   assert.match(line, /Año: 2022/);
