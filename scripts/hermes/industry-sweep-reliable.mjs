@@ -422,7 +422,14 @@ if (isCli) {
       console.error(`[HERMES reliable sweep] operational_status=QUOTA_EXHAUSTED skipped_due_quota=${error?.summary?.skipped_due_quota || 0}`);
     }
     if (error?.summary?.failures?.length) {
-      for (const failure of error.summary.failures.slice(0, 3)) console.error(`[HERMES reliable sweep] failed domains=${failure.domains.join(',')} error=${failure.error}`);
+      for (const failure of error.summary.failures.slice(0, 3)) {
+        const failureDomains = Array.isArray(failure?.domains)
+          ? failure.domains
+          : failure?.domain
+            ? [failure.domain]
+            : [];
+        console.error(`[HERMES reliable sweep] failed domains=${failureDomains.join(',') || 'unknown'} error=${failure?.error || 'unknown'}`);
+      }
       if (error.summary.failures.length > 3) console.error(`[HERMES reliable sweep] ${error.summary.failures.length - 3} additional failed batch(es) suppressed from log`);
     }
     process.exitCode = 1;
