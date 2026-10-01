@@ -25,13 +25,17 @@ const sweepDone = Array.isArray(sweep?.completed_work) ? sweep.completed_work.le
 const sweepComplete = Boolean(sweep?.complete === true && sweepTotal > 0 && sweepDone === sweepTotal);
 const researchItems = Object.values(research?.items || {});
 const deferredResearch = researchItems.filter((item) => item?.status === 'DEFERRED' && item?.terminal !== true);
+const externalResearchEnabled = String(process.env.HERMES_EXTERNAL_RESEARCH_ENABLED || 'false').toLowerCase() === 'true';
 
 let status = 'UNKNOWN';
 let valid = true;
 let reason = null;
 
 if (!pending) {
-  if (sweep && !sweepComplete) {
+  if (!externalResearchEnabled) {
+    status = 'PIPELINE_CLEAR_ZERO_COST';
+    reason = 'EXTERNAL_RESEARCH_DISABLED';
+  } else if (sweep && !sweepComplete) {
     valid = false;
     status = 'INVALID_STATE';
     reason = `SWEEP_INCOMPLETE_WITHOUT_PENDING_${sweepDone}_${sweepTotal}`;
@@ -79,6 +83,7 @@ const output = {
   valid,
   status,
   reason,
+  external_research_enabled: externalResearchEnabled,
   pending: pending ? {
     attempts: Number(pending.attempts || 0),
     failed: [...failed],
