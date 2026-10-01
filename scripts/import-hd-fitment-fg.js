@@ -18,7 +18,7 @@ const fs   = require('fs');
 const path = require('path');
 const http = require('https');
 
-const API_BASE   = 'https://elimfilters-search-pro.onrender.com';
+const API_BASE   = 'https://part-search.elimfilters.com';
 const ENDPOINT   = '/api/import/hd-fitment';
 const BATCH_SIZE = 100;
 const DRY_RUN    = process.argv.includes('--dry');
@@ -44,7 +44,7 @@ function postBatch(batch) {
   return new Promise((resolve, reject) => {
     const body = JSON.stringify(batch);
     const options = {
-      hostname: 'elimfilters-search-pro.onrender.com',
+      hostname: 'part-search.elimfilters.com',
       path:     ENDPOINT,
       method:   'POST',
       headers:  {
