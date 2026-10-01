@@ -72,7 +72,7 @@ try {
   $env:HERMES_EMAIL_LIVE = 'true'
   $env:HERMES_COLLECTION_DRY_RUN = 'false'
   $env:HERMES_GROQ_MODEL = 'groq/compound'
-  $env:HERMES_REVIEW_BASE_URL = 'https://elimfilters-search-pro.onrender.com/hermes/review'
+  $env:HERMES_REVIEW_BASE_URL = 'https://part-search.elimfilters.com/hermes/review'
   $env:HERMES_STATE_ROOT = (Join-Path $StateDir 'research')
 
   Set-Location $RuntimePath
