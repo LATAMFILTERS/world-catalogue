@@ -1,15 +1,10 @@
 name: HERMES Recovery Delivery
 
-# Recovery rule:
-# - The Monday HERMES email must be delivered even when research is degraded.
-# - If the scheduled weekly run was degraded/failed, retry the research pipeline hourly.
-# - Do NOT send repeated degraded emails from the recovery loop.
-# - Send one recovered/full email only after the pipeline completes successfully.
-# - Once a successful recovery run is newer than the failed weekly run, stop retrying.
+# Recurring recovery is owned by Lenovo/ELIMSERVER.
+# GitHub Actions keeps only a manual recovery path to avoid duplicate schedulers
+# and unnecessary hosted-runner usage.
 
 on:
-  schedule:
-    - cron: '17 * * * *'
   workflow_dispatch:
 
 permissions:
@@ -170,5 +165,5 @@ jobs:
       - name: Keep retrying while provider/pipeline is unavailable
         if: steps.pending.outputs.proceed == 'true' && steps.recovered.outputs.ready != 'true'
         run: |
-          echo 'HERMES recovery is still incomplete. No duplicate recovery email was sent. The hourly recovery schedule will retry automatically.'
+          echo 'HERMES recovery is still incomplete. No duplicate recovery email was sent. Lenovo/ELIMSERVER owns the recurring recovery retry.'
           exit 1
