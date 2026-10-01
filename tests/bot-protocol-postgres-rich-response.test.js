@@ -89,6 +89,43 @@ test('application lookup shows ELIMFILTERS SKU without codigo_base and keeps val
   assert.match(line, /Año: 2022/);
 });
 
+test('application year display expands two-digit years and normalizes reversed ranges', async () => {
+  const rangeLine = await formatCatalogProduct({
+    sku: 'EA37063',
+    filter_type: 'air',
+    technology: 'MACROCORE™',
+    validated_applications: [{
+      make: 'TOYOTA',
+      model_family: 'RAV4',
+      year: '25-19',
+      engine_code: 'L4-2.5L'
+    }]
+  }, {
+    language: 'es',
+    applicationLookup: true
+  });
+
+  const singleYearLine = await formatCatalogProduct({
+    sku: 'EC31919',
+    filter_type: 'cabin',
+    technology: 'MICROKAPPA™',
+    validated_applications: [{
+      make: 'TOYOTA',
+      model_family: 'RAV4',
+      year: '22',
+      engine_code: '2.5L GASOLINE'
+    }]
+  }, {
+    language: 'es',
+    applicationLookup: true
+  });
+
+  assert.match(rangeLine, /Año: 2019–2025/);
+  assert.doesNotMatch(rangeLine, /Año: 25-19/);
+  assert.match(singleYearLine, /Año: 2022/);
+  assert.doesNotMatch(singleYearLine, /Año: 22\b/);
+});
+
 test('validated PostgreSQL cross-reference returns a natural English answer with ELIMFILTERS technology', async () => {
   const payload = {
     intent: 'cross_reference_lookup',

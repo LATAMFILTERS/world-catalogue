@@ -18,6 +18,9 @@ const {
   createEmptyState
 } = require('../lib/bot-protocol-memory');
 const {
+  looksLikeVehicleApplicationQuery
+} = require('../lib/bot-protocol-deterministic-router');
+const {
   RACOR_TURBINE_COMPATIBILITY,
   compatibleSeriesFromProduct,
   racorHousingModel,
@@ -57,6 +60,44 @@ test('extracts Toyota RAV4 year application entities', () => {
 test('normalizes common RAV4 voice variants', () => {
   assert.equal(extractApplicationEntities('Toyota RAV 4 2022, qué filtros usa').model, 'RAV4');
   assert.equal(extractApplicationEntities('Toyota Rackford 2022, qué filtros usa').model, 'RAV4');
+});
+
+test('RAV4 application query infers Toyota when brand is omitted', () => {
+  assert.deepEqual(extractApplicationEntities('me podrias indicar que filtros usa la rav4 2022'), {
+    brand: 'TOYOTA',
+    model: 'RAV4',
+    engine: null,
+    year: 2022,
+    tokens: ['TOYOTA', 'RAV4']
+  });
+});
+
+test('RAV4 application query bypasses exact-reference preflight without explicit Toyota', () => {
+  assert.equal(looksLikeVehicleApplicationQuery('me podrias indicar que filtros usa la rav4 2022'), true);
+  assert.equal(looksLikeVehicleApplicationQuery('qué filtros usa la RAV-4 2022'), true);
+});
+
+test('generic vehicle and equipment application queries do not depend on a hardcoded brand list', () => {
+  assert.deepEqual(extractApplicationEntities('qué filtros usa Bobcat T770 2021'), {
+    brand: 'BOBCAT',
+    model: 'T770',
+    engine: null,
+    year: 2021,
+    tokens: ['BOBCAT', 'T770']
+  });
+  assert.deepEqual(extractApplicationEntities('qué filtros lleva CAT 320D'), {
+    brand: 'CAT',
+    model: '320D',
+    engine: null,
+    year: null,
+    tokens: ['CAT', '320D']
+  });
+  assert.equal(looksLikeVehicleApplicationQuery('qué filtros usa Bobcat T770 2021'), true);
+  assert.equal(looksLikeVehicleApplicationQuery('qué filtros lleva CAT 320D'), true);
+});
+
+test('bare part-number phrasing can still use reference resolution', () => {
+  assert.equal(looksLikeVehicleApplicationQuery('filtros para P551313'), false);
 });
 
 test('persists identified housing in normalized conversation state', () => {
