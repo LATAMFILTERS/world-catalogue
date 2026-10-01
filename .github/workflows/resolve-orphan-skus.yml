@@ -29,7 +29,7 @@ jobs:
             --max-time 120 \
             -X POST \
             -H "Authorization: Bearer ${{ secrets.ADMIN_KEY }}" \
-            "https://elimfilters-search-pro.onrender.com/api/admin/resolve-orphan-skus${DRY_PARAM}")
+            "https://part-search.elimfilters.com/api/admin/resolve-orphan-skus${DRY_PARAM}")
 
           HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
           BODY=$(echo "$RESPONSE" | head -n -1)
