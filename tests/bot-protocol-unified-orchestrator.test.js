@@ -7,7 +7,11 @@ const {
   PROTOCOL_VERSION,
   isReplacementElementRequest,
   extractApplicationEntities,
-  shouldDeferReferenceToCanonical
+  shouldDeferReferenceToCanonical,
+  maintenanceSystem,
+  serviceRole,
+  isIntegratedComponent,
+  governApplicationProducts
 } = require('../lib/bot-protocol-unified-orchestrator');
 const {
   normalizeState,
@@ -143,4 +147,53 @@ test('active diagnostic data collection keeps a supplied filter reference in the
     shouldDeferReferenceToCanonical('¿Cuál es la equivalencia de P552100?', state, false),
     false
   );
+});
+
+test('heavy-equipment service roles allow legitimate same-system filters', () => {
+  const governed = governApplicationProducts([
+    { sku: 'EA10001', filter_type: 'Air Filter', description: 'Primary outer element' },
+    { sku: 'EA10002', filter_type: 'Air Filter', description: 'Secondary safety inner element' },
+    { sku: 'EL10001', filter_type: 'Lube Oil Filter', description: 'Full-flow engine oil filter' },
+    { sku: 'EL10002', filter_type: 'Lube Oil Filter', description: 'Bypass engine oil filter' },
+    { sku: 'EF10001', filter_type: 'Fuel Water Separator', description: 'Primary water separator' },
+    { sku: 'EF10002', filter_type: 'Fuel Filter', description: 'Secondary final fuel filter' }
+  ]);
+
+  assert.deepEqual(governed.routine.map(product => product.sku), [
+    'EA10001', 'EA10002', 'EL10001', 'EL10002', 'EF10001', 'EF10002'
+  ]);
+  assert.equal(governed.conflicts.length, 0);
+});
+
+test('same service position remains a governed conflict', () => {
+  const governed = governApplicationProducts([
+    { sku: 'EA20001', filter_type: 'Air Filter', description: 'Primary outer element' },
+    { sku: 'EA20002', filter_type: 'Air Filter', description: 'Primary outer element' }
+  ]);
+
+  assert.equal(governed.routine.length, 0);
+  assert.equal(governed.conflicts.length, 1);
+  assert.equal(governed.conflicts[0].system, 'air');
+  assert.equal(governed.conflicts[0].service_role, 'primary_outer');
+});
+
+test('generic filter assembly is not automatically classified as integrated', () => {
+  assert.equal(isIntegratedComponent({
+    sku: 'EF30001',
+    filter_type: 'Fuel Filter Assembly',
+    description: 'Service replacement filter assembly'
+  }), false);
+
+  assert.equal(isIntegratedComponent({
+    sku: 'EF30002',
+    filter_type: 'Fuel Filter',
+    description: 'Integrated into fuel pump module inside the tank'
+  }), true);
+});
+
+test('service role recognizes hydraulic and transmission positions', () => {
+  assert.equal(serviceRole({ filter_type: 'Hydraulic Filter', description: 'Hydraulic return filter' }), 'return');
+  assert.equal(serviceRole({ filter_type: 'Hydraulic Filter', description: 'Pilot circuit filter' }), 'pilot');
+  assert.equal(maintenanceSystem({ filter_type: 'Transmission Filter', description: 'External transmission return filter' }), 'transmission');
+  assert.equal(serviceRole({ filter_type: 'Transmission Filter', description: 'External transmission return filter' }), 'return');
 });
