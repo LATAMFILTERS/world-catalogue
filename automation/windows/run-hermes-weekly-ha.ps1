@@ -1,4 +1,11 @@
 param(
+
+# Legacy scheduler entrypoint retained only for rollback/manual override.
+# The canonical scheduler is scripts/hermes/windows/Invoke-HermesLocal.ps1.
+if ([string]$env:HERMES_LEGACY_SCHEDULERS_ENABLED -ne 'true') {
+  Write-Host 'HERMES legacy scheduler disabled; canonical Lenovo scheduler owns execution.'
+  exit 0
+}
   [string]$RepoPath = "C:\ELIMSERVER\repos\world-catalogue",
   [string]$SecretsPath = "C:\ELIMSERVER\secrets\hermes-secrets.clixml",
   [string]$NodeId = "LENOVO",
