@@ -12,6 +12,14 @@ if ([string]$env:HERMES_LEGACY_SCHEDULERS_ENABLED -ne 'true') {
   [string]$SecretsPath = "C:\ELIMSERVER\secrets\hermes-secrets.clixml"
 )
 
+# Legacy scheduler entrypoint retained only for rollback/manual override.
+# The canonical scheduler is scripts/hermes/windows/Invoke-HermesLocal.ps1.
+if ([string]$env:HERMES_LEGACY_SCHEDULERS_ENABLED -ne 'true') {
+  Write-Host 'HERMES legacy scheduler disabled; canonical Lenovo scheduler owns execution.'
+  exit 0
+}
+
+
 $ErrorActionPreference = 'Stop'
 
 function Convert-SecretValueToPlainText($Value) {
