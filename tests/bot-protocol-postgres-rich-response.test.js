@@ -63,6 +63,32 @@ test('single-word production filter_type values translate instead of leaking Eng
   assert.doesNotMatch(oil, /— oil\b/i);
 });
 
+test('application lookup shows ELIMFILTERS SKU without codigo_base and keeps validated vehicle engine year', async () => {
+  const line = await formatCatalogProduct({
+    sku: 'EA37063',
+    codigo_base: '7063',
+    filter_type: 'air',
+    technology: 'MACROCORE™',
+    validated_applications: [{
+      make: 'TOYOTA',
+      model_family: 'RAV4',
+      model_type: 'RAV4',
+      year: '2022',
+      engine_code: 'A25A-FKS'
+    }]
+  }, {
+    language: 'es',
+    applicationLookup: true,
+    equipment: { brand: 'TOYOTA', model: 'RAV4', year: 2022 }
+  });
+
+  assert.match(line, /^• EA37063 — Filtro de aire/m);
+  assert.doesNotMatch(line, /EA37063 \/ 7063/);
+  assert.match(line, /Aplicación: TOYOTA RAV4/);
+  assert.match(line, /Motor: A25A-FKS/);
+  assert.match(line, /Año: 2022/);
+});
+
 test('validated PostgreSQL cross-reference returns a natural English answer with ELIMFILTERS technology', async () => {
   const payload = {
     intent: 'cross_reference_lookup',
