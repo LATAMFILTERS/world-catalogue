@@ -76,7 +76,7 @@ try {
   $env:HERMES_CATALOGUE_RESEARCH_LIMIT = '1'
   $env:HERMES_CATALOGUE_RESEARCH_PACING_MS = '20000'
   $env:HERMES_CATALOGUE_RESEARCH_RETRIES = '2'
-  $env:HERMES_REVIEW_BASE_URL = 'https://elimfilters-search-pro.onrender.com/hermes/review'
+  $env:HERMES_REVIEW_BASE_URL = 'https://part-search.elimfilters.com/hermes/review'
   $env:HERMES_STATE_ROOT = (Join-Path $StateDir 'research')
 
   Set-Location $RuntimePath
