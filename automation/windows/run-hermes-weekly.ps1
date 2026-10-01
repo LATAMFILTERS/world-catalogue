@@ -52,7 +52,7 @@ try {
   $env:HERMES_COLLECTION_DRY_RUN = 'false'
   $env:HERMES_BASELINE_MODE = 'false'
   $env:HERMES_GROQ_MODEL = 'groq/compound'
-  $env:HERMES_REVIEW_BASE_URL = 'https://elimfilters-search-pro.onrender.com/hermes/review'
+  $env:HERMES_REVIEW_BASE_URL = 'https://part-search.elimfilters.com/hermes/review'
 
   if (-not (Test-Path (Join-Path $RepoPath '.git'))) {
     throw "HERMES runtime clone not found: $RepoPath"
