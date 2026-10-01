@@ -54,7 +54,7 @@ Set-EnvFromSecret $secrets 'HERMES_REVIEW_TOKEN_SECRET' | Out-Null
 $env:HERMES_EMAIL_PROVIDER = 'outlook'
 $env:HERMES_EMAIL_LIVE = 'true'
 $env:HERMES_COLLECTION_DRY_RUN = 'false'
-$env:HERMES_REVIEW_BASE_URL = 'https://elimfilters-search-pro.onrender.com/hermes/review'
+$env:HERMES_REVIEW_BASE_URL = 'https://part-search.elimfilters.com/hermes/review'
 
 Write-Host "Evaluating HERMES weekly review report: $($latest.Name)"
 $resultLines = @(& node scripts\hermes\send-weekly-email-actions.mjs hermes/reports 2>&1)
