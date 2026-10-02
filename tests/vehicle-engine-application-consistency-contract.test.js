@@ -23,11 +23,12 @@ const framReconcile = fs.readFileSync(
   'utf8'
 );
 
-test('global audit remains read-only and covers all six inconsistency classes', () => {
+test('global audit remains read-only and covers governed inconsistency classes', () => {
   assert.match(audit, /readonly:\s*true/);
   for (const token of [
     'application_evidence_not_normalized',
-    'application_source_identity_mismatch',
+    'application_source_identity_conflict',
+    'application_source_identity_unsupported',
     'competing_skus_same_vehicle_engine_filter_type',
     'kit_component_missing_brand_application',
     'engine_string_fragmentation',
