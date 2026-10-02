@@ -96,6 +96,18 @@ test('generic vehicle and equipment application queries do not depend on a hardc
   assert.equal(looksLikeVehicleApplicationQuery('qué filtros lleva CAT 320D'), true);
 });
 
+test('equipment continuation routes Freightliner model as application, not part reference', () => {
+  const message = 'para un freightliner columbia cl120 motor detroit diesel';
+  assert.deepEqual(extractApplicationEntities(message), {
+    brand: 'FREIGHTLINER',
+    model: 'COLUMBIA CL120',
+    engine: 'DETROIT DIESEL',
+    year: null,
+    tokens: ['FREIGHTLINER', 'COLUMBIA CL120', 'DETROIT DIESEL']
+  });
+  assert.equal(looksLikeVehicleApplicationQuery(message), true);
+});
+
 test('bare part-number phrasing can still use reference resolution', () => {
   assert.equal(looksLikeVehicleApplicationQuery('filtros para P551313'), false);
 });
@@ -216,6 +228,44 @@ test('same service position remains a governed conflict', () => {
   assert.equal(governed.conflicts.length, 1);
   assert.equal(governed.conflicts[0].system, 'air');
   assert.equal(governed.conflicts[0].service_role, 'primary_outer');
+});
+
+test('DRYCORE products normalize to air-dryer service and conflicting variants fail closed', () => {
+  assert.equal(maintenanceSystem({ sku: 'ED47747', filter_type: 'air' }), 'air_dryer');
+  assert.equal(maintenanceSystem({
+    sku: 'ED47747',
+    filter_type: 'air',
+    technology: 'DRYCORE™'
+  }), 'air_dryer');
+
+  assert.equal(serviceRole({
+    sku: 'ED47747',
+    filter_type: 'air',
+    technology: 'DRYCORE™'
+  }), 'air_dryer');
+
+  const governed = governApplicationProducts([
+    {
+      sku: 'ED47747',
+      filter_type: 'air',
+      technology: 'DRYCORE™',
+      service_role: 'primary',
+      configuration: 'variant-a'
+    },
+    {
+      sku: 'ED47750',
+      filter_type: 'air',
+      technology: 'DRYCORE™',
+      service_role: 'secondary',
+      configuration: 'variant-b'
+    }
+  ]);
+
+  assert.equal(governed.routine.length, 0);
+  assert.equal(governed.conflicts.length, 1);
+  assert.equal(governed.conflicts[0].system, 'air_dryer');
+  assert.equal(governed.conflicts[0].service_role, 'air_dryer');
+  assert.deepEqual(governed.conflicts[0].configurations.sort(), ['VARIANT-A', 'VARIANT-B']);
 });
 
 test('generic filter assembly is not automatically classified as integrated', () => {

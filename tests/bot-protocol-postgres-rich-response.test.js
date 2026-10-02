@@ -7,7 +7,8 @@ const { resolveCatalogDatabaseConfig } = require('../lib/bot-protocol-db');
 const {
   buildCrossReferenceNarrative,
   inferTechnology,
-  formatCatalogProduct
+  formatCatalogProduct,
+  formatForChannel
 } = require('../lib/bot-protocol-channel-format');
 
 test('catalog database prefers the dedicated catalog URL', () => {
@@ -63,12 +64,34 @@ test('single-word production filter_type values translate instead of leaking Eng
   assert.doesNotMatch(oil, /— oil\b/i);
 });
 
+test('application lookup renders DRYCORE as an air-dryer filter, not engine air', async () => {
+  const line = await formatCatalogProduct({
+    sku: 'ED47747',
+    filter_type: 'air',
+    technology: 'DRYCORE™',
+    validated_applications: [{
+      make: 'FREIGHTLINER',
+      model_family: 'COLUMBIA CL120',
+      engine_code: 'DETROIT DIESEL'
+    }]
+  }, {
+    language: 'es',
+    applicationLookup: true,
+    equipment: { brand: 'FREIGHTLINER', model: 'COLUMBIA CL120', engine: 'DETROIT DIESEL' }
+  });
+
+  assert.match(line, /^• ED47747 — Filtro secador de aire/m);
+  assert.match(line, /Tecnología: DRYCORE™/);
+  assert.doesNotMatch(line, /^• ED47747 — Filtro de aire/m);
+});
+
 test('application lookup shows ELIMFILTERS SKU without codigo_base and keeps validated vehicle engine year', async () => {
   const line = await formatCatalogProduct({
     sku: 'EA37063',
     codigo_base: '7063',
     filter_type: 'air',
     technology: 'MACROCORE™',
+    oem_codes: ['TOYOTA 17801-0T060', 'TOYOTA 17801-77050'],
     validated_applications: [{
       make: 'TOYOTA',
       model_family: 'RAV4',
@@ -82,12 +105,17 @@ test('application lookup shows ELIMFILTERS SKU without codigo_base and keeps val
     equipment: { brand: 'TOYOTA', model: 'RAV4', year: 2022 }
   });
 
-  assert.match(line, /^• SKU ELIMFILTERS: EA37063 — Filtro de aire/m);
+  assert.match(line, /^• EA37063 — Filtro de aire/m);
   assert.doesNotMatch(line, /EA37063 \/ 7063/);
-  assert.match(line, /SKU ELIMFILTERS: EA37063/);
-  assert.match(line, /Aplicación: TOYOTA RAV4/);
+  assert.match(line, /Tecnología: MACROCORE™/);
+  assert.doesNotMatch(line, /Aplicación:/);
+  assert.doesNotMatch(line, /Descripción:/);
   assert.match(line, /Motor: A25A-FKS/);
   assert.match(line, /Año: 2022/);
+  assert.match(line, /OEM: TOYOTA 17801-0T060, 17801-77050/);
+  assert.ok(line.indexOf('Tecnología: MACROCORE™') < line.indexOf('Motor: A25A-FKS'));
+  assert.ok(line.indexOf('Motor: A25A-FKS') < line.indexOf('Año: 2022'));
+  assert.ok(line.indexOf('Año: 2022') < line.indexOf('OEM: TOYOTA 17801-0T060, 17801-77050'));
 });
 
 test('application year display expands two-digit years and normalizes reversed ranges', async () => {
@@ -125,6 +153,86 @@ test('application year display expands two-digit years and normalizes reversed r
   assert.doesNotMatch(rangeLine, /Año: 25-19/);
   assert.match(singleYearLine, /Año: 2022/);
   assert.doesNotMatch(singleYearLine, /Año: 22\b/);
+});
+
+test('application lookup response stays compact and omits promotional closing', async () => {
+  const formatted = await formatForChannel({
+    intent: 'application_lookup',
+    answer: 'fallback',
+    state: {
+      equipment: { brand: 'TOYOTA', model: 'RAV4', year: 2022 }
+    },
+    evidence: {
+      products: [{
+        sku: 'EA37063',
+        filter_type: 'air',
+        technology: 'MACROCORE™',
+        description: 'Long description that should not appear in the initial application response.',
+        oem_codes: ['TOYOTA 17801-0T060', 'TOYOTA 17801-77050'],
+        validated_applications: [{
+          make: 'TOYOTA',
+          model_family: 'RAV4',
+          year: '2022',
+          engine_code: 'L4-2.5L'
+        }]
+      }]
+    }
+  }, {
+    message: 'que filtros usa la rav4 2022',
+    lang: 'es',
+    channel: 'api'
+  });
+
+  assert.match(formatted.answer, /^Para tu TOYOTA RAV4 2022:/);
+  assert.match(formatted.answer, /• EA37063 — Filtro de aire/);
+  assert.match(formatted.answer, /Tecnología: MACROCORE™/);
+  assert.doesNotMatch(formatted.answer, /Aplicación:/);
+  assert.doesNotMatch(formatted.answer, /Descripción:/);
+  assert.doesNotMatch(formatted.answer, /Elegí ELIMFILTERS:/);
+  assert.match(formatted.answer, /OEM: TOYOTA 17801-0T060, 17801-77050/);
+});
+
+test('application lookup appends governed conflict clarification without publishing conflicted candidates', async () => {
+  const formatted = await formatForChannel({
+    intent: 'application_lookup',
+    answer: 'fallback',
+    state: {
+      equipment: {
+        brand: 'FREIGHTLINER',
+        model: 'COLUMBIA CL120',
+        engine: 'DETROIT DIESEL'
+      }
+    },
+    evidence: {
+      products: [{
+        sku: 'EA17682',
+        filter_type: 'air',
+        technology: 'MACROCORE™',
+        validated_applications: [{
+          make: 'FREIGHTLINER',
+          model_family: 'COLUMBIA CL120',
+          engine_code: 'DETROIT DIESEL'
+        }]
+      }],
+      application_conflicts: [{
+        system: 'air_dryer',
+        service_role: 'air_dryer',
+        products: [
+          { sku: 'ED47747' },
+          { sku: 'ED47750' }
+        ]
+      }]
+    }
+  }, {
+    message: 'para un freightliner columbia cl120 motor detroit diesel',
+    lang: 'es',
+    channel: 'api'
+  });
+
+  assert.match(formatted.answer, /• EA17682 — Filtro de aire/);
+  assert.doesNotMatch(formatted.answer, /ED47747|ED47750/);
+  assert.match(formatted.answer, /misma posición de servicio en: secador de aire/i);
+  assert.match(formatted.answer, /configuración exacta/i);
 });
 
 test('validated PostgreSQL cross-reference returns a natural English answer with ELIMFILTERS technology', async () => {
