@@ -2,6 +2,12 @@
 // Post-build gate for the phase-1 SKU pages in frontend/out (run from frontend/ after next build).
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
+import { createRequire } from 'node:module';
+
+const { OEM_BRANDS, CROSS_BRANDS } = createRequire(import.meta.url)('../lib/product-page-data.js');
+const norm = (b) => b.toUpperCase().replace(/[-\s]/g, '');
+const OEM_OK = new Set([...OEM_BRANDS].map(norm));
+const CROSS_OK = new Set([...CROSS_BRANDS, 'MANN-FILTER'].map(norm));
 
 const OUT = path.resolve(process.cwd(), 'out');
 const root = path.resolve(process.cwd(), '..');
@@ -49,6 +55,8 @@ for (const p of snapshot.products) {
   if (/<meta name="robots" content="[^"]*noindex/.test(html)) fail(sku, 'noindex present');
   if ((html.match(/<h1[ >]/g) || []).length !== 1) fail(sku, 'expected exactly one h1');
   if (!/<table/.test(html)) fail(sku, 'no HTML spec table');
+  for (const r of p.oem) if (!OEM_OK.has(norm(r.brand))) fail(sku, `OEM list shows a non-OEM brand: ${r.brand}`);
+  for (const r of p.crossRefs) if (!CROSS_OK.has(norm(r.brand))) fail(sku, `cross-reference list shows a brand outside the allowed set: ${r.brand}`);
   if (new Set(p.specs.map((s) => s.name)).size !== p.specs.length) fail(sku, 'duplicate spec names in snapshot');
   const rowNames = [...html.matchAll(/<th[^>]*scope="row"[^>]*>([^<]*)<\/th>/g)].map((m) => m[1]);
   if (new Set(rowNames).size !== rowNames.length) fail(sku, `duplicate spec rows in HTML: ${rowNames}`);

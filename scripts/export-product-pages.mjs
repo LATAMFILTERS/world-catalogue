@@ -2,7 +2,7 @@
 // Builds frontend/src/data/product-pages.json (the snapshot read by the static Next build)
 // from config/sku-sitemap-list.json.
 //   Catalogue DB (operator, Lenovo):  CATALOG_DATABASE_URL=... node scripts/export-product-pages.mjs
-//   Repository seed rows (no DB):     node scripts/export-product-pages.mjs --from-json
+//   Rows from a JSON export:          node scripts/export-product-pages.mjs --from-json=<file>   (file = {"rows":[...]} in elimfilters_catalog column shape)
 // A SKU that fails a governance gate is reported as STOP_REVIEW and the export exits non-zero.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { createRequire } from 'node:module';
@@ -14,13 +14,14 @@ const { buildRecord } = require('../lib/product-page-data.js');
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const list = JSON.parse(readFileSync(path.join(root, 'config/sku-sitemap-list.json'), 'utf8'));
 const entries = (list.skus || []).map((e) => (typeof e === 'string' ? { sku: e } : e));
-const seedFile = 'config/product-pages/seed-rows.json';
-const fromJson = process.argv.includes('--from-json');
+const jsonArg = process.argv.find((a) => a.startsWith('--from-json'));
+const fromJson = Boolean(jsonArg);
+const seedFile = (jsonArg && jsonArg.split('=')[1]) || 'config/product-pages/seed-rows.json';
 
 async function loadRows() {
   if (fromJson) {
-    const rows = JSON.parse(readFileSync(path.join(root, seedFile), 'utf8')).rows;
-    return { rows, source: { kind: 'repo-seed-rows', file: seedFile } };
+    const rows = JSON.parse(readFileSync(path.resolve(root, seedFile), 'utf8')).rows;
+    return { rows, source: seedFile.endsWith('seed-rows.json') ? { kind: 'repo-seed-rows', file: seedFile } : { kind: 'catalogue-db-export', file: path.basename(seedFile) } };
   }
   const url = process.env.CATALOG_DATABASE_URL || process.env.DATABASE_URL;
   if (!url) throw new Error('Set CATALOG_DATABASE_URL (catalogue DB) or pass --from-json');
@@ -44,6 +45,7 @@ for (const entry of entries) {
     if (!row) throw new Error(`STOP_REVIEW ${entry.sku}: not found in ${source.kind}`);
     if (!entry.family) throw new Error(`STOP_REVIEW ${entry.sku}: list entry has no family`);
     if (row.canonical_source_brand) console.warn(`WARN ${entry.sku}: derived from ${row.canonical_source_brand} ${row.canonical_source_code}; confirm the specs are ELIMFILTERS-validated before publishing`);
+    if (row.canonical_source_status && row.canonical_source_status !== 'VERIFIED') console.warn(`NOTE ${entry.sku}: canonical_source_status=${row.canonical_source_status}`);
     products.push(buildRecord(row, entry, { ...source, ...(row._seed ? { seed: row._seed } : {}) }));
   } catch (error) {
     blocked.push(error.message);

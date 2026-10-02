@@ -90,6 +90,11 @@
     "JOHN DEERE 9650 CTS · JOHN DEERE 6081",
     "JOHN DEERE 9650 STS · JOHN DEERE 6081H"
    ],
+   "governance": {
+    "canonicalStatus": null,
+    "dutyStatus": null,
+    "active": true
+   },
    "source": {
     "kind": "repo-seed-rows",
     "file": "config/product-pages/seed-rows.json",
@@ -265,6 +270,11 @@
    ],
    "crossRefsTotal": 106,
    "applications": [],
+   "governance": {
+    "canonicalStatus": null,
+    "dutyStatus": null,
+    "active": true
+   },
    "source": {
     "kind": "repo-seed-rows",
     "file": "config/product-pages/seed-rows.json",
@@ -440,6 +450,11 @@
    ],
    "crossRefsTotal": 103,
    "applications": [],
+   "governance": {
+    "canonicalStatus": null,
+    "dutyStatus": null,
+    "active": true
+   },
    "source": {
     "kind": "repo-seed-rows",
     "file": "config/product-pages/seed-rows.json",
@@ -572,6 +587,11 @@
     "Mercedes-Benz · OM617",
     "Mercedes-Benz 0407D · OM617"
    ],
+   "governance": {
+    "canonicalStatus": null,
+    "dutyStatus": null,
+    "active": true
+   },
    "source": {
     "kind": "repo-seed-rows",
     "file": "config/product-pages/seed-rows.json",
