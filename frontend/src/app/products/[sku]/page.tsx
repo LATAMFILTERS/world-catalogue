@@ -9,8 +9,10 @@ interface Props {
 
 export const dynamicParams = false;
 
+// `output: export` needs at least one route. While no SKU passes the VERIFIED-only policy, a sentinel
+// route is generated; it renders the not-found page and is never linked or listed in the sitemap.
 export function generateStaticParams() {
-  return PRODUCT_PAGES.map((p) => ({ sku: p.slug }));
+  return PRODUCT_PAGES.length ? PRODUCT_PAGES.map((p) => ({ sku: p.slug })) : [{ sku: '_none' }];
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

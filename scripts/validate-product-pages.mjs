@@ -29,7 +29,17 @@ const decode = (s) => s.replace(/&amp;/g, '&').replace(/&quot;/g, '"').replace(/
 
 const listed = list.skus.map((e) => (typeof e === 'string' ? e : e.sku).toUpperCase());
 const exported = snapshot.products.map((p) => p.sku);
-if (listed.join() !== exported.join()) errors.push(`snapshot SKUs [${exported}] differ from config/sku-sitemap-list.json [${listed}]; run scripts/export-product-pages.mjs`);
+const blockedSkus = (snapshot.blocked || []).map((b) => b.sku);
+if ([...exported, ...blockedSkus].sort().join() !== listed.slice().sort().join()) errors.push(`snapshot published [${exported}] + blocked [${blockedSkus}] differ from config/sku-sitemap-list.json [${listed}]; run scripts/export-product-pages.mjs`);
+for (const sku of blockedSkus) {
+  if (existsSync(path.join(OUT, 'products', sku.toLowerCase()))) errors.push(`${sku}: blocked SKU has a generated page`);
+}
+if (!snapshot.products.length) {
+  const sentinel = path.join(OUT, 'products', '_none');
+  const files = ['index.html', '../_none.html'].map((f) => path.join(sentinel, f)).filter(existsSync);
+  if (files.length && !/noindex/.test(read(files[0]))) errors.push('sentinel route /products/_none/ is indexable');
+}
+for (const p of snapshot.products) if (p.governance?.canonicalStatus !== 'VERIFIED') errors.push(`${p.sku}: published without canonical_source_status VERIFIED (policy VERIFIED-only)`);
 
 const sitemap = existsSync(path.join(OUT, 'sitemap.xml')) ? read(path.join(OUT, 'sitemap.xml')) : '';
 const sitemapProducts = [...sitemap.matchAll(/<loc>([^<]*\/products\/[^<]*)<\/loc>/g)].map((m) => m[1]);
@@ -77,4 +87,4 @@ for (const p of snapshot.products) {
 }
 
 if (errors.length) { console.error(`Product page validation FAILED:\n- ${errors.join('\n- ')}`); process.exit(1); }
-console.log(`Product page validation passed: ${snapshot.products.length} SKU pages (${exported.join(', ')}).`);
+console.log(`Product page validation passed: ${snapshot.products.length} published SKU pages (${exported.join(', ') || 'none'}); ${blockedSkus.length} blocked, none generated or in the sitemap.`);

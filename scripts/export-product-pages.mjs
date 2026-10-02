@@ -42,20 +42,20 @@ const blocked = [];
 for (const entry of entries) {
   const row = rows.find((r) => String(r.sku).toUpperCase() === entry.sku.toUpperCase());
   try {
+    if (entry.hold) throw new Error(`HOLD ${entry.sku}: ${entry.hold}`);
     if (!row) throw new Error(`STOP_REVIEW ${entry.sku}: not found in ${source.kind}`);
+    if (row.canonical_source_brand) console.warn(`NOTE ${entry.sku}: canonical source ${row.canonical_source_brand} ${row.canonical_source_code}`);
+    const record = buildRecord(row, entry, { ...source, ...(row._seed ? { seed: row._seed } : {}) });
     if (!entry.family) throw new Error(`STOP_REVIEW ${entry.sku}: list entry has no family`);
-    if (row.canonical_source_brand) console.warn(`WARN ${entry.sku}: derived from ${row.canonical_source_brand} ${row.canonical_source_code}; confirm the specs are ELIMFILTERS-validated before publishing`);
-    if (row.canonical_source_status && row.canonical_source_status !== 'VERIFIED') console.warn(`NOTE ${entry.sku}: canonical_source_status=${row.canonical_source_status}`);
-    products.push(buildRecord(row, entry, { ...source, ...(row._seed ? { seed: row._seed } : {}) }));
+    products.push(record);
   } catch (error) {
-    blocked.push(error.message);
+    blocked.push({ sku: entry.sku.toUpperCase(), reason: error.message.replace(/^(STOP_REVIEW|HOLD) \S+: /, ''), kind: error.message.split(' ')[0] });
   }
 }
 
-if (blocked.length) {
-  console.error(blocked.join('\n'));
-  process.exit(1);
-}
-const out = { phase: list.phase, options: list.options, products };
+console.log(`PUBLISHABLE (${products.length}): ${products.map((p) => p.sku).join(', ') || '-'}`);
+for (const b of blocked) console.log(`BLOCKED ${b.sku} [${b.kind}]: ${b.reason}`);
+const out = { phase: list.phase, options: list.options, policy: 'VERIFIED-only', products, blocked };
 writeFileSync(path.join(root, 'frontend/src/data/product-pages.json'), `${JSON.stringify(out, null, 1)}\n`);
-console.log(`product-pages.json: ${products.length} SKUs from ${source.kind}`);
+console.log(`product-pages.json: ${products.length} published, ${blocked.length} blocked (source: ${source.kind})`);
+if (process.argv.includes('--strict') && blocked.length) process.exit(1);

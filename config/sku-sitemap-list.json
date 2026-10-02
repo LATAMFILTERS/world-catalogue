@@ -6,9 +6,56 @@
     "showPerformanceSpecs": false
   },
   "skus": [
-    { "sku": "EH60950", "family": "hydraulic-filters" },
-    { "sku": "EL83191", "family": "oil-filters" },
-    { "sku": "EL84004", "family": "oil-filters" },
-    { "sku": "EF95112", "family": "secondary-fuel" }
-  ]
+    {
+      "sku": "EH60950",
+      "family": "hydraulic-filters",
+      "hold": "third-party media mark (Synteq XP) in catalogue record; keep blocked until corrected"
+    },
+    {
+      "sku": "EL83191",
+      "family": "oil-filters"
+    },
+    {
+      "sku": "EL84004",
+      "family": "oil-filters"
+    },
+    {
+      "sku": "EF95112",
+      "family": "secondary-fuel",
+      "hold": "specs sourced from Fleetguard FF5112; not published until verified against ELIMFILTERS own data (policy: Victor)"
+    },
+    {
+      "sku": "EF90668",
+      "hold": "fuel/water separator recorded as SYNTAPORE; scope must be HYDROCORE/TURBOCORE; keep blocked until corrected"
+    },
+    {
+      "sku": "EF90669",
+      "hold": "fuel/water separator recorded as SYNTAPORE; scope must be HYDROCORE/TURBOCORE; keep blocked until corrected"
+    },
+    {
+      "sku": "EA13648"
+    },
+    {
+      "sku": "EA30719"
+    },
+    {
+      "sku": "EF30006"
+    },
+    {
+      "sku": "EF30012"
+    },
+    {
+      "sku": "EL30001"
+    },
+    {
+      "sku": "EL30002"
+    },
+    {
+      "sku": "EH60222"
+    },
+    {
+      "sku": "EH60223"
+    }
+  ],
+  "policy": "VERIFIED-only: a SKU is published only if canonical_source_status = VERIFIED, the gates in lib/product-page-data.js pass and it has no 'hold'."
 }
