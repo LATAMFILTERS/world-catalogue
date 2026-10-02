@@ -42,7 +42,6 @@ async function main(){
     mutations:{
       catalog_rows_inserted:0,
       ld_parent_rows_inserted:0,
-      canonical_identity_rows_inserted:0,
       competitor_rows_inserted:0,
       oem_rows_inserted:0,
       application_rows_reowned:0
@@ -146,18 +145,6 @@ async function main(){
         throw new Error(`parent mismatch for ${item.target}: ${JSON.stringify(parent.rows)}`);
       }
 
-      const canonical=await db.query(
-        `SELECT *
-           FROM ld_catalog.ld_canonical_product_identity
-          WHERE elimfilters_sku=$1 AND status='ACTIVE'`,
-        [item.target]
-      );
-      if(canonical.rowCount
-        && (norm(canonical.rows[0].canonical_part_number)!==norm(item.target_base)
-          || String(canonical.rows[0].filter_type)!==item.filter_type)){
-        throw new Error(`canonical identity mismatch for ${item.target}`);
-      }
-
       const rows=await db.query(
         `SELECT id,make,model_family,model_type,year,engine_code
            FROM ld_catalog.ld_vehicle_applications
@@ -196,7 +183,6 @@ async function main(){
         target_base:item.target_base,rows:rows.rowCount,
         collisions:collisions.rows[0].n,
         parent_exists:parent.rowCount===1,
-        canonical_exists:canonical.rowCount===1,
         create_target:item.create_target && !target
       });
 
@@ -213,25 +199,6 @@ async function main(){
           );
           if(insParent.rowCount!==1) throw new Error(`parent insert failed: ${item.target}`);
           report.mutations.ld_parent_rows_inserted+=insParent.rowCount;
-        }
-
-        if(canonical.rowCount===0){
-          const insCanon=await db.query(
-            `INSERT INTO ld_catalog.ld_canonical_product_identity
-              (elimfilters_sku,origin_group,canonical_brand,canonical_part_number,
-               filter_type,status,evidence_source)
-             VALUES ($1,$2,'DONALDSON',$3,$4,'ACTIVE',$5)
-             RETURNING elimfilters_sku`,
-            [
-              item.target,
-              item.filter_type==='hydraulic'?'DONALDSON_HYDRAULIC':'DONALDSON_FUEL',
-              item.target_base,item.filter_type,
-              item.filter_type==='fuel'
-                ? 'DONALDSON_TRUCK_BUS_CATALOGUE_1345335'
-                : 'DONALDSON_OFFICIAL_PRODUCT'
-            ]
-          );
-          report.mutations.canonical_identity_rows_inserted+=insCanon.rowCount;
         }
 
         const xref=await db.query(
