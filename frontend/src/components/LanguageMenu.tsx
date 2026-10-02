@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import { useTranslation } from 'react-i18next';
 import { localeFromPath } from '@/i18n-locales';
 import { applyLanguageInPlace } from '@/lib/apply-language';
-import { setLanguagePreference, siteLangFromTag, type SiteLang } from '@/lib/language-preference';
+import { setLanguagePreference, type SiteLang } from '@/lib/language-preference';
 import { HREFLANG, languageHref } from '@/lib/localized-routes';
 
 const OPTIONS: readonly { lang: SiteLang; name: string }[] = [
@@ -32,14 +32,16 @@ const CSS = `
  * Globe menu (English / Español / Português) with plain links, no flags.
  * - Page with a published /es/ and /pt/ version: each option links to that version.
  * - Any other page: the option keeps the English URL and the page is translated in place.
- * The choice is stored (localStorage + cookie) and wins over any country-based suggestion.
+ * The choice is stored (localStorage + cookie) and wins over the country-based detector.
  * Built on <details>, so it opens and navigates without JavaScript.
  */
 export function LanguageMenu({ style }: { style?: CSSProperties }) {
   const pathname = usePathname();
   const { t, i18n } = useTranslation();
   const ref = useRef<HTMLDetailsElement>(null);
-  const current: SiteLang = localeFromPath(pathname) ?? siteLangFromTag(i18n.language);
+  // The language actually on screen. A visitor switched by country to a language outside the
+  // menu (fr, it, ...) sees that code, with no option marked.
+  const current = localeFromPath(pathname) ?? ((i18n.language || 'en').slice(0, 2).toLowerCase());
 
   useEffect(() => {
     const close = (refocus = false) => {
@@ -64,12 +66,15 @@ export function LanguageMenu({ style }: { style?: CSSProperties }) {
 
   const onSelect = (event: MouseEvent<HTMLAnchorElement>, lang: SiteLang) => {
     setLanguagePreference(lang);
-    // Same page in the same language, or a page translated in place: no navigation.
-    if (lang === current || !languageHref(pathname, lang)) {
-      event.preventDefault();
-      if (ref.current) ref.current.open = false;
-      if (lang !== current) void applyLanguageInPlace(lang);
-    }
+    // Follow the link only when it leads to another URL: the /es/ or /pt/ version of this page,
+    // or the English one. On the target URL itself, or on a page with no localized version,
+    // stay put and translate in place when the language on screen differs.
+    const target = languageHref(pathname, lang);
+    const trim = (path: string) => path.replace(/\/+$/, '') || '/';
+    if (target && trim(target) !== trim(pathname ?? '/')) return;
+    event.preventDefault();
+    if (ref.current) ref.current.open = false;
+    if (lang !== current) void applyLanguageInPlace(lang);
   };
 
   return (
