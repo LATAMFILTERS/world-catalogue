@@ -99,3 +99,13 @@ test('run_131 normalizes legacy model_type and engine_code before governed write
   assert.match(migration,/engine: entry\.engine \|\| entry\.engine_code/);
   assert.match(migration,/governancePayload\(sourcePayloadResult\.rows\[0\]\?\.vehicle_applications/);
 });
+
+test('run_131 creates EW72096 relational parent only after identity validation',()=>{
+  assert.match(migration,/EW72096 catalog identity missing/);
+  assert.match(migration,/norm\(ew\.codigo_base\)!=='P552096'/);
+  assert.match(migration,/ew\.filter_type!=='coolant'/);
+  assert.match(migration,/ew\.duty!=='HEAVY_DUTY'/);
+  assert.match(migration,/INSERT INTO ld_catalog\.ld_product_catalog/);
+  assert.match(migration,/VALUES \('EW72096','P552096','Coolant Filter'\)/);
+  assert.match(migration,/P552096 parent already owned/);
+});
