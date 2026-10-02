@@ -93,10 +93,16 @@ async function main() {
       );
       report.legacy_rows_removed = removed.rowCount;
 
+      const targetSkus = COMPONENTS.map(x => x[0]);
+      await client.query(
+        "DELETE FROM ld_catalog.ld_vehicle_applications WHERE elimfilters_sku = ANY($1) AND upper(coalesce(make,''))=$2 AND upper(coalesce(model_family,''))=upper($3) AND upper(coalesce(model_type,''))=upper($4) AND upper(coalesce(engine_code,''))=upper($5)",
+        [targetSkus,MAKE,MODEL_FAMILY,MODEL_TYPE,ENGINE]
+      );
+
       for (const item of COMPONENTS) {
         const sku = item[0], base = item[1];
         const result = await client.query(
-          "INSERT INTO ld_catalog.ld_vehicle_applications (elimfilters_sku,source_sku,make,model_family,model_type,year,engine_code,source_origin) VALUES ($1,$2,$3,$4,$5,NULL,$6,'run_124_cl120_series60_acceptance') ON CONFLICT (elimfilters_sku,make,model_family,model_type,year) DO UPDATE SET source_sku=EXCLUDED.source_sku,engine_code=EXCLUDED.engine_code,source_origin=EXCLUDED.source_origin",
+          "INSERT INTO ld_catalog.ld_vehicle_applications (elimfilters_sku,source_sku,make,model_family,model_type,year,engine_code,source_origin) VALUES ($1,$2,$3,$4,$5,NULL,$6,'run_124_cl120_series60_acceptance')",
           [sku,base,MAKE,MODEL_FAMILY,MODEL_TYPE,ENGINE]
         );
         report.application_rows_upserted += result.rowCount;
