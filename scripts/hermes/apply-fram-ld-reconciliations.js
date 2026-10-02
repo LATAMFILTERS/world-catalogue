@@ -6,6 +6,9 @@ const {Client}=require('pg');
 const ROOT=path.resolve(__dirname,'../..');
 const EXECUTE=process.argv.includes('--execute');
 const EXISTING_APPLICATION_GAPS=process.argv.includes('--existing-application-gaps');
+// Application-gap repair is scoped to ld_vehicle_applications (+ readiness.has_applications).
+// Competitor/OEM/specification evidence layers are never written in this mode.
+const APPLICATIONS_ONLY=EXISTING_APPLICATION_GAPS;
 const GAP_DIR=path.join(ROOT,'elimfilters-vault/91-private-evidence/fram-ld-gap-analysis');
 const MAP_FILE=process.env.FRAM_LD_RECONCILIATION_MAP||path.join(ROOT,'elimfilters-vault/91-private-evidence/fram-ld-reconciliation-map.json');
 const REPORT_DIR=path.join(ROOT,'elimfilters-vault/91-private-evidence/fram-ld-reconciliation-reports');
@@ -34,6 +37,19 @@ function buildPlan(entries,byAuthority){
   }
   return {comp:uniq(comp,x=>[x.sku,norm(x.brand),norm(x.part)].join('|')),oem:uniq(oem,x=>[x.sku,norm(x.brand),norm(x.part)].join('|')),apps:uniq(apps,x=>[x.sku,norm(x.make),norm(x.model),x.year||'',norm(x.engine)].join('|')),specs:uniq(specs,x=>[x.sku,x.key].join('|'))};
 }
+// Applications-only eligibility: the FRAM authority must already be owned directly and
+// uniquely by the target in ld_competitor_cross_references, and no other SKU may claim it
+// in the public FRAM cross-references. Anything else is held per entry, never reassigned.
+function partitionByDirectOwnership(entries,ldOwners,publicOwners){
+  const eligible=[],held=[];
+  for(const e of entries){
+    const k=norm(e.authority),ld=[...(ldOwners.get(k)||[])];
+    const conflicting=[...new Set([...ld,...(publicOwners.get(k)||[])])].filter(s=>s!==e.sku).sort();
+    if(ld.length===1&&ld[0]===e.sku&&!conflicting.length)eligible.push(e);
+    else held.push({authority:e.authority,sku:e.sku,family:e.family,reason:'AUTHORITY_NOT_DIRECTLY_OWNED',conflicting_owners:conflicting});
+  }
+  return {eligible,held};
+}
 async function insertRows(client,table,cols,conflict,rows,batch=250){let total=0;for(let i=0;i<rows.length;i+=batch){const part=rows.slice(i,i+batch),params=[],vals=[];let n=1;for(const r of part){const ps=[];for(const c of cols){params.push(r[c]);ps.push(`$${n++}`)}vals.push(`(${ps.join(',')})`)}if(!vals.length)continue;total+=(await client.query(`INSERT INTO ${table} (${cols.join(',')}) VALUES ${vals.join(',')} ${conflict} RETURNING 1`,params)).rowCount;}return total;}
 async function main(){
   const url=process.env.CATALOG_DATABASE_URL||process.env.DATABASE_URL;
@@ -57,7 +73,16 @@ async function main(){
     )).rows;
     const tm=new Map(targets.map(x=>[x.sku,x]));
     const missingTargetEntries=entries.filter(e=>!tm.has(e.sku));
-    const activeEntries=entries.filter(e=>tm.has(e.sku));
+    let activeEntries=entries.filter(e=>tm.has(e.sku));
+    if(APPLICATIONS_ONLY){
+      const auths=activeEntries.map(e=>norm(e.authority));
+      const ldOwners=new Map((await client.query(`SELECT ld_catalog.norm_part(competitor_part_number) AS part,array_agg(DISTINCT elimfilters_sku) AS owners FROM ld_catalog.ld_competitor_cross_references WHERE upper(regexp_replace(coalesce(competitor_brand,''),'[^A-Z0-9]','','g'))='FRAM' AND ld_catalog.norm_part(competitor_part_number)=ANY($1::text[]) GROUP BY 1`,[auths])).rows.map(r=>[r.part,r.owners]));
+      const publicOwners=new Map((await client.query(`SELECT regexp_replace(upper(x),'[^A-Z0-9]','','g') AS part,array_agg(DISTINCT c.sku) AS owners FROM public.elimfilters_catalog c CROSS JOIN LATERAL jsonb_array_elements_text(CASE WHEN jsonb_typeof(c.brand_crossrefs->'FRAM')='array' THEN c.brand_crossrefs->'FRAM' ELSE '[]'::jsonb END) x WHERE regexp_replace(upper(x),'[^A-Z0-9]','','g')=ANY($1::text[]) GROUP BY 1`,[auths])).rows.map(r=>[r.part,r.owners]));
+      const {eligible,held}=partitionByDirectOwnership(activeEntries,ldOwners,publicOwners);
+      report.skipped.authority_not_directly_owned=held;
+      report.skipped.authority_not_directly_owned_count=held.length;
+      activeEntries=eligible;
+    }
     report.skipped.missing_targets=missingTargetEntries.map(e=>({authority:e.authority,sku:e.sku,family:e.family,reason:'TARGET_NOT_IN_PUBLIC_CATALOG'}));
     report.skipped.missing_target_authorities=missingTargetEntries.length;
     report.skipped.missing_target_skus=[...new Set(missingTargetEntries.map(e=>e.sku))];
@@ -66,10 +91,10 @@ async function main(){
     const plan=buildPlan(activeEntries,byAuthority);
     report.active_authorities=activeEntries.length;
     report.active_targets=skus.length;
-    report.planned.competitor=plan.comp.length;
-    report.planned.oem=plan.oem.length;
+    report.planned.competitor=APPLICATIONS_ONLY?0:plan.comp.length;
+    report.planned.oem=APPLICATIONS_ONLY?0:plan.oem.length;
     report.planned.applications=plan.apps.length;
-    report.planned.specifications=plan.specs.length;
+    report.planned.specifications=APPLICATIONS_ONLY?0:plan.specs.length;
     for(const e of activeEntries){
       const t=tm.get(e.sku);
       if(t.duty!=='LIGHT_DUTY'||t.filter_type!==TYPE[e.family]) throw new Error(`Target guard failed ${e.authority}->${e.sku}`);
@@ -108,12 +133,20 @@ async function main(){
     report.planned.applications_already_present=evidenceAppRows.length-appRows.length;
     report.planned.applications_missing=appRows.length;
     const specRows=plan.specs.filter(x=>x.key&&x.value).map(x=>({elimfilters_sku:x.sku,source_sku:x.source,spec_key:x.key,spec_value:x.value,spec_unit:x.unit}));
-    report.inserted.competitor=await insertRows(client,'ld_catalog.ld_competitor_cross_references',['elimfilters_sku','source_sku','competitor_brand','competitor_part_number'],'ON CONFLICT (elimfilters_sku,competitor_brand,competitor_part_number) DO NOTHING',compRows);
-    report.inserted.oem=await insertRows(client,'ld_catalog.ld_oem_cross_references',['elimfilters_sku','source_sku','oem_brand','oem_part_number'],'ON CONFLICT (elimfilters_sku,oem_brand,oem_part_number) DO NOTHING',oemRows);
+    report.inserted.competitor=0;
+    report.inserted.oem=0;
+    report.inserted.specifications=0;
+    if(!APPLICATIONS_ONLY){
+      report.inserted.competitor=await insertRows(client,'ld_catalog.ld_competitor_cross_references',['elimfilters_sku','source_sku','competitor_brand','competitor_part_number'],'ON CONFLICT (elimfilters_sku,competitor_brand,competitor_part_number) DO NOTHING',compRows);
+      report.inserted.oem=await insertRows(client,'ld_catalog.ld_oem_cross_references',['elimfilters_sku','source_sku','oem_brand','oem_part_number'],'ON CONFLICT (elimfilters_sku,oem_brand,oem_part_number) DO NOTHING',oemRows);
+      report.inserted.specifications=await insertRows(client,'ld_catalog.ld_product_specifications',['elimfilters_sku','source_sku','spec_key','spec_value','spec_unit'],'ON CONFLICT (elimfilters_sku,spec_key) DO NOTHING',specRows);
+    }
     report.inserted.applications=await insertRows(client,'ld_catalog.ld_vehicle_applications',['elimfilters_sku','source_sku','make','model_family','model_type','year','engine_code','ccm','kw','hp','source_origin'],'ON CONFLICT (elimfilters_sku,make,model_family,model_type,year) DO NOTHING',appRows);
-    report.inserted.specifications=await insertRows(client,'ld_catalog.ld_product_specifications',['elimfilters_sku','source_sku','spec_key','spec_value','spec_unit'],'ON CONFLICT (elimfilters_sku,spec_key) DO NOTHING',specRows);
-    const ready=await client.query(`UPDATE ld_catalog.ld_production_readiness r SET has_oem=EXISTS(SELECT 1 FROM ld_catalog.ld_oem_cross_references o WHERE o.elimfilters_sku=r.elimfilters_sku),has_competitor=EXISTS(SELECT 1 FROM ld_catalog.ld_competitor_cross_references x WHERE x.elimfilters_sku=r.elimfilters_sku),has_applications=EXISTS(SELECT 1 FROM ld_catalog.ld_vehicle_applications a WHERE a.elimfilters_sku=r.elimfilters_sku),has_specifications=EXISTS(SELECT 1 FROM ld_catalog.ld_product_specifications s WHERE s.elimfilters_sku=r.elimfilters_sku),updated_at=now() WHERE r.elimfilters_sku=ANY($1::text[])`,[skus]);
+    const ready=APPLICATIONS_ONLY
+      ? await client.query(`UPDATE ld_catalog.ld_production_readiness r SET has_applications=true,updated_at=now() WHERE r.elimfilters_sku=ANY($1::text[]) AND r.has_applications IS NOT TRUE AND EXISTS(SELECT 1 FROM ld_catalog.ld_vehicle_applications a WHERE a.elimfilters_sku=r.elimfilters_sku) RETURNING r.elimfilters_sku`,[skus])
+      : await client.query(`UPDATE ld_catalog.ld_production_readiness r SET has_oem=EXISTS(SELECT 1 FROM ld_catalog.ld_oem_cross_references o WHERE o.elimfilters_sku=r.elimfilters_sku),has_competitor=EXISTS(SELECT 1 FROM ld_catalog.ld_competitor_cross_references x WHERE x.elimfilters_sku=r.elimfilters_sku),has_applications=EXISTS(SELECT 1 FROM ld_catalog.ld_vehicle_applications a WHERE a.elimfilters_sku=r.elimfilters_sku),has_specifications=EXISTS(SELECT 1 FROM ld_catalog.ld_product_specifications s WHERE s.elimfilters_sku=r.elimfilters_sku),updated_at=now() WHERE r.elimfilters_sku=ANY($1::text[])`,[skus]);
     report.inserted.readiness_updated=ready.rowCount;
+    if(APPLICATIONS_ONLY) report.inserted.readiness_has_applications_skus=ready.rows.map(r=>r.elimfilters_sku).sort();
     const direct=(await client.query(`SELECT competitor_part_number,elimfilters_sku FROM ld_catalog.ld_competitor_cross_references WHERE upper(regexp_replace(coalesce(competitor_brand,''),'[^A-Z0-9]','','g'))='FRAM' AND ld_catalog.norm_part(competitor_part_number)=ANY($1::text[])`,[activeEntries.map(e=>norm(e.authority))])).rows;
     const dm=new Map();for(const x of direct){const k=norm(x.competitor_part_number);if(!dm.has(k))dm.set(k,new Set());dm.get(k).add(x.elimfilters_sku)}
     const failures=[];for(const e of activeEntries){const owners=[...(dm.get(norm(e.authority))||[])];if(owners.length!==1||owners[0]!==e.sku)failures.push({authority:e.authority,expected:e.sku,owners});}
@@ -134,4 +167,5 @@ async function main(){
     console.log(JSON.stringify({report:out,...report},null,2));
   }
 }
-main().catch(e=>{if(!e.report)console.error(e.stack||e.message);process.exit(1)});
+if(require.main===module)main().catch(e=>{if(!e.report)console.error(e.stack||e.message);process.exit(1)});
+module.exports={partitionByDirectOwnership};

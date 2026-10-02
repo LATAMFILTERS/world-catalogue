@@ -121,3 +121,70 @@ test('FRAM reconciliation holds missing public targets instead of blocking valid
   assert.match(framReconcile, /activeEntries/);
   assert.doesNotMatch(framReconcile, /Missing targets \$\{targets\.length\}\/\$\{skus\.length\}/);
 });
+
+test('--existing-application-gaps cannot write competitor, OEM or specification rows', () => {
+  assert.match(framReconcile, /const APPLICATIONS_ONLY=EXISTING_APPLICATION_GAPS;/);
+  const guarded = framReconcile.match(/if\(!APPLICATIONS_ONLY\)\{([\s\S]*?)\r?\n    \}/);
+  assert.ok(guarded, 'non-application inserts must sit in one if(!APPLICATIONS_ONLY) block');
+  const outside = framReconcile.replace(guarded[0], '');
+  for (const table of ['ld_competitor_cross_references', 'ld_oem_cross_references', 'ld_product_specifications']) {
+    assert.ok(guarded[1].includes(`insertRows(client,'ld_catalog.${table}'`), `${table} insert must be guarded`);
+    assert.ok(!outside.includes(`insertRows(client,'ld_catalog.${table}'`), `${table} insert escapes the applications-only guard`);
+    for (const verb of ['INSERT INTO', 'UPDATE', 'DELETE FROM']) {
+      assert.ok(!outside.includes(`${verb} ld_catalog.${table}`), `${verb} ${table} outside guard`);
+    }
+  }
+  for (const table of ['public.elimfilters_catalog', 'ld_catalog.ld_product_catalog', 'ld_catalog.ld_canonical_product_identity']) {
+    for (const verb of ['INSERT INTO', 'UPDATE', 'DELETE FROM']) {
+      assert.ok(!framReconcile.includes(`${verb} ${table}`), `reconciliation must not ${verb} ${table}`);
+    }
+  }
+  const appsOnlyReadiness = framReconcile.match(/APPLICATIONS_ONLY\s*\?\s*await client\.query\(`(UPDATE ld_catalog\.ld_production_readiness[^`]*)`/);
+  assert.ok(appsOnlyReadiness, 'applications-only readiness update must exist');
+  assert.match(appsOnlyReadiness[1], /SET has_applications=true,updated_at=now\(\)/);
+  assert.doesNotMatch(appsOnlyReadiness[1], /has_oem|has_competitor|has_specifications/);
+  assert.match(framReconcile, /report\.planned\.competitor=APPLICATIONS_ONLY\?0:/);
+  assert.match(framReconcile, /report\.planned\.oem=APPLICATIONS_ONLY\?0:/);
+  assert.match(framReconcile, /report\.planned\.specifications=APPLICATIONS_ONLY\?0:/);
+});
+
+test('one authority without direct ownership is held without aborting valid authorities', () => {
+  const { partitionByDirectOwnership } = require('../scripts/hermes/apply-fram-ld-reconciliations.js');
+  const entries = [
+    { authority: 'PH3600', sku: 'EL31000', family: 'LUBE' },   // owned directly and uniquely
+    { authority: 'CA9007', sku: 'EA35350', family: 'AIR' },    // no LD owner
+    { authority: 'PH-8873', sku: 'EL39365', family: 'LUBE' },  // public FRAM owner is another SKU
+    { authority: 'G8018', sku: 'EF33850', family: 'FUEL' },    // LD owner is another SKU
+    { authority: 'CF1000', sku: 'EC30001', family: 'CABIN' }   // LD shared by two SKUs
+  ];
+  const ld = new Map([
+    ['PH3600', ['EL31000']],
+    ['PH8873', ['EL39365']],
+    ['G8018', ['EF91772']],
+    ['CF1000', ['EC30001', 'EC39999']]
+  ]);
+  const pub = new Map([['PH3600', ['EL31000']], ['PH8873', ['EL80507']]]);
+  const { eligible, held } = partitionByDirectOwnership(entries, ld, pub);
+  assert.deepEqual(eligible.map(e => e.authority), ['PH3600']);
+  assert.deepEqual(held.map(h => [h.authority, h.sku, h.reason, h.conflicting_owners]), [
+    ['CA9007', 'EA35350', 'AUTHORITY_NOT_DIRECTLY_OWNED', []],
+    ['PH-8873', 'EL39365', 'AUTHORITY_NOT_DIRECTLY_OWNED', ['EL80507']],
+    ['G8018', 'EF33850', 'AUTHORITY_NOT_DIRECTLY_OWNED', ['EF91772']],
+    ['CF1000', 'EC30001', 'AUTHORITY_NOT_DIRECTLY_OWNED', ['EC39999']]
+  ]);
+  assert.doesNotMatch(framReconcile, /throw[^;]*AUTHORITY_NOT_DIRECTLY_OWNED/);
+});
+
+test('held authorities cannot contribute application inserts or readiness updates', () => {
+  const at = s => {
+    const i = framReconcile.indexOf(s);
+    assert.ok(i >= 0, `missing: ${s}`);
+    return i;
+  };
+  const filtered = at('activeEntries=eligible;');
+  assert.ok(filtered < at('const skus=[...new Set(activeEntries.map(e=>e.sku))];'));
+  assert.ok(filtered < at('const plan=buildPlan(activeEntries,byAuthority);'));
+  assert.ok(filtered < at('report.inserted.applications=await insertRows'));
+  assert.ok(filtered < at('UPDATE ld_catalog.ld_production_readiness'));
+  assert.match(framReconcile, /WHERE r\.elimfilters_sku=ANY\(\$1::text\[\]\) AND r\.has_applications IS NOT TRUE[^`]*`,\[skus\]\)/);
+});
