@@ -235,7 +235,7 @@ export const INDUSTRY_PT: Record<string, string> = {
   construction: 'Construção',
   'trucks-fleets': 'Frotas de caminhões',
   'power-generation': 'Geração de energia',
-  marine: 'Marítimo',
+  marine: 'Setor marítimo',
   'oil-gas': 'Petróleo e gás',
   railway: 'Ferroviário',
   'bus-coach': 'Ônibus e rodoviário',

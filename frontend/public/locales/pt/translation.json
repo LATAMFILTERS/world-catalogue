@@ -369,7 +369,7 @@
     "platformName": "Inteligência para a proteção de ativos",
     "platformTitle1": "Uma única plataforma de",
     "platformTitle2": "inteligência para a proteção de ativos",
-    "platformBody": "A ELIMFILTERS integra filtração de engenharia, conhecimento técnico governado, inteligência de produto e ferramentas digitais em um único sistema criado para apoiar decisões melhores sobre os ativos críticos.",
+    "platformBody": "A ELIMFILTERS integra engenharia de filtração, conhecimento técnico governado, inteligência de produto e ferramentas digitais em um único sistema criado para apoiar decisões melhores sobre os ativos críticos.",
     "platformPillars": [
       {
         "title": "KNOWLEDGE CENTER",
@@ -396,7 +396,7 @@
       "agriculture": "Agricultura",
       "construction": "Construção",
       "oil-gas": "Petróleo e gás",
-      "marine": "Marítimo",
+      "marine": "Setor marítimo",
       "power-generation": "Geração de energia",
       "trucks-fleets": "Frotas de caminhões",
       "manufacturing": "Manufatura",
@@ -438,7 +438,7 @@
     "knowledgeButton": "EXPLORE OUR KNOWLEDGE SYSTEM"
   },
   "contact": {
-    "pageTitle": "Contact & Technical Support",
+    "pageTitle": "Contato e suporte técnico",
     "homeLink": "HOME",
     "heroTag": "Contact ELIMFILTERS",
     "heroTitle": "Industrial Support",
@@ -515,9 +515,9 @@
     "link2Desc": "Commercial opportunities for qualified industrial partners.",
     "link3Label": "Contact ELIMFILTERS",
     "link3Desc": "Send a commercial or technical inquiry.",
-    "link4Label": "Visit ELIMFILTERS.com",
+    "link4Label": "Visite ELIMFILTERS.com",
     "link4Desc": "Explore systems, technologies, and industries.",
-    "footerText": "Every Micron Matters."
+    "footerText": "Cada mícron conta."
   },
   "warranty": {
     "homeLink": "HOME",
@@ -599,5 +599,10 @@
         "label": "Enviar uma consulta comercial"
       }
     ]
+  },
+  "notFound": {
+    "kicker": "ELIMFILTERS // CONTROLE DE ROTA",
+    "title": "Caminho fora do sistema de proteção.",
+    "body": "A página, o link ou a rota automatizada solicitada não está ativa na ELIMFILTERS. Não existe nenhum produto, registro técnico ou destino comercial neste endereço."
   }
 }

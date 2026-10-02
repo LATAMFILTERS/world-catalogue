@@ -64,7 +64,7 @@ const GOVERNED_EN_OVERRIDES: Record<string, string> = {
   'home.techItems.2.desc': 'The right component depends on the equipment, the application, and how hard it runs. We size and specify around that reality, not a generic part number.',
   'home.sciDesc': 'The ELIMFILTERS Knowledge Center references international filtration, cleanliness, and test standards as technical frameworks where they are applicable to a protected system or engineering topic.',
   'home.llmP1': 'Industrial asset protection is a system-level engineering approach to identifying and controlling contamination sources that degrade mechanical equipment. Particles, water, heat, and degradation products can contribute to wear and reliability loss across engines, hydraulic systems, fuel circuits, lubrication systems, cooling systems, and operator environments.',
-  'home.faqItems.1.a': 'Contamination particles wear bearing surfaces, restrict fuel injectors, and degrade seal integrity. Particles smaller than 10 microns cause abrasive wear invisible to the naked eye. Water in fuel promotes microbial growth and injector corrosion.',
+  'home.faqItems.1.a': 'Contamination particles wear bearing surfaces, restrict fuel injectors, and degrade seal integrity. Particles smaller than 10 microns can cause abrasive wear invisible to the naked eye. Water in fuel promotes microbial growth and injector corrosion.',
   'home.llmP2': 'Contamination can accelerate wear at critical clearances and surfaces. Particle contamination can affect bearings, valve spools, and injector components; water can affect fuel-system reliability; and degraded fluid condition can reduce the stability of hydraulic, lubrication, and cooling systems. The applicable cleanliness target and control method depend on the protected component and operating duty.',
 };
 
@@ -74,8 +74,8 @@ export const GOVERNED_ES_OVERRIDES: Record<string, string> = {
   'home.whyP1': 'ELIMFILTERS® no es una empresa de filtros. Es una empresa de ',
   'home.whyP1after': ' que diseña sistemas para controlar la contaminación, prevenir la degradación y proteger el valor de los activos industriales críticos.',
   'home.ctaDealerTag': '// DISTRIBUCIÓN POR PAÍS',
-  'home.ctaDealerTitle': 'DESARROLLA ELIMFILTERS',
-  'home.ctaDealerHl': 'EN TU PAÍS.',
+  'home.ctaDealerTitle': 'DESARROLLE ELIMFILTERS',
+  'home.ctaDealerHl': 'EN SU PAÍS.',
   'home.ctaDealerBtn': 'SOLICITAR DISTRIBUCIÓN NACIONAL',
 
   'problem.badge': 'La contaminación puede acelerar el desgaste prematuro de componentes y la degradación de los equipos.',
@@ -122,7 +122,7 @@ export const GOVERNED_ES_OVERRIDES: Record<string, string> = {
   'home.techItems.2.desc': 'El componente correcto depende del equipo, la aplicación y la exigencia de operación. Dimensionamos y especificamos según esa realidad, no según un número de parte genérico.',
   'home.sciDesc': 'El Knowledge Center de ELIMFILTERS utiliza normas internacionales de filtración, limpieza y ensayo como marcos técnicos cuando aplican a un sistema protegido o a un tema de ingeniería.',
   'home.llmP1': 'La protección de activos industriales es un enfoque de ingeniería a nivel de sistema para identificar y controlar las fuentes de contaminación que degradan los equipos mecánicos. Partículas, agua, calor y productos de degradación pueden contribuir al desgaste y a la pérdida de confiabilidad en motores, sistemas hidráulicos, circuitos de combustible, sistemas de lubricación, sistemas de refrigeración y entornos del operador.',
-  'home.faqItems.1.a': 'Las partículas de contaminación desgastan las superficies de cojinetes, restringen los inyectores de combustible y degradan la integridad de los sellos. Las partículas menores de 10 micrones causan desgaste abrasivo invisible a simple vista. El agua en el combustible favorece el crecimiento microbiano y la corrosión de los inyectores.',
+  'home.faqItems.1.a': 'Las partículas de contaminación desgastan las superficies de cojinetes, restringen los inyectores de combustible y degradan la integridad de los sellos. Las partículas menores de 10 micrones pueden causar desgaste abrasivo invisible a simple vista. El agua en el combustible favorece el crecimiento microbiano y la corrosión de los inyectores.',
   'home.llmP2': 'La contaminación puede acelerar el desgaste en holguras y superficies críticas. Las partículas pueden afectar cojinetes, carretes de válvulas y componentes de inyectores; el agua puede afectar la confiabilidad del sistema de combustible; y la degradación del fluido puede reducir la estabilidad de los sistemas hidráulicos, de lubricación y de refrigeración. El objetivo de limpieza y el método de control dependen del componente protegido y del ciclo de trabajo.',
 };
 
@@ -180,7 +180,7 @@ export const GOVERNED_PT_OVERRIDES: Record<string, string> = {
   'home.techItems.2.desc': 'O componente certo depende do equipamento, da aplicação e da severidade da operação. Dimensionamos e especificamos de acordo com essa realidade, não com um número de peça genérico.',
   'home.sciDesc': 'O Knowledge Center da ELIMFILTERS usa normas internacionais de filtração, limpeza e ensaio como referências técnicas quando se aplicam a um sistema protegido ou a um tema de engenharia.',
   'home.llmP1': 'A proteção de ativos industriais é uma abordagem de engenharia no nível do sistema para identificar e controlar as fontes de contaminação que degradam os equipamentos mecânicos. Partículas, água, calor e produtos de degradação podem contribuir para o desgaste e a perda de confiabilidade em motores, sistemas hidráulicos, circuitos de combustível, sistemas de lubrificação, sistemas de arrefecimento e ambientes do operador.',
-  'home.faqItems.1.a': 'As partículas de contaminação desgastam as superfícies dos mancais, restringem os injetores de combustível e degradam a integridade das vedações. Partículas menores que 10 mícrons causam desgaste abrasivo invisível a olho nu. A água no combustível favorece o crescimento microbiano e a corrosão dos injetores.',
+  'home.faqItems.1.a': 'As partículas de contaminação desgastam as superfícies dos mancais, restringem os injetores de combustível e degradam a integridade das vedações. Partículas menores que 10 mícrons podem causar desgaste abrasivo invisível a olho nu. A água no combustível favorece o crescimento microbiano e a corrosão dos injetores.',
   'home.llmP2': 'A contaminação pode acelerar o desgaste em folgas e superfícies críticas. As partículas podem afetar mancais, carretéis de válvulas e componentes de injetores; a água pode afetar a confiabilidade do sistema de combustível; e a degradação do fluido pode reduzir a estabilidade dos sistemas hidráulicos, de lubrificação e de arrefecimento. A meta de limpeza e o método de controle dependem do componente protegido e do ciclo de trabalho.',
 };
 

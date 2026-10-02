@@ -4,6 +4,8 @@ import { TECHNICAL_REVIEWER } from '@/lib/technical-reviewer';
 
 // Localized versions of HydrocoreStablePage, published at /es/ and /pt/technologies/hydrocore/.
 // Each language is a faithful translation of the English page: same scope, no added claims.
+// Links to pages without a published /es/ or /pt/ version (technologies index, SYNTAPORE™,
+// TURBOCORE™, Fuel Cleanliness system) intentionally fall back to the English page.
 
 type HydrocoreLang = 'es' | 'pt';
 
@@ -67,9 +69,9 @@ const COPY = {
     faqTitle: 'Respuestas directas a preguntas frecuentes sobre la separación de agua y combustible.',
     faqs: [
       ['¿Qué es HYDROCORE™?', 'HYDROCORE™ es la arquitectura de separación de agua y combustible de ELIMFILTERS para filtros separadores estándar aprobados, no tipo turbina, incluidas las configuraciones con drenaje y con vaso transparente.'],
-      ['¿Por qué es peligrosa el agua en el combustible diésel?', 'El agua puede contribuir a la corrosión, la erosión, el riesgo de cavitación y el desgaste acelerado en bombas, inyectores y otras interfaces de precisión del sistema de combustible. La gravedad depende del sistema de combustible, del nivel de contaminación y de las condiciones de operación.'],
+      ['¿Por qué es peligrosa el agua en el combustible diésel?', 'El agua puede contribuir a la corrosión, la erosión, la cavitación y el desgaste acelerado en bombas, inyectores y otras interfaces de precisión del sistema de combustible. La gravedad depende del sistema de combustible, del nivel de contaminación y de las condiciones de operación.'],
       ['¿Un separador de agua y combustible restringido puede causar pérdida de potencia?', 'Sí. Una restricción excesiva puede reducir el suministro de combustible al motor, sobre todo bajo carga. La pérdida de potencia, las oscilaciones o los síntomas de falta de combustible justifican inspeccionar el separador, la condición del combustible aguas arriba y todo el recorrido de suministro.'],
-      ['¿Por qué un separador nuevo puede taparse antes de tiempo?', 'Una carga severa de partículas, la contaminación microbiana, el combustible degradado, los problemas de flujo en frío o la contaminación proveniente de los tanques de almacenamiento pueden acortar la vida útil. Las obstrucciones tempranas repetidas deben motivar una revisión de la calidad del combustible y del almacenamiento.'],
+      ['¿Por qué un separador nuevo puede obstruirse antes de tiempo?', 'Una carga severa de partículas, la contaminación microbiana, el combustible degradado, los problemas de flujo en frío o la contaminación proveniente de los tanques de almacenamiento pueden acortar la vida útil. Las obstrucciones tempranas repetidas deben motivar una revisión de la calidad del combustible y del almacenamiento.'],
       ['¿Cuál es la función del drenaje o del vaso transparente?', 'Cuando el separador aprobado incluye drenaje o vaso transparente, estos elementos facilitan la inspección y el retiro del agua separada. La práctica de servicio debe seguir los requisitos de la aplicación específica.'],
       ['¿HYDROCORE™ aplica a los sistemas tipo turbina FH o FG?', 'No. Los sistemas separadores de agua y combustible tipo turbina FH y FG se rigen por TURBOCORE™. HYDROCORE™ aplica a configuraciones de separadores estándar aprobadas, no tipo turbina.'],
       ['¿HYDROCORE™ reemplaza la filtración de partículas del combustible?', 'No. HYDROCORE™ gobierna la separación estándar de agua y combustible. La filtración de partículas del combustible diésel se rige por separado mediante SYNTAPORE™, dentro de la arquitectura de protección de la limpieza del combustible de ELIMFILTERS.'],
@@ -154,7 +156,7 @@ const COPY = {
     faqTitle: 'Respostas diretas às perguntas frequentes sobre separação de água e combustível.',
     faqs: [
       ['O que é o HYDROCORE™?', 'O HYDROCORE™ é a arquitetura de separação de água e combustível da ELIMFILTERS para filtros separadores padrão aprovados, não tipo turbina, incluindo as configurações com dreno e com copo transparente.'],
-      ['Por que a água no diesel é perigosa?', 'A água pode contribuir para corrosão, erosão, risco de cavitação e desgaste acelerado em bombas, injetores e outras interfaces de precisão do sistema de combustível. A gravidade depende do sistema de combustível, do nível de contaminação e das condições de operação.'],
+      ['Por que a água no diesel é perigosa?', 'A água pode contribuir para corrosão, erosão, cavitação e desgaste acelerado em bombas, injetores e outras interfaces de precisão do sistema de combustível. A gravidade depende do sistema de combustível, do nível de contaminação e das condições de operação.'],
       ['Um separador de água e combustível restrito pode causar perda de potência?', 'Sim. Uma restrição excessiva pode reduzir o fornecimento de combustível ao motor, principalmente sob carga. Perda de potência, oscilações ou sintomas de falta de combustível justificam inspecionar o separador, a condição do combustível a montante e todo o trajeto de fornecimento.'],
       ['Por que um separador novo pode entupir antes do tempo?', 'Uma carga severa de partículas, contaminação microbiana, combustível degradado, problemas de fluxo a frio ou contaminação vinda dos tanques de armazenamento podem reduzir a vida útil. Entupimentos precoces repetidos devem motivar uma revisão da qualidade do combustível e do armazenamento.'],
       ['Qual é a função do dreno ou do copo transparente?', 'Quando o separador aprovado tem dreno ou copo transparente, esses recursos facilitam a inspeção e a remoção da água separada. A prática de manutenção deve seguir os requisitos da aplicação específica.'],

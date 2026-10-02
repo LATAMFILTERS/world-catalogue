@@ -1,4 +1,10 @@
+'use client';
+
+import { useTranslation } from 'react-i18next';
+
+// Shared 404: on /es/ and /pt/ URLs ClientProviders supplies that locale's instance after hydration.
 export default function NotFound() {
+  const { t } = useTranslation();
   return (
     <main
       aria-labelledby="not-found-title"
@@ -57,7 +63,7 @@ export default function NotFound() {
             color: '#FFF12D',
           }}
         >
-          ELIMFILTERS // ROUTE CONTROL
+          {t('notFound.kicker', 'ELIMFILTERS // ROUTE CONTROL')}
         </p>
 
         <h1
@@ -90,7 +96,7 @@ export default function NotFound() {
               textTransform: 'uppercase',
             }}
           >
-            Path outside the protection system.
+            {t('notFound.title', 'Path outside the protection system.')}
           </p>
 
           <p
@@ -103,8 +109,7 @@ export default function NotFound() {
               color: 'rgba(255,255,255,0.52)',
             }}
           >
-            The requested page, link, or automated route is not active within ELIMFILTERS.
-            No product, technical record, or commercial destination exists at this address.
+            {t('notFound.body', 'The requested page, link, or automated route is not active within ELIMFILTERS. No product, technical record, or commercial destination exists at this address.')}
           </p>
         </div>
 

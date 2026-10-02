@@ -166,7 +166,7 @@
     ],
     "problemTag": "DIAGNÓSTICO DE RIESGO OPERATIVO",
     "problemH1": "LO QUE NO PUEDES VER",
-    "problemH2": "ESTÁ DETENIENDO TU OPERACIÓN.",
+    "problemH2": "ESTÁ DETENIENDO SU OPERACIÓN.",
     "problemIntro": "Hasta el 80% de las fallas prematuras de componentes hidráulicos son causadas por contaminación. La filtración ineficiente permite que partículas invisibles actúen como papel de lija dentro de componentes críticos — superficies de cojinetes, orificios de inyectores, carretes hidráulicos.",
     "problemBadgeNum": "80%",
     "problemBadgeDesc": "De las fallas prematuras de componentes hidráulicos son causadas por contaminación.",
@@ -369,7 +369,7 @@
     "platformName": "Inteligencia para la protección de activos",
     "platformTitle1": "Una sola plataforma de",
     "platformTitle2": "inteligencia para la protección de activos",
-    "platformBody": "ELIMFILTERS integra filtración de ingeniería, conocimiento técnico gobernado, inteligencia de producto y herramientas digitales en un solo sistema pensado para apoyar mejores decisiones sobre los activos críticos.",
+    "platformBody": "ELIMFILTERS integra ingeniería de filtración, conocimiento técnico gobernado, inteligencia de producto y herramientas digitales en un solo sistema pensado para apoyar mejores decisiones sobre los activos críticos.",
     "platformPillars": [
       {
         "title": "KNOWLEDGE CENTER",
@@ -396,7 +396,7 @@
       "agriculture": "Agricultura",
       "construction": "Construcción",
       "oil-gas": "Petróleo y gas",
-      "marine": "Marina",
+      "marine": "Sector marino",
       "power-generation": "Generación de energía",
       "trucks-fleets": "Flotas de camiones",
       "manufacturing": "Manufactura",
@@ -407,7 +407,7 @@
     }
   },
   "contact": {
-    "pageTitle": "Contact & Technical Support",
+    "pageTitle": "Contacto y soporte técnico",
     "homeLink": "HOME",
     "heroTag": "Contact ELIMFILTERS",
     "heroTitle": "Industrial Support",
@@ -566,9 +566,9 @@
     "link2Desc": "Commercial opportunities for qualified industrial partners.",
     "link3Label": "Contact ELIMFILTERS",
     "link3Desc": "Send a commercial or technical inquiry.",
-    "link4Label": "Visit ELIMFILTERS.com",
+    "link4Label": "Visite ELIMFILTERS.com",
     "link4Desc": "Explore systems, technologies, and industries.",
-    "footerText": "Every Micron Matters."
+    "footerText": "Cada micra cuenta."
   },
   "contactRouter": {
     "kicker": "CONTACTE A ELIMFILTERS",
@@ -599,5 +599,10 @@
   },
   "a11y": {
     "skipToContent": "Saltar al contenido principal"
+  },
+  "notFound": {
+    "kicker": "ELIMFILTERS // CONTROL DE RUTA",
+    "title": "Ruta fuera del sistema de protección.",
+    "body": "La página, el enlace o la ruta automatizada que solicitó no está activa en ELIMFILTERS. No existe ningún producto, registro técnico ni destino comercial en esta dirección."
   }
 }
