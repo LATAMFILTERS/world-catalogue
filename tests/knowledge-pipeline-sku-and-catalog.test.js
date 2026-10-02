@@ -24,7 +24,8 @@ const CATALOG_ROWS = [
   // Two rows that legitimately share a competitor cross-reference, to
   // exercise the ambiguous-match path.
   { id: 2, sku: 'EF31234', codigo_base: 'EF31234', filter_type: 'Fuel Filter', oem_codes: [], competitor_codes: [{ manufacturer: 'FRAM', code: 'AMBIGXYZ' }], brand_crossrefs: {}, equipment_applications: [], specs: {}, enrichment_data: {}, is_primary: true },
-  { id: 3, sku: 'EF39999', codigo_base: 'EF39999', filter_type: 'Fuel Filter', oem_codes: [], competitor_codes: [{ manufacturer: 'FRAM', code: 'AMBIGXYZ' }], brand_crossrefs: {}, equipment_applications: [], specs: {}, enrichment_data: {}, is_primary: false }
+  { id: 3, sku: 'EF39999', codigo_base: 'EF39999', filter_type: 'Fuel Filter', oem_codes: [], competitor_codes: [{ manufacturer: 'FRAM', code: 'AMBIGXYZ' }], brand_crossrefs: {}, equipment_applications: [], specs: {}, enrichment_data: {}, is_primary: false },
+  { id: 4, sku: 'EA90001', codigo_base: 'EA90001', filter_type: 'Air Filter', oem_codes: [{ manufacturer: 'KIA', code: '0K6B0-23-603' }], competitor_codes: [], brand_crossrefs: {}, equipment_applications: [], specs: {}, enrichment_data: {}, is_primary: true }
 ];
 
 function installFakePool() {
@@ -34,9 +35,12 @@ function installFakePool() {
         const text = String(sql);
         if (/^\s*(BEGIN|COMMIT|ROLLBACK|SET LOCAL)/i.test(text)) return { rows: [] };
         if (/FROM elimfilters_catalog/i.test(text)) {
-          const refs = (params[0] || []).map(normalizeRef);
+          const refs = typeof params[1] === 'string'
+            ? [normalizeRef(params[1])]
+            : (params[0] || []).map(normalizeRef);
           const rows = CATALOG_ROWS.filter(row =>
             refs.includes(normalizeRef(row.sku)) ||
+            refs.includes(normalizeRef(row.codigo_base)) ||
             (row.oem_codes || []).some(c => refs.includes(normalizeRef(c.code))) ||
             (row.competitor_codes || []).some(c => refs.includes(normalizeRef(c.code))));
           return { rows };
@@ -118,6 +122,49 @@ test('a SKU the customer typed is never validated without a real catalog lookup'
   const authority = buildSkuAuthorityFromUserClaim('EL82100', { brand: 'MACK' });
   assert.equal(isValidatedSku(authority), false);
   assert.equal(authority.sku_validated_in_postgresql, false);
+});
+
+test('a single O/0 typo resolves only when one verified catalog identity matches', async () => {
+  installFakePool();
+  const catalogResult = await searchByReferences(['OK6B0-23-603']);
+  assert.equal(catalogResult.products.length, 1);
+  assert.equal(catalogResult.products[0].sku, 'EA90001');
+  assert.equal(catalogResult.matchType, 'ambiguous_character_reference');
+  assert.equal(catalogResult.requestedReference, 'OK6B023603');
+  assert.equal(catalogResult.correctedReference, '0K6B023603');
+});
+
+test('O/0 preflight fails closed when more than one product identity is possible', async () => {
+  const rows = [
+    ...CATALOG_ROWS,
+    { id: 5, sku: 'EA90002', codigo_base: 'EA90002', filter_type: 'Air Filter', oem_codes: [{ manufacturer: 'TEST', code: 'OK6BO-23-603' }], competitor_codes: [], brand_crossrefs: {}, equipment_applications: [], specs: {}, enrichment_data: {}, is_primary: false }
+  ];
+  __setProtocolPoolForTests({
+    connect: async () => ({
+      async query(sql, params = []) {
+        const text = String(sql);
+        if (/^\s*(BEGIN|COMMIT|ROLLBACK|SET LOCAL)/i.test(text)) return { rows: [] };
+        if (/FROM elimfilters_catalog/i.test(text)) {
+          const refs = typeof params[1] === 'string'
+            ? [normalizeRef(params[1])]
+            : (params[0] || []).map(normalizeRef);
+          return {
+            rows: rows.filter(row =>
+              refs.includes(normalizeRef(row.sku)) ||
+              refs.includes(normalizeRef(row.codigo_base)) ||
+              (row.oem_codes || []).some(code => refs.includes(normalizeRef(code.code))) ||
+              (row.competitor_codes || []).some(code => refs.includes(normalizeRef(code.code))))
+          };
+        }
+        return { rows: [] };
+      },
+      release() {}
+    })
+  });
+
+  const catalogResult = await searchByReferences(['OK6B0-23-603']);
+  assert.equal(catalogResult.products.length, 0);
+  assert.deepEqual(catalogResult.ambiguousReferenceCandidates.sort(), ['EA90001', 'EA90002']);
 });
 
 test('reference normalization ignores dashes, spaces and case', async () => {
