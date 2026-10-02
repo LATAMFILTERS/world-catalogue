@@ -1,0 +1,4358 @@
+{
+  "rows": [
+    {
+      "sku": "EA13648",
+      "codigo_base": "P783648",
+      "name": null,
+      "description": "ELIMFILTERS® EA13648 Engine air filter for heavy-duty intake systems. MACROCORE™ progressive density media captures dust and airborne particles before they reach the combustion chamber, protecting cylinders, rings, and turbochargers from abrasive wear.",
+      "duty": "HEAVY_DUTY",
+      "filter_type": "air",
+      "sub_type": null,
+      "technology": "MACROCORE™",
+      "installation_type": "Special",
+      "thread_size": "M76 x 4",
+      "height_mm": 600,
+      "outer_diameter_mm": 120,
+      "gasket_od_mm": null,
+      "gasket_id_mm": null,
+      "micron_rating": null,
+      "nominal_efficiency": null,
+      "iso_test_method": "ISO 5011",
+      "filter_media": null,
+      "burst_pressure_psi": null,
+      "catalog_active": true,
+      "canonical_source_brand": null,
+      "canonical_source_code": "P783648",
+      "canonical_source_status": "UNVERIFIED",
+      "duty_validation_status": "LEGACY_UNVERIFIED",
+      "product_dimensions_validation_status": null,
+      "enrichment_required_authority": null,
+      "third_party_mark": null,
+      "specs": {
+        "rated_flow_l_min": null,
+        "rated_flow_gpm": null,
+        "hydrostatic_burst_minimum_psi": null
+      },
+      "oem_codes": [],
+      "competitor_codes": [
+        {
+          "code": "A6713",
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "PA4876",
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "AF26147",
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "852903TI751",
+          "manufacturer": "MAHLE",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        }
+      ],
+      "equipment_applications": [
+        {
+          "type": "DRILLING EQUIPMENT",
+          "engine": "CATERPILLAR C11",
+          "equipment": "ATLAS COPCO ROC L6"
+        }
+      ],
+      "vehicle_applications": [],
+      "oem_total_all_brands": 6
+    },
+    {
+      "sku": "EA30719",
+      "codigo_base": "0719",
+      "name": null,
+      "description": "About this item For over 70 years, ELIMFILTERS has been synonymous with premium filters in original equipment quality worldwide. Benefit from a comprehensive product range and optimum filtration performance to protect drivers, engines and machinery. In the familiar yellow-green packaging, ELIMFILTERS offers innovative solutions to new filtration challenges and produces on a global scale in accordance with the latest international production and test standards in the automotive industry.",
+      "duty": "LIGHT_DUTY",
+      "filter_type": "air",
+      "sub_type": "Genuine Media",
+      "technology": "MACROCORE™",
+      "installation_type": "Panel",
+      "thread_size": "3/4-16 UNF mm",
+      "height_mm": 123,
+      "outer_diameter_mm": 76,
+      "gasket_od_mm": 62,
+      "gasket_id_mm": 71,
+      "micron_rating": null,
+      "nominal_efficiency": null,
+      "iso_test_method": null,
+      "filter_media": null,
+      "burst_pressure_psi": null,
+      "catalog_active": true,
+      "canonical_source_brand": null,
+      "canonical_source_code": "0719",
+      "canonical_source_status": "UNVERIFIED",
+      "duty_validation_status": "LEGACY_UNVERIFIED",
+      "product_dimensions_validation_status": null,
+      "enrichment_required_authority": null,
+      "third_party_mark": null,
+      "specs": {
+        "rated_flow_l_min": null,
+        "rated_flow_gpm": null,
+        "hydrostatic_burst_minimum_psi": null
+      },
+      "oem_codes": [],
+      "competitor_codes": [],
+      "equipment_applications": [],
+      "vehicle_applications": [
+        {
+          "hp": "105",
+          "kw": "77",
+          "ccm": "3972",
+          "make": "MERCEDES-BENZ",
+          "model": "T2/LN1 (667, 668, 669, 670, 672) 611 D (T2,668) 09/92 → Series: 669",
+          "year_range": "06/94 → 12/94",
+          "engine_code": "OM 354 (364) LA"
+        },
+        {
+          "hp": "105",
+          "kw": "77",
+          "ccm": "3972",
+          "make": "MERCEDES-BENZ",
+          "model": "T2/LN1 (667, 668, 669, 670, 672) 711 D (T2,669)",
+          "year_range": "06/94 → 12/94",
+          "engine_code": "OM354 (364) LA"
+        },
+        {
+          "hp": "105",
+          "kw": "77",
+          "ccm": "3972",
+          "make": "MERCEDES-BENZ",
+          "model": "T2/LN1 (667, 668, 669, 670, 672) 711 D (T2,669) 09/92 →",
+          "year_range": "04/86 → 12/94",
+          "engine_code": "OM 364 A"
+        },
+        {
+          "hp": "105",
+          "kw": "77",
+          "ccm": "3972",
+          "make": "MERCEDES-BENZ",
+          "model": "T2/LN1 (667, 668, 669, 670, 672) 811 DT (T2,670.199) 09/92 → Series: 669",
+          "year_range": "06/94 → 12/94",
+          "engine_code": "OM 354 (364) LA"
+        },
+        {
+          "hp": "115",
+          "kw": "85",
+          "ccm": "2900",
+          "make": "MERCEDES-BENZ",
+          "model": "Vario (667, 668, 669, 670) 512 D (667)",
+          "year_range": "10/96 →",
+          "engine_code": "OM 602.984 LA"
+        },
+        {
+          "hp": "115",
+          "kw": "85",
+          "ccm": "2900",
+          "make": "MERCEDES-BENZ",
+          "model": "Vario (667, 668, 669, 670) 612 D (668)",
+          "year_range": "10/96 →",
+          "engine_code": "OM 602.984/985 LA"
+        },
+        {
+          "hp": "115",
+          "kw": "85",
+          "ccm": "2900",
+          "make": "MERCEDES-BENZ",
+          "model": "Vario (667, 668, 669, 670) 812 D (670) Series: 667 + 668",
+          "year_range": "10/96 →",
+          "engine_code": "OM 602.984/985 LA"
+        },
+        {
+          "hp": "115",
+          "kw": "85",
+          "ccm": "3972",
+          "make": "MERCEDES-BENZ",
+          "model": "T2/LN1 (667, 668, 669, 670, 672) 811 D (T2,670) 09/92 → Series: 669",
+          "year_range": "04/86 → 12/94",
+          "engine_code": "OM 364 A"
+        },
+        {
+          "hp": "115",
+          "kw": "85",
+          "ccm": "3972",
+          "make": "MERCEDES-BENZ",
+          "model": "T2/LN1 (667, 668, 669, 670, 672) 811 D (T2,670) 09/92 → Series: 669",
+          "year_range": "06/94 → 12/94",
+          "engine_code": "OM 354 (364) LA"
+        },
+        {
+          "hp": "122",
+          "kw": "90",
+          "ccm": "4250",
+          "make": "MERCEDES-BENZ",
+          "model": "Vario (667, 668, 669, 670) 812 DT (670/669) Series: 667 + 668",
+          "year_range": "10/96 →",
+          "engine_code": "OM 904.961 LA"
+        },
+        {
+          "hp": "129",
+          "kw": "95",
+          "ccm": "4250",
+          "make": "MERCEDES-BENZ",
+          "model": "Vario (667, 668, 669, 670) 613 D BlueTec (668) Series: 667 + 668",
+          "year_range": "03/06 →",
+          "engine_code": "OM 904 LA Euro4/5/EEV"
+        },
+        {
+          "hp": "129",
+          "kw": "95",
+          "ccm": "4250",
+          "make": "MERCEDES-BENZ",
+          "model": "Vario (667, 668, 669, 670) 813 D/DA BlueTec (670/669) Series: 667 + 668",
+          "year_range": "03/06 →",
+          "engine_code": "OM 904 LA Euro4/5/EEV"
+        }
+      ],
+      "oem_total_all_brands": 5
+    },
+    {
+      "sku": "EF30006",
+      "codigo_base": "0006",
+      "name": null,
+      "description": "About this item High-quality ELIMFILTERS fuel filters remove unwanted and damaging dirt particles from the fuel and thus prevent possible damage. Thanks to the highest degree of separation and sealing, the fuel filter ensures functional reliability and optimum protection during the entire maintenance interval.",
+      "duty": "LIGHT_DUTY",
+      "filter_type": "fuel",
+      "sub_type": "Genuine Media",
+      "technology": "SYNTAPORE™",
+      "installation_type": "Spin-On",
+      "thread_size": "1-14 UNS inch",
+      "height_mm": 129.54,
+      "outer_diameter_mm": 109.22,
+      "gasket_od_mm": null,
+      "gasket_id_mm": null,
+      "micron_rating": null,
+      "nominal_efficiency": null,
+      "iso_test_method": null,
+      "filter_media": null,
+      "burst_pressure_psi": null,
+      "catalog_active": true,
+      "canonical_source_brand": null,
+      "canonical_source_code": "0006",
+      "canonical_source_status": "UNVERIFIED",
+      "duty_validation_status": "LEGACY_UNVERIFIED",
+      "product_dimensions_validation_status": null,
+      "enrichment_required_authority": null,
+      "third_party_mark": null,
+      "specs": {
+        "rated_flow_l_min": null,
+        "rated_flow_gpm": null,
+        "hydrostatic_burst_minimum_psi": null
+      },
+      "oem_codes": [
+        {
+          "code": "21017305",
+          "manufacturer": "MACK"
+        },
+        {
+          "code": "263G107021",
+          "manufacturer": "HITACHI"
+        },
+        {
+          "code": "4679981",
+          "manufacturer": "HITACHI"
+        },
+        {
+          "code": "4711160",
+          "manufacturer": "HITACHI"
+        },
+        {
+          "code": "4719920",
+          "manufacturer": "HITACHI"
+        },
+        {
+          "code": "898074288",
+          "manufacturer": "ISUZU"
+        },
+        {
+          "code": "8-98074288-0",
+          "manufacturer": "ISUZU"
+        },
+        {
+          "code": "8980758540",
+          "manufacturer": "ISUZU"
+        },
+        {
+          "code": "8-98135462-0",
+          "manufacturer": "ISUZU"
+        },
+        {
+          "code": "8981354620",
+          "manufacturer": "HITACHI"
+        },
+        {
+          "code": "8981354620",
+          "manufacturer": "JOHN DEERE"
+        },
+        {
+          "code": "8-98135462-1",
+          "manufacturer": "ISUZU"
+        },
+        {
+          "code": "8981527370",
+          "manufacturer": "ISUZU"
+        },
+        {
+          "code": "8981527371",
+          "manufacturer": "HITACHI"
+        },
+        {
+          "code": "8981527371R",
+          "manufacturer": "HITACHI"
+        },
+        {
+          "code": "98074288",
+          "manufacturer": "ISUZU"
+        },
+        {
+          "code": "H-335620",
+          "brand": "CASE CONSTRUCTION",
+          "manufacturer": "CASE"
+        },
+        {
+          "code": "H649277",
+          "brand": "CASE CONSTRUCTION",
+          "manufacturer": "CASE"
+        }
+      ],
+      "competitor_codes": [
+        {
+          "code": "PU10006X",
+          "source": "mann_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 12:55:09.788508-05",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "WK10006Z",
+          "source": "mann_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 12:55:09.788508-05",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "51203",
+          "brand": "WIX",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "G6",
+          "source": "fram_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 11:30:52.645949-05",
+          "manufacturer": "FRAM"
+        },
+        {
+          "code": "G6Y0",
+          "source": "fram_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 11:30:52.645949-05",
+          "manufacturer": "FRAM"
+        }
+      ],
+      "equipment_applications": [],
+      "vehicle_applications": [
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "MACK (USA)",
+          "model": "GRANITE GRANITE",
+          "year_range": "",
+          "engine_code": "MACK MP8"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "MACK (USA)",
+          "model": "MACK GRANITE",
+          "year_range": "",
+          "engine_code": "MACK MP8"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "MACK (USA)",
+          "model": "MACK MACK",
+          "year_range": "",
+          "engine_code": "E7 400"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "MACK (USA)",
+          "model": "MACK MACK",
+          "year_range": "",
+          "engine_code": "MP7"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "MACK (USA)",
+          "model": "MACK MACK",
+          "year_range": "",
+          "engine_code": "MP8"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "CASE CONSTRUCTION",
+          "year": "01/05 →",
+          "model_type": "CX 36 B",
+          "engine_code": "",
+          "model_family": "CXB-Serie"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "HITACHI",
+          "year": "",
+          "model_type": "200-3/LC-3/210H-3/LCH-3/K-3/ (LCK-3/LCN-3/240N-3) (200001-)",
+          "engine_code": "",
+          "model_family": "ZX- Serie (Mobilbagger / Wheel Excavator)"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "HITACHI",
+          "year": "",
+          "model_type": "225US-3 (200001-)",
+          "engine_code": "Isuzu AI-4HK1XYSA-02",
+          "model_family": "ZX- Serie (Mobilbagger / Wheel Excavator)"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "HITACHI",
+          "year": "",
+          "model_type": "225USLC-3 (200001-)",
+          "engine_code": "Isuzu AI-4HK1XYSA-03",
+          "model_family": "ZX- Serie (Mobilbagger / Wheel Excavator)"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "HITACHI",
+          "year": "",
+          "model_type": "240-3/240LC-3 (200001-)",
+          "engine_code": "Iszuzu AH-4HK1XYSA-01",
+          "model_family": "ZX- Serie (Mobilbagger / Wheel Excavator)"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "HITACHI",
+          "year": "",
+          "model_type": "250LC-3/LCN-3/H-3/LCH-3/ (K-3/LCK-3) (200001-)",
+          "engine_code": "Iszuzu AH-4HK1XYSA-01",
+          "model_family": "ZX- Serie (Mobilbagger / Wheel Excavator)"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "HITACHI",
+          "year": "",
+          "model_type": "270-3/LC-3/280LC-3/LCN-3/ (LCH-3) (30001-)",
+          "engine_code": "Isuzu AH-4HK1XYSA-03",
+          "model_family": "ZX- Serie (Mobilbagger / Wheel Excavator)"
+        }
+      ],
+      "oem_total_all_brands": 40
+    },
+    {
+      "sku": "EF30012",
+      "codigo_base": "0012",
+      "name": null,
+      "description": "About this item High-quality ELIMFILTERS fuel filters remove unwanted and damaging dirt particles from the fuel and thus prevent possible damage. Thanks to the highest degree of separation and sealing, the fuel filter ensures functional reliability and optimum protection during the entire maintenance interval.",
+      "duty": "LIGHT_DUTY",
+      "filter_type": "fuel",
+      "sub_type": "Genuine Media",
+      "technology": "SYNTAPORE™",
+      "installation_type": "Spin-On",
+      "thread_size": "1-14 UNS-2B mm",
+      "height_mm": 203,
+      "outer_diameter_mm": 94,
+      "gasket_od_mm": 63,
+      "gasket_id_mm": 72,
+      "micron_rating": null,
+      "nominal_efficiency": null,
+      "iso_test_method": null,
+      "filter_media": null,
+      "burst_pressure_psi": null,
+      "catalog_active": true,
+      "canonical_source_brand": null,
+      "canonical_source_code": "0012",
+      "canonical_source_status": "UNVERIFIED",
+      "duty_validation_status": "LEGACY_UNVERIFIED",
+      "product_dimensions_validation_status": null,
+      "enrichment_required_authority": null,
+      "third_party_mark": null,
+      "specs": {
+        "rated_flow_l_min": null,
+        "rated_flow_gpm": null,
+        "hydrostatic_burst_minimum_psi": null
+      },
+      "oem_codes": [
+        {
+          "code": "1852005",
+          "manufacturer": "DAF",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "2164462",
+          "manufacturer": "DAF",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "2277128",
+          "manufacturer": "DAF",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        }
+      ],
+      "competitor_codes": [
+        {
+          "code": "PU10012ZKIT",
+          "source": "mann_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 12:55:09.788508-05",
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "FP12",
+          "source": "fram_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 11:37:42.790714-05",
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "G12",
+          "source": "fram_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 11:37:42.790714-05",
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "G12D",
+          "source": "fram_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 11:37:42.790714-05",
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "G12DP",
+          "source": "fram_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 11:37:42.790714-05",
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        }
+      ],
+      "equipment_applications": [],
+      "vehicle_applications": [
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "CASE-IH (CNH GLOBAL)",
+          "model": "1600-Serie 1688",
+          "year_range": "",
+          "engine_code": "Cummins 6T830"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "DAEWOO CONSTRUCTION EQUIPMENT",
+          "model": "MEGA-Serie (Radlader / Wheel Loaders) MEGA 250-III",
+          "year_range": "",
+          "engine_code": "DAEWOO D1146T"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "DAEWOO CONSTRUCTION EQUIPMENT",
+          "model": "MEGA-Serie (Radlader / Wheel Loaders) MEGA 300",
+          "year_range": "01/04 →",
+          "engine_code": "DAEWOO DE12T"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "DAEWOO CONSTRUCTION EQUIPMENT",
+          "model": "MEGA-Serie (Radlader / Wheel Loaders) MEGA 400-III",
+          "year_range": "",
+          "engine_code": "DAEWOO D2366T"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "DAEWOO CONSTRUCTION EQUIPMENT",
+          "model": "MEGA-Serie (Radlader / Wheel Loaders) MEGA 400-V",
+          "year_range": "",
+          "engine_code": "DAEWOO DE12T"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "DAEWOO CONSTRUCTION EQUIPMENT",
+          "model": "Solar (Hydraulikbagger / Hydraulic Excavators) 170 W-III",
+          "year_range": "",
+          "engine_code": "Daewoo DB58"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "DAEWOO CONSTRUCTION EQUIPMENT",
+          "model": "Solar (Hydraulikbagger / Hydraulic Excavators) 220LC-V SLR",
+          "year_range": "",
+          "engine_code": "DAEWOO DB58TI"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "DAEWOO CONSTRUCTION EQUIPMENT",
+          "model": "Solar (Hydraulikbagger / Hydraulic Excavators) 220LL",
+          "year_range": "",
+          "engine_code": "DAEWOO DB58TI"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "DAEWOO CONSTRUCTION EQUIPMENT",
+          "model": "Solar (Hydraulikbagger / Hydraulic Excavators) 225LL",
+          "year_range": "",
+          "engine_code": "DAEWOO DB58TIS"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "DOOSAN",
+          "model": "MEGA-Serie MEGA 200-V",
+          "year_range": "",
+          "engine_code": "DAEWOO DB58TI"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "DOOSAN",
+          "model": "MEGA-Serie MEGA 300-V from 1001 - 2000",
+          "year_range": "",
+          "engine_code": "DAEWOO DE12TIA"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "DOOSAN",
+          "model": "MEGA-Serie MEGA 400-III PLUS",
+          "year_range": "",
+          "engine_code": "DOOSAN DE12TI"
+        }
+      ],
+      "oem_total_all_brands": 4
+    },
+    {
+      "sku": "EF90668",
+      "codigo_base": "P550668",
+      "name": "ELIMFILTERS Primary Diesel Fuel Water Separator",
+      "description": "Primary heavy-duty diesel fuel/water separator. Direct replacement for John Deere RE531703.",
+      "duty": "HEAVY_DUTY",
+      "filter_type": "fuel",
+      "sub_type": "Primary Fuel / Water Separator",
+      "technology": "SYNTAPORE™",
+      "installation_type": "Spin-On",
+      "thread_size": "1-14 UN",
+      "height_mm": 296.9,
+      "outer_diameter_mm": 108,
+      "gasket_od_mm": null,
+      "gasket_id_mm": null,
+      "micron_rating": null,
+      "nominal_efficiency": "95% emulsified water separation",
+      "iso_test_method": null,
+      "filter_media": "Cellulose / Water separation media",
+      "burst_pressure_psi": null,
+      "catalog_active": true,
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550668",
+      "canonical_source_status": "UNVERIFIED",
+      "duty_validation_status": "LEGACY_UNVERIFIED",
+      "product_dimensions_validation_status": null,
+      "enrichment_required_authority": null,
+      "third_party_mark": false,
+      "specs": {
+        "rated_flow_l_min": null,
+        "rated_flow_gpm": null,
+        "hydrostatic_burst_minimum_psi": null
+      },
+      "oem_codes": [
+        {
+          "code": "RE531703",
+          "manufacturer": "JOHN-DEERE",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        }
+      ],
+      "competitor_codes": [],
+      "equipment_applications": [
+        {
+          "type": "COMBINE",
+          "engine": "- 9650",
+          "equipment": "JOHN DEERE 9650"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081",
+          "equipment": "JOHN DEERE 9650 CTS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 9650 STS"
+        }
+      ],
+      "vehicle_applications": [],
+      "oem_total_all_brands": 1
+    },
+    {
+      "sku": "EF90669",
+      "codigo_base": "P550669",
+      "name": "ELIMFILTERS Secondary Diesel Fuel Water Separator",
+      "description": "Secondary diesel fuel/water separator with sealed base. Direct replacement for John Deere RE522688.",
+      "duty": "HEAVY_DUTY",
+      "filter_type": "fuel",
+      "sub_type": "Secondary Fuel / Water Separator",
+      "technology": "SYNTAPORE™",
+      "installation_type": "Spin-On",
+      "thread_size": "7/8-14 UN",
+      "height_mm": 171,
+      "outer_diameter_mm": 108,
+      "gasket_od_mm": null,
+      "gasket_id_mm": null,
+      "micron_rating": "5",
+      "nominal_efficiency": "5 micron; 95% emulsified water separation",
+      "iso_test_method": null,
+      "filter_media": "High-density treated cellulose",
+      "burst_pressure_psi": null,
+      "catalog_active": true,
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550669",
+      "canonical_source_status": "UNVERIFIED",
+      "duty_validation_status": "LEGACY_UNVERIFIED",
+      "product_dimensions_validation_status": null,
+      "enrichment_required_authority": null,
+      "third_party_mark": false,
+      "specs": {
+        "rated_flow_l_min": null,
+        "rated_flow_gpm": null,
+        "hydrostatic_burst_minimum_psi": null
+      },
+      "oem_codes": [
+        {
+          "code": "RE522688",
+          "manufacturer": "JOHN-DEERE",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        }
+      ],
+      "competitor_codes": [],
+      "equipment_applications": [
+        {
+          "type": "COMBINE",
+          "engine": "- 9650",
+          "equipment": "JOHN DEERE 9650"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081",
+          "equipment": "JOHN DEERE 9650 CTS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 9650 STS"
+        }
+      ],
+      "vehicle_applications": [],
+      "oem_total_all_brands": 1
+    },
+    {
+      "sku": "EF95112",
+      "codigo_base": "FF5112",
+      "name": "Fuel Filter, Spin-On",
+      "description": "ELIMFILTERS® EF95112 Fuel Filter, Spin-On featuring advanced SYNTAPORE™ filtration media for superior fuel cleanliness.",
+      "duty": "HEAVY_DUTY",
+      "filter_type": "fuel",
+      "sub_type": "Fuel Filter, Spin-On",
+      "technology": "SYNTAPORE™",
+      "installation_type": "Spin-On",
+      "thread_size": "M14 X 1.5-6H INT",
+      "height_mm": 88.65,
+      "outer_diameter_mm": 76.81,
+      "gasket_od_mm": 71.98,
+      "gasket_id_mm": 62.53,
+      "micron_rating": "17.30",
+      "nominal_efficiency": "99% @ 17.30 micron (c)",
+      "iso_test_method": "SAE J905",
+      "filter_media": "Cellulose",
+      "burst_pressure_psi": "203",
+      "catalog_active": true,
+      "canonical_source_brand": "FLEETGUARD",
+      "canonical_source_code": "FF5112",
+      "canonical_source_status": "VERIFIED",
+      "duty_validation_status": "VERIFIED",
+      "product_dimensions_validation_status": "VERIFIED",
+      "enrichment_required_authority": null,
+      "third_party_mark": false,
+      "specs": {
+        "rated_flow_l_min": 3.17,
+        "rated_flow_gpm": 0.84,
+        "hydrostatic_burst_minimum_psi": 203
+      },
+      "oem_codes": [
+        {
+          "code": "4155053",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "CLARK EQUIPMENT",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "1967093C1",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "CASE IH",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "A0020921201",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "A0010923201",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "A0010922501",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "A0010920501",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "A0010920401",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "A0000929501",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "A0000929001",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "929501",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "929001",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "20921201",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "10922501",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "10920501",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "109204401",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "10920401",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "5014353",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "9975337",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "GENERAL MOTORS",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "25176758",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "GENERAL MOTORS",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        }
+      ],
+      "competitor_codes": [
+        {
+          "code": "9455160251",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "1457434153",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "1457434114",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "1457434108",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "1457434096",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "1457434095",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        }
+      ],
+      "equipment_applications": [
+        {
+          "make": "MERCEDES-BENZ",
+          "year": "1990",
+          "model": "MB120",
+          "engine": "OM616",
+          "equipment": "MERCEDES-BENZ MB120",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "source_code": "FF5112",
+          "qty_required": 1,
+          "source_brand": "FLEETGUARD"
+        },
+        {
+          "make": "MERCEDES-BENZ",
+          "year": "1990",
+          "model": "MB160",
+          "engine": "OM616",
+          "equipment": "MERCEDES-BENZ MB160",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "source_code": "FF5112",
+          "qty_required": 1,
+          "source_brand": "FLEETGUARD"
+        },
+        {
+          "make": "MERCEDES-BENZ",
+          "year": "1990",
+          "model": "MB100D-KB",
+          "engine": "OM616",
+          "equipment": "MERCEDES-BENZ MB100D-KB",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "source_code": "FF5112",
+          "qty_required": 1,
+          "source_brand": "FLEETGUARD"
+        },
+        {
+          "make": "MERCEDES-BENZ",
+          "year": "1988",
+          "model": "MB100D",
+          "engine": "OM615/ OM616",
+          "equipment": "MERCEDES-BENZ MB100D",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "source_code": "FF5112",
+          "qty_required": 1,
+          "source_brand": "FLEETGUARD"
+        },
+        {
+          "make": "MERCEDES-BENZ",
+          "year": "1988",
+          "model": "240D",
+          "engine": "SERIES W123 DIESEL",
+          "equipment": "MERCEDES-BENZ 240D",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "source_code": "FF5112",
+          "qty_required": 1,
+          "source_brand": "FLEETGUARD"
+        },
+        {
+          "make": "MERCEDES-BENZ",
+          "year": "1973",
+          "model": "240GD",
+          "engine": "SERIES W123 DIESEL",
+          "equipment": "MERCEDES-BENZ 240GD",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "source_code": "FF5112",
+          "qty_required": 1,
+          "source_brand": "FLEETGUARD"
+        },
+        {
+          "make": "MERCEDES-BENZ",
+          "year": "",
+          "model": "309D",
+          "engine": "OM617",
+          "equipment": "MERCEDES-BENZ 309D",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "source_code": "FF5112",
+          "qty_required": 1,
+          "source_brand": "FLEETGUARD"
+        },
+        {
+          "make": "MERCEDES-BENZ",
+          "year": "",
+          "model": "240D",
+          "engine": "",
+          "equipment": "MERCEDES-BENZ 240D",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "source_code": "FF5112",
+          "qty_required": 1,
+          "source_brand": "FLEETGUARD"
+        },
+        {
+          "make": "MERCEDES-BENZ",
+          "year": "",
+          "model": "409D",
+          "engine": "OM617",
+          "equipment": "MERCEDES-BENZ 409D",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "source_code": "FF5112",
+          "qty_required": 1,
+          "source_brand": "FLEETGUARD"
+        },
+        {
+          "make": "MERCEDES-BENZ",
+          "year": "",
+          "model": "220D",
+          "engine": "",
+          "equipment": "MERCEDES-BENZ 220D",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "source_code": "FF5112",
+          "qty_required": 1,
+          "source_brand": "FLEETGUARD"
+        },
+        {
+          "make": "MERCEDES-BENZ",
+          "year": "",
+          "model": "UNSPECIFIED",
+          "engine": "OM617",
+          "equipment": "MERCEDES-BENZ UNSPECIFIED",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "source_code": "FF5112",
+          "qty_required": 1,
+          "source_brand": "FLEETGUARD"
+        },
+        {
+          "make": "MERCEDES-BENZ",
+          "year": "",
+          "model": "0407D",
+          "engine": "OM617",
+          "equipment": "MERCEDES-BENZ 0407D",
+          "source_url": "https://www.fleetguard.com/product/FF5112",
+          "source_code": "FF5112",
+          "qty_required": 1,
+          "source_brand": "FLEETGUARD"
+        }
+      ],
+      "vehicle_applications": [],
+      "oem_total_all_brands": 25
+    },
+    {
+      "sku": "EH60222",
+      "codigo_base": "P550222",
+      "name": null,
+      "description": "ELIMFILTERS® EH60222 Hydraulic filter for precision fluid power systems. NANOFORCE™ electrostatic synthetic media captures fine particles and free water before they reach proportional valves and seals, preventing the wear and leakage that follow contaminated hydraulic fluid.",
+      "duty": "HEAVY_DUTY",
+      "filter_type": "hydraulic",
+      "sub_type": "Cellulose",
+      "technology": "NANOFORCE™",
+      "installation_type": "Spin-On",
+      "thread_size": "3/4-16 UN",
+      "height_mm": 5.36,
+      "outer_diameter_mm": 3.66,
+      "gasket_od_mm": 72,
+      "gasket_id_mm": 62,
+      "micron_rating": null,
+      "nominal_efficiency": null,
+      "iso_test_method": "SAE J1858",
+      "filter_media": null,
+      "burst_pressure_psi": null,
+      "catalog_active": true,
+      "canonical_source_brand": null,
+      "canonical_source_code": "P550222",
+      "canonical_source_status": "UNVERIFIED",
+      "duty_validation_status": "LEGACY_UNVERIFIED",
+      "product_dimensions_validation_status": null,
+      "enrichment_required_authority": null,
+      "third_party_mark": null,
+      "specs": {
+        "rated_flow_l_min": null,
+        "rated_flow_gpm": null,
+        "hydrostatic_burst_minimum_psi": null
+      },
+      "oem_codes": [
+        {
+          "code": "0817003",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "1021840001",
+          "manufacturer": "MERCEDES-BENZ"
+        },
+        {
+          "code": "1021840501",
+          "manufacturer": "MERCEDES-BENZ"
+        },
+        {
+          "code": "1031800610",
+          "manufacturer": "MERCEDES-BENZ"
+        },
+        {
+          "code": "1031840001",
+          "manufacturer": "MERCEDES-BENZ"
+        },
+        {
+          "code": "1031840201",
+          "manufacturer": "MERCEDES-BENZ"
+        },
+        {
+          "code": "11405640",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "1174416",
+          "manufacturer": "DEUTZ"
+        },
+        {
+          "code": "13201002",
+          "manufacturer": "ISUZU"
+        },
+        {
+          "code": "132012",
+          "manufacturer": "ISUZU"
+        },
+        {
+          "code": "140517000",
+          "manufacturer": "PERKINS"
+        },
+        {
+          "code": "1475514",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "1521132431",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "1523493",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "1523494",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "15590",
+          "manufacturer": "VOLVO"
+        },
+        {
+          "code": "1590632090",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "1612132430",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "1617128",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "1S7G-6714-DA",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "1S7Z-6714-DA",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "1S7Z-6731-DA",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "220-1523",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "224788",
+          "manufacturer": "DAF"
+        },
+        {
+          "code": "2654343",
+          "manufacturer": "PERKINS"
+        },
+        {
+          "code": "2654404",
+          "manufacturer": "PERKINS"
+        },
+        {
+          "code": "2724E6714B",
+          "manufacturer": "CASE"
+        },
+        {
+          "code": "2724E6714B",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "3I1161",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "3I1171",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "436936",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "473663C1",
+          "manufacturer": "CASE"
+        },
+        {
+          "code": "485GB1138",
+          "manufacturer": "MACK"
+        },
+        {
+          "code": "5009232",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "5012580",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "5013148",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "5018028",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "5205002",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "5721190",
+          "manufacturer": "CLAAS"
+        },
+        {
+          "code": "7000014647",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "7000014673",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "70000-36160",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "7621057",
+          "manufacturer": "LIEBHERR"
+        },
+        {
+          "code": "77BM6714C1A",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "77BM6714C2A",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "812684",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "8941145851",
+          "manufacturer": "ISUZU"
+        },
+        {
+          "code": "8941697780",
+          "manufacturer": "ISUZU"
+        },
+        {
+          "code": "8941697781",
+          "manufacturer": "ISUZU"
+        },
+        {
+          "code": "8941697782",
+          "manufacturer": "ISUZU"
+        },
+        {
+          "code": "8941697790",
+          "manufacturer": "ISUZU"
+        },
+        {
+          "code": "894414778",
+          "manufacturer": "ISUZU"
+        },
+        {
+          "code": "89761822820",
+          "manufacturer": "ISUZU"
+        },
+        {
+          "code": "9576P550335",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "9576P557780",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "9613327",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "9Y4493",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "A146696",
+          "manufacturer": "JOHN-DEERE"
+        },
+        {
+          "code": "A37189",
+          "manufacturer": "CASE"
+        },
+        {
+          "code": "A5000041045",
+          "manufacturer": "MAN"
+        },
+        {
+          "code": "A58758",
+          "manufacturer": "CASE"
+        },
+        {
+          "code": "A690X6A692TA",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "A720X6714BA",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "AFL181MC",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "AM101207",
+          "manufacturer": "JOHN-DEERE"
+        },
+        {
+          "code": "AT1220338",
+          "manufacturer": "JOHN-DEERE"
+        },
+        {
+          "code": "BE8Z-6731-AB",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "C600-211-2110",
+          "manufacturer": "CUMMINS"
+        },
+        {
+          "code": "C7NN6714B",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "C7NN6714BS",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "C9AF9601A",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "C9AF9601A",
+          "manufacturer": "NEW HOLLAND"
+        },
+        {
+          "code": "D5NN6714A",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "D8NN6714LA",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "DNP550222",
+          "manufacturer": "FREIGHTLINER"
+        },
+        {
+          "code": "DNP550335",
+          "manufacturer": "FREIGHTLINER"
+        },
+        {
+          "code": "DNP557780",
+          "manufacturer": "FREIGHTLINER"
+        },
+        {
+          "code": "DONN6714B",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "E063337",
+          "manufacturer": "CASE"
+        },
+        {
+          "code": "E4NN6714BA",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "E7TZ6731A",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "E7TZ6731A",
+          "manufacturer": "NEW HOLLAND"
+        },
+        {
+          "code": "E9TE6714B1A",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "G45210",
+          "manufacturer": "CASE"
+        },
+        {
+          "code": "HE1220800",
+          "manufacturer": "JOHN-DEERE"
+        },
+        {
+          "code": "LG491056",
+          "manufacturer": "JOHN-DEERE"
+        },
+        {
+          "code": "SBA140517020",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "V39198",
+          "manufacturer": "CASE"
+        },
+        {
+          "code": "V82DB7A203M",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "X1320002",
+          "manufacturer": "ISUZU"
+        },
+        {
+          "code": "X13201002",
+          "manufacturer": "ISUZU"
+        },
+        {
+          "code": "CM-6731-FL1A",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "D0NN-6714-B",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "37Z020F201",
+          "manufacturer": "KOMATSU"
+        },
+        {
+          "code": "OKR62189",
+          "manufacturer": "KOMATSU"
+        }
+      ],
+      "competitor_codes": [
+        {
+          "code": "C1123",
+          "manufacturer": "SAKURA"
+        },
+        {
+          "code": "C1819",
+          "manufacturer": "SAKURA"
+        },
+        {
+          "code": "C1834",
+          "manufacturer": "SAKURA"
+        },
+        {
+          "code": "C1938",
+          "manufacturer": "SAKURA"
+        },
+        {
+          "code": "HP1",
+          "manufacturer": "Fram"
+        },
+        {
+          "code": "HP1",
+          "manufacturer": "Purolator"
+        },
+        {
+          "code": "L39001",
+          "manufacturer": "Purolator"
+        },
+        {
+          "code": "OF111",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "OF161",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "1703750",
+          "manufacturer": "SAKURA"
+        },
+        {
+          "code": "C11105",
+          "manufacturer": "SAKURA"
+        },
+        {
+          "code": "C11108",
+          "manufacturer": "SAKURA"
+        },
+        {
+          "code": "C1114",
+          "manufacturer": "SAKURA"
+        },
+        {
+          "code": "C11141",
+          "manufacturer": "SAKURA"
+        },
+        {
+          "code": "C11144",
+          "manufacturer": "SAKURA"
+        },
+        {
+          "code": "C11193",
+          "manufacturer": "SAKURA"
+        },
+        {
+          "code": "C1149",
+          "manufacturer": "SAKURA"
+        },
+        {
+          "code": "C1803",
+          "manufacturer": "SAKURA"
+        },
+        {
+          "code": "C18031",
+          "manufacturer": "SAKURA"
+        },
+        {
+          "code": "C6402",
+          "manufacturer": "SAKURA"
+        },
+        {
+          "code": "C66031",
+          "manufacturer": "SAKURA"
+        },
+        {
+          "code": "C8037",
+          "manufacturer": "SAKURA"
+        },
+        {
+          "code": "B114",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B118",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B1405",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B1407",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B1430",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B244",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B252",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B253",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B297",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B298",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B2-HPG",
+          "brand": "BALDWIN",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B7020",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B7022",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B7047",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B7491",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BT111",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BT223",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BT8409",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BT8434",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "0986AF1068",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "0F150",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "3330",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "451103004",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "451103005",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "451104065",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "451203005",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "451203012",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "451203061",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "451203088",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "72124",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "72161",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "8152H",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "986452005",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "986452044",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "OF124",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "OF134",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "OF152",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "OF160",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "PF160",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "OP531",
+          "manufacturer": "FILTRON"
+        },
+        {
+          "code": "OP573",
+          "manufacturer": "FILTRON"
+        },
+        {
+          "code": "HF287783",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "HF28783",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "HF6107",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "HF6158",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "P8427",
+          "manufacturer": "FRAM"
+        },
+        {
+          "code": "H17W01",
+          "manufacturer": "HENGST"
+        },
+        {
+          "code": "H17W05",
+          "manufacturer": "HENGST"
+        },
+        {
+          "code": "H17W08",
+          "manufacturer": "HENGST"
+        },
+        {
+          "code": "H90W06",
+          "manufacturer": "HENGST"
+        },
+        {
+          "code": "H90W20",
+          "manufacturer": "HENGST"
+        },
+        {
+          "code": "HG364W",
+          "manufacturer": "HENGST"
+        },
+        {
+          "code": "AW78",
+          "manufacturer": "MAHLE"
+        },
+        {
+          "code": "AW47",
+          "manufacturer": "MAHLE"
+        },
+        {
+          "code": "6750458346",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "ML 1003",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "WD10009",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "WF9161O",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "WF9202O",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "6940571",
+          "manufacturer": "PUROLATOR"
+        },
+        {
+          "code": "337P",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "51348MP",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "51515R",
+          "brand": "Wix",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "51622",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "51762",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "51785",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "551374",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "57023",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "917P",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "919P",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "CW452MP",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "WL10165",
+          "manufacturer": "WIX"
+        }
+      ],
+      "equipment_applications": [
+        {
+          "type": "FORKLIFT",
+          "engine": "- 705C",
+          "equipment": "ALLIS-CHALMERS 705C"
+        },
+        {
+          "type": "FORKLIFT",
+          "engine": "- 706B",
+          "equipment": "ALLIS-CHALMERS 706B"
+        },
+        {
+          "type": "FORKLIFT",
+          "engine": "- 706C",
+          "equipment": "ALLIS-CHALMERS 706C"
+        },
+        {
+          "type": "FORKLIFT",
+          "engine": "- 708C",
+          "equipment": "ALLIS-CHALMERS 708C"
+        },
+        {
+          "type": "BACKHOE LOADER",
+          "engine": "PERKINS 4.236",
+          "equipment": "ALLIS-CHALMERS 714B"
+        },
+        {
+          "type": "BACKHOE LOADER",
+          "engine": "PERKINS 4.236",
+          "equipment": "ALLIS-CHALMERS 715"
+        },
+        {
+          "type": "BACKHOE LOADER",
+          "engine": "PERKINS 4.236",
+          "equipment": "ALLIS-CHALMERS 715D"
+        },
+        {
+          "type": "FORKLIFT",
+          "engine": "FORD 300",
+          "equipment": "ALLIS-CHALMERS ACP225"
+        },
+        {
+          "type": "FORKLIFT",
+          "engine": "ALLIS-CHALMERS G153",
+          "equipment": "ALLIS-CHALMERS F3024"
+        },
+        {
+          "type": "FORKLIFT",
+          "engine": "ALLIS-CHALMERS G153",
+          "equipment": "ALLIS-CHALMERS F4024"
+        },
+        {
+          "type": "FORKLIFT",
+          "engine": "ALLIS-CHALMERS G153",
+          "equipment": "ALLIS-CHALMERS F5024"
+        },
+        {
+          "type": "FORKLIFT",
+          "engine": "ALLIS-CHALMERS D175",
+          "equipment": "ALLIS-CHALMERS FB5024"
+        }
+      ],
+      "vehicle_applications": [],
+      "oem_total_all_brands": 1105
+    },
+    {
+      "sku": "EH60223",
+      "codigo_base": "HF30223",
+      "name": null,
+      "description": "ELIMFILTERS® EH60223 Hydraulic filter for precision fluid power systems. NANOFORCE™ electrostatic synthetic media captures fine particles and free water before they reach proportional valves and seals, preventing the wear and leakage that follow contaminated hydraulic fluid.",
+      "duty": "HEAVY_DUTY",
+      "filter_type": "hydraulic",
+      "sub_type": "Fleetguard",
+      "technology": "NANOFORCE™",
+      "installation_type": "Spin-On",
+      "thread_size": "1 5/16-12 UN",
+      "height_mm": 178.44,
+      "outer_diameter_mm": 60.2,
+      "gasket_od_mm": 107.6,
+      "gasket_id_mm": 93,
+      "micron_rating": null,
+      "nominal_efficiency": null,
+      "iso_test_method": null,
+      "filter_media": null,
+      "burst_pressure_psi": null,
+      "catalog_active": true,
+      "canonical_source_brand": null,
+      "canonical_source_code": "HF30223",
+      "canonical_source_status": "UNVERIFIED",
+      "duty_validation_status": "LEGACY_UNVERIFIED",
+      "product_dimensions_validation_status": null,
+      "enrichment_required_authority": null,
+      "third_party_mark": null,
+      "specs": {
+        "rated_flow_l_min": null,
+        "rated_flow_gpm": null,
+        "hydrostatic_burst_minimum_psi": null
+      },
+      "oem_codes": [
+        {
+          "code": "1930893",
+          "manufacturer": "HITACHI"
+        },
+        {
+          "code": "1992156",
+          "manufacturer": "VOLVO"
+        },
+        {
+          "code": "3082148",
+          "manufacturer": "VOLVO"
+        },
+        {
+          "code": "3130914",
+          "manufacturer": "VOLVO"
+        },
+        {
+          "code": "3I1162",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "510661508",
+          "manufacturer": "LIEBHERR"
+        },
+        {
+          "code": "550223",
+          "manufacturer": "DETROIT DIESEL"
+        },
+        {
+          "code": "73074045",
+          "manufacturer": "HITACHI"
+        },
+        {
+          "code": "73142551",
+          "manufacturer": "HITACHI"
+        },
+        {
+          "code": "9576P550223",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "9Y4513",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "DNP550223",
+          "manufacturer": "FREIGHTLINER"
+        },
+        {
+          "code": "M1992156",
+          "manufacturer": "VOLVO"
+        }
+      ],
+      "competitor_codes": [
+        {
+          "code": "BT359",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "HF6106",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "HF6243",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "HP3613",
+          "manufacturer": "FRAM"
+        },
+        {
+          "code": "P3613",
+          "manufacturer": "FRAM"
+        },
+        {
+          "code": "P3613FP",
+          "manufacturer": "FRAM"
+        },
+        {
+          "code": "H50264",
+          "manufacturer": "PUROLATOR"
+        },
+        {
+          "code": "P264",
+          "manufacturer": "PUROLATOR"
+        },
+        {
+          "code": "HC6501",
+          "manufacturer": "SAKURA"
+        },
+        {
+          "code": "HC6502",
+          "manufacturer": "SAKURA"
+        },
+        {
+          "code": "51623",
+          "manufacturer": "WIX"
+        }
+      ],
+      "equipment_applications": [
+        {
+          "type": "MISC EQUIPMENT",
+          "engine": "FIAT 8065",
+          "equipment": "ALLIS-CHALMERS FR10"
+        },
+        {
+          "type": "MISC EQUIPMENT",
+          "engine": "- FR12",
+          "equipment": "ALLIS-CHALMERS FR12"
+        },
+        {
+          "type": "MISC EQUIPMENT",
+          "engine": "- FR15",
+          "equipment": "ALLIS-CHALMERS FR15"
+        },
+        {
+          "type": "MISC EQUIPMENT",
+          "engine": "- FR20",
+          "equipment": "ALLIS-CHALMERS FR20"
+        },
+        {
+          "type": "LOADER",
+          "engine": "- FR20B",
+          "equipment": "FIAT FR20B"
+        },
+        {
+          "type": "LOADER",
+          "engine": "- FR20B",
+          "equipment": "FIATALLIS FR20B"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "CATERPILLAR 3306",
+          "equipment": "PETERBILT 357"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "CATERPILLAR 3306",
+          "equipment": "PETERBILT 357"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "CATERPILLAR 3306",
+          "equipment": "PETERBILT 357"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "CATERPILLAR 3306",
+          "equipment": "PETERBILT 357"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "CATERPILLAR 3306",
+          "equipment": "PETERBILT 357"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "CATERPILLAR 3306",
+          "equipment": "PETERBILT 357"
+        }
+      ],
+      "vehicle_applications": [],
+      "oem_total_all_brands": 78
+    },
+    {
+      "sku": "EH60950",
+      "codigo_base": "P170950",
+      "name": "ELIMFILTERS DURAMAX Hydraulic Spin-On Filter",
+      "description": "Medium-pressure hydraulic and hydrostatic spin-on filter. Direct replacement for John Deere AH128449.",
+      "duty": "HEAVY_DUTY",
+      "filter_type": "hydraulic",
+      "sub_type": "Medium Pressure Hydraulic / Hydrostatic",
+      "technology": "NANOFORCE™",
+      "installation_type": "Spin-On",
+      "thread_size": "1 3/8-12 UN",
+      "height_mm": 240,
+      "outer_diameter_mm": 97,
+      "gasket_od_mm": 70,
+      "gasket_id_mm": 63,
+      "micron_rating": "11 absolute / 4 nominal",
+      "nominal_efficiency": "Beta 1000 at 11 micron; Beta 2 at 4 micron",
+      "iso_test_method": null,
+      "filter_media": "Synthetic microfiber glass / Synteq XP",
+      "burst_pressure_psi": null,
+      "catalog_active": true,
+      "canonical_source_brand": null,
+      "canonical_source_code": "P170950",
+      "canonical_source_status": "UNVERIFIED",
+      "duty_validation_status": "LEGACY_UNVERIFIED",
+      "product_dimensions_validation_status": null,
+      "enrichment_required_authority": null,
+      "third_party_mark": true,
+      "specs": {
+        "rated_flow_l_min": null,
+        "rated_flow_gpm": null,
+        "hydrostatic_burst_minimum_psi": null
+      },
+      "oem_codes": [
+        {
+          "code": "AH128449",
+          "manufacturer": "JOHN-DEERE",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "AT215172",
+          "manufacturer": "JOHN-DEERE",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "4160174",
+          "manufacturer": "JOHN-DEERE",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        }
+      ],
+      "competitor_codes": [
+        {
+          "code": "HF6557",
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "BT8852MPG",
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "BT734",
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "BT749",
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "51819",
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        }
+      ],
+      "equipment_applications": [
+        {
+          "type": "COMBINE",
+          "engine": "- 9650",
+          "equipment": "JOHN DEERE 9650"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081",
+          "equipment": "JOHN DEERE 9650 CTS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 9650 STS"
+        }
+      ],
+      "vehicle_applications": [],
+      "oem_total_all_brands": 3
+    },
+    {
+      "sku": "EL30001",
+      "codigo_base": "0001",
+      "name": null,
+      "description": "About this item ELIMFILTERS transmission oil filters offer the highest filtration performance, due partly to the filter medium specially adapted to the intended use - protects the transmission by optimum oil cleaning. Optimum protection and sealing over the entire maintenance interval.",
+      "duty": "LIGHT_DUTY",
+      "filter_type": "oil",
+      "sub_type": "Genuine Media",
+      "technology": "SYNTRAX™",
+      "installation_type": "Spin-On",
+      "thread_size": "1-12 UNF mm",
+      "height_mm": 178,
+      "outer_diameter_mm": 95,
+      "gasket_od_mm": null,
+      "gasket_id_mm": 70,
+      "micron_rating": null,
+      "nominal_efficiency": null,
+      "iso_test_method": null,
+      "filter_media": null,
+      "burst_pressure_psi": null,
+      "catalog_active": true,
+      "canonical_source_brand": null,
+      "canonical_source_code": "0001",
+      "canonical_source_status": "UNVERIFIED",
+      "duty_validation_status": "LEGACY_UNVERIFIED",
+      "product_dimensions_validation_status": null,
+      "enrichment_required_authority": null,
+      "third_party_mark": null,
+      "specs": {
+        "rated_flow_l_min": null,
+        "rated_flow_gpm": null,
+        "hydrostatic_burst_minimum_psi": null
+      },
+      "oem_codes": [
+        {
+          "code": "10428561",
+          "manufacturer": "LIEBHERR",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "LW10428561",
+          "manufacturer": "JOHN DEERE",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "3A431-82620",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "3A431-82623",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "3A431-82630",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "3A431-82632",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "HH3A0-82623",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "HH3A0-82630",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "HH3A0-82632",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "HHK32-16770",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "W21TSH3A00",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "W21TSH3A10",
+          "manufacturer": "KUBOTA"
+        }
+      ],
+      "competitor_codes": [
+        {
+          "code": "HP1",
+          "source": "fram_newprefix_lines_2026-09-14",
+          "added_at": "2026-09-14 23:02:28.394494-05",
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "H50001",
+          "source": "mann_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 12:55:09.788508-05",
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "CH1",
+          "source": "fram_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 11:37:42.790714-05",
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "CH1P",
+          "source": "fram_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 11:37:42.790714-05",
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "CH1PL",
+          "source": "fram_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 11:37:42.790714-05",
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "PH1A",
+          "source": "fram_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 11:37:42.790714-05",
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        }
+      ],
+      "equipment_applications": [],
+      "vehicle_applications": [
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "BMW (USA)",
+          "model": "2021 X6 (V8 4.4L 4395cc) Note:: ZF6HP19Z Transmission",
+          "year_range": "",
+          "engine_code": "S63B44T4"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "2979",
+          "make": "BMW (USA)",
+          "model": "2015 X6 sDrive 35i (L6 3.0L FI Turbo) Automatic gearbox Gearbox code: ZF 6HP19Z",
+          "year_range": "",
+          "engine_code": "N55B30A"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "2979",
+          "make": "BMW (USA)",
+          "model": "2016 X3 xDrive35i (L6 3.0L FI Twin-Turbo 24V)",
+          "year_range": "",
+          "engine_code": "N55B30A"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "2979",
+          "make": "BMW (USA)",
+          "model": "2016 X4 xDrive35i (L6 3.0L FI Twin-Turbo 24V)",
+          "year_range": "",
+          "engine_code": "N55B30A"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "2979",
+          "make": "BMW (USA)",
+          "model": "2016 X5 sDrive35i (L6 3.0L FI Twin-Turbo 24V)",
+          "year_range": "",
+          "engine_code": "N55B30A"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "2979",
+          "make": "BMW (USA)",
+          "model": "2016 X5 xDrive35i (L6 3.0L FI Twin-Turbo 24V)",
+          "year_range": "",
+          "engine_code": "N55B30A"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "2979",
+          "make": "BMW (USA)",
+          "model": "2016 X6 xDrive 35i (L6 3.0L FI Twin-Turbo 24V)",
+          "year_range": "",
+          "engine_code": "N55B30A"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "2996",
+          "make": "BMW (USA)",
+          "model": "2011 Z4 sDrive 30i (L6 3.0L FI) Automatic gearbox Gearbox code: ZF 6HP19Z",
+          "year_range": "",
+          "engine_code": "N52B30A"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "2996",
+          "make": "BMW (USA)",
+          "model": "2019 Z4 sDrive 30i (L6 3.0L FI) Automatic gearbox Gearbox code: ZF 6HP19Z",
+          "year_range": "",
+          "engine_code": "N52B30A"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "3331",
+          "make": "KUBOTA",
+          "model": "M-Series M 7040 DTHNB / DTHNBC",
+          "year_range": "",
+          "engine_code": "Kubota V3307-DI-TE3-1"
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "4395",
+          "make": "BMW (USA)",
+          "model": "2015 X5 M (V8 4.4L FI Twin-Turbo 32V) Automatic gearbox Gearbox code: ZF 6HP19Z",
+          "year_range": "",
+          "engine_code": "S63R"
+        },
+        {
+          "hp": "105",
+          "kw": "77",
+          "ccm": "3800",
+          "make": "KUBOTA",
+          "model": "M-Series M 105 SDSC",
+          "year_range": "01/05 → 12/07",
+          "engine_code": "Kubota V3800-TIE2-Q"
+        }
+      ],
+      "oem_total_all_brands": 17
+    },
+    {
+      "sku": "EL30002",
+      "codigo_base": "0002",
+      "name": null,
+      "description": "About this item ELIMFILTERS transmission oil filters offer the highest filtration performance, due partly to the filter medium specially adapted to the intended use - protects the transmission by optimum oil cleaning. Optimum protection and sealing over the entire maintenance interval.",
+      "duty": "LIGHT_DUTY",
+      "filter_type": "oil",
+      "sub_type": "Genuine Media",
+      "technology": "SYNTRAX™",
+      "installation_type": "Spin-On",
+      "thread_size": "1 1/8-16 UN mm",
+      "height_mm": 175,
+      "outer_diameter_mm": 94,
+      "gasket_od_mm": 80,
+      "gasket_id_mm": 91,
+      "micron_rating": null,
+      "nominal_efficiency": null,
+      "iso_test_method": null,
+      "filter_media": null,
+      "burst_pressure_psi": null,
+      "catalog_active": true,
+      "canonical_source_brand": null,
+      "canonical_source_code": "0002",
+      "canonical_source_status": "UNVERIFIED",
+      "duty_validation_status": "LEGACY_UNVERIFIED",
+      "product_dimensions_validation_status": null,
+      "enrichment_required_authority": null,
+      "third_party_mark": null,
+      "specs": {
+        "rated_flow_l_min": null,
+        "rated_flow_gpm": null,
+        "hydrostatic_burst_minimum_psi": null
+      },
+      "oem_codes": [
+        {
+          "code": "200 180 00 09",
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "A 200 180 00 09",
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "3259038381",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "33960-38380",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "33960-82630",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "33960-82631",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "3396082632",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "87300-044",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "HH330-8260",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "HH330-82630",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "HHTA0-37710",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "HHTAO37710",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "T0070-37710",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "T007037711",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "TA040-37710",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "W21TS-H3300",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "W21TS-HTA10",
+          "manufacturer": "KUBOTA"
+        },
+        {
+          "code": "W9501-45101",
+          "manufacturer": "KUBOTA"
+        }
+      ],
+      "competitor_codes": [
+        {
+          "code": "DL2",
+          "source": "fram_newprefix_lines_2026-09-14",
+          "added_at": "2026-09-14 23:02:28.394494-05",
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "FD2",
+          "source": "fram_newprefix_lines_2026-09-14",
+          "added_at": "2026-09-14 23:02:28.394494-05",
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "FE2",
+          "source": "fram_newprefix_lines_2026-09-14",
+          "added_at": "2026-09-14 23:02:28.394494-05",
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "FF2",
+          "source": "fram_newprefix_lines_2026-09-14",
+          "added_at": "2026-09-14 23:02:28.394494-05",
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "FS2",
+          "source": "fram_newprefix_lines_2026-09-14",
+          "added_at": "2026-09-14 23:02:28.394494-05",
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "HP2",
+          "source": "fram_newprefix_lines_2026-09-14",
+          "added_at": "2026-09-14 23:02:28.394494-05",
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "H2X804W",
+          "source": "mann_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 12:55:09.788508-05",
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "H2X947/1Z",
+          "source": "mann_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 12:55:09.788508-05",
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "H2X947/3Z",
+          "source": "mann_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 12:55:09.788508-05",
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "H50002",
+          "source": "mann_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 12:55:09.788508-05",
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "HU10002Z",
+          "source": "mann_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 12:55:09.788508-05",
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "HU2X947/1Z",
+          "source": "mann_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 12:55:09.788508-05",
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "HU2X947/3Z",
+          "source": "mann_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 12:55:09.788508-05",
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "WD10002",
+          "source": "mann_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 12:55:09.788508-05",
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "CH2",
+          "source": "fram_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 11:37:42.790714-05",
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "HM2",
+          "source": "fram_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 11:37:42.790714-05",
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "PH2F",
+          "source": "fram_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 11:37:42.790714-05",
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "PH2M291",
+          "source": "fram_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 11:37:42.790714-05",
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "PH2SUZUKI",
+          "source": "fram_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 11:37:42.790714-05",
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        },
+        {
+          "code": "TG2",
+          "source": "fram_ld_sku_formula_match_2026-09-14",
+          "added_at": "2026-09-14 11:37:42.790714-05",
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+        }
+      ],
+      "equipment_applications": [],
+      "vehicle_applications": [
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "BMW",
+          "model": "X5 (E70) X5 3.0 Diesel (V6) Gearbox code: ZF 6HP28",
+          "year_range": "01/11 → 12/13",
+          "engine_code": ""
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "BMW",
+          "model": "X5 (E70) X5 4.4 Diesel (V8) Gearbox code: ZF 6HP28",
+          "year_range": "01/10 → 12/13",
+          "engine_code": ""
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "BMW",
+          "model": "X5 (E70) X5 4.8i Premium 4.8 (V8) Gearbox code: ZF 6HP28",
+          "year_range": "01/07 → 12/12",
+          "engine_code": ""
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "BMW",
+          "model": "X5 (E70) X5 M 3.0 (V6) Gearbox code: ZF 6HP28",
+          "year_range": "01/11 → 12/14",
+          "engine_code": ""
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "BMW",
+          "model": "X5 (E70) X5 xDrive30i 3.0 (V6) Gearbox code: ZF 6HP28",
+          "year_range": "01/07 → 12/10",
+          "engine_code": ""
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "BMW",
+          "model": "X5 (E70) X5 xDrive30i 3.0 (V6) Gearbox code: ZF 6HP28",
+          "year_range": "01/11 → 12/14",
+          "engine_code": ""
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "JAGUAR",
+          "model": "XF (X250) 2.0 Luxury (L4) Gearbox code: ZF 6HP26 / 6HP28",
+          "year_range": "01/13 → 12/14",
+          "engine_code": ""
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "JAGUAR",
+          "model": "XF (X250) 3.0 Luxury (V6) Gearbox code: ZF 6HP26 / 6HP28",
+          "year_range": "01/12 → 12/12",
+          "engine_code": ""
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "JAGUAR",
+          "model": "XF (X250) 3.0 Portfolio (V6) Gearbox code: ZF 6HP26 / 6HP28",
+          "year_range": "01/13 → 12/14",
+          "engine_code": ""
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "JAGUAR",
+          "model": "XF (X250) 3.0 Premium Luxury (V6) Gearbox code: ZF 6HP26 / 6HP28",
+          "year_range": "01/12 → 12/13",
+          "engine_code": ""
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "JAGUAR",
+          "model": "XF (X250) 4.2 Luxury (V8) Gearbox code: ZF 6HP26 / 6HP28",
+          "year_range": "01/09 → 12/10",
+          "engine_code": ""
+        },
+        {
+          "hp": "",
+          "kw": "",
+          "ccm": "",
+          "make": "JAGUAR",
+          "model": "XF (X250) 4.2 Supercharged (V8) Gearbox code: ZF 6HP26 / 6HP28",
+          "year_range": "01/09 → 12/09",
+          "engine_code": ""
+        }
+      ],
+      "oem_total_all_brands": 36
+    },
+    {
+      "sku": "EL83191",
+      "codigo_base": "P553191",
+      "name": null,
+      "description": "ELIMFILTERS® EL83191 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
+      "duty": "HEAVY_DUTY",
+      "filter_type": "oil",
+      "sub_type": "Cellulose",
+      "technology": "SYNTRAX™",
+      "installation_type": "Spin-On",
+      "thread_size": "1 1/8-16 UN",
+      "height_mm": 262,
+      "outer_diameter_mm": 108,
+      "gasket_od_mm": 99,
+      "gasket_id_mm": 90,
+      "micron_rating": "21",
+      "nominal_efficiency": "21 micron",
+      "iso_test_method": "ISO 16889",
+      "filter_media": null,
+      "burst_pressure_psi": "149",
+      "catalog_active": true,
+      "canonical_source_brand": null,
+      "canonical_source_code": "P553191",
+      "canonical_source_status": "UNVERIFIED",
+      "duty_validation_status": "LEGACY_UNVERIFIED",
+      "product_dimensions_validation_status": null,
+      "enrichment_required_authority": null,
+      "third_party_mark": null,
+      "specs": {
+        "rated_flow_l_min": null,
+        "rated_flow_gpm": null,
+        "hydrostatic_burst_minimum_psi": null
+      },
+      "oem_codes": [
+        {
+          "code": "1R-0658",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "1R-0739",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "1R-1807",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "1W-3300",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "2P-4004",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "2Y-8096",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "3I-1283",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "3I0730",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "492164004",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "1164406",
+          "manufacturer": "DEUTZ"
+        },
+        {
+          "code": "5011417",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "5011502",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "9576P553191",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "DNP553191",
+          "manufacturer": "FREIGHTLINER"
+        },
+        {
+          "code": "6439392",
+          "manufacturer": "GENERAL MOTORS"
+        },
+        {
+          "code": "S2340-11700",
+          "manufacturer": "HINO"
+        },
+        {
+          "code": "466634",
+          "manufacturer": "HITACHI"
+        },
+        {
+          "code": "42537127",
+          "manufacturer": "IVECO"
+        },
+        {
+          "code": "GG17031266",
+          "manufacturer": "JOHN DEERE"
+        },
+        {
+          "code": "GG17031266",
+          "manufacturer": "JOHN-DEERE"
+        },
+        {
+          "code": "2191P553191",
+          "manufacturer": "MACK"
+        },
+        {
+          "code": "21939324",
+          "manufacturer": "MACK"
+        },
+        {
+          "code": "485GB3191",
+          "manufacturer": "MACK"
+        },
+        {
+          "code": "485GB3191A",
+          "manufacturer": "MACK"
+        },
+        {
+          "code": "485GB3191B",
+          "manufacturer": "MACK"
+        },
+        {
+          "code": "485GB3191C",
+          "manufacturer": "MACK"
+        },
+        {
+          "code": "485GB3191D",
+          "manufacturer": "MACK"
+        },
+        {
+          "code": "485GB3232",
+          "manufacturer": "MACK"
+        },
+        {
+          "code": "485GB4348",
+          "manufacturer": "MACK"
+        },
+        {
+          "code": "5000133555",
+          "manufacturer": "MACK"
+        }
+      ],
+      "competitor_codes": [
+        {
+          "code": "W1110211",
+          "manufacturer": "Mann-Filter"
+        },
+        {
+          "code": "W11102/11",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "OC121",
+          "manufacturer": "MAHLE"
+        },
+        {
+          "code": "OC121",
+          "manufacturer": "Purolator"
+        },
+        {
+          "code": "OC403",
+          "manufacturer": "MAHLE"
+        },
+        {
+          "code": "L50068",
+          "manufacturer": "PUROLATOR"
+        },
+        {
+          "code": "C55011",
+          "manufacturer": "SAKURA"
+        },
+        {
+          "code": "C5510",
+          "manufacturer": "SAKURA"
+        },
+        {
+          "code": "B76",
+          "brand": "BALDWIN",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B7600",
+          "brand": "BALDWIN",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B7600-SS",
+          "brand": "BALDWIN",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B76-B",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B76-MPG",
+          "brand": "BALDWIN",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B76-SS",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B7700",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6203",
+          "brand": "BALDWIN",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6210",
+          "brand": "BALDWIN",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6284",
+          "brand": "BALDWIN",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6287",
+          "brand": "BALDWIN",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6613",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6660",
+          "brand": "BALDWIN",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6663",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6674",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6701",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6702",
+          "brand": "BALDWIN",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6708",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6712",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6718",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6722",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6829",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BT234",
+          "brand": "HASTINGS",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BT556-10",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "0451104010",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "0451403077",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "451403077",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "P3077",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "ELF7483",
+          "manufacturer": "DONALDSON"
+        },
+        {
+          "code": "ELF7739",
+          "manufacturer": "DONALDSON"
+        },
+        {
+          "code": "LFP554004",
+          "manufacturer": "DONALDSON"
+        },
+        {
+          "code": "P554004",
+          "brand": "DONALDSON",
+          "manufacturer": "DONALDSON"
+        },
+        {
+          "code": "OP584",
+          "manufacturer": "FILTRON"
+        },
+        {
+          "code": "HF35197",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF16101",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF16175",
+          "brand": "FLEETGUARD",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF3321",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF3379",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF3406",
+          "brand": "FLEETGUARD",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF3476",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF3477",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF3675",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF3730",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF531",
+          "brand": "HASTINGS",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF667",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF9667",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13048",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13051",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13052",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13053",
+          "brand": "FLEETGUARD",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13064",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13068",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13071",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13073",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13075",
+          "brand": "FLEETGUARD",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13078",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13091",
+          "brand": "FLEETGUARD",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13104",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13113",
+          "brand": "FLEETGUARD",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13119",
+          "brand": "FLEETGUARD",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13169",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13170",
+          "brand": "FLEETGUARD",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "BPH49A",
+          "manufacturer": "FRAM"
+        },
+        {
+          "code": "HPH49A",
+          "manufacturer": "FRAM"
+        },
+        {
+          "code": "HPH49AFP",
+          "manufacturer": "FRAM"
+        },
+        {
+          "code": "P449A",
+          "manufacturer": "FRAM"
+        },
+        {
+          "code": "PH49",
+          "manufacturer": "FRAM"
+        },
+        {
+          "code": "PH49A",
+          "manufacturer": "FRAM"
+        },
+        {
+          "code": "PH49AFP",
+          "manufacturer": "FRAM"
+        },
+        {
+          "code": "PH49AJS",
+          "manufacturer": "FRAM"
+        },
+        {
+          "code": "PH5394",
+          "manufacturer": "FRAM"
+        },
+        {
+          "code": "PH8842",
+          "manufacturer": "FRAM"
+        },
+        {
+          "code": "H200W01",
+          "manufacturer": "HENGST"
+        },
+        {
+          "code": "H200W10",
+          "manufacturer": "HENGST"
+        },
+        {
+          "code": "AW92",
+          "manufacturer": "MAHLE"
+        },
+        {
+          "code": "W1102/15",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "W1102/4",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "W11025",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "W1110214",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "W11102/15",
+          "brand": "Mann-Filter",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "W1110218",
+          "brand": "MANN",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "W11102/20",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "W1110227",
+          "brand": "Mann-Filter",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "W11102/35",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "W11102/37",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "W11102/4",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "6694030",
+          "manufacturer": "PUROLATOR"
+        },
+        {
+          "code": "K50003",
+          "manufacturer": "PUROLATOR"
+        },
+        {
+          "code": "K50004",
+          "manufacturer": "PUROLATOR"
+        },
+        {
+          "code": "L56069",
+          "manufacturer": "PUROLATOR"
+        },
+        {
+          "code": "L59068",
+          "manufacturer": "PUROLATOR"
+        },
+        {
+          "code": "24526",
+          "brand": "Wix",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "24536",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "24556",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "51788",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "51791",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "51791EC",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "51791MP",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "51791XE",
+          "brand": "Wix",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "551791",
+          "brand": "Wix",
+          "manufacturer": "WIX"
+        }
+      ],
+      "equipment_applications": [
+        {
+          "type": "EXCAVATOR",
+          "engine": "VOLVO TD61GE",
+          "equipment": "AKERMAN EC200"
+        },
+        {
+          "type": "EXCAVATOR",
+          "engine": "VOLVO TD61ACE",
+          "equipment": "AKERMAN EC230"
+        },
+        {
+          "type": "EXCAVATOR",
+          "engine": "VOLVO TD71ACE",
+          "equipment": "AKERMAN EC300"
+        },
+        {
+          "type": "EXCAVATOR",
+          "engine": "VOLVO TD101GE",
+          "equipment": "AKERMAN EC420"
+        },
+        {
+          "type": "EXCAVATOR",
+          "engine": "VOLVO TD61GE",
+          "equipment": "AKERMAN EW200"
+        },
+        {
+          "type": "EXCAVATOR",
+          "engine": "VOLVO TD61ACE",
+          "equipment": "AKERMAN EW230"
+        },
+        {
+          "type": "EXCAVATOR",
+          "engine": "VOLVO TD60B",
+          "equipment": "AKERMAN H10"
+        },
+        {
+          "type": "EXCAVATOR",
+          "engine": "VOLVO TD61ACE",
+          "equipment": "AKERMAN H10"
+        },
+        {
+          "type": "EXCAVATOR",
+          "engine": "VOLVO TD60B",
+          "equipment": "AKERMAN H10B"
+        },
+        {
+          "type": "EXCAVATOR",
+          "engine": "VOLVO TD61ACE",
+          "equipment": "AKERMAN H10B"
+        },
+        {
+          "type": "EXCAVATOR",
+          "engine": "VOLVO TD60B",
+          "equipment": "AKERMAN H10LC"
+        },
+        {
+          "type": "EXCAVATOR",
+          "engine": "VOLVO TD61ACE",
+          "equipment": "AKERMAN H10LC"
+        }
+      ],
+      "vehicle_applications": [],
+      "oem_total_all_brands": 226
+    },
+    {
+      "sku": "EL84004",
+      "codigo_base": "P554004",
+      "name": null,
+      "description": "ELIMFILTERS® EL84004 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
+      "duty": "HEAVY_DUTY",
+      "filter_type": "oil",
+      "sub_type": "Cellulose",
+      "technology": "SYNTRAX™",
+      "installation_type": "Spin-On",
+      "thread_size": "1 1/8-16 UN",
+      "height_mm": 262,
+      "outer_diameter_mm": 108,
+      "gasket_od_mm": 99.2,
+      "gasket_id_mm": 90.6,
+      "micron_rating": "40",
+      "nominal_efficiency": "40 micron",
+      "iso_test_method": null,
+      "filter_media": null,
+      "burst_pressure_psi": "149",
+      "catalog_active": true,
+      "canonical_source_brand": null,
+      "canonical_source_code": "P554004",
+      "canonical_source_status": "UNVERIFIED",
+      "duty_validation_status": "LEGACY_UNVERIFIED",
+      "product_dimensions_validation_status": null,
+      "enrichment_required_authority": null,
+      "third_party_mark": null,
+      "specs": {
+        "rated_flow_l_min": null,
+        "rated_flow_gpm": null,
+        "hydrostatic_burst_minimum_psi": null
+      },
+      "oem_codes": [
+        {
+          "code": "60507493",
+          "manufacturer": "CASE"
+        },
+        {
+          "code": "60507493",
+          "manufacturer": "CASE IH"
+        },
+        {
+          "code": "W1250599",
+          "manufacturer": "CASE"
+        },
+        {
+          "code": "W1250599",
+          "manufacturer": "CASE IH"
+        },
+        {
+          "code": "2836",
+          "manufacturer": "CASE IH"
+        },
+        {
+          "code": "1R-0658",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "1R-0739",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "1R-1807",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "1W-3300",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "2P-4004",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "2Y-8096",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "3I-1283",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "3Y0900",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "3Y0900X",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "3Y900",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "3Y900X",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "5P1119",
+          "manufacturer": "CATERPILLAR"
+        },
+        {
+          "code": "1164406",
+          "manufacturer": "DEUTZ"
+        },
+        {
+          "code": "9576P554004",
+          "manufacturer": "FORD"
+        },
+        {
+          "code": "DNP554004",
+          "manufacturer": "FREIGHTLINER"
+        },
+        {
+          "code": "25011932",
+          "manufacturer": "GENERAL MOTORS"
+        },
+        {
+          "code": "25013196",
+          "manufacturer": "GENERAL MOTORS"
+        },
+        {
+          "code": "6439392",
+          "manufacturer": "GENERAL MOTORS"
+        },
+        {
+          "code": "6439393",
+          "manufacturer": "GENERAL MOTORS"
+        },
+        {
+          "code": "S2340-11700",
+          "manufacturer": "HINO"
+        },
+        {
+          "code": "71901604",
+          "manufacturer": "HITACHI"
+        },
+        {
+          "code": "74663338",
+          "manufacturer": "HITACHI"
+        },
+        {
+          "code": "74667338",
+          "manufacturer": "HITACHI"
+        },
+        {
+          "code": "74667339",
+          "manufacturer": "HITACHI"
+        },
+        {
+          "code": "74667755",
+          "manufacturer": "HITACHI"
+        },
+        {
+          "code": "78826586",
+          "manufacturer": "HITACHI"
+        },
+        {
+          "code": "GG17031266",
+          "manufacturer": "JOHN DEERE"
+        },
+        {
+          "code": "GG17031266",
+          "manufacturer": "JOHN-DEERE"
+        },
+        {
+          "code": "KW667",
+          "manufacturer": "KENWORTH"
+        },
+        {
+          "code": "21939324",
+          "manufacturer": "MACK"
+        },
+        {
+          "code": "485GB3191",
+          "manufacturer": "MACK"
+        },
+        {
+          "code": "485GB3191A",
+          "manufacturer": "MACK"
+        },
+        {
+          "code": "485GB3191B",
+          "manufacturer": "MACK"
+        },
+        {
+          "code": "485GB3191C",
+          "manufacturer": "MACK"
+        },
+        {
+          "code": "485GB4348",
+          "manufacturer": "MACK"
+        },
+        {
+          "code": "5000133555",
+          "manufacturer": "MACK"
+        },
+        {
+          "code": "1117285",
+          "manufacturer": "SCANIA"
+        }
+      ],
+      "competitor_codes": [
+        {
+          "code": "OC121",
+          "manufacturer": "MAHLE"
+        },
+        {
+          "code": "L50068",
+          "manufacturer": "PUROLATOR"
+        },
+        {
+          "code": "PER67",
+          "manufacturer": "Purolator"
+        },
+        {
+          "code": "C5501",
+          "manufacturer": "SAKURA"
+        },
+        {
+          "code": "B76",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B7600",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B7600-SS",
+          "brand": "BALDWIN",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B76-B",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B76HPG",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B76-MPG",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B76-SS",
+          "brand": "BALDWIN",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "B7700",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6203",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6210",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6284",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6287",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6613",
+          "brand": "BALDWIN",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6660",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6663",
+          "brand": "BALDWIN",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6674",
+          "brand": "BALDWIN",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6701",
+          "brand": "BALDWIN",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6702",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6708",
+          "brand": "BALDWIN",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6712",
+          "brand": "BALDWIN",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6718",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6722",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BK6829",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BT234",
+          "brand": "BALDWIN",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BT340",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "BT556-10",
+          "manufacturer": "BALDWIN"
+        },
+        {
+          "code": "0451403077",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "F026407043",
+          "manufacturer": "BOSCH"
+        },
+        {
+          "code": "ELF7483",
+          "manufacturer": "DONALDSON"
+        },
+        {
+          "code": "ELF7739",
+          "manufacturer": "DONALDSON"
+        },
+        {
+          "code": "LFP554004",
+          "manufacturer": "DONALDSON"
+        },
+        {
+          "code": "P553191",
+          "brand": "DONALDSON",
+          "manufacturer": "DONALDSON"
+        },
+        {
+          "code": "OP584",
+          "manufacturer": "FILTRON"
+        },
+        {
+          "code": "HF35197",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF3321",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF3379",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF3406",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF3476",
+          "brand": "FLEETGUARD",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF3477",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF3675",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF3730",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF531",
+          "brand": "HASTINGS",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF667",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF733",
+          "brand": "FLEETGUARD",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "LF9667",
+          "brand": "FLEETGUARD",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13048",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13051",
+          "brand": "FLEETGUARD",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13052",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13053",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13064",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13068",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13071",
+          "brand": "FLEETGUARD",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13073",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13075",
+          "brand": "FLEETGUARD",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13078",
+          "brand": "FLEETGUARD",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13091",
+          "brand": "FLEETGUARD",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13104",
+          "brand": "FLEETGUARD",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13113",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13119",
+          "brand": "FLEETGUARD",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13169",
+          "brand": "FLEETGUARD",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "MK13170",
+          "brand": "FLEETGUARD",
+          "manufacturer": "FLEETGUARD"
+        },
+        {
+          "code": "HPH49A",
+          "manufacturer": "FRAM"
+        },
+        {
+          "code": "HPH49AFP",
+          "manufacturer": "FRAM"
+        },
+        {
+          "code": "PH49A",
+          "manufacturer": "FRAM"
+        },
+        {
+          "code": "PH8842",
+          "manufacturer": "FRAM"
+        },
+        {
+          "code": "H200W01",
+          "manufacturer": "HENGST"
+        },
+        {
+          "code": "H200W03",
+          "manufacturer": "HENGST"
+        },
+        {
+          "code": "H200W04",
+          "manufacturer": "HENGST"
+        },
+        {
+          "code": "H200W10",
+          "manufacturer": "HENGST"
+        },
+        {
+          "code": "H200W40",
+          "manufacturer": "HENGST"
+        },
+        {
+          "code": "H200W42",
+          "manufacturer": "HENGST"
+        },
+        {
+          "code": "KFO0332595",
+          "manufacturer": "MAHLE"
+        },
+        {
+          "code": "W1102/15",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "W1102/4",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "W11025",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "W11102/11",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "W1110214",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "W11102/15",
+          "brand": "Mann-Filter",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "W1110218",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "W11102/20",
+          "brand": "Mann-Filter",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "W11102/27",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "W11102/34",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "W11102/36",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "W11102/4",
+          "brand": "MANN",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "W1173",
+          "brand": "Mann-Filter",
+          "manufacturer": "MANN"
+        },
+        {
+          "code": "K50003",
+          "manufacturer": "PUROLATOR"
+        },
+        {
+          "code": "K50004",
+          "manufacturer": "PUROLATOR"
+        },
+        {
+          "code": "L56069",
+          "manufacturer": "PUROLATOR"
+        },
+        {
+          "code": "L59068",
+          "manufacturer": "PUROLATOR"
+        },
+        {
+          "code": "PER68",
+          "manufacturer": "PUROLATOR"
+        },
+        {
+          "code": "24526",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "24536",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "24556",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "51788",
+          "brand": "Wix",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "51791",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "51791E",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "51791EC",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "51791MP",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "51791XE",
+          "manufacturer": "WIX"
+        },
+        {
+          "code": "551791",
+          "brand": "Wix",
+          "manufacturer": "WIX"
+        }
+      ],
+      "equipment_applications": [
+        {
+          "type": "SPRAYER",
+          "engine": "CATERPILLAR 3126",
+          "equipment": "AG CHEM EQUIPMENT 1064"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 4W220",
+          "equipment": "ALLIS-CHALMERS 4W220"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 7045",
+          "equipment": "ALLIS-CHALMERS 7045"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "ALLIS-CHALMERS 670I",
+          "equipment": "ALLIS-CHALMERS 7060"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "ALLIS-CHALMERS 3750",
+          "equipment": "ALLIS-CHALMERS 7080"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "ALLIS-CHALMERS 670I",
+          "equipment": "ALLIS-CHALMERS 7580"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "ALLIS-CHALMERS 670T",
+          "equipment": "ALLIS-CHALMERS 8070"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "ALLIS-CHALMERS D3500",
+          "equipment": "ALLIS-CHALMERS N5"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "ALLIS-CHALMERS D3500",
+          "equipment": "ALLIS-CHALMERS N6"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- R6",
+          "equipment": "ALLIS-CHALMERS R6"
+        },
+        {
+          "type": "DRILLING EQUIPMENT",
+          "engine": "- ROC D7",
+          "equipment": "ATLAS COPCO ROC D7"
+        },
+        {
+          "type": "TRENCHER",
+          "engine": "CATERPILLAR 3304",
+          "equipment": "BARBER-GREENE TA30"
+        }
+      ],
+      "vehicle_applications": [],
+      "oem_total_all_brands": 265
+    }
+  ]
+}
