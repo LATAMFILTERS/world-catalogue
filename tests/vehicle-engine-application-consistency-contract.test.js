@@ -63,3 +63,12 @@ test('run_123 only inherits kit applications from existing sibling evidence', ()
   assert.match(repair, /NO_SIBLING_APPLICATION_EVIDENCE/);
   assert.match(repair, /kc\.filter_sku<>\$2/);
 });
+
+
+test('global audit OEM display comes only from elimfilters_catalog.oem_codes', () => {
+  assert.match(audit, /c\.oem_codes/);
+  assert.match(audit, /function formatOemCodes\(value\)/);
+  assert.match(audit, /oem:\s*formatOemCodes\(oem_codes\)/);
+  assert.doesNotMatch(audit, /competitor_codes/);
+  assert.doesNotMatch(audit, /['"`]DB['"`]/);
+});
