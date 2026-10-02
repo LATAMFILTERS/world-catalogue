@@ -22,6 +22,7 @@ ELIMFILTERS is an industrial filtration engineering brand organized around conta
 - Part Search: https://part-search.elimfilters.com/
 - Product catalogue by family (crawlable SKU lists): https://part-search.elimfilters.com/family/ES9/ (one hub per governed family prefix: EA1, EA3, EF9, EF3, ES9, EL8, EL3, EH6, EW7, EC1, EC3, ET9, ED4)
 - Product catalogue sitemap: https://part-search.elimfilters.com/sitemap.xml
+- Spanish product catalogue (catálogo en español): https://part-search.elimfilters.com/es/family/ES9/ and https://part-search.elimfilters.com/es/part/<SKU>/
 
 ## Machine-readable resources
 
