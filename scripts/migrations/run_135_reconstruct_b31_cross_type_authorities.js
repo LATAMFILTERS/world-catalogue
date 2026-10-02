@@ -83,10 +83,10 @@ async function main(){
                vehicle_applications,equipment_applications,
                oem_codes,competitor_codes,catalog_active,catalog_scope_reason,catalog_scope_verified_at)
              VALUES
-              ($1,$2,$3,$4,$5,
-               'DONALDSON',$2,$6,
-               'VERIFIED',now(),$7::jsonb,
-               'DONALDSON',$6,'VERIFIED',now(),$8::jsonb,
+              ($1::text,$2::text,$3::text,$4::text,$5::text,
+               'DONALDSON'::text,$2::text,$6::text,
+               'VERIFIED'::text,now(),$7::jsonb,
+               'DONALDSON'::text,$6::text,'VERIFIED'::text,now(),$8::jsonb,
                '[]'::jsonb,'[]'::jsonb,
                '[]'::jsonb,'[]'::jsonb,true,'B3.1_CANONICAL_IDENTITY_RECONSTRUCTION',now())
              RETURNING sku`,
