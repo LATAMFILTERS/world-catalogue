@@ -256,7 +256,8 @@ test('held authorities cannot contribute application inserts or readiness update
 });
 
 test('public competitor_codes FRAM claims participate in ownership validation', () => {
-  const publicOwnersSql = framReconcile.match(/const publicOwners=new Map\(\(await client\.query\(`([^`]*)`/);
+  assert.match(framReconcile, /const publicOwners=await queryPublicFramOwners\(client,auths\);/);
+  const publicOwnersSql = framReconcile.match(/async function queryPublicFramOwners\(client,codes\)\{\s*return new Map\(\(await client\.query\(`([^`]*)`/);
   assert.ok(publicOwnersSql, 'publicOwners query must exist');
   assert.match(publicOwnersSql[1], /brand_crossrefs->'FRAM'/);
   assert.match(publicOwnersSql[1], /jsonb_array_elements\(CASE WHEN jsonb_typeof\(c\.competitor_codes\)='array'/);
@@ -330,4 +331,96 @@ test('mutual alternatives are informational but unilateral links remain competin
   assert.match(audit, /competing_skus_mutual_alternatives/);
   assert.match(audit, /MUTUAL_FUNCTIONAL_ALTERNATIVES/);
   assert.match(audit, /competingConflicts\.push\(row\)/);
+});
+
+test('displacement prefers explicit engine/ccm and only falls back to one clear model_type value', () => {
+  const { displacement } = require('../scripts/hermes/apply-fram-ld-reconciliations.js');
+  assert.equal(displacement('L4-1.8L', null, '2.4'), '1.8');
+  assert.equal(displacement('2ZR-FE', '1798', '2.4'), '1.8');
+  assert.equal(displacement('LAX', null, '2.4'), '2.4');
+  assert.equal(displacement('2AZ-FE', null, '2.4 4WD (E14)'), '2.4');
+  assert.equal(displacement('1ND-TV', null, '1.4 D-4D → 12/08'), '1.4');
+  assert.equal(displacement('LAX', null, null), null);
+  assert.equal(displacement('G4FG', null, 'Hatchback'), null);
+  assert.equal(displacement('XYZ', null, '1.6 / 1.8'), null);
+});
+
+const vibe = appRow('EL36006', 'PONTIAC', 'VIBE', '10-09', 'L4-1.8L');
+test('model_type displacement fallback clears 1.8 vs 2.4 and 1.8 vs 1.4 diesel', () => {
+  const { classifyApplicationCollision } = require('../scripts/hermes/apply-fram-ld-reconciliations.js');
+  const p24 = { ...peer('EL36109', 'PONTIAC', 'VIBE', '01/09 → 12/10', 'LAX', 'oil'), model_type: '2.4' };
+  assert.equal(classifyApplicationCollision(vibe, 'oil', [p24]), null);
+  const corolla = appRow('EL36006', 'TOYOTA', 'COROLLA', '18-09', 'L4-1.8L');
+  const diesel = { ...peer('EL37120', 'TOYOTA', 'COROLLA', '04/07 → 07/14', '1ND-TV', 'oil'), model_type: '1.4 D-4D → 12/08' };
+  assert.equal(classifyApplicationCollision(corolla, 'oil', [diesel]), null);
+});
+
+test('bare engine code without usable model_type stays ambiguous; matching 1.8 still collides', () => {
+  const { classifyApplicationCollision } = require('../scripts/hermes/apply-fram-ld-reconciliations.js');
+  const opaque = { ...peer('EL36109', 'PONTIAC', 'VIBE', '01/09 → 12/10', 'LAX', 'oil'), model_type: null };
+  assert.equal(classifyApplicationCollision(vibe, 'oil', [opaque]), 'HOLD_AMBIGUOUS_APPLICATION');
+  const same = { ...peer('EL39999', 'PONTIAC', 'VIBE', '01/09 → 12/10', '2ZR-FE', 'oil'), model_type: '1.8 VVT-i' };
+  assert.equal(classifyApplicationCollision(vibe, 'oil', [same]), 'HOLD_COLLISION');
+});
+
+// Real pattern: CH10358 -> EL36006 (cartridge) and PH4967 -> EL34967 (spin-on), both FRAM-listed.
+const FRAM = 'FRAM_LD_MULTI_REGION';
+const iM = { ...appRow('EL36006', 'TOYOTA', 'COROLLA IM', '18-17', 'L4-1.8L'), source_sku: 'CH10358', source_origin: FRAM };
+const iMPeer = { ...peer('EL34967', 'TOYOTA', 'COROLLA IM', '18-17', 'L4-1.8L', 'oil'), source_sku: 'PH4967', source_origin: FRAM };
+const iMKey = 'TOYOTA|COROLLAIM|18-17|L418L';
+function multiFitFacts(overrides = {}) {
+  const base = {
+    'EL36006|CH10358': { ldOwners: ['EL36006'], publicClaimants: [], fitments: new Set([iMKey, 'TOYOTA|PRIUS|20-10|L418L']), alternatives: new Set(), blocked: false },
+    'EL34967|PH4967': { ldOwners: ['EL34967'], publicClaimants: ['EL34967'], fitments: new Set([iMKey, 'TOYOTA|PRIUSC|19-12|L415L']), alternatives: new Set(), blocked: false }
+  };
+  for (const [k, v] of Object.entries(overrides)) base[k] = { ...base[k], ...v };
+  return new Map(Object.entries(base));
+}
+
+test('FRAM multi-fit: CH10358/EL36006 vs PH4967/EL34967 is LEGITIMATE_MULTI_FIT and does not hold the authority', () => {
+  const { classifyApplicationCollision, partitionByApplicationCollision, isLegitimateFramMultiFit } = require('../scripts/hermes/apply-fram-ld-reconciliations.js');
+  const facts = multiFitFacts();
+  const mf = (r, o) => isLegitimateFramMultiFit(r, o, facts);
+  assert.equal(classifyApplicationCollision(iM, 'oil', [iMPeer]), 'HOLD_COLLISION', 'without the multi-fit hook it is still a collision');
+  assert.equal(classifyApplicationCollision(iM, 'oil', [iMPeer], mf), 'LEGITIMATE_MULTI_FIT');
+  const e = { authority: 'CH10358', sku: 'EL36006', family: 'LUBE' };
+  const { eligible, held } = partitionByApplicationCollision([e], new Map([[e, [iM]]]), new Map([['EL36006', 'oil']]), [iMPeer], mf);
+  assert.equal(held.length, 0);
+  assert.equal(eligible[0].legitimate_multi_fit_rows, 1);
+});
+
+test('FRAM multi-fit fails closed: MANN side, shared authority, claimant conflict, non-unique owner, missing evidence, blocked', () => {
+  const { classifyApplicationCollision, isLegitimateFramMultiFit } = require('../scripts/hermes/apply-fram-ld-reconciliations.js');
+  const run = (peerRow, facts) => classifyApplicationCollision(iM, 'oil', [peerRow], (r, o) => isLegitimateFramMultiFit(r, o, facts));
+  assert.equal(run({ ...iMPeer, source_origin: 'master' }, multiFitFacts()), 'HOLD_COLLISION', 'one side not FRAM-sourced');
+  assert.equal(run({ ...iMPeer, source_origin: 'master', source_sku: 'W68/3' }, multiFitFacts()), 'HOLD_COLLISION', 'one side MANN');
+  assert.equal(run({ ...iMPeer, source_sku: 'CH10358' }, multiFitFacts({ 'EL34967|CH10358': { ldOwners: ['EL36006'], publicClaimants: [], fitments: new Set([iMKey]), alternatives: new Set(), blocked: false } })), 'HOLD_COLLISION', 'shared FRAM authority');
+  assert.equal(run(iMPeer, multiFitFacts({ 'EL34967|PH4967': { publicClaimants: ['EL34967', 'EL36006'] } })), 'HOLD_COLLISION', 'claimant conflict');
+  assert.equal(run(iMPeer, multiFitFacts({ 'EL36006|CH10358': { ldOwners: ['EL36006', 'EL36013'] } })), 'HOLD_COLLISION', 'ownership not unique');
+  assert.equal(run(iMPeer, multiFitFacts({ 'EL34967|PH4967': { fitments: new Set(['TOYOTA|PRIUSC|19-12|L415L']) } })), 'HOLD_COLLISION', 'missing FRAM evidence for the peer fitment');
+  assert.equal(run(iMPeer, multiFitFacts({ 'EL34967|PH4967': { blocked: true } })), 'HOLD_COLLISION', 'quarantined / identity-conflicted');
+});
+
+test('FRAM multi-fit never applies to duplicate identities such as G7315 / G7315DP', () => {
+  const { classifyApplicationCollision, isLegitimateFramMultiFit } = require('../scripts/hermes/apply-fram-ld-reconciliations.js');
+  const same = new Set([iMKey, 'TOYOTA|PRIUS|20-10|L418L']);
+  const identical = multiFitFacts({ 'EL36006|CH10358': { fitments: same }, 'EL34967|PH4967': { fitments: new Set(same) } });
+  assert.equal(classifyApplicationCollision(iM, 'oil', [iMPeer], (r, o) => isLegitimateFramMultiFit(r, o, identical)), 'HOLD_COLLISION', 'identical FRAM fitment sets');
+  const alias = multiFitFacts({ 'EL36006|CH10358': { alternatives: new Set(['PH4967']) } });
+  assert.equal(classifyApplicationCollision(iM, 'oil', [iMPeer], (r, o) => isLegitimateFramMultiFit(r, o, alias)), 'HOLD_COLLISION', 'FRAM alternatives link the codes');
+});
+
+test('a multi-fit peer never masks a different colliding peer', () => {
+  const { classifyApplicationCollision, isLegitimateFramMultiFit } = require('../scripts/hermes/apply-fram-ld-reconciliations.js');
+  const facts = multiFitFacts();
+  const mann = { ...peer('EL39999', 'TOYOTA', 'COROLLA IM', '01/17 → 12/18', '2ZR-FE', 'oil'), model_type: '1.8', source_origin: 'master', source_sku: 'W999' };
+  assert.equal(classifyApplicationCollision(iM, 'oil', [iMPeer, mann], (r, o) => isLegitimateFramMultiFit(r, o, facts)), 'HOLD_COLLISION');
+});
+
+test('reconciliation main path wires the FRAM multi-fit guard from read-only facts', () => {
+  assert.match(framReconcile, /v\.source_sku,v\.source_origin,v\.make/);
+  assert.match(framReconcile, /loadFramMultiFitFacts\(client,multiFitPairs/);
+  assert.match(framReconcile, /\(r,o\)=>isLegitimateFramMultiFit\(r,o,multiFitFacts\)/);
+  const loader = framReconcile.slice(framReconcile.indexOf('async function loadFramMultiFitFacts'), framReconcile.indexOf('// Authority-level'));
+  assert.doesNotMatch(loader, /INSERT|UPDATE|DELETE/);
 });

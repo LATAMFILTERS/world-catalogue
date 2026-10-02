@@ -12,6 +12,7 @@ const APPLICATIONS_ONLY=EXISTING_APPLICATION_GAPS;
 const GAP_DIR=path.join(ROOT,'elimfilters-vault/91-private-evidence/fram-ld-gap-analysis');
 const MAP_FILE=process.env.FRAM_LD_RECONCILIATION_MAP||path.join(ROOT,'elimfilters-vault/91-private-evidence/fram-ld-reconciliation-map.json');
 const REPORT_DIR=path.join(ROOT,'elimfilters-vault/91-private-evidence/fram-ld-reconciliation-reports');
+const FRAM_PRODUCTS_DIR=path.join(ROOT,'elimfilters-vault/91-private-evidence/fram-usa-ld-catalog/fram-usa-ld-full-20260911/products');
 const TYPE={AIR:'air',CABIN:'cabin',FUEL:'fuel',LUBE:'oil'};
 const SEGMENT={AIR:'Air Filter',CABIN:'Cabin Filter',FUEL:'Fuel Filter',LUBE:'Oil Filter'};
 const norm=v=>String(v||'').toUpperCase().replace(/[^A-Z0-9]/g,'');
@@ -63,31 +64,86 @@ function yearRange(s){
   if(four.length)return [Math.min(...four),/(→|->|\+)\s*$/.test(s)&&four.length===1?new Date().getUTCFullYear():Math.max(...four)];
   return null;
 }
-const displacement=(engine,ccm)=>{const m=String(engine||'').match(/(\d{1,2}\.\d)\s*L?/i);if(m)return (+m[1]).toFixed(1);const c=parseInt(ccm,10);return c>=500&&c<=20000?(Math.round(c/100)/10).toFixed(1):null};
-const allEngines=e=>!e||/^ALL$/i.test(String(e).trim());
+// Displacement precedence: engine_code text (e.g. L4-1.8L) > ccm > model_type text as a fallback.
+// The model_type fallback only accepts exactly one clear d.d value in a plausible range; opaque
+// engine codes (LAX, 2AZ-FE) are never decoded.
+const displacementFromText=t=>{const v=[...new Set([...String(t||'').matchAll(/(?<![\d.])(\d\.\d)(?![\d.])/g)].map(m=>(+m[1]).toFixed(1)).filter(x=>+x>=0.6&&+x<=8.5))];return v.length===1?v[0]:null};
+const displacement=(engine,ccm,modelType)=>{const m=String(engine||'').match(/(\d{1,2}\.\d)\s*L?/i);if(m)return (+m[1]).toFixed(1);const c=parseInt(ccm,10);if(c>=500&&c<=20000)return (Math.round(c/100)/10).toFixed(1);return displacementFromText(modelType)};
+const allEngines=e=>/^ALL$/i.test(String(e||'').trim());
 // A proposed row collides when another SKU of the same filter type already owns the same
 // make/model with overlapping years and the same engine (exact key or same displacement).
 // ponytail: displacement is the engine proxy; anything not comparable (ALL engines, unparsed
 // years/engines) is AMBIGUOUS and held rather than guessed. Engine-code alias tables would refine it.
-function classifyApplicationCollision(row,targetType,peers){
-  const ry=yearRange(row.year),rd=displacement(row.engine_code);let ambiguous=false;
+// Optional multiFit(row,peer) exempts proven FRAM multi-fit peers (see isLegitimateFramMultiFit).
+function classifyApplicationCollision(row,targetType,peers,multiFit){
+  const ry=yearRange(row.year),rd=displacement(row.engine_code,null,row.model_type);let ambiguous=false,multi=false;
   for(const o of peers){
     if(o.sku===row.elimfilters_sku||o.filter_type!==targetType||norm(o.make)!==norm(row.make)||norm(o.model_family)!==norm(row.model_family))continue;
-    if(norm(o.model_type)===norm(row.model_type)&&String(o.year||'').trim()===String(row.year||'').trim()&&norm(o.engine_code)===norm(row.engine_code))return 'HOLD_COLLISION';
+    const exact=norm(o.model_type)===norm(row.model_type)&&String(o.year||'').trim()===String(row.year||'').trim()&&norm(o.engine_code)===norm(row.engine_code);
     const oy=yearRange(o.year);
-    if(ry&&oy&&(ry[0]>oy[1]||oy[0]>ry[1]))continue;
-    const od=displacement(o.engine_code,o.ccm);
-    if(ry&&oy&&!allEngines(row.engine_code)&&!allEngines(o.engine_code)&&rd&&od){if(rd===od)return 'HOLD_COLLISION';continue;}
+    if(!exact&&ry&&oy&&(ry[0]>oy[1]||oy[0]>ry[1]))continue;
+    const od=displacement(o.engine_code,o.ccm,o.model_type);
+    let verdict='HOLD_AMBIGUOUS_APPLICATION';
+    if(exact)verdict='HOLD_COLLISION';
+    else if(ry&&oy&&!allEngines(row.engine_code)&&!allEngines(o.engine_code)&&rd&&od)verdict=rd===od?'HOLD_COLLISION':null;
+    if(!verdict)continue;
+    if(multiFit&&multiFit(row,o)){multi=true;continue;}
+    if(verdict==='HOLD_COLLISION')return verdict;
     ambiguous=true;
   }
-  return ambiguous?'HOLD_AMBIGUOUS_APPLICATION':null;
+  return ambiguous?'HOLD_AMBIGUOUS_APPLICATION':multi?'LEGITIMATE_MULTI_FIT':null;
+}
+// Two FRAM-sourced applications for the same vehicle are a legitimate multi-fit only when every
+// condition holds; anything else falls back to normal collision logic (fail closed).
+const FRAM_ORIGIN='FRAM_LD_MULTI_REGION';
+const fitKey=(make,model,year,engine)=>[norm(make),norm(model),String(year||'').trim(),norm(engine)].join('|');
+function isLegitimateFramMultiFit(row,peer,facts){
+  if(row.source_origin!==FRAM_ORIGIN||peer.source_origin!==FRAM_ORIGIN)return false;
+  const a=norm(row.source_sku),b=norm(peer.source_sku);
+  if(!a||!b||a===b||row.elimfilters_sku===peer.sku)return false;
+  const fa=facts.get(`${row.elimfilters_sku}|${a}`),fb=facts.get(`${peer.sku}|${b}`);
+  if(!fa||!fb||fa.blocked||fb.blocked)return false;
+  const owns=(f,sku)=>f.ldOwners.length===1&&f.ldOwners[0]===sku&&f.publicClaimants.every(s=>s===sku);
+  if(!owns(fa,row.elimfilters_sku)||!owns(fb,peer.sku))return false;
+  if(!fa.fitments.has(fitKey(row.make,row.model_family,row.year,row.engine_code))||!fb.fitments.has(fitKey(peer.make,peer.model_family,peer.year,peer.engine_code)))return false;
+  // Same product under two FRAM codes (e.g. G7315 / G7315DP) is a duplicate identity, not a multi-fit.
+  if(fa.alternatives.has(b)||fb.alternatives.has(a))return false;
+  if(fa.fitments.size===fb.fitments.size&&[...fa.fitments].every(k=>fb.fitments.has(k)))return false;
+  return true;
+}
+async function queryPublicFramOwners(client,codes){
+  return new Map((await client.query(`SELECT part,array_agg(DISTINCT sku) AS owners FROM (
+      SELECT regexp_replace(upper(x),'[^A-Z0-9]','','g') AS part,c.sku FROM public.elimfilters_catalog c CROSS JOIN LATERAL jsonb_array_elements_text(CASE WHEN jsonb_typeof(c.brand_crossrefs->'FRAM')='array' THEN c.brand_crossrefs->'FRAM' ELSE '[]'::jsonb END) x
+      UNION ALL
+      SELECT regexp_replace(upper(e->>'code'),'[^A-Z0-9]','','g'),c.sku FROM public.elimfilters_catalog c CROSS JOIN LATERAL jsonb_array_elements(CASE WHEN jsonb_typeof(c.competitor_codes)='array' THEN c.competitor_codes ELSE '[]'::jsonb END) e WHERE jsonb_typeof(e)='object' AND upper(regexp_replace(coalesce(e->>'brand',e->>'manufacturer',''),'[^A-Za-z0-9]','','g'))='FRAM'
+    ) s WHERE part=ANY($1::text[]) GROUP BY 1`,[codes])).rows.map(r=>[r.part,r.owners]));
+}
+// Read-only facts for isLegitimateFramMultiFit, keyed `${sku}|${AUTHORITY}`.
+async function loadFramMultiFitFacts(client,pairs,fileFor){
+  const auths=[...new Set(pairs.map(p=>norm(p.authority)).filter(Boolean))],skus=[...new Set(pairs.map(p=>p.sku))];
+  const ld=new Map((await client.query(`SELECT ld_catalog.norm_part(competitor_part_number) AS part,array_agg(DISTINCT elimfilters_sku) AS owners FROM ld_catalog.ld_competitor_cross_references WHERE upper(regexp_replace(coalesce(competitor_brand,''),'[^A-Z0-9]','','g'))='FRAM' AND ld_catalog.norm_part(competitor_part_number)=ANY($1::text[]) GROUP BY 1`,[auths])).rows.map(r=>[r.part,r.owners]));
+  const pub=await queryPublicFramOwners(client,auths);
+  const quarantined=new Set([
+    ...(await client.query(`SELECT authority_normalized AS a FROM ld_catalog.ld_fram_final_quarantine WHERE authority_normalized=ANY($1::text[])`,[auths])).rows.map(r=>r.a),
+    ...(await client.query(`SELECT regexp_replace(upper(query_code),'[^A-Z0-9]','','g') AS a FROM public.bad_crossref_quarantine WHERE regexp_replace(upper(query_code),'[^A-Z0-9]','','g')=ANY($1::text[])`,[auths])).rows.map(r=>r.a)]);
+  const ident=(await client.query(`SELECT elimfilters_sku AS sku,regexp_replace(upper(canonical_part_number),'[^A-Z0-9]','','g') AS part FROM ld_catalog.ld_canonical_product_identity WHERE status='ACTIVE' AND upper(regexp_replace(coalesce(canonical_brand,''),'[^A-Z0-9]','','g'))='FRAM' AND (elimfilters_sku=ANY($1::text[]) OR regexp_replace(upper(canonical_part_number),'[^A-Z0-9]','','g')=ANY($2::text[]))`,[skus,auths])).rows;
+  const facts=new Map();
+  for(const {sku,authority} of pairs){const a=norm(authority),key=`${sku}|${a}`;if(!a||facts.has(key))continue;
+    let fitments=new Set(),alternatives=new Set(),evidence=false;const file=fileFor(a);
+    if(file&&fs.existsSync(file)){const p=JSON.parse(fs.readFileSync(file,'utf8')).public_catalog_proposal||{};evidence=true;
+      fitments=new Set((p.vehicle_application_candidates||[]).filter(x=>x.make&&x.model&&x.year).map(x=>fitKey(x.make,x.model,x.year,x.engine)));
+      alternatives=new Set((p.alternatives||[]).map(norm));}
+    const identityConflict=ident.some(i=>(i.part===a&&i.sku!==sku)||(i.sku===sku&&i.part!==a&&!alternatives.has(i.part)));
+    facts.set(key,{ldOwners:ld.get(a)||[],publicClaimants:pub.get(a)||[],fitments,alternatives,blocked:!evidence||quarantined.has(a)||identityConflict});}
+  return facts;
 }
 // Authority-level: one colliding or ambiguous proposed row holds the whole authority.
-function partitionByApplicationCollision(entries,rowsByEntry,targetTypes,peers){
+function partitionByApplicationCollision(entries,rowsByEntry,targetTypes,peers,multiFit){
   const eligible=[],held=[];
   for(const e of entries){
-    const hits={HOLD_COLLISION:[],HOLD_AMBIGUOUS_APPLICATION:[]};
-    for(const r of rowsByEntry.get(e)||[]){const c=classifyApplicationCollision(r,targetTypes.get(e.sku),peers);if(c)hits[c].push(r)}
+    const hits={HOLD_COLLISION:[],HOLD_AMBIGUOUS_APPLICATION:[],LEGITIMATE_MULTI_FIT:[]};
+    for(const r of rowsByEntry.get(e)||[]){const c=classifyApplicationCollision(r,targetTypes.get(e.sku),peers,multiFit);if(c)hits[c].push(r)}
+    e.legitimate_multi_fit_rows=hits.LEGITIMATE_MULTI_FIT.length;
     const cls=hits.HOLD_COLLISION.length?'HOLD_COLLISION':hits.HOLD_AMBIGUOUS_APPLICATION.length?'HOLD_AMBIGUOUS_APPLICATION':null;
     if(!cls){eligible.push(e);continue;}
     held.push({authority:e.authority,sku:e.sku,family:e.family,class:cls,reason:cls,proposed_rows:(rowsByEntry.get(e)||[]).length,collision_rows:hits.HOLD_COLLISION.length,ambiguous_rows:hits.HOLD_AMBIGUOUS_APPLICATION.length,examples:[...hits.HOLD_COLLISION,...hits.HOLD_AMBIGUOUS_APPLICATION].slice(0,3).map(r=>[r.make,r.model_family,r.year,r.engine_code].join(' '))});
@@ -122,11 +178,7 @@ async function main(){
       const auths=activeEntries.map(e=>norm(e.authority));
       const ldOwners=new Map((await client.query(`SELECT ld_catalog.norm_part(competitor_part_number) AS part,array_agg(DISTINCT elimfilters_sku) AS owners FROM ld_catalog.ld_competitor_cross_references WHERE upper(regexp_replace(coalesce(competitor_brand,''),'[^A-Z0-9]','','g'))='FRAM' AND ld_catalog.norm_part(competitor_part_number)=ANY($1::text[]) GROUP BY 1`,[auths])).rows.map(r=>[r.part,r.owners]));
       // Public FRAM claims come from brand_crossrefs.FRAM and competitor_codes entries branded FRAM.
-      const publicOwners=new Map((await client.query(`SELECT part,array_agg(DISTINCT sku) AS owners FROM (
-          SELECT regexp_replace(upper(x),'[^A-Z0-9]','','g') AS part,c.sku FROM public.elimfilters_catalog c CROSS JOIN LATERAL jsonb_array_elements_text(CASE WHEN jsonb_typeof(c.brand_crossrefs->'FRAM')='array' THEN c.brand_crossrefs->'FRAM' ELSE '[]'::jsonb END) x
-          UNION ALL
-          SELECT regexp_replace(upper(e->>'code'),'[^A-Z0-9]','','g'),c.sku FROM public.elimfilters_catalog c CROSS JOIN LATERAL jsonb_array_elements(CASE WHEN jsonb_typeof(c.competitor_codes)='array' THEN c.competitor_codes ELSE '[]'::jsonb END) e WHERE jsonb_typeof(e)='object' AND upper(regexp_replace(coalesce(e->>'brand',e->>'manufacturer',''),'[^A-Za-z0-9]','','g'))='FRAM'
-        ) s WHERE part=ANY($1::text[]) GROUP BY 1`,[auths])).rows.map(r=>[r.part,r.owners]));
+      const publicOwners=await queryPublicFramOwners(client,auths);
       const {eligible,held}=partitionByDirectOwnership(activeEntries,ldOwners,publicOwners);
       const hdOwners=new Set((await client.query(`SELECT sku FROM public.elimfilters_catalog WHERE sku=ANY($1::text[]) AND duty='HEAVY_DUTY'`,[[...new Set(held.flatMap(h=>h.conflicting_owners))]])).rows.map(r=>r.sku));
       for(const h of held)h.heavy_duty_conflicting_owners=h.conflicting_owners.filter(s=>hdOwners.has(s));
@@ -138,8 +190,11 @@ async function main(){
       const ownKeys=new Set((await client.query('SELECT elimfilters_sku,make,model_family,model_type,year FROM ld_catalog.ld_vehicle_applications WHERE elimfilters_sku=ANY($1::text[])',[[...new Set(eligible.map(e=>e.sku))]])).rows.map(applicationKey));
       for(const [e,rows] of rowsByEntry)rowsByEntry.set(e,rows.filter(r=>!ownKeys.has(applicationKey(r))));
       const makes=[...new Set([...rowsByEntry.values()].flat().map(r=>norm(r.make)))];
-      const peers=(await client.query(`SELECT v.elimfilters_sku AS sku,v.make,v.model_family,v.model_type,v.year,v.engine_code,v.ccm,lower(c.filter_type) AS filter_type FROM ld_catalog.ld_vehicle_applications v JOIN public.elimfilters_catalog c ON c.sku=v.elimfilters_sku WHERE regexp_replace(upper(coalesce(v.make,'')),'[^A-Z0-9]','','g')=ANY($1::text[])`,[makes])).rows;
-      const collision=partitionByApplicationCollision(eligible,rowsByEntry,new Map(targets.map(t=>[t.sku,String(t.filter_type||'').toLowerCase()])),peers);
+      const peers=(await client.query(`SELECT v.elimfilters_sku AS sku,v.source_sku,v.source_origin,v.make,v.model_family,v.model_type,v.year,v.engine_code,v.ccm,lower(c.filter_type) AS filter_type FROM ld_catalog.ld_vehicle_applications v JOIN public.elimfilters_catalog c ON c.sku=v.elimfilters_sku WHERE regexp_replace(upper(coalesce(v.make,'')),'[^A-Z0-9]','','g')=ANY($1::text[])`,[makes])).rows;
+      const multiFitPairs=[...eligible.map(e=>({sku:e.sku,authority:e.authority})),...peers.filter(p=>p.source_origin===FRAM_ORIGIN).map(p=>({sku:p.sku,authority:p.source_sku}))];
+      const multiFitFacts=await loadFramMultiFitFacts(client,multiFitPairs,a=>(byAuthority.get(a)||{}).file||path.join(FRAM_PRODUCTS_DIR,`${a}.json`));
+      const collision=partitionByApplicationCollision(eligible,rowsByEntry,new Map(targets.map(t=>[t.sku,String(t.filter_type||'').toLowerCase()])),peers,(r,o)=>isLegitimateFramMultiFit(r,o,multiFitFacts));
+      report.skipped.legitimate_multi_fit_rows=collision.eligible.reduce((s,e)=>s+(e.legitimate_multi_fit_rows||0),0);
       report.skipped.application_collision=collision.held;
       report.skipped.hold_collision_count=collision.held.filter(h=>h.class==='HOLD_COLLISION').length;
       report.skipped.hold_ambiguous_application_count=collision.held.filter(h=>h.class==='HOLD_AMBIGUOUS_APPLICATION').length;
@@ -230,4 +285,4 @@ async function main(){
   }
 }
 if(require.main===module)main().catch(e=>{if(!e.report)console.error(e.stack||e.message);process.exit(1)});
-module.exports={partitionByDirectOwnership,classifyApplicationCollision,partitionByApplicationCollision};
+module.exports={partitionByDirectOwnership,classifyApplicationCollision,partitionByApplicationCollision,isLegitimateFramMultiFit,loadFramMultiFitFacts,displacement,FRAM_ORIGIN};
