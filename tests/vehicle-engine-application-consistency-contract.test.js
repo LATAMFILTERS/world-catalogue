@@ -323,3 +323,11 @@ test('G7315 -> EF36006 is rejected because its rows duplicate EF37315 ownership'
   assert.equal(eligible.length, 0);
   assert.deepEqual([held[0].authority, held[0].sku, held[0].class, held[0].collision_rows], ['G7315', 'EF36006', 'HOLD_COLLISION', 2]);
 });
+
+test('mutual alternatives are informational but unilateral links remain competing conflicts', () => {
+  assert.match(audit, /function isMutualAlternativeGroup/);
+  assert.match(audit, /if \(!aAlts\.has\(b\) \|\| !bAlts\.has\(a\)\) return false/);
+  assert.match(audit, /competing_skus_mutual_alternatives/);
+  assert.match(audit, /MUTUAL_FUNCTIONAL_ALTERNATIVES/);
+  assert.match(audit, /competingConflicts\.push\(row\)/);
+});
