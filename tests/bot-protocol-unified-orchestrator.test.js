@@ -8,6 +8,7 @@ const {
   isReplacementElementRequest,
   extractApplicationEntities,
   requestedFilterSystem,
+  needsApplicationDisambiguation,
   shouldDeferReferenceToCanonical,
   maintenanceSystem,
   serviceRole,
@@ -131,6 +132,19 @@ test('keeps requested filter system separate from Mack MP8 equipment entities', 
     tokens: ['MACK', 'MP8']
   });
   assert.equal(requestedFilterSystem(message), 'oil');
+});
+
+test('engine-only explicit filter request asks for model/year instead of falling back', () => {
+  assert.equal(needsApplicationDisambiguation(
+    { brand: 'MACK', model: null, engine: 'MP8', year: null },
+    'oil',
+    []
+  ), true);
+  assert.equal(needsApplicationDisambiguation(
+    { brand: 'MACK', model: 'PINNACLE', engine: 'MP8', year: 2021 },
+    'oil',
+    []
+  ), false);
 });
 
 test('bare part-number phrasing can still use reference resolution', () => {
