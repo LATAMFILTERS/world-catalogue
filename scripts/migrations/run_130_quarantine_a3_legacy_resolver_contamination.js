@@ -42,7 +42,8 @@ async function main() {
       base AS (
         SELECT
           v.elimfilters_sku AS source_product_sku,
-          v.source_sku AS authority_code,
+          min(v.source_sku) AS authority_code,
+          ld_catalog.norm_part(v.source_sku) AS authority_norm,
           p.source_sku AS parent_source_sku,
           src.filter_type AS source_filter_type,
           src.duty AS source_duty,
@@ -79,7 +80,7 @@ async function main() {
             OR coalesce(src.filter_type,'')<>coalesce(tgt.filter_type,'')
           )
         GROUP BY
-          v.elimfilters_sku,v.source_sku,p.source_sku,
+          v.elimfilters_sku,ld_catalog.norm_part(v.source_sku),p.source_sku,
           src.filter_type,src.duty,
           r.target_sku,r.manufacturer,
           tgt.codigo_base,tgt.filter_type,tgt.duty
