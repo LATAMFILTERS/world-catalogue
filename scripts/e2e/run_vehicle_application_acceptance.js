@@ -275,7 +275,7 @@ async function main() {
       }
 
       if (c.id === 'freightliner-cl120-series60') {
-        assert.match(String(body.answer || ''), /EL82100/i, 'CL120 answer must include EL82100');
+        assert.match(String(body.answer || ''), /EL82100\s+x2/i, 'CL120 answer must include EL82100 x2');
         assert.match(String(body.answer || ''), /EC14226/i, 'CL120 answer must include EC14226 cabin filter');
       }
 
