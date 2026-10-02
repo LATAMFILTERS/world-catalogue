@@ -112,3 +112,12 @@ test('FRAM reconciliation can consume existing application gaps and inserts only
   assert.match(framReconcile, /applications_missing/);
   assert.match(framReconcile, /evidenceAppRows\.filter\(r=>!existingAppKeys\.has\(applicationKey\(r\)\)\)/);
 });
+
+
+test('FRAM reconciliation holds missing public targets instead of blocking valid targets', () => {
+  assert.match(framReconcile, /TARGET_NOT_IN_PUBLIC_CATALOG/);
+  assert.match(framReconcile, /missing_target_authorities/);
+  assert.match(framReconcile, /missing_target_skus/);
+  assert.match(framReconcile, /activeEntries/);
+  assert.doesNotMatch(framReconcile, /Missing targets \$\{targets\.length\}\/\$\{skus\.length\}/);
+});
