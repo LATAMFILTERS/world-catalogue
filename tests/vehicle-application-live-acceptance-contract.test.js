@@ -26,7 +26,7 @@ test('CL120 acceptance contract requires the complete validated seven-SKU set', 
   for (const sku of ['EL82100','ES90463','EF96916','EW74685','EA17682','EL82518','EC14226']) {
     assert.ok(e2e.includes(sku), 'missing CL120 SKU ' + sku);
   }
-  assert.ok(e2e.includes("forbiddenSkus: ['EA31300','EL32102']"));
+  assert.ok(e2e.includes("forbiddenSkus: ['EF90463','EA31300','EL32102']"));
 });
 
 test('RAV4 acceptance rejects the stale fuel SKU', () => {
