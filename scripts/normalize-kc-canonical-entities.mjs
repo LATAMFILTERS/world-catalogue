@@ -20,12 +20,19 @@ function walk(dir) {
 }
 walk(path.join(out, 'knowledge-center'));
 
+// The route may sit in plain HTML ("...") or inside the JSON-escaped Next.js payload
+// (self.__next_f.push([1,"...\"url\"..."])). A backslash can therefore never be part of the
+// slug, and the closing quote may be preceded by one: otherwise the trailing slash is appended
+// after the backslash (url\/") and the payload stops being valid JavaScript, so the page does
+// not hydrate.
+const SLUG = `[^/\\\\\\s"'<>?#]+`;
+const ENDS = `(?=([?#][^"'<>\\\\\\s]*)?\\\\?["'<>\\s])`;
 const absoluteRoute = new RegExp(
-  `(https://elimfilters\\.com/knowledge-center/${TARGET_FAMILIES}/[^/\\s"'<>?#]+)(?=([?#][^"'<>\\s]*)?["'<>\\s])`,
+  `(https://elimfilters\\.com/knowledge-center/${TARGET_FAMILIES}/${SLUG})${ENDS}`,
   'g',
 );
 const relativeRoute = new RegExp(
-  `(/knowledge-center/${TARGET_FAMILIES}/[^/\\s"'<>?#]+)(?=([?#][^"'<>\\s]*)?["'<>\\s])`,
+  `(/knowledge-center/${TARGET_FAMILIES}/${SLUG})${ENDS}`,
   'g',
 );
 
