@@ -71,7 +71,19 @@ async function main() {
         tgt.sku AS target_sku,
         tgt.filter_type AS target_filter_type,
         tgt.duty AS target_duty,
-        tgt.catalog_active AS target_active
+        tgt.catalog_active AS target_active,
+        EXISTS (
+          SELECT 1
+          FROM ld_catalog.ld_competitor_cross_references x
+          WHERE x.elimfilters_sku=r.target_sku
+            AND regexp_replace(
+                  upper(coalesce(x.competitor_part_number,'')),
+                  '[^A-Z0-9]','','g'
+                )=regexp_replace(
+                  upper(coalesce(v.source_sku,'')),
+                  '[^A-Z0-9]','','g'
+                )
+        ) AS direct_competitor_owner
       FROM ld_catalog.ld_vehicle_applications v
       JOIN ld_catalog.ld_product_catalog p
         ON p.elimfilters_sku=v.elimfilters_sku
@@ -134,7 +146,9 @@ async function main() {
       row.disposition = 'SAFE_CANDIDATE';
       if (!row.target_sku) row.disposition = 'TARGET_MISSING';
       else if (row.target_active !== true) row.disposition = 'TARGET_INACTIVE';
-      else if (String(row.source_filter_type || '') !== String(row.target_filter_type || '')) {
+      else if (row.direct_competitor_owner !== true) {
+        row.disposition = 'DIRECT_OWNERSHIP_MISSING';
+      } else if (String(row.source_filter_type || '') !== String(row.target_filter_type || '')) {
         row.disposition = 'FILTER_TYPE_MISMATCH';
       } else if (
         norm(row.source_duty) !== norm(row.target_duty)
