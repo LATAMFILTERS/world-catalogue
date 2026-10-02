@@ -22,7 +22,7 @@ const CASES = [
     yearLike: null,
     engineLike: 'DETROIT',
     expectedSkus: ['EL82100','ES90463','EF96916','EW74685','EA17682','EL82518','EC14226'],
-    forbiddenSkus: ['EA31300','EL32102']
+    forbiddenSkus: ['EF90463','EA31300','EL32102']
   },
   {
     id: 'toyota-rav4-2022',
