@@ -36,6 +36,7 @@ async function main() {
       expected_components: COMPONENTS.map(x => x[0]),
       legacy_rows_removed: 0,
       application_rows_upserted: 0,
+      parent_rows_inserted: 0,
       kit_rows_inserted: 0,
       kit_rows_removed: 0
     };
@@ -77,6 +78,15 @@ async function main() {
     report.kit_before = currentKit.rows.map(r => r.filter_sku);
 
     if (APPLY) {
+      for (const item of COMPONENTS) {
+        const sku = item[0], base = item[1];
+        const parent = await client.query(
+          'INSERT INTO ld_catalog.ld_product_catalog (elimfilters_sku,source_sku) VALUES ($1,$2) ON CONFLICT (elimfilters_sku) DO NOTHING',
+          [sku,base]
+        );
+        report.parent_rows_inserted += parent.rowCount;
+      }
+
       const removed = await client.query(
         "DELETE FROM ld_catalog.ld_vehicle_applications WHERE elimfilters_sku = ANY($1) AND upper(coalesce(make,''))=$2 AND upper(coalesce(model_family,''))=upper($3) AND upper(coalesce(model_type,''))=upper($4) AND upper(coalesce(engine_code,''))=upper($5)",
         [LEGACY_APPLICATIONS,MAKE,MODEL_FAMILY,MODEL_TYPE,ENGINE]
