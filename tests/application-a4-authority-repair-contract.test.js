@@ -83,3 +83,12 @@ test('run_131 stores WA9409 payload as heavy-duty equipment evidence',()=>{
   assert.match(migration,/equipment_applications:payload/);
   assert.match(migration,/MANN-FILTER \+ DONALDSON/);
 });
+
+test('run_131 merges WA9409 into existing governed EW72096 equipment evidence',()=>{
+  assert.match(migration,/function applicationKey/);
+  assert.match(migration,/existingTargetJson/);
+  assert.match(migration,/mergedTargetJson/);
+  assert.match(migration,/equipment JSON overlap/);
+  assert.match(migration,/prior_verified_authority:'DONALDSON_OFFICIAL_CATALOG'/);
+  assert.match(migration,/equipment_applications:\[\.\.\.existing,\.\.\.payload\]/);
+});
