@@ -46,7 +46,51 @@ function partitionByDirectOwnership(entries,ldOwners,publicOwners){
     const k=norm(e.authority),ld=[...(ldOwners.get(k)||[])];
     const conflicting=[...new Set([...ld,...(publicOwners.get(k)||[])])].filter(s=>s!==e.sku).sort();
     if(ld.length===1&&ld[0]===e.sku&&!conflicting.length)eligible.push(e);
-    else held.push({authority:e.authority,sku:e.sku,family:e.family,reason:'AUTHORITY_NOT_DIRECTLY_OWNED',conflicting_owners:conflicting});
+    else held.push({authority:e.authority,sku:e.sku,family:e.family,class:'HOLD_IDENTITY',reason:'AUTHORITY_NOT_DIRECTLY_OWNED',conflicting_owners:conflicting});
+  }
+  return {eligible,held};
+}
+const toAppRow=x=>({elimfilters_sku:x.sku,source_sku:x.source,make:x.make,model_family:x.model,model_type:x.engine||'',year:x.year,engine_code:x.engine||null,ccm:null,kw:null,hp:null,source_origin:x.origin});
+// Year ranges: FRAM "09-05" (2005-2009), "2013", MANN "01/05 → 12/10" or open "01/05 →".
+const yy=t=>{const n=+t;return t.length===4?n:(n>40?1900+n:2000+n)};
+function yearRange(s){
+  s=String(s||'').trim();let m;
+  if((m=s.match(/^(\d{2}|\d{4})\s*-\s*(\d{2}|\d{4})$/))){const a=yy(m[1]),b=yy(m[2]);return [Math.min(a,b),Math.max(a,b)]}
+  if((m=s.match(/^(\d{2}|\d{4})$/))){const a=yy(m[1]);return [a,a]}
+  const mm=[...s.matchAll(/\d{1,2}\/(\d{2,4})/g)].map(x=>yy(x[1]));
+  if(mm.length)return [Math.min(...mm),/(→|->)\s*$/.test(s)?new Date().getUTCFullYear():Math.max(...mm)];
+  const four=[...s.matchAll(/\b(?:19|20)\d{2}\b/g)].map(x=>+x[0]);
+  if(four.length)return [Math.min(...four),/(→|->|\+)\s*$/.test(s)&&four.length===1?new Date().getUTCFullYear():Math.max(...four)];
+  return null;
+}
+const displacement=(engine,ccm)=>{const m=String(engine||'').match(/(\d{1,2}\.\d)\s*L?/i);if(m)return (+m[1]).toFixed(1);const c=parseInt(ccm,10);return c>=500&&c<=20000?(Math.round(c/100)/10).toFixed(1):null};
+const allEngines=e=>!e||/^ALL$/i.test(String(e).trim());
+// A proposed row collides when another SKU of the same filter type already owns the same
+// make/model with overlapping years and the same engine (exact key or same displacement).
+// ponytail: displacement is the engine proxy; anything not comparable (ALL engines, unparsed
+// years/engines) is AMBIGUOUS and held rather than guessed. Engine-code alias tables would refine it.
+function classifyApplicationCollision(row,targetType,peers){
+  const ry=yearRange(row.year),rd=displacement(row.engine_code);let ambiguous=false;
+  for(const o of peers){
+    if(o.sku===row.elimfilters_sku||o.filter_type!==targetType||norm(o.make)!==norm(row.make)||norm(o.model_family)!==norm(row.model_family))continue;
+    if(norm(o.model_type)===norm(row.model_type)&&String(o.year||'').trim()===String(row.year||'').trim()&&norm(o.engine_code)===norm(row.engine_code))return 'HOLD_COLLISION';
+    const oy=yearRange(o.year);
+    if(ry&&oy&&(ry[0]>oy[1]||oy[0]>ry[1]))continue;
+    const od=displacement(o.engine_code,o.ccm);
+    if(ry&&oy&&!allEngines(row.engine_code)&&!allEngines(o.engine_code)&&rd&&od){if(rd===od)return 'HOLD_COLLISION';continue;}
+    ambiguous=true;
+  }
+  return ambiguous?'HOLD_AMBIGUOUS_APPLICATION':null;
+}
+// Authority-level: one colliding or ambiguous proposed row holds the whole authority.
+function partitionByApplicationCollision(entries,rowsByEntry,targetTypes,peers){
+  const eligible=[],held=[];
+  for(const e of entries){
+    const hits={HOLD_COLLISION:[],HOLD_AMBIGUOUS_APPLICATION:[]};
+    for(const r of rowsByEntry.get(e)||[]){const c=classifyApplicationCollision(r,targetTypes.get(e.sku),peers);if(c)hits[c].push(r)}
+    const cls=hits.HOLD_COLLISION.length?'HOLD_COLLISION':hits.HOLD_AMBIGUOUS_APPLICATION.length?'HOLD_AMBIGUOUS_APPLICATION':null;
+    if(!cls){eligible.push(e);continue;}
+    held.push({authority:e.authority,sku:e.sku,family:e.family,class:cls,reason:cls,proposed_rows:(rowsByEntry.get(e)||[]).length,collision_rows:hits.HOLD_COLLISION.length,ambiguous_rows:hits.HOLD_AMBIGUOUS_APPLICATION.length,examples:[...hits.HOLD_COLLISION,...hits.HOLD_AMBIGUOUS_APPLICATION].slice(0,3).map(r=>[r.make,r.model_family,r.year,r.engine_code].join(' '))});
   }
   return {eligible,held};
 }
@@ -77,11 +121,29 @@ async function main(){
     if(APPLICATIONS_ONLY){
       const auths=activeEntries.map(e=>norm(e.authority));
       const ldOwners=new Map((await client.query(`SELECT ld_catalog.norm_part(competitor_part_number) AS part,array_agg(DISTINCT elimfilters_sku) AS owners FROM ld_catalog.ld_competitor_cross_references WHERE upper(regexp_replace(coalesce(competitor_brand,''),'[^A-Z0-9]','','g'))='FRAM' AND ld_catalog.norm_part(competitor_part_number)=ANY($1::text[]) GROUP BY 1`,[auths])).rows.map(r=>[r.part,r.owners]));
-      const publicOwners=new Map((await client.query(`SELECT regexp_replace(upper(x),'[^A-Z0-9]','','g') AS part,array_agg(DISTINCT c.sku) AS owners FROM public.elimfilters_catalog c CROSS JOIN LATERAL jsonb_array_elements_text(CASE WHEN jsonb_typeof(c.brand_crossrefs->'FRAM')='array' THEN c.brand_crossrefs->'FRAM' ELSE '[]'::jsonb END) x WHERE regexp_replace(upper(x),'[^A-Z0-9]','','g')=ANY($1::text[]) GROUP BY 1`,[auths])).rows.map(r=>[r.part,r.owners]));
+      // Public FRAM claims come from brand_crossrefs.FRAM and competitor_codes entries branded FRAM.
+      const publicOwners=new Map((await client.query(`SELECT part,array_agg(DISTINCT sku) AS owners FROM (
+          SELECT regexp_replace(upper(x),'[^A-Z0-9]','','g') AS part,c.sku FROM public.elimfilters_catalog c CROSS JOIN LATERAL jsonb_array_elements_text(CASE WHEN jsonb_typeof(c.brand_crossrefs->'FRAM')='array' THEN c.brand_crossrefs->'FRAM' ELSE '[]'::jsonb END) x
+          UNION ALL
+          SELECT regexp_replace(upper(e->>'code'),'[^A-Z0-9]','','g'),c.sku FROM public.elimfilters_catalog c CROSS JOIN LATERAL jsonb_array_elements(CASE WHEN jsonb_typeof(c.competitor_codes)='array' THEN c.competitor_codes ELSE '[]'::jsonb END) e WHERE jsonb_typeof(e)='object' AND upper(regexp_replace(coalesce(e->>'brand',e->>'manufacturer',''),'[^A-Za-z0-9]','','g'))='FRAM'
+        ) s WHERE part=ANY($1::text[]) GROUP BY 1`,[auths])).rows.map(r=>[r.part,r.owners]));
       const {eligible,held}=partitionByDirectOwnership(activeEntries,ldOwners,publicOwners);
+      const hdOwners=new Set((await client.query(`SELECT sku FROM public.elimfilters_catalog WHERE sku=ANY($1::text[]) AND duty='HEAVY_DUTY'`,[[...new Set(held.flatMap(h=>h.conflicting_owners))]])).rows.map(r=>r.sku));
+      for(const h of held)h.heavy_duty_conflicting_owners=h.conflicting_owners.filter(s=>hdOwners.has(s));
       report.skipped.authority_not_directly_owned=held;
       report.skipped.authority_not_directly_owned_count=held.length;
-      activeEntries=eligible;
+      report.audit.heavy_duty_conflicts=held.filter(h=>h.heavy_duty_conflicting_owners.length).length;
+      // Authority-level collision guard: evaluate every proposed row before any insert.
+      const rowsByEntry=new Map(eligible.map(e=>[e,buildPlan([e],byAuthority).apps.filter(x=>x.make&&x.model&&x.year).map(toAppRow)]));
+      const ownKeys=new Set((await client.query('SELECT elimfilters_sku,make,model_family,model_type,year FROM ld_catalog.ld_vehicle_applications WHERE elimfilters_sku=ANY($1::text[])',[[...new Set(eligible.map(e=>e.sku))]])).rows.map(applicationKey));
+      for(const [e,rows] of rowsByEntry)rowsByEntry.set(e,rows.filter(r=>!ownKeys.has(applicationKey(r))));
+      const makes=[...new Set([...rowsByEntry.values()].flat().map(r=>norm(r.make)))];
+      const peers=(await client.query(`SELECT v.elimfilters_sku AS sku,v.make,v.model_family,v.model_type,v.year,v.engine_code,v.ccm,lower(c.filter_type) AS filter_type FROM ld_catalog.ld_vehicle_applications v JOIN public.elimfilters_catalog c ON c.sku=v.elimfilters_sku WHERE regexp_replace(upper(coalesce(v.make,'')),'[^A-Z0-9]','','g')=ANY($1::text[])`,[makes])).rows;
+      const collision=partitionByApplicationCollision(eligible,rowsByEntry,new Map(targets.map(t=>[t.sku,String(t.filter_type||'').toLowerCase()])),peers);
+      report.skipped.application_collision=collision.held;
+      report.skipped.hold_collision_count=collision.held.filter(h=>h.class==='HOLD_COLLISION').length;
+      report.skipped.hold_ambiguous_application_count=collision.held.filter(h=>h.class==='HOLD_AMBIGUOUS_APPLICATION').length;
+      activeEntries=collision.eligible;
     }
     report.skipped.missing_targets=missingTargetEntries.map(e=>({authority:e.authority,sku:e.sku,family:e.family,reason:'TARGET_NOT_IN_PUBLIC_CATALOG'}));
     report.skipped.missing_target_authorities=missingTargetEntries.length;
@@ -122,7 +184,7 @@ async function main(){
     }
     report.skipped.competitor_conflicts=compSkipped;
     const oemRows=plan.oem.filter(x=>x.brand&&x.part).map(x=>({elimfilters_sku:x.sku,source_sku:x.source,oem_brand:x.brand,oem_part_number:x.part}));
-    const evidenceAppRows=plan.apps.filter(x=>x.make&&x.model&&x.year).map(x=>({elimfilters_sku:x.sku,source_sku:x.source,make:x.make,model_family:x.model,model_type:x.engine||'',year:x.year,engine_code:x.engine||null,ccm:null,kw:null,hp:null,source_origin:x.origin}));
+    const evidenceAppRows=plan.apps.filter(x=>x.make&&x.model&&x.year).map(toAppRow);
     const existingApps=(await client.query(
       'SELECT elimfilters_sku,make,model_family,model_type,year FROM ld_catalog.ld_vehicle_applications WHERE elimfilters_sku=ANY($1::text[])',
       [skus]
@@ -168,4 +230,4 @@ async function main(){
   }
 }
 if(require.main===module)main().catch(e=>{if(!e.report)console.error(e.stack||e.message);process.exit(1)});
-module.exports={partitionByDirectOwnership};
+module.exports={partitionByDirectOwnership,classifyApplicationCollision,partitionByApplicationCollision};

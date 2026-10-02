@@ -192,10 +192,81 @@ test('held authorities cannot contribute application inserts or readiness update
     assert.ok(i >= 0, `missing: ${s}`);
     return i;
   };
-  const filtered = at('activeEntries=eligible;');
+  const filtered = at('activeEntries=collision.eligible;');
+  assert.ok(at('partitionByDirectOwnership(activeEntries,ldOwners,publicOwners)') < at('partitionByApplicationCollision(eligible,rowsByEntry'));
+  assert.ok(at('partitionByApplicationCollision(eligible,rowsByEntry') < filtered);
   assert.ok(filtered < at('const skus=[...new Set(activeEntries.map(e=>e.sku))];'));
   assert.ok(filtered < at('const plan=buildPlan(activeEntries,byAuthority);'));
   assert.ok(filtered < at('report.inserted.applications=await insertRows'));
   assert.ok(filtered < at('UPDATE ld_catalog.ld_production_readiness'));
   assert.match(framReconcile, /WHERE r\.elimfilters_sku=ANY\(\$1::text\[\]\) AND r\.has_applications IS NOT TRUE[^`]*`,\[skus\]\)/);
+});
+
+test('public competitor_codes FRAM claims participate in ownership validation', () => {
+  const publicOwnersSql = framReconcile.match(/const publicOwners=new Map\(\(await client\.query\(`([^`]*)`/);
+  assert.ok(publicOwnersSql, 'publicOwners query must exist');
+  assert.match(publicOwnersSql[1], /brand_crossrefs->'FRAM'/);
+  assert.match(publicOwnersSql[1], /jsonb_array_elements\(CASE WHEN jsonb_typeof\(c\.competitor_codes\)='array'/);
+  assert.match(publicOwnersSql[1], /coalesce\(e->>'brand',e->>'manufacturer',''\)[^=]*\)='FRAM'/);
+  const { partitionByDirectOwnership } = require('../scripts/hermes/apply-fram-ld-reconciliations.js');
+  // CA3916: LD owner is the target, but HD EA16219 claims it in public competitor_codes.
+  const { eligible, held } = partitionByDirectOwnership(
+    [{ authority: 'CA3916', sku: 'EA30551', family: 'AIR' }],
+    new Map([['CA3916', ['EA30551']]]),
+    new Map([['CA3916', ['EA16219']]])
+  );
+  assert.equal(eligible.length, 0);
+  assert.deepEqual([held[0].class, held[0].reason, held[0].conflicting_owners], ['HOLD_IDENTITY', 'AUTHORITY_NOT_DIRECTLY_OWNED', ['EA16219']]);
+});
+
+const appRow = (sku, make, model, year, engine) => ({
+  elimfilters_sku: sku, source_sku: 'X', make, model_family: model, model_type: engine || '', year, engine_code: engine || null
+});
+const peer = (sku, make, model, year, engine, filter_type, ccm = null) => ({
+  sku, make, model_family: model, model_type: engine || '', year, engine_code: engine, ccm, filter_type
+});
+
+test('one collision row holds the whole authority', () => {
+  const { partitionByApplicationCollision } = require('../scripts/hermes/apply-fram-ld-reconciliations.js');
+  const e = { authority: 'CA303', sku: 'EA32675', family: 'AIR' };
+  const rows = [
+    appRow('EA32675', 'FORD', 'MUSTANG', '86-79', 'L4-2.3L'),   // collides with EA33785 (1979-1986, 2.3L)
+    appRow('EA32675', 'FORD', 'RANGER', '92-89', 'L4-2.3L'),    // safe
+    appRow('EA32675', 'FORD', 'ESCORT', '90-85', 'L4-1.9L')     // safe
+  ];
+  const peers = [
+    peer('EA33785', 'FORD', 'MUSTANG', '01/82 → 12/86', '2.3 i', 'air', '2300'),
+    peer('EA33785', 'FORD', 'RANGER', '01/93 → 12/97', '2.3 i', 'air', '2300'),   // no year overlap
+    peer('EL30001', 'FORD', 'ESCORT', '01/85 → 12/90', '1.9', 'oil', '1900')      // other filter type
+  ];
+  const { eligible, held } = partitionByApplicationCollision([e], new Map([[e, rows]]), new Map([['EA32675', 'air']]), peers);
+  assert.equal(eligible.length, 0);
+  assert.equal(held[0].class, 'HOLD_COLLISION');
+  assert.equal(held[0].proposed_rows, 3);
+  assert.equal(held[0].collision_rows, 1);
+});
+
+test('one ambiguous row holds the whole authority', () => {
+  const { partitionByApplicationCollision } = require('../scripts/hermes/apply-fram-ld-reconciliations.js');
+  const e = { authority: 'CA10086', sku: 'EA32631', family: 'AIR' };
+  const safe = { authority: 'CA3717', sku: 'EA32690', family: 'AIR' };
+  const rows = new Map([
+    [e, [appRow('EA32631', 'HYUNDAI', 'TUCSON', '09-05', 'ALL'), appRow('EA32631', 'KIA', 'RIO', '11-06', 'L4-1.6L')]],
+    [safe, [appRow('EA32690', 'KIA', 'SOUL', '13-10', 'L4-2.0L')]]
+  ]);
+  const peers = [peer('EA34004', 'HYUNDAI', 'TUCSON', '01/04 → 12/09', '2.0 CRDi', 'air')];
+  const types = new Map([['EA32631', 'air'], ['EA32690', 'air']]);
+  const { eligible, held } = partitionByApplicationCollision([e, safe], rows, types, peers);
+  assert.deepEqual(eligible.map(x => x.authority), ['CA3717']);
+  assert.deepEqual([held[0].authority, held[0].class, held[0].ambiguous_rows], ['CA10086', 'HOLD_AMBIGUOUS_APPLICATION', 1]);
+});
+
+test('G7315 -> EF36006 is rejected because its rows duplicate EF37315 ownership', () => {
+  const { partitionByApplicationCollision } = require('../scripts/hermes/apply-fram-ld-reconciliations.js');
+  const e = { authority: 'G7315', sku: 'EF36006', family: 'FUEL' };
+  const rows = [appRow('EF36006', 'CHEVROLET', 'SILVERADO 1500', '13-07', 'V8-5.3L'), appRow('EF36006', 'GMC', 'SIERRA 1500', '13-07', 'V8-5.3L')];
+  const peers = rows.map(r => peer('EF37315', r.make, r.model_family, r.year, r.engine_code, 'fuel'));
+  const { eligible, held } = partitionByApplicationCollision([e], new Map([[e, rows]]), new Map([['EF36006', 'fuel']]), peers);
+  assert.equal(eligible.length, 0);
+  assert.deepEqual([held[0].authority, held[0].sku, held[0].class, held[0].collision_rows], ['G7315', 'EF36006', 'HOLD_COLLISION', 2]);
 });
