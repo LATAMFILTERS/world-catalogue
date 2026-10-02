@@ -33,7 +33,8 @@
       "hold": "fuel/water separator recorded as SYNTAPORE; scope must be HYDROCORE/TURBOCORE; keep blocked until corrected"
     },
     {
-      "sku": "EA13648"
+      "sku": "EA13648",
+      "family": "primary-air"
     },
     {
       "sku": "EA30719"
@@ -42,20 +43,26 @@
       "sku": "EF30006"
     },
     {
-      "sku": "EF30012"
+      "sku": "EF30012",
+      "family": "primary-fuel"
     },
     {
-      "sku": "EL30001"
+      "sku": "EL30001",
+      "family": "oil-filters"
     },
     {
-      "sku": "EL30002"
+      "sku": "EL30002",
+      "family": "oil-filters"
     },
     {
-      "sku": "EH60222"
+      "sku": "EH60222",
+      "family": "hydraulic-filters"
     },
     {
-      "sku": "EH60223"
+      "sku": "EH60223",
+      "family": "hydraulic-filters"
     }
   ],
-  "policy": "VERIFIED-only: a SKU is published only if canonical_source_status = VERIFIED, the gates in lib/product-page-data.js pass and it has no 'hold'."
+  "policy": "VERIFIED-only: a SKU is published only if canonical_source_status = VERIFIED, the gates in lib/product-page-data.js pass and it has no 'hold'.",
+  "skus_note": "Families for EA13648, EF30012, EH60222/3, EL30001/2 come from Victor's catalogue-data regeneration (249d6b4). EA30719 (no publishable equivalence) and EF30006 (fewer than 4 verified spec fields) were excluded by the gates in that run."
 }

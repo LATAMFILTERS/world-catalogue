@@ -4,28 +4,28 @@
   "showCrossReferences": true,
   "showPerformanceSpecs": false
  },
- "policy": "VERIFIED-only",
  "products": [],
+ "policy": "VERIFIED-only",
  "blocked": [
   {
-   "sku": "EH60950",
-   "reason": "third-party media mark (Synteq XP) in catalogue record; keep blocked until corrected",
-   "kind": "HOLD"
-  },
-  {
-   "sku": "EL83191",
-   "reason": "canonical_source_status is empty, publication requires VERIFIED",
+   "sku": "EA13648",
+   "reason": "canonical_source_status is UNVERIFIED, publication requires VERIFIED",
    "kind": "STOP_REVIEW"
   },
   {
-   "sku": "EL84004",
-   "reason": "canonical_source_status is empty, publication requires VERIFIED",
+   "sku": "EA30719",
+   "reason": "no publishable equivalence (catalogue-data run 249d6b4)",
    "kind": "STOP_REVIEW"
   },
   {
-   "sku": "EF95112",
-   "reason": "specs sourced from Fleetguard FF5112; not published until verified against ELIMFILTERS own data (policy: Victor)",
-   "kind": "HOLD"
+   "sku": "EF30006",
+   "reason": "fewer than 4 verified spec fields (catalogue-data run 249d6b4)",
+   "kind": "STOP_REVIEW"
+  },
+  {
+   "sku": "EF30012",
+   "reason": "canonical_source_status is UNVERIFIED, publication requires VERIFIED",
+   "kind": "STOP_REVIEW"
   },
   {
    "sku": "EF90668",
@@ -38,43 +38,43 @@
    "kind": "HOLD"
   },
   {
-   "sku": "EA13648",
-   "reason": "not found in repo-seed-rows",
-   "kind": "STOP_REVIEW"
-  },
-  {
-   "sku": "EA30719",
-   "reason": "not found in repo-seed-rows",
-   "kind": "STOP_REVIEW"
-  },
-  {
-   "sku": "EF30006",
-   "reason": "not found in repo-seed-rows",
-   "kind": "STOP_REVIEW"
-  },
-  {
-   "sku": "EF30012",
-   "reason": "not found in repo-seed-rows",
-   "kind": "STOP_REVIEW"
-  },
-  {
-   "sku": "EL30001",
-   "reason": "not found in repo-seed-rows",
-   "kind": "STOP_REVIEW"
-  },
-  {
-   "sku": "EL30002",
-   "reason": "not found in repo-seed-rows",
-   "kind": "STOP_REVIEW"
+   "sku": "EF95112",
+   "reason": "specs sourced from Fleetguard FF5112; not published until verified against ELIMFILTERS own data (policy: Victor)",
+   "kind": "HOLD"
   },
   {
    "sku": "EH60222",
-   "reason": "not found in repo-seed-rows",
+   "reason": "canonical_source_status is UNVERIFIED, publication requires VERIFIED",
    "kind": "STOP_REVIEW"
   },
   {
    "sku": "EH60223",
-   "reason": "not found in repo-seed-rows",
+   "reason": "canonical_source_status is UNVERIFIED, publication requires VERIFIED",
+   "kind": "STOP_REVIEW"
+  },
+  {
+   "sku": "EH60950",
+   "reason": "third-party media mark (Synteq XP) in catalogue record; keep blocked until corrected",
+   "kind": "HOLD"
+  },
+  {
+   "sku": "EL30001",
+   "reason": "canonical_source_status is UNVERIFIED, publication requires VERIFIED",
+   "kind": "STOP_REVIEW"
+  },
+  {
+   "sku": "EL30002",
+   "reason": "canonical_source_status is UNVERIFIED, publication requires VERIFIED",
+   "kind": "STOP_REVIEW"
+  },
+  {
+   "sku": "EL83191",
+   "reason": "canonical_source_status is UNVERIFIED, publication requires VERIFIED",
+   "kind": "STOP_REVIEW"
+  },
+  {
+   "sku": "EL84004",
+   "reason": "canonical_source_status is UNVERIFIED, publication requires VERIFIED",
    "kind": "STOP_REVIEW"
   }
  ]
