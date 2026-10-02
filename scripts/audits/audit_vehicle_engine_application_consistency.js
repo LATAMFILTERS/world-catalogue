@@ -1,6 +1,7 @@
 'use strict';
 
 const { Client } = require('pg');
+const SUMMARY_ONLY = process.argv.includes('--summary-only');
 
 function norm(value) {
   return String(value || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
@@ -290,7 +291,15 @@ async function main() {
     report.summary.total_flagged_rows = Object.values(report.summary)
       .reduce((sum, value) => sum + Number(value || 0), 0);
 
-    console.log(JSON.stringify(report, null, 2));
+    const output = SUMMARY_ONLY
+      ? {
+          generated_at: report.generated_at,
+          readonly: report.readonly,
+          summary: report.summary,
+          informational_summary: report.informational_summary
+        }
+      : report;
+    console.log(JSON.stringify(output, null, 2));
   } finally {
     await client.end();
   }
