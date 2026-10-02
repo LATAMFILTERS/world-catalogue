@@ -45,20 +45,32 @@ async function main(){
     : JSON.parse(fs.readFileSync(MAP_FILE,'utf8'));
   if(!Array.isArray(entries)||!entries.length) throw new Error(EXISTING_APPLICATION_GAPS?'No existing application gaps in latest report':'Empty reconciliation map');
   const byAuthority=new Map(gap.results.map(r=>[norm(r.authority),r]));
-  const plan=buildPlan(entries,byAuthority);
-  const skus=[...new Set(entries.map(e=>e.sku))];
+  const requestedSkus=[...new Set(entries.map(e=>e.sku))];
   const client=new Client({connectionString:url,ssl:{rejectUnauthorized:false}});
   await client.connect();
-  const report={mode:EXECUTE?'execute':'dry-run',source_mode:EXISTING_APPLICATION_GAPS?'existing_application_gaps':'explicit_map',gap_report:gapFile,map:EXISTING_APPLICATION_GAPS?null:MAP_FILE,authorities:entries.length,targets:skus.length,planned:{competitor:plan.comp.length,oem:plan.oem.length,applications:plan.apps.length,specifications:plan.specs.length},inserted:{},skipped:{},audit:{}};
+  const report={mode:EXECUTE?'execute':'dry-run',source_mode:EXISTING_APPLICATION_GAPS?'existing_application_gaps':'explicit_map',gap_report:gapFile,map:EXISTING_APPLICATION_GAPS?null:MAP_FILE,authorities:entries.length,targets:requestedSkus.length,planned:{},inserted:{},skipped:{},audit:{}};
   try{
     await client.query('BEGIN ISOLATION LEVEL SERIALIZABLE');
     const targets=(await client.query(
       'SELECT sku,duty,filter_type FROM public.elimfilters_catalog WHERE sku=ANY($1::text[])',
-      [skus]
+      [requestedSkus]
     )).rows;
-    if(targets.length!==skus.length) throw new Error(`Missing targets ${targets.length}/${skus.length}`);
     const tm=new Map(targets.map(x=>[x.sku,x]));
-    for(const e of entries){
+    const missingTargetEntries=entries.filter(e=>!tm.has(e.sku));
+    const activeEntries=entries.filter(e=>tm.has(e.sku));
+    report.skipped.missing_targets=missingTargetEntries.map(e=>({authority:e.authority,sku:e.sku,family:e.family,reason:'TARGET_NOT_IN_PUBLIC_CATALOG'}));
+    report.skipped.missing_target_authorities=missingTargetEntries.length;
+    report.skipped.missing_target_skus=[...new Set(missingTargetEntries.map(e=>e.sku))];
+    if(!activeEntries.length) throw new Error('No reconcilable targets remain after missing-target HOLD');
+    const skus=[...new Set(activeEntries.map(e=>e.sku))];
+    const plan=buildPlan(activeEntries,byAuthority);
+    report.active_authorities=activeEntries.length;
+    report.active_targets=skus.length;
+    report.planned.competitor=plan.comp.length;
+    report.planned.oem=plan.oem.length;
+    report.planned.applications=plan.apps.length;
+    report.planned.specifications=plan.specs.length;
+    for(const e of activeEntries){
       const t=tm.get(e.sku);
       if(t.duty!=='LIGHT_DUTY'||t.filter_type!==TYPE[e.family]) throw new Error(`Target guard failed ${e.authority}->${e.sku}`);
     }
@@ -67,7 +79,7 @@ async function main(){
     )).rows;
     const owner=new Map();
     for(const x of existing){const k=norm(x.competitor_brand)+'|'+norm(x.competitor_part_number);if(!owner.has(k))owner.set(k,new Set());owner.get(k).add(x.elimfilters_sku)}
-    for(const e of entries){
+    for(const e of activeEntries){
       const owners=owner.get('FRAM|'+norm(e.authority))||new Set();
       const bad=[...owners].filter(s=>s!==e.sku);
       if(bad.length) throw new Error(`FRAM_AUTHORITY_CONFLICT ${e.authority} -> ${bad.join(',')}`);
@@ -102,13 +114,13 @@ async function main(){
     report.inserted.specifications=await insertRows(client,'ld_catalog.ld_product_specifications',['elimfilters_sku','source_sku','spec_key','spec_value','spec_unit'],'ON CONFLICT (elimfilters_sku,spec_key) DO NOTHING',specRows);
     const ready=await client.query(`UPDATE ld_catalog.ld_production_readiness r SET has_oem=EXISTS(SELECT 1 FROM ld_catalog.ld_oem_cross_references o WHERE o.elimfilters_sku=r.elimfilters_sku),has_competitor=EXISTS(SELECT 1 FROM ld_catalog.ld_competitor_cross_references x WHERE x.elimfilters_sku=r.elimfilters_sku),has_applications=EXISTS(SELECT 1 FROM ld_catalog.ld_vehicle_applications a WHERE a.elimfilters_sku=r.elimfilters_sku),has_specifications=EXISTS(SELECT 1 FROM ld_catalog.ld_product_specifications s WHERE s.elimfilters_sku=r.elimfilters_sku),updated_at=now() WHERE r.elimfilters_sku=ANY($1::text[])`,[skus]);
     report.inserted.readiness_updated=ready.rowCount;
-    const direct=(await client.query(`SELECT competitor_part_number,elimfilters_sku FROM ld_catalog.ld_competitor_cross_references WHERE upper(regexp_replace(coalesce(competitor_brand,''),'[^A-Z0-9]','','g'))='FRAM' AND ld_catalog.norm_part(competitor_part_number)=ANY($1::text[])`,[entries.map(e=>norm(e.authority))])).rows;
+    const direct=(await client.query(`SELECT competitor_part_number,elimfilters_sku FROM ld_catalog.ld_competitor_cross_references WHERE upper(regexp_replace(coalesce(competitor_brand,''),'[^A-Z0-9]','','g'))='FRAM' AND ld_catalog.norm_part(competitor_part_number)=ANY($1::text[])`,[activeEntries.map(e=>norm(e.authority))])).rows;
     const dm=new Map();for(const x of direct){const k=norm(x.competitor_part_number);if(!dm.has(k))dm.set(k,new Set());dm.get(k).add(x.elimfilters_sku)}
-    const failures=[];for(const e of entries){const owners=[...(dm.get(norm(e.authority))||[])];if(owners.length!==1||owners[0]!==e.sku)failures.push({authority:e.authority,expected:e.sku,owners});}
-    report.audit.direct_authorities=entries.length-failures.length;
+    const failures=[];for(const e of activeEntries){const owners=[...(dm.get(norm(e.authority))||[])];if(owners.length!==1||owners[0]!==e.sku)failures.push({authority:e.authority,expected:e.sku,owners});}
+    report.audit.direct_authorities=activeEntries.length-failures.length;
     report.audit.direct_failures=failures;
     if(failures.length) throw new Error(`DIRECT_AUTHORITY_AUDIT_FAILED ${failures.length}`);
-    const hd=(await client.query(`SELECT count(*)::int n FROM ld_catalog.ld_competitor_cross_references x JOIN public.elimfilters_catalog c ON c.sku=x.elimfilters_sku WHERE x.source_sku=ANY($1::text[]) AND c.duty='HEAVY_DUTY'`,[entries.map(e=>e.authority)])).rows[0].n;
+    const hd=(await client.query(`SELECT count(*)::int n FROM ld_catalog.ld_competitor_cross_references x JOIN public.elimfilters_catalog c ON c.sku=x.elimfilters_sku WHERE x.source_sku=ANY($1::text[]) AND c.duty='HEAVY_DUTY'`,[activeEntries.map(e=>e.authority)])).rows[0].n;
     report.audit.heavy_duty_rows=hd;
     if(hd!==0) throw new Error(`HEAVY_DUTY_CONTAMINATION ${hd}`);
     if(EXECUTE) await client.query('COMMIT'); else await client.query('ROLLBACK');
