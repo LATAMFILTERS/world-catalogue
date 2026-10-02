@@ -18,7 +18,7 @@ const CASES = [
     message: 'que filtros lleva el Columbia CL120 Freightliner con motor Detroit Diesel S60',
     make: 'FREIGHTLINER',
     model: 'COLUMBIA',
-    modelTypes: ['COLUMBIA CL120','COLUMBIA 120'],
+    modelTypes: ['COLUMBIA CL120'],
     yearLike: null,
     engineLike: 'DETROIT',
     expectedSkus: ['EL82100','ES90463','EF96916','EW74685','EA17682','EL82518','EC14226'],
