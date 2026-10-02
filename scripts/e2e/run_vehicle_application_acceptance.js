@@ -101,9 +101,16 @@ async function queryApplicationRows(db, c) {
 
 async function assertCanonicalProduct(db, sku) {
   const row = await db.query(
-    `SELECT sku,codigo_base,canonical_source_code,filter_type
-       FROM public.elimfilters_catalog
-      WHERE sku=$1`,
+    `SELECT c.sku,c.codigo_base,c.canonical_source_code,c.filter_type,
+            c.enrichment_data->'codigo_base_governance'->>'state' AS governance_state,
+            c.enrichment_data->'codigo_base_governance'->>'primary_manufacturer_verified' AS manufacturer_verified,
+            (SELECT i.canonical_part_number
+               FROM ld_catalog.ld_canonical_product_identity i
+              WHERE i.elimfilters_sku=c.sku AND i.status='ACTIVE'
+              ORDER BY i.updated_at DESC NULLS LAST
+              LIMIT 1) AS ld_canonical_part_number
+       FROM public.elimfilters_catalog c
+      WHERE c.sku=$1`,
     [sku]
   );
   assert.equal(row.rowCount, 1, `${sku}: missing or duplicate canonical product row`);
@@ -111,10 +118,24 @@ async function assertCanonicalProduct(db, sku) {
 }
 
 async function assertResolverAndCache(db, product) {
-  const codes = [product.codigo_base, product.canonical_source_code].filter(Boolean);
-  const result = { resolver: [], cache: [] };
+  const governedCodes = [];
+  if (product.ld_canonical_part_number) governedCodes.push(product.ld_canonical_part_number);
+  const publicBaseGoverned = product.governance_state === 'CANONICAL_VERIFIED'
+    && String(product.manufacturer_verified || '').toLowerCase() === 'true';
+  if (publicBaseGoverned) {
+    governedCodes.push(product.canonical_source_code || product.codigo_base);
+  }
 
-  for (const code of [...new Set(codes.map(norm).filter(Boolean))]) {
+  const codes = [...new Set(governedCodes.map(norm).filter(Boolean))];
+  const result = {
+    resolver: [],
+    cache: [],
+    status: codes.length ? 'governed' : 'not_governed'
+  };
+
+  if (!codes.length) return result;
+
+  for (const code of codes) {
     const resolver = await db.query(
       `SELECT code,sku,manufacturer,status
          FROM public.v_api_resolver_v7
@@ -214,7 +235,7 @@ async function main() {
         const product = await assertCanonicalProduct(db, sku);
         entry.identity[sku] = product;
         const resolved = await assertResolverAndCache(db, product);
-        entry.resolver[sku] = resolved.resolver;
+        entry.resolver[sku] = { status: resolved.status, rows: resolved.resolver };
         entry.cache[sku] = resolved.cache;
       }
 
