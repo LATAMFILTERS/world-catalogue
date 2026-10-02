@@ -85,3 +85,36 @@ test('one resolver-authorized SKU is returned deterministically and bypasses LLM
   assert.equal(payload.evidence.products[0].protocol_source_brand, 'DONALDSON');
   assert.equal(payload.governance.llm_bypassed, true);
 });
+
+test('O/0 preflight accepts a single resolver-authorized character correction', async () => {
+  installPool([
+    { code: '0K6B0-23-603', sku: 'EL82100', manufacturer: 'KIA', score: 950, status: 'RESOLVED_SINGLE' }
+  ]);
+  const payload = await preflightReferenceLookup({
+    channel: 'web',
+    conversation_id: 'preflight-o-zero-unique',
+    message: 'OK6B0-23-603 tienes el equivalente?',
+    language: 'es'
+  });
+  assert.equal(payload.evidence.lookup_status, 'validated');
+  assert.equal(payload.evidence.validated, true);
+  assert.equal(payload.evidence.products[0].sku, 'EL82100');
+  assert.equal(payload.evidence.products[0].protocol_resolved_reference, '0K6B0-23-603');
+  assert.equal(payload.evidence.products[0].protocol_source_brand, 'KIA');
+});
+
+test('O/0 preflight fails closed when character variants resolve to multiple SKUs', async () => {
+  installPool([
+    { code: '0K6B0-23-603', sku: 'EL82100', manufacturer: 'KIA', score: 950, status: 'RESOLVED_SINGLE' },
+    { code: 'OK6BO-23-603', sku: 'EL82101', manufacturer: 'OTHER', score: 900, status: 'RESOLVED_SINGLE' }
+  ]);
+  const payload = await preflightReferenceLookup({
+    channel: 'web',
+    conversation_id: 'preflight-o-zero-ambiguous',
+    message: 'OK6B0-23-603 tienes el equivalente?',
+    language: 'es'
+  });
+  assert.equal(payload.evidence.lookup_status, 'ambiguous');
+  assert.equal(payload.evidence.validated, false);
+  assert.equal(payload.evidence.products.length, 0);
+});

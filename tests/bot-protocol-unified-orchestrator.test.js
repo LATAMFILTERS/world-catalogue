@@ -7,6 +7,7 @@ const {
   PROTOCOL_VERSION,
   isReplacementElementRequest,
   extractApplicationEntities,
+  requestedFilterSystem,
   shouldDeferReferenceToCanonical,
   maintenanceSystem,
   serviceRole,
@@ -106,6 +107,30 @@ test('equipment continuation routes Freightliner model as application, not part 
     tokens: ['FREIGHTLINER', 'COLUMBIA CL120', 'DETROIT DIESEL']
   });
   assert.equal(looksLikeVehicleApplicationQuery(message), true);
+});
+
+test('normalizes Freightliner S60 alias even when make follows model', () => {
+  const message = 'que filtros lleva el columbia Cl120 Freightliner como motor detroit diesel s60';
+  assert.deepEqual(extractApplicationEntities(message), {
+    brand: 'FREIGHTLINER',
+    model: 'COLUMBIA CL120',
+    engine: 'DETROIT DIESEL SERIES 60',
+    year: null,
+    tokens: ['FREIGHTLINER', 'COLUMBIA CL120', 'DETROIT DIESEL SERIES 60']
+  });
+  assert.equal(requestedFilterSystem(message), null);
+});
+
+test('keeps requested filter system separate from Mack MP8 equipment entities', () => {
+  const message = 'que filtro de aceite usa el Mack con motor Mp8';
+  assert.deepEqual(extractApplicationEntities(message), {
+    brand: 'MACK',
+    model: null,
+    engine: 'MP8',
+    year: null,
+    tokens: ['MACK', 'MP8']
+  });
+  assert.equal(requestedFilterSystem(message), 'oil');
 });
 
 test('bare part-number phrasing can still use reference resolution', () => {
