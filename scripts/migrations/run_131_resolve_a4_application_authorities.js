@@ -1,6 +1,7 @@
 'use strict';
 
 const { Client } = require('pg');
+const { applyVerifiedApplications } = require('../../lib/catalog-application-write-service');
 
 const EXECUTE = process.argv.includes('--execute');
 const norm = v => String(v || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
@@ -8,10 +9,30 @@ const norm = v => String(v || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
 const MOVES = [
   { source:'EA32141', target:'EC30554', code:'FP2141', expected:168, json:'KEEP' },
   { source:'EC36001', target:'EA32521', code:'CF6001', expected:106, json:'KEEP' },
-  { source:'EA37125', target:'EA30994', code:'C27125', expected:25, json:'TRANSFER', expectedJson:50 },
-  { source:'EC32862', target:'EC38644', code:'CUK2862', expected:125, json:'CLEAR_SOURCE_JUNK', expectedJson:2 },
-  { source:'EL30922', target:'EL36657', code:'WP922', expected:7, json:'TRANSFER', expectedJson:16 },
-  { source:'EL39409', target:'EW72096', code:'WA940/9', expected:151, json:'TRANSFER', expectedJson:150 }
+  {
+    source:'EA37125', target:'EA30994', code:'C27125', expected:25,
+    json:'TRANSFER', expectedJson:50, targetKind:'VEHICLE',
+    evidenceAuthority:'MANN-FILTER',
+    evidenceUrl:'https://www.mann-filter.com/us-en/catalog/search-results/product.html/c27125_mann-filter.html'
+  },
+  {
+    source:'EC32862', target:'EC38644', code:'CUK2862', expected:125,
+    json:'CLEAR_SOURCE_JUNK', expectedJson:2, targetKind:'VEHICLE',
+    evidenceAuthority:'ELIMFILTERS_A4_DUPLICATE_CONTAMINATION_AUDIT',
+    evidenceUrl:null
+  },
+  {
+    source:'EL30922', target:'EL36657', code:'WP922', expected:7,
+    json:'TRANSFER', expectedJson:16, targetKind:'VEHICLE',
+    evidenceAuthority:'MANN-FILTER',
+    evidenceUrl:'https://www.mann-filter.com/us-en/catalog/search-results/product.html/wp922_mann-filter.html'
+  },
+  {
+    source:'EL39409', target:'EW72096', code:'WA940/9', expected:151,
+    json:'TRANSFER', expectedJson:150, targetKind:'EQUIPMENT',
+    evidenceAuthority:'MANN-FILTER + DONALDSON',
+    evidenceUrl:'https://www.mann-filter.com/en/catalog/search-results/product.html/wa940/9_mann-filter.html'
+  }
 ];
 
 async function main(){
@@ -76,13 +97,19 @@ async function main(){
           `SELECT
              CASE WHEN jsonb_typeof(coalesce(vehicle_applications,'[]'::jsonb))='array'
                   THEN jsonb_array_length(coalesce(vehicle_applications,'[]'::jsonb)) ELSE 0 END AS source_json_count,
-             (SELECT CASE WHEN jsonb_typeof(coalesce(t.vehicle_applications,'[]'::jsonb))='array'
-                          THEN jsonb_array_length(coalesce(t.vehicle_applications,'[]'::jsonb)) ELSE 0 END
+             (SELECT CASE
+                       WHEN $3='EQUIPMENT'
+                         THEN CASE WHEN jsonb_typeof(coalesce(t.equipment_applications,'[]'::jsonb))='array'
+                                   THEN jsonb_array_length(coalesce(t.equipment_applications,'[]'::jsonb)) ELSE 0 END
+                       ELSE CASE WHEN jsonb_typeof(coalesce(t.vehicle_applications,'[]'::jsonb))='array'
+                                  THEN jsonb_array_length(coalesce(t.vehicle_applications,'[]'::jsonb)) ELSE 0 END
+                     END
                 FROM public.elimfilters_catalog t WHERE t.sku=$2) AS target_json_count,
+             vehicle_applications AS source_json,
              vehicle_applications::text AS source_json_text
            FROM public.elimfilters_catalog
           WHERE sku=$1`,
-          [move.source,move.target]
+          [move.source,move.target,move.targetKind || 'VEHICLE']
         );
         if(meta.rowCount!==1) throw new Error(`missing source catalog row ${move.source}`);
         jsonCount=Number(meta.rows[0].source_json_count||0);
@@ -115,39 +142,67 @@ async function main(){
         report.mutations.application_rows_reowned+=updated.rowCount;
 
         if(move.json==='TRANSFER'){
-          const changed=await db.query(
-            `WITH src AS (
-               SELECT vehicle_applications
-                 FROM public.elimfilters_catalog
-                WHERE sku=$1
-             ),
-             tgt AS (
-               UPDATE public.elimfilters_catalog
-                  SET vehicle_applications=(SELECT vehicle_applications FROM src)
-                WHERE sku=$2
-                RETURNING sku
-             )
-             UPDATE public.elimfilters_catalog
-                SET vehicle_applications='[]'::jsonb
+          const sourcePayloadResult=await db.query(
+            `SELECT vehicle_applications
+               FROM public.elimfilters_catalog
               WHERE sku=$1
-              RETURNING sku`,
-            [move.source,move.target]
+              FOR UPDATE`,
+            [move.source]
           );
-          if(changed.rowCount!==1) throw new Error(`JSON transfer failed for ${move.source}`);
+          const payload=sourcePayloadResult.rows[0]?.vehicle_applications || [];
+          const evidence={
+            authority:move.evidenceAuthority,
+            source_url:move.evidenceUrl,
+            metadata:{
+              phase:'A4',
+              authority_code:move.code,
+              source_sku:move.source,
+              target_sku:move.target
+            }
+          };
+          if(move.targetKind==='EQUIPMENT'){
+            await applyVerifiedApplications(db,{
+              sku:move.target,
+              equipment_applications:payload,
+              evidence
+            });
+          }else{
+            await applyVerifiedApplications(db,{
+              sku:move.target,
+              vehicle_applications:payload,
+              evidence
+            });
+          }
+          await applyVerifiedApplications(db,{
+            sku:move.source,
+            vehicle_applications:[],
+            evidence:{
+              ...evidence,
+              metadata:{...evidence.metadata,action:'CLEAR_CONTAMINATED_SOURCE_PAYLOAD'}
+            }
+          });
           report.mutations.source_json_cleared+=1;
           report.mutations.target_json_populated+=1;
+          report.mutations.governed_application_writes=
+            (report.mutations.governed_application_writes||0)+2;
         } else if(move.json==='CLEAR_SOURCE_JUNK'){
-          const changed=await db.query(
-            `UPDATE public.elimfilters_catalog
-                SET vehicle_applications='[]'::jsonb
-              WHERE sku=$1
-                AND jsonb_array_length(coalesce(vehicle_applications,'[]'::jsonb))=$2
-                AND vehicle_applications::text LIKE '%3880cc 237 CID%'
-              RETURNING sku`,
-            [move.source,move.expectedJson]
-          );
-          if(changed.rowCount!==1) throw new Error('EC32862 junk JSON clear failed');
+          await applyVerifiedApplications(db,{
+            sku:move.source,
+            vehicle_applications:[],
+            evidence:{
+              authority:move.evidenceAuthority,
+              source_url:move.evidenceUrl,
+              metadata:{
+                phase:'A4',
+                action:'CLEAR_DUPLICATED_BUICK_CONTAMINATION',
+                duplicate_signature:'3880cc 237 CID',
+                duplicate_catalog_skus_observed:420
+              }
+            }
+          });
           report.mutations.source_json_cleared+=1;
+          report.mutations.governed_application_writes=
+            (report.mutations.governed_application_writes||0)+1;
         }
       }
     }
