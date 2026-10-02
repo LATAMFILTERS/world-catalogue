@@ -18,7 +18,7 @@
    "gasket_id_mm": 63,
    "micron_rating": "11 absolute / 4 nominal",
    "nominal_efficiency": "Beta 1000 at 11 micron; Beta 2 at 4 micron",
-   "filter_media": "Synthetic microfiber glass / Synteq XP",
+   "filter_media": "Synthetic microfiber glass",
    "oem_codes": [
     {
      "code": "AH128449",
@@ -112,7 +112,7 @@
     "media": {
      "type": "Synthetic high-technology media",
      "material": "Microfiber glass",
-     "reference": "Synteq XP"
+     "reference": null
     },
     "filtration": {
      "absolute": {

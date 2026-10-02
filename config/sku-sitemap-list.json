@@ -3,7 +3,7 @@
   "phase": 1,
   "options": {
     "showCrossReferences": true,
-    "showPerformanceSpecs": true
+    "showPerformanceSpecs": false
   },
   "skus": [
     { "sku": "EH60950", "family": "hydraulic-filters" },

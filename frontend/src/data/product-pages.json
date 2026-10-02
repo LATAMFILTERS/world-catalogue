@@ -2,7 +2,7 @@
  "phase": 1,
  "options": {
   "showCrossReferences": true,
-  "showPerformanceSpecs": true
+  "showPerformanceSpecs": false
  },
  "products": [
   {
@@ -44,7 +44,7 @@
     },
     {
      "name": "Filter media",
-     "value": "Synthetic microfiber glass / Synteq XP"
+     "value": "Synthetic microfiber glass"
     }
    ],
    "oem": [

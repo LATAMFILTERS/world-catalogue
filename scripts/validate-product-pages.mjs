@@ -9,6 +9,12 @@ const list = JSON.parse(readFileSync(path.join(root, 'config/sku-sitemap-list.js
 const snapshot = JSON.parse(readFileSync(path.join(root, 'frontend/src/data/product-pages.json'), 'utf8'));
 const registry = readFileSync(path.join(root, 'frontend/src/lib/canonical-technologies.ts'), 'utf8');
 const BASE = 'https://elimfilters.com';
+const PERFORMANCE = new Set(['Filtration rating', 'Efficiency', 'Efficiency test method', 'Rated flow', 'Burst pressure']);
+const opts = snapshot.options || {};
+for (const p of snapshot.products) {
+  if (opts.showPerformanceSpecs === false) p.specs = p.specs.filter((s) => !PERFORMANCE.has(s.name));
+  if (opts.showCrossReferences === false) p.crossRefs = [];
+}
 const FORBIDDEN = [/100\s?%/, /cero\s+bypass/i, /zero\s+bypass/i, /garantiz/i, /guarantee/i];
 const errors = [];
 const fail = (sku, msg) => errors.push(`${sku}: ${msg}`);
@@ -43,6 +49,9 @@ for (const p of snapshot.products) {
   if (/<meta name="robots" content="[^"]*noindex/.test(html)) fail(sku, 'noindex present');
   if ((html.match(/<h1[ >]/g) || []).length !== 1) fail(sku, 'expected exactly one h1');
   if (!/<table/.test(html)) fail(sku, 'no HTML spec table');
+  if (new Set(p.specs.map((s) => s.name)).size !== p.specs.length) fail(sku, 'duplicate spec names in snapshot');
+  const rowNames = [...html.matchAll(/<th[^>]*scope="row"[^>]*>([^<]*)<\/th>/g)].map((m) => m[1]);
+  if (new Set(rowNames).size !== rowNames.length) fail(sku, `duplicate spec rows in HTML: ${rowNames}`);
   for (const s of p.specs) if (!html.includes(`>${s.name}</th>`) || !decode(html).includes(s.value)) fail(sku, `spec row missing: ${s.name}`);
   for (const r of [...p.oem, ...p.crossRefs]) if (!html.includes(r.code)) fail(sku, `reference missing: ${r.brand} ${r.code}`);
   if (!html.includes(`${p.technology}™`)) fail(sku, 'technology name without ™');

@@ -43,6 +43,7 @@ for (const entry of entries) {
   try {
     if (!row) throw new Error(`STOP_REVIEW ${entry.sku}: not found in ${source.kind}`);
     if (!entry.family) throw new Error(`STOP_REVIEW ${entry.sku}: list entry has no family`);
+    if (row.canonical_source_brand) console.warn(`WARN ${entry.sku}: derived from ${row.canonical_source_brand} ${row.canonical_source_code}; confirm the specs are ELIMFILTERS-validated before publishing`);
     products.push(buildRecord(row, entry, { ...source, ...(row._seed ? { seed: row._seed } : {}) }));
   } catch (error) {
     blocked.push(error.message);
