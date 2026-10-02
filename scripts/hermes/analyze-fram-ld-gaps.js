@@ -13,6 +13,18 @@ const CORE_KEYS = ['outer_diameter_mm','height_mm','thread_size','gasket_od_mm',
 const norm = (v='') => String(v).toUpperCase().replace(/[^A-Z0-9]/g, '');
 const hash = value => crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
 const add = (map,key,value) => { if(!key) return; if(!map.has(key)) map.set(key,new Set()); map.get(key).add(value); };
+const applicationKey = (make,model,year,engine) => [norm(make),norm(model),String(year||'').trim(),norm(engine)].join('|');
+function applicationCoverage(h, sku, appsBySku) {
+  const expected = [...new Set((h.applications||[]).map(a => applicationKey(a.make,a.model,a.year,a.engine)))];
+  const present = appsBySku.get(sku) || new Set();
+  const missing = expected.filter(key => !present.has(key));
+  return {
+    expected_count: expected.length,
+    present_count: expected.length - missing.length,
+    missing_count: missing.length,
+    missing_keys: missing
+  };
+}
 
 function proposedSku(family, authority) {
   const digits = String(authority || '').replace(/[^0-9]/g, '');
@@ -36,6 +48,7 @@ function loadHarvest() {
       competitor:p.competitor_cross_reference_candidates||[],
       oem:p.oem_cross_reference_candidates||[],
       appCount:(p.vehicle_application_candidates||[]).length,
+      applications:p.vehicle_application_candidates||[],
       coreHash:hash(CORE_KEYS.map(k => specs[k] ?? null)),
       appHash:appHash(p.vehicle_application_candidates||[])
     };
@@ -61,6 +74,12 @@ async function main() {
   const comp = (await client.query(`SELECT x.elimfilters_sku,x.competitor_brand,x.competitor_part_number,COALESCE(c.duty,CASE WHEN p.elimfilters_sku IS NOT NULL THEN 'LIGHT_DUTY' END) duty,COALESCE(c.filter_type,CASE p.segment WHEN 'Air Filter' THEN 'air' WHEN 'Cabin Filter' THEN 'cabin' WHEN 'Fuel Filter' THEN 'fuel' WHEN 'Oil Filter' THEN 'oil' END) filter_type FROM ld_catalog.ld_competitor_cross_references x LEFT JOIN public.elimfilters_catalog c ON c.sku=x.elimfilters_sku LEFT JOIN ld_catalog.ld_product_catalog p ON p.elimfilters_sku=x.elimfilters_sku WHERE c.sku IS NOT NULL OR p.elimfilters_sku IS NOT NULL`)).rows;
   const oem = (await client.query(`SELECT x.elimfilters_sku,x.oem_brand,x.oem_part_number,COALESCE(c.duty,CASE WHEN p.elimfilters_sku IS NOT NULL THEN 'LIGHT_DUTY' END) duty,COALESCE(c.filter_type,CASE p.segment WHEN 'Air Filter' THEN 'air' WHEN 'Cabin Filter' THEN 'cabin' WHEN 'Fuel Filter' THEN 'fuel' WHEN 'Oil Filter' THEN 'oil' END) filter_type FROM ld_catalog.ld_oem_cross_references x LEFT JOIN public.elimfilters_catalog c ON c.sku=x.elimfilters_sku LEFT JOIN ld_catalog.ld_product_catalog p ON p.elimfilters_sku=x.elimfilters_sku WHERE c.sku IS NOT NULL OR p.elimfilters_sku IS NOT NULL`)).rows;
   const identities = (await client.query(`SELECT i.elimfilters_sku,i.canonical_brand,i.canonical_part_number,c.duty,c.filter_type FROM ld_catalog.ld_canonical_product_identity i JOIN public.elimfilters_catalog c ON c.sku=i.elimfilters_sku WHERE i.status='ACTIVE'`)).rows;
+  const applicationRows = (await client.query(`SELECT elimfilters_sku,make,model_family,year,engine_code FROM ld_catalog.ld_vehicle_applications`)).rows;
+  const appsBySku = new Map();
+  for (const r of applicationRows) {
+    if (!appsBySku.has(r.elimfilters_sku)) appsBySku.set(r.elimfilters_sku,new Set());
+    appsBySku.get(r.elimfilters_sku).add(applicationKey(r.make,r.model_family,r.year,r.engine_code));
+  }
   const catalogBySku = new Map(catalog.map(r => [r.sku,r]));
   const directLd = new Map(), directHd = new Map(), refLd = new Map();
 
@@ -89,7 +108,10 @@ async function main() {
     const ldOwners = allLdDirect.filter(v => v.endsWith(`|${expected}`)).map(v => v.split('|')[0]);
     const crossFamilyLdOwners = allLdDirect.filter(v => !v.endsWith(`|${expected}`)).map(v => v.split('|')[0]);
     const hdOwners = [...(directHd.get(h.authorityKey)||[])].map(v => v.split('|')[0]);
-    if (ldOwners.length === 1) { results.push({...h,status:'EXISTING_DIRECT',resolvedSku:ldOwners[0],hdOwners}); continue; }
+    if (ldOwners.length === 1) {
+      results.push({...h,status:'EXISTING_DIRECT',resolvedSku:ldOwners[0],hdOwners,applicationCoverage:applicationCoverage(h,ldOwners[0],appsBySku)});
+      continue;
+    }
     if (ldOwners.length === 0 && crossFamilyLdOwners.length) { results.push({...h,status:'CROSS_FAMILY_DIRECT_CONFLICT',owners:crossFamilyLdOwners,hdOwners}); continue; }
     if (ldOwners.length > 1) { results.push({...h,status:'AMBIGUOUS_DIRECT',owners:ldOwners,hdOwners}); continue; }
     if (hdOwners.length) { results.push({...h,status:'HD_REFERENCE_CONFLICT',hdOwners}); continue; }
@@ -104,7 +126,7 @@ async function main() {
     }
     const strong = [...hits.entries()].filter(([,e]) => e.size >= 2).sort((a,b) => b[1].size-a[1].size);
     if (strong.length === 1) {
-      results.push({...h,status:'EXISTING_MULTI_CROSS',resolvedSku:strong[0][0],evidenceCount:strong[0][1].size});
+      results.push({...h,status:'EXISTING_MULTI_CROSS',resolvedSku:strong[0][0],evidenceCount:strong[0][1].size,applicationCoverage:applicationCoverage(h,strong[0][0],appsBySku)});
       continue;
     }
     if (strong.length > 1) {
@@ -146,21 +168,33 @@ async function main() {
     byFamily[r.family][r.status]=(byFamily[r.family][r.status]||0)+1;
   }
   const safe = results.filter(r => r.status === 'REAL_GAP_CREATE_SAFE');
+  const existingApplicationGaps = results.filter(r =>
+    ['EXISTING_DIRECT','EXISTING_MULTI_CROSS'].includes(r.status)
+    && Number(r.applicationCoverage?.missing_count || 0) > 0
+  );
   const report = {
     generated_at:new Date().toISOString(), harvested:harvest.length,
     counts, by_family:byFamily,
     existing_covered:results.filter(r=>r.status.startsWith('EXISTING_')).length,
+    existing_application_gap_count:existingApplicationGaps.length,
+    existing_application_gaps:existingApplicationGaps.map(r=>({
+      family:r.family,authority:r.authority,sku:r.resolvedSku,file:r.file,
+      expected_applications:r.applicationCoverage.expected_count,
+      present_applications:r.applicationCoverage.present_count,
+      missing_applications:r.applicationCoverage.missing_count,
+      missing_keys:r.applicationCoverage.missing_keys
+    })),
     variants:results.filter(r=>r.status==='VARIANT_OF_AUTHORITY').length,
     create_safe:safe.length,
     quarantine:results.filter(r=>!['EXISTING_DIRECT','EXISTING_MULTI_CROSS','VARIANT_OF_AUTHORITY','REAL_GAP_CREATE_SAFE'].includes(r.status)).length,
     safe_candidates:safe.map(r=>({family:r.family,authority:r.authority,sku:r.proposedSku,variants:r.variants||[],file:r.file})),
-    results:results.map(({coreHash,appHash,competitor,oem,alternatives,...r})=>r)
+    results:results.map(({coreHash,appHash,competitor,oem,alternatives,applications,...r})=>r)
   };
   fs.mkdirSync(REPORT_DIR,{recursive:true});
   const stamp=new Date().toISOString().replace(/[:.]/g,'-');
   const out=path.join(REPORT_DIR,`fram-ld-gap-${stamp}.json`);
   fs.writeFileSync(out,JSON.stringify(report,null,2));
-  console.log(JSON.stringify({report:out,harvested:report.harvested,counts:report.counts,by_family:report.by_family,existing_covered:report.existing_covered,variants:report.variants,create_safe:report.create_safe,quarantine:report.quarantine},null,2));
+  console.log(JSON.stringify({report:out,harvested:report.harvested,counts:report.counts,by_family:report.by_family,existing_covered:report.existing_covered,existing_application_gap_count:report.existing_application_gap_count,variants:report.variants,create_safe:report.create_safe,quarantine:report.quarantine},null,2));
   await client.end();
 }
 main().catch(e=>{console.error(e.stack||e.message);process.exit(1);});
