@@ -21,7 +21,7 @@ const CASES = [
     modelTypes: ['COLUMBIA CL120','COLUMBIA 120'],
     yearLike: null,
     engineLike: 'DETROIT',
-    expectedSkus: ['EL82100','EF90463','EF96916','EW74685','EA17682','EL82518','EC14226'],
+    expectedSkus: ['EL82100','ES90463','EF96916','EW74685','EA17682','EL82518','EC14226'],
     forbiddenSkus: ['EA31300','EL32102']
   },
   {
