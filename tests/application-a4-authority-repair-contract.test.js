@@ -80,7 +80,7 @@ test('run_131 routes public application JSON through the governed gateway',()=>{
 
 test('run_131 stores WA9409 payload as heavy-duty equipment evidence',()=>{
   assert.match(migration,/source:'EL39409'[\s\S]*target:'EW72096'[\s\S]*targetKind:'EQUIPMENT'/);
-  assert.match(migration,/equipment_applications:payload/);
+  assert.match(migration,/equipment_applications:\[\.\.\.existing,\.\.\.payload\]/);
   assert.match(migration,/MANN-FILTER \+ DONALDSON/);
 });
 
