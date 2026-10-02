@@ -8,7 +8,7 @@ export const FAMILY_PT: Record<string, FamilyEs> = {
   'primary-air': {
     name: 'Ar primário',
     seoTitle: 'Elementos de filtro de ar primário para motores pesados',
-    purpose: 'Os elementos de ar primário são a principal barreira contra a contaminação que protege a câmara de combustão da ingestão de partículas.',
+    purpose: 'Os elementos de ar primário são a principal barreira contra a contaminação que protege a câmara de combustão da admissão de partículas.',
     engineering: 'O meio de densidade progressiva MACROCORE™ distribui a carga de contaminantes por toda a profundidade do meio, equilibrando eficiência, capacidade e restrição.',
   },
   'secondary-air': {
@@ -238,7 +238,7 @@ export const INDUSTRY_PT: Record<string, string> = {
   marine: 'Setor marítimo',
   'oil-gas': 'Petróleo e gás',
   railway: 'Ferroviário',
-  'bus-coach': 'Ônibus e rodoviário',
+  'bus-coach': 'Ônibus e transporte rodoviário',
   manufacturing: 'Manufatura',
   'waste-municipal': 'Resíduos e serviços municipais',
   automotive: 'Automotivo',
