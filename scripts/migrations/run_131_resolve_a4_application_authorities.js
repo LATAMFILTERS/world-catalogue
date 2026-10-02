@@ -67,6 +67,7 @@ async function main(){
     planned_moves:[],
     blank_application_delete:null,
     wa9409_crossref:null,
+    ew72096_parent:null,
     mutations:{
       application_rows_reowned:0,
       blank_application_rows_deleted:0,
@@ -78,6 +79,53 @@ async function main(){
   };
 
   try {
+    const ewIdentity=await db.query(
+      `SELECT sku,codigo_base,filter_type,duty
+         FROM public.elimfilters_catalog
+        WHERE sku='EW72096'`
+    );
+    if(ewIdentity.rowCount!==1) throw new Error('EW72096 catalog identity missing');
+    const ew=ewIdentity.rows[0];
+    if(norm(ew.codigo_base)!=='P552096' || ew.filter_type!=='coolant' || ew.duty!=='HEAVY_DUTY'){
+      throw new Error(`EW72096 identity mismatch ${JSON.stringify(ew)}`);
+    }
+
+    const existingParent=await db.query(
+      `SELECT elimfilters_sku,source_sku,segment
+         FROM ld_catalog.ld_product_catalog
+        WHERE elimfilters_sku='EW72096'`
+    );
+    const duplicateParent=await db.query(
+      `SELECT elimfilters_sku,source_sku
+         FROM ld_catalog.ld_product_catalog
+        WHERE ld_catalog.norm_part(source_sku)=ld_catalog.norm_part('P552096')
+          AND elimfilters_sku<>'EW72096'`
+    );
+    if(duplicateParent.rowCount){
+      throw new Error(`P552096 parent already owned by ${JSON.stringify(duplicateParent.rows)}`);
+    }
+    if(existingParent.rowCount && norm(existingParent.rows[0].source_sku)!=='P552096'){
+      throw new Error(`EW72096 existing parent mismatch ${JSON.stringify(existingParent.rows)}`);
+    }
+    report.ew72096_parent={
+      catalog_identity:ew,
+      existing_parent:existingParent.rows,
+      planned_insert:existingParent.rowCount===0
+    };
+
+    if(EXECUTE && existingParent.rowCount===0){
+      const parentInsert=await db.query(
+        `INSERT INTO ld_catalog.ld_product_catalog
+           (elimfilters_sku,source_sku,segment)
+         VALUES ('EW72096','P552096','Coolant Filter')
+         ON CONFLICT (elimfilters_sku) DO NOTHING
+         RETURNING elimfilters_sku`
+      );
+      if(parentInsert.rowCount!==1) throw new Error('EW72096 parent insert failed');
+      report.mutations.ld_parent_rows_inserted=
+        (report.mutations.ld_parent_rows_inserted||0)+parentInsert.rowCount;
+    }
+
     for(const move of MOVES){
       const rows=await db.query(
         `SELECT id,make,model_family,model_type,year,engine_code
