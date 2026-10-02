@@ -111,6 +111,13 @@ test('application source mismatch is governed by relational parent identity, not
   );
 });
 
+test('summary-only mode avoids emitting full audit payload', () => {
+  assert.match(audit, /process\.argv\.includes\('--summary-only'\)/);
+  assert.match(audit, /SUMMARY_ONLY/);
+  assert.match(audit, /informational_summary/);
+  assert.match(audit, /summary:\s*report\.summary/);
+});
+
 test('run_127 is dry-run by default and executes only with --execute', () => {
   assert.match(ownershipRepair, /const EXECUTE = process\.argv\.includes\('--execute'\)/);
   assert.match(ownershipRepair, /BEGIN ISOLATION LEVEL SERIALIZABLE/);
