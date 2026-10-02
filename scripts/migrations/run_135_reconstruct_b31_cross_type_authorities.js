@@ -204,12 +204,12 @@ async function main(){
         const xref=await db.query(
           `INSERT INTO ld_catalog.ld_competitor_cross_references
             (elimfilters_sku,source_sku,competitor_brand,competitor_part_number)
-           SELECT $1,$2,$3,$4
+           SELECT $1::text,$2::text,$3::text,$4::text
            WHERE NOT EXISTS(
              SELECT 1 FROM ld_catalog.ld_competitor_cross_references x
-              WHERE x.elimfilters_sku=$1
-                AND upper(coalesce(x.competitor_brand,''))=upper($3)
-                AND ld_catalog.norm_part(x.competitor_part_number)=ld_catalog.norm_part($4)
+              WHERE x.elimfilters_sku=$1::text
+                AND upper(coalesce(x.competitor_brand,''))=upper($3::text)
+                AND ld_catalog.norm_part(x.competitor_part_number)=ld_catalog.norm_part($4::text)
            )
            RETURNING id`,
           [item.target,item.target_base,item.competitor_brand,item.code]
@@ -220,10 +220,10 @@ async function main(){
           const oem=await db.query(
             `INSERT INTO ld_catalog.ld_oem_cross_references
               (elimfilters_sku,source_sku,oem_brand,oem_part_number)
-             SELECT $1,$2,'DAF','1345335'
+             SELECT $1::text,$2::text,'DAF'::text,'1345335'::text
              WHERE NOT EXISTS(
                SELECT 1 FROM ld_catalog.ld_oem_cross_references x
-                WHERE x.elimfilters_sku=$1
+                WHERE x.elimfilters_sku=$1::text
                   AND upper(coalesce(x.oem_brand,''))='DAF'
                   AND ld_catalog.norm_part(x.oem_part_number)=ld_catalog.norm_part('1345335')
              )
