@@ -80,6 +80,7 @@ async function main(){
                canonical_source_brand,canonical_source_code,canonical_source_url,
                canonical_source_status,canonical_verified_at,canonical_evidence,
                duty_source_brand,duty_source_url,duty_validation_status,duty_verified_at,duty_evidence,
+               enrichment_data,
                vehicle_applications,equipment_applications,
                oem_codes,competitor_codes,catalog_active,catalog_scope_reason,catalog_scope_verified_at)
              VALUES
@@ -87,6 +88,7 @@ async function main(){
                'DONALDSON'::text,$2::text,$6::text,
                'VERIFIED'::text,now(),$7::jsonb,
                'DONALDSON'::text,$6::text,'VERIFIED'::text,now(),$8::jsonb,
+               $9::jsonb,
                '[]'::jsonb,'[]'::jsonb,
                '[]'::jsonb,'[]'::jsonb,true,'B3.1_CANONICAL_IDENTITY_RECONSTRUCTION',now())
              RETURNING sku`,
@@ -104,6 +106,16 @@ async function main(){
                 phase:'B3.1',
                 authority:'DONALDSON_TRUCK_BUS_CATALOGUE',
                 evidence:'1345335 -> P550810'
+              }),
+              JSON.stringify({
+                codigo_base_governance:{
+                  approved_codigo_base:'P550810',
+                  approved_manufacturer:'DONALDSON',
+                  primary_manufacturer_verified:true,
+                  approved_source_column:'CANONICAL_SOURCE',
+                  policy:'CATALOG_POLICY_V32',
+                  evidence:'DONALDSON_TRUCK_BUS_CATALOGUE_1345335'
+                }
               })
             ]
           );
