@@ -57,6 +57,22 @@ const SERVICE_DISCIPLINE: Record<string, readonly string[]> = {
   thermacore: ['Keep filter selection aligned with approved coolant chemistry.', 'Inspect coolant condition and contamination sources when loading is abnormal.', 'Treat filtration as part of the complete cooling-system maintenance strategy.'],
 };
 
+// Search-intent titles: lead with the terms buyers type, keep the brand suffix.
+const FAMILY_SEO_TITLES: Record<string, string> = {
+  'primary-air': 'Primary Air Filter Elements for Heavy-Duty Engines',
+  'secondary-air': 'Secondary & Safety Air Filter Elements',
+  'air-cleaner-housings': 'Heavy-Duty Air Cleaner Housings',
+  'primary-fuel': 'Primary Diesel Fuel Filters',
+  'secondary-fuel': 'Secondary Diesel Fuel Filters',
+  'fuel-water-separators': 'Diesel Fuel Water Separator Filters',
+  'oil-filters': 'Engine Oil Filters for Heavy & Light Duty',
+  'hydraulic-filters': 'Hydraulic Filters for Heavy Equipment',
+  'coolant-filters': 'Heavy-Duty Coolant Filters',
+  'cabin-filters': 'Cabin Air Filters for Trucks & Equipment',
+  'fuel-turbine': 'Turbine-Style Fuel Water Separators (FH / FG)',
+  'air-dryer-filters': 'Air Brake Dryer Filter Cartridges',
+};
+
 export function generateStaticParams() {
   return PRODUCT_FAMILY_LIST.map((f) => ({ slug: f.slug }));
 }
@@ -67,7 +83,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!fam) return { title: 'Not Found' };
 
   const url = `${BASE_URL}/families/${fam.slug}/`;
-  const title = `${fam.name} | Critical Asset Protection | ELIMFILTERS`;
+  const title = `${FAMILY_SEO_TITLES[fam.slug] ?? fam.name} | ELIMFILTERS`;
 
   return {
     title,
@@ -349,7 +365,10 @@ export default async function FamilyPage({ params }: Props) {
             <p style={actionBody}>Use Part Search when the application is known. Contact ELIMFILTERS when the operating condition, protection requirement or cross-reference needs technical review.</p>
           </div>
           <div style={actionLinks}>
-            <Link href="https://part-search.elimfilters.com" style={yellowButton}>PART SEARCH</Link>
+            {[fam.hdPrefix, fam.ldPrefix].filter((prefix): prefix is string => Boolean(prefix)).map((prefix) => (
+              <Link key={prefix} href={`https://part-search.elimfilters.com/family/${prefix}/`} style={yellowButton}>BROWSE {prefix} SKUS</Link>
+            ))}
+            <Link href="https://part-search.elimfilters.com" style={darkButton}>PART SEARCH</Link>
             <Link href="/contact/" style={darkButton}>TECHNICAL SUPPORT</Link>
             <Link href="/knowledge-center/" style={darkButton}>KNOWLEDGE CENTER</Link>
           </div>

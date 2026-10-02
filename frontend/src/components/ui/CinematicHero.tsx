@@ -32,7 +32,8 @@ export default function CinematicHero() {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
+        poster="/images/Hero-HOME_elimfilters-poster.avif"
         aria-label="ELIMFILTERS protection systems in the field"
         style={{
           position: "absolute",
