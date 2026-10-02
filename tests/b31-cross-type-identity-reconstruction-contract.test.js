@@ -50,9 +50,9 @@ test('run_135 requires zero target application collisions',()=>{
   assert.match(migration,/upper\(coalesce\(t\.engine_code,''\)\)=upper\(coalesce\(s\.engine_code,''\)\)/);
 });
 
-test('run_135 creates parents and canonical identities before re-own',()=>{
+test('run_135 creates HD relational parents without violating LD canonical policy',()=>{
   assert.match(migration,/INSERT INTO ld_catalog\.ld_product_catalog/);
-  assert.match(migration,/INSERT INTO ld_catalog\.ld_canonical_product_identity/);
+  assert.doesNotMatch(migration,/INSERT INTO ld_catalog\.ld_canonical_product_identity/);
   assert.match(migration,/UPDATE ld_catalog\.ld_vehicle_applications/);
 });
 
