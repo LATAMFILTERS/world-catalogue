@@ -10,13 +10,13 @@ const MODEL_TYPE = 'Columbia CL120';
 const ENGINE = 'Detroit Diesel Series 60';
 
 const COMPONENTS = [
-  ['EL82100','P552100','oil'],
-  ['ES90463','P550463','fuel'],
-  ['EF96916','P556916','fuel'],
-  ['EW74685','P554685','coolant'],
-  ['EA17682','P527682','air'],
-  ['EL82518','P552518','oil'],
-  ['EC14226','P614226','cabin']
+  ['EL82100','P552100','oil',2],
+  ['ES90463','P550463','fuel',1],
+  ['EF96916','P556916','fuel',1],
+  ['EW74685','P554685','coolant',1],
+  ['EA17682','P527682','air',1],
+  ['EL82518','P552518','oil',1],
+  ['EC14226','P614226','cabin',1]
 ];
 
 const LEGACY_APPLICATIONS = ['EL32102','EA31300'];
@@ -111,8 +111,8 @@ async function main() {
 
       for (const item of COMPONENTS) {
         const ins = await client.query(
-          'INSERT INTO kit_components (kit_sku,filter_sku) VALUES ($1,$2) ON CONFLICT DO NOTHING',
-          [KIT_SKU,item[0]]
+          'INSERT INTO kit_components (kit_sku,filter_sku,qty) VALUES ($1,$2,$3) ON CONFLICT (kit_sku,filter_sku) DO UPDATE SET qty=EXCLUDED.qty',
+          [KIT_SKU,item[0],item[3]]
         );
         report.kit_rows_inserted += ins.rowCount;
       }
