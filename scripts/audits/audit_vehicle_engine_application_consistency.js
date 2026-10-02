@@ -96,9 +96,11 @@ async function main() {
     `);
     report.categories.application_evidence_not_normalized = jsonVsRel.rows.map(withOem);
 
-    // B. Normalized application row points to a source_sku that disagrees with
-    // the product's own canonical/base identity. This catches stale application
-    // ownership after SKU migrations or wrong-source promotion.
+    // B. Normalized application source identity is governed by the relational
+    // LD parent, not by public codigo_base/canonical_source_code. Public base
+    // codes may intentionally be compact (e.g. 8226) while source_sku preserves
+    // the full authority/reference (e.g. WK8226). Only flag a mismatch when a
+    // relational parent exists and its source_sku actually disagrees.
     const sourceMismatch = await client.query(`
       SELECT DISTINCT
         v.elimfilters_sku AS sku,
@@ -106,19 +108,16 @@ async function main() {
         c.canonical_source_code,
         c.filter_type,
         c.oem_codes,
+        p.source_sku AS expected_parent_source_sku,
         v.source_sku AS application_source_sku,
         v.make,v.model_family,v.model_type,v.year,v.engine_code,v.source_origin
       FROM ld_catalog.ld_vehicle_applications v
       JOIN public.elimfilters_catalog c ON c.sku=v.elimfilters_sku
+      JOIN ld_catalog.ld_product_catalog p ON p.elimfilters_sku=v.elimfilters_sku
       WHERE nullif(regexp_replace(upper(coalesce(v.source_sku,'')),'[^A-Z0-9]','','g'),'') IS NOT NULL
-        AND nullif(regexp_replace(upper(coalesce(c.codigo_base,'')),'[^A-Z0-9]','','g'),'') IS NOT NULL
+        AND nullif(regexp_replace(upper(coalesce(p.source_sku,'')),'[^A-Z0-9]','','g'),'') IS NOT NULL
         AND regexp_replace(upper(coalesce(v.source_sku,'')),'[^A-Z0-9]','','g')
-            <> regexp_replace(upper(coalesce(c.codigo_base,'')),'[^A-Z0-9]','','g')
-        AND (
-          c.canonical_source_code IS NULL
-          OR regexp_replace(upper(coalesce(v.source_sku,'')),'[^A-Z0-9]','','g')
-             <> regexp_replace(upper(coalesce(c.canonical_source_code,'')),'[^A-Z0-9]','','g')
-        )
+            <> regexp_replace(upper(coalesce(p.source_sku,'')),'[^A-Z0-9]','','g')
       ORDER BY v.elimfilters_sku,v.make,v.model_family,v.year
     `);
     report.categories.application_source_identity_mismatch = sourceMismatch.rows.map(withOem);
