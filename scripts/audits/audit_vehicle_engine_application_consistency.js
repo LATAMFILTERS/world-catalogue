@@ -37,6 +37,27 @@ function withOem(row) {
   return { ...rest, oem: formatOemCodes(oem_codes) };
 }
 
+function alternativeSku(value) {
+  if (!value) return '';
+  if (typeof value === 'string') return String(value).toUpperCase();
+  if (typeof value !== 'object' || Array.isArray(value)) return '';
+  return String(value.sku || value.elimfilters_sku || value.code || '').toUpperCase();
+}
+
+function isMutualAlternativeGroup(skus, alternativesBySku) {
+  if (!Array.isArray(skus) || skus.length < 2) return false;
+  for (let i = 0; i < skus.length; i += 1) {
+    for (let j = i + 1; j < skus.length; j += 1) {
+      const a = String(skus[i] || '').toUpperCase();
+      const b = String(skus[j] || '').toUpperCase();
+      const aAlts = alternativesBySku.get(a) || new Set();
+      const bAlts = alternativesBySku.get(b) || new Set();
+      if (!aAlts.has(b) || !bAlts.has(a)) return false;
+    }
+  }
+  return true;
+}
+
 async function main() {
   const url = process.env.CATALOG_DATABASE_URL
     || process.env.ELIMFILTERS_DATABASE_URL
@@ -204,7 +225,38 @@ async function main() {
       WHERE sku_count > 1
       ORDER BY sku_count DESC,make,model_family,year,engine_code,filter_type
     `);
-    report.categories.competing_skus_same_vehicle_engine_filter_type = competingSku.rows;
+    const alternativeRows = await client.query(`
+      SELECT sku,alternatives
+      FROM public.elimfilters_catalog
+      WHERE alternatives IS NOT NULL
+        AND jsonb_typeof(alternatives)='array'
+        AND jsonb_array_length(alternatives)>0
+    `);
+    const alternativesBySku = new Map();
+    for (const row of alternativeRows.rows) {
+      const key = String(row.sku || '').toUpperCase();
+      alternativesBySku.set(
+        key,
+        new Set((Array.isArray(row.alternatives) ? row.alternatives : [])
+          .map(alternativeSku)
+          .filter(Boolean))
+      );
+    }
+
+    const competingConflicts = [];
+    const legitimateAlternatives = [];
+    for (const row of competingSku.rows) {
+      if (isMutualAlternativeGroup(row.skus, alternativesBySku)) {
+        legitimateAlternatives.push({
+          ...row,
+          coexistence_disposition: 'MUTUAL_FUNCTIONAL_ALTERNATIVES'
+        });
+      } else {
+        competingConflicts.push(row);
+      }
+    }
+    report.informational.competing_skus_mutual_alternatives = legitimateAlternatives;
+    report.categories.competing_skus_same_vehicle_engine_filter_type = competingConflicts;
 
     // D. Kit component is not represented in normalized applications for the
     // kit brand while sibling components are. This exposed the RAV4/CL120 class
