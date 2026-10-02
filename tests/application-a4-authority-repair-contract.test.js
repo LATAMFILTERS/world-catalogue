@@ -92,3 +92,10 @@ test('run_131 merges WA9409 into existing governed EW72096 equipment evidence',(
   assert.match(migration,/prior_verified_authority:'DONALDSON_OFFICIAL_CATALOG'/);
   assert.match(migration,/equipment_applications:\[\.\.\.existing,\.\.\.payload\]/);
 });
+
+test('run_131 normalizes legacy model_type and engine_code before governed writes',()=>{
+  assert.match(migration,/function governancePayload/);
+  assert.match(migration,/model: entry\.model \|\| \[entry\.model_family, entry\.model_type\]/);
+  assert.match(migration,/engine: entry\.engine \|\| entry\.engine_code/);
+  assert.match(migration,/governancePayload\(sourcePayloadResult\.rows\[0\]\?\.vehicle_applications/);
+});
