@@ -74,76 +74,43 @@ async function main() {
         continue;
       }
 
-      report.safe_repairs.push({
-        type:'NORMALIZE_PUBLIC_APPLICATIONS',
+      report.holds.push({
+        type:'MISSING_RELATIONAL_APPLICATIONS',
         sku:row.sku,
         base,
-        applications:normalized.length
+        applications:normalized.length,
+        reason:'REQUIRES_RELATIONAL_EVIDENCE'
       });
-
-      if (APPLY) {
-        for (const app of normalized) {
-          const result = await client.query(
-            `INSERT INTO ld_catalog.ld_vehicle_applications
-               (elimfilters_sku,source_sku,make,model_family,model_type,year,engine_code,source_origin)
-             VALUES ($1,$2,$3,$4,$5,$6,$7,'run_123_application_consistency_batch')
-             ON CONFLICT (elimfilters_sku,make,model_family,model_type,year)
-             DO UPDATE SET
-               source_sku=EXCLUDED.source_sku,
-               engine_code=COALESCE(EXCLUDED.engine_code,ld_catalog.ld_vehicle_applications.engine_code),
-               source_origin=EXCLUDED.source_origin`,
-            [row.sku,base,app.make,app.model,app.modelType,app.year,app.engine]
-          );
-          report.mutations.app_rows_inserted += result.rowCount;
-        }
-      }
     }
 
-    // 2) Stale source_sku inside relational applications. Only repair when the
-    // product has one clear canonical/base reference.
+    // 2) Application source identity is governed by the LD parent.
+    // Public catalog base/canonical references may legitimately differ from the
+    // application evidence source. run_123 never rewrites source_sku from the
+    // public catalog alone; parent mismatches stay visible as HOLDs.
     const staleSources = await client.query(`
       SELECT DISTINCT
-        v.id,v.elimfilters_sku,c.codigo_base,c.canonical_source_code,
-        v.source_sku,v.make,v.model_family,v.model_type,v.year,v.engine_code
+        v.id,v.elimfilters_sku,v.source_sku AS application_source_sku,
+        p.source_sku AS parent_source_sku,
+        v.make,v.model_family,v.model_type,v.year,v.engine_code,v.source_origin
       FROM ld_catalog.ld_vehicle_applications v
-      JOIN public.elimfilters_catalog c ON c.sku=v.elimfilters_sku
+      JOIN ld_catalog.ld_product_catalog p ON p.elimfilters_sku=v.elimfilters_sku
       WHERE nullif(trim(coalesce(v.source_sku,'')),'') IS NOT NULL
-        AND nullif(trim(coalesce(c.codigo_base,'')),'') IS NOT NULL
+        AND nullif(trim(coalesce(p.source_sku,'')),'') IS NOT NULL
         AND regexp_replace(upper(v.source_sku),'[^A-Z0-9]','','g')
-            <> regexp_replace(upper(c.codigo_base),'[^A-Z0-9]','','g')
-        AND (
-          c.canonical_source_code IS NULL
-          OR regexp_replace(upper(v.source_sku),'[^A-Z0-9]','','g')
-             <> regexp_replace(upper(c.canonical_source_code),'[^A-Z0-9]','','g')
-        )
+            <> regexp_replace(upper(p.source_sku),'[^A-Z0-9]','','g')
       ORDER BY v.elimfilters_sku,v.id
     `);
 
     for (const row of staleSources.rows) {
-      const base = row.canonical_source_code || row.codigo_base;
-      if (!base) {
-        report.holds.push({ type:'STALE_APPLICATION_SOURCE', sku:row.elimfilters_sku, id:row.id, reason:'NO_CANONICAL_SOURCE' });
-        continue;
-      }
-
-      report.safe_repairs.push({
-        type:'REALIGN_APPLICATION_SOURCE',
+      report.holds.push({
+        type:'APPLICATION_SOURCE_PARENT_MISMATCH',
         sku:row.elimfilters_sku,
         id:row.id,
-        from:row.source_sku,
-        to:base
+        application_source_sku:row.application_source_sku,
+        parent_source_sku:row.parent_source_sku,
+        source_origin:row.source_origin,
+        reason:'REQUIRES_EVIDENCE_REVIEW'
       });
-
-      if (APPLY) {
-        const result = await client.query(
-          `UPDATE ld_catalog.ld_vehicle_applications
-              SET source_sku=$1,
-                  source_origin='run_123_application_consistency_batch'
-            WHERE id=$2`,
-          [base,row.id]
-        );
-        report.mutations.app_rows_updated += result.rowCount;
-      }
     }
 
     // 3) Same vehicle/engine/filter_type has multiple SKUs. Do not auto-resolve:
@@ -217,41 +184,13 @@ async function main() {
       );
 
       const tuples = siblings.rows;
-      if (!tuples.length) {
-        report.holds.push({ type:'KIT_APPLICATION_GAP', kit_sku:row.kit_sku, sku:row.filter_sku, reason:'NO_SIBLING_APPLICATION_EVIDENCE' });
-        continue;
-      }
-
-      const base = row.canonical_source_code || row.codigo_base;
-      if (!base) {
-        report.holds.push({ type:'KIT_APPLICATION_GAP', kit_sku:row.kit_sku, sku:row.filter_sku, reason:'NO_CANONICAL_SOURCE' });
-        continue;
-      }
-
-      report.safe_repairs.push({
-        type:'INHERIT_KIT_PLATFORM_APPLICATIONS',
+      report.holds.push({
+        type:'KIT_APPLICATION_GAP',
         kit_sku:row.kit_sku,
         sku:row.filter_sku,
-        base,
-        applications:tuples.length
+        sibling_application_evidence:tuples.length,
+        reason:tuples.length ? 'REQUIRES_PLATFORM_EVIDENCE' : 'NO_SIBLING_APPLICATION_EVIDENCE'
       });
-
-      if (APPLY) {
-        for (const app of tuples) {
-          const result = await client.query(
-            `INSERT INTO ld_catalog.ld_vehicle_applications
-               (elimfilters_sku,source_sku,make,model_family,model_type,year,engine_code,source_origin)
-             VALUES ($1,$2,$3,$4,$5,$6,$7,'run_123_application_consistency_batch')
-             ON CONFLICT (elimfilters_sku,make,model_family,model_type,year)
-             DO UPDATE SET
-               source_sku=EXCLUDED.source_sku,
-               engine_code=COALESCE(EXCLUDED.engine_code,ld_catalog.ld_vehicle_applications.engine_code),
-               source_origin=EXCLUDED.source_origin`,
-            [row.filter_sku,base,app.make,app.model_family,app.model_type,app.year,app.engine_code]
-          );
-          report.mutations.app_rows_inserted += result.rowCount;
-        }
-      }
     }
 
     // 5) Prefix/type contradictions are never auto-repaired.
