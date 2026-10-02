@@ -67,8 +67,10 @@ async function main() {
         p.source_sku AS parent_source_sku,
         v.make,v.model_family,v.model_type,v.year,v.engine_code,v.source_origin,
         src.filter_type AS source_filter_type,
+        src.duty AS source_duty,
         tgt.sku AS target_sku,
         tgt.filter_type AS target_filter_type,
+        tgt.duty AS target_duty,
         tgt.catalog_active AS target_active
       FROM ld_catalog.ld_vehicle_applications v
       JOIN ld_catalog.ld_product_catalog p
@@ -134,6 +136,10 @@ async function main() {
       else if (row.target_active !== true) row.disposition = 'TARGET_INACTIVE';
       else if (String(row.source_filter_type || '') !== String(row.target_filter_type || '')) {
         row.disposition = 'FILTER_TYPE_MISMATCH';
+      } else if (
+        norm(row.source_duty) !== norm(row.target_duty)
+      ) {
+        row.disposition = 'DUTY_MISMATCH';
       } else if (exactByTarget.get(row.target_sku)?.has(key4(row))) {
         row.disposition = 'TARGET_EXACT_EXISTS';
       } else if (platformByTarget.get(row.target_sku)?.has(platformKey(row))) {
@@ -174,6 +180,8 @@ async function main() {
         authority_code: authorityRows[0].authority_code,
         parent_source_sku: authorityRows[0].parent_source_sku,
         filter_type: authorityRows[0].source_filter_type,
+        source_duty: authorityRows[0].source_duty,
+        target_duty: authorityRows[0].target_duty,
         rows: authorityRows.length,
         dispositions,
         safe,
@@ -207,6 +215,8 @@ async function main() {
         target_sku:a.target_sku,
         authority_code:a.authority_code,
         filter_type:a.filter_type,
+        source_duty:a.source_duty,
+        target_duty:a.target_duty,
         rows:a.rows
       })),
       held_authority_plan: heldAuthorities.map(a => ({
@@ -214,6 +224,8 @@ async function main() {
         target_sku:a.target_sku,
         authority_code:a.authority_code,
         filter_type:a.filter_type,
+        source_duty:a.source_duty,
+        target_duty:a.target_duty,
         rows:a.rows,
         dispositions:a.dispositions
       }))
