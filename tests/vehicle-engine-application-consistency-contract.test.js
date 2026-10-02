@@ -132,6 +132,9 @@ test('run_127 holds whole authorities on type, target-platform or convergence co
   assert.match(ownershipRepair, /competitor_part_number/);
   assert.match(ownershipRepair, /FILTER_TYPE_MISMATCH/);
   assert.match(ownershipRepair, /DUTY_MISMATCH/);
+  assert.match(ownershipRepair, /PUBLIC_EVIDENCE_WOULD_BE_ORPHANED/);
+  assert.match(ownershipRepair, /vehicle_json_count/);
+  assert.match(ownershipRepair, /equipment_json_count/);
   assert.match(ownershipRepair, /source_duty/);
   assert.match(ownershipRepair, /target_duty/);
   assert.match(ownershipRepair, /TARGET_EXACT_EXISTS/);
