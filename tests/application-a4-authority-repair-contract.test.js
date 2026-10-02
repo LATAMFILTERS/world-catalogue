@@ -70,3 +70,16 @@ test('run_131 never rewrites source_sku or product identity',()=>{
   assert.doesNotMatch(migration,/UPDATE\s+ld_catalog\.ld_product_catalog/i);
   assert.doesNotMatch(migration,/UPDATE\s+ld_catalog\.ld_canonical_product_identity/i);
 });
+
+test('run_131 routes public application JSON through the governed gateway',()=>{
+  assert.match(migration,/catalog-application-write-service/);
+  assert.match(migration,/applyVerifiedApplications/);
+  assert.doesNotMatch(migration,/SET\s+vehicle_applications=/i);
+  assert.doesNotMatch(migration,/SET\s+equipment_applications=/i);
+});
+
+test('run_131 stores WA9409 payload as heavy-duty equipment evidence',()=>{
+  assert.match(migration,/source:'EL39409'[\s\S]*target:'EW72096'[\s\S]*targetKind:'EQUIPMENT'/);
+  assert.match(migration,/equipment_applications:payload/);
+  assert.match(migration,/MANN-FILTER \+ DONALDSON/);
+});
