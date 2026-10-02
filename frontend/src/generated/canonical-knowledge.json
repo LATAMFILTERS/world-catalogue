@@ -1,7 +1,7 @@
 {
   "schemaVersion": "1.1.0",
   "sourceAuthority": "13-canonical-knowledge",
-  "generatedAt": "2026-10-02T19:39:59.881Z",
+  "generatedAt": "2026-09-22T17:14:51.168Z",
   "count": 61,
   "records": [
     {
@@ -284,7 +284,6 @@
         "Manufacturing",
         "Industrial & Process",
         "AEREMIS™",
-        "GAIRFIL™",
         "HE-CRIVA™",
         "MA-TREA™",
         "General particulate filtration stages",
@@ -388,13 +387,12 @@
         "Service Life"
       ],
       "keywords": [
-        "GAIRFIL General Air Filtration for Industrial Ventilation",
+        "General Air Filtration for Industrial Ventilation",
         "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
         "Engineering Reference",
         "Manufacturing",
         "Industrial & Process",
         "AEREMIS™",
-        "GAIRFIL™",
         "Airborne particulate loading",
         "Visible dust downstream",
         "Unexpected pressure-drop rise",
@@ -2032,7 +2030,6 @@
         "Industrial & Process",
         "COALVEX™",
         "COALERIS™",
-        "GASLIQ™",
         "Gas coalescing elements and media",
         "Bulk or intermediate separation internals where applicable",
         "Element-to-housing sealing interfaces",
@@ -2179,7 +2176,7 @@
         "Failure Analysis"
       ],
       "keywords": [
-        "GASLIQ Gas-Liquid Separation for Industrial Gas Conditioning",
+        "Gas-Liquid Separation for Industrial Gas Conditioning",
         "INDUSTRIAL_PROCESS_KNOWLEDGE_DOMAIN",
         "Engineering Reference",
         "Oil & Gas",
@@ -2187,7 +2184,7 @@
         "Power Generation",
         "Industrial & Process",
         "COALVEX™",
-        "GASLIQ™",
+        "None assigned",
         "Gas-liquid separation vessel or chamber",
         "Separation internals where applicable",
         "Liquid disengagement volume",
