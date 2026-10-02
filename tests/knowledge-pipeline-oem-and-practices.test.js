@@ -8,8 +8,10 @@
 const test = require('node:test');
 const assert = require('node:assert/strict');
 
-const { buildDiagnosticAssessmentAnswer } = require('../lib/bot-conversation-orchestrator');
+const { buildDiagnosticAssessmentAnswer, buildMaintenanceIntervalAnswer, deterministicClassify, finalizeResponseGovernance } = require('../lib/bot-conversation-orchestrator');
 const { sanitizeTechnicalEvidence } = require('../lib/knowledge-governance/technical-evidence-contract');
+const { createOemMaintenanceRecord } = require('../lib/knowledge-governance/oem-maintenance-contract');
+const { createEmptyState } = require('../lib/bot-protocol-memory');
 
 function baseState(overrides = {}) {
   return {
@@ -24,6 +26,81 @@ function baseState(overrides = {}) {
 }
 
 // Case 11: Intervalo OEM aprobado -> se muestra con fuente.
+test('direct maintenance question is classified as maintenance_interval with vehicle entities', () => {
+  const classification = deterministicClassify(
+    'cada cuanto debo cambiarle los filtros a mi hyundai sonata 2022',
+    createEmptyState()
+  );
+  assert.equal(classification.intent, 'maintenance_interval');
+  assert.equal(classification.entities.brand, 'HYUNDAI');
+  assert.equal(classification.entities.model, 'sonata');
+  assert.equal(classification.entities.year, 2022);
+});
+
+test('maintenance interval answer refuses numeric text without a structured approved OEM record', () => {
+  const state = {
+    ...createEmptyState(),
+    equipment: { brand: 'HYUNDAI', model: 'SONATA', engine: null, year: 2022 }
+  };
+  const answer = buildMaintenanceIntervalAnswer(state, {
+    technicalKnowledge: {
+      status: 'validated',
+      answer: 'Cambiar cada 8,000 millas.',
+      evidence: [],
+      oem_maintenance: null
+    }
+  });
+  assert.match(answer, /No tengo un intervalo OEM estructurado y aprobado/i);
+  assert.doesNotMatch(answer, /8,000|8000/);
+});
+
+test('structured approved OEM maintenance record passes response governance', () => {
+  const evidence = sanitizeTechnicalEvidence({
+    technical_source_validated: true,
+    source_authority: 'obsidian',
+    source_id: 'hyundai-sonata-2022-maintenance',
+    source_type: 'oem_manual',
+    source_title: 'Hyundai Sonata 2022 Owner Manual',
+    equipment: { brand: 'HYUNDAI', model: 'SONATA', year: 2022 },
+    approved_for_bot_use: true
+  });
+  const record = createOemMaintenanceRecord({
+    status: 'validated',
+    equipment: { brand: 'HYUNDAI', model: 'SONATA', year: 2022 },
+    system: 'oil',
+    component: 'engine oil filter',
+    interval: { value: 8000, unit: 'miles', maximum_time_months: 12 },
+    technical_evidence: evidence
+  });
+  const state = {
+    ...createEmptyState(),
+    intent: 'maintenance_interval',
+    equipment: { brand: 'HYUNDAI', model: 'SONATA', engine: null, year: 2022 }
+  };
+  const pipeline = {
+    technicalKnowledge: {
+      status: 'validated',
+      answer: 'Cambiar el filtro de aceite cada 8,000 millas o 12 meses.',
+      evidence: [evidence],
+      oem_maintenance: record
+    },
+    categoryRecommendation: { status: 'not_applicable', categories: [] },
+    knowledgeGapRecord: null
+  };
+  const answer = buildMaintenanceIntervalAnswer(state, pipeline);
+  assert.match(answer, /8,000 millas|8000 millas/i);
+  const governed = finalizeResponseGovernance({
+    requestId: 'test-maintenance',
+    body: {},
+    state,
+    catalog: { products: [], lookupStatus: 'not_required' },
+    answer,
+    pipeline
+  });
+  assert.equal(governed.governance.oem_maintenance_found, true);
+  assert.match(governed.answer, /8,000 millas|8000 millas/i);
+});
+
 test('validated technical knowledge is shown in the "Mantenimiento OEM" section with its source', () => {
   const evidence = sanitizeTechnicalEvidence({
     technical_source_validated: true,
