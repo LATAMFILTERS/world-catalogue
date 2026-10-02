@@ -63,6 +63,27 @@ function norm(value) {
   return String(value || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
 }
 
+function normalizeYear(value) {
+  const n = Number(String(value || '').trim());
+  if (!Number.isFinite(n)) return null;
+  if (n >= 0 && n <= 49) return 2000 + n;
+  if (n >= 50 && n <= 99) return 1900 + n;
+  return n;
+}
+
+function yearValueMatches(value, targetYear) {
+  if (!targetYear) return true;
+  const target = normalizeYear(targetYear);
+  const text = String(value || '').trim();
+  if (!text) return false;
+  if (/^\d{2,4}$/.test(text)) return normalizeYear(text) === target;
+  const range = text.match(/^(\d{2,4})\s*[-/]\s*(\d{2,4})$/);
+  if (!range) return false;
+  const a = normalizeYear(range[1]);
+  const b = normalizeYear(range[2]);
+  return Boolean(a && b && target >= Math.min(a,b) && target <= Math.max(a,b));
+}
+
 function collectBotSkus(body) {
   const values = new Set();
   for (const product of body?.evidence?.products || []) {
@@ -81,7 +102,7 @@ async function queryApplicationRows(db, c) {
     c.make,
     c.model,
     c.modelTypes || null,
-    c.yearLike ? '%' + c.yearLike + '%' : null,
+    null,
     c.engineLike ? '%' + String(c.engineLike).toUpperCase() + '%' : null
   ];
   const sql = `
@@ -96,7 +117,8 @@ async function queryApplicationRows(db, c) {
        AND ($5::text IS NULL OR upper(coalesce(v.engine_code,'')) LIKE $5)
      ORDER BY v.elimfilters_sku
   `;
-  return (await db.query(sql, params)).rows;
+  const rows = (await db.query(sql, params)).rows;
+  return c.yearLike ? rows.filter(row => yearValueMatches(row.year, c.yearLike)) : rows;
 }
 
 async function assertCanonicalProduct(db, sku) {
