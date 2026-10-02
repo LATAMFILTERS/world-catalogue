@@ -239,4 +239,4 @@ if (require.main === module) {
   });
 }
 
-module.exports = { removeExactFramClaims, CODES, TARGETS, OWNER, SURVIVING_VARIANTS };
+module.exports = { removeExactFramClaims, publicFramOwners, CODES, TARGETS, OWNER, SURVIVING_VARIANTS };
