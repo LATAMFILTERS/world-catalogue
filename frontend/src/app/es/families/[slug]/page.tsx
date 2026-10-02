@@ -11,10 +11,10 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
-  return familyMetadata(slug, 'en');
+  return familyMetadata(slug, 'es');
 }
 
-export default async function FamilyPage({ params }: Props) {
+export default async function SpanishFamilyPage({ params }: Props) {
   const { slug } = await params;
-  return <FamilyPageView slug={slug} lang="en" />;
+  return <FamilyPageView slug={slug} lang="es" />;
 }

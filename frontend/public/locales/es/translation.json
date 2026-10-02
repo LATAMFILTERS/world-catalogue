@@ -5,7 +5,8 @@
     "technologies": "Tecnologías",
     "contact": "Contacto",
     "findMyFilter": "BUSCAR MI FILTRO",
-    "knowledge": "Conocimiento"
+    "knowledge": "Conocimiento",
+    "about": "Empresa"
   },
   "hero": {
     "tag": "TECNOLOGÍA DE PROTECCIÓN DE ACTIVOS",
@@ -113,7 +114,9 @@
     "locationText": "Frisco, Texas",
     "kleoText": "© 2015–2026 Kleo Technologies",
     "elimfiltersCopyright": "KLEO TECHNOLOGY LLC | Inteligencia e Ingeniería en Filtración",
-    "elimfiltersYear": "2015–2026"
+    "elimfiltersYear": "2015–2026",
+    "legalLine": "© KLEO TECHNOLOGY LLC. ELIMFILTERS® es una marca registrada. Sede legal: Frisco, Texas, EE. UU. ELIMFILTERS opera con un modelo comercial global centrado en distribuidores y con capacidad coordinada para cuentas estratégicas.",
+    "termsOfService": "Términos del servicio"
   },
   "category": {
     "keyAdvantages": "VENTAJAS CLAVE",
@@ -329,7 +332,79 @@
       "Ferroviario y Transporte Público",
       "Transporte Comercial"
     ],
-    "ctaProtect": "Proteger mis activos"
+    "ctaProtect": "Proteger mis activos",
+    "cascadeTitle1": "Un solo evento de contaminación.",
+    "cascadeTitle2": "Una cascada de pérdidas.",
+    "cascadeIntro": "Una falla por contaminación rara vez queda contenida. Escala de un componente dañado al reemplazo del conjunto completo, a la recertificación del fluido y del sistema, y a paradas no planificadas que detienen toda la operación. Los costos se acumulan mucho más allá de la pieza que falló.",
+    "cascadeItems": [
+      {
+        "label": "Daño de componentes",
+        "desc": "La contaminación por partículas daña carretes de válvulas y partes internas de bombas, y a menudo obliga a reemplazar el conjunto completo en lugar de una sola pieza."
+      },
+      {
+        "label": "Recuperación del sistema",
+        "desc": "El fluido contaminado debe purgarse por completo: líneas lavadas, fluido reemplazado y sistema recertificado antes de que el equipo pueda volver a operar con seguridad."
+      },
+      {
+        "label": "Parada no planificada",
+        "desc": "Cada día que un activo está fuera de servicio es producción perdida, compromisos incumplidos y mano de obra inactiva: el costo que más rápido se acumula."
+      }
+    ],
+    "preventionTag": "Prevención vs. falla",
+    "preventionP1": "El reemplazo programado de filtros es una partida rutinaria de mantenimiento. Una falla causada por contaminación no lo es.",
+    "preventionP2": "La protección de activos es el seguro de menor costo disponible contra las paradas no planificadas.",
+    "assetSteps": [
+      {
+        "label": "Identificar la contaminación",
+        "desc": "Partículas, agua, calor, subproductos químicos"
+      },
+      {
+        "label": "Aplicar normas de ingeniería"
+      },
+      {
+        "label": "Implementar la tecnología de protección"
+      }
+    ],
+    "heroField": "En el campo, las fallas rara vez empiezan en el filtro. Empiezan con polvo que entra por la admisión de aire, agua que llega a los inyectores diésel, partículas abrasivas que circulan en el aceite o contaminación que daña componentes hidráulicos. ELIMFILTERS construye la protección alrededor de esas rutas reales de falla.",
+    "platformName": "Inteligencia para la protección de activos",
+    "platformTitle1": "Una sola plataforma de",
+    "platformTitle2": "inteligencia para la protección de activos",
+    "platformBody": "ELIMFILTERS integra filtración de ingeniería, conocimiento técnico gobernado, inteligencia de producto y herramientas digitales en un solo sistema pensado para apoyar mejores decisiones sobre los activos críticos.",
+    "platformPillars": [
+      {
+        "title": "KNOWLEDGE CENTER",
+        "body": "Referencias de ingeniería organizadas por sistema, modo de falla y norma industrial: ISO 4406, ISO 16889, ISO 11171."
+      },
+      {
+        "title": "CATÁLOGO DE PRODUCTOS",
+        "body": "Base de datos por SKU con números de parte OEM, especificaciones de rosca, clasificación del medio y referencias cruzadas."
+      },
+      {
+        "title": "PART SEARCH",
+        "body": "Busque por número OEM, dimensión o aplicación para llegar al SKU ELIMFILTERS correcto."
+      }
+    ],
+    "platformCtaKnowledge": "Explorar el conocimiento",
+    "platformCtaSearch": "Buscar en Product Intelligence",
+    "platformCtaNetwork": "Red global",
+    "industriesTitle1": "Diseñado para cada",
+    "industriesTitle2": "industria",
+    "industriesPrev": "Desplazar industrias a la izquierda",
+    "industriesNext": "Desplazar industrias a la derecha",
+    "industryTitles": {
+      "mining": "Minería",
+      "agriculture": "Agricultura",
+      "construction": "Construcción",
+      "oil-gas": "Petróleo y gas",
+      "marine": "Marina",
+      "power-generation": "Generación de energía",
+      "trucks-fleets": "Flotas de camiones",
+      "manufacturing": "Manufactura",
+      "railway": "Ferroviaria",
+      "waste-municipal": "Residuos y servicios municipales",
+      "bus-coach": "Buses y autocares",
+      "automotive": "Automotriz"
+    }
   },
   "contact": {
     "pageTitle": "Contact & Technical Support",
@@ -494,5 +569,35 @@
     "link4Label": "Visit ELIMFILTERS.com",
     "link4Desc": "Explore systems, technologies, and industries.",
     "footerText": "Every Micron Matters."
+  },
+  "contactRouter": {
+    "kicker": "CONTACTE A ELIMFILTERS",
+    "title": "Elija el motivo de su consulta.",
+    "intro": "Las solicitudes técnicas, de inteligencia de producto y de distribución siguen flujos de trabajo distintos. Empiece por la opción que corresponde a lo que necesita para que su solicitud llegue al equipo correcto con el contexto adecuado.",
+    "routes": [
+      {
+        "title": "Soporte técnico",
+        "body": "Preguntas de aplicación, fallas repetidas, validación de referencias cruzadas OEM y revisión de ingeniería.",
+        "label": "Solicitar soporte técnico"
+      },
+      {
+        "title": "Número de parte / Product Intelligence",
+        "body": "Búsqueda por número de parte, referencia cruzada o aplicación conocida. Empiece con Product Intelligence.",
+        "label": "Buscar en Product Intelligence"
+      },
+      {
+        "title": "Solicitud de distribuidor",
+        "body": "Empresas que buscan una relación estructurada de distribución B2B y un programa de desarrollo de mercado.",
+        "label": "Postularse como distribuidor"
+      },
+      {
+        "title": "Consulta comercial",
+        "body": "Clientes actuales, pedidos por volumen o preguntas comerciales generales que no cubren las opciones anteriores.",
+        "label": "Enviar una consulta comercial"
+      }
+    ]
+  },
+  "a11y": {
+    "skipToContent": "Saltar al contenido principal"
   }
 }

@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 
 const PLATFORM_NAME = 'Asset Protection Intelligence';
 
@@ -12,6 +13,7 @@ const PLATFORM_PILLARS = [
 ] as const;
 
 export function GlobalBrandSection() {
+  const { t } = useTranslation();
   return (
     <section style={{
       padding: 'clamp(4rem, 8vw, 7rem) clamp(1.25rem, 6vw, 6rem)',
@@ -34,7 +36,7 @@ export function GlobalBrandSection() {
             textTransform: 'uppercase',
             marginBottom: '1.25rem',
           }}>
-            {`// ${PLATFORM_NAME}`}
+            {`// ${t('home.platformName', PLATFORM_NAME)}`}
           </p>
 
           <h2 style={{
@@ -48,7 +50,7 @@ export function GlobalBrandSection() {
             marginBottom: '1.6rem',
             maxWidth: '980px',
           }}>
-            One platform for <span style={{ color: '#FFF12D' }}>asset protection intelligence</span>
+            {t('home.platformTitle1', 'One platform for')} <span style={{ color: '#FFF12D' }}>{t('home.platformTitle2', 'asset protection intelligence')}</span>
           </h2>
 
           <p style={{
@@ -58,7 +60,7 @@ export function GlobalBrandSection() {
             maxWidth: '900px',
             margin: '0 0 2rem 0',
           }}>
-            ELIMFILTERS connects engineered filtration, governed technical knowledge, product intelligence and digital tools in one system built to support better decisions across critical assets.
+            {t('home.platformBody', 'ELIMFILTERS connects engineered filtration, governed technical knowledge, product intelligence and digital tools in one system built to support better decisions across critical assets.')}
           </p>
 
           <div style={{
@@ -67,7 +69,7 @@ export function GlobalBrandSection() {
             gap: '0.9rem',
             marginBottom: '2.5rem',
           }}>
-            {PLATFORM_PILLARS.map(([title, body]) => (
+            {PLATFORM_PILLARS.map(([title, body], index) => (
               <div key={title} style={{
                 padding: '1.5rem',
                 background: 'rgba(255,255,255,0.04)',
@@ -75,10 +77,10 @@ export function GlobalBrandSection() {
                 textAlign: 'center',
               }}>
                 <h3 style={{ fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontSize: '1.05rem', margin: '0 0 0.55rem', color: '#fff' }}>
-                  {title}
+                  {t(`home.platformPillars.${index}.title`, title)}
                 </h3>
                 <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '1rem', lineHeight: 1.65, margin: 0, textAlign: 'justify' }}>
-                  {body}
+                  {t(`home.platformPillars.${index}.body`, body)}
                 </p>
               </div>
             ))}
@@ -104,7 +106,7 @@ export function GlobalBrandSection() {
               textTransform: 'uppercase',
               textAlign: 'center',
             }}>
-              Explore Knowledge
+              {t('home.platformCtaKnowledge', 'Explore Knowledge')}
             </Link>
 
             <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={{
@@ -121,7 +123,7 @@ export function GlobalBrandSection() {
               textAlign: 'center',
               border: '1px solid rgba(255,241,45,0.4)',
             }}>
-              Search Product Intelligence
+              {t('home.platformCtaSearch', 'Search Product Intelligence')}
             </a>
 
             <Link href="/distributors" style={{
@@ -138,7 +140,7 @@ export function GlobalBrandSection() {
               textAlign: 'center',
               border: '1px solid rgba(255,255,255,0.15)',
             }}>
-              Global Network
+              {t('home.platformCtaNetwork', 'Global Network')}
             </Link>
           </motion.div>
         </motion.div>

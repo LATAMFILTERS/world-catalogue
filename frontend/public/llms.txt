@@ -19,6 +19,7 @@ ELIMFILTERS is an industrial filtration engineering brand organized around conta
 - Industrial & Process: https://elimfilters.com/industrial-process/
 - Engineering Reference: https://elimfilters.com/knowledge-center/engineering-reference/
 - Standards: https://elimfilters.com/knowledge-center/standards/
+- Spanish (español): https://elimfilters.com/es/ — home, product families (https://elimfilters.com/es/families/fuel-water-separators/), HYDROCORE™ (https://elimfilters.com/es/technologies/hydrocore/) and contact (https://elimfilters.com/es/contact/)
 - Part Search: https://part-search.elimfilters.com/
 - Product catalogue by family (crawlable SKU lists): https://part-search.elimfilters.com/family/ES9/ (one hub per governed family prefix: EA1, EA3, EF9, EF3, ES9, EL8, EL3, EH6, EW7, EC1, EC3, ET9, ED4)
 - Product catalogue sitemap: https://part-search.elimfilters.com/sitemap.xml

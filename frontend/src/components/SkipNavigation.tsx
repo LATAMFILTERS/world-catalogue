@@ -1,6 +1,9 @@
 'use client'
 
+import { useTranslation } from 'react-i18next'
+
 export default function SkipNavigation() {
+  const { t } = useTranslation()
   return (
     <a
       href="#main-content"
@@ -25,7 +28,7 @@ export default function SkipNavigation() {
         e.currentTarget.style.top = '-40px'
       }}
     >
-      Skip to main content
+      {t('a11y.skipToContent', 'Skip to main content')}
     </a>
   )
 }

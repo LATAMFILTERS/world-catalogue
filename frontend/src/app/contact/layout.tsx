@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     languages: {
       'x-default': CANONICAL,
       en: CANONICAL,
+      es: 'https://elimfilters.com/es/contact/',
     },
   },
   openGraph: {
