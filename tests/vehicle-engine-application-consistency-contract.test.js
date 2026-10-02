@@ -127,6 +127,9 @@ test('run_127 changes only relational application ownership and preserves author
 });
 
 test('run_127 holds whole authorities on type, target-platform or convergence conflicts', () => {
+  assert.match(ownershipRepair, /DIRECT_OWNERSHIP_MISSING/);
+  assert.match(ownershipRepair, /ld_competitor_cross_references/);
+  assert.match(ownershipRepair, /competitor_part_number/);
   assert.match(ownershipRepair, /FILTER_TYPE_MISMATCH/);
   assert.match(ownershipRepair, /DUTY_MISMATCH/);
   assert.match(ownershipRepair, /source_duty/);
