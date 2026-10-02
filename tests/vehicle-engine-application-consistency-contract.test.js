@@ -77,6 +77,16 @@ test('run_123 keeps public-only applications and kit inheritance on HOLD', () =>
 });
 
 
+test('global audit classifies application source aliases instead of flagging all parent differences', () => {
+  assert.match(audit, /application_source_identity_legitimate_alias/);
+  assert.match(audit, /application_source_identity_conflict/);
+  assert.match(audit, /application_source_identity_unsupported/);
+  assert.match(audit, /CANONICAL_LD_MATCH/);
+  assert.match(audit, /RESOLVER_SAME_SKU/);
+  assert.match(audit, /RESOLVER_OTHER_SKU/);
+  assert.doesNotMatch(audit, /application_source_identity_mismatch\s*=/);
+});
+
 test('global audit OEM display comes only from elimfilters_catalog.oem_codes', () => {
   assert.match(audit, /c\.oem_codes/);
   assert.match(audit, /function formatOemCodes\(value\)/);
