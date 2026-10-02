@@ -1,0 +1,14 @@
+{
+  "_note": "Phase-1 SKUs published as indexable pages at /products/<sku>/ and listed in the sitemap. Add entries here, then run scripts/export-product-pages.mjs. 'family' is the /families/<slug>/ page that links to the SKU.",
+  "phase": 1,
+  "options": {
+    "showCrossReferences": true,
+    "showPerformanceSpecs": true
+  },
+  "skus": [
+    { "sku": "EH60950", "family": "hydraulic-filters" },
+    { "sku": "EL83191", "family": "oil-filters" },
+    { "sku": "EL84004", "family": "oil-filters" },
+    { "sku": "EF95112", "family": "secondary-fuel" }
+  ]
+}

@@ -16,6 +16,7 @@ import {
   FIELD_QUESTIONS_PT, SERVICE_DISCIPLINE_PT, INDUSTRY_PT,
 } from '@/lib/families-pt';
 import { OG_LOCALE, languageAlternates, localizedPath, type PageLang } from '@/lib/localized-routes';
+import { productHeading, productPath, productsForFamily } from '@/lib/product-pages';
 import { LanguageMenu } from '@/components/LanguageMenu';
 
 const BASE_URL = 'https://elimfilters.com';
@@ -521,6 +522,20 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
             <div style={industryGrid}>
               {system.relatedIndustries.map((industry) => (
                 <Link key={industry} href={`/industries/${industry}/`} style={industryLink}>{industryLabel(industry, lang)}</Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {lang === 'en' && productsForFamily(fam.slug).length > 0 && (
+        <section style={industriesSection} aria-labelledby="family-products">
+          <div style={wrap}>
+            <span style={sectionKicker}>CATALOGUE</span>
+            <h2 id="family-products" style={sectionTitleSmall}>Part numbers in this family</h2>
+            <div style={industryGrid}>
+              {productsForFamily(fam.slug).map((product) => (
+                <Link key={product.sku} href={productPath(product)} style={industryLink}>{productHeading(product)}</Link>
               ))}
             </div>
           </div>

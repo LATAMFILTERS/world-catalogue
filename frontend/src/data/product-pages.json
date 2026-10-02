@@ -1,0 +1,582 @@
+{
+ "phase": 1,
+ "options": {
+  "showCrossReferences": true,
+  "showPerformanceSpecs": true
+ },
+ "products": [
+  {
+   "sku": "EH60950",
+   "slug": "eh60950",
+   "family": "hydraulic-filters",
+   "duty": "Heavy Duty",
+   "title": "Hydraulic Spin-On Filter",
+   "technology": "NANOFORCE",
+   "description": "EH60950 is an ELIMFILTERS hydraulic spin-on filter protected by NANOFORCE™ technology.",
+   "specs": [
+    {
+     "name": "Thread",
+     "value": "1 3/8-12 UN"
+    },
+    {
+     "name": "Height",
+     "value": "240 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "97 mm"
+    },
+    {
+     "name": "Gasket outer diameter",
+     "value": "70 mm"
+    },
+    {
+     "name": "Gasket inner diameter",
+     "value": "63 mm"
+    },
+    {
+     "name": "Filtration rating",
+     "value": "11 absolute / 4 nominal"
+    },
+    {
+     "name": "Efficiency",
+     "value": "Beta 1000 at 11 micron; Beta 2 at 4 micron"
+    },
+    {
+     "name": "Filter media",
+     "value": "Synthetic microfiber glass / Synteq XP"
+    }
+   ],
+   "oem": [
+    {
+     "brand": "John Deere",
+     "code": "AH128449"
+    },
+    {
+     "brand": "John Deere",
+     "code": "AT215172"
+    },
+    {
+     "brand": "John Deere",
+     "code": "4160174"
+    }
+   ],
+   "oemTotal": 3,
+   "crossRefs": [
+    {
+     "brand": "Fleetguard",
+     "code": "HF6557"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "BT8852MPG"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "BT734"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "BT749"
+    },
+    {
+     "brand": "WIX",
+     "code": "51819"
+    }
+   ],
+   "crossRefsTotal": 5,
+   "applications": [
+    "JOHN DEERE 9650",
+    "JOHN DEERE 9650 CTS · JOHN DEERE 6081",
+    "JOHN DEERE 9650 STS · JOHN DEERE 6081H"
+   ],
+   "source": {
+    "kind": "repo-seed-rows",
+    "file": "config/product-pages/seed-rows.json",
+    "seed": "scripts/upsert-eh60950.js"
+   }
+  },
+  {
+   "sku": "EL83191",
+   "slug": "el83191",
+   "family": "oil-filters",
+   "duty": "Heavy Duty",
+   "title": "Lube Oil Spin-On Filter",
+   "technology": "SYNTRAX",
+   "description": "EL83191 is an ELIMFILTERS lube oil spin-on filter protected by SYNTRAX™ technology.",
+   "specs": [
+    {
+     "name": "Thread",
+     "value": "1 1/8-16 UN"
+    },
+    {
+     "name": "Height",
+     "value": "262 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "108 mm"
+    },
+    {
+     "name": "Gasket outer diameter",
+     "value": "99.2 mm"
+    },
+    {
+     "name": "Gasket inner diameter",
+     "value": "90.6 mm"
+    },
+    {
+     "name": "Filtration rating",
+     "value": "21 micron"
+    },
+    {
+     "name": "Efficiency",
+     "value": "99% @ 21 micron"
+    },
+    {
+     "name": "Efficiency test method",
+     "value": "ISO 16889"
+    },
+    {
+     "name": "Filter media",
+     "value": "Cellulose"
+    },
+    {
+     "name": "Burst pressure",
+     "value": "149 psi"
+    }
+   ],
+   "oem": [
+    {
+     "brand": "Caterpillar",
+     "code": "1R-0658"
+    },
+    {
+     "brand": "Caterpillar",
+     "code": "1R-0739"
+    },
+    {
+     "brand": "Caterpillar",
+     "code": "1R-1807"
+    },
+    {
+     "brand": "Caterpillar",
+     "code": "1W-3300"
+    },
+    {
+     "brand": "Deutz",
+     "code": "1164406"
+    },
+    {
+     "brand": "John Deere",
+     "code": "GG17031266"
+    },
+    {
+     "brand": "Mack",
+     "code": "2191P553191"
+    },
+    {
+     "brand": "Mack",
+     "code": "21939324"
+    },
+    {
+     "brand": "Mack",
+     "code": "485GB3191"
+    },
+    {
+     "brand": "Mack",
+     "code": "485GB3191A"
+    },
+    {
+     "brand": "Iveco",
+     "code": "42537127"
+    },
+    {
+     "brand": "Hino",
+     "code": "S2340-11700"
+    },
+    {
+     "brand": "Ford",
+     "code": "5011417"
+    },
+    {
+     "brand": "Ford",
+     "code": "5011502"
+    },
+    {
+     "brand": "Ford",
+     "code": "9576P553191"
+    },
+    {
+     "brand": "General Motors",
+     "code": "6439392"
+    }
+   ],
+   "oemTotal": 29,
+   "crossRefs": [
+    {
+     "brand": "Fleetguard",
+     "code": "HF35197"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "LF16101"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "LF16175"
+    },
+    {
+     "brand": "Donaldson",
+     "code": "P553191"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "B76"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "B76-B"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "B76-MPG"
+    },
+    {
+     "brand": "WIX",
+     "code": "24526"
+    },
+    {
+     "brand": "WIX",
+     "code": "24536"
+    },
+    {
+     "brand": "WIX",
+     "code": "24556"
+    },
+    {
+     "brand": "MANN-FILTER",
+     "code": "W1102/15"
+    },
+    {
+     "brand": "MANN-FILTER",
+     "code": "W1102/4"
+    }
+   ],
+   "crossRefsTotal": 106,
+   "applications": [],
+   "source": {
+    "kind": "repo-seed-rows",
+    "file": "config/product-pages/seed-rows.json",
+    "seed": "insert_el83191.js"
+   }
+  },
+  {
+   "sku": "EL84004",
+   "slug": "el84004",
+   "family": "oil-filters",
+   "duty": "Heavy Duty",
+   "title": "Lube Oil Spin-On Filter",
+   "technology": "SYNTRAX",
+   "description": "EL84004 is an ELIMFILTERS lube oil spin-on filter protected by SYNTRAX™ technology.",
+   "specs": [
+    {
+     "name": "Thread",
+     "value": "1 1/8-16 UN"
+    },
+    {
+     "name": "Height",
+     "value": "262 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "108 mm"
+    },
+    {
+     "name": "Gasket outer diameter",
+     "value": "99.2 mm"
+    },
+    {
+     "name": "Gasket inner diameter",
+     "value": "90.6 mm"
+    },
+    {
+     "name": "Filtration rating",
+     "value": "40 micron"
+    },
+    {
+     "name": "Efficiency",
+     "value": "99% @ 40 micron"
+    },
+    {
+     "name": "Efficiency test method",
+     "value": "SAE J1858"
+    },
+    {
+     "name": "Filter media",
+     "value": "Cellulose"
+    },
+    {
+     "name": "Burst pressure",
+     "value": "149 psi"
+    }
+   ],
+   "oem": [
+    {
+     "brand": "Caterpillar",
+     "code": "1R-0658"
+    },
+    {
+     "brand": "Caterpillar",
+     "code": "1R-0739"
+    },
+    {
+     "brand": "Caterpillar",
+     "code": "1R-1807"
+    },
+    {
+     "brand": "Caterpillar",
+     "code": "1R0658"
+    },
+    {
+     "brand": "Deutz",
+     "code": "1164406"
+    },
+    {
+     "brand": "John Deere",
+     "code": "GG17031266"
+    },
+    {
+     "brand": "Scania",
+     "code": "1117285"
+    },
+    {
+     "brand": "Mack",
+     "code": "21939324"
+    },
+    {
+     "brand": "Mack",
+     "code": "485GB3191"
+    },
+    {
+     "brand": "Mack",
+     "code": "485GB3191A"
+    },
+    {
+     "brand": "Mack",
+     "code": "485GB3191B"
+    },
+    {
+     "brand": "Hino",
+     "code": "S2340-11700"
+    },
+    {
+     "brand": "Case",
+     "code": "60507493"
+    },
+    {
+     "brand": "Case",
+     "code": "W1250599"
+    },
+    {
+     "brand": "Case IH",
+     "code": "2836"
+    },
+    {
+     "brand": "Case IH",
+     "code": "60507493"
+    }
+   ],
+   "oemTotal": 47,
+   "crossRefs": [
+    {
+     "brand": "Fleetguard",
+     "code": "HF35197"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "LF3321"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "LF3379"
+    },
+    {
+     "brand": "Donaldson",
+     "code": "P554004"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "B76"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "B76-B"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "B76-MPG"
+    },
+    {
+     "brand": "WIX",
+     "code": "24526"
+    },
+    {
+     "brand": "WIX",
+     "code": "24536"
+    },
+    {
+     "brand": "WIX",
+     "code": "24556"
+    },
+    {
+     "brand": "MANN-FILTER",
+     "code": "W1102/15"
+    },
+    {
+     "brand": "MANN-FILTER",
+     "code": "W1102/4"
+    }
+   ],
+   "crossRefsTotal": 103,
+   "applications": [],
+   "source": {
+    "kind": "repo-seed-rows",
+    "file": "config/product-pages/seed-rows.json",
+    "seed": "insert_el84004.js"
+   }
+  },
+  {
+   "sku": "EF95112",
+   "slug": "ef95112",
+   "family": "secondary-fuel",
+   "duty": "Heavy Duty",
+   "title": "Fuel Spin-On Filter",
+   "technology": "SYNTAPORE",
+   "description": "EF95112 is an ELIMFILTERS fuel spin-on filter protected by SYNTAPORE™ technology.",
+   "specs": [
+    {
+     "name": "Thread",
+     "value": "M14 X 1.5-6H INT"
+    },
+    {
+     "name": "Height",
+     "value": "88.65 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "76.81 mm"
+    },
+    {
+     "name": "Gasket outer diameter",
+     "value": "71.98 mm"
+    },
+    {
+     "name": "Gasket inner diameter",
+     "value": "62.53 mm"
+    },
+    {
+     "name": "Filtration rating",
+     "value": "17.30 micron"
+    },
+    {
+     "name": "Efficiency",
+     "value": "99% @ 17.30 micron (c)"
+    },
+    {
+     "name": "Efficiency test method",
+     "value": "SAE J905"
+    },
+    {
+     "name": "Filter media",
+     "value": "Cellulose"
+    },
+    {
+     "name": "Rated flow",
+     "value": "3.17 L/min (0.84 gpm)"
+    },
+    {
+     "name": "Burst pressure",
+     "value": "203 psi"
+    }
+   ],
+   "oem": [
+    {
+     "brand": "Mercedes-Benz",
+     "code": "A0020921201"
+    },
+    {
+     "brand": "Mercedes-Benz",
+     "code": "A0010923201"
+    },
+    {
+     "brand": "Mercedes-Benz",
+     "code": "A0010922501"
+    },
+    {
+     "brand": "Mercedes-Benz",
+     "code": "A0010920501"
+    },
+    {
+     "brand": "Case IH",
+     "code": "1967093C1"
+    },
+    {
+     "brand": "Ford",
+     "code": "5014353"
+    },
+    {
+     "brand": "General Motors",
+     "code": "9975337"
+    },
+    {
+     "brand": "General Motors",
+     "code": "25176758"
+    },
+    {
+     "brand": "Clark Equipment",
+     "code": "4155053"
+    }
+   ],
+   "oemTotal": 19,
+   "crossRefs": [
+    {
+     "brand": "Fleetguard",
+     "code": "FF5112"
+    },
+    {
+     "brand": "Bosch",
+     "code": "9455160251"
+    },
+    {
+     "brand": "Bosch",
+     "code": "1457434153"
+    },
+    {
+     "brand": "Bosch",
+     "code": "1457434114"
+    }
+   ],
+   "crossRefsTotal": 7,
+   "applications": [
+    "Mercedes-Benz MB120 · OM616",
+    "Mercedes-Benz MB160 · OM616",
+    "Mercedes-Benz MB100D-KB · OM616",
+    "Mercedes-Benz MB100D · OM615/ OM616",
+    "Mercedes-Benz 240D · SERIES W123 DIESEL",
+    "Mercedes-Benz 240GD · SERIES W123 DIESEL",
+    "Mercedes-Benz 309D · OM617",
+    "Mercedes-Benz 240D",
+    "Mercedes-Benz 409D · OM617",
+    "Mercedes-Benz 220D",
+    "Mercedes-Benz · OM617",
+    "Mercedes-Benz 0407D · OM617"
+   ],
+   "source": {
+    "kind": "repo-seed-rows",
+    "file": "config/product-pages/seed-rows.json",
+    "seed": "scripts/migrations/run_115_create_ef95112_fleetguard_ff5112.js"
+   }
+  }
+ ]
+}
