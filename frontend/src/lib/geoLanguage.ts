@@ -1,9 +1,10 @@
 'use client';
 
 // ELIMFILTERS public language policy.
-// English is the official/default language. A supported localized language is
-// selected only from the visitor's country. Unknown countries and any lookup
-// failure remain in English.
+// English is the official/default language. The visitor's country may switch the page
+// only to a language listed in GEO_AUTO_LANGUAGES. Every other country, unknown countries
+// and any lookup failure remain in English. COUNTRY_LANG still maps all countries because
+// the country itself also drives metric/imperial units.
 const COUNTRY_LANG: Record<string, string> = {
   // English
   US: 'en', CA: 'en', GB: 'en', AU: 'en', NZ: 'en', IE: 'en', ZA: 'en',
@@ -37,6 +38,11 @@ const COUNTRY_LANG: Record<string, string> = {
   // Persian
   IR: 'fa',
 };
+
+// Languages the country is allowed to switch to automatically. The other locale bundles
+// (fr, it, nl, ru, zh, ja, ar, fa) still carry claims retired from en/es/pt, so they stay
+// off until each has its own governance layer (see GOVERNED_*_OVERRIDES in i18n.ts).
+export const GEO_AUTO_LANGUAGES: readonly string[] = ['es', 'pt'];
 
 const GEO_LANG_KEY = 'ef_geo_lang';
 const GEO_COUNTRY_KEY = 'ef_geo_country';

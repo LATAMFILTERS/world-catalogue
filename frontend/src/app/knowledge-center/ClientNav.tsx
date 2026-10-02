@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { LanguageMenu } from '@/components/LanguageMenu';
 
 const NAV = [
   { href: '/knowledge-center', label: 'Overview' },
@@ -37,9 +38,13 @@ export default function ClientNav() {
           margin: 0 auto;
           padding: 0 2rem;
           display: grid;
-          grid-template-columns: auto minmax(0, 1fr);
+          grid-template-columns: auto minmax(0, 1fr) auto;
           align-items: stretch;
-          overflow: hidden;
+        }
+        .kc-nav-globe {
+          display: flex;
+          align-items: center;
+          margin-left: 0.5rem;
         }
         .kc-nav-home {
           display: flex;
@@ -47,6 +52,7 @@ export default function ClientNav() {
         }
         .kc-nav-links {
           min-width: 0;
+          overflow: hidden;
           display: grid;
           grid-template-columns: repeat(5, minmax(0, 1fr));
         }
@@ -61,6 +67,12 @@ export default function ClientNav() {
           .kc-nav-inner {
             padding: 0 1rem;
             grid-template-columns: 1fr;
+          }
+          .kc-nav-globe {
+            position: absolute;
+            top: 0.25rem;
+            right: 0.6rem;
+            margin: 0;
           }
           .kc-nav-home {
             justify-content: center;
@@ -124,6 +136,10 @@ export default function ClientNav() {
               </Link>
             );
           })}
+        </div>
+
+        <div className="kc-nav-globe">
+          <LanguageMenu />
         </div>
       </div>
     </nav>

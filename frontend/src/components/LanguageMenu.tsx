@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next';
 import { localeFromPath } from '@/i18n-locales';
 import { applyLanguageInPlace } from '@/lib/apply-language';
 import { setLanguagePreference, type SiteLang } from '@/lib/language-preference';
+import { registerLanguageMenu } from '@/lib/language-menu-registry';
 import { HREFLANG, languageHref } from '@/lib/localized-routes';
 
 const OPTIONS: readonly { lang: SiteLang; name: string }[] = [
@@ -35,13 +36,16 @@ const CSS = `
  * The choice is stored (localStorage + cookie) and wins over the country-based detector.
  * Built on <details>, so it opens and navigates without JavaScript.
  */
-export function LanguageMenu({ style }: { style?: CSSProperties }) {
+export function LanguageMenu({ style, registers = true }: { style?: CSSProperties; registers?: boolean }) {
   const pathname = usePathname();
   const { t, i18n } = useTranslation();
   const ref = useRef<HTMLDetailsElement>(null);
   // The language actually on screen. A visitor switched by country to a language outside the
   // menu (fr, it, ...) sees that code, with no option marked.
   const current = localeFromPath(pathname) ?? ((i18n.language || 'en').slice(0, 2).toLowerCase());
+
+  // Tell GlobalLanguageMenu that this page already has a menu (the fallback itself does not count).
+  useEffect(() => (registers ? registerLanguageMenu() : undefined), [registers]);
 
   useEffect(() => {
     const close = (refocus = false) => {

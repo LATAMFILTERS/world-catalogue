@@ -5,7 +5,7 @@ import { usePathname } from 'next/navigation';
 import i18n from '@/i18n';
 import { localeFromPath } from '@/i18n-locales';
 import { applyLanguageInPlace } from '@/lib/apply-language';
-import { detectGeoLanguage } from '@/lib/geoLanguage';
+import { detectGeoLanguage, GEO_AUTO_LANGUAGES } from '@/lib/geoLanguage';
 import { getLanguagePreference, siteLangFromTag } from '@/lib/language-preference';
 import { languageHref } from '@/lib/localized-routes';
 
@@ -14,8 +14,9 @@ import { languageHref } from '@/lib/localized-routes';
  *  1. A stored manual choice (globe menu) always wins: it is applied (redirect to the /es/ or
  *     /pt/ version of the page when one exists, otherwise the page is translated in place) and
  *     geolocation is not consulted.
- *  2. With no stored choice, the visitor's country picks the language as before. A choice made
- *     while the country lookup is still in flight wins over its result.
+ *  2. With no stored choice, the visitor's country picks the language, but only among
+ *     GEO_AUTO_LANGUAGES (es, pt); any other country stays in English. A choice made while
+ *     the country lookup is still in flight wins over its result.
  */
 export function LanguageDetector() {
   const pathname = usePathname();
@@ -37,7 +38,7 @@ export function LanguageDetector() {
 
     void detectGeoLanguage().then(async ({ language }) => {
       const current = i18n.language?.slice(0, 2) || 'en';
-      if (!active || current === language || getLanguagePreference()) return;
+      if (!active || !GEO_AUTO_LANGUAGES.includes(language) || current === language || getLanguagePreference()) return;
 
       try {
         await i18n.loadLanguages(language);

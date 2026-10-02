@@ -7,6 +7,7 @@ import i18n from '@/i18n';
 import { LOCALE_TAG, localeFromPath, localeInstances } from '@/i18n-locales';
 import { ScrollProgress } from './ScrollProgress';
 import { LanguageDetector } from './LanguageDetector';
+import { GlobalLanguageMenu } from './GlobalLanguageMenu';
 import { UniversalEndNavigation } from './UniversalEndNavigation';
 import { MeasurementProvider } from './MeasurementProvider';
 
@@ -32,6 +33,7 @@ export function ClientProviders({ children }: { children: React.ReactNode }) {
     <I18nextProvider i18n={locale ? localeInstances[locale] : i18n}>
       <MeasurementProvider>
         {!locale && <LanguageDetector />}
+        <GlobalLanguageMenu />
         <ScrollProgress />
         {children}
         <UniversalEndNavigation />
