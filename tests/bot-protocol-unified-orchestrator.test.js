@@ -147,6 +147,31 @@ test('engine-only explicit filter request asks for model/year instead of falling
   ), false);
 });
 
+test('parses Freightliner Columbia CL120 before the brand and normalizes Detroit S60', () => {
+  const message = 'que filtros lleva el columbia Cl120 Freightliner como motor detroit diesel s60';
+  assert.deepEqual(extractApplicationEntities(message), {
+    brand: 'FREIGHTLINER',
+    model: 'COLUMBIA CL120',
+    engine: 'DETROIT DIESEL SERIES 60',
+    year: null,
+    tokens: ['FREIGHTLINER', 'COLUMBIA CL120', 'DETROIT DIESEL SERIES 60']
+  });
+  assert.equal(looksLikeVehicleApplicationQuery(message), true);
+});
+
+test('keeps requested oil system out of Mack MP8 equipment entities', () => {
+  const message = 'que filtro de aceite usa el Mack con motor Mp8';
+  assert.deepEqual(extractApplicationEntities(message), {
+    brand: 'MACK',
+    model: null,
+    engine: 'MP8',
+    year: null,
+    tokens: ['MACK', 'MP8']
+  });
+  assert.equal(requestedFilterSystem(message), 'oil');
+  assert.equal(looksLikeVehicleApplicationQuery(message), true);
+});
+
 test('bare part-number phrasing can still use reference resolution', () => {
   assert.equal(looksLikeVehicleApplicationQuery('filtros para P551313'), false);
 });
