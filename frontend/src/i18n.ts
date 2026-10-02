@@ -126,6 +126,64 @@ export const GOVERNED_ES_OVERRIDES: Record<string, string> = {
   'home.llmP2': 'La contaminación puede acelerar el desgaste en holguras y superficies críticas. Las partículas pueden afectar cojinetes, carretes de válvulas y componentes de inyectores; el agua puede afectar la confiabilidad del sistema de combustible; y la degradación del fluido puede reducir la estabilidad de los sistemas hidráulicos, de lubricación y de refrigeración. El objetivo de limpieza y el método de control dependen del componente protegido y del ciclo de trabajo.',
 };
 
+// Portuguese (pt-BR) counterparts of GOVERNED_EN_OVERRIDES; the legacy pt bundle carried the same
+// retired claims as the Spanish one.
+export const GOVERNED_PT_OVERRIDES: Record<string, string> = {
+  'home.whyP1': 'A ELIMFILTERS® não é uma empresa de filtros. É uma empresa de ',
+  'home.whyP1after': ' que projeta sistemas para controlar a contaminação, evitar a degradação e proteger o valor dos ativos industriais críticos.',
+  'home.ctaDealerTag': '// DISTRIBUIÇÃO POR PAÍS',
+  'home.ctaDealerTitle': 'DESENVOLVA A ELIMFILTERS',
+  'home.ctaDealerHl': 'NO SEU PAÍS.',
+  'home.ctaDealerBtn': 'SOLICITAR DISTRIBUIÇÃO NACIONAL',
+
+  'problem.badge': 'A contaminação pode acelerar o desgaste prematuro de componentes e a degradação dos equipamentos.',
+  'problem.items.bearing.desc': 'O lubrificante contaminado pode acelerar o desgaste abrasivo em mancais e outras superfícies lubrificadas.',
+  'problem.items.fuel.desc': 'A contaminação e a restrição do sistema de combustível podem reduzir a confiabilidade da combustão e a eficiência operacional.',
+  'why.p2': 'Cada decisão de proteção deve ser avaliada de acordo com o valor, o ciclo de trabalho, a exposição à contaminação e os requisitos de confiabilidade do ativo protegido.',
+  'why.card.items.0': 'Controle de contaminação no nível do sistema',
+  'why.card.items.1': 'Arquitetura de proteção governada pela aplicação',
+  'why.card.items.2': 'Normas internacionais de engenharia como referências técnicas',
+  'why.card.items.3': 'Relações canônicas de equipamentos e aplicações',
+  'technology.items.media.title': 'Meios filtrantes de engenharia',
+  'technology.items.media.desc': 'A seleção do meio é definida pelo sistema protegido, pelo perfil de contaminação, pelos requisitos de vazão, pela perda de carga, pela capacidade e pelas condições de serviço.',
+  'technology.items.hydrophobic.title': 'Controle da contaminação do combustível',
+  'technology.items.hydrophobic.desc': 'A proteção do combustível combina o controle de partículas e, quando a aplicação aprovada exige, uma arquitetura dedicada de separação de água.',
+  'technology.items.antibypass.title': 'Integridade da vedação e da carcaça',
+  'technology.items.antibypass.desc': 'A geometria da carcaça, a retenção do elemento, a carga da vedação e a instalação correta ajudam a preservar o limite de contaminação protegido.',
+  'category.readyDesc': 'Encontre o componente de filtração correto para o equipamento, a aplicação e o sistema protegido.',
+  'category.engineeringDesc': 'A engenharia ELIMFILTERS alinha a seleção da filtração ao sistema protegido, ao risco de contaminação, às referências técnicas aplicáveis e ao ciclo de trabalho.',
+
+  'home.economicStats.0.value': 'PARADAS',
+  'home.economicStats.0.label': 'Paradas não programadas geram custos operacionais e de manutenção.',
+  'home.economicStats.1.value': 'CONTAMINAÇÃO',
+  'home.economicStats.1.label': 'Partículas, água, calor e produtos de degradação podem acelerar o desgaste dos componentes.',
+  'home.economicStats.2.value': 'CONFIABILIDADE',
+  'home.economicStats.2.label': 'O controle da contaminação apoia a confiabilidade dos equipamentos e a continuidade da operação.',
+  'home.problemIntro': 'A contaminação pode agir nas interfaces críticas dos componentes e acelerar o desgaste em motores, sistemas de combustível, circuitos de lubrificação e equipamentos hidráulicos.',
+  'home.problemBadgeNum': 'RISCO',
+  'home.problemBadgeDesc': 'A contaminação é um fator controlável da degradação prematura dos equipamentos.',
+  'home.failModes.1.desc': 'Partículas sólidas maiores que a espessura do filme de óleo penetram em mancais de deslizamento e de rolamento, causando desgaste abrasivo e pitting nas superfícies de carga.',
+  'home.failModes.2.desc': 'A carga de partículas restringe as tolerâncias de vazão dos injetores, altera o padrão de pulverização e a atomização e degrada a eficiência da combustão.',
+  'home.whyP2': 'Cada tecnologia ELIMFILTERS cumpre uma função definida de controle de contaminação dentro de um sistema protegido. O objetivo é a confiabilidade do equipamento e a proteção do ativo, não afirmações universais de desempenho sem respaldo.',
+  'home.whyCheckItems.1': 'Engenharia focada em ativos industriais de alto valor',
+  'home.whyCheckItems.2': 'As referências técnicas incluem ISO 5011, ISO 16889, ISO 19438 e ISO 4406, quando aplicáveis',
+  'home.whyCheckItems.3': 'Arquitetura de proteção organizada nos domínios de aplicação industrial da ELIMFILTERS',
+  'home.whyCardItems.0': 'Controle de contaminação no nível do sistema',
+  'home.whyCardItems.1': 'Arquitetura canônica de tecnologias de proteção',
+  'home.whyCardItems.2': 'Conhecimento de engenharia respaldado por fontes',
+  'home.whyCardItems.3': 'Suporte técnico focado na aplicação',
+  'home.techItems.0.title': 'Arquitetura de controle de contaminação',
+  'home.techItems.0.desc': 'Partimos do sistema protegido: quais contaminantes ele enfrenta, com qual vazão e em quais condições de operação. A arquitetura de filtração é definida a partir daí.',
+  'home.techItems.1.title': 'Proteção no nível do sistema',
+  'home.techItems.1.desc': 'Os sistemas de ar, combustível, lubrificação, hidráulico, arrefecimento, cabine e pneumático falham de formas diferentes. Associamos cada um à tecnologia ELIMFILTERS desenvolvida para ele.',
+  'home.techItems.2.title': 'Seleção governada pela aplicação',
+  'home.techItems.2.desc': 'O componente certo depende do equipamento, da aplicação e da severidade da operação. Dimensionamos e especificamos de acordo com essa realidade, não com um número de peça genérico.',
+  'home.sciDesc': 'O Knowledge Center da ELIMFILTERS usa normas internacionais de filtração, limpeza e ensaio como referências técnicas quando se aplicam a um sistema protegido ou a um tema de engenharia.',
+  'home.llmP1': 'A proteção de ativos industriais é uma abordagem de engenharia no nível do sistema para identificar e controlar as fontes de contaminação que degradam os equipamentos mecânicos. Partículas, água, calor e produtos de degradação podem contribuir para o desgaste e a perda de confiabilidade em motores, sistemas hidráulicos, circuitos de combustível, sistemas de lubrificação, sistemas de arrefecimento e ambientes do operador.',
+  'home.faqItems.1.a': 'As partículas de contaminação desgastam as superfícies dos mancais, restringem os injetores de combustível e degradam a integridade das vedações. Partículas menores que 10 mícrons causam desgaste abrasivo invisível a olho nu. A água no combustível favorece o crescimento microbiano e a corrosão dos injetores.',
+  'home.llmP2': 'A contaminação pode acelerar o desgaste em folgas e superfícies críticas. As partículas podem afetar mancais, carretéis de válvulas e componentes de injetores; a água pode afetar a confiabilidade do sistema de combustível; e a degradação do fluido pode reduzir a estabilidade dos sistemas hidráulicos, de lubrificação e de arrefecimento. A meta de limpeza e o método de controle dependem do componente protegido e do ciclo de trabalho.',
+};
+
 function cloneTranslation<T>(value: T): T {
   return JSON.parse(JSON.stringify(value)) as T;
 }
@@ -179,6 +237,9 @@ function applyRuntimeGovernance() {
 
   for (const [key, value] of Object.entries(GOVERNED_ES_OVERRIDES)) {
     i18n.addResource('es', 'translation', key, value);
+  }
+  for (const [key, value] of Object.entries(GOVERNED_PT_OVERRIDES)) {
+    i18n.addResource('pt', 'translation', key, value);
   }
 }
 

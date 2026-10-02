@@ -11,12 +11,23 @@ import {
   FAMILY_ES, TECHNOLOGY_ES, SYSTEM_ES, FAILURE_ES, PROTECTED_COMPONENTS_ES,
   FIELD_QUESTIONS_ES, SERVICE_DISCIPLINE_ES, INDUSTRY_ES,
 } from '@/lib/families-es';
+import {
+  FAMILY_PT, TECHNOLOGY_PT, SYSTEM_PT, FAILURE_PT, PROTECTED_COMPONENTS_PT,
+  FIELD_QUESTIONS_PT, SERVICE_DISCIPLINE_PT, INDUSTRY_PT,
+} from '@/lib/families-pt';
+import { OG_LOCALE, languageAlternates, localizedPath, type PageLang } from '@/lib/localized-routes';
 
 const BASE_URL = 'https://elimfilters.com';
 const displayFont = 'var(--font-display)';
 const bodyFont = 'var(--font-body)';
 
-export type FamilyLang = 'en' | 'es';
+export type FamilyLang = PageLang;
+
+// Governed translations overlaid on the canonical English records per published language.
+const LOCALE_CONTENT = {
+  es: { family: FAMILY_ES, technology: TECHNOLOGY_ES, system: SYSTEM_ES, failure: FAILURE_ES, components: PROTECTED_COMPONENTS_ES, questions: FIELD_QUESTIONS_ES, service: SERVICE_DISCIPLINE_ES, industry: INDUSTRY_ES },
+  pt: { family: FAMILY_PT, technology: TECHNOLOGY_PT, system: SYSTEM_PT, failure: FAILURE_PT, components: PROTECTED_COMPONENTS_PT, questions: FIELD_QUESTIONS_PT, service: SERVICE_DISCIPLINE_PT, industry: INDUSTRY_PT },
+} as const;
 
 const PROTECTED_COMPONENTS: Record<string, readonly string[]> = {
   macrocore: ['Cylinders', 'Piston rings', 'Turbochargers', 'Combustion air path'],
@@ -162,34 +173,73 @@ const COPY = {
     category: 'Filtración industrial',
     variesBy: 'Clase de servicio',
   },
+  pt: {
+    back: 'FAMÍLIAS',
+    eyebrow: 'PROTEÇÃO DE ATIVOS CRÍTICOS',
+    duty: (duty: string) => `LINHA ${duty}`,
+    heroAlt: (name: string) => `Aplicação de filtração: ${name}`,
+    ogAlt: (name: string) => `${name}: proteção de ativos`,
+    whyKicker: 'POR QUE ESTA FAMÍLIA EXISTE',
+    whyTitle: 'Proteja a máquina antes que a contaminação se transforme em dano.',
+    assetKicker: 'ATIVO PROTEGIDO',
+    assetTitle: 'O que está por trás do filtro importa mais do que o próprio filtro.',
+    riskKicker: 'RISCO DE CONTAMINAÇÃO',
+    riskTitle: 'O que acontece quando a barreira de proteção é perdida.',
+    riskLink: 'LER O GUIA DE CONTAMINAÇÃO',
+    strategyKicker: 'ESTRATÉGIA DE PROTEÇÃO',
+    strategyTitle: 'A seleção começa pelo sistema em operação, não por um número de peça.',
+    controlStrategy: 'Estratégia de controle',
+    systemContext: 'Contexto do sistema',
+    familyRole: 'Função da família',
+    selectionKicker: 'ANTES DE SELECIONAR UM FILTRO',
+    selectionTitle: 'Perguntas que a aplicação deve responder primeiro.',
+    selectionBody: 'O elemento correto é definido pelo ativo protegido, pela exposição à contaminação e pela severidade da operação. Estas perguntas devem ser respondidas antes da referência cruzada ou da seleção da peça.',
+    serviceKicker: 'DISCIPLINA DE MANUTENÇÃO',
+    serviceTitle: 'Um elemento novo não corrige uma prática de manutenção contaminada.',
+    contextKicker: 'CONTEXTO TÉCNICO',
+    contextTitle: 'Tecnologia, sistema e normas aplicáveis.',
+    contextNote: 'Estas referências definem o contexto de engenharia da família. A seleção final do produto continua dependendo da aplicação aprovada e das condições de operação.',
+    technology: 'Tecnologia',
+    protectionSystem: 'Sistema de proteção',
+    references: 'Referências aplicáveis',
+    industriesKicker: 'AMBIENTES DE OPERAÇÃO',
+    industriesTitle: 'Onde este sistema de proteção é aplicado.',
+    actionKicker: 'DA ENGENHARIA À IDENTIFICAÇÃO DA PEÇA',
+    actionTitle: 'Primeiro proteja o ativo. Depois identifique a peça.',
+    actionBody: 'Use o Part Search quando a aplicação for conhecida. Fale com a ELIMFILTERS quando a condição de operação, o requisito de proteção ou a referência cruzada precisarem de revisão técnica.',
+    browse: (prefix: string) => `VER SKUS ${prefix}`,
+    partSearch: 'PART SEARCH',
+    support: 'SUPORTE TÉCNICO',
+    knowledge: 'KNOWLEDGE CENTER',
+    home: 'Início',
+    families: 'Famílias',
+    category: 'Filtração industrial',
+    variesBy: 'Classe de serviço',
+  },
 } as const;
 
 export const familySlugs = () => PRODUCT_FAMILY_LIST.map((f) => ({ slug: f.slug }));
 
-const familyPath = (slug: string, lang: FamilyLang) => `${lang === 'es' ? '/es' : ''}/families/${slug}/`;
+const familyPath = (slug: string, lang: FamilyLang) => localizedPath(`/families/${slug}`, lang);
 
-// Technology pages that have a published Spanish version.
-const SPANISH_TECHNOLOGY_PAGES = new Set(['hydrocore']);
+// Technology pages that have published /es/ and /pt/ versions.
+const LOCALIZED_TECHNOLOGY_PAGES = new Set(['hydrocore']);
 
 export function familyMetadata(slug: string, lang: FamilyLang): Metadata {
   const fam = getFamilyBySlug(slug);
   if (!fam) return { title: 'Not Found' };
-  const es = lang === 'es' ? FAMILY_ES[fam.slug] : undefined;
-  const name = es?.name ?? fam.name;
-  const purpose = es?.purpose ?? fam.purpose;
+  const local = lang === 'en' ? undefined : LOCALE_CONTENT[lang].family[fam.slug];
+  const name = local?.name ?? fam.name;
+  const purpose = local?.purpose ?? fam.purpose;
   const url = `${BASE_URL}${familyPath(fam.slug, lang)}`;
-  const title = `${es?.seoTitle ?? FAMILY_SEO_TITLES[fam.slug] ?? fam.name} | ELIMFILTERS`;
+  const title = `${local?.seoTitle ?? FAMILY_SEO_TITLES[fam.slug] ?? fam.name} | ELIMFILTERS`;
 
   return {
     title,
     description: purpose,
     alternates: {
       canonical: url,
-      languages: {
-        en: `${BASE_URL}${familyPath(fam.slug, 'en')}`,
-        es: `${BASE_URL}${familyPath(fam.slug, 'es')}`,
-        'x-default': `${BASE_URL}${familyPath(fam.slug, 'en')}`,
-      },
+      languages: languageAlternates(`/families/${fam.slug}`),
     },
     openGraph: {
       title,
@@ -197,7 +247,7 @@ export function familyMetadata(slug: string, lang: FamilyLang): Metadata {
       url,
       type: 'website',
       siteName: 'ELIMFILTERS',
-      locale: lang === 'es' ? 'es_419' : 'en_US',
+      locale: OG_LOCALE[lang],
       images: [{ url: fam.heroImage, alt: COPY[lang].ogAlt(name) }],
     },
     twitter: { card: 'summary_large_image', title, description: purpose, images: [fam.heroImage] },
@@ -220,7 +270,8 @@ function standardHref(std: string) {
 }
 
 function industryLabel(value: string, lang: FamilyLang) {
-  if (lang === 'es' && INDUSTRY_ES[value]) return INDUSTRY_ES[value];
+  const local = lang === 'en' ? undefined : (LOCALE_CONTENT[lang].industry as Record<string, string>)[value];
+  if (local) return local;
   return value
     .replace('trucks-fleets', 'Truck Fleets')
     .replace('oil-gas', 'Oil & Gas')
@@ -235,35 +286,33 @@ function industryLabel(value: string, lang: FamilyLang) {
 export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang }) {
   const source = getFamilyBySlug(slug);
   if (!source) notFound();
-  const isEs = lang === 'es';
   const c = COPY[lang];
 
-  // Spanish routes overlay the governed Spanish copy on the canonical English records.
-  const famEs = isEs ? FAMILY_ES[source.slug] : undefined;
-  const fam = { ...source, name: famEs?.name ?? source.name, purpose: famEs?.purpose ?? source.purpose, engineering: famEs?.engineering ?? source.engineering };
+  // Localized routes overlay the governed translation on the canonical English records.
+  const content = lang === 'en' ? undefined : LOCALE_CONTENT[lang];
+  const famLocal = content?.family[source.slug];
+  const fam = { ...source, name: famLocal?.name ?? source.name, purpose: famLocal?.purpose ?? source.purpose, engineering: famLocal?.engineering ?? source.engineering };
   const systemSource = getProtectionSystemBySlug(fam.protectionSystem);
-  const systemEs = isEs && systemSource ? SYSTEM_ES[systemSource.slug] : undefined;
-  const system = systemSource && { ...systemSource, ...(systemEs ?? {}) };
+  const system = systemSource && { ...systemSource, ...((content && content.system[systemSource.slug]) || {}) };
   const technologySource = getTechnologyEngineering(fam.primaryTechnology);
-  const technologyEs = isEs ? TECHNOLOGY_ES[fam.primaryTechnology] : undefined;
-  const technology = technologySource && { ...technologySource, ...(technologyEs ?? {}) };
+  const technology = technologySource && { ...technologySource, ...((content && content.technology[fam.primaryTechnology]) || {}) };
   const failures = Object.values(FAILURE_KNOWLEDGE)
     .filter((failure) => failure.families.includes(fam.slug))
-    .map((failure) => ({ ...failure, ...((isEs && FAILURE_ES[failure.key]) || {}) }));
-  const components = (isEs ? PROTECTED_COMPONENTS_ES : PROTECTED_COMPONENTS)[fam.primaryTechnology] ?? [];
-  const fieldQuestions = (isEs ? FIELD_QUESTIONS_ES : FIELD_QUESTIONS)[fam.slug] ?? [];
-  const serviceDiscipline = (isEs ? SERVICE_DISCIPLINE_ES : SERVICE_DISCIPLINE)[fam.primaryTechnology] ?? [];
+    .map((failure) => ({ ...failure, ...((content && content.failure[failure.key]) || {}) }));
+  const components = (content ? content.components : PROTECTED_COMPONENTS)[fam.primaryTechnology] ?? [];
+  const fieldQuestions = (content ? content.questions : FIELD_QUESTIONS)[fam.slug] ?? [];
+  const serviceDiscipline = (content ? content.service : SERVICE_DISCIPLINE)[fam.primaryTechnology] ?? [];
   const familyUrl = `${BASE_URL}${familyPath(fam.slug, lang)}`;
-  const technologyHref = isEs && SPANISH_TECHNOLOGY_PAGES.has(fam.primaryTechnology)
-    ? `/es/technologies/${fam.primaryTechnology}/`
+  const technologyHref = LOCALIZED_TECHNOLOGY_PAGES.has(fam.primaryTechnology)
+    ? localizedPath(`/technologies/${fam.primaryTechnology}`, lang)
     : `/technologies/${fam.primaryTechnology}/`;
-  const hubBase = isEs ? 'https://part-search.elimfilters.com/es' : 'https://part-search.elimfilters.com';
+  const hubBase = `https://part-search.elimfilters.com${lang === 'en' ? '' : `/${lang}`}`;
 
   const breadcrumb = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
     itemListElement: [
-      { '@type': 'ListItem', position: 1, name: c.home, item: `${BASE_URL}${isEs ? '/es/' : '/'}` },
+      { '@type': 'ListItem', position: 1, name: c.home, item: `${BASE_URL}${localizedPath('/', lang)}` },
       { '@type': 'ListItem', position: 2, name: c.families, item: `${BASE_URL}/families/` },
       { '@type': 'ListItem', position: 3, name: fam.name, item: familyUrl },
     ],
@@ -488,7 +537,7 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
               <Link key={prefix} href={`${hubBase}/family/${prefix}/`} style={yellowButton}>{c.browse(prefix)}</Link>
             ))}
             <Link href="https://part-search.elimfilters.com" style={darkButton}>{c.partSearch}</Link>
-            <Link href={isEs ? '/es/contact/' : '/contact/'} style={darkButton}>{c.support}</Link>
+            <Link href={localizedPath('/contact', lang)} style={darkButton}>{c.support}</Link>
             <Link href="/knowledge-center/" style={darkButton}>{c.knowledge}</Link>
           </div>
         </div>

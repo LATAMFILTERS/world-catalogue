@@ -2,20 +2,20 @@ import type { Metadata } from 'next';
 import HomePage from '@/components/HomePage';
 import { languageAlternates } from '@/lib/localized-routes';
 
-const TITLE = 'ELIMFILTERS | Filtros industriales y para servicio pesado';
-const DESCRIPTION = 'Filtros para servicio pesado e industrial: filtros de combustible diésel, separadores de agua, filtros de aire, aceite, hidráulicos, refrigerante y cabina, diseñados por ELIMFILTERS para proteger motores y equipos.';
+const TITLE = 'ELIMFILTERS | Filtros industriais e para linha pesada';
+const DESCRIPTION = 'Filtros para linha pesada e industrial: filtros de combustível diesel, separadores de água, filtros de ar, óleo, hidráulicos, líquido de arrefecimento e cabine, projetados pela ELIMFILTERS para proteger motores e equipamentos.';
 
 export const metadata: Metadata = {
   title: TITLE,
   description: DESCRIPTION,
   alternates: {
-    canonical: '/es/',
+    canonical: '/pt/',
     languages: languageAlternates('/'),
   },
   openGraph: {
     type: 'website',
-    locale: 'es_419',
-    url: '/es/',
+    locale: 'pt_BR',
+    url: '/pt/',
     siteName: 'ELIMFILTERS',
     title: TITLE,
     description: DESCRIPTION,
@@ -24,6 +24,6 @@ export const metadata: Metadata = {
   twitter: { card: 'summary_large_image', title: TITLE, description: DESCRIPTION, images: ['/assets/logo-elimfilters.png'] },
 };
 
-export default function SpanishHomePage() {
+export default function PortugueseHomePage() {
   return <HomePage />;
 }

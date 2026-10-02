@@ -1,11 +1,10 @@
 import type { MetadataRoute } from 'next';
 import { getCrawlProfiles } from '@/lib/crawl-optimization';
-import { SPANISH_ROUTES, spanishPath } from '@/lib/spanish-routes';
+import { LOCALIZED_ROUTES, ROUTE_LANGS, languageAlternates } from '@/lib/localized-routes';
 
 export const dynamic = 'force-static';
 
-const BASE_URL = 'https://elimfilters.com';
-const spanishRoutes = new Set(SPANISH_ROUTES);
+const localizedRoutes = new Set(LOCALIZED_ROUTES);
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return getCrawlProfiles().flatMap((profile) => {
@@ -15,11 +14,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: profile.priority,
     };
     const path = profile.path === '/' ? '/' : profile.path.replace(/\/+$/, '');
-    if (!spanishRoutes.has(path)) return [entry];
-    const languages = { en: profile.url, es: `${BASE_URL}${spanishPath(path)}` };
+    if (!localizedRoutes.has(path)) return [entry];
+    const { 'x-default': _default, ...languages } = languageAlternates(path);
     return [
       { ...entry, alternates: { languages } },
-      { ...entry, url: languages.es, alternates: { languages } },
+      ...ROUTE_LANGS.map((lang) => ({ ...entry, url: languages[lang === 'pt' ? 'pt-BR' : lang], alternates: { languages } })),
     ];
   });
 }

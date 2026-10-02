@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { usePathname } from 'next/navigation';
-import { isSpanishPath } from '@/i18n-es';
+import { localeFromPath } from '@/i18n-locales';
 
 const SCROLL_HIDE_THRESHOLD = 60;
 
@@ -44,7 +44,8 @@ const INDUSTRY_BREADCRUMB_LABELS: Record<string, string> = {
 
 export function PageHeader({ breadcrumbs, currentPage }: PageHeaderProps) {
   const { t } = useTranslation();
-  const homeHref = isSpanishPath(usePathname()) ? '/es/' : '/';
+  const locale = localeFromPath(usePathname());
+  const homeHref = locale ? `/${locale}/` : '/';
   const [atTop, setAtTop] = useState(true);
 
   useEffect(() => {

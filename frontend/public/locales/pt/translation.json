@@ -5,7 +5,8 @@
     "technologies": "Tecnologias",
     "contact": "Contato",
     "findMyFilter": "ENCONTRE MEU FILTRO",
-    "knowledge": "Conhecimento"
+    "knowledge": "Conhecimento",
+    "about": "Empresa"
   },
   "hero": {
     "tag": "TECNOLOGIA DE PROTEÇÃO DE ATIVOS",
@@ -113,7 +114,9 @@
     "locationText": "Frisco, Texas",
     "kleoText": "© 2015–2026 Kleo Technologies",
     "elimfiltersCopyright": "KLEO TECHNOLOGY LLC | Inteligência e Engenharia em Filtração",
-    "elimfiltersYear": "2015–2026"
+    "elimfiltersYear": "2015–2026",
+    "legalLine": "© KLEO TECHNOLOGY LLC. ELIMFILTERS® é uma marca registrada. Sede legal: Frisco, Texas, EUA. A ELIMFILTERS opera com um modelo comercial global centrado em distribuidores e com capacidade coordenada para contas estratégicas.",
+    "termsOfService": "Termos de serviço"
   },
   "category": {
     "keyAdvantages": "PRINCIPAIS VANTAGENS",
@@ -329,7 +332,79 @@
       "Ferroviário e Transporte Público",
       "Transporte Comercial"
     ],
-    "ctaProtect": "Proteger os meus ativos"
+    "ctaProtect": "Proteger os meus ativos",
+    "cascadeTitle1": "Um único evento de contaminação.",
+    "cascadeTitle2": "Uma cascata de perdas.",
+    "cascadeIntro": "Uma falha por contaminação raramente fica contida. Ela evolui de um componente danificado para a troca do conjunto completo, para a recertificação do fluido e do sistema e para paradas não programadas que travam toda a operação. Os custos se acumulam muito além da peça que falhou.",
+    "cascadeItems": [
+      {
+        "label": "Dano aos componentes",
+        "desc": "A contaminação por partículas danifica carretéis de válvulas e partes internas de bombas e, muitas vezes, exige a troca do conjunto completo em vez de uma única peça."
+      },
+      {
+        "label": "Recuperação do sistema",
+        "desc": "O fluido contaminado precisa ser totalmente purgado: linhas lavadas, fluido substituído e sistema recertificado antes que o equipamento possa voltar a operar com segurança."
+      },
+      {
+        "label": "Parada não programada",
+        "desc": "Cada dia em que um ativo fica fora de operação significa produção perdida, compromissos descumpridos e mão de obra parada: o custo que mais rápido se acumula."
+      }
+    ],
+    "preventionTag": "Prevenção vs. falha",
+    "preventionP1": "A troca programada de filtros é um item rotineiro de manutenção. Uma falha causada por contaminação não é.",
+    "preventionP2": "A proteção de ativos é o seguro de menor custo disponível contra paradas não programadas.",
+    "assetSteps": [
+      {
+        "label": "Identificar a contaminação",
+        "desc": "Partículas, água, calor, subprodutos químicos"
+      },
+      {
+        "label": "Aplicar normas de engenharia"
+      },
+      {
+        "label": "Implantar a tecnologia de proteção"
+      }
+    ],
+    "heroField": "No campo, as falhas raramente começam no filtro. Elas começam com poeira entrando pela admissão de ar, água chegando aos injetores diesel, partículas abrasivas circulando no óleo ou contaminação danificando componentes hidráulicos. A ELIMFILTERS constrói a proteção em torno dessas rotas reais de falha.",
+    "platformName": "Inteligência para a proteção de ativos",
+    "platformTitle1": "Uma única plataforma de",
+    "platformTitle2": "inteligência para a proteção de ativos",
+    "platformBody": "A ELIMFILTERS integra filtração de engenharia, conhecimento técnico governado, inteligência de produto e ferramentas digitais em um único sistema criado para apoiar decisões melhores sobre os ativos críticos.",
+    "platformPillars": [
+      {
+        "title": "KNOWLEDGE CENTER",
+        "body": "Referências de engenharia organizadas por sistema, modo de falha e norma industrial: ISO 4406, ISO 16889, ISO 11171."
+      },
+      {
+        "title": "CATÁLOGO DE PRODUTOS",
+        "body": "Base de dados por SKU com números de peça OEM, especificações de rosca, classificação do meio e referências cruzadas."
+      },
+      {
+        "title": "PART SEARCH",
+        "body": "Pesquise por número OEM, dimensão ou aplicação para chegar ao SKU ELIMFILTERS correto."
+      }
+    ],
+    "platformCtaKnowledge": "Explorar o conhecimento",
+    "platformCtaSearch": "Pesquisar no Product Intelligence",
+    "platformCtaNetwork": "Rede global",
+    "industriesTitle1": "Feito para cada",
+    "industriesTitle2": "setor",
+    "industriesPrev": "Rolar setores para a esquerda",
+    "industriesNext": "Rolar setores para a direita",
+    "industryTitles": {
+      "mining": "Mineração",
+      "agriculture": "Agricultura",
+      "construction": "Construção",
+      "oil-gas": "Petróleo e gás",
+      "marine": "Marítimo",
+      "power-generation": "Geração de energia",
+      "trucks-fleets": "Frotas de caminhões",
+      "manufacturing": "Manufatura",
+      "railway": "Ferroviário",
+      "waste-municipal": "Resíduos e serviços municipais",
+      "bus-coach": "Ônibus e rodoviário",
+      "automotive": "Automotivo"
+    }
   },
   "about": {
     "homeLink": "HOME",
@@ -494,5 +569,35 @@
     "closingTitle": "Support protects confidence before, during, and after installation.",
     "closingButton1": "REQUEST SUPPORT",
     "closingButton2": "EXPLORE SYSTEMS"
+  },
+  "a11y": {
+    "skipToContent": "Pular para o conteúdo principal"
+  },
+  "contactRouter": {
+    "kicker": "FALE COM A ELIMFILTERS",
+    "title": "Escolha o motivo do seu contato.",
+    "intro": "Solicitações técnicas, de inteligência de produto e de distribuição seguem fluxos de trabalho diferentes. Comece pela opção que corresponde ao que você precisa para que a solicitação chegue à equipe certa com o contexto adequado.",
+    "routes": [
+      {
+        "title": "Suporte técnico",
+        "body": "Dúvidas de aplicação, falhas repetidas, validação de referências cruzadas OEM e revisão de engenharia.",
+        "label": "Solicitar suporte técnico"
+      },
+      {
+        "title": "Número de peça / Product Intelligence",
+        "body": "Pesquisa por número de peça, referência cruzada ou aplicação conhecida. Comece pelo Product Intelligence.",
+        "label": "Pesquisar no Product Intelligence"
+      },
+      {
+        "title": "Candidatura de distribuidor",
+        "body": "Empresas que buscam uma relação estruturada de distribuição B2B e um programa de desenvolvimento de mercado.",
+        "label": "Candidatar-se como distribuidor"
+      },
+      {
+        "title": "Consulta comercial",
+        "body": "Clientes atuais, pedidos em volume ou dúvidas comerciais gerais não cobertas pelas opções acima.",
+        "label": "Enviar uma consulta comercial"
+      }
+    ]
   }
 }
