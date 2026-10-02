@@ -60,7 +60,7 @@ test('run_135 normalizes MANN crossrefs and DAF OEM for P550810',()=>{
   assert.match(migration,/MANN-FILTER/);
   assert.match(migration,/ld_competitor_cross_references/);
   assert.match(migration,/ld_oem_cross_references/);
-  assert.match(migration,/'DAF','1345335'/);
+  assert.match(migration,/'DAF'::text,'1345335'::text/);
 });
 
 test('run_135 never mutates cabin holds',()=>{
