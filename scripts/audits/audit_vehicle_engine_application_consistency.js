@@ -19,6 +19,23 @@ function family(value) {
   return text || 'unknown';
 }
 
+function formatOemCodes(value) {
+  const entries = Array.isArray(value) ? value : [];
+  const codes = entries
+    .map(entry => {
+      if (typeof entry === 'string') return entry.trim();
+      if (!entry || typeof entry !== 'object') return '';
+      return String(entry.code || entry.oem_code || entry.part_number || '').trim();
+    })
+    .filter(Boolean);
+  return [...new Set(codes)].join(' | ');
+}
+
+function withOem(row) {
+  const { oem_codes, ...rest } = row;
+  return { ...rest, oem: formatOemCodes(oem_codes) };
+}
+
 async function main() {
   const url = process.env.CATALOG_DATABASE_URL
     || process.env.ELIMFILTERS_DATABASE_URL
@@ -49,6 +66,7 @@ async function main() {
           c.codigo_base,
           c.filter_type,
           c.duty,
+          c.oem_codes,
           CASE
             WHEN jsonb_typeof(coalesce(c.vehicle_applications,'[]'::jsonb))='array'
               THEN jsonb_array_length(coalesce(c.vehicle_applications,'[]'::jsonb))
@@ -67,7 +85,7 @@ async function main() {
         GROUP BY elimfilters_sku
       )
       SELECT
-        p.sku,p.codigo_base,p.filter_type,p.duty,
+        p.sku,p.codigo_base,p.filter_type,p.duty,p.oem_codes,
         p.vehicle_json_count,p.equipment_json_count,
         coalesce(r.relational_count,0)::int AS relational_count
       FROM public_apps p
@@ -76,7 +94,7 @@ async function main() {
         AND coalesce(r.relational_count,0)=0
       ORDER BY p.duty,p.filter_type,p.sku
     `);
-    report.categories.application_evidence_not_normalized = jsonVsRel.rows;
+    report.categories.application_evidence_not_normalized = jsonVsRel.rows.map(withOem);
 
     // B. Normalized application row points to a source_sku that disagrees with
     // the product's own canonical/base identity. This catches stale application
@@ -87,6 +105,7 @@ async function main() {
         c.codigo_base,
         c.canonical_source_code,
         c.filter_type,
+        c.oem_codes,
         v.source_sku AS application_source_sku,
         v.make,v.model_family,v.model_type,v.year,v.engine_code,v.source_origin
       FROM ld_catalog.ld_vehicle_applications v
@@ -102,7 +121,7 @@ async function main() {
         )
       ORDER BY v.elimfilters_sku,v.make,v.model_family,v.year
     `);
-    report.categories.application_source_identity_mismatch = sourceMismatch.rows;
+    report.categories.application_source_identity_mismatch = sourceMismatch.rows.map(withOem);
 
     // C. Same vehicle/model/year/engine/service family points to multiple SKUs.
     // This is a high-value collision class: the bot can publish the wrong SKU or
@@ -136,7 +155,7 @@ async function main() {
       WITH kit_rows AS (
         SELECT
           mk.kit_sku,mk.brand,mk.equipment_ref,kc.filter_sku,
-          c.codigo_base,c.filter_type,
+          c.codigo_base,c.filter_type,c.oem_codes,
           (
             SELECT count(*)::int
             FROM ld_catalog.ld_vehicle_applications v
@@ -161,7 +180,7 @@ async function main() {
         AND brand_application_count=0
       ORDER BY kit_sku,filter_type,filter_sku
     `);
-    report.categories.kit_component_missing_brand_application = kitAppGap.rows;
+    report.categories.kit_component_missing_brand_application = kitAppGap.rows.map(withOem);
 
     // E. Engine aliases/variants within the same make/model/year can fragment a
     // platform into parallel strings (e.g. S60 vs SERIES 60, DETROIT vs DETROIT
@@ -191,7 +210,7 @@ async function main() {
     // product identities whose SKU family and filter_type are inconsistent.
     const prefixType = await client.query(`
       SELECT DISTINCT
-        c.sku,c.codigo_base,c.filter_type,c.duty,
+        c.sku,c.codigo_base,c.filter_type,c.duty,c.oem_codes,
         v.make,v.model_family,v.model_type,v.year,v.engine_code
       FROM public.elimfilters_catalog c
       JOIN ld_catalog.ld_vehicle_applications v ON v.elimfilters_sku=c.sku
@@ -203,7 +222,7 @@ async function main() {
         OR (c.sku LIKE 'EH%' AND lower(coalesce(c.filter_type,'')) !~ 'hydraulic')
       ORDER BY c.sku,v.make,v.model_family,v.year
     `);
-    report.categories.sku_prefix_filter_type_contradiction = prefixType.rows;
+    report.categories.sku_prefix_filter_type_contradiction = prefixType.rows.map(withOem);
 
     for (const [name, rows] of Object.entries(report.categories)) {
       report.summary[name] = rows.length;
