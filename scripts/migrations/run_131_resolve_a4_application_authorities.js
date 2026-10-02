@@ -12,9 +12,18 @@ function applicationKey(entry = {}) {
     norm(entry.model),
     norm(entry.model_family),
     norm(entry.model_type),
-    norm(entry.engine_code),
+    norm(entry.engine || entry.engine_code),
     String(entry.year || entry.year_range || '')
   ].join('|');
+}
+
+function governancePayload(payload = []) {
+  return (Array.isArray(payload) ? payload : []).map((entry) => ({
+    ...entry,
+    model: entry.model || [entry.model_family, entry.model_type].filter(Boolean).join(' ') || entry.equipment || entry.vehicle || '',
+    engine: entry.engine || entry.engine_code || entry.engine_model || '',
+    year: entry.year || entry.year_range || ''
+  }));
 }
 
 const MOVES = [
@@ -137,7 +146,7 @@ async function main(){
           throw new Error(`${move.target} target JSON not empty: ${targetJsonCount}`);
         }
         if(move.targetKind==='EQUIPMENT'){
-          const sourcePayload=meta.rows[0].source_json || [];
+          const sourcePayload=governancePayload(meta.rows[0].source_json || []);
           const targetPayload=meta.rows[0].target_json || [];
           const targetKeys=new Set(targetPayload.map(applicationKey));
           const overlap=sourcePayload.filter(entry=>targetKeys.has(applicationKey(entry))).length;
@@ -176,7 +185,7 @@ async function main(){
               FOR UPDATE`,
             [move.source]
           );
-          const payload=sourcePayloadResult.rows[0]?.vehicle_applications || [];
+          const payload=governancePayload(sourcePayloadResult.rows[0]?.vehicle_applications || []);
           const evidence={
             authority:move.evidenceAuthority,
             source_url:move.evidenceUrl,
