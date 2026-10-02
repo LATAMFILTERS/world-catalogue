@@ -52,16 +52,20 @@ test('run_123 reuses existing relational application graph instead of creating a
   assert.doesNotMatch(repair, /CREATE TABLE/i);
 });
 
-test('run_123 requires canonical source before repairing application ownership', () => {
-  assert.match(repair, /canonical_source_code \|\| row\.codigo_base/);
-  assert.match(repair, /NO_CANONICAL_SOURCE/);
-  assert.match(repair, /REALIGN_APPLICATION_SOURCE/);
+test('run_123 never rewrites application source from public catalog identity alone', () => {
+  assert.match(repair, /ld_catalog\.ld_product_catalog/);
+  assert.match(repair, /APPLICATION_SOURCE_PARENT_MISMATCH/);
+  assert.match(repair, /REQUIRES_EVIDENCE_REVIEW/);
+  assert.doesNotMatch(repair, /REALIGN_APPLICATION_SOURCE/);
+  assert.doesNotMatch(repair, /UPDATE ld_catalog\.ld_vehicle_applications/);
 });
 
-test('run_123 only inherits kit applications from existing sibling evidence', () => {
-  assert.match(repair, /INHERIT_KIT_PLATFORM_APPLICATIONS/);
+test('run_123 keeps public-only applications and kit inheritance on HOLD', () => {
+  assert.match(repair, /REQUIRES_RELATIONAL_EVIDENCE/);
+  assert.match(repair, /REQUIRES_PLATFORM_EVIDENCE/);
   assert.match(repair, /NO_SIBLING_APPLICATION_EVIDENCE/);
-  assert.match(repair, /kc\.filter_sku<>\$2/);
+  assert.doesNotMatch(repair, /INHERIT_KIT_PLATFORM_APPLICATIONS/);
+  assert.doesNotMatch(repair, /INSERT INTO ld_catalog\.ld_vehicle_applications/);
 });
 
 
