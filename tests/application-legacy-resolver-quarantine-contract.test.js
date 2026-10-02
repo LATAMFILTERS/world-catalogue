@@ -56,3 +56,9 @@ test('run_130 verifies A3 resolver pairs are gone before commit',()=>{
   assert.match(migration,/remaining_a3_resolver_pairs/);
   assert.match(migration,/A3 resolver pairs remain after quarantine/);
 });
+
+test('run_130 deduplicates textual authority variants by normalized code',()=>{
+  assert.match(migration,/ld_catalog\.norm_part\(v\.source_sku\) AS authority_norm/);
+  assert.match(migration,/min\(v\.source_sku\) AS authority_code/);
+  assert.match(migration,/GROUP BY[\s\S]*ld_catalog\.norm_part\(v\.source_sku\)/);
+});
