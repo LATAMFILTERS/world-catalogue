@@ -14,6 +14,14 @@ const repair = fs.readFileSync(
   path.join(ROOT, 'scripts', 'migrations', 'run_123_repair_vehicle_engine_application_consistency.js'),
   'utf8'
 );
+const framGapAnalyzer = fs.readFileSync(
+  path.join(ROOT, 'scripts', 'hermes', 'analyze-fram-ld-gaps.js'),
+  'utf8'
+);
+const framReconcile = fs.readFileSync(
+  path.join(ROOT, 'scripts', 'hermes', 'apply-fram-ld-reconciliations.js'),
+  'utf8'
+);
 
 test('global audit remains read-only and covers all six inconsistency classes', () => {
   assert.match(audit, /readonly:\s*true/);
@@ -75,4 +83,32 @@ test('global audit OEM display comes only from elimfilters_catalog.oem_codes', (
   assert.match(audit, /oem:\s*formatOemCodes\(oem_codes\)/);
   assert.doesNotMatch(audit, /competitor_codes/);
   assert.doesNotMatch(audit, /['"`]DB['"`]/);
+});
+
+
+test('application source mismatch is governed by relational parent identity, not compact public base codes', () => {
+  assert.match(audit, /JOIN ld_catalog\.ld_product_catalog p ON p\.elimfilters_sku=v\.elimfilters_sku/);
+  assert.match(audit, /p\.source_sku AS expected_parent_source_sku/);
+  assert.match(audit, /coalesce\(p\.source_sku/);
+  assert.doesNotMatch(
+    audit,
+    /regexp_replace\(upper\(coalesce\(v\.source_sku,''\)\).*<> regexp_replace\(upper\(coalesce\(c\.codigo_base,''\)/s
+  );
+});
+
+test('FRAM EXISTING_DIRECT analysis measures relational application coverage', () => {
+  assert.match(framGapAnalyzer, /function applicationCoverage\(/);
+  assert.match(framGapAnalyzer, /ld_catalog\.ld_vehicle_applications/);
+  assert.match(framGapAnalyzer, /existing_application_gap_count/);
+  assert.match(framGapAnalyzer, /existing_application_gaps/);
+  assert.match(framGapAnalyzer, /status:'EXISTING_DIRECT'.*applicationCoverage/s);
+});
+
+test('FRAM reconciliation can consume existing application gaps and inserts only missing application rows', () => {
+  assert.match(framReconcile, /--existing-application-gaps/);
+  assert.match(framReconcile, /gap\.existing_application_gaps/);
+  assert.match(framReconcile, /existingAppKeys/);
+  assert.match(framReconcile, /applications_already_present/);
+  assert.match(framReconcile, /applications_missing/);
+  assert.match(framReconcile, /evidenceAppRows\.filter\(r=>!existingAppKeys\.has\(applicationKey\(r\)\)\)/);
 });
