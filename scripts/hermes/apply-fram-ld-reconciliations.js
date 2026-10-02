@@ -5,6 +5,7 @@ const {Client}=require('pg');
 
 const ROOT=path.resolve(__dirname,'../..');
 const EXECUTE=process.argv.includes('--execute');
+const EXISTING_APPLICATION_GAPS=process.argv.includes('--existing-application-gaps');
 const GAP_DIR=path.join(ROOT,'elimfilters-vault/91-private-evidence/fram-ld-gap-analysis');
 const MAP_FILE=process.env.FRAM_LD_RECONCILIATION_MAP||path.join(ROOT,'elimfilters-vault/91-private-evidence/fram-ld-reconciliation-map.json');
 const REPORT_DIR=path.join(ROOT,'elimfilters-vault/91-private-evidence/fram-ld-reconciliation-reports');
@@ -14,6 +15,7 @@ const norm=v=>String(v||'').toUpperCase().replace(/[^A-Z0-9]/g,'');
 const clean=(v,max=255)=>v==null?null:String(v).trim().slice(0,max);
 const uniq=(rows,key)=>{const s=new Set();return rows.filter(r=>{const k=key(r);if(s.has(k))return false;s.add(k);return true})};
 const unitFor=k=>/_mm$/.test(k)?'mm':/_in$/.test(k)?'in':/_psi$/.test(k)?'psi':null;
+const applicationKey=r=>[norm(r.elimfilters_sku),norm(r.make),norm(r.model_family),norm(r.model_type),String(r.year||'').trim()].join('|');
 function latestGap(){const f=fs.readdirSync(GAP_DIR).filter(x=>/^fram-ld-gap-.*\.json$/.test(x)).map(x=>path.join(GAP_DIR,x));if(!f.length)throw new Error('No gap report');return f.sort((a,b)=>fs.statSync(b).mtimeMs-fs.statSync(a).mtimeMs)[0];}
 function buildPlan(entries,byAuthority){
   const comp=[],oem=[],apps=[],specs=[];
@@ -36,16 +38,18 @@ async function insertRows(client,table,cols,conflict,rows,batch=250){let total=0
 async function main(){
   const url=process.env.CATALOG_DATABASE_URL||process.env.DATABASE_URL;
   if(!url) throw new Error('CATALOG_DATABASE_URL missing');
-  const entries=JSON.parse(fs.readFileSync(MAP_FILE,'utf8'));
-  if(!Array.isArray(entries)||!entries.length) throw new Error('Empty reconciliation map');
   const gapFile=latestGap();
   const gap=JSON.parse(fs.readFileSync(gapFile,'utf8'));
+  const entries=EXISTING_APPLICATION_GAPS
+    ? (gap.existing_application_gaps||[]).map(x=>({authority:x.authority,sku:x.sku,family:x.family}))
+    : JSON.parse(fs.readFileSync(MAP_FILE,'utf8'));
+  if(!Array.isArray(entries)||!entries.length) throw new Error(EXISTING_APPLICATION_GAPS?'No existing application gaps in latest report':'Empty reconciliation map');
   const byAuthority=new Map(gap.results.map(r=>[norm(r.authority),r]));
   const plan=buildPlan(entries,byAuthority);
   const skus=[...new Set(entries.map(e=>e.sku))];
   const client=new Client({connectionString:url,ssl:{rejectUnauthorized:false}});
   await client.connect();
-  const report={mode:EXECUTE?'execute':'dry-run',gap_report:gapFile,map:MAP_FILE,authorities:entries.length,targets:skus.length,planned:{competitor:plan.comp.length,oem:plan.oem.length,applications:plan.apps.length,specifications:plan.specs.length},inserted:{},skipped:{},audit:{}};
+  const report={mode:EXECUTE?'execute':'dry-run',source_mode:EXISTING_APPLICATION_GAPS?'existing_application_gaps':'explicit_map',gap_report:gapFile,map:EXISTING_APPLICATION_GAPS?null:MAP_FILE,authorities:entries.length,targets:skus.length,planned:{competitor:plan.comp.length,oem:plan.oem.length,applications:plan.apps.length,specifications:plan.specs.length},inserted:{},skipped:{},audit:{}};
   try{
     await client.query('BEGIN ISOLATION LEVEL SERIALIZABLE');
     const targets=(await client.query(
@@ -81,7 +85,16 @@ async function main(){
     }
     report.skipped.competitor_conflicts=compSkipped;
     const oemRows=plan.oem.filter(x=>x.brand&&x.part).map(x=>({elimfilters_sku:x.sku,source_sku:x.source,oem_brand:x.brand,oem_part_number:x.part}));
-    const appRows=plan.apps.filter(x=>x.make&&x.model&&x.year).map(x=>({elimfilters_sku:x.sku,source_sku:x.source,make:x.make,model_family:x.model,model_type:x.engine||'',year:x.year,engine_code:x.engine||null,ccm:null,kw:null,hp:null,source_origin:x.origin}));
+    const evidenceAppRows=plan.apps.filter(x=>x.make&&x.model&&x.year).map(x=>({elimfilters_sku:x.sku,source_sku:x.source,make:x.make,model_family:x.model,model_type:x.engine||'',year:x.year,engine_code:x.engine||null,ccm:null,kw:null,hp:null,source_origin:x.origin}));
+    const existingApps=(await client.query(
+      'SELECT elimfilters_sku,make,model_family,model_type,year FROM ld_catalog.ld_vehicle_applications WHERE elimfilters_sku=ANY($1::text[])',
+      [skus]
+    )).rows;
+    const existingAppKeys=new Set(existingApps.map(applicationKey));
+    const appRows=evidenceAppRows.filter(r=>!existingAppKeys.has(applicationKey(r)));
+    report.planned.applications_total_evidence=evidenceAppRows.length;
+    report.planned.applications_already_present=evidenceAppRows.length-appRows.length;
+    report.planned.applications_missing=appRows.length;
     const specRows=plan.specs.filter(x=>x.key&&x.value).map(x=>({elimfilters_sku:x.sku,source_sku:x.source,spec_key:x.key,spec_value:x.value,spec_unit:x.unit}));
     report.inserted.competitor=await insertRows(client,'ld_catalog.ld_competitor_cross_references',['elimfilters_sku','source_sku','competitor_brand','competitor_part_number'],'ON CONFLICT (elimfilters_sku,competitor_brand,competitor_part_number) DO NOTHING',compRows);
     report.inserted.oem=await insertRows(client,'ld_catalog.ld_oem_cross_references',['elimfilters_sku','source_sku','oem_brand','oem_part_number'],'ON CONFLICT (elimfilters_sku,oem_brand,oem_part_number) DO NOTHING',oemRows);
