@@ -1,14 +1,46 @@
 {
-  "_note": "Phase-1 SKUs published as indexable pages at /products/<sku>/ and listed in the sitemap. Add entries here, then run scripts/export-product-pages.mjs. 'family' is the /families/<slug>/ page that links to the SKU.",
+  "_note": "Phase-1 public product pages generated from governed catalogue rows. STOP_REVIEW exclusions: EH60950 (third-party media mark), EF90668/EF90669 (SYNTAPORE fuel/water separator scope), EA30719 (no publishable equivalence), EF30006 (fewer than 4 verified spec fields).",
   "phase": 1,
   "options": {
     "showCrossReferences": true,
     "showPerformanceSpecs": false
   },
   "skus": [
-    { "sku": "EH60950", "family": "hydraulic-filters" },
-    { "sku": "EL83191", "family": "oil-filters" },
-    { "sku": "EL84004", "family": "oil-filters" },
-    { "sku": "EF95112", "family": "secondary-fuel" }
+    {
+      "sku": "EA13648",
+      "family": "primary-air"
+    },
+    {
+      "sku": "EF30012",
+      "family": "primary-fuel"
+    },
+    {
+      "sku": "EF95112",
+      "family": "secondary-fuel"
+    },
+    {
+      "sku": "EH60222",
+      "family": "hydraulic-filters"
+    },
+    {
+      "sku": "EH60223",
+      "family": "hydraulic-filters"
+    },
+    {
+      "sku": "EL30001",
+      "family": "oil-filters"
+    },
+    {
+      "sku": "EL30002",
+      "family": "oil-filters"
+    },
+    {
+      "sku": "EL83191",
+      "family": "oil-filters"
+    },
+    {
+      "sku": "EL84004",
+      "family": "oil-filters"
+    }
   ]
 }
