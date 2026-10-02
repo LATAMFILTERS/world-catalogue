@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import styles from './MacrocoreTechnologyPage.module.css';
 import { TECHNICAL_REVIEWER } from '@/lib/technical-reviewer';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 // Localized versions of HydrocoreStablePage, published at /es/ and /pt/technologies/hydrocore/.
 // Each language is a faithful translation of the English page: same scope, no added claims.
@@ -227,7 +228,7 @@ export function HydrocoreLocalizedPage({ lang }: { lang: HydrocoreLang }) {
     <Link href={`/${lang}/`} style={crumb}>{c.home.toUpperCase()}</Link><span>→</span>
     <Link href="/technologies/" style={crumb}>{c.technologies.toUpperCase()}</Link><span>→</span>
     <span style={{ color: '#fff12d' }}>HYDROCORE™</span>
-    <Link href="/technologies/hydrocore/" hrefLang="en" lang="en" style={{ ...crumb, marginLeft: 'auto' }}>ENGLISH</Link>
+    <LanguageSwitcher style={{ marginLeft: 'auto' }} />
    </div>
   </nav>
 

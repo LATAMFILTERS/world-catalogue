@@ -6,6 +6,8 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import '@/i18n';
+import { localeFromPath } from '@/i18n-locales';
+import { LanguageSwitcher } from './LanguageSwitcher';
 
 const HEADER_DISPLAY_FONT = 'Chakra Petch, Arial Narrow, monospace';
 
@@ -16,6 +18,8 @@ export function Navigation() {
   const [headerVisible, setHeaderVisible] = useState(true);
   const lastScrollY = useRef(0);
   const pathname = usePathname();
+  const routeLocale = localeFromPath(pathname);
+  const contactHref = routeLocale ? `/${routeLocale}/contact/` : '/contact';
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -79,11 +83,12 @@ export function Navigation() {
           <NavLink href="/knowledge-center/">{t('nav.knowledgeCenter', 'Knowledge Center')}</NavLink>
           <NavLink href="/industrial-process" accent>Industrial & Process</NavLink>
           <NavLink href="/about">{t('nav.about', 'Company')}</NavLink>
-          <NavLink href="/contact">{t('nav.contact', 'Contact')}</NavLink>
+          <NavLink href={contactHref}>{t('nav.contact', 'Contact')}</NavLink>
 
           <motion.a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" whileHover={{ boxShadow: '0 0 28px rgba(255,241,45,0.55)', y: -1 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.18 }} style={{ background: '#FFF12D', color: '#000', fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, fontSize: '0.80rem', letterSpacing: '0.07em', padding: '0.38rem 0.72rem', textDecoration: 'none', display: 'inline-block', textTransform: 'uppercase', flexShrink: 0, whiteSpace: 'nowrap' }}>
             {t('nav.findMyFilter', 'FIND MY FILTER')}
           </motion.a>
+          <span className="nav-lang"><LanguageSwitcher style={{ flexShrink: 0 }} /></span>
         </nav>
 
         <button onClick={() => setMenuOpen(!menuOpen)} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.65rem', display: 'none' }} className="show-mobile" aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={menuOpen}>
@@ -106,7 +111,7 @@ export function Navigation() {
                 { href: '/knowledge-center/', label: t('nav.knowledge', 'Knowledge') },
                 { href: '/industrial-process', label: 'Industrial & Process', accent: true },
                 { href: '/about', label: t('nav.about', 'Company') },
-                { href: '/contact', label: t('nav.contact', 'Contact') },
+                { href: contactHref, label: t('nav.contact', 'Contact') },
               ].map((item) => (
                 <motion.div key={item.href} variants={{ hidden: { opacity: 0, x: -16 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}>
                   <Link href={item.href} style={{ ...mobileLinkStyle, ...(item.accent ? { color: '#FFF12D', fontWeight: 700 } : {}) }} onClick={() => setMenuOpen(false)}>{item.label}</Link>
@@ -115,6 +120,7 @@ export function Navigation() {
               <motion.div variants={{ hidden: { opacity: 0, x: -16 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}>
                 <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={{ ...mobileLinkStyle, color: '#FFF12D', fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase' }}>{t('nav.findMyFilter', 'FIND MY FILTER')} →</a>
               </motion.div>
+              <LanguageSwitcher style={{ fontSize: '0.85rem' }} />
             </motion.div>
           </motion.div>
         )}
@@ -126,6 +132,7 @@ export function Navigation() {
           .show-mobile{display:flex!important}
         }
         @media (min-width: 769px) {.show-mobile{display:none!important}}
+        @media (max-width: 1319px) {.nav-lang{display:none!important}}
       `}</style>
     </nav>
   );

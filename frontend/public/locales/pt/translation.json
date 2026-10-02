@@ -132,7 +132,7 @@
     "readyToUpgrade": "Pronto para atualizar?",
     "readyDesc": "Encontre o componente de filtração correto para o equipamento, a aplicação e o sistema protegido.",
     "engineeringDesc": "A engenharia ELIMFILTERS alinha a seleção da filtração ao sistema protegido, ao risco de contaminação, às referências técnicas aplicáveis e ao ciclo de trabalho.",
-    "home": "LAR"
+    "home": "INÍCIO"
   },
   "language": {
     "switchToEn": "PT"
@@ -407,7 +407,7 @@
     }
   },
   "about": {
-    "homeLink": "HOME",
+    "homeLink": "INÍCIO",
     "heroTitle": "Engineering protection around the asset.",
     "heroLead": "ELIMFILTERS® is an industrial asset protection company. We develop filtration and contamination-control systems to reduce wear, prevent avoidable failure, extend equipment life, and protect the economic value of severe-duty machinery.",
     "section1Title": "A protection company built around equipment reliability.",
@@ -476,7 +476,7 @@
     "sector8": "Equipamentos industriais"
   },
   "distributors": {
-    "homeLink": "HOME",
+    "homeLink": "INÍCIO",
     "heroTitle": "Industrial Distribution Network",
     "heroLead": "ELIMFILTERS authorized distributors provide local market access, technical support, and asset protection coverage for industrial customers across the Americas.",
     "tag1": "LATAM",
@@ -520,7 +520,7 @@
     "footerText": "Cada mícron conta."
   },
   "warranty": {
-    "homeLink": "HOME",
+    "homeLink": "INÍCIO",
     "heroTitle": "Protection Backed By Support",
     "heroLead": "ELIMFILTERS warranty coverage supports distributors, fleets, and industrial customers with a clear protection framework, technical validation, and replacement-focused support.",
     "tagSupport": "SUPPORT",

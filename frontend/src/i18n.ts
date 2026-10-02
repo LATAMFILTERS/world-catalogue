@@ -235,11 +235,14 @@ function applyRuntimeGovernance() {
     i18n.addResource('en', 'translation', key, value);
   }
 
-  for (const [key, value] of Object.entries(GOVERNED_ES_OVERRIDES)) {
-    i18n.addResource('es', 'translation', key, value);
-  }
-  for (const [key, value] of Object.entries(GOVERNED_PT_OVERRIDES)) {
-    i18n.addResource('pt', 'translation', key, value);
+  // Only patch a language once its bundle has been loaded by the HTTP backend. Adding these
+  // keys earlier makes i18next treat the language as already loaded, so the full bundle is
+  // never fetched and geo-switched visitors fall back to English.
+  for (const [lng, overrides] of [['es', GOVERNED_ES_OVERRIDES], ['pt', GOVERNED_PT_OVERRIDES]] as const) {
+    if (!i18n.hasResourceBundle(lng, 'translation')) continue;
+    for (const [key, value] of Object.entries(overrides)) {
+      i18n.addResource(lng, 'translation', key, value);
+    }
   }
 }
 

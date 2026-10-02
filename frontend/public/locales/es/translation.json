@@ -445,7 +445,7 @@
     "sector8": "Equipos industriales"
   },
   "about": {
-    "homeLink": "HOME",
+    "homeLink": "INICIO",
     "heroTitle": "Engineering protection around the asset.",
     "heroLead": "ELIMFILTERS® is an industrial asset protection company. We develop filtration and contamination-control systems to reduce wear, prevent avoidable failure, extend equipment life, and protect the economic value of severe-duty machinery.",
     "section1Title": "A protection company built around equipment reliability.",
@@ -476,7 +476,7 @@
     "knowledgeButton": "EXPLORE OUR KNOWLEDGE SYSTEM"
   },
   "warranty": {
-    "homeLink": "HOME",
+    "homeLink": "INICIO",
     "heroTitle": "Protection Backed By Support",
     "heroLead": "ELIMFILTERS warranty coverage supports distributors, fleets, and industrial customers with a clear protection framework, technical validation, and replacement-focused support.",
     "tagSupport": "SUPPORT",
@@ -527,7 +527,7 @@
     "closingButton2": "EXPLORE SYSTEMS"
   },
   "distributors": {
-    "homeLink": "HOME",
+    "homeLink": "INICIO",
     "heroTitle": "Industrial Distribution Network",
     "heroLead": "ELIMFILTERS authorized distributors provide local market access, technical support, and asset protection coverage for industrial customers across the Americas.",
     "tag1": "LATAM",
