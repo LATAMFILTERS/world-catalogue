@@ -203,6 +203,62 @@ async function main() {
       });
     }
 
+    const preliminarySafe = authorities.filter(a => a.safe);
+    const plannedBySource = new Map();
+    for (const authority of preliminarySafe) {
+      plannedBySource.set(
+        authority.source_product_sku,
+        (plannedBySource.get(authority.source_product_sku) || 0) + authority.rows
+      );
+    }
+
+    const sourceSkus = [...plannedBySource.keys()];
+    const sourceMeta = sourceSkus.length
+      ? await db.query(
+          `SELECT
+             c.sku,
+             CASE
+               WHEN jsonb_typeof(coalesce(c.vehicle_applications,'[]'::jsonb))='array'
+                 THEN jsonb_array_length(coalesce(c.vehicle_applications,'[]'::jsonb))
+               ELSE 0
+             END AS vehicle_json_count,
+             CASE
+               WHEN jsonb_typeof(coalesce(c.equipment_applications,'[]'::jsonb))='array'
+                 THEN jsonb_array_length(coalesce(c.equipment_applications,'[]'::jsonb))
+               ELSE 0
+             END AS equipment_json_count,
+             (
+               SELECT count(*)::int
+               FROM ld_catalog.ld_vehicle_applications v
+               WHERE v.elimfilters_sku=c.sku
+             ) AS relational_count
+           FROM public.elimfilters_catalog c
+           WHERE c.sku=ANY($1::text[])`,
+          [sourceSkus]
+        )
+      : { rows: [] };
+    const sourceMetaBySku = new Map(sourceMeta.rows.map(row => [row.sku,row]));
+
+    for (const authority of preliminarySafe) {
+      const meta = sourceMetaBySku.get(authority.source_product_sku);
+      const planned = plannedBySource.get(authority.source_product_sku) || 0;
+      const publicEvidence = Number(meta?.vehicle_json_count || 0)
+        + Number(meta?.equipment_json_count || 0);
+      if (
+        meta
+        && planned === Number(meta.relational_count || 0)
+        && publicEvidence > 0
+      ) {
+        authority.safe = false;
+        authority.dispositions = [
+          ...new Set([
+            ...authority.dispositions,
+            'PUBLIC_EVIDENCE_WOULD_BE_ORPHANED'
+          ])
+        ].sort();
+      }
+    }
+
     const safeAuthorities = authorities.filter(a => a.safe);
     const heldAuthorities = authorities.filter(a => !a.safe);
     const safeRows = safeAuthorities.reduce((n,a) => n+a.rows,0);
