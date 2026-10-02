@@ -250,12 +250,7 @@ async function main() {
         && publicEvidence > 0
       ) {
         authority.safe = false;
-        authority.dispositions = [
-          ...new Set([
-            ...authority.dispositions,
-            'PUBLIC_EVIDENCE_WOULD_BE_ORPHANED'
-          ])
-        ].sort();
+        authority.dispositions = ['PUBLIC_EVIDENCE_WOULD_BE_ORPHANED'];
       }
     }
 
