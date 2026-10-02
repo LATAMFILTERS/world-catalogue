@@ -4,7 +4,6 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
-import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 
 const ease = [0.16, 1, 0.3, 1] as const;
 const approvedDisplayFont = "Chakra Petch, Arial Narrow, monospace";
@@ -192,9 +191,6 @@ export default function CinematicHero() {
             {t("home.ctaFilter", "Find My Filter")}
           </a>
         </motion.div>
-        {/* Below 1320px the header has no room for the switcher, so it lives in the hero. */}
-        <div className="hero-lang" style={{ marginTop: "1.4rem" }}><LanguageSwitcher /></div>
-        <style>{`@media (min-width: 1320px){.hero-lang{display:none}}`}</style>
       </div>
 
       <motion.div

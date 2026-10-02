@@ -28,3 +28,18 @@ export function languageAlternates(path: string): Record<string, string> {
   const url = (lang: PageLang) => `${BASE_URL}${localizedPath(path, lang)}`;
   return { en: url('en'), es: url('es'), 'pt-BR': url('pt'), 'x-default': url('en') };
 }
+
+/** English route ('/' or '/path', no trailing slash) for any current pathname, /es/ and /pt/ included. */
+export function englishRouteOf(pathname: string | null | undefined): string {
+  const stripped = (pathname || '/').replace(/^\/(es|pt)(?=\/|$)/, '').replace(/\/+$/, '');
+  return stripped || '/';
+}
+
+/**
+ * URL of the current page in `lang` when that page has a published /es/ and /pt/ version,
+ * otherwise null (the visitor stays on the English URL and the page is translated in place).
+ */
+export function languageHref(pathname: string | null | undefined, lang: PageLang): string | null {
+  const route = englishRouteOf(pathname);
+  return LOCALIZED_ROUTES.includes(route) ? localizedPath(route, lang) : null;
+}

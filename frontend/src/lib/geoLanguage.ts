@@ -56,9 +56,16 @@ function officialDefault(): GeoResult {
   return { language: OFFICIAL_LANGUAGE, country: OFFICIAL_COUNTRY, showSwitcher: false };
 }
 
-export async function detectGeoLanguage(): Promise<GeoResult> {
-  if (typeof window === 'undefined') return officialDefault();
+// Several components ask for the visitor's country at once; share one lookup per page load.
+let inflight: Promise<GeoResult> | null = null;
 
+export function detectGeoLanguage(): Promise<GeoResult> {
+  if (typeof window === 'undefined') return Promise.resolve(officialDefault());
+  inflight ??= lookupGeoLanguage();
+  return inflight;
+}
+
+async function lookupGeoLanguage(): Promise<GeoResult> {
   const ts = localStorage.getItem(GEO_TS_KEY);
   const cachedLang = localStorage.getItem(GEO_LANG_KEY);
   const cachedCountry = localStorage.getItem(GEO_COUNTRY_KEY);

@@ -16,7 +16,7 @@ import {
   FIELD_QUESTIONS_PT, SERVICE_DISCIPLINE_PT, INDUSTRY_PT,
 } from '@/lib/families-pt';
 import { OG_LOCALE, languageAlternates, localizedPath, type PageLang } from '@/lib/localized-routes';
-import { LanguageSwitcher } from '@/components/LanguageSwitcher';
+import { LanguageMenu } from '@/components/LanguageMenu';
 
 const BASE_URL = 'https://elimfilters.com';
 const displayFont = 'var(--font-display)';
@@ -339,7 +339,7 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productGroupSchema) }} />
 
       <Link href="/families/" style={backButton}>{c.back}</Link>
-      <LanguageSwitcher style={languageChip} />
+      <div style={languageChip}><LanguageMenu /></div>
 
       <header style={hero}>
         <img src={fam.heroImage} alt={c.heroAlt(fam.name)} fetchPriority="high" style={heroImage} />
@@ -550,7 +550,7 @@ export function FamilyPageView({ slug, lang }: { slug: string; lang: FamilyLang 
 
 const main: CSSProperties = { background: '#050505', color: '#fff', minHeight: '100vh', fontFamily: bodyFont };
 const wrap: CSSProperties = { maxWidth: '1180px', margin: '0 auto' };
-const languageChip: CSSProperties = { position: 'fixed', top: '1rem', right: '1.2rem', zIndex: 50, background: 'rgba(0,0,0,0.72)', border: '1px solid rgba(255,255,255,0.16)', padding: '0.42rem 0.75rem', backdropFilter: 'blur(12px)' };
+const languageChip: CSSProperties = { position: 'fixed', top: '1rem', right: '1.2rem', zIndex: 50, background: 'rgba(0,0,0,0.72)', border: '1px solid rgba(255,255,255,0.16)', padding: '0.1rem 0.35rem', backdropFilter: 'blur(12px)' };
 const backButton: CSSProperties = { position: 'fixed', top: '1rem', left: '1.2rem', zIndex: 50, background: 'rgba(0,0,0,0.72)', border: '1px solid rgba(255,255,255,0.16)', color: '#fff', textDecoration: 'none', fontFamily: displayFont, fontWeight: 700, letterSpacing: '0.14em', fontSize: '0.72rem', padding: '0.72rem 1rem', backdropFilter: 'blur(12px)' };
 const hero: CSSProperties = { minHeight: '82vh', position: 'relative', overflow: 'hidden', display: 'flex', alignItems: 'flex-end', padding: 'clamp(7rem, 12vw, 10rem) clamp(1.25rem, 6vw, 6rem) clamp(4rem, 8vw, 7rem)', borderBottom: '1px solid rgba(255,255,255,0.08)' };
 const heroImage: CSSProperties = { position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', opacity: HERO_MEDIA_TREATMENT.opacity, filter: 'none' };

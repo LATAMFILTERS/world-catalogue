@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import styles from './MacrocoreTechnologyPage.module.css';
 import { TECHNICAL_REVIEWER } from '@/lib/technical-reviewer';
-import { LanguageSwitcher } from './LanguageSwitcher';
 
 const faqs = [
   ['What is HYDROCORE™?','HYDROCORE™ is the ELIMFILTERS fuel/water separation architecture for approved standard non-turbine separator filters, including drain and transparent-bowl configurations.'],
@@ -49,7 +48,6 @@ export function HydrocoreStablePage(){
     <Link href="/" style={{color:'rgba(255,255,255,.55)',textDecoration:'none'}}>HOME</Link><span>→</span>
     <Link href="/technologies/" style={{color:'rgba(255,255,255,.55)',textDecoration:'none'}}>TECHNOLOGIES</Link><span>→</span>
     <span style={{color:'#fff12d'}}>HYDROCORE™</span>
-    <LanguageSwitcher style={{marginLeft:'auto'}}/>
    </div>
   </nav>
 

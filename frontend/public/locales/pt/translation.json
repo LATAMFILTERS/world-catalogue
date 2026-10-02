@@ -571,7 +571,8 @@
     "closingButton2": "EXPLORE SYSTEMS"
   },
   "a11y": {
-    "skipToContent": "Pular para o conteúdo principal"
+    "skipToContent": "Pular para o conteúdo principal",
+    "language": "Idioma"
   },
   "contactRouter": {
     "kicker": "FALE COM A ELIMFILTERS",

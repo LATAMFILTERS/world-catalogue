@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { usePathname } from 'next/navigation';
 import { localeFromPath } from '@/i18n-locales';
+import { LanguageMenu } from './LanguageMenu';
 
 const SCROLL_HIDE_THRESHOLD = 60;
 
@@ -77,13 +78,17 @@ export function PageHeader({ breadcrumbs, currentPage }: PageHeaderProps) {
   }
 
   return (
+    <>
+    <div style={{ position: 'fixed', top: 'calc(1rem + env(safe-area-inset-top, 0px))', right: 'clamp(0.75rem, 4vw, 4rem)', zIndex: 51, background: 'rgba(0,0,0,0.6)', border: '1px solid rgba(255,255,255,0.12)', backdropFilter: 'blur(10px)', WebkitBackdropFilter: 'blur(10px)', padding: '0 0.2rem' }}>
+      <LanguageMenu />
+    </div>
     <nav
       aria-label="Breadcrumb"
       style={{
         position: 'fixed',
         top: '1.5rem',
         left: 'clamp(1.25rem, 6vw, 6rem)',
-        right: 'clamp(1.25rem, 6vw, 6rem)',
+        right: 'calc(clamp(0.75rem, 4vw, 4rem) + 5.5rem)',
         zIndex: 50,
         opacity: atTop ? 1 : 0,
         transform: atTop ? 'translateY(0)' : 'translateY(-8px)',
@@ -127,5 +132,6 @@ export function PageHeader({ breadcrumbs, currentPage }: PageHeaderProps) {
         ))}
       </ol>
     </nav>
+    </>
   );
 }
