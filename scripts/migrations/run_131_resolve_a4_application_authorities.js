@@ -6,6 +6,17 @@ const { applyVerifiedApplications } = require('../../lib/catalog-application-wri
 const EXECUTE = process.argv.includes('--execute');
 const norm = v => String(v || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
 
+function applicationKey(entry = {}) {
+  return [
+    norm(entry.make),
+    norm(entry.model),
+    norm(entry.model_family),
+    norm(entry.model_type),
+    norm(entry.engine_code),
+    String(entry.year || entry.year_range || '')
+  ].join('|');
+}
+
 const MOVES = [
   { source:'EA32141', target:'EC30554', code:'FP2141', expected:168, json:'KEEP' },
   { source:'EC36001', target:'EA32521', code:'CF6001', expected:106, json:'KEEP' },
@@ -106,7 +117,12 @@ async function main(){
                      END
                 FROM public.elimfilters_catalog t WHERE t.sku=$2) AS target_json_count,
              vehicle_applications AS source_json,
-             vehicle_applications::text AS source_json_text
+             vehicle_applications::text AS source_json_text,
+             (SELECT CASE
+                       WHEN $3='EQUIPMENT' THEN coalesce(t.equipment_applications,'[]'::jsonb)
+                       ELSE coalesce(t.vehicle_applications,'[]'::jsonb)
+                     END
+                FROM public.elimfilters_catalog t WHERE t.sku=$2) AS target_json
            FROM public.elimfilters_catalog
           WHERE sku=$1`,
           [move.source,move.target,move.targetKind || 'VEHICLE']
@@ -117,8 +133,19 @@ async function main(){
         if(jsonCount!==move.expectedJson){
           throw new Error(`${move.source} JSON count ${jsonCount} != ${move.expectedJson}`);
         }
-        if(targetJsonCount!==0){
+        if(move.targetKind!=='EQUIPMENT' && targetJsonCount!==0){
           throw new Error(`${move.target} target JSON not empty: ${targetJsonCount}`);
+        }
+        if(move.targetKind==='EQUIPMENT'){
+          const sourcePayload=meta.rows[0].source_json || [];
+          const targetPayload=meta.rows[0].target_json || [];
+          const targetKeys=new Set(targetPayload.map(applicationKey));
+          const overlap=sourcePayload.filter(entry=>targetKeys.has(applicationKey(entry))).length;
+          if(overlap!==0){
+            throw new Error(`${move.target} equipment JSON overlap: ${overlap}`);
+          }
+          move.existingTargetJson=targetJsonCount;
+          move.mergedTargetJson=targetJsonCount+jsonCount;
         }
         if(move.json==='CLEAR_SOURCE_JUNK' && !String(meta.rows[0].source_json_text||'').includes('3880cc 237 CID')){
           throw new Error('EC32862 junk JSON signature not found');
@@ -161,10 +188,31 @@ async function main(){
             }
           };
           if(move.targetKind==='EQUIPMENT'){
+            const targetCurrent=await db.query(
+              `SELECT equipment_applications
+                 FROM public.elimfilters_catalog
+                WHERE sku=$1
+                FOR UPDATE`,
+              [move.target]
+            );
+            const existing=targetCurrent.rows[0]?.equipment_applications || [];
+            const existingKeys=new Set(existing.map(applicationKey));
+            const overlap=payload.filter(entry=>existingKeys.has(applicationKey(entry))).length;
+            if(overlap!==0){
+              throw new Error(`${move.target} equipment merge overlap: ${overlap}`);
+            }
             await applyVerifiedApplications(db,{
               sku:move.target,
-              equipment_applications:payload,
-              evidence
+              equipment_applications:[...existing,...payload],
+              evidence:{
+                ...evidence,
+                metadata:{
+                  ...evidence.metadata,
+                  prior_verified_authority:'DONALDSON_OFFICIAL_CATALOG',
+                  prior_equipment_count:existing.length,
+                  appended_equipment_count:payload.length
+                }
+              }
             });
           }else{
             await applyVerifiedApplications(db,{
