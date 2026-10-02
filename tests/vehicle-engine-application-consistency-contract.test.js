@@ -14,6 +14,10 @@ const repair = fs.readFileSync(
   path.join(ROOT, 'scripts', 'migrations', 'run_123_repair_vehicle_engine_application_consistency.js'),
   'utf8'
 );
+const ownershipRepair = fs.readFileSync(
+  path.join(ROOT, 'scripts', 'migrations', 'run_127_repair_application_resolver_ownership.js'),
+  'utf8'
+);
 const framGapAnalyzer = fs.readFileSync(
   path.join(ROOT, 'scripts', 'hermes', 'analyze-fram-ld-gaps.js'),
   'utf8'
@@ -105,6 +109,39 @@ test('application source mismatch is governed by relational parent identity, not
     audit,
     /regexp_replace\(upper\(coalesce\(v\.source_sku,''\)\).*<> regexp_replace\(upper\(coalesce\(c\.codigo_base,''\)/s
   );
+});
+
+test('run_127 is dry-run by default and executes only with --execute', () => {
+  assert.match(ownershipRepair, /const EXECUTE = process\.argv\.includes\('--execute'\)/);
+  assert.match(ownershipRepair, /BEGIN ISOLATION LEVEL SERIALIZABLE/);
+  assert.match(ownershipRepair, /ROLLBACK \(dry-run\)/);
+  assert.match(ownershipRepair, /console\.log\('COMMIT'\)/);
+});
+
+test('run_127 changes only relational application ownership and preserves authority evidence', () => {
+  assert.match(ownershipRepair, /UPDATE ld_catalog\.ld_vehicle_applications[\s\S]*SET elimfilters_sku=\$1/);
+  assert.doesNotMatch(ownershipRepair, /SET\s+source_sku=/);
+  assert.doesNotMatch(ownershipRepair, /UPDATE\s+public\.elimfilters_catalog/i);
+  assert.doesNotMatch(ownershipRepair, /INSERT\s+INTO\s+ld_catalog\.ld_(?:competitor|oem|product_specifications)/i);
+  assert.doesNotMatch(ownershipRepair, /UPDATE\s+ld_catalog\.ld_production_readiness/i);
+});
+
+test('run_127 holds whole authorities on type, target-platform or convergence conflicts', () => {
+  assert.match(ownershipRepair, /FILTER_TYPE_MISMATCH/);
+  assert.match(ownershipRepair, /TARGET_EXACT_EXISTS/);
+  assert.match(ownershipRepair, /TARGET_PLATFORM_VARIANT/);
+  assert.match(ownershipRepair, /CANDIDATE_CONVERGENCE_COLLISION/);
+  assert.match(ownershipRepair, /const safeAuthorities = authorities\.filter\(a => a\.safe\)/);
+  assert.match(ownershipRepair, /const heldAuthorities = authorities\.filter\(a => !a\.safe\)/);
+});
+
+test('run_127 requires a unique governed resolver owner and rechecks row identity on update', () => {
+  assert.match(ownershipRepair, /r\.owner_count=1/);
+  assert.match(ownershipRepair, /r\.target_sku<>v\.elimfilters_sku/);
+  assert.match(ownershipRepair, /id=ANY\(\$2::int\[\]\)/);
+  assert.match(ownershipRepair, /elimfilters_sku=\$3/);
+  assert.match(ownershipRepair, /regexp_replace\([\s\S]*source_sku[\s\S]*\)=\$4/);
+  assert.match(ownershipRepair, /row-count mismatch/);
 });
 
 test('FRAM EXISTING_DIRECT analysis measures relational application coverage', () => {
