@@ -10,8 +10,10 @@ const {
   codesFromJsonObject,
   productReferenceSet,
   exactReferenceMatch,
-  referenceContainmentPayloads
+  referenceContainmentPayloads,
+  searchByApplication
 } = require('../lib/bot-protocol-catalog');
+const { __setProtocolPoolForTests, __resetProtocolPoolForTests } = require('../lib/bot-protocol-db');
 
 test('extracts P552100 without treating 2007 as a filter reference', () => {
   assert.deepEqual(extractReferences('Es modelo 2007. El filtro es Donaldson P552100.'), ['P552100']);
@@ -97,6 +99,33 @@ test('builds JSONB containment payloads for known cross-reference key variants',
   assert.ok(payloads.some(value => value[0].code === 'RE52987'));
   assert.ok(payloads.some(value => value[0].partNumber === 'RE52987'));
   assert.ok(payloads.some(value => value[0].oem_code === 'RE52987'));
+});
+
+test('explicit application system never falls back to unrelated filters', async () => {
+  __setProtocolPoolForTests({
+    async connect() {
+      return {
+        async query(sql) {
+          const text = String(sql);
+          if (/^\s*(BEGIN|COMMIT|ROLLBACK|SET LOCAL)/i.test(text)) return { rows: [] };
+          if (/FROM ld_catalog\.ld_vehicle_applications/i.test(text)) {
+            return { rows: [{ elimfilters_sku: 'ED47747', make: 'MACK', model_family: 'MACK', model_type: 'MACK', year: null, engine_code: 'MP8' }] };
+          }
+          if (/FROM elimfilters_catalog c/i.test(text)) {
+            return { rows: [{ id: 1, sku: 'ED47747', filter_type: 'Air Dryer Filter', oem_codes: [], competitor_codes: [], brand_crossrefs: {}, equipment_applications: [], vehicle_applications: [], specs: {}, enrichment_data: {}, is_primary: true }] };
+          }
+          return { rows: [] };
+        },
+        release() {}
+      };
+    }
+  });
+  try {
+    const result = await searchByApplication(['MACK', 'MP8'], null, 'oil');
+    assert.deepEqual(result.products, []);
+  } finally {
+    __resetProtocolPoolForTests();
+  }
 });
 
 test('PostgreSQL cross-reference query avoids regexp full-table scans', () => {
