@@ -53,7 +53,9 @@ async function main() {
       generated_at: new Date().toISOString(),
       readonly: true,
       categories: {},
-      summary: {}
+      informational: {},
+      summary: {},
+      informational_summary: {}
     };
 
     // A. Public JSON application evidence exists, but normalized relational
@@ -96,11 +98,9 @@ async function main() {
     `);
     report.categories.application_evidence_not_normalized = jsonVsRel.rows.map(withOem);
 
-    // B. Normalized application source identity is governed by the relational
-    // LD parent, not by public codigo_base/canonical_source_code. Public base
-    // codes may intentionally be compact (e.g. 8226) while source_sku preserves
-    // the full authority/reference (e.g. WK8226). Only flag a mismatch when a
-    // relational parent exists and its source_sku actually disagrees.
+    // B. Source identity differences are not automatically errors. Classify them
+    // against the active LD canonical identity and the governed resolver. A source
+    // that resolves uniquely to the same SKU is informational, not a HOLD.
     const sourceMismatch = await client.query(`
       SELECT DISTINCT
         v.elimfilters_sku AS sku,
@@ -120,7 +120,65 @@ async function main() {
             <> regexp_replace(upper(coalesce(p.source_sku,'')),'[^A-Z0-9]','','g')
       ORDER BY v.elimfilters_sku,v.make,v.model_family,v.year
     `);
-    report.categories.application_source_identity_mismatch = sourceMismatch.rows.map(withOem);
+
+    const canonicalIdentity = await client.query(`
+      SELECT elimfilters_sku AS sku,canonical_part_number
+      FROM ld_catalog.ld_canonical_product_identity
+      WHERE status='ACTIVE'
+    `);
+    const canonicalBySku = new Map();
+    for (const row of canonicalIdentity.rows) {
+      const key = String(row.sku || '');
+      if (!canonicalBySku.has(key)) canonicalBySku.set(key, new Set());
+      canonicalBySku.get(key).add(norm(row.canonical_part_number));
+    }
+
+    const resolverRows = await client.query(`
+      SELECT code,sku,status
+      FROM public.v_api_resolver_v7
+      WHERE coalesce(status,'') ~* 'RESOLVED|CANONICAL'
+    `);
+    const resolverByCode = new Map();
+    for (const row of resolverRows.rows) {
+      const code = norm(row.code);
+      if (!code) continue;
+      if (!resolverByCode.has(code)) resolverByCode.set(code, new Set());
+      resolverByCode.get(code).add(String(row.sku || ''));
+    }
+
+    const legitimate = [];
+    const conflicts = [];
+    const unsupported = [];
+    for (const raw of sourceMismatch.rows) {
+      const row = withOem(raw);
+      const code = norm(raw.application_source_sku);
+      const canonicalMatch = canonicalBySku.get(String(raw.sku || ''))?.has(code) || false;
+      const resolverSkus = resolverByCode.get(code) || new Set();
+      const resolverSame = resolverSkus.has(String(raw.sku || ''));
+      const resolverOther = [...resolverSkus].some(sku => sku && sku !== String(raw.sku || ''));
+
+      if (canonicalMatch || (resolverSame && !resolverOther)) {
+        legitimate.push({
+          ...row,
+          identity_disposition: canonicalMatch ? 'CANONICAL_LD_MATCH' : 'RESOLVER_SAME_SKU'
+        });
+      } else if (resolverOther) {
+        conflicts.push({
+          ...row,
+          identity_disposition: 'RESOLVER_OTHER_SKU',
+          resolver_skus: [...resolverSkus].sort()
+        });
+      } else {
+        unsupported.push({
+          ...row,
+          identity_disposition: 'UNSUPPORTED_REVIEW'
+        });
+      }
+    }
+
+    report.informational.application_source_identity_legitimate_alias = legitimate;
+    report.categories.application_source_identity_conflict = conflicts;
+    report.categories.application_source_identity_unsupported = unsupported;
 
     // C. Same vehicle/model/year/engine/service family points to multiple SKUs.
     // This is a high-value collision class: the bot can publish the wrong SKU or
@@ -225,6 +283,9 @@ async function main() {
 
     for (const [name, rows] of Object.entries(report.categories)) {
       report.summary[name] = rows.length;
+    }
+    for (const [name, rows] of Object.entries(report.informational)) {
+      report.informational_summary[name] = rows.length;
     }
     report.summary.total_flagged_rows = Object.values(report.summary)
       .reduce((sum, value) => sum + Number(value || 0), 0);
