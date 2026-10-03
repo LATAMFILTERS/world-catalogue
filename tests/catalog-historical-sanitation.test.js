@@ -12,21 +12,26 @@ test('official product evidence requires Donaldson context and exact normalized 
   assert.equal(pageSupportsOfficialProduct('<html><body>Donaldson P551999 Filter</body></html>', 'P551313'), false);
 });
 
-test('historical sanitation worker does not infer manufacturer absence or mutate alternate arrays/SKU', () => {
+test('historical sanitation worker does not infer manufacturer absence or rename SKU', () => {
   const source = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'catalog-historical-sanitation.js'), 'utf8');
   assert.match(source, /absence_inferred:\s*0/);
-  assert.match(source, /alternate_columns_mutated:\s*0/);
   assert.match(source, /sku_mutations:\s*0/);
-  assert.doesNotMatch(source, /SET\s+oem_codes\s*=/i);
-  assert.doesNotMatch(source, /SET\s+competitor_codes\s*=/i);
   assert.doesNotMatch(source, /SET\s+sku\s*=/i);
+});
+
+test('canonical promotion mutates alternates only through the constrained promotion helper', () => {
+  const source = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'catalog-historical-sanitation.js'), 'utf8');
+  assert.match(source, /buildCanonicalPromotionAlternates/);
+  assert.match(source, /SANITATION_POSTCHECK_CANONICAL_DUPLICATED/);
+  assert.match(source, /SANITATION_POSTCHECK_PRIOR_BASE_NOT_PRESERVED/);
+  assert.match(source, /replacedReferenceManufacturer/);
 });
 
 test('historical sanitation catalog writes pass through gateway and compare-and-swap postchecks', () => {
   const source = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'catalog-historical-sanitation.js'), 'utf8');
   assert.match(source, /assertGovernedCatalogPatch/);
   assert.match(source, /SELECT \* FROM elimfilters_catalog WHERE sku=\$1 FOR UPDATE/);
-  assert.match(source, /codigo_base IS NOT DISTINCT FROM \$4/);
+  assert.match(source, /codigo_base IS NOT DISTINCT FROM \$6/);
   assert.match(source, /SANITATION_POSTCHECK_FAILED/);
   assert.match(source, /SANITATION_QUEUE_COMPARE_AND_SWAP_FAILED/);
   assert.match(source, /gateway_validated/);
