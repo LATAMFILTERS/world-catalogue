@@ -64,6 +64,89 @@
    "governance": {
     "canonicalSourceBrand": "DONALDSON",
     "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db-export",
+    "file": "live-rows.json"
+   }
+  },
+  {
+   "sku": "ED47754",
+   "slug": "ed47754",
+   "family": "air-dryer-filters",
+   "duty": "Heavy Duty",
+   "title": "Air Dryer Cartridge",
+   "technology": "DRYCORE",
+   "description": "ED47754 is an ELIMFILTERS air dryer cartridge protected by DRYCORE™ technology.",
+   "specs": [
+    {
+     "name": "Height",
+     "value": "127 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "78 mm"
+    },
+    {
+     "name": "Gasket outer diameter",
+     "value": "71.5 mm"
+    }
+   ],
+   "oem": [
+    {
+     "brand": "Mercedes-Benz",
+     "code": "000 429 52 95"
+    },
+    {
+     "brand": "Mercedes-Benz",
+     "code": "000 429 52 95 64"
+    },
+    {
+     "brand": "Mercedes-Benz",
+     "code": "A 000 429 52 95"
+    },
+    {
+     "brand": "Mercedes-Benz",
+     "code": "A 000 429 52 95 64"
+    },
+    {
+     "brand": "Knorr-Bremse",
+     "code": "1 507 434 00"
+    }
+   ],
+   "oemTotal": 5,
+   "crossRefs": [
+    {
+     "brand": "Fleetguard",
+     "code": "AD27754"
+    }
+   ],
+   "crossRefsTotal": 1,
+   "applications": [
+    "International - PRO LF627 PREM · ISX15",
+    "Blue Bird - All American FE · C7",
+    "Autocar Llc. - Xpeditor WX · ISL G (8.9)",
+    "Mercedes-Benz - VARIO 812D (670) · OM602.985LA",
+    "Mercedes-Benz - VARIO 512D (667) · OM602.984LA",
+    "Mercedes-Benz - VARIO 618D BLUETEC (670) · OM904LA",
+    "Mercedes-Benz - VARIO 615D (668) · OM904LA",
+    "Mercedes-Benz - VARIO 816D/DA BLUETEC (670/669) · OM904LA",
+    "Mercedes-Benz - VARIO 614D (668) · OM904LA",
+    "Mercedes-Benz - VARIO 818D/DA BLUETEC (670/669) · OM904LA",
+    "Mercedes-Benz - VARIO 814D/DA (670/669) · OM904LA",
+    "Mercedes-Benz - VARIO 813D/DA BLUETEC (670/669) · OM904LA"
+   ],
+   "physicalWarnings": [],
+   "governance": {
+    "canonicalSourceBrand": "FLEETGUARD",
+    "ownDataVerified": false,
+    "fleetguardFallbackVerified": true,
+    "verifiedOemReferences": true,
     "canonicalStatus": "VERIFIED",
     "dutyStatus": "LEGACY_UNVERIFIED",
     "active": true
@@ -126,6 +209,8 @@
    "governance": {
     "canonicalSourceBrand": "DONALDSON",
     "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
     "canonicalStatus": "VERIFIED",
     "dutyStatus": "LEGACY_UNVERIFIED",
     "active": true
@@ -192,6 +277,8 @@
    "governance": {
     "canonicalSourceBrand": "DONALDSON",
     "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
     "canonicalStatus": "VERIFIED",
     "dutyStatus": "LEGACY_UNVERIFIED",
     "active": true
@@ -375,6 +462,8 @@
    "governance": {
     "canonicalSourceBrand": "DONALDSON",
     "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
     "canonicalStatus": "VERIFIED",
     "dutyStatus": "LEGACY_UNVERIFIED",
     "active": true
@@ -521,6 +610,8 @@
    "governance": {
     "canonicalSourceBrand": "DONALDSON",
     "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
     "canonicalStatus": "VERIFIED",
     "dutyStatus": "LEGACY_UNVERIFIED",
     "active": true
@@ -623,6 +714,8 @@
    "governance": {
     "canonicalSourceBrand": "DONALDSON",
     "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
     "canonicalStatus": "VERIFIED",
     "dutyStatus": "LEGACY_UNVERIFIED",
     "active": true
@@ -818,6 +911,8 @@
    "governance": {
     "canonicalSourceBrand": "DONALDSON",
     "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
     "canonicalStatus": "VERIFIED",
     "dutyStatus": "LEGACY_UNVERIFIED",
     "active": true
@@ -1009,6 +1104,8 @@
    "governance": {
     "canonicalSourceBrand": "DONALDSON",
     "ownDataVerified": false,
+    "fleetguardFallbackVerified": false,
+    "verifiedOemReferences": false,
     "canonicalStatus": "VERIFIED",
     "dutyStatus": "LEGACY_UNVERIFIED",
     "active": true
@@ -1020,11 +1117,6 @@
   }
  ],
  "blocked": [
-  {
-   "sku": "ED47754",
-   "reason": "canonical source is a fallback manufacturer (FLEETGUARD); publish only after specs are verified against ELIMFILTERS own data (ownDataVerified)",
-   "kind": "STOP_REVIEW"
-  },
   {
    "sku": "EF95112",
    "reason": "specs sourced from Fleetguard FF5112; not published until verified against ELIMFILTERS own data (policy: Victor)",

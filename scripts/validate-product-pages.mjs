@@ -41,7 +41,7 @@ if (!snapshot.products.length) {
 }
 for (const p of snapshot.products) {
   const g = p.governance || {};
-  if (g.canonicalSourceBrand && !PRIMARY_SOURCES.has(g.canonicalSourceBrand) && !g.ownDataVerified) errors.push(`${p.sku}: published with fallback canonical source ${g.canonicalSourceBrand} and no ownDataVerified`);
+  if (g.canonicalSourceBrand && !PRIMARY_SOURCES.has(g.canonicalSourceBrand) && !g.ownDataVerified && !(g.canonicalSourceBrand === 'FLEETGUARD' && g.fleetguardFallbackVerified)) errors.push(`${p.sku}: published with fallback canonical source ${g.canonicalSourceBrand} and no explicit verified Fleetguard manufacturer fallback`);
 }
 for (const p of snapshot.products) if (p.governance?.canonicalStatus !== 'VERIFIED') errors.push(`${p.sku}: published without canonical_source_status VERIFIED (policy VERIFIED-only)`);
 

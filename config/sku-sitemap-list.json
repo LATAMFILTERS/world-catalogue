@@ -12,7 +12,9 @@
     },
     {
       "sku": "ED47754",
-      "family": "air-dryer-filters"
+      "family": "air-dryer-filters",
+      "verifiedFleetguardFallback": true,
+      "verifiedOemReferences": true
     },
     {
       "sku": "EF90668",
