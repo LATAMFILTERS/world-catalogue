@@ -5,10 +5,12 @@
  *
  * This worker NEVER infers manufacturer absence.
  * It only resolves rows when official manufacturer evidence is found.
- * Search-engine HTML may be used only to DISCOVER the exact Donaldson product URL;
- * the evidence itself must come from the official shop.donaldson.com product page.
+ * Search-engine HTML may be used only to DISCOVER official Donaldson evidence;
+ * the evidence itself must come from shop.donaldson.com or allowlisted Donaldson literature.
  *
- * It does not touch OEM/competitor alternate arrays and it does not rename SKU.
+ * It does not rename SKU. Alternate arrays are immutable except during a verified
+ * canonical promotion, where the promoted code is removed from alternates and the
+ * prior base is preserved only when its manufacturer is explicitly proven.
  */
 
 require('dotenv').config();
@@ -27,6 +29,9 @@ const {
 const {
   assertGovernedCatalogPatch,
 } = require('../lib/catalog-write-gateway');
+const {
+  findOfficialLiteratureCrossReference,
+} = require('../lib/donaldson-official-cross-reference-literature');
 
 const DATABASE_URL = process.env.CATALOG_DATABASE_URL || process.env.DATABASE_URL;
 if (!DATABASE_URL) throw new Error('Missing CATALOG_DATABASE_URL or DATABASE_URL');
@@ -36,6 +41,8 @@ const RECONCILE_ONLY = process.argv.includes('--reconcile-only');
 const limitArg = process.argv.find((v) => v.startsWith('--limit='));
 const concurrencyArg = process.argv.find((v) => v.startsWith('--verify-concurrency='));
 const rowTimeoutArg = process.argv.find((v) => v.startsWith('--verify-row-timeout-ms='));
+const skuArg = process.argv.find((v) => v.startsWith('--sku='));
+const TARGET_SKU = skuArg ? String(skuArg.split('=')[1] || '').trim().toUpperCase() || null : null;
 const LIMIT = limitArg ? Math.max(1, Math.min(1000, Number(limitArg.split('=')[1]) || 25)) : 25;
 const VERIFY_CONCURRENCY = concurrencyArg
   ? Math.max(1, Math.min(8, Number(concurrencyArg.split('=')[1]) || 1))
@@ -235,12 +242,35 @@ async function verifyRow(row, { signal = null } = {}) {
 
     for (const candidate of candidates) {
       if (signal?.aborted) return { resolved: false, reason: 'VERIFY_ROW_TIMEOUT' };
+
+      const literature = findOfficialLiteratureCrossReference(candidate, row.codigo_base);
+      if (literature?.ok) {
+        matches.push({
+          candidate,
+          url: literature.evidenceUrl,
+          hash: literature.evidenceHash,
+          evidenceHashKind: literature.evidenceHashKind,
+          evidenceKind: literature.evidenceKind,
+          evidenceAuthority: literature.evidenceAuthority,
+          evidenceDocumentId: literature.evidenceDocumentId,
+          replacedReferenceManufacturer: literature.manufacturer,
+        });
+        continue;
+      }
+
       const page = await fetchOfficialDonaldsonPage(candidate, signal);
       if (!page.ok) {
         if (page.reason === 'OFFICIAL_URL_DISCOVERY_FAILED') discoveryFailures += 1;
       } else if (pageSupportsCrossReference(page.html, candidate, row.codigo_base)) {
-        matches.push({ candidate, url: page.url, hash: page.hash });
+        matches.push({
+          candidate,
+          url: page.url,
+          hash: page.hash,
+          evidenceKind: 'OFFICIAL_CROSS_REFERENCE',
+          evidenceAuthority: 'OFFICIAL_DONALDSON_SHOP',
+        });
       }
+
       await sleep(250);
     }
 
@@ -254,9 +284,13 @@ async function verifyRow(row, { signal = null } = {}) {
     return {
       resolved: true,
       approvedCodigoBase: matches[0].candidate,
-      evidenceKind: 'OFFICIAL_CROSS_REFERENCE',
+      evidenceKind: matches[0].evidenceKind || 'OFFICIAL_CROSS_REFERENCE',
+      evidenceAuthority: matches[0].evidenceAuthority || 'OFFICIAL_DONALDSON_SHOP',
       evidenceUrl: matches[0].url,
       evidenceHash: matches[0].hash,
+      evidenceDocumentId: matches[0].evidenceDocumentId || null,
+      evidenceHashKind: matches[0].evidenceHashKind || null,
+      replacedReferenceManufacturer: matches[0].replacedReferenceManufacturer || null,
       sourceCurrentBase: false,
     };
   }
@@ -278,6 +312,36 @@ async function verifyRowWithTimeout(row, timeoutMs = VERIFY_ROW_TIMEOUT_MS) {
   }
 }
 
+function buildCanonicalPromotionAlternates(current, resolution) {
+  const approved = normalizeCode(resolution.approvedCodigoBase);
+  const previous = normalizeCode(current.codigo_base);
+  const oemCodes = Array.isArray(current.oem_codes) ? current.oem_codes : [];
+  const competitorCodes = Array.isArray(current.competitor_codes) ? current.competitor_codes : [];
+
+  const cleanOem = oemCodes.filter((item) => normalizeCode(item?.code || item?.reference) !== approved);
+  const cleanCompetitors = competitorCodes.filter((item) => normalizeCode(item?.code || item?.reference) !== approved);
+
+  if (!resolution.sourceCurrentBase && previous && previous !== approved && resolution.replacedReferenceManufacturer) {
+    const exists = [...cleanOem, ...cleanCompetitors].some(
+      (item) => normalizeCode(item?.code || item?.reference) === previous
+    );
+    if (!exists) {
+      cleanCompetitors.push({
+        code: current.codigo_base,
+        manufacturer: String(resolution.replacedReferenceManufacturer).trim().toUpperCase(),
+      });
+    }
+  }
+
+  return {
+    oem_codes: cleanOem,
+    competitor_codes: cleanCompetitors,
+    mutated:
+      JSON.stringify(oemCodes) !== JSON.stringify(cleanOem) ||
+      JSON.stringify(competitorCodes) !== JSON.stringify(cleanCompetitors),
+  };
+}
+
 async function applyResolution(client, row, resolution) {
   const lockedResult = await client.query(
     'SELECT * FROM elimfilters_catalog WHERE sku=$1 FOR UPDATE',
@@ -297,7 +361,7 @@ async function applyResolution(client, row, resolution) {
     primary_manufacturer_verified: true,
     approved_manufacturer: 'DONALDSON',
     approved_codigo_base: resolution.approvedCodigoBase,
-    evidence_authority: 'OFFICIAL_DONALDSON_SHOP',
+    evidence_authority: resolution.evidenceAuthority || 'OFFICIAL_DONALDSON_SHOP',
     evidence_kind: resolution.evidenceKind,
     evidence_url: resolution.evidenceUrl,
     evidence_hash: resolution.evidenceHash,
@@ -313,9 +377,12 @@ async function applyResolution(client, row, resolution) {
     ...currentData,
     codigo_base_governance: { ...currentGov, ...evidencePatch },
   };
+  const alternatePromotion = buildCanonicalPromotionAlternates(current, resolution);
   const patch = {
     codigo_base: resolution.approvedCodigoBase,
     enrichment_data: nextData,
+    oem_codes: alternatePromotion.oem_codes,
+    competitor_codes: alternatePromotion.competitor_codes,
   };
   const gateway = assertGovernedCatalogPatch(current, patch);
 
@@ -323,27 +390,42 @@ async function applyResolution(client, row, resolution) {
     INSERT INTO catalog_codigo_base_evidence (
       sku, evidence_kind, authority, manufacturer, reference_code,
       normalized_reference, source_url, evidence_hash, verified_at, metadata
-    ) VALUES ($1,$2,'DONALDSON','DONALDSON',$3,$4,$5,$6,$7,$8::jsonb)
+    ) VALUES ($1,$2,$3,'DONALDSON',$4,$5,$6,$7,$8,$9::jsonb)
     ON CONFLICT DO NOTHING
   `, [
     row.sku,
     resolution.evidenceKind,
+    resolution.evidenceAuthority || 'OFFICIAL_DONALDSON_SHOP',
     resolution.approvedCodigoBase,
     normalizeCode(resolution.approvedCodigoBase),
     resolution.evidenceUrl,
     resolution.evidenceHash,
     now,
-    JSON.stringify({ prior_codigo_base: row.codigo_base, source_current_base: resolution.sourceCurrentBase }),
+    JSON.stringify({
+      prior_codigo_base: row.codigo_base,
+      source_current_base: resolution.sourceCurrentBase,
+      evidence_document_id: resolution.evidenceDocumentId || null,
+      evidence_hash_kind: resolution.evidenceHashKind || null,
+    }),
   ]);
 
   const updated = await client.query(`
     UPDATE elimfilters_catalog
     SET enrichment_data=$1::jsonb,
-        codigo_base=$2
-    WHERE sku=$3
-      AND codigo_base IS NOT DISTINCT FROM $4
-    RETURNING sku,codigo_base,enrichment_data
-  `, [JSON.stringify(nextData), resolution.approvedCodigoBase, row.sku, current.codigo_base]);
+        codigo_base=$2,
+        oem_codes=$3::jsonb,
+        competitor_codes=$4::jsonb
+    WHERE sku=$5
+      AND codigo_base IS NOT DISTINCT FROM $6
+    RETURNING sku,codigo_base,oem_codes,competitor_codes,enrichment_data
+  `, [
+    JSON.stringify(nextData),
+    resolution.approvedCodigoBase,
+    JSON.stringify(alternatePromotion.oem_codes),
+    JSON.stringify(alternatePromotion.competitor_codes),
+    row.sku,
+    current.codigo_base,
+  ]);
   if (updated.rowCount !== 1) throw new Error(`SANITATION_COMPARE_AND_SWAP_FAILED:${row.sku}`);
 
   const post = updated.rows[0];
@@ -352,6 +434,19 @@ async function applyResolution(client, row, resolution) {
       postGov.state !== 'CANONICAL_VERIFIED' ||
       normalizeCode(postGov.approved_codigo_base) !== normalizeCode(resolution.approvedCodigoBase)) {
     throw new Error(`SANITATION_POSTCHECK_FAILED:${row.sku}`);
+  }
+
+  const postAlternateCodes = [
+    ...(Array.isArray(post.oem_codes) ? post.oem_codes : []),
+    ...(Array.isArray(post.competitor_codes) ? post.competitor_codes : []),
+  ].map((item) => normalizeCode(item?.code || item?.reference)).filter(Boolean);
+  if (postAlternateCodes.includes(normalizeCode(resolution.approvedCodigoBase))) {
+    throw new Error(`SANITATION_POSTCHECK_CANONICAL_DUPLICATED:${row.sku}`);
+  }
+  if (!resolution.sourceCurrentBase && resolution.replacedReferenceManufacturer &&
+      normalizeCode(row.codigo_base) !== normalizeCode(resolution.approvedCodigoBase) &&
+      !postAlternateCodes.includes(normalizeCode(row.codigo_base))) {
+    throw new Error(`SANITATION_POSTCHECK_PRIOR_BASE_NOT_PRESERVED:${row.sku}`);
   }
 
   const queue = await client.query(`
@@ -370,7 +465,7 @@ async function applyResolution(client, row, resolution) {
   `, [resolution.approvedCodigoBase, row.sku]);
   if (queue.rowCount !== 1) throw new Error(`SANITATION_QUEUE_COMPARE_AND_SWAP_FAILED:${row.sku}`);
 
-  return { gateway, post };
+  return { gateway, post, alternatePromotion };
 }
 
 async function runHistoricalSanitationBatch({
@@ -379,6 +474,7 @@ async function runHistoricalSanitationBatch({
   reconcileOnly = RECONCILE_ONLY,
   verifyConcurrency = VERIFY_CONCURRENCY,
   verifyRowTimeoutMs = VERIFY_ROW_TIMEOUT_MS,
+  targetSku = TARGET_SKU,
 } = {}) {
   const pool = new Pool({ connectionString: DATABASE_URL, ssl: { rejectUnauthorized: false } });
   const client = await pool.connect();
@@ -395,6 +491,7 @@ async function runHistoricalSanitationBatch({
     gateway_validated: 0,
     verify_concurrency: verifyConcurrency,
     verify_row_timeout_ms: verifyRowTimeoutMs,
+    target_sku: targetSku,
     queue_reconciliation: { eligible: 0, updated: 0, by_state: [] },
     details: [],
   };
@@ -424,9 +521,10 @@ async function runHistoricalSanitationBatch({
         AND c.duty='HEAVY_DUTY'
         AND c.enrichment_data->'codigo_base_governance'->>'state'
             IN ('CANONICAL_EVIDENCED_NOT_VERIFIED','REVIEW_PRIMARY_CANDIDATE')
+        AND ($2::text IS NULL OR q.sku=$2)
       ORDER BY q.priority, q.attempts, q.sku
       LIMIT $1
-    `, [limit]);
+    `, [limit, targetSku]);
 
     summary.selected = rows.length;
 
@@ -473,6 +571,7 @@ async function runHistoricalSanitationBatch({
           try {
             const applied = await applyResolution(client, row, resolution);
             if (applied?.gateway?.valid === true) summary.gateway_validated += 1;
+            if (applied?.alternatePromotion?.mutated === true) summary.alternate_columns_mutated += 1;
             await client.query('COMMIT');
           } catch (error) {
             await client.query('ROLLBACK');
