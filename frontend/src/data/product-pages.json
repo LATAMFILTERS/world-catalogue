@@ -289,6 +289,147 @@
    }
   },
   {
+   "sku": "EF95112",
+   "slug": "ef95112",
+   "family": "secondary-fuel",
+   "duty": "Heavy Duty",
+   "title": "Fuel Spin-On Filter",
+   "technology": "SYNTAPORE",
+   "description": "EF95112 is an ELIMFILTERS fuel spin-on filter protected by SYNTAPORE™ technology.",
+   "specs": [
+    {
+     "name": "Thread",
+     "value": "M14 X 1.5-6H INT"
+    },
+    {
+     "name": "Height",
+     "value": "88.65 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "76.81 mm"
+    },
+    {
+     "name": "Gasket outer diameter",
+     "value": "71.98 mm"
+    },
+    {
+     "name": "Gasket inner diameter",
+     "value": "62.53 mm"
+    },
+    {
+     "name": "Filtration rating",
+     "value": "17.30 micron"
+    },
+    {
+     "name": "Efficiency",
+     "value": "99% @ 17.30 micron (c)"
+    },
+    {
+     "name": "Efficiency test method",
+     "value": "SAE J905"
+    },
+    {
+     "name": "Filter media",
+     "value": "Cellulose"
+    },
+    {
+     "name": "Rated flow",
+     "value": "3.17 L/min (0.84 gpm)"
+    },
+    {
+     "name": "Burst pressure",
+     "value": "203 psi"
+    }
+   ],
+   "oem": [
+    {
+     "brand": "Mercedes-Benz",
+     "code": "A0020921201"
+    },
+    {
+     "brand": "Mercedes-Benz",
+     "code": "A0010923201"
+    },
+    {
+     "brand": "Mercedes-Benz",
+     "code": "A0010922501"
+    },
+    {
+     "brand": "Mercedes-Benz",
+     "code": "A0010920501"
+    },
+    {
+     "brand": "Case IH",
+     "code": "1967093C1"
+    },
+    {
+     "brand": "Ford",
+     "code": "5014353"
+    },
+    {
+     "brand": "General Motors",
+     "code": "9975337"
+    },
+    {
+     "brand": "General Motors",
+     "code": "25176758"
+    },
+    {
+     "brand": "Clark Equipment",
+     "code": "4155053"
+    }
+   ],
+   "oemTotal": 19,
+   "crossRefs": [
+    {
+     "brand": "Fleetguard",
+     "code": "FF5112"
+    },
+    {
+     "brand": "Bosch",
+     "code": "9455160251"
+    },
+    {
+     "brand": "Bosch",
+     "code": "1457434153"
+    },
+    {
+     "brand": "Bosch",
+     "code": "1457434114"
+    }
+   ],
+   "crossRefsTotal": 7,
+   "applications": [
+    "MERCEDES-BENZ MB120 · OM616",
+    "MERCEDES-BENZ MB160 · OM616",
+    "MERCEDES-BENZ MB100D-KB · OM616",
+    "MERCEDES-BENZ MB100D · OM615/ OM616",
+    "MERCEDES-BENZ 240D · SERIES W123 DIESEL",
+    "MERCEDES-BENZ 240GD · SERIES W123 DIESEL",
+    "MERCEDES-BENZ 309D · OM617",
+    "MERCEDES-BENZ 240D",
+    "MERCEDES-BENZ 409D · OM617",
+    "MERCEDES-BENZ 220D",
+    "MERCEDES-BENZ UNSPECIFIED · OM617",
+    "MERCEDES-BENZ 0407D · OM617"
+   ],
+   "physicalWarnings": [],
+   "governance": {
+    "canonicalSourceBrand": "FLEETGUARD",
+    "ownDataVerified": false,
+    "fleetguardFallbackVerified": true,
+    "verifiedOemReferences": true,
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "VERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db-export",
+    "file": "live-rows.json"
+   }
+  },
+  {
    "sku": "EH60222",
    "slug": "eh60222",
    "family": "hydraulic-filters",
@@ -1116,11 +1257,5 @@
    }
   }
  ],
- "blocked": [
-  {
-   "sku": "EF95112",
-   "reason": "specs sourced from Fleetguard FF5112; not published until verified against ELIMFILTERS own data (policy: Victor)",
-   "kind": "HOLD"
-  }
- ]
+ "blocked": []
 }
