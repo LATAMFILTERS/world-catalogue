@@ -101,12 +101,16 @@ async function main(){
               '{codigo_base_governance}',
               coalesce(enrichment_data->'codigo_base_governance','{}'::jsonb)
                 || jsonb_build_object(
-                  'policy_version','2026-08-19-v3.1',
-                  'state','CANONICAL_VERIFIED',
+                  'origin_group','EUROPEAN',
                   'approved_manufacturer','MANN-FILTER',
                   'approved_codigo_base',$2::text,
+                  'approved_source_column','CANONICAL_POLICY',
                   'primary_manufacturer_verified',true,
                   'governance_state','CANONICAL_VERIFIED',
+                  'state','CANONICAL_VERIFIED',
+                  'current_codigo_base',$2::text,
+                  'required_authority','MANN_FILTER_REGIONAL_CANONICAL',
+                  'policy_version','2026-08-29-v3.2-regional',
                   'evidence_note','run_148: LD SKU rule 21202 -> 1202; MANN C2120/2 geometry 203 x 50 mm matches EA31202 and 35 source applications.'
                 ),
               true
