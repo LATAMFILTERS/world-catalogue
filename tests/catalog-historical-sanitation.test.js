@@ -12,18 +12,53 @@ test('official product evidence requires Donaldson context and exact normalized 
   assert.equal(pageSupportsOfficialProduct('<html><body>Donaldson P551999 Filter</body></html>', 'P551313'), false);
 });
 
-test('historical sanitation worker does not infer manufacturer absence or mutate alternate arrays/SKU', () => {
+test('historical sanitation worker does not infer manufacturer absence or rename SKU', () => {
   const source = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'catalog-historical-sanitation.js'), 'utf8');
   assert.match(source, /absence_inferred:\s*0/);
-  assert.match(source, /alternate_columns_mutated:\s*0/);
   assert.match(source, /sku_mutations:\s*0/);
-  assert.doesNotMatch(source, /SET\s+oem_codes\s*=/i);
-  assert.doesNotMatch(source, /SET\s+competitor_codes\s*=/i);
   assert.doesNotMatch(source, /SET\s+sku\s*=/i);
+});
+
+test('canonical promotion mutates alternates only through the constrained promotion helper', () => {
+  const source = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'catalog-historical-sanitation.js'), 'utf8');
+  assert.match(source, /buildCanonicalPromotionAlternates/);
+  assert.match(source, /SANITATION_POSTCHECK_CANONICAL_DUPLICATED/);
+  assert.match(source, /SANITATION_POSTCHECK_PRIOR_BASE_NOT_PRESERVED/);
+  assert.match(source, /replacedReferenceManufacturer/);
+});
+
+test('historical sanitation catalog writes pass through gateway and compare-and-swap postchecks', () => {
+  const source = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'catalog-historical-sanitation.js'), 'utf8');
+  assert.match(source, /assertGovernedCatalogPatch/);
+  assert.match(source, /SELECT \* FROM elimfilters_catalog WHERE sku=\$1 FOR UPDATE/);
+  assert.match(source, /codigo_base IS NOT DISTINCT FROM \$6/);
+  assert.match(source, /SANITATION_POSTCHECK_FAILED/);
+  assert.match(source, /SANITATION_QUEUE_COMPARE_AND_SWAP_FAILED/);
+  assert.match(source, /gateway_validated/);
+});
+
+test('historical sanitation reconciles only terminal governed queue states', () => {
+  const source = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'catalog-historical-sanitation.js'), 'utf8');
+  assert.match(source, /CANONICAL_VERIFIED_FALLBACK/);
+  assert.match(source, /RETIRED/);
+  assert.match(source, /SUPERSEDED/);
+  assert.match(source, /reconcileTerminalQueue/);
+  assert.match(source, /status='RESOLVED'/);
+  assert.match(source, /RECONCILE_ONLY/);
+  assert.match(source, /if \(reconcileOnly\) return summary/);
 });
 
 test('sanitation queue migration never updates protected catalog fields', () => {
   const source = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'migrations', 'run_074_catalog_historical_sanitation_queue.js'), 'utf8');
   assert.doesNotMatch(source, /UPDATE\s+elimfilters_catalog/i);
   assert.match(source, /protected_catalog_fields_mutated:\s*0/);
+});
+
+test('historical sanitation cancels slow verification rows instead of blocking the batch', () => {
+  const source = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'catalog-historical-sanitation.js'), 'utf8');
+  assert.match(source, /VERIFY_ROW_TIMEOUT/);
+  assert.match(source, /verify-row-timeout-ms=/);
+  assert.match(source, /new AbortController\(\)/);
+  assert.match(source, /externalSignal\?\.addEventListener\('abort'/);
+  assert.match(source, /verifyRowWithTimeout/);
 });
