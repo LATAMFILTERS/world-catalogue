@@ -37,6 +37,20 @@ test('official literature covers the governed transmission Fleetguard matrix', (
   }
 });
 
+test('official literature covers additional exact Fleetguard rows from F111330-ENG', () => {
+  for (const [donaldson, fleetguard] of [
+    ['P560972', 'HF35153'],
+    ['P560972', 'HF28936'],
+    ['P560972', 'HF28944'],
+    ['P550637', 'LF637'],
+  ]) {
+    const result = findOfficialLiteratureCrossReference(donaldson, fleetguard);
+    assert.ok(result, `${donaldson} -> ${fleetguard}`);
+    assert.equal(result.evidenceDocumentId, 'F111330-ENG');
+    assert.equal(result.manufacturer, 'FLEETGUARD');
+  }
+});
+
 test('official literature matcher is exact and fail-closed', () => {
   assert.equal(findOfficialLiteratureCrossReference('P166254', 'HF999999'), null);
   assert.equal(findOfficialLiteratureCrossReference('P999999', 'HF8273'), null);
