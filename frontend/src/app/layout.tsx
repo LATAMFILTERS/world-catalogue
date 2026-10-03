@@ -26,8 +26,8 @@ import SkipNavigation from '@/components/SkipNavigation';
 
 const BASE_URL = 'https://elimfilters.com';
 const GA_ID = 'G-T7STY4TY9C';
-const BRAND_TITLE = 'ELIMFILTERS | Total Asset Protection Systems';
-const BRAND_DESCRIPTION = 'ELIMFILTERS engineers Total Asset Protection Systems that control contamination, reduce equipment wear, minimize downtime, improve reliability, and extend the operational life of critical industrial assets across mining, construction, agriculture, power generation, marine, and heavy-duty transportation.';
+const BRAND_TITLE = 'ELIMFILTERS | Heavy-Duty & Industrial Filtration Systems';
+const BRAND_DESCRIPTION = 'Heavy-duty and industrial filters: diesel fuel filters, fuel water separators, air, oil, hydraulic, coolant and cabin filters engineered by ELIMFILTERS to protect engines and equipment.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
@@ -43,6 +43,10 @@ export const metadata: Metadata = {
   },
   keywords: [
     'industrial filtration',
+    'diesel fuel filters',
+    'fuel water separator',
+    'oil filters',
+    'air filters',
     'asset protection systems',
     'contamination control',
     'heavy duty filters',

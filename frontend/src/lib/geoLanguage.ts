@@ -1,9 +1,10 @@
 'use client';
 
 // ELIMFILTERS public language policy.
-// English is the official/default language. A supported localized language is
-// selected only from the visitor's country. Unknown countries and any lookup
-// failure remain in English.
+// English is the official/default language. The visitor's country may switch the page
+// only to a language listed in GEO_AUTO_LANGUAGES. Every other country, unknown countries
+// and any lookup failure remain in English. COUNTRY_LANG still maps all countries because
+// the country itself also drives metric/imperial units.
 const COUNTRY_LANG: Record<string, string> = {
   // English
   US: 'en', CA: 'en', GB: 'en', AU: 'en', NZ: 'en', IE: 'en', ZA: 'en',
@@ -38,6 +39,11 @@ const COUNTRY_LANG: Record<string, string> = {
   IR: 'fa',
 };
 
+// Languages the country is allowed to switch to automatically. The other locale bundles
+// (fr, it, nl, ru, zh, ja, ar, fa) still carry claims retired from en/es/pt, so they stay
+// off until each has its own governance layer (see GOVERNED_*_OVERRIDES in i18n.ts).
+export const GEO_AUTO_LANGUAGES: readonly string[] = ['es', 'pt'];
+
 const GEO_LANG_KEY = 'ef_geo_lang';
 const GEO_COUNTRY_KEY = 'ef_geo_country';
 const GEO_TS_KEY = 'ef_geo_ts';
@@ -56,9 +62,16 @@ function officialDefault(): GeoResult {
   return { language: OFFICIAL_LANGUAGE, country: OFFICIAL_COUNTRY, showSwitcher: false };
 }
 
-export async function detectGeoLanguage(): Promise<GeoResult> {
-  if (typeof window === 'undefined') return officialDefault();
+// Several components ask for the visitor's country at once; share one lookup per page load.
+let inflight: Promise<GeoResult> | null = null;
 
+export function detectGeoLanguage(): Promise<GeoResult> {
+  if (typeof window === 'undefined') return Promise.resolve(officialDefault());
+  inflight ??= lookupGeoLanguage();
+  return inflight;
+}
+
+async function lookupGeoLanguage(): Promise<GeoResult> {
   const ts = localStorage.getItem(GEO_TS_KEY);
   const cachedLang = localStorage.getItem(GEO_LANG_KEY);
   const cachedCountry = localStorage.getItem(GEO_COUNTRY_KEY);

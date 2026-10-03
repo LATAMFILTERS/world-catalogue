@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { languageAlternates } from '@/lib/localized-routes';
 
 const CANONICAL = 'https://elimfilters.com/contact/';
 
@@ -8,10 +9,7 @@ export const metadata: Metadata = {
     'Contact ELIMFILTERS for technical validation, authorized distributor inquiries, and asset protection consultations. Available globally for mining, agriculture, marine, and heavy industry.',
   alternates: {
     canonical: CANONICAL,
-    languages: {
-      'x-default': CANONICAL,
-      en: CANONICAL,
-    },
+    languages: languageAlternates('/contact'),
   },
   openGraph: {
     title: 'Contact & Technical Support',

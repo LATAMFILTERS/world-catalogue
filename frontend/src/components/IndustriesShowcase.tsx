@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import { useTranslation } from 'react-i18next';
 import styles from './IndustriesShowcase.module.css';
 
 const INDUSTRIES = [
@@ -37,6 +38,7 @@ const LOADER_COLUMNS = Array.from({ length: COLUMN_COUNT }, (_, columnIndex) =>
 );
 
 export function IndustriesShowcase() {
+  const { t } = useTranslation();
   const sectionRef = useRef<HTMLElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -209,14 +211,14 @@ export function IndustriesShowcase() {
       <div className={styles.content}>
         <div className={styles.headingWrap}>
           <h2 id="industries-heading" className={styles.heading}>
-            Built for Every <span className={styles.yellow}>Industry</span>
+            {t('home.industriesTitle1', 'Built for Every')} <span className={styles.yellow}>{t('home.industriesTitle2', 'Industry')}</span>
           </h2>
         </div>
 
         <div className={styles.carouselWrap}>
           <button
             type="button"
-            aria-label="Scroll industries left"
+            aria-label={t('home.industriesPrev', 'Scroll industries left')}
             onClick={() => scrollByCards(-1)}
             className={`${styles.arrowButton} ${styles.arrowLeft}`}
           >
@@ -225,7 +227,7 @@ export function IndustriesShowcase() {
 
           <button
             type="button"
-            aria-label="Scroll industries right"
+            aria-label={t('home.industriesNext', 'Scroll industries right')}
             onClick={() => scrollByCards(1)}
             className={`${styles.arrowButton} ${styles.arrowRight}`}
           >
@@ -237,13 +239,13 @@ export function IndustriesShowcase() {
               <a key={industry.slug} href={`/industries/${industry.slug}`} className={styles.card}>
                 <div
                   role="img"
-                  aria-label={industry.title}
+                  aria-label={t(`home.industryTitles.${industry.slug}`, industry.title)}
                   className={styles.cardImage}
                   style={{ backgroundImage: `url(${industry.image})` }}
                 />
                 <div className={styles.cardShade} />
                 <div className={styles.cardLabelWrap}>
-                  <span className={styles.cardLabel}>{industry.title}</span>
+                  <span className={styles.cardLabel}>{t(`home.industryTitles.${industry.slug}`, industry.title)}</span>
                 </div>
               </a>
             ))}

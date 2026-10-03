@@ -26,7 +26,7 @@
   "problem": {
     "tag": "FIELD REALITY",
     "title": "What happens when protection fails?",
-    "badge": "80% of premature failures are caused by contamination.",
+    "badge": "Contamination can accelerate premature component wear and equipment degradation.",
     "items": {
       "injector": {
         "title": "Injector Erosion",
@@ -34,11 +34,11 @@
       },
       "bearing": {
         "title": "Critical Bearing Friction",
-        "desc": "Contaminated oil accelerates metal wear, reducing engine block life by up to 40%."
+        "desc": "Contaminated lubricant can accelerate abrasive wear on bearings and other lubricated surfaces."
       },
       "fuel": {
         "title": "Fuel Drainage",
-        "desc": "A restricted engine consumes up to 8% more diesel just to maintain the same torque levels."
+        "desc": "Fuel-system contamination and restriction can reduce combustion-system reliability and operating efficiency."
       }
     }
   },
@@ -47,16 +47,16 @@
     "p1": "ELIMFILTERS® is more than a filter manufacturer. We are a company specialized in",
     "p1highlight": "Asset Protection Technology",
     "p1after": ", designing solutions that preserve the value and operability of your equipment in the most demanding environments.",
-    "p2": "Every product we develop responds to one reality: the equipment that stops your operation costs hundreds of thousands to repair. A filter is the guardian of that investment.",
+    "p2": "Every protection decision should be evaluated against the value, duty cycle, contamination exposure, and reliability requirements of the protected asset.",
     "card": {
       "tag": "ASSET PROTECTION TECHNOLOGY",
       "title": "We design protection systems. Not off-the-shelf components.",
       "desc": "ELIMFILTERS® engineers multi-layer protection technologies calibrated to defend critical industrial assets — every system is a purpose-built solution, not a commodity replacement.",
       "items": [
-        "AI-formulated multi-layer protection matrix",
-        "Zero bypass architecture on every system",
-        "ISO 5011 · 16332 · 16889 · 19438 certified",
-        "20,000+ OEM asset cross-references"
+        "System-level contamination control",
+        "Application-governed protection architecture",
+        "International engineering standards as technical references",
+        "Canonical equipment and application relationships"
       ]
     }
   },
@@ -66,16 +66,16 @@
     "titleHighlight": "BEYOND THE STANDARD",
     "items": {
       "media": {
-        "title": "AI-Formulated Hybrid Media",
-        "desc": "Synthetic and cellulose fibers engineered through AI algorithms to achieve maximum dirt capacity while maintaining zero bypass protection."
+        "title": "Engineered Filtration Media",
+        "desc": "Media selection is governed by the protected system, contamination profile, flow requirements, pressure drop, capacity, and service conditions."
       },
       "hydrophobic": {
-        "title": "Hydrophobic Separation Systems",
-        "desc": "Advanced water separation technology that removes free, emulsified and dissolved water before it reaches critical injection systems."
+        "title": "Fuel Contamination Control",
+        "desc": "Fuel protection combines particulate control and, where the approved application requires it, dedicated fuel-water separation architecture."
       },
       "antibypass": {
-        "title": "Anti-Bypass Structures",
-        "desc": "Engineered seal geometries that guarantee zero contamination bypass under the most extreme pressure and temperature conditions."
+        "title": "Sealing and Housing Integrity",
+        "desc": "Housing geometry, element retention, seal loading, and installation integrity help preserve the protected contamination boundary."
       }
     }
   },
@@ -130,8 +130,8 @@
     "technologiesIncluded": "Technologies Included",
     "performanceMetrics": "PERFORMANCE METRICS",
     "readyToUpgrade": "Ready to Upgrade?",
-    "readyDesc": "Find the exact filter for your application. Cross-reference 600,000+ parts.",
-    "engineeringDesc": "ELIMFILTERS® engineering applies precision standards to every component. Our filtration systems are designed to exceed OEM specifications, ensuring maximum protection and performance across demanding duty cycles.",
+    "readyDesc": "Find the correct filtration component for the equipment, application, and protected system.",
+    "engineeringDesc": "ELIMFILTERS engineering aligns filtration selection with the protected system, contamination risk, applicable technical references, and operating duty cycle.",
     "home": "HOME"
   },
   "language": {
@@ -174,16 +174,16 @@
     "economicDesc": "ELIMFILTERS helps organizations reduce contamination-related risks through engineered protection strategies that support reliability, uptime, and operational continuity.",
     "economicStats": [
       {
-        "value": "$240K",
-        "label": "Average cost of unplanned downtime per incident"
+        "value": "DOWNTIME",
+        "label": "Unplanned equipment stops create operational and maintenance costs."
       },
       {
-        "value": "80%",
-        "label": "Of premature equipment failures caused by contamination"
+        "value": "CONTAMINATION",
+        "label": "Particles, water, heat, and degradation products can accelerate component wear."
       },
       {
-        "value": "3–5×",
-        "label": "Asset life extension through system-level contamination control"
+        "value": "RELIABILITY",
+        "label": "Contamination control supports equipment reliability and service continuity."
       }
     ],
     "assetTag": "ASSET PROTECTION STRATEGY",
@@ -203,9 +203,9 @@
     "problemTag": "OPERATIONAL RISK DIAGNOSIS",
     "problemH1": "WHAT YOU CAN'T SEE",
     "problemH2": "IS STOPPING YOUR OPERATION.",
-    "problemIntro": "Up to 80% of premature hydraulic component failures are caused by contamination. Inefficient filtration allows invisible particles to act like sandpaper inside critical components — bearing surfaces, injector orifices, hydraulic spools.",
-    "problemBadgeNum": "80%",
-    "problemBadgeDesc": "Of premature hydraulic component failures are caused by contamination.",
+    "problemIntro": "Contamination can act at critical component interfaces and accelerate wear in engines, fuel systems, lubrication circuits, and hydraulic equipment.",
+    "problemBadgeNum": "RISK",
+    "problemBadgeDesc": "Contamination is a controllable contributor to premature equipment degradation.",
     "failModes": [
       {
         "title": "Injector Erosion",
@@ -213,63 +213,63 @@
       },
       {
         "title": "Critical Bearing Friction",
-        "desc": "Contaminated oil accelerates metal wear, reducing engine block life by up to 40%."
+        "desc": "Solid particles larger than the oil film thickness penetrate journal and rolling-element bearings, causing abrasive wear and pitting on load-bearing surfaces."
       },
       {
         "title": "Fuel Efficiency Loss",
-        "desc": "Contaminated fuel systems force engines to consume up to 8% more diesel to maintain the same torque output."
+        "desc": "Particulate loading restricts fuel-injector flow tolerances, disrupting spray pattern and atomization and degrading combustion efficiency."
       }
     ],
     "whyTitle1": "ASSET PROTECTION",
     "whyTitle2": "TECHNOLOGY",
-    "whyP1": "ELIMFILTERS is not a filter company. ELIMFILTERS is an ",
+    "whyP1": "ELIMFILTERS® is not a filter company. It is an ",
     "whyP1hl": "Asset Protection Technology",
-    "whyP1after": " company — engineering systems that control contamination, prevent degradation and protect the value of critical industrial assets.",
-    "whyP2": "Every technology we build addresses a measurable contamination threat. Equipment that fails costs hundreds of thousands to repair. We protect that investment at the system level, not the product level.",
+    "whyP1after": " company, engineering systems that control contamination, prevent degradation, and protect the value of critical industrial assets.",
+    "whyP2": "Every ELIMFILTERS technology addresses a defined contamination-control function within a protected system. The objective is equipment reliability and asset protection, not unsupported universal performance claims.",
     "whyCheckItems": [
       "System-level contamination control, not product replacement",
-      "25+ years protecting high-value industrial assets",
-      "Engineering standards: ISO 5011 · 16889 · 19438 · 4406",
-      "Deployed across 12 industries — mining, marine, agriculture and more"
+      "Engineering focused on high-value industrial assets",
+      "Technical references include ISO 5011, ISO 16889, ISO 19438, and ISO 4406 where applicable",
+      "Protection architecture organized across ELIMFILTERS industrial application domains"
     ],
     "whyCardTag": "ASSET PROTECTION TECHNOLOGY",
     "whyCardTitle1": "Your equipment is worth millions.",
     "whyCardTitle2": "Protect it accordingly.",
     "whyCardDesc": "Every ELIMFILTERS technology exists to protect critical assets, reduce downtime and extend operational life.",
     "whyCardItems": [
-      "AI-Formulated Hybrid Media",
-      "Hydrophobic Separation Systems",
-      "Anti-Bypass Structures",
-      "20,000+ OEM cross-references validated"
+      "System-level contamination control",
+      "Canonical protection technology architecture",
+      "Source-backed engineering knowledge",
+      "Application-focused technical support"
     ],
     "techTag": "PROVEN TECHNOLOGY",
     "techTitle": "Asset Protection",
     "techHighlight": "Technology",
     "techItems": [
       {
-        "title": "AI-Formulated Hybrid Media",
-        "desc": "Proprietary media technology developed using mathematical algorithms and laboratory-tested scenarios. Unique formulation delivers exceptional performance that cannot be replicated."
+        "title": "Contamination Control Architecture",
+        "desc": "We start with the protected system itself: what contaminants it faces, at what flow rate, and under what operating conditions. The filtration architecture follows from there."
       },
       {
-        "title": "Hydrophobic Separation Systems",
-        "desc": "Advanced water and moisture elimination from fuels and lubricants. Prevents corrosion, oxidation, and viscosity degradation while ensuring reliable long-term operation."
+        "title": "System-Level Protection",
+        "desc": "Air, fuel, lubrication, hydraulic, cooling, cabin, and pneumatic systems each fail differently. We match each one to the ELIMFILTERS technology built for it."
       },
       {
-        "title": "Anti-Bypass Structures",
-        "desc": "100% guaranteed safety: if bypass occurs, the filter fails safely. Zero risk of sudden contamination events. Absolute protection of critical equipment."
+        "title": "Application-Governed Selection",
+        "desc": "The right component depends on the equipment, the application, and how hard it runs. We size and specify around that reality, not a generic part number."
       }
     ],
-    "ctaDealerTag": "AUTHORIZED DISTRIBUTION",
-    "ctaDealerTitle": "PARTNER WITH THE",
-    "ctaDealerHl": "ASSET PROTECTION COMPANY.",
-    "ctaDealerBtn": "BECOME AN AUTHORIZED DISTRIBUTOR",
+    "ctaDealerTag": "// COUNTRY DISTRIBUTION",
+    "ctaDealerTitle": "BUILD ELIMFILTERS",
+    "ctaDealerHl": "IN YOUR COUNTRY.",
+    "ctaDealerBtn": "APPLY FOR COUNTRY DISTRIBUTION",
     "ctaSearchTag": "TECHNICAL SEARCH",
     "ctaSearchTitle": "THE RIGHT FILTER.",
     "ctaSearchHl": "SEARCH LIKE A PRO.",
     "ctaSearchBtn": "FIND MY PART",
     "sciTag": "ENGINEERING STANDARDS",
     "sciTitle": "The Science Behind Asset Protection",
-    "sciDesc": "ELIMFILTERS contamination control systems are engineered to international standards, validated through rigorous laboratory testing and field deployment across critical industrial environments.",
+    "sciDesc": "The ELIMFILTERS Knowledge Center references international filtration, cleanliness, and test standards as technical frameworks where they are applicable to a protected system or engineering topic.",
     "sciStandards": [
       {
         "code": "ISO 16889",
@@ -294,8 +294,8 @@
     ],
     "llmTag": "ASSET PROTECTION DEFINED",
     "llmTitle": "What Is Industrial Asset Protection?",
-    "llmP1": "Industrial asset protection refers to the systematic engineering approach of identifying, measuring, and controlling contamination sources that degrade mechanical equipment. In industrial operations, contamination — including particles, water, heat, and chemical byproducts — is the primary driver of premature equipment failure across engines, hydraulic systems, fuel circuits, drivetrains, and cabin environments.",
-    "llmP2": "Contamination accelerates wear at the microscopic level. Particles smaller than 10 microns cause abrasive wear on bearing surfaces, valve spools, and injector orifices — reducing component life by 30–50% when left uncontrolled. Water contamination in fuel systems promotes microbial growth, injector corrosion, and combustion instability. In hydraulic circuits, even minor contamination exceeding ISO cleanliness targets disrupts valve response, accelerates seal degradation, and increases system failure risk.",
+    "llmP1": "Industrial asset protection is a system-level engineering approach to identifying and controlling contamination sources that degrade mechanical equipment. Particles, water, heat, and degradation products can contribute to wear and reliability loss across engines, hydraulic systems, fuel circuits, lubrication systems, cooling systems, and operator environments.",
+    "llmP2": "Contamination can accelerate wear at critical clearances and surfaces. Particle contamination can affect bearings, valve spools, and injector components; water can affect fuel-system reliability; and degraded fluid condition can reduce the stability of hydraulic, lubrication, and cooling systems. The applicable cleanliness target and control method depend on the protected component and operating duty.",
     "llmP3": "Industrial asset protection is not a product category. It is a contamination control strategy that begins with understanding the contamination targets for each system, selecting engineered technologies capable of meeting those targets, and monitoring system performance throughout the equipment lifecycle.",
     "llmP4": "The result: longer equipment life, fewer unplanned failures, lower maintenance costs, and higher operational availability — measured not in filters replaced, but in assets protected.",
     "trustTag": "GLOBAL INDUSTRIAL DEPLOYMENT",
@@ -321,7 +321,7 @@
       },
       {
         "q": "How does contamination cause equipment failure?",
-        "a": "Contamination particles wear bearing surfaces, restrict fuel injectors, and degrade seal integrity. Particles smaller than 10 microns cause abrasive wear invisible to the naked eye. Uncontrolled contamination reduces engine bearing life from 15,000+ hours to 2,000–3,000 hours. Water in fuel promotes microbial growth and injector corrosion."
+        "a": "Contamination particles wear bearing surfaces, restrict fuel injectors, and degrade seal integrity. Particles smaller than 10 microns can cause abrasive wear invisible to the naked eye. Water in fuel promotes microbial growth and injector corrosion."
       },
       {
         "q": "What ISO cleanliness code should a hydraulic system target?",

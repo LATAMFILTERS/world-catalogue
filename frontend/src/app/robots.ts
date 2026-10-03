@@ -27,6 +27,8 @@ export default function robots(): MetadataRoute.Robots {
       `${BASE_URL}/sitemap.xml`,
       `${BASE_URL}/sitemap-ai.xml`,
       `${BASE_URL}/video-sitemap.xml`,
+      // Product Intelligence SKU pages (indexable, served by Part Search).
+      'https://part-search.elimfilters.com/sitemap.xml',
     ],
     host: BASE_URL,
   };

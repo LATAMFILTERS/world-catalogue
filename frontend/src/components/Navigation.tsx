@@ -6,6 +6,8 @@ import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslation } from 'react-i18next';
 import '@/i18n';
+import { localeFromPath } from '@/i18n-locales';
+import { LanguageMenu } from './LanguageMenu';
 
 const HEADER_DISPLAY_FONT = 'Chakra Petch, Arial Narrow, monospace';
 
@@ -16,6 +18,8 @@ export function Navigation() {
   const [headerVisible, setHeaderVisible] = useState(true);
   const lastScrollY = useRef(0);
   const pathname = usePathname();
+  const routeLocale = localeFromPath(pathname);
+  const contactHref = routeLocale ? `/${routeLocale}/contact/` : '/contact';
   const { t } = useTranslation();
 
   useEffect(() => {
@@ -79,20 +83,24 @@ export function Navigation() {
           <NavLink href="/knowledge-center/">{t('nav.knowledgeCenter', 'Knowledge Center')}</NavLink>
           <NavLink href="/industrial-process" accent>Industrial & Process</NavLink>
           <NavLink href="/about">{t('nav.about', 'Company')}</NavLink>
-          <NavLink href="/contact">{t('nav.contact', 'Contact')}</NavLink>
+          <NavLink href={contactHref}>{t('nav.contact', 'Contact')}</NavLink>
 
           <motion.a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" whileHover={{ boxShadow: '0 0 28px rgba(255,241,45,0.55)', y: -1 }} whileTap={{ scale: 0.97 }} transition={{ duration: 0.18 }} style={{ background: '#FFF12D', color: '#000', fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, fontSize: '0.80rem', letterSpacing: '0.07em', padding: '0.38rem 0.72rem', textDecoration: 'none', display: 'inline-block', textTransform: 'uppercase', flexShrink: 0, whiteSpace: 'nowrap' }}>
             {t('nav.findMyFilter', 'FIND MY FILTER')}
           </motion.a>
+          <LanguageMenu style={{ flexShrink: 0 }} />
         </nav>
 
-        <button onClick={() => setMenuOpen(!menuOpen)} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.65rem', display: 'none' }} className="show-mobile" aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={menuOpen}>
+        <div className="show-mobile" style={{ display: 'none', alignItems: 'center', gap: '0.1rem' }}>
+        <LanguageMenu />
+        <button onClick={() => setMenuOpen(!menuOpen)} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.65rem' }} aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={menuOpen}>
           <div style={{ width: '24px', display: 'flex', flexDirection: 'column', gap: '5px' }}>
             {[0, 1, 2].map((i) => (
               <motion.span key={i} animate={{ rotate: menuOpen && i === 0 ? 45 : menuOpen && i === 2 ? -45 : 0, scaleX: menuOpen && i === 1 ? 0 : 1, y: menuOpen && i === 0 ? 7 : menuOpen && i === 2 ? -7 : 0 }} transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }} style={{ display: 'block', height: '2px', background: '#FFF12D', transformOrigin: 'center' }} />
             ))}
           </div>
         </button>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -106,7 +114,7 @@ export function Navigation() {
                 { href: '/knowledge-center/', label: t('nav.knowledge', 'Knowledge') },
                 { href: '/industrial-process', label: 'Industrial & Process', accent: true },
                 { href: '/about', label: t('nav.about', 'Company') },
-                { href: '/contact', label: t('nav.contact', 'Contact') },
+                { href: contactHref, label: t('nav.contact', 'Contact') },
               ].map((item) => (
                 <motion.div key={item.href} variants={{ hidden: { opacity: 0, x: -16 }, visible: { opacity: 1, x: 0 } }} transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}>
                   <Link href={item.href} style={{ ...mobileLinkStyle, ...(item.accent ? { color: '#FFF12D', fontWeight: 700 } : {}) }} onClick={() => setMenuOpen(false)}>{item.label}</Link>
@@ -121,11 +129,13 @@ export function Navigation() {
       </AnimatePresence>
 
       <style>{`
-        @media (max-width: 768px) {
+        /* The full menu (links + CTA + globe) only fits from 1280px in en/es/pt; below that the
+           hamburger bar is used, and it carries the globe too. */
+        @media (max-width: 1279px) {
           .hidden-mobile{display:none!important}
           .show-mobile{display:flex!important}
         }
-        @media (min-width: 769px) {.show-mobile{display:none!important}}
+        @media (min-width: 1280px) {.show-mobile{display:none!important}}
       `}</style>
     </nav>
   );

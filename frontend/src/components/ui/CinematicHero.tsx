@@ -32,7 +32,8 @@ export default function CinematicHero() {
         muted
         loop
         playsInline
-        preload="auto"
+        preload="metadata"
+        poster="/images/Hero-HOME_elimfilters-poster.avif"
         aria-label="ELIMFILTERS protection systems in the field"
         style={{
           position: "absolute",
@@ -116,7 +117,7 @@ export default function CinematicHero() {
             marginBottom: "2rem",
           }}
         >
-          In the field, failures rarely start with the filter. They start with dust entering an air intake, water reaching diesel injectors, abrasive particles moving through oil, or contamination damaging hydraulic components. ELIMFILTERS builds protection around those real failure paths.
+          {t("home.heroField", "In the field, failures rarely start with the filter. They start with dust entering an air intake, water reaching diesel injectors, abrasive particles moving through oil, or contamination damaging hydraulic components. ELIMFILTERS builds protection around those real failure paths.")}
         </motion.p>
 
         <motion.div

@@ -1,0 +1,56 @@
+{
+  "_note": "Phase-1 SKUs published as indexable pages at /products/<sku>/ and listed in the sitemap. Add entries here, then run scripts/export-product-pages.mjs. 'family' is the /families/<slug>/ page that links to the SKU.",
+  "phase": 1,
+  "options": {
+    "showCrossReferences": true,
+    "showPerformanceSpecs": false
+  },
+  "skus": [
+    {
+      "sku": "EA13648",
+      "family": "primary-air"
+    },
+    {
+      "sku": "ED47754",
+      "family": "air-dryer-filters",
+      "verifiedFleetguardFallback": true,
+      "verifiedOemReferences": true
+    },
+    {
+      "sku": "EF90668",
+      "family": "fuel-water-separators"
+    },
+    {
+      "sku": "EF90669",
+      "family": "fuel-water-separators"
+    },
+    {
+      "sku": "EF95112",
+      "family": "secondary-fuel",
+      "verifiedFleetguardFallback": true,
+      "verifiedOemReferences": true
+    },
+    {
+      "sku": "EH60222",
+      "family": "hydraulic-filters"
+    },
+    {
+      "sku": "EH60223",
+      "family": "hydraulic-filters"
+    },
+    {
+      "sku": "EH60950",
+      "family": "hydraulic-filters"
+    },
+    {
+      "sku": "EL83191",
+      "family": "oil-filters"
+    },
+    {
+      "sku": "EL84004",
+      "family": "oil-filters"
+    }
+  ],
+  "policy": "VERIFIED-only: a SKU is published only if canonical_source_status = VERIFIED, its canonical source is Donaldson or an explicitly verified Fleetguard manufacturer fallback, the gates in lib/product-page-data.js pass and it has no hold.",
+  "skus_note": "Phase-1 set = the 10 SKUs in config/product-pages/live-rows.json (sha256 0e3505e2...099b, commit b31449b). EF95112 released after Donaldson absence + Fleetguard FF5112 manufacturer fallback verification."
+}
