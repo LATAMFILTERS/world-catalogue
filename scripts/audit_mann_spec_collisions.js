@@ -125,6 +125,19 @@ async function main(){
         continue;
       }
       const liveComparable=comparableLive(live);
+
+      if(live.canonical_source_status==='EXCEPTION_CONFIRMED'){
+        findings.push({
+          sku,
+          state:'GOVERNANCE_EXCEPTION_CONFIRMED',
+          canonical_source_code:live.canonical_source_code,
+          filter_type:live.filter_type,
+          duty:live.duty,
+          patch_sources:rows.map(r=>r.mann_source)
+        });
+        continue;
+      }
+
       const semanticRows=(specsBySku.get(sku)||[]).filter(
         s=>norm(s.source_sku)===norm(live.canonical_source_code)
       );
