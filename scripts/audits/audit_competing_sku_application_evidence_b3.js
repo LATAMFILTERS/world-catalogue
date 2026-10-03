@@ -14,6 +14,20 @@ const appKey = row => [
   String(row.filter_type || '')
 ].join('|');
 
+const VALIDATED_DISTINCT_OVERLAPS = new Map([
+  ['EA33172|EA31721|air','FP3172 vs FP3172/1: distinct cabin-filter steering-position variants'],
+  ['EL39364|EL39503|oil','W936/4 vs WD950/3: distinct oil-filter geometry/thread specifications'],
+  ['EA31318|EA36200|air','C271318 vs C16200: primary/secondary air-element pairing'],
+  ['EA36724|EA31882|air','FP6724 cabin filter vs C1882 engine air filter'],
+  ['EA34436|EA31287|air','FP4436 cabin filter vs C1287 engine air filter'],
+  ['EF34218|EF34217|fuel','WK842/18 vs WK842/17: distinct MANN fuel-filter variants'],
+  ['EF39016|EF30034|fuel','WK9016 vs WK10034Z: VW Amarok production/application split'],
+  ['EL32881|EL39066|oil','PH6355 vs W9066: distinct oil-filter specifications'],
+  ['EL34021|EL39403|oil','W940/21 vs W940/3: distinct MANN oil-filter valve/application specifications'],
+  ['EA37200|EA36752|air','CS17200 vs C26752: distinct paired air elements with different geometry'],
+  ['EA36724|EA32589|air','FP6724 cabin filter vs C2589 engine air filter']
+]);
+
 async function main() {
   const url = process.env.CATALOG_DATABASE_URL
     || process.env.ELIMFILTERS_DATABASE_URL
@@ -257,8 +271,14 @@ async function main() {
 
       const overlapRatio = peerKeys.size ? overlap / peerKeys.size : 0;
 
+      const validatedDistinctReason = VALIDATED_DISTINCT_OVERLAPS.get(
+        [pair.owner,pair.peer,pair.filter_type].join('|')
+      );
+
       let bucket;
-      if (peerOwnIdentity && peerOnly > 0) {
+      if (validatedDistinctReason) {
+        bucket = 'VALIDATED_DISTINCT_IDENTITY_OVERLAP';
+      } else if (peerOwnIdentity && peerOnly > 0) {
         bucket = 'PEER_IDENTITY_WITH_UNIQUE_APPLICATIONS';
       } else if (peerOwnIdentity && peerOnly === 0) {
         bucket = 'PEER_IDENTITY_FULLY_OVERLAPS_OWNER';
@@ -299,6 +319,7 @@ async function main() {
         peer_source_resolves_elsewhere:peerSourceResolvesElsewhere,
         peer_resolver_targets:peerResolverTargets,
         public_application_count:publicApplicationCount,
+        validated_distinct_reason:validatedDistinctReason || null,
         bucket
       });
     }
