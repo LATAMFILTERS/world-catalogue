@@ -3,6 +3,7 @@
 const test=require('node:test');
 const assert=require('node:assert/strict');
 const {
+  mannProductUrl,
   parseMannSummary,
   verifyProductIdentity,
 }=require('../lib/mann-official-spec-verifier');
@@ -21,6 +22,26 @@ test('official MANN parser preserves semantic dimension labels',()=>{
   assert.equal(parsed.values.inner_diameter_1_mm,90);
   assert.equal(parsed.values.height_mm,188);
   assert.equal(verifyProductIdentity(html,'C16005').valid,true);
+});
+
+test('MANN product URL preserves slash variants used by official catalogue',()=>{
+  assert.equal(
+    mannProductUrl('C 22 033/1'),
+    'https://www.mann-filter.com/en/catalog/search-results/product.html/c22033/1_mann-filter.html'
+  );
+});
+
+test('oil and fuel semantics remain distinct',()=>{
+  const oil='<title>MANN-FILTER W 940/13 Oil Filter</title><div class="cmp-product__summary"><div><li>Outer diameter (A) = 93 mm; Inner diameter of gasket (B) = 62 mm; Outer diameter of gasket (C) = 71 mm; Thread Size (G) = 3/4-16UNF; Height (H) = 155 mm</li></div></div>';
+  const fuel='<title>MANN-FILTER WK 9022 Fuel Filter</title><div class="cmp-product__summary"><div><li>Outer diameter (A) = 90 mm; Inlet (F) = 10 mm; Outlet (G) = 10 mm; Height (H) = 160 mm</li></div></div>';
+  const o=parseMannSummary(oil).values;
+  const f=parseMannSummary(fuel).values;
+  assert.equal(o.gasket_id_mm,62);
+  assert.equal(o.gasket_od_mm,71);
+  assert.equal(o.thread_size,'3/4-16UNF');
+  assert.equal(f.inlet_mm,10);
+  assert.equal(f.outlet_mm,10);
+  assert.equal(f.gasket_od_mm,undefined);
 });
 
 test('panel geometry maps to product length without inventing width column',()=>{

@@ -158,7 +158,7 @@ async function upsertSemanticSpecs(db,row,official){
   }
 }
 
-async function applyOne(db,row,official,shape,patch){
+async function applyOne(db,row,official,shape,patch,{expectedFilterType='air'}={}){
   const gateway=assertGovernedCatalogPatch(row,patch);
   const resolver=await resolverCheck(db,row);
   if(!resolver.valid) throw new Error('RESOLVER_IDENTITY_CONFLICT '+JSON.stringify(resolver.rows));
@@ -172,11 +172,12 @@ async function applyOne(db,row,official,shape,patch){
     if(!locked) throw new Error('TARGET_MISSING');
     if(locked.canonical_source_brand!=='MANN-FILTER'||
        normalizePart(locked.canonical_source_code)!==normalizePart(row.canonical_source_code)||
-       locked.filter_type!=='air'||locked.duty!=='LIGHT_DUTY'||locked.catalog_active!==true){
+       locked.filter_type!==expectedFilterType||locked.duty!=='LIGHT_DUTY'||locked.catalog_active!==true){
       throw new Error('IDENTITY_OR_SCOPE_CHANGED');
     }
     assertGovernedCatalogPatch(locked,patch);
 
+    const field=(key)=>Object.hasOwn(patch,key)?patch[key]:locked[key];
     const q=await db.query(
       `UPDATE public.elimfilters_catalog
           SET height_mm=$2,
@@ -185,23 +186,25 @@ async function applyOne(db,row,official,shape,patch){
               inner_diameter_mm=$5,
               gasket_od_mm=$6,
               gasket_id_mm=$7,
-              canonical_source_url=$8,
+              thread_size=$8,
+              canonical_source_url=$9,
               canonical_source_status='VERIFIED',
               canonical_verified_at=now()
         WHERE sku=$1
           AND canonical_source_brand='MANN-FILTER'
-          AND ld_catalog.norm_part(canonical_source_code)=ld_catalog.norm_part($9)
+          AND ld_catalog.norm_part(canonical_source_code)=ld_catalog.norm_part($10)
       RETURNING sku,canonical_source_code,height_mm,product_length_mm,
-                outer_diameter_mm,inner_diameter_mm,gasket_od_mm,gasket_id_mm,
+                outer_diameter_mm,inner_diameter_mm,gasket_od_mm,gasket_id_mm,thread_size,
                 canonical_source_status,catalog_active`,
       [
         row.sku,
-        patch.height_mm,
-        patch.product_length_mm??null,
-        patch.outer_diameter_mm??null,
-        patch.inner_diameter_mm??null,
-        patch.gasket_od_mm??null,
-        patch.gasket_id_mm??null,
+        field('height_mm'),
+        field('product_length_mm'),
+        field('outer_diameter_mm'),
+        field('inner_diameter_mm'),
+        field('gasket_od_mm'),
+        field('gasket_id_mm'),
+        field('thread_size'),
         official.url,
         row.canonical_source_code,
       ]
@@ -213,6 +216,9 @@ async function applyOne(db,row,official,shape,patch){
     const post=q.rows[0];
     for(const key of ['height_mm','product_length_mm','outer_diameter_mm','inner_diameter_mm','gasket_od_mm','gasket_id_mm']){
       if(Object.hasOwn(patch,key)&&!same(post[key],patch[key])) throw new Error(`POSTCHECK_${key}_FAILED`);
+    }
+    if(Object.hasOwn(patch,'thread_size')&&String(post.thread_size||'')!==String(patch.thread_size||'')){
+      throw new Error('POSTCHECK_thread_size_FAILED');
     }
     const resolverPost=await resolverCheck(db,row);
     if(!resolverPost.valid) throw new Error('POST_RESOLVER_IDENTITY_CONFLICT');
@@ -268,7 +274,11 @@ async function main(){
            equalShape(live,patchComparable(p))
       );
       if(!offMatches.length) continue;
-      candidates.push({row,offMatches:offMatches.map(p=>p.mann_source)});
+      candidates.push({
+        row,
+        rawCanonicalSource:canonicalPatchRows[0].mann_source,
+        offMatches:offMatches.map(p=>p.mann_source),
+      });
     }
 
     candidates.sort((a,b)=>a.row.sku.localeCompare(b.row.sku));
@@ -280,7 +290,10 @@ async function main(){
       const chunk=scanCandidates.slice(i,i+CONCURRENCY);
       const fetched=await Promise.all(chunk.map(async candidate=>({
         candidate,
-        official:await fetchOfficialMannSpecs(candidate.row.canonical_source_code,{timeoutMs:12000}),
+        official:await fetchOfficialMannSpecs(candidate.row.canonical_source_code,{
+          timeoutMs:12000,
+          rawCode:candidate.rawCanonicalSource,
+        }),
       })));
 
       for(const item of fetched){
@@ -379,4 +392,9 @@ module.exports={
   validateOfficialGeometry,
   buildPatch,
   patchDiffers,
+  loadCollisionGroups,
+  fetchRows,
+  resolverCheck,
+  upsertSemanticSpecs,
+  applyOne,
 };
