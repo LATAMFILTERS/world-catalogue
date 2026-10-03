@@ -4,78 +4,1064 @@
   "showCrossReferences": true,
   "showPerformanceSpecs": false
  },
- "products": [],
  "policy": "VERIFIED-only",
- "blocked": [
+ "products": [
   {
-   "sku": "EA13648",
-   "reason": "canonical_source_status is UNVERIFIED, publication requires VERIFIED",
-   "kind": "STOP_REVIEW"
+   "sku": "EH60950",
+   "slug": "eh60950",
+   "family": "hydraulic-filters",
+   "duty": "Heavy Duty",
+   "title": "Hydraulic Spin-On Filter",
+   "technology": "NANOFORCE",
+   "description": "EH60950 is an ELIMFILTERS hydraulic spin-on filter protected by NANOFORCE™ technology.",
+   "specs": [
+    {
+     "name": "Thread",
+     "value": "1 3/8-12 UN"
+    },
+    {
+     "name": "Height",
+     "value": "240 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "97 mm"
+    },
+    {
+     "name": "Gasket outer diameter",
+     "value": "70 mm"
+    },
+    {
+     "name": "Gasket inner diameter",
+     "value": "63 mm"
+    },
+    {
+     "name": "Filtration rating",
+     "value": "11 absolute / 4 nominal"
+    },
+    {
+     "name": "Efficiency",
+     "value": "Beta 1000 at 11 micron; Beta 2 at 4 micron"
+    },
+    {
+     "name": "Filter media",
+     "value": "Synthetic microfiber glass"
+    }
+   ],
+   "oem": [
+    {
+     "brand": "John Deere",
+     "code": "AH128449"
+    },
+    {
+     "brand": "John Deere",
+     "code": "AT215172"
+    },
+    {
+     "brand": "John Deere",
+     "code": "4160174"
+    }
+   ],
+   "oemTotal": 3,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P170950"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF6557"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "BT8852MPG"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "BT734"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "BT749"
+    },
+    {
+     "brand": "WIX",
+     "code": "51819"
+    }
+   ],
+   "crossRefsTotal": 6,
+   "applications": [
+    "JOHN DEERE 9650",
+    "JOHN DEERE 9650 CTS · JOHN DEERE 6081",
+    "JOHN DEERE 9650 STS · JOHN DEERE 6081H"
+   ],
+   "governance": {
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db-export",
+    "file": "live-rows.json"
+   }
   },
   {
-   "sku": "EA30719",
-   "reason": "no publishable equivalence (catalogue-data run 249d6b4)",
-   "kind": "STOP_REVIEW"
+   "sku": "EL83191",
+   "slug": "el83191",
+   "family": "oil-filters",
+   "duty": "Heavy Duty",
+   "title": "Lube Oil Spin-On Filter",
+   "technology": "SYNTRAX",
+   "description": "EL83191 is an ELIMFILTERS lube oil spin-on filter protected by SYNTRAX™ technology.",
+   "specs": [
+    {
+     "name": "Thread",
+     "value": "1 1/8-16 UN"
+    },
+    {
+     "name": "Height",
+     "value": "262 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "108 mm"
+    },
+    {
+     "name": "Gasket outer diameter",
+     "value": "99 mm"
+    },
+    {
+     "name": "Gasket inner diameter",
+     "value": "90 mm"
+    },
+    {
+     "name": "Filtration rating",
+     "value": "21 micron"
+    },
+    {
+     "name": "Efficiency",
+     "value": "21 micron"
+    },
+    {
+     "name": "Efficiency test method",
+     "value": "ISO 16889"
+    },
+    {
+     "name": "Burst pressure",
+     "value": "149 psi"
+    }
+   ],
+   "oem": [
+    {
+     "brand": "Caterpillar",
+     "code": "1R-0658"
+    },
+    {
+     "brand": "Caterpillar",
+     "code": "1R-0739"
+    },
+    {
+     "brand": "Caterpillar",
+     "code": "1R-1807"
+    },
+    {
+     "brand": "Caterpillar",
+     "code": "1W-3300"
+    },
+    {
+     "brand": "John Deere",
+     "code": "GG17031266"
+    },
+    {
+     "brand": "Mack",
+     "code": "2191P553191"
+    },
+    {
+     "brand": "Mack",
+     "code": "21939324"
+    },
+    {
+     "brand": "Mack",
+     "code": "485GB3191"
+    },
+    {
+     "brand": "Mack",
+     "code": "485GB3191A"
+    },
+    {
+     "brand": "Iveco",
+     "code": "42537127"
+    },
+    {
+     "brand": "Hino",
+     "code": "S2340-11700"
+    },
+    {
+     "brand": "Ford",
+     "code": "5011417"
+    },
+    {
+     "brand": "Ford",
+     "code": "5011502"
+    },
+    {
+     "brand": "Ford",
+     "code": "9576P553191"
+    },
+    {
+     "brand": "Freightliner",
+     "code": "DNP553191"
+    },
+    {
+     "brand": "Hitachi",
+     "code": "466634"
+    }
+   ],
+   "oemTotal": 27,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P553191"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF35197"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "LF16101"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "LF16175"
+    },
+    {
+     "brand": "Donaldson",
+     "code": "ELF7483"
+    },
+    {
+     "brand": "Donaldson",
+     "code": "ELF7739"
+    },
+    {
+     "brand": "Donaldson",
+     "code": "LFP554004"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "B76"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "B7600"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "B7600-SS"
+    },
+    {
+     "brand": "WIX",
+     "code": "24526"
+    },
+    {
+     "brand": "WIX",
+     "code": "24536"
+    },
+    {
+     "brand": "WIX",
+     "code": "24556"
+    }
+   ],
+   "crossRefsTotal": 98,
+   "applications": [
+    "AKERMAN EC200 · VOLVO TD61GE",
+    "AKERMAN EC230 · VOLVO TD61ACE",
+    "AKERMAN EC300 · VOLVO TD71ACE",
+    "AKERMAN EC420 · VOLVO TD101GE",
+    "AKERMAN EW200 · VOLVO TD61GE",
+    "AKERMAN EW230 · VOLVO TD61ACE",
+    "AKERMAN H10 · VOLVO TD60B",
+    "AKERMAN H10 · VOLVO TD61ACE",
+    "AKERMAN H10B · VOLVO TD60B",
+    "AKERMAN H10B · VOLVO TD61ACE",
+    "AKERMAN H10LC · VOLVO TD60B",
+    "AKERMAN H10LC · VOLVO TD61ACE"
+   ],
+   "governance": {
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db-export",
+    "file": "live-rows.json"
+   }
   },
   {
-   "sku": "EF30006",
-   "reason": "fewer than 4 verified spec fields (catalogue-data run 249d6b4)",
-   "kind": "STOP_REVIEW"
-  },
-  {
-   "sku": "EF30012",
-   "reason": "canonical_source_status is UNVERIFIED, publication requires VERIFIED",
-   "kind": "STOP_REVIEW"
+   "sku": "EL84004",
+   "slug": "el84004",
+   "family": "oil-filters",
+   "duty": "Heavy Duty",
+   "title": "Lube Oil Spin-On Filter",
+   "technology": "SYNTRAX",
+   "description": "EL84004 is an ELIMFILTERS lube oil spin-on filter protected by SYNTRAX™ technology.",
+   "specs": [
+    {
+     "name": "Thread",
+     "value": "1 1/8-16 UN"
+    },
+    {
+     "name": "Height",
+     "value": "262 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "108 mm"
+    },
+    {
+     "name": "Gasket outer diameter",
+     "value": "99 mm"
+    },
+    {
+     "name": "Gasket inner diameter",
+     "value": "90 mm"
+    },
+    {
+     "name": "Filtration rating",
+     "value": "40 micron"
+    },
+    {
+     "name": "Efficiency",
+     "value": "40 micron"
+    },
+    {
+     "name": "Burst pressure",
+     "value": "149 psi"
+    }
+   ],
+   "oem": [
+    {
+     "brand": "Caterpillar",
+     "code": "1R-0658"
+    },
+    {
+     "brand": "Caterpillar",
+     "code": "1R-0739"
+    },
+    {
+     "brand": "Caterpillar",
+     "code": "1R-1807"
+    },
+    {
+     "brand": "Caterpillar",
+     "code": "1W-3300"
+    },
+    {
+     "brand": "John Deere",
+     "code": "GG17031266"
+    },
+    {
+     "brand": "Scania",
+     "code": "1117285"
+    },
+    {
+     "brand": "Mack",
+     "code": "21939324"
+    },
+    {
+     "brand": "Mack",
+     "code": "485GB3191"
+    },
+    {
+     "brand": "Mack",
+     "code": "485GB3191A"
+    },
+    {
+     "brand": "Mack",
+     "code": "485GB3191B"
+    },
+    {
+     "brand": "Hino",
+     "code": "S2340-11700"
+    },
+    {
+     "brand": "Case",
+     "code": "60507493"
+    },
+    {
+     "brand": "Case",
+     "code": "W1250599"
+    },
+    {
+     "brand": "Case IH",
+     "code": "60507493"
+    },
+    {
+     "brand": "Case IH",
+     "code": "W1250599"
+    },
+    {
+     "brand": "Case IH",
+     "code": "2836"
+    }
+   ],
+   "oemTotal": 36,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P554004"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF35197"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "LF3321"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "LF3379"
+    },
+    {
+     "brand": "Donaldson",
+     "code": "ELF7483"
+    },
+    {
+     "brand": "Donaldson",
+     "code": "ELF7739"
+    },
+    {
+     "brand": "Donaldson",
+     "code": "LFP554004"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "B76"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "B7600"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "B7600-SS"
+    },
+    {
+     "brand": "WIX",
+     "code": "24526"
+    },
+    {
+     "brand": "WIX",
+     "code": "24536"
+    },
+    {
+     "brand": "WIX",
+     "code": "24556"
+    }
+   ],
+   "crossRefsTotal": 101,
+   "applications": [
+    "AG CHEM EQUIPMENT 1064 · CATERPILLAR 3126",
+    "ALLIS-CHALMERS 4W220",
+    "ALLIS-CHALMERS 7045",
+    "ALLIS-CHALMERS 7060 · ALLIS-CHALMERS 670I",
+    "ALLIS-CHALMERS 7080 · ALLIS-CHALMERS 3750",
+    "ALLIS-CHALMERS 7580 · ALLIS-CHALMERS 670I",
+    "ALLIS-CHALMERS 8070 · ALLIS-CHALMERS 670T",
+    "ALLIS-CHALMERS N5 · ALLIS-CHALMERS D3500",
+    "ALLIS-CHALMERS N6 · ALLIS-CHALMERS D3500",
+    "ALLIS-CHALMERS R6",
+    "ATLAS COPCO ROC D7",
+    "BARBER-GREENE TA30 · CATERPILLAR 3304"
+   ],
+   "governance": {
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db-export",
+    "file": "live-rows.json"
+   }
   },
   {
    "sku": "EF90668",
-   "reason": "fuel/water separator recorded as SYNTAPORE; scope must be HYDROCORE/TURBOCORE; keep blocked until corrected",
-   "kind": "HOLD"
+   "slug": "ef90668",
+   "family": "fuel-water-separators",
+   "duty": "Heavy Duty",
+   "title": "Primary Fuel/Water Separator, Spin-On",
+   "technology": "HYDROCORE",
+   "description": "EF90668 is an ELIMFILTERS primary fuel/water separator, spin-on protected by HYDROCORE™ technology.",
+   "specs": [
+    {
+     "name": "Thread",
+     "value": "1-14 UN"
+    },
+    {
+     "name": "Height",
+     "value": "296.9 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "108 mm"
+    },
+    {
+     "name": "Efficiency",
+     "value": "95% emulsified water separation"
+    },
+    {
+     "name": "Filter media",
+     "value": "Cellulose / Water separation media"
+    }
+   ],
+   "oem": [
+    {
+     "brand": "John Deere",
+     "code": "RE531703"
+    }
+   ],
+   "oemTotal": 1,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P551026"
+    }
+   ],
+   "crossRefsTotal": 1,
+   "applications": [
+    "JOHN DEERE 9650",
+    "JOHN DEERE 9650 CTS · JOHN DEERE 6081",
+    "JOHN DEERE 9650 STS · JOHN DEERE 6081H"
+   ],
+   "governance": {
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db-export",
+    "file": "live-rows.json"
+   }
   },
   {
    "sku": "EF90669",
-   "reason": "fuel/water separator recorded as SYNTAPORE; scope must be HYDROCORE/TURBOCORE; keep blocked until corrected",
-   "kind": "HOLD"
+   "slug": "ef90669",
+   "family": "fuel-water-separators",
+   "duty": "Heavy Duty",
+   "title": "Secondary Fuel/Water Separator, Spin-On",
+   "technology": "HYDROCORE",
+   "description": "EF90669 is an ELIMFILTERS secondary fuel/water separator, spin-on protected by HYDROCORE™ technology.",
+   "specs": [
+    {
+     "name": "Thread",
+     "value": "7/8-14 UN"
+    },
+    {
+     "name": "Height",
+     "value": "171 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "108 mm"
+    },
+    {
+     "name": "Filtration rating",
+     "value": "5 micron"
+    },
+    {
+     "name": "Efficiency",
+     "value": "5 micron; 95% emulsified water separation"
+    },
+    {
+     "name": "Filter media",
+     "value": "High-density treated cellulose"
+    }
+   ],
+   "oem": [
+    {
+     "brand": "John Deere",
+     "code": "RE522688"
+    }
+   ],
+   "oemTotal": 1,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P551027"
+    }
+   ],
+   "crossRefsTotal": 1,
+   "applications": [
+    "JOHN DEERE 9650",
+    "JOHN DEERE 9650 CTS · JOHN DEERE 6081",
+    "JOHN DEERE 9650 STS · JOHN DEERE 6081H"
+   ],
+   "governance": {
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db-export",
+    "file": "live-rows.json"
+   }
   },
+  {
+   "sku": "EA13648",
+   "slug": "ea13648",
+   "family": "primary-air",
+   "duty": "Heavy Duty",
+   "title": "Air Filter",
+   "technology": "MACROCORE",
+   "description": "EA13648 is an ELIMFILTERS air filter protected by MACROCORE™ technology.",
+   "specs": [
+    {
+     "name": "Thread",
+     "value": "M76 x 4"
+    },
+    {
+     "name": "Height",
+     "value": "600 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "120 mm"
+    },
+    {
+     "name": "Efficiency test method",
+     "value": "ISO 5011"
+    }
+   ],
+   "oem": [],
+   "oemTotal": 0,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P783648"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "AF26147"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "PA4876"
+    },
+    {
+     "brand": "Mahle",
+     "code": "852903TI751"
+    },
+    {
+     "brand": "Sakura",
+     "code": "A6713"
+    }
+   ],
+   "crossRefsTotal": 5,
+   "applications": [
+    "ATLAS COPCO ROC L6 · CATERPILLAR C11"
+   ],
+   "governance": {
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db-export",
+    "file": "live-rows.json"
+   }
+  },
+  {
+   "sku": "EA30719",
+   "slug": "ea30719",
+   "family": "air-dryer-filters",
+   "duty": "Light Duty",
+   "title": "Air Dryer Cartridge",
+   "technology": "DRYCORE",
+   "description": "EA30719 is an ELIMFILTERS air dryer cartridge protected by DRYCORE™ technology.",
+   "specs": [
+    {
+     "name": "Thread",
+     "value": "3/4-16 UNF"
+    },
+    {
+     "name": "Height",
+     "value": "123 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "76 mm"
+    },
+    {
+     "name": "Gasket outer diameter",
+     "value": "62 mm"
+    },
+    {
+     "name": "Gasket inner diameter",
+     "value": "71 mm"
+    }
+   ],
+   "oem": [],
+   "oemTotal": 0,
+   "crossRefs": [
+    {
+     "brand": "Mann-Filter",
+     "code": "TB719"
+    }
+   ],
+   "crossRefsTotal": 1,
+   "applications": [
+    "Mercedes-Benz T2/LN1 (667, 668, 669, 670, 672) 611 D (T2,668) 09/92 → Series: 669",
+    "Mercedes-Benz T2/LN1 (667, 668, 669, 670, 672) 711 D (T2,669)",
+    "Mercedes-Benz T2/LN1 (667, 668, 669, 670, 672) 711 D (T2,669) 09/92 →",
+    "Mercedes-Benz T2/LN1 (667, 668, 669, 670, 672) 811 DT (T2,670.199) 09/92 → Series: 669",
+    "Mercedes-Benz Vario (667, 668, 669, 670) 512 D (667)",
+    "Mercedes-Benz Vario (667, 668, 669, 670) 612 D (668)",
+    "Mercedes-Benz Vario (667, 668, 669, 670) 812 D (670) Series: 667 + 668",
+    "Mercedes-Benz T2/LN1 (667, 668, 669, 670, 672) 811 D (T2,670) 09/92 → Series: 669",
+    "Mercedes-Benz Vario (667, 668, 669, 670) 812 DT (670/669) Series: 667 + 668",
+    "Mercedes-Benz Vario (667, 668, 669, 670) 613 D BlueTec (668) Series: 667 + 668",
+    "Mercedes-Benz Vario (667, 668, 669, 670) 813 D/DA BlueTec (670/669) Series: 667 + 668"
+   ],
+   "governance": {
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db-export",
+    "file": "live-rows.json"
+   }
+  },
+  {
+   "sku": "EH60222",
+   "slug": "eh60222",
+   "family": "hydraulic-filters",
+   "duty": "Heavy Duty",
+   "title": "Hydraulic Spin-On Filter",
+   "technology": "NANOFORCE",
+   "description": "EH60222 is an ELIMFILTERS hydraulic spin-on filter protected by NANOFORCE™ technology.",
+   "specs": [
+    {
+     "name": "Thread",
+     "value": "3/4-16 UN"
+    },
+    {
+     "name": "Height",
+     "value": "5.36 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "3.66 mm"
+    },
+    {
+     "name": "Gasket outer diameter",
+     "value": "72 mm"
+    },
+    {
+     "name": "Gasket inner diameter",
+     "value": "62 mm"
+    },
+    {
+     "name": "Efficiency test method",
+     "value": "SAE J1858"
+    }
+   ],
+   "oem": [
+    {
+     "brand": "Caterpillar",
+     "code": "0817003"
+    },
+    {
+     "brand": "Caterpillar",
+     "code": "220-1523"
+    },
+    {
+     "brand": "Caterpillar",
+     "code": "3I1161"
+    },
+    {
+     "brand": "Caterpillar",
+     "code": "3I1171"
+    },
+    {
+     "brand": "Cummins",
+     "code": "C600-211-2110"
+    },
+    {
+     "brand": "John Deere",
+     "code": "A146696"
+    },
+    {
+     "brand": "John Deere",
+     "code": "AM101207"
+    },
+    {
+     "brand": "John Deere",
+     "code": "AT1220338"
+    },
+    {
+     "brand": "John Deere",
+     "code": "HE1220800"
+    },
+    {
+     "brand": "Komatsu",
+     "code": "37Z020F201"
+    },
+    {
+     "brand": "Komatsu",
+     "code": "OKR62189"
+    },
+    {
+     "brand": "Volvo",
+     "code": "15590"
+    },
+    {
+     "brand": "Mercedes-Benz",
+     "code": "1021840001"
+    },
+    {
+     "brand": "Mercedes-Benz",
+     "code": "1021840501"
+    },
+    {
+     "brand": "Mercedes-Benz",
+     "code": "1031800610"
+    },
+    {
+     "brand": "Mercedes-Benz",
+     "code": "1031840001"
+    }
+   ],
+   "oemTotal": 86,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P550222"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF287783"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF28783"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF6107"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "B114"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "B118"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "B1405"
+    },
+    {
+     "brand": "WIX",
+     "code": "337P"
+    },
+    {
+     "brand": "WIX",
+     "code": "51348MP"
+    },
+    {
+     "brand": "WIX",
+     "code": "51515R"
+    },
+    {
+     "brand": "MANN-FILTER",
+     "code": "6750458346"
+    },
+    {
+     "brand": "MANN-FILTER",
+     "code": "ML 1003"
+    },
+    {
+     "brand": "MANN-FILTER",
+     "code": "WD10009"
+    }
+   ],
+   "crossRefsTotal": 93,
+   "applications": [
+    "ALLIS-CHALMERS 705C",
+    "ALLIS-CHALMERS 706B",
+    "ALLIS-CHALMERS 706C",
+    "ALLIS-CHALMERS 708C",
+    "ALLIS-CHALMERS 714B · PERKINS 4.236",
+    "ALLIS-CHALMERS 715 · PERKINS 4.236",
+    "ALLIS-CHALMERS 715D · PERKINS 4.236",
+    "ALLIS-CHALMERS ACP225 · FORD 300",
+    "ALLIS-CHALMERS F3024 · ALLIS-CHALMERS G153",
+    "ALLIS-CHALMERS F4024 · ALLIS-CHALMERS G153",
+    "ALLIS-CHALMERS F5024 · ALLIS-CHALMERS G153",
+    "ALLIS-CHALMERS FB5024 · ALLIS-CHALMERS D175"
+   ],
+   "governance": {
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db-export",
+    "file": "live-rows.json"
+   }
+  },
+  {
+   "sku": "EH60223",
+   "slug": "eh60223",
+   "family": "hydraulic-filters",
+   "duty": "Heavy Duty",
+   "title": "Hydraulic Spin-On Filter",
+   "technology": "NANOFORCE",
+   "description": "EH60223 is an ELIMFILTERS hydraulic spin-on filter protected by NANOFORCE™ technology.",
+   "specs": [
+    {
+     "name": "Thread",
+     "value": "1 5/16-12 UN"
+    },
+    {
+     "name": "Height",
+     "value": "260 mm"
+    },
+    {
+     "name": "Outer diameter",
+     "value": "124 mm"
+    },
+    {
+     "name": "Gasket outer diameter",
+     "value": "103 mm"
+    },
+    {
+     "name": "Gasket inner diameter",
+     "value": "92 mm"
+    }
+   ],
+   "oem": [
+    {
+     "brand": "Caterpillar",
+     "code": "3I1162"
+    },
+    {
+     "brand": "Caterpillar",
+     "code": "9Y4513"
+    },
+    {
+     "brand": "Volvo",
+     "code": "1992156"
+    },
+    {
+     "brand": "Volvo",
+     "code": "3082148"
+    },
+    {
+     "brand": "Volvo",
+     "code": "3130914"
+    },
+    {
+     "brand": "Volvo",
+     "code": "M1992156"
+    },
+    {
+     "brand": "Liebherr",
+     "code": "510661508"
+    },
+    {
+     "brand": "Detroit Diesel",
+     "code": "550223"
+    },
+    {
+     "brand": "Ford",
+     "code": "9576P550223"
+    },
+    {
+     "brand": "Freightliner",
+     "code": "DNP550223"
+    },
+    {
+     "brand": "Hitachi",
+     "code": "1930893"
+    },
+    {
+     "brand": "Hitachi",
+     "code": "73074045"
+    },
+    {
+     "brand": "Hitachi",
+     "code": "73142551"
+    }
+   ],
+   "oemTotal": 13,
+   "crossRefs": [
+    {
+     "brand": "Donaldson",
+     "code": "P550223"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF6106"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF6243"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "BT359"
+    },
+    {
+     "brand": "WIX",
+     "code": "51623"
+    },
+    {
+     "brand": "Purolator",
+     "code": "H50264"
+    },
+    {
+     "brand": "Purolator",
+     "code": "P264"
+    },
+    {
+     "brand": "Sakura",
+     "code": "HC6501"
+    },
+    {
+     "brand": "Sakura",
+     "code": "HC6502"
+    }
+   ],
+   "crossRefsTotal": 9,
+   "applications": [
+    "ALLIS-CHALMERS FR10 · FIAT 8065",
+    "ALLIS-CHALMERS FR12",
+    "ALLIS-CHALMERS FR15",
+    "ALLIS-CHALMERS FR20",
+    "FIAT FR20B",
+    "FIATALLIS FR20B",
+    "PETERBILT 357 · CATERPILLAR 3306"
+   ],
+   "governance": {
+    "canonicalStatus": "VERIFIED",
+    "dutyStatus": "LEGACY_UNVERIFIED",
+    "active": true
+   },
+   "source": {
+    "kind": "catalogue-db-export",
+    "file": "live-rows.json"
+   }
+  }
+ ],
+ "blocked": [
   {
    "sku": "EF95112",
    "reason": "specs sourced from Fleetguard FF5112; not published until verified against ELIMFILTERS own data (policy: Victor)",
    "kind": "HOLD"
-  },
-  {
-   "sku": "EH60222",
-   "reason": "canonical_source_status is UNVERIFIED, publication requires VERIFIED",
-   "kind": "STOP_REVIEW"
-  },
-  {
-   "sku": "EH60223",
-   "reason": "canonical_source_status is UNVERIFIED, publication requires VERIFIED",
-   "kind": "STOP_REVIEW"
-  },
-  {
-   "sku": "EH60950",
-   "reason": "third-party media mark (Synteq XP) in catalogue record; keep blocked until corrected",
-   "kind": "HOLD"
-  },
-  {
-   "sku": "EL30001",
-   "reason": "canonical_source_status is UNVERIFIED, publication requires VERIFIED",
-   "kind": "STOP_REVIEW"
-  },
-  {
-   "sku": "EL30002",
-   "reason": "canonical_source_status is UNVERIFIED, publication requires VERIFIED",
-   "kind": "STOP_REVIEW"
-  },
-  {
-   "sku": "EL83191",
-   "reason": "canonical_source_status is UNVERIFIED, publication requires VERIFIED",
-   "kind": "STOP_REVIEW"
-  },
-  {
-   "sku": "EL84004",
-   "reason": "canonical_source_status is UNVERIFIED, publication requires VERIFIED",
-   "kind": "STOP_REVIEW"
   }
  ]
 }

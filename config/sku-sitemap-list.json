@@ -8,8 +8,7 @@
   "skus": [
     {
       "sku": "EH60950",
-      "family": "hydraulic-filters",
-      "hold": "third-party media mark (Synteq XP) in catalogue record; keep blocked until corrected"
+      "family": "hydraulic-filters"
     },
     {
       "sku": "EL83191",
@@ -26,33 +25,19 @@
     },
     {
       "sku": "EF90668",
-      "hold": "fuel/water separator recorded as SYNTAPORE; scope must be HYDROCORE/TURBOCORE; keep blocked until corrected"
+      "family": "fuel-water-separators"
     },
     {
       "sku": "EF90669",
-      "hold": "fuel/water separator recorded as SYNTAPORE; scope must be HYDROCORE/TURBOCORE; keep blocked until corrected"
+      "family": "fuel-water-separators"
     },
     {
       "sku": "EA13648",
       "family": "primary-air"
     },
     {
-      "sku": "EA30719"
-    },
-    {
-      "sku": "EF30006"
-    },
-    {
-      "sku": "EF30012",
-      "family": "primary-fuel"
-    },
-    {
-      "sku": "EL30001",
-      "family": "oil-filters"
-    },
-    {
-      "sku": "EL30002",
-      "family": "oil-filters"
+      "sku": "EA30719",
+      "family": "air-dryer-filters"
     },
     {
       "sku": "EH60222",
@@ -64,5 +49,5 @@
     }
   ],
   "policy": "VERIFIED-only: a SKU is published only if canonical_source_status = VERIFIED, the gates in lib/product-page-data.js pass and it has no 'hold'.",
-  "skus_note": "Families for EA13648, EF30012, EH60222/3, EL30001/2 come from Victor's catalogue-data regeneration (249d6b4). EA30719 (no publishable equivalence) and EF30006 (fewer than 4 verified spec fields) were excluded by the gates in that run."
+  "skus_note": "Phase-1 set = the 10 SKUs in config/product-pages/live-rows.json. Holds removed for EH60950 / EF90668 / EF90669 after production data was corrected (generic media and no third-party mark; HYDROCORE scope). EF95112 stays on hold (policy: Victor)."
 }
