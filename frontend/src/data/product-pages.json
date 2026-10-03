@@ -62,6 +62,8 @@
    ],
    "physicalWarnings": [],
    "governance": {
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
     "canonicalStatus": "VERIFIED",
     "dutyStatus": "LEGACY_UNVERIFIED",
     "active": true
@@ -122,6 +124,8 @@
    ],
    "physicalWarnings": [],
    "governance": {
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
     "canonicalStatus": "VERIFIED",
     "dutyStatus": "LEGACY_UNVERIFIED",
     "active": true
@@ -186,6 +190,8 @@
    ],
    "physicalWarnings": [],
    "governance": {
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
     "canonicalStatus": "VERIFIED",
     "dutyStatus": "LEGACY_UNVERIFIED",
     "active": true
@@ -367,6 +373,8 @@
    ],
    "physicalWarnings": [],
    "governance": {
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
     "canonicalStatus": "VERIFIED",
     "dutyStatus": "LEGACY_UNVERIFIED",
     "active": true
@@ -511,6 +519,8 @@
    ],
    "physicalWarnings": [],
    "governance": {
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
     "canonicalStatus": "VERIFIED",
     "dutyStatus": "LEGACY_UNVERIFIED",
     "active": true
@@ -611,6 +621,8 @@
    ],
    "physicalWarnings": [],
    "governance": {
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
     "canonicalStatus": "VERIFIED",
     "dutyStatus": "LEGACY_UNVERIFIED",
     "active": true
@@ -804,6 +816,8 @@
    ],
    "physicalWarnings": [],
    "governance": {
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
     "canonicalStatus": "VERIFIED",
     "dutyStatus": "LEGACY_UNVERIFIED",
     "active": true
@@ -993,6 +1007,8 @@
    ],
    "physicalWarnings": [],
    "governance": {
+    "canonicalSourceBrand": "DONALDSON",
+    "ownDataVerified": false,
     "canonicalStatus": "VERIFIED",
     "dutyStatus": "LEGACY_UNVERIFIED",
     "active": true
@@ -1006,7 +1022,7 @@
  "blocked": [
   {
    "sku": "ED47754",
-   "reason": "fewer than 4 verified spec fields",
+   "reason": "canonical source is a fallback manufacturer (FLEETGUARD); publish only after specs are verified against ELIMFILTERS own data (ownDataVerified)",
    "kind": "STOP_REVIEW"
   },
   {

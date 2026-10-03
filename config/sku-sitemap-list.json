@@ -48,6 +48,6 @@
       "family": "oil-filters"
     }
   ],
-  "policy": "VERIFIED-only: a SKU is published only if canonical_source_status = VERIFIED, the gates in lib/product-page-data.js pass and it has no 'hold'.",
+  "policy": "VERIFIED-only: a SKU is published only if canonical_source_status = VERIFIED, its canonical source is the primary manufacturer (Donaldson) or the entry has ownDataVerified:true, the gates in lib/product-page-data.js pass and it has no 'hold'.",
   "skus_note": "Phase-1 set = the 10 SKUs in config/product-pages/live-rows.json (sha256 0e3505e2...099b, commit b31449b). EF95112 stays on hold (policy: Victor)."
 }

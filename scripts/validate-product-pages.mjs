@@ -4,7 +4,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
 
-const { OEM_BRANDS, CROSS_BRANDS, physicalIssuesFromSpecs } = createRequire(import.meta.url)('../lib/product-page-data.js');
+const { OEM_BRANDS, CROSS_BRANDS, PRIMARY_SOURCES, physicalIssuesFromSpecs } = createRequire(import.meta.url)('../lib/product-page-data.js');
 const norm = (b) => b.toUpperCase().replace(/[-\s]/g, '');
 const OEM_OK = new Set([...OEM_BRANDS].map(norm));
 const CROSS_OK = new Set([...CROSS_BRANDS, 'MANN-FILTER'].map(norm));
@@ -38,6 +38,10 @@ if (!snapshot.products.length) {
   const sentinel = path.join(OUT, 'products', '_none');
   const files = ['index.html', '../_none.html'].map((f) => path.join(sentinel, f)).filter(existsSync);
   if (files.length && !/noindex/.test(read(files[0]))) errors.push('sentinel route /products/_none/ is indexable');
+}
+for (const p of snapshot.products) {
+  const g = p.governance || {};
+  if (g.canonicalSourceBrand && !PRIMARY_SOURCES.has(g.canonicalSourceBrand) && !g.ownDataVerified) errors.push(`${p.sku}: published with fallback canonical source ${g.canonicalSourceBrand} and no ownDataVerified`);
 }
 for (const p of snapshot.products) if (p.governance?.canonicalStatus !== 'VERIFIED') errors.push(`${p.sku}: published without canonical_source_status VERIFIED (policy VERIFIED-only)`);
 
