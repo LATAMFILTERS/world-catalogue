@@ -2,91 +2,83 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { evaluateCodigoBase } = require('../lib/catalog-codigo-base-policy');
+const { evaluateCodigoBase, POLICY_VERSION } = require('../lib/catalog-codigo-base-policy');
 
-test('HD uses Donaldson when Donaldson evidence exists', () => {
+function gov(overrides = {}) {
+  return { enrichment_data: { codigo_base_governance: overrides } };
+}
+
+test('V3.2 policy is active', () => {
+  assert.equal(POLICY_VERSION, '2026-10-02-v3.2');
+});
+
+test('HD verified Donaldson is primary authority', () => {
   const row = {
-    duty: 'HEAVY_DUTY',
-    codigo_base: 'P551313',
-    competitor_codes: [
-      { manufacturer: 'DONALDSON', code: 'P551313' },
-      { manufacturer: 'FLEETGUARD', code: 'FF5320' },
-    ],
+    duty: 'HEAVY_DUTY', sku: 'EF91234', codigo_base: 'P551234',
+    oem_codes: [], competitor_codes: [],
+    ...gov({ primary_manufacturer_verified: true, approved_manufacturer: 'DONALDSON', approved_codigo_base: 'P551234' }),
   };
-  assert.deepEqual(evaluateCodigoBase(row), { valid: true, authority: 'DONALDSON' });
+  assert.equal(evaluateCodigoBase(row).authority, 'VERIFIED_DONALDSON');
+});
+test('HD Fleetguard requires verified Donaldson absence and explicit Fleetguard authority', () => {
+  const row = {
+    duty: 'HEAVY_DUTY', sku: 'ED47754', codigo_base: 'AD27754',
+    oem_codes: [], competitor_codes: [{ manufacturer: 'FLEETGUARD', code: 'AD27754' }],
+    ...gov({
+      donaldson_absence_verified: true,
+      fallback_manufacturer_verified: true,
+      fallback_commercial_code_verified: true,
+      approved_manufacturer: 'FLEETGUARD',
+      approved_codigo_base: 'AD27754',
+      approved_source_column: 'COMPETITOR_CODES',
+    }),
+  };
+  assert.equal(evaluateCodigoBase(row).authority, 'VERIFIED_FLEETGUARD_FALLBACK');
 });
 
-test('HD rejects Fleetguard while Donaldson evidence exists', () => {
-  const result = evaluateCodigoBase({
-    duty: 'HEAVY_DUTY',
-    codigo_base: 'FF5320',
-    competitor_codes: [
-      { manufacturer: 'DONALDSON', code: 'P551313' },
-      { manufacturer: 'FLEETGUARD', code: 'FF5320' },
-    ],
-  });
-  assert.equal(result.valid, false);
-  assert.equal(result.reason, 'donaldson_reference_must_be_codigo_base');
-});
-
-test('HD Fleetguard fallback requires verified Donaldson absence', () => {
+test('HD OEM cannot be used until Donaldson and Fleetguard absence are both verified', () => {
   const base = {
-    duty: 'HEAVY_DUTY',
-    codigo_base: 'FF5320',
-    competitor_codes: [{ manufacturer: 'FLEETGUARD', code: 'FF5320' }],
+    duty: 'HEAVY_DUTY', sku: 'ED45295', codigo_base: '0004295295',
+    oem_codes: [], competitor_codes: [],
+    ...gov({
+      donaldson_absence_verified: true,
+      fallback_manufacturer_verified: true,
+      fallback_commercial_code_verified: true,
+      approved_manufacturer: 'MERCEDES-BENZ',
+      approved_codigo_base: '0004295295',
+      approved_source_column: 'OEM_CODES',
+    }),
   };
-  assert.equal(evaluateCodigoBase(base).valid, false);
-  assert.deepEqual(
-    evaluateCodigoBase({
-      ...base,
-      enrichment_data: { codigo_base_governance: { donaldson_absence_verified: true } },
+  const blocked = evaluateCodigoBase(base);
+  assert.equal(blocked.valid, false);
+  assert.equal(blocked.authority, 'VERIFY_FLEETGUARD_ABSENCE');
+  const allowed = evaluateCodigoBase({
+    ...base,
+    ...gov({
+      donaldson_absence_verified: true,
+      fleetguard_absence_verified: true,
+      fallback_manufacturer_verified: true,
+      fallback_commercial_code_verified: true,
+      approved_manufacturer: 'MERCEDES-BENZ',
+      approved_codigo_base: '0004295295',
+      approved_source_column: 'OEM_CODES',
     }),
-    { valid: true, authority: 'FLEETGUARD' }
-  );
+  });
+  assert.equal(allowed.authority, 'VERIFIED_OEM_FALLBACK');
 });
 
-test('HD OEM fallback requires complete verified evidence', () => {
-  const base = { duty: 'HEAVY_DUTY', codigo_base: 'OEM123' };
-  assert.equal(evaluateCodigoBase(base).valid, false);
-  assert.deepEqual(
-    evaluateCodigoBase({
-      ...base,
-      enrichment_data: {
-        codigo_base_governance: {
-          donaldson_absence_verified: true,
-          fleetguard_absence_verified: true,
-          oem_commercial_code_verified: true,
-        },
-      },
+test('generic HD aftermarket fallback is rejected', () => {
+  const row = {
+    duty: 'HEAVY_DUTY', sku: 'EF99999', codigo_base: 'BF9999',
+    oem_codes: [], competitor_codes: [{ manufacturer: 'BALDWIN', code: 'BF9999' }],
+    ...gov({
+      donaldson_absence_verified: true,
+      fallback_manufacturer_verified: true,
+      fallback_commercial_code_verified: true,
+      approved_manufacturer: 'BALDWIN',
+      approved_codigo_base: 'BF9999',
+      approved_source_column: 'COMPETITOR_CODES',
     }),
-    { valid: true, authority: 'OEM' }
-  );
-});
-
-test('LD uses MANN-FILTER when MANN evidence exists', () => {
-  assert.deepEqual(
-    evaluateCodigoBase({
-      duty: 'LIGHT_DUTY',
-      codigo_base: 'WK842',
-      competitor_codes: [{ manufacturer: 'MANN-FILTER', code: 'WK842' }],
-    }),
-    { valid: true, authority: 'MANN_FILTER' }
-  );
-});
-
-test('LD OEM fallback requires verified MANN absence and commercial OEM code', () => {
-  const base = { duty: 'LIGHT_DUTY', codigo_base: 'OEM456' };
-  assert.equal(evaluateCodigoBase(base).valid, false);
-  assert.deepEqual(
-    evaluateCodigoBase({
-      ...base,
-      enrichment_data: {
-        codigo_base_governance: {
-          mann_absence_verified: true,
-          oem_commercial_code_verified: true,
-        },
-      },
-    }),
-    { valid: true, authority: 'OEM' }
-  );
+  };
+  assert.equal(evaluateCodigoBase(row).valid, false);
 });

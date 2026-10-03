@@ -5,8 +5,8 @@ const assert = require('node:assert/strict');
 const { POLICY_VERSION, deriveCodigoBaseGovernance } = require('../lib/catalog-codigo-base-governance');
 const { evaluateCodigoBase } = require('../lib/catalog-codigo-base-policy');
 
-test('V3.1 policy version is active', () => {
-  assert.equal(POLICY_VERSION, '2026-08-19-v3.1');
+test('V3.2 policy version is active', () => {
+  assert.equal(POLICY_VERSION, '2026-10-02-v3.2');
 });
 
 test('HD observed Donaldson base is evidenced but not called verified without explicit authority', () => {
@@ -51,7 +51,7 @@ test('absence of Donaldson in JSONB is not manufacturing absence evidence', () =
   assert.equal(evaluateCodigoBase(row).reason, 'donaldson_manufacturing_absence_requires_verified_evidence');
 });
 
-test('HD verified aftermarket fallback is canonical without duplicating codigo_base in competitor_codes', () => {
+test('HD verified Fleetguard fallback is canonical without duplicating codigo_base in competitor_codes', () => {
   const row = {
     duty: 'HEAVY_DUTY', sku: 'EF91234', codigo_base: 'FF1234',
     competitor_codes: [{ manufacturer: 'BALDWIN', code: 'BF9999' }],
@@ -67,7 +67,7 @@ test('HD verified aftermarket fallback is canonical without duplicating codigo_b
   };
   const result = deriveCodigoBaseGovernance(row);
   assert.equal(result.state, 'CANONICAL_VERIFIED');
-  assert.equal(result.required_authority, 'VERIFIED_AFTERMARKET_FALLBACK');
+  assert.equal(result.required_authority, 'VERIFIED_FLEETGUARD_FALLBACK');
   assert.equal(evaluateCodigoBase(row).valid, true);
 });
 
@@ -78,6 +78,7 @@ test('HD verified OEM fallback is canonical while alternate columns remain indep
     oem_codes: [{ manufacturer: 'OEM', code: 'OEM2222' }],
     enrichment_data: { codigo_base_governance: {
       donaldson_absence_verified: true,
+      fleetguard_absence_verified: true,
       fallback_manufacturer_verified: true,
       fallback_commercial_code_verified: true,
       approved_manufacturer: 'OEM',

@@ -163,7 +163,7 @@ test('HD fallback cannot pass without verified Donaldson absence', () => {
   assert.ok(result.reasons.includes('DONALDSON_ABSENCE_NOT_VERIFIED'));
 });
 
-test('HD verified aftermarket fallback passes and codigo_base need not be duplicated', () => {
+test('HD verified Fleetguard fallback passes and codigo_base need not be duplicated', () => {
   const row = baseRow({
     sku: 'EF91234', codigo_base: 'FF1234',
     competitor_codes: [{ manufacturer: 'BALDWIN', code: 'BF9999', classification: 'AFTERMARKET' }],
@@ -300,4 +300,35 @@ test('active HERMES catalogue writers invoke the patch gateway before direct SQL
     assert.ok(write >= 0, `${relative} is expected to contain a catalogue writer`);
     assert.ok(source.indexOf('assertGovernedCatalogPatch', gate + 1) >= 0, `${relative} must call the gateway`);
   }
+});
+
+test('DRYCORE air dryer cannot remain LIGHT_DUTY', () => {
+  const row = {
+    ...baseRow(),
+    sku: 'ED40719',
+    duty: 'LIGHT_DUTY',
+    filter_type: 'air_dryer',
+    technology: 'DRYCORE™',
+  };
+  const result = validateCanonicalWrite(row);
+  assert.equal(result.valid, false);
+  assert.ok(result.reasons.includes('AIR_DRYER_REQUIRES_HEAVY_DUTY'));
+});
+
+test('HD OEM fallback is blocked until Fleetguard absence is verified', () => {
+  const row = baseRow({
+    sku: 'ED45295',
+    codigo_base: '0004295295',
+    enrichment_data: { codigo_base_governance: {
+      donaldson_absence_verified: true,
+      fallback_manufacturer_verified: true,
+      fallback_commercial_code_verified: true,
+      approved_manufacturer: 'MERCEDES-BENZ',
+      approved_codigo_base: '0004295295',
+      approved_source_column: 'OEM_CODES',
+    } },
+  });
+  const result = validateCanonicalWrite(row);
+  assert.equal(result.valid, false);
+  assert.ok(result.reasons.includes('FLEETGUARD_ABSENCE_NOT_VERIFIED'));
 });
