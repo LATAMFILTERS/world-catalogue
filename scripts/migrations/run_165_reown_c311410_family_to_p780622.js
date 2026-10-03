@@ -12,6 +12,8 @@ const OLD='C321447';
 const KEEP='C291410';
 const EXPECTED_CURRENT=73;
 const EXPECTED_OLD=77;
+const EXPECTED_OLD_DUPLICATES=29;
+const EXPECTED_OLD_UNIQUE=48;
 const EXPECTED_KEEP=2;
 const DONALDSON_URL='https://www.donaldson.com/content/dam/donaldson/engine-hydraulics-bulk/catalogs/industries-markets/truck-bus/emea/f116002/Truck-Bus-Catalogue.pdf';
 const MANN_URL='https://www.mann-filter.com/us-en/catalog/search-results/product.html/c311410_mann-filter.html';
@@ -30,7 +32,7 @@ async function main(){
   const targetQ=await db.query('SELECT * FROM public.elimfilters_catalog WHERE sku=$1 FOR UPDATE',[TARGET]);
   if(targetQ.rowCount!==1) throw new Error('TARGET_NOT_UNIQUE');
   const target=targetQ.rows[0];
-  if(target.codigo_base!==TARGET_BASE||target.duty!=='HEAVY_DUTY'||target.filter_type!=='air'||target.technology!=='MACROCORE™'||target.canonical_source_code!==TARGET_BASE||target.canonical_source_brand!=='DONALDSON'){
+  if(target.codigo_base!==TARGET_BASE||target.duty!=='HEAVY_DUTY'||target.filter_type!=='air'||String(target.technology||'').toUpperCase().replace(/[^A-Z0-9]/g,'')!=='MACROCORE'||target.canonical_source_code!==TARGET_BASE||target.canonical_source_brand!=='DONALDSON'){
    throw new Error('TARGET_IDENTITY_CHANGED');
   }
   const currentOwner=await db.query(
@@ -58,6 +60,13 @@ async function main(){
   );
   if(curRows.rowCount!==EXPECTED_CURRENT) throw new Error('CURRENT_ROW_COUNT_CHANGED '+curRows.rowCount);
   if(oldRows.rowCount!==EXPECTED_OLD) throw new Error('OLD_ROW_COUNT_CHANGED '+oldRows.rowCount);
+  const overlapQ=await db.query(
+   "WITH c AS (SELECT make,model_family,model_type,year FROM ld_catalog.ld_vehicle_applications WHERE elimfilters_sku=$1 AND ld_catalog.norm_part(source_sku)=ld_catalog.norm_part($2)), o AS (SELECT make,model_family,model_type,year FROM ld_catalog.ld_vehicle_applications WHERE elimfilters_sku=$3 AND ld_catalog.norm_part(source_sku)=ld_catalog.norm_part($4)) SELECT count(*)::int n FROM o WHERE EXISTS (SELECT 1 FROM c WHERE coalesce(c.make,'')=coalesce(o.make,'') AND coalesce(c.model_family,'')=coalesce(o.model_family,'') AND coalesce(c.model_type,'')=coalesce(o.model_type,'') AND coalesce(c.year,'')=coalesce(o.year,''))",
+   [CURRENT_SOURCE,CURRENT,OLD_SOURCE,OLD]
+  );
+  const oldDuplicateCount=overlapQ.rows[0].n;
+  const oldUniqueCount=EXPECTED_OLD-oldDuplicateCount;
+  if(oldDuplicateCount!==EXPECTED_OLD_DUPLICATES||oldUniqueCount!==EXPECTED_OLD_UNIQUE) throw new Error('PREDECESSOR_OVERLAP_CHANGED '+JSON.stringify({oldDuplicateCount,oldUniqueCount}));
   if(keepRows.rows[0].n!==EXPECTED_KEEP) throw new Error('KEEP_ROW_COUNT_CHANGED '+keepRows.rows[0].n);
   const targetParent=await db.query("SELECT elimfilters_sku,source_sku FROM ld_catalog.ld_product_catalog WHERE elimfilters_sku=$1",[TARGET]);
   if(targetParent.rowCount>0 && !(targetParent.rowCount===1&&targetParent.rows[0].source_sku===TARGET_BASE)) throw new Error('TARGET_PARENT_CONFLICT');
@@ -95,6 +104,8 @@ async function main(){
   report.pre.gateway=assertGovernedCatalogPatch(target,{enrichment_data:targetEnrichment});
   report.pre.current_rows=curRows.rowCount;
   report.pre.predecessor_rows=oldRows.rowCount;
+  report.pre.predecessor_constraint_duplicates=oldDuplicateCount;
+  report.pre.predecessor_unique=oldUniqueCount;
   report.pre.keep_rows=keepRows.rows[0].n;
   report.pre.target_parent=targetParent.rowCount;
   report.pre.target_identity=targetIdentity.rowCount;
@@ -135,12 +146,17 @@ async function main(){
     "UPDATE ld_catalog.ld_vehicle_applications SET elimfilters_sku=$1 WHERE elimfilters_sku=$2 AND id=ANY($3::bigint[]) AND ld_catalog.norm_part(source_sku)=ld_catalog.norm_part($4)",
     [TARGET,CURRENT_SOURCE,curRows.rows.map(r=>r.id),CURRENT]
    );
+   const deletedOldDuplicates=await db.query(
+    "DELETE FROM ld_catalog.ld_vehicle_applications o USING ld_catalog.ld_vehicle_applications c WHERE o.elimfilters_sku=$1 AND ld_catalog.norm_part(o.source_sku)=ld_catalog.norm_part($2) AND c.elimfilters_sku=$3 AND ld_catalog.norm_part(c.source_sku)=ld_catalog.norm_part($4) AND coalesce(c.make,'')=coalesce(o.make,'') AND coalesce(c.model_family,'')=coalesce(o.model_family,'') AND coalesce(c.model_type,'')=coalesce(o.model_type,'') AND coalesce(c.year,'')=coalesce(o.year,'') RETURNING o.id",
+    [OLD_SOURCE,OLD,TARGET,CURRENT]
+   );
    const movedOld=await db.query(
     "UPDATE ld_catalog.ld_vehicle_applications SET elimfilters_sku=$1 WHERE elimfilters_sku=$2 AND id=ANY($3::bigint[]) AND ld_catalog.norm_part(source_sku)=ld_catalog.norm_part($4)",
     [TARGET,OLD_SOURCE,oldRows.rows.map(r=>r.id),OLD]
    );
-   if(movedCurrent.rowCount!==EXPECTED_CURRENT||movedOld.rowCount!==EXPECTED_OLD) throw new Error('APPLICATION_MOVE_FAILED');
+   if(movedCurrent.rowCount!==EXPECTED_CURRENT||deletedOldDuplicates.rowCount!==EXPECTED_OLD_DUPLICATES||movedOld.rowCount!==EXPECTED_OLD_UNIQUE) throw new Error('APPLICATION_MOVE_FAILED '+JSON.stringify({movedCurrent:movedCurrent.rowCount,deletedOldDuplicates:deletedOldDuplicates.rowCount,movedOld:movedOld.rowCount}));
    report.mutations.current_reowned=movedCurrent.rowCount;
+   report.mutations.predecessor_duplicates_deleted=deletedOldDuplicates.rowCount;
    report.mutations.predecessor_reowned=movedOld.rowCount;
 
    const retiredIdentity=await db.query("UPDATE ld_catalog.ld_canonical_product_identity SET status='RETIRED',updated_at=now(),evidence_source='MIGRATION_165_SUPERSEDED_BY_C311410_P780622' WHERE elimfilters_sku=$1 AND canonical_part_number=$2 AND status='ACTIVE' RETURNING elimfilters_sku",[OLD_SOURCE,OLD]);
@@ -182,7 +198,7 @@ async function main(){
   report.post=post.rows[0];
 
   if(EXECUTE){
-   if(report.post.target_current!==EXPECTED_CURRENT||report.post.target_old!==EXPECTED_OLD||
+   if(report.post.target_current!==EXPECTED_CURRENT||report.post.target_old!==EXPECTED_OLD_UNIQUE||
       report.post.source_current!==0||report.post.source_old!==0||report.post.keep_rows!==EXPECTED_KEEP||
       report.post.base_resolves!==1||report.post.current_resolves!==1||report.post.old_resolves!==1||report.post.old_other!==0||
       report.post.old_identity_status!=='RETIRED'||report.post.old_active!==false||
