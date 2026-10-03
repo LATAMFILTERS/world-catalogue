@@ -29,9 +29,6 @@ const {
 const {
   assertGovernedCatalogPatch,
 } = require('../lib/catalog-write-gateway');
-const {
-  findOfficialLiteratureCrossReference,
-} = require('../lib/donaldson-official-cross-reference-literature');
 
 const DATABASE_URL = process.env.CATALOG_DATABASE_URL || process.env.DATABASE_URL;
 if (!DATABASE_URL) throw new Error('Missing CATALOG_DATABASE_URL or DATABASE_URL');
@@ -242,21 +239,6 @@ async function verifyRow(row, { signal = null } = {}) {
 
     for (const candidate of candidates) {
       if (signal?.aborted) return { resolved: false, reason: 'VERIFY_ROW_TIMEOUT' };
-
-      const literature = findOfficialLiteratureCrossReference(candidate, row.codigo_base);
-      if (literature?.ok) {
-        matches.push({
-          candidate,
-          url: literature.evidenceUrl,
-          hash: literature.evidenceHash,
-          evidenceHashKind: literature.evidenceHashKind,
-          evidenceKind: literature.evidenceKind,
-          evidenceAuthority: literature.evidenceAuthority,
-          evidenceDocumentId: literature.evidenceDocumentId,
-          replacedReferenceManufacturer: literature.manufacturer,
-        });
-        continue;
-      }
 
       const page = await fetchOfficialDonaldsonPage(candidate, signal);
       if (!page.ok) {
