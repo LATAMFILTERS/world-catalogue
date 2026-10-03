@@ -47,6 +47,7 @@ for (const entry of entries) {
     if (row.canonical_source_brand) console.warn(`NOTE ${entry.sku}: canonical source ${row.canonical_source_brand} ${row.canonical_source_code}`);
     const record = buildRecord(row, entry, { ...source, ...(row._seed ? { seed: row._seed } : {}) });
     if (!entry.family) throw new Error(`STOP_REVIEW ${entry.sku}: list entry has no family`);
+    for (const w of record.physicalWarnings || []) console.warn(`WARN ${entry.sku}: ${w}`);
     products.push(record);
   } catch (error) {
     blocked.push({ sku: entry.sku.toUpperCase(), reason: error.message.replace(/^(STOP_REVIEW|HOLD) \S+: /, ''), kind: error.message.split(' ')[0] });

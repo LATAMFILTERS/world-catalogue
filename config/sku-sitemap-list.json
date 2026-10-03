@@ -7,21 +7,12 @@
   },
   "skus": [
     {
-      "sku": "EH60950",
-      "family": "hydraulic-filters"
+      "sku": "EA13648",
+      "family": "primary-air"
     },
     {
-      "sku": "EL83191",
-      "family": "oil-filters"
-    },
-    {
-      "sku": "EL84004",
-      "family": "oil-filters"
-    },
-    {
-      "sku": "EF95112",
-      "family": "secondary-fuel",
-      "hold": "specs sourced from Fleetguard FF5112; not published until verified against ELIMFILTERS own data (policy: Victor)"
+      "sku": "ED47754",
+      "family": "air-dryer-filters"
     },
     {
       "sku": "EF90668",
@@ -32,12 +23,9 @@
       "family": "fuel-water-separators"
     },
     {
-      "sku": "EA13648",
-      "family": "primary-air"
-    },
-    {
-      "sku": "EA30719",
-      "family": "air-dryer-filters"
+      "sku": "EF95112",
+      "family": "secondary-fuel",
+      "hold": "specs sourced from Fleetguard FF5112; not published until verified against ELIMFILTERS own data (policy: Victor)"
     },
     {
       "sku": "EH60222",
@@ -46,8 +34,20 @@
     {
       "sku": "EH60223",
       "family": "hydraulic-filters"
+    },
+    {
+      "sku": "EH60950",
+      "family": "hydraulic-filters"
+    },
+    {
+      "sku": "EL83191",
+      "family": "oil-filters"
+    },
+    {
+      "sku": "EL84004",
+      "family": "oil-filters"
     }
   ],
   "policy": "VERIFIED-only: a SKU is published only if canonical_source_status = VERIFIED, the gates in lib/product-page-data.js pass and it has no 'hold'.",
-  "skus_note": "Phase-1 set = the 10 SKUs in config/product-pages/live-rows.json. Holds removed for EH60950 / EF90668 / EF90669 after production data was corrected (generic media and no third-party mark; HYDROCORE scope). EF95112 stays on hold (policy: Victor)."
+  "skus_note": "Phase-1 set = the 10 SKUs in config/product-pages/live-rows.json (sha256 0e3505e2...099b, commit b31449b). EF95112 stays on hold (policy: Victor)."
 }

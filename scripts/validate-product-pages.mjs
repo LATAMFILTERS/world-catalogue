@@ -4,7 +4,7 @@ import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { createRequire } from 'node:module';
 
-const { OEM_BRANDS, CROSS_BRANDS } = createRequire(import.meta.url)('../lib/product-page-data.js');
+const { OEM_BRANDS, CROSS_BRANDS, physicalIssuesFromSpecs } = createRequire(import.meta.url)('../lib/product-page-data.js');
 const norm = (b) => b.toUpperCase().replace(/[-\s]/g, '');
 const OEM_OK = new Set([...OEM_BRANDS].map(norm));
 const CROSS_OK = new Set([...CROSS_BRANDS, 'MANN-FILTER'].map(norm));
@@ -67,6 +67,10 @@ for (const p of snapshot.products) {
   if (!/<table/.test(html)) fail(sku, 'no HTML spec table');
   for (const r of p.oem) if (!OEM_OK.has(norm(r.brand))) fail(sku, `OEM list shows a non-OEM brand: ${r.brand}`);
   for (const r of p.crossRefs) if (!CROSS_OK.has(norm(r.brand))) fail(sku, `cross-reference list shows a brand outside the allowed set: ${r.brand}`);
+  // Physical plausibility: impossible geometry breaks the build, suspicious values only warn.
+  const physical = physicalIssuesFromSpecs(snapshot.products.find((q) => q.sku === sku).specs);
+  for (const e of physical.errors) fail(sku, `physically impossible: ${e}`);
+  for (const w of physical.warnings) console.warn(`WARN ${sku}: ${w}`);
   if (new Set(p.specs.map((s) => s.name)).size !== p.specs.length) fail(sku, 'duplicate spec names in snapshot');
   const rowNames = [...html.matchAll(/<th[^>]*scope="row"[^>]*>([^<]*)<\/th>/g)].map((m) => m[1]);
   if (new Set(rowNames).size !== rowNames.length) fail(sku, `duplicate spec rows in HTML: ${rowNames}`);
