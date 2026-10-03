@@ -5,8 +5,8 @@ const assert = require('node:assert/strict');
 const { POLICY_VERSION, deriveCodigoBaseGovernance } = require('../lib/catalog-codigo-base-governance');
 const { evaluateCodigoBase } = require('../lib/catalog-codigo-base-policy');
 
-test('V3.1 policy version is active', () => {
-  assert.equal(POLICY_VERSION, '2026-08-19-v3.1');
+test('V3.2 policy version is active', () => {
+  assert.equal(POLICY_VERSION, '2026-10-02-v3.2');
 });
 
 test('HD observed Donaldson base is evidenced but not called verified without explicit authority', () => {
@@ -51,7 +51,7 @@ test('absence of Donaldson in JSONB is not manufacturing absence evidence', () =
   assert.equal(evaluateCodigoBase(row).reason, 'donaldson_manufacturing_absence_requires_verified_evidence');
 });
 
-test('HD verified aftermarket fallback is canonical without duplicating codigo_base in competitor_codes', () => {
+test('HD verified Fleetguard fallback is canonical without duplicating codigo_base in competitor_codes', () => {
   const row = {
     duty: 'HEAVY_DUTY', sku: 'EF91234', codigo_base: 'FF1234',
     competitor_codes: [{ manufacturer: 'BALDWIN', code: 'BF9999' }],
@@ -67,7 +67,7 @@ test('HD verified aftermarket fallback is canonical without duplicating codigo_b
   };
   const result = deriveCodigoBaseGovernance(row);
   assert.equal(result.state, 'CANONICAL_VERIFIED');
-  assert.equal(result.required_authority, 'VERIFIED_AFTERMARKET_FALLBACK');
+  assert.equal(result.required_authority, 'VERIFIED_FLEETGUARD_FALLBACK');
   assert.equal(evaluateCodigoBase(row).valid, true);
 });
 
@@ -78,6 +78,7 @@ test('HD verified OEM fallback is canonical while alternate columns remain indep
     oem_codes: [{ manufacturer: 'OEM', code: 'OEM2222' }],
     enrichment_data: { codigo_base_governance: {
       donaldson_absence_verified: true,
+      fleetguard_absence_verified: true,
       fallback_manufacturer_verified: true,
       fallback_commercial_code_verified: true,
       approved_manufacturer: 'OEM',
@@ -109,6 +110,7 @@ test('LD observed MANN-FILTER base is evidenced but not verified without explici
   const row = {
     duty: 'LIGHT_DUTY', sku: 'EF30842', codigo_base: 'WK842',
     competitor_codes: [{ manufacturer: 'MANN-FILTER', code: 'WK842' }],
+    enrichment_data: { codigo_base_governance: { origin_group: 'EUROPEAN' } },
   };
   assert.equal(deriveCodigoBaseGovernance(row).state, 'CANONICAL_EVIDENCED_NOT_VERIFIED');
   assert.equal(evaluateCodigoBase(row).valid, false);
@@ -118,6 +120,7 @@ test('LD explicitly verified MANN-FILTER authority is canonical verified', () =>
   const row = {
     duty: 'LIGHT_DUTY', sku: 'EF30842', codigo_base: 'WK842', competitor_codes: [], oem_codes: [],
     enrichment_data: { codigo_base_governance: {
+      origin_group: 'EUROPEAN',
       primary_manufacturer_verified: true,
       approved_manufacturer: 'MANN-FILTER',
       approved_codigo_base: 'WK842',
@@ -131,6 +134,7 @@ test('LD missing MANN reference remains an absence-verification case', () => {
   const result = deriveCodigoBaseGovernance({
     duty: 'LIGHT_DUTY', sku: 'EF34421', codigo_base: '77024-42110',
     oem_codes: [{ manufacturer: 'TOYOTA', code: '23300-0V010' }],
+    enrichment_data: { codigo_base_governance: { origin_group: 'EUROPEAN' } },
   });
   assert.equal(result.state, 'VERIFY_PRIMARY_ABSENCE');
 });
