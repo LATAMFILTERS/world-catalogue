@@ -87,14 +87,14 @@ async function main(){
           canonical_source_status,canonical_verified_at,duty_source_brand,duty_validation_status,
           duty_verified_at,description,catalog_active,enrichment_data
         ) VALUES(
-          $1,$2,'air','MACROCORE™',579.4,263.5,153.2,
-          'HEAVY_DUTY','Cellulose','Round','DONALDSON',$2,
+          $1::text,$2::text,'air','MACROCORE™',579.4,263.5,153.2,
+          'HEAVY_DUTY','Cellulose','Round','DONALDSON',$2::text,
           'VERIFIED',now(),'DONALDSON','VERIFIED',now(),
           'Engine Air Filter - Primary Round',true,
           jsonb_build_object(
             'codigo_base_governance',jsonb_build_object(
               'approved_manufacturer','DONALDSON',
-              'approved_codigo_base',$2,
+              'approved_codigo_base',$2::text,
               'primary_manufacturer_verified',true,
               'governance_state','CANONICAL_VERIFIED',
               'evidence_note','B3.1 reconstruction: MANN C271397 cross-references Donaldson P117797; geometry aligns with source application family.'

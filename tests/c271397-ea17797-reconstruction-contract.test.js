@@ -32,6 +32,8 @@ test('run_141 refuses existing target or P117797 ownership and leaves unrelated 
   assert.doesNotMatch(file,/DELETE FROM ld_catalog\.ld_vehicle_applications/);
 });
 
+test('run_141 types reused SQL parameters explicitly',()=>{assert.match(file,/\$1::text,\$2::text/);assert.match(file,/approved_codigo_base',\$2::text/)});
+
 test('run_141 is serializable dry-run and canonical-db only',()=>{
   assert.match(file,/BEGIN ISOLATION LEVEL SERIALIZABLE/);
   assert.match(file,/process\.argv\.includes\('--execute'\)/);
