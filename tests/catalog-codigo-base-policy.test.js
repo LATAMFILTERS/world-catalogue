@@ -82,3 +82,63 @@ test('generic HD aftermarket fallback is rejected', () => {
   };
   assert.equal(evaluateCodigoBase(row).valid, false);
 });
+
+test('LD European uses MANN-FILTER as primary and OEM only after verified MANN absence', () => {
+  const primary = {
+    duty: 'LIGHT_DUTY', sku: 'EL12345', codigo_base: 'HU1234X',
+    oem_codes: [], competitor_codes: [],
+    ...gov({
+      origin_group: 'EUROPEAN',
+      primary_manufacturer_verified: true,
+      approved_manufacturer: 'MANN-FILTER',
+      approved_codigo_base: 'HU1234X',
+    }),
+  };
+  assert.equal(evaluateCodigoBase(primary).authority, 'VERIFIED_MANN_FILTER');
+
+  const fallback = {
+    duty: 'LIGHT_DUTY', sku: 'EL54321', codigo_base: 'A123456789',
+    oem_codes: [], competitor_codes: [],
+    ...gov({
+      origin_group: 'EUROPEAN',
+      mann_absence_verified: true,
+      fallback_manufacturer_verified: true,
+      fallback_commercial_code_verified: true,
+      approved_manufacturer: 'BMW',
+      approved_codigo_base: 'A123456789',
+      approved_source_column: 'OEM_CODES',
+    }),
+  };
+  assert.equal(evaluateCodigoBase(fallback).authority, 'VERIFIED_OEM_FALLBACK');
+});
+
+test('LD non-European uses FRAM as primary and OEM only after verified FRAM absence', () => {
+  const primary = {
+    duty: 'LIGHT_DUTY', sku: 'EL24680', codigo_base: 'PH6607',
+    oem_codes: [], competitor_codes: [],
+    ...gov({
+      origin_group: 'NON_EUROPEAN',
+      primary_manufacturer_verified: true,
+      approved_manufacturer: 'FRAM',
+      approved_codigo_base: 'PH6607',
+    }),
+  };
+  assert.equal(evaluateCodigoBase(primary).authority, 'VERIFIED_FRAM');
+
+  const blocked = {
+    duty: 'LIGHT_DUTY', sku: 'EL13579', codigo_base: '15208-65F0E',
+    oem_codes: [], competitor_codes: [],
+    ...gov({
+      origin_group: 'NON_EUROPEAN',
+      fallback_manufacturer_verified: true,
+      fallback_commercial_code_verified: true,
+      approved_manufacturer: 'NISSAN',
+      approved_codigo_base: '15208-65F0E',
+      approved_source_column: 'OEM_CODES',
+    }),
+  };
+  assert.equal(evaluateCodigoBase(blocked).authority, 'VERIFY_FRAM_ABSENCE');
+
+  blocked.enrichment_data.codigo_base_governance.fram_absence_verified = true;
+  assert.equal(evaluateCodigoBase(blocked).authority, 'VERIFIED_OEM_FALLBACK');
+});

@@ -110,6 +110,7 @@ test('LD observed MANN-FILTER base is evidenced but not verified without explici
   const row = {
     duty: 'LIGHT_DUTY', sku: 'EF30842', codigo_base: 'WK842',
     competitor_codes: [{ manufacturer: 'MANN-FILTER', code: 'WK842' }],
+    enrichment_data: { codigo_base_governance: { origin_group: 'EUROPEAN' } },
   };
   assert.equal(deriveCodigoBaseGovernance(row).state, 'CANONICAL_EVIDENCED_NOT_VERIFIED');
   assert.equal(evaluateCodigoBase(row).valid, false);
@@ -119,6 +120,7 @@ test('LD explicitly verified MANN-FILTER authority is canonical verified', () =>
   const row = {
     duty: 'LIGHT_DUTY', sku: 'EF30842', codigo_base: 'WK842', competitor_codes: [], oem_codes: [],
     enrichment_data: { codigo_base_governance: {
+      origin_group: 'EUROPEAN',
       primary_manufacturer_verified: true,
       approved_manufacturer: 'MANN-FILTER',
       approved_codigo_base: 'WK842',
@@ -132,6 +134,7 @@ test('LD missing MANN reference remains an absence-verification case', () => {
   const result = deriveCodigoBaseGovernance({
     duty: 'LIGHT_DUTY', sku: 'EF34421', codigo_base: '77024-42110',
     oem_codes: [{ manufacturer: 'TOYOTA', code: '23300-0V010' }],
+    enrichment_data: { codigo_base_governance: { origin_group: 'EUROPEAN' } },
   });
   assert.equal(result.state, 'VERIFY_PRIMARY_ABSENCE');
 });

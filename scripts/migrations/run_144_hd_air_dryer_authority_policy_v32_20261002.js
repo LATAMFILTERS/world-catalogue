@@ -101,11 +101,28 @@ BEGIN
     IF expected_ld_brand IS NULL THEN
       RAISE EXCEPTION 'CATALOG_POLICY_V32: no active LD canonical source policy for origin_group %', origin_group_value;
     END IF;
-    IF coalesce((gov->>'primary_manufacturer_verified')::boolean, false) IS NOT TRUE THEN
-      RAISE EXCEPTION 'CATALOG_POLICY_V32: LD SKU % requires verified canonical manufacturer authority', NEW.sku;
+    IF coalesce((gov->>'primary_manufacturer_verified')::boolean, false) IS TRUE
+       AND approved_manufacturer = expected_ld_brand
+       AND approved_code_norm = base_norm THEN
+      RETURN NEW;
     END IF;
-    IF approved_manufacturer <> expected_ld_brand THEN
-      RAISE EXCEPTION 'CATALOG_POLICY_V32: LD SKU % origin_group % requires canonical manufacturer %, got %', NEW.sku, origin_group_value, expected_ld_brand, approved_manufacturer;
+
+    IF origin_group_value = 'EUROPEAN' THEN
+      IF coalesce((gov->>'mann_absence_verified')::boolean, false) IS NOT TRUE THEN
+        RAISE EXCEPTION 'CATALOG_POLICY_V32: LD European SKU % requires verified MANN-FILTER authority or verified MANN-FILTER manufacturing absence', NEW.sku;
+      END IF;
+    ELSE
+      IF coalesce((gov->>'fram_absence_verified')::boolean, false) IS NOT TRUE THEN
+        RAISE EXCEPTION 'CATALOG_POLICY_V32: LD non-European SKU % requires verified FRAM authority or verified FRAM manufacturing absence', NEW.sku;
+      END IF;
+    END IF;
+
+    IF coalesce((gov->>'fallback_manufacturer_verified')::boolean, false) IS NOT TRUE
+       OR coalesce((gov->>'fallback_commercial_code_verified')::boolean, false) IS NOT TRUE THEN
+      RAISE EXCEPTION 'CATALOG_POLICY_V32: LD SKU % OEM fallback requires verified manufacturer and commercial code', NEW.sku;
+    END IF;
+    IF approved_source <> 'OEM_CODES' THEN
+      RAISE EXCEPTION 'CATALOG_POLICY_V32: LD SKU % fallback must be OEM_CODES', NEW.sku;
     END IF;
     IF approved_code_norm = '' OR approved_code_norm <> base_norm THEN
       RAISE EXCEPTION 'CATALOG_POLICY_V32: LD SKU % codigo_base must equal approved_codigo_base', NEW.sku;
