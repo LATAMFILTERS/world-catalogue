@@ -88,9 +88,9 @@ async function main(){
     if(EXECUTE){
       const updated=await db.query(`
         UPDATE public.elimfilters_catalog
-        SET codigo_base=$2,
+        SET codigo_base=$2::text,
             canonical_source_brand='MANN-FILTER',
-            canonical_source_code=$2,
+            canonical_source_code=$2::text,
             canonical_source_status='VERIFIED',
             canonical_verified_at=now(),
             duty_source_brand='MANN-FILTER',
@@ -104,7 +104,7 @@ async function main(){
                   'policy_version','2026-08-19-v3.1',
                   'state','CANONICAL_VERIFIED',
                   'approved_manufacturer','MANN-FILTER',
-                  'approved_codigo_base',$2,
+                  'approved_codigo_base',$2::text,
                   'primary_manufacturer_verified',true,
                   'governance_state','CANONICAL_VERIFIED',
                   'evidence_note','run_148: LD SKU rule 21202 -> 1202; MANN C2120/2 geometry 203 x 50 mm matches EA31202 and 35 source applications.'
@@ -119,7 +119,7 @@ async function main(){
 
       const parentUpdate=await db.query(`
         UPDATE ld_catalog.ld_product_catalog
-        SET source_sku=$2,updated_at=now()
+        SET source_sku=$2::text,updated_at=now()
         WHERE elimfilters_sku=$1 AND ld_catalog.norm_part(source_sku)=ld_catalog.norm_part($3)
         RETURNING elimfilters_sku
       `,[SKU,MANN,OLD_PARENT]);
@@ -129,7 +129,7 @@ async function main(){
       const identity=await db.query(`
         INSERT INTO ld_catalog.ld_canonical_product_identity(
           elimfilters_sku,origin_group,canonical_brand,canonical_part_number,filter_type,status,evidence_source,created_at,updated_at
-        ) VALUES($1,'EUROPEAN','MANN-FILTER',$2,'air','ACTIVE','MIGRATION_148_C21202_IDENTITY_REPAIR',now(),now())
+        ) VALUES($1::text,'EUROPEAN','MANN-FILTER',$2::text,'air','ACTIVE','MIGRATION_148_C21202_IDENTITY_REPAIR',now(),now())
         RETURNING elimfilters_sku
       `,[SKU,MANN]);
       if(identity.rowCount!==1) throw new Error('IDENTITY_INSERT_FAILED');
