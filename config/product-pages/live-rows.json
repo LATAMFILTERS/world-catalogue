@@ -7,7 +7,7 @@
       "description": "ELIMFILTERS® EA13648 Engine air filter for heavy-duty intake systems. MACROCORE™ progressive density media captures dust and airborne particles before they reach the combustion chamber, protecting cylinders, rings, and turbochargers from abrasive wear.",
       "duty": "HEAVY_DUTY",
       "filter_type": "air",
-      "sub_type": null,
+      "sub_type": "Air Filter, Primary Special",
       "technology": "MACROCORE™",
       "installation_type": "Special",
       "thread_size": "M76 x 4",
@@ -21,9 +21,9 @@
       "filter_media": null,
       "burst_pressure_psi": null,
       "catalog_active": true,
-      "canonical_source_brand": null,
+      "canonical_source_brand": "DONALDSON",
       "canonical_source_code": "P783648",
-      "canonical_source_status": "UNVERIFIED",
+      "canonical_source_status": "VERIFIED",
       "duty_validation_status": "LEGACY_UNVERIFIED",
       "product_dimensions_validation_status": null,
       "enrichment_required_authority": null,
@@ -72,15 +72,15 @@
     },
     {
       "sku": "EA30719",
-      "codigo_base": "0719",
+      "codigo_base": "TB719",
       "name": null,
       "description": "About this item For over 70 years, ELIMFILTERS has been synonymous with premium filters in original equipment quality worldwide. Benefit from a comprehensive product range and optimum filtration performance to protect drivers, engines and machinery. In the familiar yellow-green packaging, ELIMFILTERS offers innovative solutions to new filtration challenges and produces on a global scale in accordance with the latest international production and test standards in the automotive industry.",
       "duty": "LIGHT_DUTY",
       "filter_type": "air",
-      "sub_type": "Genuine Media",
-      "technology": "MACROCORE™",
+      "sub_type": "Air Dryer Cartridge",
+      "technology": "DRYCORE™",
       "installation_type": "Panel",
-      "thread_size": "3/4-16 UNF mm",
+      "thread_size": "3/4-16 UNF",
       "height_mm": 123,
       "outer_diameter_mm": 76,
       "gasket_od_mm": 62,
@@ -91,9 +91,9 @@
       "filter_media": null,
       "burst_pressure_psi": null,
       "catalog_active": true,
-      "canonical_source_brand": null,
-      "canonical_source_code": "0719",
-      "canonical_source_status": "UNVERIFIED",
+      "canonical_source_brand": "MANN-FILTER",
+      "canonical_source_code": "TB719",
+      "canonical_source_status": "VERIFIED",
       "duty_validation_status": "LEGACY_UNVERIFIED",
       "product_dimensions_validation_status": null,
       "enrichment_required_authority": null,
@@ -219,482 +219,14 @@
       "oem_total_all_brands": 5
     },
     {
-      "sku": "EF30006",
-      "codigo_base": "0006",
-      "name": null,
-      "description": "About this item High-quality ELIMFILTERS fuel filters remove unwanted and damaging dirt particles from the fuel and thus prevent possible damage. Thanks to the highest degree of separation and sealing, the fuel filter ensures functional reliability and optimum protection during the entire maintenance interval.",
-      "duty": "LIGHT_DUTY",
-      "filter_type": "fuel",
-      "sub_type": "Genuine Media",
-      "technology": "SYNTAPORE™",
-      "installation_type": "Spin-On",
-      "thread_size": "1-14 UNS inch",
-      "height_mm": 129.54,
-      "outer_diameter_mm": 109.22,
-      "gasket_od_mm": null,
-      "gasket_id_mm": null,
-      "micron_rating": null,
-      "nominal_efficiency": null,
-      "iso_test_method": null,
-      "filter_media": null,
-      "burst_pressure_psi": null,
-      "catalog_active": true,
-      "canonical_source_brand": null,
-      "canonical_source_code": "0006",
-      "canonical_source_status": "UNVERIFIED",
-      "duty_validation_status": "LEGACY_UNVERIFIED",
-      "product_dimensions_validation_status": null,
-      "enrichment_required_authority": null,
-      "third_party_mark": null,
-      "specs": {
-        "rated_flow_l_min": null,
-        "rated_flow_gpm": null,
-        "hydrostatic_burst_minimum_psi": null
-      },
-      "oem_codes": [
-        {
-          "code": "21017305",
-          "manufacturer": "MACK"
-        },
-        {
-          "code": "263G107021",
-          "manufacturer": "HITACHI"
-        },
-        {
-          "code": "4679981",
-          "manufacturer": "HITACHI"
-        },
-        {
-          "code": "4711160",
-          "manufacturer": "HITACHI"
-        },
-        {
-          "code": "4719920",
-          "manufacturer": "HITACHI"
-        },
-        {
-          "code": "898074288",
-          "manufacturer": "ISUZU"
-        },
-        {
-          "code": "8-98074288-0",
-          "manufacturer": "ISUZU"
-        },
-        {
-          "code": "8980758540",
-          "manufacturer": "ISUZU"
-        },
-        {
-          "code": "8-98135462-0",
-          "manufacturer": "ISUZU"
-        },
-        {
-          "code": "8981354620",
-          "manufacturer": "HITACHI"
-        },
-        {
-          "code": "8981354620",
-          "manufacturer": "JOHN DEERE"
-        },
-        {
-          "code": "8-98135462-1",
-          "manufacturer": "ISUZU"
-        },
-        {
-          "code": "8981527370",
-          "manufacturer": "ISUZU"
-        },
-        {
-          "code": "8981527371",
-          "manufacturer": "HITACHI"
-        },
-        {
-          "code": "8981527371R",
-          "manufacturer": "HITACHI"
-        },
-        {
-          "code": "98074288",
-          "manufacturer": "ISUZU"
-        },
-        {
-          "code": "H-335620",
-          "brand": "CASE CONSTRUCTION",
-          "manufacturer": "CASE"
-        },
-        {
-          "code": "H649277",
-          "brand": "CASE CONSTRUCTION",
-          "manufacturer": "CASE"
-        }
-      ],
-      "competitor_codes": [
-        {
-          "code": "PU10006X",
-          "source": "mann_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 12:55:09.788508-05",
-          "manufacturer": "MANN"
-        },
-        {
-          "code": "WK10006Z",
-          "source": "mann_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 12:55:09.788508-05",
-          "manufacturer": "MANN"
-        },
-        {
-          "code": "51203",
-          "brand": "WIX",
-          "manufacturer": "WIX"
-        },
-        {
-          "code": "G6",
-          "source": "fram_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 11:30:52.645949-05",
-          "manufacturer": "FRAM"
-        },
-        {
-          "code": "G6Y0",
-          "source": "fram_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 11:30:52.645949-05",
-          "manufacturer": "FRAM"
-        }
-      ],
-      "equipment_applications": [],
-      "vehicle_applications": [
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "MACK (USA)",
-          "model": "GRANITE GRANITE",
-          "year_range": "",
-          "engine_code": "MACK MP8"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "MACK (USA)",
-          "model": "MACK GRANITE",
-          "year_range": "",
-          "engine_code": "MACK MP8"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "MACK (USA)",
-          "model": "MACK MACK",
-          "year_range": "",
-          "engine_code": "E7 400"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "MACK (USA)",
-          "model": "MACK MACK",
-          "year_range": "",
-          "engine_code": "MP7"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "MACK (USA)",
-          "model": "MACK MACK",
-          "year_range": "",
-          "engine_code": "MP8"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "CASE CONSTRUCTION",
-          "year": "01/05 →",
-          "model_type": "CX 36 B",
-          "engine_code": "",
-          "model_family": "CXB-Serie"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "HITACHI",
-          "year": "",
-          "model_type": "200-3/LC-3/210H-3/LCH-3/K-3/ (LCK-3/LCN-3/240N-3) (200001-)",
-          "engine_code": "",
-          "model_family": "ZX- Serie (Mobilbagger / Wheel Excavator)"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "HITACHI",
-          "year": "",
-          "model_type": "225US-3 (200001-)",
-          "engine_code": "Isuzu AI-4HK1XYSA-02",
-          "model_family": "ZX- Serie (Mobilbagger / Wheel Excavator)"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "HITACHI",
-          "year": "",
-          "model_type": "225USLC-3 (200001-)",
-          "engine_code": "Isuzu AI-4HK1XYSA-03",
-          "model_family": "ZX- Serie (Mobilbagger / Wheel Excavator)"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "HITACHI",
-          "year": "",
-          "model_type": "240-3/240LC-3 (200001-)",
-          "engine_code": "Iszuzu AH-4HK1XYSA-01",
-          "model_family": "ZX- Serie (Mobilbagger / Wheel Excavator)"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "HITACHI",
-          "year": "",
-          "model_type": "250LC-3/LCN-3/H-3/LCH-3/ (K-3/LCK-3) (200001-)",
-          "engine_code": "Iszuzu AH-4HK1XYSA-01",
-          "model_family": "ZX- Serie (Mobilbagger / Wheel Excavator)"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "HITACHI",
-          "year": "",
-          "model_type": "270-3/LC-3/280LC-3/LCN-3/ (LCH-3) (30001-)",
-          "engine_code": "Isuzu AH-4HK1XYSA-03",
-          "model_family": "ZX- Serie (Mobilbagger / Wheel Excavator)"
-        }
-      ],
-      "oem_total_all_brands": 40
-    },
-    {
-      "sku": "EF30012",
-      "codigo_base": "0012",
-      "name": null,
-      "description": "About this item High-quality ELIMFILTERS fuel filters remove unwanted and damaging dirt particles from the fuel and thus prevent possible damage. Thanks to the highest degree of separation and sealing, the fuel filter ensures functional reliability and optimum protection during the entire maintenance interval.",
-      "duty": "LIGHT_DUTY",
-      "filter_type": "fuel",
-      "sub_type": "Genuine Media",
-      "technology": "SYNTAPORE™",
-      "installation_type": "Spin-On",
-      "thread_size": "1-14 UNS-2B mm",
-      "height_mm": 203,
-      "outer_diameter_mm": 94,
-      "gasket_od_mm": 63,
-      "gasket_id_mm": 72,
-      "micron_rating": null,
-      "nominal_efficiency": null,
-      "iso_test_method": null,
-      "filter_media": null,
-      "burst_pressure_psi": null,
-      "catalog_active": true,
-      "canonical_source_brand": null,
-      "canonical_source_code": "0012",
-      "canonical_source_status": "UNVERIFIED",
-      "duty_validation_status": "LEGACY_UNVERIFIED",
-      "product_dimensions_validation_status": null,
-      "enrichment_required_authority": null,
-      "third_party_mark": null,
-      "specs": {
-        "rated_flow_l_min": null,
-        "rated_flow_gpm": null,
-        "hydrostatic_burst_minimum_psi": null
-      },
-      "oem_codes": [
-        {
-          "code": "1852005",
-          "manufacturer": "DAF",
-          "classification": "OEM",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "2164462",
-          "manufacturer": "DAF",
-          "classification": "OEM",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "2277128",
-          "manufacturer": "DAF",
-          "classification": "OEM",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        }
-      ],
-      "competitor_codes": [
-        {
-          "code": "PU10012ZKIT",
-          "source": "mann_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 12:55:09.788508-05",
-          "manufacturer": "MANN",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "FP12",
-          "source": "fram_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 11:37:42.790714-05",
-          "manufacturer": "FRAM",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "G12",
-          "source": "fram_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 11:37:42.790714-05",
-          "manufacturer": "FRAM",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "G12D",
-          "source": "fram_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 11:37:42.790714-05",
-          "manufacturer": "FRAM",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "G12DP",
-          "source": "fram_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 11:37:42.790714-05",
-          "manufacturer": "FRAM",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        }
-      ],
-      "equipment_applications": [],
-      "vehicle_applications": [
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "CASE-IH (CNH GLOBAL)",
-          "model": "1600-Serie 1688",
-          "year_range": "",
-          "engine_code": "Cummins 6T830"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "DAEWOO CONSTRUCTION EQUIPMENT",
-          "model": "MEGA-Serie (Radlader / Wheel Loaders) MEGA 250-III",
-          "year_range": "",
-          "engine_code": "DAEWOO D1146T"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "DAEWOO CONSTRUCTION EQUIPMENT",
-          "model": "MEGA-Serie (Radlader / Wheel Loaders) MEGA 300",
-          "year_range": "01/04 →",
-          "engine_code": "DAEWOO DE12T"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "DAEWOO CONSTRUCTION EQUIPMENT",
-          "model": "MEGA-Serie (Radlader / Wheel Loaders) MEGA 400-III",
-          "year_range": "",
-          "engine_code": "DAEWOO D2366T"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "DAEWOO CONSTRUCTION EQUIPMENT",
-          "model": "MEGA-Serie (Radlader / Wheel Loaders) MEGA 400-V",
-          "year_range": "",
-          "engine_code": "DAEWOO DE12T"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "DAEWOO CONSTRUCTION EQUIPMENT",
-          "model": "Solar (Hydraulikbagger / Hydraulic Excavators) 170 W-III",
-          "year_range": "",
-          "engine_code": "Daewoo DB58"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "DAEWOO CONSTRUCTION EQUIPMENT",
-          "model": "Solar (Hydraulikbagger / Hydraulic Excavators) 220LC-V SLR",
-          "year_range": "",
-          "engine_code": "DAEWOO DB58TI"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "DAEWOO CONSTRUCTION EQUIPMENT",
-          "model": "Solar (Hydraulikbagger / Hydraulic Excavators) 220LL",
-          "year_range": "",
-          "engine_code": "DAEWOO DB58TI"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "DAEWOO CONSTRUCTION EQUIPMENT",
-          "model": "Solar (Hydraulikbagger / Hydraulic Excavators) 225LL",
-          "year_range": "",
-          "engine_code": "DAEWOO DB58TIS"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "DOOSAN",
-          "model": "MEGA-Serie MEGA 200-V",
-          "year_range": "",
-          "engine_code": "DAEWOO DB58TI"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "DOOSAN",
-          "model": "MEGA-Serie MEGA 300-V from 1001 - 2000",
-          "year_range": "",
-          "engine_code": "DAEWOO DE12TIA"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "DOOSAN",
-          "model": "MEGA-Serie MEGA 400-III PLUS",
-          "year_range": "",
-          "engine_code": "DOOSAN DE12TI"
-        }
-      ],
-      "oem_total_all_brands": 4
-    },
-    {
       "sku": "EF90668",
-      "codigo_base": "P550668",
+      "codigo_base": "P551026",
       "name": "ELIMFILTERS Primary Diesel Fuel Water Separator",
       "description": "Primary heavy-duty diesel fuel/water separator. Direct replacement for John Deere RE531703.",
       "duty": "HEAVY_DUTY",
       "filter_type": "fuel",
       "sub_type": "Primary Fuel / Water Separator",
-      "technology": "SYNTAPORE™",
+      "technology": "HYDROCORE™",
       "installation_type": "Spin-On",
       "thread_size": "1-14 UN",
       "height_mm": 296.9,
@@ -707,9 +239,9 @@
       "filter_media": "Cellulose / Water separation media",
       "burst_pressure_psi": null,
       "catalog_active": true,
-      "canonical_source_brand": null,
-      "canonical_source_code": "P550668",
-      "canonical_source_status": "UNVERIFIED",
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551026",
+      "canonical_source_status": "VERIFIED",
       "duty_validation_status": "LEGACY_UNVERIFIED",
       "product_dimensions_validation_status": null,
       "enrichment_required_authority": null,
@@ -750,13 +282,13 @@
     },
     {
       "sku": "EF90669",
-      "codigo_base": "P550669",
+      "codigo_base": "P551027",
       "name": "ELIMFILTERS Secondary Diesel Fuel Water Separator",
       "description": "Secondary diesel fuel/water separator with sealed base. Direct replacement for John Deere RE522688.",
       "duty": "HEAVY_DUTY",
       "filter_type": "fuel",
       "sub_type": "Secondary Fuel / Water Separator",
-      "technology": "SYNTAPORE™",
+      "technology": "HYDROCORE™",
       "installation_type": "Spin-On",
       "thread_size": "7/8-14 UN",
       "height_mm": 171,
@@ -769,9 +301,9 @@
       "filter_media": "High-density treated cellulose",
       "burst_pressure_psi": null,
       "catalog_active": true,
-      "canonical_source_brand": null,
-      "canonical_source_code": "P550669",
-      "canonical_source_status": "UNVERIFIED",
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P551027",
+      "canonical_source_status": "VERIFIED",
       "duty_validation_status": "LEGACY_UNVERIFIED",
       "product_dimensions_validation_status": null,
       "enrichment_required_authority": null,
@@ -1166,7 +698,7 @@
       "description": "ELIMFILTERS® EH60222 Hydraulic filter for precision fluid power systems. NANOFORCE™ electrostatic synthetic media captures fine particles and free water before they reach proportional valves and seals, preventing the wear and leakage that follow contaminated hydraulic fluid.",
       "duty": "HEAVY_DUTY",
       "filter_type": "hydraulic",
-      "sub_type": "Cellulose",
+      "sub_type": "Hydraulic Filter, Spin-On",
       "technology": "NANOFORCE™",
       "installation_type": "Spin-On",
       "thread_size": "3/4-16 UN",
@@ -1180,9 +712,9 @@
       "filter_media": null,
       "burst_pressure_psi": null,
       "catalog_active": true,
-      "canonical_source_brand": null,
+      "canonical_source_brand": "DONALDSON",
       "canonical_source_code": "P550222",
-      "canonical_source_status": "UNVERIFIED",
+      "canonical_source_status": "VERIFIED",
       "duty_validation_status": "LEGACY_UNVERIFIED",
       "product_dimensions_validation_status": null,
       "enrichment_required_authority": null,
@@ -1195,763 +727,1141 @@
       "oem_codes": [
         {
           "code": "0817003",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1021840001",
-          "manufacturer": "MERCEDES-BENZ"
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1021840501",
-          "manufacturer": "MERCEDES-BENZ"
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1031800610",
-          "manufacturer": "MERCEDES-BENZ"
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1031840001",
-          "manufacturer": "MERCEDES-BENZ"
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1031840201",
-          "manufacturer": "MERCEDES-BENZ"
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "11405640",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1174416",
-          "manufacturer": "DEUTZ"
+          "manufacturer": "DEUTZ",
+          "classification": "REVIEW_REQUIRED",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "13201002",
-          "manufacturer": "ISUZU"
+          "manufacturer": "ISUZU",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "132012",
-          "manufacturer": "ISUZU"
+          "manufacturer": "ISUZU",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "140517000",
-          "manufacturer": "PERKINS"
+          "manufacturer": "PERKINS",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1475514",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1521132431",
-          "manufacturer": "KUBOTA"
+          "manufacturer": "KUBOTA",
+          "classification": "REVIEW_REQUIRED",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1523493",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1523494",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "15590",
-          "manufacturer": "VOLVO"
+          "manufacturer": "VOLVO",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1590632090",
-          "manufacturer": "KUBOTA"
+          "manufacturer": "KUBOTA",
+          "classification": "REVIEW_REQUIRED",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1612132430",
-          "manufacturer": "KUBOTA"
+          "manufacturer": "KUBOTA",
+          "classification": "REVIEW_REQUIRED",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1617128",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1S7G-6714-DA",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1S7Z-6714-DA",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1S7Z-6731-DA",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "220-1523",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "224788",
-          "manufacturer": "DAF"
+          "manufacturer": "DAF",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "2654343",
-          "manufacturer": "PERKINS"
+          "manufacturer": "PERKINS",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "2654404",
-          "manufacturer": "PERKINS"
+          "manufacturer": "PERKINS",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "2724E6714B",
-          "manufacturer": "CASE"
+          "manufacturer": "CASE",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "2724E6714B",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "3I1161",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "3I1171",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "436936",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "473663C1",
-          "manufacturer": "CASE"
+          "manufacturer": "CASE",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "485GB1138",
-          "manufacturer": "MACK"
+          "manufacturer": "MACK",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "5009232",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "5012580",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "5013148",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "5018028",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "5205002",
-          "manufacturer": "KUBOTA"
+          "manufacturer": "KUBOTA",
+          "classification": "REVIEW_REQUIRED",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "5721190",
-          "manufacturer": "CLAAS"
+          "manufacturer": "CLAAS",
+          "classification": "REVIEW_REQUIRED",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "7000014647",
-          "manufacturer": "KUBOTA"
+          "manufacturer": "KUBOTA",
+          "classification": "REVIEW_REQUIRED",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "7000014673",
-          "manufacturer": "KUBOTA"
+          "manufacturer": "KUBOTA",
+          "classification": "REVIEW_REQUIRED",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "70000-36160",
-          "manufacturer": "KUBOTA"
+          "manufacturer": "KUBOTA",
+          "classification": "REVIEW_REQUIRED",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "7621057",
-          "manufacturer": "LIEBHERR"
+          "manufacturer": "LIEBHERR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "77BM6714C1A",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "77BM6714C2A",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "812684",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "8941145851",
-          "manufacturer": "ISUZU"
+          "manufacturer": "ISUZU",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "8941697780",
-          "manufacturer": "ISUZU"
+          "manufacturer": "ISUZU",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "8941697781",
-          "manufacturer": "ISUZU"
+          "manufacturer": "ISUZU",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "8941697782",
-          "manufacturer": "ISUZU"
+          "manufacturer": "ISUZU",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "8941697790",
-          "manufacturer": "ISUZU"
+          "manufacturer": "ISUZU",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "894414778",
-          "manufacturer": "ISUZU"
+          "manufacturer": "ISUZU",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "89761822820",
-          "manufacturer": "ISUZU"
+          "manufacturer": "ISUZU",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "9576P550335",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "9576P557780",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "9613327",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "9Y4493",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "A146696",
-          "manufacturer": "JOHN-DEERE"
+          "manufacturer": "JOHN-DEERE",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "A37189",
-          "manufacturer": "CASE"
+          "manufacturer": "CASE",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "A5000041045",
-          "manufacturer": "MAN"
+          "manufacturer": "MAN",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "A58758",
-          "manufacturer": "CASE"
+          "manufacturer": "CASE",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "A690X6A692TA",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "A720X6714BA",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "AFL181MC",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "AM101207",
-          "manufacturer": "JOHN-DEERE"
+          "manufacturer": "JOHN-DEERE",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "AT1220338",
-          "manufacturer": "JOHN-DEERE"
+          "manufacturer": "JOHN-DEERE",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BE8Z-6731-AB",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C600-211-2110",
-          "manufacturer": "CUMMINS"
+          "manufacturer": "CUMMINS",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C7NN6714B",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C7NN6714BS",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C9AF9601A",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C9AF9601A",
-          "manufacturer": "NEW HOLLAND"
+          "manufacturer": "NEW HOLLAND",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "D5NN6714A",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "D8NN6714LA",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "DNP550222",
-          "manufacturer": "FREIGHTLINER"
+          "manufacturer": "FREIGHTLINER",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "DNP550335",
-          "manufacturer": "FREIGHTLINER"
+          "manufacturer": "FREIGHTLINER",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "DNP557780",
-          "manufacturer": "FREIGHTLINER"
+          "manufacturer": "FREIGHTLINER",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "DONN6714B",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "E063337",
-          "manufacturer": "CASE"
+          "manufacturer": "CASE",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "E4NN6714BA",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "E7TZ6731A",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "E7TZ6731A",
-          "manufacturer": "NEW HOLLAND"
+          "manufacturer": "NEW HOLLAND",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "E9TE6714B1A",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "G45210",
-          "manufacturer": "CASE"
+          "manufacturer": "CASE",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "HE1220800",
-          "manufacturer": "JOHN-DEERE"
+          "manufacturer": "JOHN-DEERE",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LG491056",
-          "manufacturer": "JOHN-DEERE"
+          "manufacturer": "JOHN-DEERE",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "SBA140517020",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "V39198",
-          "manufacturer": "CASE"
+          "manufacturer": "CASE",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "V82DB7A203M",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "X1320002",
-          "manufacturer": "ISUZU"
+          "manufacturer": "ISUZU",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "X13201002",
-          "manufacturer": "ISUZU"
+          "manufacturer": "ISUZU",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "CM-6731-FL1A",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "D0NN-6714-B",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "37Z020F201",
-          "manufacturer": "KOMATSU"
+          "manufacturer": "KOMATSU",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "OKR62189",
-          "manufacturer": "KOMATSU"
+          "manufacturer": "KOMATSU",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         }
       ],
       "competitor_codes": [
         {
           "code": "C1123",
-          "manufacturer": "SAKURA"
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C1819",
-          "manufacturer": "SAKURA"
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C1834",
-          "manufacturer": "SAKURA"
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C1938",
-          "manufacturer": "SAKURA"
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "HP1",
-          "manufacturer": "Fram"
+          "manufacturer": "Fram",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "HP1",
-          "manufacturer": "Purolator"
+          "manufacturer": "Purolator",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "L39001",
-          "manufacturer": "Purolator"
+          "manufacturer": "Purolator",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "OF111",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "OF161",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1703750",
-          "manufacturer": "SAKURA"
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C11105",
-          "manufacturer": "SAKURA"
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C11108",
-          "manufacturer": "SAKURA"
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C1114",
-          "manufacturer": "SAKURA"
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C11141",
-          "manufacturer": "SAKURA"
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C11144",
-          "manufacturer": "SAKURA"
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C11193",
-          "manufacturer": "SAKURA"
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C1149",
-          "manufacturer": "SAKURA"
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C1803",
-          "manufacturer": "SAKURA"
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C18031",
-          "manufacturer": "SAKURA"
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C6402",
-          "manufacturer": "SAKURA"
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C66031",
-          "manufacturer": "SAKURA"
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C8037",
-          "manufacturer": "SAKURA"
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B114",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B118",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B1405",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B1407",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B1430",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B244",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B252",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B253",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B297",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B298",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B2-HPG",
           "brand": "BALDWIN",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B7020",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B7022",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B7047",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B7491",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BT111",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BT223",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BT8409",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BT8434",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "0986AF1068",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "0F150",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "3330",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "451103004",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "451103005",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "451104065",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "451203005",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "451203012",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "451203061",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "451203088",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "72124",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "72161",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "8152H",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "986452005",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "986452044",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "OF124",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "OF134",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "OF152",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "OF160",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "PF160",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "OP531",
-          "manufacturer": "FILTRON"
+          "manufacturer": "FILTRON",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "OP573",
-          "manufacturer": "FILTRON"
+          "manufacturer": "FILTRON",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "HF287783",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "HF28783",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "HF6107",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "HF6158",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "P8427",
-          "manufacturer": "FRAM"
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "H17W01",
-          "manufacturer": "HENGST"
+          "manufacturer": "HENGST",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "H17W05",
-          "manufacturer": "HENGST"
+          "manufacturer": "HENGST",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "H17W08",
-          "manufacturer": "HENGST"
+          "manufacturer": "HENGST",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "H90W06",
-          "manufacturer": "HENGST"
+          "manufacturer": "HENGST",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "H90W20",
-          "manufacturer": "HENGST"
+          "manufacturer": "HENGST",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "HG364W",
-          "manufacturer": "HENGST"
+          "manufacturer": "HENGST",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "AW78",
-          "manufacturer": "MAHLE"
+          "manufacturer": "MAHLE",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "AW47",
-          "manufacturer": "MAHLE"
+          "manufacturer": "MAHLE",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "6750458346",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "ML 1003",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "WD10009",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "WF9161O",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "WF9202O",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "6940571",
-          "manufacturer": "PUROLATOR"
+          "manufacturer": "PUROLATOR",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "337P",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "51348MP",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "51515R",
           "brand": "Wix",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "51622",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "51762",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "51785",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "551374",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "57023",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "917P",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "919P",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "CW452MP",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "WL10165",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         }
       ],
       "equipment_applications": [
@@ -2021,28 +1931,28 @@
     },
     {
       "sku": "EH60223",
-      "codigo_base": "HF30223",
+      "codigo_base": "P550223",
       "name": null,
       "description": "ELIMFILTERS® EH60223 Hydraulic filter for precision fluid power systems. NANOFORCE™ electrostatic synthetic media captures fine particles and free water before they reach proportional valves and seals, preventing the wear and leakage that follow contaminated hydraulic fluid.",
       "duty": "HEAVY_DUTY",
       "filter_type": "hydraulic",
-      "sub_type": "Fleetguard",
+      "sub_type": "Hydraulic Filter, Spin-On",
       "technology": "NANOFORCE™",
       "installation_type": "Spin-On",
       "thread_size": "1 5/16-12 UN",
-      "height_mm": 178.44,
-      "outer_diameter_mm": 60.2,
-      "gasket_od_mm": 107.6,
-      "gasket_id_mm": 93,
+      "height_mm": 260,
+      "outer_diameter_mm": 124,
+      "gasket_od_mm": 103,
+      "gasket_id_mm": 92,
       "micron_rating": null,
       "nominal_efficiency": null,
       "iso_test_method": null,
       "filter_media": null,
       "burst_pressure_psi": null,
       "catalog_active": true,
-      "canonical_source_brand": null,
-      "canonical_source_code": "HF30223",
-      "canonical_source_status": "UNVERIFIED",
+      "canonical_source_brand": "DONALDSON",
+      "canonical_source_code": "P550223",
+      "canonical_source_status": "VERIFIED",
       "duty_validation_status": "LEGACY_UNVERIFIED",
       "product_dimensions_validation_status": null,
       "enrichment_required_authority": null,
@@ -2055,101 +1965,149 @@
       "oem_codes": [
         {
           "code": "1930893",
-          "manufacturer": "HITACHI"
+          "manufacturer": "HITACHI",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1992156",
-          "manufacturer": "VOLVO"
+          "manufacturer": "VOLVO",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "3082148",
-          "manufacturer": "VOLVO"
+          "manufacturer": "VOLVO",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "3130914",
-          "manufacturer": "VOLVO"
+          "manufacturer": "VOLVO",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "3I1162",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "510661508",
-          "manufacturer": "LIEBHERR"
+          "manufacturer": "LIEBHERR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "550223",
-          "manufacturer": "DETROIT DIESEL"
+          "manufacturer": "DETROIT DIESEL",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "73074045",
-          "manufacturer": "HITACHI"
+          "manufacturer": "HITACHI",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "73142551",
-          "manufacturer": "HITACHI"
+          "manufacturer": "HITACHI",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "9576P550223",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "9Y4513",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "DNP550223",
-          "manufacturer": "FREIGHTLINER"
+          "manufacturer": "FREIGHTLINER",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "M1992156",
-          "manufacturer": "VOLVO"
+          "manufacturer": "VOLVO",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         }
       ],
       "competitor_codes": [
         {
           "code": "BT359",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "HF6106",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "HF6243",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "HP3613",
-          "manufacturer": "FRAM"
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "P3613",
-          "manufacturer": "FRAM"
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "P3613FP",
-          "manufacturer": "FRAM"
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "H50264",
-          "manufacturer": "PUROLATOR"
+          "manufacturer": "PUROLATOR",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "P264",
-          "manufacturer": "PUROLATOR"
+          "manufacturer": "PUROLATOR",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "HC6501",
-          "manufacturer": "SAKURA"
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "HC6502",
-          "manufacturer": "SAKURA"
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "51623",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         }
       ],
       "equipment_applications": [
@@ -2235,16 +2193,16 @@
       "micron_rating": "11 absolute / 4 nominal",
       "nominal_efficiency": "Beta 1000 at 11 micron; Beta 2 at 4 micron",
       "iso_test_method": null,
-      "filter_media": "Synthetic microfiber glass / Synteq XP",
+      "filter_media": "Synthetic microfiber glass",
       "burst_pressure_psi": null,
       "catalog_active": true,
-      "canonical_source_brand": null,
+      "canonical_source_brand": "DONALDSON",
       "canonical_source_code": "P170950",
-      "canonical_source_status": "UNVERIFIED",
+      "canonical_source_status": "VERIFIED",
       "duty_validation_status": "LEGACY_UNVERIFIED",
       "product_dimensions_validation_status": null,
       "enrichment_required_authority": null,
-      "third_party_mark": true,
+      "third_party_mark": false,
       "specs": {
         "rated_flow_l_min": null,
         "rated_flow_gpm": null,
@@ -2323,649 +2281,13 @@
       "oem_total_all_brands": 3
     },
     {
-      "sku": "EL30001",
-      "codigo_base": "0001",
-      "name": null,
-      "description": "About this item ELIMFILTERS transmission oil filters offer the highest filtration performance, due partly to the filter medium specially adapted to the intended use - protects the transmission by optimum oil cleaning. Optimum protection and sealing over the entire maintenance interval.",
-      "duty": "LIGHT_DUTY",
-      "filter_type": "oil",
-      "sub_type": "Genuine Media",
-      "technology": "SYNTRAX™",
-      "installation_type": "Spin-On",
-      "thread_size": "1-12 UNF mm",
-      "height_mm": 178,
-      "outer_diameter_mm": 95,
-      "gasket_od_mm": null,
-      "gasket_id_mm": 70,
-      "micron_rating": null,
-      "nominal_efficiency": null,
-      "iso_test_method": null,
-      "filter_media": null,
-      "burst_pressure_psi": null,
-      "catalog_active": true,
-      "canonical_source_brand": null,
-      "canonical_source_code": "0001",
-      "canonical_source_status": "UNVERIFIED",
-      "duty_validation_status": "LEGACY_UNVERIFIED",
-      "product_dimensions_validation_status": null,
-      "enrichment_required_authority": null,
-      "third_party_mark": null,
-      "specs": {
-        "rated_flow_l_min": null,
-        "rated_flow_gpm": null,
-        "hydrostatic_burst_minimum_psi": null
-      },
-      "oem_codes": [
-        {
-          "code": "10428561",
-          "manufacturer": "LIEBHERR",
-          "classification": "OEM",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "LW10428561",
-          "manufacturer": "JOHN DEERE",
-          "classification": "OEM",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "3A431-82620",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "3A431-82623",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "3A431-82630",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "3A431-82632",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "HH3A0-82623",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "HH3A0-82630",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "HH3A0-82632",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "HHK32-16770",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "W21TSH3A00",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "W21TSH3A10",
-          "manufacturer": "KUBOTA"
-        }
-      ],
-      "competitor_codes": [
-        {
-          "code": "HP1",
-          "source": "fram_newprefix_lines_2026-09-14",
-          "added_at": "2026-09-14 23:02:28.394494-05",
-          "manufacturer": "FRAM",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "H50001",
-          "source": "mann_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 12:55:09.788508-05",
-          "manufacturer": "MANN",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "CH1",
-          "source": "fram_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 11:37:42.790714-05",
-          "manufacturer": "FRAM",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "CH1P",
-          "source": "fram_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 11:37:42.790714-05",
-          "manufacturer": "FRAM",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "CH1PL",
-          "source": "fram_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 11:37:42.790714-05",
-          "manufacturer": "FRAM",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "PH1A",
-          "source": "fram_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 11:37:42.790714-05",
-          "manufacturer": "FRAM",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        }
-      ],
-      "equipment_applications": [],
-      "vehicle_applications": [
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "BMW (USA)",
-          "model": "2021 X6 (V8 4.4L 4395cc) Note:: ZF6HP19Z Transmission",
-          "year_range": "",
-          "engine_code": "S63B44T4"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "2979",
-          "make": "BMW (USA)",
-          "model": "2015 X6 sDrive 35i (L6 3.0L FI Turbo) Automatic gearbox Gearbox code: ZF 6HP19Z",
-          "year_range": "",
-          "engine_code": "N55B30A"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "2979",
-          "make": "BMW (USA)",
-          "model": "2016 X3 xDrive35i (L6 3.0L FI Twin-Turbo 24V)",
-          "year_range": "",
-          "engine_code": "N55B30A"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "2979",
-          "make": "BMW (USA)",
-          "model": "2016 X4 xDrive35i (L6 3.0L FI Twin-Turbo 24V)",
-          "year_range": "",
-          "engine_code": "N55B30A"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "2979",
-          "make": "BMW (USA)",
-          "model": "2016 X5 sDrive35i (L6 3.0L FI Twin-Turbo 24V)",
-          "year_range": "",
-          "engine_code": "N55B30A"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "2979",
-          "make": "BMW (USA)",
-          "model": "2016 X5 xDrive35i (L6 3.0L FI Twin-Turbo 24V)",
-          "year_range": "",
-          "engine_code": "N55B30A"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "2979",
-          "make": "BMW (USA)",
-          "model": "2016 X6 xDrive 35i (L6 3.0L FI Twin-Turbo 24V)",
-          "year_range": "",
-          "engine_code": "N55B30A"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "2996",
-          "make": "BMW (USA)",
-          "model": "2011 Z4 sDrive 30i (L6 3.0L FI) Automatic gearbox Gearbox code: ZF 6HP19Z",
-          "year_range": "",
-          "engine_code": "N52B30A"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "2996",
-          "make": "BMW (USA)",
-          "model": "2019 Z4 sDrive 30i (L6 3.0L FI) Automatic gearbox Gearbox code: ZF 6HP19Z",
-          "year_range": "",
-          "engine_code": "N52B30A"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "3331",
-          "make": "KUBOTA",
-          "model": "M-Series M 7040 DTHNB / DTHNBC",
-          "year_range": "",
-          "engine_code": "Kubota V3307-DI-TE3-1"
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "4395",
-          "make": "BMW (USA)",
-          "model": "2015 X5 M (V8 4.4L FI Twin-Turbo 32V) Automatic gearbox Gearbox code: ZF 6HP19Z",
-          "year_range": "",
-          "engine_code": "S63R"
-        },
-        {
-          "hp": "105",
-          "kw": "77",
-          "ccm": "3800",
-          "make": "KUBOTA",
-          "model": "M-Series M 105 SDSC",
-          "year_range": "01/05 → 12/07",
-          "engine_code": "Kubota V3800-TIE2-Q"
-        }
-      ],
-      "oem_total_all_brands": 17
-    },
-    {
-      "sku": "EL30002",
-      "codigo_base": "0002",
-      "name": null,
-      "description": "About this item ELIMFILTERS transmission oil filters offer the highest filtration performance, due partly to the filter medium specially adapted to the intended use - protects the transmission by optimum oil cleaning. Optimum protection and sealing over the entire maintenance interval.",
-      "duty": "LIGHT_DUTY",
-      "filter_type": "oil",
-      "sub_type": "Genuine Media",
-      "technology": "SYNTRAX™",
-      "installation_type": "Spin-On",
-      "thread_size": "1 1/8-16 UN mm",
-      "height_mm": 175,
-      "outer_diameter_mm": 94,
-      "gasket_od_mm": 80,
-      "gasket_id_mm": 91,
-      "micron_rating": null,
-      "nominal_efficiency": null,
-      "iso_test_method": null,
-      "filter_media": null,
-      "burst_pressure_psi": null,
-      "catalog_active": true,
-      "canonical_source_brand": null,
-      "canonical_source_code": "0002",
-      "canonical_source_status": "UNVERIFIED",
-      "duty_validation_status": "LEGACY_UNVERIFIED",
-      "product_dimensions_validation_status": null,
-      "enrichment_required_authority": null,
-      "third_party_mark": null,
-      "specs": {
-        "rated_flow_l_min": null,
-        "rated_flow_gpm": null,
-        "hydrostatic_burst_minimum_psi": null
-      },
-      "oem_codes": [
-        {
-          "code": "200 180 00 09",
-          "manufacturer": "MERCEDES-BENZ",
-          "classification": "OEM",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "A 200 180 00 09",
-          "manufacturer": "MERCEDES-BENZ",
-          "classification": "OEM",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "3259038381",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "33960-38380",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "33960-82630",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "33960-82631",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "3396082632",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "87300-044",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "HH330-8260",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "HH330-82630",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "HHTA0-37710",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "HHTAO37710",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "T0070-37710",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "T007037711",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "TA040-37710",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "W21TS-H3300",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "W21TS-HTA10",
-          "manufacturer": "KUBOTA"
-        },
-        {
-          "code": "W9501-45101",
-          "manufacturer": "KUBOTA"
-        }
-      ],
-      "competitor_codes": [
-        {
-          "code": "DL2",
-          "source": "fram_newprefix_lines_2026-09-14",
-          "added_at": "2026-09-14 23:02:28.394494-05",
-          "manufacturer": "FRAM",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "FD2",
-          "source": "fram_newprefix_lines_2026-09-14",
-          "added_at": "2026-09-14 23:02:28.394494-05",
-          "manufacturer": "FRAM",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "FE2",
-          "source": "fram_newprefix_lines_2026-09-14",
-          "added_at": "2026-09-14 23:02:28.394494-05",
-          "manufacturer": "FRAM",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "FF2",
-          "source": "fram_newprefix_lines_2026-09-14",
-          "added_at": "2026-09-14 23:02:28.394494-05",
-          "manufacturer": "FRAM",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "FS2",
-          "source": "fram_newprefix_lines_2026-09-14",
-          "added_at": "2026-09-14 23:02:28.394494-05",
-          "manufacturer": "FRAM",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "HP2",
-          "source": "fram_newprefix_lines_2026-09-14",
-          "added_at": "2026-09-14 23:02:28.394494-05",
-          "manufacturer": "FRAM",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "H2X804W",
-          "source": "mann_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 12:55:09.788508-05",
-          "manufacturer": "MANN",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "H2X947/1Z",
-          "source": "mann_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 12:55:09.788508-05",
-          "manufacturer": "MANN",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "H2X947/3Z",
-          "source": "mann_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 12:55:09.788508-05",
-          "manufacturer": "MANN",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "H50002",
-          "source": "mann_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 12:55:09.788508-05",
-          "manufacturer": "MANN",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "HU10002Z",
-          "source": "mann_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 12:55:09.788508-05",
-          "manufacturer": "MANN",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "HU2X947/1Z",
-          "source": "mann_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 12:55:09.788508-05",
-          "manufacturer": "MANN",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "HU2X947/3Z",
-          "source": "mann_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 12:55:09.788508-05",
-          "manufacturer": "MANN",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "WD10002",
-          "source": "mann_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 12:55:09.788508-05",
-          "manufacturer": "MANN",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "CH2",
-          "source": "fram_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 11:37:42.790714-05",
-          "manufacturer": "FRAM",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "HM2",
-          "source": "fram_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 11:37:42.790714-05",
-          "manufacturer": "FRAM",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "PH2F",
-          "source": "fram_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 11:37:42.790714-05",
-          "manufacturer": "FRAM",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "PH2M291",
-          "source": "fram_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 11:37:42.790714-05",
-          "manufacturer": "FRAM",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "PH2SUZUKI",
-          "source": "fram_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 11:37:42.790714-05",
-          "manufacturer": "FRAM",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        },
-        {
-          "code": "TG2",
-          "source": "fram_ld_sku_formula_match_2026-09-14",
-          "added_at": "2026-09-14 11:37:42.790714-05",
-          "manufacturer": "FRAM",
-          "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
-        }
-      ],
-      "equipment_applications": [],
-      "vehicle_applications": [
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "BMW",
-          "model": "X5 (E70) X5 3.0 Diesel (V6) Gearbox code: ZF 6HP28",
-          "year_range": "01/11 → 12/13",
-          "engine_code": ""
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "BMW",
-          "model": "X5 (E70) X5 4.4 Diesel (V8) Gearbox code: ZF 6HP28",
-          "year_range": "01/10 → 12/13",
-          "engine_code": ""
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "BMW",
-          "model": "X5 (E70) X5 4.8i Premium 4.8 (V8) Gearbox code: ZF 6HP28",
-          "year_range": "01/07 → 12/12",
-          "engine_code": ""
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "BMW",
-          "model": "X5 (E70) X5 M 3.0 (V6) Gearbox code: ZF 6HP28",
-          "year_range": "01/11 → 12/14",
-          "engine_code": ""
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "BMW",
-          "model": "X5 (E70) X5 xDrive30i 3.0 (V6) Gearbox code: ZF 6HP28",
-          "year_range": "01/07 → 12/10",
-          "engine_code": ""
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "BMW",
-          "model": "X5 (E70) X5 xDrive30i 3.0 (V6) Gearbox code: ZF 6HP28",
-          "year_range": "01/11 → 12/14",
-          "engine_code": ""
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "JAGUAR",
-          "model": "XF (X250) 2.0 Luxury (L4) Gearbox code: ZF 6HP26 / 6HP28",
-          "year_range": "01/13 → 12/14",
-          "engine_code": ""
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "JAGUAR",
-          "model": "XF (X250) 3.0 Luxury (V6) Gearbox code: ZF 6HP26 / 6HP28",
-          "year_range": "01/12 → 12/12",
-          "engine_code": ""
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "JAGUAR",
-          "model": "XF (X250) 3.0 Portfolio (V6) Gearbox code: ZF 6HP26 / 6HP28",
-          "year_range": "01/13 → 12/14",
-          "engine_code": ""
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "JAGUAR",
-          "model": "XF (X250) 3.0 Premium Luxury (V6) Gearbox code: ZF 6HP26 / 6HP28",
-          "year_range": "01/12 → 12/13",
-          "engine_code": ""
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "JAGUAR",
-          "model": "XF (X250) 4.2 Luxury (V8) Gearbox code: ZF 6HP26 / 6HP28",
-          "year_range": "01/09 → 12/10",
-          "engine_code": ""
-        },
-        {
-          "hp": "",
-          "kw": "",
-          "ccm": "",
-          "make": "JAGUAR",
-          "model": "XF (X250) 4.2 Supercharged (V8) Gearbox code: ZF 6HP26 / 6HP28",
-          "year_range": "01/09 → 12/09",
-          "engine_code": ""
-        }
-      ],
-      "oem_total_all_brands": 36
-    },
-    {
       "sku": "EL83191",
       "codigo_base": "P553191",
       "name": null,
       "description": "ELIMFILTERS® EL83191 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
       "duty": "HEAVY_DUTY",
       "filter_type": "oil",
-      "sub_type": "Cellulose",
+      "sub_type": "Lube Filter, Spin-On Full Flow",
       "technology": "SYNTRAX™",
       "installation_type": "Spin-On",
       "thread_size": "1 1/8-16 UN",
@@ -2979,9 +2301,9 @@
       "filter_media": null,
       "burst_pressure_psi": "149",
       "catalog_active": true,
-      "canonical_source_brand": null,
+      "canonical_source_brand": "DONALDSON",
       "canonical_source_code": "P553191",
-      "canonical_source_status": "UNVERIFIED",
+      "canonical_source_status": "VERIFIED",
       "duty_validation_status": "LEGACY_UNVERIFIED",
       "product_dimensions_validation_status": null,
       "enrichment_required_authority": null,
@@ -2994,584 +2316,860 @@
       "oem_codes": [
         {
           "code": "1R-0658",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1R-0739",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1R-1807",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1W-3300",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "2P-4004",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "2Y-8096",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "3I-1283",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "3I0730",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "492164004",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1164406",
-          "manufacturer": "DEUTZ"
+          "manufacturer": "DEUTZ",
+          "classification": "REVIEW_REQUIRED",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "5011417",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "5011502",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "9576P553191",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "DNP553191",
-          "manufacturer": "FREIGHTLINER"
+          "manufacturer": "FREIGHTLINER",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "6439392",
-          "manufacturer": "GENERAL MOTORS"
+          "manufacturer": "GENERAL MOTORS",
+          "classification": "REVIEW_REQUIRED",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "S2340-11700",
-          "manufacturer": "HINO"
+          "manufacturer": "HINO",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "466634",
-          "manufacturer": "HITACHI"
+          "manufacturer": "HITACHI",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "42537127",
-          "manufacturer": "IVECO"
+          "manufacturer": "IVECO",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "GG17031266",
-          "manufacturer": "JOHN DEERE"
+          "manufacturer": "JOHN DEERE",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "GG17031266",
-          "manufacturer": "JOHN-DEERE"
+          "manufacturer": "JOHN-DEERE",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "2191P553191",
-          "manufacturer": "MACK"
+          "manufacturer": "MACK",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "21939324",
-          "manufacturer": "MACK"
+          "manufacturer": "MACK",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "485GB3191",
-          "manufacturer": "MACK"
+          "manufacturer": "MACK",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "485GB3191A",
-          "manufacturer": "MACK"
+          "manufacturer": "MACK",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "485GB3191B",
-          "manufacturer": "MACK"
+          "manufacturer": "MACK",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "485GB3191C",
-          "manufacturer": "MACK"
+          "manufacturer": "MACK",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "485GB3191D",
-          "manufacturer": "MACK"
+          "manufacturer": "MACK",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "485GB3232",
-          "manufacturer": "MACK"
+          "manufacturer": "MACK",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "485GB4348",
-          "manufacturer": "MACK"
+          "manufacturer": "MACK",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "5000133555",
-          "manufacturer": "MACK"
+          "manufacturer": "MACK",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         }
       ],
       "competitor_codes": [
         {
           "code": "W1110211",
-          "manufacturer": "Mann-Filter"
+          "manufacturer": "Mann-Filter",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W11102/11",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "OC121",
-          "manufacturer": "MAHLE"
+          "manufacturer": "MAHLE",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "OC121",
-          "manufacturer": "Purolator"
+          "manufacturer": "Purolator",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "OC403",
-          "manufacturer": "MAHLE"
+          "manufacturer": "MAHLE",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "L50068",
-          "manufacturer": "PUROLATOR"
+          "manufacturer": "PUROLATOR",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C55011",
-          "manufacturer": "SAKURA"
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C5510",
-          "manufacturer": "SAKURA"
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B76",
           "brand": "BALDWIN",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B7600",
           "brand": "BALDWIN",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B7600-SS",
           "brand": "BALDWIN",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B76-B",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B76-MPG",
           "brand": "BALDWIN",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B76-SS",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B7700",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6203",
           "brand": "BALDWIN",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6210",
           "brand": "BALDWIN",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6284",
           "brand": "BALDWIN",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6287",
           "brand": "BALDWIN",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6613",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6660",
           "brand": "BALDWIN",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6663",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6674",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6701",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6702",
           "brand": "BALDWIN",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6708",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6712",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6718",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6722",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6829",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BT234",
           "brand": "HASTINGS",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BT556-10",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "0451104010",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "0451403077",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "451403077",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "P3077",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "ELF7483",
-          "manufacturer": "DONALDSON"
+          "manufacturer": "DONALDSON",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "ELF7739",
-          "manufacturer": "DONALDSON"
+          "manufacturer": "DONALDSON",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LFP554004",
-          "manufacturer": "DONALDSON"
+          "manufacturer": "DONALDSON",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "P554004",
           "brand": "DONALDSON",
-          "manufacturer": "DONALDSON"
+          "manufacturer": "DONALDSON",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "OP584",
-          "manufacturer": "FILTRON"
+          "manufacturer": "FILTRON",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "HF35197",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF16101",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF16175",
           "brand": "FLEETGUARD",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF3321",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF3379",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF3406",
           "brand": "FLEETGUARD",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF3476",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF3477",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF3675",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF3730",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF531",
           "brand": "HASTINGS",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF667",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF9667",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13048",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13051",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13052",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13053",
           "brand": "FLEETGUARD",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13064",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13068",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13071",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13073",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13075",
           "brand": "FLEETGUARD",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13078",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13091",
           "brand": "FLEETGUARD",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13104",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13113",
           "brand": "FLEETGUARD",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13119",
           "brand": "FLEETGUARD",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13169",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13170",
           "brand": "FLEETGUARD",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BPH49A",
-          "manufacturer": "FRAM"
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "HPH49A",
-          "manufacturer": "FRAM"
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "HPH49AFP",
-          "manufacturer": "FRAM"
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "P449A",
-          "manufacturer": "FRAM"
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "PH49",
-          "manufacturer": "FRAM"
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "PH49A",
-          "manufacturer": "FRAM"
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "PH49AFP",
-          "manufacturer": "FRAM"
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "PH49AJS",
-          "manufacturer": "FRAM"
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "PH5394",
-          "manufacturer": "FRAM"
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "PH8842",
-          "manufacturer": "FRAM"
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "H200W01",
-          "manufacturer": "HENGST"
+          "manufacturer": "HENGST",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "H200W10",
-          "manufacturer": "HENGST"
+          "manufacturer": "HENGST",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "AW92",
-          "manufacturer": "MAHLE"
+          "manufacturer": "MAHLE",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W1102/15",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W1102/4",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W11025",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W1110214",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W11102/15",
           "brand": "Mann-Filter",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W1110218",
           "brand": "MANN",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W11102/20",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W1110227",
           "brand": "Mann-Filter",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W11102/35",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W11102/37",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W11102/4",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "6694030",
-          "manufacturer": "PUROLATOR"
+          "manufacturer": "PUROLATOR",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "K50003",
-          "manufacturer": "PUROLATOR"
+          "manufacturer": "PUROLATOR",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "K50004",
-          "manufacturer": "PUROLATOR"
+          "manufacturer": "PUROLATOR",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "L56069",
-          "manufacturer": "PUROLATOR"
+          "manufacturer": "PUROLATOR",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "L59068",
-          "manufacturer": "PUROLATOR"
+          "manufacturer": "PUROLATOR",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "24526",
           "brand": "Wix",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "24536",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "24556",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "51788",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "51791",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "51791EC",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "51791MP",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "51791XE",
           "brand": "Wix",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "551791",
           "brand": "Wix",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         }
       ],
       "equipment_applications": [
@@ -3646,23 +3244,23 @@
       "description": "ELIMFILTERS® EL84004 Full-flow oil filter for heavy-duty engines. SYNTRAX™ synthetic media traps wear particles before they reach bearings and cylinder walls, keeping oil clean and protecting critical engine surfaces throughout the full service interval.",
       "duty": "HEAVY_DUTY",
       "filter_type": "oil",
-      "sub_type": "Cellulose",
+      "sub_type": "Lube Filter, Spin-On Full Flow",
       "technology": "SYNTRAX™",
       "installation_type": "Spin-On",
       "thread_size": "1 1/8-16 UN",
       "height_mm": 262,
       "outer_diameter_mm": 108,
-      "gasket_od_mm": 99.2,
-      "gasket_id_mm": 90.6,
+      "gasket_od_mm": 99,
+      "gasket_id_mm": 90,
       "micron_rating": "40",
       "nominal_efficiency": "40 micron",
       "iso_test_method": null,
       "filter_media": null,
       "burst_pressure_psi": "149",
       "catalog_active": true,
-      "canonical_source_brand": null,
+      "canonical_source_brand": "DONALDSON",
       "canonical_source_code": "P554004",
-      "canonical_source_status": "UNVERIFIED",
+      "canonical_source_status": "VERIFIED",
       "duty_validation_status": "LEGACY_UNVERIFIED",
       "product_dimensions_validation_status": null,
       "enrichment_required_authority": null,
@@ -3675,618 +3273,910 @@
       "oem_codes": [
         {
           "code": "60507493",
-          "manufacturer": "CASE"
+          "manufacturer": "CASE",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "60507493",
-          "manufacturer": "CASE IH"
+          "manufacturer": "CASE IH",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W1250599",
-          "manufacturer": "CASE"
+          "manufacturer": "CASE",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W1250599",
-          "manufacturer": "CASE IH"
+          "manufacturer": "CASE IH",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "2836",
-          "manufacturer": "CASE IH"
+          "manufacturer": "CASE IH",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1R-0658",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1R-0739",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1R-1807",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1W-3300",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "2P-4004",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "2Y-8096",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "3I-1283",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "3Y0900",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "3Y0900X",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "3Y900",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "3Y900X",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "5P1119",
-          "manufacturer": "CATERPILLAR"
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1164406",
-          "manufacturer": "DEUTZ"
+          "manufacturer": "DEUTZ",
+          "classification": "REVIEW_REQUIRED",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "9576P554004",
-          "manufacturer": "FORD"
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "DNP554004",
-          "manufacturer": "FREIGHTLINER"
+          "manufacturer": "FREIGHTLINER",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "25011932",
-          "manufacturer": "GENERAL MOTORS"
+          "manufacturer": "GENERAL MOTORS",
+          "classification": "REVIEW_REQUIRED",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "25013196",
-          "manufacturer": "GENERAL MOTORS"
+          "manufacturer": "GENERAL MOTORS",
+          "classification": "REVIEW_REQUIRED",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "6439392",
-          "manufacturer": "GENERAL MOTORS"
+          "manufacturer": "GENERAL MOTORS",
+          "classification": "REVIEW_REQUIRED",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "6439393",
-          "manufacturer": "GENERAL MOTORS"
+          "manufacturer": "GENERAL MOTORS",
+          "classification": "REVIEW_REQUIRED",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "S2340-11700",
-          "manufacturer": "HINO"
+          "manufacturer": "HINO",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "71901604",
-          "manufacturer": "HITACHI"
+          "manufacturer": "HITACHI",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "74663338",
-          "manufacturer": "HITACHI"
+          "manufacturer": "HITACHI",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "74667338",
-          "manufacturer": "HITACHI"
+          "manufacturer": "HITACHI",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "74667339",
-          "manufacturer": "HITACHI"
+          "manufacturer": "HITACHI",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "74667755",
-          "manufacturer": "HITACHI"
+          "manufacturer": "HITACHI",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "78826586",
-          "manufacturer": "HITACHI"
+          "manufacturer": "HITACHI",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "GG17031266",
-          "manufacturer": "JOHN DEERE"
+          "manufacturer": "JOHN DEERE",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "GG17031266",
-          "manufacturer": "JOHN-DEERE"
+          "manufacturer": "JOHN-DEERE",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "KW667",
-          "manufacturer": "KENWORTH"
+          "manufacturer": "KENWORTH",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "21939324",
-          "manufacturer": "MACK"
+          "manufacturer": "MACK",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "485GB3191",
-          "manufacturer": "MACK"
+          "manufacturer": "MACK",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "485GB3191A",
-          "manufacturer": "MACK"
+          "manufacturer": "MACK",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "485GB3191B",
-          "manufacturer": "MACK"
+          "manufacturer": "MACK",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "485GB3191C",
-          "manufacturer": "MACK"
+          "manufacturer": "MACK",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "485GB4348",
-          "manufacturer": "MACK"
+          "manufacturer": "MACK",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "5000133555",
-          "manufacturer": "MACK"
+          "manufacturer": "MACK",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "1117285",
-          "manufacturer": "SCANIA"
+          "manufacturer": "SCANIA",
+          "classification": "OEM",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         }
       ],
       "competitor_codes": [
         {
           "code": "OC121",
-          "manufacturer": "MAHLE"
+          "manufacturer": "MAHLE",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "L50068",
-          "manufacturer": "PUROLATOR"
+          "manufacturer": "PUROLATOR",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "PER67",
-          "manufacturer": "Purolator"
+          "manufacturer": "Purolator",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "C5501",
-          "manufacturer": "SAKURA"
+          "manufacturer": "SAKURA",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B76",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B7600",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B7600-SS",
           "brand": "BALDWIN",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B76-B",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B76HPG",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B76-MPG",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B76-SS",
           "brand": "BALDWIN",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "B7700",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6203",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6210",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6284",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6287",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6613",
           "brand": "BALDWIN",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6660",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6663",
           "brand": "BALDWIN",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6674",
           "brand": "BALDWIN",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6701",
           "brand": "BALDWIN",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6702",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6708",
           "brand": "BALDWIN",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6712",
           "brand": "BALDWIN",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6718",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6722",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BK6829",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BT234",
           "brand": "BALDWIN",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BT340",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "BT556-10",
-          "manufacturer": "BALDWIN"
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "0451403077",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "F026407043",
-          "manufacturer": "BOSCH"
+          "manufacturer": "BOSCH",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "ELF7483",
-          "manufacturer": "DONALDSON"
+          "manufacturer": "DONALDSON",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "ELF7739",
-          "manufacturer": "DONALDSON"
+          "manufacturer": "DONALDSON",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LFP554004",
-          "manufacturer": "DONALDSON"
+          "manufacturer": "DONALDSON",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "P553191",
           "brand": "DONALDSON",
-          "manufacturer": "DONALDSON"
+          "manufacturer": "DONALDSON",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "OP584",
-          "manufacturer": "FILTRON"
+          "manufacturer": "FILTRON",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "HF35197",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF3321",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF3379",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF3406",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF3476",
           "brand": "FLEETGUARD",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF3477",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF3675",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF3730",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF531",
           "brand": "HASTINGS",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF667",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF733",
           "brand": "FLEETGUARD",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "LF9667",
           "brand": "FLEETGUARD",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13048",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13051",
           "brand": "FLEETGUARD",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13052",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13053",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13064",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13068",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13071",
           "brand": "FLEETGUARD",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13073",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13075",
           "brand": "FLEETGUARD",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13078",
           "brand": "FLEETGUARD",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13091",
           "brand": "FLEETGUARD",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13104",
           "brand": "FLEETGUARD",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13113",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13119",
           "brand": "FLEETGUARD",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13169",
           "brand": "FLEETGUARD",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "MK13170",
           "brand": "FLEETGUARD",
-          "manufacturer": "FLEETGUARD"
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "HPH49A",
-          "manufacturer": "FRAM"
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "HPH49AFP",
-          "manufacturer": "FRAM"
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "PH49A",
-          "manufacturer": "FRAM"
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "PH8842",
-          "manufacturer": "FRAM"
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "H200W01",
-          "manufacturer": "HENGST"
+          "manufacturer": "HENGST",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "H200W03",
-          "manufacturer": "HENGST"
+          "manufacturer": "HENGST",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "H200W04",
-          "manufacturer": "HENGST"
+          "manufacturer": "HENGST",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "H200W10",
-          "manufacturer": "HENGST"
+          "manufacturer": "HENGST",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "H200W40",
-          "manufacturer": "HENGST"
+          "manufacturer": "HENGST",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "H200W42",
-          "manufacturer": "HENGST"
+          "manufacturer": "HENGST",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "KFO0332595",
-          "manufacturer": "MAHLE"
+          "manufacturer": "MAHLE",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W1102/15",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W1102/4",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W11025",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W11102/11",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W1110214",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W11102/15",
           "brand": "Mann-Filter",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W1110218",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W11102/20",
           "brand": "Mann-Filter",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W11102/27",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W11102/34",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W11102/36",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W11102/4",
           "brand": "MANN",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "W1173",
           "brand": "Mann-Filter",
-          "manufacturer": "MANN"
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "K50003",
-          "manufacturer": "PUROLATOR"
+          "manufacturer": "PUROLATOR",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "K50004",
-          "manufacturer": "PUROLATOR"
+          "manufacturer": "PUROLATOR",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "L56069",
-          "manufacturer": "PUROLATOR"
+          "manufacturer": "PUROLATOR",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "L59068",
-          "manufacturer": "PUROLATOR"
+          "manufacturer": "PUROLATOR",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "PER68",
-          "manufacturer": "PUROLATOR"
+          "manufacturer": "PUROLATOR",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "24526",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "24536",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "24556",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "51788",
           "brand": "Wix",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "51791",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "51791E",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "51791EC",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "51791MP",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "51791XE",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         },
         {
           "code": "551791",
           "brand": "Wix",
-          "manufacturer": "WIX"
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "CATALOG_CONSENSUS_20261002"
         }
       ],
       "equipment_applications": [
