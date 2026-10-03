@@ -73,6 +73,7 @@ async function main() {
 
   let updated = 0;
   let notFound = 0;
+  let canonicalMismatch = 0;
   let skipped = 0;
   let index = 0;
 
@@ -103,7 +104,7 @@ async function main() {
     }
 
     try {
-      // Overwrite technical specs directly so that corrected dimensions overwrite incorrect ones.
+      // Update only when the patch source still matches the SKU's governed MANN canonical identity.
       const res = await client.query(
         `UPDATE elimfilters_catalog SET
           installation_type    = $2,
@@ -112,7 +113,9 @@ async function main() {
           height_mm            = $5,
           gasket_od_mm         = $6,
           gasket_id_mm         = $7
-        WHERE sku = $1`,
+        WHERE sku = $1
+          AND canonical_source_brand = 'MANN-FILTER'
+          AND ld_catalog.norm_part(canonical_source_code) = ld_catalog.norm_part($8)`,
         [
           sku,
           row.installation_type || null,
@@ -120,14 +123,23 @@ async function main() {
           row.outer_diameter_mm != null ? Number(row.outer_diameter_mm) : null,
           row.height_mm != null ? Number(row.height_mm) : null,
           row.gasket_od_mm != null ? Number(row.gasket_od_mm) : null,
-          row.gasket_id_mm != null ? Number(row.gasket_id_mm) : null
+          row.gasket_id_mm != null ? Number(row.gasket_id_mm) : null,
+          row.mann_source || null
         ]
       );
 
       if (res.rowCount > 0) {
         updated++;
       } else {
-        notFound++;
+        const existing = await client.query(
+          'SELECT canonical_source_brand, canonical_source_code FROM elimfilters_catalog WHERE sku = $1',
+          [sku]
+        );
+        if (existing.rowCount > 0) {
+          canonicalMismatch++;
+        } else {
+          notFound++;
+        }
       }
     } catch (err) {
       console.error(`❌ Error updating SKU ${sku}:`, err.message);
@@ -138,6 +150,7 @@ async function main() {
   console.log('\n📊 Patch Execution Report:');
   console.log(`   Processed:  ${lines.length}`);
   console.log(`   Updated:    ${updated}`);
+  console.log(`   Canonical mismatch: ${canonicalMismatch} (patch source != governed MANN source)`);
   console.log(`   Not Found:  ${notFound} (SKU doesn't exist in DB)`);
   console.log(`   Skipped:    ${skipped}`);
 
