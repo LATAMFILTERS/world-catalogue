@@ -1174,3 +1174,46 @@ Independent read confirmed persisted changes. Public EH61553 returned HTTP 200,
 the 22 reconstructed applications, and TECHNICAL_REVIEW_REQUIRED for references.
 No global SKU certification, resolver entry, startup process or infrastructure
 was modified. No new table, script, dependency or service was created.
+
+## Applied removal of technical metrics from OEM references - 2026-10-04 UTC
+
+Found engineering measurement labels misclassified as OEM identities:
+manufacturer exactly TWA MICRON @ BETA=2/20/75/200 and code exactly a decimal
+number followed by MICRON. Examples include 10.00 MICRON and 1.00 MICRON.
+These entries are not approved as product specifications; their numbers must
+not become certified filter ratings.
+
+A whole-block preflight evaluated 76 affected SKU and 519 entries through the
+existing catalog-write-gateway. Five SKU passed every gateway; 71 did not because
+of pre-existing canonical authority, reference-array or equipment-identity gaps.
+The failed initial shape exception rolled back; the completed dry-run explicitly
+classified such rows as held and rolled back all candidate writes.
+
+Committed the exact eligible set with expected count and mutation checks:
+| SKU | Removed metric entries | OEM entries remaining |
+| --- | --- | --- |
+| EF90588 | 7 | 529 |
+| EF90879 | 3 | 4 |
+| EF91319 | 4 | 43 |
+| EH61553 | 9 | 331 |
+| EH65877 | 4 | 367 |
+
+Total: 27 entries removed from active OEM arrays and archived in each row's
+existing enrichment_data.technical_metrics_removed_from_oem_20261004, together
+with prior array SHA256 and action rationale. Existing governance OEM counts were
+synchronized with the remaining arrays; previous counts retained in the archive.
+Canonical code, duty, competitor arrays, equipment and vehicle payloads were
+checked unchanged. No gateway or trigger was bypassed.
+
+71 rows / 492 measurement entries remain pending; their existing governance
+must be repaired before this cleanup can pass the canonical write gateway.
+No identity, OEM equivalence or competitor relationship was promoted by
+measurement removal. EH61553 now has 331 OEM entries, of which two have scoped
+Donaldson reference evidence; 329 OEM source relations and 275 competitor
+relations still require technical review.
+
+Fresh database read confirmed archived/remaining counts. Public EH61553 returned
+HTTP 200, zero metric OEM entries in the response and the 22 reconstructed
+applications. Its response exposes a subset of 51 OEM references; this is not
+the canonical database total. Reused existing gateway, triggers and record-level
+history; no new table, production script, dependency, service or scheduler.
