@@ -16,6 +16,12 @@ const apiKey=process.env.GROQ_API_KEY;
 const model=process.env.HERMES_CATALOGUE_DOSSIER_MODEL || 'groq/compound-mini';
 const fallbackModel=process.env.HERMES_GROQ_FALLBACK_MODEL || 'groq/compound-mini';
 const limit=Math.max(1,Math.min(20,Number(process.env.HERMES_CATALOGUE_RESEARCH_LIMIT||1)));
+const targetSkus=new Set(String(process.env.HERMES_CATALOGUE_TARGET_SKUS||'').split(',').map(v=>v.trim().toUpperCase()).filter(Boolean));
+const targeted=targetSkus.size>0;
+const expectedTargetCountRaw=String(process.env.HERMES_CATALOGUE_EXPECTED_TARGET_COUNT||'').trim();
+const expectedTargetCount=expectedTargetCountRaw?Number(expectedTargetCountRaw):null;
+if(expectedTargetCount!==null&&(!Number.isInteger(expectedTargetCount)||expectedTargetCount<1)) throw new Error('HERMES_CATALOGUE_EXPECTED_TARGET_COUNT must be a positive integer');
+if(targeted&&expectedTargetCount!==null&&targetSkus.size!==expectedTargetCount) throw new Error(`HERMES_TARGET_LIST_COUNT_MISMATCH:${targetSkus.size}!=${expectedTargetCount}`);
 const pacingMs=Math.max(0,Number(process.env.HERMES_CATALOGUE_RESEARCH_PACING_MS||20000));
 const retries=Math.max(0,Math.min(3,Number(process.env.HERMES_CATALOGUE_RESEARCH_RETRIES||2)));
 const timeoutMs=Math.max(10000,Number(process.env.HERMES_CATALOGUE_RESEARCH_TIMEOUT_MS||45000));
@@ -286,7 +292,9 @@ for(const batch of index.batches||[]){
   const doc=JSON.parse(fs.readFileSync(path.join(root,batch.file),'utf8'));
   for(const item of doc.items||[]){
     if(selected.length>=limit) break;
-    if(item.gap_type==='SOURCE') selected.push(item);
+    if(item.gap_type!=='SOURCE') continue;
+    if(targeted&&!targetSkus.has(String(item.sku||'').toUpperCase())) continue;
+    selected.push(item);
   }
 }
 
@@ -295,7 +303,7 @@ await db.connect();
 const migration=fs.readFileSync(path.join(root,'scripts/migrations/run_110_hermes_catalogue_dossier_20260918.sql'),'utf8');
 await db.query(migration);
 await db.query(fs.readFileSync(path.join(root,'scripts/migrations/run_111_hermes_duty_source_role_20260918.sql'),'utf8'));
-const run={schema_version:'2.0.0',generated_at:new Date().toISOString(),selected:selected.length,results:[]};
+const run={schema_version:'2.0.0',generated_at:new Date().toISOString(),targeted,target_sku_count:targetSkus.size,selected:selected.length,results:[]};
 
 try{
   for(let i=0;i<selected.length;i++){
