@@ -311,7 +311,10 @@ function proposedValues(item,dossier,evidenceId,capturedAt,applicationEvidence=n
   const xrefs=structuredObjects(dossier?.cross_references?.records||[]);
   if(dossier.cross_references.status==='VERIFIED' && xrefs.length) values.competitor_codes=xrefs;
   const applications=structuredApplications(dossier?.applications?.records||[]);
-  if(dossier.applications.status==='VERIFIED' && applicationEvidence && applications.length) values.vehicle_applications=applications;
+  if(dossier.applications.status==='VERIFIED' && applicationEvidence && applications.length){
+    if(String(item?.duty||'').toUpperCase()==='HEAVY_DUTY') values.equipment_applications=applications;
+    else values.vehicle_applications=applications;
+  }
   return values;
 }
 const orgDoc=JSON.parse(fs.readFileSync(path.join(root,'hermes/config/source-organizations.json'),'utf8'));
