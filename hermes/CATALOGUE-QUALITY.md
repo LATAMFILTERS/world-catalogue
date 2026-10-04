@@ -76,3 +76,13 @@ For LIGHT_DUTY, a fully verified MANN-FILTER or FRAM dossier may provide the can
 For HEAVY_DUTY, MANN-FILTER and FRAM part numbers are competitor references only. They must never become the canonical `codigo_base` or canonical source identity. HERMES records a complete MANN/FRAM HD dossier as CROSS_REFERENCES evidence and keeps SOURCE open while it searches for the actual HD canonical source.
 
 The dossier must also classify `market_segment`. If official evidence shows that a proposed LD MANN/FRAM candidate is actually HEAVY_DUTY, that candidate is rejected as the LD base, preserved as competitor evidence, and the SKU is flagged for duty/source review.
+
+### Runtime relationship review — 2026-10-04
+
+The existing PostgreSQL evidence was re-read without rerunning the 212/213 migrations or reclassifying the lane. All 1,886 rows remain pending explicit Donaldson authority. The existing HERMES ledger still contains 1,762 verified exact Fleetguard code identities and 124 `REVIEW_REQUIRED` identities.
+
+For the 1,762 verified identities, the current ledger has 0 verified application-evidence rows, 0 verified HERMES technical-specification rows, and 0 rows with dimensions marked verified. Although 189 SKUs have an `exact_part_reference` row and catalogue records contain OEM or competitor reference arrays, those facts do not establish ELIMFILTERS equivalence or a supported application. No relation met the evidence bar for a catalogue correction in this review; corrected rows: 0.
+
+The remaining 124 identities still have no matching exact official Fleetguard product evidence. Current records contain competitor entries for 46 SKUs, OEM entries for 37, and exact-part-reference rows for 9; none has verified application, technical-specification, or dimension evidence in the HERMES ledger. These reference hints remain research leads, not verified identity or fitment.
+
+This run completed 0 new source investigations and left all 124 identity cases pending. The existing HERMES selector cannot run against the current runtime because `hermes_catalogue_readiness`, `hermes_catalogue_backlog`, and `hermes_catalogue_dossier` are absent. Its existing live dossier researcher also requires `GROQ_API_KEY`, which is unavailable in this process. The only HERMES table present is the evidence ledger. I did not apply the global readiness sync: its current implementation upserts readiness/backlog for all active SKUs and resolves stale backlog rows globally, which could overwrite concurrent HERMES work. No candidate passed the evidence gates, so no gateway simulation or catalogue write was performed.
