@@ -83,6 +83,7 @@
     "hermes:nodal:review:init": "node scripts/hermes/nodal-promotion.mjs --init-reviews",
     "hermes:nodal:promotion:audit": "node scripts/hermes/nodal-promotion.mjs",
     "hermes:nodal:promote": "node scripts/hermes/nodal-promotion.mjs --apply",
+    "catalog:b3:audit": "node scripts/audits/audit-competing-sku-application-evidence-b3.js",
     "hermes:catalogue:quality": "node scripts/hermes/catalogue-readiness.mjs",
     "hermes:catalogue:quality:sync": "node scripts/hermes/catalogue-readiness.mjs --sync",
     "hermes:catalogue:work-orders": "node scripts/hermes/catalogue-quality-work-orders.mjs",
