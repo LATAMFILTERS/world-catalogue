@@ -278,6 +278,41 @@ test('non-canonical patches can pass without forcing unrelated legacy governance
   assert.deepEqual(result.canonical_fields_touched, []);
 });
 
+test('rejection cleanup may only remove existing OEM or competitor references', () => {
+  const current = {
+    sku: 'EH68318',
+    competitor_codes: [
+      { manufacturer: 'DONALDSON', code: 'P166135' },
+      { manufacturer: 'WIX', code: '51698' },
+    ],
+    oem_codes: [],
+  };
+  const removal = validateGovernedCatalogPatch(
+    current,
+    { competitor_codes: [{ manufacturer: 'WIX', code: '51698' }] },
+    { rejectionCleanup: true }
+  );
+  assert.equal(removal.valid, true);
+  assert.equal(removal.scope, 'REJECTION_CLEANUP');
+  assert.equal(removal.removed_count, 1);
+
+  const addition = validateGovernedCatalogPatch(
+    current,
+    { competitor_codes: [{ manufacturer: 'WIX', code: '51698' }, { manufacturer: 'DONALDSON', code: 'P999999' }] },
+    { rejectionCleanup: true }
+  );
+  assert.equal(addition.valid, false);
+  assert.ok(addition.reasons.includes('REJECTION_CLEANUP_MUST_REMOVE_ONLY'));
+
+  const baseChange = validateGovernedCatalogPatch(
+    current,
+    { codigo_base: 'P166135' },
+    { rejectionCleanup: true }
+  );
+  assert.equal(baseChange.valid, false);
+  assert.ok(baseChange.reasons.includes('REJECTION_CLEANUP_FIELDS_NOT_ALLOWED'));
+});
+
 test('canonical patches are evaluated against the complete post-write row', () => {
   const result = validateGovernedCatalogPatch(baseRow(), { duty: 'LIGHT_DUTY' });
   assert.equal(result.valid, false);
