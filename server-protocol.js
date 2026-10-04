@@ -26,6 +26,15 @@ function startRuntimeSurface() {
 }
 
 async function start() {
+  // Explicit presentation-only restart: reuse installed database governance.
+  // Normal startup continues to run all governed migrations below.
+  if (process.argv.includes('--runtime-only')) {
+    const { loadReferenceQuarantine } = require('./lib/catalog-reference-quarantine');
+    const quarantine = await loadReferenceQuarantine();
+    console.log('[runtime-only] existing reference quarantine loaded', JSON.stringify(quarantine));
+    startRuntimeSurface();
+    return;
+  }
   if (startupAsync) {
     startRuntimeSurface();
     console.log('[startup-migrations] asynchronous mode enabled: service surface is available while governed migrations run');
