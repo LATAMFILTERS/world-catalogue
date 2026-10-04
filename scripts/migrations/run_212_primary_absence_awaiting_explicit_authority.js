@@ -45,7 +45,9 @@ async function runPrimaryAbsenceAwaitingAuthorityMigration({ apply = APPLY, expe
 
   const pool = new Pool({
     connectionString: databaseUrl,
-    ssl: { rejectUnauthorized: false },
+    ssl: process.env.CATALOG_DATABASE_SSL === 'disable'
+      ? false
+      : { rejectUnauthorized: false },
   });
   const client = await pool.connect();
 

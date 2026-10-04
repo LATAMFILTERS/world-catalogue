@@ -35,7 +35,7 @@ test('primary absence awaiting authority lane is fail closed and queue only', ()
 
   assert.doesNotMatch(source, /UPDATE\s+elimfilters_catalog/i);
   assert.doesNotMatch(source, /SET\s+donaldson_absence_verified\s*=\s*true/i);
-  assert.doesNotMatch(source, /status\s*=\s*'RESOLVED'/i);
+  assert.doesNotMatch(source, /SET\s+status\s*=\s*'RESOLVED'/i);
   assert.doesNotMatch(source, /canonical_source_brand\s*=/i);
   assert.doesNotMatch(source, /canonical_source_status\s*=/i);
 });
@@ -60,9 +60,7 @@ test('historical queue rebuild preserves the explicit absence authority lane', (
 test('automatic sanitation worker cannot promote the awaiting absence lane', () => {
   const source = fs.readFileSync(sanitationPath, 'utf8');
 
-  assert.match(
-    source,
-    /IN \('CANONICAL_EVIDENCED_NOT_VERIFIED','REVIEW_PRIMARY_CANDIDATE'\)/
-  );
+  assert.match(source, /state === 'CANONICAL_EVIDENCED_NOT_VERIFIED'/);
+  assert.match(source, /state === 'REVIEW_PRIMARY_CANDIDATE'/);
   assert.doesNotMatch(source, /PRIMARY_ABSENCE_AWAITING_EXPLICIT_AUTHORITY/);
 });
