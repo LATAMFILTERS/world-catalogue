@@ -9,6 +9,11 @@ import { assessSku, buildBacklog, buildOrganizationIndex, stableId } from './cat
 const { Client } = pg;
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../..');
 const sync = process.argv.includes('--sync');
+const targetSkus = new Set(String(process.env.HERMES_CATALOGUE_TARGET_SKUS || '').split(',').map(v=>v.trim().toUpperCase()).filter(Boolean));
+const targeted = targetSkus.size > 0;
+const expectedTargetCountRaw = String(process.env.HERMES_CATALOGUE_EXPECTED_TARGET_COUNT || '').trim();
+const expectedTargetCount = expectedTargetCountRaw ? Number(expectedTargetCountRaw) : null;
+if (expectedTargetCount !== null && (!Number.isInteger(expectedTargetCount) || expectedTargetCount < 1)) throw new Error('HERMES_CATALOGUE_EXPECTED_TARGET_COUNT must be a positive integer');
 const url = process.env.CATALOG_DATABASE_URL || process.env.ELIMFILTERS_DATABASE_URL || process.env.DATABASE_URL;
 if (!url) throw new Error('DATABASE_URL/CATALOG_DATABASE_URL is required');
 if (sync && String(process.env.HERMES_CATALOGUE_QUALITY_SYNC || '').toLowerCase() !== 'true') {
@@ -20,7 +25,14 @@ const db = new Client({ connectionString:url });
 await db.connect();
 
 try {
-  const catalog = (await db.query("SELECT sku,codigo_base,duty,technology,filter_type,canonical_source_brand,canonical_source_code,canonical_source_url,canonical_source_status,canonical_verified_at,canonical_evidence,vehicle_applications,equipment_applications,oem_codes,competitor_codes,brand_crossrefs,height_mm,product_length_mm,outer_diameter_mm,inner_diameter_mm,gasket_od_mm,gasket_id_mm,product_dimensions_source,product_dimensions_validation_status,image_url,enrichment_data,units_per_case,unit_packaged_weight_kg,unit_packaged_volume_m3,master_carton_length_cm,packaging_type,packaging_source,packaging_source_url,packaging_validation_status,packaging_validated_at FROM elimfilters_catalog WHERE catalog_active=true ORDER BY sku")).rows;
+  const catalogAll = (await db.query("SELECT sku,codigo_base,duty,technology,filter_type,canonical_source_brand,canonical_source_code,canonical_source_url,canonical_source_status,canonical_verified_at,canonical_evidence,vehicle_applications,equipment_applications,oem_codes,competitor_codes,brand_crossrefs,height_mm,product_length_mm,outer_diameter_mm,inner_diameter_mm,gasket_od_mm,gasket_id_mm,product_dimensions_source,product_dimensions_validation_status,image_url,enrichment_data,units_per_case,unit_packaged_weight_kg,unit_packaged_volume_m3,master_carton_length_cm,packaging_type,packaging_source,packaging_source_url,packaging_validation_status,packaging_validated_at FROM elimfilters_catalog WHERE catalog_active=true ORDER BY sku")).rows;
+  const catalog = targeted ? catalogAll.filter(row=>targetSkus.has(String(row.sku||'').toUpperCase())) : catalogAll;
+  if (targeted && expectedTargetCount !== null && catalog.length !== expectedTargetCount) throw new Error(`HERMES_TARGET_COUNT_MISMATCH:${catalog.length}!=${expectedTargetCount}`);
+  if (targeted && catalog.length !== targetSkus.size) {
+    const found = new Set(catalog.map(row=>String(row.sku||'').toUpperCase()));
+    const missing = [...targetSkus].filter(sku=>!found.has(sku));
+    throw new Error(`HERMES_TARGET_SKUS_NOT_ACTIVE_OR_MISSING:${missing.join(',')}`);
+  }
   const appRows = (await db.query("SELECT id,sku,application_kind,payload_hash,evidence_authority,source_url,evidence_hash,verified_at,metadata,created_at FROM catalog_application_evidence WHERE verified=true")).rows;
   const refRows = (await db.query("SELECT id,reference_type,brand,part_number,sku,source,created_at FROM exact_part_reference")).rows;
   const manufacturerIdentityRows = (await db.query("SELECT evidence_id,sku,authority,source_url,source_hash,verification_status,payload,provenance,captured_at FROM hermes_catalogue_evidence WHERE field_group='MANUFACTURER_IDENTITY' ORDER BY updated_at DESC,evidence_id")).rows;
@@ -70,7 +82,7 @@ try {
     equivalence_approvals:0,
     publication_approvals:0
   };
-  const summary={generated_at:new Date().toISOString(),active_skus:catalog.length,source_verified:readiness.filter(x=>x.source_verified).length,source_primary_evidence:readiness.filter(x=>x.source_primary_evidence).length,manufacturer_identity_verified:readiness.filter(x=>x.manufacturer_identity_verified).length,manufacturer_priority_awaiting_explicit_authority:readiness.filter(x=>x.manufacturer_priority_status==='AWAITING_EXPLICIT_AUTHORITY').length,primary_absence_identity_lane:primaryAbsenceIdentityLane,applications_verified:readiness.filter(x=>x.applications_verified).length,crossrefs_verified:readiness.filter(x=>x.crossrefs_verified).length,dimensions_verified:readiness.filter(x=>x.dimensions_verified).length,image_verified:readiness.filter(x=>x.image_verified).length,packaging_verified:readiness.filter(x=>x.packaging_verified).length,technical_ready:readiness.filter(x=>x.technical_ready).length,fully_verified:readiness.filter(x=>x.fully_verified).length,backlog_open:backlog.length,backlog_by_gap:Object.fromEntries(gapNames.map(g=>[g,readiness.filter(x=>x.gaps.includes(g)).length])),next_action_by_gap:Object.fromEntries(gapNames.map(g=>[g,backlog.filter(x=>x.gap_type===g).length])),evidence_records:evidence.length,sync_requested:sync};
+  const summary={generated_at:new Date().toISOString(),targeted,target_sku_count:targetSkus.size,active_skus:catalog.length,source_verified:readiness.filter(x=>x.source_verified).length,source_primary_evidence:readiness.filter(x=>x.source_primary_evidence).length,manufacturer_identity_verified:readiness.filter(x=>x.manufacturer_identity_verified).length,manufacturer_priority_awaiting_explicit_authority:readiness.filter(x=>x.manufacturer_priority_status==='AWAITING_EXPLICIT_AUTHORITY').length,primary_absence_identity_lane:primaryAbsenceIdentityLane,applications_verified:readiness.filter(x=>x.applications_verified).length,crossrefs_verified:readiness.filter(x=>x.crossrefs_verified).length,dimensions_verified:readiness.filter(x=>x.dimensions_verified).length,image_verified:readiness.filter(x=>x.image_verified).length,packaging_verified:readiness.filter(x=>x.packaging_verified).length,technical_ready:readiness.filter(x=>x.technical_ready).length,fully_verified:readiness.filter(x=>x.fully_verified).length,backlog_open:backlog.length,backlog_by_gap:Object.fromEntries(gapNames.map(g=>[g,readiness.filter(x=>x.gaps.includes(g)).length])),next_action_by_gap:Object.fromEntries(gapNames.map(g=>[g,backlog.filter(x=>x.gap_type===g).length])),evidence_records:evidence.length,sync_requested:sync};
 
   const groups={};
   for(const r of readiness){
@@ -136,10 +148,16 @@ try {
       );
 
       const activeIds=backlog.map(x=>x.backlog_id);
-      if(activeIds.length) await db.query(
-        "UPDATE hermes_catalogue_backlog SET status='RESOLVED',resolved_at=now(),updated_at=now() WHERE status NOT IN ('EVIDENCE_FOUND','REVIEW_REQUIRED','APPROVED','BLOCKED') AND NOT(backlog_id=ANY($1::text[]))",
-        [activeIds]
-      );
+      if(activeIds.length) {
+        if(targeted) await db.query(
+          "UPDATE hermes_catalogue_backlog SET status='RESOLVED',resolved_at=now(),updated_at=now() WHERE sku=ANY($2::text[]) AND status NOT IN ('EVIDENCE_FOUND','REVIEW_REQUIRED','APPROVED','BLOCKED') AND NOT(backlog_id=ANY($1::text[]))",
+          [activeIds,[...targetSkus]]
+        );
+        else await db.query(
+          "UPDATE hermes_catalogue_backlog SET status='RESOLVED',resolved_at=now(),updated_at=now() WHERE status NOT IN ('EVIDENCE_FOUND','REVIEW_REQUIRED','APPROVED','BLOCKED') AND NOT(backlog_id=ANY($1::text[]))",
+          [activeIds]
+        );
+      }
       await db.query('COMMIT');
     }catch(error){
       await db.query('ROLLBACK');
