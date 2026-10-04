@@ -49,6 +49,8 @@ CREATE INDEX IF NOT EXISTS hermes_catalogue_dossier_status_idx
 CREATE INDEX IF NOT EXISTS hermes_catalogue_dossier_source_idx
   ON hermes_catalogue_dossier(manufacturer, source_code);
 
+DROP VIEW IF EXISTS hermes_catalogue_dossier_progress_v;
+
 CREATE OR REPLACE VIEW hermes_catalogue_dossier_progress_v AS
 SELECT
   c.duty,

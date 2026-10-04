@@ -1,6 +1,7 @@
 ﻿'use strict';
 
 const { Client } = require('pg');
+const { validateCanonicalWrite } = require('../../lib/catalog-write-gateway');
 
 const SUMMARY_ONLY = process.argv.includes('--summary-only');
 const norm = v => String(v || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
@@ -68,8 +69,9 @@ async function main() {
 
     const publicIds = (await db.query(`
       SELECT
-        sku,codigo_base,canonical_source_code,canonical_source_status,
-        enrichment_data,
+        sku,codigo_base,duty,filter_type,technology,
+        canonical_source_brand,canonical_source_code,canonical_source_status,
+        oem_codes,competitor_codes,enrichment_data,
         vehicle_applications,equipment_applications
       FROM public.elimfilters_catalog
     `)).rows;
@@ -139,9 +141,22 @@ async function main() {
     const isStrongCanonical = sku => {
       const pub = publicBySku.get(sku) || {};
       const state = pub.enrichment_data?.codigo_base_governance?.state || '';
-      return canonicalBySku.has(sku)
-        && pub.canonical_source_status === 'VERIFIED'
-        && state === 'CANONICAL_VERIFIED';
+      if (pub.canonical_source_status !== 'VERIFIED' || state !== 'CANONICAL_VERIFIED') return false;
+      let validation;
+      try {
+        validation = validateCanonicalWrite({
+          ...pub,
+          oem_codes:Array.isArray(pub.oem_codes)?pub.oem_codes:[],
+          competitor_codes:Array.isArray(pub.competitor_codes)?pub.competitor_codes:[]
+        }, { validateApplications:false });
+      } catch {
+        return false;
+      }
+      if (!validation.valid) return false;
+      const duty = String(pub.duty || '').toUpperCase();
+      if (duty === 'LIGHT_DUTY') return canonicalBySku.has(sku);
+      if (duty === 'HEAVY_DUTY' || duty === 'INDUSTRIAL_PROCESS') return true;
+      return false;
     };
     const appsBySku = new Map();
     const groups = new Map();
