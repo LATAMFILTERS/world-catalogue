@@ -1137,3 +1137,40 @@ reconstructed applications with EVIDENCE_VERIFIED. Public EH61553 search returne
 approved applications likewise report NO_VERIFIED_APPLICATIONS. No data, SKU
 identity, OEM/competitor, infrastructure topology, service or table was changed
 by this correction. Render remains the bridge to Lenovo.
+
+## Applied canonical-reference and OEM-source correction - 2026-10-04 UTC
+
+EH61553 incorrectly retained VERIFY_PRIMARY_ABSENCE for its existing P551553
+canonical reference, despite the official Donaldson F116003 catalogue documenting
+P551553. Corrected codigo_base_governance to CANONICAL_VERIFIED with
+primary_manufacturer_verified=true and approved manufacturer DONALDSON.
+verification_scope is EXISTING_CANONICAL_REFERENCE_IDENTITY_ONLY; this does NOT
+certify physical ELIMFILTERS product interchangeability or the complete SKU.
+
+Attached source_evidence to exactly two existing OEM manufacturer/code pairs:
+- JOHN-DEERE / RE34040: PDF page 274 (printed 264), hydraulic spin-on P551553.
+  Equipment applicability retains source serial restrictions; no blanket machine
+  application or engine model was inferred from this cross-reference.
+- TORO / 863010: PDF page 470 (printed 460) cross-reference table, corroborated by
+  86-3010 / P551553 at Reelmaster 5010 PDF page 435 (printed 425).
+
+Source: Donaldson official F116003 Agriculture Catalogue.
+Source URL: https://www.donaldson.com/content/dam/donaldson/engine-hydraulics-bulk/catalogs/industries-markets/agriculture/emea/f116003/Agriculture-Catalogue.pdf
+Source SHA256: e646ecf41f62ae8d90dc36eeec3bc27e5f91f90d46086a6e0b2f03a2c661b9d4
+
+The source pages were rendered and visually checked. Each OEM evidence record is
+scoped MANUFACTURER_REFERENCE_ONLY, with reference_validation
+CANONICAL_SOURCE_VERIFIED_ELIM_EQUIVALENCE_PENDING and own-product approval=false.
+
+Reused assertGovernedCatalogPatch and existing database triggers. Full dry-run
+rolled back before COMMIT, with exact preconditions and before/after checks.
+The existing enrichment_data.p551553_primary_and_oem_evidence_20261004 archive
+holds previous canonical governance and OEM array. No codes, manufacturers or
+array counts changed: 340 OEM and 275 competitor entries remain. 338 other OEM
+source relations and all 275 competitor relations still need source review.
+No equivalence was approved just because a part number appears in a source.
+
+Independent read confirmed persisted changes. Public EH61553 returned HTTP 200,
+the 22 reconstructed applications, and TECHNICAL_REVIEW_REQUIRED for references.
+No global SKU certification, resolver entry, startup process or infrastructure
+was modified. No new table, script, dependency or service was created.
