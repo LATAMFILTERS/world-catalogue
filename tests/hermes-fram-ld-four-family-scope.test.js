@@ -8,6 +8,8 @@ const {
   isAllowedFramLdFamily,
   isEuropeMarket,
   classifyCrossReference,
+  classifyNonEuropeanApplicationOverlap,
+  NON_EUROPEAN_OVERLAP_DECISIONS,
   MARKET_POLICY
 } = require('../lib/knowledge-governance/fram-ld-catalog-scope');
 
@@ -35,4 +37,63 @@ test('MANN reference found in non-European FRAM evidence is competitor cross onl
   assert.equal(cross.nomenclature_authority, false);
   assert.equal(cross.application_authority, false);
   assert.equal(cross.catalog_auto_write_allowed, false);
+});
+
+
+test('Toyota C-HR non-European FRAM fitment is not blocked by overlapping MANN application alone', () => {
+  const result = classifyNonEuropeanApplicationOverlap({
+    origin_group: 'NON_EUROPEAN',
+    canonical_brand: 'FRAM',
+    peer_manufacturer: 'MANN-FILTER',
+    overlap_proven: true,
+    technical_conflict_reasons: []
+  });
+
+  assert.equal(result.applies, true);
+  assert.equal(result.decision, NON_EUROPEAN_OVERLAP_DECISIONS.SECONDARY_APPLICATION_EVIDENCE);
+  assert.equal(result.hold_required, false);
+  assert.equal(result.canonical_application_authority, true);
+  assert.equal(result.peer_application_authority, false);
+  assert.equal(result.application_overlap, true);
+  assert.equal(result.technical_contradiction, false);
+});
+
+test('Toyota Prius non-European FRAM fitment keeps MANN as secondary application evidence', () => {
+  const result = classifyNonEuropeanApplicationOverlap({
+    origin_group: 'NON_EUROPEAN',
+    canonical_brand: 'FRAM',
+    peer_manufacturer: 'MANN',
+    overlap_proven: true
+  });
+
+  assert.equal(result.decision, NON_EUROPEAN_OVERLAP_DECISIONS.SECONDARY_APPLICATION_EVIDENCE);
+  assert.equal(result.hold_required, false);
+});
+
+test('non-European FRAM overlap stays on hold only with an independent technical contradiction', () => {
+  const result = classifyNonEuropeanApplicationOverlap({
+    origin_group: 'NON_EUROPEAN',
+    canonical_brand: 'FRAM',
+    peer_manufacturer: 'MANN-FILTER',
+    overlap_proven: true,
+    technical_conflict_reasons: ['INCOMPATIBLE_THREAD']
+  });
+
+  assert.equal(result.decision, NON_EUROPEAN_OVERLAP_DECISIONS.TECHNICAL_CONTRADICTION);
+  assert.equal(result.hold_required, true);
+  assert.equal(result.technical_contradiction, true);
+  assert.deepEqual(result.technical_conflict_reasons, ['INCOMPATIBLE_THREAD']);
+});
+
+test('unsupported hold reasons fail closed instead of creating arbitrary collisions', () => {
+  assert.throws(
+    () => classifyNonEuropeanApplicationOverlap({
+      origin_group: 'NON_EUROPEAN',
+      canonical_brand: 'FRAM',
+      peer_manufacturer: 'MANN-FILTER',
+      overlap_proven: true,
+      technical_conflict_reasons: ['MANN_OVERLAP_EXISTS']
+    }),
+    /UNSUPPORTED_TECHNICAL_CONTRADICTION_REASON/
+  );
 });
