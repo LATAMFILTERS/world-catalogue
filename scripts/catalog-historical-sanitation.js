@@ -455,7 +455,10 @@ async function buildPrimaryAuthorityResearchReport(client, { limit = 1000, targe
       AND q.governance_state='REVIEW_PRIMARY_CANDIDATE'
       AND coalesce(q.last_error,'') NOT IN (
         'CROSS_REFERENCE_ONLY_NOT_MANUFACTURING_AUTHORITY',
-        'CROSS_REFERENCE_ONLY_NOT_CANONICAL_AUTHORITY'
+        'CROSS_REFERENCE_ONLY_NOT_CANONICAL_AUTHORITY',
+        'SUPERSEDED_REFERENCE_NOT_CANONICAL_AUTHORITY',
+        'DONALDSON_PRODUCT_EXISTS_IDENTITY_LINK_UNVERIFIED',
+        'DONALDSON_NOT_FOUND_NOT_ABSENCE_EVIDENCE'
       )
       AND c.duty='HEAVY_DUTY'
       AND ($2::text IS NULL OR q.sku=$2)
@@ -542,7 +545,10 @@ async function runHistoricalSanitationBatch({
         AND q.attempts < 3
         AND coalesce(q.last_error,'') NOT IN (
           'CROSS_REFERENCE_ONLY_NOT_MANUFACTURING_AUTHORITY',
-          'CROSS_REFERENCE_ONLY_NOT_CANONICAL_AUTHORITY'
+          'CROSS_REFERENCE_ONLY_NOT_CANONICAL_AUTHORITY',
+          'SUPERSEDED_REFERENCE_NOT_CANONICAL_AUTHORITY',
+          'DONALDSON_PRODUCT_EXISTS_IDENTITY_LINK_UNVERIFIED',
+          'DONALDSON_NOT_FOUND_NOT_ABSENCE_EVIDENCE'
         )
         AND c.duty='HEAVY_DUTY'
         AND c.enrichment_data->'codigo_base_governance'->>'state' = 'CANONICAL_EVIDENCED_NOT_VERIFIED'

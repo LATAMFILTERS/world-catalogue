@@ -36,6 +36,9 @@ test('primary candidates fail closed when evidence is only a cross-reference', (
 test('cross-reference-only queue rows are excluded from automatic sanitation batches', () => {
   const source = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'catalog-historical-sanitation.js'), 'utf8');
   assert.match(source, /CROSS_REFERENCE_ONLY_NOT_MANUFACTURING_AUTHORITY/);
+  assert.match(source, /SUPERSEDED_REFERENCE_NOT_CANONICAL_AUTHORITY/);
+  assert.match(source, /DONALDSON_PRODUCT_EXISTS_IDENTITY_LINK_UNVERIFIED/);
+  assert.match(source, /DONALDSON_NOT_FOUND_NOT_ABSENCE_EVIDENCE/);
   assert.match(source, /coalesce\(q\.last_error,''\) NOT IN/);
 });
 
