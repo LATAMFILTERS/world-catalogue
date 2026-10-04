@@ -935,3 +935,76 @@ Each indexed row below occurs in all 12 identical payloads. These indices are sn
 Obtain authoritative equipment/filter-position evidence first for the source EH66502/P566502, then evaluate each target's filtration requirement independently. Do not propagate approval across micron variants or shared codes.
 Subgroup order: P566499-503 variants; P167943; HF7118F-7120F; HF8318-8320. Without primary technical documentation, retain pending status and public withholding.
 Reused installed presentation guard, certification/evidence tables, canonical Lenovo connection, existing repository audit report and Notion project control page. Created no service, table, scheduler, dependency or parallel source of truth.
+
+### Group 2 technical continuation: origin and mounting conflicts
+Audit date: 2026-10-03 America/Chicago / 2026-10-04 UTC. Read-only investigation; no data migrations, base promotions, application deletions or runtime restarts.
+
+#### Historical extraction versus current catalog
+Reused scripts/donaldson_hydraulic_results.json in the canonical Lenovo repository. Measured SHA-256: 14a715b2af058a191436abb3dc1f1aab235b89f85d4ed3a1bb3de6090c0c6d76.
+This local extraction is a historical research snapshot, not newly verified equipment evidence.
+
+| Source part | Local extracted equipment rows | Current catalog equipment rows | Stored installation |
+| --- | ---: | ---: | --- |
+| P551553 / EH61553 | 147 (140 distinct equipment/type/engine tuples) | 489 | Spin-On |
+| P566502 / EH66502 | 0 | 489 | Cartridge |
+| P167943 / EH67943 | 0 | 489 | Cartridge |
+| P566522 / EH66522 | 0 | 489 | Cartridge |
+
+All 140 distinct P551553 source tuples occur in the current 489-row payload; 349 current distinct tuples are outside that historical source snapshot. The extraction contains seven repeated tuples; the current database payload has 489 distinct tuples. The count of 147 source rows must not be subtracted directly from 489.
+An empty extracted equipment array is not proof of incompatibility. It does show that this snapshot does not supply the historical application list for the three cartridges.
+No execution logs prove which writer copied the payload into EH66502. The matching payload does not establish mutation direction or which source originally owned every application.
+
+#### Scope widened by exact payload matching
+The same PostgreSQL payload hash 9c6154cfbec913b75ae133704dd89575 occurs in 18 SKUs, not only the 12-SKU inheritance group. These are 8802 recorded SKU/application relationships, not 8802 independently verified relations.
+Six additional matching SKUs:
+
+| SKU | Base | Installation as stored | Inheritance marker |
+| --- | --- | --- | --- |
+| EH60274 | HF30274 | Spin-On | None |
+| EH61553 | P551553 | Spin-On | None |
+| EH66508 | HF6508 | Not recorded | EH60274 |
+| EH66522 | P566522 | Cartridge | None |
+| EH66523 | P566523 | Cartridge | EH66522 |
+| EH67518 | P167518 | Cartridge | EH60274 |
+
+All six additional SKUs have zero EQUIPMENT evidence records and recorded BLOCKED certification. Live public API checks preserve identity and withhold all 489 equipment applications for each. No application approval was made for the original Spin-On SKUs either.
+
+#### Primary manufacturer check: Bobcat
+Official sources:
+- https://shop.bobcat.com/parts/6661248-hydraulic-oil-filter
+- https://shop.bobcat.com/hydraulic-oil-filters-6516722
+- https://shop.donaldson.com/store/en-us/product/P566502/37515
+
+| Documented part or candidate | Mounting style | Length | Thread | Relevant model scope |
+| --- | --- | --- | --- | --- |
+| Bobcat 6661248 | Spin-On | 152 mm | 1 3/8-12 UN | Includes Bobcat 329 |
+| Bobcat 6516722 | Spin-On | 136 mm | 1-12 UN | Includes Bobcat 329, 371 and 5600 |
+| Donaldson P566502 | Cartridge (current official product identity) | 428 mm in historical local extraction; not freshly certified here | No thread in historical extraction | Equipment-specific approval still missing |
+
+Conclusion for the documented threaded service positions: a cartridge is not a direct replacement for those Spin-On filter positions. This is a specific mounting conflict, not a blanket finding that P566502 cannot occur anywhere on the same model.
+The legacy application record "BOBCAT 329" has no filter position, serial range or years; it therefore cannot establish which service position was intended. Keep the ELIMFILTERS application pending and withheld; do not delete the entire model application on this evidence alone.
+Bobcat explicitly requires serial/engine-based compatibility checking. The recovered model lists do not certify every serial variant.
+The same caution applies to legacy BOBCAT 371 and 5600 records: do not infer compatibility from the model name or a shared cross-reference.
+
+#### Donaldson historical catalog cross-check
+Author: Donaldson Company. Worldwide Filter and Engine Vehicle Application Guide, July 2014, F110026 ENG7-14, historical mirror:
+https://www.petroil.net/publish/IMG_Products/Descargas/F110026%20ENG7-14%20Filter%20Application%20Guide.pdf
+Downloaded PDF SHA-256: 8c618c8d48a412f383433b6467b54e77cc3ca79d22b14f3e4382c73a009fcac4. 1612 PDF pages. Visually checked relevant tables.
+- PDF page 16 (printed page 14): P167943 is listed as Standard with P566502 as a DT performance alternative. This is not a supersession statement and does not certify every equipment application.
+- PDF page 517 (printed page 515): Allis Chalmers 860/860XTB hydraulic service entries list Spin-On P551553 and P551551 with OEM references 70248399 and 72532042 respectively. This supports a position-specific concern for the unpositioned legacy ALLIS-CHALMERS 860/860XTB entries; current serial/configuration confirmation remains necessary.
+P566502 and P167943 only appeared in the historical performance-alternative tables in the extracted text. This edition's absence of a part from an application table is not treated as exhaustive incompatibility.
+
+Official Donaldson Hydraulic Product Guide downloaded from:
+https://www.donaldson.com/content/dam/donaldson/engine-hydraulics-bulk/catalogs/Hydraulic/North-America/F112100-ENG/Hydraulic-Filtration-Product-Guide.pdf
+SHA-256: 2e0e52b5be298905e9db67da16928ed8b340135236a28e541dd267df76c72361. 278 PDF pages. No P566502/P167943 text match; no negative fitment decision was derived from that limited guide.
+
+#### Specification mapping discrepancy requiring controlled repair
+The historical P566502 extraction contains "Overall Length" of 428 mm and beta-1000 efficiency of 12 micrometres, but its parsed dimensions object lacks length; current EH66502 has height_mm and micron_rating NULL. This is a source-to-field mapping gap, not proof that the product has no length/efficiency. A governed repair requires source revalidation and correct efficiency semantics.
+P167943 extraction records 423.7 mm and beta-1000 efficiency of 9 micrometres. Those numbers differ from P566502; shared applications or an alternate list must not erase their performance differences.
+No catalog fields were populated from unverified historical extraction in this continuation.
+
+#### Disposition
+- Confirmed: 18 SKUs share the identical unverified payload; source snapshot does not justify cartridge application publication.
+- Confirmed: documented Bobcat service positions use a mounting style incompatible with a direct cartridge replacement.
+- Pending: source/serial/position evidence for every legacy application, actual historical write chain, current ELIMFILTERS physical/performance specifications and target-specific suitability.
+- Reused the installed public guard, canonical read-only connection, existing extraction files and audit report. Added only this documentary evidence and bounded technical dispositions; no new code, table, service, scheduler or evidence-certification record.
