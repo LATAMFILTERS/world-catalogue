@@ -1431,7 +1431,12 @@ function renderCard(p, index) {
                           nameLine = `<span class="equip-mfr">${esc(fullName)}</span>`;
                         }
 
-                        const subLine = [eng, yearType].filter(Boolean).join(' Â· ');
+                        const sourceDetails = [
+                          a.filter_position || '',
+                          a.serial_restriction ? (currentLang === 'es' ? 'Serie: ' : 'Serial: ') + a.serial_restriction : '',
+                          a.source_scope === 'DONALDSON_CANONICAL_PART_APPLICATION' ? (currentLang === 'es' ? 'Aplicaci\u00f3n documentada para ' : 'Documented application for ') + a.source_part_number + (currentLang === 'es' ? '; equivalencia ELIMFILTERS pendiente' : '; ELIMFILTERS equivalence pending') : ''
+                        ].filter(Boolean).join(' | ');
+                        const subLine = [eng, yearType, sourceDetails].filter(Boolean).join(' | ');
                         return `<span class="equip-chip"><span class="equip-name">${nameLine}</span>${subLine ? `<span class="equip-sub">${esc(subLine)}</span>` : ''}</span>`;
                       }
                       

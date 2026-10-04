@@ -1049,3 +1049,63 @@ Recovery must use the archived original payload for investigation and restore on
 per-SKU, service-position evidence through the existing verified write service.
 Do not set verified=true on the historical 489-array to restore it wholesale.
 No new table, service, scheduler, dependency or production script was introduced.
+
+## Applied P551553 TORO reconstruction - 2026-10-04 UTC
+
+Committed 22 source-grounded EQUIPMENT applications for EH61553's existing
+P551553 reference via the existing verified application write service. This is a
+new reconstruction from Donaldson's official F116003 Agriculture Catalogue,
+not a recertification of the previous 489-entry array or automatic approval of
+ELIMFILTERS product interchangeability. The historical archive remains intact.
+
+Source URL: https://www.donaldson.com/content/dam/donaldson/engine-hydraulics-bulk/catalogs/industries-markets/agriculture/emea/f116003/Agriculture-Catalogue.pdf
+
+Source SHA256: e646ecf41f62ae8d90dc36eeec3bc27e5f91f90d46086a6e0b2f03a2c661b9d4
+
+PDF pages 435-441 (printed 425-431) were rendered and visually checked. EQUIPMENT
+and ENGINE evidence records cover the exact PostgreSQL JSONB payload hash
+0e8500c14c6d98df034d18d602df9f2c. Every entry preserves hydraulic spin-on position,
+source part, page, engine wording, missing-year scope, and serial restriction.
+No unknown dates or engine model were inferred; manufacturer-only engine names
+remain manufacturer-only. All entries require equipment serial confirmation.
+
+| TORO equipment | Engine as published | PDF page | Serial scope |
+| --- | --- | --- | --- |
+| Reelmaster 5010 (2 & 4 Wheel Drive) | Kubota | 435 | All Models - 260000001 & UP |
+| Greenmaster 3150 | B+S Vanguard | 436 | Not specified |
+| Greenmaster 3250 D | Briggs DM 850D | 436 | Not specified |
+| Groundsmaster 455 D | Peugeot XUD 9 | 437 | Not specified |
+| Groundsmaster 3500 D | Kubota | 438 | Not specified |
+| Groundsmaster 3505 D | Kubota | 438 | Not specified |
+| HTM | Kohler K 582QS | 438 | Not specified |
+| Multi Pro 5500 | Ford | 439 | Not specified |
+| Multi Pro 5600 | Ford | 439 | Not specified |
+| Multi Pro 5700 | Kubota | 439 | Not specified |
+| Procore 648 | Kohler | 439 | Not specified |
+| Reelmaster 2300 D | Perkins | 439 | Not specified |
+| Reelmaster 3500 D | Peugeot | 440 | Not specified |
+| Reelmaster 5210 | Kubota | 440 | Not specified |
+| Reelmaster 5410 | Kubota | 440 | Not specified |
+| Reelmaster 5510 | Kubota | 440 | Not specified |
+| Reelmaster 5610 | Kubota | 440 | Not specified |
+| Sand Pro 2000 | Kohler M 12S | 441 | Not specified |
+| Sand Pro 5000 | Briggs | 441 | Not specified |
+| Top Dresser 2500 | Not specified | 441 | Not specified |
+| Traperake S 2000 | Kohler | 441 | Not specified |
+| Turf Pro | Kohler K 582QS | 441 | Not specified |
+
+Dry-run executed the reconstruction and rolled back before COMMIT. Identity,
+OEM/competitor arrays, original SQL NULL vehicle applications and the 489-entry
+archive were checked unchanged. A fresh database read and public searches for
+EH61553 and P551553 returned the exact 22 entries with EVIDENCE_VERIFIED for the
+source applications. Reference equivalence remains TECHNICAL_REVIEW_REQUIRED.
+
+The existing equipment-chip renderer now displays filter position, serial
+restriction and the explicit 'documented for P551553; ELIMFILTERS equivalence
+pending' qualifier. This prevents a source application from appearing as an
+approved own-product replacement. Escaping is reused for all displayed values.
+Both review/live inline scripts parsed, and all four existing presentation guard
+tests passed. No runtime restart, new table, service, dependency or production
+script was needed. Other SKU were not modified and no shared-list propagation
+was performed. Remaining P551553 source groups and all OEM/competitor equivalences
+still require their own technical evidence.
