@@ -1008,3 +1008,44 @@ No catalog fields were populated from unverified historical extraction in this c
 - Confirmed: documented Bobcat service positions use a mounting style incompatible with a direct cartridge replacement.
 - Pending: source/serial/position evidence for every legacy application, actual historical write chain, current ELIMFILTERS physical/performance specifications and target-specific suitability.
 - Reused the installed public guard, canonical read-only connection, existing extraction files and audit report. Added only this documentary evidence and bounded technical dispositions; no new code, table, service, scheduler or evidence-certification record.
+
+## Applied data correction - 2026-10-04 UTC
+
+The previous read-only finding has now become a committed data correction in the
+canonical PostgreSQL on Lenovo. This section supersedes the earlier "no data
+mutations" status for this specific group.
+
+- Exactly 18 locked SKU rows matched the audited 489-entry payload hash
+  9c6154cfbec913b75ae133704dd89575; no verified evidence existed for that payload.
+- Used existing lib/catalog-application-write-service.js and its application
+  governance trigger to withdraw the unsupported active EQUIPMENT arrays.
+- 8,802 active assertions were removed; all 8,802 original entries remain inside
+  each row's enrichment_data.withdraw_shared_hydraulic_payload_20261004 archive,
+  including original payload hash and previous application governance.
+- This is withdrawal of unsupported assertions, NOT proof that every listed
+  equipment model is incompatible. Even P551553's 140 distinct historical
+  matches require scoped reconstruction; none were automatically promoted.
+- The withdrawal record is explicitly unverified for fitment (verified=false).
+  application_governance equipment_verified=false, engine_verified=false,
+  equipment_state=WITHDRAWN_PENDING_RECONSTRUCTION,
+  verification_scope=NO_FITMENT_APPROVED. The empty payload is not a compatibility
+  certification.
+- Dry-run executed all 18 writes and rolled back before applying the transaction.
+  Preconditions checked exact SKU count, original hash/count and absence of
+  verified payload evidence; checks compared codigo_base, OEM, competitor and
+  vehicle arrays before/after. The gateway normalizes SQL NULL vehicle arrays;
+  their original SQL NULL was preserved within the transaction.
+- Fresh database read confirmed all 18 active arrays empty and all archives
+  retain 489 entries. All 18 public API searches returned HTTP 200, retained SKU
+  identity and exposed zero equipment applications.
+- Some public searches still assemble legacy applications from other existing
+  sources (observed withheld counts: EH60274 378, EH61553 489, EH66503 167,
+  EH66522/EH66523 34, EH67518 6842). The existing exact-payload presentation
+  guard withheld every one; these secondary sources still require tracing.
+- No OEM/competitor relationship or replacement was approved by this change.
+  No SKU was deleted; Render topology and runtime processes were not changed.
+
+Recovery must use the archived original payload for investigation and restore only
+per-SKU, service-position evidence through the existing verified write service.
+Do not set verified=true on the historical 489-array to restore it wholesale.
+No new table, service, scheduler, dependency or production script was introduced.
