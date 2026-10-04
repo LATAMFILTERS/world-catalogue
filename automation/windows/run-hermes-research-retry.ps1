@@ -79,7 +79,7 @@ try {
   $env:HERMES_EMAIL_PROVIDER = 'outlook'
   $env:HERMES_EMAIL_LIVE = 'true'
   $env:HERMES_COLLECTION_DRY_RUN = 'false'
-  $env:HERMES_GROQ_MODEL = 'groq/compound'
+  $env:HERMES_GROQ_MODEL = 'openai/gpt-oss-120b'
   $env:HERMES_CATALOGUE_QUALITY_SYNC = 'true'
   $catalogueTargetFile = Join-Path $StateDir 'catalogue-target-skus.txt'
   if (Test-Path $catalogueTargetFile) {
