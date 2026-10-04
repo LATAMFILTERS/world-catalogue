@@ -50,6 +50,21 @@ function verifiedApplicationGovernance(payload, kind = 'EQUIPMENT', hasEngine = 
   return gov;
 }
 
+
+test('legacy machine field is recognized only when its explicit format option is enabled', () => {
+  const payload = [{ type: 'EXCAVATOR TRACKED', year: '-', engine: 'MITSUBISHI 4M40', machine: 'CATERPILLAR 307D' }];
+  const row = hdBase({ equipment_applications: payload });
+  const defaultResult = validateApplicationWrite(row);
+  assert.equal(defaultResult.valid, false);
+  assert.ok(defaultResult.reasons.includes('EQUIPMENT_IDENTITY_MISSING'));
+  const options = { allowMachineAsEquipment: true };
+  const result = validateApplicationWrite(row, options);
+  assert.equal(result.valid, true);
+  assert.equal(result.equipment_count, 1);
+  assert.equal(result.engine_count, 1);
+  assert.equal(result.equipment_payload_hash, applicationPayloadHash(payload, options));
+  assert.equal(payload[0].machine, 'CATERPILLAR 307D');
+});
 test('HD equipment application with engine is blocked without explicit application evidence', () => {
   const equipment = [{ make: 'VOLVO', model: 'L120', equipment: 'VOLVO L120', type: 'LOADER', engine: 'D6' }];
   const row = hdBase({ equipment_applications: equipment });

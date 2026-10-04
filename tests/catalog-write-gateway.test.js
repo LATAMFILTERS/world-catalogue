@@ -179,6 +179,15 @@ test('HD verified Fleetguard fallback passes and codigo_base need not be duplica
   assert.equal(validateCanonicalWrite(row).valid, true);
 });
 
+test('legacy machine field requires an explicit gateway option', () => {
+  const row = baseRow({ equipment_applications: [{ machine: 'CATERPILLAR 307D', engine: 'MITSUBISHI 4M40', year: '-' }] });
+  const blocked = validateCanonicalWrite(row);
+  assert.equal(blocked.valid, false);
+  assert.ok(blocked.reasons.includes('EQUIPMENT_IDENTITY_MISSING'));
+  const allowed = validateCanonicalWrite(row, { allowMachineAsEquipment: true });
+  assert.equal(allowed.valid, true);
+});
+
 test('OEM reference in competitor_codes is blocked', () => {
   const row = baseRow({ competitor_codes: [{ manufacturer: 'OEM', code: 'ABC123', classification: 'OEM' }] });
   const result = validateCanonicalWrite(row);
