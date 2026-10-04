@@ -91,9 +91,24 @@ async function installHistoricalSanitationQueue() {
       ON CONFLICT (sku) DO UPDATE SET
         duty = EXCLUDED.duty,
         current_codigo_base = EXCLUDED.current_codigo_base,
-        governance_state = EXCLUDED.governance_state,
-        required_authority = EXCLUDED.required_authority,
-        priority = EXCLUDED.priority,
+        governance_state = CASE
+          WHEN catalog_codigo_base_sanitation_queue.status='PENDING'
+           AND catalog_codigo_base_sanitation_queue.governance_state='PRIMARY_ABSENCE_AWAITING_EXPLICIT_AUTHORITY'
+          THEN catalog_codigo_base_sanitation_queue.governance_state
+          ELSE EXCLUDED.governance_state
+        END,
+        required_authority = CASE
+          WHEN catalog_codigo_base_sanitation_queue.status='PENDING'
+           AND catalog_codigo_base_sanitation_queue.governance_state='PRIMARY_ABSENCE_AWAITING_EXPLICIT_AUTHORITY'
+          THEN 'EXPLICIT_DONALDSON_MANUFACTURING_ABSENCE'
+          ELSE EXCLUDED.required_authority
+        END,
+        priority = CASE
+          WHEN catalog_codigo_base_sanitation_queue.status='PENDING'
+           AND catalog_codigo_base_sanitation_queue.governance_state='PRIMARY_ABSENCE_AWAITING_EXPLICIT_AUTHORITY'
+          THEN catalog_codigo_base_sanitation_queue.priority
+          ELSE EXCLUDED.priority
+        END,
         contamination_flags = EXCLUDED.contamination_flags,
         updated_at = now()
     `);
