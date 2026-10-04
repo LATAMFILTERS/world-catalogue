@@ -1382,6 +1382,9 @@ function fixMojibakeDeep(arr) {
 
 function buildFilterData(row, lang = 'en'){
   let subtype = safeSubtype(row.sub_type, lang);
+  const enrichment = row.enrichment_data && typeof row.enrichment_data === 'object' && !Array.isArray(row.enrichment_data)
+    ? row.enrichment_data
+    : {};
 
   // Enforce rule: No Cellulose/Celulosa media (sub_type) for any filter
   if (subtype && (subtype.toUpperCase() === 'CELLULOSE' || subtype.toUpperCase() === 'CELULOSA')) {
@@ -1417,6 +1420,13 @@ function buildFilterData(row, lang = 'en'){
     competitor_codes: refs.competitor,
     brand_crossrefs: row.brand_crossrefs || {},
     alternatives: row.alternatives || [],
+    supersession: enrichment.supersession || null,
+    reference_relationships: enrichment.reference_relationships || null,
+    matched_reference: row.matched_reference ? {
+      part_number: row.matched_reference,
+      reference_type: row.matched_reference_type || null,
+      source: row.matched_reference_source || null
+    } : null,
     equipment_applications: fixMojibakeDeep(row.equipment_applications),
     vehicle_applications: fixMojibakeDeep(row.vehicle_applications)
   };
@@ -1802,7 +1812,11 @@ app.get('/api/search', searchLimiter, async (req, res) => {
 
     // 1c. Exact governed reference match (e.g. Donaldson listing aliases / consolidated source codes)
     const byExactRef = await client.query(
-      `SELECT DISTINCT ON (c.sku) c.*
+      `SELECT DISTINCT ON (c.sku)
+         c.*,
+         e.reference_type AS matched_reference_type,
+         e.part_number AS matched_reference,
+         e.source AS matched_reference_source
        FROM exact_part_reference e
        JOIN elimfilters_catalog_active_v c ON c.sku = e.sku
        WHERE UPPER(e.brand) = 'DONALDSON'

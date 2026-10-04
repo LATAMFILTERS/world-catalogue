@@ -27,6 +27,35 @@ test('canonical promotion mutates alternates only through the constrained promot
   assert.match(source, /replacedReferenceManufacturer/);
 });
 
+test('primary candidates fail closed when evidence is only a cross-reference', () => {
+  const source = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'catalog-historical-sanitation.js'), 'utf8');
+  assert.match(source, /CROSS_REFERENCE_ONLY_NOT_CANONICAL_AUTHORITY/);
+  assert.doesNotMatch(source, /findOfficialLiteratureCrossReference/);
+});
+
+test('cross-reference-only queue rows are excluded from automatic sanitation batches', () => {
+  const source = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'catalog-historical-sanitation.js'), 'utf8');
+  assert.match(source, /CROSS_REFERENCE_ONLY_NOT_MANUFACTURING_AUTHORITY/);
+  assert.match(source, /coalesce\(q\.last_error,''\) NOT IN/);
+});
+
+test('automatic sanitation only processes current-base evidence, not review candidates', () => {
+  const source = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'catalog-historical-sanitation.js'), 'utf8');
+  assert.match(source, /state' = 'CANONICAL_EVIDENCED_NOT_VERIFIED'/);
+  assert.doesNotMatch(source, /IN \('CANONICAL_EVIDENCED_NOT_VERIFIED','REVIEW_PRIMARY_CANDIDATE'\)/);
+});
+
+test('review candidates have a read-only manufacturing-authority research mode', () => {
+  const source = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'catalog-historical-sanitation.js'), 'utf8');
+  assert.match(source, /--research-only/);
+  assert.match(source, /SINGLE_CANDIDATE_MANUFACTURING_AUTHORITY_RESEARCH/);
+  assert.match(source, /MULTI_CANDIDATE_IDENTITY_CONFLICT_RESEARCH/);
+  assert.match(source, /OFFICIAL_CROSS_REFERENCE/);
+  assert.match(source, /automatic_promotion_allowed:\s*false/);
+  assert.match(source, /RESEARCH_ONLY_REFUSES_APPLY/);
+  assert.match(source, /writes_performed:\s*0/);
+});
+
 test('historical sanitation catalog writes pass through gateway and compare-and-swap postchecks', () => {
   const source = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'catalog-historical-sanitation.js'), 'utf8');
   assert.match(source, /assertGovernedCatalogPatch/);

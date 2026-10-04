@@ -286,6 +286,33 @@ test('canonical patches are evaluated against the complete post-write row', () =
   assert.throws(() => assertGovernedCatalogPatch(baseRow(), { duty: 'LIGHT_DUTY' }), /CATALOG_PATCH_GATEWAY_BLOCKED/);
 });
 
+test('authority-only enrichment patch does not revalidate untouched legacy applications', () => {
+  const current = baseRow({
+    equipment_applications: [{ type: 'FORKLIFT' }],
+  });
+  const patch = {
+    enrichment_data: {
+      codigo_base_governance: {
+        primary_manufacturer_verified: true,
+        approved_manufacturer: 'DONALDSON',
+        approved_codigo_base: 'P551234',
+      },
+    },
+  };
+  const result = validateGovernedCatalogPatch(current, patch);
+  assert.equal(result.valid, true);
+  assert.equal(result.application_validation.skipped, true);
+});
+
+test('patches that touch applications still validate application identity', () => {
+  const current = baseRow();
+  const result = validateGovernedCatalogPatch(current, {
+    equipment_applications: [{ type: 'FORKLIFT' }],
+  });
+  assert.equal(result.valid, false);
+  assert.ok(result.reasons.includes('EQUIPMENT_IDENTITY_MISSING'));
+});
+
 test('active HERMES catalogue writers invoke the patch gateway before direct SQL', () => {
   const files = [
     'scripts/hermes/publish-catalogue-plan.mjs',

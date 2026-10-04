@@ -83,7 +83,20 @@ test('Part Search resolves governed Donaldson exact_part_reference aliases', () 
   const route = server.slice(start, server.indexOf('// Equipment class filter', start));
   assert.ok(route.includes('FROM exact_part_reference e'), 'must query exact_part_reference');
   assert.ok(route.includes("UPPER(e.brand) = 'DONALDSON'"), 'Donaldson exact references must be scoped by brand');
+  assert.ok(route.includes('e.reference_type AS matched_reference_type'), 'must expose exact reference relationship type');
+  assert.ok(route.includes('e.part_number AS matched_reference'), 'must expose the matched historical/reference part number');
   assert.ok(route.includes("source: 'exact_part_reference'"), 'must expose exact reference source');
+});
+
+test('Part Search product payload exposes supersession and governed reference relationships', () => {
+  const server = read('server-original.js');
+  const start = server.indexOf('function buildFilterData');
+  const end = server.indexOf('// Duplicate status route removed', start);
+  assert.ok(start >= 0 && end > start, 'buildFilterData block missing');
+  const helper = server.slice(start, end);
+  assert.ok(helper.includes('supersession: enrichment.supersession || null'));
+  assert.ok(helper.includes('reference_relationships: enrichment.reference_relationships || null'));
+  assert.ok(helper.includes('matched_reference: row.matched_reference ?'));
 });
 
 test('public search excludes catalog-inactive hardware', () => {

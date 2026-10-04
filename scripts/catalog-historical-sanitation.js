@@ -5,8 +5,8 @@
  *
  * This worker NEVER infers manufacturer absence.
  * It only resolves rows when official manufacturer evidence is found.
- * Search-engine HTML may be used only to DISCOVER official Donaldson evidence;
- * the evidence itself must come from shop.donaldson.com or allowlisted Donaldson literature.
+ * Search-engine HTML may be used only to DISCOVER official Donaldson evidence.
+ * Cross-reference literature is corroboration only and cannot establish canonical identity.
  *
  * It does not rename SKU. Alternate arrays are immutable except during a verified
  * canonical promotion, where the promoted code is removed from alternates and the
@@ -18,7 +18,6 @@ const crypto = require('crypto');
 const { Pool } = require('pg');
 const {
   normalizeCode,
-  pageSupportsCrossReference,
   pageSupportsOfficialProduct,
 } = require('../lib/donaldson-official-evidence');
 const {
@@ -29,15 +28,13 @@ const {
 const {
   assertGovernedCatalogPatch,
 } = require('../lib/catalog-write-gateway');
-const {
-  findOfficialLiteratureCrossReference,
-} = require('../lib/donaldson-official-cross-reference-literature');
 
 const DATABASE_URL = process.env.CATALOG_DATABASE_URL || process.env.DATABASE_URL;
 if (!DATABASE_URL) throw new Error('Missing CATALOG_DATABASE_URL or DATABASE_URL');
 
 const APPLY = process.argv.includes('--apply');
 const RECONCILE_ONLY = process.argv.includes('--reconcile-only');
+const RESEARCH_ONLY = process.argv.includes('--research-only');
 const limitArg = process.argv.find((v) => v.startsWith('--limit='));
 const concurrencyArg = process.argv.find((v) => v.startsWith('--verify-concurrency='));
 const rowTimeoutArg = process.argv.find((v) => v.startsWith('--verify-row-timeout-ms='));
@@ -50,7 +47,6 @@ const VERIFY_CONCURRENCY = concurrencyArg
 const VERIFY_ROW_TIMEOUT_MS = rowTimeoutArg
   ? Math.max(5000, Math.min(120000, Number(rowTimeoutArg.split('=')[1]) || 35000))
   : 35000;
-const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const TERMINAL_GOVERNANCE_STATES = new Set([
   'CANONICAL_VERIFIED',
   'CANONICAL_VERIFIED_FALLBACK',
@@ -234,64 +230,15 @@ async function verifyRow(row, { signal = null } = {}) {
   }
 
   if (state === 'REVIEW_PRIMARY_CANDIDATE') {
-    const candidates = Array.isArray(gov.observed_primary_candidates)
-      ? [...new Set(gov.observed_primary_candidates.map(String).filter(Boolean))]
-      : [];
-    const matches = [];
-    let discoveryFailures = 0;
-
-    for (const candidate of candidates) {
-      if (signal?.aborted) return { resolved: false, reason: 'VERIFY_ROW_TIMEOUT' };
-
-      const literature = findOfficialLiteratureCrossReference(candidate, row.codigo_base);
-      if (literature?.ok) {
-        matches.push({
-          candidate,
-          url: literature.evidenceUrl,
-          hash: literature.evidenceHash,
-          evidenceHashKind: literature.evidenceHashKind,
-          evidenceKind: literature.evidenceKind,
-          evidenceAuthority: literature.evidenceAuthority,
-          evidenceDocumentId: literature.evidenceDocumentId,
-          replacedReferenceManufacturer: literature.manufacturer,
-        });
-        continue;
-      }
-
-      const page = await fetchOfficialDonaldsonPage(candidate, signal);
-      if (!page.ok) {
-        if (page.reason === 'OFFICIAL_URL_DISCOVERY_FAILED') discoveryFailures += 1;
-      } else if (pageSupportsCrossReference(page.html, candidate, row.codigo_base)) {
-        matches.push({
-          candidate,
-          url: page.url,
-          hash: page.hash,
-          evidenceKind: 'OFFICIAL_CROSS_REFERENCE',
-          evidenceAuthority: 'OFFICIAL_DONALDSON_SHOP',
-        });
-      }
-
-      await sleep(250);
-    }
-
-    if (matches.length !== 1) {
-      let reason = 'NO_OFFICIAL_CROSS_REFERENCE_MATCH';
-      if (matches.length > 1) reason = 'MULTIPLE_OFFICIAL_CROSS_REFERENCE_MATCHES';
-      else if (candidates.length && discoveryFailures === candidates.length) reason = 'OFFICIAL_URL_DISCOVERY_FAILED';
-      return { resolved: false, reason, verifiedMatches: matches.map((m) => m.candidate) };
-    }
-
+    // Fail closed: an observed cross-reference may identify a candidate for review,
+    // but it cannot establish ELIMFILTERS canonical identity or manufacturing authority.
+    // This matches catalog-codigo-base-policy and the sibling CRM intelligence contract.
+    // Promotion requires a separate governed evidence path that proves the candidate is
+    // the authoritative manufacturing identity for this exact ELIMFILTERS product.
     return {
-      resolved: true,
-      approvedCodigoBase: matches[0].candidate,
-      evidenceKind: matches[0].evidenceKind || 'OFFICIAL_CROSS_REFERENCE',
-      evidenceAuthority: matches[0].evidenceAuthority || 'OFFICIAL_DONALDSON_SHOP',
-      evidenceUrl: matches[0].url,
-      evidenceHash: matches[0].hash,
-      evidenceDocumentId: matches[0].evidenceDocumentId || null,
-      evidenceHashKind: matches[0].evidenceHashKind || null,
-      replacedReferenceManufacturer: matches[0].replacedReferenceManufacturer || null,
-      sourceCurrentBase: false,
+      resolved: false,
+      reason: 'CROSS_REFERENCE_ONLY_NOT_CANONICAL_AUTHORITY',
+      verifiedMatches: [],
     };
   }
 
@@ -468,10 +415,80 @@ async function applyResolution(client, row, resolution) {
   return { gateway, post, alternatePromotion };
 }
 
+function classifyAuthorityResearchRow(row = {}) {
+  const gov = row.enrichment_data?.codigo_base_governance || {};
+  const candidates = Array.isArray(gov.observed_primary_candidates)
+    ? [...new Set(gov.observed_primary_candidates.map(String).filter(Boolean))]
+    : [];
+  return {
+    sku: row.sku,
+    current_codigo_base: row.codigo_base,
+    filter_type: row.filter_type || null,
+    technology: row.technology || null,
+    candidate_count: candidates.length,
+    candidates,
+    research_class: candidates.length === 1
+      ? 'SINGLE_CANDIDATE_MANUFACTURING_AUTHORITY_RESEARCH'
+      : 'MULTI_CANDIDATE_IDENTITY_CONFLICT_RESEARCH',
+    required_proof: [
+      'PRIMARY_MANUFACTURER_IDENTITY_FOR_EXACT_PRODUCT',
+      'ELIMFILTERS_OR_SUPPLIER_CONTROLLED_ORIGIN_LINK_TO_EXACT_CANDIDATE',
+    ],
+    corroboration_only: [
+      'OFFICIAL_CROSS_REFERENCE',
+      'DIMENSIONAL_MATCH',
+      'APPLICATION_OVERLAP',
+      'AFTERMARKET_CATALOG',
+      'SEARCH_SNIPPET',
+    ],
+    automatic_promotion_allowed: false,
+  };
+}
+
+async function buildPrimaryAuthorityResearchReport(client, { limit = 1000, targetSku = null } = {}) {
+  const { rows } = await client.query(`
+    SELECT c.sku,c.codigo_base,c.filter_type,c.technology,c.enrichment_data
+    FROM catalog_codigo_base_sanitation_queue q
+    JOIN elimfilters_catalog c ON c.sku=q.sku
+    WHERE q.status='PENDING'
+      AND q.attempts < 3
+      AND q.governance_state='REVIEW_PRIMARY_CANDIDATE'
+      AND coalesce(q.last_error,'') NOT IN (
+        'CROSS_REFERENCE_ONLY_NOT_MANUFACTURING_AUTHORITY',
+        'CROSS_REFERENCE_ONLY_NOT_CANONICAL_AUTHORITY'
+      )
+      AND c.duty='HEAVY_DUTY'
+      AND ($2::text IS NULL OR q.sku=$2)
+    ORDER BY q.priority,q.attempts,q.sku
+    LIMIT $1
+  `, [limit, targetSku]);
+
+  const items = rows.map(classifyAuthorityResearchRow);
+  const byClass = {};
+  const byFilterType = {};
+  for (const item of items) {
+    byClass[item.research_class] = (byClass[item.research_class] || 0) + 1;
+    const key = item.filter_type || 'unknown';
+    byFilterType[key] = (byFilterType[key] || 0) + 1;
+  }
+
+  return {
+    mode: 'RESEARCH_ONLY',
+    source_of_truth: 'catalog_codigo_base_sanitation_queue + elimfilters_catalog',
+    selected: items.length,
+    by_class: byClass,
+    by_filter_type: byFilterType,
+    promotion_policy: 'FAIL_CLOSED_NO_CROSS_REFERENCE_ONLY_PROMOTION',
+    writes_performed: 0,
+    items,
+  };
+}
+
 async function runHistoricalSanitationBatch({
   apply = APPLY,
   limit = LIMIT,
   reconcileOnly = RECONCILE_ONLY,
+  researchOnly = RESEARCH_ONLY,
   verifyConcurrency = VERIFY_CONCURRENCY,
   verifyRowTimeoutMs = VERIFY_ROW_TIMEOUT_MS,
   targetSku = TARGET_SKU,
@@ -497,6 +514,11 @@ async function runHistoricalSanitationBatch({
   };
 
   try {
+    if (researchOnly) {
+      if (apply) throw new Error('RESEARCH_ONLY_REFUSES_APPLY');
+      return buildPrimaryAuthorityResearchReport(client, { limit, targetSku });
+    }
+
     if (apply) {
       await client.query('BEGIN');
       try {
@@ -518,9 +540,12 @@ async function runHistoricalSanitationBatch({
       JOIN elimfilters_catalog c ON c.sku=q.sku
       WHERE q.status='PENDING'
         AND q.attempts < 3
+        AND coalesce(q.last_error,'') NOT IN (
+          'CROSS_REFERENCE_ONLY_NOT_MANUFACTURING_AUTHORITY',
+          'CROSS_REFERENCE_ONLY_NOT_CANONICAL_AUTHORITY'
+        )
         AND c.duty='HEAVY_DUTY'
-        AND c.enrichment_data->'codigo_base_governance'->>'state'
-            IN ('CANONICAL_EVIDENCED_NOT_VERIFIED','REVIEW_PRIMARY_CANDIDATE')
+        AND c.enrichment_data->'codigo_base_governance'->>'state' = 'CANONICAL_EVIDENCED_NOT_VERIFIED'
         AND ($2::text IS NULL OR q.sku=$2)
       ORDER BY q.priority, q.attempts, q.sku
       LIMIT $1
@@ -610,5 +635,7 @@ module.exports = {
   verifyRow,
   verifyRowWithTimeout,
   applyResolution,
+  classifyAuthorityResearchRow,
+  buildPrimaryAuthorityResearchReport,
   runHistoricalSanitationBatch,
 };
