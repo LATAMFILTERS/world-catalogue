@@ -81,6 +81,19 @@ try {
   $env:HERMES_COLLECTION_DRY_RUN = 'false'
   $env:HERMES_GROQ_MODEL = 'groq/compound'
   $env:HERMES_CATALOGUE_QUALITY_SYNC = 'true'
+  $catalogueTargetFile = Join-Path $StateDir 'catalogue-target-skus.txt'
+  if (Test-Path $catalogueTargetFile) {
+    $catalogueTargets = @(
+      Get-Content $catalogueTargetFile |
+        ForEach-Object { ([string]$_).Trim() } |
+        Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
+    )
+    if ($catalogueTargets.Count -gt 0) {
+      $env:HERMES_CATALOGUE_TARGET_SKUS = ($catalogueTargets -join ',')
+      $env:HERMES_CATALOGUE_ONLY = 'true'
+      if ([string]::IsNullOrWhiteSpace($env:HERMES_CATALOGUE_RESEARCH_LIMIT)) { $env:HERMES_CATALOGUE_RESEARCH_LIMIT = '20' }
+    }
+  }
   if ([string]::IsNullOrWhiteSpace($env:HERMES_CATALOGUE_RESEARCH_LIMIT)) { $env:HERMES_CATALOGUE_RESEARCH_LIMIT = '1' }
   $env:HERMES_CATALOGUE_RESEARCH_PACING_MS = '20000'
   $env:HERMES_CATALOGUE_RESEARCH_RETRIES = '2'
@@ -119,6 +132,11 @@ try {
     $env:DATABASE_URL = $catalogueQualityOldDatabaseUrl
     $env:CATALOG_DATABASE_URL = $catalogueQualityOldCatalogDatabaseUrl
   }
+  if ([string]$env:HERMES_CATALOGUE_ONLY -eq 'true') {
+    "[$(Get-Date -Format o)] Catalogue-only HERMES cycle complete; downstream review/email stages intentionally skipped." | Tee-Object -FilePath $log -Append
+    exit 0
+  }
+
   node scripts\hermes\apply-review-decisions-from-db.mjs | Tee-Object -FilePath $log -Append
   if ($LASTEXITCODE -ne 0) { throw 'Failed to apply one or more HERMES review decisions from durable queue' }
 
