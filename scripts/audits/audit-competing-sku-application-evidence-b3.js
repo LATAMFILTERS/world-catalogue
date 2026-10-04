@@ -340,6 +340,24 @@ async function main() {
       }
 
       const hermesCoverage = hermesBySku.get(pair.peer) || [];
+      const resolverTargetSkus = [...new Set(
+        Object.values(peerResolverTargets || {}).filter(Boolean)
+      )].sort();
+      const resolverTargetStates = resolverTargetSkus.map(sku => ({
+        sku,
+        strong_canonical:isStrongCanonical(sku),
+        canonical_code:canonicalBySku.get(sku) || null,
+        hermes_coverage:hermesBySku.get(sku) || []
+      }));
+      const resolverPeerStrongCanonical = isStrongCanonical(pair.peer);
+      const resolverAllTargetsStrongCanonical =
+        resolverTargetStates.length > 0
+        && resolverTargetStates.every(x => x.strong_canonical);
+      const resolverPreflightReady =
+        peerSourceResolvesElsewhere
+        && resolverTargetStates.length === 1
+        && resolverPeerStrongCanonical
+        && resolverAllTargetsStrongCanonical;
       let automationLane;
       let laneAction;
       if (bucket === 'VALIDATED_DISTINCT_IDENTITY_OVERLAP') {
@@ -347,7 +365,24 @@ async function main() {
         laneAction = 'NO_CATALOG_MUTATION';
       } else if (peerSourceResolvesElsewhere) {
         automationLane = 'RESOLVER_COLLISION';
-        laneAction = 'REOWN_ONLY_AFTER_BOTH_GATEWAYS_PASS';
+        if (resolverPreflightReady) {
+          laneAction = 'PREFLIGHT_READY_FOR_GATEWAY_REOWNERSHIP';
+        } else if (!resolverPeerStrongCanonical) {
+          laneAction = hermesCoverage.some(x => x.gap_type === 'SOURCE')
+            ? 'HERMES_CANONICALIZE_PEER_SOURCE'
+            : hermesCoverage.some(x => x.gap_type === 'APPLICATIONS')
+              ? 'HERMES_CANONICALIZE_PEER_APPLICATIONS'
+              : 'HERMES_CANONICALIZE_PEER';
+        } else if (!resolverAllTargetsStrongCanonical) {
+          const targetCoverage = resolverTargetStates.flatMap(x => x.hermes_coverage || []);
+          laneAction = targetCoverage.some(x => x.gap_type === 'SOURCE')
+            ? 'HERMES_CANONICALIZE_TARGET_SOURCE'
+            : targetCoverage.some(x => x.gap_type === 'APPLICATIONS')
+              ? 'HERMES_CANONICALIZE_TARGET_APPLICATIONS'
+              : 'HERMES_CANONICALIZE_TARGET';
+        } else {
+          laneAction = 'RESOLVER_TARGET_AMBIGUOUS';
+        }
       } else if (peerSources.size > 1 || ownerSources.size > 1) {
         automationLane = 'MULTI_SOURCE';
         laneAction = hermesCoverage.some(x => x.gap_type === 'SOURCE')

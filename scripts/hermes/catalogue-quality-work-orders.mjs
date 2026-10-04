@@ -9,6 +9,7 @@ const { Client } = pg;
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
 const url=process.env.CATALOG_DATABASE_URL || process.env.ELIMFILTERS_DATABASE_URL || process.env.DATABASE_URL;
 const batchSize=Math.max(1,Math.min(100,Number(process.env.HERMES_CATALOGUE_WORK_ORDER_BATCH_SIZE||25)));
+const targetSkus=new Set(String(process.env.HERMES_CATALOGUE_TARGET_SKUS||'').split(',').map(v=>v.trim().toUpperCase()).filter(Boolean));
 if(!url) throw new Error('DATABASE_URL/CATALOG_DATABASE_URL is required');
 
 const norm=v=>String(v||'').normalize('NFKD').replace(/[\u0300-\u036f]/g,'').toUpperCase().replace(/[^A-Z0-9]+/g,' ').trim();
@@ -52,7 +53,7 @@ try{
     FROM hermes_catalogue_backlog b
     JOIN hermes_catalogue_readiness r USING(sku)
     LEFT JOIN hermes_catalogue_dossier d ON d.sku=b.sku
-    WHERE b.status='OPEN'
+    WHERE b.status IN ('OPEN','BLOCKED')
       AND (b.next_attempt_at IS NULL OR b.next_attempt_at<=now())
     ORDER BY b.priority,b.gap_type,r.duty,r.technology,b.sku
   `)).rows;
@@ -65,7 +66,8 @@ try{
     endpointsByOrg.get(e.organization_id).push({endpoint_id:e.id,url:e.url,endpoint_type:e.endpoint_type,source_type:e.source_type});
   }
 
-  const items=rows.map(row=>{
+  const eligibleRows=targetSkus.size ? rows.filter(row=>targetSkus.has(String(row.sku||'').toUpperCase())) : rows;
+  const items=eligibleRows.map(row=>{
     const rawHints=row.discovery_hints||{};
     const rejectedCandidate=Boolean(
       row.dossier_canonical_role &&
