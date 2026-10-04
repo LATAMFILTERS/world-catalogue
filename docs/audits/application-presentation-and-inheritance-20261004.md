@@ -1217,3 +1217,46 @@ HTTP 200, zero metric OEM entries in the response and the 22 reconstructed
 applications. Its response exposes a subset of 51 OEM references; this is not
 the canonical database total. Reused existing gateway, triggers and record-level
 history; no new table, production script, dependency, service or scheduler.
+
+## Metric OEM cleanup continuation - 2026-10-04 06:19 UTC
+
+Refreshed all 71 pending SKU against current canonical governance; several had
+been repaired since the previous preflight. Reused assertGovernedCatalogPatch,
+existing triggers and the exact micron/beta predicate. The full dry-run rolled
+back. Seventeen SKU passed; an exact SKU/count manifest was enforced before
+COMMIT, with untouched canonical code, duty, competitor and application fields
+checked against their locked baseline.
+
+| SKU | Metric entries withdrawn |
+| --- | --- |
+| EH61551 | 10 |
+| EH61602 | 11 |
+| EH63577 | 3 |
+| EH64375 | 12 |
+| EH64378 | 4 |
+| EH64384 | 3 |
+| EH65060 | 3 |
+| EH65243 | 3 |
+| EH65354 | 10 |
+| EH65569 | 3 |
+| EH65675 | 5 |
+| EH65705 | 3 |
+| EH66379 | 4 |
+| EH66380 | 4 |
+| EH66385 | 4 |
+| EH67162 | 7 |
+| EL80335 | 2 |
+
+This continuation withdrew 91 more measurement entries and preserved them in
+the existing technical_metrics_removed_from_oem_20261004 record archive. No
+ratings were promoted into product specifications, and no equivalence or new
+application was approved. Existing governance OEM counts were synchronized.
+
+Independent database read confirmed cumulative 22 corrected SKU, 118 archived
+entries, zero governance count mismatches, and 54 pending SKU / 401 entries.
+Representative public checks for EH61551, EH61602, EH64375 and EL80335 returned
+HTTP 200, retained each identity and exposed zero metric OEM entries.
+
+The remaining rows still fail the existing canonical/structural gates; no bypass
+was introduced. No new table, service, dependency, scheduler or persistent
+production script was created. Runtime and Render topology were unchanged.
