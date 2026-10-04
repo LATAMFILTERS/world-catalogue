@@ -118,6 +118,25 @@ export function canPromoteCanonicalIdentity(raw = {}) {
   return assessment.complete && assessment.axes.identity.status === 'VERIFIED';
 }
 
+export function resolutionDisposition(raw = {}, options = {}) {
+  const assessment = assessDossier(raw);
+  const attempts = Math.max(0, Number(options.research_attempts || 0));
+  const maxAttempts = Math.max(1, Number(options.max_research_attempts || 3));
+  const identityVerified = assessment.axes.identity.status === 'VERIFIED' && assessment.axes.identity.resolved;
+  const canonicalEligible = options.canonical_eligible !== false;
+  const conflicts = assessment.conflicts.length > 0 || String(raw?.consistency?.status || '').toUpperCase() === 'CONFLICTING';
+
+  if (identityVerified && canonicalEligible) return { action: 'CONTINUE_RESOLUTION', reason: 'IDENTITY_VERIFIED', attempts, max_attempts: maxAttempts };
+  if (conflicts) return { action: 'CONTINUE_RESOLUTION', reason: 'CONFLICTING_EVIDENCE_REQUIRES_MORE_RESEARCH', attempts, max_attempts: maxAttempts };
+  if (attempts < maxAttempts) return { action: 'CONTINUE_RESOLUTION', reason: 'RESEARCH_ATTEMPTS_REMAIN', attempts, max_attempts: maxAttempts };
+  return {
+    action: 'DISCARD_SKU',
+    reason: identityVerified ? 'NO_CANONICAL_IDENTITY_AFTER_RESEARCH' : 'NO_DEFENSIBLE_IDENTITY_AFTER_RESEARCH',
+    attempts,
+    max_attempts: maxAttempts
+  };
+}
+
 export function canonicalRoleForDossier(item = {}, raw = {}) {
   const dossier=normalizeDossier(raw);
   const brand=brandKey(dossier.identity?.manufacturer);

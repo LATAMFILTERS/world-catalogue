@@ -5,10 +5,11 @@ import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
 import pg from 'file:///C:/ELIMSERVER/repos/world-catalogue/node_modules/pg/lib/index.js';
-import { assessDossier, canonicalRoleForDossier } from './catalogue-dossier-core.mjs';
+import { assessDossier, canonicalRoleForDossier, resolutionDisposition } from './catalogue-dossier-core.mjs';
 
 const require = createRequire(import.meta.url);
 const { buildBrandResearchStrategy } = require('../../lib/hermes-brand-search-router');
+const { assertGovernedCatalogPatch } = require('../../lib/catalog-write-gateway');
 const { Client } = pg;
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
 const url=process.env.CATALOG_DATABASE_URL || process.env.DATABASE_URL;
@@ -18,6 +19,7 @@ const fallbackModel=process.env.HERMES_GROQ_FALLBACK_MODEL || 'groq/compound-min
 const limit=Math.max(1,Math.min(20,Number(process.env.HERMES_CATALOGUE_RESEARCH_LIMIT||1)));
 const pacingMs=Math.max(0,Number(process.env.HERMES_CATALOGUE_RESEARCH_PACING_MS||20000));
 const retries=Math.max(0,Math.min(3,Number(process.env.HERMES_CATALOGUE_RESEARCH_RETRIES||2)));
+const maxResearchAttempts=Math.max(1,Math.min(10,Number(process.env.HERMES_CATALOGUE_MAX_RESEARCH_ATTEMPTS||3)));
 const timeoutMs=Math.max(10000,Number(process.env.HERMES_CATALOGUE_RESEARCH_TIMEOUT_MS||45000));
 if(!url) throw new Error('CATALOG_DATABASE_URL/DATABASE_URL is required');
 if(!apiKey) throw new Error('GROQ_API_KEY is required');
@@ -334,11 +336,31 @@ try{
         await db.query(`UPDATE hermes_catalogue_dossier SET evidence_ids=$2::jsonb,updated_at=now() WHERE sku=$1`,
           [item.sku,JSON.stringify([competitorEvidenceId])]);
       }
+      const attempts=Number(item.research_attempts||0)+1;
+      const disposition=resolutionDisposition(dossier,{
+        research_attempts:attempts,
+        max_research_attempts:maxResearchAttempts,
+        canonical_eligible:canonicalEligible
+      });
+      if(disposition.action==='DISCARD_SKU'){
+        assertGovernedCatalogPatch({}, {catalog_active:false});
+        await db.query('BEGIN');
+        try{
+          await db.query('UPDATE elimfilters_catalog SET catalog_active=false WHERE sku=$1 AND catalog_active=true',[item.sku]);
+          await db.query(`UPDATE hermes_catalogue_dossier SET dossier_status='REJECTED',updated_at=now() WHERE sku=$1`,[item.sku]);
+          await db.query(`UPDATE hermes_catalogue_backlog SET status='RESOLVED',research_attempts=$2,last_research_at=now(),
+            next_attempt_at=NULL,last_research_error=$3,last_evidence_id=coalesce($4,last_evidence_id),resolved_at=now(),updated_at=now()
+            WHERE backlog_id=$1`,[item.backlog_id,attempts,disposition.reason,competitorEvidenceId]);
+          await db.query('COMMIT');
+        }catch(error){await db.query('ROLLBACK');throw error;}
+        run.results.push({sku:item.sku,status:'DISCARDED_NO_EVIDENCE',canonical_role:canonicalRole,unresolved_axes:assessment.unresolved_axes,reason:disposition.reason,research_attempts:attempts,evidence_id:competitorEvidenceId});
+        continue;
+      }
       const retryInterval=canonicalRole.role==='COMPETITOR_CODE'?'1 hour':'24 hours';
-      await db.query(`UPDATE hermes_catalogue_backlog SET research_attempts=research_attempts+1,
-        last_research_at=now(),next_attempt_at=now()+($2::text)::interval,last_research_error=$3,last_evidence_id=coalesce($4,last_evidence_id),updated_at=now()
-        WHERE backlog_id=$1`,[item.backlog_id,retryInterval,reason||'dossier-incomplete',competitorEvidenceId]);
-      run.results.push({sku:item.sku,status:canonicalRole.role==='COMPETITOR_CODE'?'COMPETITOR_CODE':'DOSSIER_INCOMPLETE',canonical_role:canonicalRole,unresolved_axes:assessment.unresolved_axes,reason,evidence_id:competitorEvidenceId});
+      await db.query(`UPDATE hermes_catalogue_backlog SET research_attempts=$2,
+        last_research_at=now(),next_attempt_at=now()+($3::text)::interval,last_research_error=$4,last_evidence_id=coalesce($5,last_evidence_id),updated_at=now()
+        WHERE backlog_id=$1`,[item.backlog_id,attempts,retryInterval,reason||'dossier-incomplete',competitorEvidenceId]);
+      run.results.push({sku:item.sku,status:canonicalRole.role==='COMPETITOR_CODE'?'COMPETITOR_CODE':'DOSSIER_INCOMPLETE',canonical_role:canonicalRole,unresolved_axes:assessment.unresolved_axes,reason,evidence_id:competitorEvidenceId,research_attempts:attempts});
       continue;
     }
 
@@ -401,6 +423,7 @@ run.summary={
   processed:run.results.length,
   dossier_complete:run.results.filter(x=>x.status==='DOSSIER_COMPLETE').length,
   dossier_incomplete:run.results.filter(x=>x.status==='DOSSIER_INCOMPLETE').length,
+  discarded_no_evidence:run.results.filter(x=>x.status==='DISCARDED_NO_EVIDENCE').length,
   research_error:run.results.filter(x=>x.status==='RESEARCH_ERROR').length
 };
 const outDir=path.join(root,'hermes/catalogue-quality/dossier-runs');

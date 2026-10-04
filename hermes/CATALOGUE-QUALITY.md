@@ -31,15 +31,15 @@ No numeric quality score is used. Missing evidence remains explicit.
 
 `hermes:catalogue:quality:sync` may write only HERMES metadata tables when `HERMES_CATALOGUE_QUALITY_SYNC=true`.
 
-It does not modify `elimfilters_catalog` product truth.
+It does not modify canonical product truth fields. A single lifecycle exception is allowed: after the governed research-attempt limit is exhausted without a defensible canonical identity, HERMES may set `catalog_active=false` through the catalog write gateway and close the backlog as resolved. The historical row is preserved for audit rather than deleted.
 
-Any product-field change must continue through HERMES catalogue candidates, explicit approval, publication plan, controlled publisher, backup and rollback.
+Any correction to identity, codes, specifications, applications or other product truth must continue through HERMES catalogue candidates, explicit approval, publication plan, controlled publisher, backup and rollback.
 
 ## Automatic dispatcher
 
-`hermes:catalogue:work-orders` groups the next eligible action for every active SKU by gap, duty, technology, product family and authoritative organization when one is actually supported. It never promotes a manufacturer from a cross-reference alone.
+`hermes:catalogue:work-orders` groups the next eligible action for every active SKU by gap, duty, technology, product family and authoritative organization when one is actually supported. It never promotes a manufacturer from a cross-reference alone. `BLOCKED` is not a terminal dispatcher state; unresolved active items remain eligible for research.
 
-`hermes:catalogue:research` consumes a bounded number of work-order items, uses HERMES live research, and records `VERIFIED`, `REVIEW_REQUIRED` or `UNRESOLVED` evidence. Research updates only HERMES evidence/backlog metadata. It never writes canonical catalogue truth.
+`hermes:catalogue:research` consumes a bounded number of work-order items, uses HERMES live web research, and records evidence. If a defensible canonical identity is found, normal review/publication governance continues. If repeated completed research cannot establish a defensible canonical identity, the SKU is discarded from the active catalogue by setting `catalog_active=false`. Transient network/provider failures do not count as evidence of absence and do not trigger discard.
 
 The Lenovo weekly HERMES run and six-hour research retry refresh readiness, regenerate work orders and run the bounded catalogue research worker before the existing general HERMES research cycle.
 

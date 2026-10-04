@@ -52,7 +52,7 @@ try{
     FROM hermes_catalogue_backlog b
     JOIN hermes_catalogue_readiness r USING(sku)
     LEFT JOIN hermes_catalogue_dossier d ON d.sku=b.sku
-    WHERE b.status='OPEN'
+    WHERE b.status IN ('OPEN','BLOCKED')
       AND (b.next_attempt_at IS NULL OR b.next_attempt_at<=now())
     ORDER BY b.priority,b.gap_type,r.duty,r.technology,b.sku
   `)).rows;

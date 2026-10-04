@@ -106,13 +106,13 @@ try {
         [JSON.stringify(batch)]
       );
       for(const batch of batches(backlog)) await db.query(
-        "INSERT INTO hermes_catalogue_backlog(backlog_id,sku,gap_type,priority,status,manufacturer_candidates,organization_candidates,discovery_hints,recommended_action,updated_at) SELECT backlog_id,sku,gap_type,priority,'OPEN',manufacturer_candidates,organization_candidates,discovery_hints,recommended_action,now() FROM jsonb_to_recordset($1::jsonb) AS x(backlog_id text,sku varchar,gap_type text,priority integer,manufacturer_candidates jsonb,organization_candidates jsonb,discovery_hints jsonb,recommended_action text) ON CONFLICT(backlog_id) DO UPDATE SET sku=excluded.sku,gap_type=excluded.gap_type,priority=excluded.priority,status=CASE WHEN hermes_catalogue_backlog.status IN ('EVIDENCE_FOUND','REVIEW_REQUIRED','APPROVED','BLOCKED') THEN hermes_catalogue_backlog.status ELSE 'OPEN' END,manufacturer_candidates=excluded.manufacturer_candidates,organization_candidates=excluded.organization_candidates,discovery_hints=excluded.discovery_hints,recommended_action=excluded.recommended_action,updated_at=now(),resolved_at=null",
+        "INSERT INTO hermes_catalogue_backlog(backlog_id,sku,gap_type,priority,status,manufacturer_candidates,organization_candidates,discovery_hints,recommended_action,updated_at) SELECT backlog_id,sku,gap_type,priority,'OPEN',manufacturer_candidates,organization_candidates,discovery_hints,recommended_action,now() FROM jsonb_to_recordset($1::jsonb) AS x(backlog_id text,sku varchar,gap_type text,priority integer,manufacturer_candidates jsonb,organization_candidates jsonb,discovery_hints jsonb,recommended_action text) ON CONFLICT(backlog_id) DO UPDATE SET sku=excluded.sku,gap_type=excluded.gap_type,priority=excluded.priority,status=CASE WHEN hermes_catalogue_backlog.status IN ('EVIDENCE_FOUND','REVIEW_REQUIRED','APPROVED') THEN hermes_catalogue_backlog.status ELSE 'OPEN' END,manufacturer_candidates=excluded.manufacturer_candidates,organization_candidates=excluded.organization_candidates,discovery_hints=excluded.discovery_hints,recommended_action=excluded.recommended_action,updated_at=now(),resolved_at=null",
         [JSON.stringify(batch)]
       );
 
       const activeIds=backlog.map(x=>x.backlog_id);
       if(activeIds.length) await db.query(
-        "UPDATE hermes_catalogue_backlog SET status='RESOLVED',resolved_at=now(),updated_at=now() WHERE status NOT IN ('EVIDENCE_FOUND','REVIEW_REQUIRED','APPROVED','BLOCKED') AND NOT(backlog_id=ANY($1::text[]))",
+        "UPDATE hermes_catalogue_backlog SET status='RESOLVED',resolved_at=now(),updated_at=now() WHERE status NOT IN ('EVIDENCE_FOUND','REVIEW_REQUIRED','APPROVED') AND NOT(backlog_id=ANY($1::text[]))",
         [activeIds]
       );
       await db.query('COMMIT');

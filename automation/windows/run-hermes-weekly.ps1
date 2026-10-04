@@ -108,6 +108,7 @@ try {
   try {
     $env:DATABASE_URL = 'postgresql://catalog_admin@127.0.0.1:5441/catalogo_elimfilters?sslmode=disable'
     $env:CATALOG_DATABASE_URL = $env:DATABASE_URL
+    $env:HERMES_CATALOGUE_MAX_RESEARCH_ATTEMPTS = '3'
     $catalogueOldEap = $ErrorActionPreference
     $ErrorActionPreference = 'Continue'
     npm run hermes:catalogue:quality:sync 2>&1 | Tee-Object -FilePath $log -Append

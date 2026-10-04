@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { assessDossier, canPromoteCanonicalIdentity, canonicalRoleForDossier } from '../scripts/hermes/catalogue-dossier-core.mjs';
+import { assessDossier, canPromoteCanonicalIdentity, canonicalRoleForDossier, resolutionDisposition } from '../scripts/hermes/catalogue-dossier-core.mjs';
 import { PUBLISHABLE_CATALOGUE_FIELDS } from '../scripts/hermes/catalogue-publication-plan.mjs';
 import { COLUMN_GROUPS } from '../scripts/hermes/publish-catalogue-plan.mjs';
 
@@ -76,6 +76,32 @@ test('MANN/FRAM are canonical only in LD',()=>{
   const mismatch=canonicalRoleForDossier({duty:'LIGHT_DUTY'},hdDossier);
   assert.equal(mismatch.role,'COMPETITOR_CODE');
   assert.equal(mismatch.duty_review_required,true);
+});
+
+test('unresolved SKU is researched before discard and discarded after the governed attempt limit',()=>{
+  const unresolved=structuredClone(complete);
+  unresolved.identity={status:'UNRESOLVED',manufacturer:null,source_code:null,product_type:null,market_segment:null,records:[],source_urls:[],checked_sources:[]};
+  assert.equal(resolutionDisposition(unresolved,{research_attempts:1,max_research_attempts:3,canonical_eligible:false}).action,'CONTINUE_RESOLUTION');
+  const finalDisposition=resolutionDisposition(unresolved,{research_attempts:3,max_research_attempts:3,canonical_eligible:false});
+  assert.equal(finalDisposition.action,'DISCARD_SKU');
+  assert.equal(finalDisposition.reason,'NO_DEFENSIBLE_IDENTITY_AFTER_RESEARCH');
+});
+
+test('verified competitor-only identity does not become canonical and is discarded if no canonical identity is found after the attempt limit',()=>{
+  const hdDossier=structuredClone(complete);
+  hdDossier.identity.market_segment='HEAVY_DUTY';
+  const disposition=resolutionDisposition(hdDossier,{research_attempts:3,max_research_attempts:3,canonical_eligible:false});
+  assert.equal(disposition.action,'DISCARD_SKU');
+  assert.equal(disposition.reason,'NO_CANONICAL_IDENTITY_AFTER_RESEARCH');
+});
+
+test('conflicting evidence is never discarded merely because the attempt counter is reached',()=>{
+  const conflicted=structuredClone(complete);
+  conflicted.identity.status='CONFLICTING';
+  conflicted.consistency={status:'CONFLICTING',conflicts:['official sources disagree']};
+  const disposition=resolutionDisposition(conflicted,{research_attempts:3,max_research_attempts:3,canonical_eligible:false});
+  assert.equal(disposition.action,'CONTINUE_RESOLUTION');
+  assert.equal(disposition.reason,'CONFLICTING_EVIDENCE_REQUIRES_MORE_RESEARCH');
 });
 
 test('HD non-MANN/FRAM canonical source remains eligible',()=>{

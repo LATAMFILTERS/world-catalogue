@@ -19,4 +19,6 @@ A SKU is `CERTIFIED` only when all applicable checks pass:
 
 Every failed check is persisted in `public.catalog_sku_certification.blockers`. The certification row also stores evidence counts and the policy version used for the decision.
 
-The catalog is globally certified only when `CERTIFIED == total catalog rows` and `BLOCKED == 0`. No partial percentage is allowed to be presented as full certification.
+For active catalogue governance, `BLOCKED` is an audit signal, not a terminal disposition. Every active non-certified SKU must enter HERMES resolution. HERMES searches official manufacturer/OEM sources and the web for a defensible identity and evidence. A resolved SKU returns to certification; if the governed research-attempt limit is exhausted without a defensible canonical identity, the SKU is removed from the active catalogue with `catalog_active=false` while its historical row and audit trail are preserved.
+
+The active catalog is globally certified only when every `catalog_active=true` row is `CERTIFIED` and there are zero unresolved active rows. No partial percentage is allowed to be presented as full certification.
