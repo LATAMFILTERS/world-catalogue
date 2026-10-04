@@ -100,3 +100,31 @@ if (fs.existsSync(notFoundPath)) {
   fs.writeFileSync(notFoundPath, notFoundHtml, 'utf8');
   console.log('[sanitize-public-html] Normalized 404 title and robots metadata');
 }
+
+// The shared root layout renders <html lang="en"> for every exported page. The
+// /es/ and /pt/ layouts only correct it client-side, so crawlers and the first
+// parse saw "en". Rewrite the served document language for those trees here.
+const LOCALE_HTML_LANG = { es: 'es', pt: 'pt-BR' };
+for (const [dir, lang] of Object.entries(LOCALE_HTML_LANG)) {
+  const root = path.join(outDir, dir);
+  if (!fs.existsSync(root)) continue;
+  let count = 0;
+  for (const rel of fs.readdirSync(root, { recursive: true })) {
+    if (!rel.endsWith('.html')) continue;
+    const file = path.join(root, rel);
+    const doc = fs.readFileSync(file, 'utf8');
+    const fixed = doc.replace(/<html\b([^>]*?)\blang=(["'])[^"']*\2/i, `<html$1lang="${lang}"`);
+    if (fixed !== doc) {
+      fs.writeFileSync(file, fixed, 'utf8');
+      count++;
+    }
+  }
+  const missed = fs.readdirSync(root, { recursive: true })
+    .filter((rel) => rel.endsWith('.html'))
+    .filter((rel) => !new RegExp(`<html\\b[^>]*\\blang="${lang}"`, 'i').test(fs.readFileSync(path.join(root, rel), 'utf8')));
+  if (missed.length) {
+    console.error(`[sanitize-public-html] /${dir}/ pages without <html lang="${lang}">: ${missed.join(', ')}`);
+    process.exit(1);
+  }
+  console.log(`[sanitize-public-html] Set <html lang="${lang}"> on ${count} /${dir}/ pages`);
+}

@@ -28,7 +28,7 @@
     "items": {
       "injector": {
         "title": "Erosão do Injetor",
-        "desc": "Partículas microônicas deformam os orifícios de pulverização, causando perda imediata de energia e má combustão."
+        "desc": "Partículas micrométricas deformam os orifícios de pulverização, causando perda de potência e má combustão."
       },
       "bearing": {
         "title": "Fricção Crítica do Rolamento",
@@ -48,8 +48,8 @@
     "p2": "Cada decisão de proteção deve ser avaliada de acordo com o valor, o ciclo de trabalho, a exposição à contaminação e os requisitos de confiabilidade do ativo protegido.",
     "card": {
       "tag": "TECNOLOGIA DE PROTEÇÃO DE ATIVOS",
-      "title": "Projetamos sistemas de proteção. Não são componentes prontos para uso.",
-      "desc": "A ELIMFILTERS® desenvolve tecnologias de proteção multicamadas calibradas para defender ativos industriais críticos – cada sistema é uma solução desenvolvida especificamente, não um substituto de mercadoria.",
+      "title": "Projetamos sistemas de proteção. Não componentes de prateleira.",
+      "desc": "A ELIMFILTERS® desenvolve tecnologias de proteção multicamadas calibradas para defender ativos industriais críticos – cada sistema é uma solução desenvolvida especificamente, não um substituto genérico.",
       "items": [
         "Controle de contaminação no nível do sistema",
         "Arquitetura de proteção governada pela aplicação",
@@ -173,7 +173,7 @@
     "failModes": [
       {
         "title": "Erosão do Injetor",
-        "desc": "Partículas microônicas deformam os orifícios de pulverização, causando perda imediata de potência e má combustão."
+        "desc": "Partículas micrométricas deformam os orifícios de pulverização, causando perda de potência e má combustão."
       },
       {
         "title": "Fricção Crítica do Rolamento",
