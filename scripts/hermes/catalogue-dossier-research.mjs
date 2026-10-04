@@ -242,7 +242,7 @@ async function persistDossier(db,item,dossier,assessment,identityCheck,attemptEr
      cross_references,applications,provenance,consistency,source_urls,dossier_hash,research_attempts,
      first_researched_at,last_researched_at,completed_at,updated_at)
     VALUES($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13,$14,$15,$16,$17,$18::jsonb,$19::jsonb,$20::jsonb,$21::jsonb,$22::jsonb,
-      $23::jsonb,$24::jsonb,$25::jsonb,$26::jsonb,$27::jsonb,$28::jsonb,$29,1,$30,$30,$31,now())
+      $23::jsonb,$24::jsonb,$25::jsonb,$26::jsonb,$27::jsonb,$28::jsonb,$29,$30,1,$31,$31,$32,now())
     ON CONFLICT(sku) DO UPDATE SET
       backlog_id=excluded.backlog_id,manufacturer=excluded.manufacturer,source_code=excluded.source_code,
       product_type=excluded.product_type,product_name=excluded.product_name,dossier_status=excluded.dossier_status,market_segment=excluded.market_segment,canonical_role=excluded.canonical_role,canonical_role_reason=excluded.canonical_role_reason,
