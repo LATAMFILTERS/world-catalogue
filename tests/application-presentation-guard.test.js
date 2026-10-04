@@ -26,3 +26,26 @@ test('vehicle payload requires its own verified evidence',async()=>{
  const result=await governApplicationPresentation(input,{query:async()=>({rows:[row]})});
  assert.equal(result.results[0].vehicle_applications.length,1);assert.equal(result.results[0].equipment_applications.length,0);
 });
+
+test('equipment motor requires separate exact ENGINE evidence',async()=>{
+ const input=fixture();input.results[0].equipment_applications[0].engine='Kubota';
+ const row={sku:'EH68277',equipment_verified:true,equipment_applications:input.results[0].equipment_applications};
+ const pool={query:async()=>({rows:[row]})};
+ assert.deepEqual((await governApplicationPresentation(input,pool)).results[0].equipment_applications,[]);
+ row.equipment_engine_verified=true;
+ assert.equal((await governApplicationPresentation(input,pool)).results[0].equipment_applications.length,1);
+});
+test('vehicle motor cannot reuse equipment engine verification',async()=>{
+ const input=fixture();input.results[0].vehicle_applications=[{make:'Toyota',model:'Corolla',motor:'2ZR'}];
+ const row={sku:'EH68277',vehicle_verified:true,equipment_engine_verified:true,vehicle_applications:input.results[0].vehicle_applications};
+ const pool={query:async()=>({rows:[row]})};
+ assert.equal((await governApplicationPresentation(input,pool)).results[0].vehicle_applications.length,0);
+ row.vehicle_engine_verified=true;
+ assert.equal((await governApplicationPresentation(input,pool)).results[0].vehicle_applications.length,1);
+});
+test('empty payload is never a verified compatibility assertion',async()=>{
+ const input=fixture();input.results[0].equipment_applications=[];
+ const row={sku:'EH68277',equipment_verified:true,equipment_applications:[]};
+ const result=await governApplicationPresentation(input,{query:async()=>({rows:[row]})});
+ assert.equal(result.results[0].application_validation.equipment_applications.state,'NO_VERIFIED_APPLICATIONS');
+});

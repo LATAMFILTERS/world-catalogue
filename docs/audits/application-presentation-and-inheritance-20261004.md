@@ -1109,3 +1109,31 @@ tests passed. No runtime restart, new table, service, dependency or production
 script was needed. Other SKU were not modified and no shared-list propagation
 was performed. Remaining P551553 source groups and all OEM/competitor equivalences
 still require their own technical evidence.
+
+## Applied presentation corrections - 2026-10-04 UTC
+
+Corrected two remaining publication defects in the existing application guard:
+1. EQUIPMENT or VEHICLE payloads containing a motor now also require a separate
+   verified ENGINE evidence record for the same SKU and exact JSONB payload hash,
+   with nonempty source URL and evidence hash. Equipment and vehicle engine
+   evidence cannot be interchanged.
+2. An empty application array now reports NO_VERIFIED_APPLICATIONS, never
+   EVIDENCE_VERIFIED, including when an empty-payload evidence record exists.
+
+Reused engineApplicationsFrom from catalog-application-governance so publication
+follows the existing engine identity policy used at write time. The sibling CRM
+had no equivalent presentation/evidence implementation in its source or scripts.
+Added three regression cases to the existing test file; all seven guard tests
+pass, syntax and diff checks pass.
+
+Applied the guard only after comparing the live file with the reviewed baseline.
+Restarted the existing Lenovo scheduled runtime using its runtime-only option;
+normal runner defaults were restored. No startup migrations were invoked by this
+controlled restart. The task returned Running and public HTTP reads succeeded.
+
+Post-restart checks against actual database evidence retained EH61553's 22
+reconstructed applications with EVIDENCE_VERIFIED. Public EH61553 search returned
+22; EH66502 returned zero with NO_VERIFIED_APPLICATIONS. Vehicle arrays without
+approved applications likewise report NO_VERIFIED_APPLICATIONS. No data, SKU
+identity, OEM/competitor, infrastructure topology, service or table was changed
+by this correction. Render remains the bridge to Lenovo.
