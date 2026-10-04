@@ -14,8 +14,8 @@ const { Client } = pg;
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
 const url=process.env.CATALOG_DATABASE_URL || process.env.DATABASE_URL;
 const apiKey=process.env.GROQ_API_KEY;
-const model=process.env.HERMES_CATALOGUE_DOSSIER_MODEL || process.env.HERMES_GROQ_MODEL || 'groq/compound';
-const fallbackModel=process.env.HERMES_GROQ_FALLBACK_MODEL || model;
+const model=process.env.HERMES_CATALOGUE_DOSSIER_MODEL || process.env.HERMES_GROQ_MODEL || 'openai/gpt-oss-120b';
+const fallbackModel=process.env.HERMES_GROQ_FALLBACK_MODEL || 'openai/gpt-oss-20b';
 const limit=Math.max(1,Math.min(20,Number(process.env.HERMES_CATALOGUE_RESEARCH_LIMIT||1)));
 const pacingMs=Math.max(0,Number(process.env.HERMES_CATALOGUE_RESEARCH_PACING_MS||20000));
 const retries=Math.max(0,Math.min(3,Number(process.env.HERMES_CATALOGUE_RESEARCH_RETRIES||2)));
@@ -124,7 +124,8 @@ async function research(item){
       const r=await fetch('https://api.groq.com/openai/v1/chat/completions',{
         method:'POST',signal:controller.signal,
         headers:{Authorization:'Bearer '+apiKey,'Content-Type':'application/json'},
-        body:JSON.stringify({model:requestModel,temperature:0,max_completion_tokens:5000,response_format:{type:'json_object'},
+        body:JSON.stringify({model:requestModel,temperature:0,max_completion_tokens:5000,
+          tools:[{type:'browser_search'}],
           messages:[{role:'system',content:systemPrompt()},{role:'user',content:JSON.stringify(input)}]})
       });
       if(!r.ok){
@@ -307,12 +308,12 @@ try{
     try{researched=await research(item);}
     catch(error){
       const reason=String(error?.message||error);
-      const transient=/Groq HTTP (413|429|5\d\d)|ECONNRESET|fetch failed|aborted/i.test(reason);
-      const next=new Date(Date.now()+(transient?1:24)*3600_000).toISOString();
-      await db.query(`UPDATE hermes_catalogue_backlog SET research_attempts=research_attempts+1,
+      const infrastructure=/model_not_found|Groq HTTP (404|413|429|5\d\d)|ECONNRESET|fetch failed|aborted/i.test(reason);
+      const next=new Date(Date.now()+(infrastructure?1:24)*3600_000).toISOString();
+      await db.query(`UPDATE hermes_catalogue_backlog SET research_attempts=research_attempts+$4,
         last_research_at=now(),next_attempt_at=$2,last_research_error=$3,updated_at=now() WHERE backlog_id=$1`,
-        [item.backlog_id,next,reason]);
-      run.results.push({sku:item.sku,status:'RESEARCH_ERROR',reason,next_attempt_at:next});
+        [item.backlog_id,next,reason,infrastructure?0:1]);
+      run.results.push({sku:item.sku,status:'RESEARCH_ERROR',reason,next_attempt_at:next,research_attempt_counted:!infrastructure});
       continue;
     }
     const dossier=researched.dossier||{};
