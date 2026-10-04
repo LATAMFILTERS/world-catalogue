@@ -1260,3 +1260,83 @@ HTTP 200, retained each identity and exposed zero metric OEM entries.
 The remaining rows still fail the existing canonical/structural gates; no bypass
 was introduced. No new table, service, dependency, scheduler or persistent
 production script was created. Runtime and Render topology were unchanged.
+
+## Metric OEM cleanup completion - 2026-10-04T06:59:20.438Z
+
+Verified branch fix/application-presentation-evidence-20261004-main at a25afa0d73, initially clean. PR #796 is OPEN and draft, targets main; no merge performed. Canonical repository has unrelated changes, which were preserved. No AGENTS.md was found in the applicable workspace/repository ancestor paths.
+
+Canonical PostgreSQL independently confirmed the previous baseline: 22 archived SKU / 118 entries and 54 pending SKU / 401 entries. The general gateway preflight held every pending row: 51 have the seven unresolved canonical fallback/authority reasons, 23 have EQUIPMENT_IDENTITY_MISSING, and 2 have non-array competitor_codes (ES91221, ES99732). Groups overlap. No absence, equivalence or equipment approval was inferred.
+
+Inspected current world-catalogue controls before choosing a write route. Its existing committed gateway fbc040767359928d061b082520d5e1b34d7ba25e supplies rejectionCleanup: true, scoped REJECTION_CLEANUP / REFERENCE_REMOVAL_ONLY. It rejects additions and changes outside OEM/competitor arrays. This current removal-specific control resolves the cleanup scope without claiming to resolve the unrelated legacy authority/application gaps. The branch copy predates that capability; reused the canonical implementation without modifying either gateway. Existing gateway tests: 19 passed.
+
+The sibling elimfilters-crm catalog-db.mjs provides read-only catalog queries; its existing reference-status and gap classifiers do not provide a catalog mutation path. Reused the Lenovo runner connection in memory, with a local-host/database assertion. Render remained the existing bridge.
+
+Only entries whose manufacturer matches /^TWA MICRON @ BETA=(2|20|75|200)$/ and code matches /^\d+(\.\d+)?\s*MICRON$/i were removed. The actual manufacturer/unit strings demonstrate misclassification as part references; no measurement became a product specification.
+
+Executed all 54 removals through assertGovernedCatalogPatch with the existing rejectionCleanup option and all database triggers active, then ROLLBACK. The subsequent transaction enforced the exact same SKU/count/baseline SHA256 manifest before COMMIT. Each row was locked; complete before/after row comparisons allowed only the filtered OEM array and the exact archival/count changes. Every other column, including identities, competitor arrays, equipment/vehicle arrays and SQL NULL values, remained equal. No validation was disabled.
+
+Archived original removed objects in enrichment_data.technical_metrics_removed_from_oem_20261004 with previous OEM SHA256, previous governance count, rationale and gateway provenance. Only existing governance oem_code_count was synchronized; its authority, approvals and evidence stayed unchanged. The archive itself is audit metadata, not a reference addition or approval. Existing canonical, alternate-integrity and cache-refresh triggers ran normally.
+
+| SKU | Entries removed | OEM remaining |
+| --- | ---: | ---: |
+| EF90012 | 11 | 469 |
+| EF90015 | 3 | 374 |
+| EF90202 | 23 | 215 |
+| EF90745 | 21 | 55 |
+| EF91047 | 3 | 113 |
+| EF91068 | 3 | 317 |
+| EF91089 | 3 | 270 |
+| EF91218 | 3 | 355 |
+| EF91299 | 3 | 357 |
+| EF91326 | 3 | 200 |
+| EF91481 | 3 | 2159 |
+| EF92006 | 11 | 156 |
+| EF92026 | 11 | 21 |
+| EF92047 | 11 | 292 |
+| EF92049 | 8 | 134 |
+| EF92116 | 15 | 25 |
+| EF95017 | 3 | 4397 |
+| EF95507 | 15 | 15 |
+| EF95636 | 21 | 21 |
+| EF95776 | 11 | 5 |
+| EF95813 | 3 | 1509 |
+| EF95936 | 3 | 2013 |
+| EH60151 | 3 | 4270 |
+| EH60249 | 3 | 333 |
+| EH60363 | 6 | 6 |
+| EH60428 | 3 | 4268 |
+| EH60455 | 3 | 4122 |
+| EH60749 | 3 | 1755 |
+| EH60996 | 4 | 0 |
+| EH66317 | 6 | 57 |
+| EH66551 | 15 | 23 |
+| EH66710 | 3 | 163 |
+| EH67415 | 3 | 418 |
+| EH67507 | 3 | 351 |
+| EH67969 | 19 | 16 |
+| EH67977 | 7 | 11 |
+| EL80710 | 3 | 66 |
+| EL86001 | 3 | 193 |
+| EL87487 | 3 | 1755 |
+| EL87500 | 11 | 146 |
+| EL89024 | 3 | 1150 |
+| ES90019 | 3 | 1573 |
+| ES90203 | 6 | 9 |
+| ES90253 | 23 | 29 |
+| ES91221 | 3 | 5 |
+| ES91280 | 23 | 153 |
+| ES93016 | 6 | 9 |
+| ES93018 | 6 | 9 |
+| ES99513 | 21 | 21 |
+| ES99526 | 3 | 3943 |
+| ES99732 | 3 | 5 |
+| ES99915 | 3 | 4 |
+| EW72176 | 3 | 360 |
+| EW72187 | 3 | 1573 |
+
+Independent post-COMMIT connection at 2026-10-04T06:59:20.438Z confirmed 76 archived SKU / 519 archived entries, zero matching active entries, and zero archive-row governance count mismatches. Every archived removed object satisfies the exact predicate. This continuation removed 401 entries from 54 SKU; the previous 22 archives were not rewritten.
+
+Remaining: canonical authority/absence and application-shape defects still require their own source-backed repairs before general canonical writes. The two competitor arrays retain their original SQL NULL values. No ELIMFILTERS equivalence, equipment compatibility or global certification was approved. The broader OEM/competitor/equipment audit remains open.
+
+Reused catalog-write-gateway.js, existing PostgreSQL governance/integrity/cache triggers, runner configuration, record archives and this report. Inspected catalog-application-write-service.js; no application write was needed or invoked. Created only temporary local execution/verification files to run the bounded manifest, rollback and independent checks; removed them after recording results. No production script, table, service, worker, scheduler, dependency or parallel source was created. No runtime restart or deployment was necessary.
+Public endpoint checks after COMMIT: EF90202, EH67415, ES91221 and EW72187 each returned HTTP 200, retained the exact elimfilters_sku, and exposed zero matching metric reference objects. The first local HTTP check failed on a protocol redirect; public verification used the existing HTTPS bridge without changing runtime configuration.
