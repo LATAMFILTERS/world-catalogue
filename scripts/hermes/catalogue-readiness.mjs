@@ -23,11 +23,15 @@ try {
   const catalog = (await db.query("SELECT sku,codigo_base,duty,technology,filter_type,canonical_source_brand,canonical_source_code,canonical_source_url,canonical_source_status,canonical_verified_at,canonical_evidence,vehicle_applications,equipment_applications,oem_codes,competitor_codes,brand_crossrefs,height_mm,product_length_mm,outer_diameter_mm,inner_diameter_mm,gasket_od_mm,gasket_id_mm,product_dimensions_source,product_dimensions_validation_status,image_url,enrichment_data,units_per_case,unit_packaged_weight_kg,unit_packaged_volume_m3,master_carton_length_cm,packaging_type,packaging_source,packaging_source_url,packaging_validation_status,packaging_validated_at FROM elimfilters_catalog WHERE catalog_active=true ORDER BY sku")).rows;
   const appRows = (await db.query("SELECT id,sku,application_kind,payload_hash,evidence_authority,source_url,evidence_hash,verified_at,metadata,created_at FROM catalog_application_evidence WHERE verified=true")).rows;
   const refRows = (await db.query("SELECT id,reference_type,brand,part_number,sku,source,created_at FROM exact_part_reference")).rows;
+  const manufacturerIdentityRows = (await db.query("SELECT evidence_id,sku,authority,source_url,source_hash,verification_status,payload,provenance,captured_at FROM hermes_catalogue_evidence WHERE field_group='MANUFACTURER_IDENTITY' ORDER BY updated_at DESC,evidence_id")).rows;
+  const manufacturerPriorityRows = (await db.query("SELECT sku,status,governance_state,required_authority,last_error FROM catalog_codigo_base_sanitation_queue WHERE status='PENDING' AND governance_state='PRIMARY_ABSENCE_AWAITING_EXPLICIT_AUTHORITY' AND required_authority='EXPLICIT_DONALDSON_MANUFACTURING_ABSENCE' AND last_error='EXPLICIT_PRIMARY_ABSENCE_AUTHORITY_REQUIRED'")).rows;
   const sourceCandidateRows = (await db.query("SELECT elimfilters_sku,origin_group,canonical_brand,canonical_part_number,candidate_state,updated_at FROM ld_catalog.ld_canonical_backfill_candidates WHERE candidate_state IN ('READY_SOURCE_MANN','READY_SINGLE_FRAM')")).rows;
-  const appBySku=new Map(), refBySku=new Map(), sourceCandidateBySku=new Map();
+  const appBySku=new Map(), refBySku=new Map(), sourceCandidateBySku=new Map(), manufacturerIdentityBySku=new Map(), manufacturerPriorityBySku=new Map();
   for(const x of appRows){ if(!appBySku.has(x.sku)) appBySku.set(x.sku,[]); appBySku.get(x.sku).push(x); }
   for(const x of refRows){ if(!refBySku.has(x.sku)) refBySku.set(x.sku,[]); refBySku.get(x.sku).push(x); }
   for(const x of sourceCandidateRows) sourceCandidateBySku.set(x.elimfilters_sku,x);
+  for(const x of manufacturerIdentityRows) if(!manufacturerIdentityBySku.has(x.sku)) manufacturerIdentityBySku.set(x.sku,x);
+  for(const x of manufacturerPriorityRows) manufacturerPriorityBySku.set(x.sku,{status:'AWAITING_EXPLICIT_AUTHORITY',required_authority:x.required_authority||null,governance_state:x.governance_state,last_error:x.last_error||null});
 
   const orgDoc=JSON.parse(fs.readFileSync(path.join(root,'hermes/config/source-organizations.json'),'utf8'));
   const orgIndex=buildOrganizationIndex(orgDoc.organizations||[]);
@@ -35,7 +39,7 @@ try {
 
   for(const row of catalog){
     const apps=appBySku.get(row.sku)||[], refs=refBySku.get(row.sku)||[];
-    const state=assessSku(row,{appVerifiedCount:apps.length,exactRefs:refs});
+    const state=assessSku(row,{appVerifiedCount:apps.length,exactRefs:refs,manufacturerIdentity:manufacturerIdentityBySku.get(row.sku)||null,manufacturerPriority:manufacturerPriorityBySku.get(row.sku)||null});
     readiness.push(state);
     backlog.push(...buildBacklog(row,state,refs,orgIndex,sourceCandidateBySku.get(row.sku)||null));
 
@@ -56,13 +60,25 @@ try {
   }
 
   const gapNames=['SOURCE','APPLICATIONS','CROSS_REFERENCES','DIMENSIONS','IMAGE','PACKAGING'];
-  const summary={generated_at:new Date().toISOString(),active_skus:catalog.length,source_verified:readiness.filter(x=>x.source_verified).length,source_primary_evidence:readiness.filter(x=>x.source_primary_evidence).length,applications_verified:readiness.filter(x=>x.applications_verified).length,crossrefs_verified:readiness.filter(x=>x.crossrefs_verified).length,dimensions_verified:readiness.filter(x=>x.dimensions_verified).length,image_verified:readiness.filter(x=>x.image_verified).length,packaging_verified:readiness.filter(x=>x.packaging_verified).length,technical_ready:readiness.filter(x=>x.technical_ready).length,fully_verified:readiness.filter(x=>x.fully_verified).length,backlog_open:backlog.length,backlog_by_gap:Object.fromEntries(gapNames.map(g=>[g,readiness.filter(x=>x.gaps.includes(g)).length])),next_action_by_gap:Object.fromEntries(gapNames.map(g=>[g,backlog.filter(x=>x.gap_type===g).length])),evidence_records:evidence.length,sync_requested:sync};
+  const primaryAbsenceIdentityLane={
+    selected:manufacturerPriorityRows.length,
+    manufacturer_priority_awaiting_explicit_authority:manufacturerPriorityRows.length,
+    manufacturer_identity_verified:manufacturerIdentityRows.filter(x=>x.provenance?.queue_state==='PRIMARY_ABSENCE_AWAITING_EXPLICIT_AUTHORITY'&&x.verification_status==='VERIFIED').length,
+    manufacturer_identity_review_required:manufacturerIdentityRows.filter(x=>x.provenance?.queue_state==='PRIMARY_ABSENCE_AWAITING_EXPLICIT_AUTHORITY'&&x.verification_status==='REVIEW_REQUIRED').length,
+    canonical_source_identity_promotions:0,
+    application_approvals:0,
+    equivalence_approvals:0,
+    publication_approvals:0
+  };
+  const summary={generated_at:new Date().toISOString(),active_skus:catalog.length,source_verified:readiness.filter(x=>x.source_verified).length,source_primary_evidence:readiness.filter(x=>x.source_primary_evidence).length,manufacturer_identity_verified:readiness.filter(x=>x.manufacturer_identity_verified).length,manufacturer_priority_awaiting_explicit_authority:readiness.filter(x=>x.manufacturer_priority_status==='AWAITING_EXPLICIT_AUTHORITY').length,primary_absence_identity_lane:primaryAbsenceIdentityLane,applications_verified:readiness.filter(x=>x.applications_verified).length,crossrefs_verified:readiness.filter(x=>x.crossrefs_verified).length,dimensions_verified:readiness.filter(x=>x.dimensions_verified).length,image_verified:readiness.filter(x=>x.image_verified).length,packaging_verified:readiness.filter(x=>x.packaging_verified).length,technical_ready:readiness.filter(x=>x.technical_ready).length,fully_verified:readiness.filter(x=>x.fully_verified).length,backlog_open:backlog.length,backlog_by_gap:Object.fromEntries(gapNames.map(g=>[g,readiness.filter(x=>x.gaps.includes(g)).length])),next_action_by_gap:Object.fromEntries(gapNames.map(g=>[g,backlog.filter(x=>x.gap_type===g).length])),evidence_records:evidence.length,sync_requested:sync};
 
   const groups={};
   for(const r of readiness){
     const k=`${r.duty}|${r.technology}`;
-    groups[k]??={duty:r.duty,technology:r.technology,total:0,source_verified:0,applications_verified:0,crossrefs_verified:0,dimensions_verified:0,technical_ready:0,fully_verified:0};
+    groups[k]??={duty:r.duty,technology:r.technology,total:0,manufacturer_identity_verified:0,manufacturer_priority_awaiting_explicit_authority:0,source_verified:0,applications_verified:0,crossrefs_verified:0,dimensions_verified:0,technical_ready:0,fully_verified:0};
     const g=groups[k]; g.total++;
+    if(r.manufacturer_identity_verified) g.manufacturer_identity_verified++;
+    if(r.manufacturer_priority_status==='AWAITING_EXPLICIT_AUTHORITY') g.manufacturer_priority_awaiting_explicit_authority++;
     for(const f of ['source_verified','applications_verified','crossrefs_verified','dimensions_verified','technical_ready','fully_verified']) if(r[f]) g[f]++;
   }
   summary.by_duty_technology=Object.values(groups).sort((a,b)=>String(a.duty).localeCompare(String(b.duty))||b.total-a.total);
@@ -79,6 +95,15 @@ try {
     `- Active SKUs: **${summary.active_skus}**`,
     `- Source verified: **${summary.source_verified}**`,
     `- Source with primary/governed evidence payload: **${summary.source_primary_evidence}**`,
+    `- Independently verified manufacturer-code identities: **${summary.manufacturer_identity_verified}**`,
+    `- Manufacturer priority awaiting explicit authority: **${summary.manufacturer_priority_awaiting_explicit_authority}**`,
+    '',
+    '## Primary-absence identity and priority lane','',
+    `- Selected pending rows: **${primaryAbsenceIdentityLane.selected}**`,
+    `- Documented manufacturer-code identity verified: **${primaryAbsenceIdentityLane.manufacturer_identity_verified}**`,
+    `- Identity evidence review required: **${primaryAbsenceIdentityLane.manufacturer_identity_review_required}**`,
+    `- Donaldson priority still awaiting explicit authority: **${primaryAbsenceIdentityLane.manufacturer_priority_awaiting_explicit_authority}**`,
+    '- Canonical source, equivalence, application, and publication approvals from identity verification: **0**','',
     `- Applications verified: **${summary.applications_verified}**`,
     `- Cross-references verified: **${summary.crossrefs_verified}**`,
     `- Dimensions verified: **${summary.dimensions_verified}**`,

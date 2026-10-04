@@ -35,6 +35,11 @@ export function organizationCandidates(candidates, orgIndex) {
 }
 export function assessSku(row, context={}) {
   const appVerifiedCount=Number(context.appVerifiedCount||0), exactRefs=context.exactRefs||[];
+  const manufacturerIdentity=context.manufacturerIdentity||null;
+  const manufacturerPriority=context.manufacturerPriority||null;
+  const manufacturerIdentityStatus=String(manufacturerIdentity?.verification_status||'NOT_ASSESSED').toUpperCase();
+  const manufacturerPriorityStatus=String(manufacturerPriority?.status||'NOT_ASSESSED').toUpperCase();
+  const manufacturerIdentityVerified=manufacturerIdentityStatus==='VERIFIED' && manufacturerIdentity?.payload?.status==='VERIFIED';
   const sourceVerified=['VERIFIED','EXCEPTION_CONFIRMED'].includes(String(row.canonical_source_status||'').toUpperCase()) && Boolean(row.canonical_source_brand);
   const sourcePresent=Boolean(row.canonical_source_brand||row.canonical_source_code||row.canonical_source_url);
   const sourcePrimaryEvidence=sourceVerified && Boolean(row.canonical_source_url || (row.canonical_evidence && Object.keys(row.canonical_evidence).length));
@@ -53,7 +58,7 @@ export function assessSku(row, context={}) {
   const gaps=[]; if(!sourceVerified)gaps.push('SOURCE'); if(!applicationsVerified)gaps.push('APPLICATIONS'); if(!crossrefsVerified)gaps.push('CROSS_REFERENCES'); if(!dimensionsVerified)gaps.push('DIMENSIONS'); if(!imageVerified)gaps.push('IMAGE'); if(!packagingVerified)gaps.push('PACKAGING');
   let readinessState='FULLY_VERIFIED';
   if(!sourceVerified)readinessState='SOURCE_PENDING'; else if(!applicationsVerified)readinessState='APPLICATION_PENDING'; else if(!crossrefsVerified)readinessState='REFERENCE_PENDING'; else if(!dimensionsVerified)readinessState='DIMENSIONS_PENDING'; else if(!imageVerified)readinessState='MEDIA_PENDING'; else if(!packagingVerified)readinessState='LOGISTICS_PENDING';
-  return {sku:row.sku,duty:row.duty,technology:row.technology,filter_type:row.filter_type,source_present:sourcePresent,source_verified:sourceVerified,source_primary_evidence:sourcePrimaryEvidence,applications_present:applicationsPresent,applications_verified:applicationsVerified,crossrefs_present:crossrefsPresent,crossrefs_verified:crossrefsVerified,dimensions_present:dimensionsPresent,dimensions_verified:dimensionsVerified,image_present:imagePresent,image_verified:imageVerified,packaging_present:packagingPresent,packaging_verified:packagingVerified,technical_ready:technicalReady,fully_verified:fullyVerified,readiness_state:readinessState,gaps,evidence_counts:{application_verified:appVerifiedCount,exact_references:exactRefs.length}};
+  return {sku:row.sku,duty:row.duty,technology:row.technology,filter_type:row.filter_type,manufacturer_identity_status:manufacturerIdentityStatus,manufacturer_identity_verified:manufacturerIdentityVerified,manufacturer_identity_manufacturer:manufacturerIdentity?.payload?.manufacturer||null,manufacturer_priority_status:manufacturerPriorityStatus,manufacturer_priority_required_authority:manufacturerPriority?.required_authority||null,source_present:sourcePresent,source_verified:sourceVerified,source_primary_evidence:sourcePrimaryEvidence,applications_present:applicationsPresent,applications_verified:applicationsVerified,crossrefs_present:crossrefsPresent,crossrefs_verified:crossrefsVerified,dimensions_present:dimensionsPresent,dimensions_verified:dimensionsVerified,image_present:imagePresent,image_verified:imageVerified,packaging_present:packagingPresent,packaging_verified:packagingVerified,technical_ready:technicalReady,fully_verified:fullyVerified,readiness_state:readinessState,gaps,evidence_counts:{application_verified:appVerifiedCount,exact_references:exactRefs.length}};
 }
 const PRIORITY={SOURCE:0,APPLICATIONS:1,CROSS_REFERENCES:1,DIMENSIONS:2,IMAGE:3,PACKAGING:4};
 const ACTION={

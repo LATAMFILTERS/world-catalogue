@@ -51,6 +51,21 @@ test('absence of Donaldson in JSONB is not manufacturing absence evidence', () =
   assert.equal(evaluateCodigoBase(row).reason, 'donaldson_manufacturing_absence_requires_verified_evidence');
 });
 
+test('verified Fleetguard code identity does not satisfy pending Donaldson priority', () => {
+  const row = {
+    duty: 'HEAVY_DUTY', sku: 'EF91234', codigo_base: 'FF1234',
+    competitor_codes: [{ manufacturer: 'FLEETGUARD', code: 'FF1234' }], oem_codes: [],
+    enrichment_data: { codigo_base_governance: {
+      state: 'PRIMARY_ABSENCE_AWAITING_EXPLICIT_AUTHORITY',
+      donaldson_absence_verified: false,
+      manufacturer_identity: { status: 'VERIFIED', manufacturer: 'FLEETGUARD', code: 'FF1234' },
+    } },
+  };
+  const result = evaluateCodigoBase(row);
+  assert.equal(result.valid, false);
+  assert.equal(result.reason, 'donaldson_manufacturing_absence_requires_verified_evidence');
+});
+
 test('HD verified Fleetguard fallback is canonical without duplicating codigo_base in competitor_codes', () => {
   const row = {
     duty: 'HEAVY_DUTY', sku: 'EF91234', codigo_base: 'FF1234',

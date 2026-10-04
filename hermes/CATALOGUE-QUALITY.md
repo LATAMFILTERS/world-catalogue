@@ -47,6 +47,18 @@ The Lenovo weekly HERMES run and six-hour research retry refresh readiness, rege
 
 `source_identity` is a controlled publication field covering `canonical_source_brand`, `canonical_source_code`, `canonical_source_url`, `canonical_source_status`, `canonical_verified_at` and `canonical_evidence`. Promotion requires the existing HERMES approval, snapshot, plan hash, transaction, backup, post-write verification and rollback controls.
 
+## Manufacturer code identity and priority
+
+`MANUFACTURER_IDENTITY` is an independent HERMES evidence axis. It records that a manufacturer publishes an exact code, using a matching official product record. It does not assert that the ELIMFILTERS SKU is equivalent to that manufacturer's product, set `canonical_source_*`, or approve applications or publication.
+
+For heavy-duty rows awaiting explicit Donaldson absence authority, manufacturer priority remains `PRIMARY_ABSENCE_AWAITING_EXPLICIT_AUTHORITY` in the existing sanitation queue even when a Fleetguard code identity is verified. An OEM or Fleetguard reference in an alternate list alone remains `REVIEW_REQUIRED`; it is not product identity evidence. Neither state changes `donaldson_absence_verified`.
+
+The HERMES quality report displays manufacturer identity and manufacturer priority separately. `technical_ready` and `fully_verified` continue to use the existing source, application, reference, dimension, image, and packaging gates; manufacturer code identity alone does not satisfy those gates.
+
+### Runtime assessment — 2026-10-04
+
+The explicit-Donaldson-authority lane contains 1,886 pending heavy-duty rows. Of these, 1,762 have exact current-code evidence from the Fleetguard official product sitemap and are recorded as verified Fleetguard code identities; 124 have no exact official product evidence and remain `REVIEW_REQUIRED`. All 1,886 remain pending Donaldson explicit absence authority. Independent PostgreSQL verification found zero `donaldson_absence_verified=true`, equivalence approvals, application approvals, or publication approvals from this identity assessment.
+
 ## Complete source dossier closure
 
 A SOURCE backlog item is not closed by manufacturer identity alone.

@@ -43,3 +43,22 @@ test('presence does not equal verification', () => {
   assert.equal(state.packaging_present,true);
   assert.equal(state.packaging_verified,false);
 });
+
+test('documented Fleetguard identity stays separate from manufacturer priority and other approvals', () => {
+  const row={...base,canonical_source_brand:null,canonical_source_code:null,canonical_source_url:null,canonical_source_status:'UNVERIFIED',vehicle_applications:[],equipment_applications:[],enrichment_data:{codigo_base_governance:{state:'PRIMARY_ABSENCE_AWAITING_EXPLICIT_AUTHORITY',donaldson_absence_verified:false}}};
+  const state=assessSku(row,{
+    appVerifiedCount:0,
+    exactRefs:[],
+    manufacturerIdentity:{verification_status:'VERIFIED',payload:{status:'VERIFIED',manufacturer:'FLEETGUARD',equivalence_approved:false,applications_approved:false,publication_approved:false}},
+    manufacturerPriority:{status:'AWAITING_EXPLICIT_AUTHORITY',required_authority:'EXPLICIT_DONALDSON_MANUFACTURING_ABSENCE'},
+  });
+  assert.equal(state.manufacturer_identity_verified,true);
+  assert.equal(state.manufacturer_identity_manufacturer,'FLEETGUARD');
+  assert.equal(state.manufacturer_priority_status,'AWAITING_EXPLICIT_AUTHORITY');
+  assert.equal(state.manufacturer_priority_required_authority,'EXPLICIT_DONALDSON_MANUFACTURING_ABSENCE');
+  assert.equal(state.source_verified,false);
+  assert.equal(state.applications_verified,false);
+  assert.equal(state.crossrefs_verified,false);
+  assert.equal(state.technical_ready,false);
+  assert.equal(state.fully_verified,false);
+});
