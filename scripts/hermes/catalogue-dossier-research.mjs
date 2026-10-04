@@ -187,8 +187,36 @@ function uniqueUrls(dossier){
   return urls;
 }
 
+function plainObject(value){
+  return value && typeof value==='object' && !Array.isArray(value);
+}
+function structuredObjects(records){
+  return Array.isArray(records) ? records.filter(plainObject) : [];
+}
+function structuredApplications(records){
+  const rows=structuredObjects(records);
+  if(!rows.length || rows.length!==records.length) return [];
+  return rows.filter(row=>row.make||row.manufacturer||row.brand||row.model||row.equipment||row.vehicle||row.application);
+}
+function canonicalBrandName(item,dossier){
+  const selected=String(item?.organization?.name||'').trim();
+  if(selected) return selected;
+  const raw=String(dossier?.identity?.manufacturer||'').trim();
+  const n=norm(raw);
+  if(n.includes('MANNFILTER')||n.includes('MANNHUMMEL')) return 'MANN-FILTER';
+  if(n.includes('DONALDSON')) return 'DONALDSON';
+  if(n.includes('FLEETGUARD')||n.includes('CUMMINSFILTRATION')) return 'FLEETGUARD';
+  if(n.includes('FRAM')) return 'FRAM';
+  return raw;
+}
+function canonicalPartCode(value){
+  return String(value||'').normalize('NFKC').replace(/\s+/g,'').trim();
+}
+
 function applicationEvidenceForDossier(dossier,evidenceId){
   if(String(dossier?.applications?.status||'').toUpperCase()!=='VERIFIED') return null;
+  const applicationRows=structuredApplications(dossier?.applications?.records||[]);
+  if(!applicationRows.length) return null;
   const sourceUrl=(dossier.applications.source_urls||[]).find(Boolean)||null;
   if(!sourceUrl) return null;
   const sources=Array.isArray(dossier?.provenance?.sources)?dossier.provenance.sources:[];
@@ -204,7 +232,7 @@ function applicationEvidenceForDossier(dossier,evidenceId){
     source_url:sourceUrl,
     evidence_hash:sha({
       evidence_id:evidenceId,
-      applications:dossier.applications.records||[],
+      applications:applicationRows,
       source_url:sourceUrl,
       authority
     }),
@@ -260,24 +288,30 @@ async function persistDossier(db,item,dossier,assessment,identityCheck,attemptEr
   return status;
 }
 
-function proposedValues(dossier,evidenceId,capturedAt,applicationEvidence=null){
+function proposedValues(item,dossier,evidenceId,capturedAt,applicationEvidence=null){
   const identity=dossier.identity;
+  const canonicalCode=canonicalPartCode(identity.source_code);
   const values={
-    codigo_base:identity.source_code,
+    codigo_base:canonicalCode,
     source_identity:{
-      canonical_source_brand:identity.manufacturer,
-      canonical_source_code:identity.source_code,
+      canonical_source_brand:canonicalBrandName(item,dossier),
+      canonical_source_code:canonicalCode,
       canonical_source_url:identity.source_urls?.[0]||null,
       canonical_source_status:'VERIFIED',
       canonical_verified_at:capturedAt,
       canonical_evidence:{evidence_id:evidenceId,dossier_complete:true}
     }
   };
-  if(dossier.dimensions.status==='VERIFIED') values.dimensions=Object.assign({},...dossier.dimensions.records);
-  if(dossier.technical_specs.status==='VERIFIED') values.technical_specs=Object.assign({},...dossier.technical_specs.records);
-  if(dossier.oem_codes.status==='VERIFIED') values.oem_codes=dossier.oem_codes.records;
-  if(dossier.cross_references.status==='VERIFIED') values.competitor_codes=dossier.cross_references.records;
-  if(dossier.applications.status==='VERIFIED' && applicationEvidence) values.vehicle_applications=dossier.applications.records;
+  const dimensions=structuredObjects(dossier?.dimensions?.records||[]);
+  if(dossier.dimensions.status==='VERIFIED' && dimensions.length) values.dimensions=Object.assign({},...dimensions);
+  const specs=structuredObjects(dossier?.technical_specs?.records||[]);
+  if(dossier.technical_specs.status==='VERIFIED' && specs.length) values.technical_specs=Object.assign({},...specs);
+  const oem=structuredObjects(dossier?.oem_codes?.records||[]);
+  if(dossier.oem_codes.status==='VERIFIED' && oem.length) values.oem_codes=oem;
+  const xrefs=structuredObjects(dossier?.cross_references?.records||[]);
+  if(dossier.cross_references.status==='VERIFIED' && xrefs.length) values.competitor_codes=xrefs;
+  const applications=structuredApplications(dossier?.applications?.records||[]);
+  if(dossier.applications.status==='VERIFIED' && applicationEvidence && applications.length) values.vehicle_applications=applications;
   return values;
 }
 const orgDoc=JSON.parse(fs.readFileSync(path.join(root,'hermes/config/source-organizations.json'),'utf8'));
@@ -387,7 +421,7 @@ try{
       await db.query('COMMIT');
     }catch(error){await db.query('ROLLBACK');throw error;}
     const applicationEvidence=applicationEvidenceForDossier(dossier,evidenceId);
-    const values=proposedValues(dossier,evidenceId,capturedAt,applicationEvidence);
+    const values=proposedValues(item,dossier,evidenceId,capturedAt,applicationEvidence);
     const approvedFields=Object.keys(values);
     const candidate={
       schema_version:'2.0.0',
