@@ -89,7 +89,8 @@
     "hermes:catalogue:research": "node scripts/hermes/catalogue-dossier-research.mjs",
     "hermes:vehicle:closure": "node scripts/hermes/vehicle-platform-closure-work-orders.js",
     "hermes:isuzu-us:phase2": "node scripts/hermes/isuzu-us-phase2-oem-work-orders.js",
-    "hermes:isuzu-us:phase2:2a": "node scripts/hermes/isuzu-us-phase2-oem-work-orders.js --stage=2A_MODEL_UNIVERSE"
+    "hermes:isuzu-us:phase2:2a": "node scripts/hermes/isuzu-us-phase2-oem-work-orders.js --stage=2A_MODEL_UNIVERSE",
+    "catalog:b3:resolver-sweep": "node scripts/audits/run-b3-resolver-sweep.js"
   },
   "dependencies": {
     "axios": "^1.7.7",
