@@ -7,5 +7,9 @@ routes = [
   { pattern = "elimfilters.com/knowledge-system*", zone_name = "elimfilters.com" },
   { pattern = "www.elimfilters.com/knowledge-system*", zone_name = "elimfilters.com" },
   { pattern = "elimfilters.com/knowledge-center/engineering/operator-health*", zone_name = "elimfilters.com" },
-  { pattern = "www.elimfilters.com/knowledge-center/engineering/operator-health*", zone_name = "elimfilters.com" }
+  { pattern = "www.elimfilters.com/knowledge-center/engineering/operator-health*", zone_name = "elimfilters.com" },
+  { pattern = "elimfilters.com/products/ef9066*", zone_name = "elimfilters.com" },
+  { pattern = "www.elimfilters.com/products/ef9066*", zone_name = "elimfilters.com" },
+  { pattern = "elimfilters.com/products/EF9066*", zone_name = "elimfilters.com" },
+  { pattern = "www.elimfilters.com/products/EF9066*", zone_name = "elimfilters.com" }
 ]
