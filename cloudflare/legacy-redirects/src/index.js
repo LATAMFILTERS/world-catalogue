@@ -51,6 +51,11 @@ const REDIRECTS = new Map([
   ["/products/ef90669/", "/products/es91027/"],
   ["/products/EF90669", "/products/es91027/"],
   ["/products/EF90669/", "/products/es91027/"],
+  // 2026-10-05: Donaldson P170950 discontinued, superseded by P164378 (EH60950 -> EH64378).
+  ["/products/eh60950", "/products/eh64378/"],
+  ["/products/eh60950/", "/products/eh64378/"],
+  ["/products/EH60950", "/products/eh64378/"],
+  ["/products/EH60950/", "/products/eh64378/"],
 ]);
 
 function permanentRedirect(url, destinationPath) {
