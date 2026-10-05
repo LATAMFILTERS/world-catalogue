@@ -210,6 +210,32 @@ Git Commit (Control de versión)
 </p>
 ```
 
+## 📚 Biblioteca de cuadernos e investigación con seguimiento
+
+Uso manual u on-demand de HERMES técnico en Lenovo (PRIMARY). No es un job
+recurrente: cada pregunta consume cuota diaria de NotebookLM.
+
+```bash
+# Registrar un cuaderno con metadatos (todos obligatorios)
+python3 scripts/notebooklm_asset_protection.py --library-add \
+  --notebook-id <ID> --name "Normas de combustible" \
+  --description "ISO/ASTM sobre limpieza de diésel y agua en combustible" \
+  --topics fuel-cleanliness,iso-4406,astm-d6304
+
+python3 scripts/notebooklm_asset_protection.py --library-list
+python3 scripts/notebooklm_asset_protection.py --library-search fuel
+
+# Preguntar: el cuaderno se elige por temas (falla si no hay match o hay empate),
+# luego se repiten seguimientos en la misma conversación hasta COMPLETE
+python3 scripts/notebooklm_asset_protection.py \
+  --ask "¿Cómo afecta el agua libre a la vida de inyectores common rail?" \
+  --topic-query fuel-cleanliness --max-follow-ups 2
+```
+
+- La biblioteca vive en `~/.notebooklm/elimfilters_library_<perfil>.json` (los IDs pertenecen a la cuenta Google del operador).
+- La salida se guarda en `docs/external_analysis_notebooklm_<tema>_<fecha>.md` marcada como **PROPUESTA INTERNA NO VALIDADA**, con los pasajes citados por fuente.
+- Una respuesta de NotebookLM no es evidencia: verificar contra la fuente primaria y aprobar en Obsidian antes de usarla en Knowledge Center, catálogo o superficies públicas.
+
 ## 📝 Workflow de Integración Paso a Paso
 
 ### 1️⃣ Generar Análisis
