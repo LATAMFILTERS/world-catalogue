@@ -157,13 +157,13 @@
    }
   },
   {
-   "sku": "EF90668",
-   "slug": "ef90668",
+   "sku": "ES91026",
+   "slug": "es91026",
    "family": "fuel-water-separators",
    "duty": "Heavy Duty",
    "title": "Primary Fuel/Water Separator, Spin-On",
    "technology": "HYDROCORE",
-   "description": "EF90668 is an ELIMFILTERS primary fuel/water separator, spin-on protected by HYDROCORE™ technology.",
+   "description": "ES91026 is an ELIMFILTERS primary fuel/water separator, spin-on protected by HYDROCORE™ technology.",
    "specs": [
     {
      "name": "Thread",
@@ -221,13 +221,13 @@
    }
   },
   {
-   "sku": "EF90669",
-   "slug": "ef90669",
+   "sku": "ES91027",
+   "slug": "es91027",
    "family": "fuel-water-separators",
    "duty": "Heavy Duty",
    "title": "Secondary Fuel/Water Separator, Spin-On",
    "technology": "HYDROCORE",
-   "description": "EF90669 is an ELIMFILTERS secondary fuel/water separator, spin-on protected by HYDROCORE™ technology.",
+   "description": "ES91027 is an ELIMFILTERS secondary fuel/water separator, spin-on protected by HYDROCORE™ technology.",
    "specs": [
     {
      "name": "Thread",

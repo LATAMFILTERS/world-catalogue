@@ -132,11 +132,11 @@
    "_seed": "scripts/upsert-eh60950.js"
   },
   {
-   "sku": "EF90668",
+   "sku": "ES91026",
    "codigo_base": "P550668",
    "name": "ELIMFILTERS Primary Diesel Fuel Water Separator",
    "description": "Primary heavy-duty diesel fuel/water separator. Direct replacement for John Deere RE531703.",
-   "filter_type": "fuel",
+   "filter_type": "water",
    "sub_type": "Primary Fuel / Water Separator",
    "technology": "SYNTAPORE™",
    "installation_type": "Spin-On",
@@ -214,11 +214,11 @@
    "_seed": "scripts/upsert-ef90668-ef90669.js"
   },
   {
-   "sku": "EF90669",
+   "sku": "ES91027",
    "codigo_base": "P550669",
    "name": "ELIMFILTERS Secondary Diesel Fuel Water Separator",
    "description": "Secondary diesel fuel/water separator with sealed base. Direct replacement for John Deere RE522688.",
-   "filter_type": "fuel",
+   "filter_type": "water",
    "sub_type": "Secondary Fuel / Water Separator",
    "technology": "SYNTAPORE™",
    "installation_type": "Spin-On",

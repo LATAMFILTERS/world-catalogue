@@ -93,3 +93,13 @@
 
 # ── Wildcard catch-all (any remaining /knowledge-system/* path) ──────────────
 /knowledge-system/*                                    /knowledge-center/:splat 301
+
+# ── Product SKU renumbering (2026-10-04): fuel/water separators EF9 → ES9 (HYDROCORE™) ──
+/products/ef90668    /products/es91026/ 301
+/products/ef90668/   /products/es91026/ 301
+/products/EF90668    /products/es91026/ 301
+/products/EF90668/   /products/es91026/ 301
+/products/ef90669    /products/es91027/ 301
+/products/ef90669/   /products/es91027/ 301
+/products/EF90669    /products/es91027/ 301
+/products/EF90669/   /products/es91027/ 301
