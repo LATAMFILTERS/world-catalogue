@@ -11,5 +11,9 @@ routes = [
   { pattern = "elimfilters.com/products/ef9066*", zone_name = "elimfilters.com" },
   { pattern = "www.elimfilters.com/products/ef9066*", zone_name = "elimfilters.com" },
   { pattern = "elimfilters.com/products/EF9066*", zone_name = "elimfilters.com" },
-  { pattern = "www.elimfilters.com/products/EF9066*", zone_name = "elimfilters.com" }
+  { pattern = "www.elimfilters.com/products/EF9066*", zone_name = "elimfilters.com" },
+  { pattern = "elimfilters.com/products/eh60950*", zone_name = "elimfilters.com" },
+  { pattern = "www.elimfilters.com/products/eh60950*", zone_name = "elimfilters.com" },
+  { pattern = "elimfilters.com/products/EH60950*", zone_name = "elimfilters.com" },
+  { pattern = "www.elimfilters.com/products/EH60950*", zone_name = "elimfilters.com" }
 ]
