@@ -1,5 +1,9 @@
 import pg from 'pg';
 
+// Retired 2026-10-04: EF90668/EF90669 were renumbered to ES91026/ES91027 (HYDROCORE fuel/water
+// separators, Donaldson P551026/P551027). Re-running would resurrect the old SKUs and base codes.
+throw new Error('Retired: EF90668/EF90669 are now ES91026/ES91027; do not re-run this upsert.');
+
 const { Client } = pg;
 const client = new Client({
   connectionString: process.env.CATALOG_DATABASE_URL || process.env.DATABASE_URL,
