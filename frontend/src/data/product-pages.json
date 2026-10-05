@@ -763,13 +763,13 @@
    }
   },
   {
-   "sku": "EH60950",
-   "slug": "eh60950",
+   "sku": "EH64378",
+   "slug": "eh64378",
    "family": "hydraulic-filters",
    "duty": "Heavy Duty",
    "title": "Hydraulic Spin-On Filter",
    "technology": "NANOFORCE",
-   "description": "EH60950 is an ELIMFILTERS hydraulic spin-on filter protected by NANOFORCE™ technology.",
+   "description": "EH64378 is an ELIMFILTERS hydraulic spin-on filter protected by NANOFORCE™ technology. Donaldson P164378 supersedes discontinued P170950.",
    "specs": [
     {
      "name": "Thread",
@@ -777,7 +777,7 @@
     },
     {
      "name": "Height",
-     "value": "240 mm"
+     "value": "239.78 mm"
     },
     {
      "name": "Outer diameter",
@@ -793,40 +793,100 @@
     },
     {
      "name": "Filtration rating",
-     "value": "11 absolute / 4 nominal"
+     "value": "4 (Beta 2) / 11 (Beta 1000) micron"
     },
     {
-     "name": "Efficiency",
-     "value": "Beta 1000 at 11 micron; Beta 2 at 4 micron"
+     "name": "Efficiency test method",
+     "value": "ISO 16889"
     },
     {
      "name": "Filter media",
-     "value": "Synthetic microfiber glass"
+     "value": "Synthetic"
     }
    ],
    "oem": [
     {
-     "brand": "John Deere",
-     "code": "AH128449"
+     "brand": "Caterpillar",
+     "code": "4C9479"
+    },
+    {
+     "brand": "Caterpillar",
+     "code": "3I0568"
+    },
+    {
+     "brand": "Caterpillar",
+     "code": "3I1947"
+    },
+    {
+     "brand": "Caterpillar",
+     "code": "1664647"
     },
     {
      "brand": "John Deere",
-     "code": "AT215172"
+     "code": "AL233526"
     },
     {
      "brand": "John Deere",
      "code": "4160174"
+    },
+    {
+     "brand": "John Deere",
+     "code": "RE47313"
+    },
+    {
+     "brand": "John Deere",
+     "code": "AL118036"
+    },
+    {
+     "brand": "Komatsu",
+     "code": "5073397"
+    },
+    {
+     "brand": "Volvo",
+     "code": "11841674U01"
+    },
+    {
+     "brand": "Volvo",
+     "code": "E6050119"
+    },
+    {
+     "brand": "Volvo",
+     "code": "11841674"
+    },
+    {
+     "brand": "Volvo",
+     "code": "VOE11036607"
+    },
+    {
+     "brand": "Mercedes-Benz",
+     "code": "A4370940004"
+    },
+    {
+     "brand": "Mack",
+     "code": "106SK13"
+    },
+    {
+     "brand": "Kubota",
+     "code": "3J02808960"
     }
    ],
-   "oemTotal": 3,
+   "oemTotal": 47,
    "crossRefs": [
     {
      "brand": "Donaldson",
-     "code": "P170950"
+     "code": "P164378"
     },
     {
      "brand": "Fleetguard",
      "code": "HF6557"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF28940"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "HF6518"
     },
     {
      "brand": "Baldwin",
@@ -843,13 +903,42 @@
     {
      "brand": "WIX",
      "code": "51819"
+    },
+    {
+     "brand": "WIX",
+     "code": "51486"
+    },
+    {
+     "brand": "WIX",
+     "code": "57247"
+    },
+    {
+     "brand": "MANN-FILTER",
+     "code": "WH10003"
+    },
+    {
+     "brand": "MANN-FILTER",
+     "code": "WH980"
+    },
+    {
+     "brand": "MANN-FILTER",
+     "code": "WH9801"
     }
    ],
-   "crossRefsTotal": 6,
+   "crossRefsTotal": 18,
    "applications": [
-    "JOHN DEERE 9650",
-    "JOHN DEERE 9650 CTS · JOHN DEERE 6081",
-    "JOHN DEERE 9650 STS · JOHN DEERE 6081H"
+    "AG CHEM EQUIPMENT 544 · CUMMINS 4B3.9",
+    "AGCO 6145",
+    "AGCO 6175",
+    "AGCO 9635",
+    "AGCO 9650",
+    "AGCO 9655",
+    "AGCO 9670",
+    "AGCO 9675",
+    "AGCO 9690",
+    "AGCO 9695",
+    "AGCO 9815",
+    "AGCO R42"
    ],
    "physicalWarnings": [],
    "governance": {
@@ -858,7 +947,7 @@
     "fleetguardFallbackVerified": false,
     "verifiedOemReferences": false,
     "canonicalStatus": "VERIFIED",
-    "dutyStatus": "LEGACY_UNVERIFIED",
+    "dutyStatus": "VERIFIED",
     "active": true
    },
    "source": {

@@ -14680,56 +14680,1453 @@
       "oem_total_all_brands": 78
     },
     {
-      "sku": "EH60950",
-      "codigo_base": "P170950",
-      "name": "ELIMFILTERS DURAMAX Hydraulic Spin-On Filter",
-      "description": "Medium-pressure hydraulic and hydrostatic spin-on filter. Direct replacement for John Deere AH128449.",
+      "sku": "EH64378",
+      "codigo_base": "P164378",
+      "name": "ELIMFILTERS Hydraulic Spin-On Filter",
+      "description": "Hydraulic spin-on filter. Donaldson P164378 equivalent; P164378 supersedes discontinued Donaldson P170950.",
       "duty": "HEAVY_DUTY",
       "filter_type": "hydraulic",
-      "sub_type": "Medium Pressure Hydraulic / Hydrostatic",
+      "sub_type": "Hydraulic Spin-On",
       "technology": "NANOFORCE™",
       "installation_type": "Spin-On",
       "thread_size": "1 3/8-12 UN",
-      "height_mm": 240,
+      "height_mm": 239.78,
       "outer_diameter_mm": 97,
       "gasket_od_mm": 70,
       "gasket_id_mm": 63,
-      "micron_rating": "11 absolute / 4 nominal",
-      "nominal_efficiency": "Beta 1000 at 11 micron; Beta 2 at 4 micron",
-      "iso_test_method": null,
-      "filter_media": "Synthetic microfiber glass",
+      "micron_rating": "4 (Beta 2) / 11 (Beta 1000)",
+      "nominal_efficiency": null,
+      "iso_test_method": "ISO 16889",
+      "filter_media": "Synthetic",
       "burst_pressure_psi": null,
       "catalog_active": true,
       "canonical_source_brand": "DONALDSON",
-      "canonical_source_code": "P170950",
+      "canonical_source_code": "P164378",
       "canonical_source_status": "VERIFIED",
-      "duty_validation_status": "LEGACY_UNVERIFIED",
+      "duty_validation_status": "VERIFIED",
       "product_dimensions_validation_status": null,
       "enrichment_required_authority": null,
       "third_party_mark": false,
       "specs": {
-        "rated_flow_l_min": null,
-        "rated_flow_gpm": null,
-        "hydrostatic_burst_minimum_psi": null
+        "media": {
+          "type": "Synthetic",
+          "function": "Hydraulic filtration"
+        },
+        "source": {
+          "url": "https://shop.donaldson.com/store/en-us/product/P164378/16046",
+          "authority": "DONALDSON",
+          "verified_on": "2026-10-05"
+        },
+        "dimensions": {
+          "length_in": 9.44,
+          "length_mm": 239.78,
+          "thread_size": "1 3/8-12 UN",
+          "gasket_id_mm": 63,
+          "gasket_od_mm": 70,
+          "outer_diameter_in": 3.82,
+          "outer_diameter_mm": 97
+        },
+        "efficiency": {
+          "beta_2_micron": 4,
+          "test_standard": "ISO 16889",
+          "beta_1000_micron": 11
+        },
+        "configuration": {
+          "style": "Spin-On"
+        }
       },
       "oem_codes": [
         {
-          "code": "AH128449",
-          "manufacturer": "JOHN-DEERE",
+          "code": "46209",
+          "manufacturer": "ADVANCE MACHINE",
           "classification": "OEM",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
         },
         {
-          "code": "AT215172",
-          "manufacturer": "JOHN-DEERE",
+          "code": "496209",
+          "manufacturer": "ADVANCE MACHINE",
           "classification": "OEM",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "AG609934",
+          "manufacturer": "AG CHEM EQUIPMENT",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "LA323543250",
+          "manufacturer": "AGCO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "512558D1",
+          "manufacturer": "AGCO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "303506819",
+          "manufacturer": "AGCO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "AG133231",
+          "manufacturer": "AGCO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "71372341",
+          "manufacturer": "AGCO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "9772040094",
+          "manufacturer": "ATLAS COPCO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "371975",
+          "manufacturer": "ATLAS COPCO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "7500368",
+          "manufacturer": "ATLAS WEYHAUSEN",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "34464",
+          "manufacturer": "B R LEE INDUSTRIES",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "56500109",
+          "manufacturer": "BARKO HYDRAULICS",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "220077",
+          "manufacturer": "BELL",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "65005",
+          "manufacturer": "BELLE ENGINEERING",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "E5177",
+          "manufacturer": "BERGERAT MONNOYEUR",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "92486",
+          "manufacturer": "BIG A",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "6631705",
+          "manufacturer": "BOBCAT",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "404893R",
+          "manufacturer": "BOECKER-WANDREI",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "59990R",
+          "manufacturer": "BOECKER-WANDREI",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "5730128",
+          "manufacturer": "BOMAG",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "853531235",
+          "manufacturer": "BOMAG",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "53531235",
+          "manufacturer": "BOMAG",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "53531235SYNT",
+          "manufacturer": "BOMAG",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "F026404005",
+          "manufacturer": "BOSCH-REXROTH",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "86029163",
+          "manufacturer": "BUHLER VERSATILE",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "84237579",
+          "manufacturer": "CASE/CASE IH",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "372246A1",
+          "manufacturer": "CASE/CASE IH",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "87308945",
+          "manufacturer": "CASE/CASE IH",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "84074777",
+          "manufacturer": "CASE/CASE IH",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "132575302",
+          "manufacturer": "CASE/CASE IH",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "1325753021",
+          "manufacturer": "CASE/CASE IH",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "48131200",
+          "manufacturer": "CASE/CASE IH",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "76025691",
+          "manufacturer": "CASE/CASE IH",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "84131255",
+          "manufacturer": "CASE/CASE IH",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "81663799",
+          "manufacturer": "CASE/CASE IH",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "81863793",
+          "manufacturer": "CASE/CASE IH",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "87308944",
+          "manufacturer": "CASE/CASE IH",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "4C9479",
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "3I0568",
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "3I1947",
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "1664647",
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "1803813",
+          "manufacturer": "CATERPILLAR",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "451750014101",
+          "manufacturer": "CEDARAPIDS",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "97710",
+          "manufacturer": "CHAMPION ROAD",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "5859480",
+          "manufacturer": "CLAAS",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "05127431",
+          "manufacturer": "CLAAS",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "5127430",
+          "manufacturer": "CLAAS",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "5127431",
+          "manufacturer": "CLAAS",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "110366077",
+          "manufacturer": "CLARK",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "P2980653688",
+          "manufacturer": "CMI",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "P2980653668",
+          "manufacturer": "CMI",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "25003227",
+          "manufacturer": "CMI",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "285491",
+          "manufacturer": "CMI",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "2008549001",
+          "manufacturer": "CMI",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "933931",
+          "manufacturer": "COMPACTION AMERICA",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "853531244",
+          "manufacturer": "COMPACTION AMERICA",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "D516823",
+          "manufacturer": "DAEWOO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "K1022788",
+          "manufacturer": "DAEWOO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "54749040",
+          "manufacturer": "DAEWOO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "54749040SYNT",
+          "manufacturer": "DAEWOO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "GEO496",
+          "manufacturer": "DITCH WITCH",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "84230",
+          "manufacturer": "DITCH WITCH",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "149641A",
+          "manufacturer": "DITCH WITCH",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "084230",
+          "manufacturer": "DITCH WITCH",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "40006451",
+          "manufacturer": "DRILTECH",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "4700359552",
+          "manufacturer": "DYNAPAC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "4700372229",
+          "manufacturer": "DYNAPAC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "372229",
+          "manufacturer": "DYNAPAC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "4700391433",
+          "manufacturer": "DYNAPAC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "391433",
+          "manufacturer": "DYNAPAC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "104508005",
+          "manufacturer": "EATON",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "2370077",
+          "manufacturer": "EATON",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "108107000",
+          "manufacturer": "EATON",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "8320047",
+          "manufacturer": "ENGINE POWER SOURCE",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "16563975",
+          "manufacturer": "EUCLID",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "11036607",
+          "manufacturer": "EUCLID",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "81863797",
+          "manufacturer": "FIAT",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "2226568",
+          "manufacturer": "FMC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "FONN6714CA12H",
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "9576P164378",
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "9576P163555",
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "1507587",
+          "manufacturer": "FRANKLIN",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "131838",
+          "manufacturer": "GEHL",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "074830",
+          "manufacturer": "GEHL",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "74830",
+          "manufacturer": "GEHL",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "8251832000",
+          "manufacturer": "GILLIG",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "502471",
+          "manufacturer": "GLOBAL ASPHALT PRODUCTS",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "VA22600036",
+          "manufacturer": "GRADALL",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "376022",
+          "manufacturer": "GROVE",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "4272830",
+          "manufacturer": "GROVE",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "2246015",
+          "manufacturer": "GT PIECES ET SERVICES",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "1382725",
+          "manufacturer": "HYSTER",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "CV102717",
+          "manufacturer": "IMPERIAL",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "13468301",
+          "manufacturer": "INGERSOLL RAND",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "59075440",
+          "manufacturer": "INGERSOLL RAND",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "602471",
+          "manufacturer": "INGERSOLL RAND",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "43927185",
+          "manufacturer": "INGERSOLL RAND",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "90536046",
+          "manufacturer": "INGERSOLL RAND",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "90536046SYNT",
+          "manufacturer": "INGERSOLL RAND",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "IF6004",
+          "manufacturer": "INTRUPA",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "32922500",
+          "manufacturer": "JCB",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "32909200",
+          "manufacturer": "JCB",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "999999999999902",
+          "manufacturer": "JLG",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "7024231",
+          "manufacturer": "JLG",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "1001081316",
+          "manufacturer": "JLG",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "AL233526",
+          "manufacturer": "JOHN DEERE",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
         },
         {
           "code": "4160174",
-          "manufacturer": "JOHN-DEERE",
+          "manufacturer": "JOHN DEERE",
           "classification": "OEM",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "RE47313",
+          "manufacturer": "JOHN DEERE",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "AL118036",
+          "manufacturer": "JOHN DEERE",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "RE39527",
+          "manufacturer": "JOHN DEERE",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "9106200123",
+          "manufacturer": "JOHN DEERE",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "AH128449",
+          "manufacturer": "JOHN DEERE",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "AT215172",
+          "manufacturer": "JOHN DEERE",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "AKK23814",
+          "manufacturer": "JOHN DEERE",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "AT429938",
+          "manufacturer": "JOHN DEERE",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "8535301235",
+          "manufacturer": "KOEHRING",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "5073397",
+          "manufacturer": "KOMATSU",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "L494",
+          "manufacturer": "KRALINATOR",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "L486",
+          "manufacturer": "KRALINATOR",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "3J02808960",
+          "manufacturer": "KUBOTA",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "3J02808961",
+          "manufacturer": "KUBOTA",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "325432500",
+          "manufacturer": "LAVERDA",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "323543250",
+          "manufacturer": "LAVERDA",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "3235432500",
+          "manufacturer": "LAVERDA",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "66555",
+          "manufacturer": "LEKANG",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "20914",
+          "manufacturer": "LOESING",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "021592",
+          "manufacturer": "LOESING",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "20107",
+          "manufacturer": "LOESING",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "21592",
+          "manufacturer": "LOESING",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "40400393",
+          "manufacturer": "LS TRACTOR",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "MDH6333",
+          "manufacturer": "M.D.F. SARL",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "201713",
+          "manufacturer": "MACDON",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "106SK13",
+          "manufacturer": "MACK",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "N074830",
+          "manufacturer": "MANITOU",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "906694",
+          "manufacturer": "MANITOU",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "427283",
+          "manufacturer": "MANITOWOC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "MC427283",
+          "manufacturer": "MANITOWOC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "14272830",
+          "manufacturer": "MANITOWOC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "605299",
+          "manufacturer": "MARINE TRAVELIFT, INC.",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "6194045M91",
+          "manufacturer": "MASSEY FERGUSON",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "3HB477",
+          "manufacturer": "MCNEILUS",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "A4370940004",
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "24517023",
+          "manufacturer": "MORBARK",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "26638671",
+          "manufacturer": "MORBARK",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "26746169",
+          "manufacturer": "MORBARK",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "26868671",
+          "manufacturer": "MORBARK",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "26838671",
+          "manufacturer": "MORBARK",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "6303751",
+          "manufacturer": "NABI BUS",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "P176566",
+          "manufacturer": "NACCO MATERIALS",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "2043981",
+          "manufacturer": "NACCO MATERIALS",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "8508952",
+          "manufacturer": "NACCO MATERIALS",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "1490095",
+          "manufacturer": "NACCO MATERIALS",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "S00935460050",
+          "manufacturer": "NACCO MATERIALS",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "48142231",
+          "manufacturer": "NEW HOLLAND",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "9821381",
+          "manufacturer": "NEW HOLLAND",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "NP81863799",
+          "manufacturer": "NEW HOLLAND",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "464121",
+          "manufacturer": "NEW HOLLAND",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "H11722",
+          "manufacturer": "NEW HOLLAND",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "818637970",
+          "manufacturer": "NEW HOLLAND",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "87413810",
+          "manufacturer": "NEW HOLLAND",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "89821387",
+          "manufacturer": "NEW HOLLAND",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "56496209",
+          "manufacturer": "NILFISK-ADVANCE INCORPORATED",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "1451200",
+          "manufacturer": "ORENSTEIN & KOPPEL",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "36772",
+          "manufacturer": "PORTAGE MANUFACTURING",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "19500148",
+          "manufacturer": "PREVOST CAR",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "4211410010",
+          "manufacturer": "SAKAI",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "4211410041",
+          "manufacturer": "SAKAI",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "04425014",
+          "manufacturer": "SAME",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "4427013",
+          "manufacturer": "SAME",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "4425014",
+          "manufacturer": "SAME",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "11004919",
+          "manufacturer": "SAUER DANFOSS INC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "0317883SYNT",
+          "manufacturer": "SAUER DANFOSS INC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "SQC00122SYNT",
+          "manufacturer": "SAUER DANFOSS INC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "SQC00134",
+          "manufacturer": "SAUER DANFOSS INC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "SQC00097",
+          "manufacturer": "SAUER DANFOSS INC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "11113449",
+          "manufacturer": "SAUER DANFOSS INC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "1511157",
+          "manufacturer": "SAUER DANFOSS INC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "11004921",
+          "manufacturer": "SAUER DANFOSS INC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "B1929BE",
+          "manufacturer": "SAUER SUNDSTRAND",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "BFLBE",
+          "manufacturer": "SAUER SUNDSTRAND",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "8700143",
+          "manufacturer": "SAUER SUNDSTRAND",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "8700068",
+          "manufacturer": "SAUER SUNDSTRAND",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "180340",
+          "manufacturer": "SELLICK EQPT LTD",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "2404219",
+          "manufacturer": "TAYLOR",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "1015933",
+          "manufacturer": "TENNANT",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "35243",
+          "manufacturer": "THOMAS",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "035243",
+          "manufacturer": "THOMAS",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "3M004138",
+          "manufacturer": "TREEMME TECNOLOGY",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "PM1652",
+          "manufacturer": "TWIN DISC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "PM11652",
+          "manufacturer": "TWIN DISC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "1016505",
+          "manufacturer": "TWIN DISC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "29359",
+          "manufacturer": "TYLER POWER PRODUCTS",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "687208",
+          "manufacturer": "UNITED CENTRAL INDUSTRIAL SUPP",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "321000",
+          "manufacturer": "UNITED CENTRAL INDUSTRIAL SUPP",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "5050618",
+          "manufacturer": "VALMET",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "VPK1551",
+          "manufacturer": "VAPORMATIC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "731130011",
+          "manufacturer": "VERMEER",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "73113001",
+          "manufacturer": "VERMEER",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "HF164378",
+          "manufacturer": "VMC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "HF163555",
+          "manufacturer": "VMC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "HF173737",
+          "manufacturer": "VMC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "HF176566",
+          "manufacturer": "VMC",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "1656397",
+          "manufacturer": "VME",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "110376506",
+          "manufacturer": "VME",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "11841674U01",
+          "manufacturer": "VOLVO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "E6050119",
+          "manufacturer": "VOLVO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "11841674",
+          "manufacturer": "VOLVO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "VOE11036607",
+          "manufacturer": "VOLVO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "11448509",
+          "manufacturer": "VOLVO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "11419264",
+          "manufacturer": "VOLVO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "11802677",
+          "manufacturer": "VOLVO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "15709341",
+          "manufacturer": "VOLVO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "VOE11448509",
+          "manufacturer": "VOLVO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "110366071",
+          "manufacturer": "VOLVO CONSTRUCTION EQUIPMENT",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "VOE11802677",
+          "manufacturer": "VOLVO CONSTRUCTION EQUIPMENT",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "810953",
+          "manufacturer": "WALGAHN-MOTORENTECHN",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "811026",
+          "manufacturer": "WALGAHN-MOTORENTECHN",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "00810981",
+          "manufacturer": "WALGAHN-MOTORENTECHN",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "00811026",
+          "manufacturer": "WALGAHN-MOTORENTECHN",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "810981",
+          "manufacturer": "WALGAHN-MOTORENTECHN",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "3726711M1",
+          "manufacturer": "WESTERN COMBINE",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "3726771M1",
+          "manufacturer": "WESTERN COMBINE",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "501209880",
+          "manufacturer": "ZF",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "4047516DON",
+          "manufacturer": "FILTRAUTO-UK",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "CG49CC16",
+          "manufacturer": "FAIREY-ARLON",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "EM351B3R20",
+          "manufacturer": "WESTERN",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "FONN6714CA1",
+          "manufacturer": "FORD",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "P164378710",
+          "manufacturer": "FILTRAUTO-UK",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "ZME10L",
+          "manufacturer": "ZINGA",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "ZME16L",
+          "manufacturer": "ZINGA",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "ZME16LP",
+          "manufacturer": "ZINGA",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
         }
       ],
       "competitor_codes": [
@@ -14737,34 +16134,1740 @@
           "code": "HF6557",
           "manufacturer": "FLEETGUARD",
           "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
         },
         {
           "code": "BT8852MPG",
           "manufacturer": "BALDWIN",
           "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
         },
         {
           "code": "BT734",
           "manufacturer": "BALDWIN",
           "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
         },
         {
           "code": "BT749",
           "manufacturer": "BALDWIN",
           "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
         },
         {
           "code": "51819",
           "manufacturer": "WIX",
           "classification": "AFTERMARKET",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "85494",
+          "manufacturer": "CARQUEST",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "933430",
+          "manufacturer": "PARKER",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "SPH12512",
+          "manufacturer": "SCHUPP",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "WGH6553",
+          "manufacturer": "WOODGATE",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "BT8327",
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "BT8856MPG",
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "HF28940",
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "HF6518",
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "HF6573",
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "P6893",
+          "manufacturer": "FRAM",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "HF861",
+          "manufacturer": "HASTINGS",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "HY18W11",
+          "manufacturer": "HENGST",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "LAF3586",
+          "manufacturer": "LUBERFINER",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "WH10003",
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "WH980",
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "WH9801",
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "WH980/3",
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "1494",
+          "manufacturer": "NAPA",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "51486",
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "57247",
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "SH66051",
+          "manufacturer": "HIFI",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "PSH607",
+          "manufacturer": "TECFIL",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "1931182",
+          "manufacturer": "CASE-IH",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "47131180",
+          "manufacturer": "CASE-IH",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "47131179",
+          "manufacturer": "NEW-HOLLAND",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
+        },
+        {
+          "code": "81863799",
+          "manufacturer": "NEW-HOLLAND",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_20261005"
         }
       ],
       "equipment_applications": [
+        {
+          "type": "SPRAYER",
+          "engine": "CUMMINS 4B3.9",
+          "equipment": "AG CHEM EQUIPMENT 544"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 6145",
+          "equipment": "AGCO 6145"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 6175",
+          "equipment": "AGCO 6175"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 9635",
+          "equipment": "AGCO 9635"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 9650",
+          "equipment": "AGCO 9650"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 9655",
+          "equipment": "AGCO 9655"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 9670",
+          "equipment": "AGCO 9670"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 9675",
+          "equipment": "AGCO 9675"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 9690",
+          "equipment": "AGCO 9690"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 9695",
+          "equipment": "AGCO 9695"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 9815",
+          "equipment": "AGCO 9815"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- R42",
+          "equipment": "AGCO R42"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- R52",
+          "equipment": "AGCO R52"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- R62",
+          "equipment": "AGCO R62"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CUMMINS 6CTA8.3",
+          "equipment": "AGCO R62"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- R65",
+          "equipment": "AGCO R65"
+        },
+        {
+          "type": "ROAD ROLLER",
+          "engine": "PERKINS 1104C-44",
+          "equipment": "ATLAS WEYHAUSEN AW1070"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "SISU 620.87",
+          "equipment": "CASE/CASE IH 120"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "SISU 620.88",
+          "equipment": "CASE/CASE IH 130"
+        },
+        {
+          "type": "EXCAVATOR",
+          "engine": "SISU 620.90",
+          "equipment": "CASE/CASE IH 170"
+        },
+        {
+          "type": "LAWN EQUIPMENT",
+          "engine": "KOHLER 10-14 HP",
+          "equipment": "CASE/CASE IH 195"
+        },
+        {
+          "type": "BACKHOE LOADER",
+          "engine": "CASE/CASE IH 4.390",
+          "equipment": "CASE/CASE IH 580E"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 6150 CVT",
+          "equipment": "CASE/CASE IH 6150 CVT"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 6160 CVT",
+          "equipment": "CASE/CASE IH 6160 CVT"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "STEYR 620",
+          "equipment": "CASE/CASE IH 6170 CVT"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "STEYR 620",
+          "equipment": "CASE/CASE IH 6190 CVT"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 6195 CVT",
+          "equipment": "CASE/CASE IH 6195 CVT"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- CS100",
+          "equipment": "CASE/CASE IH CS100"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- CS110",
+          "equipment": "CASE/CASE IH CS110"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- CS120",
+          "equipment": "CASE/CASE IH CS120"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- CS130",
+          "equipment": "CASE/CASE IH CS130"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- CS150",
+          "equipment": "CASE/CASE IH CS150"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "STEYR 620.87",
+          "equipment": "CASE/CASE IH CVT120"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "STEYR 620.88",
+          "equipment": "CASE/CASE IH CVT130"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "STEYR 620.90",
+          "equipment": "CASE/CASE IH CVT170"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- MAXXUM 1170 CVX",
+          "equipment": "CASE/CASE IH MAXXUM 1170 CVX"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- MAXXUM 1190 CVX",
+          "equipment": "CASE/CASE IH MAXXUM 1190 CVX"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- MAXXUM 1195 CVX",
+          "equipment": "CASE/CASE IH MAXXUM 1195 CVX"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- -",
+          "equipment": "CASE/CASE IH PUMA 150"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- -",
+          "equipment": "CASE/CASE IH PUMA 150 CVX"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- PUMA 155",
+          "equipment": "CASE/CASE IH PUMA 155"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- -",
+          "equipment": "CASE/CASE IH PUMA 165"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- PUMA 165 PowerDrive",
+          "equipment": "CASE/CASE IH PUMA 165 PowerDrive"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- PUMA 170",
+          "equipment": "CASE/CASE IH PUMA 170"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- PUMA 175 CVX",
+          "equipment": "CASE/CASE IH PUMA 175 CVX"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- -",
+          "equipment": "CASE/CASE IH PUMA 185"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- -",
+          "equipment": "CASE/CASE IH Puma 165"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- CHALLENGER 45",
+          "equipment": "CATERPILLAR CHALLENGER 45"
+        },
+        {
+          "type": "DOZER TRACKED",
+          "engine": "CATERPILLAR 3412E",
+          "equipment": "CATERPILLAR D10R"
+        },
+        {
+          "type": "PLANER",
+          "engine": "CATERPILLAR 3408C",
+          "equipment": "CATERPILLAR PM565B"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR C6.6",
+          "equipment": "CLAAS LEXION 510"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR 3126B",
+          "equipment": "CLAAS LEXION 510"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR 3126B",
+          "equipment": "CLAAS LEXION 520"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR C6.6",
+          "equipment": "CLAAS LEXION 520"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR 3126B",
+          "equipment": "CLAAS LEXION 520 MONTANA"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR C6.6",
+          "equipment": "CLAAS LEXION 520 MONTANA"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR C9",
+          "equipment": "CLAAS LEXION 530"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR 3126B",
+          "equipment": "CLAAS LEXION 530"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR 3126B",
+          "equipment": "CLAAS LEXION 530 MONTANA"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR C9",
+          "equipment": "CLAAS LEXION 530 MONTANA"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR C9",
+          "equipment": "CLAAS LEXION 540"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR 3126B",
+          "equipment": "CLAAS LEXION 540C"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR C6.6",
+          "equipment": "CLAAS LEXION 540C"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR C9",
+          "equipment": "CLAAS LEXION 550"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR C9",
+          "equipment": "CLAAS LEXION 550 MONTANA"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR C10",
+          "equipment": "CLAAS LEXION 560"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR C13",
+          "equipment": "CLAAS LEXION 560"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR C10",
+          "equipment": "CLAAS LEXION 560 MONTANA"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR C13",
+          "equipment": "CLAAS LEXION 560 MONTANA"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR C12",
+          "equipment": "CLAAS LEXION 570"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR C13",
+          "equipment": "CLAAS LEXION 570"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR C12",
+          "equipment": "CLAAS LEXION 570 MONTANA"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR C13",
+          "equipment": "CLAAS LEXION 570 MONTANA"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "CATERPILLAR C13",
+          "equipment": "CLAAS LEXION 570C"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "MERCEDES-BENZ OM 502 LA",
+          "equipment": "CLAAS LEXION 580"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "MERCEDES-BENZ OM 502 LA",
+          "equipment": "CLAAS LEXION 600"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "PERKINS 1006.6T",
+          "equipment": "CLAAS MEGA 202"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "MERCEDES-BENZ OM 366 A",
+          "equipment": "CLAAS MEGA 202"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "MERCEDES-BENZ OM 366 A",
+          "equipment": "CLAAS MEGA 202 II"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "PERKINS 1006.6T",
+          "equipment": "CLAAS MEGA 202 II"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "MERCEDES-BENZ OM 366 A",
+          "equipment": "CLAAS MEGA 203"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "PERKINS 1006.6T",
+          "equipment": "CLAAS MEGA 203"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "MERCEDES-BENZ OM 366 A",
+          "equipment": "CLAAS MEGA 203 II"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "PERKINS 1006.6T",
+          "equipment": "CLAAS MEGA 203 II"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "MERCEDES-BENZ OM 366 LA",
+          "equipment": "CLAAS MEGA 204"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "MERCEDES-BENZ OM 366 LA",
+          "equipment": "CLAAS MEGA 204 II"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "MERCEDES-BENZ OM 366 LA",
+          "equipment": "CLAAS MEGA 208 II"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "YANMAR 4TNE84",
+          "equipment": "DAEWOO DSL 601"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "DEUTZ TCD 2013 L6",
+          "equipment": "DEUTZ-FAHR AGROTRON X720"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "CUMMINS A2300",
+          "equipment": "DOOSAN 440"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "CUMMINS A2300",
+          "equipment": "DOOSAN 440 PLUS"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "- 450",
+          "equipment": "DOOSAN 450"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "- 450 PLUS",
+          "equipment": "DOOSAN 450 PLUS"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "CUMMINS B3.3",
+          "equipment": "DOOSAN 460"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "CUMMINS B3.3",
+          "equipment": "DOOSAN 460 PLUS"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "CUMMINS B3.3T",
+          "equipment": "DOOSAN 470"
+        },
+        {
+          "type": "COMPACTOR",
+          "engine": "CUMMINS QSB3.3",
+          "equipment": "DYNAPAC CC234HF"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "AGCO 74AWI",
+          "equipment": "FENDT 5275C"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "AGCO 74AWI",
+          "equipment": "FENDT 5275CPL"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "AGCO 84AWI",
+          "equipment": "FENDT 6335C"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "AGCO 84AWI",
+          "equipment": "FENDT 6335CPL"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 8160",
+          "equipment": "FORD 8160"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 8240",
+          "equipment": "FORD 8240"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 8340",
+          "equipment": "FORD 8340"
+        },
+        {
+          "type": "PAVER",
+          "engine": "- 1439",
+          "equipment": "GEHL 1439"
+        },
+        {
+          "type": "PAVER",
+          "engine": "- 1448",
+          "equipment": "GEHL 1448"
+        },
+        {
+          "type": "PAVER",
+          "engine": "- 1648",
+          "equipment": "GEHL 1648"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ BF4M1011",
+          "equipment": "GEHL 3635"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ BF3M1011",
+          "equipment": "GEHL 3635"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "YANMAR 3TNV88",
+          "equipment": "GEHL 3640E"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "YANMAR 4TNV88",
+          "equipment": "GEHL 4240E"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "KUBOTA V2203DI",
+          "equipment": "GEHL 4625"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "KUBOTA V2203-DI",
+          "equipment": "GEHL 4635"
+        },
+        {
+          "type": "LOADER",
+          "engine": "DEUTZ F3M1011",
+          "equipment": "GEHL 4635SX"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ BF3M1011",
+          "equipment": "GEHL 4635SX"
+        },
+        {
+          "type": "LOADER",
+          "engine": "DEUTZ F3M1011",
+          "equipment": "GEHL 4635SXT"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ BF3M1011",
+          "equipment": "GEHL 4635SXT"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ F3M2011",
+          "equipment": "GEHL 4640"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ BF3M2011",
+          "equipment": "GEHL 4640"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ F4M2011",
+          "equipment": "GEHL 4840"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "- 5460",
+          "equipment": "GEHL 5460"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "PERKINS 4.154",
+          "equipment": "GEHL 5620"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "PERKINS 4.154",
+          "equipment": "GEHL 5625"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "PERKINS 4.154",
+          "equipment": "GEHL 5625 HYDRACAT"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ F4M1011F",
+          "equipment": "GEHL 5635"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ BF4M2011",
+          "equipment": "GEHL 5640"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ F4M2011",
+          "equipment": "GEHL 5640"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ BF4M1011F",
+          "equipment": "GEHL 6635"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ BF4M2011",
+          "equipment": "GEHL 6640"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "YANMAR 3TNV88-XMS2",
+          "equipment": "GEHL SL3640"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "FORD I-98 KSG",
+          "equipment": "GEHL SL4510"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "FORD I-79 VSG",
+          "equipment": "GEHL SL4510"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "FORD I-98 KSG",
+          "equipment": "GEHL SL4515"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "FORD 413 VSG",
+          "equipment": "GEHL SL4525"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "PERKINS 4.19",
+          "equipment": "GEHL SL4610"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "PERKINS 4.108",
+          "equipment": "GEHL SL4610"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "PERKINS 4.19",
+          "equipment": "GEHL SL4615"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "PERKINS 4.108",
+          "equipment": "GEHL SL4615"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "KUBOTA V2203B",
+          "equipment": "GEHL SL4625"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "KUBOTA V2203B",
+          "equipment": "GEHL SL4625DX"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "KUBOTA V2203B",
+          "equipment": "GEHL SL4625SX"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ BF3M1011F",
+          "equipment": "GEHL SL4635DX"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ F3M1011",
+          "equipment": "GEHL SL4635SX"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ F3M1011F",
+          "equipment": "GEHL SL4635SX"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ F3M1011",
+          "equipment": "GEHL SL4635SXT"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "YANMAR 4TNV88-XMS2",
+          "equipment": "GEHL SL4640"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ F3M2011F",
+          "equipment": "GEHL SL4640"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ BF3M2011F",
+          "equipment": "GEHL SL4640"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ BF3M1011F",
+          "equipment": "GEHL SL4835DX"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ BF3M1011",
+          "equipment": "GEHL SL4835SX"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ BF3M1011F",
+          "equipment": "GEHL SL4835SX"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ BF3M1011",
+          "equipment": "GEHL SL4835SXT"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ F4M2011F",
+          "equipment": "GEHL SL4840"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "PERKINS 4.154",
+          "equipment": "GEHL SL5620"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "PERKINS 4.154",
+          "equipment": "GEHL SL5625"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "PERKINS 204.25",
+          "equipment": "GEHL SL5625DX"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "PERKINS 4.154",
+          "equipment": "GEHL SL5625DX"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "PERKINS 204.25",
+          "equipment": "GEHL SL5625SX"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "PERKINS 4.154",
+          "equipment": "GEHL SL5625SX"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ BF4M1011F",
+          "equipment": "GEHL SL5635DX"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ F4M1011F",
+          "equipment": "GEHL SL5635DX"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ BF4M1011F",
+          "equipment": "GEHL SL5635DXT"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ BF4M1011F",
+          "equipment": "GEHL SL5635SX"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ F4M1011F",
+          "equipment": "GEHL SL5635SX"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ BF4M1011F",
+          "equipment": "GEHL SL5635SXT"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ BF4M2011F",
+          "equipment": "GEHL SL5640"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ F4M2011F",
+          "equipment": "GEHL SL5640"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "PERKINS 4.154",
+          "equipment": "GEHL SL6620"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "PERKINS 4.154",
+          "equipment": "GEHL SL6625"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "PERKINS 204.30",
+          "equipment": "GEHL SL6625DX"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "PERKINS 204.30",
+          "equipment": "GEHL SL6625SX2"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ BF4M1011F",
+          "equipment": "GEHL SL6635DX"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ BF4M1011F",
+          "equipment": "GEHL SL6635SX"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "DEUTZ BF4M2011F",
+          "equipment": "GEHL SL6640"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "YANMAR 4TNE106",
+          "equipment": "GEHL SL7600"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "YANMAR 4TNE106",
+          "equipment": "GEHL SL7800"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "YANMAR 4TNE106T",
+          "equipment": "GEHL SL7800"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "PERKINS -",
+          "equipment": "JCB ROBOT 185"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- -",
+          "equipment": "JOHN DEERE 2054"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- 2056",
+          "equipment": "JOHN DEERE 2056"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6068H",
+          "equipment": "JOHN DEERE 2056"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6068H",
+          "equipment": "JOHN DEERE 2058"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6076A",
+          "equipment": "JOHN DEERE 2064"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- 2066",
+          "equipment": "JOHN DEERE 2066"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6076H",
+          "equipment": "JOHN DEERE 2066"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6068H",
+          "equipment": "JOHN DEERE 2254"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- 2256",
+          "equipment": "JOHN DEERE 2256"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 2256"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 2258"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6076A",
+          "equipment": "JOHN DEERE 2264"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 2264"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6076A",
+          "equipment": "JOHN DEERE 2266"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 2266"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 2266E"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "- 244H",
+          "equipment": "JOHN DEERE 244H"
+        },
+        {
+          "type": "LAWN EQUIPMENT",
+          "engine": "YANMAR 3015D",
+          "equipment": "JOHN DEERE 3235A"
+        },
+        {
+          "type": "DOZER TRACKED",
+          "engine": "- 450G",
+          "equipment": "JOHN DEERE 450G"
+        },
+        {
+          "type": "DOZER TRACKED",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 450G"
+        },
+        {
+          "type": "LOADER TRACKED",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 455G"
+        },
+        {
+          "type": "FORKLIFT",
+          "engine": "JOHN DEERE 4045D",
+          "equipment": "JOHN DEERE 485E"
+        },
+        {
+          "type": "WINDROWER",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 4890"
+        },
+        {
+          "type": "WINDROWER",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 4895"
+        },
+        {
+          "type": "SPRAYER",
+          "engine": "JOHN DEERE 6068T",
+          "equipment": "JOHN DEERE 4920"
+        },
+        {
+          "type": "SPRAYER",
+          "engine": "JOHN DEERE 6090H",
+          "equipment": "JOHN DEERE 4930"
+        },
+        {
+          "type": "WINDROWER",
+          "engine": "JOHN DEERE 6068",
+          "equipment": "JOHN DEERE 4995"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045H",
+          "equipment": "JOHN DEERE 5080R"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045H",
+          "equipment": "JOHN DEERE 5080RN"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045H",
+          "equipment": "JOHN DEERE 5090R"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 5090R"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045H",
+          "equipment": "JOHN DEERE 5090RN"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045H",
+          "equipment": "JOHN DEERE 5100R"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 5100R"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045H",
+          "equipment": "JOHN DEERE 5100RN"
+        },
+        {
+          "type": "DOZER TRACKED",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 550G"
+        },
+        {
+          "type": "LOADER TRACKED",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 555G"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045D",
+          "equipment": "JOHN DEERE 5620"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 5720"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 5820"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045D",
+          "equipment": "JOHN DEERE 6010"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4039D",
+          "equipment": "JOHN DEERE 6100"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 6110L"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 6120"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 6120L"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4039T",
+          "equipment": "JOHN DEERE 6200"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 6210"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 6220"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 6220L"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4039T",
+          "equipment": "JOHN DEERE 6300"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 6310"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 6320"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 6320L"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 6400"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 6405"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 6410"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 6410S",
+          "equipment": "JOHN DEERE 6410S"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 6420"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 6420L"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 6420S"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 6500"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6068D",
+          "equipment": "JOHN DEERE 6506"
+        },
+        {
+          "type": "DOZER TRACKED",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 650G"
+        },
+        {
+          "type": "DOZER TRACKED",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 650G LGP"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 6510"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 6520"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 6520L"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6059T",
+          "equipment": "JOHN DEERE 6600"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6068T",
+          "equipment": "JOHN DEERE 6605"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6068T",
+          "equipment": "JOHN DEERE 6610"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 4045T",
+          "equipment": "JOHN DEERE 6620"
+        },
+        {
+          "type": "HARVESTER",
+          "engine": "JOHN DEERE 6081",
+          "equipment": "JOHN DEERE 6650"
+        },
+        {
+          "type": "HARVESTER",
+          "engine": "- 6750",
+          "equipment": "JOHN DEERE 6750"
+        },
+        {
+          "type": "HARVESTER",
+          "engine": "JOHN DEERE 6125",
+          "equipment": "JOHN DEERE 6750"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6068T",
+          "equipment": "JOHN DEERE 6800"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6068T",
+          "equipment": "JOHN DEERE 6810"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6068T",
+          "equipment": "JOHN DEERE 6820"
+        },
+        {
+          "type": "HARVESTER",
+          "engine": "JOHN DEERE 6125",
+          "equipment": "JOHN DEERE 6850"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6068T",
+          "equipment": "JOHN DEERE 6900"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6068T",
+          "equipment": "JOHN DEERE 6910"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6068T",
+          "equipment": "JOHN DEERE 6910S"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6068T",
+          "equipment": "JOHN DEERE 6920"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6068T",
+          "equipment": "JOHN DEERE 6920S"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6068T",
+          "equipment": "JOHN DEERE 7220"
+        },
+        {
+          "type": "HARVESTER",
+          "engine": "JOHN DEERE 6090H",
+          "equipment": "JOHN DEERE 7250"
+        },
+        {
+          "type": "HARVESTER",
+          "engine": "JOHN DEERE 6125",
+          "equipment": "JOHN DEERE 7300"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6068T",
+          "equipment": "JOHN DEERE 7320"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 7400",
+          "equipment": "JOHN DEERE 7400"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6068H",
+          "equipment": "JOHN DEERE 7420"
+        },
+        {
+          "type": "HARVESTER",
+          "engine": "- 7450",
+          "equipment": "JOHN DEERE 7450"
+        },
+        {
+          "type": "COTTON PICKER",
+          "engine": "JOHN DEERE 6125",
+          "equipment": "JOHN DEERE 7455"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6068T",
+          "equipment": "JOHN DEERE 7505"
+        },
+        {
+          "type": "DOZER TRACKED",
+          "engine": "- 750J",
+          "equipment": "JOHN DEERE 750J"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6068H",
+          "equipment": "JOHN DEERE 7520"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6068T",
+          "equipment": "JOHN DEERE 7600"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6068T",
+          "equipment": "JOHN DEERE 7610"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6068",
+          "equipment": "JOHN DEERE 7610"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6076T",
+          "equipment": "JOHN DEERE 7700"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 7710"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6076T",
+          "equipment": "JOHN DEERE 7800"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 7810"
+        },
+        {
+          "type": "DOZER TRACKED",
+          "engine": "- 850J",
+          "equipment": "JOHN DEERE 850J"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 9100"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6125H",
+          "equipment": "JOHN DEERE 9200"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6125H",
+          "equipment": "JOHN DEERE 9300"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6068T",
+          "equipment": "JOHN DEERE 9400"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6125H",
+          "equipment": "JOHN DEERE 9400"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- 9400W",
+          "equipment": "JOHN DEERE 9400W"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6068H",
+          "equipment": "JOHN DEERE 9410"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- 9450",
+          "equipment": "JOHN DEERE 9450"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- 9450W",
+          "equipment": "JOHN DEERE 9450W"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6076H",
+          "equipment": "JOHN DEERE 9500"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- 9500W",
+          "equipment": "JOHN DEERE 9500W"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- 9510",
+          "equipment": "JOHN DEERE 9510"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- 9510W",
+          "equipment": "JOHN DEERE 9510W"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- 9540",
+          "equipment": "JOHN DEERE 9540"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081T",
+          "equipment": "JOHN DEERE 9540 WTS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- 9550",
+          "equipment": "JOHN DEERE 9550"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- 9550W",
+          "equipment": "JOHN DEERE 9550W"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- 9560",
+          "equipment": "JOHN DEERE 9560"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 9560 STS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081T",
+          "equipment": "JOHN DEERE 9560 WTS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- 9560W",
+          "equipment": "JOHN DEERE 9560W"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6068H",
+          "equipment": "JOHN DEERE 9570 STS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6068HH",
+          "equipment": "JOHN DEERE 9580"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081T",
+          "equipment": "JOHN DEERE 9580 WTS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- 9600",
+          "equipment": "JOHN DEERE 9600"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6076H",
+          "equipment": "JOHN DEERE 9600"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- 9610",
+          "equipment": "JOHN DEERE 9610"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 9610"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081",
+          "equipment": "JOHN DEERE 9640"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081T",
+          "equipment": "JOHN DEERE 9640 WTS"
+        },
         {
           "type": "COMBINE",
           "engine": "- 9650",
@@ -14777,12 +17880,1256 @@
         },
         {
           "type": "COMBINE",
+          "engine": "- 9650 CTS",
+          "equipment": "JOHN DEERE 9650 CTS"
+        },
+        {
+          "type": "COMBINE",
           "engine": "JOHN DEERE 6081H",
           "equipment": "JOHN DEERE 9650 STS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- 9650W",
+          "equipment": "JOHN DEERE 9650W"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- 9660",
+          "equipment": "JOHN DEERE 9660"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081",
+          "equipment": "JOHN DEERE 9660 CTS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081A",
+          "equipment": "JOHN DEERE 9660 CTS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 9660 STS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081T",
+          "equipment": "JOHN DEERE 9660 WTS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- 9660W",
+          "equipment": "JOHN DEERE 9660W"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6090H",
+          "equipment": "JOHN DEERE 9670 STS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081",
+          "equipment": "JOHN DEERE 9680"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081T",
+          "equipment": "JOHN DEERE 9680 WTS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 9750 STS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 4045D",
+          "equipment": "JOHN DEERE 9760"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 9760 STS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6090H",
+          "equipment": "JOHN DEERE 9770 STS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081T",
+          "equipment": "JOHN DEERE 9780 CTS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 12.5L",
+          "equipment": "JOHN DEERE 9860"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6125H",
+          "equipment": "JOHN DEERE 9860 STS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6135H",
+          "equipment": "JOHN DEERE 9870 STS"
+        },
+        {
+          "type": "COTTON PICKER",
+          "engine": "- 9935",
+          "equipment": "JOHN DEERE 9935"
+        },
+        {
+          "type": "COTTON PICKER",
+          "engine": "JOHN DEERE DTS466",
+          "equipment": "JOHN DEERE 9960"
+        },
+        {
+          "type": "COTTON PICKER",
+          "engine": "JOHN DEERE DTA466",
+          "equipment": "JOHN DEERE 9965"
+        },
+        {
+          "type": "COTTON PICKER",
+          "engine": "JOHN DEERE 6.8L",
+          "equipment": "JOHN DEERE 9970"
+        },
+        {
+          "type": "COTTON PICKER",
+          "engine": "- 9976",
+          "equipment": "JOHN DEERE 9976"
+        },
+        {
+          "type": "WINDROWER",
+          "engine": "JOHN DEERE 4045H",
+          "equipment": "JOHN DEERE A400"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6090H",
+          "equipment": "JOHN DEERE C670"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6076H",
+          "equipment": "JOHN DEERE CTS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "- CTS II",
+          "equipment": "JOHN DEERE CTS II"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE CTS II"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6068H",
+          "equipment": "JOHN DEERE S430"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6068H",
+          "equipment": "JOHN DEERE S440"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6068H",
+          "equipment": "JOHN DEERE S550"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6135H",
+          "equipment": "JOHN DEERE S560"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6090HH",
+          "equipment": "JOHN DEERE S660"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6090HH",
+          "equipment": "JOHN DEERE S670"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6135H",
+          "equipment": "JOHN DEERE S680"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6135H",
+          "equipment": "JOHN DEERE S690"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE PowerTech 9.0L",
+          "equipment": "JOHN DEERE S7 600"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE PowerTech 9.0L",
+          "equipment": "JOHN DEERE S7 700"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE JOHN DEERE POWERTECH 13.6L",
+          "equipment": "JOHN DEERE S7 800"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE JOHN DEERE POWERTECH 13.6L",
+          "equipment": "JOHN DEERE S7 900"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6090HH",
+          "equipment": "JOHN DEERE S760"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE POWERTECH PSS 13.5L",
+          "equipment": "JOHN DEERE S770"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE POWERTECH PSS 9.0",
+          "equipment": "JOHN DEERE S770"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE POWERTECH PSS 9.0",
+          "equipment": "JOHN DEERE S780"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE POWERTECH PSS 13.5L",
+          "equipment": "JOHN DEERE S780"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE POWERTECH PSS 13.5L",
+          "equipment": "JOHN DEERE S790"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE POWERTECH PSS 9.0",
+          "equipment": "JOHN DEERE S790"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6068H",
+          "equipment": "JOHN DEERE T550"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6090H",
+          "equipment": "JOHN DEERE T560"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6090H",
+          "equipment": "JOHN DEERE T660"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6090H",
+          "equipment": "JOHN DEERE T670"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6068H",
+          "equipment": "JOHN DEERE W540"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6068H",
+          "equipment": "JOHN DEERE W550"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6090H",
+          "equipment": "JOHN DEERE W650"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6090H",
+          "equipment": "JOHN DEERE W660"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "WUXI DIESEL CA6DF2D-16G",
+          "equipment": "JOHN DEERE Y210 6488"
+        },
+        {
+          "type": "FORWARDER",
+          "engine": "AGCO 74LFTN-D4",
+          "equipment": "KOMATSU 895"
+        },
+        {
+          "type": "FORWARDER",
+          "engine": "AGCO 74LFTN-D5",
+          "equipment": "KOMATSU 895-3"
+        },
+        {
+          "type": "WINDROWER",
+          "engine": "CUMMINS QSB4.5",
+          "equipment": "MACDON M1170"
+        },
+        {
+          "type": "WINDROWER",
+          "engine": "CUMMINS QSB6.7",
+          "equipment": "MACDON M1240"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "- FDM700",
+          "equipment": "MACK FDM700"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "CUMMINS 6CTA8.3",
+          "equipment": "MASSEY FERGUSON MF9240"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "CUMMINS B3.3",
+          "equipment": "MUSTANG 2066"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "CUMMINS B3.3",
+          "equipment": "MUSTANG 2076"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "CUMMINS B3.3",
+          "equipment": "MUSTANG 2086"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 5640S",
+          "equipment": "NEW HOLLAND 5640S"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 5640SL",
+          "equipment": "NEW HOLLAND 5640SL"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 5640SLE",
+          "equipment": "NEW HOLLAND 5640SLE"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 6640 SLE",
+          "equipment": "NEW HOLLAND 6640 SLE"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 6640S",
+          "equipment": "NEW HOLLAND 6640S"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 6640SL",
+          "equipment": "NEW HOLLAND 6640SL"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 7740 SL",
+          "equipment": "NEW HOLLAND 7740 SL"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 7740 SLE",
+          "equipment": "NEW HOLLAND 7740 SLE"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 7840 SL",
+          "equipment": "NEW HOLLAND 7840 SL"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 7840 SLE",
+          "equipment": "NEW HOLLAND 7840 SLE"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 7840S",
+          "equipment": "NEW HOLLAND 7840S"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 8240 SL",
+          "equipment": "NEW HOLLAND 8240 SL"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 8240 SLE",
+          "equipment": "NEW HOLLAND 8240 SLE"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 8240S",
+          "equipment": "NEW HOLLAND 8240S"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 8340 SL",
+          "equipment": "NEW HOLLAND 8340 SL"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- 8340 SLE",
+          "equipment": "NEW HOLLAND 8340 SLE"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "FPT INDUSTRIAL F36",
+          "equipment": "NEW HOLLAND T4.120F"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "FPT INDUSTRIAL N45",
+          "equipment": "NEW HOLLAND T6.145 Dynamic Command"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "FPT INDUSTRIAL N45",
+          "equipment": "NEW HOLLAND T6.145 Electro Command"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "FPT INDUSTRIAL NEF",
+          "equipment": "NEW HOLLAND T6.155"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "FPT INDUSTRIAL N45",
+          "equipment": "NEW HOLLAND T6.155 Dynamic Command"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "FPT INDUSTRIAL N45",
+          "equipment": "NEW HOLLAND T6.155 Electro Command"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "FPT INDUSTRIAL N67",
+          "equipment": "NEW HOLLAND T6.160 Dynamic Command"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "FPT INDUSTRIAL N67",
+          "equipment": "NEW HOLLAND T6.160 Electro Command"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "FPT INDUSTRIAL NEF",
+          "equipment": "NEW HOLLAND T6.165"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "FPT INDUSTRIAL N45",
+          "equipment": "NEW HOLLAND T6.165 Dynamic Command"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "FPT INDUSTRIAL N45",
+          "equipment": "NEW HOLLAND T6.165 Electro Command"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "FPT INDUSTRIAL NEF",
+          "equipment": "NEW HOLLAND T6.175"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "FPT INDUSTRIAL N45",
+          "equipment": "NEW HOLLAND T6.175 Dynamic Command"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "FPT INDUSTRIAL N45",
+          "equipment": "NEW HOLLAND T6.175 Electro Command"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- T6.180",
+          "equipment": "NEW HOLLAND T6.180"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "FPT INDUSTRIAL N67",
+          "equipment": "NEW HOLLAND T6.180 Dynamic Command"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "FPT INDUSTRIAL N67",
+          "equipment": "NEW HOLLAND T6.180 Electro Command"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- T7.175 Classic",
+          "equipment": "NEW HOLLAND T7.175 Classic"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- T7.175 SideWinder II",
+          "equipment": "NEW HOLLAND T7.175 SideWinder II"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- T7.210",
+          "equipment": "NEW HOLLAND T7.210"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- T7.220",
+          "equipment": "NEW HOLLAND T7.220"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- T7.235",
+          "equipment": "NEW HOLLAND T7.235"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- T7.250",
+          "equipment": "NEW HOLLAND T7.250"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- T7510",
+          "equipment": "NEW HOLLAND T7510"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- T7540",
+          "equipment": "NEW HOLLAND T7540"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- T7550",
+          "equipment": "NEW HOLLAND T7550"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "CUMMINS 6CTAA8.3",
+          "equipment": "NEW HOLLAND T8010"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "CUMMINS 6CTAA8.3",
+          "equipment": "NEW HOLLAND T8020"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "CUMMINS 6CTAA8.3",
+          "equipment": "NEW HOLLAND T8030"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "CUMMINS 6CTAA8.3",
+          "equipment": "NEW HOLLAND T8040"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- T8050",
+          "equipment": "NEW HOLLAND T8050"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- TG210",
+          "equipment": "NEW HOLLAND TG210"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "CUMMINS 6CT8.3",
+          "equipment": "NEW HOLLAND TG255"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- P164378",
+          "equipment": "NEW HOLLAND TG285"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "DEUTZ BF6M1013FC",
+          "equipment": "SAME DIAMOND 230"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "DEUTZ BF6M1013FC",
+          "equipment": "SAME DIAMOND 260"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "KUBOTA V1305-B",
+          "equipment": "THOMAS 105"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "KUBOTA V2203-E",
+          "equipment": "THOMAS 153"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "KUBOTA -",
+          "equipment": "THOMAS 173"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "KUBOTA V2003-TE",
+          "equipment": "THOMAS 175"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "KUBOTA V2003-M-T",
+          "equipment": "THOMAS 205"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "KUBOTA V1903-E",
+          "equipment": "THOMAS T133S"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "KUBOTA -",
+          "equipment": "THOMAS T135S"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "KUBOTA V2203E",
+          "equipment": "THOMAS T173"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "KUBOTA V2203",
+          "equipment": "THOMAS T183HD"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "KUBOTA V2203",
+          "equipment": "THOMAS T203HD"
+        },
+        {
+          "type": "SKID STEER LOADER",
+          "engine": "KUBOTA S2800B",
+          "equipment": "THOMAS T233HD"
+        },
+        {
+          "type": "TRENCHER",
+          "engine": "- T1455",
+          "equipment": "VERMEER T1455"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO TD710",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A20"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO TAD73E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A25"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D9A",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A25D"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D10A",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A25D"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D9A",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A25E"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D11H",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A25F"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D11",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A25G"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO TAD103ES",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A30"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D10A",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A30C"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D9A340",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A30D"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D9A300",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A30E"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D11H",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A30F"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D11",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A30G"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO TD122",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A35C"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D12C380",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A35D"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D12C420",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A35E"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D12C460",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A35F"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D13H-A",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A35F-FS"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D13",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A35G"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO TD122",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A40"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO TD122",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A40C"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D12C420",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A40D"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D16A520",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A40E"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D16A520",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A40F"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D16H-A",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A40F-FS"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D16",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A40G"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D16",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A45G"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D16",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A60H"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "MITSUBISHI S3L2",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EC25"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "VOLVO D1.6",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EC27C"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "MITSUBISHI S3L2",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EC30"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "VOLVO D1.1 DCAE4",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT ECR28"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO TAD73E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L120C"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO TAD73E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L120D"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO THD102",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L150C"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO TD101",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L150D"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO TD122",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L180C"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO TD122",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L180D"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO TD41",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L50C"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO TD40",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L50D"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D4D",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L50E"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D6E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L60F"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D6",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L60H"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D6E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L70F"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D6",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L70H"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO TD63E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L90C"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO TD63E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L90D"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D6E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L90F"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D6",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L90H"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D12D",
+          "equipment": "VOLVO FH 12 380"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D12D",
+          "equipment": "VOLVO FH 12 420"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D12D",
+          "equipment": "VOLVO FH 12 460"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13AB",
+          "equipment": "VOLVO FH 400"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13C",
+          "equipment": "VOLVO FH 420"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13K",
+          "equipment": "VOLVO FH 420"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13AB",
+          "equipment": "VOLVO FH 440"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13K",
+          "equipment": "VOLVO FH 460"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13C",
+          "equipment": "VOLVO FH 460"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13A",
+          "equipment": "VOLVO FH 480"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13K",
+          "equipment": "VOLVO FH 480"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13BC",
+          "equipment": "VOLVO FH 500"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13C",
+          "equipment": "VOLVO FH 500"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13K",
+          "equipment": "VOLVO FH 500"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13A",
+          "equipment": "VOLVO FH 520"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13B",
+          "equipment": "VOLVO FH 520"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13C",
+          "equipment": "VOLVO FH 540"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D16G",
+          "equipment": "VOLVO FH 540"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13K",
+          "equipment": "VOLVO FH 540"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D16K",
+          "equipment": "VOLVO FH 550"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D16G",
+          "equipment": "VOLVO FH 600"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D16K",
+          "equipment": "VOLVO FH 650"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D16G",
+          "equipment": "VOLVO FH 700"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D16K",
+          "equipment": "VOLVO FH 750"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D16G",
+          "equipment": "VOLVO FH 750"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D12D",
+          "equipment": "VOLVO FM 12 340"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D12D",
+          "equipment": "VOLVO FM 12 380"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D12D",
+          "equipment": "VOLVO FM 12 420"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D12D",
+          "equipment": "VOLVO FM 12 460"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D9B",
+          "equipment": "VOLVO FM 300"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D11C",
+          "equipment": "VOLVO FM 330"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D9B",
+          "equipment": "VOLVO FM 340"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13AB",
+          "equipment": "VOLVO FM 360"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D11C",
+          "equipment": "VOLVO FM 370"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D9B",
+          "equipment": "VOLVO FM 380"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13C",
+          "equipment": "VOLVO FM 380"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D11B",
+          "equipment": "VOLVO FM 390"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13AB",
+          "equipment": "VOLVO FM 400"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D11C",
+          "equipment": "VOLVO FM 410"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13C",
+          "equipment": "VOLVO FM 420"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D11B",
+          "equipment": "VOLVO FM 430"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13AB",
+          "equipment": "VOLVO FM 440"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D11C",
+          "equipment": "VOLVO FM 450"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13C",
+          "equipment": "VOLVO FM 460"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13AB",
+          "equipment": "VOLVO FM 480"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13B",
+          "equipment": "VOLVO FM 500"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13C",
+          "equipment": "VOLVO FM 500"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D7A",
+          "equipment": "VOLVO FM 7 230"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D7C",
+          "equipment": "VOLVO FM 7 250"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D7A",
+          "equipment": "VOLVO FM 7 260"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D7C",
+          "equipment": "VOLVO FM 7 290"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D9A",
+          "equipment": "VOLVO FM 9 260"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D9A",
+          "equipment": "VOLVO FM 9 300"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D9A",
+          "equipment": "VOLVO FM 9 340"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D9A",
+          "equipment": "VOLVO FM 9 380"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D11C",
+          "equipment": "VOLVO FMX 330"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D11C",
+          "equipment": "VOLVO FMX 370"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13C",
+          "equipment": "VOLVO FMX 380"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13B",
+          "equipment": "VOLVO FMX 400"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D11C",
+          "equipment": "VOLVO FMX 410"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13C",
+          "equipment": "VOLVO FMX 420"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D11C",
+          "equipment": "VOLVO FMX 450"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13C",
+          "equipment": "VOLVO FMX 460"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "VOLVO D13C",
+          "equipment": "VOLVO FMX 500"
         }
       ],
-      "vehicle_applications": [],
-      "oem_total_all_brands": 3
+      "vehicle_applications": null,
+      "oem_total_all_brands": 232,
+      "enrichment_data": {
+        "supersession": {
+          "status": "VERIFIED",
+          "note_es": "P164378 sustituye al P170950 descontinuado",
+          "current_part": "P164378",
+          "manufacturer": "DONALDSON",
+          "predecessors": [
+            {
+              "status": "VERIFIED",
+              "evidence": {
+                "query": "P170950",
+                "result": "Donaldson Parts (1): P164378 HYDRAULIC FILTER, SPIN-ON DURAMAX",
+                "checked_at": "2026-10-05"
+              },
+              "source_url": "https://shop.donaldson.com/store/en-us/search?Ntt=P170950&st=parts",
+              "part_number": "P170950",
+              "verified_at": "2026-10-05T12:35:55.366Z",
+              "manufacturer": "DONALDSON",
+              "relationship": "REPLACES",
+              "evidence_hash": "949981351cfc2772dec5c6dc23dd7512322aa2deb6c97a25088dc1c1d8bddca4",
+              "evidence_kind": "OFFICIAL_SUPERSESSION_SEARCH_RESULT",
+              "evidence_authority": "OFFICIAL_DONALDSON_SHOP",
+              "operator_confirmed": true
+            }
+          ],
+          "policy_version": "2026-10-04-v1",
+          "relationship_type": "SUPERSESSION"
+        }
+      }
     },
     {
       "sku": "EL83191",
