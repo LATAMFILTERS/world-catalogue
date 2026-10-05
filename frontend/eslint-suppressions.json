@@ -1,0 +1,237 @@
+{
+  "src/app/commercial-lines/page.tsx": {
+    "react/jsx-no-comment-textnodes": {
+      "count": 2
+    }
+  },
+  "src/app/contamination/diesel-water/page.tsx": {
+    "react/jsx-no-comment-textnodes": {
+      "count": 1
+    }
+  },
+  "src/app/contamination/hydraulic-system/page.tsx": {
+    "react/jsx-no-comment-textnodes": {
+      "count": 1
+    },
+    "react/no-unescaped-entities": {
+      "count": 3
+    }
+  },
+  "src/app/contamination/particle-wear/page.tsx": {
+    "react/jsx-no-comment-textnodes": {
+      "count": 1
+    },
+    "react/no-unescaped-entities": {
+      "count": 2
+    }
+  },
+  "src/app/distributor-application/page.tsx": {
+    "react/jsx-no-comment-textnodes": {
+      "count": 4
+    }
+  },
+  "src/app/engineering/contamination/[entityId]/ContaminationExplorerClient.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/app/engineering/failure-modes/[entityId]/FailureModeExplorerClient.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/app/engineering/media/[entityId]/MediaExplorerClient.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/app/engineering/principles/[entityId]/PrincipleExplorerClient.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/app/engineering/problem-diagnosis/ProblemDiagnosisConsultation.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/app/engineering/standards/[entityId]/StandardExplorerClient.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/app/engineering/technologies/[entityId]/TechnologyExplorerClient.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/app/knowledge-center/comparison/evaluation-framework/page.tsx": {
+    "react/jsx-no-comment-textnodes": {
+      "count": 1
+    },
+    "react/no-unescaped-entities": {
+      "count": 4
+    }
+  },
+  "src/app/knowledge-center/comparison/oem-vs-aftermarket/page.tsx": {
+    "react/jsx-no-comment-textnodes": {
+      "count": 1
+    }
+  },
+  "src/app/knowledge-center/comparison/system-vs-commodity/page.tsx": {
+    "react/jsx-no-comment-textnodes": {
+      "count": 1
+    }
+  },
+  "src/app/knowledge-center/engineering-reference/page.tsx": {
+    "react/no-unescaped-entities": {
+      "count": 1
+    }
+  },
+  "src/app/knowledge-center/fleet-optimization/asset-protection-system/page.tsx": {
+    "react/no-unescaped-entities": {
+      "count": 14
+    }
+  },
+  "src/app/knowledge-center/fleet-optimization/equipment-lifecycle-optimization/page.tsx": {
+    "react/no-unescaped-entities": {
+      "count": 3
+    }
+  },
+  "src/app/knowledge-system/faqs/technical-faqs/page.tsx": {
+    "react/jsx-no-comment-textnodes": {
+      "count": 1
+    }
+  },
+  "src/app/knowledge-system/market/competitive-analysis-framework/page.tsx": {
+    "react/jsx-no-comment-textnodes": {
+      "count": 1
+    }
+  },
+  "src/app/knowledge-system/market/competitive-intelligence/page.tsx": {
+    "react/jsx-no-comment-textnodes": {
+      "count": 1
+    }
+  },
+  "src/app/knowledge-system/resources/podcast-scripts/page.tsx": {
+    "react/jsx-no-comment-textnodes": {
+      "count": 1
+    }
+  },
+  "src/app/knowledge-system/resources/podcast-scripts/system-vs-commodity-15min/page.tsx": {
+    "react/jsx-no-comment-textnodes": {
+      "count": 1
+    },
+    "react/no-unescaped-entities": {
+      "count": 2
+    }
+  },
+  "src/app/products/page.tsx": {
+    "@next/next/no-html-link-for-pages": {
+      "count": 1
+    }
+  },
+  "src/app/search/page.tsx": {
+    "@next/next/no-html-link-for-pages": {
+      "count": 1
+    },
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/components/AquaguardPage.tsx": {
+    "react/no-unescaped-entities": {
+      "count": 1
+    }
+  },
+  "src/components/AudioOverview.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/components/BreadcrumbNavigation.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/components/ConsentBanner.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/components/GlobalLanguageMenu.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/components/HomePage.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/components/LubricationSystemPage.tsx": {
+    "react/no-unescaped-entities": {
+      "count": 1
+    }
+  },
+  "src/components/MacrocoreMediaEngineeringPortal.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/components/UniversalEndNavigation.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/components/engineering/ContaminationCard.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/components/engineering/EngineeringMemoryPanel.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/components/engineering/EngineeringPrincipleCard.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/components/engineering/FailureModeCard.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/components/engineering/ProtectionSystemExplorer.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/components/engineering/ProvenancePanel.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/components/engineering/StandardCard.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/components/engineering/TechnologyCard.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/components/ui/ChatBotRouteGuard.tsx": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  },
+  "src/lib/useConsent.ts": {
+    "react-hooks/set-state-in-effect": {
+      "count": 1
+    }
+  }
+}
