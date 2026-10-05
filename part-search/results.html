@@ -1330,7 +1330,12 @@ function renderCard(p, index) {
   const vehicleApps = Array.isArray(p.vehicle_applications) ? p.vehicle_applications : [];
   const equipApps   = Array.isArray(p.equipment_applications) ? p.equipment_applications : [];
   // LD products show vehicle fitment; HD products show equipment applications
-  const apps = isLD && vehicleApps.length ? vehicleApps : equipApps;
+  const applicationField = isLD ? 'vehicle_applications' : 'equipment_applications';
+  const applicationVerified = p.application_validation?.[applicationField]?.state === 'EVIDENCE_VERIFIED';
+  const apps = applicationVerified ? (isLD ? vehicleApps : equipApps) : [];
+  const reviewNotice = currentLang === 'es'
+    ? 'Producto identificado. Referencias OEM y de competidores pendientes de revisi\u00f3n t\u00e9cnica. Las aplicaciones sin evidencia verificada no se muestran.'
+    : 'Product identified. OEM and competitor references require technical review. Applications without verified evidence are withheld.';
 
   return `
     <article class="product-card" style="animation-delay: ${0.08 * index}s">
@@ -1349,6 +1354,8 @@ function renderCard(p, index) {
           </div>
         </div>
 
+        <p class="card-desc" role="status">${esc(reviewNotice)}</p>
+        ${p.catalog_validation?.state === 'BLOCKED' ? `<p class="card-desc" role="status">${currentLang === 'es' ? 'SKU bloqueado en la auditoría registrada; requiere revisión antes de usar su compatibilidad.' : 'SKU blocked in the recorded audit; compatibility requires review before use.'}</p>` : ''}
         ${parseDesc(p.description) ? `<p class="card-desc">${esc(parseDesc(p.description))}</p>` : ''}
 
         ${specs.length ? `
@@ -1424,7 +1431,12 @@ function renderCard(p, index) {
                           nameLine = `<span class="equip-mfr">${esc(fullName)}</span>`;
                         }
 
-                        const subLine = [eng, yearType].filter(Boolean).join(' Â· ');
+                        const sourceDetails = [
+                          a.filter_position || '',
+                          a.serial_restriction ? (currentLang === 'es' ? 'Serie: ' : 'Serial: ') + a.serial_restriction : '',
+                          a.source_scope === 'DONALDSON_CANONICAL_PART_APPLICATION' ? (currentLang === 'es' ? 'Aplicaci\u00f3n documentada para ' : 'Documented application for ') + a.source_part_number + (currentLang === 'es' ? '; equivalencia ELIMFILTERS pendiente' : '; ELIMFILTERS equivalence pending') : ''
+                        ].filter(Boolean).join(' | ');
+                        const subLine = [eng, yearType, sourceDetails].filter(Boolean).join(' | ');
                         return `<span class="equip-chip"><span class="equip-name">${nameLine}</span>${subLine ? `<span class="equip-sub">${esc(subLine)}</span>` : ''}</span>`;
                       }
                       
@@ -1439,7 +1451,7 @@ function renderCard(p, index) {
                       }
                       return `<span class="equip-chip"><span class="equip-name">${nameLine}</span></span>`;
                     }).join('') 
-                  : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">${T.specNoEquip}</span>`
+                  : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">${applicationVerified ? T.specNoEquip : (currentLang === 'es' ? 'Compatibilidad pendiente de validaci\u00f3n' : 'Compatibility pending validation')}</span>`
                 }
               </div>
             </div>
