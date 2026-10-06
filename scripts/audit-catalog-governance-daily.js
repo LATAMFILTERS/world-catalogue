@@ -51,10 +51,10 @@ async function completenessReport(client) {
                FROM exact_part_reference e
                WHERE e.sku = c.sku
                  AND upper(e.reference_type) = 'OEM'
-                 AND upper(regexp_replace(coalesce(e.brand,''), '[^A-Z0-9]', '', 'g')) =
-                     upper(regexp_replace(coalesce(x->>'manufacturer',''), '[^A-Z0-9]', '', 'g'))
-                 AND upper(regexp_replace(coalesce(e.part_number,''), '[^A-Z0-9]', '', 'g')) =
-                     upper(regexp_replace(coalesce(x->>'code',''), '[^A-Z0-9]', '', 'g'))
+                 AND regexp_replace(upper(coalesce(e.brand,'')), '[^A-Z0-9]', '', 'g') =
+                     regexp_replace(upper(coalesce(x->>'manufacturer','')), '[^A-Z0-9]', '', 'g')
+                 AND regexp_replace(upper(coalesce(e.part_number,'')), '[^A-Z0-9]', '', 'g') =
+                     regexp_replace(upper(coalesce(x->>'code','')), '[^A-Z0-9]', '', 'g')
              )
         ) AS all_oem_verified,
 
@@ -68,10 +68,10 @@ async function completenessReport(client) {
                FROM exact_part_reference e
                WHERE e.sku = c.sku
                  AND upper(e.reference_type) = 'COMPETITOR'
-                 AND upper(regexp_replace(coalesce(e.brand,''), '[^A-Z0-9]', '', 'g')) =
-                     upper(regexp_replace(coalesce(x->>'manufacturer',''), '[^A-Z0-9]', '', 'g'))
-                 AND upper(regexp_replace(coalesce(e.part_number,''), '[^A-Z0-9]', '', 'g')) =
-                     upper(regexp_replace(coalesce(x->>'code',''), '[^A-Z0-9]', '', 'g'))
+                 AND regexp_replace(upper(coalesce(e.brand,'')), '[^A-Z0-9]', '', 'g') =
+                     regexp_replace(upper(coalesce(x->>'manufacturer','')), '[^A-Z0-9]', '', 'g')
+                 AND regexp_replace(upper(coalesce(e.part_number,'')), '[^A-Z0-9]', '', 'g') =
+                     regexp_replace(upper(coalesce(x->>'code','')), '[^A-Z0-9]', '', 'g')
              )
         ) AS all_competitor_verified,
 
@@ -168,10 +168,10 @@ async function completenessReport(client) {
                SELECT 1 FROM exact_part_reference e
                WHERE e.sku=c.sku
                  AND upper(e.reference_type)='OEM'
-                 AND upper(regexp_replace(coalesce(e.brand,''), '[^A-Z0-9]', '', 'g')) =
-                     upper(regexp_replace(coalesce(x->>'manufacturer',''), '[^A-Z0-9]', '', 'g'))
-                 AND upper(regexp_replace(coalesce(e.part_number,''), '[^A-Z0-9]', '', 'g')) =
-                     upper(regexp_replace(coalesce(x->>'code',''), '[^A-Z0-9]', '', 'g'))
+                 AND regexp_replace(upper(coalesce(e.brand,'')), '[^A-Z0-9]', '', 'g') =
+                     regexp_replace(upper(coalesce(x->>'manufacturer','')), '[^A-Z0-9]', '', 'g')
+                 AND regexp_replace(upper(coalesce(e.part_number,'')), '[^A-Z0-9]', '', 'g') =
+                     regexp_replace(upper(coalesce(x->>'code','')), '[^A-Z0-9]', '', 'g')
              )
         ) AS all_oem_verified,
 
@@ -183,10 +183,10 @@ async function completenessReport(client) {
                SELECT 1 FROM exact_part_reference e
                WHERE e.sku=c.sku
                  AND upper(e.reference_type)='COMPETITOR'
-                 AND upper(regexp_replace(coalesce(e.brand,''), '[^A-Z0-9]', '', 'g')) =
-                     upper(regexp_replace(coalesce(x->>'manufacturer',''), '[^A-Z0-9]', '', 'g'))
-                 AND upper(regexp_replace(coalesce(e.part_number,''), '[^A-Z0-9]', '', 'g')) =
-                     upper(regexp_replace(coalesce(x->>'code',''), '[^A-Z0-9]', '', 'g'))
+                 AND regexp_replace(upper(coalesce(e.brand,'')), '[^A-Z0-9]', '', 'g') =
+                     regexp_replace(upper(coalesce(x->>'manufacturer','')), '[^A-Z0-9]', '', 'g')
+                 AND regexp_replace(upper(coalesce(e.part_number,'')), '[^A-Z0-9]', '', 'g') =
+                     regexp_replace(upper(coalesce(x->>'code','')), '[^A-Z0-9]', '', 'g')
              )
         ) AS all_competitor_verified,
 
