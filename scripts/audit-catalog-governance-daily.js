@@ -32,6 +32,19 @@ function loadPublishedSkus() {
 async function completenessReport(client) {
   const publishedSkus = loadPublishedSkus();
 
+  const { rows: universeRows } = await client.query(`
+    SELECT
+      count(*)::int AS physical_rows,
+      count(DISTINCT sku)::int AS physical_unique_skus,
+      count(*) FILTER (WHERE catalog_active IS TRUE)::int AS active_rows,
+      count(*) FILTER (WHERE catalog_active IS TRUE AND is_primary IS TRUE)::int AS active_primary_true,
+      count(*) FILTER (WHERE catalog_active IS TRUE AND is_primary IS FALSE)::int AS active_primary_false,
+      count(*) FILTER (WHERE catalog_active IS TRUE AND is_primary IS NULL)::int AS active_primary_null,
+      count(*) FILTER (WHERE catalog_active IS NOT TRUE)::int AS inactive_rows
+    FROM public.elimfilters_catalog
+  `);
+  const universe = universeRows[0];
+
   const { rows: totals } = await client.query(`
     WITH base AS (
       SELECT
@@ -114,6 +127,7 @@ async function completenessReport(client) {
   return {
     audit: 'CATALOG_COMPLETENESS_READONLY_V1',
     expected_catalog_skus: EXPECTED_CATALOG_SKUS,
+    universe,
     total_skus: t.total_skus,
     total_matches_expected: t.total_skus === EXPECTED_CATALOG_SKUS,
     family_totals_reconcile: sumsOk,
