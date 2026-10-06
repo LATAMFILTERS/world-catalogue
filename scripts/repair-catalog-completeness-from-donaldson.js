@@ -68,6 +68,11 @@ function sslFor(url) {
 function arr(v) { return Array.isArray(v) ? v : []; }
 function obj(v) { return v && typeof v === 'object' && !Array.isArray(v) ? v : {}; }
 
+function capturePriority(name) {
+  if (/final_results_20260917/i.test(String(name || ''))) return 20;
+  return 10;
+}
+
 function flattenRecords(doc) {
   if (Array.isArray(doc)) return doc;
   if (Array.isArray(doc && doc.results)) return doc.results;
@@ -215,6 +220,14 @@ function loadDataset() {
         continue;
       }
       const prior = byPart.get(key);
+      const priorPriority = capturePriority(prior.__capture_file);
+      const nextPriority = capturePriority(wrapped.__capture_file);
+      if (nextPriority > priorPriority) {
+        byPart.set(key, wrapped);
+        continue;
+      }
+      if (nextPriority < priorPriority) continue;
+
       const same =
         JSON.stringify(extractReferences(prior)) === JSON.stringify(extractReferences(wrapped)) &&
         JSON.stringify(extractApplications(prior)) === JSON.stringify(extractApplications(wrapped));
@@ -484,6 +497,7 @@ module.exports = {
   brandKey,
   isCompetitor,
   validRef,
+  capturePriority,
   flattenRecords,
   partNumber,
   sourceUrl,
