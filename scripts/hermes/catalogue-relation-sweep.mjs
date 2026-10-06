@@ -4,7 +4,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
-import pg from 'file:///C:/ELIMSERVER/repos/world-catalogue/node_modules/pg/lib/index.js';
+import pg from 'pg';
 
 const require=createRequire(import.meta.url);
 const repair=require('../repair-catalog-completeness-from-donaldson.js');
@@ -43,7 +43,7 @@ const gov=row=>obj(row?.enrichment_data?.codigo_base_governance);
 const route=relationAuthorityFor;
 function exactRecord(row,r,indexes){const keys=[norm(row.canonical_source_code),norm(row.codigo_base)].filter(Boolean);const index=r.authority==='DONALDSON'?indexes.donaldson.byPart:r.authority==='PARKER_RACOR'?indexes.parker.byPart:r.authority==='FLEETGUARD'?indexes.fleetguard.byPart:null;if(index){for(const k of keys)if(index.has(k))return {record:index.get(k),authority:r.authority,fallback:false};}if(r.fallback_allowed===true&&r.fallback_authority==='FLEETGUARD'){for(const k of keys)if(indexes.fleetguard.byPart.has(k))return {record:indexes.fleetguard.byPart.get(k),authority:'FLEETGUARD',fallback:true};}return null;}
 function state(r,recordInfo,kind,current,sourceRefs,sourceApps){if(r.authority.startsWith('HERMES_'))return{status:'REVIEW_REQUIRED',reason:'PRIMARY_AUTHORITY_RESEARCH_REQUIRED'};if(!recordInfo)return{status:'REVIEW_REQUIRED',reason:r.fallback_allowed===true?'PRIMARY_AND_ALLOWED_FALLBACK_SOURCE_RECORD_NOT_AVAILABLE':'PRIMARY_SOURCE_RECORD_NOT_AVAILABLE'};if(kind==='APPLICATION')return sourceApps.some(x=>appKey(x)===appKey(current))?{status:'VERIFIED',reason:'EXACT_APPLICATION_MATCH'}:{status:'REVIEW_REQUIRED',reason:'APPLICATION_NOT_FOUND_IN_PRIMARY_CAPTURE'};const key=refKey(current);if(sourceRefs.some(x=>x.kind===kind&&refKey(x)===key))return{status:'VERIFIED',reason:'EXACT_REFERENCE_MATCH'};if(sourceRefs.some(x=>x.kind!==kind&&refKey(x)===key))return{status:'CONFLICTING',reason:'REFERENCE_CLASSIFICATION_CONFLICT'};return{status:'REVIEW_REQUIRED',reason:'REFERENCE_NOT_FOUND_IN_PRIMARY_CAPTURE'};}
-function orgs(r){if(r.authority==='DONALDSON')return[{organization_id:'donaldson',name:'Donaldson Company'}];if(r.authority==='PARKER_RACOR')return[{organization_id:'parker_hannifin_filtration',name:'Parker Racor'}];if(r.authority==='FLEETGUARD')return[{organization_id:'cummins_filtration',name:'Cummins Filtration (Fleetguard)'}];if(r.authority==='HERMES_LD_AUTHORITY_ROUTER')return[{organization_id:'mann_filter',name:'MANN-FILTER'},{organization_id:'fram_group',name:'FRAM'}];return[];}
+function orgs(r){if(r.authority==='DONALDSON')return[{organization_id:'donaldson',name:'Donaldson Company'}];if(r.authority==='PARKER_RACOR'){const out=[{organization_id:'parker_hannifin_filtration',name:'Parker Racor'}];if(r.fallback_allowed===true&&r.fallback_authority==='FLEETGUARD')out.push({organization_id:'cummins_filtration',name:'Cummins Filtration (Fleetguard)'});return out;}if(r.authority==='FLEETGUARD')return[{organization_id:'cummins_filtration',name:'Cummins Filtration (Fleetguard)'}];if(r.authority==='HERMES_LD_AUTHORITY_ROUTER')return[{organization_id:'mann_filter',name:'MANN-FILTER'},{organization_id:'fram_group',name:'FRAM'}];return[];}
 const d=repair.loadDataset(),indexes={donaldson:{byPart:d.byPart,files:d.files},parker:genericIndex(['parker_turbine_results.json','racor_turbine_results.json','parker_racor_turbine_results.json']),fleetguard:fleetguardIndex()};
 const db=new Client({connectionString:url});
 await db.connect();
@@ -104,7 +104,7 @@ async function syncSku(row,routeInfo,skuEvidence,unresolvedItems){
         JSON.stringify([routeInfo.authority]),
         JSON.stringify(orgs(routeInfo)),
         JSON.stringify(hints),
-        'Verify every unresolved '+gap+' relation against '+routeInfo.authority+'; never infer from absence or code similarity.'
+        'Verify every unresolved '+gap+' relation against '+routeInfo.authority+(routeInfo.fallback_allowed===true&&routeInfo.fallback_authority?' first; use '+routeInfo.fallback_authority+' only as governed fallback':'')+'; never infer from absence or code similarity.'
       ]);
       totals.backlog_items++;
     }
