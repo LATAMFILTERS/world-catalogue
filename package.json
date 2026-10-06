@@ -91,7 +91,14 @@
     "hermes:vehicle:closure": "node scripts/hermes/vehicle-platform-closure-work-orders.js",
     "hermes:isuzu-us:phase2": "node scripts/hermes/isuzu-us-phase2-oem-work-orders.js",
     "hermes:isuzu-us:phase2:2a": "node scripts/hermes/isuzu-us-phase2-oem-work-orders.js --stage=2A_MODEL_UNIVERSE",
-    "catalog:b3:resolver-sweep": "node scripts/audits/run-b3-resolver-sweep.js"
+    "catalog:b3:resolver-sweep": "node scripts/audits/run-b3-resolver-sweep.js",
+    "catalog:repair:donaldson": "node scripts/repair-catalog-completeness-from-donaldson.js",
+    "catalog:repair:donaldson:apply": "node scripts/repair-catalog-completeness-from-donaldson.js --apply",
+    "catalog:repair:ef95112": "node scripts/migrations/run_115_create_ef95112_fleetguard_ff5112.js",
+    "catalog:repair:ef95112:apply": "node scripts/migrations/run_115_create_ef95112_fleetguard_ff5112.js --apply",
+    "catalog:completeness:recover": "node scripts/run-catalog-completeness-recovery.js",
+    "catalog:completeness:recover:apply": "node scripts/run-catalog-completeness-recovery.js --apply",
+    "test:catalog-completeness-repair": "node --test tests/catalog-completeness-donaldson-repair.test.js"
   },
   "dependencies": {
     "axios": "^1.7.7",
