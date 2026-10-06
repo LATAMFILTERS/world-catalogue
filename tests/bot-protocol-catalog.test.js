@@ -29,6 +29,11 @@ test('extracts numeric references containing separators', () => {
   assert.deepEqual(extractReferences('Komatsu 600-211-1231'), ['6002111231']);
 });
 
+test('a hyphenated alphanumeric code does not yield its numeric tail as a second reference', () => {
+  assert.deepEqual(extractReferences('¿Qué equivalencia tiene el código P-552-100?'), ['P552100']);
+  assert.deepEqual(extractReferences('Caterpillar 1R-0739 y Volvo 11110683'), ['1R0739', '11110683']);
+});
+
 test('extracts references containing slash separators', () => {
   assert.deepEqual(extractReferences('MANN W940/25'), ['W94025']);
 });

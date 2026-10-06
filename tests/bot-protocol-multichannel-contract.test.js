@@ -77,11 +77,23 @@ const CATALOG_ROWS = [
   }
 ];
 
+// Mirrors v_api_resolver_v7 in the catalogue DB, which references resolve through since the
+// canonical resolver authority: P552100 has a single canonical owner (EL82100).
+const RESOLVER_ROWS = [
+  { code: 'P552100', sku: 'EL82100', manufacturer: 'DONALDSON', score: 950, status: 'RESOLVED_CANONICAL_BASE' }
+];
+
 function fakeCatalogClient() {
   return {
     async query(sql, params = []) {
       const text = String(sql);
       if (/^\s*(BEGIN|COMMIT|ROLLBACK|SET LOCAL)/i.test(text)) return { rows: [] };
+      if (/FROM v_api_resolver_v7/i.test(text)) {
+        const keys = (params[0] || []).map(normalizeRef);
+        const statuses = params[1] || [];
+        const column = /coalesce\(code,/i.test(text) ? 'code' : 'sku';
+        return { rows: RESOLVER_ROWS.filter(row => keys.includes(normalizeRef(row[column])) && statuses.includes(row.status)) };
+      }
       if (/FROM elimfilters_catalog/i.test(text)) {
         const refs = (params[0] || []).map(normalizeRef);
         const rows = CATALOG_ROWS.filter(row => {
