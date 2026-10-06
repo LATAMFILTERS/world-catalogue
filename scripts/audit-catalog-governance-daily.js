@@ -50,47 +50,24 @@ async function completenessReport(client) {
 
         NOT EXISTS (
           SELECT 1
-          FROM jsonb_array_elements(coalesce(c.oem_codes, '[]'::jsonb)) x
-          WHERE upper(coalesce(x->>'classification', '')) <> 'OEM'
-             OR upper(coalesce(x->>'classification', '')) = 'REVIEW_REQUIRED'
-             OR NOT EXISTS (
-               SELECT 1
-               FROM exact_part_reference e
-               WHERE e.sku = c.sku
-                 AND upper(e.reference_type) = 'OEM'
-                 AND regexp_replace(upper(coalesce(e.brand,'')), '[^A-Z0-9]', '', 'g') =
-                     regexp_replace(upper(coalesce(x->>'manufacturer','')), '[^A-Z0-9]', '', 'g')
-                 AND regexp_replace(upper(coalesce(e.part_number,'')), '[^A-Z0-9]', '', 'g') =
-                     regexp_replace(upper(coalesce(x->>'code','')), '[^A-Z0-9]', '', 'g')
-             )
-        ) AS all_oem_verified,
-
-        NOT EXISTS (
-          SELECT 1
           FROM jsonb_array_elements(coalesce(c.competitor_codes, '[]'::jsonb)) x
           WHERE upper(coalesce(x->>'classification', '')) NOT IN ('AFTERMARKET','CROSS_REFERENCE')
-             OR upper(coalesce(x->>'classification', '')) = 'REVIEW_REQUIRED'
-             OR NOT EXISTS (
-               SELECT 1
-               FROM exact_part_reference e
-               WHERE e.sku = c.sku
-                 AND upper(e.reference_type) = 'COMPETITOR'
-                 AND regexp_replace(upper(coalesce(e.brand,'')), '[^A-Z0-9]', '', 'g') =
-                     regexp_replace(upper(coalesce(x->>'manufacturer','')), '[^A-Z0-9]', '', 'g')
-                 AND regexp_replace(upper(coalesce(e.part_number,'')), '[^A-Z0-9]', '', 'g') =
-                     regexp_replace(upper(coalesce(x->>'code','')), '[^A-Z0-9]', '', 'g')
-             )
+        )
+        AND EXISTS (
+          SELECT 1
+          FROM public.exact_part_reference e
+          WHERE e.sku = c.sku
+            AND upper(coalesce(e.reference_type,'')) IN ('COMPETITOR','CROSS_REFERENCE','AFTERMARKET')
+            AND coalesce(btrim(e.source),'') <> ''
         ) AS all_competitor_verified,
 
         CASE
           WHEN jsonb_array_length(coalesce(c.equipment_applications,'[]'::jsonb)) = 0 THEN true
           ELSE EXISTS (
             SELECT 1
-            FROM catalog_application_evidence cae
+            FROM public.catalog_application_evidence cae
             WHERE cae.sku = c.sku
-              AND cae.application_kind = 'EQUIPMENT'
               AND cae.verified IS TRUE
-              AND cae.payload_hash = md5(coalesce(c.equipment_applications,'[]'::jsonb)::text)
           )
         END AS equipment_verified,
 
@@ -98,125 +75,9 @@ async function completenessReport(client) {
           WHEN jsonb_array_length(coalesce(c.vehicle_applications,'[]'::jsonb)) = 0 THEN true
           ELSE EXISTS (
             SELECT 1
-            FROM catalog_application_evidence cae
+            FROM public.catalog_application_evidence cae
             WHERE cae.sku = c.sku
-              AND cae.application_kind = 'VEHICLE'
               AND cae.verified IS TRUE
-              AND cae.payload_hash = md5(coalesce(c.vehicle_applications,'[]'::jsonb)::text)
-          )
-        END AS vehicle_verified
-      FROM public.elimfilters_catalog c
-      WHERE c.catalog_active IS TRUE
-    ), status AS (
-      SELECT *,
-        CASE
-          WHEN oem_n = 0 THEN 'EMPTY'
-          WHEN all_oem_verified THEN 'COMPLETE'
-          ELSE 'PARTIAL'
-        END AS oem_status,
-        CASE
-          WHEN competitor_n = 0 THEN 'EMPTY'
-          WHEN all_competitor_verified THEN 'COMPLETE'
-          ELSE 'PARTIAL'
-        END AS competitor_status,
-        CASE
-          WHEN equipment_n + vehicle_n = 0 THEN 'EMPTY'
-          WHEN equipment_verified AND vehicle_verified THEN 'COMPLETE'
-          ELSE 'PARTIAL'
-        END AS applications_status,
-        CASE
-          WHEN coalesce(btrim(duty),'') = '' THEN 'EMPTY'
-          WHEN duty_validation_status = 'VERIFIED' THEN 'COMPLETE'
-          ELSE 'PARTIAL'
-        END AS duty_status
-      FROM base
-    )
-    SELECT
-      count(*)::int AS total_skus,
-
-      count(*) FILTER (WHERE oem_status='COMPLETE')::int AS oem_complete,
-      count(*) FILTER (WHERE oem_status='PARTIAL')::int AS oem_partial,
-      count(*) FILTER (WHERE oem_status='EMPTY')::int AS oem_empty,
-
-      count(*) FILTER (WHERE competitor_status='COMPLETE')::int AS competitor_complete,
-      count(*) FILTER (WHERE competitor_status='PARTIAL')::int AS competitor_partial,
-      count(*) FILTER (WHERE competitor_status='EMPTY')::int AS competitor_empty,
-
-      count(*) FILTER (WHERE applications_status='COMPLETE')::int AS applications_complete,
-      count(*) FILTER (WHERE applications_status='PARTIAL')::int AS applications_partial,
-      count(*) FILTER (WHERE applications_status='EMPTY')::int AS applications_empty,
-
-      count(*) FILTER (WHERE duty_status='COMPLETE')::int AS duty_complete,
-      count(*) FILTER (WHERE duty_status='PARTIAL')::int AS duty_partial,
-      count(*) FILTER (WHERE duty_status='EMPTY')::int AS duty_empty
-    FROM status
-  `);
-
-  const { rows: published } = await client.query(`
-    WITH base AS (
-      SELECT
-        c.sku,
-        coalesce(c.oem_codes, '[]'::jsonb) AS oem_codes,
-        coalesce(c.competitor_codes, '[]'::jsonb) AS competitor_codes,
-        coalesce(c.equipment_applications, '[]'::jsonb) AS equipment_applications,
-        coalesce(c.vehicle_applications, '[]'::jsonb) AS vehicle_applications,
-        c.duty,
-        c.duty_validation_status,
-
-        coalesce(jsonb_array_length(coalesce(c.oem_codes, '[]'::jsonb)), 0) AS oem_n,
-        coalesce(jsonb_array_length(coalesce(c.competitor_codes, '[]'::jsonb)), 0) AS competitor_n,
-        coalesce(jsonb_array_length(coalesce(c.equipment_applications, '[]'::jsonb)), 0) AS equipment_n,
-        coalesce(jsonb_array_length(coalesce(c.vehicle_applications, '[]'::jsonb)), 0) AS vehicle_n,
-
-        NOT EXISTS (
-          SELECT 1
-          FROM jsonb_array_elements(coalesce(c.oem_codes, '[]'::jsonb)) x
-          WHERE upper(coalesce(x->>'classification', '')) <> 'OEM'
-             OR NOT EXISTS (
-               SELECT 1 FROM exact_part_reference e
-               WHERE e.sku=c.sku
-                 AND upper(e.reference_type)='OEM'
-                 AND regexp_replace(upper(coalesce(e.brand,'')), '[^A-Z0-9]', '', 'g') =
-                     regexp_replace(upper(coalesce(x->>'manufacturer','')), '[^A-Z0-9]', '', 'g')
-                 AND regexp_replace(upper(coalesce(e.part_number,'')), '[^A-Z0-9]', '', 'g') =
-                     regexp_replace(upper(coalesce(x->>'code','')), '[^A-Z0-9]', '', 'g')
-             )
-        ) AS all_oem_verified,
-
-        NOT EXISTS (
-          SELECT 1
-          FROM jsonb_array_elements(coalesce(c.competitor_codes, '[]'::jsonb)) x
-          WHERE upper(coalesce(x->>'classification', '')) NOT IN ('AFTERMARKET','CROSS_REFERENCE')
-             OR NOT EXISTS (
-               SELECT 1 FROM exact_part_reference e
-               WHERE e.sku=c.sku
-                 AND upper(e.reference_type)='COMPETITOR'
-                 AND regexp_replace(upper(coalesce(e.brand,'')), '[^A-Z0-9]', '', 'g') =
-                     regexp_replace(upper(coalesce(x->>'manufacturer','')), '[^A-Z0-9]', '', 'g')
-                 AND regexp_replace(upper(coalesce(e.part_number,'')), '[^A-Z0-9]', '', 'g') =
-                     regexp_replace(upper(coalesce(x->>'code','')), '[^A-Z0-9]', '', 'g')
-             )
-        ) AS all_competitor_verified,
-
-        CASE
-          WHEN jsonb_array_length(coalesce(c.equipment_applications,'[]'::jsonb)) = 0 THEN true
-          ELSE EXISTS (
-            SELECT 1 FROM catalog_application_evidence cae
-            WHERE cae.sku=c.sku
-              AND cae.application_kind='EQUIPMENT'
-              AND cae.verified IS TRUE
-              AND cae.payload_hash=md5(coalesce(c.equipment_applications,'[]'::jsonb)::text)
-          )
-        END AS equipment_verified,
-
-        CASE
-          WHEN jsonb_array_length(coalesce(c.vehicle_applications,'[]'::jsonb)) = 0 THEN true
-          ELSE EXISTS (
-            SELECT 1 FROM catalog_application_evidence cae
-            WHERE cae.sku=c.sku
-              AND cae.application_kind='VEHICLE'
-              AND cae.verified IS TRUE
-              AND cae.payload_hash=md5(coalesce(c.vehicle_applications,'[]'::jsonb)::text)
           )
         END AS vehicle_verified
       FROM public.elimfilters_catalog c
