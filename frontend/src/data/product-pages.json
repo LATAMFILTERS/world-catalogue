@@ -599,70 +599,62 @@
    "oem": [
     {
      "brand": "Caterpillar",
-     "code": "0817003"
-    },
-    {
-     "brand": "Caterpillar",
-     "code": "220-1523"
-    },
-    {
-     "brand": "Caterpillar",
      "code": "3I1161"
-    },
-    {
-     "brand": "Caterpillar",
-     "code": "3I1171"
-    },
-    {
-     "brand": "Cummins",
-     "code": "C600-211-2110"
     },
     {
      "brand": "John Deere",
      "code": "A146696"
     },
     {
-     "brand": "John Deere",
-     "code": "AM101207"
-    },
-    {
-     "brand": "John Deere",
-     "code": "AT1220338"
-    },
-    {
-     "brand": "John Deere",
-     "code": "HE1220800"
-    },
-    {
-     "brand": "Komatsu",
-     "code": "37Z020F201"
-    },
-    {
-     "brand": "Komatsu",
-     "code": "OKR62189"
-    },
-    {
      "brand": "Volvo",
      "code": "15590"
     },
     {
-     "brand": "Mercedes-Benz",
-     "code": "1021840001"
+     "brand": "Perkins",
+     "code": "2654404"
     },
     {
-     "brand": "Mercedes-Benz",
-     "code": "1021840501"
+     "brand": "Isuzu",
+     "code": "89761822820"
     },
     {
-     "brand": "Mercedes-Benz",
-     "code": "1031800610"
+     "brand": "New Holland",
+     "code": "C9AF9601A"
     },
     {
-     "brand": "Mercedes-Benz",
-     "code": "1031840001"
+     "brand": "New Holland",
+     "code": "E7TZ6731A"
+    },
+    {
+     "brand": "Case",
+     "code": "473663C1"
+    },
+    {
+     "brand": "Case",
+     "code": "E063337"
+    },
+    {
+     "brand": "Ford",
+     "code": "1617128"
+    },
+    {
+     "brand": "Ford",
+     "code": "1S7G-6714-DA"
+    },
+    {
+     "brand": "Ford",
+     "code": "1S7Z-6714-DA"
+    },
+    {
+     "brand": "Ford",
+     "code": "2724E6714B"
+    },
+    {
+     "brand": "Freightliner",
+     "code": "DNP550222"
     }
    ],
-   "oemTotal": 86,
+   "oemTotal": 21,
    "crossRefs": [
     {
      "brand": "Donaldson",
@@ -670,27 +662,15 @@
     },
     {
      "brand": "Fleetguard",
-     "code": "HF287783"
-    },
-    {
-     "brand": "Fleetguard",
-     "code": "HF28783"
-    },
-    {
-     "brand": "Fleetguard",
      "code": "HF6107"
     },
     {
      "brand": "Baldwin",
-     "code": "B114"
+     "code": "B252"
     },
     {
      "brand": "Baldwin",
-     "code": "B118"
-    },
-    {
-     "brand": "Baldwin",
-     "code": "B1405"
+     "code": "BT8434"
     },
     {
      "brand": "WIX",
@@ -698,11 +678,11 @@
     },
     {
      "brand": "WIX",
-     "code": "51348MP"
+     "code": "51515R"
     },
     {
      "brand": "WIX",
-     "code": "51515R"
+     "code": "51622"
     },
     {
      "brand": "MANN-FILTER",
@@ -715,9 +695,21 @@
     {
      "brand": "MANN-FILTER",
      "code": "WD10009"
+    },
+    {
+     "brand": "Mahle",
+     "code": "AW78"
+    },
+    {
+     "brand": "Hengst",
+     "code": "HG364W"
+    },
+    {
+     "brand": "Bosch",
+     "code": "OF111"
     }
    ],
-   "crossRefsTotal": 93,
+   "crossRefsTotal": 28,
    "applications": [
     "ALLIS-CHALMERS 705C",
     "ALLIS-CHALMERS 706B",
@@ -1137,19 +1129,11 @@
    "oem": [
     {
      "brand": "Caterpillar",
-     "code": "1R-0658"
+     "code": "3I0730"
     },
     {
      "brand": "Caterpillar",
-     "code": "1R-0739"
-    },
-    {
-     "brand": "Caterpillar",
-     "code": "1R-1807"
-    },
-    {
-     "brand": "Caterpillar",
-     "code": "1W-3300"
+     "code": "492164004"
     },
     {
      "brand": "John Deere",
@@ -1176,10 +1160,6 @@
      "code": "42537127"
     },
     {
-     "brand": "Hino",
-     "code": "S2340-11700"
-    },
-    {
      "brand": "Ford",
      "code": "5011417"
     },
@@ -1200,7 +1180,7 @@
      "code": "466634"
     }
    ],
-   "oemTotal": 27,
+   "oemTotal": 18,
    "crossRefs": [
     {
      "brand": "Donaldson",
@@ -1236,11 +1216,11 @@
     },
     {
      "brand": "Baldwin",
-     "code": "B7600"
+     "code": "B76-B"
     },
     {
      "brand": "Baldwin",
-     "code": "B7600-SS"
+     "code": "B76-SS"
     },
     {
      "brand": "WIX",
@@ -1255,7 +1235,7 @@
      "code": "24556"
     }
    ],
-   "crossRefsTotal": 98,
+   "crossRefsTotal": 80,
    "applications": [
     "AKERMAN EC200 · VOLVO TD61GE",
     "AKERMAN EC230 · VOLVO TD61ACE",
@@ -1338,11 +1318,11 @@
     },
     {
      "brand": "Caterpillar",
-     "code": "1R-1807"
+     "code": "1W-3300"
     },
     {
      "brand": "Caterpillar",
-     "code": "1W-3300"
+     "code": "2P-4004"
     },
     {
      "brand": "John Deere",
@@ -1354,23 +1334,7 @@
     },
     {
      "brand": "Mack",
-     "code": "21939324"
-    },
-    {
-     "brand": "Mack",
-     "code": "485GB3191"
-    },
-    {
-     "brand": "Mack",
-     "code": "485GB3191A"
-    },
-    {
-     "brand": "Mack",
-     "code": "485GB3191B"
-    },
-    {
-     "brand": "Hino",
-     "code": "S2340-11700"
+     "code": "485GB4348"
     },
     {
      "brand": "Case",
@@ -1391,9 +1355,25 @@
     {
      "brand": "Case IH",
      "code": "2836"
+    },
+    {
+     "brand": "Ford",
+     "code": "9576P554004"
+    },
+    {
+     "brand": "Freightliner",
+     "code": "DNP554004"
+    },
+    {
+     "brand": "Kenworth",
+     "code": "KW667"
+    },
+    {
+     "brand": "Hitachi",
+     "code": "71901604"
     }
    ],
-   "oemTotal": 36,
+   "oemTotal": 28,
    "crossRefs": [
     {
      "brand": "Donaldson",
@@ -1448,7 +1428,7 @@
      "code": "24556"
     }
    ],
-   "crossRefsTotal": 101,
+   "crossRefsTotal": 80,
    "applications": [
     "AG CHEM EQUIPMENT 1064 · CATERPILLAR 3126",
     "ALLIS-CHALMERS 4W220",
