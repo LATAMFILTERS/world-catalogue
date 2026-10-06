@@ -6,6 +6,13 @@ const { Pool } = require('pg');
 const DATABASE_URL = process.env.CATALOG_DATABASE_URL || process.env.DATABASE_URL;
 if (!DATABASE_URL) throw new Error('Missing CATALOG_DATABASE_URL or DATABASE_URL');
 
+function sslForDatabaseUrl(connectionString) {
+  const parsed = new URL(connectionString);
+  return parsed.searchParams.get('sslmode') === 'disable'
+    ? false
+    : { rejectUnauthorized: false };
+}
+
 const EXPECTED_POLICY = '2026-08-19-v3.1';
 const EXPECTED_APPLICATION_POLICY = '2026-08-19-app-v1';
 const KNOWN_CONTAMINATION_BASELINE = 1344;
@@ -262,7 +269,7 @@ async function completenessReport(client) {
 }
 
 async function main() {
-  const pool = new Pool({ connectionString: DATABASE_URL, ssl: { rejectUnauthorized: false }, max: 1 });
+  const pool = new Pool({ connectionString: DATABASE_URL, ssl: sslForDatabaseUrl(DATABASE_URL), max: 1 });
   const client = await pool.connect();
   try {
     await client.query('BEGIN TRANSACTION READ ONLY');
