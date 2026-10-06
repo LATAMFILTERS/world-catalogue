@@ -161,9 +161,9 @@
    "slug": "es91026",
    "family": "fuel-water-separators",
    "duty": "Heavy Duty",
-   "title": "Primary Fuel/Water Separator, Spin-On",
+   "title": "Fuel/Water Separator, Spin-On",
    "technology": "HYDROCORE",
-   "description": "ES91026 is an ELIMFILTERS primary fuel/water separator, spin-on protected by HYDROCORE™ technology.",
+   "description": "ES91026 is an ELIMFILTERS fuel/water separator, spin-on protected by HYDROCORE™ technology.",
    "specs": [
     {
      "name": "Thread",
@@ -171,39 +171,172 @@
     },
     {
      "name": "Height",
-     "value": "296.9 mm"
+     "value": "243.6 mm"
     },
     {
      "name": "Outer diameter",
-     "value": "108 mm"
+     "value": "107.3 mm"
+    },
+    {
+     "name": "Gasket outer diameter",
+     "value": "99 mm"
+    },
+    {
+     "name": "Gasket inner diameter",
+     "value": "90.3 mm"
+    },
+    {
+     "name": "Filtration rating",
+     "value": "10 (99%) micron"
     },
     {
      "name": "Efficiency",
      "value": "95% emulsified water separation"
     },
     {
+     "name": "Efficiency test method",
+     "value": "ISO 19438"
+    },
+    {
      "name": "Filter media",
-     "value": "Cellulose / Water separation media"
+     "value": "Cellulose, Meltblown"
     }
    ],
    "oem": [
     {
+     "brand": "Deutz",
+     "code": "2113151"
+    },
+    {
      "brand": "John Deere",
-     "code": "RE531703"
+     "code": "RE522689"
+    },
+    {
+     "brand": "Volvo",
+     "code": "11110683"
+    },
+    {
+     "brand": "Volvo",
+     "code": "111100683"
+    },
+    {
+     "brand": "Mercedes-Benz",
+     "code": "0004770103"
+    },
+    {
+     "brand": "Mercedes-Benz",
+     "code": "9604770003"
+    },
+    {
+     "brand": "Mercedes-Benz",
+     "code": "A3760927301KZ"
+    },
+    {
+     "brand": "Mercedes-Benz",
+     "code": "A4760927201"
+    },
+    {
+     "brand": "Man",
+     "code": "51125030052"
+    },
+    {
+     "brand": "Man",
+     "code": "51125030051"
+    },
+    {
+     "brand": "Man",
+     "code": "51125017288"
+    },
+    {
+     "brand": "Man",
+     "code": "51125036000"
+    },
+    {
+     "brand": "Iveco",
+     "code": "2997378"
+    },
+    {
+     "brand": "Iveco",
+     "code": "42554067"
+    },
+    {
+     "brand": "Iveco",
+     "code": "504166113"
+    },
+    {
+     "brand": "Iveco",
+     "code": "504272431"
     }
    ],
-   "oemTotal": 1,
+   "oemTotal": 20,
    "crossRefs": [
     {
      "brand": "Donaldson",
      "code": "P551026"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "FS19753"
+    },
+    {
+     "brand": "Fleetguard",
+     "code": "FS19914"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "BF1358-O"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "BF1358-SP"
+    },
+    {
+     "brand": "Baldwin",
+     "code": "BF1363"
+    },
+    {
+     "brand": "WIX",
+     "code": "33782"
+    },
+    {
+     "brand": "WIX",
+     "code": "533778"
+    },
+    {
+     "brand": "WIX",
+     "code": "SF10013"
+    },
+    {
+     "brand": "MANN-FILTER",
+     "code": "PL4207X"
+    },
+    {
+     "brand": "MANN-FILTER",
+     "code": "WK11561"
+    },
+    {
+     "brand": "Mahle",
+     "code": "KC200"
+    },
+    {
+     "brand": "Hengst",
+     "code": "H701WK"
     }
    ],
-   "crossRefsTotal": 1,
+   "crossRefsTotal": 16,
    "applications": [
-    "JOHN DEERE 9650",
-    "JOHN DEERE 9650 CTS · JOHN DEERE 6081",
-    "JOHN DEERE 9650 STS · JOHN DEERE 6081H"
+    "BOMAG BW211-40",
+    "BOMAG BW213DH-4 BVC",
+    "DEUTZ 7545 RTS",
+    "DOOSAN DL300 · DOOSAN DL08",
+    "DOOSAN DL400 · CUMMINS QSL9",
+    "DOOSAN DL450 · CUMMINS QSM11",
+    "DOOSAN DL500 · CUMMINS QSM11",
+    "DOOSAN DX300LC · DOOSAN DL08",
+    "DOOSAN DX340LC · DOOSAN DL08",
+    "DOOSAN DX420LC · DOOSAN DV11",
+    "DOOSAN DX480LC · DOOSAN DV11",
+    "DOOSAN DX520LC · DOOSAN DV11"
    ],
    "physicalWarnings": [],
    "governance": {
@@ -212,7 +345,7 @@
     "fleetguardFallbackVerified": false,
     "verifiedOemReferences": false,
     "canonicalStatus": "VERIFIED",
-    "dutyStatus": "LEGACY_UNVERIFIED",
+    "dutyStatus": "VERIFIED",
     "active": true
    },
    "source": {

@@ -704,64 +704,3659 @@
     {
       "sku": "ES91026",
       "codigo_base": "P551026",
-      "name": "ELIMFILTERS Primary Diesel Fuel Water Separator",
-      "description": "Primary heavy-duty diesel fuel/water separator. Direct replacement for John Deere RE531703.",
+      "name": "ELIMFILTERS Diesel Fuel Water Separator",
+      "description": "Heavy-duty diesel fuel/water separator, spin-on with Twist&Drain drain. Donaldson P551026 equivalent.",
       "duty": "HEAVY_DUTY",
       "filter_type": "water",
-      "sub_type": "Primary Fuel / Water Separator",
+      "sub_type": "Fuel / Water Separator",
       "technology": "HYDROCORE™",
       "installation_type": "Spin-On",
       "thread_size": "1-14 UN",
-      "height_mm": 296.9,
-      "outer_diameter_mm": 108,
-      "gasket_od_mm": null,
-      "gasket_id_mm": null,
-      "micron_rating": null,
+      "height_mm": 243.6,
+      "outer_diameter_mm": 107.3,
+      "gasket_od_mm": 99,
+      "gasket_id_mm": 90.3,
+      "micron_rating": "10 (99%)",
       "nominal_efficiency": "95% emulsified water separation",
-      "iso_test_method": null,
-      "filter_media": "Cellulose / Water separation media",
+      "iso_test_method": "ISO 19438",
+      "filter_media": "Cellulose, Meltblown",
       "burst_pressure_psi": null,
       "catalog_active": true,
       "canonical_source_brand": "DONALDSON",
       "canonical_source_code": "P551026",
       "canonical_source_status": "VERIFIED",
-      "duty_validation_status": "LEGACY_UNVERIFIED",
+      "duty_validation_status": "VERIFIED",
       "product_dimensions_validation_status": null,
       "enrichment_required_authority": null,
       "third_party_mark": false,
       "specs": {
-        "rated_flow_l_min": null,
-        "rated_flow_gpm": null,
-        "hydrostatic_burst_minimum_psi": null
+        "media": {
+          "type": "Cellulose, Meltblown",
+          "function": "Fuel filtration and water separation"
+        },
+        "notes": [
+          "Not for marine applications"
+        ],
+        "source": {
+          "url": "https://shop.donaldson.com/store/en-us/product/P551026/62885",
+          "authority": "DONALDSON",
+          "verified_on": "2026-10-05"
+        },
+        "dimensions": {
+          "length_in": 9.59,
+          "length_mm": 243.6,
+          "thread_size": "1-14 UN",
+          "gasket_id_mm": 90.3,
+          "gasket_od_mm": 99,
+          "outer_diameter_in": 4.22,
+          "outer_diameter_mm": 107.3
+        },
+        "efficiency": {
+          "test_standard": "ISO 19438",
+          "efficiency_99_micron": 10
+        },
+        "configuration": {
+          "drain": "Twist&Drain",
+          "style": "Spin-On"
+        },
+        "water_separation": {
+          "contaminant": "emulsified water",
+          "efficiency_percent": 95
+        }
       },
       "oem_codes": [
         {
-          "code": "RE531703",
-          "manufacturer": "JOHN-DEERE",
+          "code": "SP1473",
+          "manufacturer": "ALCO",
           "classification": "OEM",
-          "classification_source": "CROSS_REFERENCE_BRAND_TAXONOMY_20260927"
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "05825015",
+          "manufacturer": "BOMAG",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "5825015",
+          "manufacturer": "BOMAG",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "5825010",
+          "manufacturer": "BOMAG",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "65125015021",
+          "manufacturer": "DAEWOO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "4700469",
+          "manufacturer": "DAIMLER",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "A0004700469",
+          "manufacturer": "DAIMLER",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "2113151",
+          "manufacturer": "DEUTZ",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "K1006529",
+          "manufacturer": "DOOSAN",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "263J227001",
+          "manufacturer": "HITACHI",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "3194552161",
+          "manufacturer": "HYUNDAI",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "2997378",
+          "manufacturer": "IVECO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "42554067",
+          "manufacturer": "IVECO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "504166113",
+          "manufacturer": "IVECO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "504272431",
+          "manufacturer": "IVECO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "RE522689",
+          "manufacturer": "JOHN DEERE",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "KC296D",
+          "manufacturer": "KNECHT",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "52609710",
+          "manufacturer": "KONECRANES",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "1000167423",
+          "manufacturer": "KRAMER",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "10032291",
+          "manufacturer": "LIEBHERR",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "10101998",
+          "manufacturer": "LIEBHERR",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "51125030052",
+          "manufacturer": "MAN",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "51125030051",
+          "manufacturer": "MAN",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "51125017288",
+          "manufacturer": "MAN",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "51125036000",
+          "manufacturer": "MAN",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "0004770103",
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "9604770003",
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "A3760927301KZ",
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "A4760927201",
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "4760927201",
+          "manufacturer": "MERCEDES-BENZ",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "56076200",
+          "manufacturer": "NORMET",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "57414020",
+          "manufacturer": "NORMET",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "57413750",
+          "manufacturer": "NORMET",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "57411977",
+          "manufacturer": "NORMET",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "7420754418",
+          "manufacturer": "RENAULT VI",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "56012861",
+          "manufacturer": "SANDVIK",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "0112142450",
+          "manufacturer": "SOLARIS BUS",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "61509695",
+          "manufacturer": "TAMROCK",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "11110683",
+          "manufacturer": "VOLVO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "111100683",
+          "manufacturer": "VOLVO",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "20593537",
+          "manufacturer": "VOLVO CONSTRUCTION EQUIPMENT",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "RCL02003",
+          "manufacturer": "XCMG",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
+        },
+        {
+          "code": "800105552",
+          "manufacturer": "XCMG",
+          "classification": "OEM",
+          "classification_source": "DONALDSON_OFFICIAL_PRODUCT_PAGE_20261005"
         }
       ],
-      "competitor_codes": [],
+      "competitor_codes": [
+        {
+          "code": "86782",
+          "manufacturer": "CARQUEST",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_EXACT_20261005"
+        },
+        {
+          "code": "SN40749",
+          "manufacturer": "HIFI",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_EXACT_20261005"
+        },
+        {
+          "code": "LFF9737",
+          "manufacturer": "LUBER-FINER",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_EXACT_20261005"
+        },
+        {
+          "code": "BF1358-O",
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_EXACT_20261005"
+        },
+        {
+          "code": "BF1358-SP",
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_EXACT_20261005"
+        },
+        {
+          "code": "BF1363",
+          "manufacturer": "BALDWIN",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_EXACT_20261005"
+        },
+        {
+          "code": "FS19753",
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_EXACT_20261005"
+        },
+        {
+          "code": "FS19914",
+          "manufacturer": "FLEETGUARD",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_EXACT_20261005"
+        },
+        {
+          "code": "H701WK",
+          "manufacturer": "HENGST",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_EXACT_20261005"
+        },
+        {
+          "code": "H710WK",
+          "manufacturer": "HENGST",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_EXACT_20261005"
+        },
+        {
+          "code": "H7121WK10",
+          "manufacturer": "HENGST",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_EXACT_20261005"
+        },
+        {
+          "code": "KC200",
+          "manufacturer": "MAHLE",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_EXACT_20261005"
+        },
+        {
+          "code": "PL4207X",
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_EXACT_20261005"
+        },
+        {
+          "code": "WK11561",
+          "manufacturer": "MANN",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_EXACT_20261005"
+        },
+        {
+          "code": "33782",
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_EXACT_20261005"
+        },
+        {
+          "code": "533778",
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_EXACT_20261005"
+        },
+        {
+          "code": "SF10013",
+          "manufacturer": "WIX",
+          "classification": "AFTERMARKET",
+          "classification_source": "DONALDSON_OFFICIAL_CROSS_REFERENCE_SEARCH_EXACT_20261005"
+        }
+      ],
       "equipment_applications": [
         {
-          "type": "COMBINE",
-          "engine": "- 9650",
-          "equipment": "JOHN DEERE 9650"
+          "type": "COMPACTOR",
+          "engine": "- BW211-40",
+          "equipment": "BOMAG BW211-40"
+        },
+        {
+          "type": "COMPACTOR",
+          "engine": "- BW213DH-4 BVC",
+          "equipment": "BOMAG BW213DH-4 BVC"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "- TCD 2015 V6 4V",
+          "equipment": "DEUTZ 7545 RTS"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "DOOSAN DL08",
+          "equipment": "DOOSAN DL300"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "CUMMINS QSL9",
+          "equipment": "DOOSAN DL400"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "CUMMINS QSM11",
+          "equipment": "DOOSAN DL450"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "CUMMINS QSM11",
+          "equipment": "DOOSAN DL500"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "DOOSAN DL08",
+          "equipment": "DOOSAN DX300LC"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "DOOSAN DL08",
+          "equipment": "DOOSAN DX340LC"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "DOOSAN DV11",
+          "equipment": "DOOSAN DX420LC"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "DOOSAN DV11",
+          "equipment": "DOOSAN DX480LC"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "DOOSAN DV11",
+          "equipment": "DOOSAN DX520LC"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X2219L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X2219L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X2219L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE250C",
+          "equipment": "GINAF X2219L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X2220L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE250C",
+          "equipment": "GINAF X2220L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X2220L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X2220L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X2221L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE250C",
+          "equipment": "GINAF X2221L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X2221L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X2221L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF PE265C",
+          "equipment": "GINAF X2222L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X2222L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE250C",
+          "equipment": "GINAF X2222L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X2222L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF PE228C",
+          "equipment": "GINAF X2222L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X2222L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF PE183C",
+          "equipment": "GINAF X2222L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE250C",
+          "equipment": "GINAF X2223L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X2223L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X2223L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X2223L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X2225L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE250C",
+          "equipment": "GINAF X2225L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X2225L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X2225L"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X3232S"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X3232S"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE250C",
+          "equipment": "GINAF X3232S"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X3232S"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X3233S"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE250C",
+          "equipment": "GINAF X3233S"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X3233S"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X3233S"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X3238"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X3238"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE250C",
+          "equipment": "GINAF X3238"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X3238"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X3329"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X3329"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE250C",
+          "equipment": "GINAF X3329"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X3329"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X3331"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X3331"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X3331"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE250C",
+          "equipment": "GINAF X3331"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X3333"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X3333"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X3333"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE250C",
+          "equipment": "GINAF X3333"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X3335"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X3335"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X3335"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE250C",
+          "equipment": "GINAF X3335"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X3338"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE250C",
+          "equipment": "GINAF X3338"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X3338"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X3338"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X4241S"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X4241S"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X4241S"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X4243S"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X4243S"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X4243S"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X4245TS"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X4245TS"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X4245TS"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X4343LS"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X4343LS"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X4343LS"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X4345TS"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X4345TS"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X4345TS"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X4446TS"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X4446TS"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X4449B"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X4449B"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X4449B"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X5250TS"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X5250TS"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X5250TS"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X5350TS"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X5350TS"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X5350TS"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "PACCAR MX340S",
+          "equipment": "GINAF X5364T"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X5364T"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X5364T"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE280C",
+          "equipment": "GINAF X5364T"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "PACCAR MX340S",
+          "equipment": "GINAF X5376T"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X5450S"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X5450S"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE355C",
+          "equipment": "GINAF X5460B"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "DAF XE315C",
+          "equipment": "GINAF X5460B"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "HYUNDAI D4GA",
+          "equipment": "HYUNDAI HD65"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "HYUNDAI D4GA",
+          "equipment": "HYUNDAI HD78"
+        },
+        {
+          "type": "EXCAVATOR",
+          "engine": "- 330C",
+          "equipment": "JOHN DEERE 330C"
+        },
+        {
+          "type": "FELLER BUNCHER",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 753G"
+        },
+        {
+          "type": "FELLER BUNCHER",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 753GL"
+        },
+        {
+          "type": "FELLER BUNCHER",
+          "engine": "JOHN DEERE 6090H",
+          "equipment": "JOHN DEERE 753J"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 8120"
+        },
+        {
+          "type": "TRACTOR TRACKED",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 8120T"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 8220"
+        },
+        {
+          "type": "TRACTOR TRACKED",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 8220T"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 8320"
+        },
+        {
+          "type": "TRACTOR TRACKED",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 8320T"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 8420"
+        },
+        {
+          "type": "TRACTOR TRACKED",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 8420T"
+        },
+        {
+          "type": "TRACTOR",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 8520"
+        },
+        {
+          "type": "TRACTOR TRACKED",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 8520T"
         },
         {
           "type": "COMBINE",
-          "engine": "JOHN DEERE 6081",
-          "equipment": "JOHN DEERE 9650 CTS"
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 9560 STS"
         },
         {
           "type": "COMBINE",
           "engine": "JOHN DEERE 6081H",
           "equipment": "JOHN DEERE 9650 STS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 9660 STS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 9750 STS"
+        },
+        {
+          "type": "COMBINE",
+          "engine": "JOHN DEERE 6081H",
+          "equipment": "JOHN DEERE 9760 STS"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "KAMAZ 740.63",
+          "equipment": "KAMAZ 5460"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "KAMAZ 740.64",
+          "equipment": "KAMAZ 5460"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "KAMAZ 740.63",
+          "equipment": "KAMAZ 6460"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "KAMAZ 740.63",
+          "equipment": "KAMAZ 6520"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "KAMAZ 740.60",
+          "equipment": "KAMAZ 6520"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "KAMAZ 740.61",
+          "equipment": "KAMAZ 6520"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "KAMAZ 740.63",
+          "equipment": "KAMAZ 65201"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "KAMAZ 740.60",
+          "equipment": "KAMAZ 65201"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "KAMAZ 740.61",
+          "equipment": "KAMAZ 6522"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "KAMAZ 740.63",
+          "equipment": "KAMAZ 65224"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "KAMAZ 740.60",
+          "equipment": "KAMAZ 65225"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "KAMAZ 740.63",
+          "equipment": "KAMAZ 65225"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MAN D2840 LF21",
+          "equipment": "MAN 36.604DF"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MAN D2840 LF21",
+          "equipment": "MAN 40.604DF"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MAN D2840 LF21",
+          "equipment": "MAN 41.604DF"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MAN D2840 LF21",
+          "equipment": "MAN 50.604VF"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 HLA",
+          "equipment": "MERCEDES-BENZ 12.1"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 926 LA",
+          "equipment": "MERCEDES-BENZ 1833"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 447 LA",
+          "equipment": "MERCEDES-BENZ 19 SERIES"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 926 LA",
+          "equipment": "MERCEDES-BENZ 2733"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "MERCEDES-BENZ 500"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 1824"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 1827"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 1830"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 1832"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 1833"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 1835"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 1836"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 1840"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 1842"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 1843"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 1845"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 1848"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 1851"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 1852"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 1858"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 1863"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2024"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2027"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2030"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2032"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2033"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2035"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2036"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2040"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2042"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2043"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2045"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2048"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2051"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2427"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2430"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2432"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2433"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2435"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2436"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2440"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2442"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2443"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2445"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2448"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2451"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2527"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2530"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2532"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2533"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2535"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2536"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2540"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2542"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2543"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2545"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2548"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2551"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2552"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2558"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2563"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2627"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2630"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2632"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2633"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2635"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2636"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2640"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2642"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2643"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2645"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2648"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 2651"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 3233"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 3236"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 3240"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 3243"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 3333"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 3336"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 3340"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 3342"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 3343"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 3345"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 3348"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 3351"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 4152"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 4158"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ ACTROS 4163"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 1824"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 1827"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 1830"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 1832"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 1833"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 1835"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 1836"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 1840"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 1842"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 1843"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 1845"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 1848"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 1851"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 1852"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 1858"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 1863"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2024"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2027"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2030"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2032"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2033"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2035"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2036"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2040"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2042"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2043"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2045"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2048"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2051"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2427"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2430"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2432"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2433"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2435"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2436"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2440"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2442"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2443"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2445"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2448"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2451"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2452"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2458"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2463"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2527"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2530"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2532"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2533"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2535"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2536"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2540"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2542"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2543"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2545"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2548"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2551"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2552"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2558"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2563"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2627"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2630"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2632"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2633"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2635"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2636"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2640"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2642"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2643"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2645"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2648"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2651"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2652"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2658"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 2663"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 3333"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 3336"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 3340"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 3342"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 3343"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 3345"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 3348"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ ANTOS 3351"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ AROCS 1824"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ AROCS 1827"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ AROCS 1830"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ AROCS 1832"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 1833"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ AROCS 1835"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 1836"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 1840"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 1842"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 1843"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 1845"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 1848"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 1851"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ AROCS 1852"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ AROCS 1863"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2024"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2027"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2030"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2032"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2033"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2035"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2036"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2040"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2042"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2043"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2045"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2048"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2051"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2052"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2063"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2527"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2530"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2532"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2533"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2535"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2536"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2540"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2542"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2543"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2545"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2548"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2551"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2552"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2558"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2563"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2627"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2630"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2632"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2633"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2635"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2636"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2640"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2642"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2643"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2645"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2648"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2651"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2652"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2658"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ AROCS 2663"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3227"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3230"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3232"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3233"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3235"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3236"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3240"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3242"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3243"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3245"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3248"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3251"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3252"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3263"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3333"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3336"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3340"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3342"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3343"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3345"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3348"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3351"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3352"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ AROCS 3363"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 4133"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 4136"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 4140"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 4142"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ AROCS 4143"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 4145"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 4148"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 4151"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ AROCS 4152"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ AROCS 4158"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ AROCS 4163"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 4448"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "MERCEDES-BENZ AROCS 4451"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ AROCS 4452"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 473 LA",
+          "equipment": "MERCEDES-BENZ AROCS 4458"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1016"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1018"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1021"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1023"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1024"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1216"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1218"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1221"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1223"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1224"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1227"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1230"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1318"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1321"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1323"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1324"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1327"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1330"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1518"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1521"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1523"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1524"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1527"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 1530"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 716"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 718"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 721"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 723"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 816"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 818"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 821"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 823"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 824"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 916"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 918"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 921"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 934 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 923"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 924"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ATEGO 927"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ CONECTO 12"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ CONECTO 18"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ CONECTO G"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ECONIC 1830"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ECONIC 1835"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ECONIC 2630"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ ECONIC 2635"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 926 LA",
+          "equipment": "MERCEDES-BENZ INTEGRO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 HLA",
+          "equipment": "MERCEDES-BENZ INTEGRO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ INTEGRO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 926 LA",
+          "equipment": "MERCEDES-BENZ INTEGRO L"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 HLA",
+          "equipment": "MERCEDES-BENZ INTEGRO L"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ INTEGRO L"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 HLA",
+          "equipment": "MERCEDES-BENZ INTEGRO M"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 926 LA",
+          "equipment": "MERCEDES-BENZ INTEGRO M"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ INTOURO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ INTOURO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 926.939",
+          "equipment": "MERCEDES-BENZ INTOURO 12.1"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ INTOURO L"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ INTOURO L"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "MERCEDES-BENZ INTOURO M"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "MERCEDES-BENZ INTOURO M"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 926.939",
+          "equipment": "MERCEDES-BENZ INTOURO M 12.9"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "MERCEDES-BENZ L 14"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "MERCEDES-BENZ M 13"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 HLA",
+          "equipment": "MERCEDES-BENZ M2 13"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 906.960 LA",
+          "equipment": "MERCEDES-BENZ O345 CONECTO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457.942 HLA",
+          "equipment": "MERCEDES-BENZ O345 CONECTO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "MERCEDES-BENZ O350 TOURISMO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "MERCEDES-BENZ O403 TOURISMO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 906 LA",
+          "equipment": "MERCEDES-BENZ O510 TOURINO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 926.939",
+          "equipment": "MERCEDES-BENZ O510 TOURINO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 906 LA/HLA",
+          "equipment": "MERCEDES-BENZ O530 CITARO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 HLA",
+          "equipment": "MERCEDES-BENZ O530 CITARO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 926 LA/HLA",
+          "equipment": "MERCEDES-BENZ O530 CITARO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 924.927",
+          "equipment": "MERCEDES-BENZ O530 CITARO G BLUETEC"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 HLA",
+          "equipment": "MERCEDES-BENZ O550 INTEGRO M"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "MERCEDES-BENZ O560 INTOURO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "MERCEDES-BENZ O580-15RH TRAVEGO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "MERCEDES-BENZ O580-15RHD TRAVEGO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 502 LA",
+          "equipment": "MERCEDES-BENZ O580-16RHD TRAVEGO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "MERCEDES-BENZ O580-16RHD TRAVEGO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 502 LA",
+          "equipment": "MERCEDES-BENZ O580-17RHD TRAVEGO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "MERCEDES-BENZ O580-17RHD TRAVEGO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 904 LA",
+          "equipment": "MERCEDES-BENZ O815 MEDIO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 904 LA",
+          "equipment": "MERCEDES-BENZ O818 MEDIO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 926 LA",
+          "equipment": "MERCEDES-BENZ OF 1730"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457.944 LA",
+          "equipment": "MERCEDES-BENZ TOURO"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 HLA",
+          "equipment": "MERCEDES-BENZ UE / MUE"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 HLA",
+          "equipment": "SETRA S313UL MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 HLA",
+          "equipment": "SETRA S315GT COMFORT CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "SETRA S315GT-HD COMFORT CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 HLA",
+          "equipment": "SETRA S315H TOP CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 HLA",
+          "equipment": "SETRA S315NF MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 447 HLA",
+          "equipment": "SETRA S315UL MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 HLA",
+          "equipment": "SETRA S315UL MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 HLA",
+          "equipment": "SETRA S316UL MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "SETRA S317GT-HD COMFORT CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 502 LA",
+          "equipment": "SETRA S317HD-H3 TOP CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 HLA",
+          "equipment": "SETRA S317UL MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "SETRA S319GT-HD COMFORT CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 HLA",
+          "equipment": "SETRA S319NF MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 HLA",
+          "equipment": "SETRA S319UL MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 501 LA",
+          "equipment": "SETRA S411HD TOP CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "SETRA S412HD MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "SETRA S412UL MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "SETRA S412UL MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "SETRA S415GT COMFORT CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "SETRA S415GT-HD COMFORT CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "SETRA S415H MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "SETRA S415H MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 502 LA",
+          "equipment": "SETRA S415HD TOP CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "SETRA S415HD TOP CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "SETRA S415HDH TOP CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 502 LA",
+          "equipment": "SETRA S415HDH TOP CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "SETRA S415UL MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 HLA",
+          "equipment": "SETRA S415UL MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "SETRA S416GT COMFORT CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "SETRA S416GT-HD COMFORT CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "SETRA S416GT-HD2 COMFORT CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "SETRA S416H MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "SETRA S416H MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "SETRA S416HDH TOP CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 502 LA",
+          "equipment": "SETRA S416HDH TOP CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 936 LA",
+          "equipment": "SETRA S416UL MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "SETRA S416UL MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "SETRA S417GT-HD COMFORT CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "SETRA S417HDH TOP CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 502 LA",
+          "equipment": "SETRA S417HDH TOP CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "SETRA S417UL MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "SETRA S417UL MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 502 LA",
+          "equipment": "SETRA S419GT-HD COMFORT CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 470 LA",
+          "equipment": "SETRA S419UL MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 LA",
+          "equipment": "SETRA S419UL MULTI CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 502 LA1",
+          "equipment": "SETRA S431DT TOP CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 471 LA",
+          "equipment": "SETRA S431DT TOP CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 502 LA8",
+          "equipment": "SETRA S431DT TOP CLASS"
+        },
+        {
+          "type": "BUS",
+          "engine": "MERCEDES-BENZ OM 457 HLA",
+          "equipment": "SETRA SG321UL MULTI CLASS"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 502 LA",
+          "equipment": "SISU 550"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 502 LA",
+          "equipment": "SISU ROCK"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 501 LA",
+          "equipment": "SISU ROCK"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 502 LA",
+          "equipment": "SISU TIMBER"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 501 LA",
+          "equipment": "SISU TIMBER"
+        },
+        {
+          "type": "BUS",
+          "engine": "DAF PR183",
+          "equipment": "SOLARIS BUS URBINO U12LE"
+        },
+        {
+          "type": "BUS",
+          "engine": "LEYLAND-DAF (LDV) PE183C",
+          "equipment": "SOLARIS BUS URBINO U12LE III"
+        },
+        {
+          "type": "BUS",
+          "engine": "DAF PR265S",
+          "equipment": "SOLARIS BUS URBINO U15"
+        },
+        {
+          "type": "BUS",
+          "engine": "DAF PR250S",
+          "equipment": "SOLARIS BUS URBINO U15"
+        },
+        {
+          "type": "BUS",
+          "engine": "DAF PR228S",
+          "equipment": "SOLARIS BUS URBINO U15"
+        },
+        {
+          "type": "BUS",
+          "engine": "DAF PR265S",
+          "equipment": "SOLARIS BUS URBINO U18"
+        },
+        {
+          "type": "BUS",
+          "engine": "DAF PR228S",
+          "equipment": "SOLARIS BUS URBINO U18"
+        },
+        {
+          "type": "BUS",
+          "engine": "DAF PR250S",
+          "equipment": "SOLARIS BUS URBINO U18"
+        },
+        {
+          "type": "BUS",
+          "engine": "DAF XE250C",
+          "equipment": "SOLARIS BUS VACANZA 12"
+        },
+        {
+          "type": "BUS",
+          "engine": "DAF XE280C",
+          "equipment": "SOLARIS BUS VACANZA 12"
+        },
+        {
+          "type": "BUS",
+          "engine": "DAF XE315C",
+          "equipment": "SOLARIS BUS VACANZA 12"
+        },
+        {
+          "type": "BUS",
+          "engine": "DAF MX300",
+          "equipment": "SOLARIS BUS VACANZA 12"
+        },
+        {
+          "type": "BUS",
+          "engine": "DAF XE280C",
+          "equipment": "SOLARIS BUS VACANZA 13"
+        },
+        {
+          "type": "BUS",
+          "engine": "DAF MX300",
+          "equipment": "SOLARIS BUS VACANZA 13"
+        },
+        {
+          "type": "BUS",
+          "engine": "DAF XE315C",
+          "equipment": "SOLARIS BUS VACANZA 13"
+        },
+        {
+          "type": "BUS",
+          "engine": "DAF XE250C",
+          "equipment": "SOLARIS BUS VACANZA 13"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "MERCEDES-BENZ OM 904",
+          "equipment": "TERBERG 182"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "CUMMINS ISBE",
+          "equipment": "TERBERG 182"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "CUMMINS QSB173",
+          "equipment": "TERBERG 182"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "IVECO F4AE0681A",
+          "equipment": "TERBERG 2121"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "CUMMINS ISBE",
+          "equipment": "TERBERG 222"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "CUMMINS QSB220",
+          "equipment": "TERBERG 222"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "IVECO F4AE0681A",
+          "equipment": "TERBERG 3128"
+        },
+        {
+          "type": "TRUCK",
+          "engine": "CUMMINS QSM11",
+          "equipment": "TERBERG 382"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D9A",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A25D"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D10A",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A25D"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D9A",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A25E"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D9A340",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A30D"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D9A300",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A30E"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D12C380",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A35D"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D12C420",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A35E"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D12C460",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A35F"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D13",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A35G"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D12C420",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A40D"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D16A520",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A40E"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D16A520",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A40F"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D16",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A40G"
+        },
+        {
+          "type": "DUMP TRUCK ARTICULATED",
+          "engine": "VOLVO D16",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT A45G"
+        },
+        {
+          "type": "PAVER",
+          "engine": "DEUTZ TCD 2013 L6 4V",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT ABG5820"
+        },
+        {
+          "type": "PAVER",
+          "engine": "DEUTZ TCD 2013 L4 2V",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT ABG5870"
+        },
+        {
+          "type": "PAVER",
+          "engine": "DEUTZ TCD 2013 L4 2V",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT ABG6870"
+        },
+        {
+          "type": "PAVER",
+          "engine": "DEUTZ TCD 2013 L6 4V",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT ABG9820"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "VOLVO D4E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EC140C"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "VOLVO D6E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EC160C"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "VOLVO D6E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EC180C"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "VOLVO D6E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EC210C"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "VOLVO D6E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EC235C"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "VOLVO D7E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EC240B"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "VOLVO D7E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EC240C"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "VOLVO D7D",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EC290B"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "VOLVO D7E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EC290C"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "VOLVO D12D",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EC330C"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "VOLVO D12D",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EC360B"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "VOLVO D12D",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EC360C"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "VOLVO D12D",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EC460B"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "VOLVO D12D",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EC460C"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "VOLVO D16E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EC700B"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "VOLVO D16E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EC700C"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "VOLVO D4E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT ECR145C"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "VOLVO D6E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT ECR235C"
+        },
+        {
+          "type": "EXCAVATOR TRACKED",
+          "engine": "VOLVO D7E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT ECR305C"
+        },
+        {
+          "type": "EXCAVATOR WHEELED",
+          "engine": "VOLVO D5E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EW140C"
+        },
+        {
+          "type": "EXCAVATOR WHEELED",
+          "engine": "VOLVO D6E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EW160C"
+        },
+        {
+          "type": "EXCAVATOR WHEELED",
+          "engine": "VOLVO D6E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EW180C"
+        },
+        {
+          "type": "EXCAVATOR WHEELED",
+          "engine": "VOLVO D6E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT EW210C"
+        },
+        {
+          "type": "GRADER",
+          "engine": "VOLVO D7E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT G930"
+        },
+        {
+          "type": "GRADER",
+          "engine": "VOLVO D7E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT G940"
+        },
+        {
+          "type": "GRADER",
+          "engine": "VOLVO D7E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT G946"
+        },
+        {
+          "type": "GRADER",
+          "engine": "VOLVO D7E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT G960"
+        },
+        {
+          "type": "GRADER",
+          "engine": "VOLVO D9B",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT G970"
+        },
+        {
+          "type": "GRADER",
+          "engine": "VOLVO D9B",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT G976"
+        },
+        {
+          "type": "GRADER",
+          "engine": "VOLVO D9B",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT G990"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D7D",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L110E"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D7",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L110F"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D7E240",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L120E"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D7",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L120F"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D12D340",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L150E"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D12D340",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L150F"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D13H-E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L150G"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D13",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L150H"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D12C380",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L180E"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D12D340",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L180F"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D12C380",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L220E"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D12C380",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L220F"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D16E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L350F"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D6E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L60F"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D6E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L70F"
+        },
+        {
+          "type": "LOADER WHEELED",
+          "engine": "VOLVO D6E",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT L90F"
+        },
+        {
+          "type": "MILLING EQUIPMENT",
+          "engine": "DEUTZ TCD 2012 L4 2V",
+          "equipment": "VOLVO CONSTRUCTION EQUIPMENT MW500"
+        },
+        {
+          "type": "EXCAVATOR",
+          "engine": "ISUZU 6BG1T",
+          "equipment": "XCMG XE210B"
+        },
+        {
+          "type": "EXCAVATOR",
+          "engine": "ISUZU 6BG1T",
+          "equipment": "XCMG XE215C"
         }
       ],
-      "vehicle_applications": [],
-      "oem_total_all_brands": 1
+      "vehicle_applications": null,
+      "oem_total_all_brands": 43
     },
     {
       "sku": "ES91027",
