@@ -6,14 +6,14 @@ const { Client } = require('pg');
 const EXECUTE = process.argv.includes('--execute');
 
 function patchPolicyFunction(definition) {
-  if (definition.includes('donldson_sku_collision_verified_v42_marker')) return definition;
+  if (definition.includes('donaldson_sku_collision_verified_v42_marker')) return definition;
 
   const marker = "    IF coalesce((gov->>'donaldson_absence_verified')::boolean, false) IS NOT TRUE THEN";
   const at = definition.indexOf(marker);
   if (at < 0) throw new Error('HD_COLLISION_POLICY_MARKER_NOT_FOUND');
 
   const block = [
-    "    -- donldson_sku_collision_verified_v42_marker",
+    "    -- donaldson_sku_collision_verified_v42_marker",
     "    IF coalesce((gov->>'donaldson_sku_collision_verified')::boolean, false) IS TRUE THEN",
     "      IF coalesce((gov->>'primary_manufacturer_verified')::boolean, false) IS NOT TRUE THEN",
     "        RAISE EXCEPTION 'CATALOG_POLICY_V42: HD collision fallback requires verified Donaldson identity';",
@@ -67,7 +67,7 @@ async function main() {
     await db.query(patched);
 
     const check = (await db.query("SELECT pg_get_functiondef('public.enforce_elimfilters_codigo_base_policy()'::regprocedure) AS def")).rows[0]?.def || '';
-    if (!check.includes('donldson_sku_collision_verified_v42_marker')) throw new Error('POLICY_PATCH_NOT_INSTALLED');
+    if (!check.includes('donaldson_sku_collision_verified_v42_marker')) throw new Error('POLICY_PATCH_NOT_INSTALLED');
 
     if (EXECUTE) {
       await db.query('COMMIT');
