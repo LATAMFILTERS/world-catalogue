@@ -41,6 +41,21 @@ const REDIRECTS = new Map([
   ["/knowledge-center/engineering/operator-health/", "/knowledge-center/systems/cabin-air-protection/"],
   ["/industrial-process/aquvexis/electrodeionization", "/industrial-process/aquvexis/"],
   ["/industrial-process/aquvexis/electrodeionization/", "/industrial-process/aquvexis/"],
+  // 2026-10-04 SKU renumbering: fuel/water separators EF9 -> ES9 (HYDROCORE).
+  // Render keeps files from earlier static deploys, so the old pages must be redirected here.
+  ["/products/ef90668", "/products/es91026/"],
+  ["/products/ef90668/", "/products/es91026/"],
+  ["/products/EF90668", "/products/es91026/"],
+  ["/products/EF90668/", "/products/es91026/"],
+  ["/products/ef90669", "/products/es91027/"],
+  ["/products/ef90669/", "/products/es91027/"],
+  ["/products/EF90669", "/products/es91027/"],
+  ["/products/EF90669/", "/products/es91027/"],
+  // 2026-10-05: Donaldson P170950 discontinued, superseded by P164378 (EH60950 -> EH64378).
+  ["/products/eh60950", "/products/eh64378/"],
+  ["/products/eh60950/", "/products/eh64378/"],
+  ["/products/EH60950", "/products/eh64378/"],
+  ["/products/EH60950/", "/products/eh64378/"],
 ]);
 
 function permanentRedirect(url, destinationPath) {
