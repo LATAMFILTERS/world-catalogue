@@ -31,7 +31,9 @@ test('ET9 permits Fleetguard only after governed Donaldson non-manufacture verif
     },
   };
   const route = relationAuthorityFor(row);
-  assert.equal(route.authority, 'FLEETGUARD');
+  assert.equal(route.authority, 'PARKER_RACOR');
+  assert.equal(route.fallback_authority, 'FLEETGUARD');
+  assert.equal(route.fallback_allowed, true);
   assert.equal(fleetguardFallbackAllowed(row), true);
 });
 
