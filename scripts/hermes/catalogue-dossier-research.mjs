@@ -4,7 +4,7 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { createRequire } from 'node:module';
-import pg from 'file:///C:/ELIMSERVER/repos/world-catalogue/node_modules/pg/lib/index.js';
+import pg from 'pg';
 import { assessDossier, canonicalRoleForDossier, resolutionDisposition } from './catalogue-dossier-core.mjs';
 
 const require = createRequire(import.meta.url);
