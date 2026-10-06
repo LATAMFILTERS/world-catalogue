@@ -136,7 +136,7 @@ test('Mack 2024 agua en el sistema asks which system, without re-asking symptoms
   const { body } = await sendMessage('Mack 2024 agua en el sistema', { conversationId: `water-flow-${Date.now()}` });
   assert.equal(body.intent, 'diagnostic');
   assert.equal(body.pending_field, 'symptom_system');
-  assert.match(body.answer, /combustible, aceite, refrigerante, hidr[aá]ulico o aire/i);
+  assert.match(body.answer, /combustible, aceite, refrigerante, hidr[aá]ulico o (?:en el sistema de )?aire/i);
   assert.doesNotMatch(body.answer, /qu[eé] s[ií]ntomas observás/i);
 });
 
@@ -294,7 +294,12 @@ test('recommending a SKU actually invokes both the canonical Postgres catalog an
     // Both dependencies were actually called at least once for this
     // conversation -- not mocked away, not skipped.
     assert.ok(catalogQueryCount > 0, 'the canonical elimfilters_catalog table must actually be queried');
-    assert.ok(knowledgeEngineFetchCount > 0, 'the Knowledge Center (knowledge-engine-runtime) must actually be called');
+    // Since 6dba55e879 the Knowledge Center answers from approved canonical knowledge first and
+    // only falls back to the external knowledge-engine runtime when there is no canonical answer.
+    assert.ok(
+      knowledgeEngineFetchCount > 0 || (body.intelligence.knowledge_status === 'validated' && body.knowledge_governance.technical_source_validated === true),
+      'the Knowledge Center must actually be consulted (canonical knowledge or knowledge-engine runtime)'
+    );
     // And only once both ran does the response carry a recommended SKU.
     assert.equal(body.evidence.validated, true);
     assert.match(body.answer, /EL82100/);
@@ -330,7 +335,8 @@ test('Groq unavailable (network failure) falls back to the deterministic classif
   try {
     const { status, body } = await sendMessage('Mack 2024 agua en el sistema', { conversationId: `groq-down-${Date.now()}` });
     assert.equal(status, 200);
-    assert.equal(body.intelligence.classifier, 'deterministic');
+    // Explicit symptoms are grounded deterministically before Groq is consulted (4e025c8988).
+    assert.match(body.intelligence.classifier, /^deterministic/);
     assert.equal(body.pending_field, 'symptom_system');
   } finally {
     global.fetch = originalFetch;

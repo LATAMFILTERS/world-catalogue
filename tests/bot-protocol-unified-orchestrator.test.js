@@ -21,7 +21,7 @@ const {
 } = require('../lib/bot-protocol-catalog');
 
 test('uses one protocol version for unified responses', () => {
-  assert.equal(PROTOCOL_VERSION, '3.3.0');
+  assert.equal(PROTOCOL_VERSION, '3.4.0');
 });
 
 test('detects turbine replacement-element requests', () => {

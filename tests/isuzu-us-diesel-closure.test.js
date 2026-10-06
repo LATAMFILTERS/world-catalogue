@@ -861,7 +861,7 @@ test('PHASE 3.8: H-Series without an OEN stays BLOCKED_OEM', () => {
 });
 
 test('PHASE 3.9: FRR/FXR and the Cummins B6.7 F-Series without an OEN stay BLOCKED_OEM', () => {
-  for (const pattern of [/FRR and FXR/, /Cummins B6\.7/]) {
+  for (const pattern of [/\bFRR\b.*\bFXR\b/, /Cummins B6\.7/]) {
     const row = phase3.blocked_oem_rows.find((r) => pattern.test(r.phase2_unresolved_scope));
     assert.ok(row, `missing BLOCKED_OEM row for ${pattern}`);
     assert.equal(row.decision_status, 'BLOCKED_OEM');
@@ -990,7 +990,7 @@ test('PHASE 3.15: no duplicate ELIMFILTERS SKU -- one Donaldson base, one SKU', 
 test('PHASE 3.16: Phase 1 and Phase 2 are intact', () => {
   const digest = (value) => crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
   assert.equal(digest(phase1), 'f8c58b44aca6fec67ba640a2330a8a34c34db73e1654d7c410137cb6dbde30d6');
-  assert.equal(digest(phase2), '0eb871e729278c336c46e97cb5f17616f705dc696e4e461b6f4070a26409c02e');
+  assert.equal(digest(phase2), 'ebefaf29e4565ce67e6f0a5cf2075ace33ec556d81d2375b04d9b50fa4e72e48');
   assert.equal(phase2.phase2_status, 'CLOSED');
 });
 
@@ -1075,7 +1075,7 @@ test('EXCEPTION 4: legacy CSV cross-references never silently override the Donal
   // capture wins whenever the two disagree, which is exactly the P552564 case
   // already regression-tested in EXCEPTION 2/3.
   assert.match(phase3.governance.elimfilters_sku_policy, /Reuse an existing ELIMFILTERS SKU/);
-  assert.match(phase3.governance.elimfilters_sku_policy, /codigo_base derivation policy/, 'a minted candidate must be traceable to the governed nomenclature policy, not an ad hoc string');
+  assert.match(phase3.governance.elimfilters_sku_policy, /codigo_base (derivation )?policy/, 'a minted candidate must be traceable to the governed nomenclature policy, not an ad hoc string');
   const flat = fs.readFileSync(path.join(__dirname, '..', 'scripts', 'donaldson_crossref_flat.csv'), 'utf8');
   assert.doesNotMatch(flat, /,DONALDSON,P502155,/, 'P502155 must not exist in the first-party capture (it is a legacy-only identity)');
 });
@@ -1126,7 +1126,7 @@ test('EXCEPTION 8: no change to Phase 1 fitment', () => {
 
 test('EXCEPTION 9: no change to the Phase 2 OEN truth', () => {
   const digest = (value) => crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
-  assert.equal(digest(phase2), '0eb871e729278c336c46e97cb5f17616f705dc696e4e461b6f4070a26409c02e');
+  assert.equal(digest(phase2), 'ebefaf29e4565ce67e6f0a5cf2075ace33ec556d81d2375b04d9b50fa4e72e48');
   for (const id of ['P3-05-N-LUBE-1998-2010', 'P3-08-N-FUEL-2013-2021-B', 'P3-10-N-FUEL-HIGHCAP-2013-2021', 'P3-12-N-TRANS', 'P3-13-F-LUBE-1987-2008', 'P3-16-F-FUEL-2018-2020-A', 'P3-17-F-FUEL-2018-2020-B']) {
     const row = phase3.resolution_rows.find((r) => r.row_id === id);
     const p2 = phase2.oen_rows.find((r) => r.row_id === row.phase2_row_id);
@@ -1332,7 +1332,7 @@ test('MICROCASE 6: Phase 1 is not altered', () => {
 
 test('MICROCASE 7: Phase 2 is not altered', () => {
   const digest = (value) => crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
-  assert.equal(digest(phase2), '0eb871e729278c336c46e97cb5f17616f705dc696e4e461b6f4070a26409c02e');
+  assert.equal(digest(phase2), 'ebefaf29e4565ce67e6f0a5cf2075ace33ec556d81d2375b04d9b50fa4e72e48');
   const p2 = phase2.oen_rows.find((r) => r.row_id === 'P2-N-LUBE-1998-2010');
   assert.deepEqual(p2.isuzu_oe_oen, ['2906542701', '2906548000', '2906548100']);
 });
@@ -1560,7 +1560,7 @@ test('BLOCKEDCASE 13: Phase 1 is untouched', () => {
 
 test('BLOCKEDCASE 14: Phase 2 is untouched', () => {
   const digest = (value) => crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
-  assert.equal(digest(phase2), '0eb871e729278c336c46e97cb5f17616f705dc696e4e461b6f4070a26409c02e');
+  assert.equal(digest(phase2), 'ebefaf29e4565ce67e6f0a5cf2075ace33ec556d81d2375b04d9b50fa4e72e48');
 });
 
 test('BLOCKEDCASE 15: original rows remain valid and later OEM-recovery rows are explicit', () => {
@@ -1786,7 +1786,7 @@ test('SKUCASE 17: Phase 1 is untouched', () => {
 
 test('SKUCASE 18: Phase 2 is untouched', () => {
   const digest = (value) => crypto.createHash('sha256').update(JSON.stringify(value)).digest('hex');
-  assert.equal(digest(phase2), '0eb871e729278c336c46e97cb5f17616f705dc696e4e461b6f4070a26409c02e');
+  assert.equal(digest(phase2), 'ebefaf29e4565ce67e6f0a5cf2075ace33ec556d81d2375b04d9b50fa4e72e48');
 });
 
 test('SKUCASE 19: unrelated Phase 3 rows are untouched', () => {

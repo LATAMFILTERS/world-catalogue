@@ -1284,7 +1284,7 @@
       ],
       "donaldson_research_trace": {
         "USA_PRIMARY": "EXHAUSTED",
-        "REGIONAL_OFFICIAL": "EXHAUSTED_CANDIDATE_ONLY_NO_EXACT_US_OEN_TIE",
+        "REGIONAL_OFFICIAL": "CANDIDATE_ONLY_NO_US_OEN_TIE",
         "fleetguard_gate": "CLOSED_UNLESS_DONALDSON_NOT_MANUFACTURED_VERIFIED"
       },
       "regional_donaldson_closure": {
@@ -2103,7 +2103,7 @@
       ],
       "donaldson_research_trace": {
         "USA_PRIMARY": "EXHAUSTED",
-        "REGIONAL_OFFICIAL": "EXHAUSTED_CANDIDATE_ONLY_NO_EXACT_US_OEN_TIE",
+        "REGIONAL_OFFICIAL": "CANDIDATE_ONLY_NO_US_OEN_TIE",
         "fleetguard_gate": "CLOSED_UNLESS_DONALDSON_NOT_MANUFACTURED_VERIFIED"
       },
       "regional_donaldson_closure": {
