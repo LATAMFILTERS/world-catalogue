@@ -16,6 +16,7 @@
     "catalog:vehicle-normalization:install": "node scripts/migrations/run_112_vehicle_application_normalization.js && node scripts/migrations/run_113_relational_vehicle_application_evidence.js",
     "hermes:isuzu-us:wix-air": "node scripts/hermes/close-isuzu-n-series-us-wix.js",
     "catalog:governance:audit": "node scripts/audit-catalog-governance-daily.js",
+    "catalog:completeness:audit": "node scripts/audit-catalog-governance-daily.js --completeness",
     "hermes:validate": "node scripts/hermes/validate-candidates.mjs hermes/test-candidates",
     "hermes:report": "node scripts/hermes/generate-weekly-report.mjs hermes/test-candidates hermes/reports",
     "hermes:email": "node scripts/hermes/send-weekly-email-actions.mjs hermes/reports",
