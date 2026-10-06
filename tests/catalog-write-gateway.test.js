@@ -376,3 +376,33 @@ test('HD OEM fallback is blocked until Fleetguard absence is verified', () => {
   assert.equal(result.valid, false);
   assert.ok(result.reasons.includes('FLEETGUARD_ABSENCE_NOT_VERIFIED'));
 });
+
+
+test('gateway accepts Fleetguard codigo_base when verified Donaldson SKU collides', () => {
+  const row = {
+    sku: 'EA15551',
+    codigo_base: 'AF25551',
+    duty: 'HEAVY_DUTY',
+    filter_type: 'air',
+    technology: 'MACROCORE™',
+    canonical_source_brand: 'DONALDSON',
+    canonical_source_code: 'P821575',
+    oem_codes: [{ manufacturer: 'JOHN DEERE', code: 'M131802' }],
+    competitor_codes: [],
+    enrichment_data: { codigo_base_governance: {
+      policy_version: '2026-10-06-v4.2',
+      primary_manufacturer_verified: true,
+      donaldson_sku_collision_verified: true,
+      collision_donaldson_code: 'P821575',
+      fallback_manufacturer_verified: true,
+      fallback_commercial_code_verified: true,
+      approved_manufacturer: 'FLEETGUARD',
+      approved_codigo_base: 'AF25551',
+      approved_source_column: 'COMPETITOR_CODES',
+    } },
+    equipment_applications: [],
+    vehicle_applications: [],
+  };
+  const result = validateCanonicalWrite(row, { validateApplications: false });
+  assert.equal(result.valid, true, result.reasons.join(','));
+});

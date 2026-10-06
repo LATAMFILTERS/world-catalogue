@@ -73,7 +73,7 @@ A `STANDBY` or `CI` node must not run recurring production schedulers. Before ad
 
 Product identity is separated by governed domain:
 
-- Heavy Duty: existing HD prefixes and canonical-source rules remain unchanged.
+- Heavy Duty: existing HD prefixes remain fixed. Canonical base priority is Donaldson → Fleetguard → verified OEM. SKU creation uses the last four numeric digits of the selected commercial code. If a verified Donaldson code resolves to an SKU already occupied by a different published product, do not append or rotate digits; evaluate the verified Fleetguard cross and derive its natural SKU. If that Fleetguard SKU also collides, evaluate a verified OEM code. If all eligible natural slots collide, fail closed with `STOP_REVIEW`.
 - Light Duty: existing LD prefixes and canonical-source rules remain unchanged.
 - Industrial & Process: dedicated Technology-Core prefixes are `IA1/IA2/IA3`,
   `ID1`, `IG1/IG2`, `IH1`, `IL1`, `IO1/IO2`,
