@@ -9,7 +9,11 @@
   "brands": [
     {
       "id": "isuzu_usa",
-      "match": ["ISUZU", "ISUZU TRUCKS", "ISUZU COMMERCIAL TRUCK OF AMERICA"],
+      "match": [
+        "ISUZU",
+        "ISUZU TRUCKS",
+        "ISUZU COMMERCIAL TRUCK OF AMERICA"
+      ],
       "role": "OEM_VEHICLE_AUTHORITY",
       "market": "US",
       "engines": [
@@ -17,14 +21,22 @@
           "id": "isuzu_us_nseries",
           "type": "official_vehicle_catalog",
           "base_url": "https://www.isuzucv.com",
-          "supports": ["platform_identity", "model_year", "engine_identity"],
+          "supports": [
+            "platform_identity",
+            "model_year",
+            "engine_identity"
+          ],
           "priority": 1
         }
       ]
     },
     {
       "id": "wix",
-      "match": ["WIX", "WIX FILTERS", "MANN+HUMMEL WIX"],
+      "match": [
+        "WIX",
+        "WIX FILTERS",
+        "MANN+HUMMEL WIX"
+      ],
       "role": "FILTER_APPLICATION_AUTHORITY",
       "market": "US",
       "engines": [
@@ -39,14 +51,22 @@
             "engines": "/search/MakeEngines2?vehicleYear={year}&section={section}&make={make_id}&model={model_id}",
             "parts": "/search/SearchPartsByVehicle3?vehicleYear={year}&section={section}&make={make_id}&model={model_id}&engine={engine_id}"
           },
-          "supports": ["vehicle_to_filter", "filter_position", "engine_specific_fitment"],
+          "supports": [
+            "vehicle_to_filter",
+            "filter_position",
+            "engine_specific_fitment"
+          ],
           "priority": 1
         }
       ]
     },
     {
       "id": "mann_filter",
-      "match": ["MANN", "MANN-FILTER", "MANN FILTER"],
+      "match": [
+        "MANN",
+        "MANN-FILTER",
+        "MANN FILTER"
+      ],
       "role": "FILTER_APPLICATION_AUTHORITY",
       "market": "GLOBAL",
       "engines": [
@@ -54,14 +74,20 @@
           "id": "mann_online_catalog",
           "type": "official_online_catalog",
           "base_url": "https://www.mann-filter.com",
-          "supports": ["product_lookup", "vehicle_to_filter", "oem_cross_reference"],
+          "supports": [
+            "product_lookup",
+            "vehicle_to_filter",
+            "oem_cross_reference"
+          ],
           "priority": 1
         }
       ]
     },
     {
       "id": "donaldson",
-      "match": ["DONALDSON"],
+      "match": [
+        "DONALDSON"
+      ],
       "role": "FILTER_APPLICATION_AUTHORITY",
       "market": "GLOBAL",
       "engines": [
@@ -69,14 +95,21 @@
           "id": "donaldson_product_search",
           "type": "official_product_catalog",
           "base_url": "https://www.donaldson.com",
-          "supports": ["product_lookup", "cross_reference", "application_lookup"],
+          "supports": [
+            "product_lookup",
+            "cross_reference",
+            "application_lookup"
+          ],
           "priority": 1
         }
       ]
     },
     {
       "id": "fleetguard",
-      "match": ["FLEETGUARD", "CUMMINS FILTRATION"],
+      "match": [
+        "FLEETGUARD",
+        "CUMMINS FILTRATION"
+      ],
       "role": "FILTER_APPLICATION_AUTHORITY",
       "market": "GLOBAL",
       "engines": [
@@ -84,14 +117,20 @@
           "id": "fleetguard_product_search",
           "type": "official_product_catalog",
           "base_url": "https://www.fleetguard.com",
-          "supports": ["product_lookup", "application_lookup", "cross_reference"],
+          "supports": [
+            "product_lookup",
+            "application_lookup",
+            "cross_reference"
+          ],
           "priority": 1
         }
       ]
     },
     {
       "id": "fram",
-      "match": ["FRAM"],
+      "match": [
+        "FRAM"
+      ],
       "role": "FILTER_APPLICATION_AUTHORITY",
       "market": "US",
       "engines": [
@@ -99,14 +138,19 @@
           "id": "fram_application_catalog",
           "type": "official_application_catalog",
           "base_url": "https://www.fram.com",
-          "supports": ["vehicle_to_filter", "product_lookup"],
+          "supports": [
+            "vehicle_to_filter",
+            "product_lookup"
+          ],
           "priority": 1
         }
       ]
     },
     {
       "id": "baldwin",
-      "match": ["BALDWIN"],
+      "match": [
+        "BALDWIN"
+      ],
       "role": "FILTER_APPLICATION_AUTHORITY",
       "market": "GLOBAL",
       "engines": [
@@ -114,7 +158,36 @@
           "id": "baldwin_product_catalog",
           "type": "official_product_catalog",
           "base_url": "https://www.baldwinfilters.com",
-          "supports": ["product_lookup", "application_lookup", "cross_reference"],
+          "supports": [
+            "product_lookup",
+            "application_lookup",
+            "cross_reference"
+          ],
+          "priority": 1
+        }
+      ]
+    },
+    {
+      "id": "parker_racor",
+      "match": [
+        "PARKER",
+        "RACOR",
+        "PARKER RACOR",
+        "RACOR TURBINE"
+      ],
+      "role": "FILTER_APPLICATION_AUTHORITY",
+      "market": "GLOBAL",
+      "engines": [
+        {
+          "id": "parker_racor_turbine_search",
+          "type": "official_product_catalog",
+          "base_url": "https://www.parker.com",
+          "supports": [
+            "product_lookup",
+            "cross_reference",
+            "application_lookup",
+            "turbine_compatibility"
+          ],
           "priority": 1
         }
       ]
