@@ -3,7 +3,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
 import { fileURLToPath } from 'node:url';
-import pg from 'file:///C:/ELIMSERVER/repos/world-catalogue/node_modules/pg/lib/index.js';
+import pg from 'pg';
 
 const { Client } = pg;
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../..');
