@@ -98,7 +98,10 @@
     "catalog:repair:ef95112:apply": "node scripts/migrations/run_115_create_ef95112_fleetguard_ff5112.js --apply",
     "catalog:completeness:recover": "node scripts/run-catalog-completeness-recovery.js",
     "catalog:completeness:recover:apply": "node scripts/run-catalog-completeness-recovery.js --apply",
-    "test:catalog-completeness-repair": "node --test tests/catalog-completeness-donaldson-repair.test.js"
+    "test:catalog-completeness-repair": "node --test tests/catalog-completeness-donaldson-repair.test.js",
+    "hermes:catalogue:relations": "node scripts/hermes/catalogue-relation-sweep.mjs",
+    "hermes:catalogue:relations:sync": "node scripts/hermes/catalogue-relation-sweep.mjs --sync",
+    "test:hermes-relation-authority": "node --test tests/hermes-relation-authority-policy.test.js"
   },
   "dependencies": {
     "axios": "^1.7.7",
