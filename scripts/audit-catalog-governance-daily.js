@@ -153,6 +153,68 @@ async function completenessReport(client) {
     ORDER BY rows DESC, reference_type
   `);
 
+  const { rows: scopeDiagnostics } = await client.query(`
+    SELECT
+      coalesce(catalog_scope_reason,'(NULL)') AS catalog_scope_reason,
+      count(*)::int AS rows,
+      count(*) FILTER (WHERE catalog_active IS TRUE)::int AS active_rows,
+      count(*) FILTER (WHERE catalog_active IS FALSE)::int AS inactive_rows
+    FROM public.elimfilters_catalog
+    GROUP BY coalesce(catalog_scope_reason,'(NULL)')
+    ORDER BY rows DESC, catalog_scope_reason
+  `);
+
+  const { rows: familyDiagnostics } = await client.query(`
+    SELECT
+      coalesce(duty,'(NULL)') AS duty,
+      coalesce(filter_type,'(NULL)') AS filter_type,
+      count(*)::int AS rows
+    FROM public.elimfilters_catalog
+    WHERE catalog_active IS TRUE
+    GROUP BY coalesce(duty,'(NULL)'), coalesce(filter_type,'(NULL)')
+    ORDER BY rows DESC, duty, filter_type
+    LIMIT 40
+  `);
+
+  const { rows: referenceDiagnostics } = await client.query(`
+    WITH base AS (
+      SELECT
+        c.sku,
+        jsonb_array_length(coalesce(c.oem_codes,'[]'::jsonb)) AS oem_n,
+        jsonb_array_length(coalesce(c.competitor_codes,'[]'::jsonb)) AS competitor_n,
+        NOT EXISTS (
+          SELECT 1 FROM jsonb_array_elements(coalesce(c.oem_codes,'[]'::jsonb)) x
+          WHERE upper(coalesce(x->>'classification','')) <> 'OEM'
+        ) AS oem_classification_clean,
+        NOT EXISTS (
+          SELECT 1 FROM jsonb_array_elements(coalesce(c.competitor_codes,'[]'::jsonb)) x
+          WHERE upper(coalesce(x->>'classification','')) NOT IN ('AFTERMARKET','CROSS_REFERENCE')
+        ) AS competitor_classification_clean,
+        EXISTS (
+          SELECT 1 FROM public.exact_part_reference e
+          WHERE e.sku=c.sku AND upper(coalesce(e.reference_type,''))='OEM'
+            AND coalesce(btrim(e.source),'')<>''
+        ) AS oem_evidence,
+        EXISTS (
+          SELECT 1 FROM public.exact_part_reference e
+          WHERE e.sku=c.sku AND upper(coalesce(e.reference_type,'')) IN ('COMPETITOR','CROSS_REFERENCE','AFTERMARKET')
+            AND coalesce(btrim(e.source),'')<>''
+        ) AS competitor_evidence
+      FROM public.elimfilters_catalog c
+      WHERE c.catalog_active IS TRUE
+    )
+    SELECT
+      count(*) FILTER (WHERE oem_n>0)::int AS oem_present,
+      count(*) FILTER (WHERE oem_n>0 AND oem_classification_clean)::int AS oem_classification_clean,
+      count(*) FILTER (WHERE oem_n>0 AND oem_evidence)::int AS oem_with_evidence,
+      count(*) FILTER (WHERE oem_n>0 AND oem_classification_clean AND oem_evidence)::int AS oem_complete_intersection,
+      count(*) FILTER (WHERE competitor_n>0)::int AS competitor_present,
+      count(*) FILTER (WHERE competitor_n>0 AND competitor_classification_clean)::int AS competitor_classification_clean,
+      count(*) FILTER (WHERE competitor_n>0 AND competitor_evidence)::int AS competitor_with_evidence,
+      count(*) FILTER (WHERE competitor_n>0 AND competitor_classification_clean AND competitor_evidence)::int AS competitor_complete_intersection
+    FROM base
+  `);
+
   const { rows: published } = await client.query(`
     WITH base AS (
       SELECT
@@ -239,6 +301,9 @@ async function completenessReport(client) {
     total_matches_expected: t.total_skus === EXPECTED_CATALOG_SKUS,
     family_totals_reconcile: sumsOk,
     reference_evidence_diagnostics: evidenceDiagnostics,
+    scope_diagnostics: scopeDiagnostics,
+    active_family_diagnostics: familyDiagnostics,
+    reference_completeness_diagnostics: referenceDiagnostics[0],
     families: {
       OEM: { complete: t.oem_complete, partial: t.oem_partial, empty: t.oem_empty },
       COMPETITORS: { complete: t.competitor_complete, partial: t.competitor_partial, empty: t.competitor_empty },
