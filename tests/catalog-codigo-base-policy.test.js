@@ -2,14 +2,18 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { evaluateCodigoBase, POLICY_VERSION } = require('../lib/catalog-codigo-base-policy');
+const {
+  evaluateCodigoBase,
+  POLICY_VERSION,
+  planHdSkuFromVerifiedAuthorities,
+} = require('../lib/catalog-codigo-base-policy');
 
 function gov(overrides = {}) {
   return { enrichment_data: { codigo_base_governance: overrides } };
 }
 
-test('V3.2 policy is active', () => {
-  assert.equal(POLICY_VERSION, '2026-10-02-v3.2');
+test('V4.2 policy is active', () => {
+  assert.equal(POLICY_VERSION, '2026-10-06-v4.2');
 });
 
 test('HD verified Donaldson is primary authority', () => {
@@ -141,4 +145,108 @@ test('LD non-European uses FRAM as primary and OEM only after verified FRAM abse
 
   blocked.enrichment_data.codigo_base_governance.fram_absence_verified = true;
   assert.equal(evaluateCodigoBase(blocked).authority, 'VERIFIED_OEM_FALLBACK');
+});
+
+
+test('HD SKU collision falls from Donaldson to Fleetguard without synthetic discriminator', () => {
+  const plan = planHdSkuFromVerifiedAuthorities({
+    prefix: 'EA1',
+    verifiedDonaldsonCode: 'P821575',
+    verifiedFleetguardCode: 'AF25551',
+    verifiedOemCode: 'M131802',
+    occupiedSkus: {
+      EA11575: { codigo_base: 'P541575' },
+    },
+  });
+  assert.equal(plan.status, 'READY');
+  assert.equal(plan.sku, 'EA15551');
+  assert.equal(plan.selected_manufacturer, 'FLEETGUARD');
+  assert.equal(plan.selected_code, 'AF25551');
+  assert.equal(plan.attempts[0].status, 'SKU_COLLISION');
+  assert.equal(plan.attempts[0].occupied_by_code, 'P541575');
+});
+
+test('HD SKU collision falls from Fleetguard to OEM when both preferred slots are occupied', () => {
+  const plan = planHdSkuFromVerifiedAuthorities({
+    prefix: 'EA1',
+    verifiedDonaldsonCode: 'P821575',
+    verifiedFleetguardCode: 'AF25551',
+    verifiedOemCode: 'M131802',
+    occupiedSkus: {
+      EA11575: { codigo_base: 'P541575' },
+      EA15551: { codigo_base: 'AF15551' },
+    },
+  });
+  assert.equal(plan.status, 'READY');
+  assert.equal(plan.sku, 'EA11802');
+  assert.equal(plan.selected_manufacturer, 'OEM');
+  assert.equal(plan.selected_code, 'M131802');
+});
+
+test('HD SKU collision stops review when Donaldson Fleetguard and OEM slots are all occupied', () => {
+  const plan = planHdSkuFromVerifiedAuthorities({
+    prefix: 'EA1',
+    verifiedDonaldsonCode: 'P821575',
+    verifiedFleetguardCode: 'AF25551',
+    verifiedOemCode: 'M131802',
+    occupiedSkus: {
+      EA11575: { codigo_base: 'P541575' },
+      EA15551: { codigo_base: 'AF15551' },
+      EA11802: { codigo_base: 'P181802' },
+    },
+  });
+  assert.equal(plan.status, 'STOP_REVIEW');
+  assert.equal(plan.sku, null);
+});
+
+test('HD Fleetguard collision fallback is valid only with explicit Donaldson collision governance', () => {
+  const row = {
+    duty: 'HEAVY_DUTY',
+    sku: 'EA15551',
+    codigo_base: 'AF25551',
+    canonical_source_brand: 'DONALDSON',
+    canonical_source_code: 'P821575',
+    oem_codes: [{ manufacturer: 'JOHN DEERE', code: 'M131802' }],
+    competitor_codes: [{ manufacturer: 'FLEETGUARD', code: 'AF25551' }],
+    ...gov({
+      primary_manufacturer_verified: true,
+      donaldson_sku_collision_verified: true,
+      collision_donaldson_code: 'P821575',
+      fallback_manufacturer_verified: true,
+      fallback_commercial_code_verified: true,
+      approved_manufacturer: 'FLEETGUARD',
+      approved_codigo_base: 'AF25551',
+      approved_source_column: 'COMPETITOR_CODES',
+    }),
+  };
+  assert.equal(evaluateCodigoBase(row).authority, 'VERIFIED_FLEETGUARD_COLLISION_FALLBACK');
+
+  row.enrichment_data.codigo_base_governance.donaldson_sku_collision_verified = false;
+  assert.equal(evaluateCodigoBase(row).valid, false);
+});
+
+test('HD OEM collision fallback requires both Donaldson and Fleetguard SKU collisions', () => {
+  const row = {
+    duty: 'HEAVY_DUTY',
+    sku: 'EA11802',
+    codigo_base: 'M131802',
+    canonical_source_brand: 'DONALDSON',
+    canonical_source_code: 'P821575',
+    oem_codes: [{ manufacturer: 'JOHN DEERE', code: 'M131802' }],
+    competitor_codes: [{ manufacturer: 'FLEETGUARD', code: 'AF25551' }],
+    ...gov({
+      primary_manufacturer_verified: true,
+      donaldson_sku_collision_verified: true,
+      collision_donaldson_code: 'P821575',
+      fleetguard_sku_collision_verified: true,
+      collision_fleetguard_code: 'AF25551',
+      oem_base_verified: true,
+      fallback_manufacturer_verified: true,
+      fallback_commercial_code_verified: true,
+      approved_manufacturer: 'JOHN DEERE',
+      approved_codigo_base: 'M131802',
+      approved_source_column: 'OEM_CODES',
+    }),
+  };
+  assert.equal(evaluateCodigoBase(row).authority, 'VERIFIED_OEM_COLLISION_FALLBACK');
 });
