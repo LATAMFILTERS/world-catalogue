@@ -106,6 +106,7 @@ async function completenessReport(client) {
           )
         END AS vehicle_verified
       FROM public.elimfilters_catalog c
+      WHERE c.catalog_active IS TRUE
     ), status AS (
       SELECT *,
         CASE
