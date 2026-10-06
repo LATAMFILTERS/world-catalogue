@@ -45,21 +45,39 @@ async function completenessReport(client) {
   `);
   const universe = universeRows[0];
 
+  let scopePredicate = 'c.catalog_active IS TRUE';
+  let auditScope = 'CATALOG_ACTIVE';
+  if (universe.active_primary_true === EXPECTED_CATALOG_SKUS) {
+    scopePredicate = 'c.catalog_active IS TRUE AND c.is_primary IS TRUE';
+    auditScope = 'CATALOG_ACTIVE_PRIMARY';
+  } else if ((universe.active_primary_true + universe.active_primary_null) === EXPECTED_CATALOG_SKUS) {
+    scopePredicate = 'c.catalog_active IS TRUE AND c.is_primary IS DISTINCT FROM FALSE';
+    auditScope = 'CATALOG_ACTIVE_NOT_FALSE_PRIMARY';
+  }
+
   const { rows: totals } = await client.query(`
     WITH base AS (
       SELECT
         c.sku,
-        coalesce(c.oem_codes, '[]'::jsonb) AS oem_codes,
-        coalesce(c.competitor_codes, '[]'::jsonb) AS competitor_codes,
-        coalesce(c.equipment_applications, '[]'::jsonb) AS equipment_applications,
-        coalesce(c.vehicle_applications, '[]'::jsonb) AS vehicle_applications,
-        c.duty,
-        c.duty_validation_status,
-
         coalesce(jsonb_array_length(coalesce(c.oem_codes, '[]'::jsonb)), 0) AS oem_n,
         coalesce(jsonb_array_length(coalesce(c.competitor_codes, '[]'::jsonb)), 0) AS competitor_n,
         coalesce(jsonb_array_length(coalesce(c.equipment_applications, '[]'::jsonb)), 0) AS equipment_n,
         coalesce(jsonb_array_length(coalesce(c.vehicle_applications, '[]'::jsonb)), 0) AS vehicle_n,
+        c.duty,
+        c.duty_validation_status,
+
+        NOT EXISTS (
+          SELECT 1
+          FROM jsonb_array_elements(coalesce(c.oem_codes, '[]'::jsonb)) x
+          WHERE upper(coalesce(x->>'classification', '')) <> 'OEM'
+        )
+        AND EXISTS (
+          SELECT 1
+          FROM public.exact_part_reference e
+          WHERE e.sku = c.sku
+            AND upper(coalesce(e.reference_type,'')) = 'OEM'
+            AND coalesce(btrim(e.source),'') <> ''
+        ) AS all_oem_verified,
 
         NOT EXISTS (
           SELECT 1
@@ -74,25 +92,110 @@ async function completenessReport(client) {
             AND coalesce(btrim(e.source),'') <> ''
         ) AS all_competitor_verified,
 
-        CASE
-          WHEN jsonb_array_length(coalesce(c.equipment_applications,'[]'::jsonb)) = 0 THEN true
-          ELSE EXISTS (
-            SELECT 1
-            FROM public.catalog_application_evidence cae
-            WHERE cae.sku = c.sku
-              AND cae.verified IS TRUE
-          )
-        END AS equipment_verified,
+        EXISTS (
+          SELECT 1
+          FROM public.catalog_application_evidence cae
+          WHERE cae.sku = c.sku
+            AND cae.verified IS TRUE
+        ) AS application_evidence_verified
 
+      FROM public.elimfilters_catalog c
+      WHERE ${scopePredicate}
+    ), status AS (
+      SELECT *,
         CASE
-          WHEN jsonb_array_length(coalesce(c.vehicle_applications,'[]'::jsonb)) = 0 THEN true
-          ELSE EXISTS (
-            SELECT 1
-            FROM public.catalog_application_evidence cae
-            WHERE cae.sku = c.sku
-              AND cae.verified IS TRUE
-          )
-        END AS vehicle_verified
+          WHEN oem_n = 0 THEN 'EMPTY'
+          WHEN all_oem_verified THEN 'COMPLETE'
+          ELSE 'PARTIAL'
+        END AS oem_status,
+        CASE
+          WHEN competitor_n = 0 THEN 'EMPTY'
+          WHEN all_competitor_verified THEN 'COMPLETE'
+          ELSE 'PARTIAL'
+        END AS competitor_status,
+        CASE
+          WHEN equipment_n + vehicle_n = 0 THEN 'EMPTY'
+          WHEN application_evidence_verified THEN 'COMPLETE'
+          ELSE 'PARTIAL'
+        END AS applications_status,
+        CASE
+          WHEN coalesce(btrim(duty),'') = '' THEN 'EMPTY'
+          WHEN duty_validation_status = 'VERIFIED' THEN 'COMPLETE'
+          ELSE 'PARTIAL'
+        END AS duty_status
+      FROM base
+    )
+    SELECT
+      count(*)::int AS total_skus,
+      count(*) FILTER (WHERE oem_status='COMPLETE')::int AS oem_complete,
+      count(*) FILTER (WHERE oem_status='PARTIAL')::int AS oem_partial,
+      count(*) FILTER (WHERE oem_status='EMPTY')::int AS oem_empty,
+      count(*) FILTER (WHERE competitor_status='COMPLETE')::int AS competitor_complete,
+      count(*) FILTER (WHERE competitor_status='PARTIAL')::int AS competitor_partial,
+      count(*) FILTER (WHERE competitor_status='EMPTY')::int AS competitor_empty,
+      count(*) FILTER (WHERE applications_status='COMPLETE')::int AS applications_complete,
+      count(*) FILTER (WHERE applications_status='PARTIAL')::int AS applications_partial,
+      count(*) FILTER (WHERE applications_status='EMPTY')::int AS applications_empty,
+      count(*) FILTER (WHERE duty_status='COMPLETE')::int AS duty_complete,
+      count(*) FILTER (WHERE duty_status='PARTIAL')::int AS duty_partial,
+      count(*) FILTER (WHERE duty_status='EMPTY')::int AS duty_empty
+    FROM status
+  `);
+
+  const { rows: evidenceDiagnostics } = await client.query(`
+    SELECT
+      upper(coalesce(reference_type,'')) AS reference_type,
+      count(*)::int AS rows,
+      count(DISTINCT sku)::int AS skus,
+      count(*) FILTER (WHERE coalesce(btrim(source),'') <> '')::int AS rows_with_source
+    FROM public.exact_part_reference
+    GROUP BY upper(coalesce(reference_type,''))
+    ORDER BY rows DESC, reference_type
+  `);
+
+  const { rows: published } = await client.query(`
+    WITH base AS (
+      SELECT
+        c.sku,
+        coalesce(jsonb_array_length(coalesce(c.oem_codes,'[]'::jsonb)),0) AS oem_n,
+        coalesce(jsonb_array_length(coalesce(c.competitor_codes,'[]'::jsonb)),0) AS competitor_n,
+        coalesce(jsonb_array_length(coalesce(c.equipment_applications,'[]'::jsonb)),0) AS equipment_n,
+        coalesce(jsonb_array_length(coalesce(c.vehicle_applications,'[]'::jsonb)),0) AS vehicle_n,
+        c.duty,
+        c.duty_validation_status,
+
+        NOT EXISTS (
+          SELECT 1
+          FROM jsonb_array_elements(coalesce(c.oem_codes,'[]'::jsonb)) x
+          WHERE upper(coalesce(x->>'classification','')) <> 'OEM'
+        )
+        AND EXISTS (
+          SELECT 1
+          FROM public.exact_part_reference e
+          WHERE e.sku=c.sku
+            AND upper(coalesce(e.reference_type,''))='OEM'
+            AND coalesce(btrim(e.source),'')<>''
+        ) AS all_oem_verified,
+
+        NOT EXISTS (
+          SELECT 1
+          FROM jsonb_array_elements(coalesce(c.competitor_codes,'[]'::jsonb)) x
+          WHERE upper(coalesce(x->>'classification','')) NOT IN ('AFTERMARKET','CROSS_REFERENCE')
+        )
+        AND EXISTS (
+          SELECT 1
+          FROM public.exact_part_reference e
+          WHERE e.sku=c.sku
+            AND upper(coalesce(e.reference_type,'')) IN ('COMPETITOR','CROSS_REFERENCE','AFTERMARKET')
+            AND coalesce(btrim(e.source),'')<>''
+        ) AS all_competitor_verified,
+
+        EXISTS (
+          SELECT 1
+          FROM public.catalog_application_evidence cae
+          WHERE cae.sku=c.sku AND cae.verified IS TRUE
+        ) AS application_evidence_verified
+
       FROM public.elimfilters_catalog c
       WHERE c.sku = ANY($1::text[])
     )
@@ -105,7 +208,7 @@ async function completenessReport(client) {
       equipment_n,
       vehicle_n,
       CASE WHEN equipment_n+vehicle_n=0 THEN 'EMPTY'
-           WHEN equipment_verified AND vehicle_verified THEN 'COMPLETE'
+           WHEN application_evidence_verified THEN 'COMPLETE'
            ELSE 'PARTIAL' END AS applications_status,
       duty,
       duty_validation_status,
@@ -124,13 +227,18 @@ async function completenessReport(client) {
     t.duty_complete + t.duty_partial + t.duty_empty,
   ].every((n) => n === t.total_skus);
 
+  const publishedFound = new Set(published.map((row) => row.sku));
+  const publishedMissing = publishedSkus.filter((sku) => !publishedFound.has(sku));
+
   return {
-    audit: 'CATALOG_COMPLETENESS_READONLY_V1',
+    audit: 'CATALOG_COMPLETENESS_READONLY_V2',
     expected_catalog_skus: EXPECTED_CATALOG_SKUS,
     universe,
+    audit_scope: auditScope,
     total_skus: t.total_skus,
     total_matches_expected: t.total_skus === EXPECTED_CATALOG_SKUS,
     family_totals_reconcile: sumsOk,
+    reference_evidence_diagnostics: evidenceDiagnostics,
     families: {
       OEM: { complete: t.oem_complete, partial: t.oem_partial, empty: t.oem_empty },
       COMPETITORS: { complete: t.competitor_complete, partial: t.competitor_partial, empty: t.competitor_empty },
@@ -139,6 +247,7 @@ async function completenessReport(client) {
     },
     published_skus_expected: publishedSkus.length,
     published_skus_found: published.length,
+    published_skus_missing: publishedMissing,
     published,
     mutation_count: 0,
   };
