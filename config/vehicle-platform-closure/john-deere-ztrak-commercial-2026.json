@@ -1,0 +1,140 @@
+{
+  "status": "IN_PROGRESS",
+  "updated_at": "2026-10-06",
+  "scope": "John Deere commercial ZTrak filtration and air-cleaner service components",
+  "canonical_rule": "HD SKU authority resolution: Donaldson natural SKU; if occupied by a different published identity, Fleetguard natural SKU; if also occupied, verified OEM natural SKU; if all eligible natural slots collide, STOP_REVIEW.",
+  "repo_occupancy_checked_on_main": true,
+  "rows": [
+    {
+      "john_deere": "M131802",
+      "role": "AIR_PRIMARY",
+      "donaldson": "P821575",
+      "donaldson_sku": "EA11575",
+      "donaldson_sku_status": "COLLISION",
+      "donaldson_collision_with": "P541575",
+      "fleetguard": "AF25551",
+      "fleetguard_sku": "EA15551",
+      "fleetguard_sku_status": "REPO_FREE",
+      "decision": "EA15551",
+      "state": "READY_FOR_LIVE_OCCUPANCY_AND_WRITE_GATE"
+    },
+    {
+      "john_deere": "M131803",
+      "role": "AIR_SECONDARY",
+      "donaldson": "P822858",
+      "donaldson_sku": "EA12858",
+      "donaldson_sku_status": "OCCUPIED",
+      "fleetguard": "AF25552",
+      "fleetguard_sku": "EA15552",
+      "fleetguard_sku_status": "OCCUPIED",
+      "oem_sku": "EA11803",
+      "oem_sku_status": "REPO_FREE",
+      "decision": "EA11803",
+      "state": "READY_FOR_LIVE_OCCUPANCY_AND_WRITE_GATE"
+    },
+    {
+      "john_deere": "AM107423",
+      "role": "LUBE",
+      "donaldson": "P502015",
+      "donaldson_sku": "EL82015",
+      "donaldson_sku_status": "EXISTS",
+      "decision": "EL82015",
+      "state": "REUSE_PENDING_IDENTITY_CONFIRMATION"
+    },
+    {
+      "john_deere": "AM125424",
+      "role": "LUBE",
+      "donaldson": "P502024",
+      "donaldson_sku": "EL82024",
+      "donaldson_sku_status": "EXISTS",
+      "decision": "EL82024",
+      "state": "REUSE_PENDING_IDENTITY_CONFIRMATION"
+    },
+    {
+      "john_deere": "AM116304",
+      "role": "FUEL",
+      "donaldson": "P550094",
+      "donaldson_sku": "EF90094",
+      "donaldson_sku_status": "EXISTS",
+      "decision": "EF90094",
+      "state": "REUSE_PENDING_IDENTITY_CONFIRMATION"
+    },
+    {
+      "john_deere": "UC16183",
+      "role": "FUEL_INLINE",
+      "donaldson": null,
+      "fleetguard": null,
+      "oem_sku": "EF96183",
+      "oem_sku_status": "REPO_FREE",
+      "decision": null,
+      "state": "BLOCKED_DF_MANUFACTURING_AUTHORITY_NOT_VERIFIED"
+    },
+    {
+      "john_deere": "UC21217",
+      "role": "FUEL_INLINE",
+      "donaldson": null,
+      "fleetguard": null,
+      "oem_sku": "EF92117",
+      "oem_sku_status": "REPO_FREE",
+      "decision": null,
+      "state": "BLOCKED_DF_MANUFACTURING_AUTHORITY_NOT_VERIFIED"
+    },
+    {
+      "john_deere": "MIU13224",
+      "role": "FUEL_INLINE_EFI",
+      "donaldson": null,
+      "fleetguard": null,
+      "oem_sku": "EF93224",
+      "oem_sku_status": "REPO_FREE",
+      "decision": null,
+      "state": "BLOCKED_DF_MANUFACTURING_AUTHORITY_NOT_VERIFIED"
+    },
+    {
+      "john_deere": "MIA881446",
+      "role": "TRANSMISSION_FILTER",
+      "replaces": "AM131102",
+      "donaldson": null,
+      "fleetguard": null,
+      "oem_sku": "EH61446",
+      "oem_sku_status": "REPO_FREE",
+      "decision": null,
+      "state": "BLOCKED_DF_MANUFACTURING_AUTHORITY_NOT_VERIFIED"
+    },
+    {
+      "john_deere": "MIA12832",
+      "role": "AIR_CLEANER_ASSEMBLY",
+      "donaldson": null,
+      "fleetguard": null,
+      "oem_sku": "EA22832",
+      "oem_sku_status": "REPO_FREE",
+      "decision": null,
+      "state": "BLOCKED_DF_MANUFACTURING_AUTHORITY_NOT_VERIFIED"
+    },
+    {
+      "john_deere": "MIU14301",
+      "role": "AIR_CLEANER_HOUSING",
+      "donaldson": null,
+      "fleetguard": null,
+      "oem_sku": "EA24301",
+      "oem_sku_status": "REPO_FREE",
+      "decision": null,
+      "state": "BLOCKED_DF_MANUFACTURING_AUTHORITY_NOT_VERIFIED"
+    },
+    {
+      "john_deere": "UC23657",
+      "role": "AIR_CLEANER_HOUSING",
+      "donaldson": null,
+      "fleetguard": null,
+      "oem_sku": "EA23657",
+      "oem_sku_status": "REPO_FREE",
+      "decision": null,
+      "state": "BLOCKED_DF_MANUFACTURING_AUTHORITY_NOT_VERIFIED"
+    }
+  ],
+  "evidence_notes": [
+    "John Deere official shop confirms UC16183, UC21217 and MIU13224 are inline fuel filters for the listed compatible equipment.",
+    "John Deere official shop confirms MIA881446 is a transmission oil filter with packing and replaces AM131102.",
+    "John Deere official shop confirms MIA12832 is an Air Cleaner Assembly and UC23657 is a Housing with commercial ZTrak compatibility.",
+    "Exact searches of donaldson.com and fleetguard.com for UC16183, UC21217, MIU13224, MIA881446, MIA12832, MIU14301 and UC23657 returned no direct results in the current research pass; this is NOT treated as verified non-manufacture."
+  ]
+}
