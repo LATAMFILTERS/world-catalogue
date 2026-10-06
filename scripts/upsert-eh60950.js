@@ -1,5 +1,9 @@
 const { Client } = require('pg');
 
+// Retired 2026-10-05: Donaldson P170950 is discontinued and superseded by P164378 (SKU EH64378).
+// Re-running would reactivate EH60950 with the obsolete base code.
+throw new Error('Retired: EH60950 (P170950) is superseded by EH64378 (P164378); do not re-run this upsert.');
+
 const client = new Client({
   connectionString: process.env.CATALOG_DATABASE_URL || process.env.DATABASE_URL,
   ssl: { rejectUnauthorized: false }
