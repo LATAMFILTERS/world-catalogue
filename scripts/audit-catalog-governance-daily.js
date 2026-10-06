@@ -60,7 +60,17 @@ async function completenessReport(client) {
       SELECT
         c.sku,
         coalesce(jsonb_array_length(coalesce(c.oem_codes, '[]'::jsonb)), 0) AS oem_n,
-        coalesce(jsonb_array_length(coalesce(c.competitor_codes, '[]'::jsonb)), 0) AS competitor_n,
+        (coalesce(jsonb_array_length(coalesce(c.competitor_codes, '[]'::jsonb)), 0) +
+          coalesce((
+            SELECT sum(
+              CASE
+                WHEN jsonb_typeof(v.value)='array' THEN jsonb_array_length(v.value)
+                WHEN jsonb_typeof(v.value)='string' THEN 1
+                ELSE 0
+              END
+            )::int
+            FROM jsonb_each(coalesce(c.brand_crossrefs, '{}'::jsonb)) v
+          ), 0)) AS competitor_n,
         coalesce(jsonb_array_length(coalesce(c.equipment_applications, '[]'::jsonb)), 0) AS equipment_n,
         coalesce(jsonb_array_length(coalesce(c.vehicle_applications, '[]'::jsonb)), 0) AS vehicle_n,
         c.duty,
@@ -220,7 +230,17 @@ async function completenessReport(client) {
       SELECT
         c.sku,
         coalesce(jsonb_array_length(coalesce(c.oem_codes,'[]'::jsonb)),0) AS oem_n,
-        coalesce(jsonb_array_length(coalesce(c.competitor_codes,'[]'::jsonb)),0) AS competitor_n,
+        (coalesce(jsonb_array_length(coalesce(c.competitor_codes, '[]'::jsonb)), 0) +
+          coalesce((
+            SELECT sum(
+              CASE
+                WHEN jsonb_typeof(v.value)='array' THEN jsonb_array_length(v.value)
+                WHEN jsonb_typeof(v.value)='string' THEN 1
+                ELSE 0
+              END
+            )::int
+            FROM jsonb_each(coalesce(c.brand_crossrefs, '{}'::jsonb)) v
+          ), 0)) AS competitor_n,
         coalesce(jsonb_array_length(coalesce(c.equipment_applications,'[]'::jsonb)),0) AS equipment_n,
         coalesce(jsonb_array_length(coalesce(c.vehicle_applications,'[]'::jsonb)),0) AS vehicle_n,
         c.duty,
