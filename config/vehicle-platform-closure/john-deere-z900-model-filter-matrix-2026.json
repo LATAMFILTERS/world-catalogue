@@ -1,5 +1,5 @@
 {
-  "status": "FILTER_MATRIX_COMPLETE",
+  "status": "FILTRATION_CANONICAL_COMPLETE",
   "updated_at": "2026-10-06",
   "scope": "John Deere Z900 commercial ZTrak model-level filtration coverage",
   "rule": "Each model must resolve engine oil, primary air, secondary air, fuel filtration variants, and transmission/hydraulic filter. Fuel variants are alternatives selected by installed fuel-system/serial configuration, not simultaneous requirements unless the Deere guide explicitly requires both.",
@@ -9,10 +9,10 @@
     "AM107423": "EL82015",
     "AM125424": "EL82024",
     "AM116304": "EF90094",
-    "UC16183": null,
-    "UC21217": null,
-    "MIU13224": null,
-    "MIA881446": null
+    "UC16183": "EF90094",
+    "UC21217": "EF90094",
+    "MIU13224": "EF91760",
+    "MIA881446": "EH65409"
   },
   "models": [
     {
@@ -259,5 +259,11 @@
     "https://www.deere.com/assets/pdfs/common/qrg/landscaping-and-grounds/rpg-tc572932-z955m-efi-ztrak-m-series-mower.pdf",
     "https://www.deere.com/assets/pdfs/common/qrg/z960m-ztrak-m-series-mower-with-decks.pdf",
     "https://shop.deere.com/us/product/MIA881446%3A-Transmission-Oil-Filter-with-Packing/p/MIA881446"
+  ],
+  "live_verification_status": "ALL_FILTER_REFERENCES_CANONICALIZED",
+  "remaining_non_filter_service_components": [
+    "MIA12832",
+    "MIU14301",
+    "UC23657"
   ]
 }
