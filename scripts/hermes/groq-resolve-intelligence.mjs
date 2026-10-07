@@ -4,9 +4,13 @@ import fs from 'node:fs';
 import path from 'node:path';
 import process from 'node:process';
 import crypto from 'node:crypto';
+import { createRequire } from 'node:module';
 import { resolveRealCandidatesInputDir, validateCandidate } from './hermes-core.mjs';
 import { HERMES_INDUSTRIAL_RESEARCH_POLICY } from './industrial-research-policy.mjs';
 import { assertZeroCostGroqAllowed } from './zero-cost-policy.mjs';
+
+const require = createRequire(import.meta.url);
+const { callLocalLlm } = require('../../lib/hermes-local-llm');
 
 const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
 export const HERMES_GROQ_DEFAULT_MODEL = 'openai/gpt-oss-120b';
@@ -130,25 +134,39 @@ function isReadyResolution(r) {
 }
 
 export async function resolveWithGroq({ candidate, evidenceBundle, apiKey, model = DEFAULT_MODEL, fetchImpl = globalThis.fetch }) {
-  if (!apiKey) throw new Error('GROQ_API_KEY is required for HERMES intelligence resolution');
+  const messages = [
+    { role: 'system', content: HERMES_GROQ_SYSTEM_PROMPT },
+    { role: 'user', content: JSON.stringify({ candidate, evidence_bundle: evidenceBundle }, null, 2).slice(0, MAX_SOURCE_CHARS) }
+  ];
+  const responseFormat = {
+    type: 'json_schema',
+    json_schema: {
+      name: 'hermes_intelligence_resolution',
+      strict: true,
+      schema: HERMES_GROQ_RESOLUTION_SCHEMA
+    }
+  };
+
+  const local = await callLocalLlm(messages, {
+    responseFormat,
+    maxTokens: 1800,
+    temperature: 0,
+    fetchImpl
+  });
+  if (local.ok) return cleanJson(local.content);
+
+  if (!apiKey) {
+    throw new Error(`HERMES_LOCAL_UNAVAILABLE_AND_GROQ_DISABLED: ${local.reason || 'local model unavailable'}`);
+  }
   assertZeroCostGroqAllowed();
+
   const payload = {
     model,
     temperature: 0,
     reasoning_effort: 'low',
     max_completion_tokens: 1800,
-    response_format: {
-      type: 'json_schema',
-      json_schema: {
-        name: 'hermes_intelligence_resolution',
-        strict: true,
-        schema: HERMES_GROQ_RESOLUTION_SCHEMA
-      }
-    },
-    messages: [
-      { role: 'system', content: HERMES_GROQ_SYSTEM_PROMPT },
-      { role: 'user', content: JSON.stringify({ candidate, evidence_bundle: evidenceBundle }, null, 2).slice(0, MAX_SOURCE_CHARS) }
-    ]
+    response_format: responseFormat,
+    messages
   };
   const response = await fetchImpl(GROQ_URL, {
     method: 'POST',
