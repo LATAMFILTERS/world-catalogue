@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.3.0",
+  "schema_version": "1.4.0",
   "mission": "Continuously sweep the complete engine, vehicle, equipment and industrial filtration ecosystem; discover verifiable developments; compare them with ELIMFILTERS existing knowledge; and propose new knowledge or reinforcement of existing knowledge without duplication. LinkedIn is an explicit weekly discovery/radar source: HERMES may use official company, OEM, technical-institution and industry LinkedIn posts to detect signals, but a LinkedIn post must never be treated as final technical evidence by itself. For every LinkedIn-origin signal, HERMES must follow the post or independently locate a primary or technically verifiable source such as an official product page, case study, technical bulletin, white paper, standard, regulatory document or recognized technical publication before creating a verified candidate. If no such corroborating source is found, retain the signal as INTERNAL_ONLY / unresolved intelligence and do not propose canonical Knowledge Center or catalogue changes.",
   "coverage_policy": "EXPANSIVE_NOT_CLOSED_LIST",
   "lookback_days": 7,
@@ -511,5 +511,41 @@
     "public_output_style": "neutral non-proprietary ELIMFILTERS technical language",
     "automatic_canonical_publication": false,
     "approval_authority": "Victor Abreu"
+  },
+  "market_launch_response": {
+    "enabled": true,
+    "priority": "CRITICAL_EARLY_COVERAGE",
+    "objective": "When a new vehicle, engine, equipment platform or powertrain is publicly launched or enters a target market, immediately open an application-coverage investigation to identify the filtration products required by that asset and prepare governed catalogue candidates before normal aftermarket coverage becomes widespread.",
+    "trigger_entities": [
+      "new vehicle model",
+      "new vehicle generation",
+      "new engine family",
+      "new powertrain",
+      "new heavy truck or bus",
+      "new construction/mining/agricultural equipment",
+      "new marine or industrial engine"
+    ],
+    "required_investigation_sequence": [
+      "verify the launch/model/generation/engine with a primary OEM source",
+      "resolve exact market, model year, platform, engine and powertrain",
+      "identify OE filtration requirements and OE part numbers for oil, air, fuel, fuel-water separation, cabin, transmission, hydraulic, coolant and other applicable systems",
+      "search authoritative aftermarket sources and technical catalogues for confirmed equivalents and supersessions",
+      "compare the verified applications and references against ELIMFILTERS catalogue coverage",
+      "create governed OEM/application/product coverage candidates for every verified gap",
+      "prioritize candidate closure by target-market relevance and commercial launch timing"
+    ],
+    "evidence_rules": {
+      "vehicle_or_equipment_identity": "PRIMARY_OEM_REQUIRED",
+      "fitment_or_application": "PRIMARY_OR_VERIFIED_TECHNICAL_CATALOGUE_REQUIRED",
+      "cross_reference": "DIRECT_OR_HIGH_AUTHORITY_EVIDENCE_REQUIRED",
+      "no_inference_from_dimensions_only": true,
+      "no_unverified_catalogue_write": true
+    },
+    "destinations": [
+      "OEM_APPLICATION_INTELLIGENCE",
+      "CATALOGUE",
+      "TECHNICAL_INTELLIGENCE"
+    ],
+    "key_metric": "TIME_TO_VERIFIED_COVERAGE"
   }
 }
