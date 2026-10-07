@@ -161,7 +161,7 @@ try {
   $env:AZURE_CLIENT_ID=Convert-SecureValue $vault.AZURE_CLIENT_ID; $env:AZURE_TENANT_ID=Convert-SecureValue $vault.AZURE_TENANT_ID; $env:AZURE_CLIENT_SECRET=Convert-SecureValue $vault.AZURE_CLIENT_SECRET; $env:HERMES_SENDER_EMAIL=Convert-SecureValue $vault.HERMES_SENDER_EMAIL; $env:HERMES_REVIEW_EMAIL=Convert-SecureValue $vault.HERMES_REVIEW_EMAIL
   $env:HERMES_EMAIL_PROVIDER='outlook'; $env:HERMES_EMAIL_LIVE='false'; $env:HERMES_COLLECTION_DRY_RUN='true'; $env:HERMES_BASELINE_MODE='false'; $env:HERMES_MAX_SOURCES_PER_RUN='35'
   $env:HERMES_CYCLE_ID=$cycle; $env:HERMES_STATE_ROOT=$StateRoot
-  if ($externalResearchEnabled) { $env:HERMES_GROQ_MODEL='groq/compound'; $env:HERMES_SWEEP_MODEL='groq/compound-mini' } else { Remove-Item Env:HERMES_GROQ_MODEL,Env:HERMES_SWEEP_MODEL -ErrorAction SilentlyContinue }
+  if ($externalResearchEnabled) { $env:HERMES_GROQ_MODEL='openai/gpt-oss-120b'; $env:HERMES_SWEEP_MODEL='openai/gpt-oss-120b' } else { Remove-Item Env:HERMES_GROQ_MODEL,Env:HERMES_SWEEP_MODEL -ErrorAction SilentlyContinue }
   $env:HERMES_SWEEP_DOMAIN_BATCH='1'; $env:HERMES_SWEEP_MAX_TOPICS_PER_REQUEST='4'; $env:HERMES_SWEEP_MAX_FINDINGS_PER_DOMAIN='2'; $env:HERMES_SWEEP_MAX_RETRIES='2'; $env:HERMES_SWEEP_MIN_INTERVAL_MS='10000'; $env:HERMES_SWEEP_MIN_429_BACKOFF_MS='10000'; $env:HERMES_SWEEP_BACKOFF_MS='10000'; $env:HERMES_SWEEP_MAX_BACKOFF_MS='60000'; $env:HERMES_SWEEP_BUDGET_MS='2100000'; $env:HERMES_RESEARCH_BUDGET_MS='1800000'; $env:HERMES_RESEARCH_RETRY_DELAY_MS='21600000'; $env:HERMES_GROQ_TPD_FALLBACK='true'
 
   $status=[ordered]@{}
