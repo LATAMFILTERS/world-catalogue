@@ -24,7 +24,7 @@ async function main() {
   process.env.HERMES_EMAIL_LIVE = 'true';
   process.env.HERMES_COLLECTION_DRY_RUN = 'false';
   process.env.HERMES_BASELINE_MODE = 'false';
-  process.env.HERMES_GROQ_MODEL = process.env.HERMES_GROQ_MODEL || 'groq/compound';
+  process.env.HERMES_GROQ_MODEL = process.env.HERMES_GROQ_MODEL || 'openai/gpt-oss-120b';
 
   const claim = await claimWeeklyRun({ nodeId: NODE_ID, role: ROLE, leaseHours: 6 });
   console.log('[hermes-failover] lease', JSON.stringify(claim));
