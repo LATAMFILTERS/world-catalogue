@@ -19,6 +19,8 @@ import {
 } from '../../scripts/hermes/groq-grounding-contract.mjs';
 
 test('resolver defaults to GPT-OSS 120B and strict structured output', async () => {
+  const previousFreeTier = process.env.HERMES_GROQ_FREE_TIER_CONFIRMED;
+  process.env.HERMES_GROQ_FREE_TIER_CONFIRMED = 'true';
   let requestBody;
   const resolution = {
     resolution_status: 'READY',
@@ -60,6 +62,8 @@ test('resolver defaults to GPT-OSS 120B and strict structured output', async () 
   assert.equal(requestBody.response_format.type, 'json_schema');
   assert.equal(requestBody.response_format.json_schema.strict, true);
   assert.deepEqual(requestBody.response_format.json_schema.schema, HERMES_GROQ_RESOLUTION_SCHEMA);
+  if (previousFreeTier === undefined) delete process.env.HERMES_GROQ_FREE_TIER_CONFIRMED;
+  else process.env.HERMES_GROQ_FREE_TIER_CONFIRMED = previousFreeTier;
 });
 
 test('grounding contract forbids fabrication, repetition and parallel truth', () => {
@@ -112,4 +116,22 @@ test('READY resolution still stops at human review', () => {
 
   assert.equal(next.workflow_status, 'PENDING_REVIEW');
   assert.equal(next.change_classification, 'GROQ_RESOLVED_VERIFIED_FINDING');
+});
+
+
+test('zero-cost policy blocks external Groq unless free tier is explicitly confirmed', async () => {
+  const previousFreeTier = process.env.HERMES_GROQ_FREE_TIER_CONFIRMED;
+  delete process.env.HERMES_GROQ_FREE_TIER_CONFIRMED;
+
+  await assert.rejects(
+    () => resolveWithGroq({
+      candidate: { entity_code: 'HERMES_REAL_COST_GUARD' },
+      evidenceBundle: [],
+      apiKey: 'test',
+      fetchImpl: async () => { throw new Error('fetch must not execute'); }
+    }),
+    /HERMES_ZERO_COST_BLOCK/
+  );
+
+  if (previousFreeTier !== undefined) process.env.HERMES_GROQ_FREE_TIER_CONFIRMED = previousFreeTier;
 });
