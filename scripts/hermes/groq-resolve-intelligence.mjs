@@ -6,6 +6,7 @@ import process from 'node:process';
 import crypto from 'node:crypto';
 import { resolveRealCandidatesInputDir, validateCandidate } from './hermes-core.mjs';
 import { HERMES_INDUSTRIAL_RESEARCH_POLICY } from './industrial-research-policy.mjs';
+import { assertZeroCostGroqAllowed } from './zero-cost-policy.mjs';
 
 const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
 export const HERMES_GROQ_DEFAULT_MODEL = 'openai/gpt-oss-120b';
@@ -130,6 +131,7 @@ function isReadyResolution(r) {
 
 export async function resolveWithGroq({ candidate, evidenceBundle, apiKey, model = DEFAULT_MODEL, fetchImpl = globalThis.fetch }) {
   if (!apiKey) throw new Error('GROQ_API_KEY is required for HERMES intelligence resolution');
+  assertZeroCostGroqAllowed();
   const payload = {
     model,
     temperature: 0,
