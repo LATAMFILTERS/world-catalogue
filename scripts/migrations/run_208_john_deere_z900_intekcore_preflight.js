@@ -34,7 +34,7 @@ function norm(v){ return String(v||'').replace(/[^A-Z0-9]/gi,'').toUpperCase(); 
       SELECT DISTINCT
         c.sku,c.codigo_base,c.filter_type,c.technology,
         c.canonical_source_brand,c.canonical_source_code,
-        c.product_length_mm,c.product_width_mm,c.product_height_mm,
+        c.product_length_mm,
         c.height_mm,c.outer_diameter_mm,
         pm.model_code,
         pe.element_code,
