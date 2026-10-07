@@ -49,7 +49,8 @@ async function main() {
     // AF25551 becomes codigo_base, so it must not also remain in alternates.
     // The verified Fleetguard authority is retained in codigo_base_governance metadata.
     const competitor = removeCode(src.competitor_codes, 'AF25551');
-    const oem = ensureRef(src.oem_codes, 'JOHN-DEERE', 'M131802');
+    const oem = ensureRef(removeCode(src.oem_codes, 'M131802'), 'JOHN-DEERE', 'M131802');
+    const competitorNoJohnDeere = removeCode(competitor, 'M131802');
     const enrichment = { ...(src.enrichment_data || {}) };
     enrichment.codigo_base_governance = {
       ...(enrichment.codigo_base_governance || {}),
@@ -66,7 +67,7 @@ async function main() {
 
     await db.query(
       "UPDATE public.elimfilters_catalog SET sku=$1,codigo_base=$2,oem_codes=$3::jsonb,competitor_codes=$4::jsonb,enrichment_data=$5::jsonb WHERE sku=$6",
-      [CANONICAL.M131802.sku, CANONICAL.M131802.codigo_base, JSON.stringify(oem), JSON.stringify(competitor), JSON.stringify(enrichment), CANONICAL.M131802.source_sku]
+      [CANONICAL.M131802.sku, CANONICAL.M131802.codigo_base, JSON.stringify(oem), JSON.stringify(competitorNoJohnDeere), JSON.stringify(enrichment), CANONICAL.M131802.source_sku]
     );
     report.remap = { from: CANONICAL.M131802.source_sku, to: CANONICAL.M131802.sku, codigo_base: CANONICAL.M131802.codigo_base };
 
@@ -91,8 +92,9 @@ async function main() {
       const canonicalRow = (await db.query("SELECT sku,codigo_base,oem_codes,competitor_codes,canonical_source_brand,canonical_source_code FROM public.elimfilters_catalog WHERE sku=$1 FOR UPDATE", [wanted.sku])).rows[0];
       if (!canonicalRow || norm(canonicalRow.codigo_base) !== norm(wanted.codigo_base)) throw new Error(code + '_CANONICAL_ROW_MISMATCH');
 
-      const nextOem = ensureRef(canonicalRow.oem_codes, 'JOHN-DEERE', code);
-      await db.query("UPDATE public.elimfilters_catalog SET oem_codes=$1::jsonb WHERE sku=$2", [JSON.stringify(nextOem), wanted.sku]);
+      const nextOem = ensureRef(removeCode(canonicalRow.oem_codes, code), 'JOHN-DEERE', code);
+      const nextComp = removeCode(canonicalRow.competitor_codes, code);
+      await db.query("UPDATE public.elimfilters_catalog SET oem_codes=$1::jsonb,competitor_codes=$2::jsonb WHERE sku=$3", [JSON.stringify(nextOem), JSON.stringify(nextComp), wanted.sku]);
       report.cleaned[code] = touched;
     }
 
