@@ -120,6 +120,20 @@ async function verifyFleetguardExact(code,preferredUrl){
       if(sources.length>1||occupied) for(const source of sources) collisionRows.push({source,target,occupied});
     }
 
+    let deferredDonaldson=new Set();
+    if(FOCUS==='donaldson'){
+      const hasQueue=(await db.query("SELECT to_regclass('public.catalog_codigo_base_sanitation_queue') AS r")).rows[0]?.r;
+      if(hasQueue){
+        const q=(await db.query(`
+          SELECT sku
+          FROM public.catalog_codigo_base_sanitation_queue
+          WHERE last_error='RUN_220_DONALDSON_UNRESOLVED'
+            AND last_attempt_at > now() - interval '7 days'
+        `)).rows;
+        deferredDonaldson=new Set(q.map(x=>String(x.sku).toUpperCase()));
+      }
+    }
+
     const selected=collisionRows.filter(item=>{
       const r=item.source;
       const gov=governanceFrom(r);
@@ -127,7 +141,7 @@ async function verifyFleetguardExact(code,preferredUrl){
       const comp=refs(r.competitor_codes);
       const hasFg=comp.some(x=>x.manufacturer==='FLEETGUARD');
       const needsDonaldson=!(gov.primary_manufacturer_verified===true && canon==='DONALDSON' && normalizeCode(r.canonical_source_code));
-      if(FOCUS==='donaldson') return needsDonaldson;
+      if(FOCUS==='donaldson') return needsDonaldson && !deferredDonaldson.has(String(r.sku).toUpperCase());
       if(FOCUS==='fleetguard') return !needsDonaldson && hasFg;
       return needsDonaldson || hasFg;
     }).slice(0,LIMIT);
@@ -170,6 +184,18 @@ async function verifyFleetguardExact(code,preferredUrl){
             current_base:r.codigo_base,
             url:verified.url
           });
+          if(EXECUTE){
+            const hasQueue=(await db.query("SELECT to_regclass('public.catalog_codigo_base_sanitation_queue') AS r")).rows[0]?.r;
+            if(hasQueue){
+              await db.query(`
+                UPDATE public.catalog_codigo_base_sanitation_queue
+                SET last_error=NULL,
+                    last_attempt_at=now(),
+                    updated_at=now()
+                WHERE sku=$1
+              `,[r.sku]);
+            }
+          }
 
           if(verifiedMatchesBase){
             nextGov={
@@ -270,6 +296,19 @@ async function verifyFleetguardExact(code,preferredUrl){
         }else{
           report.donaldson.unresolved++;
           report.details.push({sku:r.sku,kind:'DONALDSON',status:'UNRESOLVED'});
+          if(EXECUTE){
+            const hasQueue=(await db.query("SELECT to_regclass('public.catalog_codigo_base_sanitation_queue') AS r")).rows[0]?.r;
+            if(hasQueue){
+              await db.query(`
+                UPDATE public.catalog_codigo_base_sanitation_queue
+                SET attempts=attempts+1,
+                    last_attempt_at=now(),
+                    last_error='RUN_220_DONALDSON_UNRESOLVED',
+                    updated_at=now()
+                WHERE sku=$1
+              `,[r.sku]);
+            }
+          }
         }
       }
 
