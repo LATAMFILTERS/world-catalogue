@@ -29,6 +29,8 @@ test('HERMES mission covers the complete filtration intelligence ecosystem', () 
 });
 
 test('industry sweep creates one verified candidate and suppresses repeated evidence', async () => {
+  const previousFreeTier = process.env.HERMES_GROQ_FREE_TIER_CONFIRMED;
+  process.env.HERMES_GROQ_FREE_TIER_CONFIRMED = 'true';
   const outputDir = fs.mkdtempSync(path.join(os.tmpdir(), 'hermes-sweep-'));
   // Isolated from the real hermes/state/ directory -- writing checkpoints there could make the
   // real scheduled sweep believe production work for this cycle was already done (2026-09-10 incident).
@@ -78,9 +80,13 @@ test('industry sweep creates one verified candidate and suppresses repeated evid
   assert.equal(candidate.research_resolution.status, 'VERIFIED');
   assert.equal(candidate.research_resolution.knowledge_action, 'UPDATE_REINFORCE');
   assert.equal(candidate.research_resolution.destination, 'KNOWLEDGE_CENTER');
+  if (previousFreeTier === undefined) delete process.env.HERMES_GROQ_FREE_TIER_CONFIRMED;
+  else process.env.HERMES_GROQ_FREE_TIER_CONFIRMED = previousFreeTier;
 });
 
 test('industry sweep splits an oversized 413 domain request and preserves the recovered batch', async () => {
+  const previousFreeTier = process.env.HERMES_GROQ_FREE_TIER_CONFIRMED;
+  process.env.HERMES_GROQ_FREE_TIER_CONFIRMED = 'true';
   const outputDir = fs.mkdtempSync(path.join(os.tmpdir(), 'hermes-sweep-413-'));
   // Isolated from the real hermes/state/ directory -- this test doesn't override `now`, so
   // without this it writes checkpoints straight into the real current-week production cycle file.
@@ -114,4 +120,6 @@ test('industry sweep splits an oversized 413 domain request and preserves the re
   assert.equal(summary.quota_exhausted, false);
   assert.equal(summary.created, 0);
   assert.equal(groqCalls, mission.domains.length + 2, 'one rejected request is replaced by two narrower requests');
+  if (previousFreeTier === undefined) delete process.env.HERMES_GROQ_FREE_TIER_CONFIRMED;
+  else process.env.HERMES_GROQ_FREE_TIER_CONFIRMED = previousFreeTier;
 });
