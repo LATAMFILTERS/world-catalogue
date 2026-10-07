@@ -8,8 +8,31 @@ import { resolveRealCandidatesInputDir, validateCandidate } from './hermes-core.
 import { HERMES_INDUSTRIAL_RESEARCH_POLICY } from './industrial-research-policy.mjs';
 
 const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
-const DEFAULT_MODEL = process.env.HERMES_GROQ_MODEL || 'llama-3.3-70b-versatile';
+export const HERMES_GROQ_DEFAULT_MODEL = 'openai/gpt-oss-120b';
+const DEFAULT_MODEL = process.env.HERMES_GROQ_MODEL || HERMES_GROQ_DEFAULT_MODEL;
 const MAX_SOURCE_CHARS = 24000;
+
+export const HERMES_GROQ_RESOLUTION_SCHEMA = {
+  type: 'object',
+  additionalProperties: false,
+  properties: {
+    resolution_status: { type: 'string', enum: ['READY', 'IRRELEVANT', 'RESOLUTION_BLOCKED'] },
+    finding_type: { type: 'string', enum: ['OEM', 'AFTERMARKET', 'FILTER_MEDIA', 'STANDARD', 'TECHNICAL', 'SUPPLIER', 'INTERNAL_WATCH'] },
+    specific_item: { type: 'string' },
+    published_at: { type: ['string', 'null'] },
+    evidence_url: { type: ['string', 'null'] },
+    evidence_title: { type: ['string', 'null'] },
+    facts: { type: 'array', items: { type: 'string' } },
+    neutral_fact: { type: 'string' },
+    affected_entities: { type: 'array', items: { type: 'string' } },
+    destination: { type: 'string', enum: ['CATALOGUE', 'KNOWLEDGE_CENTER', 'TECHNICAL_INTELLIGENCE', 'TECHNOLOGY_WATCH', 'STANDARDS', 'OEM_APPLICATION_INTELLIGENCE', 'INTERNAL_ONLY'] },
+    relevance: { type: 'string' },
+    proposed_action: { type: 'string' },
+    confidence: { type: 'number', minimum: 0, maximum: 1 },
+    blocked_reason: { type: ['string', 'null'] }
+  },
+  required: ['resolution_status', 'finding_type', 'specific_item', 'published_at', 'evidence_url', 'evidence_title', 'facts', 'neutral_fact', 'affected_entities', 'destination', 'relevance', 'proposed_action', 'confidence', 'blocked_reason']
+};
 
 function readJson(file) {
   return JSON.parse(fs.readFileSync(file, 'utf8'));
@@ -43,6 +66,15 @@ ELIMFILTERS develops and sells filtration and asset-protection solutions for eng
 - Filter media, contamination control, cleanliness, maintenance, reliability and technical standards.
 - Agriculture, automotive, bus/coach, construction, manufacturing, marine, mining, oil & gas, power generation, railway, truck fleets and waste/municipal equipment.
 - Engine families, equipment models, model years, platforms, specifications, applications and relationships that can improve ELIMFILTERS catalogue intelligence or Knowledge Center coverage.
+
+RESPONSE DISCIPLINE
+- Answer only the intelligence question represented by the supplied candidate and evidence. Do not add background, recommendations, history or adjacent topics unless required to classify the finding.
+- Every item in facts must be directly supported by the supplied evidence. Do not convert inference into fact.
+- If a material claim is not supported, omit it from facts. If the missing claim prevents a reliable answer, use RESOLUTION_BLOCKED.
+- Never infer or fabricate a SKU, OEM cross-reference, compatibility, dimension, service interval, date or specification.
+- PostgreSQL remains the only ELIMFILTERS SKU authority. This resolver may describe source-reported part numbers only as evidence; it cannot authorize an ELIMFILTERS SKU.
+- Use concise neutral_fact, relevance and proposed_action fields. One decision, no essay.
+- Treat uncertainty explicitly: FACT = supported by evidence; INFERENCE = allowed only inside relevance/proposed_action and must be clearly framed; UNKNOWN = RESOLUTION_BLOCKED when required for the decision.
 
 SOURCE PRIORITY
 1. Primary OEM/manufacturer/standards-body source.
@@ -100,8 +132,17 @@ export async function resolveWithGroq({ candidate, evidenceBundle, apiKey, model
   if (!apiKey) throw new Error('GROQ_API_KEY is required for HERMES intelligence resolution');
   const payload = {
     model,
-    temperature: 0.05,
-    response_format: { type: 'json_object' },
+    temperature: 0,
+    reasoning_effort: 'low',
+    max_completion_tokens: 1800,
+    response_format: {
+      type: 'json_schema',
+      json_schema: {
+        name: 'hermes_intelligence_resolution',
+        strict: true,
+        schema: HERMES_GROQ_RESOLUTION_SCHEMA
+      }
+    },
     messages: [
       { role: 'system', content: HERMES_GROQ_SYSTEM_PROMPT },
       { role: 'user', content: JSON.stringify({ candidate, evidence_bundle: evidenceBundle }, null, 2).slice(0, MAX_SOURCE_CHARS) }
