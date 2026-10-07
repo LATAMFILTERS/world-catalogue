@@ -123,7 +123,16 @@ function evidenceKey(e){ return normalizeManufacturer(e.manufacturer)+'|'+normal
           const code=fleetguard[0].code;
           const target=expectedSkuFromCode(r.sku,code);
           const occ=bySku.get(target)||null;
-          if(!occ){
+          const donaldsonCollisionProven=Boolean(
+            item.occupied &&
+            normalizeCode(item.occupied.codigo_base)!==normalizeCode(r.codigo_base) &&
+            normalizeCode(item.occupied.canonical_source_code)!==normalizeCode(r.canonical_source_code)
+          );
+          if(!donaldsonCollisionProven){
+            baseEntry.missing.push(item.source_count>1
+              ? 'MULTIPLE_SOURCE_DONALDSON_TARGET_REQUIRES_PRIMARY_SELECTION'
+              : 'DONALDSON_COLLISION_NOT_PROVEN');
+          }else if(!occ){
             baseEntry.qualification='AUTO_READY_FLEETGUARD';
             baseEntry.candidate={manufacturer:'FLEETGUARD',code,source_column:'COMPETITOR_CODES',final_sku:target};
           }else{
