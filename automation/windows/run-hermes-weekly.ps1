@@ -51,7 +51,7 @@ try {
   $env:HERMES_EMAIL_LIVE = 'true'
   $env:HERMES_COLLECTION_DRY_RUN = 'false'
   $env:HERMES_BASELINE_MODE = 'false'
-  $env:HERMES_GROQ_MODEL = 'groq/compound'
+  $env:HERMES_GROQ_MODEL = 'openai/gpt-oss-120b'
   $env:HERMES_CATALOGUE_QUALITY_SYNC = 'true'
   $env:HERMES_CATALOGUE_RESEARCH_LIMIT = '1'
   $env:HERMES_CATALOGUE_RESEARCH_PACING_MS = '20000'
