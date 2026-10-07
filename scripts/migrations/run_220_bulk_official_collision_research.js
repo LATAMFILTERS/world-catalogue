@@ -87,7 +87,8 @@ async function verifyFleetguardExact(code,preferredUrl){
     donaldson:{attempted:0,verified:0,unresolved:0},
     fleetguard:{attempted:0,verified:0,unresolved:0},
     details:[],
-    mutations:{catalog:0,evidence:0}
+    mutations:{catalog:0,evidence:0},
+    evidence_only:{donaldson_code_differs_from_base:0}
   };
 
   try{
@@ -153,43 +154,106 @@ async function verifyFleetguardExact(code,preferredUrl){
         if(verified){
           report.donaldson.verified++;
           const now=new Date().toISOString();
-          nextGov={
-            ...nextGov,
-            state:'CANONICAL_VERIFIED',
-            governance_state:'CANONICAL_VERIFIED',
-            required_authority:'VERIFIED_DONALDSON',
-            primary_manufacturer_verified:true,
-            approved_manufacturer:'DONALDSON',
-            approved_codigo_base:r.codigo_base,
-            current_codigo_base:r.codigo_base,
-            evidence_authority:'OFFICIAL_DONALDSON',
-            evidence_kind:verified.evidence_kind,
-            evidence_url:verified.url,
-            evidence_hash:verified.hash,
-            verified_at:now
-          };
-          nextData={...nextData,codigo_base_governance:nextGov};
-          patch={
-            ...patch,
-            canonical_source_brand:'DONALDSON',
-            canonical_source_code:verified.code,
-            canonical_source_url:verified.url,
-            canonical_source_status:'VERIFIED',
-            canonical_verified_at:now,
-            canonical_evidence:{source:verified.evidence_kind,source_url:verified.url,evidence_hash:verified.hash,migration:'220_BULK_OFFICIAL_COLLISION_RESEARCH'}
-          };
-          changed=true;
+          const verifiedMatchesBase=normalizeCode(verified.code)===normalizeCode(r.codigo_base);
+
+          report.details.push({
+            sku:r.sku,
+            kind:'DONALDSON',
+            status:verifiedMatchesBase?'VERIFIED_CANONICAL_BASE':'VERIFIED_EVIDENCE_ONLY',
+            code:verified.code,
+            current_base:r.codigo_base,
+            url:verified.url
+          });
+
+          if(verifiedMatchesBase){
+            nextGov={
+              ...nextGov,
+              state:'CANONICAL_VERIFIED',
+              governance_state:'CANONICAL_VERIFIED',
+              required_authority:'VERIFIED_DONALDSON',
+              primary_manufacturer_verified:true,
+              approved_manufacturer:'DONALDSON',
+              approved_codigo_base:r.codigo_base,
+              current_codigo_base:r.codigo_base,
+              evidence_authority:'OFFICIAL_DONALDSON',
+              evidence_kind:verified.evidence_kind,
+              evidence_url:verified.url,
+              evidence_hash:verified.hash,
+              verified_at:now
+            };
+            nextData={...nextData,codigo_base_governance:nextGov};
+            patch={
+              ...patch,
+              canonical_source_brand:'DONALDSON',
+              canonical_source_code:verified.code,
+              canonical_source_url:verified.url,
+              canonical_source_status:'VERIFIED',
+              canonical_verified_at:now,
+              canonical_evidence:{source:verified.evidence_kind,source_url:verified.url,evidence_hash:verified.hash,migration:'220_BULK_OFFICIAL_COLLISION_RESEARCH'}
+            };
+            changed=true;
+          }else{
+            report.evidence_only.donaldson_code_differs_from_base++;
+          }
 
           if(EXECUTE){
-            await db.query(`
-              INSERT INTO public.catalog_codigo_base_evidence
-                (sku,evidence_kind,authority,manufacturer,reference_code,normalized_reference,source_url,evidence_hash,verified_at,metadata)
-              VALUES($1,$2,'OFFICIAL_DONALDSON','DONALDSON',$3,$4,$5,$6,$7,$8::jsonb)
-              ON CONFLICT DO NOTHING
-            `,[r.sku,verified.evidence_kind,verified.code,normalizeCode(verified.code),verified.url,verified.hash,now,JSON.stringify({migration:'220_BULK_OFFICIAL_COLLISION_RESEARCH'})]);
-            report.mutations.evidence++;
+            await db.query('BEGIN ISOLATION LEVEL SERIALIZABLE');
+            try{
+              const locked=(await db.query('SELECT * FROM public.elimfilters_catalog WHERE sku=$1 FOR UPDATE',[r.sku])).rows[0];
+              if(!locked) throw new Error('SOURCE_MISSING');
+
+              const evidence=await db.query(`
+                INSERT INTO public.catalog_codigo_base_evidence
+                  (sku,evidence_kind,authority,manufacturer,reference_code,normalized_reference,source_url,evidence_hash,verified_at,metadata)
+                VALUES($1,$2,'OFFICIAL_DONALDSON','DONALDSON',$3,$4,$5,$6,$7,$8::jsonb)
+                ON CONFLICT DO NOTHING
+                RETURNING id
+              `,[
+                r.sku,verified.evidence_kind,verified.code,normalizeCode(verified.code),
+                verified.url,verified.hash,now,
+                JSON.stringify({
+                  migration:'220_BULK_OFFICIAL_COLLISION_RESEARCH',
+                  current_codigo_base:r.codigo_base,
+                  canonical_base_match:verifiedMatchesBase
+                })
+              ]);
+              report.mutations.evidence+=evidence.rowCount;
+
+              if(verifiedMatchesBase){
+                const mergedData={...(locked.enrichment_data||{}),codigo_base_governance:nextGov};
+                assertGovernedCatalogPatch(locked,{...patch,enrichment_data:mergedData});
+                const u=await db.query(`
+                  UPDATE public.elimfilters_catalog
+                  SET enrichment_data=$1::jsonb,
+                      canonical_source_brand=$2,
+                      canonical_source_code=$3,
+                      canonical_source_url=$4,
+                      canonical_source_status=$5,
+                      canonical_verified_at=$6::timestamptz,
+                      canonical_evidence=$7::jsonb
+                  WHERE sku=$8
+                    AND codigo_base IS NOT DISTINCT FROM $9
+                  RETURNING sku
+                `,[
+                  JSON.stringify(mergedData),
+                  patch.canonical_source_brand,
+                  patch.canonical_source_code,
+                  patch.canonical_source_url,
+                  patch.canonical_source_status,
+                  patch.canonical_verified_at,
+                  JSON.stringify(patch.canonical_evidence),
+                  r.sku,r.codigo_base
+                ]);
+                if(u.rowCount!==1) throw new Error('CATALOG_UPDATE_FAILED');
+                report.mutations.catalog++;
+              }
+
+              await db.query('COMMIT');
+            }catch(e){
+              await db.query('ROLLBACK');
+              throw e;
+            }
           }
-          report.details.push({sku:r.sku,kind:'DONALDSON',status:'VERIFIED',code:verified.code,url:verified.url});
         }else{
           report.donaldson.unresolved++;
           report.details.push({sku:r.sku,kind:'DONALDSON',status:'UNRESOLVED'});
@@ -207,13 +271,23 @@ async function verifyFleetguardExact(code,preferredUrl){
         report.fleetguard.verified++;
         const now=new Date().toISOString();
         if(EXECUTE){
-          await db.query(`
-            INSERT INTO public.catalog_codigo_base_evidence
-              (sku,evidence_kind,authority,manufacturer,reference_code,normalized_reference,source_url,evidence_hash,verified_at,metadata)
-            VALUES($1,$2,'OFFICIAL_FLEETGUARD','FLEETGUARD',$3,$4,$5,$6,$7,$8::jsonb)
-            ON CONFLICT DO NOTHING
-          `,[r.sku,fgVerified.evidence_kind,fgVerified.code,normalizeCode(fgVerified.code),fgVerified.url,fgVerified.hash,now,JSON.stringify({migration:'220_BULK_OFFICIAL_COLLISION_RESEARCH',purpose:'collision_fallback_candidate'})]);
-          report.mutations.evidence++;
+          await db.query('BEGIN ISOLATION LEVEL SERIALIZABLE');
+          try{
+            const locked=(await db.query('SELECT sku FROM public.elimfilters_catalog WHERE sku=$1 FOR UPDATE',[r.sku])).rows[0];
+            if(!locked) throw new Error('SOURCE_MISSING');
+            const evidence=await db.query(`
+              INSERT INTO public.catalog_codigo_base_evidence
+                (sku,evidence_kind,authority,manufacturer,reference_code,normalized_reference,source_url,evidence_hash,verified_at,metadata)
+              VALUES($1,$2,'OFFICIAL_FLEETGUARD','FLEETGUARD',$3,$4,$5,$6,$7,$8::jsonb)
+              ON CONFLICT DO NOTHING
+              RETURNING id
+            `,[r.sku,fgVerified.evidence_kind,fgVerified.code,normalizeCode(fgVerified.code),fgVerified.url,fgVerified.hash,now,JSON.stringify({migration:'220_BULK_OFFICIAL_COLLISION_RESEARCH',purpose:'collision_fallback_candidate'})]);
+            report.mutations.evidence+=evidence.rowCount;
+            await db.query('COMMIT');
+          }catch(e){
+            await db.query('ROLLBACK');
+            throw e;
+          }
         }
         report.details.push({sku:r.sku,kind:'FLEETGUARD',status:'VERIFIED',code:fgVerified.code,url:fgVerified.url});
       }else if(fgRefs.length){
@@ -221,42 +295,7 @@ async function verifyFleetguardExact(code,preferredUrl){
         report.details.push({sku:r.sku,kind:'FLEETGUARD',status:'UNRESOLVED',candidate_count:fgRefs.length});
       }
 
-      if(changed && EXECUTE){
-        await db.query('BEGIN ISOLATION LEVEL SERIALIZABLE');
-        try{
-          const locked=(await db.query('SELECT * FROM public.elimfilters_catalog WHERE sku=$1 FOR UPDATE',[r.sku])).rows[0];
-          if(!locked) throw new Error('SOURCE_MISSING');
-          const mergedData={...(locked.enrichment_data||{}),codigo_base_governance:nextGov};
-          assertGovernedCatalogPatch(locked,{...patch,enrichment_data:mergedData});
-          const u=await db.query(`
-            UPDATE public.elimfilters_catalog
-            SET enrichment_data=$1::jsonb,
-                canonical_source_brand=COALESCE($2,canonical_source_brand),
-                canonical_source_code=COALESCE($3,canonical_source_code),
-                canonical_source_url=COALESCE($4,canonical_source_url),
-                canonical_source_status=COALESCE($5,canonical_source_status),
-                canonical_verified_at=COALESCE($6::timestamptz,canonical_verified_at),
-                canonical_evidence=COALESCE($7::jsonb,canonical_evidence)
-            WHERE sku=$8
-            RETURNING sku
-          `,[
-            JSON.stringify(mergedData),
-            patch.canonical_source_brand||null,
-            patch.canonical_source_code||null,
-            patch.canonical_source_url||null,
-            patch.canonical_source_status||null,
-            patch.canonical_verified_at||null,
-            patch.canonical_evidence?JSON.stringify(patch.canonical_evidence):null,
-            r.sku
-          ]);
-          if(u.rowCount!==1) throw new Error('CATALOG_UPDATE_FAILED');
-          await db.query('COMMIT');
-          report.mutations.catalog++;
-        }catch(e){
-          await db.query('ROLLBACK');
-          throw e;
-        }
-      }
+
     }
 
     report.summary={
@@ -268,7 +307,8 @@ async function verifyFleetguardExact(code,preferredUrl){
       fleetguard_verified:report.fleetguard.verified,
       fleetguard_unresolved:report.fleetguard.unresolved,
       catalog_mutations:report.mutations.catalog,
-      evidence_mutations:report.mutations.evidence
+      evidence_mutations:report.mutations.evidence,
+      donaldson_evidence_only_code_differs_from_base:report.evidence_only.donaldson_code_differs_from_base
     };
     console.log(JSON.stringify(report,null,2));
   }finally{
