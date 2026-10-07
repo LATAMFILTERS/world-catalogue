@@ -4,7 +4,7 @@ import path from 'node:path';
 import process from 'node:process';
 import { createRequire } from 'node:module';
 import { pathToFileURL } from 'node:url';
-import { latestWeeklyReport, resolveMailConfig } from './send-weekly-email.mjs';
+import { latestWeeklyReport, resolveMailConfig, buildMessage } from './send-weekly-email.mjs';
 import { validateWeeklyEmailContract, validateRenderedWeeklyEmail } from './weekly-email-integrity.mjs';
 
 const require = createRequire(import.meta.url);
@@ -139,16 +139,67 @@ export async function sendWeeklyActionEmail({ reportsDir = 'hermes/reports', env
   const contract = validateWeeklyEmailContract(report.data);
 
   if (contract.review_ready === 0 || reviewReadyCount(report.data) === 0) {
+    // A weekly intelligence digest is an executive reporting obligation, not merely
+    // an approval queue. Previously this branch returned success without transporting
+    // any email, which let the Lenovo scheduler mark the week as sent even though
+    // Victor received nothing whenever all findings were still research-pending.
+    const digest = buildMessage(report, config);
+
+    if (!config.live) {
+      const preview = path.join(path.resolve(reportsDir), `hermes-weekly-digest-preview-${digest.date}.html`);
+      fs.writeFileSync(preview, digest.html, 'utf8');
+      return {
+        outcome: 'DRY_RUN',
+        preview,
+        provider: config.provider,
+        recipient: config.recipient || null,
+        review_ready: 0,
+        queued_pending: contract.needs_research,
+        duplicates: contract.duplicates,
+        invalid: contract.invalid,
+        report: report.name,
+        actionable: false,
+        informational_digest: true,
+      };
+    }
+
+    if (config.provider === 'gmail') {
+      const createTransport = gmailTransportFactory || require('nodemailer').createTransport;
+      const transport = createTransport({ service: 'gmail', auth: { user: config.senderEmail, pass: config.gmailAppPassword } });
+      await transport.verify();
+      const result = await transport.sendMail({
+        from: digest.from,
+        to: digest.to,
+        subject: digest.subject,
+        text: digest.text,
+        html: digest.html
+      });
+      return {
+        outcome: 'SENT',
+        provider: 'gmail',
+        recipient: config.recipient,
+        message_id: result.messageId || null,
+        review_ready: 0,
+        queued_pending: contract.needs_research,
+        actionable: false,
+        informational_digest: true,
+      };
+    }
+
+    const OutlookMailService = outlookFactory || require('../../lib/outlook-mail.js');
+    const mail = new OutlookMailService();
+    mail.validateConfig();
+    if (config.senderEmail) mail.emailMap.default = config.senderEmail;
+    await mail.send(config.recipient, digest.subject, digest.html, digest.text, 'default');
     return {
-      outcome: 'NO_REVIEW_READY',
-      provider: config.provider,
-      recipient: config.recipient || null,
+      outcome: 'SENT',
+      provider: 'outlook',
+      recipient: config.recipient,
+      message_id: null,
       review_ready: 0,
       queued_pending: contract.needs_research,
-      duplicates: contract.duplicates,
-      invalid: contract.invalid,
-      report: report.name,
       actionable: false,
+      informational_digest: true,
     };
   }
 
