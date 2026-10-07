@@ -51,7 +51,7 @@ try {
   $env:HERMES_EMAIL_LIVE = 'true'
   $env:HERMES_COLLECTION_DRY_RUN = 'false'
   $env:HERMES_BASELINE_MODE = 'false'
-  $env:HERMES_GROQ_MODEL = 'groq/compound'
+  $env:HERMES_GROQ_MODEL = 'openai/gpt-oss-120b'
   $env:HERMES_CATALOGUE_QUALITY_SYNC = 'true'
   $env:HERMES_CATALOGUE_RESEARCH_LIMIT = '1'
   $env:HERMES_CATALOGUE_RESEARCH_PACING_MS = '20000'
@@ -96,6 +96,19 @@ try {
   git reset --hard origin/main | Tee-Object -FilePath $log -Append
   if ($LASTEXITCODE -ne 0) { throw 'git reset --hard origin/main failed' }
   git clean -fd -e hermes/ -e seo-geo-audit-out/ | Tee-Object -FilePath $log -Append
+
+  $localLlmInstaller = Join-Path $RepoPath 'automation\windows\install-hermes-local-llm.ps1'
+  if (Test-Path $localLlmInstaller) {
+    "[$(Get-Date -Format o)] Ensuring HERMES local zero-cost LLM runtime." | Tee-Object -FilePath $log -Append
+    & powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File $localLlmInstaller 2>&1 | Tee-Object -FilePath $log -Append
+    if ($LASTEXITCODE -ne 0) { throw 'HERMES local LLM bootstrap failed' }
+  } else {
+    throw "HERMES local LLM installer not found: $localLlmInstaller"
+  }
+
+  $env:HERMES_LOCAL_LLM_ENABLED = 'true'
+  $env:HERMES_ZERO_COST_REQUIRED = 'true'
+  $env:HERMES_GROQ_FREE_TIER_CONFIRMED = 'false'
 
   node scripts\validate-hybrid-runtime.js | Tee-Object -FilePath $log -Append
   if ($LASTEXITCODE -ne 0) { throw 'Hybrid runtime validation failed' }

@@ -5,7 +5,7 @@ import path from 'node:path';
 import process from 'node:process';
 
 const ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions';
-const MODEL = process.env.HERMES_GROQ_MODEL || 'groq/compound';
+const MODEL = process.env.HERMES_GROQ_MODEL || 'openai/gpt-oss-120b';
 const INPUT = path.resolve(process.env.HERMES_HD_PACKAGING_PLAN || 'hermes/hd-packaging/latest.json');
 const OUTPUT_DIR = path.resolve(process.env.HERMES_HD_PACKAGING_EVIDENCE_DIR || 'hermes/official-evidence');
 const STATE_DIR = path.resolve('hermes/state/hd-packaging');
