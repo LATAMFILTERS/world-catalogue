@@ -46,7 +46,9 @@ async function main() {
     const naturalDonaldson = (await db.query("SELECT sku,codigo_base FROM public.elimfilters_catalog WHERE sku='EA11575'")).rows[0];
     if (!naturalDonaldson || norm(naturalDonaldson.codigo_base) === norm('P821575')) throw new Error('M131802_DONALDSON_COLLISION_NOT_PROVEN');
 
-    const competitor = ensureRef(src.competitor_codes, 'FLEETGUARD', 'AF25551');
+    // AF25551 becomes codigo_base, so it must not also remain in alternates.
+    // The verified Fleetguard authority is retained in codigo_base_governance metadata.
+    const competitor = removeCode(src.competitor_codes, 'AF25551');
     const oem = ensureRef(src.oem_codes, 'JOHN-DEERE', 'M131802');
     const enrichment = { ...(src.enrichment_data || {}) };
     enrichment.codigo_base_governance = {
