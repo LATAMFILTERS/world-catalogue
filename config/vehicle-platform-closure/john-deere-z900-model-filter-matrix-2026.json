@@ -1,0 +1,263 @@
+{
+  "status": "FILTER_MATRIX_COMPLETE",
+  "updated_at": "2026-10-06",
+  "scope": "John Deere Z900 commercial ZTrak model-level filtration coverage",
+  "rule": "Each model must resolve engine oil, primary air, secondary air, fuel filtration variants, and transmission/hydraulic filter. Fuel variants are alternatives selected by installed fuel-system/serial configuration, not simultaneous requirements unless the Deere guide explicitly requires both.",
+  "canonical_skus": {
+    "M131802": "EA15551",
+    "M131803": "EA12858",
+    "AM107423": "EL82015",
+    "AM125424": "EL82024",
+    "AM116304": "EF90094",
+    "UC16183": null,
+    "UC21217": null,
+    "MIU13224": null,
+    "MIA881446": null
+  },
+  "models": [
+    {
+      "model": "Z915B",
+      "filters": {
+        "engine_oil": [
+          "AM125424"
+        ],
+        "air_primary": [
+          "M131802"
+        ],
+        "air_secondary": [
+          "M131803"
+        ],
+        "fuel_variants": [
+          "AM116304",
+          "UC16183"
+        ],
+        "transmission_hydraulic": [
+          "MIA881446"
+        ]
+      }
+    },
+    {
+      "model": "Z915E",
+      "filters": {
+        "engine_oil": [
+          "AM125424"
+        ],
+        "air_primary": [
+          "M131802"
+        ],
+        "air_secondary": [
+          "M131803"
+        ],
+        "fuel_variants": [
+          "AM116304",
+          "UC16183"
+        ],
+        "transmission_hydraulic": [
+          "MIA881446"
+        ]
+      }
+    },
+    {
+      "model": "Z920M",
+      "filters": {
+        "engine_oil": [
+          "AM125424"
+        ],
+        "air_primary": [
+          "M131802"
+        ],
+        "air_secondary": [
+          "M131803"
+        ],
+        "fuel_variants": [
+          "AM116304",
+          "UC21217"
+        ],
+        "transmission_hydraulic": [
+          "MIA881446"
+        ]
+      }
+    },
+    {
+      "model": "Z925M EFI",
+      "filters": {
+        "engine_oil": [
+          "AM125424"
+        ],
+        "air_primary": [
+          "M131802"
+        ],
+        "air_secondary": [
+          "M131803"
+        ],
+        "fuel_variants": [
+          "MIU13224",
+          "UC16183"
+        ],
+        "transmission_hydraulic": [
+          "MIA881446"
+        ]
+      }
+    },
+    {
+      "model": "Z925M FLEX FUEL",
+      "filters": {
+        "engine_oil": [
+          "AM125424"
+        ],
+        "air_primary": [
+          "M131802"
+        ],
+        "air_secondary": [
+          "M131803"
+        ],
+        "fuel_variants": [
+          "MIU13224",
+          "UC16183"
+        ],
+        "transmission_hydraulic": [
+          "MIA881446"
+        ]
+      }
+    },
+    {
+      "model": "Z930M EFI",
+      "filters": {
+        "engine_oil": [
+          "AM125424"
+        ],
+        "air_primary": [
+          "M131802"
+        ],
+        "air_secondary": [
+          "M131803"
+        ],
+        "fuel_variants": [
+          "MIU13224",
+          "UC16183"
+        ],
+        "transmission_hydraulic": [
+          "MIA881446"
+        ]
+      }
+    },
+    {
+      "model": "Z930M",
+      "filters": {
+        "engine_oil": [
+          "AM107423"
+        ],
+        "air_primary": [
+          "M131802"
+        ],
+        "air_secondary": [
+          "M131803"
+        ],
+        "fuel_variants": [
+          "AM116304",
+          "UC21217"
+        ],
+        "transmission_hydraulic": [
+          "MIA881446"
+        ]
+      }
+    },
+    {
+      "model": "Z945M EFI",
+      "filters": {
+        "engine_oil": [
+          "AM125424"
+        ],
+        "air_primary": [
+          "M131802"
+        ],
+        "air_secondary": [
+          "M131803"
+        ],
+        "fuel_variants": [
+          "AM116304",
+          "UC16183"
+        ],
+        "transmission_hydraulic": [
+          "MIA881446"
+        ]
+      }
+    },
+    {
+      "model": "Z950M",
+      "filters": {
+        "engine_oil": [
+          "AM107423"
+        ],
+        "air_primary": [
+          "M131802"
+        ],
+        "air_secondary": [
+          "M131803"
+        ],
+        "fuel_variants": [
+          "AM116304",
+          "UC21217"
+        ],
+        "transmission_hydraulic": [
+          "MIA881446"
+        ]
+      }
+    },
+    {
+      "model": "Z955M EFI",
+      "filters": {
+        "engine_oil": [
+          "AM125424"
+        ],
+        "air_primary": [
+          "M131802"
+        ],
+        "air_secondary": [
+          "M131803"
+        ],
+        "fuel_variants": [
+          "UC16183"
+        ],
+        "transmission_hydraulic": [
+          "MIA881446"
+        ]
+      }
+    },
+    {
+      "model": "Z960M",
+      "filters": {
+        "engine_oil": [
+          "AM107423"
+        ],
+        "air_primary": [
+          "M131802"
+        ],
+        "air_secondary": [
+          "M131803"
+        ],
+        "fuel_variants": [
+          "AM116304",
+          "UC21217"
+        ],
+        "transmission_hydraulic": [
+          "MIA881446"
+        ]
+      }
+    }
+  ],
+  "official_evidence": [
+    "https://www.deere.com/assets/pdfs/common/parts-and-service/manuals-training/Z915B-Z915E-Z920M-Z925MEFI-Z925M-FLEX-FUEL-Z930M-EFI-Z930M-Z945M-EFI-Z950M-Z955M-EFI-Z960M.pdf",
+    "https://www.deere.com/assets/pdfs/common/qrg/landscaping-and-grounds/rpg-tc588951-z915e-ztrak-zero-turn-mower.pdf",
+    "https://www.deere.com/assets/pdfs/common/qrg/z915b-ztrak-with-48%2C-54%2C-60-inch-deck.pdf",
+    "https://www.deere.com/assets/pdfs/common/qrg/z925m-efi-ztrak-with-54%2C-60-inch-deck.pdf",
+    "https://www.deere.com/assets/pdfs/common/qrg/landscaping-and-grounds/rpg-tc579318-z925m-efi-flex-fuel-ztrak-m-series-mower.pdf",
+    "https://www.deere.com/assets/pdfs/common/qrg/z930m-efi-ztrak-with-60-inch-deck.pdf",
+    "https://www.deere.com/assets/pdfs/common/qrg/landscaping-and-grounds/rpg-tc575622-z930m-ztrak-m-series-mower.pdf",
+    "https://www.deere.com/assets/pdfs/common/qrg/landscaping-and-grounds/z945m-efi-ztrak-with-60-inch-deck.pdf",
+    "https://www.deere.com/assets/pdfs/common/qrg/landscaping-and-grounds/rpg-tc575266-z950m-ztrak-m-series-mower.pdf",
+    "https://www.deere.com/assets/pdfs/common/qrg/landscaping-and-grounds/rpg-tc572932-z955m-efi-ztrak-m-series-mower.pdf",
+    "https://www.deere.com/assets/pdfs/common/qrg/z960m-ztrak-m-series-mower-with-decks.pdf",
+    "https://shop.deere.com/us/product/MIA881446%3A-Transmission-Oil-Filter-with-Packing/p/MIA881446"
+  ]
+}
