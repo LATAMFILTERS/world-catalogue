@@ -131,7 +131,17 @@ async function strictVerify(code,sourceUrl){
       selected:report.selected,
       strict_verified:report.strict_verified,
       strict_failed:report.strict_failed,
-      canonical_mismatch:report.canonical_mismatch
+      canonical_mismatch:report.canonical_mismatch,
+      anomalies:report.details.filter(x=>x.status==='STRICT_FAILED'||x.canonical_match===false).map(x=>({
+        sku:x.sku,
+        code:x.code,
+        status:x.status,
+        canonical_match:x.canonical_match,
+        source_url:x.source_url||x.url||null,
+        canonical_source_brand:x.canonical_source_brand||null,
+        canonical_source_code:x.canonical_source_code||null,
+        canonical_source_status:x.canonical_source_status||null
+      }))
     };
 
     console.log(JSON.stringify(report,null,2));
