@@ -69,12 +69,18 @@ async function updateDerivedRefs(db, oldSku, newSku){
 async function renameOne(db, row, target){
   await db.query('SAVEPOINT one_sku');
   try{
-    const derived=await updateDerivedRefs(db,row.sku,target);
+    // Rename the canonical parent first. FK surfaces installed with ON UPDATE CASCADE
+    // follow atomically. Updating FK children before the parent caused the previous
+    // batch to fail every candidate with transient referential-integrity errors.
     const u=await db.query(
       'UPDATE public.elimfilters_catalog SET sku=$1 WHERE sku=$2 RETURNING sku,codigo_base,canonical_source_code,canonical_source_brand',
       [target,row.sku]
     );
     if(u.rowCount!==1) throw new Error('CATALOG_RENAME_COUNT_CHANGED '+row.sku);
+
+    // Then repair denormalized/no-FK surfaces that do not cascade automatically.
+    const derived=await updateDerivedRefs(db,row.sku,target);
+
     if(await tableExists(db,'public.crossref_resolved_cache')){
       await db.query('DELETE FROM public.crossref_resolved_cache WHERE sku=ANY($1::text[])',[[row.sku,target]]);
     }
