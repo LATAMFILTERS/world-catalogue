@@ -8,6 +8,7 @@ const {pageSupportsOfficialProduct}=require('../../lib/donaldson-official-eviden
 
 const LIMIT_ARG=process.argv.find(x=>x.startsWith('--limit='));
 const LIMIT=LIMIT_ARG?Math.max(1,Number(LIMIT_ARG.split('=')[1])||500):500;
+const ANOMALIES_ONLY=process.argv.includes('--anomalies-only');
 
 function sha(v){return crypto.createHash('sha256').update(String(v)).digest('hex');}
 
@@ -101,7 +102,7 @@ async function strictVerify(code,sourceUrl){
 
       if(v.ok){
         report.strict_verified++;
-        report.details.push({
+        if(!ANOMALIES_ONLY || !canonicalMatch) report.details.push({
           sku:r.sku,
           code:r.reference_code,
           status:'STRICT_VERIFIED',
