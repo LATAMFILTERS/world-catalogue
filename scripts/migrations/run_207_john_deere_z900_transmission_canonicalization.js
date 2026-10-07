@@ -3,16 +3,17 @@ require('dotenv').config();
 const {Client}=require('pg');
 const {assertCanonicalWrite}=require('../../lib/catalog-write-gateway');
 const APPLY=process.argv.includes('--execute');
-const SKU='EH61102', BASE='AM131102';
+const SKU='EH65409', BASE='1365409';
 const JD='https://shop.deere.com/us/product/MIA881446%3A-Transmission-Oil-Filter-with-Packing/p/MIA881446';
 const TT='https://outdoorpowerdirect.com/products/tuff-torq-1a637026450-transmission-filter';
 const row={
   sku:SKU,codigo_base:BASE,name:'Transmission Oil Filter',
-  description:'ELIMFILTERS® EH61102 hydrostatic transmission oil filter. John Deere MIA881446 supersedes AM131102.',
+  description:'ELIMFILTERS® EH65409 hydrostatic transmission oil filter. John Deere MIA881446 / AM131102; verified OEM equivalent Toro 1365409.',
   filter_type:'hydraulic',sub_type:'Transmission Oil Filter',technology:'NANOFORCE™',
   installation_type:'Cartridge',duty:'HEAVY_DUTY',
   oem_codes:[
     {manufacturer:'JOHN-DEERE',code:'MIA881446',classification:'OEM',source_url:JD},
+    {manufacturer:'JOHN-DEERE',code:'AM131102',classification:'OEM',source_url:JD},
     {manufacturer:'TUFF-TORQ',code:'1A637026450',classification:'OEM',source_url:TT},
     {manufacturer:'SNAPPER',code:'1720806',classification:'OEM',source_url:TT},
     {manufacturer:'SIMPLICITY',code:'1687472YP',classification:'OEM',source_url:TT}
@@ -23,15 +24,15 @@ const row={
   ],
   equipment_applications:[],vehicle_applications:[],specs:{},
   brand_crossrefs:{},alternative_products:[],alternatives:[],is_primary:true,
-  canonical_source_brand:'JOHN-DEERE',canonical_source_code:BASE,
-  canonical_source_url:JD,canonical_source_status:'VERIFIED',
+  canonical_source_brand:'TORO',canonical_source_code:BASE,
+  canonical_source_url:'https://www.tractorsupply.com/tsc/product/hero-hydraulic-filter-replaces-john-deere-mia881446-crosses-toro-1365409-tuff-torq-1a637026450',canonical_source_status:'VERIFIED',
   enrichment_data:{codigo_base_governance:{
     policy_version:'2026-10-06-v4.2',state:'CANONICAL_VERIFIED',
     primary_manufacturer_verified:false,donaldson_absence_verified:true,
     fleetguard_absence_verified:true,fallback_manufacturer_verified:true,
-    fallback_commercial_code_verified:true,approved_manufacturer:'JOHN-DEERE',
+    fallback_commercial_code_verified:true,approved_manufacturer:'TORO',
     approved_codigo_base:BASE,approved_source_column:'OEM_CODES',
-    verification_method:'JOHN_DEERE_DIRECT_SUPERSESSION_AM131102_TO_MIA881446'
+    verification_method:'JOHN_DEERE_DIRECT_SUPERSESSION_PLUS_VERIFIED_TORO_1365409_EQUIVALENCE'
   }}
 };
 function norm(v){return String(v||'').replace(/[^A-Z0-9]/gi,'').toUpperCase()}
