@@ -16,7 +16,7 @@
       "fleetguard_sku": "EA15551",
       "fleetguard_sku_status": "REPO_FREE",
       "decision": "EA15551",
-      "state": "READY_FOR_LIVE_OCCUPANCY_AND_WRITE_GATE"
+      "state": "CANONICAL_VERIFIED_LIVE"
     },
     {
       "john_deere": "M131803",
@@ -27,10 +27,10 @@
       "fleetguard": "AF25552",
       "fleetguard_sku": "EA15552",
       "fleetguard_sku_status": "OCCUPIED",
-      "oem_sku": "EA11803",
-      "oem_sku_status": "REPO_FREE",
-      "decision": "EA11803",
-      "state": "READY_FOR_LIVE_OCCUPANCY_AND_WRITE_GATE"
+      "oem_sku": null,
+      "oem_sku_status": null,
+      "decision": "EA12858",
+      "state": "CANONICAL_VERIFIED_LIVE"
     },
     {
       "john_deere": "AM107423",
@@ -39,7 +39,7 @@
       "donaldson_sku": "EL82015",
       "donaldson_sku_status": "EXISTS",
       "decision": "EL82015",
-      "state": "REUSE_PENDING_IDENTITY_CONFIRMATION"
+      "state": "CANONICAL_VERIFIED_LIVE"
     },
     {
       "john_deere": "AM125424",
@@ -48,7 +48,7 @@
       "donaldson_sku": "EL82024",
       "donaldson_sku_status": "EXISTS",
       "decision": "EL82024",
-      "state": "REUSE_PENDING_IDENTITY_CONFIRMATION"
+      "state": "CANONICAL_VERIFIED_LIVE"
     },
     {
       "john_deere": "AM116304",
@@ -57,7 +57,7 @@
       "donaldson_sku": "EF90094",
       "donaldson_sku_status": "EXISTS",
       "decision": "EF90094",
-      "state": "REUSE_PENDING_IDENTITY_CONFIRMATION"
+      "state": "CANONICAL_VERIFIED_LIVE"
     },
     {
       "john_deere": "UC16183",
@@ -96,9 +96,9 @@
       "donaldson": null,
       "fleetguard": null,
       "oem_sku": "EH61446",
-      "oem_sku_status": "REPO_FREE",
+      "oem_sku_status": "LIVE_COLLISION_WITH_P566446",
       "decision": null,
-      "state": "BLOCKED_DF_MANUFACTURING_AUTHORITY_NOT_VERIFIED"
+      "state": "STOP_REVIEW_OEM_NATURAL_SKU_COLLISION"
     },
     {
       "john_deere": "MIA12832",
@@ -135,6 +135,9 @@
     "John Deere official shop confirms UC16183, UC21217 and MIU13224 are inline fuel filters for the listed compatible equipment.",
     "John Deere official shop confirms MIA881446 is a transmission oil filter with packing and replaces AM131102.",
     "John Deere official shop confirms MIA12832 is an Air Cleaner Assembly and UC23657 is a Housing with commercial ZTrak compatibility.",
-    "Exact searches of donaldson.com and fleetguard.com for UC16183, UC21217, MIU13224, MIA881446, MIA12832, MIU14301 and UC23657 returned no direct results in the current research pass; this is NOT treated as verified non-manufacture."
-  ]
+    "Exact searches of donaldson.com and fleetguard.com for UC16183, UC21217, MIU13224, MIA881446, MIA12832, MIU14301 and UC23657 returned no direct results in the current research pass; this is NOT treated as verified non-manufacture.",
+    "Model-level filter matrix completed for all 11 requested Z900 models using official John Deere replacement-parts guides; fuel-filter rows preserve Deere configuration/serial alternatives rather than collapsing them into one universal part."
+  ],
+  "model_filter_matrix": "config/vehicle-platform-closure/john-deere-z900-model-filter-matrix-2026.json",
+  "model_filter_matrix_status": "COMPLETE_11_MODELS"
 }
