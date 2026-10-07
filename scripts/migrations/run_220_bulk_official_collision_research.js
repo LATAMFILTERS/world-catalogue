@@ -221,7 +221,14 @@ async function verifyFleetguardExact(code,preferredUrl){
 
               if(verifiedMatchesBase){
                 const mergedData={...(locked.enrichment_data||{}),codigo_base_governance:nextGov};
-                assertGovernedCatalogPatch(locked,{...patch,enrichment_data:mergedData});
+                const validationRow={
+                  ...locked,
+                  oem_codes:Array.isArray(locked.oem_codes)?locked.oem_codes:[],
+                  competitor_codes:Array.isArray(locked.competitor_codes)?locked.competitor_codes:[],
+                  equipment_applications:Array.isArray(locked.equipment_applications)?locked.equipment_applications:[],
+                  vehicle_applications:Array.isArray(locked.vehicle_applications)?locked.vehicle_applications:[]
+                };
+                assertGovernedCatalogPatch(validationRow,{...patch,enrichment_data:mergedData},{validateApplications:false});
                 const u=await db.query(`
                   UPDATE public.elimfilters_catalog
                   SET enrichment_data=$1::jsonb,
