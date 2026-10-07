@@ -97,6 +97,19 @@ try {
   if ($LASTEXITCODE -ne 0) { throw 'git reset --hard origin/main failed' }
   git clean -fd -e hermes/ -e seo-geo-audit-out/ | Tee-Object -FilePath $log -Append
 
+  $localLlmInstaller = Join-Path $RepoPath 'automation\windows\install-hermes-local-llm.ps1'
+  if (Test-Path $localLlmInstaller) {
+    "[$(Get-Date -Format o)] Ensuring HERMES local zero-cost LLM runtime." | Tee-Object -FilePath $log -Append
+    & powershell.exe -NoProfile -NonInteractive -ExecutionPolicy Bypass -File $localLlmInstaller 2>&1 | Tee-Object -FilePath $log -Append
+    if ($LASTEXITCODE -ne 0) { throw 'HERMES local LLM bootstrap failed' }
+  } else {
+    throw "HERMES local LLM installer not found: $localLlmInstaller"
+  }
+
+  $env:HERMES_LOCAL_LLM_ENABLED = 'true'
+  $env:HERMES_ZERO_COST_REQUIRED = 'true'
+  $env:HERMES_GROQ_FREE_TIER_CONFIRMED = 'false'
+
   node scripts\validate-hybrid-runtime.js | Tee-Object -FilePath $log -Append
   if ($LASTEXITCODE -ne 0) { throw 'Hybrid runtime validation failed' }
 
