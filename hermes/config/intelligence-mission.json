@@ -1,5 +1,5 @@
 {
-  "schema_version": "1.4.0",
+  "schema_version": "1.5.0",
   "mission": "Continuously sweep the complete engine, vehicle, equipment and industrial filtration ecosystem; discover verifiable developments; compare them with ELIMFILTERS existing knowledge; and propose new knowledge or reinforcement of existing knowledge without duplication. LinkedIn is an explicit weekly discovery/radar source: HERMES may use official company, OEM, technical-institution and industry LinkedIn posts to detect signals, but a LinkedIn post must never be treated as final technical evidence by itself. For every LinkedIn-origin signal, HERMES must follow the post or independently locate a primary or technically verifiable source such as an official product page, case study, technical bulletin, white paper, standard, regulatory document or recognized technical publication before creating a verified candidate. If no such corroborating source is found, retain the signal as INTERNAL_ONLY / unresolved intelligence and do not propose canonical Knowledge Center or catalogue changes.",
   "coverage_policy": "EXPANSIVE_NOT_CLOSED_LIST",
   "lookback_days": 7,
@@ -547,5 +547,75 @@
       "TECHNICAL_INTELLIGENCE"
     ],
     "key_metric": "TIME_TO_VERIFIED_COVERAGE"
+  },
+  "competitive_technology_radar": {
+    "enabled": true,
+    "role": "INTERNAL_TECHNOLOGY_AND_PRODUCT_INTELLIGENCE",
+    "objective": "Continuously detect technically relevant new products, filtration technologies, filter-media developments, applications, patents, test methods, manufacturing capabilities and market signals from major filtration companies and material suppliers, then verify the underlying evidence and convert material findings into governed ELIMFILTERS knowledge or catalogue candidates.",
+    "priority_organizations": [
+      "Donaldson",
+      "Fleetguard / Cummins Filtration",
+      "MANN-FILTER / MANN+HUMMEL",
+      "Baldwin Filters",
+      "Parker / Racor",
+      "Hengst",
+      "MAHLE",
+      "UFI Filters",
+      "Filtration Group"
+    ],
+    "filter_media_priority": [
+      "cellulose media",
+      "synthetic media",
+      "microglass and glass fiber",
+      "nanofiber media",
+      "meltblown",
+      "nonwovens",
+      "coalescing media",
+      "hydrophobic media",
+      "activated carbon media",
+      "membranes",
+      "resins, binders and coatings",
+      "antistatic media",
+      "bio-based and lower-impact filtration media"
+    ],
+    "signal_types": [
+      "new filter product or part family",
+      "new vehicle, engine or equipment application coverage",
+      "new or revised filtration technology",
+      "new filter media or material",
+      "technical bulletin",
+      "white paper or peer-reviewed technical publication",
+      "patent or patent application",
+      "new test method or standards-related finding",
+      "new laboratory or manufacturing capability",
+      "new plant, capacity or supply-chain development",
+      "documented field-performance or reliability finding",
+      "supersession, discontinuation or catalogue expansion"
+    ],
+    "research_sequence": [
+      "detect the signal from official, technical or industry sources",
+      "trace the signal to a primary or technically verifiable source",
+      "extract the concrete technical facts, affected products/applications and claimed performance",
+      "separate marketing language from verifiable evidence",
+      "compare the finding against ELIMFILTERS existing products, technologies and knowledge",
+      "classify CREATE_NEW, UPDATE_REINFORCE, NO_MATERIAL_CHANGE or INTERNAL_ONLY",
+      "create governed knowledge, technology-watch or catalogue candidates when material"
+    ],
+    "governance": {
+      "competitor_identity_internal_provenance_only": true,
+      "public_competitor_names": false,
+      "public_competitor_proprietary_claims": false,
+      "no_copying_proprietary_claims_as_elimfilters": true,
+      "automatic_catalogue_write": false,
+      "approval_required": true
+    },
+    "destinations": [
+      "CATALOGUE",
+      "KNOWLEDGE_CENTER",
+      "TECHNICAL_INTELLIGENCE",
+      "TECHNOLOGY_WATCH",
+      "OEM_APPLICATION_INTELLIGENCE",
+      "INTERNAL_ONLY"
+    ]
   }
 }
