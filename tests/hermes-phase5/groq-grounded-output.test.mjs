@@ -18,9 +18,8 @@ import {
   HERMES_GROQ_GROUNDING_VERSION
 } from '../../scripts/hermes/groq-grounding-contract.mjs';
 
-test('resolver defaults to GPT-OSS 120B and strict structured output', async () => {
-  const previousFreeTier = process.env.HERMES_GROQ_FREE_TIER_CONFIRMED;
-  process.env.HERMES_GROQ_FREE_TIER_CONFIRMED = 'true';
+test('resolver uses local LLM first with strict structured output', async () => {
+  let requestUrl;
   let requestBody;
   const resolution = {
     resolution_status: 'READY',
@@ -39,8 +38,56 @@ test('resolver defaults to GPT-OSS 120B and strict structured output', async () 
     blocked_reason: null
   };
 
-  const fetchImpl = async (_url, init) => {
+  const fetchImpl = async (url, init) => {
+    requestUrl = String(url);
     requestBody = JSON.parse(init.body);
+    return {
+      ok: true,
+      json: async () => ({ choices: [{ message: { content: JSON.stringify(resolution) } }] })
+    };
+  };
+
+  const out = await resolveWithGroq({
+    candidate: { entity_code: 'HERMES_REAL_TEST', source_url: resolution.evidence_url },
+    evidenceBundle: [{ source_url: resolution.evidence_url, raw_snippet: 'supported fact' }],
+    apiKey: null,
+    fetchImpl
+  });
+
+  assert.deepEqual(out, resolution);
+  assert.match(requestUrl, /^http:\/\/127\.0\.0\.1:11434\/v1\/chat\/completions/);
+  assert.equal(requestBody.model, 'qwen3:8b');
+  assert.equal(requestBody.temperature, 0);
+  assert.equal(requestBody.response_format.type, 'json_schema');
+  assert.equal(requestBody.response_format.json_schema.strict, true);
+  assert.deepEqual(requestBody.response_format.json_schema.schema, HERMES_GROQ_RESOLUTION_SCHEMA);
+  assert.equal(HERMES_GROQ_DEFAULT_MODEL, 'openai/gpt-oss-120b');
+});
+
+test('resolver falls back to Groq only when free tier is confirmed', async () => {
+  const previousFreeTier = process.env.HERMES_GROQ_FREE_TIER_CONFIRMED;
+  process.env.HERMES_GROQ_FREE_TIER_CONFIRMED = 'true';
+  const calls = [];
+  const resolution = {
+    resolution_status: 'READY',
+    finding_type: 'TECHNICAL',
+    specific_item: 'Verified technical update',
+    published_at: null,
+    evidence_url: 'https://example.com/source',
+    evidence_title: 'Source',
+    facts: ['A source-supported filtration fact.'],
+    neutral_fact: 'A source-supported filtration fact.',
+    affected_entities: ['Example entity'],
+    destination: 'TECHNICAL_INTELLIGENCE',
+    relevance: 'The fact is materially relevant to filtration intelligence.',
+    proposed_action: 'Review the evidence before approving any knowledge update.',
+    confidence: 0.9,
+    blocked_reason: null
+  };
+
+  const fetchImpl = async (url, init) => {
+    calls.push({ url: String(url), body: JSON.parse(init.body) });
+    if (String(url).startsWith('http://127.0.0.1:11434')) return { ok: false, status: 503 };
     return {
       ok: true,
       json: async () => ({ choices: [{ message: { content: JSON.stringify(resolution) } }] })
@@ -55,13 +102,12 @@ test('resolver defaults to GPT-OSS 120B and strict structured output', async () 
   });
 
   assert.deepEqual(out, resolution);
-  assert.equal(HERMES_GROQ_DEFAULT_MODEL, 'openai/gpt-oss-120b');
-  assert.equal(requestBody.model, 'openai/gpt-oss-120b');
-  assert.equal(requestBody.temperature, 0);
-  assert.equal(requestBody.reasoning_effort, 'low');
-  assert.equal(requestBody.response_format.type, 'json_schema');
-  assert.equal(requestBody.response_format.json_schema.strict, true);
-  assert.deepEqual(requestBody.response_format.json_schema.schema, HERMES_GROQ_RESOLUTION_SCHEMA);
+  assert.equal(calls.length, 2);
+  assert.match(calls[0].url, /^http:\/\/127\.0\.0\.1:11434/);
+  assert.equal(calls[1].url, 'https://api.groq.com/openai/v1/chat/completions');
+  assert.equal(calls[1].body.model, 'openai/gpt-oss-120b');
+  assert.equal(calls[1].body.reasoning_effort, 'low');
+
   if (previousFreeTier === undefined) delete process.env.HERMES_GROQ_FREE_TIER_CONFIRMED;
   else process.env.HERMES_GROQ_FREE_TIER_CONFIRMED = previousFreeTier;
 });
