@@ -100,7 +100,7 @@ jobs:
         continue-on-error: true
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          HERMES_GROQ_MODEL: ${{ vars.HERMES_GROQ_MODEL || 'groq/compound' }}
+          HERMES_GROQ_MODEL: ${{ vars.HERMES_GROQ_MODEL || 'openai/gpt-oss-120b' }}
         run: npm run hermes:sweep
 
       - name: Resolve detected source changes with Groq
@@ -109,7 +109,7 @@ jobs:
         continue-on-error: true
         env:
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          HERMES_GROQ_MODEL: ${{ vars.HERMES_GROQ_MODEL || 'groq/compound' }}
+          HERMES_GROQ_MODEL: ${{ vars.HERMES_GROQ_MODEL || 'openai/gpt-oss-120b' }}
         run: npm run hermes:research
 
       - name: Validate real candidates
