@@ -15,9 +15,11 @@ test('workflow_dispatch trigger is present', () => {
   assert.match(workflowText, /\bworkflow_dispatch:/);
 });
 
-test('a weekly cron schedule is present', () => {
-  assert.match(workflowText, /schedule:/);
-  assert.match(workflowText, /cron:\s*'0 1[34] \* \* 1'/);
+test('GitHub Actions has no recurring cron because Lenovo owns the zero-cost schedule', () => {
+  assert.doesNotMatch(workflowText, /\bschedule:/);
+  assert.doesNotMatch(workflowText, /\bcron:/);
+  assert.match(workflowText, /recurring execution is owned by the/i);
+  assert.match(workflowText, /Lenovo primary runtime/i);
 });
 
 test('Node 20 is pinned', () => {
@@ -70,7 +72,9 @@ test('artifact upload is configured', () => {
   assert.match(workflowText, /elimfilters-vault\/94-sync-log/);
 });
 
-test('the guard step never proceeds automatically outside the intended local hour for a scheduled run', () => {
-  assert.match(workflowText, /github\.event_name.*=\s*['"]schedule['"]/);
-  assert.match(workflowText, /proceed=false/);
+test('manual GitHub workflow remains non-publishing and Lenovo retains recurring execution authority', () => {
+  assert.match(workflowText, /workflow_dispatch:/);
+  assert.doesNotMatch(workflowText, /github\.event_name.*=\s*['"]schedule['"]/);
+  assert.doesNotMatch(workflowText, /hermes:publish\b/);
+  assert.match(workflowText, /Lenovo primary runtime/i);
 });
