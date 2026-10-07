@@ -273,7 +273,7 @@ async function verifyFleetguardExact(code,preferredUrl){
         }
       }
 
-      const fgRefs=refs(r.competitor_codes).filter(x=>x.manufacturer==='FLEETGUARD');
+      const fgRefs=FOCUS==='donaldson' ? [] : refs(r.competitor_codes).filter(x=>x.manufacturer==='FLEETGUARD');
       let fgVerified=null;
       for(const x of fgRefs){
         report.fleetguard.attempted++;
