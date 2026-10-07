@@ -14,6 +14,9 @@ const {assertGovernedCatalogPatch}=require('../../lib/catalog-write-gateway');
 const EXECUTE=process.argv.includes('--execute');
 const LIMIT_ARG=process.argv.find(x=>x.startsWith('--limit='));
 const LIMIT=LIMIT_ARG?Math.max(1,Number(LIMIT_ARG.split('=')[1])||50):50;
+const FOCUS_ARG=process.argv.find(x=>x.startsWith('--focus='));
+const FOCUS=String(FOCUS_ARG?FOCUS_ARG.split('=')[1]:'all').toLowerCase();
+if(!['all','donaldson','fleetguard'].includes(FOCUS)) throw new Error('INVALID_FOCUS '+FOCUS);
 
 function sha(v){return crypto.createHash('sha256').update(String(v)).digest('hex');}
 function prefixFor(sku=''){
@@ -83,6 +86,7 @@ async function verifyFleetguardExact(code,preferredUrl){
     migration:'220_BULK_OFFICIAL_COLLISION_RESEARCH',
     mode:EXECUTE?'execute':'dry-run',
     limit:LIMIT,
+    focus:FOCUS,
     selected:0,
     donaldson:{attempted:0,verified:0,unresolved:0},
     fleetguard:{attempted:0,verified:0,unresolved:0},
@@ -123,6 +127,8 @@ async function verifyFleetguardExact(code,preferredUrl){
       const comp=refs(r.competitor_codes);
       const hasFg=comp.some(x=>x.manufacturer==='FLEETGUARD');
       const needsDonaldson=!(gov.primary_manufacturer_verified===true && canon==='DONALDSON' && normalizeCode(r.canonical_source_code));
+      if(FOCUS==='donaldson') return needsDonaldson;
+      if(FOCUS==='fleetguard') return !needsDonaldson && hasFg;
       return needsDonaldson || hasFg;
     }).slice(0,LIMIT);
 
