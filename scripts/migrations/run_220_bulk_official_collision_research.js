@@ -127,7 +127,7 @@ async function verifyFleetguardExact(code,preferredUrl){
         const q=(await db.query(`
           SELECT sku
           FROM public.catalog_codigo_base_sanitation_queue
-          WHERE last_error='RUN_220_DONALDSON_UNRESOLVED'
+          WHERE last_error IN ('RUN_220_DONALDSON_UNRESOLVED','RUN_220_DONALDSON_EVIDENCE_ONLY')
             AND last_attempt_at > now() - interval '7 days'
         `)).rows;
         deferredDonaldson=new Set(q.map(x=>String(x.sku).toUpperCase()));
@@ -226,6 +226,19 @@ async function verifyFleetguardExact(code,preferredUrl){
             changed=true;
           }else{
             report.evidence_only.donaldson_code_differs_from_base++;
+            if(EXECUTE){
+              const hasQueue=(await db.query("SELECT to_regclass('public.catalog_codigo_base_sanitation_queue') AS r")).rows[0]?.r;
+              if(hasQueue){
+                await db.query(`
+                  UPDATE public.catalog_codigo_base_sanitation_queue
+                  SET attempts=attempts+1,
+                      last_attempt_at=now(),
+                      last_error='RUN_220_DONALDSON_EVIDENCE_ONLY',
+                      updated_at=now()
+                  WHERE sku=$1
+                `,[r.sku]);
+              }
+            }
           }
 
           if(EXECUTE){
