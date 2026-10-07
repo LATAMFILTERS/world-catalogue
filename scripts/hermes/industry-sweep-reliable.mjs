@@ -25,8 +25,8 @@ const QUOTA_CUSHION_MS = Math.max(250, Number(process.env.HERMES_SWEEP_QUOTA_CUS
 const TOKEN_LOW_WATER_RATIO = Math.min(0.5, Math.max(0.01, Number(process.env.HERMES_SWEEP_TOKEN_LOW_WATER_RATIO || 0.12)));
 const TOKEN_LOW_WATER_ABSOLUTE = Math.max(1000, Number(process.env.HERMES_SWEEP_TOKEN_LOW_WATER_ABSOLUTE || 12000));
 const MAX_FINDINGS_PER_DOMAIN = Math.max(1, Number(process.env.HERMES_SWEEP_MAX_FINDINGS_PER_DOMAIN || 3));
-const PRIMARY_MODEL = process.env.HERMES_GROQ_MODEL || 'groq/compound';
-const FALLBACK_MODEL = process.env.HERMES_GROQ_FALLBACK_MODEL || 'groq/compound-mini';
+const PRIMARY_MODEL = process.env.HERMES_GROQ_MODEL || 'openai/gpt-oss-120b';
+const FALLBACK_MODEL = process.env.HERMES_GROQ_FALLBACK_MODEL || 'openai/gpt-oss-20b';
 const ENABLE_TPD_FALLBACK = String(process.env.HERMES_GROQ_TPD_FALLBACK || 'true').toLowerCase() !== 'false';
 const MAX_DEGRADED_EMPTY_BATCHES = Math.max(0, Number(process.env.HERMES_SWEEP_MAX_DEGRADED_EMPTY_BATCHES || 1));
 
@@ -318,7 +318,7 @@ export function createResilientFetch(baseFetch = globalThis.fetch, sleeper = sle
         exhaustedModels.add(model);
 
         if (ENABLE_TPD_FALLBACK && !fallbackUsed && model === PRIMARY_MODEL && FALLBACK_MODEL && FALLBACK_MODEL !== PRIMARY_MODEL && !exhaustedModels.has(FALLBACK_MODEL)) {
-          console.warn(`[HERMES sweep] primary Compound underlying TPD exhausted used=${details.used ?? 'unknown'}/${details.limit ?? 'unknown'} requested=${details.requested ?? 'unknown'}; switching this domain to ${FALLBACK_MODEL}`);
+          console.warn(`[HERMES sweep] primary Groq model TPD exhausted used=${details.used ?? 'unknown'}/${details.limit ?? 'unknown'} requested=${details.requested ?? 'unknown'}; switching this domain to ${FALLBACK_MODEL}`);
           requestInit = withModel(requestInit, FALLBACK_MODEL);
           model = FALLBACK_MODEL;
           fallbackUsed = true;
