@@ -11,7 +11,8 @@ import {
 import {
   VALIDATED_KNOWLEDGE_AUTHORITY,
   buildValidatedKnowledgeContext,
-  validateNoveltyAgainstValidatedBase
+  validateNoveltyAgainstValidatedBase,
+  findCanonicalDuplicate
 } from '../../scripts/hermes/validated-knowledge-context.mjs';
 import {
   HERMES_GROQ_GROUNDING_CONTRACT,
@@ -180,4 +181,33 @@ test('zero-cost policy blocks external Groq unless free tier is explicitly confi
   );
 
   if (previousFreeTier !== undefined) process.env.HERMES_GROQ_FREE_TIER_CONFIRMED = previousFreeTier;
+});
+
+
+test('CREATE_NEW is rejected when it repeats validated canonical material', () => {
+  const validatedBase = {
+    authority: '13-canonical-knowledge',
+    available: true,
+    matches: [{
+      id: 'CANONICAL-FUEL-WATER-SEPARATION',
+      title: 'Fuel water separation',
+      validated_fact: 'Fuel water separation removes free water and particulate contamination from diesel fuel before downstream components.'
+    }]
+  };
+  const resolution = {
+    knowledge_action: 'CREATE_NEW',
+    finding_title: 'Fuel water separation',
+    technical_facts: [
+      'Fuel water separation removes free water and particulate contamination from diesel fuel before downstream components.'
+    ],
+    public_safe_fact: 'Fuel water separation removes free water and particulate contamination from diesel fuel.'
+  };
+
+  const duplicate = findCanonicalDuplicate(resolution, validatedBase);
+  assert.equal(duplicate.id, 'CANONICAL-FUEL-WATER-SEPARATION');
+
+  const errors = validateNoveltyAgainstValidatedBase(resolution, validatedBase);
+  assert.equal(errors.length, 1);
+  assert.match(errors[0], /canonical duplicate detected/i);
+  assert.match(errors[0], /CREATE_NEW forbidden/i);
 });
