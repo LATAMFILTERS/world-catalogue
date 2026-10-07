@@ -10,6 +10,7 @@ const {
   lastFourNumeric,
 } = require('../../lib/catalog-codigo-base-policy');
 const {assertGovernedCatalogPatch}=require('../../lib/catalog-write-gateway');
+const {pageSupportsOfficialProduct}=require('../../lib/donaldson-official-evidence');
 
 const EXECUTE=process.argv.includes('--execute');
 const LIMIT_ARG=process.argv.find(x=>x.startsWith('--limit='));
@@ -47,17 +48,24 @@ async function fetchText(url){
     return {ok:false,reason:e?.name==='AbortError'?'FETCH_TIMEOUT':'FETCH_FAILED',url};
   }finally{clearTimeout(t);}
 }
+function exactDonaldsonProductLink(html,code){
+  const safe=String(code||'').replace(/[^A-Z0-9-]/gi,'');
+  return safe ? new RegExp('/product/'+safe+'/(?:prod)?[A-Z0-9]+','i').test(String(html||'')) : false;
+}
 async function verifyDonaldsonExact(code,preferredUrl){
   const urls=[];
   if(preferredUrl && /donaldson\.com/i.test(preferredUrl)) urls.push(preferredUrl);
   urls.push('https://shop.donaldson.com/store/en-us/search?Ntt='+encodeURIComponent(code));
-  const wanted=normalizeCode(code);
   for(const url of [...new Set(urls)]){
     const f=await fetchText(url);
     if(!f.ok) continue;
-    const n=normalizeCode(f.text);
-    if(!n.includes(wanted)) continue;
-    return {ok:true,url:f.url,hash:f.hash,evidence_kind:/\/product\//i.test(f.url)?'OFFICIAL_PRODUCT_PAGE':'OFFICIAL_EXACT_SEARCH_RESULT'};
+    if(/\/product\//i.test(f.url)){
+      const safe=String(code||'').replace(/[^A-Z0-9-]/gi,'');
+      const exactUrl=new RegExp('/product/'+safe+'/','i').test(f.url);
+      if(exactUrl && pageSupportsOfficialProduct(f.text,code)) return {ok:true,url:f.url,hash:f.hash,evidence_kind:'OFFICIAL_PRODUCT_PAGE'};
+      continue;
+    }
+    if(exactDonaldsonProductLink(f.text,code)) return {ok:true,url:f.url,hash:f.hash,evidence_kind:'OFFICIAL_EXACT_SEARCH_RESULT'};
   }
   return {ok:false,reason:'DONALDSON_EXACT_NOT_CONFIRMED'};
 }
