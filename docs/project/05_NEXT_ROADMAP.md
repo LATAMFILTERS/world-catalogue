@@ -24,3 +24,8 @@ Ingestion and mapping of new manufacturer compatibility matrix parameters and ap
 
 ### Priority 7: Cross Reference Expansion
 Database expansion mapping competitive part numbers and industrial crossover definitions under the existing metadata schema.
+
+### Priority 8: Autonomous Fulfillment Pilot — Dallas
+Evaluate a future Dallas–Fort Worth micro-fulfillment node that reuses the existing ELIMFILTERS catalogue, CRM, order-management, HERMES and governance layers while adding only the minimum physical-operations adapters required for robotic receiving, 24/7 picking/packing, inventory reconciliation and compliant autonomous local delivery.
+
+Detailed concept: [06_AUTONOMOUS_FULFILLMENT_DALLAS_PILOT.md](./06_AUTONOMOUS_FULFILLMENT_DALLAS_PILOT.md)
