@@ -119,7 +119,7 @@ test('industry sweep splits an oversized 413 domain request and preserves the re
   assert.equal(summary.failed_batches, 0);
   assert.equal(summary.quota_exhausted, false);
   assert.equal(summary.created, 0);
-  assert.equal(groqCalls, mission.domains.length + 2, 'one rejected request is replaced by two narrower requests');
+  assert.equal(groqCalls, summary.total_work + 2, 'one rejected work batch is replaced by two narrower requests');
   if (previousFreeTier === undefined) delete process.env.HERMES_GROQ_FREE_TIER_CONFIRMED;
   else process.env.HERMES_GROQ_FREE_TIER_CONFIRMED = previousFreeTier;
 });
