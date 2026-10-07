@@ -8,9 +8,10 @@ import { pathToFileURL } from 'node:url';
 import { resolveRealCandidatesInputDir, validateCandidate } from './hermes-core.mjs';
 import { HERMES_INDUSTRIAL_RESEARCH_POLICY } from './industrial-research-policy.mjs';
 import { HERMES_GROQ_GROUNDING_CONTRACT, HERMES_GROQ_GROUNDING_VERSION } from './groq-grounding-contract.mjs';
+import { buildValidatedKnowledgeContext, validateNoveltyAgainstValidatedBase } from './validated-knowledge-context.mjs';
 
 const ENDPOINT = 'https://api.groq.com/openai/v1/chat/completions';
-const MODEL = process.env.HERMES_SWEEP_MODEL || 'groq/compound-mini';
+const MODEL = process.env.HERMES_SWEEP_MODEL || 'openai/gpt-oss-120b';
 const MISSION_PATH = path.resolve(process.env.HERMES_MISSION_PATH || 'hermes/config/intelligence-mission.json');
 const TIMEOUT_MS = Number(process.env.HERMES_RESEARCH_TIMEOUT_MS || 25000);
 const MAX_EVIDENCE_CHARS = Number(process.env.HERMES_RESEARCH_MAX_EVIDENCE_CHARS || 16000);
@@ -111,11 +112,17 @@ function sweepPrompt(mission, domain, topics) {
 }
 
 async function searchSegment(mission, domain, topics, apiKey, fetchImpl = globalThis.fetch) {
-  const response = await fetchImpl(ENDPOINT, { method: 'POST', headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json', 'Groq-Model-Version': 'latest' }, body: JSON.stringify({ model: MODEL, temperature: 0, max_completion_tokens: MAX_COMPLETION_TOKENS, response_format: { type: 'json_object' }, messages: [{ role: 'system', content: sweepPrompt(mission, domain, topics) }, { role: 'user', content: 'Search this narrow scope now and return only verified, material developments.' }] }) });
+  const validatedBase = buildValidatedKnowledgeContext(`${domain.label || ''} ${topics.join(' ')}`);
+  const response = await fetchImpl(ENDPOINT, { method: 'POST', headers: { Authorization: `Bearer ${apiKey}`, 'Content-Type': 'application/json', 'Groq-Model-Version': 'latest' }, body: JSON.stringify({ model: MODEL, temperature: 0, reasoning_effort: 'low', max_completion_tokens: MAX_COMPLETION_TOKENS, response_format: { type: 'json_object' }, tool_choice: 'required', tools: [{ type: 'browser_search' }], messages: [{ role: 'system', content: sweepPrompt(mission, domain, topics) }, { role: 'user', content: JSON.stringify({ instruction: 'Search this narrow scope now and return only verified, material developments. Compare every proposed knowledge action against the supplied validated canonical base. Do not create duplicates.', validated_knowledge_base: validatedBase }) }] }) });
   if (!response.ok) { const error = new Error(`Groq HTTP ${response.status}: ${(await response.text()).slice(0, 400)}`); error.status = response.status; throw error; }
   const payload = await response.json(); const content = payload?.choices?.[0]?.message?.content; if (!content) throw new Error('Groq returned no content');
   const parsed = JSON.parse(stripFence(content));
-  return { findings: Array.isArray(parsed.findings) ? parsed.findings : [], tool_calls: payload?.choices?.[0]?.message?.executed_tools?.length || 0, tokens_used: Number(payload?.usage?.total_tokens) || 0 };
+  const findings = Array.isArray(parsed.findings) ? parsed.findings : [];
+  for (const finding of findings) {
+    const noveltyErrors = validateNoveltyAgainstValidatedBase(finding, validatedBase);
+    if (noveltyErrors.length) throw new Error(`Validated-base novelty gate failed: ${noveltyErrors.join('; ')}`);
+  }
+  return { findings, tool_calls: payload?.choices?.[0]?.message?.executed_tools?.length || 0, tokens_used: Number(payload?.usage?.total_tokens) || 0 };
 }
 
 async function searchTopicsAdaptive(mission, domain, topics, apiKey, fetchImpl, tokenBudget = { used: 0 }) {
