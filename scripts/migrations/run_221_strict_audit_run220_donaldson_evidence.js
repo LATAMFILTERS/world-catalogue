@@ -64,6 +64,8 @@ async function strictVerify(code,sourceUrl){
     strict_verified:0,
     strict_failed:0,
     canonical_mismatch:0,
+    expected_evidence_only:0,
+    unexpected_canonical_mismatch:0,
     details:[],
     transaction:'READ_ONLY'
   };
@@ -78,6 +80,7 @@ async function strictVerify(code,sourceUrl){
         e.normalized_reference,
         e.source_url,
         e.evidence_kind,
+        e.metadata,
         e.verified_at,
         c.codigo_base,
         c.canonical_source_brand,
@@ -97,16 +100,24 @@ async function strictVerify(code,sourceUrl){
     for(const r of q.rows){
       const v=await strictVerify(r.reference_code,r.source_url);
       const canonicalMatch=normalizeCode(r.codigo_base)===normalizeCode(r.reference_code);
+      const metadata=r.metadata&&typeof r.metadata==='object'?r.metadata:{};
+      const intendedEvidenceOnly=metadata.canonical_base_match===false &&
+        !canonicalMatch &&
+        String(r.canonical_source_status||'').toUpperCase()!=='VERIFIED' &&
+        String(r.canonical_source_brand||'').trim()==='';
 
       if(!canonicalMatch)report.canonical_mismatch++;
+      if(intendedEvidenceOnly)report.expected_evidence_only++;
+      else if(!canonicalMatch)report.unexpected_canonical_mismatch++;
 
       if(v.ok){
         report.strict_verified++;
-        if(!ANOMALIES_ONLY || !canonicalMatch) report.details.push({
+        if(!ANOMALIES_ONLY || (!canonicalMatch && !intendedEvidenceOnly)) report.details.push({
           sku:r.sku,
           code:r.reference_code,
-          status:'STRICT_VERIFIED',
+          status:intendedEvidenceOnly?'STRICT_VERIFIED_EVIDENCE_ONLY':'STRICT_VERIFIED',
           canonical_match:canonicalMatch,
+          intended_evidence_only:intendedEvidenceOnly,
           evidence_kind:v.evidence_kind,
           url:v.url
         });
@@ -132,7 +143,9 @@ async function strictVerify(code,sourceUrl){
       strict_verified:report.strict_verified,
       strict_failed:report.strict_failed,
       canonical_mismatch:report.canonical_mismatch,
-      anomalies:report.details.filter(x=>x.status==='STRICT_FAILED'||x.canonical_match===false).map(x=>({
+      expected_evidence_only:report.expected_evidence_only,
+      unexpected_canonical_mismatch:report.unexpected_canonical_mismatch,
+      anomalies:report.details.filter(x=>x.status==='STRICT_FAILED'||(x.canonical_match===false&&x.intended_evidence_only!==true)).map(x=>({
         sku:x.sku,
         code:x.code,
         status:x.status,
