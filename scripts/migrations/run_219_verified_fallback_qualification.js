@@ -208,7 +208,15 @@ function evidenceKey(e){ return normalizeManufacturer(e.manufacturer)+'|'+normal
         auto_ready_oem:counts.AUTO_READY_OEM||0,
         research_required:counts.RESEARCH_REQUIRED||0,
         qualification_counts:counts,
-        missing_requirement_counts:missingCounts
+        missing_requirement_counts:missingCounts,
+        auto_ready_rows:matrix.filter(x=>x.qualification==='AUTO_READY_FLEETGUARD').map(x=>({
+          source_sku:x.source_sku,
+          source_base:x.source_base,
+          natural_target:x.natural_target,
+          occupied_by:x.occupied_by,
+          source_count_for_target:x.source_count_for_target,
+          candidate:x.candidate
+        }))
       },
       transaction:'READ_ONLY'
     },null,2));
