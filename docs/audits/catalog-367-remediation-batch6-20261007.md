@@ -27,4 +27,3 @@ EF984011 sigue pendiente: el OEM RE11325 permite recuperar P552010, pero EF92010
 El objetivo sigue abierto: cero pendientes aún no alcanzado.
 
 Las cuatro referencias Fleetguard verificadas se conservaron además como alternativas en los productos consolidados y se reconstruyeron sus índices. La comprobación posterior confirmó las filas definitivas y la conservación de los demás datos.
-
