@@ -13,7 +13,7 @@ function sslForDatabaseUrl(connectionString) {
     : { rejectUnauthorized: false };
 }
 
-const EXPECTED_POLICY = '2026-08-19-v3.1';
+const { POLICY_VERSION: EXPECTED_POLICY } = require('../lib/catalog-codigo-base-policy');
 const EXPECTED_APPLICATION_POLICY = '2026-08-19-app-v1';
 const KNOWN_CONTAMINATION_BASELINE = 1344;
 const KNOWN_HISTORICAL_LD_EQUIPMENT_BASELINE = 5;

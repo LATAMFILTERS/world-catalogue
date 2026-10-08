@@ -1,6 +1,7 @@
 'use strict';
 
 require('dotenv').config();
+const {verifiedFleetguardIdentityForSource}=require('../../lib/fleetguard-official-evidence');
 const {Client}=require('pg');
 const {
   normalizeCode,
@@ -66,7 +67,7 @@ function officialKind(v=''){
 
     const skuList=collisionRows.map(x=>x.source.sku);
     const ledger=skuList.length?(await db.query(`
-      SELECT sku,evidence_kind,authority,manufacturer,reference_code,source_url,verified_at,metadata
+      SELECT sku,evidence_kind,authority,manufacturer,reference_code,source_url,evidence_hash,verified_at,metadata
       FROM public.catalog_codigo_base_evidence
       WHERE sku=ANY($1::text[])
       ORDER BY sku,verified_at DESC,id DESC
@@ -91,7 +92,7 @@ function officialKind(v=''){
       if(!donaldsonPrimary)continue;
 
       const evidence=(ledgerBySku.get(r.sku)||[]).filter(e=>officialKind(e.evidence_kind));
-      const evidenceSet=new Set(evidence.map(evidenceKey));
+      const evidenceSet=new Set(evidence.filter(e=>normalizeManufacturer(e.manufacturer)!=='FLEETGUARD'||verifiedFleetguardIdentityForSource(e,r)).map(evidenceKey));
 
       const fg219=refs(r.competitor_codes)
         .filter(x=>x.manufacturer==='FLEETGUARD'&&evidenceSet.has('FLEETGUARD|'+normalizeCode(x.code)));

@@ -1,6 +1,6 @@
 {
-  "status": "FILTRATION_COMPLETE_AIR_CLEANER_HARDWARE_PENDING",
-  "updated_at": "2026-10-06",
+  "status": "NOT_CLOSED",
+  "updated_at": "2026-10-07",
   "scope": "John Deere commercial ZTrak filtration and air-cleaner service components",
   "canonical_rule": "HD SKU authority resolution: Donaldson natural SKU; if occupied by a different published identity, Fleetguard natural SKU; if also occupied, verified OEM natural SKU; if all eligible natural slots collide, STOP_REVIEW.",
   "repo_occupancy_checked_on_main": true,
@@ -16,7 +16,7 @@
       "fleetguard_sku": "EA15551",
       "fleetguard_sku_status": "REPO_FREE",
       "decision": "EA15551",
-      "state": "CANONICAL_VERIFIED_LIVE"
+      "state": "REQUIRES_CURRENT_LIVE_AUTHORITY_VALIDATION"
     },
     {
       "john_deere": "M131803",
@@ -30,7 +30,7 @@
       "oem_sku": null,
       "oem_sku_status": null,
       "decision": "EA12858",
-      "state": "CANONICAL_VERIFIED_LIVE"
+      "state": "REQUIRES_CURRENT_LIVE_AUTHORITY_VALIDATION"
     },
     {
       "john_deere": "AM107423",
@@ -39,7 +39,7 @@
       "donaldson_sku": "EL82015",
       "donaldson_sku_status": "EXISTS",
       "decision": "EL82015",
-      "state": "CANONICAL_VERIFIED_LIVE"
+      "state": "REQUIRES_CURRENT_LIVE_AUTHORITY_VALIDATION"
     },
     {
       "john_deere": "AM125424",
@@ -48,7 +48,7 @@
       "donaldson_sku": "EL82024",
       "donaldson_sku_status": "EXISTS",
       "decision": "EL82024",
-      "state": "CANONICAL_VERIFIED_LIVE"
+      "state": "REQUIRES_CURRENT_LIVE_AUTHORITY_VALIDATION"
     },
     {
       "john_deere": "AM116304",
@@ -57,7 +57,7 @@
       "donaldson_sku": "EF90094",
       "donaldson_sku_status": "EXISTS",
       "decision": "EF90094",
-      "state": "CANONICAL_VERIFIED_LIVE"
+      "state": "REQUIRES_CURRENT_LIVE_AUTHORITY_VALIDATION"
     },
     {
       "john_deere": "UC16183",
@@ -66,8 +66,9 @@
       "fleetguard": null,
       "oem_sku": "EF96183",
       "oem_sku_status": "REPO_FREE",
-      "decision": "EF90094",
-      "state": "CANONICAL_VERIFIED_LIVE"
+      "decision": null,
+      "state": "STOP_REVIEW_UNVERIFIED_CANONICAL_EQUIVALENCE",
+      "prior_unverified_decision": "EF90094"
     },
     {
       "john_deere": "UC21217",
@@ -76,8 +77,9 @@
       "fleetguard": null,
       "oem_sku": "EF92117",
       "oem_sku_status": "REPO_FREE",
-      "decision": "EF90094",
-      "state": "CANONICAL_VERIFIED_LIVE"
+      "decision": null,
+      "state": "STOP_REVIEW_UNVERIFIED_CANONICAL_EQUIVALENCE",
+      "prior_unverified_decision": "EF90094"
     },
     {
       "john_deere": "MIU13224",
@@ -86,8 +88,9 @@
       "fleetguard": null,
       "oem_sku": "EF93224",
       "oem_sku_status": "REPO_FREE",
-      "decision": "EF91760",
-      "state": "CANONICAL_VERIFIED_LIVE"
+      "decision": null,
+      "state": "STOP_REVIEW_UNVERIFIED_CANONICAL_EQUIVALENCE",
+      "prior_unverified_decision": "EF91760"
     },
     {
       "john_deere": "MIA881446",
@@ -95,10 +98,12 @@
       "replaces": "AM131102",
       "donaldson": null,
       "fleetguard": null,
-      "oem_sku": "EH65409",
-      "oem_sku_status": "LIVE_CANONICAL",
-      "decision": "EH65409",
-      "state": "CANONICAL_VERIFIED_LIVE"
+      "oem_sku": null,
+      "oem_sku_status": "UNVERIFIED_EQUIVALENCE_WITHDRAWN",
+      "decision": null,
+      "state": "STOP_REVIEW_UNVERIFIED_CANONICAL_EQUIVALENCE",
+      "prior_unverified_decision": "EH65409",
+      "prior_unverified_oem_sku": "EH65409"
     },
     {
       "john_deere": "MIA12832",
@@ -137,8 +142,17 @@
     "John Deere official shop confirms MIA12832 is an Air Cleaner Assembly and UC23657 is a Housing with commercial ZTrak compatibility.",
     "Exact searches of donaldson.com and fleetguard.com for UC16183, UC21217, MIU13224, MIA881446, MIA12832, MIU14301 and UC23657 returned no direct results in the current research pass; this is NOT treated as verified non-manufacture.",
     "Model-level filter matrix completed for all 11 requested Z900 models using official John Deere replacement-parts guides; fuel-filter rows preserve Deere configuration/serial alternatives rather than collapsing them into one universal part.",
-    "Live PostgreSQL closure: UC16183 and UC21217 resolve uniquely to EF90094/P550094; MIU13224 resolves uniquely to EF91760/P551760; MIA881446/AM131102 committed as EH65409/1365409."
+    "2026-10-07 structural audit: no current canonical proof for UC16183, UC21217, MIU13224 or Toro 1365409 to Deere MIA881446. These mappings must not be advertised as live canonical closure."
   ],
   "model_filter_matrix": "config/vehicle-platform-closure/john-deere-z900-model-filter-matrix-2026.json",
-  "model_filter_matrix_status": "COMPLETE_11_MODELS_CANONICAL_LIVE"
+  "model_filter_matrix_status": "11_MODELS_DEFINED_LIVE_CLOSURE_BLOCKED",
+  "superseded_live_closure_claims": [
+    {
+      "claim": "Live PostgreSQL closure: UC16183 and UC21217 resolve uniquely to EF90094/P550094; MIU13224 resolves uniquely to EF91760/P551760; MIA881446/AM131102 committed as EH65409/1365409.",
+      "status": "WITHDRAWN_UNVERIFIED"
+    }
+  ],
+  "model_registry_status": "11_REQUIRED_MODELS_REGISTERED_EXISTENCE_ONLY",
+  "models_live_complete": 0,
+  "engine_authority_status": "NOT_VERIFIED"
 }

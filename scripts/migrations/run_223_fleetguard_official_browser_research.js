@@ -2,6 +2,8 @@
 
 require('dotenv').config();
 const crypto=require('crypto');
+const fs=require('fs');
+function recordProgress(report,sku,code){if(process.env.CATALOG_RESEARCH_PROGRESS_PATH)fs.writeFileSync(process.env.CATALOG_RESEARCH_PROGRESS_PATH,JSON.stringify({selected_rows:report.selected_rows,candidate_codes:report.candidate_codes,attempted:report.attempted,verified:report.verified,unresolved:report.unresolved,last_sku:sku,last_code:code,timestamp:new Date().toISOString()}));}
 const {Client}=require('pg');
 const {
   normalizeCode,
@@ -10,6 +12,7 @@ const {
   lastFourNumeric,
 }=require('../../lib/catalog-codigo-base-policy');
 
+const {exactCodeToken,exactProductUrl,verifiesDonaldsonCrossReference,verifiedFleetguardIdentityForSource}=require('../../lib/fleetguard-official-evidence');
 const EXECUTE=process.argv.includes('--execute');
 const LIMIT_ARG=process.argv.find(x=>x.startsWith('--limit='));
 const LIMIT=LIMIT_ARG?Math.max(1,Number(LIMIT_ARG.split('=')[1])||20):20;
@@ -34,10 +37,7 @@ function refs(v){
 }
 function exactPathMatches(url,code){
   try{
-    const u=new URL(url);
-    const safe=normalizeCode(code);
-    const path=normalizeCode(u.pathname);
-    return u.hostname.toLowerCase().endsWith('fleetguard.com') && path.includes('PRODUCT'+safe);
+    return exactProductUrl(url,code);
   }catch{return false;}
 }
 
@@ -101,14 +101,14 @@ async function main(){
     let ledger=[];
     if(skuList.length){
       ledger=(await db.query(`
-        SELECT sku,manufacturer,reference_code,evidence_kind
+        SELECT sku,manufacturer,reference_code,evidence_kind,source_url,evidence_hash,verified_at,metadata
         FROM public.catalog_codigo_base_evidence
         WHERE sku=ANY($1::text[])
           AND manufacturer='FLEETGUARD'
           AND (UPPER(evidence_kind) LIKE '%OFFICIAL%' OR UPPER(evidence_kind) LIKE '%MANUFACTURER%')
       `,[skuList])).rows;
     }
-    const existing=new Set(ledger.map(e=>String(e.sku).toUpperCase()+'|'+normalizeCode(e.reference_code)));
+    const existing=new Set(ledger.filter(e=>verifiedFleetguardIdentityForSource(e,bySku.get(e.sku)||{})).map(e=>String(e.sku).toUpperCase()+'|'+normalizeCode(e.reference_code)));
 
     const selected=[];
     for(const item of collisionRows){
@@ -133,6 +133,7 @@ async function main(){
     report.selected_rows=selected.length;
     report.candidate_codes=selected.reduce((n,x)=>n+x.fg.length,0);
 
+    const productPages=new Map();
     const page=await browser.newPage({locale:'en-US',viewport:{width:1440,height:1200}});
 
     for(const sel of selected){
@@ -148,13 +149,14 @@ async function main(){
         let verified=null;
         let reason='OFFICIAL_PAGE_NOT_CONFIRMED';
         try{
-          const response=await page.goto(requested,{waitUntil:'domcontentloaded',timeout:60000});
+          const cached=productPages.get(code);
+          const response=cached?{ok:()=>true}:await page.goto(requested,{waitUntil:'domcontentloaded',timeout:60000});
           if(!response?.ok()){
             reason='HTTP_'+String(response?.status()||0);
           }else{
-            await page.waitForTimeout(1800);
-            const finalUrl=page.url();
-            const payload=await page.evaluate(()=>({
+            if(!cached)await page.waitForTimeout(1800);
+            const finalUrl=cached?.url||page.url();
+            const payload=cached?.payload||await page.evaluate(()=>({
               text:document.body?.innerText||'',
               html:document.documentElement?.outerHTML||'',
               title:document.title||'',
@@ -165,15 +167,15 @@ async function main(){
               }))
             }));
 
-            const nText=normalizeCode(payload.text);
-            const exactBody=nText.includes(code);
+            productPages.set(code,{url:finalUrl,payload});
+            const exactBody=exactCodeToken(payload.text,code);
             const exactUrl=exactPathMatches(finalUrl,code);
             const imageBound=payload.images.some(img=>{
-              const joined=normalizeCode(String(img.alt)+' '+String(img.src)+' '+String(img.parent));
-              return joined.includes(code);
+              return exactCodeToken(img.alt,code)||exactCodeToken(img.src,code);
             });
 
-            if(exactUrl&&exactBody&&imageBound){
+            const crossReference=verifiesDonaldsonCrossReference(payload,code,sel.item.source.canonical_source_code);
+            if(exactUrl&&exactBody&&imageBound&&crossReference){
               verified={
                 url:finalUrl,
                 evidence_kind:'OFFICIAL_FLEETGUARD_RENDERED_PRODUCT_PAGE',
@@ -184,7 +186,8 @@ async function main(){
               reason=[
                 exactUrl?'':'URL_CODE_MISMATCH',
                 exactBody?'':'BODY_CODE_MISSING',
-                imageBound?'':'IMAGE_BINDING_MISSING'
+                imageBound?'':'IMAGE_BINDING_MISSING',
+                crossReference?'':'DONALDSON_CROSS_REFERENCE_MISSING'
               ].filter(Boolean).join('+')||reason;
             }
           }
@@ -195,11 +198,13 @@ async function main(){
         if(!verified){
           report.unresolved++;
           report.details.push({sku,code,status:'UNRESOLVED',reason,requested_url:requested});
+          recordProgress(report,sku,code);
           continue;
         }
 
         report.verified++;
         report.details.push({sku,code,status:'VERIFIED',url:verified.url,evidence_kind:verified.evidence_kind});
+        recordProgress(report,sku,code);
 
         if(EXECUTE){
           await db.query('BEGIN ISOLATION LEVEL SERIALIZABLE');
@@ -224,7 +229,10 @@ async function main(){
               verified.evidence_hash,
               JSON.stringify({
                 migration:'223_FLEETGUARD_OFFICIAL_BROWSER_RESEARCH',
-                verification:'EXACT_URL_EXACT_BODY_IMAGE_BOUND'
+                verification:'EXACT_URL_EXACT_BODY_IMAGE_BOUND_EXACT_DONALDSON_CROSS_REFERENCE',
+                cross_reference_confirmed:true,
+                source_codigo_base:sel.item.source.codigo_base,
+                source_canonical_code:sel.item.source.canonical_source_code
               })
             ]);
             report.evidence_mutations+=ins.rowCount;

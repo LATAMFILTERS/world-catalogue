@@ -1,6 +1,7 @@
 'use strict';
 
 require('dotenv').config();
+const {verifiedFleetguardIdentityForSource}=require('../../lib/fleetguard-official-evidence');
 const { Client } = require('pg');
 const {
   normalizeCode,
@@ -70,7 +71,7 @@ function evidenceKey(e){ return normalizeManufacturer(e.manufacturer)+'|'+normal
     const hasLedger=(await db.query("SELECT to_regclass('public.catalog_codigo_base_evidence') AS r")).rows[0]?.r;
     if(hasLedger && skuList.length){
       ledger=(await db.query(`
-        SELECT sku,evidence_kind,authority,manufacturer,reference_code,source_url,verified_at,metadata
+        SELECT sku,evidence_kind,authority,manufacturer,reference_code,source_url,evidence_hash,verified_at,metadata
         FROM public.catalog_codigo_base_evidence
         WHERE sku=ANY($1::text[])
         ORDER BY sku,verified_at DESC,id DESC
@@ -90,7 +91,7 @@ function evidenceKey(e){ return normalizeManufacturer(e.manufacturer)+'|'+normal
       const comp=refs(r.competitor_codes);
       const oem=refs(r.oem_codes);
       const evidence=(ledgerBySku.get(r.sku)||[]).filter(e=>officialKind(e.evidence_kind));
-      const evidenceSet=new Set(evidence.map(evidenceKey));
+      const evidenceSet=new Set(evidence.filter(e=>normalizeManufacturer(e.manufacturer)!=='FLEETGUARD'||verifiedFleetguardIdentityForSource(e,r)).map(evidenceKey));
 
       const fleetguard=comp.filter(x=>x.manufacturer==='FLEETGUARD' && evidenceSet.has('FLEETGUARD|'+normalizeCode(x.code)));
       const oemVerified=oem.filter(x=>evidenceSet.has(x.manufacturer+'|'+normalizeCode(x.code)));

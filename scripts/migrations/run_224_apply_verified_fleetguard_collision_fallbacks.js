@@ -1,6 +1,7 @@
 'use strict';
 
 require('dotenv').config();
+const {verifiedFleetguardIdentityForSource}=require('../../lib/fleetguard-official-evidence');
 const {Client}=require('pg');
 const {
   normalizeCode,
@@ -127,7 +128,7 @@ async function updateDerivedRefs(db,oldSku,newSku){
 
     const skuList=collisionRows.map(x=>x.source.sku);
     const ledger=skuList.length?(await db.query(`
-      SELECT sku,evidence_kind,authority,manufacturer,reference_code,source_url,verified_at,metadata
+      SELECT sku,evidence_kind,authority,manufacturer,reference_code,source_url,evidence_hash,verified_at,metadata
       FROM public.catalog_codigo_base_evidence
       WHERE sku=ANY($1::text[])
       ORDER BY sku,verified_at DESC,id DESC
@@ -160,7 +161,7 @@ async function updateDerivedRefs(db,oldSku,newSku){
         const k=String(e.evidence_kind||'').toUpperCase();
         return k.includes('OFFICIAL')||k.includes('MANUFACTURER');
       });
-      const set=new Set(official.map(evidenceKey));
+      const set=new Set(official.filter(e=>normalizeManufacturer(e.manufacturer)!=='FLEETGUARD'||verifiedFleetguardIdentityForSource(e,r)).map(evidenceKey));
 
       const fleetguard=[...new Map(
         refs(r.competitor_codes)

@@ -18,6 +18,11 @@ const LIMIT=LIMIT_ARG?Math.max(1,Number(LIMIT_ARG.split('=')[1])||50):50;
 const FOCUS_ARG=process.argv.find(x=>x.startsWith('--focus='));
 const FOCUS=String(FOCUS_ARG?FOCUS_ARG.split('=')[1]:'all').toLowerCase();
 if(!['all','donaldson','fleetguard'].includes(FOCUS)) throw new Error('INVALID_FOCUS '+FOCUS);
+const SCOPE_ARG=process.argv.find(x=>x.startsWith('--scope='));
+const SCOPE=SCOPE_ARG?SCOPE_ARG.slice('--scope='.length):'collisions';
+if(!['collisions','free-targets'].includes(SCOPE))throw new Error('INVALID_RESEARCH_SCOPE');
+const AFTER_ARG=process.argv.find(x=>x.startsWith('--after-sku='));
+const AFTER_SKU=AFTER_ARG?AFTER_ARG.slice('--after-sku='.length):'';
 
 function sha(v){return crypto.createHash('sha256').update(String(v)).digest('hex');}
 function prefixFor(sku=''){
@@ -95,6 +100,8 @@ async function verifyFleetguardExact(code,preferredUrl){
     mode:EXECUTE?'execute':'dry-run',
     limit:LIMIT,
     focus:FOCUS,
+    scope:SCOPE,
+    after_sku:AFTER_SKU,
     selected:0,
     donaldson:{attempted:0,verified:0,unresolved:0},
     fleetguard:{attempted:0,verified:0,unresolved:0},
@@ -142,7 +149,11 @@ async function verifyFleetguardExact(code,preferredUrl){
       }
     }
 
-    const selected=collisionRows.filter(item=>{
+    const researchRows=SCOPE==='collisions'?collisionRows:malformed
+      .filter(r=>groups.get(r.natural_target).length===1&&!bySku.has(r.natural_target))
+      .map(source=>({source,target:source.natural_target,occupied:null}));
+    const selected=researchRows.filter(item=>{
+      if(AFTER_SKU&&item.source.sku<=AFTER_SKU)return false;
       const r=item.source;
       const gov=governanceFrom(r);
       const canon=normalizeManufacturer(r.canonical_source_brand);
@@ -155,6 +166,8 @@ async function verifyFleetguardExact(code,preferredUrl){
     }).slice(0,LIMIT);
 
     report.selected=selected.length;
+    report.selected_skus=selected.map(item=>item.source.sku);
+    report.next_after_sku=selected.at(-1)?.source.sku||AFTER_SKU;
 
     for(const item of selected){
       const r=item.source;
