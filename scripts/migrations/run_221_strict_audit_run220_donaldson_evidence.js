@@ -3,6 +3,7 @@
 require('dotenv').config();
 const crypto=require('crypto');
 const {Client}=require('pg');
+const {sslConfigFor}=require('../../lib/catalog-db-ssl');
 const {normalizeCode}=require('../../lib/catalog-codigo-base-policy');
 const {pageSupportsOfficialProduct}=require('../../lib/donaldson-official-evidence');
 
@@ -54,7 +55,7 @@ async function strictVerify(code,sourceUrl){
   const url=process.env.CATALOG_DATABASE_URL||process.env.ELIMFILTERS_DATABASE_URL||process.env.DATABASE_URL;
   if(!url)throw new Error('DB URL missing');
 
-  const db=new Client({connectionString:url,ssl:{rejectUnauthorized:false}});
+  const db=new Client({connectionString:url,ssl:sslConfigFor(url)});
   await db.connect();
 
   const report={
