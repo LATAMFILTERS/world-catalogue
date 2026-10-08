@@ -18,16 +18,17 @@ Se iniciaron únicamente las bases de ensayo del puerto 5450 y se crearon bases 
 - Septiembre 24: 5432=13,312; 5441=13,948; 5440=13,210 filas, con SHA256 concordante con cada manifiesto.
 - Trece respaldos diarios de producción de septiembre 25 a octubre 7: huellas comprobadas y tablas restauradas en bases nuevas temporales. Octubre 8 tiene un dump vacío y no es válido.
 
-Archivo original: 3,331 diferencias. Comparación de codigo_base, canonical_source_status y catalog_active contra copia común **probable**:
+Archivo original: 3,331 diferencias. Comparación corregida de codigo_base y canonical_source_status contra copia común **probable**. Ninguna de sus 13,307 filas contiene catalog_active: se excluye únicamente de la atribución contra esa copia, conservando diferencias actuales de actividad en columnas separadas para revisión. El conteo anterior de 2,255 conflictos era incorrecto y queda retirado.
 
 | Clasificación condicional | Filas |
 |---|---:|
-| Cambio solo de producción | 13 |
-| Cambio solo del borrador | 1,060 |
-| Cambios distintos en ambos | 2,255 |
-| Ambos convergen actualmente | 3 |
+| Cambio solo de producción | 1,304 |
+| Cambio solo del borrador | 1,626 |
+| Cambios distintos en ambos | 384 |
+| Ambos convergen actualmente | 2 |
+| Sin cambio de base/estado frente a la copia común | 15 |
 
-Clasificación de rama no equivale a autoría ni a mejora correcta. La atribución sigue sin demostrar; los conflictos requieren operador. La fecha de cada cambio se expresa como intervalo entre capturas, no hora exacta de modificación. Cronología completa de producción: 5,153 eventos en 5,147 SKUs para los tres campos, incluidos cambios fuera de la lista original. Incluye intervalo posterior al último respaldo hasta la captura de lectura de producción.
+Clasificación de rama no equivale a autoría ni a mejora correcta. La atribución sigue sin demostrar; los conflictos y las diferencias de actividad sin línea base requieren operador. Las 15 filas sin cambio de base/estado no están automáticamente resueltas: su actividad se revisa aparte. La fecha de cada cambio se expresa como intervalo entre capturas, no hora exacta de modificación. Cronología completa de producción: 5,153 eventos en 5,147 SKUs para los tres campos, incluidos cambios fuera de la lista original. Incluye intervalo posterior al último respaldo hasta la captura de lectura de producción. La comparación desde septiembre 24 conserva actividad porque esa copia sí tiene el campo.
 
 ## Condiciones antes de sustitución
 
