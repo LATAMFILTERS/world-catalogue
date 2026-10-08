@@ -54,6 +54,7 @@ async function updateDerivedRefs(db,oldSku,newSku){
     ['public.kg_crossrefs','product_sku'],
     ['public.catalog_sku_certification','sku'],
     ['public.catalog_codigo_base_evidence','sku'],
+    ['public.catalog_identity_evidence','sku'],
     ['public.codigo_base_review_queue','sku'],
     ['public.catalog_codigo_base_sanitation_queue','sku'],
     ['public.hermes_catalogue_backlog','sku'],
@@ -178,6 +179,10 @@ async function updateDerivedRefs(db,oldSku,newSku){
       if(targetOcc)continue;
 
       const nextCompetitor=removeRef(r.competitor_codes,'FLEETGUARD',fg.code);
+      // Preserve the original manufacturer reference when it becomes an alternate.
+      if(!refs(nextCompetitor).some(x=>x.manufacturer==='DONALDSON'&&normalizeCode(x.code)===canonicalCode)){
+        nextCompetitor.push({manufacturer:'DONALDSON',code:r.canonical_source_code});
+      }
       const nextGov={
         ...gov,
         policy_version:'2026-10-06-v4.2',
@@ -278,7 +283,7 @@ async function updateDerivedRefs(db,oldSku,newSku){
         if(await tableExists(db,'public.crossref_resolved_cache')){
           await db.query('DELETE FROM public.crossref_resolved_cache WHERE sku=ANY($1::text[])',[[r.sku,target]]);
         }
-        try{await db.query('SELECT public.refresh_crossref_cache_sku($1)',[target]);}catch(_){}
+        await db.query('SELECT public.refresh_crossref_cache_sku($1)',[target]);
 
         const after=(await db.query('SELECT * FROM public.elimfilters_catalog WHERE sku=$1',[target])).rows[0];
         if(!approvedHdCollisionFallbackReady(after,'FLEETGUARD'))throw new Error('POST_WRITE_POLICY_NOT_READY');
