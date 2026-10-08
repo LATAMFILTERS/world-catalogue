@@ -2,6 +2,7 @@
 
 require('dotenv').config();
 const { Client } = require('pg');
+const {sslConfigFor}=require('../../lib/catalog-db-ssl');
 
 function digits(v){ return String(v||'').replace(/\D/g,''); }
 function expectedSku(row){
@@ -20,7 +21,7 @@ function expectedSku(row){
 (async()=>{
   const url=process.env.CATALOG_DATABASE_URL||process.env.ELIMFILTERS_DATABASE_URL||process.env.DATABASE_URL;
   if(!url) throw new Error('DB URL missing');
-  const db=new Client({connectionString:url,ssl:{rejectUnauthorized:false}});
+  const db=new Client({connectionString:url,ssl:sslConfigFor(url)});
   await db.connect();
   try{
     const rows=(await db.query(`
