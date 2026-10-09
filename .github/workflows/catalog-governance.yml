@@ -4,6 +4,14 @@ on:
   pull_request:
     paths:
       - 'lib/catalog-*.js'
+      - 'lib/bot-conversation-orchestrator.js'
+      - 'lib/bot-protocol-reference-preflight.js'
+      - 'lib/bot-protocol-unified-orchestrator.js'
+      - 'lib/fleetguard-official-evidence.js'
+      - 'scripts/audit-catalog-structural-integrity.js'
+      - 'scripts/migrations/run_21*.js'
+      - 'scripts/migrations/run_22*.js'
+      - 'config/vehicle-platform-closure/john-deere-*.json'
       - 'scripts/audit-catalog-governance-daily.js'
       - 'scripts/catalog-historical-sanitation.js'
       - 'scripts/migrations/run_07*.js'
@@ -23,6 +31,14 @@ on:
     branches: [main]
     paths:
       - 'lib/catalog-*.js'
+      - 'lib/bot-conversation-orchestrator.js'
+      - 'lib/bot-protocol-reference-preflight.js'
+      - 'lib/bot-protocol-unified-orchestrator.js'
+      - 'lib/fleetguard-official-evidence.js'
+      - 'scripts/audit-catalog-structural-integrity.js'
+      - 'scripts/migrations/run_21*.js'
+      - 'scripts/migrations/run_22*.js'
+      - 'config/vehicle-platform-closure/john-deere-*.json'
       - 'scripts/audit-catalog-governance-daily.js'
       - 'scripts/catalog-historical-sanitation.js'
       - 'scripts/migrations/run_07*.js'

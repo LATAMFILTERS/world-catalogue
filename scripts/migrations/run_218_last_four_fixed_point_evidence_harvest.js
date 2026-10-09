@@ -9,6 +9,7 @@ const {
   governanceFrom,
 } = require('../../lib/catalog-codigo-base-policy');
 
+const {qualifyNaturalRemap}=require('../../lib/catalog-natural-remap');
 const APPLY = process.argv.includes('--execute');
 
 function prefixFor(sku=''){
@@ -111,6 +112,7 @@ function refItems(v){
     mode:APPLY?'execute':'dry-run',
     fixed_point_rounds:[],
     renamed:[],
+    safe_candidate_matrix:[],
     evidence_matrix:[],
     summary:{}
   };
@@ -129,9 +131,18 @@ function refItems(v){
         collision_rows:state.collisionRows.length,
         collision_targets:new Set(state.collisionRows.map(x=>x.target)).size
       });
-      if(!APPLY || state.safe.length===0) break;
-
+      const candidates=[];
       for(const item of state.safe){
+        const occupied=(await db.query('SELECT sku FROM public.elimfilters_catalog WHERE sku=$1',[item.target])).rows;
+        const evidence=await tableExists(db,'public.catalog_codigo_base_evidence')
+          ? (await db.query('SELECT sku,manufacturer,reference_code,evidence_kind,source_url,evidence_hash,verified_at FROM public.catalog_codigo_base_evidence WHERE sku=$1',[item.source.sku])).rows : [];
+        const plan=qualifyNaturalRemap(item.source,item.target,evidence,occupied);
+        report.safe_candidate_matrix.push({...plan,round});
+        if(plan.ready)candidates.push(item);
+      }
+      if(!APPLY || candidates.length===0) break;
+      const resolvedBefore=report.renamed.filter(x=>x.status==='RESOLVED_COMMIT').length;
+      for(const item of candidates){
         await db.query('SAVEPOINT fp_one');
         try{
           const conflict=await db.query('SELECT sku FROM public.elimfilters_catalog WHERE sku=$1',[item.target]);
@@ -154,6 +165,7 @@ function refItems(v){
           report.renamed.push({from:item.source.sku,to:item.target,status:'BLOCKED',error:e.message});
         }
       }
+      if(report.renamed.filter(x=>x.status==='RESOLVED_COMMIT').length===resolvedBefore) break;
       round++;
       if(round>50) throw new Error('FIXED_POINT_ROUND_LIMIT');
     }
@@ -223,6 +235,8 @@ function refItems(v){
       initial_malformed_rows:report.fixed_point_rounds[0]?.malformed_rows||0,
       fixed_point_renamed_count:report.renamed.filter(x=>x.status==='RESOLVED_COMMIT').length,
       fixed_point_blocked_count:report.renamed.filter(x=>x.status==='BLOCKED').length,
+      safe_ready_count:report.safe_candidate_matrix.filter(x=>x.round===0&&x.ready).length,
+      safe_blocked_count:report.safe_candidate_matrix.filter(x=>x.round===0&&!x.ready).length,
       remaining_malformed_rows:finalState.malformed.length,
       remaining_collision_rows:finalState.collisionRows.length,
       remaining_collision_targets:new Set(finalState.collisionRows.map(x=>x.target)).size,

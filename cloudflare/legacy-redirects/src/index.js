@@ -51,6 +51,15 @@ const REDIRECTS = new Map([
   ["/products/ef90669/", "/products/es91027/"],
   ["/products/EF90669", "/products/es91027/"],
   ["/products/EF90669/", "/products/es91027/"],
+  // Retired EF9 identities retain their published URL through the active ES9 successors.
+  ["/products/ef91026", "/products/es91026/"],
+  ["/products/ef91026/", "/products/es91026/"],
+  ["/products/EF91026", "/products/es91026/"],
+  ["/products/EF91026/", "/products/es91026/"],
+  ["/products/ef91027", "/products/es91027/"],
+  ["/products/ef91027/", "/products/es91027/"],
+  ["/products/EF91027", "/products/es91027/"],
+  ["/products/EF91027/", "/products/es91027/"],
   // 2026-10-05: Donaldson P170950 discontinued, superseded by P164378 (EH60950 -> EH64378).
   ["/products/eh60950", "/products/eh64378/"],
   ["/products/eh60950/", "/products/eh64378/"],

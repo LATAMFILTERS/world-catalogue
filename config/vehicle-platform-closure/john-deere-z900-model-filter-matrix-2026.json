@@ -1,6 +1,6 @@
 {
-  "status": "FILTRATION_CANONICAL_COMPLETE",
-  "updated_at": "2026-10-06",
+  "status": "NOT_CLOSED",
+  "updated_at": "2026-10-07",
   "scope": "John Deere Z900 commercial ZTrak model-level filtration coverage",
   "rule": "Each model must resolve engine oil, primary air, secondary air, fuel filtration variants, and transmission/hydraulic filter. Fuel variants are alternatives selected by installed fuel-system/serial configuration, not simultaneous requirements unless the Deere guide explicitly requires both.",
   "canonical_skus": {
@@ -8,11 +8,7 @@
     "M131803": "EA12858",
     "AM107423": "EL82015",
     "AM125424": "EL82024",
-    "AM116304": "EF90094",
-    "UC16183": "EF90094",
-    "UC21217": "EF90094",
-    "MIU13224": "EF91760",
-    "MIA881446": "EH65409"
+    "AM116304": "EF90094"
   },
   "models": [
     {
@@ -260,10 +256,46 @@
     "https://www.deere.com/assets/pdfs/common/qrg/z960m-ztrak-m-series-mower-with-decks.pdf",
     "https://shop.deere.com/us/product/MIA881446%3A-Transmission-Oil-Filter-with-Packing/p/MIA881446"
   ],
-  "live_verification_status": "ALL_FILTER_REFERENCES_CANONICALIZED",
+  "live_verification_status": "BLOCKED_CANONICAL_AUTHORITY_AND_GRAPH_REPAIR",
   "remaining_non_filter_service_components": [
     "MIA12832",
     "MIU14301",
     "UC23657"
-  ]
+  ],
+  "blocked_canonical_refs": [
+    {
+      "reference": "UC16183",
+      "status": "STOP_REVIEW",
+      "reason": "MANUFACTURER_GRADE_EQUIVALENCE_NOT_VERIFIED",
+      "prior_unverified_sku": "EF90094"
+    },
+    {
+      "reference": "UC21217",
+      "status": "STOP_REVIEW",
+      "reason": "MANUFACTURER_GRADE_EQUIVALENCE_NOT_VERIFIED",
+      "prior_unverified_sku": "EF90094"
+    },
+    {
+      "reference": "MIU13224",
+      "status": "STOP_REVIEW",
+      "reason": "MANUFACTURER_GRADE_EQUIVALENCE_NOT_VERIFIED",
+      "prior_unverified_sku": "EF91760"
+    },
+    {
+      "reference": "MIA881446",
+      "status": "STOP_REVIEW",
+      "reason": "TORO_1365409_EQUIVALENCE_NOT_VERIFIED",
+      "prior_unverified_sku": "EH65409"
+    }
+  ],
+  "closure_blockers": [
+    "EA15551 catalog target absent; incorrect EH66486 graph link quarantined pending verified air identity",
+    "Five known mappings require current live evidence validation",
+    "Four unsafe canonical mappings withdrawn pending official equivalence evidence",
+    "Exact air-cleaner housing authority remains pending",
+    "All 11 live model queries must be verified before closure"
+  ],
+  "model_registry_status": "11_REQUIRED_MODELS_REGISTERED_EXISTENCE_ONLY",
+  "models_live_complete": 0,
+  "engine_authority_status": "NOT_VERIFIED"
 }
