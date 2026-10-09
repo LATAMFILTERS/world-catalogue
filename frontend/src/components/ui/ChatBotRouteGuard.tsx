@@ -23,6 +23,11 @@ export default function ChatBotRouteGuard() {
   }, []);
 
   // Don't render conditionally until after hydration to prevent mismatch
+  // Disable chatbot only on the approved partners landing.
+  if (pathname === '/partners' || pathname === '/partners/') {
+    return null;
+  }
+
   if (!mounted) {
     return <ChatBot />;
   }

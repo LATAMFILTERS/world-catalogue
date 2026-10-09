@@ -102,6 +102,20 @@ Canonical detail:
 - `docs/brand/PRODUCT_REGISTRY.md`
 - `product-identity/lib/industrial-sku-policy.mjs`
 
+## Política canónica Duty / código base (definida por Victor, 2026-10-04)
+- HD: el código base es Donaldson. Si Donaldson no lo fabrica, se usa Fleetguard. Si ninguno lo fabrica, el código base es el OEM más comercial. Excepción: los ET9* son 100% Parker (esta regla no aplica).
+- LD (vehículos livianos, SUV, motores diésel pequeños, pickups/camionetas): vehículos NO europeos → código base FRAM; vehículos europeos → código base MANN FILTERS.
+
+## Sistema de prefijos SKU (definido por Victor, 2026-10-04)
+- HD = prefijo + últimos 4 dígitos del código base (ejemplo: P552100 → EL82100).
+- ES9 = separador de combustible, HYDROCORE. EF9 = fuel filter, SYNTAPORE. EL8 = lube/oil, SYNTRAX. EH6 = hidráulico, NANOFORCE. EW7 = refrigerante, THERMOCORE. ED4 = air dryer, DRYCORE. EA1 = filtros de aire, MACROCORE. EA2 = carcasas para filtros de aire, INTEKCORE. EC1 = filtros de cabina, MICROKAPPA.
+- LD tiene solo 4 prefijos: EA3 = aire MACROCORE, EC3 = cabina MICROKAPPA, EL3 = aceite SYNTRAX, EF3 = fuel SYNTAPORE.
+
+## Doctrina de clasificación (definida por Victor, 2026-10-04)
+- Ante una etiqueta ambigua del fabricante, predominan las características físicas: purgador, vaso visor, o cartucho dentro de un elemento visor = separador de agua (ES9), aunque el fabricante lo llame "FUEL FILTER".
+
+Caso pendiente (NO ejecutado, requiere aprobación): EF90668 y EF90669 deben renumerarse a ES91026 y ES91027 porque son separadores de agua, no fuel filters.
+
 ## Hard rules
 
 - Resolve technology names and scopes from canonical registries only.
