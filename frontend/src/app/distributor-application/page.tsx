@@ -155,7 +155,7 @@ export default function DistributorApplication() {
     e.preventDefault();
     if (program !== 'country' && program !== 'partner') return;
     try {
-      const res = await fetch(program === 'partner' ? '/api/partner-application/' : '/api/distributor', {
+      const res = await fetch(program === 'partner' ? 'https://crm-api.elimfilters.com/v1/public/partner-applications' : '/api/distributor', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
