@@ -25,11 +25,6 @@
       "count": 2
     }
   },
-  "src/app/distributor-application/page.tsx": {
-    "react/jsx-no-comment-textnodes": {
-      "count": 4
-    }
-  },
   "src/app/engineering/contamination/[entityId]/ContaminationExplorerClient.tsx": {
     "react-hooks/set-state-in-effect": {
       "count": 1

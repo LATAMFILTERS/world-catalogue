@@ -2,7 +2,7 @@
 
 import PartnerTurnstile from './PartnerTurnstile';
 
-import {  useEffect, useState, type CSSProperties, useRef } from 'react';
+import {  useEffect, useState, useSyncExternalStore, type CSSProperties, useRef } from 'react';
 import { PageHeader } from '@/components/PageHeader';
 
 const PROGRAM_SUPPORT = [
@@ -107,17 +107,16 @@ const partnerSchemaBreadcrumb = {
   ],
 };
 
-export default function DistributorApplication() {
-  const [program, setProgram] = useState<'loading' | 'country' | 'partner'>('loading');
-  const partnerMode = program === 'partner';
+const subscribeNever = () => () => {};
 
-  useEffect(() => {
-    setProgram(
-      new URLSearchParams(window.location.search).get('program') === 'partner'
-        ? 'partner'
-        : 'country'
-    );
-  }, []);
+export default function DistributorApplication() {
+  // 'loading' on the server and during hydration; the query string is read on the client only.
+  const program = useSyncExternalStore<'loading' | 'country' | 'partner'>(
+    subscribeNever,
+    () => new URLSearchParams(window.location.search).get('program') === 'partner' ? 'partner' : 'country',
+    () => 'loading'
+  );
+  const partnerMode = program === 'partner';
   const [formData, setFormData] = useState({
     companyName: '',
     legalName: '',
