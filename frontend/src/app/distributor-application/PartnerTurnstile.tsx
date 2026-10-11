@@ -21,6 +21,7 @@ export default function PartnerTurnstile({ onVerify }: Props) {
   const callbackRef = useRef(onVerify);
   const [error, setError] = useState('');
   const [attempt, setAttempt] = useState(0);
+  const message = sitekey ? error : 'Turnstile no está configurado. Código: SITEKEY_MISSING';
 
   useEffect(() => { callbackRef.current = onVerify; }, [onVerify]);
 
@@ -30,10 +31,7 @@ export default function PartnerTurnstile({ onVerify }: Props) {
     const started = Date.now();
     callbackRef.current('');
 
-    if (!sitekey) {
-      setError('Turnstile no está configurado. Código: SITEKEY_MISSING');
-      return;
-    }
+    if (!sitekey) return;
 
     // Load explicitly: Next Script may not be injected on the static export after hydration.
     let script: HTMLScriptElement | null = null;
@@ -108,9 +106,9 @@ export default function PartnerTurnstile({ onVerify }: Props) {
   return (
     <>
       <div ref={containerRef} style={{ margin: '1rem 0', minHeight: 65 }} />
-      {error && (
+      {message && (
         <div role="alert" style={{ color: '#ffcc55', fontSize: 14, lineHeight: 1.5, paddingBottom: 16 }}>
-          {error}
+          {message}
           <button type="button"
             onClick={() => {
               callbackRef.current('');
