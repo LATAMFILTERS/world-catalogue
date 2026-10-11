@@ -56,6 +56,7 @@ const CONSTITUTIONAL_DOMAIN_MAP: Record<string, string> = {
   'TECH-NANOFORCE':   'Hydraulic',
   'TECH-SYNTAPORE':   'Fuel HPCR',
   'TECH-HYDROCORE':   'Fuel Water Separation',
+  'TECH-TURBOCORE':   'Fuel Water Separation',
 
   'TECH-THERMACORE':  'Cooling System',
   'TECH-DRYCORE':     'Compressed Air',

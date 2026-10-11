@@ -16,7 +16,8 @@
  *   SYNTRAX     → Engine Lube Oil         (ISO 16889, ISO 4406)
  *   NANOFORCE   → Hydraulic               (ISO 16889, NFPA T2.14)
  *   SYNTAPORE   → Fuel HPCR               (application-specific — no universal certification standard)
- *   HYDROCORE   → Fuel Water Separation   (application-specific — no universal certification standard)
+ *   HYDROCORE   → Fuel Water Separation   (standard spin-on / cartridge separators, ES9)
+ *   TURBOCORE   → Fuel Water Separation   (turbine-style FH / FG systems, ET9)
 
  *   THERMACORE  → Cooling System          (ASTM D3306)
  *   INTEKCORE   → Air Intake              (air-cleaner housing and sealing; ISO 5011)
@@ -562,7 +563,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     ],
   },
 
-  // ── HYDROCORE — Fuel Water Separation ────────────────────────────────
+  // ── HYDROCORE — Standard Fuel Water Separation (spin-on / cartridge) ──
 
   'TECH-HYDROCORE': {
     entityType: 'TECHNOLOGY_ARCHITECTURE',
@@ -575,13 +576,119 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     createdDate: '2026-07-01',
 
     canonicalDefinition:
-      'HYDROCORE is the ELIMFILTERS fuel/water-separation architecture across approved spin-on, cartridge, and Turbine Series FH/FG applications within Fuel Cleanliness Protection. Its engineering role is to coordinate staged fuel conditioning and separation around the required flow, separation duty, element rating, installation and maintenance access of each approved application. Applicable fuel-separation test methods, element ratings and application requirements must be selected for the approved system; the technology name alone does not imply a universal micron rating, water-separation efficiency or certification claim.',
+      'HYDROCORE is the ELIMFILTERS fuel/water-separation architecture for approved standard non-turbine separator filters — spin-on and cartridge configurations, including those with a drain or a transparent bowl — within Fuel Cleanliness Protection. Its engineering role is to coordinate separation media and the approved separator construction around flow, water-holding capacity, element service interval, installation, drainage, bowl configuration and maintenance access. It does not govern FH or FG turbine-style systems, which belong exclusively to TURBOCORE. Applicable fuel-water separation test methods, water-holding capacity and application requirements must be selected for the approved separator; the technology name alone does not imply a universal micron rating, water-separation efficiency or certification claim.',
 
     systemContext:
-      'Applies to approved spin-on and cartridge fuel/water separators as well as Turbine Series FH and FG fuel-separation housings and their dedicated replacement elements. Flow, separation duty and element rating must be matched to the specific approved application rather than assumed universally.',
+      'Applies to approved standard non-turbine fuel/water separators in spin-on and cartridge form, with drain or transparent-bowl configurations (ES9 series). FH and FG turbine-style housings and their dedicated replacement elements are excluded and governed by TURBOCORE. Flow, water-holding capacity and element rating must be matched to the specific approved application rather than assumed universally.',
 
     industrialRole:
-      'HYDROCORE provides the staged fuel-conditioning and separation layer of ELIMFILTERS Fuel Cleanliness Protection across approved spin-on, cartridge, and turbine-style FH/FG architectures. Selection is governed by flow, separation duty, element rating, installation and maintenance requirements specific to each approved application.',
+      'HYDROCORE provides the standard fuel/water-separation layer of ELIMFILTERS Fuel Cleanliness Protection for approved non-turbine spin-on and cartridge separators. Inadequate water separation or incorrect drainage can allow water to reach downstream injectors and high-pressure pumps, increasing erosion, corrosion and cavitation risk. Selection is governed by flow, water-holding capacity, drainage, bowl configuration, installation and maintenance requirements specific to each approved application.',
+
+    protectionMedia: [
+      {
+        type: 'Fuel/water separation media',
+        description:
+          'Separation media and separator construction are matched to the required flow, water-holding capacity and element rating of the approved spin-on or cartridge application.',
+        micronRating: 'Application-specific — no universal rating',
+        mediaConstruction: 'Application-specific per approved spin-on or cartridge separator',
+      },
+    ],
+
+    engineeringPrincipleIds: ['EP-SEP-001'],
+
+    materials: [
+      {
+        component: 'Separator element and media',
+        material: 'Application-specific per approved separator specification',
+        justification:
+          'Material selection is governed by the approved spin-on or cartridge separator specification for the target fuel system.',
+      },
+      {
+        component: 'Water collection bowl and drain',
+        material: 'Application-specific',
+        justification:
+          'Provides collection volume for separated water; drain and transparent-bowl arrangement depend on the approved application.',
+      },
+    ],
+
+    construction: [
+      {
+        feature: 'Spin-on or cartridge separator construction',
+        description:
+          'Separation media is packaged in the approved spin-on or cartridge format with the drain or transparent-bowl configuration specified for the application.',
+        engineeringBasis:
+          'Separated water must be collected and drained before it can re-enter the fuel circuit; the approved construction defines the collection volume, drainage and service access for the application.',
+      },
+      {
+        feature: 'Water-in-fuel (WIF) monitoring provision',
+        description:
+          'Where the approved application specifies it, a WIF sensor port provides operator warning when separated water reaches service level.',
+        engineeringBasis:
+          'Condition-based service alerts before separated water can re-enter the fuel circuit, where the application requires this provision.',
+      },
+    ],
+
+    flowDynamics: [
+      {
+        parameter: 'Rated fuel flow',
+        value: 'Application-specific',
+        unit: 'per approved separator rating',
+      },
+    ],
+
+    captureMechanisms: [
+      {
+        contaminantClass: 'Free and emulsified water',
+        mechanism: 'Separation matched to the approved spin-on or cartridge application',
+        particleSizeRange: 'Application-specific — no universal rating',
+      },
+    ],
+
+    performanceProfile: [],
+
+    failureModes: [
+      {
+        id: 'FM-FUEL-001',
+        rootCauseChain:
+          'Water contamination in fuel reaching the HPCR injection rail → hydraulic damage at the injector tip → injection pattern distortion → combustion failure and injector replacement',
+        measuredConsequence:
+          'HPCR injector replacement cost: USD 800–4,000 per injector, depending on engine and application.',
+        operationalImpact:
+          'Inadequate fuel water separation or neglected drainage in standard spin-on and cartridge separator applications increases injector failure risk; the correct approved element, drainage practice and service interval must be maintained for the target application.',
+        preventedByThisTechnology: true,
+      },
+    ],
+
+    versionHistory: [
+      {
+        version: '1.0.0',
+        publishedDate: '2026-10-11',
+        approvedBy: 'Operator directive 2026-10-11 — Technology Authority review pending',
+        changeNote: 'Re-established as a distinct architecture for standard non-turbine separators after the 2026-08-18 consolidation; FH/FG scope returned to TURBOCORE per the canonical boundary.',
+      },
+    ],
+  },
+
+  // ── TURBOCORE — Turbine Fuel Water Separation (FH / FG) ────────────────────────────────
+
+  'TECH-TURBOCORE': {
+    entityType: 'TECHNOLOGY_ARCHITECTURE',
+    id: 'TECH-TURBOCORE',
+    technologyName: 'TURBOCORE',
+    commercialName: 'TURBOCORE™',
+    systemDomain: 'Fuel Water Separation',
+    primaryStandards: [],
+    maturity: MATURITY.PUBLISHED,
+    createdDate: '2026-07-01',
+
+    canonicalDefinition:
+      'TURBOCORE is the ELIMFILTERS dedicated fuel-separation architecture for approved turbine-style FH and FG applications within Fuel Cleanliness Protection. Its engineering role is to coordinate staged fuel conditioning and separation around the required flow, separation duty, element rating, installation and maintenance access of each approved FH or FG application. Applicable fuel-separation test methods, element ratings and application requirements must be selected for the approved system; the technology name alone does not imply a universal micron rating, water-separation efficiency or certification claim.',
+
+    systemContext:
+      'Applies to the approved Turbine Series FH and FG fuel-separation housings and their dedicated replacement elements. Flow, separation duty and element rating must be matched to the specific approved FH or FG application rather than assumed universally.',
+
+    industrialRole:
+      'TURBOCORE provides the staged fuel-conditioning and separation layer of ELIMFILTERS Fuel Cleanliness Protection for approved turbine-style FH and FG architectures. Selection is governed by flow, separation duty, element rating, installation and maintenance requirements specific to each approved application.',
 
     protectionMedia: [
       {

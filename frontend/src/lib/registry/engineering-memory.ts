@@ -585,13 +585,13 @@ export const ENGINEERING_MEMORY: readonly EngineeringMemoryEntry[] = [
   {
     memoryId: 'MEM-2026-07-05-001',
     entityType: 'TECHNOLOGY_ARCHITECTURE',
-    entityId: 'TECH-HYDROCORE',
+    entityId: 'TECH-TURBOCORE',
     entityVersion: '1.0.0',
     archivedDate: '2026-07-05',
     archivedReason: 'VERSION_SNAPSHOT',
     snapshot: {
-      id: 'TECH-HYDROCORE',
-      name: 'HYDROCORE',
+      id: 'TECH-TURBOCORE',
+      name: 'TURBOCORE',
       systemDomain: 'Fuel 3-Stage',
       primaryStandards: ['ISO 16332', 'ASTM D6304'],
       engineeringPrincipleIds: ['EP-SEP-003', 'EP-PHS-001', 'EP-PHS-002', 'EP-SEP-001'],
