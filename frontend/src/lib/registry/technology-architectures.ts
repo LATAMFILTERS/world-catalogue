@@ -19,7 +19,7 @@
  *   HYDROCORE   → Fuel Water Separation   (application-specific — no universal certification standard)
 
  *   THERMACORE  → Cooling System          (ASTM D3306)
- *   INTEKCORE   → Filter Housing Systems
+ *   INTEKCORE   → Air Intake              (air-cleaner housing and sealing; ISO 5011)
  *   DURATECH    → Fleet Maintenance
  *   MICROKAPPA  → Cabin Air               (ISO 11155, DIN 71220)
  */
@@ -1164,7 +1164,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     ],
   },
 
-  // ── INTEKCORE — Filter Housing Systems ───────────────────────────────
+  // ── INTEKCORE — Air Intake (housing) ───────────────────────────────────
 
   'TECH-INTEKCORE': {
     entityType: 'TECHNOLOGY_ARCHITECTURE',

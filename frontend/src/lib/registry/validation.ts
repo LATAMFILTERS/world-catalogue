@@ -59,7 +59,7 @@ const CONSTITUTIONAL_DOMAIN_MAP: Record<string, string> = {
 
   'TECH-THERMACORE':  'Cooling System',
   'TECH-DRYCORE':     'Compressed Air',
-  'TECH-INTEKCORE':   'Filter Housing Systems',
+  'TECH-INTEKCORE':   'Air Intake',
   'TECH-DURATECH':    'Fleet Maintenance',
   'TECH-MARINECLEAN': 'Marine Diesel & Hydraulic',
   'TECH-MICROKAPPA':  'Cabin Air',
