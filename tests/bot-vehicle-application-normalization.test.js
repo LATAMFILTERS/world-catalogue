@@ -146,3 +146,38 @@ test('legacy equipment lookup remains backward compatible and does not claim veh
   assert.match(capturedSql, /equipment_applications::text/);
   assert.doesNotMatch(capturedSql, /vehicle_verified/);
 });
+
+test('explicit filter system never falls back to unrelated filters', async () => {
+  __setProtocolPoolForTests({
+    connect: async () => ({
+      async query(sql) {
+        const text = String(sql);
+        if (/^\s*(BEGIN|COMMIT|ROLLBACK|SET LOCAL)/i.test(text)) return { rows: [] };
+        return {
+          rows: [{
+            id: 1,
+            sku: 'ED_TEST',
+            codigo_base: 'D_TEST',
+            duty: 'HEAVY_DUTY',
+            filter_type: 'Air Dryer Filter',
+            equipment_applications: [{ make: 'MACK', engine: 'MP8' }],
+            vehicle_applications: [],
+            oem_codes: [],
+            competitor_codes: [],
+            brand_crossrefs: {},
+            specs: {},
+            enrichment_data: {},
+            is_primary: true
+          }]
+        };
+      },
+      release() {}
+    })
+  });
+
+  const unfiltered = await searchByApplication(['MACK', 'MP8'], null, null, null);
+  assert.equal(unfiltered.products.length, 1);
+
+  const oilOnly = await searchByApplication(['MACK', 'MP8'], null, 'oil', null);
+  assert.deepEqual(oilOnly.products, []);
+});
