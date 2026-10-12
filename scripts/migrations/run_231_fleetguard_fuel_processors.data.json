@@ -1,0 +1,1961 @@
+{
+ "captured_on": "2026-10-11",
+ "source": "FLEETGUARD_OFFICIAL_PRODUCT_PAGE",
+ "excluded": {
+  "FH23211M": "slot ET93211 occupied (P553201); left out by operator decision",
+  "FH23300": "Fleetguard lists it as replaced by FH23441"
+ },
+ "housings": [
+  {
+   "sku": "ET93027",
+   "code": "FH23027",
+   "url": "https://www.fleetguard.com/es/product/fh23027/01t5x000008FDUSAA4",
+   "height_mm": 412.75,
+   "elements": [
+    "ES90467"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Fuel Pro Remote Mount Heavy duty engines, fluid heat w/120v and 12v pre-heater Fuel flows up to 180 gph (681 lph) Bio Diesel Compatible See Technical Information Catalog for more details on this product",
+    "Uses Service Part": "3950445S",
+    "Housing Used With": "FS19624",
+    "Media Type": "StrataPore",
+    "Height": "16.25 inch / 412.75 mm",
+    "Overall Width": "7.30 inch / 185.42 mm",
+    "Applicable Region": "North America, Europe, South America, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93029",
+   "code": "FH23029",
+   "url": "https://www.fleetguard.com/es/product/fh23029/01t5x000008FDUTAA4",
+   "height_mm": 406.4,
+   "elements": [
+    "ES90467"
+   ],
+   "oem": [
+    [
+     "PACCAR",
+     "1323230"
+    ],
+    [
+     "VOLVO",
+     "3188140"
+    ]
+   ],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Fuel Pro Remote Mount Heavy duty engines, unheated Fuel flows up to 180 gph (681 lph) Bio Diesel Compatible See Technical Information Catalog for more details on this product",
+    "Uses Service Part": "3950445S",
+    "Housing Used With": "FS19624",
+    "Replaces": "FH23000",
+    "Media Type": "StrataPore",
+    "Height": "16.00 inch / 406.40 mm",
+    "Overall Width": "7.30 inch / 185.42 mm",
+    "Overall Length": "0.00 inch / 0.00 mm",
+    "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93030",
+   "code": "FH23030",
+   "url": "https://www.fleetguard.com/es/product/fh23030/01t5x000008FDV5AAO",
+   "height_mm": 406.4,
+   "elements": [],
+   "oem": [],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Fuel Pro Remote Mount Heavy duty engines, unheated Fuel flows up to 180 gph (681 lph) Bio Diesel Compatible See Technical Information Catalog for more details on this product",
+    "Uses Service Part": "3950445S",
+    "Media Type": "StrataPore",
+    "Height": "16.00 inch / 406.40 mm",
+    "Overall Width": "7.30 inch / 185.42 mm",
+    "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93031",
+   "code": "FH23031",
+   "url": "https://www.fleetguard.com/es/product/fh23031/01t5x000008FDV6AAO",
+   "height_mm": 406.4,
+   "elements": [
+    "ES90467"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Fuel Pro Remote Mount Heavy duty engines, unheated w/12v pre-heater Fuel flows up to 180 gph (681 lph) Bio Diesel Compatible See Technical Information Catalog for more details on this product",
+    "Uses Service Part": "3950445S",
+    "Housing Used With": "FS19624",
+    "Media Type": "StrataPore",
+    "Height": "16.00 inch / 406.40 mm",
+    "Overall Width": "7.30 inch / 185.42 mm",
+    "Overall Height": "15.61 inch / 396.60 mm",
+    "Applicable Region": "North America, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93032",
+   "code": "FH23032",
+   "url": "https://www.fleetguard.com/es/product/fh23032/01t5x000008FDV7AAO",
+   "height_mm": 406.4,
+   "elements": [
+    "ES90467"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Fuel Pro Remote Mount Heavy duty engines, unheated w/ 24v pre-heater Fuel flows up to180 gph (681 lph) Bio Diesel Compatible See Technical Information Catalog for more details on this product",
+    "Uses Service Part": "3950445S",
+    "Housing Used With": "FS19624",
+    "Media Type": "StrataPore",
+    "Height": "16.00 inch / 406.40 mm",
+    "Overall Width": "7.30 inch / 185.42 mm",
+    "Overall Height": "15.61 inch / 396.60 mm",
+    "Applicable Region": "North America, Europe, South America, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93038",
+   "code": "FH23038",
+   "url": "https://www.fleetguard.com/es/product/fh23038/01t5x000008FE0jAAG",
+   "height_mm": 412.75,
+   "elements": [
+    "ES90467"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Fuel Pro Remote mount Heavy duty engines, Fluid Heat Fuel flows up to 180 gph (681 l/h) Bio Diesel Compatible See Technical Information Catalog for more details on this product",
+    "Uses Service Part": "3950445S",
+    "Housing Used With": "FS19624",
+    "Media Type": "StrataPore",
+    "Height": "16.25 inch / 412.75 mm",
+    "Overall Width": "7.30 inch / 185.42 mm",
+    "Overall Length": "6.58 inch / 167.10 mm",
+    "Applicable Region": "North America, Europe, South America, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93039",
+   "code": "FH23039",
+   "url": "https://www.fleetguard.com/es/product/fh23039/01t5x000008FE0kAAG",
+   "height_mm": 412.75,
+   "elements": [
+    "ES90467"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Fuel Pro Remote mount Heavy duty engines, Fluid Heat, WIF, Fuel flows up to 180 gph (681 lph) Bio Diesel Compatible See Technical Information Catalog for more details on this product",
+    "Uses Service Part": "3950445S",
+    "Housing Used With": "FS19624",
+    "Media Type": "StrataPore",
+    "Height": "16.25 inch / 412.75 mm",
+    "Overall Width": "7.30 inch / 185.42 mm",
+    "Overall Height": "409,7",
+    "Applicable Region": "North America, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93040",
+   "code": "FH23040",
+   "url": "https://www.fleetguard.com/es/product/fh23040/01t5x000008FE0lAAG",
+   "height_mm": 412.75,
+   "elements": [
+    "ES90467"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Fuel Pro Remote mount Heavy duty engines, Fluid heat w/ 12v pre-heater Fuel flows up to 180 gph (681 lph)  Bio Diesel Compatible  See Technical Information Catalog for more details on this product",
+    "Uses Service Part": "3950445S",
+    "Housing Used With": "FS19624",
+    "Media Type": "StrataPore",
+    "Height": "16.25 inch / 412.75 mm",
+    "Overall Width": "7.30 inch / 185.42 mm",
+    "Applicable Region": "North America, Europe, South America, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93041",
+   "code": "FH23041",
+   "url": "https://www.fleetguard.com/es/product/fh23041/01t5x000008FDVVAA4",
+   "height_mm": null,
+   "elements": [
+    "ES90467"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Fuel Pro Remote mount Heavy duty engines, Fluid heat w/12v pre-heater, WIF, Fuel flows up to 180 gph (681 lph) Bio Diesel Compatible See Technical Information Catalog for more details on this product",
+    "Uses Service Part": "3950445S",
+    "Housing Used With": "FS19624",
+    "Media Type": "StrataPore",
+    "Overall Width": "7.30 inch / 185.42 mm",
+    "Overall Length": "16.25 inch / 412.75 mm",
+    "Applicable Region": "North America, Europe, South America, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93042",
+   "code": "FH23042",
+   "url": "https://www.fleetguard.com/es/product/fh23042/01t5x000008FE0mAAG",
+   "height_mm": 412.75,
+   "elements": [
+    "ES90467"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Fuel Pro Remote mount Heavy duty engines, Fluid heat w/ 24v pre-heater Fuel flows up to 180 gph (681 lph) Bio Diesel Compatible See Technical Information Catalog for more details on this product",
+    "Uses Service Part": "3950445S",
+    "Housing Used With": "FS19624",
+    "Media Type": "StrataPore",
+    "Height": "16.25 inch / 412.75 mm",
+    "Overall Width": "7.30 inch / 185.42 mm",
+    "Overall Height": "16.13 inch / 409.70 mm",
+    "Applicable Region": "North America, China, Europe, South America, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93045",
+   "code": "FH23045",
+   "url": "https://www.fleetguard.com/es/product/fh23045/01t5x000008FDVWAA4",
+   "height_mm": 412.75,
+   "elements": [
+    "ES90467"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Fuel Pro Remote mount Heavy duty engines, Fluid heat w/ 120v pre-heater Fuel flows up to 180 gph (681 lph) Bio Diesel Compatible See Technical Information Catalog for more details on this product",
+    "Uses Service Part": "3950445S",
+    "Housing Used With": "FS19624",
+    "Media Type": "StrataPore",
+    "Height": "16.25 inch / 412.75 mm",
+    "Overall Width": "7.30 inch / 185.42 mm",
+    "Overall Height": "409,7",
+    "Applicable Region": "North America, Europe, South America, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93049",
+   "code": "FH23049",
+   "url": "https://www.fleetguard.com/es/product/fh23049/01t5x000008FE3NAAW",
+   "height_mm": 412.75,
+   "elements": [
+    "ES90467"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Fuel Pro Remote mount Heavy duty engines, unheated w/ 12v pre-heater, WIF, Fuel flows up to 180 gph (681 lph) Bio Diesel Compatible See Technical Information Catalog for more details on this product",
+    "Uses Service Part": "3950445S",
+    "Housing Used With": "FS19624",
+    "Media Type": "StrataPore",
+    "Height": "16.25 inch / 412.75 mm",
+    "Overall Width": "7.30 inch / 185.42 mm",
+    "Overall Length": "6.58 inch / 167.10 mm",
+    "Overall Height": "15.61 inch / 396.60 mm",
+    "Applicable Region": "North America, Europe, South America, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93050",
+   "code": "FH23050",
+   "url": "https://www.fleetguard.com/es/product/fh23050/01t5x000008FE23AAG",
+   "height_mm": 412.75,
+   "elements": [
+    "ES90467"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Fuel Pro Remote mount Heavy duty engines, unheated w/24v pre-heater, WIF, Fuel flows up to 180 gph (681 lph) Bio Diesel Compatible See Technical Information Catalog for more details on this product",
+    "Uses Service Part": "3950445S",
+    "Housing Used With": "FS19624",
+    "Media Type": "StrataPore",
+    "Height": "16.25 inch / 412.75 mm",
+    "Overall Width": "7.30 inch / 185.42 mm",
+    "Overall Length": "6.58 inch / 167.10 mm",
+    "Applicable Region": "North America, China, Europe, South America, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93054",
+   "code": "FH23054",
+   "url": "https://www.fleetguard.com/es/product/fh23054/01t5x000008FE24AAG",
+   "height_mm": 412.75,
+   "elements": [
+    "ES90467"
+   ],
+   "oem": [
+    [
+     "INTERNATIONAL",
+     "3528790C1"
+    ]
+   ],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Fuel Pro Remote mount Heavy duty engines, unheated w/12v and 120v heater Fuel flows up to 180 gph (681 lph) Bio Diesel Compatible See Technical Information Catalog for more details on this product",
+    "Uses Service Part": "3950445S",
+    "Housing Used With": "FS19624",
+    "Replaces": "FH23002,FS1010Y,FH23001,FH23003",
+    "Media Type": "StrataPore",
+    "Height": "16.25 inch / 412.75 mm",
+    "Overall Height": "396,6",
+    "Width": "7.30 inch / 185.42 mm",
+    "Heater Voltage (AC)": "120.00 V",
+    "Heater Voltage (DC)": "12.00 V",
+    "Inlet Connection": "1/2-14 NPTF",
+    "Outlet Connection": "1/2-14 NPTF",
+    "Pressure Diagnosis Port": "NO",
+    "WIF Sensor": "NO",
+    "Applicable Region": "North America, Europe, South America, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93060",
+   "code": "FH23060",
+   "url": "https://www.fleetguard.com/es/product/fh23060/01t5x000008FCMnAAO",
+   "height_mm": 406.0,
+   "elements": [],
+   "oem": [],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Fuel Pro Remote Mount Heavy duty engines, unheated, WIF, 25 micron filter element FS19765 Fuel Flows up to 180 gph (681 lph) Bio Diesel Compatible See Technical Information Catalog for more details on this product",
+    "Uses Service Part": "3950445S",
+    "Replaces": "FH23010",
+    "Media Type": "StrataPore",
+    "Height": "15.98 inch / 406.00 mm",
+    "Overall Width": "6.75 inch / 171.50 mm",
+    "Overall Length": "6.58 inch / 167.10 mm",
+    "Width": "7.30 inch / 185.42 mm",
+    "Heater Voltage (AC)": "0.00 V",
+    "Heater Voltage (DC)": "0.00 V",
+    "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93061",
+   "code": "FH23061",
+   "url": "https://www.fleetguard.com/es/product/fh23061/01t5x000008FCMoAAO",
+   "height_mm": 412.75,
+   "elements": [
+    "ES90849"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Fuel Pro Remote Mount FWS, Unheated, WIF, 7 micron Elemax plus size filter. Heavy Duty Diesel Engines, Fuel Flows up to 180 gph (681 lph) Bio Diesel Compatible See Technical Information Catalog for more details on this product",
+    "Uses Service Part": "3950445S",
+    "Is An Element For": "FS19763",
+    "Media Type": "StrataPore",
+    "Height": "16.25 inch / 412.75 mm",
+    "Overall Width": "7.30 inch / 185.42 mm",
+    "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93067",
+   "code": "FH23067M",
+   "url": "https://www.fleetguard.com/es/product/fh23067m/01t5x000008FDGTAA4",
+   "height_mm": 406.4,
+   "elements": [],
+   "oem": [],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Fuel Pro Remote Mount Heavy duty engines, unheated w/ 24v pre-heater, WIF, 25 micron filter element-FS19765 Fuel flows up to 180 gph (681 lph) Bio Diesel Compatible See Technical Information Catalog for more details on this product",
+    "Uses Service Part": "3950445S",
+    "Media Type": "StrataPore",
+    "Height": "16.00 inch / 406.40 mm",
+    "Overall Width": "6.75 inch / 171.50 mm",
+    "Overall Length": "6.58 inch / 167.10 mm",
+    "Width": "7.30 inch / 185.42 mm",
+    "Heater Voltage (DC)": "24.00 V",
+    "Applicable Region": "North America, China, Europe, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93068",
+   "code": "FH23068M",
+   "url": "https://www.fleetguard.com/es/product/fh23068m/01t5x000008FDGUAA4",
+   "height_mm": 406.4,
+   "elements": [],
+   "oem": [],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Fuel Pro Remote Mount Heavy duty engines, unheated, WIF, 25 micron filter element-FS19765, plugged ports for heater and thermostat Fuel flows up to 180 gph (681lph) Bio Diesel Compatible",
+    "Uses Service Part": "3950445S",
+    "Media Type": "StrataPore",
+    "Height": "16.00 inch / 406.40 mm",
+    "Overall Width": "6.75 inch / 171.50 mm",
+    "Overall Length": "6.58 inch / 167.10 mm",
+    "Width": "7.30 inch / 185.42 mm",
+    "Applicable Region": "North America, China, Europe, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93069",
+   "code": "FH23069M",
+   "url": "https://www.fleetguard.com/es/product/fh23069m/01t5x000008FDGVAA4",
+   "height_mm": 412.8,
+   "elements": [],
+   "oem": [],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Fuel Pro Remote Mount Heavy duty engines, fluid heat w/ 24v pre-heater,WIF, 25 micron filter element-FS19765 Fuel flows up to 180 gph (681 lph) Bio Diesel Compatible See Technical Information Catalog for more details on this product",
+    "Uses Service Part": "3950445S",
+    "Media Type": "StrataPore",
+    "Height": "16.25 inch / 412.80 mm",
+    "Overall Width": "6.75 inch / 171.50 mm",
+    "Overall Length": "6.58 inch / 167.10 mm",
+    "Width": "7.30 inch / 185.42 mm",
+    "Heater Voltage (DC)": "24.00 V",
+    "Applicable Region": "North America, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93076",
+   "code": "FH23076",
+   "url": "https://www.fleetguard.com/es/product/fh23076/01t5x000008FEHmAAO",
+   "height_mm": null,
+   "elements": [],
+   "oem": [],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Fuel Pro Remote Mount Heavy duty engines, unheated Fuel flows up to 180 gph (681 lph) 25 Micron Bio Diesel Compatible See Technical Information Catalog for more details on this product",
+    "Media Type": "StrataPore",
+    "Height": "0.00 inch / 0.00 mm",
+    "Overall Width": "0.00 inch / 0.00 mm",
+    "Overall Length": "0.00 inch / 0.00 mm",
+    "Width": "7.30 inch / 185.42 mm",
+    "Heater Voltage (AC)": "0.00 V",
+    "Heater Voltage (DC)": "0.00 V",
+    "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93100",
+   "code": "FH23100",
+   "url": "https://www.fleetguard.com/es/product/fh23100/01t5x000008FE1IAAW",
+   "height_mm": 14.28,
+   "elements": [],
+   "oem": [],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Fuel Pro 483",
+    "Media Type": "StrataPore",
+    "Height": "0.56 inch / 14.28 mm",
+    "Largest Outside Diameter": "8.34 inch / 211.84 mm",
+    "Applicable Region": "North America, Europe, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93127",
+   "code": "FH23127",
+   "url": "https://www.fleetguard.com/es/product/fh23127/01t5x000008FCWLAA4",
+   "height_mm": 406.4,
+   "elements": [],
+   "oem": [],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Fuel Pro unit consists of 382 Unheated with 12v Pre-heater, WIF, 10 Micron Element FS19764",
+    "Media Type": "StrataPore",
+    "Height": "16.00 inch / 406.40 mm",
+    "Overall Width": "7.29 inch / 185.20 mm",
+    "Overall Length": "6.58 inch / 167.10 mm",
+    "Overall Height": "15.61 inch / 396.60 mm",
+    "Applicable Region": "North America, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93132",
+   "code": "FH23132",
+   "url": "https://www.fleetguard.com/es/product/fh23132/01t5x000008FDl4AAG",
+   "height_mm": null,
+   "elements": [
+    "ES90849"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Part should have an M suffix...unable to delete.",
+    "description": "Fuel Pro Remote Mount, Heavy Duty Engines, unheated, 24v pre-heater, WIF, Fuel Flows 180gph (681lph), Biodiesel Compatible",
+    "Is An Element For": "FS19763",
+    "Media Type": "StrataPore"
+   }
+  },
+  {
+   "sku": "ET93166",
+   "code": "FH23166",
+   "url": "https://www.fleetguard.com/es/product/fh23166/01t5x000008FBgwAAG",
+   "height_mm": 14.28,
+   "elements": [],
+   "oem": [],
+   "source": {
+    "product_class": "Fuel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "Media Type": "StrataPore",
+    "Height": "0.56 inch / 14.28 mm",
+    "Largest Outside Diameter": "8.34 inch / 211.84 mm",
+    "Applicable Region": "North America, Europe, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93500",
+   "code": "FH23500",
+   "url": "https://www.fleetguard.com/es/product/fh23500/01t5x000008FC0PAAW",
+   "height_mm": 312.9,
+   "elements": [
+    "ES90460"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro Remote Mount Medium Duty Engines, Fuel Flows up to 60 ghp (230 lph), clear bowl.",
+    "Housing Used With": "FS19730",
+    "Replaces": "FH23200",
+    "Media Type": "StrataPore",
+    "Height": "12.32 inch / 312.90 mm",
+    "Overall Width": "5.85 inch / 148.60 mm",
+    "Overall Length": "6.22 inch / 158.00 mm",
+    "Pressure Diagnosis Port": "No",
+    "BPV OPENING DP": "No",
+    "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93501",
+   "code": "FH23501",
+   "url": "https://www.fleetguard.com/es/product/fh23501/01t5x000008FBc4AAG",
+   "height_mm": 312.9,
+   "elements": [
+    "ES90460"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro Remote Mount Medium Duty Engines, Combo Pre-heater 24V, Fuel Flows up to 60 ghp (230 lph), clear bowl.",
+    "Housing Used With": "FS19730",
+    "Replaces": "FH23201",
+    "Media Type": "StrataPore",
+    "Height": "12.32 inch / 312.90 mm",
+    "Overall Width": "5.85 inch / 148.60 mm",
+    "Overall Length": "6.22 inch / 158.00 mm",
+    "Width": "6.25 inch / 158.75 mm",
+    "Pressure Diagnosis Port": "No",
+    "BPV OPENING DP": "No",
+    "Applicable Region": "North America, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93502",
+   "code": "FH23502",
+   "url": "https://www.fleetguard.com/es/product/fh23502/01t5x000008FBc5AAG",
+   "height_mm": 312.9,
+   "elements": [
+    "ES90460"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro Remote Mount Medium Duty Engines, Combo Pre-heater 12V, Fuel Flows up to 60 ghp (230 lph), clear bowl.",
+    "Housing Used With": "FS19730",
+    "Replaces": "FH23202",
+    "Media Type": "StrataPore",
+    "Height": "12.32 inch / 312.90 mm",
+    "Overall Width": "5.85 inch / 148.60 mm",
+    "Overall Length": "6.22 inch / 158.00 mm",
+    "Width": "6.25 inch / 158.75 mm",
+    "Pressure Diagnosis Port": "No",
+    "BPV OPENING DP": "No",
+    "Applicable Region": "North America, Europe, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93504",
+   "code": "FH23504M",
+   "url": "https://www.fleetguard.com/es/product/fh23504m/01t5x000008FBcBAAW",
+   "height_mm": 312.9,
+   "elements": [
+    "ES99731"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro Remote Mount Medium Duty Engines, Combo Pre-heater 24V, WIF, Fuel Flows up to 60 ghp (230 lph), clear bowl.",
+    "Housing Used With": "FS19731,FS19785",
+    "Replaces": "FH23210M,FH23213M",
+    "Media Type": "StrataPore",
+    "Height": "12.32 inch / 312.90 mm",
+    "Overall Width": "5.85 inch / 148.60 mm",
+    "Overall Length": "6.22 inch / 158.00 mm",
+    "Overall Height": "312,9",
+    "Width": "6.25 inch / 158.75 mm",
+    "Pressure Diagnosis Port": "No",
+    "BPV OPENING DP": "No",
+    "Applicable Region": "North America, China, Europe, South America, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93506",
+   "code": "FH23506",
+   "url": "https://www.fleetguard.com/es/product/fh23506/01t5x000008FBcCAAW",
+   "height_mm": 312.9,
+   "elements": [
+    "ES99731"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro Remote Mount Medium Duty Engines, Combo Pre-heater 24V, WIF, Fuel Flows up to 60 ghp (230 lph), clear bowl.",
+    "Housing Used With": "FS19731",
+    "Media Type": "StrataPore",
+    "Height": "12.32 inch / 312.90 mm",
+    "Overall Width": "5.85 inch / 148.60 mm",
+    "Overall Length": "6.22 inch / 158.00 mm",
+    "Overall Height": "312,9",
+    "Width": "6.25 inch / 158.75 mm",
+    "Pressure Diagnosis Port": "No",
+    "BPV OPENING DP": "No",
+    "Applicable Region": "North America, Europe, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93508",
+   "code": "FH23508",
+   "url": "https://www.fleetguard.com/es/product/fh23508/01t5x000008FBdsAAG",
+   "height_mm": 312.9,
+   "elements": [
+    "ES99731"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro Remote Mount Medium Duty Engines, WIF, Fuel Flows up to 60 ghp (230 lph), clear bowl.",
+    "Housing Used With": "FS19731",
+    "Media Type": "StrataPore",
+    "Height": "12.32 inch / 312.90 mm",
+    "Overall Width": "5.85 inch / 148.60 mm",
+    "Overall Length": "6.22 inch / 158.00 mm",
+    "Width": "6.25 inch / 158.75 mm",
+    "Pressure Diagnosis Port": "No",
+    "BPV OPENING DP": "No",
+    "Applicable Region": "North America, Europe, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93509",
+   "code": "FH23509M",
+   "url": "https://www.fleetguard.com/es/product/fh23509m/01t5x000008FBdtAAG",
+   "height_mm": 312.9,
+   "elements": [
+    "ES99731"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro Remote Mount Medium Duty Engines, WIF, Fuel Flows up to 60 ghp (230 lph), clear bowl.",
+    "Housing Used With": "FS19731",
+    "Media Type": "StrataPore",
+    "Height": "12.32 inch / 312.90 mm",
+    "Overall Width": "5.85 inch / 148.60 mm",
+    "Overall Length": "6.22 inch / 158.00 mm",
+    "Width": "6.25 inch / 158.75 mm",
+    "Pressure Diagnosis Port": "No",
+    "BPV OPENING DP": "No",
+    "Applicable Region": "North America, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93510",
+   "code": "FH23510",
+   "url": "https://www.fleetguard.com/es/product/fh23510/01t5x000008FBdxAAG",
+   "height_mm": 312.9,
+   "elements": [
+    "ES99731"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro Remote Mount Medium Duty Engines, Combo Pre-heater 12V, WIF, Fuel Flows up to 60 ghp (230 lph), clear bowl.",
+    "Housing Used With": "FS19731",
+    "Replaces": "FH23215",
+    "Media Type": "StrataPore",
+    "Height": "12.32 inch / 312.90 mm",
+    "Overall Width": "5.85 inch / 148.60 mm",
+    "Overall Length": "6.22 inch / 158.00 mm",
+    "Width": "6.25 inch / 158.75 mm",
+    "Pressure Diagnosis Port": "No",
+    "BPV OPENING DP": "No",
+    "Applicable Region": "North America, Europe, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93515",
+   "code": "FH23515M",
+   "url": "https://www.fleetguard.com/es/product/fh23515m/01t5x000008FBZWAA4",
+   "height_mm": 312.9,
+   "elements": [
+    "ES99731"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Diesel Pro Fuel Housing with WIF, Priming Pump",
+    "Is An Element For": "FS19731",
+    "Media Type": "StrataPore",
+    "Height": "12.32 inch / 312.90 mm",
+    "Overall Width": "5.85 inch / 148.60 mm",
+    "Overall Length": "6.22 inch / 158.00 mm",
+    "Overall Height": "312,9",
+    "Width": "6.25 inch / 158.75 mm",
+    "Pressure Diagnosis Port": "No",
+    "BPV OPENING DP": "No",
+    "Applicable Region": "North America, Europe, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93517",
+   "code": "FH23517",
+   "url": "https://www.fleetguard.com/es/product/fh23517/01t5x000008FBmSAAW",
+   "height_mm": 312.9,
+   "elements": [
+    "ES90460"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro 7 Micron, Short Cover, Clear Bowl, 3/8\" NPT fitting, Fuel in right, out left, No Heater, No Primer Pumpt, No WIF",
+    "Is An Element For": "FS19730",
+    "Media Type": "StrataPore",
+    "Height": "12.32 inch / 312.90 mm",
+    "Overall Width": "5.85 inch / 148.60 mm",
+    "Overall Length": "6.22 inch / 158.00 mm",
+    "Width": "6.25 inch / 158.75 mm",
+    "Pressure Diagnosis Port": "No",
+    "BPV OPENING DP": "No",
+    "Applicable Region": "North America, Europe, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93518",
+   "code": "FH23518M",
+   "url": "https://www.fleetguard.com/es/product/fh23518m/01t5x000008FBaqAAG",
+   "height_mm": null,
+   "elements": [],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro Fuel Processor with 10 Micron Element, WIF Sensor, bottom bowl, 24V/150W Heater, inlet right, outlet left",
+    "Media Type": "StrataPore",
+    "Overall Height": "312,9",
+    "Applicable Region": "North America, Europe, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93600",
+   "code": "FH23600",
+   "url": "https://www.fleetguard.com/es/product/fh23600/01t5x000008FBe0AAG",
+   "height_mm": 334.26,
+   "elements": [
+    "ES90467"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro Remote Mount Medium Duty Engines, Fuel Flows up to 90 gph (341 lph), clear bowl.",
+    "Housing Used With": "FS19624",
+    "Replaces": "FH23302",
+    "Media Type": "StrataPore",
+    "Height": "13.16 inch / 334.26 mm",
+    "Overall Width": "6.25 inch / 158.75 mm",
+    "Overall Length": "0.00 inch / 0.00 mm",
+    "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93601",
+   "code": "FH23601",
+   "url": "https://www.fleetguard.com/es/product/fh23601/01t5x000008FBe1AAG",
+   "height_mm": 334.26,
+   "elements": [
+    "ES90467"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro Remote Mount Medium Duty Engines, Combo Pre-heater 12V, Fuel Flows up to 90 gph (341 lph), clear bowl.",
+    "Housing Used With": "FS19624",
+    "Replaces": "FH23303",
+    "Media Type": "StrataPore",
+    "Height": "13.16 inch / 334.26 mm",
+    "Overall Width": "6.25 inch / 158.75 mm",
+    "Overall Length": "0.00 inch / 0.00 mm",
+    "Overall Height": "14.32 inch / 363.70 mm",
+    "Applicable Region": "North America, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93602",
+   "code": "FH23602",
+   "url": "https://www.fleetguard.com/es/product/fh23602/01t5x000008FBe2AAG",
+   "height_mm": 334.26,
+   "elements": [
+    "ES90467"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro Remote Mount Medium Duty Engines, Combo Pre-heater 24V, Fuel Flows up to 90 gph (341 lph), clear bowl.",
+    "Housing Used With": "FS19624",
+    "Replaces": "FH23304",
+    "Media Type": "StrataPore",
+    "Height": "13.16 inch / 334.26 mm",
+    "Overall Width": "6.25 inch / 158.75 mm",
+    "Overall Length": "0.00 inch / 0.00 mm",
+    "Overall Height": "14.32 inch / 363.70 mm",
+    "Applicable Region": "North America, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93603",
+   "code": "FH23603",
+   "url": "https://www.fleetguard.com/es/product/fh23603/01t5x000008FBe3AAG",
+   "height_mm": 334.26,
+   "elements": [
+    "ES90736"
+   ],
+   "oem": [
+    [
+     "SEPAR",
+     "2000550"
+    ],
+    [
+     "SEPAR",
+     "20005"
+    ]
+   ],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro Remote Mount Medium Duty Engines, WIF, Fuel Flows up to 90 gph (341 lph), clear bowl.",
+    "Housing Used With": "FS19728",
+    "Replaces": "FH23308",
+    "Media Type": "StrataPore",
+    "Height": "13.16 inch / 334.26 mm",
+    "Overall Width": "6.25 inch / 158.75 mm",
+    "Overall Length": "5.85 inch / 148.60 mm",
+    "Overall Height": "14.32 inch / 363.70 mm",
+    "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93604",
+   "code": "FH23604M",
+   "url": "https://www.fleetguard.com/es/product/fh23604m/01t5x000008FBe4AAG",
+   "height_mm": 332.7,
+   "elements": [
+    "ES90736"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro Remote Mount Medium Duty Engines, WIF, Fuel Flows up to 90 gph (341 lph), clear bowl.",
+    "Housing Used With": "FS19728",
+    "Replaces": "FH23315M,FH23318M",
+    "Media Type": "StrataPore",
+    "Height": "13.10 inch / 332.70 mm",
+    "Overall Width": "5.85 inch / 148.60 mm",
+    "Overall Length": "6.22 inch / 158.00 mm",
+    "Width": "6.25 inch / 158.75 mm",
+    "Applicable Region": "North America, China, Europe, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93605",
+   "code": "FH23605M",
+   "url": "https://www.fleetguard.com/es/product/fh23605m/01t5x000008FBe5AAG",
+   "height_mm": 332.7,
+   "elements": [
+    "ES90736"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro Remote Mount Medium Duty Engines, Combo Pre-heater 24V 150W, WIF, Fuel Flows up to 90 gph (341 lph), clear bowl.",
+    "Housing Used With": "FS19728",
+    "Replaces": "FH23316M,FH23319M",
+    "Media Type": "StrataPore",
+    "Height": "13.10 inch / 332.70 mm",
+    "Overall Width": "5.85 inch / 148.60 mm",
+    "Overall Length": "6.22 inch / 158.00 mm",
+    "Width": "6.25 inch / 158.75 mm",
+    "Applicable Region": "North America, China, Europe, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93606",
+   "code": "FH23606M",
+   "url": "https://www.fleetguard.com/es/product/fh23606m/01t5x000008FBgHAAW",
+   "height_mm": 332.7,
+   "elements": [
+    "ES90736"
+   ],
+   "oem": [
+    [
+     "BMC TRUCKS",
+     "57RS028609"
+    ]
+   ],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro Remote Mount Medium Duty Engines, Combo Pre-heater 24V 250W, WIF, Fuel Flows up to 90 gph (341 lph), clear bowl.",
+    "Housing Used With": "FS19728",
+    "Replaces": "FH23322M,FH23320M",
+    "Media Type": "StrataPore",
+    "Height": "13.10 inch / 332.70 mm",
+    "Overall Width": "5.85 inch / 148.60 mm",
+    "Overall Length": "6.22 inch / 158.00 mm",
+    "Width": "6.25 inch / 158.75 mm",
+    "Applicable Region": "North America, Europe, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93607",
+   "code": "FH23607",
+   "url": "https://www.fleetguard.com/es/product/fh23607/01t5x000008FBgIAAW",
+   "height_mm": null,
+   "elements": [
+    "ES99727"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro Remote Mount Medium Duty Engines, WIF, Fuel Flows up to 90 gph (341 lph), clear bowl.",
+    "Housing Used With": "FS19727",
+    "Replaces": "FH23321",
+    "Media Type": "StrataPore",
+    "Overall Height": "14.32 inch / 363.70 mm",
+    "Applicable Region": "North America, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93608",
+   "code": "FH23608M",
+   "url": "https://www.fleetguard.com/es/product/fh23608m/01t5x000008FBgJAAW",
+   "height_mm": 332.7,
+   "elements": [
+    "ES99727"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro Remote Mount Medium Duty Engines, WIF, Fuel Flows up to 90 gph (341 lph), clear bowl.",
+    "Housing Used With": "FS19727",
+    "Media Type": "StrataPore",
+    "Height": "13.10 inch / 332.70 mm",
+    "Overall Width": "5.85 inch / 148.60 mm",
+    "Overall Length": "6.22 inch / 158.00 mm",
+    "Width": "6.25 inch / 158.75 mm",
+    "Applicable Region": "North America, China, Europe, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93610",
+   "code": "FH23610",
+   "url": "https://www.fleetguard.com/es/product/fh23610/01t5x000008FBZJAA4",
+   "height_mm": 334.26,
+   "elements": [],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro Remote Mount for Medium duty engines, Fuel flows up to 90 gph (341 lph), clear bowl, no heater, no WIF, no priming pump.",
+    "Media Type": "StrataPore",
+    "Height": "13.16 inch / 334.26 mm",
+    "Width": "6.25 inch / 158.75 mm",
+    "Inlet Connection": "7/8-14 UNF-2B",
+    "Outlet Connection": "7/8-14 UNF-2B",
+    "Pressure Diagnosis Port": "NO",
+    "WIF Sensor": "NO",
+    "Applicable Region": "North America, Europe, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93616",
+   "code": "FH23616M",
+   "url": "https://www.fleetguard.com/es/product/fh23616m/01t5x000008FByfAAG",
+   "height_mm": 332.7,
+   "elements": [
+    "ES90467"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Diesel Pro Fuel Housing with WIF",
+    "Housing Used With": "FS19624",
+    "Media Type": "StrataPore",
+    "Height": "13.10 inch / 332.70 mm",
+    "Overall Width": "5.85 inch / 148.60 mm",
+    "Overall Length": "6.22 inch / 158.00 mm",
+    "Width": "6.25 inch / 158.75 mm",
+    "Applicable Region": "North America, Europe, South America, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93617",
+   "code": "FH23617M",
+   "url": "https://www.fleetguard.com/es/product/fh23617m/01t5x000008FBZSAA4",
+   "height_mm": 332.7,
+   "elements": [
+    "ES90736"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro with WIF, Priming Pump",
+    "Is An Element For": "FS19728",
+    "Media Type": "StrataPore",
+    "Height": "13.10 inch / 332.70 mm",
+    "Overall Width": "5.85 inch / 148.60 mm",
+    "Overall Length": "6.22 inch / 158.00 mm",
+    "Width": "6.25 inch / 158.75 mm",
+    "Applicable Region": "North America, China, Europe, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93618",
+   "code": "FH23618",
+   "url": "https://www.fleetguard.com/es/product/fh23618/01t5x000008FBZTAA4",
+   "height_mm": 332.7,
+   "elements": [
+    "ES99727"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Diesel Pro Fuel Housing with WIF, Priming Pump",
+    "Is An Element For": "FS19727",
+    "Media Type": "StrataPore",
+    "Height": "13.10 inch / 332.70 mm",
+    "Overall Width": "5.85 inch / 148.60 mm",
+    "Overall Length": "6.22 inch / 158.00 mm",
+    "Overall Height": "14.32 inch / 363.70 mm",
+    "Width": "6.25 inch / 158.75 mm",
+    "Applicable Region": "North America, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93622",
+   "code": "FH23622M",
+   "url": "https://www.fleetguard.com/es/product/fh23622m/01t5x000008FByhAAG",
+   "height_mm": 332.7,
+   "elements": [
+    "ES90467"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Diesel Pro Fuel Housing with 24V 250W Heater and WIF",
+    "Housing Used With": "FS19624",
+    "Media Type": "StrataPore",
+    "Height": "13.10 inch / 332.70 mm",
+    "Overall Width": "5.85 inch / 148.60 mm",
+    "Overall Length": "6.22 inch / 158.00 mm",
+    "Width": "6.25 inch / 158.75 mm",
+    "Applicable Region": "North America, Europe, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93623",
+   "code": "FH23623M",
+   "url": "https://www.fleetguard.com/es/product/fh23623m/01t5x000008FDYAAA4",
+   "height_mm": 332.7,
+   "elements": [],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro Fuel Processor",
+    "Media Type": "StrataPore",
+    "Height": "13.10 inch / 332.70 mm",
+    "Overall Width": "5.85 inch / 148.60 mm",
+    "Overall Length": "8.22 inch / 208.90 mm",
+    "Overall Height": "14.32 inch / 363.70 mm",
+    "Pressure Diagnosis Port": "No",
+    "BPV OPENING DP": "No",
+    "Applicable Region": "North America, China, Europe, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93625",
+   "code": "FH23625M",
+   "url": "https://www.fleetguard.com/es/product/fh23625m/01t5x000008FByiAAG",
+   "height_mm": null,
+   "elements": [
+    "ES90736"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Diesel Pro Fuel Housing with 24V 250W Heater and WIF",
+    "Housing Used With": "FS19728",
+    "Media Type": "StrataPore",
+    "Height": "0.00 inch / 0.00 mm",
+    "Overall Width": "0.00 inch / 0.00 mm",
+    "Overall Length": "0.00 inch / 0.00 mm",
+    "Width": "6.25 inch / 158.75 mm",
+    "Applicable Region": "North America, China, Europe, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93659",
+   "code": "FH23659",
+   "url": "https://www.fleetguard.com/es/product/fh23659/01t5x000008FLXzAAO",
+   "height_mm": null,
+   "elements": [],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "Applicable Region": "South America"
+   }
+  },
+  {
+   "sku": "ET93663",
+   "code": "FH23663",
+   "url": "https://www.fleetguard.com/es/product/fh23663/01t5x000008FBkqAAG",
+   "height_mm": 332.7,
+   "elements": [],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro fuel procesor, with 2 micron filter element FS19761 and 12V/195W PTC heater",
+    "Media Type": "StrataPore",
+    "Height": "13.10 inch / 332.70 mm",
+    "Overall Width": "6.22 inch / 158.00 mm",
+    "Overall Length": "5.66 inch / 143.80 mm",
+    "Overall Height": "14.32 inch / 363.70 mm",
+    "Pressure Diagnosis Port": "No",
+    "BPV OPENING DP": "No",
+    "Applicable Region": "North America, Europe, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93669",
+   "code": "FH23669M",
+   "url": "https://www.fleetguard.com/es/product/fh23669m/01t5x000008FN25AAG",
+   "height_mm": 332.7,
+   "elements": [
+    "ES99761"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "additional_information": "Diesel Pro 236 Series with 24V 195W Pre-Heater, WIF Sensor, Priming Pump. Fuel In Left/Out Left Cummins QSG12",
+    "Is An Element For": "FS19761",
+    "Media Type": "StrataPore",
+    "Height": "13.10 inch / 332.70 mm",
+    "Overall Width": "5.85 inch / 148.60 mm",
+    "Overall Length": "0.00 inch / 0.00 mm",
+    "Applicable Region": "North America, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93812",
+   "code": "FH23812",
+   "url": "https://www.fleetguard.com/es/product/fh23812/01t5x000008FDfdAAG",
+   "height_mm": null,
+   "elements": [],
+   "oem": [],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "Media Type": "StrataPore"
+   }
+  },
+  {
+   "sku": "ET93815",
+   "code": "FH23815VG",
+   "url": "https://www.fleetguard.com/es/product/fh23815vg/01t5x000008FGQLAA4",
+   "height_mm": null,
+   "elements": [
+    "ES90018"
+   ],
+   "oem": [
+    [
+     "KAMAZ",
+     "45104110511190"
+    ]
+   ],
+   "source": {
+    "product_class": "Diesel Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "Housing Used With": "FS20018",
+    "Media Type": "StrataPore",
+    "Applicable Region": "Europe"
+   }
+  },
+  {
+   "sku": "ET93900",
+   "code": "FH23900",
+   "url": "https://www.fleetguard.com/es/product/fh23900/01t5x000008FDmRAAW",
+   "height_mm": 508.0,
+   "elements": [
+    "ES93015"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro Unit, Single, Short,  Bracket, WIF, Inlet Right, Outlet Left, Priming Pump, Clear Bowl",
+    "Is An Element For": "FS53015",
+    "Media Type": "NanoNet",
+    "Height": "20.00 inch / 508.00 mm",
+    "Overall Height": "20.00 inch / 508.00 mm",
+    "Largest Outside Diameter": "11.87 inch / 301.50 mm",
+    "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93901",
+   "code": "FH23901",
+   "url": "https://www.fleetguard.com/es/product/fh23901/01t5x000008FDU0AAO",
+   "height_mm": null,
+   "elements": [
+    "ES93014"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro Unit, Single, Tall,  Bracket, WIF, Inlet Left, Outlet Right, Priming Pump, Clear Bowl",
+    "Is An Element For": "FS53014",
+    "Media Type": "NanoNet",
+    "Applicable Region": "North America, China, Europe, South East Asia, South Pacific, APAC"
+   }
+  },
+  {
+   "sku": "ET93903",
+   "code": "FH23903",
+   "url": "https://www.fleetguard.com/es/product/fh23903/01t5x000008FDU1AAO",
+   "height_mm": null,
+   "elements": [
+    "ES93014"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro Unit, Single, Tall,  Bracket, WIF, Inlet Right, Outlet Left, Priming Pump, Clear Bowl",
+    "Is An Element For": "FS53014",
+    "Media Type": "NanoNet",
+    "Overall Height": "27.60 inch / 701.04 mm",
+    "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific, APAC"
+   }
+  },
+  {
+   "sku": "ET93904",
+   "code": "FH23904",
+   "url": "https://www.fleetguard.com/es/product/fh23904/01t5x000008FDQyAAO",
+   "height_mm": null,
+   "elements": [
+    "ES93015"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro Unit, Single, Short,  Bracket, WIF, Inlet Left, Outlet Right, Priming Pump, Clear Bowl",
+    "Is An Element For": "FS53015",
+    "Media Type": "NanoNet",
+    "Overall Height": "20.00 inch / 508.00 mm",
+    "Applicable Region": "North America, China, Europe, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93905",
+   "code": "FH23905",
+   "url": "https://www.fleetguard.com/es/product/fh23905/01t5x000008FDQzAAO",
+   "height_mm": null,
+   "elements": [
+    "ES93014"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro Unit, Single, Tall,  Bracket, WIF, Inlet Left, Outlet Left, Priming Pump, Clear Bowl",
+    "Is An Element For": "FS53014",
+    "Media Type": "NanoNet",
+    "Overall Height": "27.60 inch / 701.04 mm",
+    "Applicable Region": "North America, China, Europe, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93906",
+   "code": "FH23906",
+   "url": "https://www.fleetguard.com/es/product/fh23906/01t5x000008FDR0AAO",
+   "height_mm": null,
+   "elements": [
+    "ES93014"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro Unit, Single, Tall,  Bracket, WIF, Inlet Right, Outlet Right, Priming Pump, Clear Bowl",
+    "Is An Element For": "FS53014",
+    "Media Type": "NanoNet",
+    "Overall Height": "27.60 inch / 701.04 mm",
+    "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93907",
+   "code": "FH23907",
+   "url": "https://www.fleetguard.com/es/product/fh23907/01t5x000008FDh9AAG",
+   "height_mm": null,
+   "elements": [
+    "ES93014"
+   ],
+   "oem": [
+    [
+     "CUMMINS",
+     "3649303"
+    ]
+   ],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro Unit, Dual, Tall, Bracket, WIF, Inlet Right, Outlet Left, Clear Bowl with NanoNet filter.",
+    "Is An Element For": "FS53014",
+    "Media Type": "NanoNet",
+    "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93908",
+   "code": "FH23908",
+   "url": "https://www.fleetguard.com/es/product/fh23908/01t5x000008FDlkAAG",
+   "height_mm": null,
+   "elements": [
+    "ES93014"
+   ],
+   "oem": [
+    [
+     "CUMMINS",
+     "4328048"
+    ]
+   ],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro Unit, Dual, Tall, Bracket, WIF, Inlet Right, Outlet Left, Clear Bowl with NanoNet filter.",
+    "Is An Element For": "FS53014",
+    "Media Type": "NanoNet",
+    "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific, APAC"
+   }
+  },
+  {
+   "sku": "ET93910",
+   "code": "FH23910",
+   "url": "https://www.fleetguard.com/es/product/fh23910/01t5x000008FDhAAAW",
+   "height_mm": 711.2,
+   "elements": [
+    "ES93014"
+   ],
+   "oem": [
+    [
+     "CUMMINS",
+     "3649302"
+    ]
+   ],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro Unit, Dual, Tall, Bracket, WIF, Inlet Left, Outer Right, Clear Bowl with NanoNet filter",
+    "Is An Element For": "FS53014",
+    "Media Type": "NanoNet",
+    "Height": "28.00 inch / 711.20 mm",
+    "Overall Height": "27.60 inch / 701.04 mm",
+    "Largest Outside Diameter": "23.80 inch / 604.52 mm",
+    "Applicable Region": "North America, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93911",
+   "code": "FH23911",
+   "url": "https://www.fleetguard.com/es/product/fh23911/01t5x000008FDhBAAW",
+   "height_mm": 711.2,
+   "elements": [
+    "ES93014"
+   ],
+   "oem": [
+    [
+     "CUMMINS",
+     "3650131"
+    ]
+   ],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro Unit, Dual, Tall, Bracket, WIF, Inlet Left, Outlet Right, Clear Bowl with NanoNet filter",
+    "Is An Element For": "FS53014",
+    "Media Type": "NanoNet",
+    "Height": "28.00 inch / 711.20 mm",
+    "Overall Height": "27.60 inch / 701.04 mm",
+    "Largest Outside Diameter": "23.80 inch / 604.52 mm",
+    "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93912",
+   "code": "FH23912",
+   "url": "https://www.fleetguard.com/es/product/fh23912/01t5x000008FDR1AAO",
+   "height_mm": null,
+   "elements": [
+    "ES93014"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro Unit, Single, Tall,  Bracket, WIF, Inlet Right, Outlet Right, Clear Bowl",
+    "Is An Element For": "FS53014",
+    "Media Type": "NanoNet",
+    "Overall Height": "27.60 inch / 701.10 mm",
+    "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93913",
+   "code": "FH23913",
+   "url": "https://www.fleetguard.com/es/product/fh23913/01t5x000008FDR2AAO",
+   "height_mm": null,
+   "elements": [
+    "ES93014"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro Unit, Single, Tall,  Bracket, WIF, Inlet Right, Outlet Left, Clear Bowl",
+    "Is An Element For": "FS53014",
+    "Media Type": "NanoNet",
+    "Overall Height": "27.60 inch / 701.10 mm",
+    "Applicable Region": "North America, China, Europe, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93914",
+   "code": "FH23914",
+   "url": "https://www.fleetguard.com/es/product/fh23914/01t5x000008FDR3AAO",
+   "height_mm": null,
+   "elements": [
+    "ES93014"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro Unit, Single, Tall,  Bracket, WIF, Inlet Left, Outlet Right, Clear Bowl",
+    "Is An Element For": "FS53014",
+    "Media Type": "NanoNet",
+    "Overall Height": "27.60 inch / 701.10 mm",
+    "Applicable Region": "North America, China, Europe, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93915",
+   "code": "FH23915",
+   "url": "https://www.fleetguard.com/es/product/fh23915/01t5x000008FDR4AAO",
+   "height_mm": null,
+   "elements": [
+    "ES93014"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro Unit, Single, Tall,  Bracket, WIF, Inlet Left, Outlet Left, Clear Bowl",
+    "Is An Element For": "FS53014",
+    "Media Type": "NanoNet",
+    "Overall Height": "27.60 inch / 701.10 mm",
+    "Applicable Region": "North America, China, Europe, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93916",
+   "code": "FH23916",
+   "url": "https://www.fleetguard.com/es/product/fh23916/01t5x000008FDR5AAO",
+   "height_mm": null,
+   "elements": [
+    "ES93015"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro Unit, Single, Short,  Bracket, WIF, Inlet Right, Outlet Left, Clear Bowl",
+    "Is An Element For": "FS53015",
+    "Media Type": "NanoNet",
+    "Overall Height": "20.00 inch / 508.00 mm",
+    "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93917",
+   "code": "FH23917",
+   "url": "https://www.fleetguard.com/es/product/fh23917/01t5x000008FDR6AAO",
+   "height_mm": null,
+   "elements": [
+    "ES93015"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro Unit, Single, Short,  Bracket, WIF, Inlet Left, Outlet Right, Clear Bowl",
+    "Is An Element For": "FS53015",
+    "Media Type": "NanoNet",
+    "Overall Height": "20.00 inch / 508.00 mm",
+    "Applicable Region": "North America, China, Europe, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93918",
+   "code": "FH23918",
+   "url": "https://www.fleetguard.com/es/product/fh23918/01t5x000008FDYZAA4",
+   "height_mm": 711.2,
+   "elements": [
+    "ES93014"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro Unit, Dual, Tall, Bracket, WIF, Inlet Right, Outlet Left, Clear Bowl with NanoNet filter",
+    "Is An Element For": "FS53014",
+    "Media Type": "NanoNet",
+    "Height": "28.00 inch / 711.20 mm",
+    "Overall Height": "27.60 inch / 701.04 mm",
+    "Largest Outside Diameter": "23.80 inch / 604.52 mm",
+    "Applicable Region": "North America, Europe, South America, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93919",
+   "code": "FH23919",
+   "url": "https://www.fleetguard.com/es/product/fh23919/01t5x000008FDYaAAO",
+   "height_mm": 711.2,
+   "elements": [
+    "ES93014"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro Unit, Dual, Tall, Bracket, WIF, Inlet Left, Outlet Right, Clear Bowl with NanoNet filter",
+    "Is An Element For": "FS53014",
+    "Media Type": "NanoNet",
+    "Height": "28.00 inch / 711.20 mm",
+    "Overall Height": "27.60 inch / 701.04 mm",
+    "Largest Outside Diameter": "23.80 inch / 604.52 mm",
+    "Applicable Region": "North America, Europe, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93920",
+   "code": "FH23920",
+   "url": "https://www.fleetguard.com/es/product/fh23920/01t5x000008FDYbAAO",
+   "height_mm": 711.2,
+   "elements": [
+    "ES93014"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro Unit, Dual, Tall, Bracket, WIF, Inlet Left, Outlet Left, Clear Bowl with NanoNet filter",
+    "Is An Element For": "FS53014",
+    "Media Type": "NanoNet",
+    "Height": "28.00 inch / 711.20 mm",
+    "Overall Height": "27.60 inch / 701.04 mm",
+    "Largest Outside Diameter": "23.80 inch / 604.52 mm",
+    "Applicable Region": "North America, Europe, South East Asia"
+   }
+  },
+  {
+   "sku": "ET93921",
+   "code": "FH23921",
+   "url": "https://www.fleetguard.com/es/product/fh23921/01t5x000008FDYcAAO",
+   "height_mm": null,
+   "elements": [
+    "ES93014"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro Unit, Dual, Tall, Bracket, WIF, Inlet Right, Outlet Right, Clear Bowl with NanoNet filter",
+    "Is An Element For": "FS53014",
+    "Overall Height": "27.60 inch / 701.04 mm",
+    "Largest Outside Diameter": "23,8 / 604,52",
+    "Applicable Region": "North America, Europe, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93922",
+   "code": "FH23922",
+   "url": "https://www.fleetguard.com/es/product/fh23922/01t5x000008FN1RAAW",
+   "height_mm": 695.71,
+   "elements": [
+    "ES93014"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro, Duplex tall with Priming Pump, WIF &amp;  Check Valve",
+    "Is An Element For": "FS53014",
+    "Media Type": "NanoNet",
+    "Height": "27.39 inch / 695.71 mm",
+    "Largest Outside Diameter": "11.18 inch / 283.97 mm",
+    "Applicable Region": "North America, Europe, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93923",
+   "code": "FH23923",
+   "url": "https://www.fleetguard.com/es/product/fh23923/01t5x000008FDokAAG",
+   "height_mm": 707.14,
+   "elements": [
+    "ES93014"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro Unit, Duplex tall with Priming Pump, WIF &amp; Check Valve",
+    "Is An Element For": "FS53014",
+    "Media Type": "NanoNet",
+    "Height": "27.84 inch / 707.14 mm",
+    "Largest Outside Diameter": "11.18 inch / 283.97 mm",
+    "Applicable Region": "North America, China, Europe, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93926",
+   "code": "FH23926",
+   "url": "https://www.fleetguard.com/es/product/fh23926/01t5x000008FN1SAAW",
+   "height_mm": 502.67,
+   "elements": [
+    "ES93015"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro, Duplex short without Priming Pump, WIF &amp;  Check Valve",
+    "Is An Element For": "FS53015",
+    "Media Type": "NanoNet",
+    "Height": "19.79 inch / 502.67 mm",
+    "Largest Outside Diameter": "12.37 inch / 314.20 mm",
+    "Applicable Region": "North America, Europe, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93927",
+   "code": "FH23927",
+   "url": "https://www.fleetguard.com/es/product/fh23927/01t5x000008FN1TAAW",
+   "height_mm": 513.84,
+   "elements": [
+    "ES93015"
+   ],
+   "oem": [],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro, Duplex short with Priming Pump, WIF &amp;  Check Valve",
+    "Is An Element For": "FS53015",
+    "Media Type": "NanoNet",
+    "Height": "20.23 inch / 513.84 mm",
+    "Largest Outside Diameter": "12.37 inch / 314.20 mm",
+    "Applicable Region": "North America, Europe, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93930",
+   "code": "FH23930",
+   "url": "https://www.fleetguard.com/es/product/fh23930/01t5x000008FE5eAAG",
+   "height_mm": 701.04,
+   "elements": [
+    "ES93014"
+   ],
+   "oem": [
+    [
+     "CUMMINS",
+     "5374777"
+    ]
+   ],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "Is An Element For": "FS53014",
+    "Media Type": "NanoNet",
+    "Height": "27.60 inch / 701.04 mm",
+    "Overall Height": "27.60 inch / 701.04 mm",
+    "Largest Outside Diameter": "35.44 inch / 900.18 mm",
+    "Applicable Region": "North America, China, Europe, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET93931",
+   "code": "FH23931",
+   "url": "https://www.fleetguard.com/es/product/fh23931/01t5x000008FDnwAAG",
+   "height_mm": 701.04,
+   "elements": [],
+   "oem": [],
+   "source": {
+    "product_class": "Industrial Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "Industrial Pro Single Tall",
+    "Media Type": "NanoNet",
+    "Height": "27.60 inch / 701.04 mm",
+    "Largest Outside Diameter": "11.87 inch / 301.50 mm",
+    "Applicable Region": "North America, South East Asia"
+   }
+  },
+  {
+   "sku": "ET94000",
+   "code": "FH24000",
+   "url": "https://www.fleetguard.com/es/product/fh24000/01t5x000008FBccAAG",
+   "height_mm": null,
+   "elements": [],
+   "oem": [],
+   "source": {
+    "product_class": "Sea Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "SeaPro Unit, Single-Short, WIF *Kit Available , Drain, Fuel Bottom In and Bottom Out, NanoNet",
+    "Media Type": "NanoNet",
+    "Applicable Region": "North America, Europe, South America, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET94001",
+   "code": "FH24001",
+   "url": "https://www.fleetguard.com/es/product/fh24001/01t5x000008FN24AAG",
+   "height_mm": 677.67,
+   "elements": [],
+   "oem": [],
+   "source": {
+    "product_class": "Sea Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "SeaPro Unit, Single -Tall, WIF *Kit Available, Drain, Fuel Bottom in and Bottom Out, NanoNet",
+    "Media Type": "NanoNet",
+    "Height": "26.68 inch / 677.67 mm",
+    "Overall Height": "26.70 inch / 678.18 mm",
+    "Largest Outside Diameter": "7.50 inch / 190.50 mm",
+    "Applicable Region": "North America, Europe, South East Asia, South Pacific"
+   }
+  },
+  {
+   "sku": "ET94002",
+   "code": "FH24002",
+   "url": "https://www.fleetguard.com/es/product/fh24002/01t5x000008FBq0AAG",
+   "height_mm": null,
+   "elements": [],
+   "oem": [],
+   "source": {
+    "product_class": "Sea Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "SeaPro Unit, Duplex-Short, WIF *Kit Available, Drain, Fuel Bottom In and Top Out, NanoNet",
+    "Media Type": "NanoNet",
+    "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific, APAC"
+   }
+  },
+  {
+   "sku": "ET94003",
+   "code": "FH24003",
+   "url": "https://www.fleetguard.com/es/product/fh24003/01t5x000008FBpzAAG",
+   "height_mm": null,
+   "elements": [],
+   "oem": [
+    [
+     "CUMMINS",
+     "4357329"
+    ]
+   ],
+   "source": {
+    "product_class": "Sea Pro Fuel Processor",
+    "mounting_configuration": "Off Engine",
+    "description": "SeaPro Unit, Duplex-Tall, WIF *Kit Available, Drain, Fuel Bottom In and Top Out, NanoNet",
+    "Media Type": "NanoNet",
+    "Overall Height": "32.40 inch / 822.96 mm",
+    "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific"
+   }
+  }
+ ],
+ "elements": [
+  {
+   "sku": "ES99731",
+   "code": "FS19731",
+   "url": "https://www.fleetguard.com/es/product/fs19731/01t5x000008FDEPAA4",
+   "height_mm": 112.9,
+   "outer_diameter_mm": 88.82,
+   "micron_rating": "10",
+   "oem": [],
+   "source": {
+    "product_class": "Non-EleMax",
+    "short_description": "Separador de Combustible/Agua",
+    "specifications": {
+     "Media Type": "StrataPore",
+     "Outside Diameter, End 2": "3.48 inch / 88.39 mm",
+     "Inside Diameter, End 1": "0.66 inch / 16.76 mm",
+     "Largest Outside Diameter": "3.50 inch / 88.82 mm",
+     "Height": "4.44 in / 112.90 mm",
+     "EFFICIENCY, TWA BY SAE J 1985": "98.7%",
+     "Emulsified Water Separation": "95% / 95.00 %",
+     "Free Water Separation": "95%",
+     "MICRON RATING BY SAE J 1985": "10.00 micron",
+     "Rated Flow": "3.78 L/m",
+     "Element Collapse/Burst, Min": "550.00 kPa",
+     "Primary Particle Efficiency": "0,99",
+     "Largest End Inside Diameter": "1.28 in / 32.51 mm",
+     "Overall Height": "4.44 inch / 112.90 mm",
+     "Applicable Region": "North America, Europe, South America, South East Asia, South Pacific, Mexico and Central America"
+    },
+    "related_parts": {
+     "Filter Used With": "FH23506,FH23510,FH23202,FH23509M,FH23201,FH23508,FH23504M,FH23200",
+     "Replaces": "FS19731G",
+     "Uses Element": "FH23515M"
+    }
+   }
+  },
+  {
+   "sku": "ES99761",
+   "code": "FS19761",
+   "url": "https://www.fleetguard.com/es/product/fs19761/01t5x000008FE28AAG",
+   "height_mm": 178.79,
+   "outer_diameter_mm": 97.03,
+   "micron_rating": "5",
+   "oem": [
+    [
+     "MACK",
+     "5839FS19536"
+    ],
+    [
+     "HINO",
+     "23304E0020"
+    ]
+   ],
+   "source": {
+    "product_class": "Fuel Filter Standard Size Elemax",
+    "short_description": "Separador de Combustible/Agua",
+    "specifications": {
+     "Overall Height": "6.79 inch / 172.47 mm",
+     "Media Type": "StrataPore",
+     "Outside Diameter, End 2": "3.82 inch / 97.03 mm",
+     "Height": "7.04 inch / 178.79 mm",
+     "Largest Outside Diameter": "3.82 inch / 97.03 mm",
+     "Inside Diameter, End 1": "0.66 inch / 16.76 mm",
+     "EFFICIENCY, TWA BY SAE J 1985": "98.7%",
+     "Emulsified Water Separation": "95%",
+     "Free Water Separation": "95%",
+     "MICRON RATING BY SAE J 1985": "5.00 micron",
+     "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific, Mexico and Central America"
+    },
+    "related_parts": {
+     "Uses Element": "FH23669M",
+     "Replaces": "FS19761G"
+    }
+   }
+  },
+  {
+   "sku": "ES90018",
+   "code": "FS20018",
+   "url": "https://www.fleetguard.com/es/product/fs20018/01t5x000008FGWyAAO",
+   "height_mm": 202.02,
+   "outer_diameter_mm": 98.23,
+   "micron_rating": null,
+   "oem": [
+    [
+     "LIEBHERR",
+     "11823470"
+    ]
+   ],
+   "source": {
+    "product_class": "Fuel Filter Standard Size Elemax",
+    "short_description": "Separador de Combustible/Agua",
+    "specifications": {
+     "Media Type": "StrataPore",
+     "Height": "7.95 in / 202.02 mm",
+     "Largest Outside Diameter": "3.87 inch / 98.23 mm",
+     "Emulsified Water Separation": "0,95",
+     "Rated Flow": "6.31 cu. m/m",
+     "Element Collapse/Burst, Min": "550.00 kPa",
+     "Primary Particle Efficiency": "98.7%",
+     "Overall Height": "7.95 inch / 202.02 mm",
+     "Applicable Region": "North America, China, Europe, South America, South East Asia, South Pacific, Mexico and Central America"
+    },
+    "related_parts": {
+     "Filter Used With": "FH23815VG"
+    }
+   }
+  }
+ ]
+}
