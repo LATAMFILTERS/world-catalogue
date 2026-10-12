@@ -1801,11 +1801,13 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     }
 
     // 1c. Exact governed reference match (e.g. Donaldson listing aliases / consolidated source codes)
+    // A renumbered ELIMFILTERS SKU is registered here as SUPERSEDED so the former SKU still finds the product.
     const byExactRef = await client.query(
       `SELECT DISTINCT ON (c.sku) c.*
        FROM exact_part_reference e
        JOIN elimfilters_catalog_active_v c ON c.sku = e.sku
-       WHERE UPPER(e.brand) = 'DONALDSON'
+       WHERE (UPPER(e.brand) = 'DONALDSON'
+              OR (UPPER(e.brand) = 'ELIMFILTERS' AND e.reference_type = 'SUPERSEDED'))
          AND UPPER(REPLACE(REPLACE(e.part_number,'-',''),' ','')) = $1
        ORDER BY c.sku, e.id DESC
        LIMIT 10`,
