@@ -34,6 +34,21 @@ const args = process.argv.slice(2);
 const value = (flag) => { const i = args.indexOf(flag); return i >= 0 ? args[i + 1] : null; };
 const normalize = (v) => String(v || '').trim().toUpperCase().replace(/[^A-Z0-9-]/g, '');
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+// Pause between products so a long run does not hammer the store.
+const PAGE_DELAY_MS = Math.max(Number(process.env.PAGE_DELAY_MS ?? 8000) || 0, 0);
+
+// Donaldson's edge answers a refused client with 403 "Access Denied". That is not "part not found":
+// the run must stop, and the code must stay pending.
+function isAccessDenied(status, title) { return status === 403 || /access denied/i.test(title || ''); }
+async function gotoOrDenied(page, url, options) {
+  const response = await page.goto(url, options);
+  if (isAccessDenied(response && response.status(), await page.title().catch(() => ''))) {
+    const error = new Error(`ACCESS_DENIED by shop.donaldson.com at ${url}`);
+    error.accessDenied = true;
+    throw error;
+  }
+  return response;
+}
 
 function loadJson(file, fallback) {
   try { return JSON.parse(fs.readFileSync(file, 'utf8')); } catch { return fallback; }
@@ -227,14 +242,14 @@ async function extractPage(page, requestedCode) {
 }
 
 async function resolveProductUrl(page, code) {
-  await page.goto(`${BASE}/search?Ntt=${encodeURIComponent(code)}&st=parts`, { waitUntil: 'domcontentloaded', timeout: 90000 });
+  await gotoOrDenied(page, `${BASE}/search?Ntt=${encodeURIComponent(code)}&st=parts`, { waitUntil: 'domcontentloaded', timeout: 90000 });
   await sleep(1800);
   const href = await page.locator(`a[href*="/product/${code}/" i]`).first().getAttribute('href').catch(() => null);
   return href ? new URL(href, BASE).href : null;
 }
 
 async function categoryCodes(page, category, notifier) {
-  await page.goto(CATEGORIES[category], { waitUntil: 'domcontentloaded', timeout: 90000 });
+  await gotoOrDenied(page, CATEGORIES[category], { waitUntil: 'domcontentloaded', timeout: 90000 });
   await sleep(4000);
   const codes = new Set();
   const productUrls = new Set();
@@ -360,13 +375,18 @@ async function main() {
           await maybeEmitProgress(notifier, runStartedAt, processed, codes.length);
           continue;
         }
-        await page.goto(sourceUrl, { waitUntil: 'networkidle', timeout: 90000 });
+        await gotoOrDenied(page, sourceUrl, { waitUntil: 'networkidle', timeout: 90000 });
         const audit = await exhaustAllSections(page);
         const official = await extractPage(page, code);
         const metric = metricFromOfficial(official.attributes);
         appendJsonl({ codigo_base: code, status: audit.expansion_complete ? 'OK' : 'PARTIAL', source_url: page.url(), scraped_at: new Date().toISOString(), official, metric, audit });
         console.log(`[product] ${code} status=${audit.expansion_complete ? 'OK' : 'PARTIAL'} remaining_show_more=${audit.remaining_show_more} remaining_plus=${audit.remaining_plus}`);
       } catch (error) {
+        if (error.accessDenied) {
+          // not recorded and not marked done: the code is retried on the next run
+          console.error(`[run] stopped at ${code}: ${error.message}`);
+          throw error;
+        }
         appendJsonl({ codigo_base: code, status: 'ERROR', error: error.message, scraped_at: new Date().toISOString() });
         console.error(`[product] ${code} ERROR ${error.message}`);
       }
@@ -374,6 +394,7 @@ async function main() {
       saveProgress(done);
       processed++;
       await maybeEmitProgress(notifier, runStartedAt, processed, codes.length);
+      await sleep(PAGE_DELAY_MS);
     }
 
     const latest = loadLatestStatuses(OUTPUT);
@@ -413,4 +434,13 @@ async function main() {
   }
 }
 
-main().catch((error) => { console.error(error); process.exitCode = 1; });
+if (args.includes('--self-check')) {
+  const assert = require('assert');
+  assert.strictEqual(isAccessDenied(403, ''), true);
+  assert.strictEqual(isAccessDenied(200, 'Access Denied'), true);
+  assert.strictEqual(isAccessDenied(200, 'Engine and Industrial Air, Oil and Liquid Filtration | Donaldson Company, Inc.'), false);
+  assert.strictEqual(isAccessDenied(null, ''), false);
+  console.log('self-check ok');
+} else {
+  main().catch((error) => { console.error(error); process.exitCode = 1; });
+}
