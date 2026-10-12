@@ -114,7 +114,7 @@ Canonical detail:
 ## Doctrina de clasificación (definida por Victor, 2026-10-04)
 - Ante una etiqueta ambigua del fabricante, predominan las características físicas: purgador, vaso visor, o cartucho dentro de un elemento visor = separador de agua (ES9), aunque el fabricante lo llame "FUEL FILTER".
 
-Caso pendiente (NO ejecutado, requiere aprobación): EF90668 y EF90669 deben renumerarse a ES91026 y ES91027 porque son separadores de agua, no fuel filters.
+Caso ejecutado (entre 2026-10-04 y 2026-10-05): EF90668 y EF90669 se renumeraron a ES91026 y ES91027 porque son separadores de agua, no fuel filters.
 
 ## Hard rules
 
