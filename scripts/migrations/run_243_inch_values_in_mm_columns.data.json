@@ -1,0 +1,4682 @@
+[
+ {
+  "sku": "EA10043",
+  "codigo_base": "P600043",
+  "column": "height_mm",
+  "stored": "14.29",
+  "correct_mm": 363.0,
+  "page_value": "14.29 inch (363 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P600043/21324"
+ },
+ {
+  "sku": "EA10043",
+  "codigo_base": "P600043",
+  "column": "outer_diameter_mm",
+  "stored": "4.17",
+  "correct_mm": 106.0,
+  "page_value": "4.17 inch (106 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P600043/21324"
+ },
+ {
+  "sku": "EA10047",
+  "codigo_base": "P600047",
+  "column": "height_mm",
+  "stored": "13.50",
+  "correct_mm": 343.0,
+  "page_value": "13.50 inch (343 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P600047/21325"
+ },
+ {
+  "sku": "EA10047",
+  "codigo_base": "P600047",
+  "column": "outer_diameter_mm",
+  "stored": "2.44",
+  "correct_mm": 62.0,
+  "page_value": "2.44 inch (62 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P600047/21325"
+ },
+ {
+  "sku": "EA10048",
+  "codigo_base": "P500048",
+  "column": "height_mm",
+  "stored": "5.20",
+  "correct_mm": 132.0,
+  "page_value": "5.20 inch (132 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P500048/18767"
+ },
+ {
+  "sku": "EA10048",
+  "codigo_base": "P500048",
+  "column": "outer_diameter_mm",
+  "stored": "4.72",
+  "correct_mm": 120.0,
+  "page_value": "4.72 inch (120 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P500048/18767"
+ },
+ {
+  "sku": "EA10056",
+  "codigo_base": "P500056",
+  "column": "height_mm",
+  "stored": "3.98",
+  "correct_mm": 101.0,
+  "page_value": "3.98 inch (101 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P500056/18769"
+ },
+ {
+  "sku": "EA10056",
+  "codigo_base": "P500056",
+  "column": "outer_diameter_mm",
+  "stored": "7.24",
+  "correct_mm": 184.0,
+  "page_value": "7.24 inch (184 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P500056/18769"
+ },
+ {
+  "sku": "EA10064",
+  "codigo_base": "P500064",
+  "column": "height_mm",
+  "stored": "5.94",
+  "correct_mm": 151.0,
+  "page_value": "5.94 inch (151 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P500064/18773"
+ },
+ {
+  "sku": "EA10064",
+  "codigo_base": "P500064",
+  "column": "outer_diameter_mm",
+  "stored": "6.06",
+  "correct_mm": 154.0,
+  "page_value": "6.06 inch (154 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P500064/18773"
+ },
+ {
+  "sku": "EA10109",
+  "codigo_base": "P150109",
+  "column": "height_mm",
+  "stored": "11.81",
+  "correct_mm": 300.0,
+  "page_value": "11.81 inch (300 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P150109/15675"
+ },
+ {
+  "sku": "EA101280",
+  "codigo_base": "P601280",
+  "column": "height_mm",
+  "stored": "15.98",
+  "correct_mm": 406.0,
+  "page_value": "15.98 inch (406 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P601280/21334"
+ },
+ {
+  "sku": "EA101280",
+  "codigo_base": "P601280",
+  "column": "outer_diameter_mm",
+  "stored": "6.89",
+  "correct_mm": 175.0,
+  "page_value": "6.89 inch (175 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P601280/21334"
+ },
+ {
+  "sku": "EA10149",
+  "codigo_base": "P500149",
+  "column": "height_mm",
+  "stored": "23.70",
+  "correct_mm": 602.0,
+  "page_value": "23.70 inch (602 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P500149/39650"
+ },
+ {
+  "sku": "EA10149",
+  "codigo_base": "P500149",
+  "column": "outer_diameter_mm",
+  "stored": "4.53",
+  "correct_mm": 115.0,
+  "page_value": "4.53 inch (115 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P500149/39650"
+ },
+ {
+  "sku": "EA10164",
+  "codigo_base": "P780164",
+  "column": "height_mm",
+  "stored": "9.02",
+  "correct_mm": 229.0,
+  "page_value": "9.02 inch (229 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P780164/22063"
+ },
+ {
+  "sku": "EA10332",
+  "codigo_base": "P270332",
+  "column": "outer_diameter_mm",
+  "stored": "8.39",
+  "correct_mm": 213.0,
+  "page_value": "8.39 inch (213 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P270332/18722"
+ },
+ {
+  "sku": "EA10333",
+  "codigo_base": "P270333",
+  "column": "outer_diameter_mm",
+  "stored": "5.24",
+  "correct_mm": 133.0,
+  "page_value": "5.24 inch (133 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P270333/18723"
+ },
+ {
+  "sku": "EA10338",
+  "codigo_base": "P620338",
+  "column": "outer_diameter_mm",
+  "stored": "19.29",
+  "correct_mm": 490.0,
+  "page_value": "19.29 inch (490 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P620338/63050"
+ },
+ {
+  "sku": "EA10355",
+  "codigo_base": "P530355",
+  "column": "outer_diameter_mm",
+  "stored": "7.99",
+  "correct_mm": 203.0,
+  "page_value": "7.99 inch (203 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P530355/19423"
+ },
+ {
+  "sku": "EA10643",
+  "codigo_base": "P530643",
+  "column": "height_mm",
+  "stored": "3.11",
+  "correct_mm": 79.0,
+  "page_value": "3.11 inch (79 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P530643/19444"
+ },
+ {
+  "sku": "EA10643",
+  "codigo_base": "P530643",
+  "column": "outer_diameter_mm",
+  "stored": "3.86",
+  "correct_mm": 98.0,
+  "page_value": "3.86 inch (98 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P530643/19444"
+ },
+ {
+  "sku": "EA10693",
+  "codigo_base": "P150693",
+  "column": "height_mm",
+  "stored": "28.03",
+  "correct_mm": 712.0,
+  "page_value": "28.03 inch (712 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P150693/15681"
+ },
+ {
+  "sku": "EA10693",
+  "codigo_base": "P150693",
+  "column": "outer_diameter_mm",
+  "stored": "8.66",
+  "correct_mm": 220.0,
+  "page_value": "8.66 inch (220 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P150693/15681"
+ },
+ {
+  "sku": "EA10822",
+  "codigo_base": "P140822",
+  "column": "height_mm",
+  "stored": "27.99",
+  "correct_mm": 711.0,
+  "page_value": "27.99 inch (711 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P140822/15557"
+ },
+ {
+  "sku": "EA10822",
+  "codigo_base": "P140822",
+  "column": "outer_diameter_mm",
+  "stored": "8.66",
+  "correct_mm": 220.0,
+  "page_value": "8.66 inch (220 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P140822/15557"
+ },
+ {
+  "sku": "EA10905",
+  "codigo_base": "P610905",
+  "column": "height_mm",
+  "stored": "10.71",
+  "correct_mm": 272.0,
+  "page_value": "10.71 inch (272 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P610905/35603"
+ },
+ {
+  "sku": "EA10905",
+  "codigo_base": "P610905",
+  "column": "outer_diameter_mm",
+  "stored": "5.43",
+  "correct_mm": 138.0,
+  "page_value": "5.43 inch (138 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P610905/35603"
+ },
+ {
+  "sku": "EA11005",
+  "codigo_base": "P181005",
+  "column": "outer_diameter_mm",
+  "stored": "12.76",
+  "correct_mm": 324.0,
+  "page_value": "12.76 inch (324 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P181005/17773"
+ },
+ {
+  "sku": "EA11013",
+  "codigo_base": "P181013",
+  "column": "height_mm",
+  "stored": "10.00",
+  "correct_mm": 254.0,
+  "page_value": "10.00 inch (254 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P181013/17781"
+ },
+ {
+  "sku": "EA11013",
+  "codigo_base": "P181013",
+  "column": "outer_diameter_mm",
+  "stored": "12.09",
+  "correct_mm": 307.0,
+  "page_value": "12.09 inch (307 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P181013/17781"
+ },
+ {
+  "sku": "EA11023",
+  "codigo_base": "P181023",
+  "column": "height_mm",
+  "stored": "15.98",
+  "correct_mm": 406.0,
+  "page_value": "15.98 inch (406 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P181023/17789"
+ },
+ {
+  "sku": "EA11023",
+  "codigo_base": "P181023",
+  "column": "outer_diameter_mm",
+  "stored": "11.10",
+  "correct_mm": 282.0,
+  "page_value": "11.10 inch (282 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P181023/17789"
+ },
+ {
+  "sku": "EA11028",
+  "codigo_base": "P041028",
+  "column": "height_mm",
+  "stored": "12.01",
+  "correct_mm": 305.0,
+  "page_value": "12.01 inch (305 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P041028/35187"
+ },
+ {
+  "sku": "EA11038",
+  "codigo_base": "P101038",
+  "column": "height_mm",
+  "stored": "12.01",
+  "correct_mm": 305.0,
+  "page_value": "12.01 inch (305 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P101038/14528"
+ },
+ {
+  "sku": "EA11038",
+  "codigo_base": "P101038",
+  "column": "outer_diameter_mm",
+  "stored": "7.93",
+  "correct_mm": 201.42,
+  "page_value": "7.93 inch (201.42 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P101038/14528"
+ },
+ {
+  "sku": "EA11055",
+  "codigo_base": "P181055",
+  "column": "outer_diameter_mm",
+  "stored": "12.76",
+  "correct_mm": 324.0,
+  "page_value": "12.76 inch (324 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P181055/17817"
+ },
+ {
+  "sku": "EA11060",
+  "codigo_base": "P181060",
+  "column": "height_mm",
+  "stored": "12.01",
+  "correct_mm": 305.0,
+  "page_value": "12.01 inch (305 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P181060/17822"
+ },
+ {
+  "sku": "EA11060",
+  "codigo_base": "P181060",
+  "column": "outer_diameter_mm",
+  "stored": "13.86",
+  "correct_mm": 352.0,
+  "page_value": "13.86 inch (352 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P181060/17822"
+ },
+ {
+  "sku": "EA11066",
+  "codigo_base": "P181066",
+  "column": "height_mm",
+  "stored": "14.02",
+  "correct_mm": 356.0,
+  "page_value": "14.02 inch (356 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P181066/17828"
+ },
+ {
+  "sku": "EA11066",
+  "codigo_base": "P181066",
+  "column": "outer_diameter_mm",
+  "stored": "13.82",
+  "correct_mm": 351.0,
+  "page_value": "13.82 inch (351 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P181066/17828"
+ },
+ {
+  "sku": "EA11074",
+  "codigo_base": "P181074",
+  "column": "outer_diameter_mm",
+  "stored": "10.39",
+  "correct_mm": 264.0,
+  "page_value": "10.39 inch (264 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P181074/17835"
+ },
+ {
+  "sku": "EA11079",
+  "codigo_base": "P181079",
+  "column": "height_mm",
+  "stored": "17.99",
+  "correct_mm": 457.0,
+  "page_value": "17.99 inch (457 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P181079/17840"
+ },
+ {
+  "sku": "EA11079",
+  "codigo_base": "P181079",
+  "column": "outer_diameter_mm",
+  "stored": "12.09",
+  "correct_mm": 307.0,
+  "page_value": "12.09 inch (307 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P181079/17840"
+ },
+ {
+  "sku": "EA11096",
+  "codigo_base": "P181096",
+  "column": "outer_diameter_mm",
+  "stored": "12.09",
+  "correct_mm": 307.0,
+  "page_value": "12.09 inch (307 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P181096/17853"
+ },
+ {
+  "sku": "EA11113",
+  "codigo_base": "P181113",
+  "column": "outer_diameter_mm",
+  "stored": "12.76",
+  "correct_mm": 324.0,
+  "page_value": "12.76 inch (324 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P181113/17866"
+ },
+ {
+  "sku": "EA11114",
+  "codigo_base": "P181114",
+  "column": "outer_diameter_mm",
+  "stored": "12.76",
+  "correct_mm": 324.0,
+  "page_value": "12.76 inch (324 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P181114/17867"
+ },
+ {
+  "sku": "EA11129",
+  "codigo_base": "P181129",
+  "column": "outer_diameter_mm",
+  "stored": "6.85",
+  "correct_mm": 174.0,
+  "page_value": "6.85 inch (174 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P181129/17878"
+ },
+ {
+  "sku": "EA11146",
+  "codigo_base": "P181146",
+  "column": "outer_diameter_mm",
+  "stored": "8.86",
+  "correct_mm": 225.0,
+  "page_value": "8.86 inch (225 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P181146/17889"
+ },
+ {
+  "sku": "EA11166",
+  "codigo_base": "P181166",
+  "column": "outer_diameter_mm",
+  "stored": "12.76",
+  "correct_mm": 324.0,
+  "page_value": "12.76 inch (324 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P181166/17897"
+ },
+ {
+  "sku": "EA11172",
+  "codigo_base": "P641172",
+  "column": "height_mm",
+  "stored": "13.41",
+  "correct_mm": 340.7,
+  "page_value": "13.41 inch (340.7 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P641172/prod1660036"
+ },
+ {
+  "sku": "EA11182",
+  "codigo_base": "P641182",
+  "column": "height_mm",
+  "stored": "15.18",
+  "correct_mm": 385.7,
+  "page_value": "15.18 inch (385.7 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P641182/prod1660039"
+ },
+ {
+  "sku": "EA11185",
+  "codigo_base": "P181185",
+  "column": "outer_diameter_mm",
+  "stored": "13.82",
+  "correct_mm": 351.0,
+  "page_value": "13.82 inch (351 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P181185/17901"
+ },
+ {
+  "sku": "EA11188",
+  "codigo_base": "P181188",
+  "column": "height_mm",
+  "stored": "7.01",
+  "correct_mm": 178.0,
+  "page_value": "7.01 inch (178 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P181188/17904"
+ },
+ {
+  "sku": "EA11188",
+  "codigo_base": "P181188",
+  "column": "outer_diameter_mm",
+  "stored": "11.69",
+  "correct_mm": 297.0,
+  "page_value": "11.69 inch (297 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P181188/17904"
+ },
+ {
+  "sku": "EA11286",
+  "codigo_base": "P601286",
+  "column": "height_mm",
+  "stored": "15.39",
+  "correct_mm": 391.0,
+  "page_value": "15.39 inch (391 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P601286/21335"
+ },
+ {
+  "sku": "EA11286",
+  "codigo_base": "P601286",
+  "column": "outer_diameter_mm",
+  "stored": "4.13",
+  "correct_mm": 105.0,
+  "page_value": "4.13 inch (105 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P601286/21335"
+ },
+ {
+  "sku": "EA11339",
+  "codigo_base": "P141339",
+  "column": "height_mm",
+  "stored": "22.01",
+  "correct_mm": 559.0,
+  "page_value": "22.01 inch (559 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P141339/15567"
+ },
+ {
+  "sku": "EA11339",
+  "codigo_base": "P141339",
+  "column": "outer_diameter_mm",
+  "stored": "8.66",
+  "correct_mm": 220.0,
+  "page_value": "8.66 inch (220 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P141339/15567"
+ },
+ {
+  "sku": "EA11437",
+  "codigo_base": "P601437",
+  "column": "height_mm",
+  "stored": "15.04",
+  "correct_mm": 382.0,
+  "page_value": "15.04 inch (382 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P601437/21336"
+ },
+ {
+  "sku": "EA11437",
+  "codigo_base": "P601437",
+  "column": "outer_diameter_mm",
+  "stored": "6.10",
+  "correct_mm": 155.0,
+  "page_value": "6.10 inch (155 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P601437/21336"
+ },
+ {
+  "sku": "EA11470",
+  "codigo_base": "P781470",
+  "column": "height_mm",
+  "stored": "20.04",
+  "correct_mm": 509.0,
+  "page_value": "20.04 inch (509 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P781470/22160"
+ },
+ {
+  "sku": "EA11470",
+  "codigo_base": "P781470",
+  "column": "outer_diameter_mm",
+  "stored": "8.15",
+  "correct_mm": 207.0,
+  "page_value": "8.15 inch (207 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P781470/22160"
+ },
+ {
+  "sku": "EA11471",
+  "codigo_base": "P781471",
+  "column": "height_mm",
+  "stored": "19.72",
+  "correct_mm": 501.0,
+  "page_value": "19.72 inch (501 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P781471/22161"
+ },
+ {
+  "sku": "EA11471",
+  "codigo_base": "P781471",
+  "column": "outer_diameter_mm",
+  "stored": "4.25",
+  "correct_mm": 108.0,
+  "page_value": "4.25 inch (108 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P781471/22161"
+ },
+ {
+  "sku": "EA11539",
+  "codigo_base": "P611539",
+  "column": "height_mm",
+  "stored": "18.86",
+  "correct_mm": 479.0,
+  "page_value": "18.86 inch (479 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P611539/37584"
+ },
+ {
+  "sku": "EA11539",
+  "codigo_base": "P611539",
+  "column": "outer_diameter_mm",
+  "stored": "9.96",
+  "correct_mm": 253.0,
+  "page_value": "9.96 inch (253 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P611539/37584"
+ },
+ {
+  "sku": "EA11540",
+  "codigo_base": "P611540",
+  "column": "height_mm",
+  "stored": "17.44",
+  "correct_mm": 443.0,
+  "page_value": "17.44 inch (443 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P611540/37585"
+ },
+ {
+  "sku": "EA11540",
+  "codigo_base": "P611540",
+  "column": "outer_diameter_mm",
+  "stored": "5.31",
+  "correct_mm": 135.0,
+  "page_value": "5.31 inch (135 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P611540/37585"
+ },
+ {
+  "sku": "EA11575",
+  "codigo_base": "P541575",
+  "column": "height_mm",
+  "stored": "14.76",
+  "correct_mm": 375.0,
+  "page_value": "14.76 inch (375 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P541575/19939"
+ },
+ {
+  "sku": "EA11575",
+  "codigo_base": "P541575",
+  "column": "outer_diameter_mm",
+  "stored": "13.07",
+  "correct_mm": 332.0,
+  "page_value": "13.07 inch (332 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P541575/19939"
+ },
+ {
+  "sku": "EA11639",
+  "codigo_base": "P841639",
+  "column": "height_mm",
+  "stored": "10.24",
+  "correct_mm": 260.0,
+  "page_value": "10.24 inch (260 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P841639/35674"
+ },
+ {
+  "sku": "EA11639",
+  "codigo_base": "P841639",
+  "column": "outer_diameter_mm",
+  "stored": "2.44",
+  "correct_mm": 62.0,
+  "page_value": "2.44 inch (62 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P841639/35674"
+ },
+ {
+  "sku": "EA11767",
+  "codigo_base": "P601767",
+  "column": "height_mm",
+  "stored": "13.03",
+  "correct_mm": 331.0,
+  "page_value": "13.03 inch (331 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P601767/21338"
+ },
+ {
+  "sku": "EA11767",
+  "codigo_base": "P601767",
+  "column": "outer_diameter_mm",
+  "stored": "9.21",
+  "correct_mm": 234.0,
+  "page_value": "9.21 inch (234 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P601767/21338"
+ },
+ {
+  "sku": "EA11774",
+  "codigo_base": "P601774",
+  "column": "height_mm",
+  "stored": "12.72",
+  "correct_mm": 323.0,
+  "page_value": "12.72 inch (323 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P601774/21339"
+ },
+ {
+  "sku": "EA11774",
+  "codigo_base": "P601774",
+  "column": "outer_diameter_mm",
+  "stored": "4.76",
+  "correct_mm": 121.0,
+  "page_value": "4.76 inch (121 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P601774/21339"
+ },
+ {
+  "sku": "EA11790",
+  "codigo_base": "P601790",
+  "column": "height_mm",
+  "stored": "16.10",
+  "correct_mm": 409.0,
+  "page_value": "16.10 inch (409 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P601790/21340"
+ },
+ {
+  "sku": "EA11790",
+  "codigo_base": "P601790",
+  "column": "outer_diameter_mm",
+  "stored": "8.19",
+  "correct_mm": 208.0,
+  "page_value": "8.19 inch (208 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P601790/21340"
+ },
+ {
+  "sku": "EA11858",
+  "codigo_base": "P611858",
+  "column": "height_mm",
+  "stored": "10.51",
+  "correct_mm": 267.0,
+  "page_value": "10.51 inch (267 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P611858/36024"
+ },
+ {
+  "sku": "EA11858",
+  "codigo_base": "P611858",
+  "column": "outer_diameter_mm",
+  "stored": "4.09",
+  "correct_mm": 104.0,
+  "page_value": "4.09 inch (104 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P611858/36024"
+ },
+ {
+  "sku": "EA11859",
+  "codigo_base": "P611859",
+  "column": "height_mm",
+  "stored": "12.87",
+  "correct_mm": 327.0,
+  "page_value": "12.87 inch (327 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P611859/36025"
+ },
+ {
+  "sku": "EA11859",
+  "codigo_base": "P611859",
+  "column": "outer_diameter_mm",
+  "stored": "4.80",
+  "correct_mm": 122.0,
+  "page_value": "4.80 inch (122 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P611859/36025"
+ },
+ {
+  "sku": "EA11922",
+  "codigo_base": "P121922",
+  "column": "outer_diameter_mm",
+  "stored": "12.09",
+  "correct_mm": 307.0,
+  "page_value": "12.09 inch (307 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P121922/15144"
+ },
+ {
+  "sku": "EA12015",
+  "codigo_base": "P182015",
+  "column": "outer_diameter_mm",
+  "stored": "12.09",
+  "correct_mm": 307.0,
+  "page_value": "12.09 inch (307 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P182015/17927"
+ },
+ {
+  "sku": "EA12016",
+  "codigo_base": "P182016",
+  "column": "outer_diameter_mm",
+  "stored": "10.39",
+  "correct_mm": 264.0,
+  "page_value": "10.39 inch (264 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P182016/17928"
+ },
+ {
+  "sku": "EA12024",
+  "codigo_base": "P952024",
+  "column": "outer_diameter_mm",
+  "stored": "11.10",
+  "correct_mm": 282.0,
+  "page_value": "11.10 inch (282 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P952024/69302"
+ },
+ {
+  "sku": "EA12028",
+  "codigo_base": "P182028",
+  "column": "outer_diameter_mm",
+  "stored": "10.41",
+  "correct_mm": 264.3,
+  "page_value": "10.41 inch (264.3 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P182028/17933"
+ },
+ {
+  "sku": "EA12052",
+  "codigo_base": "P102052",
+  "column": "height_mm",
+  "stored": "19.49",
+  "correct_mm": 495.0,
+  "page_value": "19.49 inch (495 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P102052/14581"
+ },
+ {
+  "sku": "EA12055",
+  "codigo_base": "P182055",
+  "column": "outer_diameter_mm",
+  "stored": "12.76",
+  "correct_mm": 324.0,
+  "page_value": "12.76 inch (324 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P182055/17957"
+ },
+ {
+  "sku": "EA12092",
+  "codigo_base": "P622092",
+  "column": "height_mm",
+  "stored": "15.00",
+  "correct_mm": 381.0,
+  "page_value": "15.00 inch (381 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P622092/64872"
+ },
+ {
+  "sku": "EA12095",
+  "codigo_base": "P182095",
+  "column": "outer_diameter_mm",
+  "stored": "13.82",
+  "correct_mm": 351.0,
+  "page_value": "13.82 inch (351 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P182095/17977"
+ },
+ {
+  "sku": "EA12096",
+  "codigo_base": "P182096",
+  "column": "outer_diameter_mm",
+  "stored": "12.09",
+  "correct_mm": 307.0,
+  "page_value": "12.09 inch (307 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P182096/17978"
+ },
+ {
+  "sku": "EA12148",
+  "codigo_base": "P622148",
+  "column": "height_mm",
+  "stored": "8.86",
+  "correct_mm": 225.0,
+  "page_value": "8.86 inch (225 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P622148/64729"
+ },
+ {
+  "sku": "EA12331",
+  "codigo_base": "P042331",
+  "column": "height_mm",
+  "stored": "22.00",
+  "correct_mm": 558.8,
+  "page_value": "22.00 inch (558.8 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P042331/35857"
+ },
+ {
+  "sku": "EA12331",
+  "codigo_base": "P042331",
+  "column": "outer_diameter_mm",
+  "stored": "12.56",
+  "correct_mm": 319.0,
+  "page_value": "12.56 inch (319 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P042331/35857"
+ },
+ {
+  "sku": "EA12427",
+  "codigo_base": "P602427",
+  "column": "height_mm",
+  "stored": "12.64",
+  "correct_mm": 321.0,
+  "page_value": "12.64 inch (321 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P602427/31222"
+ },
+ {
+  "sku": "EA12427",
+  "codigo_base": "P602427",
+  "column": "outer_diameter_mm",
+  "stored": "3.07",
+  "correct_mm": 78.0,
+  "page_value": "3.07 inch (78 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P602427/31222"
+ },
+ {
+  "sku": "EA12520",
+  "codigo_base": "P772520",
+  "column": "outer_diameter_mm",
+  "stored": "10.39",
+  "correct_mm": 264.0,
+  "page_value": "10.39 inch (264 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P772520/21651"
+ },
+ {
+  "sku": "EA12535",
+  "codigo_base": "P772535",
+  "column": "outer_diameter_mm",
+  "stored": "6.97",
+  "correct_mm": 177.0,
+  "page_value": "6.97 inch (177 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P772535/21661"
+ },
+ {
+  "sku": "EA12549",
+  "codigo_base": "P772549",
+  "column": "outer_diameter_mm",
+  "stored": "5.43",
+  "correct_mm": 138.0,
+  "page_value": "5.43 inch (138 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P772549/21664"
+ },
+ {
+  "sku": "EA12552",
+  "codigo_base": "P772552",
+  "column": "outer_diameter_mm",
+  "stored": "5.51",
+  "correct_mm": 140.0,
+  "page_value": "5.51 inch (140 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P772552/21666?_requestid=11867483"
+ },
+ {
+  "sku": "EA12556",
+  "codigo_base": "P772556",
+  "column": "outer_diameter_mm",
+  "stored": "6.10",
+  "correct_mm": 155.0,
+  "page_value": "6.10 inch (155 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P772556/21669"
+ },
+ {
+  "sku": "EA12567",
+  "codigo_base": "P772567",
+  "column": "outer_diameter_mm",
+  "stored": "12.09",
+  "correct_mm": 307.0,
+  "page_value": "12.09 inch (307 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P772567/21672"
+ },
+ {
+  "sku": "EA12703",
+  "codigo_base": "P532703",
+  "column": "height_mm",
+  "stored": "9.49",
+  "correct_mm": 241.0,
+  "page_value": "9.49 inch (241 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P532703/19553"
+ },
+ {
+  "sku": "EA12703",
+  "codigo_base": "P532703",
+  "column": "outer_diameter_mm",
+  "stored": "8.03",
+  "correct_mm": 204.0,
+  "page_value": "8.03 inch (204 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P532703/19553"
+ },
+ {
+  "sku": "EA127957",
+  "codigo_base": "P527957",
+  "column": "height_mm",
+  "stored": "9.02",
+  "correct_mm": 229.0,
+  "page_value": "9.02 inch (229 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P527957/19361"
+ },
+ {
+  "sku": "EA127957",
+  "codigo_base": "P527957",
+  "column": "outer_diameter_mm",
+  "stored": "8.23",
+  "correct_mm": 209.0,
+  "page_value": "8.23 inch (209 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P527957/19361"
+ },
+ {
+  "sku": "EA12874",
+  "codigo_base": "P522874",
+  "column": "outer_diameter_mm",
+  "stored": "15.08",
+  "correct_mm": 383.0,
+  "page_value": "15.08 inch (383 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P522874/18941"
+ },
+ {
+  "sku": "EA12901",
+  "codigo_base": "P812901",
+  "column": "outer_diameter_mm",
+  "stored": "7.36",
+  "correct_mm": 187.0,
+  "page_value": "7.36 inch (187 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P812901/22333"
+ },
+ {
+  "sku": "EA12926",
+  "codigo_base": "P522926",
+  "column": "outer_diameter_mm",
+  "stored": "13.86",
+  "correct_mm": 352.0,
+  "page_value": "13.86 inch (352 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P522926/18944"
+ },
+ {
+  "sku": "EA131017",
+  "codigo_base": "P531017",
+  "column": "height_mm",
+  "stored": "30.00",
+  "correct_mm": 762.0,
+  "page_value": "30.00 inch (762 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P531017/19521"
+ },
+ {
+  "sku": "EA13304",
+  "codigo_base": "P953304",
+  "column": "height_mm",
+  "stored": "20.16",
+  "correct_mm": 512.0,
+  "page_value": "20.16 inch (512 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P953304/74517"
+ },
+ {
+  "sku": "EA13304",
+  "codigo_base": "P953304",
+  "column": "outer_diameter_mm",
+  "stored": "12.32",
+  "correct_mm": 313.0,
+  "page_value": "12.32 inch (313 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P953304/74517"
+ },
+ {
+  "sku": "EA13333",
+  "codigo_base": "P613333",
+  "column": "height_mm",
+  "stored": "20.43",
+  "correct_mm": 519.0,
+  "page_value": "20.43 inch (519 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P613333/35213"
+ },
+ {
+  "sku": "EA13333",
+  "codigo_base": "P613333",
+  "column": "outer_diameter_mm",
+  "stored": "10.98",
+  "correct_mm": 279.0,
+  "page_value": "10.98 inch (279 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P613333/35213"
+ },
+ {
+  "sku": "EA13347",
+  "codigo_base": "P123347",
+  "column": "outer_diameter_mm",
+  "stored": "8.04",
+  "correct_mm": 204.22,
+  "page_value": "8.04 inch (204.22 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P123347/15177"
+ },
+ {
+  "sku": "EA13439",
+  "codigo_base": "P613439",
+  "column": "outer_diameter_mm",
+  "stored": "13.86",
+  "correct_mm": 352.0,
+  "page_value": "13.86 inch (352 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P613439/37805"
+ },
+ {
+  "sku": "EA13701",
+  "codigo_base": "P133701",
+  "column": "outer_diameter_mm",
+  "stored": "10.37",
+  "correct_mm": 263.39,
+  "page_value": "10.37 inch (263.39 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P133701/15425"
+ },
+ {
+  "sku": "EA13713",
+  "codigo_base": "P133713",
+  "column": "height_mm",
+  "stored": "10.00",
+  "correct_mm": 254.0,
+  "page_value": "10.00 inch (254 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P133713/15434?_requestid=14569571"
+ },
+ {
+  "sku": "EA13713",
+  "codigo_base": "P133713",
+  "column": "outer_diameter_mm",
+  "stored": "8.91",
+  "correct_mm": 226.2,
+  "page_value": "8.91 inch (226.2 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P133713/15434?_requestid=14569571"
+ },
+ {
+  "sku": "EA13714",
+  "codigo_base": "P133714",
+  "column": "height_mm",
+  "stored": "24.02",
+  "correct_mm": 610.0,
+  "page_value": "24.02 inch (610 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P133714/15435?_requestid=14840087"
+ },
+ {
+  "sku": "EA13714",
+  "codigo_base": "P133714",
+  "column": "outer_diameter_mm",
+  "stored": "16.61",
+  "correct_mm": 422.0,
+  "page_value": "16.61 inch (422 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P133714/15435?_requestid=14840087"
+ },
+ {
+  "sku": "EA13938",
+  "codigo_base": "P533938",
+  "column": "height_mm",
+  "stored": "17.24",
+  "correct_mm": 438.0,
+  "page_value": "17.24 inch (438 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P533938/19630"
+ },
+ {
+  "sku": "EA13938",
+  "codigo_base": "P533938",
+  "column": "outer_diameter_mm",
+  "stored": "13.46",
+  "correct_mm": 342.0,
+  "page_value": "13.46 inch (342 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P533938/19630"
+ },
+ {
+  "sku": "EA13946",
+  "codigo_base": "P533946",
+  "column": "height_mm",
+  "stored": "16.61",
+  "correct_mm": 422.0,
+  "page_value": "16.61 inch (422 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P533946/19631"
+ },
+ {
+  "sku": "EA13946",
+  "codigo_base": "P533946",
+  "column": "outer_diameter_mm",
+  "stored": "8.35",
+  "correct_mm": 212.0,
+  "page_value": "8.35 inch (212 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P533946/19631"
+ },
+ {
+  "sku": "EA14243",
+  "codigo_base": "P544243",
+  "column": "height_mm",
+  "stored": "21.38",
+  "correct_mm": 543.0,
+  "page_value": "21.38 inch (543 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P544243/19958"
+ },
+ {
+  "sku": "EA14243",
+  "codigo_base": "P544243",
+  "column": "outer_diameter_mm",
+  "stored": "13.07",
+  "correct_mm": 332.0,
+  "page_value": "13.07 inch (332 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P544243/19958"
+ },
+ {
+  "sku": "EA14301",
+  "codigo_base": "P544301",
+  "column": "height_mm",
+  "stored": "25.51",
+  "correct_mm": 648.0,
+  "page_value": "25.51 inch (648 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P544301/23083"
+ },
+ {
+  "sku": "EA14301",
+  "codigo_base": "P544301",
+  "column": "outer_diameter_mm",
+  "stored": "12.76",
+  "correct_mm": 324.0,
+  "page_value": "12.76 inch (324 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P544301/23083"
+ },
+ {
+  "sku": "EA14357",
+  "codigo_base": "P524357",
+  "column": "height_mm",
+  "stored": "2.80",
+  "correct_mm": 71.0,
+  "page_value": "2.80 inch (71 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P524357/18963"
+ },
+ {
+  "sku": "EA14357",
+  "codigo_base": "P524357",
+  "column": "outer_diameter_mm",
+  "stored": "13.27",
+  "correct_mm": 337.0,
+  "page_value": "13.27 inch (337 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P524357/18963"
+ },
+ {
+  "sku": "EA14362",
+  "codigo_base": "P524362",
+  "column": "height_mm",
+  "stored": "5.00",
+  "correct_mm": 127.0,
+  "page_value": "5.00 inch (127 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P524362/18968"
+ },
+ {
+  "sku": "EA14362",
+  "codigo_base": "P524362",
+  "column": "outer_diameter_mm",
+  "stored": "12.64",
+  "correct_mm": 321.0,
+  "page_value": "12.64 inch (321 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P524362/18968"
+ },
+ {
+  "sku": "EA14390",
+  "codigo_base": "P524390",
+  "column": "height_mm",
+  "stored": "2.99",
+  "correct_mm": 76.0,
+  "page_value": "2.99 inch (76 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P524390/18993"
+ },
+ {
+  "sku": "EA14390",
+  "codigo_base": "P524390",
+  "column": "outer_diameter_mm",
+  "stored": "8.27",
+  "correct_mm": 210.0,
+  "page_value": "8.27 inch (210 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P524390/18993"
+ },
+ {
+  "sku": "EA14430",
+  "codigo_base": "P604430",
+  "column": "height_mm",
+  "stored": "27.99",
+  "correct_mm": 711.0,
+  "page_value": "27.99 inch (711 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P604430/23173"
+ },
+ {
+  "sku": "EA14430",
+  "codigo_base": "P604430",
+  "column": "outer_diameter_mm",
+  "stored": "8.66",
+  "correct_mm": 220.0,
+  "page_value": "8.66 inch (220 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P604430/23173"
+ },
+ {
+  "sku": "EA145114",
+  "codigo_base": "P645114",
+  "column": "height_mm",
+  "stored": "25.04",
+  "correct_mm": 636.0,
+  "page_value": "25.04 inch (636 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P645114/prod1690089"
+ },
+ {
+  "sku": "EA145114",
+  "codigo_base": "P645114",
+  "column": "outer_diameter_mm",
+  "stored": "9.33",
+  "correct_mm": 237.0,
+  "page_value": "9.33 inch (237 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P645114/prod1690089"
+ },
+ {
+  "sku": "EA14765",
+  "codigo_base": "P544765",
+  "column": "height_mm",
+  "stored": "20.04",
+  "correct_mm": 509.0,
+  "page_value": "20.04 inch (509 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P544765/23441"
+ },
+ {
+  "sku": "EA14765",
+  "codigo_base": "P544765",
+  "column": "outer_diameter_mm",
+  "stored": "10.63",
+  "correct_mm": 270.0,
+  "page_value": "10.63 inch (270 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P544765/23441"
+ },
+ {
+  "sku": "EA14996",
+  "codigo_base": "P604996",
+  "column": "height_mm",
+  "stored": "13.66",
+  "correct_mm": 347.0,
+  "page_value": "13.66 inch (347 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P604996/34484"
+ },
+ {
+  "sku": "EA14996",
+  "codigo_base": "P604996",
+  "column": "outer_diameter_mm",
+  "stored": "6.46",
+  "correct_mm": 164.0,
+  "page_value": "6.46 inch (164 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P604996/34484"
+ },
+ {
+  "sku": "EA14997",
+  "codigo_base": "P604997",
+  "column": "height_mm",
+  "stored": "13.39",
+  "correct_mm": 340.0,
+  "page_value": "13.39 inch (340 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P604997/36750"
+ },
+ {
+  "sku": "EA14997",
+  "codigo_base": "P604997",
+  "column": "outer_diameter_mm",
+  "stored": "3.70",
+  "correct_mm": 94.0,
+  "page_value": "3.70 inch (94 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P604997/36750"
+ },
+ {
+  "sku": "EA151028",
+  "codigo_base": "P151028",
+  "column": "outer_diameter_mm",
+  "stored": "9.50",
+  "correct_mm": 241.3,
+  "page_value": "9.50 inch (241.3 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P151028/15687"
+ },
+ {
+  "sku": "EA151098",
+  "codigo_base": "P151098",
+  "column": "outer_diameter_mm",
+  "stored": "12.76",
+  "correct_mm": 324.0,
+  "page_value": "12.76 inch (324 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P151098/15689"
+ },
+ {
+  "sku": "EA15130",
+  "codigo_base": "P625130",
+  "column": "height_mm",
+  "stored": "17.80",
+  "correct_mm": 452.0,
+  "page_value": "17.80 inch (452 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P625130/68701"
+ },
+ {
+  "sku": "EA15130",
+  "codigo_base": "P625130",
+  "column": "outer_diameter_mm",
+  "stored": "12.78",
+  "correct_mm": 324.6,
+  "page_value": "12.78 inch (324.6 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P625130/68701"
+ },
+ {
+  "sku": "EA15338",
+  "codigo_base": "P535338",
+  "column": "height_mm",
+  "stored": "12.99",
+  "correct_mm": 330.0,
+  "page_value": "12.99 inch (330 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P535338/19662"
+ },
+ {
+  "sku": "EA15338",
+  "codigo_base": "P535338",
+  "column": "outer_diameter_mm",
+  "stored": "2.36",
+  "correct_mm": 60.0,
+  "page_value": "2.36 inch (60 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P535338/19662"
+ },
+ {
+  "sku": "EA15388",
+  "codigo_base": "P785388",
+  "column": "height_mm",
+  "stored": "16.22",
+  "correct_mm": 412.0,
+  "page_value": "16.22 inch (412 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785388/35988"
+ },
+ {
+  "sku": "EA15388",
+  "codigo_base": "P785388",
+  "column": "outer_diameter_mm",
+  "stored": "8.19",
+  "correct_mm": 208.0,
+  "page_value": "8.19 inch (208 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785388/35988"
+ },
+ {
+  "sku": "EA15389",
+  "codigo_base": "P785389",
+  "column": "height_mm",
+  "stored": "14.21",
+  "correct_mm": 361.0,
+  "page_value": "14.21 inch (361 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785389/35989"
+ },
+ {
+  "sku": "EA15389",
+  "codigo_base": "P785389",
+  "column": "outer_diameter_mm",
+  "stored": "4.25",
+  "correct_mm": 108.0,
+  "page_value": "4.25 inch (108 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785389/35989"
+ },
+ {
+  "sku": "EA15391",
+  "codigo_base": "P785391",
+  "column": "height_mm",
+  "stored": "18.07",
+  "correct_mm": 459.0,
+  "page_value": "18.07 inch (459 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785391/35991"
+ },
+ {
+  "sku": "EA15391",
+  "codigo_base": "P785391",
+  "column": "outer_diameter_mm",
+  "stored": "5.94",
+  "correct_mm": 150.9,
+  "page_value": "5.94 inch (150.9 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785391/35991"
+ },
+ {
+  "sku": "EA15401",
+  "codigo_base": "P785401",
+  "column": "height_mm",
+  "stored": "18.07",
+  "correct_mm": 459.0,
+  "page_value": "18.07 inch (459 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785401/36001"
+ },
+ {
+  "sku": "EA15401",
+  "codigo_base": "P785401",
+  "column": "outer_diameter_mm",
+  "stored": "7.13",
+  "correct_mm": 181.0,
+  "page_value": "7.13 inch (181 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785401/36001"
+ },
+ {
+  "sku": "EA15423",
+  "codigo_base": "P525423",
+  "column": "outer_diameter_mm",
+  "stored": "6.10",
+  "correct_mm": 155.0,
+  "page_value": "6.10 inch (155 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P525423/19050"
+ },
+ {
+  "sku": "EA15426",
+  "codigo_base": "P785426",
+  "column": "height_mm",
+  "stored": "22.56",
+  "correct_mm": 573.0,
+  "page_value": "22.56 inch (573 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785426/36066"
+ },
+ {
+  "sku": "EA15426",
+  "codigo_base": "P785426",
+  "column": "outer_diameter_mm",
+  "stored": "12.32",
+  "correct_mm": 313.0,
+  "page_value": "12.32 inch (313 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785426/36066"
+ },
+ {
+  "sku": "EA15427",
+  "codigo_base": "P785427",
+  "column": "height_mm",
+  "stored": "20.51",
+  "correct_mm": 521.0,
+  "page_value": "20.51 inch (521 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785427/36067"
+ },
+ {
+  "sku": "EA15427",
+  "codigo_base": "P785427",
+  "column": "outer_diameter_mm",
+  "stored": "7.52",
+  "correct_mm": 191.0,
+  "page_value": "7.52 inch (191 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785427/36067"
+ },
+ {
+  "sku": "EA15493",
+  "codigo_base": "P615493",
+  "column": "height_mm",
+  "stored": "7.55",
+  "correct_mm": 191.7,
+  "page_value": "7.55 inch (191.7 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P615493/41176"
+ },
+ {
+  "sku": "EA15500",
+  "codigo_base": "P775500",
+  "column": "height_mm",
+  "stored": "14.57",
+  "correct_mm": 370.0,
+  "page_value": "14.57 inch (370 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P775500/21737"
+ },
+ {
+  "sku": "EA15500",
+  "codigo_base": "P775500",
+  "column": "outer_diameter_mm",
+  "stored": "7.28",
+  "correct_mm": 185.0,
+  "page_value": "7.28 inch (185 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P775500/21737"
+ },
+ {
+  "sku": "EA15589",
+  "codigo_base": "P785589",
+  "column": "height_mm",
+  "stored": "16.22",
+  "correct_mm": 412.0,
+  "page_value": "16.22 inch (412 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785589/36992"
+ },
+ {
+  "sku": "EA15589",
+  "codigo_base": "P785589",
+  "column": "outer_diameter_mm",
+  "stored": "8.19",
+  "correct_mm": 208.0,
+  "page_value": "8.19 inch (208 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785589/36992"
+ },
+ {
+  "sku": "EA15596",
+  "codigo_base": "P535596",
+  "column": "outer_diameter_mm",
+  "stored": "9.21",
+  "correct_mm": 234.0,
+  "page_value": "9.21 inch (234 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P535596/19677"
+ },
+ {
+  "sku": "EA15610",
+  "codigo_base": "P785610",
+  "column": "height_mm",
+  "stored": "20.16",
+  "correct_mm": 512.0,
+  "page_value": "20.16 inch (512 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785610/36994"
+ },
+ {
+  "sku": "EA15610",
+  "codigo_base": "P785610",
+  "column": "outer_diameter_mm",
+  "stored": "11.10",
+  "correct_mm": 282.0,
+  "page_value": "11.10 inch (282 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785610/36994"
+ },
+ {
+  "sku": "EA15960",
+  "codigo_base": "P605960",
+  "column": "height_mm",
+  "stored": "8.03",
+  "correct_mm": 204.0,
+  "page_value": "8.03 inch (204 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P605960/23846"
+ },
+ {
+  "sku": "EA15960",
+  "codigo_base": "P605960",
+  "column": "outer_diameter_mm",
+  "stored": "14.84",
+  "correct_mm": 377.0,
+  "page_value": "14.84 inch (377 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P605960/23846"
+ },
+ {
+  "sku": "EA16096",
+  "codigo_base": "P626096",
+  "column": "height_mm",
+  "stored": "13.81",
+  "correct_mm": 350.7,
+  "page_value": "13.81 inch (350.7 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P626096/75131"
+ },
+ {
+  "sku": "EA16096",
+  "codigo_base": "P626096",
+  "column": "outer_diameter_mm",
+  "stored": "8.98",
+  "correct_mm": 228.0,
+  "page_value": "8.98 inch (228 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P626096/75131"
+ },
+ {
+  "sku": "EA16104",
+  "codigo_base": "P626104",
+  "column": "height_mm",
+  "stored": "11.73",
+  "correct_mm": 298.0,
+  "page_value": "11.73 inch (298 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P626104/prod170064"
+ },
+ {
+  "sku": "EA16104",
+  "codigo_base": "P626104",
+  "column": "outer_diameter_mm",
+  "stored": "4.96",
+  "correct_mm": 126.0,
+  "page_value": "4.96 inch (126 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P626104/prod170064"
+ },
+ {
+  "sku": "EA16122",
+  "codigo_base": "P606122",
+  "column": "height_mm",
+  "stored": "14.37",
+  "correct_mm": 365.0,
+  "page_value": "14.37 inch (365 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P606122/23178"
+ },
+ {
+  "sku": "EA16157",
+  "codigo_base": "P776157",
+  "column": "height_mm",
+  "stored": "19.68",
+  "correct_mm": 500.0,
+  "page_value": "19.68 inch (500 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P776157/21775"
+ },
+ {
+  "sku": "EA16157",
+  "codigo_base": "P776157",
+  "column": "outer_diameter_mm",
+  "stored": "11.50",
+  "correct_mm": 292.0,
+  "page_value": "11.50 inch (292 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P776157/21775"
+ },
+ {
+  "sku": "EA16198",
+  "codigo_base": "P786198",
+  "column": "height_mm",
+  "stored": "17.60",
+  "correct_mm": 447.0,
+  "page_value": "17.60 inch (447 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P786198/37888"
+ },
+ {
+  "sku": "EA16198",
+  "codigo_base": "P786198",
+  "column": "outer_diameter_mm",
+  "stored": "9.09",
+  "correct_mm": 230.9,
+  "page_value": "9.09 inch (230.9 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P786198/37888"
+ },
+ {
+  "sku": "EA16219",
+  "codigo_base": "P606219",
+  "column": "height_mm",
+  "stored": "7.64",
+  "correct_mm": 194.0,
+  "page_value": "7.64 inch (194 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P606219/23248"
+ },
+ {
+  "sku": "EA16272",
+  "codigo_base": "P606272",
+  "column": "height_mm",
+  "stored": "6.57",
+  "correct_mm": 167.0,
+  "page_value": "6.57 inch (167 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P606272/23250"
+ },
+ {
+  "sku": "EA16278",
+  "codigo_base": "P606278",
+  "column": "height_mm",
+  "stored": "5.00",
+  "correct_mm": 127.0,
+  "page_value": "5.00 inch (127 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P606278/23181"
+ },
+ {
+  "sku": "EA16278",
+  "codigo_base": "P606278",
+  "column": "outer_diameter_mm",
+  "stored": "4.92",
+  "correct_mm": 125.0,
+  "page_value": "4.92 inch (125 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P606278/23181"
+ },
+ {
+  "sku": "EA16279",
+  "codigo_base": "P606279",
+  "column": "height_mm",
+  "stored": "3.94",
+  "correct_mm": 100.0,
+  "page_value": "3.94 inch (100 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P606279/23254"
+ },
+ {
+  "sku": "EA16279",
+  "codigo_base": "P606279",
+  "column": "outer_diameter_mm",
+  "stored": "8.27",
+  "correct_mm": 210.0,
+  "page_value": "8.27 inch (210 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P606279/23254"
+ },
+ {
+  "sku": "EA16280",
+  "codigo_base": "P606280",
+  "column": "height_mm",
+  "stored": "10.90",
+  "correct_mm": 276.86,
+  "page_value": "10.90 inch (276.86 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P606280/23255"
+ },
+ {
+  "sku": "EA16280",
+  "codigo_base": "P606280",
+  "column": "outer_diameter_mm",
+  "stored": "8.00",
+  "correct_mm": 203.2,
+  "page_value": "8.00 inch (203.2 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P606280/23255"
+ },
+ {
+  "sku": "EA16440",
+  "codigo_base": "P786440",
+  "column": "height_mm",
+  "stored": "4.92",
+  "correct_mm": 125.0,
+  "page_value": "4.92 inch (125 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P786440/38329"
+ },
+ {
+  "sku": "EA16440",
+  "codigo_base": "P786440",
+  "column": "outer_diameter_mm",
+  "stored": "4.96",
+  "correct_mm": 126.0,
+  "page_value": "4.96 inch (126 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P786440/38329"
+ },
+ {
+  "sku": "EA16442",
+  "codigo_base": "P536442",
+  "column": "height_mm",
+  "stored": "9.76",
+  "correct_mm": 248.0,
+  "page_value": "9.76 inch (248 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P536442/19705"
+ },
+ {
+  "sku": "EA16442",
+  "codigo_base": "P536442",
+  "column": "outer_diameter_mm",
+  "stored": "5.94",
+  "correct_mm": 151.0,
+  "page_value": "5.94 inch (151 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P536442/19705"
+ },
+ {
+  "sku": "EA16481",
+  "codigo_base": "P606481",
+  "column": "height_mm",
+  "stored": "17.76",
+  "correct_mm": 451.0,
+  "page_value": "17.76 inch (451 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P606481/23273"
+ },
+ {
+  "sku": "EA16481",
+  "codigo_base": "P606481",
+  "column": "outer_diameter_mm",
+  "stored": "12.09",
+  "correct_mm": 307.0,
+  "page_value": "12.09 inch (307 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P606481/23273"
+ },
+ {
+  "sku": "EA16489",
+  "codigo_base": "P526489",
+  "column": "height_mm",
+  "stored": "14.76",
+  "correct_mm": 375.0,
+  "page_value": "14.76 inch (375 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P526489/19299"
+ },
+ {
+  "sku": "EA16489",
+  "codigo_base": "P526489",
+  "column": "outer_diameter_mm",
+  "stored": "9.57",
+  "correct_mm": 243.0,
+  "page_value": "9.57 inch (243 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P526489/19299"
+ },
+ {
+  "sku": "EA16509",
+  "codigo_base": "P526509",
+  "column": "height_mm",
+  "stored": "15.67",
+  "correct_mm": 398.0,
+  "page_value": "15.67 inch (398 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P526509/19315"
+ },
+ {
+  "sku": "EA16509",
+  "codigo_base": "P526509",
+  "column": "outer_diameter_mm",
+  "stored": "11.50",
+  "correct_mm": 292.0,
+  "page_value": "11.50 inch (292 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P526509/19315"
+ },
+ {
+  "sku": "EA16510",
+  "codigo_base": "P526510",
+  "column": "height_mm",
+  "stored": "13.94",
+  "correct_mm": 354.0,
+  "page_value": "13.94 inch (354 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P526510/19316"
+ },
+ {
+  "sku": "EA16510",
+  "codigo_base": "P526510",
+  "column": "outer_diameter_mm",
+  "stored": "6.89",
+  "correct_mm": 175.0,
+  "page_value": "6.89 inch (175 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P526510/19316"
+ },
+ {
+  "sku": "EA16512",
+  "codigo_base": "P526512",
+  "column": "height_mm",
+  "stored": "22.24",
+  "correct_mm": 565.0,
+  "page_value": "22.24 inch (565 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P526512/19318"
+ },
+ {
+  "sku": "EA16512",
+  "codigo_base": "P526512",
+  "column": "outer_diameter_mm",
+  "stored": "12.52",
+  "correct_mm": 318.0,
+  "page_value": "12.52 inch (318 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P526512/19318"
+ },
+ {
+  "sku": "EA16555",
+  "codigo_base": "P146555",
+  "column": "height_mm",
+  "stored": "19.49",
+  "correct_mm": 495.0,
+  "page_value": "19.49 inch (495 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P146555/15629"
+ },
+ {
+  "sku": "EA16614",
+  "codigo_base": "P546614",
+  "column": "height_mm",
+  "stored": "26.81",
+  "correct_mm": 681.0,
+  "page_value": "26.81 inch (681 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P546614/19971"
+ },
+ {
+  "sku": "EA16614",
+  "codigo_base": "P546614",
+  "column": "outer_diameter_mm",
+  "stored": "12.56",
+  "correct_mm": 319.0,
+  "page_value": "12.56 inch (319 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P546614/19971"
+ },
+ {
+  "sku": "EA16712",
+  "codigo_base": "P606712",
+  "column": "height_mm",
+  "stored": "12.28",
+  "correct_mm": 312.0,
+  "page_value": "12.28 inch (312 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P606712/23992"
+ },
+ {
+  "sku": "EA16712",
+  "codigo_base": "P606712",
+  "column": "outer_diameter_mm",
+  "stored": "9.33",
+  "correct_mm": 237.0,
+  "page_value": "9.33 inch (237 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P606712/23992"
+ },
+ {
+  "sku": "EA16715",
+  "codigo_base": "P606715",
+  "column": "height_mm",
+  "stored": "11.81",
+  "correct_mm": 300.0,
+  "page_value": "11.81 inch (300 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P606715/23996"
+ },
+ {
+  "sku": "EA16715",
+  "codigo_base": "P606715",
+  "column": "outer_diameter_mm",
+  "stored": "5.31",
+  "correct_mm": 135.0,
+  "page_value": "5.31 inch (135 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P606715/23996"
+ },
+ {
+  "sku": "EA16755",
+  "codigo_base": "P546755",
+  "column": "height_mm",
+  "stored": "10.00",
+  "correct_mm": 254.0,
+  "page_value": "10.00 inch (254 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P546755/39482"
+ },
+ {
+  "sku": "EA16755",
+  "codigo_base": "P546755",
+  "column": "outer_diameter_mm",
+  "stored": "11.69",
+  "correct_mm": 297.0,
+  "page_value": "11.69 inch (297 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P546755/39482"
+ },
+ {
+  "sku": "EA16761",
+  "codigo_base": "P546761",
+  "column": "height_mm",
+  "stored": "29.02",
+  "correct_mm": 737.0,
+  "page_value": "29.02 inch (737 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P546761/19973"
+ },
+ {
+  "sku": "EA16761",
+  "codigo_base": "P546761",
+  "column": "outer_diameter_mm",
+  "stored": "13.90",
+  "correct_mm": 353.0,
+  "page_value": "13.90 inch (353 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P546761/19973"
+ },
+ {
+  "sku": "EA16762",
+  "codigo_base": "P546762",
+  "column": "height_mm",
+  "stored": "27.76",
+  "correct_mm": 705.0,
+  "page_value": "27.76 inch (705 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P546762/19974"
+ },
+ {
+  "sku": "EA16762",
+  "codigo_base": "P546762",
+  "column": "outer_diameter_mm",
+  "stored": "9.88",
+  "correct_mm": 251.0,
+  "page_value": "9.88 inch (251 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P546762/19974"
+ },
+ {
+  "sku": "EA16765",
+  "codigo_base": "P776765",
+  "column": "height_mm",
+  "stored": "19.53",
+  "correct_mm": 496.0,
+  "page_value": "19.53 inch (496 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P776765/21862"
+ },
+ {
+  "sku": "EA16765",
+  "codigo_base": "P776765",
+  "column": "outer_diameter_mm",
+  "stored": "9.88",
+  "correct_mm": 251.0,
+  "page_value": "9.88 inch (251 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P776765/21862"
+ },
+ {
+  "sku": "EA16789",
+  "codigo_base": "P786789",
+  "column": "height_mm",
+  "stored": "4.06",
+  "correct_mm": 103.0,
+  "page_value": "4.06 inch (103 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P786789/38573"
+ },
+ {
+  "sku": "EA16835",
+  "codigo_base": "P136835",
+  "column": "outer_diameter_mm",
+  "stored": "12.09",
+  "correct_mm": 307.0,
+  "page_value": "12.09 inch (307 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P136835/15490"
+ },
+ {
+  "sku": "EA16837",
+  "codigo_base": "P136837",
+  "column": "outer_diameter_mm",
+  "stored": "11.81",
+  "correct_mm": 300.0,
+  "page_value": "11.81 inch (300 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P136837/15492"
+ },
+ {
+  "sku": "EA16956",
+  "codigo_base": "P606956",
+  "column": "height_mm",
+  "stored": "7.01",
+  "correct_mm": 178.0,
+  "page_value": "7.01 inch (178 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P606956/23292"
+ },
+ {
+  "sku": "EA16962",
+  "codigo_base": "P606962",
+  "column": "height_mm",
+  "stored": "14.76",
+  "correct_mm": 375.0,
+  "page_value": "14.76 inch (375 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P606962/23194"
+ },
+ {
+  "sku": "EA16962",
+  "codigo_base": "P606962",
+  "column": "outer_diameter_mm",
+  "stored": "9.21",
+  "correct_mm": 234.0,
+  "page_value": "9.21 inch (234 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P606962/23194"
+ },
+ {
+  "sku": "EA16966",
+  "codigo_base": "P526966",
+  "column": "outer_diameter_mm",
+  "stored": "7.32",
+  "correct_mm": 186.0,
+  "page_value": "7.32 inch (186 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P526966/19345"
+ },
+ {
+  "sku": "EA17098",
+  "codigo_base": "P607098",
+  "column": "height_mm",
+  "stored": "12.52",
+  "correct_mm": 318.0,
+  "page_value": "12.52 inch (318 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607098/23198"
+ },
+ {
+  "sku": "EA17098",
+  "codigo_base": "P607098",
+  "column": "outer_diameter_mm",
+  "stored": "5.55",
+  "correct_mm": 141.0,
+  "page_value": "5.55 inch (141 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607098/23198"
+ },
+ {
+  "sku": "EA17240",
+  "codigo_base": "P607240",
+  "column": "height_mm",
+  "stored": "2.87",
+  "correct_mm": 73.0,
+  "page_value": "2.87 inch (73 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607240/23219"
+ },
+ {
+  "sku": "EA17240",
+  "codigo_base": "P607240",
+  "column": "outer_diameter_mm",
+  "stored": "5.91",
+  "correct_mm": 150.0,
+  "page_value": "5.91 inch (150 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607240/23219"
+ },
+ {
+  "sku": "EA17246",
+  "codigo_base": "P607246",
+  "column": "height_mm",
+  "stored": "15.35",
+  "correct_mm": 390.0,
+  "page_value": "15.35 inch (390 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607246/23721"
+ },
+ {
+  "sku": "EA17246",
+  "codigo_base": "P607246",
+  "column": "outer_diameter_mm",
+  "stored": "6.93",
+  "correct_mm": 176.0,
+  "page_value": "6.93 inch (176 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607246/23721"
+ },
+ {
+  "sku": "EA17248",
+  "codigo_base": "P607248",
+  "column": "height_mm",
+  "stored": "4.45",
+  "correct_mm": 113.0,
+  "page_value": "4.45 inch (113 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607248/23723"
+ },
+ {
+  "sku": "EA17248",
+  "codigo_base": "P607248",
+  "column": "outer_diameter_mm",
+  "stored": "7.13",
+  "correct_mm": 181.0,
+  "page_value": "7.13 inch (181 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607248/23723"
+ },
+ {
+  "sku": "EA17254",
+  "codigo_base": "P607254",
+  "column": "height_mm",
+  "stored": "3.62",
+  "correct_mm": 92.0,
+  "page_value": "3.62 inch (92 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607254/23729"
+ },
+ {
+  "sku": "EA17254",
+  "codigo_base": "P607254",
+  "column": "outer_diameter_mm",
+  "stored": "3.82",
+  "correct_mm": 97.0,
+  "page_value": "3.82 inch (97 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607254/23729"
+ },
+ {
+  "sku": "EA17259",
+  "codigo_base": "P607259",
+  "column": "height_mm",
+  "stored": "16.38",
+  "correct_mm": 416.0,
+  "page_value": "16.38 inch (416 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607259/23734"
+ },
+ {
+  "sku": "EA17259",
+  "codigo_base": "P607259",
+  "column": "outer_diameter_mm",
+  "stored": "5.94",
+  "correct_mm": 151.0,
+  "page_value": "5.94 inch (151 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607259/23734"
+ },
+ {
+  "sku": "EA17273",
+  "codigo_base": "P607273",
+  "column": "height_mm",
+  "stored": "4.02",
+  "correct_mm": 102.0,
+  "page_value": "4.02 inch (102 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607273/23748"
+ },
+ {
+  "sku": "EA17301",
+  "codigo_base": "P607301",
+  "column": "height_mm",
+  "stored": "2.28",
+  "correct_mm": 58.0,
+  "page_value": "2.28 inch (58 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607301/23688"
+ },
+ {
+  "sku": "EA17301",
+  "codigo_base": "P607301",
+  "column": "outer_diameter_mm",
+  "stored": "12.87",
+  "correct_mm": 327.0,
+  "page_value": "12.87 inch (327 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607301/23688"
+ },
+ {
+  "sku": "EA17325",
+  "codigo_base": "P607325",
+  "column": "height_mm",
+  "stored": "2.80",
+  "correct_mm": 71.0,
+  "page_value": "2.80 inch (71 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607325/23779"
+ },
+ {
+  "sku": "EA17325",
+  "codigo_base": "P607325",
+  "column": "outer_diameter_mm",
+  "stored": "5.94",
+  "correct_mm": 151.0,
+  "page_value": "5.94 inch (151 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607325/23779"
+ },
+ {
+  "sku": "EA17326",
+  "codigo_base": "P607326",
+  "column": "height_mm",
+  "stored": "4.92",
+  "correct_mm": 125.0,
+  "page_value": "4.92 inch (125 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607326/23780"
+ },
+ {
+  "sku": "EA17326",
+  "codigo_base": "P607326",
+  "column": "outer_diameter_mm",
+  "stored": "5.75",
+  "correct_mm": 146.0,
+  "page_value": "5.75 inch (146 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607326/23780"
+ },
+ {
+  "sku": "EA17331",
+  "codigo_base": "P547331",
+  "column": "height_mm",
+  "stored": "15.09",
+  "correct_mm": 383.4,
+  "page_value": "15.09 inch (383.4 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P547331/19977"
+ },
+ {
+  "sku": "EA17331",
+  "codigo_base": "P547331",
+  "column": "outer_diameter_mm",
+  "stored": "8.18",
+  "correct_mm": 207.7,
+  "page_value": "8.18 inch (207.7 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P547331/19977"
+ },
+ {
+  "sku": "EA17359",
+  "codigo_base": "P607359",
+  "column": "height_mm",
+  "stored": "16.00",
+  "correct_mm": 406.4,
+  "page_value": "16.00 inch (406.4 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607359/23813"
+ },
+ {
+  "sku": "EA17359",
+  "codigo_base": "P607359",
+  "column": "outer_diameter_mm",
+  "stored": "9.88",
+  "correct_mm": 250.83,
+  "page_value": "9.88 inch (250.83 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607359/23813"
+ },
+ {
+  "sku": "EA17360",
+  "codigo_base": "P607360",
+  "column": "height_mm",
+  "stored": "16.50",
+  "correct_mm": 419.0,
+  "page_value": "16.50 inch (419 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607360/23814"
+ },
+ {
+  "sku": "EA17360",
+  "codigo_base": "P607360",
+  "column": "outer_diameter_mm",
+  "stored": "7.95",
+  "correct_mm": 202.0,
+  "page_value": "7.95 inch (202 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607360/23814"
+ },
+ {
+  "sku": "EA17370",
+  "codigo_base": "P607370",
+  "column": "height_mm",
+  "stored": "25.20",
+  "correct_mm": 640.0,
+  "page_value": "25.20 inch (640 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607370/23824"
+ },
+ {
+  "sku": "EA17370",
+  "codigo_base": "P607370",
+  "column": "outer_diameter_mm",
+  "stored": "9.25",
+  "correct_mm": 235.0,
+  "page_value": "9.25 inch (235 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607370/23824"
+ },
+ {
+  "sku": "EA17375",
+  "codigo_base": "P537375",
+  "column": "height_mm",
+  "stored": "5.94",
+  "correct_mm": 151.0,
+  "page_value": "5.94 inch (151 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P537375/19734"
+ },
+ {
+  "sku": "EA17375",
+  "codigo_base": "P537375",
+  "column": "outer_diameter_mm",
+  "stored": "5.75",
+  "correct_mm": 146.0,
+  "page_value": "5.75 inch (146 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P537375/19734"
+ },
+ {
+  "sku": "EA17383",
+  "codigo_base": "P117383",
+  "column": "outer_diameter_mm",
+  "stored": "11.10",
+  "correct_mm": 282.0,
+  "page_value": "11.10 inch (282 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P117383/14963"
+ },
+ {
+  "sku": "EA17483",
+  "codigo_base": "P777483",
+  "column": "height_mm",
+  "stored": "2.52",
+  "correct_mm": 64.0,
+  "page_value": "2.52 inch (64 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P777483/21920"
+ },
+ {
+  "sku": "EA17483",
+  "codigo_base": "P777483",
+  "column": "outer_diameter_mm",
+  "stored": "5.75",
+  "correct_mm": 146.0,
+  "page_value": "5.75 inch (146 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P777483/21920"
+ },
+ {
+  "sku": "EA17566",
+  "codigo_base": "P527566",
+  "column": "outer_diameter_mm",
+  "stored": "13.86",
+  "correct_mm": 352.0,
+  "page_value": "13.86 inch (352 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P527566/19352"
+ },
+ {
+  "sku": "EA17641",
+  "codigo_base": "P137641",
+  "column": "height_mm",
+  "stored": "15.51",
+  "correct_mm": 394.0,
+  "page_value": "15.51 inch (394 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P137641/15502"
+ },
+ {
+  "sku": "EA17641",
+  "codigo_base": "P137641",
+  "column": "outer_diameter_mm",
+  "stored": "7.64",
+  "correct_mm": 194.0,
+  "page_value": "7.64 inch (194 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P137641/15502"
+ },
+ {
+  "sku": "EA17781",
+  "codigo_base": "P117781",
+  "column": "outer_diameter_mm",
+  "stored": "11.86",
+  "correct_mm": 301.3,
+  "page_value": "11.86 inch (301.3 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P117781/14977"
+ },
+ {
+  "sku": "EA17791",
+  "codigo_base": "P537791",
+  "column": "height_mm",
+  "stored": "22.01",
+  "correct_mm": 559.0,
+  "page_value": "22.01 inch (559 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P537791/19757"
+ },
+ {
+  "sku": "EA17791",
+  "codigo_base": "P537791",
+  "column": "outer_diameter_mm",
+  "stored": "10.63",
+  "correct_mm": 270.0,
+  "page_value": "10.63 inch (270 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P537791/19757"
+ },
+ {
+  "sku": "EA17960",
+  "codigo_base": "P607960",
+  "column": "height_mm",
+  "stored": "7.99",
+  "correct_mm": 203.0,
+  "page_value": "7.99 inch (203 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607960/24009"
+ },
+ {
+  "sku": "EA17960",
+  "codigo_base": "P607960",
+  "column": "outer_diameter_mm",
+  "stored": "12.83",
+  "correct_mm": 326.0,
+  "page_value": "12.83 inch (326 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607960/24009"
+ },
+ {
+  "sku": "EA18043",
+  "codigo_base": "P148043",
+  "column": "height_mm",
+  "stored": "27.99",
+  "correct_mm": 711.0,
+  "page_value": "27.99 inch (711 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P148043/15631"
+ },
+ {
+  "sku": "EA18043",
+  "codigo_base": "P148043",
+  "column": "outer_diameter_mm",
+  "stored": "10.40",
+  "correct_mm": 264.16,
+  "page_value": "10.40 inch (264.16 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P148043/15631"
+ },
+ {
+  "sku": "EA18044",
+  "codigo_base": "P148044",
+  "column": "height_mm",
+  "stored": "27.99",
+  "correct_mm": 711.0,
+  "page_value": "27.99 inch (711 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P148044/15632"
+ },
+ {
+  "sku": "EA18044",
+  "codigo_base": "P148044",
+  "column": "outer_diameter_mm",
+  "stored": "8.66",
+  "correct_mm": 220.0,
+  "page_value": "8.66 inch (220 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P148044/15632"
+ },
+ {
+  "sku": "EA18219",
+  "codigo_base": "P528219",
+  "column": "height_mm",
+  "stored": "10.24",
+  "correct_mm": 260.0,
+  "page_value": "10.24 inch (260 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P528219/19376"
+ },
+ {
+  "sku": "EA18219",
+  "codigo_base": "P528219",
+  "column": "outer_diameter_mm",
+  "stored": "8.90",
+  "correct_mm": 226.0,
+  "page_value": "8.90 inch (226 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P528219/19376"
+ },
+ {
+  "sku": "EA18279",
+  "codigo_base": "P228279",
+  "column": "outer_diameter_mm",
+  "stored": "18.98",
+  "correct_mm": 482.0,
+  "page_value": "18.98 inch (482 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P228279/37692"
+ },
+ {
+  "sku": "EA183400",
+  "codigo_base": "P783400",
+  "column": "height_mm",
+  "stored": "17.68",
+  "correct_mm": 449.0,
+  "page_value": "17.68 inch (449 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P783400/22229"
+ },
+ {
+  "sku": "EA183400",
+  "codigo_base": "P783400",
+  "column": "outer_diameter_mm",
+  "stored": "11.10",
+  "correct_mm": 282.0,
+  "page_value": "11.10 inch (282 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P783400/22229"
+ },
+ {
+  "sku": "EA18390",
+  "codigo_base": "P628390",
+  "column": "height_mm",
+  "stored": "6.68",
+  "correct_mm": 169.6,
+  "page_value": "6.68 inch (169.6 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P628390/prod170056"
+ },
+ {
+  "sku": "EA18390",
+  "codigo_base": "P628390",
+  "column": "outer_diameter_mm",
+  "stored": "4.32",
+  "correct_mm": 109.7,
+  "page_value": "4.32 inch (109.7 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P628390/prod170056"
+ },
+ {
+  "sku": "EA185394",
+  "codigo_base": "P785394",
+  "column": "outer_diameter_mm",
+  "stored": "14.29",
+  "correct_mm": 363.0,
+  "page_value": "14.29 inch (363 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785394/35995"
+ },
+ {
+  "sku": "EA185395",
+  "codigo_base": "P785395",
+  "column": "height_mm",
+  "stored": "23.15",
+  "correct_mm": 588.0,
+  "page_value": "23.15 inch (588 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785395/36237"
+ },
+ {
+  "sku": "EA185395",
+  "codigo_base": "P785395",
+  "column": "outer_diameter_mm",
+  "stored": "9.09",
+  "correct_mm": 230.9,
+  "page_value": "9.09 inch (230.9 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785395/36237"
+ },
+ {
+  "sku": "EA185396",
+  "codigo_base": "P785396",
+  "column": "height_mm",
+  "stored": "18.31",
+  "correct_mm": 465.0,
+  "page_value": "18.31 inch (465 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785396/35996"
+ },
+ {
+  "sku": "EA185396",
+  "codigo_base": "P785396",
+  "column": "outer_diameter_mm",
+  "stored": "9.25",
+  "correct_mm": 235.0,
+  "page_value": "9.25 inch (235 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785396/35996"
+ },
+ {
+  "sku": "EA185397",
+  "codigo_base": "P785397",
+  "column": "height_mm",
+  "stored": "16.22",
+  "correct_mm": 412.0,
+  "page_value": "16.22 inch (412 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785397/35999"
+ },
+ {
+  "sku": "EA185397",
+  "codigo_base": "P785397",
+  "column": "outer_diameter_mm",
+  "stored": "5.30",
+  "correct_mm": 134.6,
+  "page_value": "5.3 inch (134.6 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785397/35999"
+ },
+ {
+  "sku": "EA185398",
+  "codigo_base": "P785398",
+  "column": "height_mm",
+  "stored": "15.98",
+  "correct_mm": 406.0,
+  "page_value": "15.98 inch (406 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785398/35997"
+ },
+ {
+  "sku": "EA185398",
+  "codigo_base": "P785398",
+  "column": "outer_diameter_mm",
+  "stored": "11.10",
+  "correct_mm": 282.0,
+  "page_value": "11.10 inch (282 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785398/35997"
+ },
+ {
+  "sku": "EA185399",
+  "codigo_base": "P785399",
+  "column": "height_mm",
+  "stored": "13.86",
+  "correct_mm": 352.0,
+  "page_value": "13.86 inch (352 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785399/36000"
+ },
+ {
+  "sku": "EA185399",
+  "codigo_base": "P785399",
+  "column": "outer_diameter_mm",
+  "stored": "5.94",
+  "correct_mm": 150.9,
+  "page_value": "5.94 inch (150.9 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785399/36000"
+ },
+ {
+  "sku": "EA185400",
+  "codigo_base": "P785400",
+  "column": "height_mm",
+  "stored": "22.56",
+  "correct_mm": 573.0,
+  "page_value": "22.56 inch (573 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785400/35998"
+ },
+ {
+  "sku": "EA185400",
+  "codigo_base": "P785400",
+  "column": "outer_diameter_mm",
+  "stored": "12.32",
+  "correct_mm": 313.0,
+  "page_value": "12.32 inch (313 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P785400/35998"
+ },
+ {
+  "sku": "EA18542",
+  "codigo_base": "P538542",
+  "column": "height_mm",
+  "stored": "18.03",
+  "correct_mm": 458.0,
+  "page_value": "18.03 inch (458 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P538542/19779"
+ },
+ {
+  "sku": "EA18542",
+  "codigo_base": "P538542",
+  "column": "outer_diameter_mm",
+  "stored": "5.31",
+  "correct_mm": 135.0,
+  "page_value": "5.31 inch (135 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P538542/19779"
+ },
+ {
+  "sku": "EA18637",
+  "codigo_base": "P778637",
+  "column": "height_mm",
+  "stored": "14.21",
+  "correct_mm": 361.0,
+  "page_value": "14.21 inch (361 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P778637/22025"
+ },
+ {
+  "sku": "EA18637",
+  "codigo_base": "P778637",
+  "column": "outer_diameter_mm",
+  "stored": "4.13",
+  "correct_mm": 105.0,
+  "page_value": "4.13 inch (105 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P778637/22025"
+ },
+ {
+  "sku": "EA18638",
+  "codigo_base": "P778638",
+  "column": "height_mm",
+  "stored": "14.53",
+  "correct_mm": 369.0,
+  "page_value": "14.53 inch (369 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P778638/22026"
+ },
+ {
+  "sku": "EA18638",
+  "codigo_base": "P778638",
+  "column": "outer_diameter_mm",
+  "stored": "8.19",
+  "correct_mm": 208.0,
+  "page_value": "8.19 inch (208 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P778638/22026"
+ },
+ {
+  "sku": "EA18654",
+  "codigo_base": "P608654",
+  "column": "height_mm",
+  "stored": "19.49",
+  "correct_mm": 495.0,
+  "page_value": "19.49 inch (495 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P608654/34529"
+ },
+ {
+  "sku": "EA18666",
+  "codigo_base": "P158666",
+  "column": "height_mm",
+  "stored": "8.78",
+  "correct_mm": 223.0,
+  "page_value": "8.78 inch (223 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P158666/15741"
+ },
+ {
+  "sku": "EA18666",
+  "codigo_base": "P158666",
+  "column": "outer_diameter_mm",
+  "stored": "7.72",
+  "correct_mm": 196.0,
+  "page_value": "7.72 inch (196 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P158666/15741"
+ },
+ {
+  "sku": "EA18668",
+  "codigo_base": "P158668",
+  "column": "height_mm",
+  "stored": "13.39",
+  "correct_mm": 340.0,
+  "page_value": "13.39 inch (340 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P158668/15742?_requestid=16555790"
+ },
+ {
+  "sku": "EA18668",
+  "codigo_base": "P158668",
+  "column": "outer_diameter_mm",
+  "stored": "7.66",
+  "correct_mm": 194.6,
+  "page_value": "7.66 inch (194.6 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P158668/15742?_requestid=16555790"
+ },
+ {
+  "sku": "EA18781",
+  "codigo_base": "P128781",
+  "column": "outer_diameter_mm",
+  "stored": "12.76",
+  "correct_mm": 324.0,
+  "page_value": "12.76 inch (324 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P128781/15303"
+ },
+ {
+  "sku": "EA18785",
+  "codigo_base": "P118785",
+  "column": "height_mm",
+  "stored": "8.26",
+  "correct_mm": 209.8,
+  "page_value": "8.26 inch (209.8 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P118785/15013"
+ },
+ {
+  "sku": "EA18785",
+  "codigo_base": "P118785",
+  "column": "outer_diameter_mm",
+  "stored": "2.44",
+  "correct_mm": 62.0,
+  "page_value": "2.44 inch (62 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P118785/15013"
+ },
+ {
+  "sku": "EA18802",
+  "codigo_base": "P628802",
+  "column": "height_mm",
+  "stored": "17.15",
+  "correct_mm": 435.7,
+  "page_value": "17.15 inch (435.7 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P628802/75185"
+ },
+ {
+  "sku": "EA18802",
+  "codigo_base": "P628802",
+  "column": "outer_diameter_mm",
+  "stored": "4.59",
+  "correct_mm": 116.5,
+  "page_value": "4.59 inch (116.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P628802/75185"
+ },
+ {
+  "sku": "EA18805",
+  "codigo_base": "P628805",
+  "column": "height_mm",
+  "stored": "19.30",
+  "correct_mm": 490.3,
+  "page_value": "19.30 inch (490.3 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P628805/75128"
+ },
+ {
+  "sku": "EA18805",
+  "codigo_base": "P628805",
+  "column": "outer_diameter_mm",
+  "stored": "8.98",
+  "correct_mm": 228.0,
+  "page_value": "8.98 inch (228 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P628805/75128"
+ },
+ {
+  "sku": "EA18862",
+  "codigo_base": "P628862",
+  "column": "height_mm",
+  "stored": "14.58",
+  "correct_mm": 370.4,
+  "page_value": "14.58 inch (370.4 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P628862/75129"
+ },
+ {
+  "sku": "EA18862",
+  "codigo_base": "P628862",
+  "column": "outer_diameter_mm",
+  "stored": "5.46",
+  "correct_mm": 138.7,
+  "page_value": "5.46 inch (138.7 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P628862/75129"
+ },
+ {
+  "sku": "EA18866",
+  "codigo_base": "P628866",
+  "column": "height_mm",
+  "stored": "16.61",
+  "correct_mm": 421.9,
+  "page_value": "16.61 inch (421.9 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P628866/75130"
+ },
+ {
+  "sku": "EA18866",
+  "codigo_base": "P628866",
+  "column": "outer_diameter_mm",
+  "stored": "10.75",
+  "correct_mm": 273.0,
+  "page_value": "10.75 inch (273 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P628866/75130"
+ },
+ {
+  "sku": "EA18921",
+  "codigo_base": "P618921",
+  "column": "height_mm",
+  "stored": "29.37",
+  "correct_mm": 746.0,
+  "page_value": "29.37 inch (746 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P618921/62270"
+ },
+ {
+  "sku": "EA18932",
+  "codigo_base": "P148932",
+  "column": "height_mm",
+  "stored": "15.00",
+  "correct_mm": 381.0,
+  "page_value": "15.00 inch (381 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P148932/15667"
+ },
+ {
+  "sku": "EA18932",
+  "codigo_base": "P148932",
+  "column": "outer_diameter_mm",
+  "stored": "5.25",
+  "correct_mm": 133.35,
+  "page_value": "5.25 inch (133.35 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P148932/15667"
+ },
+ {
+  "sku": "EA18966",
+  "codigo_base": "P148966",
+  "column": "height_mm",
+  "stored": "10.98",
+  "correct_mm": 279.0,
+  "page_value": "10.98 inch (279 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P148966/15668"
+ },
+ {
+  "sku": "EA18966",
+  "codigo_base": "P148966",
+  "column": "outer_diameter_mm",
+  "stored": "5.26",
+  "correct_mm": 133.6,
+  "page_value": "5.26 inch (133.6 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P148966/15668"
+ },
+ {
+  "sku": "EA18968",
+  "codigo_base": "P148968",
+  "column": "height_mm",
+  "stored": "12.01",
+  "correct_mm": 305.0,
+  "page_value": "12.01 inch (305 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P148968/15669"
+ },
+ {
+  "sku": "EA18968",
+  "codigo_base": "P148968",
+  "column": "outer_diameter_mm",
+  "stored": "6.09",
+  "correct_mm": 154.69,
+  "page_value": "6.09 inch (154.69 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P148968/15669"
+ },
+ {
+  "sku": "EA19218",
+  "codigo_base": "P609218",
+  "column": "height_mm",
+  "stored": "12.91",
+  "correct_mm": 328.0,
+  "page_value": "12.91 inch (328 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P609218/31221"
+ },
+ {
+  "sku": "EA19218",
+  "codigo_base": "P609218",
+  "column": "outer_diameter_mm",
+  "stored": "4.80",
+  "correct_mm": 122.0,
+  "page_value": "4.80 inch (122 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P609218/31221"
+ },
+ {
+  "sku": "EA19271",
+  "codigo_base": "P549271",
+  "column": "height_mm",
+  "stored": "15.00",
+  "correct_mm": 381.0,
+  "page_value": "15.00 inch (381 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P549271/20007"
+ },
+ {
+  "sku": "EA19271",
+  "codigo_base": "P549271",
+  "column": "outer_diameter_mm",
+  "stored": "5.28",
+  "correct_mm": 134.0,
+  "page_value": "5.28 inch (134 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P549271/20007"
+ },
+ {
+  "sku": "EA19277",
+  "codigo_base": "P549277",
+  "column": "height_mm",
+  "stored": "14.65",
+  "correct_mm": 372.0,
+  "page_value": "14.65 inch (372 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P549277/20008"
+ },
+ {
+  "sku": "EA19277",
+  "codigo_base": "P549277",
+  "column": "outer_diameter_mm",
+  "stored": "3.58",
+  "correct_mm": 91.0,
+  "page_value": "3.58 inch (91 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P549277/20008"
+ },
+ {
+  "sku": "EA19458",
+  "codigo_base": "P539458",
+  "column": "height_mm",
+  "stored": "4.72",
+  "correct_mm": 120.0,
+  "page_value": "4.72 inch (120 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P539458/19894"
+ },
+ {
+  "sku": "EA19458",
+  "codigo_base": "P539458",
+  "column": "outer_diameter_mm",
+  "stored": "4.41",
+  "correct_mm": 112.0,
+  "page_value": "4.41 inch (112 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P539458/19894"
+ },
+ {
+  "sku": "EA19486",
+  "codigo_base": "P539486",
+  "column": "height_mm",
+  "stored": "14.49",
+  "correct_mm": 368.0,
+  "page_value": "14.49 inch (368 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P539486/19919"
+ },
+ {
+  "sku": "EA19486",
+  "codigo_base": "P539486",
+  "column": "outer_diameter_mm",
+  "stored": "7.20",
+  "correct_mm": 183.0,
+  "page_value": "7.20 inch (183 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P539486/19919"
+ },
+ {
+  "sku": "EA19523",
+  "codigo_base": "P549523",
+  "column": "height_mm",
+  "stored": "17.99",
+  "correct_mm": 457.0,
+  "page_value": "17.99 inch (457 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P549523/20009"
+ },
+ {
+  "sku": "EA19523",
+  "codigo_base": "P549523",
+  "column": "outer_diameter_mm",
+  "stored": "12.09",
+  "correct_mm": 307.0,
+  "page_value": "12.09 inch (307 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P549523/20009"
+ },
+ {
+  "sku": "EA19530",
+  "codigo_base": "P549530",
+  "column": "height_mm",
+  "stored": "17.83",
+  "correct_mm": 453.0,
+  "page_value": "17.83 inch (453 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P549530/20010"
+ },
+ {
+  "sku": "EA19530",
+  "codigo_base": "P549530",
+  "column": "outer_diameter_mm",
+  "stored": "6.89",
+  "correct_mm": 175.0,
+  "page_value": "6.89 inch (175 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P549530/20010"
+ },
+ {
+  "sku": "EA19720",
+  "codigo_base": "P119720",
+  "column": "outer_diameter_mm",
+  "stored": "11.10",
+  "correct_mm": 282.0,
+  "page_value": "11.10 inch (282 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P119720/15082"
+ },
+ {
+  "sku": "EA19937",
+  "codigo_base": "P639937",
+  "column": "height_mm",
+  "stored": "15.38",
+  "correct_mm": 390.7,
+  "page_value": "15.38 inch (390.7 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P639937/prod1410196"
+ },
+ {
+  "sku": "EA24837",
+  "codigo_base": "P524837",
+  "column": "height_mm",
+  "stored": "25.80",
+  "correct_mm": 655.32,
+  "page_value": "25.80 inch (655.32 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P524837/19013"
+ },
+ {
+  "sku": "EA24838",
+  "codigo_base": "P524838",
+  "column": "height_mm",
+  "stored": "25.80",
+  "correct_mm": 655.32,
+  "page_value": "25.80 inch (655.32 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P524838/19014"
+ },
+ {
+  "sku": "EA26065",
+  "codigo_base": "P636065",
+  "column": "height_mm",
+  "stored": "19.50",
+  "correct_mm": 495.3,
+  "page_value": "19.50 inch (495.3 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P636065/64747"
+ },
+ {
+  "sku": "EA26066",
+  "codigo_base": "P636066",
+  "column": "height_mm",
+  "stored": "19.50",
+  "correct_mm": 495.3,
+  "page_value": "19.50 inch (495.3 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P636066/64748"
+ },
+ {
+  "sku": "EA26067",
+  "codigo_base": "P636067",
+  "column": "height_mm",
+  "stored": "19.50",
+  "correct_mm": 495.3,
+  "page_value": "19.50 inch (495.3 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P636067/64749"
+ },
+ {
+  "sku": "EA26068",
+  "codigo_base": "P636068",
+  "column": "height_mm",
+  "stored": "19.60",
+  "correct_mm": 497.8,
+  "page_value": "19.60 inch (497.8 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P636068/64750"
+ },
+ {
+  "sku": "EA26069",
+  "codigo_base": "P636069",
+  "column": "height_mm",
+  "stored": "19.58",
+  "correct_mm": 497.3,
+  "page_value": "19.58 inch (497.3 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P636069/64751"
+ },
+ {
+  "sku": "EA26070",
+  "codigo_base": "P636070",
+  "column": "height_mm",
+  "stored": "14.59",
+  "correct_mm": 370.5,
+  "page_value": "14.59 inch (370.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P636070/64752"
+ },
+ {
+  "sku": "EA26071",
+  "codigo_base": "P636071",
+  "column": "height_mm",
+  "stored": "25.70",
+  "correct_mm": 652.78,
+  "page_value": "25.70 inch (652.78 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P636071/64753"
+ },
+ {
+  "sku": "EA28722",
+  "codigo_base": "P528722",
+  "column": "height_mm",
+  "stored": "19.80",
+  "correct_mm": 502.92,
+  "page_value": "19.80 inch (502.92 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P528722/19398"
+ },
+ {
+  "sku": "EC10024",
+  "codigo_base": "P960024",
+  "column": "height_mm",
+  "stored": "10.43",
+  "correct_mm": 265.0,
+  "page_value": "10.43 inch (265 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P960024/prod2990110"
+ },
+ {
+  "sku": "EC10169",
+  "codigo_base": "P650169",
+  "column": "height_mm",
+  "stored": "9.45",
+  "correct_mm": 240.0,
+  "page_value": "9.45 inch (240 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P650169/prod3060960"
+ },
+ {
+  "sku": "EC10348",
+  "codigo_base": "P150348",
+  "column": "height_mm",
+  "stored": "23.43",
+  "correct_mm": 595.0,
+  "page_value": "23.43 inch (595 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P150348/15677"
+ },
+ {
+  "sku": "EC10450",
+  "codigo_base": "P520450",
+  "column": "height_mm",
+  "stored": "16.00",
+  "correct_mm": 406.3,
+  "page_value": "16.00 inch (406.3 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P520450/18899"
+ },
+ {
+  "sku": "EC11036",
+  "codigo_base": "P121036",
+  "column": "height_mm",
+  "stored": "37.99",
+  "correct_mm": 965.0,
+  "page_value": "37.99 inch (965 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P121036/15119"
+ },
+ {
+  "sku": "EC11231",
+  "codigo_base": "P131231",
+  "column": "height_mm",
+  "stored": "32.01",
+  "correct_mm": 813.0,
+  "page_value": "32.01 inch (813 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P131231/15350"
+ },
+ {
+  "sku": "EC12815",
+  "codigo_base": "P612815",
+  "column": "height_mm",
+  "stored": "12.36",
+  "correct_mm": 314.0,
+  "page_value": "12.36 inch (314 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P612815/36988"
+ },
+ {
+  "sku": "EC13688",
+  "codigo_base": "P103688",
+  "column": "height_mm",
+  "stored": "24.02",
+  "correct_mm": 610.0,
+  "page_value": "24.02 inch (610 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P103688/14618"
+ },
+ {
+  "sku": "EC14229",
+  "codigo_base": "P114229",
+  "column": "height_mm",
+  "stored": "24.37",
+  "correct_mm": 619.0,
+  "page_value": "24.37 inch (619 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P114229/14880"
+ },
+ {
+  "sku": "EC14546",
+  "codigo_base": "P614546",
+  "column": "height_mm",
+  "stored": "8.66",
+  "correct_mm": 220.0,
+  "page_value": "8.66 inch (220 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P614546/38356"
+ },
+ {
+  "sku": "EC15958",
+  "codigo_base": "P105958",
+  "column": "height_mm",
+  "stored": "10.00",
+  "correct_mm": 254.0,
+  "page_value": "10.00 inch (254 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P105958/14716"
+ },
+ {
+  "sku": "EC16960",
+  "codigo_base": "P606960",
+  "column": "height_mm",
+  "stored": "11.42",
+  "correct_mm": 290.0,
+  "page_value": "11.42 inch (290 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P606960/23192"
+ },
+ {
+  "sku": "EC17005",
+  "codigo_base": "P617005",
+  "column": "height_mm",
+  "stored": "13.62",
+  "correct_mm": 346.0,
+  "page_value": "13.62 inch (346 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P617005/38338"
+ },
+ {
+  "sku": "EC17253",
+  "codigo_base": "P607253",
+  "column": "height_mm",
+  "stored": "8.50",
+  "correct_mm": 216.0,
+  "page_value": "8.50 inch (216 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607253/23728"
+ },
+ {
+  "sku": "EC17281",
+  "codigo_base": "P607281",
+  "column": "height_mm",
+  "stored": "22.52",
+  "correct_mm": 572.0,
+  "page_value": "22.52 inch (572 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607281/23756"
+ },
+ {
+  "sku": "EC17300",
+  "codigo_base": "P607300",
+  "column": "height_mm",
+  "stored": "12.28",
+  "correct_mm": 312.0,
+  "page_value": "12.28 inch (312 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P607300/23687"
+ },
+ {
+  "sku": "EC17523",
+  "codigo_base": "P137523",
+  "column": "height_mm",
+  "stored": "15.00",
+  "correct_mm": 381.0,
+  "page_value": "15.00 inch (381 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P137523/15499"
+ },
+ {
+  "sku": "EC17714",
+  "codigo_base": "P647714",
+  "column": "height_mm",
+  "stored": "10.24",
+  "correct_mm": 260.0,
+  "page_value": "10.24 inch (260 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P647714/prod2690034"
+ },
+ {
+  "sku": "EF90115",
+  "codigo_base": "P550115",
+  "column": "height_mm",
+  "stored": "5.15",
+  "correct_mm": 130.9,
+  "page_value": "5.15 inch (130.9 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550115/20115"
+ },
+ {
+  "sku": "EF90115",
+  "codigo_base": "P550115",
+  "column": "outer_diameter_mm",
+  "stored": "3.70",
+  "correct_mm": 93.9,
+  "page_value": "3.70 inch (93.9 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550115/20115"
+ },
+ {
+  "sku": "EF90501",
+  "codigo_base": "P550501",
+  "column": "height_mm",
+  "stored": "4.84",
+  "correct_mm": 123.0,
+  "page_value": "4.84 inch (123 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550501/20423"
+ },
+ {
+  "sku": "EF90501",
+  "codigo_base": "P550501",
+  "column": "outer_diameter_mm",
+  "stored": "3.45",
+  "correct_mm": 87.6,
+  "page_value": "3.45 inch (87.6 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550501/20423"
+ },
+ {
+  "sku": "EF90677",
+  "codigo_base": "P550677",
+  "column": "height_mm",
+  "stored": "4.36",
+  "correct_mm": 110.74,
+  "page_value": "4.36 inch (110.74 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550677/20468"
+ },
+ {
+  "sku": "EF90677",
+  "codigo_base": "P550677",
+  "column": "outer_diameter_mm",
+  "stored": "3.69",
+  "correct_mm": 93.73,
+  "page_value": "3.69 inch (93.73 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550677/20468"
+ },
+ {
+  "sku": "EF90782",
+  "codigo_base": "P550782",
+  "column": "height_mm",
+  "stored": "6.93",
+  "correct_mm": 176.0,
+  "page_value": "6.93 inch (176 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550782/37796"
+ },
+ {
+  "sku": "EF90782",
+  "codigo_base": "P550782",
+  "column": "outer_diameter_mm",
+  "stored": "3.18",
+  "correct_mm": 80.8,
+  "page_value": "3.18 inch (80.8 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550782/37796"
+ },
+ {
+  "sku": "EF90783",
+  "codigo_base": "P550783",
+  "column": "height_mm",
+  "stored": "6.93",
+  "correct_mm": 176.0,
+  "page_value": "6.93 inch (176 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550783/37797"
+ },
+ {
+  "sku": "EF90783",
+  "codigo_base": "P550783",
+  "column": "outer_diameter_mm",
+  "stored": "3.18",
+  "correct_mm": 80.8,
+  "page_value": "3.18 inch (80.8 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550783/37797"
+ },
+ {
+  "sku": "EF91081",
+  "codigo_base": "P551081",
+  "column": "height_mm",
+  "stored": "3.54",
+  "correct_mm": 90.0,
+  "page_value": "3.54 inch (90 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551081/74225"
+ },
+ {
+  "sku": "EF91081",
+  "codigo_base": "P551081",
+  "column": "outer_diameter_mm",
+  "stored": "4.86",
+  "correct_mm": 123.44,
+  "page_value": "4.86 inch (123.44 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551081/74225"
+ },
+ {
+  "sku": "EF91082",
+  "codigo_base": "P551082",
+  "column": "height_mm",
+  "stored": "4.54",
+  "correct_mm": 115.32,
+  "page_value": "4.54 inch (115.32 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551082/74226"
+ },
+ {
+  "sku": "EF91082",
+  "codigo_base": "P551082",
+  "column": "outer_diameter_mm",
+  "stored": "4.86",
+  "correct_mm": 123.45,
+  "page_value": "4.86 inch (123.45 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551082/74226"
+ },
+ {
+  "sku": "EF91760",
+  "codigo_base": "P551760",
+  "column": "height_mm",
+  "stored": "5.43",
+  "correct_mm": 138.0,
+  "page_value": "5.43 inch (138 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551760/20795"
+ },
+ {
+  "sku": "EF91760",
+  "codigo_base": "P551760",
+  "column": "outer_diameter_mm",
+  "stored": "2.15",
+  "correct_mm": 54.7,
+  "page_value": "2.15 inch (54.7 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551760/20795"
+ },
+ {
+  "sku": "EF91915",
+  "codigo_base": "P551915",
+  "column": "height_mm",
+  "stored": "7.44",
+  "correct_mm": 188.98,
+  "page_value": "7.44 inch (188.98 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551915/20800"
+ },
+ {
+  "sku": "EF91915",
+  "codigo_base": "P551915",
+  "column": "outer_diameter_mm",
+  "stored": "3.69",
+  "correct_mm": 93.73,
+  "page_value": "3.69 inch (93.73 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551915/20800"
+ },
+ {
+  "sku": "EF92135",
+  "codigo_base": "P502135",
+  "column": "height_mm",
+  "stored": "3.43",
+  "correct_mm": 87.12,
+  "page_value": "3.43 inch (87.12 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P502135/18848"
+ },
+ {
+  "sku": "EF92135",
+  "codigo_base": "P502135",
+  "column": "outer_diameter_mm",
+  "stored": "1.38",
+  "correct_mm": 35.0,
+  "page_value": "1.38 inch (35 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P502135/18848"
+ },
+ {
+  "sku": "EF92136",
+  "codigo_base": "P502136",
+  "column": "height_mm",
+  "stored": "1.72",
+  "correct_mm": 43.69,
+  "page_value": "1.72 inch (43.69 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P502136/18849"
+ },
+ {
+  "sku": "EF92136",
+  "codigo_base": "P502136",
+  "column": "outer_diameter_mm",
+  "stored": "1.12",
+  "correct_mm": 28.45,
+  "page_value": "1.12 inch (28.45 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P502136/18849"
+ },
+ {
+  "sku": "EF92398",
+  "codigo_base": "P552398",
+  "column": "height_mm",
+  "stored": "4.81",
+  "correct_mm": 122.1,
+  "page_value": "4.81 inch (122.1 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P552398/24028"
+ },
+ {
+  "sku": "EF92398",
+  "codigo_base": "P552398",
+  "column": "outer_diameter_mm",
+  "stored": "2.80",
+  "correct_mm": 71.0,
+  "page_value": "2.80 inch (71 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P552398/24028"
+ },
+ {
+  "sku": "EF92403",
+  "codigo_base": "P552403",
+  "column": "height_mm",
+  "stored": "4.72",
+  "correct_mm": 120.0,
+  "page_value": "4.72 inch (120 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P552403/24033"
+ },
+ {
+  "sku": "EF92403",
+  "codigo_base": "P552403",
+  "column": "outer_diameter_mm",
+  "stored": "2.17",
+  "correct_mm": 55.0,
+  "page_value": "2.17 inch (55 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P552403/24033"
+ },
+ {
+  "sku": "EF93544",
+  "codigo_base": "P583544",
+  "column": "height_mm",
+  "stored": "5.69",
+  "correct_mm": 144.4,
+  "page_value": "5.69 inch (144.4 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P583544/prod2510092"
+ },
+ {
+  "sku": "EF93544",
+  "codigo_base": "P583544",
+  "column": "outer_diameter_mm",
+  "stored": "3.69",
+  "correct_mm": 93.7,
+  "page_value": "3.69 inch (93.7 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P583544/prod2510092"
+ },
+ {
+  "sku": "EF93545",
+  "codigo_base": "P583545",
+  "column": "height_mm",
+  "stored": "5.69",
+  "correct_mm": 144.4,
+  "page_value": "5.69 inch (144.4 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P583545/prod2510093"
+ },
+ {
+  "sku": "EF93545",
+  "codigo_base": "P583545",
+  "column": "outer_diameter_mm",
+  "stored": "3.69",
+  "correct_mm": 93.7,
+  "page_value": "3.69 inch (93.7 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P583545/prod2510093"
+ },
+ {
+  "sku": "EF952423",
+  "codigo_base": "P552423",
+  "column": "height_mm",
+  "stored": "5.44",
+  "correct_mm": 138.18,
+  "page_value": "5.44 inch (138.18 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P552423/5016"
+ },
+ {
+  "sku": "EF952423",
+  "codigo_base": "P552423",
+  "column": "outer_diameter_mm",
+  "stored": "3.15",
+  "correct_mm": 80.0,
+  "page_value": "3.15 inch (80 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P552423/5016"
+ },
+ {
+  "sku": "EF96310",
+  "codigo_base": "P566310",
+  "column": "height_mm",
+  "stored": "5.94",
+  "correct_mm": 150.9,
+  "page_value": "5.94 inch (150.9 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P566310/37726"
+ },
+ {
+  "sku": "EF96310",
+  "codigo_base": "P566310",
+  "column": "outer_diameter_mm",
+  "stored": "3.66",
+  "correct_mm": 93.0,
+  "page_value": "3.66 inch (93 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P566310/37726"
+ },
+ {
+  "sku": "EH60027",
+  "codigo_base": "P570027",
+  "column": "height_mm",
+  "stored": "12.13",
+  "correct_mm": 308.0,
+  "page_value": "12.13 inch (308 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P570027/59942"
+ },
+ {
+  "sku": "EH60027",
+  "codigo_base": "P570027",
+  "column": "outer_diameter_mm",
+  "stored": "5.33",
+  "correct_mm": 135.3,
+  "page_value": "5.33 inch (135.3 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P570027/59942"
+ },
+ {
+  "sku": "EH60028",
+  "codigo_base": "P570028",
+  "column": "height_mm",
+  "stored": "12.13",
+  "correct_mm": 308.0,
+  "page_value": "12.13 inch (308 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P570028/59943"
+ },
+ {
+  "sku": "EH60028",
+  "codigo_base": "P570028",
+  "column": "outer_diameter_mm",
+  "stored": "5.33",
+  "correct_mm": 135.3,
+  "page_value": "5.33 inch (135.3 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P570028/59943"
+ },
+ {
+  "sku": "EH60055",
+  "codigo_base": "P760055",
+  "column": "outer_diameter_mm",
+  "stored": "3.15",
+  "correct_mm": 80.0,
+  "page_value": "3.15 inch (80 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P760055/33907"
+ },
+ {
+  "sku": "EH60063",
+  "codigo_base": "P170063",
+  "column": "height_mm",
+  "stored": "12.00",
+  "correct_mm": 304.8,
+  "page_value": "12.00 inch (304.8 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P170063/16483"
+ },
+ {
+  "sku": "EH60063",
+  "codigo_base": "P170063",
+  "column": "outer_diameter_mm",
+  "stored": "5.63",
+  "correct_mm": 143.0,
+  "page_value": "5.63 inch (143 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P170063/16483"
+ },
+ {
+  "sku": "EH60066",
+  "codigo_base": "P170066",
+  "column": "height_mm",
+  "stored": "5.00",
+  "correct_mm": 127.0,
+  "page_value": "5.00 inch (127 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P170066/16485"
+ },
+ {
+  "sku": "EH60066",
+  "codigo_base": "P170066",
+  "column": "outer_diameter_mm",
+  "stored": "2.44",
+  "correct_mm": 61.98,
+  "page_value": "2.44 inch (61.98 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P170066/16485"
+ },
+ {
+  "sku": "EH60073",
+  "codigo_base": "P170073",
+  "column": "height_mm",
+  "stored": "9.25",
+  "correct_mm": 234.95,
+  "page_value": "9.25 inch (234.95 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P170073/16489"
+ },
+ {
+  "sku": "EH60073",
+  "codigo_base": "P170073",
+  "column": "outer_diameter_mm",
+  "stored": "2.44",
+  "correct_mm": 61.98,
+  "page_value": "2.44 inch (61.98 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P170073/16489"
+ },
+ {
+  "sku": "EH60078",
+  "codigo_base": "P160078",
+  "column": "height_mm",
+  "stored": "22.00",
+  "correct_mm": 558.8,
+  "page_value": "22.00 inch (558.8 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P160078/15770"
+ },
+ {
+  "sku": "EH60078",
+  "codigo_base": "P160078",
+  "column": "outer_diameter_mm",
+  "stored": "7.44",
+  "correct_mm": 188.98,
+  "page_value": "7.44 inch (188.98 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P160078/15770"
+ },
+ {
+  "sku": "EH60082",
+  "codigo_base": "P550082",
+  "column": "height_mm",
+  "stored": "10.94",
+  "correct_mm": 277.88,
+  "page_value": "10.94 inch (277.88 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550082/20083"
+ },
+ {
+  "sku": "EH60082",
+  "codigo_base": "P550082",
+  "column": "outer_diameter_mm",
+  "stored": "2.56",
+  "correct_mm": 65.0,
+  "page_value": "2.56 inch (65 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550082/20083"
+ },
+ {
+  "sku": "EH60084",
+  "codigo_base": "P170084",
+  "column": "height_mm",
+  "stored": "9.25",
+  "correct_mm": 235.0,
+  "page_value": "9.25 inch (235 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P170084/16490"
+ },
+ {
+  "sku": "EH60084",
+  "codigo_base": "P170084",
+  "column": "outer_diameter_mm",
+  "stored": "2.44",
+  "correct_mm": 62.0,
+  "page_value": "2.44 inch (62 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P170084/16490"
+ },
+ {
+  "sku": "EH60099",
+  "codigo_base": "P170099",
+  "column": "height_mm",
+  "stored": "7.40",
+  "correct_mm": 188.0,
+  "page_value": "7.40 inch (188 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P170099/16500"
+ },
+ {
+  "sku": "EH60099",
+  "codigo_base": "P170099",
+  "column": "outer_diameter_mm",
+  "stored": "3.60",
+  "correct_mm": 91.5,
+  "page_value": "3.60 inch (91.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P170099/16500"
+ },
+ {
+  "sku": "EH60417",
+  "codigo_base": "P550417",
+  "column": "height_mm",
+  "stored": "11.42",
+  "correct_mm": 290.1,
+  "page_value": "11.42 inch (290.1 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550417/20355"
+ },
+ {
+  "sku": "EH60417",
+  "codigo_base": "P550417",
+  "column": "outer_diameter_mm",
+  "stored": "4.80",
+  "correct_mm": 121.92,
+  "page_value": "4.80 inch (121.92 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550417/20355"
+ },
+ {
+  "sku": "EH60979",
+  "codigo_base": "P580979",
+  "column": "height_mm",
+  "stored": "9.09",
+  "correct_mm": 231.0,
+  "page_value": "9.09 inch (231 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P580979/prod2001679"
+ },
+ {
+  "sku": "EH60979",
+  "codigo_base": "P580979",
+  "column": "outer_diameter_mm",
+  "stored": "3.86",
+  "correct_mm": 98.0,
+  "page_value": "3.86 inch (98 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P580979/prod2001679"
+ },
+ {
+  "sku": "EH61310",
+  "codigo_base": "P171310",
+  "column": "height_mm",
+  "stored": "4.56",
+  "correct_mm": 115.82,
+  "page_value": "4.56 inch (115.82 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P171310/16667"
+ },
+ {
+  "sku": "EH61310",
+  "codigo_base": "P171310",
+  "column": "outer_diameter_mm",
+  "stored": "2.69",
+  "correct_mm": 68.33,
+  "page_value": "2.69 inch (68.33 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P171310/16667"
+ },
+ {
+  "sku": "ES90215",
+  "codigo_base": "P550215",
+  "column": "height_mm",
+  "stored": "5.37",
+  "correct_mm": 136.39,
+  "page_value": "5.37 inch (136.39 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550215/20212"
+ },
+ {
+  "sku": "ES90215",
+  "codigo_base": "P550215",
+  "column": "outer_diameter_mm",
+  "stored": "3.69",
+  "correct_mm": 93.73,
+  "page_value": "3.69 inch (93.73 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550215/20212"
+ },
+ {
+  "sku": "ES90365",
+  "codigo_base": "P550365",
+  "column": "height_mm",
+  "stored": "7.00",
+  "correct_mm": 177.8,
+  "page_value": "7.00 inch (177.8 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550365/20311"
+ },
+ {
+  "sku": "ES90365",
+  "codigo_base": "P550365",
+  "column": "outer_diameter_mm",
+  "stored": "3.72",
+  "correct_mm": 94.5,
+  "page_value": "3.72 inch (94.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550365/20311"
+ },
+ {
+  "sku": "ES90447",
+  "codigo_base": "P550447",
+  "column": "height_mm",
+  "stored": "6.44",
+  "correct_mm": 163.7,
+  "page_value": "6.44 inch (163.7 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550447/20379"
+ },
+ {
+  "sku": "ES90447",
+  "codigo_base": "P550447",
+  "column": "outer_diameter_mm",
+  "stored": "4.35",
+  "correct_mm": 110.5,
+  "page_value": "4.35 inch (110.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550447/20379"
+ },
+ {
+  "sku": "ES90547",
+  "codigo_base": "P550547",
+  "column": "height_mm",
+  "stored": "9.13",
+  "correct_mm": 231.9,
+  "page_value": "9.13 inch (231.9 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550547/23045"
+ },
+ {
+  "sku": "ES90547",
+  "codigo_base": "P550547",
+  "column": "outer_diameter_mm",
+  "stored": "4.81",
+  "correct_mm": 122.17,
+  "page_value": "4.81 inch (122.17 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550547/23045"
+ },
+ {
+  "sku": "ES90607",
+  "codigo_base": "P550607",
+  "column": "height_mm",
+  "stored": "9.13",
+  "correct_mm": 231.9,
+  "page_value": "9.13 inch (231.9 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550607/23232"
+ },
+ {
+  "sku": "ES90607",
+  "codigo_base": "P550607",
+  "column": "outer_diameter_mm",
+  "stored": "4.81",
+  "correct_mm": 122.17,
+  "page_value": "4.81 inch (122.17 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550607/23232"
+ },
+ {
+  "sku": "ES90683",
+  "codigo_base": "P920683",
+  "column": "height_mm",
+  "stored": "11.33",
+  "correct_mm": 287.7,
+  "page_value": "11.33 inch (287.7 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P920683/22644"
+ },
+ {
+  "sku": "ES90683",
+  "codigo_base": "P920683",
+  "column": "outer_diameter_mm",
+  "stored": "4.40",
+  "correct_mm": 111.8,
+  "page_value": "4.40 inch (111.8 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P920683/22644"
+ },
+ {
+  "sku": "ES90711",
+  "codigo_base": "P920711",
+  "column": "height_mm",
+  "stored": "7.05",
+  "correct_mm": 179.0,
+  "page_value": "7.05 inch (179 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P920711/22645"
+ },
+ {
+  "sku": "ES90711",
+  "codigo_base": "P920711",
+  "column": "outer_diameter_mm",
+  "stored": "4.40",
+  "correct_mm": 111.8,
+  "page_value": "4.40 inch (111.8 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P920711/22645"
+ },
+ {
+  "sku": "ES90729",
+  "codigo_base": "P550729",
+  "column": "height_mm",
+  "stored": "5.05",
+  "correct_mm": 128.3,
+  "page_value": "5.05 inch (128.3 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550729/20513"
+ },
+ {
+  "sku": "ES90729",
+  "codigo_base": "P550729",
+  "column": "outer_diameter_mm",
+  "stored": "4.36",
+  "correct_mm": 110.7,
+  "page_value": "4.36 inch (110.7 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550729/20513"
+ },
+ {
+  "sku": "ES90828",
+  "codigo_base": "P550828",
+  "column": "height_mm",
+  "stored": "6.11",
+  "correct_mm": 155.2,
+  "page_value": "6.11 inch (155.2 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550828/39833"
+ },
+ {
+  "sku": "ES90828",
+  "codigo_base": "P550828",
+  "column": "outer_diameter_mm",
+  "stored": "3.66",
+  "correct_mm": 93.0,
+  "page_value": "3.66 inch (93 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550828/39833"
+ },
+ {
+  "sku": "ES90901",
+  "codigo_base": "P550901",
+  "column": "height_mm",
+  "stored": "9.92",
+  "correct_mm": 252.0,
+  "page_value": "9.92 inch (252 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550901/35183"
+ },
+ {
+  "sku": "ES90901",
+  "codigo_base": "P550901",
+  "column": "outer_diameter_mm",
+  "stored": "3.66",
+  "correct_mm": 93.0,
+  "page_value": "3.66 inch (93 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P550901/35183"
+ },
+ {
+  "sku": "ES90967",
+  "codigo_base": "P920967",
+  "column": "height_mm",
+  "stored": "12.19",
+  "correct_mm": 309.5,
+  "page_value": "12.19 inch (309.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P920967/22647"
+ },
+ {
+  "sku": "ES90967",
+  "codigo_base": "P920967",
+  "column": "outer_diameter_mm",
+  "stored": "4.25",
+  "correct_mm": 108.0,
+  "page_value": "4.25 inch (108 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P920967/22647"
+ },
+ {
+  "sku": "ES91066",
+  "codigo_base": "P551066",
+  "column": "height_mm",
+  "stored": "6.81",
+  "correct_mm": 173.1,
+  "page_value": "6.81 inch (173.1 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551066/62878"
+ },
+ {
+  "sku": "ES91066",
+  "codigo_base": "P551066",
+  "column": "outer_diameter_mm",
+  "stored": "4.22",
+  "correct_mm": 107.3,
+  "page_value": "4.22 inch (107.3 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551066/62878"
+ },
+ {
+  "sku": "ES91335",
+  "codigo_base": "P551335",
+  "column": "height_mm",
+  "stored": "7.91",
+  "correct_mm": 200.91,
+  "page_value": "7.91 inch (200.91 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551335/20748"
+ },
+ {
+  "sku": "ES91335",
+  "codigo_base": "P551335",
+  "column": "outer_diameter_mm",
+  "stored": "4.25",
+  "correct_mm": 107.95,
+  "page_value": "4.25 inch (107.95 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551335/20748"
+ },
+ {
+  "sku": "ES91746",
+  "codigo_base": "P551746",
+  "column": "height_mm",
+  "stored": "11.31",
+  "correct_mm": 287.2,
+  "page_value": "11.31 inch (287.2 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551746/20783"
+ },
+ {
+  "sku": "ES91746",
+  "codigo_base": "P551746",
+  "column": "outer_diameter_mm",
+  "stored": "4.29",
+  "correct_mm": 109.0,
+  "page_value": "4.29 inch (109 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551746/20783"
+ },
+ {
+  "sku": "ES91752",
+  "codigo_base": "P551752",
+  "column": "height_mm",
+  "stored": "7.50",
+  "correct_mm": 190.5,
+  "page_value": "7.50 inch (190.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551752/20788"
+ },
+ {
+  "sku": "ES91752",
+  "codigo_base": "P551752",
+  "column": "outer_diameter_mm",
+  "stored": "3.67",
+  "correct_mm": 93.22,
+  "page_value": "3.67 inch (93.22 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551752/20788"
+ },
+ {
+  "sku": "ES91801",
+  "codigo_base": "P551801",
+  "column": "height_mm",
+  "stored": "2.30",
+  "correct_mm": 58.42,
+  "page_value": "2.30 inch (58.42 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551801/prod520884"
+ },
+ {
+  "sku": "ES91801",
+  "codigo_base": "P551801",
+  "column": "outer_diameter_mm",
+  "stored": "4.22",
+  "correct_mm": 107.19,
+  "page_value": "4.22 inch (107.19 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551801/prod520884"
+ },
+ {
+  "sku": "ES91802",
+  "codigo_base": "P551802",
+  "column": "height_mm",
+  "stored": "4.62",
+  "correct_mm": 117.3,
+  "page_value": "4.62 inch (117.3 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551802/72979"
+ },
+ {
+  "sku": "ES91802",
+  "codigo_base": "P551802",
+  "column": "outer_diameter_mm",
+  "stored": "6.08",
+  "correct_mm": 154.4,
+  "page_value": "6.08 inch (154.4 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551802/72979"
+ },
+ {
+  "sku": "ES91803",
+  "codigo_base": "P551803",
+  "column": "height_mm",
+  "stored": "9.68",
+  "correct_mm": 245.9,
+  "page_value": "9.68 inch (245.9 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551803/72980"
+ },
+ {
+  "sku": "ES91803",
+  "codigo_base": "P551803",
+  "column": "outer_diameter_mm",
+  "stored": "6.20",
+  "correct_mm": 157.4,
+  "page_value": "6.20 inch (157.4 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551803/72980"
+ },
+ {
+  "sku": "ES91820",
+  "codigo_base": "P551820",
+  "column": "height_mm",
+  "stored": "4.02",
+  "correct_mm": 102.0,
+  "page_value": "4.02 inch (102 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551820/37562"
+ },
+ {
+  "sku": "ES91820",
+  "codigo_base": "P551820",
+  "column": "outer_diameter_mm",
+  "stored": "3.74",
+  "correct_mm": 95.0,
+  "page_value": "3.74 inch (95 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551820/37562"
+ },
+ {
+  "sku": "ES91840",
+  "codigo_base": "P551840",
+  "column": "height_mm",
+  "stored": "7.40",
+  "correct_mm": 188.0,
+  "page_value": "7.40 inch (188 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551840/75214"
+ },
+ {
+  "sku": "ES91840",
+  "codigo_base": "P551840",
+  "column": "outer_diameter_mm",
+  "stored": "3.80",
+  "correct_mm": 96.5,
+  "page_value": "3.80 inch (96.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P551840/75214"
+ },
+ {
+  "sku": "ES92157",
+  "codigo_base": "P502157",
+  "column": "height_mm",
+  "stored": "4.72",
+  "correct_mm": 119.89,
+  "page_value": "4.72 inch (119.89 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P502157/4156"
+ },
+ {
+  "sku": "ES92157",
+  "codigo_base": "P502157",
+  "column": "outer_diameter_mm",
+  "stored": "3.70",
+  "correct_mm": 93.93,
+  "page_value": "3.7 inch (93.93 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P502157/4156"
+ },
+ {
+  "sku": "ES92167",
+  "codigo_base": "P502167",
+  "column": "height_mm",
+  "stored": "6.89",
+  "correct_mm": 175.0,
+  "page_value": "6.89 inch (175 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P502167/18861"
+ },
+ {
+  "sku": "ES92167",
+  "codigo_base": "P502167",
+  "column": "outer_diameter_mm",
+  "stored": "3.15",
+  "correct_mm": 80.0,
+  "page_value": "3.15 inch (80 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P502167/18861"
+ },
+ {
+  "sku": "ES92177",
+  "codigo_base": "P502177",
+  "column": "height_mm",
+  "stored": "3.31",
+  "correct_mm": 84.1,
+  "page_value": "3.31 inch (84.1 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P502177/18866"
+ },
+ {
+  "sku": "ES92177",
+  "codigo_base": "P502177",
+  "column": "outer_diameter_mm",
+  "stored": "3.15",
+  "correct_mm": 80.0,
+  "page_value": "3.15 inch (80 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P502177/18866"
+ },
+ {
+  "sku": "ES92851",
+  "codigo_base": "P552851",
+  "column": "height_mm",
+  "stored": "4.74",
+  "correct_mm": 120.5,
+  "page_value": "4.74 inch (120.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P552851/prod960002"
+ },
+ {
+  "sku": "ES92851",
+  "codigo_base": "P552851",
+  "column": "outer_diameter_mm",
+  "stored": "4.23",
+  "correct_mm": 107.5,
+  "page_value": "4.23 inch (107.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P552851/prod960002"
+ },
+ {
+  "sku": "ES92852",
+  "codigo_base": "P552852",
+  "column": "height_mm",
+  "stored": "4.74",
+  "correct_mm": 120.5,
+  "page_value": "4.74 inch (120.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P552852/prod170013"
+ },
+ {
+  "sku": "ES92852",
+  "codigo_base": "P552852",
+  "column": "outer_diameter_mm",
+  "stored": "4.23",
+  "correct_mm": 107.5,
+  "page_value": "4.23 inch (107.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P552852/prod170013"
+ },
+ {
+  "sku": "ES92853",
+  "codigo_base": "P552853",
+  "column": "height_mm",
+  "stored": "4.74",
+  "correct_mm": 120.5,
+  "page_value": "4.74 inch (120.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P552853/prod960003"
+ },
+ {
+  "sku": "ES92853",
+  "codigo_base": "P552853",
+  "column": "outer_diameter_mm",
+  "stored": "4.23",
+  "correct_mm": 107.5,
+  "page_value": "4.23 inch (107.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P552853/prod960003"
+ },
+ {
+  "sku": "ES92854",
+  "codigo_base": "P552854",
+  "column": "height_mm",
+  "stored": "5.77",
+  "correct_mm": 146.5,
+  "page_value": "5.77 inch (146.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P552854/prod960004"
+ },
+ {
+  "sku": "ES92854",
+  "codigo_base": "P552854",
+  "column": "outer_diameter_mm",
+  "stored": "4.23",
+  "correct_mm": 107.5,
+  "page_value": "4.23 inch (107.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P552854/prod960004"
+ },
+ {
+  "sku": "ES92855",
+  "codigo_base": "P552855",
+  "column": "height_mm",
+  "stored": "5.77",
+  "correct_mm": 146.5,
+  "page_value": "5.77 inch (146.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P552855/prod170014"
+ },
+ {
+  "sku": "ES92855",
+  "codigo_base": "P552855",
+  "column": "outer_diameter_mm",
+  "stored": "4.23",
+  "correct_mm": 107.5,
+  "page_value": "4.23 inch (107.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P552855/prod170014"
+ },
+ {
+  "sku": "ES92857",
+  "codigo_base": "P552857",
+  "column": "outer_diameter_mm",
+  "stored": "4.23",
+  "correct_mm": 107.5,
+  "page_value": "4.23 inch (107.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P552857/prod960006"
+ },
+ {
+  "sku": "ES92858",
+  "codigo_base": "P552858",
+  "column": "height_mm",
+  "stored": "8.54",
+  "correct_mm": 216.9,
+  "page_value": "8.54 inch (216.9 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P552858/prod170015"
+ },
+ {
+  "sku": "ES92858",
+  "codigo_base": "P552858",
+  "column": "outer_diameter_mm",
+  "stored": "4.23",
+  "correct_mm": 107.5,
+  "page_value": "4.23 inch (107.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P552858/prod170015"
+ },
+ {
+  "sku": "ES92859",
+  "codigo_base": "P552859",
+  "column": "height_mm",
+  "stored": "8.54",
+  "correct_mm": 216.9,
+  "page_value": "8.54 inch (216.9 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P552859/prod960007"
+ },
+ {
+  "sku": "ES92859",
+  "codigo_base": "P552859",
+  "column": "outer_diameter_mm",
+  "stored": "4.23",
+  "correct_mm": 107.5,
+  "page_value": "4.23 inch (107.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P552859/prod960007"
+ },
+ {
+  "sku": "ES93020",
+  "codigo_base": "P553020",
+  "column": "height_mm",
+  "stored": "9.75",
+  "correct_mm": 247.6,
+  "page_value": "9.75 inch (247.6 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P553020/prod2700091"
+ },
+ {
+  "sku": "ES93020",
+  "codigo_base": "P553020",
+  "column": "outer_diameter_mm",
+  "stored": "4.19",
+  "correct_mm": 106.4,
+  "page_value": "4.19 inch (106.4 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P553020/prod2700091"
+ },
+ {
+  "sku": "ES93023",
+  "codigo_base": "P553023",
+  "column": "height_mm",
+  "stored": "9.75",
+  "correct_mm": 247.6,
+  "page_value": "9.75 inch (247.6 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P553023/prod2700092"
+ },
+ {
+  "sku": "ES93023",
+  "codigo_base": "P553023",
+  "column": "outer_diameter_mm",
+  "stored": "4.19",
+  "correct_mm": 106.4,
+  "page_value": "4.19 inch (106.4 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P553023/prod2700092"
+ },
+ {
+  "sku": "ES93024",
+  "codigo_base": "P553024",
+  "column": "height_mm",
+  "stored": "9.75",
+  "correct_mm": 247.6,
+  "page_value": "9.75 inch (247.6 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P553024/prod2700093"
+ },
+ {
+  "sku": "ES93024",
+  "codigo_base": "P553024",
+  "column": "outer_diameter_mm",
+  "stored": "4.19",
+  "correct_mm": 106.4,
+  "page_value": "4.19 inch (106.4 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P553024/prod2700093"
+ },
+ {
+  "sku": "ES93040",
+  "codigo_base": "P553040",
+  "column": "height_mm",
+  "stored": "4.75",
+  "correct_mm": 120.6,
+  "page_value": "4.75 inch (120.6 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P553040/prod2700094?_requestid=16852127"
+ },
+ {
+  "sku": "ES93040",
+  "codigo_base": "P553040",
+  "column": "outer_diameter_mm",
+  "stored": "4.19",
+  "correct_mm": 106.4,
+  "page_value": "4.19 inch (106.4 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P553040/prod2700094?_requestid=16852127"
+ },
+ {
+  "sku": "ES93043",
+  "codigo_base": "P553043",
+  "column": "height_mm",
+  "stored": "4.75",
+  "correct_mm": 120.6,
+  "page_value": "4.75 inch (120.6 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P553043/prod2700095"
+ },
+ {
+  "sku": "ES93043",
+  "codigo_base": "P553043",
+  "column": "outer_diameter_mm",
+  "stored": "4.19",
+  "correct_mm": 106.4,
+  "page_value": "4.19 inch (106.4 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P553043/prod2700095"
+ },
+ {
+  "sku": "ES93088",
+  "codigo_base": "P583088",
+  "column": "height_mm",
+  "stored": "6.17",
+  "correct_mm": 156.8,
+  "page_value": "6.17 inch (156.8 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P583088/prod2320346"
+ },
+ {
+  "sku": "ES93088",
+  "codigo_base": "P583088",
+  "column": "outer_diameter_mm",
+  "stored": "3.17",
+  "correct_mm": 80.6,
+  "page_value": "3.17 inch (80.6 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P583088/prod2320346"
+ },
+ {
+  "sku": "ES93089",
+  "codigo_base": "P583089",
+  "column": "height_mm",
+  "stored": "6.24",
+  "correct_mm": 158.6,
+  "page_value": "6.24 inch (158.6 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P583089/prod2320347"
+ },
+ {
+  "sku": "ES93089",
+  "codigo_base": "P583089",
+  "column": "outer_diameter_mm",
+  "stored": "3.17",
+  "correct_mm": 80.6,
+  "page_value": "3.17 inch (80.6 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P583089/prod2320347"
+ },
+ {
+  "sku": "ES93203",
+  "codigo_base": "P553203",
+  "column": "height_mm",
+  "stored": "7.61",
+  "correct_mm": 193.3,
+  "page_value": "7.61 inch (193.3 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P553203/40176"
+ },
+ {
+  "sku": "ES93203",
+  "codigo_base": "P553203",
+  "column": "outer_diameter_mm",
+  "stored": "3.66",
+  "correct_mm": 93.0,
+  "page_value": "3.66 inch (93 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P553203/40176"
+ },
+ {
+  "sku": "ES93204",
+  "codigo_base": "P553204",
+  "column": "height_mm",
+  "stored": "8.63",
+  "correct_mm": 219.3,
+  "page_value": "8.63 inch (219.3 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P553204/40047"
+ },
+ {
+  "sku": "ES93204",
+  "codigo_base": "P553204",
+  "column": "outer_diameter_mm",
+  "stored": "3.66",
+  "correct_mm": 93.0,
+  "page_value": "3.66 inch (93 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P553204/40047"
+ },
+ {
+  "sku": "ES93207",
+  "codigo_base": "P553207",
+  "column": "height_mm",
+  "stored": "8.63",
+  "correct_mm": 219.3,
+  "page_value": "8.63 inch (219.3 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P553207/40046"
+ },
+ {
+  "sku": "ES93207",
+  "codigo_base": "P553207",
+  "column": "outer_diameter_mm",
+  "stored": "3.66",
+  "correct_mm": 93.0,
+  "page_value": "3.66 inch (93 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P553207/40046"
+ },
+ {
+  "sku": "ES93212",
+  "codigo_base": "P553212",
+  "column": "height_mm",
+  "stored": "8.63",
+  "correct_mm": 219.3,
+  "page_value": "8.63 inch (219.3 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P553212/40246"
+ },
+ {
+  "sku": "ES93212",
+  "codigo_base": "P553212",
+  "column": "outer_diameter_mm",
+  "stored": "3.66",
+  "correct_mm": 93.0,
+  "page_value": "3.66 inch (93 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P553212/40246"
+ },
+ {
+  "sku": "ES93215",
+  "codigo_base": "P553215",
+  "column": "height_mm",
+  "stored": "7.61",
+  "correct_mm": 193.3,
+  "page_value": "7.61 inch (193.3 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P553215/40249"
+ },
+ {
+  "sku": "ES93215",
+  "codigo_base": "P553215",
+  "column": "outer_diameter_mm",
+  "stored": "3.66",
+  "correct_mm": 93.0,
+  "page_value": "3.66 inch (93 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P553215/40249"
+ },
+ {
+  "sku": "ES94393",
+  "codigo_base": "P564393",
+  "column": "height_mm",
+  "stored": "5.24",
+  "correct_mm": 133.0,
+  "page_value": "5.24 inch (133 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P564393/25234"
+ },
+ {
+  "sku": "ES94393",
+  "codigo_base": "P564393",
+  "column": "outer_diameter_mm",
+  "stored": "4.37",
+  "correct_mm": 111.0,
+  "page_value": "4.37 inch (111 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P564393/25234"
+ },
+ {
+  "sku": "ES94430",
+  "codigo_base": "P564430",
+  "column": "height_mm",
+  "stored": "9.25",
+  "correct_mm": 235.0,
+  "page_value": "9.25 inch (235 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P564430/33441"
+ },
+ {
+  "sku": "ES94430",
+  "codigo_base": "P564430",
+  "column": "outer_diameter_mm",
+  "stored": "4.37",
+  "correct_mm": 111.0,
+  "page_value": "4.37 inch (111 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P564430/33441"
+ },
+ {
+  "sku": "ES94520",
+  "codigo_base": "P584520",
+  "column": "height_mm",
+  "stored": "7.60",
+  "correct_mm": 193.0,
+  "page_value": "7.60 inch (193 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P584520/prod2280050"
+ },
+ {
+  "sku": "ES94520",
+  "codigo_base": "P584520",
+  "column": "outer_diameter_mm",
+  "stored": "5.83",
+  "correct_mm": 148.0,
+  "page_value": "5.83 inch (148 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P584520/prod2280050"
+ },
+ {
+  "sku": "ES94521",
+  "codigo_base": "P584521",
+  "column": "height_mm",
+  "stored": "7.60",
+  "correct_mm": 193.0,
+  "page_value": "7.60 inch (193 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P584521/prod2280051"
+ },
+ {
+  "sku": "ES94521",
+  "codigo_base": "P584521",
+  "column": "outer_diameter_mm",
+  "stored": "5.83",
+  "correct_mm": 148.0,
+  "page_value": "5.83 inch (148 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P584521/prod2280051"
+ },
+ {
+  "sku": "ES96312",
+  "codigo_base": "P566312",
+  "column": "height_mm",
+  "stored": "6.75",
+  "correct_mm": 171.5,
+  "page_value": "6.75 inch (171.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P566312/37728"
+ },
+ {
+  "sku": "ES96312",
+  "codigo_base": "P566312",
+  "column": "outer_diameter_mm",
+  "stored": "3.84",
+  "correct_mm": 97.5,
+  "page_value": "3.84 inch (97.5 mm)",
+  "url": "https://shop.donaldson.com/store/en-us/product/P566312/37728"
+ }
+]
