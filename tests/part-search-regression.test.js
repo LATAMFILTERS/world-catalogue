@@ -83,6 +83,7 @@ test('Part Search resolves governed Donaldson exact_part_reference aliases', () 
   const route = server.slice(start, server.indexOf('// Equipment class filter', start));
   assert.ok(route.includes('FROM exact_part_reference e'), 'must query exact_part_reference');
   assert.ok(route.includes("UPPER(e.brand) = 'DONALDSON'"), 'Donaldson exact references must be scoped by brand');
+  assert.ok(route.includes("UPPER(e.brand) = 'ELIMFILTERS' AND e.reference_type = 'SUPERSEDED'"), 'former ELIMFILTERS SKUs must resolve only as SUPERSEDED references');
   assert.ok(route.includes("source: 'exact_part_reference'"), 'must expose exact reference source');
 });
 
