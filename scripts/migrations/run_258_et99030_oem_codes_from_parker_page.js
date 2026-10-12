@@ -13,15 +13,10 @@
  * No other product cites any of the three, so no search becomes ambiguous;
  * the script refuses to run if that has changed.
  *
- * Governance. The write gateway re-validates codigo_base governance whenever
- * oem_codes changes, and it has no ET9 exception: for a manufacturer base it
- * demands fleetguard_absence_verified and approved_source_column OEM_CODES.
- * This row predates that (source COMPETITOR_CODES, no Fleetguard flag). The
- * script brings it to the convention used for every other ET9 row since
- * run_231: both flags record the operator ruling — Parker Racor codes live in
- * ET9 with the manufacturer's code as base — not a manufacturing check. That
- * matters here: Fleetguard does list an equivalent (FS20028 names R9030MB),
- * and the note written to the row says so.
+ * Governance is not touched. Parker is a filter manufacturer, not an OEM, so
+ * R9030MB stays classified as a competitor code (operator, 2026-10-12). The
+ * write gateway accepts that for ET9 through approvedEt9ManufacturerBaseReady,
+ * added in the same change as this script.
  *
  * Dry-run by default (everything runs, then ROLLBACK). Pass --execute to COMMIT.
  */
@@ -72,22 +67,10 @@ const CODES = [
     const added = CODES.filter(c => !has.has(normalizeCode(c.code)));
     if (!added.length) throw new Error('NOTHING_TO_ADD');
     oem.push(...added);
-    const enrichment = { ...(row.enrichment_data || {}) };
-    enrichment.codigo_base_governance = {
-      ...(enrichment.codigo_base_governance || {}),
-      approved_source_column: 'OEM_CODES',
-      previous_approved_source_column: (enrichment.codigo_base_governance || {}).approved_source_column || null,
-      // the gateway has no ET9 exception: this flag records the operator ruling, not a manufacturing check
-      fleetguard_absence_verified: true,
-      fleetguard_absence_note: 'Set by ELIMFILTERS operator ruling 2026-10-12 (Parker Racor codes live in ET9 with the manufacturer code as base), not by a Fleetguard manufacturing check. Fleetguard does list an equivalent: its FS20028 record names R9030MB.',
-      fallback_manufacturer_verified: true,
-      fallback_commercial_code_verified: true,
-    };
-    assertGovernedCatalogPatch(row, { oem_codes: oem, enrichment_data: enrichment });
+    assertGovernedCatalogPatch(row, { oem_codes: oem });
 
     // trg_sync_crossref_cache rebuilds crossref_resolved_cache for the row on this update
-    await db.query('UPDATE public.elimfilters_catalog SET oem_codes=$2::jsonb, enrichment_data=$3::jsonb WHERE sku=$1',
-      [SKU, JSON.stringify(oem), JSON.stringify(enrichment)]);
+    await db.query('UPDATE public.elimfilters_catalog SET oem_codes=$2::jsonb WHERE sku=$1', [SKU, JSON.stringify(oem)]);
     const cache = (await db.query(
       `SELECT upper(regexp_replace(code,'[^A-Za-z0-9]','','g')) AS code FROM public.crossref_resolved_cache WHERE sku=$1`, [SKU])).rows.map(r => r.code);
     const missing = wanted.filter(w => !cache.includes(w));
