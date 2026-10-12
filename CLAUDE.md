@@ -22,7 +22,7 @@ MACROCORE™ · MICROKAPPA™ · DRYCORE™ · INTEKCORE™ · SYNTAPORE™ · H
 
 - SYNTAPORE™ governs plain diesel-fuel particulate filtration for approved primary, secondary, spin-on and cartridge applications.
 - HYDROCORE™ governs approved standard non-turbine fuel/water separator configurations, including drain and transparent-bowl applications.
-- TURBOCORE™ governs approved turbine-style FH and FG fuel/water separation systems and their dedicated replacement-element architecture.
+- TURBOCORE™ governs approved turbine-style FH and FG fuel/water separation systems and their dedicated replacement-element architecture, plus approved fuel processor housings.
 - SYNTAPORE™, HYDROCORE™ and TURBOCORE™ are distinct scopes. Never merge, alias or substitute one for another in active or public surfaces.
 
 Specialized commercial solutions: MARINECLEAN™ · DURATECH™. These are not canonical core technology entities.
@@ -103,11 +103,12 @@ Canonical detail:
 - `product-identity/lib/industrial-sku-policy.mjs`
 
 ## Política canónica Duty / código base (definida por Victor, 2026-10-04)
-- HD: el código base es Donaldson. Si Donaldson no lo fabrica, se usa Fleetguard. Si ninguno lo fabrica, el código base es el OEM más comercial. Excepción: los ET9* son 100% Parker (esta regla no aplica).
+- HD: el código base es Donaldson. Si Donaldson no lo fabrica, se usa Fleetguard. Si ninguno lo fabrica, el código base es el OEM más comercial. Excepción (actualizada por Victor, 2026-10-11): los ET9* no siguen esta regla. Las turbinas FH/FG y sus elementos tienen código base Parker; los procesadores de combustible (carcasas tomadas de la categoría "Carcasa del filtro de combustible" de Fleetguard) tienen código base Fleetguard.
 - LD (vehículos livianos, SUV, motores diésel pequeños, pickups/camionetas): vehículos NO europeos → código base FRAM; vehículos europeos → código base MANN FILTERS.
 
 ## Sistema de prefijos SKU (definido por Victor, 2026-10-04)
 - HD = prefijo + últimos 4 dígitos del código base (ejemplo: P552100 → EL82100).
+- ET9 = turbinas FH/FG con sus elementos, y procesadores de combustible Fleetguard (carcasas), TURBOCORE. Los elementos que Fleetguard califica como separadores de combustible/agua son ES9, no EF9 ni ET9.
 - ES9 = separador de combustible, HYDROCORE. EF9 = fuel filter, SYNTAPORE. EL8 = lube/oil, SYNTRAX. EH6 = hidráulico, NANOFORCE. EW7 = refrigerante, THERMOCORE. ED4 = air dryer, DRYCORE. EA1 = filtros de aire, MACROCORE. EA2 = carcasas para filtros de aire, INTEKCORE. EC1 = filtros de cabina, MICROKAPPA.
 - LD tiene solo 4 prefijos: EA3 = aire MACROCORE, EC3 = cabina MICROKAPPA, EL3 = aceite SYNTRAX, EF3 = fuel SYNTAPORE.
 
