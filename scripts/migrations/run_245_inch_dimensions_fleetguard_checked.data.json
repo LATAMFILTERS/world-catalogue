@@ -1,0 +1,752 @@
+[
+ {
+  "sku": "EH60079",
+  "codigo_base": "P550079",
+  "stored_height": "9.02",
+  "stored_od": "4.51",
+  "fleetguard": "HF6151",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6151/01t5x000008FFgfAAG",
+  "fleetguard_height_mm": 231.65,
+  "fleetguard_od_mm": 114.83
+ },
+ {
+  "sku": "EH60083",
+  "codigo_base": "P550083",
+  "stored_height": "11.50",
+  "stored_od": "4.41",
+  "fleetguard": "HF35005",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf35005/01t5x000008FCKAAA4",
+  "fleetguard_height_mm": 292.1,
+  "fleetguard_od_mm": null
+ },
+ {
+  "sku": "EH60092",
+  "codigo_base": "P170092",
+  "stored_height": "9.00",
+  "stored_od": "4.42",
+  "fleetguard": "HF7797",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf7797/01t5x000008FHFFAA4",
+  "fleetguard_height_mm": 230.12,
+  "fleetguard_od_mm": null
+ },
+ {
+  "sku": "EH60095",
+  "codigo_base": "P170095",
+  "stored_height": "7.40",
+  "stored_od": "3.60",
+  "fleetguard": "HF7724",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf7724/01t5x000008FG8sAAG",
+  "fleetguard_height_mm": 197.1,
+  "fleetguard_od_mm": null
+ },
+ {
+  "sku": "EH60098",
+  "codigo_base": "P170098",
+  "stored_height": "7.41",
+  "stored_od": "3.60",
+  "fleetguard": "HF7809",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf7809/01t5x000008FHGMAA4",
+  "fleetguard_height_mm": 197.74,
+  "fleetguard_od_mm": null
+ },
+ {
+  "sku": "EH60128",
+  "codigo_base": "P550128",
+  "stored_height": "3.00",
+  "stored_od": "5.00",
+  "fleetguard": "HF6000",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6000/01t5x000008FBNmAAO",
+  "fleetguard_height_mm": 76.45,
+  "fleetguard_od_mm": 128.52
+ },
+ {
+  "sku": "EH60138",
+  "codigo_base": "P550138",
+  "stored_height": "7.04",
+  "stored_od": "4.53",
+  "fleetguard": "HF6060",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6060/01t5x000008FFeZAAW",
+  "fleetguard_height_mm": 177.8,
+  "fleetguard_od_mm": 114.83
+ },
+ {
+  "sku": "EH60140",
+  "codigo_base": "P550140",
+  "stored_height": "7.04",
+  "stored_od": "4.49",
+  "fleetguard": "HF6094",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6094/01t5x000008FHD9AAO",
+  "fleetguard_height_mm": 179.32,
+  "fleetguard_od_mm": 114.83
+ },
+ {
+  "sku": "EH60213",
+  "codigo_base": "P550213",
+  "stored_height": "17.95",
+  "stored_od": "6.00",
+  "fleetguard": "HF6063",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6063/01t5x000008FFecAAG",
+  "fleetguard_height_mm": 454.02,
+  "fleetguard_od_mm": null
+ },
+ {
+  "sku": "EH60229",
+  "codigo_base": "P550229",
+  "stored_height": "7.01",
+  "stored_od": "3.82",
+  "fleetguard": "HF28989",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf28989/01t5x000008FCGbAAO",
+  "fleetguard_height_mm": 174.5,
+  "fleetguard_od_mm": 94.5
+ },
+ {
+  "sku": "EH60230",
+  "codigo_base": "P550230",
+  "stored_height": "8.39",
+  "stored_od": "3.82",
+  "fleetguard": "HF6141",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6141/01t5x000008FFgXAAW",
+  "fleetguard_height_mm": 210.5,
+  "fleetguard_od_mm": 93.5
+ },
+ {
+  "sku": "EH60284",
+  "codigo_base": "P550284",
+  "stored_height": "8.96",
+  "stored_od": "3.99",
+  "fleetguard": "HF6218",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6218/01t5x000008FH65AAG",
+  "fleetguard_height_mm": 228.09,
+  "fleetguard_od_mm": 101.6
+ },
+ {
+  "sku": "EH60320",
+  "codigo_base": "P550320",
+  "stored_height": "11.71",
+  "stored_od": "5.00",
+  "fleetguard": "HF6836",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6836/01t5x000008FCFOAA4",
+  "fleetguard_height_mm": 297.43,
+  "fleetguard_od_mm": 124.33
+ },
+ {
+  "sku": "EH60404",
+  "codigo_base": "P560404",
+  "stored_height": "12.87",
+  "stored_od": "3.07",
+  "fleetguard": "HF30357",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf30357/01t5x000008FEJNAA4",
+  "fleetguard_height_mm": 328.42,
+  "fleetguard_od_mm": 79.3
+ },
+ {
+  "sku": "EH60415",
+  "codigo_base": "P550415",
+  "stored_height": "11.42",
+  "stored_od": "4.80",
+  "fleetguard": "HF6809",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6809/01t5x000008FGqoAAG",
+  "fleetguard_height_mm": 297.43,
+  "fleetguard_od_mm": 124.33
+ },
+ {
+  "sku": "EH60427",
+  "codigo_base": "P550427",
+  "stored_height": "8.50",
+  "stored_od": "6.00",
+  "fleetguard": "HF6190",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6190/01t5x000008FH7EAAW",
+  "fleetguard_height_mm": 216.66,
+  "fleetguard_od_mm": 152.4
+ },
+ {
+  "sku": "EH60445",
+  "codigo_base": "P550445",
+  "stored_height": "6.81",
+  "stored_od": "3.68",
+  "fleetguard": "HF28857",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf28857/01t5x000008FG31AAG",
+  "fleetguard_height_mm": 174.5,
+  "fleetguard_od_mm": 93.5
+ },
+ {
+  "sku": "EH60480",
+  "codigo_base": "P170480",
+  "stored_height": "5.52",
+  "stored_od": "3.13",
+  "fleetguard": "HF28938",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf28938/01t5x000008FGwTAAW",
+  "fleetguard_height_mm": 140.21,
+  "fleetguard_od_mm": 79.5
+ },
+ {
+  "sku": "EH60523",
+  "codigo_base": "P550523",
+  "stored_height": "6.88",
+  "stored_od": "5.07",
+  "fleetguard": "HF6376",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6376/01t5x000008FGCwAAO",
+  "fleetguard_height_mm": 177.8,
+  "fleetguard_od_mm": 128.8
+ },
+ {
+  "sku": "EH60527",
+  "codigo_base": "P560527",
+  "stored_height": "8.00",
+  "stored_od": "4.39",
+  "fleetguard": "HF35278",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf35278/01t5x000008FEKVAA4",
+  "fleetguard_height_mm": 203.2,
+  "fleetguard_od_mm": null
+ },
+ {
+  "sku": "EH60532",
+  "codigo_base": "P550532",
+  "stored_height": "11.97",
+  "stored_od": "5.51",
+  "fleetguard": "HF28879",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf28879/01t5x000008FG97AAG",
+  "fleetguard_height_mm": 305.05,
+  "fleetguard_od_mm": null
+ },
+ {
+  "sku": "EH60546",
+  "codigo_base": "P170546",
+  "stored_height": "14.24",
+  "stored_od": "4.70",
+  "fleetguard": "HF35438",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf35438/01t5x000008FCL3AAO",
+  "fleetguard_height_mm": 361.7,
+  "fleetguard_od_mm": 121.0
+ },
+ {
+  "sku": "EH60575",
+  "codigo_base": "P550575",
+  "stored_height": "11.06",
+  "stored_od": "5.13",
+  "fleetguard": "HF6202",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6202/01t5x000008FH7NAAW",
+  "fleetguard_height_mm": 282.7,
+  "fleetguard_od_mm": 129.54
+ },
+ {
+  "sku": "EH60577",
+  "codigo_base": "P550577",
+  "stored_height": "16.73",
+  "stored_od": "5.51",
+  "fleetguard": "HF35195",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf35195/01t5x000008FN3iAAG",
+  "fleetguard_height_mm": 425.0,
+  "fleetguard_od_mm": 142.0
+ },
+ {
+  "sku": "EH60578",
+  "codigo_base": "P550578",
+  "stored_height": "11.44",
+  "stored_od": "3.53",
+  "fleetguard": "HF7922",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf7922/01t5x000008FGbmAAG",
+  "fleetguard_height_mm": 290.83,
+  "fleetguard_od_mm": 90.0
+ },
+ {
+  "sku": "EH60587",
+  "codigo_base": "P170587",
+  "stored_height": "3.28",
+  "stored_od": "1.88",
+  "fleetguard": "ST1036",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/st1036/01t5x000008FEDmAAO",
+  "fleetguard_height_mm": 84.0,
+  "fleetguard_od_mm": 47.0
+ },
+ {
+  "sku": "EH60588",
+  "codigo_base": "P170588",
+  "stored_height": "6.02",
+  "stored_od": "1.88",
+  "fleetguard": "ST1038",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/st1038/01t5x000008FEENAA4",
+  "fleetguard_height_mm": 153.0,
+  "fleetguard_od_mm": 47.0
+ },
+ {
+  "sku": "EH60589",
+  "codigo_base": "P170589",
+  "stored_height": "6.02",
+  "stored_od": "1.87",
+  "fleetguard": "HF30217",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf30217/01t5x000008FEMkAAO",
+  "fleetguard_height_mm": 152.91,
+  "fleetguard_od_mm": 47.24
+ },
+ {
+  "sku": "EH60590",
+  "codigo_base": "P170590",
+  "stored_height": "4.49",
+  "stored_od": "2.73",
+  "fleetguard": "ST1042",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/st1042/01t5x000008FEEQAA4",
+  "fleetguard_height_mm": 116.0,
+  "fleetguard_od_mm": 69.0
+ },
+ {
+  "sku": "EH60591",
+  "codigo_base": "P170591",
+  "stored_height": "4.49",
+  "stored_od": "2.73",
+  "fleetguard": "ST1044",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/st1044/01t5x000008FEESAA4",
+  "fleetguard_height_mm": 116.0,
+  "fleetguard_od_mm": 69.0
+ },
+ {
+  "sku": "EH60592",
+  "codigo_base": "P170592",
+  "stored_height": "6.82",
+  "stored_od": "2.73",
+  "fleetguard": "ST1046",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/st1046/01t5x000008FEEUAA4",
+  "fleetguard_height_mm": 175.0,
+  "fleetguard_od_mm": 69.0
+ },
+ {
+  "sku": "EH60593",
+  "codigo_base": "P170593",
+  "stored_height": "6.82",
+  "stored_od": "2.73",
+  "fleetguard": "ST1048",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/st1048/01t5x000008FEEVAA4",
+  "fleetguard_height_mm": 175.0,
+  "fleetguard_od_mm": 69.0
+ },
+ {
+  "sku": "EH60596",
+  "codigo_base": "P170596",
+  "stored_height": "12.95",
+  "stored_od": "3.57",
+  "fleetguard": "ST1054",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/st1054/01t5x000008FEEaAAO",
+  "fleetguard_height_mm": 329.0,
+  "fleetguard_od_mm": 90.5
+ },
+ {
+  "sku": "EH60597",
+  "codigo_base": "P170597",
+  "stored_height": "12.95",
+  "stored_od": "3.57",
+  "fleetguard": "HF6847",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6847/01t5x000008FBgKAAW",
+  "fleetguard_height_mm": 329.0,
+  "fleetguard_od_mm": 90.5
+ },
+ {
+  "sku": "EH60599",
+  "codigo_base": "P170599",
+  "stored_height": "3.67",
+  "stored_od": "1.38",
+  "fleetguard": "HF6861",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6861/01t5x000008FBc2AAG",
+  "fleetguard_height_mm": 94.0,
+  "fleetguard_od_mm": 35.0
+ },
+ {
+  "sku": "EH60601",
+  "codigo_base": "P550601",
+  "stored_height": "4.21",
+  "stored_od": "4.00",
+  "fleetguard": "HF35379",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf35379/01t5x000008FBl3AAG",
+  "fleetguard_height_mm": 106.83,
+  "fleetguard_od_mm": 101.6
+ },
+ {
+  "sku": "EH60605",
+  "codigo_base": "P550605",
+  "stored_height": "7.00",
+  "stored_od": "5.50",
+  "fleetguard": "HF7946",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf7946/01t5x000008FG9KAAW",
+  "fleetguard_height_mm": 177.81,
+  "fleetguard_od_mm": 139.7
+ },
+ {
+  "sku": "EH60648",
+  "codigo_base": "P550648",
+  "stored_height": "9.02",
+  "stored_od": "4.04",
+  "fleetguard": "HF35255",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf35255/01t5x000008FE0gAAG",
+  "fleetguard_height_mm": 228.09,
+  "fleetguard_od_mm": 102.36
+ },
+ {
+  "sku": "EH60653",
+  "codigo_base": "P560653",
+  "stored_height": "7.85",
+  "stored_od": "5.04",
+  "fleetguard": "HF28961",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf28961/01t5x000008FC5uAAG",
+  "fleetguard_height_mm": 200.0,
+  "fleetguard_od_mm": 128.93
+ },
+ {
+  "sku": "EH60694",
+  "codigo_base": "P550694",
+  "stored_height": "5.59",
+  "stored_od": "3.48",
+  "fleetguard": "HF6198",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6198/01t5x000008FH7KAAW",
+  "fleetguard_height_mm": 142.49,
+  "fleetguard_od_mm": 88.39
+ },
+ {
+  "sku": "EH60698",
+  "codigo_base": "P550698",
+  "stored_height": "5.00",
+  "stored_od": "3.98",
+  "fleetguard": "HF6238",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6238/01t5x000008FH5AAAW",
+  "fleetguard_height_mm": 128.78,
+  "fleetguard_od_mm": 101.22
+ },
+ {
+  "sku": "EH60699",
+  "codigo_base": "P550699",
+  "stored_height": "5.51",
+  "stored_od": "3.46",
+  "fleetguard": "HF6320",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6320/01t5x000008FGCEAA4",
+  "fleetguard_height_mm": 142.49,
+  "fleetguard_od_mm": 88.52
+ },
+ {
+  "sku": "EH60700",
+  "codigo_base": "P160700",
+  "stored_height": "16.00",
+  "stored_od": "4.39",
+  "fleetguard": "HF6296",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6296/01t5x000008FGAvAAO",
+  "fleetguard_height_mm": 406.4,
+  "fleetguard_od_mm": null
+ },
+ {
+  "sku": "EH60701",
+  "codigo_base": "P550701",
+  "stored_height": "6.81",
+  "stored_od": "3.72",
+  "fleetguard": "HF6366",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6366/01t5x000008FGAlAAO",
+  "fleetguard_height_mm": 175.26,
+  "fleetguard_od_mm": 93.47
+ },
+ {
+  "sku": "EH60705",
+  "codigo_base": "P550705",
+  "stored_height": "8.00",
+  "stored_od": "3.75",
+  "fleetguard": "HF6635",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6635/01t5x000008FGqxAAG",
+  "fleetguard_height_mm": 203.2,
+  "fleetguard_od_mm": 93.47
+ },
+ {
+  "sku": "EH60781",
+  "codigo_base": "P550781",
+  "stored_height": "5.06",
+  "stored_od": "3.99",
+  "fleetguard": "HF8140",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf8140/01t5x000008FG9rAAG",
+  "fleetguard_height_mm": 128.52,
+  "fleetguard_od_mm": 101.22
+ },
+ {
+  "sku": "EH60816",
+  "codigo_base": "P550816",
+  "stored_height": "9.00",
+  "stored_od": "3.12",
+  "fleetguard": "HF6201",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6201/01t5x000008FH7MAAW",
+  "fleetguard_height_mm": 228.6,
+  "fleetguard_od_mm": 79.12
+ },
+ {
+  "sku": "EH60903",
+  "codigo_base": "P580903",
+  "stored_height": "10.65",
+  "stored_od": "4.72",
+  "fleetguard": "HF29122",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf29122/01t5x000008FN8FAAW",
+  "fleetguard_height_mm": 272.8,
+  "fleetguard_od_mm": 120.0
+ },
+ {
+  "sku": "EH60923",
+  "codigo_base": "P550923",
+  "stored_height": "10.88",
+  "stored_od": "5.08",
+  "fleetguard": "HF6344",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6344/01t5x000008FGAgAAO",
+  "fleetguard_height_mm": 282.45,
+  "fleetguard_od_mm": 129.54
+ },
+ {
+  "sku": "EH60925",
+  "codigo_base": "P550925",
+  "stored_height": "9.00",
+  "stored_od": "6.84",
+  "fleetguard": "HF6339",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6339/01t5x000008FGAdAAO",
+  "fleetguard_height_mm": 231.65,
+  "fleetguard_od_mm": 173.48
+ },
+ {
+  "sku": "EH61054",
+  "codigo_base": "P551054",
+  "stored_height": "8.27",
+  "stored_od": "3.94",
+  "fleetguard": "HF6354",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6354/01t5x000008FGAHAA4",
+  "fleetguard_height_mm": 209.8,
+  "fleetguard_od_mm": 100.08
+ },
+ {
+  "sku": "EH61094",
+  "codigo_base": "P551094",
+  "stored_height": "9.25",
+  "stored_od": "4.00",
+  "fleetguard": "HF35010",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf35010/01t5x000008FCLEAA4",
+  "fleetguard_height_mm": 236.73,
+  "fleetguard_od_mm": 101.0
+ },
+ {
+  "sku": "EH61095",
+  "codigo_base": "P551095",
+  "stored_height": "8.90",
+  "stored_od": "5.07",
+  "fleetguard": "HF35101",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf35101/01t5x000008FN3DAAW",
+  "fleetguard_height_mm": 231.65,
+  "fleetguard_od_mm": 129.49
+ },
+ {
+  "sku": "EH61108",
+  "codigo_base": "P761108",
+  "stored_height": "4.53",
+  "stored_od": "3.82",
+  "fleetguard": "HF7535",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf7535/01t5x000008FG7OAAW",
+  "fleetguard_height_mm": 113.0,
+  "fleetguard_od_mm": 94.0
+ },
+ {
+  "sku": "EH61142",
+  "codigo_base": "P551142",
+  "stored_height": "11.81",
+  "stored_od": "5.90",
+  "fleetguard": "HF28975",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf28975/01t5x000008FH1qAAG",
+  "fleetguard_height_mm": 299.97,
+  "fleetguard_od_mm": 150.01
+ },
+ {
+  "sku": "EH61158",
+  "codigo_base": "P551158",
+  "stored_height": "9.12",
+  "stored_od": "3.94",
+  "fleetguard": "HF6072",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6072/01t5x000008FHBrAAO",
+  "fleetguard_height_mm": 231.65,
+  "fleetguard_od_mm": 101.6
+ },
+ {
+  "sku": "EH61160",
+  "codigo_base": "P551160",
+  "stored_height": "10.94",
+  "stored_od": "3.94",
+  "fleetguard": "HF6213",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6213/01t5x000008FH50AAG",
+  "fleetguard_height_mm": 280.92,
+  "fleetguard_od_mm": null
+ },
+ {
+  "sku": "EH61200",
+  "codigo_base": "P551200",
+  "stored_height": "3.36",
+  "stored_od": "2.75",
+  "fleetguard": "HF6092",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6092/01t5x000008FHD7AAO",
+  "fleetguard_height_mm": 85.34,
+  "fleetguard_od_mm": 69.75
+ },
+ {
+  "sku": "EH61204",
+  "codigo_base": "P551204",
+  "stored_height": "3.76",
+  "stored_od": "3.67",
+  "fleetguard": "HF6120",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6120/01t5x000008FFgIAAW",
+  "fleetguard_height_mm": 97.71,
+  "fleetguard_od_mm": 93.17
+ },
+ {
+  "sku": "EH61210",
+  "codigo_base": "P551210",
+  "stored_height": "17.72",
+  "stored_od": "5.90",
+  "fleetguard": "HF28978",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf28978/01t5x000008FCEDAA4",
+  "fleetguard_height_mm": 453.9,
+  "fleetguard_od_mm": 150.01
+ },
+ {
+  "sku": "EH61215",
+  "codigo_base": "P551215",
+  "stored_height": "9.00",
+  "stored_od": "4.52",
+  "fleetguard": "HF6149",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6149/01t5x000008FFgdAAG",
+  "fleetguard_height_mm": 228.6,
+  "fleetguard_od_mm": 114.81
+ },
+ {
+  "sku": "EH61235",
+  "codigo_base": "P551235",
+  "stored_height": "9.50",
+  "stored_od": "3.86",
+  "fleetguard": "HF6579",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6579/01t5x000008FGasAAG",
+  "fleetguard_height_mm": 241.3,
+  "fleetguard_od_mm": 98.04
+ },
+ {
+  "sku": "EH61242",
+  "codigo_base": "P551242",
+  "stored_height": "8.22",
+  "stored_od": "4.89",
+  "fleetguard": "HF6802",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6802/01t5x000008FGpeAAG",
+  "fleetguard_height_mm": 208.79,
+  "fleetguard_od_mm": 126.07
+ },
+ {
+  "sku": "EH61244",
+  "codigo_base": "P171244",
+  "stored_height": "6.50",
+  "stored_od": "2.83",
+  "fleetguard": "HF7751",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf7751/01t5x000008FHELAA4",
+  "fleetguard_height_mm": 166.12,
+  "fleetguard_od_mm": null
+ },
+ {
+  "sku": "EH61248",
+  "codigo_base": "P171248",
+  "stored_height": "8.69",
+  "stored_od": "2.73",
+  "fleetguard": "HF7778",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf7778/01t5x000008FHEkAAO",
+  "fleetguard_height_mm": 220.47,
+  "fleetguard_od_mm": null
+ },
+ {
+  "sku": "EH61275",
+  "codigo_base": "P171275",
+  "stored_height": "11.63",
+  "stored_od": "4.70",
+  "fleetguard": "HF6586",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6586/01t5x000008FGayAAG",
+  "fleetguard_height_mm": 294.26,
+  "fleetguard_od_mm": 119.89
+ },
+ {
+  "sku": "EH61290",
+  "codigo_base": "P551290",
+  "stored_height": "9.25",
+  "stored_od": "3.94",
+  "fleetguard": "HF6084",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6084/01t5x000008FHCjAAO",
+  "fleetguard_height_mm": 231.65,
+  "fleetguard_od_mm": 101.6
+ },
+ {
+  "sku": "EH61314",
+  "codigo_base": "P171314",
+  "stored_height": "9.31",
+  "stored_od": "2.69",
+  "fleetguard": "HF7317",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf7317/01t5x000008FG6GAAW",
+  "fleetguard_height_mm": 242.82,
+  "fleetguard_od_mm": null
+ },
+ {
+  "sku": "EH61315",
+  "codigo_base": "P171315",
+  "stored_height": "9.31",
+  "stored_od": "2.69",
+  "fleetguard": "HF7314",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf7314/01t5x000008FG6FAAW",
+  "fleetguard_height_mm": 242.82,
+  "fleetguard_od_mm": null
+ },
+ {
+  "sku": "EH61323",
+  "codigo_base": "P551323",
+  "stored_height": "5.35",
+  "stored_od": "3.66",
+  "fleetguard": "HF6123",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6123/01t5x000008FFgLAAW",
+  "fleetguard_height_mm": 136.14,
+  "fleetguard_od_mm": 93.22
+ },
+ {
+  "sku": "EH61324",
+  "codigo_base": "P551324",
+  "stored_height": "4.52",
+  "stored_od": "3.66",
+  "fleetguard": "HF6337",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6337/01t5x000008FGAbAAO",
+  "fleetguard_height_mm": 116.5,
+  "fleetguard_od_mm": 93.5
+ },
+ {
+  "sku": "EH61327",
+  "codigo_base": "P551327",
+  "stored_height": "5.68",
+  "stored_od": "3.76",
+  "fleetguard": "HF6351",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf6351/01t5x000008FGB4AAO",
+  "fleetguard_height_mm": 142.5,
+  "fleetguard_od_mm": 93.5
+ },
+ {
+  "sku": "EH61333",
+  "codigo_base": "P551333",
+  "stored_height": "17.72",
+  "stored_od": "5.90",
+  "fleetguard": "HF7923",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf7923/01t5x000008FGbnAAG",
+  "fleetguard_height_mm": 450.85,
+  "fleetguard_od_mm": 150.11
+ },
+ {
+  "sku": "EH61334",
+  "codigo_base": "P551334",
+  "stored_height": "17.72",
+  "stored_od": "5.90",
+  "fleetguard": "HF7923",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf7923/01t5x000008FGbnAAG",
+  "fleetguard_height_mm": 450.85,
+  "fleetguard_od_mm": 150.11
+ },
+ {
+  "sku": "EH61348",
+  "codigo_base": "P551348",
+  "stored_height": "6.81",
+  "stored_od": "3.66",
+  "fleetguard": "HF35018",
+  "fleetguard_url": "https://www.fleetguard.com/es/product/hf35018/01t5x000008FCT2AAO",
+  "fleetguard_height_mm": 177.57,
+  "fleetguard_od_mm": null
+ }
+]
