@@ -1,0 +1,47 @@
+import type { PageLang } from '@/lib/localized-routes';
+/** Localized carousel editorial copy; never changes the product-family source of truth. */
+const translations: Record<'es' | 'pt',Record<string,string>> = {
+  "es": {
+    "Mining operations run on machines that cost more per hour of downtime than almost any other industry. ELIMFILTERS® protection systems are built to hold up under constant dust loading, vibration, and extreme duty cycles, so contamination does not turn into an unplanned failure. Working through a global distributor network, we make sure the right protection system is available where the equipment actually operates, not just where it was purchased.": "Las operaciones mineras dependen de equipos cuya parada genera costos elevados. Los sistemas ELIMFILTERS® están diseñados para condiciones de polvo constante, vibración y ciclos de trabajo severos. Nuestra red de distribuidores busca facilitar el acceso a la protección adecuada en el lugar donde realmente trabajan los equipos.",
+    "Primary Air": "Aire primario",
+    "Primary Fuel": "Combustible primario",
+    "Oil Filters": "Filtros de aceite",
+    "Cabin Filters": "Filtros de cabina",
+    "Fuel Water Separators": "Separadores de agua del combustible",
+    "Hydraulic Filters": "Filtros hidráulicos",
+    "Primary air elements are the main contamination barrier protecting the combustion chamber from particulate ingestion.": "Los elementos primarios de aire constituyen la barrera principal contra la entrada de partículas en la cámara de combustión.",
+    "MACROCORE™ progressive-density media distributes contaminant loading through the full media depth while balancing efficiency, capacity, and restriction.": "El medio de densidad progresiva MACROCORE™ distribuye la carga de contaminantes en toda su profundidad, equilibrando eficiencia, capacidad y restricción.",
+    "Primary fuel filters remove sediment, rust, and coarse particulate contamination before fuel reaches the final filtration stage and injection circuit.": "Los filtros primarios de combustible eliminan sedimentos, óxido y partículas gruesas antes de la filtración final y el circuito de inyección.",
+    "SYNTAPORE™ media provides staged particulate interception matched to fuel-system cleanliness requirements and service conditions.": "El medio SYNTAPORE™ permite capturar partículas por etapas según los requisitos de limpieza del sistema de combustible y las condiciones de servicio.",
+    "Oil filters control soot agglomerates, wear debris, and oxidation byproducts before lubricant returns to critical interfaces.": "Los filtros de aceite controlan aglomerados de hollín, partículas de desgaste y productos de oxidación antes de que el lubricante regrese a los componentes críticos.",
+    "SYNTRAX™ full-flow composite media balances efficiency, contaminant capacity, pressure drop, and valve integrity across the service interval.": "El medio compuesto de flujo total SYNTRAX™ equilibra eficiencia, capacidad de retención, pérdida de presión e integridad de las válvulas durante el intervalo de servicio.",
+    "Cabin filters protect operator and passenger air from particulate, allergens, odors, and selected gaseous contaminants.": "Los filtros de cabina protegen el aire de operadores y pasajeros frente a partículas, alérgenos, olores y determinados contaminantes gaseosos.",
+    "MICROKAPPA™ combines mechanical and electrostatic particle capture with adsorption layers where required by the application.": "MICROKAPPA™ combina captura mecánica y electrostática de partículas con capas adsorbentes cuando la aplicación lo requiere.",
+    "Fuel-water separators remove free and emulsified water while supporting particulate control in diesel fuel systems.": "Los separadores de agua del combustible eliminan agua libre y emulsionada y contribuyen al control de partículas en sistemas diésel.",
+    "HYDROCORE™ combines staged separation, droplet coalescence, water collection, and a final hydrophobic barrier for standard non-turbine spin-on and cartridge fuel/water separator applications.": "HYDROCORE™ combina separación por etapas, coalescencia de gotas, recolección de agua y una barrera hidrofóbica final en separadores convencionales de combustible/agua tipo roscado y cartucho, no de turbina.",
+    "Hydraulic filters maintain fluid cleanliness around the tolerance requirements of pumps, valves, actuators, and servo controls.": "Los filtros hidráulicos mantienen la limpieza del fluido conforme a las tolerancias de bombas, válvulas, actuadores y servocontroles.",
+    "NANOFORCE™ uses Beta-rated media and collapse-resistant construction matched to flow, pressure, particle size, and duty cycle.": "NANOFORCE™ utiliza medios con clasificación Beta y una construcción resistente al colapso, adaptados al caudal, presión, tamaño de partícula y ciclo de trabajo."
+  },
+  "pt": {
+    "Mining operations run on machines that cost more per hour of downtime than almost any other industry. ELIMFILTERS® protection systems are built to hold up under constant dust loading, vibration, and extreme duty cycles, so contamination does not turn into an unplanned failure. Working through a global distributor network, we make sure the right protection system is available where the equipment actually operates, not just where it was purchased.": "Operações de mineração dependem de equipamentos cujas paradas geram custos elevados. Os sistemas ELIMFILTERS® são projetados para condições de poeira constante, vibração e ciclos severos. Nossa rede de distribuidores busca facilitar o acesso à proteção adequada no local onde os equipamentos realmente operam.",
+    "Primary Air": "Ar primário",
+    "Primary Fuel": "Combustível primário",
+    "Oil Filters": "Filtros de óleo",
+    "Cabin Filters": "Filtros de cabine",
+    "Fuel Water Separators": "Separadores de água do combustível",
+    "Hydraulic Filters": "Filtros hidráulicos",
+    "Primary air elements are the main contamination barrier protecting the combustion chamber from particulate ingestion.": "Os elementos primários de ar constituem a principal barreira contra a entrada de partículas na câmara de combustão.",
+    "MACROCORE™ progressive-density media distributes contaminant loading through the full media depth while balancing efficiency, capacity, and restriction.": "O meio de densidade progressiva MACROCORE™ distribui a carga de contaminantes por toda sua profundidade, equilibrando eficiência, capacidade e restrição.",
+    "Primary fuel filters remove sediment, rust, and coarse particulate contamination before fuel reaches the final filtration stage and injection circuit.": "Filtros primários de combustível removem sedimentos, ferrugem e partículas grossas antes da filtração final e do circuito de injeção.",
+    "SYNTAPORE™ media provides staged particulate interception matched to fuel-system cleanliness requirements and service conditions.": "O meio SYNTAPORE™ permite capturar partículas por etapas conforme os requisitos de limpeza do sistema de combustível e as condições de serviço.",
+    "Oil filters control soot agglomerates, wear debris, and oxidation byproducts before lubricant returns to critical interfaces.": "Filtros de óleo controlam aglomerados de fuligem, partículas de desgaste e subprodutos de oxidação antes que o lubrificante retorne aos componentes críticos.",
+    "SYNTRAX™ full-flow composite media balances efficiency, contaminant capacity, pressure drop, and valve integrity across the service interval.": "O meio composto de fluxo total SYNTRAX™ equilibra eficiência, capacidade de retenção, perda de pressão e integridade das válvulas durante o intervalo de manutenção.",
+    "Cabin filters protect operator and passenger air from particulate, allergens, odors, and selected gaseous contaminants.": "Filtros de cabine protegem o ar de operadores e passageiros contra partículas, alérgenos, odores e determinados contaminantes gasosos.",
+    "MICROKAPPA™ combines mechanical and electrostatic particle capture with adsorption layers where required by the application.": "MICROKAPPA™ combina captura mecânica e eletrostática de partículas com camadas adsorventes quando a aplicação exige.",
+    "Fuel-water separators remove free and emulsified water while supporting particulate control in diesel fuel systems.": "Separadores de água do combustível removem água livre e emulsionada e contribuem para o controle de partículas em sistemas a diesel.",
+    "HYDROCORE™ combines staged separation, droplet coalescence, water collection, and a final hydrophobic barrier for standard non-turbine spin-on and cartridge fuel/water separator applications.": "HYDROCORE™ combina separação por etapas, coalescência de gotas, coleta de água e uma barreira hidrofóbica final em separadores convencionais de combustível/água rosqueáveis e de cartucho, não de turbina.",
+    "Hydraulic filters maintain fluid cleanliness around the tolerance requirements of pumps, valves, actuators, and servo controls.": "Filtros hidráulicos mantêm a limpeza do fluido conforme as tolerâncias de bombas, válvulas, atuadores e servocontroles.",
+    "NANOFORCE™ uses Beta-rated media and collapse-resistant construction matched to flow, pressure, particle size, and duty cycle.": "NANOFORCE™ utiliza meios classificados por Beta e construção resistente ao colapso, adequados à vazão, pressão, tamanho das partículas e ciclo de trabalho."
+  }
+};
+export const carouselText = (lang: PageLang, value: string) => lang === 'en' ? value : translations[lang][value] ?? value;
