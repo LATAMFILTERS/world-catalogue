@@ -1343,7 +1343,7 @@ function renderCard(p, index) {
           </div>
           <div class="card-badges">
             ${p.filter_type      ? `<span class="badge badge-type">${esc(p.filter_type)}</span>` : ''}
-            ${p.filter_subtype   ? `<span class="badge badge-type">${esc(p.filter_subtype)}</span>` : ''}
+            <span class="badge badge-type">${MEDIA_LABEL}</span>
             ${p.installation_type ? `<span class="badge badge-type">${esc(p.installation_type)}</span>` : ''}
             ${p.duty             ? `<span class="badge badge-duty">${esc(p.duty.toUpperCase())}</span>` : ''}
             ${p.technology       ? `<a href="https://elimfilters.com/technologies/${String(p.technology).replace(/[™®©]/g, '').normalize('NFKD').replace(/[^A-Za-z0-9]/g, '').toLowerCase()}/" target="_blank" rel="noopener noreferrer" class="badge badge-tech" title="Learn more about ${esc(p.technology)}">${esc(p.technology)}</a>` : ''}
