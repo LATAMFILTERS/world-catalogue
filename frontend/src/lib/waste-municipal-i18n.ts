@@ -102,7 +102,14 @@ const translations: Record<'es'|'pt',Record<string,string>> = {
     "Mission": "Misión",
     "Duty & Service": "Trabajo y mantenimiento",
     "Protection": "Protección",
-    "Application Evidence": "Evidencia de aplicación"
+    "Application Evidence": "Evidencia de aplicación",
+    "Vehicle / Equipment": "Vehículo / Equipo",
+    "Identify the refuse truck, sweeper, vacuum truck, utility vehicle or public-works equipment.": "Identifique recolector, barredora, camión de vacío, vehículo de servicio o equipo de obras públicas.",
+    "Define collection, sweeping, sewer, utility or support duty and the auxiliary equipment used.": "Defina recolección, barrido, alcantarillado, servicios auxiliares y equipos utilizados.",
+    "Exposure": "Exposición",
+    "Document dust, debris, fuel condition, idle time, hydraulic work and route environment.": "Documente polvo, residuos, combustible, ralentí, trabajo hidráulico y condiciones de ruta.",
+    "Map the exposure to engine, fuel, lubrication, hydraulic, cooling, compressed-air or cabin protection.": "Relacione la exposición con protección de motor, combustible, lubricación, hidráulica, refrigeración, aire comprimido o cabina.",
+    "Validate the final filter using OEM reference, dimensions, configuration and documented application evidence.": "Valide el filtro con referencia OEM, dimensiones, configuración y evidencia documentada de aplicación."
   },
   "pt": {
     "WASTE & MUNICIPAL / PUBLIC-SERVICE FLEET PROTECTION": "RESÍDUOS E SERVIÇOS MUNICIPAIS / PROTEÇÃO DE FROTAS",
@@ -206,7 +213,14 @@ const translations: Record<'es'|'pt',Record<string,string>> = {
     "Mission": "Missão",
     "Duty & Service": "Trabalho e manutenção",
     "Protection": "Proteção",
-    "Application Evidence": "Evidência de aplicação"
+    "Application Evidence": "Evidência de aplicação",
+    "Vehicle / Equipment": "Veículo / Equipamento",
+    "Identify the refuse truck, sweeper, vacuum truck, utility vehicle or public-works equipment.": "Identifique coletor, varredeira, caminhão de vácuo, veículo de serviço ou equipamento de obras públicas.",
+    "Define collection, sweeping, sewer, utility or support duty and the auxiliary equipment used.": "Defina coleta, varrição, esgoto, serviços auxiliares e equipamentos usados.",
+    "Exposure": "Exposição",
+    "Document dust, debris, fuel condition, idle time, hydraulic work and route environment.": "Documente poeira, resíduos, combustível, marcha lenta, trabalho hidráulico e condições da rota.",
+    "Map the exposure to engine, fuel, lubrication, hydraulic, cooling, compressed-air or cabin protection.": "Relacione a exposição à proteção de motor, combustível, lubrificação, hidráulica, arrefecimento, ar comprimido ou cabine.",
+    "Validate the final filter using OEM reference, dimensions, configuration and documented application evidence.": "Valide o filtro com referência OEM, dimensões, configuração e evidências documentadas de aplicação."
   }
 };
 export const municipalText = (lang:PageLang, value:string) => lang === 'en' ? value : translations[lang][value] ?? value;
