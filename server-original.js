@@ -11,7 +11,7 @@ const {
   isSameFunctionalFamily,
   filterAlternativesByFunctionalFamily,
 } = require('./lib/alternative-functional-family');
-const { publicFilterType } = require('./lib/public-filter-type');
+const { publicFilterType, publicSubType } = require('./lib/public-filter-type');
 const EmailIntentClassifier = require('./lib/email-intent-classifier');
 const TranslationService = require('./lib/translation-service');
 const { findPlatform, parseVehicleSearchText, normalizeAlphaNum } = require('./lib/vehicle-application-normalizer');
@@ -1383,7 +1383,8 @@ function buildFilterData(row, lang = 'en'){
     elimfilters_sku: row.sku,
     description: extractText(row.description, lang),
     filter_type: publicFilterType(row) || extractText(row.filter_type, lang),
-    filter_subtype: MEDIA_LABEL,
+    filter_subtype: publicSubType(row),
+    filter_media: MEDIA_LABEL,
     technology: TECH_NAME_FIXES[row.technology] || row.technology || null,
     technology_logo: getTechLogo(TECH_NAME_FIXES[row.technology] || row.technology),
     installation_type: row.installation_type || null,

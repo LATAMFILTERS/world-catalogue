@@ -2,7 +2,7 @@
 
 const test = require('node:test');
 const assert = require('node:assert/strict');
-const { publicFilterType } = require('../lib/public-filter-type');
+const { publicFilterType, publicSubType } = require('../lib/public-filter-type');
 
 test('maps stored rows to the public Type', () => {
   const t = (sku, filter_type, technology) => publicFilterType({ sku, filter_type, technology });
@@ -17,4 +17,15 @@ test('maps stored rows to the public Type', () => {
   assert.equal(t('EH68277', 'transmission'), 'Transmission');
   assert.equal(t('EH60416', 'hydraulic'), 'Hydraulic');
   assert.equal(t('XX00000', 'fuel'), null);
+});
+
+test('shows sub_type only from the closed list', () => {
+  const s = (sub_type) => publicSubType({ sub_type });
+  assert.equal(s('Primary Radial Seal'), 'Primary Radial Seal');
+  assert.equal(s('Secondary'), 'Secondary');
+  assert.equal(s('Spin On'), 'Spin On');
+  assert.equal(s('Cellulose'), null);
+  assert.equal(s('Fleetguard'), null);
+  assert.equal(s('Primary Synthetic'), null);
+  assert.equal(s(null), null);
 });
