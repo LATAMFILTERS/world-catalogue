@@ -69,14 +69,16 @@ const questions = [
 ] as const;
 
 export function MiningIndustryPageV2({ lang = 'en' }: { lang?: PageLang }) {
+  const pageUrl = `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/industries/mining/`;
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': `${PAGE_URL}#page`,
-        url: PAGE_URL,
-        name: 'Mining Filtration Systems',
+        '@id': `${pageUrl}#page`,
+        url: pageUrl,
+        name: lang === 'es' ? 'Sistemas de filtración minera' : lang === 'pt' ? 'Sistemas de filtração para mineração' : 'Mining Filtration Systems',
+        inLanguage: lang === 'pt' ? 'pt-BR' : lang,
         description: 'Mining filtration systems and contamination-control architecture for haul trucks, excavators, loaders, drills and severe-duty mining equipment.',
         isPartOf: { '@id': `${BASE_URL}/#website` },
         publisher: { '@id': `${BASE_URL}/#organization` },
@@ -88,27 +90,27 @@ export function MiningIndustryPageV2({ lang = 'en' }: { lang?: PageLang }) {
           { '@type': 'Thing', name: 'Mining equipment total cost of ownership' },
           { '@type': 'Thing', name: 'Mining dust failure mechanisms' },
         ],
-        breadcrumb: { '@id': `${PAGE_URL}#breadcrumb` },
+        breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': `${PAGE_URL}#breadcrumb`,
+        '@id': `${pageUrl}#breadcrumb`,
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
           { '@type': 'ListItem', position: 2, name: 'Industries', item: `${BASE_URL}/industries/` },
-          { '@type': 'ListItem', position: 3, name: 'Mining', item: PAGE_URL },
+          { '@type': 'ListItem', position: 3, name: 'Mining', item: pageUrl },
         ],
       },
       {
         '@type': 'ItemList',
-        '@id': `${PAGE_URL}#equipment`,
-        name: 'Mining equipment protected by ELIMFILTERS',
-        itemListElement: equipment.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name })),
+        '@id': `${pageUrl}#equipment`,
+        name: lang === 'es' ? 'Equipos mineros protegidos por ELIMFILTERS' : lang === 'pt' ? 'Equipamentos de mineração protegidos pela ELIMFILTERS' : 'Mining equipment protected by ELIMFILTERS',
+        itemListElement: equipment.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name: miningText(lang, name) })),
       },
       {
         '@type': 'FAQPage',
-        '@id': `${PAGE_URL}#faq`,
-        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+        '@id': `${pageUrl}#faq`,
+        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: miningText(lang, q), acceptedAnswer: { '@type': 'Answer', text: miningText(lang, a) } })),
       },
     ],
   };
@@ -172,7 +174,7 @@ export function MiningIndustryPageV2({ lang = 'en' }: { lang?: PageLang }) {
         <div style={principle}><span style={principleLabel}>{miningText(lang, "MINING ENGINEERING PRINCIPLE")}</span><p style={principleText}>{miningText(lang, "The correct filtration strategy is not determined by machine type alone. Dust loading, fluid cleanliness requirements, fuel handling, duty cycle, service interval and component sensitivity determine the protection architecture.")}</p></div>
       </section>
 
-      <IndustryFilterCarousel dutyClass="HD" industryName="Mining" />
+      <IndustryFilterCarousel dutyClass="HD" industryName="Mining" lang={lang} />
 
       <section style={stakesSection} aria-labelledby="stakes-title">
         <div style={wideHeader}><p style={eyebrow}>{miningText(lang, "WHAT CONTAMINATION PUTS AT RISK")}</p><h2 id="stakes-title" style={sectionTitle}>{miningText(lang, "Protect the operating chain before contamination becomes downtime.")}</h2><p style={bodyWide}>{miningText(lang, "In mining, contamination can affect airflow, hydraulic cleanliness, fuel-system integrity, thermal control and overall equipment availability across the operating chain.")}</p></div>
