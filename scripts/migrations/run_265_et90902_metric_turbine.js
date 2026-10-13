@@ -1,25 +1,30 @@
 'use strict';
 
 /**
- * ET90902 (Parker Racor 902FH): record base governance and correct the port.
+ * ET90902 (Racor 902FH) and ET91002 (Racor 1002FH): record base governance and
+ * correct the port of ET90902.
  *
  * Parker Racor catalog (operator-supplied RacorCatalog.pdf), Turbine Series,
- * "How to Order", printed page A253 (PDF page 275 of 888):
- *   "Specify 900FH for 7/8''-14 UNF ports or 902FH for 22M ports."
- * Read from a screenshot of the page taken by the operator on 2026-10-12; the
- * model numbers on that line are drawn in a font that text extraction drops.
- * Screenshot kept at
- * C:/ELIMSERVER/evidence/et9-review-20261012/racor-full/RacorCatalog-p275-A253-how-to-order.png
+ * "How to Order":
+ *   printed page A253 (PDF page 275 of 888)
+ *     "Specify 900FH for 7/8''-14 UNF ports or 902FH for 22M ports."
+ *   printed page A255 (PDF page 277 of 888)
+ *     "Specify 1000FH for 7/8''-14 UNF ports or 1002FH for 22M ports."
+ * Read from screenshots of both pages taken by the operator on 2026-10-12; the
+ * model numbers on those lines are drawn in a font that text extraction and
+ * copy-paste both drop. Screenshots kept in
+ * C:/ELIMSERVER/evidence/et9-review-20261012/racor-full/
+ *   RacorCatalog-p275-A253-how-to-order.png, RacorCatalog-p277-A255-how-to-order.png
  *
- * So 902FH is a real Racor model: the 900 turbine with metric 22M ports.
- *   - Governance: base = 902FH, Parker, competitor code (same record as run_263).
- *   - thread_size: the row said "7/8-14 UNF (SAE J1926)", which is the 900FH
- *     port. It becomes "22M", as the catalog prints it.
+ * So 902FH and 1002FH are real Racor models: the 900 and 1000 turbines with
+ * metric 22M ports.
+ *   - Governance: base = the Racor model, Parker, competitor code (as run_263).
+ *   - thread_size of ET90902 said "7/8-14 UNF (SAE J1926)", which is the 900FH
+ *     port; it becomes "22M", as the catalog prints it. ET91002 already says
+ *     "22M x 1.5" and is left as it is.
  *   - SKU ET90902 is kept: 902FH has three digits, so the pair is added to the
  *     operator-approved allowlist in lib/catalog-codigo-base-policy.js.
- *
- * Not covered: ET91002 (1002FH). The matching line is on printed page A255
- * (PDF page 277), which has not been read yet.
+ *     ET91002 follows the normal rule (1002).
  *
  * Dry-run by default (everything runs, then ROLLBACK). Pass --execute to COMMIT.
  */
@@ -32,15 +37,16 @@ const { evaluateCodigoBase } = require('../../lib/catalog-codigo-base-policy');
 
 const APPLY = process.argv.includes('--execute');
 const MIGRATION = 'run_265_et90902_metric_turbine';
-const CITATION = 'printed page A253 (PDF page 275)';
-const STORED_THREAD = '7/8-14 UNF (SAE J1926)';
-const CATALOG_THREAD = '22M';
+
 const SOURCE = 'Parker Racor filtration catalog (RacorCatalog.pdf), Turbine Series';
 const VERIFIED_AT = '2026-10-12T00:00:00.000Z';
 
-// sku, codigo_base, catalog note, PDF page, micron printed in the catalog (null for the assembly)
+// sku, codigo_base, catalog note, citation, micron (null for an assembly), thread_size on the row today, thread_size to leave
 const ROWS = [
-  ['ET90902', '902FH', '900 turbine assembly with 22M ports ("Specify 900FH for 7/8-14 UNF ports or 902FH for 22M ports")', CITATION, null],
+  ['ET90902', '902FH', '900 turbine assembly with 22M ports ("Specify 900FH for 7/8-14 UNF ports or 902FH for 22M ports")',
+    'printed page A253 (PDF page 275)', null, '7/8-14 UNF (SAE J1926)', '22M'],
+  ['ET91002', '1002FH', '1000 turbine assembly with 22M ports ("Specify 1000FH for 7/8-14 UNF ports or 1002FH for 22M ports")',
+    'printed page A255 (PDF page 277)', null, '22M x 1.5', '22M x 1.5'],
 ];
 
 (async () => {
@@ -53,7 +59,7 @@ const ROWS = [
 
   try {
     await db.query('BEGIN ISOLATION LEVEL SERIALIZABLE');
-    for (const [sku, base, what, page, micron] of ROWS) {
+    for (const [sku, base, what, page, micron, storedThread, thread] of ROWS) {
       const found = await db.query('SELECT * FROM public.elimfilters_catalog WHERE sku=$1 FOR UPDATE', [sku]);
       if (found.rowCount !== 1) throw new Error(`SKU_MISSING ${sku}`);
       const row = found.rows[0];
@@ -61,7 +67,7 @@ const ROWS = [
       if (row.technology !== 'TURBOCORE™') throw new Error(`TECHNOLOGY_CHANGED ${sku}: ${row.technology}`);
       const before = (row.enrichment_data || {}).codigo_base_governance || {};
       if (before.approved_manufacturer) throw new Error(`GOVERNANCE_ALREADY_RECORDED ${sku}`);
-      if (row.thread_size !== STORED_THREAD) throw new Error(`THREAD_CHANGED ${sku}: found ${row.thread_size}`);
+      if (row.thread_size !== storedThread) throw new Error(`THREAD_CHANGED ${sku}: found ${row.thread_size}`);
       // micron is only filled where empty; an existing value must agree with the catalog
       const hasMicron = row.micron_rating !== null && String(row.micron_rating).trim() !== '';
       if (micron !== null && hasMicron && parseInt(row.micron_rating, 10) !== micron) {
@@ -103,7 +109,7 @@ const ROWS = [
         `UPDATE public.elimfilters_catalog
          SET enrichment_data=$2::jsonb, micron_rating=CASE WHEN $3::boolean THEN $4::text ELSE micron_rating END,
              thread_size=$5
-         WHERE sku=$1`, [sku, JSON.stringify(enrichment), fill, micron === null ? null : String(micron), CATALOG_THREAD]);
+         WHERE sku=$1`, [sku, JSON.stringify(enrichment), fill, micron === null ? null : String(micron), thread]);
       if (u.rowCount !== 1) throw new Error(`UPDATE_COUNT_CHANGED ${sku}`);
       if (fill) report.micron_filled += 1;
 
