@@ -9,7 +9,7 @@
  * Read from a screenshot of the page taken by the operator on 2026-10-12; the
  * model numbers on that line are drawn in a font that text extraction drops.
  * Screenshot kept at
- * C:\ELIMSERVER\evidence\et9-review-20261012acor-full\RacorCatalog-p275-A253-how-to-order.png
+ * C:/ELIMSERVER/evidence/et9-review-20261012/racor-full/RacorCatalog-p275-A253-how-to-order.png
  *
  * So 902FH is a real Racor model: the 900 turbine with metric 22M ports.
  *   - Governance: base = 902FH, Parker, competitor code (same record as run_263).
