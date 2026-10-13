@@ -3,6 +3,8 @@ import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { IndustryFilterCarousel } from './IndustryFilterCarousel';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
+import { automotiveText } from '@/lib/automotive-i18n';
+import type { PageLang } from '@/lib/localized-routes';
 
 const BASE_URL = 'https://elimfilters.com';
 const PAGE_URL = `${BASE_URL}/industries/automotive/`;
@@ -49,15 +51,17 @@ const questions = [
   ['Can ELIMFILTERS identify a filter from an existing part number?', 'Yes. Part Search is the fastest route when a known reference exists. For uncertain applications, include the vehicle and engine information so the cross-reference can be evaluated in context.'],
 ] as const;
 
-export function AutomotiveIndustryPage() {
+export function AutomotiveIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
+  const pageUrl = `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/industries/automotive/`;
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': `${PAGE_URL}#page`,
-        url: PAGE_URL,
-        name: 'Automotive Filtration Systems',
+        '@id': `${pageUrl}#page`,
+        url: pageUrl,
+        name: lang === 'es' ? 'Sistemas de filtración automotriz' : lang === 'pt' ? 'Sistemas de filtração automotiva' : 'Automotive Filtration Systems',
+        inLanguage: lang === 'pt' ? 'pt-BR' : lang,
         description: 'Automotive filtration systems for passenger vehicles, light commercial vehicles, delivery fleets, service vans and mixed light-duty fleets requiring engine air, fuel, lubrication and cabin-air protection.',
         isPartOf: { '@id': `${BASE_URL}/#website` },
         publisher: { '@id': `${BASE_URL}/#organization` },
@@ -77,27 +81,27 @@ export function AutomotiveIndustryPage() {
           { '@type': 'Thing', name: 'SYNTRAX' },
           { '@type': 'Thing', name: 'MICROKAPPA' },
         ],
-        breadcrumb: { '@id': `${PAGE_URL}#breadcrumb` },
+        breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': `${PAGE_URL}#breadcrumb`,
+        '@id': `${pageUrl}#breadcrumb`,
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
           { '@type': 'ListItem', position: 2, name: 'Industry', item: `${BASE_URL}/industries/` },
-          { '@type': 'ListItem', position: 3, name: 'Automotive Filtration Systems', item: PAGE_URL },
+          { '@type': 'ListItem', position: 3, name: 'Automotive Filtration Systems', item: pageUrl },
         ],
       },
       {
         '@type': 'ItemList',
-        '@id': `${PAGE_URL}#applications`,
+        '@id': `${pageUrl}#applications`,
         name: 'Automotive and light-duty applications',
         itemListElement: applications.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name })),
       },
       {
         '@type': 'FAQPage',
-        '@id': `${PAGE_URL}#faq`,
-        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+        '@id': `${pageUrl}#faq`,
+        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: automotiveText(lang, q), acceptedAnswer: { '@type': 'Answer', text: automotiveText(lang, a) } })),
       },
     ],
   };
@@ -113,41 +117,41 @@ export function AutomotiveIndustryPage() {
         </video>
         <div style={heroShade} />
         <div style={heroInner}>
-          <p style={eyebrow}>AUTOMOTIVE / LIGHT-DUTY ASSET PROTECTION</p>
-          <h1 style={heroTitle}>Automotive Filtration<br /><span style={yellow}>Systems</span></h1>
-          <p style={heroPromise}>Match the filter to the actual vehicle, engine and operating environment—not just the part number.</p>
-          <p style={heroLead}>Engine air, fuel, lubrication and cabin-air filtration for passenger vehicles, light commercial vehicles, delivery fleets, service vans and mixed light-duty fleets.</p>
+          <p style={eyebrow}>{automotiveText(lang, "AUTOMOTIVE / LIGHT-DUTY ASSET PROTECTION")}</p>
+          <h1 style={heroTitle}>{automotiveText(lang, "Automotive Filtration")}<br /><span style={yellow}>{automotiveText(lang, "Systems")}</span></h1>
+          <p style={heroPromise}>{automotiveText(lang, "Match the filter to the actual vehicle, engine and operating environment—not just the part number.")}</p>
+          <p style={heroLead}>{automotiveText(lang, "Engine air, fuel, lubrication and cabin-air filtration for passenger vehicles, light commercial vehicles, delivery fleets, service vans and mixed light-duty fleets.")}</p>
           <div style={actions}>
-            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY VEHICLE PROTECTION PATH</Link>
-            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a>
+            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{automotiveText(lang, "IDENTIFY MY VEHICLE PROTECTION PATH")}</Link>
+            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{automotiveText(lang, "FIND MY FILTER")}</a>
           </div>
         </div>
       </section>
 
       <section style={directSection} aria-labelledby="auto-direct-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>DIRECT ANSWER</p>
-          <h2 id="auto-direct-title" style={directTitle}>What defines the correct automotive filter?</h2>
-          <p style={directText}>Correct automotive filtration starts with year, make, model, engine and protected system, then checks the operating environment, known reference, dimensions and application evidence. A cross-reference should not be accepted solely because a filter looks similar or shares one specification.</p>
+          <p style={eyebrow}>{automotiveText(lang, "DIRECT ANSWER")}</p>
+          <h2 id="auto-direct-title" style={directTitle}>{automotiveText(lang, "What defines the correct automotive filter?")}</h2>
+          <p style={directText}>{automotiveText(lang, "Correct automotive filtration starts with year, make, model, engine and protected system, then checks the operating environment, known reference, dimensions and application evidence. A cross-reference should not be accepted solely because a filter looks similar or shares one specification.")}</p>
         </div>
       </section>
 
       <section style={section} aria-labelledby="duty-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>VEHICLE DUTY PROFILE</p>
-          <h2 id="duty-title" style={sectionTitle}>The same platform can live a very different service life.</h2>
-          <p style={wideText}>A commuter vehicle, delivery van and service fleet can share components while accumulating contamination under very different operating conditions.</p>
-          <div style={grid}>{operatingConditions.map(([title, text]) => <article key={title} style={card}><h3 style={cardTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          <p style={eyebrow}>{automotiveText(lang, "VEHICLE DUTY PROFILE")}</p>
+          <h2 id="duty-title" style={sectionTitle}>{automotiveText(lang, "The same platform can live a very different service life.")}</h2>
+          <p style={wideText}>{automotiveText(lang, "A commuter vehicle, delivery van and service fleet can share components while accumulating contamination under very different operating conditions.")}</p>
+          <div style={grid}>{operatingConditions.map(([title, text]) => <article key={title} style={card}><h3 style={cardTitle}>{automotiveText(lang, title)}</h3><p style={bodyText}>{automotiveText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={applicationSection} aria-labelledby="applications-title">
         <div style={applicationGrid}>
           <div>
-            <p style={eyebrow}>AUTOMOTIVE APPLICATIONS</p>
-            <h2 id="applications-title" style={sectionTitle}>One light-duty market. Multiple operating profiles.</h2>
-            <p style={wideText}>Vehicle class alone does not resolve the filtration requirement. Engine, system configuration and operating profile determine the application path.</p>
-            <div role="list" aria-label="Automotive applications" style={applicationList}>{applications.map((asset) => <div role="listitem" key={asset} style={applicationRow}><span style={applicationName}>{asset}</span></div>)}</div>
+            <p style={eyebrow}>{automotiveText(lang, "AUTOMOTIVE APPLICATIONS")}</p>
+            <h2 id="applications-title" style={sectionTitle}>{automotiveText(lang, "One light-duty market. Multiple operating profiles.")}</h2>
+            <p style={wideText}>{automotiveText(lang, "Vehicle class alone does not resolve the filtration requirement. Engine, system configuration and operating profile determine the application path.")}</p>
+            <div role="list" aria-label="Automotive applications" style={applicationList}>{applications.map((asset) => <div role="listitem" key={asset} style={applicationRow}><span style={applicationName}>{automotiveText(lang, asset)}</span></div>)}</div>
           </div>
           <div><img src="/images/autos-02.avif" alt="Automotive and light-duty vehicle applications" style={applicationImage} /></div>
         </div>
@@ -155,58 +159,58 @@ export function AutomotiveIndustryPage() {
 
       <section style={section} aria-labelledby="path-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>PROTECTION PATHWAYS</p>
-          <h2 id="path-title" style={sectionTitle}>Identify the contamination path before selecting the replacement filter.</h2>
-          <div className="industry-pathway-grid" style={pathwayGrid}>{pathways.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>CONTAMINATION SOURCE</span><strong style={pathwaySource}>{source}</strong><p style={smallText}>{detail}</p></div><div style={dividerLine} /><div><span style={smallLabel}>PROTECTION SYSTEM</span><strong style={pathwaySystem}>{system}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>ELIMFILTERS PROTECTION PATH</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>EXPLORE →</span></Link></article>)}</div>
+          <p style={eyebrow}>{automotiveText(lang, "PROTECTION PATHWAYS")}</p>
+          <h2 id="path-title" style={sectionTitle}>{automotiveText(lang, "Identify the contamination path before selecting the replacement filter.")}</h2>
+          <div className="industry-pathway-grid" style={pathwayGrid}>{pathways.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>{automotiveText(lang, "CONTAMINATION SOURCE")}</span><strong style={pathwaySource}>{automotiveText(lang, source)}</strong><p style={smallText}>{automotiveText(lang, detail)}</p></div><div style={dividerLine} /><div><span style={smallLabel}>{automotiveText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwaySystem}>{automotiveText(lang, system)}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>{automotiveText(lang, "ELIMFILTERS PROTECTION PATH")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{automotiveText(lang, "EXPLORE →")}</span></Link></article>)}</div>
         </div>
       </section>
 
-      <section style={principleSection}><div style={principle}><span style={principleLabel}>AUTOMOTIVE ENGINEERING PRINCIPLE</span><p style={principleText}>Year, make and model identify the vehicle family; engine, system configuration and application evidence determine whether the filter is actually correct.</p></div></section>
+      <section style={principleSection}><div style={principle}><span style={principleLabel}>{automotiveText(lang, "AUTOMOTIVE ENGINEERING PRINCIPLE")}</span><p style={principleText}>{automotiveText(lang, "Year, make and model identify the vehicle family; engine, system configuration and application evidence determine whether the filter is actually correct.")}</p></div></section>
 
-      <IndustryFilterCarousel dutyClass="LD" industryName="Automotive" />
+      <IndustryFilterCarousel dutyClass="LD" industryName="Automotive" lang={lang} />
 
       <section style={impactSection} aria-labelledby="impact-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>SERVICE ACCURACY</p>
-          <h2 id="impact-title" style={sectionTitle}>Protect the vehicle by getting the application right before the service starts.</h2>
-          <div style={impactGrid}>{outcomes.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          <p style={eyebrow}>{automotiveText(lang, "SERVICE ACCURACY")}</p>
+          <h2 id="impact-title" style={sectionTitle}>{automotiveText(lang, "Protect the vehicle by getting the application right before the service starts.")}</h2>
+          <div style={impactGrid}>{outcomes.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{automotiveText(lang, title)}</h3><p style={bodyText}>{automotiveText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={section} aria-labelledby="decision-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>FROM VEHICLE TO PART</p>
-          <h2 id="decision-title" style={sectionTitle}>Resolve the automotive application in five decisions.</h2>
+          <p style={eyebrow}>{automotiveText(lang, "FROM VEHICLE TO PART")}</p>
+          <h2 id="decision-title" style={sectionTitle}>{automotiveText(lang, "Resolve the automotive application in five decisions.")}</h2>
           <div style={decisionGrid}>{[
             ['Vehicle', 'Confirm year, make, model and vehicle class.'],
             ['Engine', 'Identify engine, fuel type and relevant system configuration.'],
             ['Duty', 'Define urban, highway, fleet and environmental exposure.'],
             ['Protection', 'Identify the air, fuel, lubrication or cabin-air position.'],
             ['Evidence', 'Validate with OEM reference, dimensions and documented application data.'],
-          ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{automotiveText(lang, title)}</h3><p style={bodyText}>{automotiveText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={evidenceSection} aria-labelledby="evidence-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>APPLICATION EVIDENCE</p>
-          <h2 id="evidence-title" style={sectionTitle}>A cross-reference is useful evidence, not the whole application.</h2>
-          <p style={wideText}>When a known part number exists, use it to accelerate identification. Final acceptance should still reconcile the actual vehicle, engine, model year, system position and available dimensional or application evidence.</p>
+          <p style={eyebrow}>{automotiveText(lang, "APPLICATION EVIDENCE")}</p>
+          <h2 id="evidence-title" style={sectionTitle}>{automotiveText(lang, "A cross-reference is useful evidence, not the whole application.")}</h2>
+          <p style={wideText}>{automotiveText(lang, "When a known part number exists, use it to accelerate identification. Final acceptance should still reconcile the actual vehicle, engine, model year, system position and available dimensional or application evidence.")}</p>
         </div>
       </section>
 
       <section style={faqSection} aria-labelledby="faq-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>AUTOMOTIVE FILTRATION QUESTIONS</p>
-          <h2 id="faq-title" style={sectionTitle}>What vehicle owners, service teams and fleet managers need to know.</h2>
-          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{q}</h3><p style={faqAnswer}>{a}</p></article>)}</div>
+          <p style={eyebrow}>{automotiveText(lang, "AUTOMOTIVE FILTRATION QUESTIONS")}</p>
+          <h2 id="faq-title" style={sectionTitle}>{automotiveText(lang, "What vehicle owners, service teams and fleet managers need to know.")}</h2>
+          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{automotiveText(lang, q)}</h3><p style={faqAnswer}>{automotiveText(lang, a)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={conversionSection}>
         <div style={conversionGrid}>
-          <div><p style={eyebrow}>HAVE A VEHICLE OR PART NUMBER?</p><h2 style={conversionTitle}>Identify the correct filtration path before the service decision becomes a mismatch.</h2><p style={conversionText}>Send the year, make, model, engine, protected system and any known OEM or current filter reference.</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY VEHICLE PROTECTION PATH</Link></div>
-          <div style={conversionSecondary}><div><p style={eyebrow}>ALREADY HAVE A REFERENCE?</p><h3 style={conversionSubTitle}>Go directly to Part Search.</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a></div><div style={dividerLine} /><div><p style={eyebrow}>SERVE AUTOMOTIVE CUSTOMERS?</p><h3 style={conversionSubTitle}>Evaluate distributor fit.</h3><Link href="/distributor-application/" style={secondaryButton}>BECOME A DISTRIBUTOR</Link></div></div>
+          <div><p style={eyebrow}>{automotiveText(lang, "HAVE A VEHICLE OR PART NUMBER?")}</p><h2 style={conversionTitle}>{automotiveText(lang, "Identify the correct filtration path before the service decision becomes a mismatch.")}</h2><p style={conversionText}>{automotiveText(lang, "Send the year, make, model, engine, protected system and any known OEM or current filter reference.")}</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{automotiveText(lang, "IDENTIFY MY VEHICLE PROTECTION PATH")}</Link></div>
+          <div style={conversionSecondary}><div><p style={eyebrow}>{automotiveText(lang, "ALREADY HAVE A REFERENCE?")}</p><h3 style={conversionSubTitle}>{automotiveText(lang, "Go directly to Part Search.")}</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{automotiveText(lang, "FIND MY FILTER")}</a></div><div style={dividerLine} /><div><p style={eyebrow}>{automotiveText(lang, "SERVE AUTOMOTIVE CUSTOMERS?")}</p><h3 style={conversionSubTitle}>{automotiveText(lang, "Evaluate distributor fit.")}</h3><Link href="/distributor-application/" style={secondaryButton}>{automotiveText(lang, "BECOME A DISTRIBUTOR")}</Link></div></div>
         </div>
       </section>
     </main>
