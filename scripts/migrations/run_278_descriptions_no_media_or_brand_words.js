@@ -8,7 +8,9 @@
  *   - 2,361 hydraulic template: "NANOFORCE™ electrostatic synthetic media captures ..."
  *   -   621 lube template:      "SYNTRAX™ synthetic media traps ..."
  *   -    86 ET9 housings:       "... Canonical source: Fleetguard FH23904."
- *   -     8 individually worded descriptions (EDITS below)
+ *   -    11 individually worded descriptions (EDITS below), which also lose
+ *          equipment-brand sentences (John Deere, Caterpillar, Allison, Toyota)
+ *   -     5 names carrying FRAM, DT or DURAMAX (NAMES below)
  * The Fleetguard / Donaldson codes stay in codigo_base and the reference
  * lists; only the public sentence goes. Nothing else in a text changes.
  *
@@ -20,18 +22,31 @@ const { Client } = require('pg');
 
 const APPLY = process.argv.includes('--execute');
 const MEDIA = 'GENUINE FILTER MEDIA';
-const BANNED = 'synthetic|cellulose|fleetguard|donaldson';
+const BANNED = 'synthetic|cellulose|fleetguard|donaldson|john deere|caterpillar|allison|toyota|twist&drain';
 
 // [sku, text to find, replacement] applied in order; a miss is reported, not forced.
 const EDITS = [
   ['EF33802', 'multi-layered synthetic micro-glass filtration media', MEDIA],
-  ['EF91316', ' Cellulose media.', ''],
+  ['EF91316', ' Cellulose media. Caterpillar 1R-0755 heavy equipment applications.', ''],
   ['EH64378', ' Donaldson P164378 equivalent; P164378 supersedes discontinued Donaldson P170950.', ''],
   ['EH66235', ' hydraulic DT cartridge filter. Canonical Donaldson reference P566235. Synthetic media, Beta', ' hydraulic cartridge filter. Beta'],
   ['EH66502', ' hydraulic DT cartridge filter. Canonical Donaldson reference P566502. Synthetic media, Beta', ' hydraulic cartridge filter. Beta'],
   ['EH68277', ' Canonical Donaldson reference P166254 with official Fleetguard HF8277 cross-reference. Synthetic media, Beta', ' Beta'],
+  ['EH68277', ' Verified Allison 5000, 5940, 6000, 8000 and 9000 Series applications.', ''],
+  ['ES91027', ' Direct replacement for John Deere RE522688.', ''],
+  ['EH60950', ' Direct replacement for John Deere AH128449.', ''],
+  ['EF34421', ' for the Toyota RAV4 2.5L (2022+). First aftermarket equivalent to OEM 77024-42110 - no prior cross-reference existed.', '.'],
   ['EL33614', 'synthetic-reinforced media', MEDIA],
   ['ES91026', ' spin-on with Twist&Drain drain. Donaldson P551026 equivalent.', ' spin-on with drain.'],
+];
+
+// name column (used by the bot): same rule.
+const NAMES = [
+  ['EH60950', 'ELIMFILTERS Hydraulic Spin-On Filter'],
+  ['EH66235', 'Hydraulic Filter, Cartridge'],
+  ['EH66502', 'Hydraulic Filter, Cartridge'],
+  ['EL33614', 'Oil Filter'],
+  ['EF33802', 'Fuel Filter'],
 ];
 
 (async () => {
@@ -66,6 +81,12 @@ const EDITS = [
          WHERE sku = $1 AND position($2 in description) > 0`, [sku, from, to]);
       if (u.rowCount === 1) report.single_edits += 1; else report.edits_missed.push(sku);
     }
+    report.names = 0;
+    for (const [sku, name] of NAMES) {
+      report.names += (await db.query('UPDATE public.elimfilters_catalog SET name = $2 WHERE sku = $1 AND name IS DISTINCT FROM $2', [sku, name])).rowCount;
+    }
+    report.names_with_brand = (await db.query(
+      `SELECT count(*)::int AS n FROM public.elimfilters_catalog WHERE name ~* 'fram|duramax|\\mDT\\M|donaldson|fleetguard'`)).rows[0].n;
     report.after = await count(BANNED);
     report.remaining = (await db.query(
       `SELECT sku, left(description, 160) AS description FROM public.elimfilters_catalog WHERE description ~* $1 ORDER BY sku LIMIT 20`,
