@@ -96,7 +96,7 @@ export function PageHeader({ breadcrumbs, currentPage }: PageHeaderProps) {
   const trail: Breadcrumb[] = [{ label: t('category.home', { defaultValue: 'HOME' }), href: homeHref }];
 
   if (industryLabel) {
-    trail.push({ label: t('nav.industries', { defaultValue: 'Industries' }), href: locale ? `/${locale}/industries/` : '/industries/' });
+    trail.push({ label: locale === 'es' ? 'Industrias' : locale === 'pt' ? 'Indústrias' : 'Industries', href: locale ? `/${locale}/industries/` : '/industries/' });
     trail.push({ label: (locale === 'es' || locale === 'pt') && currentPage ? INDUSTRY_TRANSLATED_LABELS[locale][currentPage] ?? industryLabel : industryLabel });
   } else {
     if (breadcrumbs) {
