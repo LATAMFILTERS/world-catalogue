@@ -14,6 +14,7 @@ export const LOCALIZED_ROUTES: readonly string[] = [
   '/',
   '/contact',
   '/industries',
+  '/industries/mining',
   '/technologies/hydrocore',
   ...PRODUCT_FAMILY_LIST.map((family) => `/families/${family.slug}`),
 ];
