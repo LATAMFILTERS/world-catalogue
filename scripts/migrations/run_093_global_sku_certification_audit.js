@@ -71,6 +71,21 @@ async function applyGlobalSkuCertificationAudit() {
         SELECT base_key, count(DISTINCT sku)::int AS sku_count
         FROM catalog
         WHERE base_key<>''
+        -- Approved PH6010A continuity: preserve retired EL30671 without treating it as a second active identity.
+        -- All other duplicate owners, including a reactivated EL30671, remain counted.
+        AND NOT EXISTS (
+          SELECT 1 FROM public.elimfilters_catalog retired
+          JOIN public.elimfilters_catalog successor
+            ON successor.sku='EL36010' AND successor.catalog_active
+          WHERE retired.sku=catalog.sku AND retired.sku='EL30671'
+            AND retired.catalog_active IS FALSE
+            AND retired.codigo_base='PH6010A' AND successor.codigo_base='PH6010A'
+            AND retired.canonical_source_brand='FRAM' AND successor.canonical_source_brand='FRAM'
+            AND retired.enrichment_data->'resolution_status'->>'state'='SUPERSEDED_SAME_IDENTITY'
+            AND retired.enrichment_data->'resolution_status'->>'superseded_by'='EL36010'
+            AND retired.enrichment_data->'resolution_status'->>'identity_continuity_verified'='true'
+        )
+
         GROUP BY base_key
       ),
       ld_policy AS (
