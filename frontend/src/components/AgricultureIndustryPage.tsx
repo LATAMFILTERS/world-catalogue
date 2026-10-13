@@ -3,6 +3,8 @@ import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { IndustryFilterCarousel } from './IndustryFilterCarousel';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
+import { agricultureText } from '@/lib/agriculture-i18n';
+import type { PageLang } from '@/lib/localized-routes';
 
 const BASE_URL = 'https://elimfilters.com';
 const PAGE_URL = `${BASE_URL}/industries/agriculture/`;
@@ -45,15 +47,17 @@ const questions = [
   ['Can ELIMFILTERS identify an agricultural filter from an OEM or part number?', 'Yes. If the OEM reference or current filter number is known, Part Search provides the fastest route to cross-reference and application information. For an engineering review, include the machine, engine, system and operating conditions.'],
 ] as const;
 
-export function AgricultureIndustryPage() {
+export function AgricultureIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
+  const pageUrl = `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/industries/agriculture/`;
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': `${PAGE_URL}#page`,
-        url: PAGE_URL,
-        name: 'Agricultural Filtration Systems',
+        '@id': `${pageUrl}#page`,
+        url: pageUrl,
+        name: lang === 'es' ? 'Sistemas de filtración agrícola' : lang === 'pt' ? 'Sistemas de filtração agrícola' : 'Agricultural Filtration Systems',
+        inLanguage: lang === 'pt' ? 'pt-BR' : lang,
         description: 'Agricultural filtration systems and contamination-control architecture for tractors, combines, harvesters, sprayers, irrigation engines and field support equipment.',
         isPartOf: { '@id': `${BASE_URL}/#website` },
         publisher: { '@id': `${BASE_URL}/#organization` },
@@ -79,27 +83,27 @@ export function AgricultureIndustryPage() {
           { '@type': 'Thing', name: 'SYNTRAX technology' },
           { '@type': 'Thing', name: 'MICROKAPPA technology' },
         ],
-        breadcrumb: { '@id': `${PAGE_URL}#breadcrumb` },
+        breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': `${PAGE_URL}#breadcrumb`,
+        '@id': `${pageUrl}#breadcrumb`,
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
           { '@type': 'ListItem', position: 2, name: 'Industry', item: `${BASE_URL}/industries/` },
-          { '@type': 'ListItem', position: 3, name: 'Agricultural Filtration Systems', item: PAGE_URL },
+          { '@type': 'ListItem', position: 3, name: 'Agricultural Filtration Systems', item: pageUrl },
         ],
       },
       {
         '@type': 'ItemList',
-        '@id': `${PAGE_URL}#equipment`,
+        '@id': `${pageUrl}#equipment`,
         name: 'Agricultural equipment applications',
-        itemListElement: equipment.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name })),
+        itemListElement: equipment.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name: agricultureText(lang, name) })),
       },
       {
         '@type': 'FAQPage',
-        '@id': `${PAGE_URL}#faq`,
-        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+        '@id': `${pageUrl}#faq`,
+        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: agricultureText(lang, q), acceptedAnswer: { '@type': 'Answer', text: agricultureText(lang, a) } })),
       },
     ],
   };
@@ -113,13 +117,13 @@ export function AgricultureIndustryPage() {
         <video autoPlay muted loop playsInline preload="auto" style={heroVideo}><source src="/images/Agriculture-2.mp4" type="video/mp4" /></video>
         <div style={heroShade} />
         <div style={heroInner}>
-          <p style={eyebrow}>AGRICULTURE / SEASONAL ASSET PROTECTION</p>
-          <h1 style={heroTitle}>Agricultural Filtration<br /><span style={yellow}>Systems</span></h1>
-          <p style={heroPromise}>Protect the equipment that has to perform when the field window is open.</p>
-          <p style={heroLead}>Contamination control for tractors, combines, harvesters, sprayers, irrigation engines and support equipment operating through soil dust, crop residue, heat, fuel handling and long seasonal duty cycles.</p>
+          <p style={eyebrow}>{agricultureText(lang, "AGRICULTURE / SEASONAL ASSET PROTECTION")}</p>
+          <h1 style={heroTitle}>{agricultureText(lang, "Agricultural Filtration")}<br /><span style={yellow}>{agricultureText(lang, "Systems")}</span></h1>
+          <p style={heroPromise}>{agricultureText(lang, "Protect the equipment that has to perform when the field window is open.")}</p>
+          <p style={heroLead}>{agricultureText(lang, "Contamination control for tractors, combines, harvesters, sprayers, irrigation engines and support equipment operating through soil dust, crop residue, heat, fuel handling and long seasonal duty cycles.")}</p>
           <div style={actions}>
-            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY AGRICULTURAL PROTECTION PATH</Link>
-            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a>
+            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{agricultureText(lang, "IDENTIFY MY AGRICULTURAL PROTECTION PATH")}</Link>
+            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{agricultureText(lang, "FIND MY FILTER")}</a>
           </div>
         </div>
       </section>
@@ -127,36 +131,36 @@ export function AgricultureIndustryPage() {
       <section style={directAnswerSection} aria-labelledby="agriculture-answer-title">
         <div style={contentWidth}>
           <p style={eyebrow}>DIRECT ANSWER</p>
-          <h2 id="agriculture-answer-title" style={sectionTitle}>What makes agricultural filtration effective?</h2>
-          <p style={directAnswerText}>Effective agricultural filtration connects the machine, seasonal duty, contamination source, protected system and service window to a validated filter application. The path is machine → field condition → contamination mechanism → protection system → ELIMFILTERS technology → verified part.</p>
+          <h2 id="agriculture-answer-title" style={sectionTitle}>{agricultureText(lang, "What makes agricultural filtration effective?")}</h2>
+          <p style={directAnswerText}>{agricultureText(lang, "Effective agricultural filtration connects the machine, seasonal duty, contamination source, protected system and service window to a validated filter application. The path is machine → field condition → contamination mechanism → protection system → ELIMFILTERS technology → verified part.")}</p>
         </div>
       </section>
 
-      <section style={seasonSection} aria-labelledby="season-title"><div style={contentWidth}><p style={eyebrow}>SEASONAL UPTIME</p><h2 id="season-title" style={sectionTitle}>The protection strategy changes with the work cycle.</h2><p style={wideText}>Agriculture concentrates risk into short operating windows. A filter decision that is acceptable during light service may be inadequate once dust loading, crop residue, heat and operating hours increase together.</p><div style={seasonGrid}>{seasonalWindows.map(([title, text]) => <article key={title} style={seasonCard}><h3 style={cardTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div></div></section>
+      <section style={seasonSection} aria-labelledby="season-title"><div style={contentWidth}><p style={eyebrow}>{agricultureText(lang, "SEASONAL UPTIME")}</p><h2 id="season-title" style={sectionTitle}>{agricultureText(lang, "The protection strategy changes with the work cycle.")}</h2><p style={wideText}>{agricultureText(lang, "Agriculture concentrates risk into short operating windows. A filter decision that is acceptable during light service may be inadequate once dust loading, crop residue, heat and operating hours increase together.")}</p><div style={seasonGrid}>{seasonalWindows.map(([title, text]) => <article key={title} style={seasonCard}><h3 style={cardTitle}>{agricultureText(lang, title)}</h3><p style={bodyText}>{agricultureText(lang, text)}</p></article>)}</div></div></section>
 
-      <section style={equipmentSection} aria-labelledby="equipment-title"><div style={equipmentGrid}><div style={equipmentMedia}><img src="/images/agriculture-2_converted.avif" alt="Agricultural equipment operating in field conditions" style={equipmentImage} /></div><div style={equipmentCopy}><h2 id="equipment-title" style={sectionTitle}>Different machines. Different field exposure.</h2><p style={wideText}>A tractor, combine, sprayer and irrigation engine may work on the same farm but face very different contamination loads, service access and operating intensity.</p><div role="list" aria-label="Agricultural equipment applications" style={equipmentList}>{equipment.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{asset}</span></div>)}</div></div></div></section>
+      <section style={equipmentSection} aria-labelledby="equipment-title"><div style={equipmentGrid}><div style={equipmentMedia}><img src="/images/agriculture-2_converted.avif" alt="Agricultural equipment operating in field conditions" style={equipmentImage} /></div><div style={equipmentCopy}><h2 id="equipment-title" style={sectionTitle}>{agricultureText(lang, "Different machines. Different field exposure.")}</h2><p style={wideText}>{agricultureText(lang, "A tractor, combine, sprayer and irrigation engine may work on the same farm but face very different contamination loads, service access and operating intensity.")}</p><div role="list" aria-label="Agricultural equipment applications" style={equipmentList}>{equipment.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{agricultureText(lang, asset)}</span></div>)}</div></div></div></section>
 
-      <section style={section} aria-labelledby="exposure-title"><div style={contentWidth}><p style={eyebrow}>FIELD EXPOSURE</p><h2 id="exposure-title" style={sectionTitle}>Five contamination pathways shape agricultural reliability.</h2><p style={wideText}>The useful question is not simply which filter fits the machine. It is where contamination enters, which system is exposed and what component must remain protected through the seasonal duty cycle.</p><div className="industry-pathway-grid" style={pathwayGrid}>{protection.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>CONTAMINATION SOURCE</span><strong style={pathwaySource}>{source}</strong><p style={smallText}>{detail}</p></div><div style={pathwayDivider} /><div><span style={smallLabel}>PROTECTION SYSTEM</span><strong style={pathwaySystem}>{system}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>ELIMFILTERS TECHNOLOGY</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>EXPLORE →</span></Link></article>)}</div></div></section>
+      <section style={section} aria-labelledby="exposure-title"><div style={contentWidth}><p style={eyebrow}>{agricultureText(lang, "FIELD EXPOSURE")}</p><h2 id="exposure-title" style={sectionTitle}>{agricultureText(lang, "Five contamination pathways shape agricultural reliability.")}</h2><p style={wideText}>{agricultureText(lang, "The useful question is not simply which filter fits the machine. It is where contamination enters, which system is exposed and what component must remain protected through the seasonal duty cycle.")}</p><div className="industry-pathway-grid" style={pathwayGrid}>{protection.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>{agricultureText(lang, "CONTAMINATION SOURCE")}</span><strong style={pathwaySource}>{agricultureText(lang, source)}</strong><p style={smallText}>{agricultureText(lang, detail)}</p></div><div style={pathwayDivider} /><div><span style={smallLabel}>{agricultureText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwaySystem}>{agricultureText(lang, system)}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>{agricultureText(lang, "ELIMFILTERS TECHNOLOGY")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{agricultureText(lang, "EXPLORE →")}</span></Link></article>)}</div></div></section>
 
-      <section style={principleSection}><div style={principle}><span style={principleLabel}>AGRICULTURE ENGINEERING PRINCIPLE</span><p style={principleText}>Agricultural filtration should be selected around the field environment, machine duty, contamination source, protected system and service window—not by equipment category alone.</p></div></section>
+      <section style={principleSection}><div style={principle}><span style={principleLabel}>{agricultureText(lang, "AGRICULTURE ENGINEERING PRINCIPLE")}</span><p style={principleText}>{agricultureText(lang, "Agricultural filtration should be selected around the field environment, machine duty, contamination source, protected system and service window—not by equipment category alone.")}</p></div></section>
 
-      <IndustryFilterCarousel dutyClass="HD" industryName="Agriculture" />
+      <IndustryFilterCarousel dutyClass="HD" industryName="Agriculture" lang={lang} />
 
-      <section style={continuitySection} aria-labelledby="continuity-title"><div style={contentWidth}><p style={eyebrow}>FIELD CONTINUITY</p><h2 id="continuity-title" style={sectionTitle}>When the season is moving, maintenance flexibility disappears.</h2><div style={continuityGrid}>{continuity.map(([title, text]) => <article key={title} style={continuityCard}><h3 style={continuityTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div></div></section>
+      <section style={continuitySection} aria-labelledby="continuity-title"><div style={contentWidth}><p style={eyebrow}>{agricultureText(lang, "FIELD CONTINUITY")}</p><h2 id="continuity-title" style={sectionTitle}>{agricultureText(lang, "When the season is moving, maintenance flexibility disappears.")}</h2><div style={continuityGrid}>{continuity.map(([title, text]) => <article key={title} style={continuityCard}><h3 style={continuityTitle}>{agricultureText(lang, title)}</h3><p style={bodyText}>{agricultureText(lang, text)}</p></article>)}</div></div></section>
 
-      <section style={section} aria-labelledby="decision-title"><div style={contentWidth}><p style={eyebrow}>FROM FIELD CONDITION TO PART</p><h2 id="decision-title" style={sectionTitle}>Resolve the application in five decisions.</h2><div style={decisionGrid}>{[
+      <section style={section} aria-labelledby="decision-title"><div style={contentWidth}><p style={eyebrow}>{agricultureText(lang, "FROM FIELD CONDITION TO PART")}</p><h2 id="decision-title" style={sectionTitle}>{agricultureText(lang, "Resolve the application in five decisions.")}</h2><div style={decisionGrid}>{[
         ['Machine', 'Identify the tractor, combine, sprayer, irrigation engine or support asset.'],
         ['Field Condition', 'Define dust, crop residue, moisture, fuel handling, heat and operating intensity.'],
         ['Duty & Service', 'Establish seasonal hours, loading, service access and maintenance window.'],
         ['Protected System', 'Determine whether the primary risk is air intake, hydraulic, fuel, lubrication or cabin air.'],
         ['Application Evidence', 'Confirm the final filter through OEM reference, dimensions and validated application data.'],
-      ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div></div></section>
+      ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{agricultureText(lang, title)}</h3><p style={bodyText}>{agricultureText(lang, text)}</p></article>)}</div></div></section>
 
-      <section style={evidenceSection} aria-labelledby="evidence-title"><div style={contentWidth}><p style={eyebrow}>APPLICATION EVIDENCE</p><h2 id="evidence-title" style={sectionTitle}>A filter match is complete only when the application is validated.</h2><p style={wideText}>Use OEM reference, dimensional fit, protected system, machine context and operating evidence together. Part Search accelerates identification; engineering support resolves applications where the duty or contamination path needs additional review.</p></div></section>
+      <section style={evidenceSection} aria-labelledby="evidence-title"><div style={contentWidth}><p style={eyebrow}>{agricultureText(lang, "APPLICATION EVIDENCE")}</p><h2 id="evidence-title" style={sectionTitle}>{agricultureText(lang, "A filter match is complete only when the application is validated.")}</h2><p style={wideText}>{agricultureText(lang, "Use OEM reference, dimensional fit, protected system, machine context and operating evidence together. Part Search accelerates identification; engineering support resolves applications where the duty or contamination path needs additional review.")}</p></div></section>
 
-      <section style={faqSection} aria-labelledby="faq-title"><div style={contentWidth}><p style={eyebrow}>AGRICULTURAL FILTRATION QUESTIONS</p><h2 id="faq-title" style={sectionTitle}>What operators and maintenance teams need to know.</h2><div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{q}</h3><p style={faqAnswer}>{a}</p></article>)}</div></div></section>
+      <section style={faqSection} aria-labelledby="faq-title"><div style={contentWidth}><p style={eyebrow}>{agricultureText(lang, "AGRICULTURAL FILTRATION QUESTIONS")}</p><h2 id="faq-title" style={sectionTitle}>{agricultureText(lang, "What operators and maintenance teams need to know.")}</h2><div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{agricultureText(lang, q)}</h3><p style={faqAnswer}>{agricultureText(lang, a)}</p></article>)}</div></div></section>
 
-      <section style={conversionSection}><div style={conversionGrid}><div><p style={eyebrow}>HAVE A MACHINE OR FIELD-DUTY PROBLEM?</p><h2 style={conversionTitle}>Identify the protection path before choosing the part.</h2><p style={conversionText}>Send the machine, engine, protected system, field conditions, seasonal duty and any known OEM or filter reference.</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY AGRICULTURAL PROTECTION PATH</Link></div><div style={conversionSecondary}><div><p style={eyebrow}>ALREADY HAVE A PART NUMBER?</p><h3 style={conversionSubTitle}>Go directly to Part Search.</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a></div><div style={divider} /><div><p style={eyebrow}>SERVE AGRICULTURAL CUSTOMERS?</p><h3 style={conversionSubTitle}>Evaluate distributor fit.</h3><Link href="/distributor-application/" style={secondaryButton}>BECOME A DISTRIBUTOR</Link></div></div></div></section>
+      <section style={conversionSection}><div style={conversionGrid}><div><p style={eyebrow}>{agricultureText(lang, "HAVE A MACHINE OR FIELD-DUTY PROBLEM?")}</p><h2 style={conversionTitle}>{agricultureText(lang, "Identify the protection path before choosing the part.")}</h2><p style={conversionText}>{agricultureText(lang, "Send the machine, engine, protected system, field conditions, seasonal duty and any known OEM or filter reference.")}</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{agricultureText(lang, "IDENTIFY MY AGRICULTURAL PROTECTION PATH")}</Link></div><div style={conversionSecondary}><div><p style={eyebrow}>{agricultureText(lang, "ALREADY HAVE A PART NUMBER?")}</p><h3 style={conversionSubTitle}>{agricultureText(lang, "Go directly to Part Search.")}</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{agricultureText(lang, "FIND MY FILTER")}</a></div><div style={divider} /><div><p style={eyebrow}>{agricultureText(lang, "SERVE AGRICULTURAL CUSTOMERS?")}</p><h3 style={conversionSubTitle}>{agricultureText(lang, "Evaluate distributor fit.")}</h3><Link href="/distributor-application/" style={secondaryButton}>{agricultureText(lang, "BECOME A DISTRIBUTOR")}</Link></div></div></div></section>
     </main>
   );
 }
