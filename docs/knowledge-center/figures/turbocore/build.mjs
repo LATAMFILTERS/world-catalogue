@@ -131,7 +131,7 @@ const svg = k.figureSvg({
   width: WIDTH,
   height: HEIGHT,
   label:
-    "Carcasa separadora de combustible y agua tipo turbina, con tapa y manija en T, montada con abrazadera a un soporte de pared. A través del vaso transparente se ve el deflector de turbina; el agua separada se acumula al fondo del vaso, donde un purgador la descarga a una taza. Al levantar la tapa sale el elemento reemplazable.",
+    "Carcasa separadora de combustible y agua tipo turbina, con tapa y manija en T, montada con abrazadera a un soporte de pared. A través del vaso transparente se ve el deflector de turbina, que centrifuga el combustible: el agua, más densa, se desplaza hacia la pared y cae al fondo del vaso, donde un purgador la descarga a una taza. Al levantar la tapa sale el elemento reemplazable.",
   body: layers,
 });
 
@@ -167,7 +167,7 @@ function tick(now) {
   if (touring) flowTarget = 0.55 + 0.4 * Math.sin(clock * 0.3);
   flow += (flowTarget - flow) * (1 - Math.exp(-dt / 0.6));
   spin += dt * flow * 1.6;
-  // visual only: separated water drops spiral down the bowl into the sump (no mechanism is claimed in the copy)
+  // stage 1: the turbine deflector centrifuges the fuel; denser water moves out to the bowl wall and spirals down into the sump
   spawn += dt * (1 + 6 * flow);
   while (spawn > 1) { spawn -= 1; swirl.push({ r: T.r - 2, a: rand() * Math.PI * 2, z: T.z0 - 3 - rand() * 4, v: 4 }); }
   const top = waterTop();
@@ -212,11 +212,11 @@ const body = PAGE_CSS + k.plateHtml({
   readout: "caudal medio · acumulando agua",
   keys: [
     { mark: "lit", label: "Álabes del deflector de turbina y nivel de agua" },
-    { mark: "blue", label: "Agua separada acumulándose en el vaso" },
+    { mark: "blue", label: "Agua separada por centrifugado" },
     { mark: "raised", label: "Tapa con manija en T, elemento reemplazable, carcasa con aletas y abrazadera, vaso, purgador" },
   ],
   caption:
-    "Ilustración conceptual de una carcasa separadora de combustible/agua tipo turbina (FH/FG), con separación por etapas. El agua separada se acumula en el vaso transparente y se descarga por el purgador; el elemento reemplazable se retira por la tapa. Es una ilustración conceptual: no muestra datos de producto.",
+    "Ilustración conceptual de una carcasa separadora de combustible/agua tipo turbina (FH/FG), con separación por etapas. En la primera etapa, visible en el vaso, un deflector de turbina centrifuga el combustible: el agua, más densa, se desplaza hacia la pared y decanta al fondo, donde el purgador la descarga. Las etapas siguientes ocurren en el elemento reemplazable, que se retira por la tapa. Es una ilustración conceptual: no muestra datos de producto.",
   body: `<div class="iso-stage" tabindex="0" role="slider" aria-label="Carcasa TURBOCORE: flechas cambian el caudal, E abre la tapa, espacio purga" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60">${svg}</div>`,
 });
 

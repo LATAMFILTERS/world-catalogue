@@ -19,7 +19,7 @@ HYDROCORE™ and TURBOCORE™ are separate figures because they are distinct sco
 - Figures are conceptual explainers, not SKU product images (those go through `elimfilters-product-image-pipeline`).
 - No competitor names, product codes, efficiencies, capacities, pressures or service intervals.
 - Readouts show qualitative states (for example `caudal medio · acumulando agua`), never numbers.
-- TURBOCORE™ copy states only staged separation; it does not claim how any stage works.
+- TURBOCORE™ copy states staged separation with a stage-1 turbine deflector that centrifuges the fuel, as confirmed by the operator (see `status.json`).
 - Remaining review items and operator decisions are recorded in `status.json`.
 
 ## Rebuilding

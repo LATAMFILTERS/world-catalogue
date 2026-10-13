@@ -25,7 +25,8 @@
       "validationStatus": "pending-secondary-validation",
       "publicationStatus": "internal-only",
       "open_items": [
-        "Engineering review of the drawn configuration (lid, housing, bowl, deflector, drain) against approved FH/FG applications."
+        "Engineering review of the drawn configuration (lid, housing, bowl, deflector, drain) against approved FH/FG applications.",
+        "Attach an ELIMFILTERS-controlled document reference for the operator-confirmed stage-1 mechanism (turbine deflector centrifuges the fuel)."
       ]
     }
   ],
@@ -39,7 +40,13 @@
     {
       "date": "2026-10-13",
       "by": "operator",
-      "decision": "TURBOCORE copy states only staged separation; no stage mechanism (centrifugal/deflector) is claimed."
+      "decision": "Superseded by the next entry."
+    },
+    {
+      "date": "2026-10-13",
+      "by": "operator",
+      "decision": "Operator confirmed the TURBOCORE stage-1 mechanism: a turbine deflector centrifuges the fuel. Copy restored to state it. Attach an ELIMFILTERS-controlled document reference before publication (FUEL_CANONICAL_GOVERNANCE.md, claims blocked by default).",
+      "evidence": "operator statement, 2026-10-13"
     },
     {
       "date": "2026-10-13",
