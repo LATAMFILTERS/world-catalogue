@@ -131,7 +131,7 @@ export function MiningIndustryPageV2({ lang = 'en' }: { lang?: PageLang }) {
           <p style={heroContext}>{miningText(lang, "Operating reality: abrasive dust, heavy load, extended duty cycles and constrained service windows.")}</p>
           <div style={actions}>
             <Link href="/contact/" style={primaryButton} data-conversion-action="application-support">{miningText(lang, "PROTECT MINING EQUIPMENT")}</Link>
-            <a href="https://part-search.elimfilters.com/" style={secondaryButton} data-conversion-action="product-intelligence">FIND MY FILTER</a>
+            <a href="https://part-search.elimfilters.com/" style={secondaryButton} data-conversion-action="product-intelligence">{miningText(lang, "FIND MY FILTER")}</a>
           </div>
         </div>
       </section>
@@ -206,7 +206,7 @@ export function MiningIndustryPageV2({ lang = 'en' }: { lang?: PageLang }) {
       <section style={conversionSection}>
         <div style={conversionGrid}>
           <div style={conversionPrimary}><p style={eyebrow}>{miningText(lang, "HAVE A MACHINE OR CONTAMINATION PROBLEM?")}</p><h2 style={conversionTitle}>{miningText(lang, "Protect mining equipment around the way it actually operates.")}</h2><p style={conversionText}>{miningText(lang, "Send the machine, engine, protected system, operating environment and any known OEM or filter reference. We will route the request through the correct protection path.")}</p><Link href="/contact/" style={primaryButton} data-conversion-action="application-support">{miningText(lang, "PROTECT MINING EQUIPMENT")}</Link></div>
-          <div style={conversionSecondary}><div><p style={eyebrow}>{miningText(lang, "ALREADY HAVE A PART NUMBER?")}</p><h3 style={conversionSubTitle}>{miningText(lang, "Go directly to Part Search.")}</h3><a href="https://part-search.elimfilters.com/" style={secondaryButton} data-conversion-action="product-intelligence">FIND MY FILTER</a></div><div style={divider} /><div><p style={eyebrow}>{miningText(lang, "SERVE MINING CUSTOMERS?")}</p><h3 style={conversionSubTitle}>{miningText(lang, "Evaluate distributor fit.")}</h3><Link href="/distributor-application/" style={secondaryButton}>BECOME A DISTRIBUTOR</Link></div></div>
+          <div style={conversionSecondary}><div><p style={eyebrow}>{miningText(lang, "ALREADY HAVE A PART NUMBER?")}</p><h3 style={conversionSubTitle}>{miningText(lang, "Go directly to Part Search.")}</h3><a href="https://part-search.elimfilters.com/" style={secondaryButton} data-conversion-action="product-intelligence">{miningText(lang, "FIND MY FILTER")}</a></div><div style={divider} /><div><p style={eyebrow}>{miningText(lang, "SERVE MINING CUSTOMERS?")}</p><h3 style={conversionSubTitle}>{miningText(lang, "Evaluate distributor fit.")}</h3><Link href="/distributor-application/" style={secondaryButton}>{miningText(lang, "BECOME A DISTRIBUTOR")}</Link></div></div>
         </div>
       </section>
     </main>
