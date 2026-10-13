@@ -65,8 +65,8 @@ export function PageHeader({ breadcrumbs, currentPage }: PageHeaderProps) {
   const trail: Breadcrumb[] = [{ label: t('category.home', { defaultValue: 'HOME' }), href: homeHref }];
 
   if (industryLabel) {
-    trail.push({ label: t('nav.industries', { defaultValue: 'Industries' }), href: '/industries/' });
-    trail.push({ label: industryLabel });
+    trail.push({ label: t('nav.industries', { defaultValue: 'Industries' }), href: locale ? `/${locale}/industries/` : '/industries/' });
+    trail.push({ label: locale === 'es' && currentPage === 'Mining' ? 'Sistemas de filtración minera' : locale === 'pt' && currentPage === 'Mining' ? 'Sistemas de filtração para mineração' : industryLabel });
   } else {
     if (breadcrumbs) {
       trail.push(...breadcrumbs.map((crumb) => ({ ...crumb, label: localizeLabel(crumb.label) })));
