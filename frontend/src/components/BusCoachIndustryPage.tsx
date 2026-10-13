@@ -3,6 +3,8 @@ import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { IndustryFilterCarousel } from './IndustryFilterCarousel';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
+import { busCoachText } from '@/lib/bus-coach-i18n';
+import type { PageLang } from '@/lib/localized-routes';
 
 const BASE_URL = 'https://elimfilters.com';
 const PAGE_URL = `${BASE_URL}/industries/bus-coach/`;
@@ -52,15 +54,17 @@ const questions = [
   ['Can ELIMFILTERS identify a bus or coach filter from an OEM or part number?', 'Yes. A known OEM or current filter reference can be used as a starting point in Part Search. Final confirmation should still reconcile the vehicle, engine, protected system and application evidence.'],
 ] as const;
 
-export function BusCoachIndustryPage() {
+export function BusCoachIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
+  const pageUrl = `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/industries/bus-coach/`;
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': `${PAGE_URL}#page`,
-        url: PAGE_URL,
-        name: 'Bus & Coach Filtration Systems',
+        '@id': `${pageUrl}#page`,
+        url: pageUrl,
+        name: lang === 'es' ? 'Filtración para autobuses y autocares' : lang === 'pt' ? 'Filtração para ônibus e transporte rodoviário' : 'Bus & Coach Filtration Systems',
+        inLanguage: lang === 'pt' ? 'pt-BR' : lang,
         description: 'Bus and coach filtration systems for transit buses, intercity coaches, school buses, shuttle fleets and passenger vehicles requiring air, fuel, lubrication, cooling, compressed-air and cabin protection.',
         isPartOf: { '@id': `${BASE_URL}/#website` },
         publisher: { '@id': `${BASE_URL}/#organization` },
@@ -86,27 +90,27 @@ export function BusCoachIndustryPage() {
           { '@type': 'Thing', name: 'MICROKAPPA' },
           { '@type': 'Thing', name: 'THERMACORE' },
         ],
-        breadcrumb: { '@id': `${PAGE_URL}#breadcrumb` },
+        breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': `${PAGE_URL}#breadcrumb`,
+        '@id': `${pageUrl}#breadcrumb`,
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
           { '@type': 'ListItem', position: 2, name: 'Industry', item: `${BASE_URL}/industries/` },
-          { '@type': 'ListItem', position: 3, name: 'Bus & Coach Filtration Systems', item: PAGE_URL },
+          { '@type': 'ListItem', position: 3, name: 'Bus & Coach Filtration Systems', item: pageUrl },
         ],
       },
       {
         '@type': 'ItemList',
-        '@id': `${PAGE_URL}#fleet-types`,
+        '@id': `${pageUrl}#fleet-types`,
         name: 'Bus and coach fleet applications',
         itemListElement: fleetTypes.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name })),
       },
       {
         '@type': 'FAQPage',
-        '@id': `${PAGE_URL}#faq`,
-        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+        '@id': `${pageUrl}#faq`,
+        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: busCoachText(lang, q), acceptedAnswer: { '@type': 'Answer', text: busCoachText(lang, a) } })),
       },
     ],
   };
@@ -122,40 +126,40 @@ export function BusCoachIndustryPage() {
         </video>
         <div style={heroShade} />
         <div style={heroInner}>
-          <p style={eyebrow}>BUS & COACH / PASSENGER FLEET PROTECTION</p>
-          <h1 style={heroTitle}>Bus & Coach<br /><span style={yellow}>Filtration Systems</span></h1>
-          <p style={heroPromise}>Protect route availability, engine systems, compressed air and the passenger environment with application-specific filtration.</p>
-          <p style={heroLead}>Filtration architecture for transit buses, intercity coaches, school buses, shuttle fleets and other passenger vehicles operating through stop-and-go duty, urban particulate, long daily service and scheduled depot maintenance.</p>
+          <p style={eyebrow}>{busCoachText(lang, "BUS & COACH / PASSENGER FLEET PROTECTION")}</p>
+          <h1 style={heroTitle}>{busCoachText(lang, "Bus & Coach")}<br /><span style={yellow}>{busCoachText(lang, "Filtration Systems")}</span></h1>
+          <p style={heroPromise}>{busCoachText(lang, "Protect route availability, engine systems, compressed air and the passenger environment with application-specific filtration.")}</p>
+          <p style={heroLead}>{busCoachText(lang, "Filtration architecture for transit buses, intercity coaches, school buses, shuttle fleets and other passenger vehicles operating through stop-and-go duty, urban particulate, long daily service and scheduled depot maintenance.")}</p>
           <div style={actions}>
-            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY BUS & COACH PROTECTION PATH</Link>
-            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a>
+            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{busCoachText(lang, "IDENTIFY MY BUS & COACH PROTECTION PATH")}</Link>
+            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{busCoachText(lang, "FIND MY FILTER")}</a>
           </div>
         </div>
       </section>
 
       <section style={directSection} aria-labelledby="bus-direct-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>DIRECT ANSWER</p>
-          <h2 id="bus-direct-title" style={directTitle}>What defines the correct filtration strategy for a bus or coach fleet?</h2>
-          <p style={directText}>Start with the actual vehicle platform, engine and protected system. Then resolve route duty, passenger environment, compressed-air architecture, fuel condition, service windows and documented application evidence. A bus category or service interval alone is not enough to confirm the correct filter.</p>
+          <p style={eyebrow}>{busCoachText(lang, "DIRECT ANSWER")}</p>
+          <h2 id="bus-direct-title" style={directTitle}>{busCoachText(lang, "What defines the correct filtration strategy for a bus or coach fleet?")}</h2>
+          <p style={directText}>{busCoachText(lang, "Start with the actual vehicle platform, engine and protected system. Then resolve route duty, passenger environment, compressed-air architecture, fuel condition, service windows and documented application evidence. A bus category or service interval alone is not enough to confirm the correct filter.")}</p>
         </div>
       </section>
 
       <section style={section} aria-labelledby="duty-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>PASSENGER-FLEET DUTY</p>
-          <h2 id="duty-title" style={sectionTitle}>The vehicle has to protect the route and the occupied environment at the same time.</h2>
-          <p style={wideText}>Bus and coach filtration decisions span propulsion, compressed air, cooling and HVAC. The operating context is different from a conventional truck fleet because passenger load, route frequency and depot schedules are part of the maintenance equation.</p>
-          <div style={cardGrid}>{dutyFactors.map(([title, text]) => <article key={title} style={card}><h3 style={cardTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          <p style={eyebrow}>{busCoachText(lang, "PASSENGER-FLEET DUTY")}</p>
+          <h2 id="duty-title" style={sectionTitle}>{busCoachText(lang, "The vehicle has to protect the route and the occupied environment at the same time.")}</h2>
+          <p style={wideText}>{busCoachText(lang, "Bus and coach filtration decisions span propulsion, compressed air, cooling and HVAC. The operating context is different from a conventional truck fleet because passenger load, route frequency and depot schedules are part of the maintenance equation.")}</p>
+          <div style={cardGrid}>{dutyFactors.map(([title, text]) => <article key={title} style={card}><h3 style={cardTitle}>{busCoachText(lang, title)}</h3><p style={bodyText}>{busCoachText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={fleetSection} aria-labelledby="fleet-title">
         <div style={fleetGrid}>
           <div>
-            <p style={eyebrow}>FLEET APPLICATIONS</p>
-            <h2 id="fleet-title" style={sectionTitle}>One passenger sector. Multiple duty profiles.</h2>
-            <p style={wideText}>Urban transit, school transportation, intercity service and shuttle operations can share similar vehicle architecture while operating under very different route lengths, passenger cycles and maintenance windows.</p>
+            <p style={eyebrow}>{busCoachText(lang, "FLEET APPLICATIONS")}</p>
+            <h2 id="fleet-title" style={sectionTitle}>{busCoachText(lang, "One passenger sector. Multiple duty profiles.")}</h2>
+            <p style={wideText}>{busCoachText(lang, "Urban transit, school transportation, intercity service and shuttle operations can share similar vehicle architecture while operating under very different route lengths, passenger cycles and maintenance windows.")}</p>
             <div style={fleetList}>{fleetTypes.map((item) => <div key={item} style={fleetRow}>{item}</div>)}</div>
           </div>
           <div style={fleetMedia}><img src="/images/bus-hero.avif" alt="Bus and coach fleet operating in passenger service" style={fleetImage} /></div>
@@ -164,32 +168,32 @@ export function BusCoachIndustryPage() {
 
       <section style={section} aria-labelledby="path-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>PROTECTION PATHWAYS</p>
-          <h2 id="path-title" style={sectionTitle}>Connect each contamination path to the system that keeps the vehicle in service.</h2>
-          <p style={wideText}>The protection architecture should identify the contamination source, the affected vehicle system, the appropriate ELIMFILTERS technology and then the validated part for that exact application.</p>
-          <div className="industry-pathway-grid" style={pathwayGrid}>{pathways.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>CONTAMINATION / CONDITION</span><strong style={pathwaySource}>{source}</strong><p style={smallText}>{detail}</p></div><div style={pathwayDivider} /><div><span style={smallLabel}>PROTECTED SYSTEM</span><strong style={pathwaySystem}>{system}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>ELIMFILTERS TECHNOLOGY</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>EXPLORE →</span></Link></article>)}</div>
+          <p style={eyebrow}>{busCoachText(lang, "PROTECTION PATHWAYS")}</p>
+          <h2 id="path-title" style={sectionTitle}>{busCoachText(lang, "Connect each contamination path to the system that keeps the vehicle in service.")}</h2>
+          <p style={wideText}>{busCoachText(lang, "The protection architecture should identify the contamination source, the affected vehicle system, the appropriate ELIMFILTERS technology and then the validated part for that exact application.")}</p>
+          <div className="industry-pathway-grid" style={pathwayGrid}>{pathways.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>{busCoachText(lang, "CONTAMINATION / CONDITION")}</span><strong style={pathwaySource}>{busCoachText(lang, source)}</strong><p style={smallText}>{busCoachText(lang, detail)}</p></div><div style={pathwayDivider} /><div><span style={smallLabel}>{busCoachText(lang, "PROTECTED SYSTEM")}</span><strong style={pathwaySystem}>{busCoachText(lang, system)}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>{busCoachText(lang, "ELIMFILTERS TECHNOLOGY")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{busCoachText(lang, "EXPLORE →")}</span></Link></article>)}</div>
         </div>
       </section>
 
       <section style={principleSection}>
-        <div style={principle}><span style={principleLabel}>BUS & COACH ENGINEERING PRINCIPLE</span><p style={principleText}>Passenger-fleet filtration should be resolved by vehicle platform, route duty, protected system and application evidence before fleet-wide standardization is accepted.</p></div>
+        <div style={principle}><span style={principleLabel}>{busCoachText(lang, "BUS & COACH ENGINEERING PRINCIPLE")}</span><p style={principleText}>{busCoachText(lang, "Passenger-fleet filtration should be resolved by vehicle platform, route duty, protected system and application evidence before fleet-wide standardization is accepted.")}</p></div>
       </section>
 
-      <IndustryFilterCarousel dutyClass="HD" industryName="Bus Coach" />
+      <IndustryFilterCarousel dutyClass="HD" industryName="Bus Coach" lang={lang} />
 
       <section style={impactSection} aria-labelledby="impact-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>ROUTE AVAILABILITY</p>
-          <h2 id="impact-title" style={sectionTitle}>Protect the systems that determine whether the vehicle can stay assigned to service.</h2>
-          <p style={wideText}>A filtration decision affects more than an engine component. It can influence route continuity, brake-system support, HVAC service, depot planning and the ability to standardize maintenance across a mixed passenger fleet.</p>
-          <div style={impactGrid}>{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          <p style={eyebrow}>{busCoachText(lang, "ROUTE AVAILABILITY")}</p>
+          <h2 id="impact-title" style={sectionTitle}>{busCoachText(lang, "Protect the systems that determine whether the vehicle can stay assigned to service.")}</h2>
+          <p style={wideText}>{busCoachText(lang, "A filtration decision affects more than an engine component. It can influence route continuity, brake-system support, HVAC service, depot planning and the ability to standardize maintenance across a mixed passenger fleet.")}</p>
+          <div style={impactGrid}>{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{busCoachText(lang, title)}</h3><p style={bodyText}>{busCoachText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={section} aria-labelledby="decision-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>FROM ROUTE PROFILE TO PART</p>
-          <h2 id="decision-title" style={sectionTitle}>Resolve the bus or coach application in six decisions.</h2>
+          <p style={eyebrow}>{busCoachText(lang, "FROM ROUTE PROFILE TO PART")}</p>
+          <h2 id="decision-title" style={sectionTitle}>{busCoachText(lang, "Resolve the bus or coach application in six decisions.")}</h2>
           <div style={decisionGrid}>{[
             ['Vehicle', 'Identify make, model, year, chassis and fleet configuration.'],
             ['Engine', 'Resolve the installed engine and any platform-specific engine variation.'],
@@ -197,30 +201,30 @@ export function BusCoachIndustryPage() {
             ['Protected System', 'Identify air intake, fuel, lubrication, cooling, compressed air or cabin HVAC.'],
             ['Service Context', 'Account for depot schedule, ambient particulate, passenger load and fueling conditions.'],
             ['Application Evidence', 'Validate the final filter using OEM reference, current part, dimensions and documented fitment evidence.'],
-          ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{busCoachText(lang, title)}</h3><p style={bodyText}>{busCoachText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={evidenceSection} aria-labelledby="evidence-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>DEPOT APPLICATION EVIDENCE</p>
-          <h2 id="evidence-title" style={sectionTitle}>A fleet standard is only useful when the underlying applications are actually compatible.</h2>
-          <p style={wideText}>Before consolidating part numbers across a bus or coach fleet, reconcile engine, chassis, protected system, OEM reference, dimensions and documented application evidence. Similar body styles do not prove identical filter positions.</p>
+          <p style={eyebrow}>{busCoachText(lang, "DEPOT APPLICATION EVIDENCE")}</p>
+          <h2 id="evidence-title" style={sectionTitle}>{busCoachText(lang, "A fleet standard is only useful when the underlying applications are actually compatible.")}</h2>
+          <p style={wideText}>{busCoachText(lang, "Before consolidating part numbers across a bus or coach fleet, reconcile engine, chassis, protected system, OEM reference, dimensions and documented application evidence. Similar body styles do not prove identical filter positions.")}</p>
         </div>
       </section>
 
       <section style={faqSection} aria-labelledby="faq-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>BUS & COACH FILTRATION QUESTIONS</p>
-          <h2 id="faq-title" style={sectionTitle}>What fleet and maintenance teams need to know.</h2>
-          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{q}</h3><p style={faqAnswer}>{a}</p></article>)}</div>
+          <p style={eyebrow}>{busCoachText(lang, "BUS & COACH FILTRATION QUESTIONS")}</p>
+          <h2 id="faq-title" style={sectionTitle}>{busCoachText(lang, "What fleet and maintenance teams need to know.")}</h2>
+          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{busCoachText(lang, q)}</h3><p style={faqAnswer}>{busCoachText(lang, a)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={conversionSection}>
         <div style={conversionGrid}>
-          <div><p style={eyebrow}>HAVE A BUS, COACH OR FLEET APPLICATION?</p><h2 style={conversionTitle}>Identify the protection path before the next depot window.</h2><p style={conversionText}>Send the vehicle make, model, year, engine, chassis or VIN details when available, protected system, route duty and any known OEM or current filter reference.</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY BUS & COACH PROTECTION PATH</Link></div>
-          <div style={conversionSecondary}><div><p style={eyebrow}>ALREADY HAVE A PART NUMBER?</p><h3 style={conversionSubTitle}>Go directly to Part Search.</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a></div><div style={divider} /><div><p style={eyebrow}>SERVE TRANSIT OR COACH OPERATORS?</p><h3 style={conversionSubTitle}>Evaluate distributor fit.</h3><Link href="/distributor-application/" style={secondaryButton}>BECOME A DISTRIBUTOR</Link></div></div>
+          <div><p style={eyebrow}>{busCoachText(lang, "HAVE A BUS, COACH OR FLEET APPLICATION?")}</p><h2 style={conversionTitle}>{busCoachText(lang, "Identify the protection path before the next depot window.")}</h2><p style={conversionText}>{busCoachText(lang, "Send the vehicle make, model, year, engine, chassis or VIN details when available, protected system, route duty and any known OEM or current filter reference.")}</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{busCoachText(lang, "IDENTIFY MY BUS & COACH PROTECTION PATH")}</Link></div>
+          <div style={conversionSecondary}><div><p style={eyebrow}>{busCoachText(lang, "ALREADY HAVE A PART NUMBER?")}</p><h3 style={conversionSubTitle}>{busCoachText(lang, "Go directly to Part Search.")}</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{busCoachText(lang, "FIND MY FILTER")}</a></div><div style={divider} /><div><p style={eyebrow}>{busCoachText(lang, "SERVE TRANSIT OR COACH OPERATORS?")}</p><h3 style={conversionSubTitle}>{busCoachText(lang, "Evaluate distributor fit.")}</h3><Link href="/distributor-application/" style={secondaryButton}>{busCoachText(lang, "BECOME A DISTRIBUTOR")}</Link></div></div>
         </div>
       </section>
     </main>
