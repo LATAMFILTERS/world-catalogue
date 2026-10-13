@@ -1280,17 +1280,8 @@ function detectLang(req) {
   return langs.some(l => l.startsWith('es')) ? 'es' : 'en';
 }
 
-const PROPRIETARY_SUBTYPES = new Set([
-  'synteq xp', 'synteq', 'ultra-web nanofiber', 'aquabloc® ii', 'aquabloc ii',
-  'alpha-web™', 'alpha-web', 'synteq xp™',
-]);
-function safeSubtype(val, lang = 'en') {
-  const text = extractText(val, lang);
-  if (!text) return null;
-  if (/[®™]/.test(text)) return null;
-  if (PROPRIETARY_SUBTYPES.has(text.toLowerCase())) return null;
-  return text;
-}
+// Operator rule 2026-10-13: the only media/subtype text shown is this one.
+const MEDIA_LABEL = 'GENUINE FILTER MEDIA';
 
 // ── Mojibake repair ──────────────────────────────────────────────────────────
 // Some catalog rows were imported through a pipeline that read UTF-8 bytes as
@@ -1381,13 +1372,6 @@ function fixMojibakeDeep(arr) {
 }
 
 function buildFilterData(row, lang = 'en'){
-  let subtype = safeSubtype(row.sub_type, lang);
-
-  // Enforce rule: No Cellulose/Celulosa media (sub_type) for any filter
-  if (subtype && (subtype.toUpperCase() === 'CELLULOSE' || subtype.toUpperCase() === 'CELULOSA')) {
-    subtype = lang === 'es' ? 'Híbrida' : 'Genuine Media';
-  }
-
   // Re-classify on every response: after the consolidation migration oem_codes
   // may contain competitor filter-brand codes. Merging both arrays and running
   // splitRefs() keeps OEM equipment manufacturers and competitor filter brands
@@ -1398,7 +1382,7 @@ function buildFilterData(row, lang = 'en'){
     elimfilters_sku: row.sku,
     description: extractText(row.description, lang),
     filter_type: extractText(row.filter_type, lang),
-    filter_subtype: subtype,
+    filter_subtype: MEDIA_LABEL,
     technology: TECH_NAME_FIXES[row.technology] || row.technology || null,
     technology_logo: getTechLogo(TECH_NAME_FIXES[row.technology] || row.technology),
     installation_type: row.installation_type || null,
