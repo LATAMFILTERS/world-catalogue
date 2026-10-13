@@ -1,6 +1,6 @@
 /** Approved editorial translations for the industry landing page. Technical part numbers stay canonical. */
 import type { PageLang } from '@/lib/localized-routes';
-const translations: Record<'es' | 'pt', Record<string, string>> = {
+const translations: Record<'es' | 'pt', Record<string, string>> =  {
   "es": {
     "Industrial Filtration": "Filtración industrial",
     "By Industry": "Por industria",
@@ -84,7 +84,15 @@ const translations: Record<'es' | 'pt', Record<string, string>> = {
     "Identify particles, water, thermal stress, bypass risk, or other failure mechanisms.": "Identifique partículas, agua, estrés térmico, riesgo de derivación u otros mecanismos de falla.",
     "Connect the risk to air, fuel, lubrication, hydraulic, coolant, cabin, or compressed-air protection.": "Relacione el riesgo con la protección de aire, combustible, lubricación, hidráulica, refrigerante, cabina o aire comprimido.",
     "Apply the ELIMFILTERS technology architecture engineered for that system.": "Aplique la arquitectura tecnológica ELIMFILTERS diseñada para ese sistema.",
-    "Resolve the final part, OEM reference, dimensions, and application fit.": "Determine la pieza final, la referencia OEM, las dimensiones y la compatibilidad de aplicación."
+    "Resolve the final part, OEM reference, dimensions, and application fit.": "Determine la pieza final, la referencia OEM, las dimensiones y la compatibilidad de aplicación.",
+    "Why do filtration requirements change by industry?": "¿Por qué cambian los requisitos de filtración entre industrias?",
+    "Filtration requirements change with dust concentration, water exposure, fuel quality, system sensitivity, temperature, load cycle, idle time, and service interval. The same filter category can therefore face very different contamination loads and failure risks in mining, marine, power generation, or urban fleet service.": "Los requisitos dependen de la concentración de polvo, la exposición al agua, la calidad del combustible, la sensibilidad del sistema, la temperatura, el ciclo de carga, el ralentí y el intervalo de servicio. Una misma categoría de filtros puede enfrentar cargas de contaminación y riesgos de falla muy distintos en minería, marina, generación eléctrica o flotas urbanas.",
+    "What filtration systems are most important in severe-duty equipment?": "¿Qué sistemas de filtración son más importantes en equipos de servicio severo?",
+    "The critical systems depend on the asset and operating environment, but severe-duty equipment commonly requires coordinated protection across air intake, fuel, lubrication, hydraulic, coolant, cabin, and compressed-air systems.": "Los sistemas críticos dependen del activo y su entorno operativo, pero los equipos de servicio severo suelen requerir protección coordinada en admisión de aire, combustible, lubricación, hidráulica, refrigerante, cabina y aire comprimido.",
+    "How does ELIMFILTERS select protection for an industry?": "¿Cómo selecciona ELIMFILTERS la protección para una industria?",
+    "Selection begins with the asset, operating environment, contamination mechanism, duty cycle, service conditions, and cost of downtime. The protection architecture is then connected to the appropriate system, technology, and product family.": "La selección comienza por el activo, el entorno operativo, el mecanismo de contaminación, el ciclo de trabajo, las condiciones de servicio y el costo de inactividad. A partir de ello se define el sistema, la tecnología y la familia de productos adecuados.",
+    "Can I search by part number instead of industry?": "¿Puedo buscar por número de pieza en lugar de industria?",
+    "Yes. If you already know an OEM reference or part number, Part Search provides the fastest path to cross-reference and application information without navigating the industry structure first.": "Sí. Si ya conoce una referencia OEM o un número de pieza, Find My Filter permite consultar directamente las equivalencias y aplicaciones sin recorrer primero la estructura por industrias."
   },
   "pt": {
     "Industrial Filtration": "Filtração industrial",
@@ -169,7 +177,15 @@ const translations: Record<'es' | 'pt', Record<string, string>> = {
     "Identify particles, water, thermal stress, bypass risk, or other failure mechanisms.": "Identifique partículas, água, estresse térmico, risco de desvio ou outros mecanismos de falha.",
     "Connect the risk to air, fuel, lubrication, hydraulic, coolant, cabin, or compressed-air protection.": "Relacione o risco à proteção de ar, combustível, lubrificação, hidráulica, arrefecimento, cabine ou ar comprimido.",
     "Apply the ELIMFILTERS technology architecture engineered for that system.": "Aplique a arquitetura tecnológica ELIMFILTERS projetada para esse sistema.",
-    "Resolve the final part, OEM reference, dimensions, and application fit.": "Determine a peça final, a referência OEM, as dimensões e a compatibilidade de aplicação."
+    "Resolve the final part, OEM reference, dimensions, and application fit.": "Determine a peça final, a referência OEM, as dimensões e a compatibilidade de aplicação.",
+    "Why do filtration requirements change by industry?": "Por que os requisitos de filtração mudam de um setor para outro?",
+    "Filtration requirements change with dust concentration, water exposure, fuel quality, system sensitivity, temperature, load cycle, idle time, and service interval. The same filter category can therefore face very different contamination loads and failure risks in mining, marine, power generation, or urban fleet service.": "Os requisitos dependem da concentração de poeira, exposição à água, qualidade do combustível, sensibilidade do sistema, temperatura, ciclo de carga, marcha lenta e intervalo de manutenção. Uma mesma categoria de filtros pode enfrentar cargas de contaminação e riscos de falha muito diferentes em mineração, aplicações marítimas, geração de energia ou frotas urbanas.",
+    "What filtration systems are most important in severe-duty equipment?": "Quais sistemas de filtração são mais importantes em equipamentos de serviço severo?",
+    "The critical systems depend on the asset and operating environment, but severe-duty equipment commonly requires coordinated protection across air intake, fuel, lubrication, hydraulic, coolant, cabin, and compressed-air systems.": "Os sistemas críticos dependem do ativo e do ambiente operacional, mas equipamentos de serviço severo geralmente exigem proteção coordenada na admissão de ar, combustível, lubrificação, hidráulica, arrefecimento, cabine e ar comprimido.",
+    "How does ELIMFILTERS select protection for an industry?": "Como a ELIMFILTERS seleciona a proteção para cada setor?",
+    "Selection begins with the asset, operating environment, contamination mechanism, duty cycle, service conditions, and cost of downtime. The protection architecture is then connected to the appropriate system, technology, and product family.": "A seleção começa pelo ativo, ambiente operacional, mecanismo de contaminação, ciclo de trabalho, condições de manutenção e custo da parada. A partir disso, definem-se o sistema, a tecnologia e a família de produtos adequados.",
+    "Can I search by part number instead of industry?": "Posso pesquisar pelo número da peça em vez do setor?",
+    "Yes. If you already know an OEM reference or part number, Part Search provides the fastest path to cross-reference and application information without navigating the industry structure first.": "Sim. Se você já conhece uma referência OEM ou número da peça, Find My Filter permite consultar diretamente equivalências e aplicações sem percorrer primeiro a estrutura por setores."
   }
 };
 export function industryText(lang: PageLang, en: string): string { return lang === 'en' ? en : (translations[lang][en] ?? en); }
