@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import { PRODUCT_FAMILIES, type FamilyKey } from '@/lib/product-families-data';
+import { carouselText } from '@/lib/industry-carousel-i18n';
+import type { PageLang } from '@/lib/localized-routes';
 
 const CORE_KEYS: FamilyKey[] = ['primary-air', 'primary-fuel', 'oil-filters', 'cabin-filters'];
 const HD_EXTRA_KEYS: FamilyKey[] = ['fuel-water-separators', 'hydraulic-filters'];
@@ -133,9 +135,10 @@ const INDUSTRY_INTRO: Record<string, string> = {
 interface IndustryFilterCarouselProps {
   dutyClass: 'HD' | 'LD';
   industryName: string;
+  lang?: PageLang;
 }
 
-export function IndustryFilterCarousel({ dutyClass, industryName }: IndustryFilterCarouselProps) {
+export function IndustryFilterCarousel({ dutyClass, industryName, lang = 'en' }: IndustryFilterCarouselProps) {
   const keys = (
     dutyClass === 'LD'
       ? CORE_KEYS
@@ -180,10 +183,10 @@ export function IndustryFilterCarousel({ dutyClass, industryName }: IndustryFilt
             margin: '0 0 0.9rem',
           }}
         >
-          Filters Built For <span style={{ color: '#FFF12D' }}>{industryName}</span>
+          {lang === 'es' ? 'Filtros diseñados para' : lang === 'pt' ? 'Filtros projetados para' : 'Filters Built For'} <span style={{ color: '#FFF12D' }}>{lang === 'es' && industryName === 'Mining' ? 'Minería' : lang === 'pt' && industryName === 'Mining' ? 'Mineração' : industryName}</span>
         </h2>
         <p style={{ fontFamily: bodyFont, fontSize: '1rem', lineHeight: 1.78, color: 'rgba(255,255,255,0.58)', maxWidth: '780px', margin: 0 }}>
-          {INDUSTRY_INTRO[industryName] ?? `We are proud to serve customers who build a better future and protect what matters. ELIMFILTERS® protection systems keep ${industryName.toLowerCase()} equipment running, because the industries we serve most depend on us being reliable.`}
+          {carouselText(lang, INDUSTRY_INTRO[industryName] ?? `We are proud to serve customers who build a better future and protect what matters. ELIMFILTERS® protection systems keep ${industryName.toLowerCase()} equipment running, because the industries we serve most depend on us being reliable.`)}
         </p>
       </div>
 
@@ -200,10 +203,10 @@ export function IndustryFilterCarousel({ dutyClass, industryName }: IndustryFilt
         >
           <div>
             <h3 style={{ fontFamily: displayFont, fontWeight: 700, fontSize: 'clamp(1.5rem, 2.6vw, 2.1rem)', color: '#fff', margin: '0 0 1.1rem', textTransform: 'uppercase' }}>
-              {family.name}
+              {carouselText(lang, family.name)}
             </h3>
             <p style={{ fontFamily: bodyFont, fontSize: '1.02rem', lineHeight: 1.75, color: 'rgba(255,255,255,0.65)', margin: '0 0 1.5rem', maxWidth: '540px' }}>
-              {family.purpose} {family.engineering}
+              {carouselText(lang, family.purpose)} {carouselText(lang, family.engineering)}
             </p>
             <Link
               href={`/families/${family.slug}/`}
@@ -220,19 +223,19 @@ export function IndustryFilterCarousel({ dutyClass, industryName }: IndustryFilt
                 textTransform: 'uppercase',
               }}
             >
-              View {family.name} →
+              {lang === 'es' ? 'Ver' : lang === 'pt' ? 'Ver' : 'View'} {carouselText(lang, family.name)} →
             </Link>
           </div>
 
           <div style={{ position: 'relative', width: '100%', paddingBottom: '75%', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', background: '#fff' }}>
             <img
               src={image}
-              alt={family.name}
+              alt={carouselText(lang, family.name)}
               style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain', padding: '1.5rem' }}
             />
             <button
               type="button"
-              aria-label="Previous filter"
+              aria-label={lang === "es" ? "Filtro anterior" : lang === "pt" ? "Filtro anterior" : "Previous filter"}
               onClick={() => go(-1)}
               style={{ ...onImageArrowStyle, left: '0.75rem' }}
             >
@@ -240,7 +243,7 @@ export function IndustryFilterCarousel({ dutyClass, industryName }: IndustryFilt
             </button>
             <button
               type="button"
-              aria-label="Next filter"
+              aria-label={lang === "es" ? "Filtro siguiente" : lang === "pt" ? "Próximo filtro" : "Next filter"}
               onClick={() => go(1)}
               style={{ ...onImageArrowStyle, right: '0.75rem' }}
             >
