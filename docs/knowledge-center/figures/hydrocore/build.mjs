@@ -100,10 +100,10 @@ let wet = 0.5, wetTarget = 0.5, spawn = 0, clock = 0, touring = true, idle = 0, 
 const falling = [];
 function draw() {
   drawBowl(falling.map((d) => ({ at: [d.x, d.y, d.z], back: false })));
-  const text = "agua en el vaso " + Math.round(bowl.level * 100) + " %" + (bowl.open > 0.5 ? " · purgando" : "");
+  const text = bowl.open > 0.5 ? "vaso · purgando" : bowl.level > 0.85 ? "vaso · llegando a la marca" : "vaso · acumulando agua";
   if (readout.textContent !== text) readout.textContent = text;
   stage.setAttribute("aria-valuenow", String(Math.round(wet * 100)));
-  stage.setAttribute("aria-valuetext", "agua en el combustible " + Math.round(wet * 100) + " %, " + text);
+  stage.setAttribute("aria-valuetext", (wet > 0.66 ? "mucha" : wet > 0.33 ? "algo de" : "poca") + " agua en el combustible, " + text);
 }
 function tick(now) {
   const dt = last ? Math.min((now - last) / 1000, 1 / 30) : 1 / 60;
@@ -144,14 +144,14 @@ const body = PAGE_CSS + k.plateHtml({
   fig: "Fig 1",
   title: "HYDROCORE™ · separador estándar",
   hint: "Cursor: más o menos agua · clic: purgar",
-  readout: "agua en el vaso 30 %",
+  readout: "vaso · acumulando agua",
   keys: [
     { mark: "lit", label: "Nivel de agua en el vaso y mariposa del purgador" },
     { mark: "blue", label: "Agua separada: gotas y columna en el vaso" },
     { mark: "raised", label: "Cabezal con bomba de cebado, cartucho spin-on, vaso transparente, taza colectora" },
   ],
   caption:
-    "Ilustración conceptual de un separador de combustible/agua estándar, no-turbina, con vaso transparente y purgador. El agua separada, más densa que el diésel, cae al vaso; cuando alcanza la marca, el purgador se abre y la descarga a la taza. Los porcentajes son ilustrativos, no datos de producto.",
+    "Ilustración conceptual de un separador de combustible/agua estándar, no-turbina, con vaso transparente y purgador. El agua separada, más densa que el diésel, cae al vaso; cuando alcanza la marca, el purgador se abre y la descarga a la taza. Es una ilustración conceptual: no muestra datos de producto.",
   body: `<div class="iso-stage" tabindex="0" role="slider" aria-label="Separador HYDROCORE: flechas cambian el agua en el combustible, espacio purga" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">${svg}</div>`,
 });
 

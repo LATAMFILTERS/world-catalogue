@@ -18,8 +18,9 @@ HYDROCORE™ and TURBOCORE™ are separate figures because they are distinct sco
 
 - Figures are conceptual explainers, not SKU product images (those go through `elimfilters-product-image-pipeline`).
 - No competitor names, product codes, efficiencies, capacities, pressures or service intervals.
-- Readout percentages are illustrative model values and the captions say so.
-- Open review items are listed per figure in `status.json`. The TURBOCORE™ stage-1 turbine-deflector mechanism is a **blocking** item.
+- Readouts show qualitative states (for example `caudal medio · acumulando agua`), never numbers.
+- TURBOCORE™ copy states only staged separation; it does not claim how any stage works.
+- Remaining review items and operator decisions are recorded in `status.json`.
 
 ## Rebuilding
 

@@ -4,24 +4,28 @@
       "id": "kc-figure-hydrocore-standard-separator",
       "technology": "HYDROCORE",
       "scope": "standard non-turbine fuel/water separator with drain and transparent bowl",
-      "files": ["hydrocore/hydrocore.html", "hydrocore/hydrocore-light.html"],
+      "files": [
+        "hydrocore/hydrocore.html",
+        "hydrocore/hydrocore-light.html"
+      ],
       "validationStatus": "pending-secondary-validation",
       "publicationStatus": "internal-only",
       "open_items": [
-        "Engineering review of the drawn configuration (head, spin-on, bowl, drain) against approved HYDROCORE applications.",
-        "Readout percentages are illustrative; confirm they may appear publicly as non-product values or remove them."
+        "Engineering review of the drawn configuration (head, spin-on, bowl, drain) against approved HYDROCORE applications."
       ]
     },
     {
       "id": "kc-figure-turbocore-turbine-housing",
       "technology": "TURBOCORE",
       "scope": "turbine-style FH/FG fuel/water separation housing with replaceable element",
-      "files": ["turbocore/turbocore.html", "turbocore/turbocore-light.html"],
+      "files": [
+        "turbocore/turbocore.html",
+        "turbocore/turbocore-light.html"
+      ],
       "validationStatus": "pending-secondary-validation",
       "publicationStatus": "internal-only",
       "open_items": [
-        "BLOCKING: the stage-1 turbine-deflector/centrifugal mechanism shown is not in the canonical registry (which states only 'staged flow routing'). FUEL_CANONICAL_GOVERNANCE.md blocks competitor-derived geometry or patented mechanisms without ELIMFILTERS-controlled evidence.",
-        "Readout flow/water percentages are illustrative; confirm they may appear publicly as non-product values or remove them."
+        "Engineering review of the drawn configuration (lid, housing, bowl, deflector, drain) against approved FH/FG applications."
       ]
     }
   ],
@@ -30,5 +34,17 @@
     "source": "https://github.com/wheresryan22/anatomy",
     "commit": "be2fa9b47a7e4b05dec468be9ffc42e830c2101c",
     "license": "MIT (ANATOMY_LICENSE.txt)"
-  }
+  },
+  "decisions": [
+    {
+      "date": "2026-10-13",
+      "by": "operator",
+      "decision": "TURBOCORE copy states only staged separation; no stage mechanism (centrifugal/deflector) is claimed."
+    },
+    {
+      "date": "2026-10-13",
+      "by": "operator",
+      "decision": "Readouts show qualitative states instead of numbers on both figures."
+    }
+  ]
 }

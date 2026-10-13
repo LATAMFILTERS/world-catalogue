@@ -131,7 +131,7 @@ const svg = k.figureSvg({
   width: WIDTH,
   height: HEIGHT,
   label:
-    "Carcasa separadora de combustible y agua tipo turbina, con tapa y manija en T, montada con abrazadera a un soporte de pared. A través del vaso transparente se ve el deflector de turbina girando: el combustible entra en remolino y el agua, más densa, es lanzada hacia la pared y cae al fondo del vaso, donde un purgador la descarga a una taza. Al levantar la tapa sale el elemento reemplazable.",
+    "Carcasa separadora de combustible y agua tipo turbina, con tapa y manija en T, montada con abrazadera a un soporte de pared. A través del vaso transparente se ve el deflector de turbina; el agua separada se acumula al fondo del vaso, donde un purgador la descarga a una taza. Al levantar la tapa sale el elemento reemplazable.",
   body: layers,
 });
 
@@ -155,7 +155,7 @@ function draw() {
   const lift = translateAlong(P, [0, 0, T.lift * lid.x]);
   const [dx, dy] = lift.match(/-?[\\d.]+/g).map(Number);
   for (const group of lidGroups) { group.setAttribute("transform", lift); holdStill(group, [dx, dy]); }
-  const text = (lid.x > 0.5 ? "elemento fuera" : "flujo " + Math.round(flow * 100) + " %") + " · agua " + Math.round(bowl.level * 100) + " %" + (bowl.open > 0.5 ? " · purgando" : "");
+  const text = (lid.x > 0.5 ? "elemento fuera" : "caudal " + (flow > 0.66 ? "alto" : flow > 0.33 ? "medio" : "bajo")) + " · " + (bowl.open > 0.5 ? "purgando" : bowl.level > 0.85 ? "agua en la marca" : "acumulando agua");
   if (readout.textContent !== text) readout.textContent = text;
   stage.setAttribute("aria-valuenow", String(Math.round(flow * 100)));
   stage.setAttribute("aria-valuetext", text);
@@ -167,7 +167,7 @@ function tick(now) {
   if (touring) flowTarget = 0.55 + 0.4 * Math.sin(clock * 0.3);
   flow += (flowTarget - flow) * (1 - Math.exp(-dt / 0.6));
   spin += dt * flow * 1.6;
-  // stage 1: the deflector swirls the fuel; denser water moves out to the bowl wall and spirals down into the sump
+  // visual only: separated water drops spiral down the bowl into the sump (no mechanism is claimed in the copy)
   spawn += dt * (1 + 6 * flow);
   while (spawn > 1) { spawn -= 1; swirl.push({ r: T.r - 2, a: rand() * Math.PI * 2, z: T.z0 - 3 - rand() * 4, v: 4 }); }
   const top = waterTop();
@@ -209,14 +209,14 @@ const body = PAGE_CSS + k.plateHtml({
   fig: "Fig 2",
   title: "TURBOCORE™ · carcasa tipo turbina",
   hint: "Cursor: caudal · arriba: tapa · clic: purgar",
-  readout: "flujo 60 % · agua 30 %",
+  readout: "caudal medio · acumulando agua",
   keys: [
     { mark: "lit", label: "Álabes del deflector de turbina y nivel de agua" },
-    { mark: "blue", label: "Agua separada por centrifugado" },
+    { mark: "blue", label: "Agua separada acumulándose en el vaso" },
     { mark: "raised", label: "Tapa con manija en T, elemento reemplazable, carcasa con aletas y abrazadera, vaso, purgador" },
   ],
   caption:
-    "Ilustración conceptual de una carcasa separadora tipo turbina (FH/FG). Etapa 1, visible en el vaso: el deflector pone el combustible en remolino y el agua, más densa, se desplaza a la pared y decanta al fondo. Las etapas siguientes ocurren en el elemento reemplazable dentro de la carcasa, que sale por la tapa. Caudal y porcentajes son ilustrativos, no datos de producto.",
+    "Ilustración conceptual de una carcasa separadora de combustible/agua tipo turbina (FH/FG), con separación por etapas. El agua separada se acumula en el vaso transparente y se descarga por el purgador; el elemento reemplazable se retira por la tapa. Es una ilustración conceptual: no muestra datos de producto.",
   body: `<div class="iso-stage" tabindex="0" role="slider" aria-label="Carcasa TURBOCORE: flechas cambian el caudal, E abre la tapa, espacio purga" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60">${svg}</div>`,
 });
 
