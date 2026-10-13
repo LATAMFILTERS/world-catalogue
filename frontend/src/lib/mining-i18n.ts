@@ -125,7 +125,12 @@ const strings: Record<'es' | 'pt', Record<string,string>> = {
     "Does the same filtration strategy apply to open-pit and underground mining?": "¿Se aplica la misma estrategia en minería a cielo abierto y subterránea?",
     "No. The equipment may share filter categories, but dust loading, ventilation, moisture, temperature, duty cycle, access and maintenance conditions can differ substantially. Those variables change the protection architecture and service strategy.": "No necesariamente. Los equipos pueden compartir categorías de filtros, pero la carga de polvo, ventilación, humedad, temperatura, ciclo operativo, accesibilidad y mantenimiento pueden variar considerablemente. Estas variables cambian la arquitectura de protección y la estrategia de servicio.",
     "Can ELIMFILTERS identify a mining filter from an OEM or part number?": "¿Puede ELIMFILTERS identificar un filtro minero por referencia OEM o número de pieza?",
-    "Yes. If the OEM reference or current filter number is known, Part Search provides the fastest path to cross-reference and application information. For an engineering review, the machine, protected system and operating environment should also be provided.": "Sí. Con una referencia OEM o un número de filtro conocido, Part Search permite consultar equivalencias y aplicaciones. Para una revisión de ingeniería también se requieren la máquina, el sistema protegido y el entorno operativo."
+    "Yes. If the OEM reference or current filter number is known, Part Search provides the fastest path to cross-reference and application information. For an engineering review, the machine, protected system and operating environment should also be provided.": "Sí. Con una referencia OEM o un número de filtro conocido, Part Search permite consultar equivalencias y aplicaciones. Para una revisión de ingeniería también se requieren la máquina, el sistema protegido y el entorno operativo.",
+    "HYDRAULIC": "HIDRÁULICA",
+    "FUEL": "COMBUSTIBLE",
+    "LUBRICATION": "LUBRICACIÓN",
+    "FIND MY FILTER": "ENCONTRAR MI FILTRO",
+    "BECOME A DISTRIBUTOR": "SER DISTRIBUIDOR"
   },
   "pt": {
     "MINING / SEVERE-DUTY FILTRATION": "MINERAÇÃO / FILTRAÇÃO DE SERVIÇO SEVERO",
@@ -251,7 +256,12 @@ const strings: Record<'es' | 'pt', Record<string,string>> = {
     "Does the same filtration strategy apply to open-pit and underground mining?": "A mesma estratégia serve para mineração a céu aberto e subterrânea?",
     "No. The equipment may share filter categories, but dust loading, ventilation, moisture, temperature, duty cycle, access and maintenance conditions can differ substantially. Those variables change the protection architecture and service strategy.": "Não necessariamente. Equipamentos podem compartilhar categorias de filtros, mas a carga de poeira, ventilação, umidade, temperatura, ciclo operacional, acesso e manutenção podem variar consideravelmente. Essas variáveis mudam a arquitetura de proteção e a estratégia de serviço.",
     "Can ELIMFILTERS identify a mining filter from an OEM or part number?": "A ELIMFILTERS pode identificar um filtro de mineração por referência OEM ou número de peça?",
-    "Yes. If the OEM reference or current filter number is known, Part Search provides the fastest path to cross-reference and application information. For an engineering review, the machine, protected system and operating environment should also be provided.": "Sim. Com uma referência OEM ou número de filtro conhecido, o Part Search permite consultar equivalências e aplicações. Para uma análise de engenharia também são necessários a máquina, o sistema protegido e o ambiente operacional."
+    "Yes. If the OEM reference or current filter number is known, Part Search provides the fastest path to cross-reference and application information. For an engineering review, the machine, protected system and operating environment should also be provided.": "Sim. Com uma referência OEM ou número de filtro conhecido, o Part Search permite consultar equivalências e aplicações. Para uma análise de engenharia também são necessários a máquina, o sistema protegido e o ambiente operacional.",
+    "HYDRAULIC": "HIDRÁULICA",
+    "FUEL": "COMBUSTÍVEL",
+    "LUBRICATION": "LUBRIFICAÇÃO",
+    "FIND MY FILTER": "ENCONTRAR MEU FILTRO",
+    "BECOME A DISTRIBUTOR": "SEJA UM DISTRIBUIDOR"
   }
 };
 export function miningText(lang: PageLang, original: string): string { return lang === 'en' ? original : (strings[lang][original] ?? original); }
