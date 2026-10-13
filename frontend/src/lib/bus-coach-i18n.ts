@@ -107,7 +107,17 @@ const translations: Record<'es'|'pt',Record<string,string>> = {
     "Vehicle / Platform": "Vehículo / Plataforma",
     "Route Duty": "Servicio en ruta",
     "Protection": "Protección",
-    "Application Evidence": "Evidencia de aplicación"
+    "Application Evidence": "Evidencia de aplicación",
+    "Vehicle": "Vehículo",
+    "Identify make, model, year, chassis and fleet configuration.": "Identifique marca, modelo, año, chasis y configuración de flota.",
+    "Engine": "Motor",
+    "Resolve the installed engine and any platform-specific engine variation.": "Verifique el motor instalado y las variaciones por plataforma.",
+    "Define urban stop-start, school, shuttle, intercity, touring or mixed service.": "Defina servicio urbano, escolar, lanzadera, interurbano, turístico o mixto.",
+    "Protected System": "Sistema protegido",
+    "Identify air intake, fuel, lubrication, cooling, compressed air or cabin HVAC.": "Identifique admisión, combustible, lubricación, refrigeración, aire comprimido o climatización de cabina.",
+    "Service Context": "Condiciones de servicio",
+    "Account for depot schedule, ambient particulate, passenger load and fueling conditions.": "Considere horarios del depósito, partículas ambientales, ocupación y abastecimiento.",
+    "Validate the final filter using OEM reference, current part, dimensions and documented fitment evidence.": "Valide el filtro con referencia OEM, pieza actual, dimensiones y compatibilidad documentada."
   },
   "pt": {
     "BUS & COACH / PASSENGER FLEET PROTECTION": "ÔNIBUS / PROTEÇÃO DE FROTAS DE PASSAGEIROS",
@@ -216,7 +226,17 @@ const translations: Record<'es'|'pt',Record<string,string>> = {
     "Vehicle / Platform": "Veículo / Plataforma",
     "Route Duty": "Serviço na rota",
     "Protection": "Proteção",
-    "Application Evidence": "Evidência de aplicação"
+    "Application Evidence": "Evidência de aplicação",
+    "Vehicle": "Veículo",
+    "Identify make, model, year, chassis and fleet configuration.": "Identifique marca, modelo, ano, chassi e configuração da frota.",
+    "Engine": "Motor",
+    "Resolve the installed engine and any platform-specific engine variation.": "Verifique o motor instalado e as variações por plataforma.",
+    "Define urban stop-start, school, shuttle, intercity, touring or mixed service.": "Defina serviço urbano, escolar, traslado, rodoviário, turismo ou misto.",
+    "Protected System": "Sistema protegido",
+    "Identify air intake, fuel, lubrication, cooling, compressed air or cabin HVAC.": "Identifique admissão, combustível, lubrificação, arrefecimento, ar comprimido ou climatização da cabine.",
+    "Service Context": "Condições de manutenção",
+    "Account for depot schedule, ambient particulate, passenger load and fueling conditions.": "Considere horários da garagem, partículas ambientais, ocupação e abastecimento.",
+    "Validate the final filter using OEM reference, current part, dimensions and documented fitment evidence.": "Valide o filtro com referência OEM, peça atual, dimensões e compatibilidade documentada."
   }
 };
 export const busCoachText = (lang:PageLang, value:string) => lang === 'en' ? value : translations[lang][value] ?? value;
