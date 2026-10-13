@@ -16,6 +16,12 @@ export const LOCALIZED_ROUTES: readonly string[] = [
   '/industries',
   '/industries/mining',
   '/industries/agriculture',
+  '/industries/manufacturing',
+  '/industries/trucks-fleets',
+  '/industries/power-generation',
+  '/industries/marine',
+  '/industries/oil-gas',
+  '/industries/construction',
   '/technologies/hydrocore',
   ...PRODUCT_FAMILY_LIST.map((family) => `/families/${family.slug}`),
 ];
