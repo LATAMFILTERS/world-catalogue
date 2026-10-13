@@ -3,6 +3,8 @@ import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { IndustryFilterCarousel } from './IndustryFilterCarousel';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
+import { manufacturingText } from '@/lib/manufacturing-i18n';
+import type { PageLang } from '@/lib/localized-routes';
 
 const BASE_URL = 'https://elimfilters.com';
 const PAGE_URL = `${BASE_URL}/industries/manufacturing/`;
@@ -49,15 +51,17 @@ const questions = [
   ['Can ELIMFILTERS identify a manufacturing filter from an OEM or part number?', 'Yes. If an OEM reference or current filter number is known, Part Search provides the fastest route to cross-reference and application information. For an engineering review, include the machine, protected system and operating conditions.'],
 ] as const;
 
-export function ManufacturingIndustryPage() {
+export function ManufacturingIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
+  const pageUrl = `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/industries/manufacturing/`;
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': `${PAGE_URL}#page`,
-        url: PAGE_URL,
-        name: 'Manufacturing Filtration Systems',
+        '@id': `${pageUrl}#page`,
+        url: pageUrl,
+        name: lang === 'es' ? 'Sistemas de filtración industrial' : lang === 'pt' ? 'Sistemas de filtração industrial' : 'Manufacturing Filtration Systems',
+        inLanguage: lang === 'pt' ? 'pt-BR' : lang,
         description: 'Manufacturing filtration systems for hydraulic power units, compressors, pumps, machine tools and production equipment requiring contamination control across continuous plant duty and planned maintenance windows.',
         isPartOf: { '@id': `${BASE_URL}/#website` },
         publisher: { '@id': `${BASE_URL}/#organization` },
@@ -79,27 +83,27 @@ export function ManufacturingIndustryPage() {
           { '@type': 'Thing', name: 'SYNTRAX' },
           { '@type': 'Thing', name: 'HYDROCORE' },
         ],
-        breadcrumb: { '@id': `${PAGE_URL}#breadcrumb` },
+        breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': `${PAGE_URL}#breadcrumb`,
+        '@id': `${pageUrl}#breadcrumb`,
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
           { '@type': 'ListItem', position: 2, name: 'Industry', item: `${BASE_URL}/industries/` },
-          { '@type': 'ListItem', position: 3, name: 'Manufacturing Filtration Systems', item: PAGE_URL },
+          { '@type': 'ListItem', position: 3, name: 'Manufacturing Filtration Systems', item: pageUrl },
         ],
       },
       {
         '@type': 'ItemList',
-        '@id': `${PAGE_URL}#equipment`,
+        '@id': `${pageUrl}#equipment`,
         name: 'Manufacturing equipment applications',
-        itemListElement: assets.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name })),
+        itemListElement: assets.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name: manufacturingText(lang, name) })),
       },
       {
         '@type': 'FAQPage',
-        '@id': `${PAGE_URL}#faq`,
-        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+        '@id': `${pageUrl}#faq`,
+        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: manufacturingText(lang, q), acceptedAnswer: { '@type': 'Answer', text: manufacturingText(lang, a) } })),
       },
     ],
   };
@@ -115,41 +119,41 @@ export function ManufacturingIndustryPage() {
         </video>
         <div style={heroShade} />
         <div style={heroInner}>
-          <p style={eyebrow}>MANUFACTURING / PRODUCTION CONTINUITY</p>
-          <h1 style={heroTitle}>Manufacturing Filtration<br /><span style={yellow}>Systems</span></h1>
-          <p style={heroPromise}>Protect the machines and utilities that production flow depends on.</p>
-          <p style={heroLead}>Hydraulic, air intake, lubrication and fuel contamination control for hydraulic power units, compressors, pumps, machine tools and engine-driven plant utilities operating across continuous duty and scheduled maintenance windows.</p>
+          <p style={eyebrow}>{manufacturingText(lang, "MANUFACTURING / PRODUCTION CONTINUITY")}</p>
+          <h1 style={heroTitle}>{manufacturingText(lang, "Manufacturing Filtration")}<br /><span style={yellow}>{manufacturingText(lang, "Systems")}</span></h1>
+          <p style={heroPromise}>{manufacturingText(lang, "Protect the machines and utilities that production flow depends on.")}</p>
+          <p style={heroLead}>{manufacturingText(lang, "Hydraulic, air intake, lubrication and fuel contamination control for hydraulic power units, compressors, pumps, machine tools and engine-driven plant utilities operating across continuous duty and scheduled maintenance windows.")}</p>
           <div style={actions}>
-            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY PLANT PROTECTION PATH</Link>
-            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a>
+            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{manufacturingText(lang, "IDENTIFY MY PLANT PROTECTION PATH")}</Link>
+            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{manufacturingText(lang, "FIND MY FILTER")}</a>
           </div>
         </div>
       </section>
 
       <section style={directSection} aria-labelledby="manufacturing-direct-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>DIRECT ANSWER</p>
-          <h2 id="manufacturing-direct-title" style={directTitle}>What defines the correct manufacturing filtration strategy?</h2>
-          <p style={directText}>Start with the machine or plant utility, identify the contamination source and protected system, then resolve component sensitivity, duty cycle, shutdown access and application evidence. Manufacturing filtration should support the production process around the asset, not be selected from equipment category or service interval alone.</p>
+          <p style={eyebrow}>{manufacturingText(lang, "DIRECT ANSWER")}</p>
+          <h2 id="manufacturing-direct-title" style={directTitle}>{manufacturingText(lang, "What defines the correct manufacturing filtration strategy?")}</h2>
+          <p style={directText}>{manufacturingText(lang, "Start with the machine or plant utility, identify the contamination source and protected system, then resolve component sensitivity, duty cycle, shutdown access and application evidence. Manufacturing filtration should support the production process around the asset, not be selected from equipment category or service interval alone.")}</p>
         </div>
       </section>
 
       <section style={section} aria-labelledby="production-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>THE PRODUCTION SYSTEM</p>
-          <h2 id="production-title" style={sectionTitle}>A machine rarely operates in isolation.</h2>
-          <p style={wideText}>Manufacturing plants connect machines, utilities and support systems into one operating sequence. The filtration decision should consider what happens to production when one hydraulic unit, compressor, pump or engine-driven utility is unavailable.</p>
-          <div style={pressureGrid}>{productionPressures.map(([title, text]) => <article key={title} style={pressureCard}><h3 style={cardTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          <p style={eyebrow}>{manufacturingText(lang, "THE PRODUCTION SYSTEM")}</p>
+          <h2 id="production-title" style={sectionTitle}>{manufacturingText(lang, "A machine rarely operates in isolation.")}</h2>
+          <p style={wideText}>{manufacturingText(lang, "Manufacturing plants connect machines, utilities and support systems into one operating sequence. The filtration decision should consider what happens to production when one hydraulic unit, compressor, pump or engine-driven utility is unavailable.")}</p>
+          <div style={pressureGrid}>{productionPressures.map(([title, text]) => <article key={title} style={pressureCard}><h3 style={cardTitle}>{manufacturingText(lang, title)}</h3><p style={bodyText}>{manufacturingText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={equipmentSection} aria-labelledby="equipment-title">
         <div style={equipmentGrid}>
           <div style={equipmentCopy}>
-            <p style={eyebrow}>PLANT ASSETS</p>
-            <h2 id="equipment-title" style={sectionTitle}>Different roles in the plant create different contamination priorities.</h2>
-            <p style={wideText}>Hydraulic power, compressed-air support, pumping and machine operations can share the same facility while requiring different protection decisions and service evidence.</p>
-            <div role="list" aria-label="Manufacturing equipment applications" style={equipmentList}>{assets.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{asset}</span></div>)}</div>
+            <p style={eyebrow}>{manufacturingText(lang, "PLANT ASSETS")}</p>
+            <h2 id="equipment-title" style={sectionTitle}>{manufacturingText(lang, "Different roles in the plant create different contamination priorities.")}</h2>
+            <p style={wideText}>{manufacturingText(lang, "Hydraulic power, compressed-air support, pumping and machine operations can share the same facility while requiring different protection decisions and service evidence.")}</p>
+            <div role="list" aria-label="Manufacturing equipment applications" style={equipmentList}>{assets.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{manufacturingText(lang, asset)}</span></div>)}</div>
           </div>
           <div style={equipmentMedia}><img src="/images/manufacture.avif" alt="Industrial manufacturing equipment operating inside a production facility" style={equipmentImage} /></div>
         </div>
@@ -157,62 +161,62 @@ export function ManufacturingIndustryPage() {
 
       <section style={section} aria-labelledby="path-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>CONTAMINATION PATHWAYS</p>
-          <h2 id="path-title" style={sectionTitle}>Map the contamination source to the protected production interface.</h2>
-          <p style={wideText}>Selection should move from contamination source to protected system, then to the appropriate ELIMFILTERS technology and finally to a validated part.</p>
-          <div className="industry-pathway-grid" style={pathwayGrid}>{pathways.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>CONTAMINATION SOURCE</span><strong style={pathwaySource}>{source}</strong><p style={smallText}>{detail}</p></div><div style={pathwayDivider} /><div><span style={smallLabel}>PROTECTION SYSTEM</span><strong style={pathwaySystem}>{system}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>ELIMFILTERS TECHNOLOGY</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>EXPLORE →</span></Link></article>)}</div>
+          <p style={eyebrow}>{manufacturingText(lang, "CONTAMINATION PATHWAYS")}</p>
+          <h2 id="path-title" style={sectionTitle}>{manufacturingText(lang, "Map the contamination source to the protected production interface.")}</h2>
+          <p style={wideText}>{manufacturingText(lang, "Selection should move from contamination source to protected system, then to the appropriate ELIMFILTERS technology and finally to a validated part.")}</p>
+          <div className="industry-pathway-grid" style={pathwayGrid}>{pathways.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>{manufacturingText(lang, "CONTAMINATION SOURCE")}</span><strong style={pathwaySource}>{manufacturingText(lang, source)}</strong><p style={smallText}>{manufacturingText(lang, detail)}</p></div><div style={pathwayDivider} /><div><span style={smallLabel}>{manufacturingText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwaySystem}>{manufacturingText(lang, system)}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>{manufacturingText(lang, "ELIMFILTERS TECHNOLOGY")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{manufacturingText(lang, "EXPLORE →")}</span></Link></article>)}</div>
         </div>
       </section>
 
       <section style={principleSection}>
-        <div style={principle}><span style={principleLabel}>MANUFACTURING ENGINEERING PRINCIPLE</span><p style={principleText}>The correct filter protects a production interface, not just a machine. Asset criticality, contamination pathway, component sensitivity, maintenance timing and application evidence must be resolved before the part number is accepted.</p></div>
+        <div style={principle}><span style={principleLabel}>{manufacturingText(lang, "MANUFACTURING ENGINEERING PRINCIPLE")}</span><p style={principleText}>{manufacturingText(lang, "The correct filter protects a production interface, not just a machine. Asset criticality, contamination pathway, component sensitivity, maintenance timing and application evidence must be resolved before the part number is accepted.")}</p></div>
       </section>
 
-      <IndustryFilterCarousel dutyClass="HD" industryName="Manufacturing" />
+      <IndustryFilterCarousel dutyClass="HD" industryName="Manufacturing" lang={lang} />
 
       <section style={impactSection} aria-labelledby="continuity-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>PRODUCTION CONTINUITY</p>
-          <h2 id="continuity-title" style={sectionTitle}>Protect the bottleneck before it becomes a line constraint.</h2>
-          <p style={wideText}>Filtration supports the machine and the production sequence around it. The greater the dependency on a shared hydraulic unit, compressor, pump or engine-driven utility, the more important correct contamination control and service preparation become.</p>
-          <div style={impactGrid}>{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          <p style={eyebrow}>{manufacturingText(lang, "PRODUCTION CONTINUITY")}</p>
+          <h2 id="continuity-title" style={sectionTitle}>{manufacturingText(lang, "Protect the bottleneck before it becomes a line constraint.")}</h2>
+          <p style={wideText}>{manufacturingText(lang, "Filtration supports the machine and the production sequence around it. The greater the dependency on a shared hydraulic unit, compressor, pump or engine-driven utility, the more important correct contamination control and service preparation become.")}</p>
+          <div style={impactGrid}>{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{manufacturingText(lang, title)}</h3><p style={bodyText}>{manufacturingText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={section} aria-labelledby="decision-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>FROM PLANT CONDITION TO PART</p>
-          <h2 id="decision-title" style={sectionTitle}>Resolve the manufacturing application in five decisions.</h2>
+          <p style={eyebrow}>{manufacturingText(lang, "FROM PLANT CONDITION TO PART")}</p>
+          <h2 id="decision-title" style={sectionTitle}>{manufacturingText(lang, "Resolve the manufacturing application in five decisions.")}</h2>
           <div style={decisionGrid}>{[
             ['Asset', 'Identify the machine, hydraulic power unit, compressor, pump or engine-driven plant utility.'],
             ['Process Role', 'Establish what production step or shared utility depends on the asset.'],
             ['Exposure', 'Define particulate, fluid contamination, storage, service ingress and operating environment.'],
             ['Protection', 'Match the contamination mechanism to hydraulic, air intake, lubrication or fuel protection.'],
             ['Application Evidence', 'Validate the final filter using OEM reference, dimensions and documented equipment evidence before the maintenance window.'],
-          ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{manufacturingText(lang, title)}</h3><p style={bodyText}>{manufacturingText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={evidenceSection} aria-labelledby="evidence-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>MAINTENANCE EVIDENCE</p>
-          <h2 id="evidence-title" style={sectionTitle}>Validate the part before the shutdown starts.</h2>
-          <p style={wideText}>Manufacturing maintenance often works inside defined windows. Final identification should reconcile the known reference, machine context, dimensions, protected system and operating conditions before the asset is taken out of service.</p>
+          <p style={eyebrow}>{manufacturingText(lang, "MAINTENANCE EVIDENCE")}</p>
+          <h2 id="evidence-title" style={sectionTitle}>{manufacturingText(lang, "Validate the part before the shutdown starts.")}</h2>
+          <p style={wideText}>{manufacturingText(lang, "Manufacturing maintenance often works inside defined windows. Final identification should reconcile the known reference, machine context, dimensions, protected system and operating conditions before the asset is taken out of service.")}</p>
         </div>
       </section>
 
       <section style={faqSection} aria-labelledby="faq-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>MANUFACTURING FILTRATION QUESTIONS</p>
-          <h2 id="faq-title" style={sectionTitle}>What plant engineering and maintenance teams need to know.</h2>
-          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{q}</h3><p style={faqAnswer}>{a}</p></article>)}</div>
+          <p style={eyebrow}>{manufacturingText(lang, "MANUFACTURING FILTRATION QUESTIONS")}</p>
+          <h2 id="faq-title" style={sectionTitle}>{manufacturingText(lang, "What plant engineering and maintenance teams need to know.")}</h2>
+          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{manufacturingText(lang, q)}</h3><p style={faqAnswer}>{manufacturingText(lang, a)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={conversionSection}>
         <div style={conversionGrid}>
-          <div><p style={eyebrow}>HAVE A MACHINE OR PLANT-UTILITY APPLICATION?</p><h2 style={conversionTitle}>Identify the protection path before the maintenance window opens.</h2><p style={conversionText}>Send the machine or utility, protected system, operating conditions, duty profile and any known OEM or filter reference.</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY PLANT PROTECTION PATH</Link></div>
-          <div style={conversionSecondary}><div><p style={eyebrow}>ALREADY HAVE A PART NUMBER?</p><h3 style={conversionSubTitle}>Go directly to Part Search.</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a></div><div style={divider} /><div><p style={eyebrow}>SERVE INDUSTRIAL CUSTOMERS?</p><h3 style={conversionSubTitle}>Evaluate distributor fit.</h3><Link href="/distributor-application/" style={secondaryButton}>BECOME A DISTRIBUTOR</Link></div></div>
+          <div><p style={eyebrow}>{manufacturingText(lang, "HAVE A MACHINE OR PLANT-UTILITY APPLICATION?")}</p><h2 style={conversionTitle}>{manufacturingText(lang, "Identify the protection path before the maintenance window opens.")}</h2><p style={conversionText}>{manufacturingText(lang, "Send the machine or utility, protected system, operating conditions, duty profile and any known OEM or filter reference.")}</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{manufacturingText(lang, "IDENTIFY MY PLANT PROTECTION PATH")}</Link></div>
+          <div style={conversionSecondary}><div><p style={eyebrow}>{manufacturingText(lang, "ALREADY HAVE A PART NUMBER?")}</p><h3 style={conversionSubTitle}>{manufacturingText(lang, "Go directly to Part Search.")}</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{manufacturingText(lang, "FIND MY FILTER")}</a></div><div style={divider} /><div><p style={eyebrow}>{manufacturingText(lang, "SERVE INDUSTRIAL CUSTOMERS?")}</p><h3 style={conversionSubTitle}>{manufacturingText(lang, "Evaluate distributor fit.")}</h3><Link href="/distributor-application/" style={secondaryButton}>{manufacturingText(lang, "BECOME A DISTRIBUTOR")}</Link></div></div>
         </div>
       </section>
     </main>
