@@ -3,6 +3,8 @@ import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { IndustryFilterCarousel } from './IndustryFilterCarousel';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
+import { oilGasText } from '@/lib/oil-gas-i18n';
+import type { PageLang } from '@/lib/localized-routes';
 
 const BASE_URL = 'https://elimfilters.com';
 const PAGE_URL = `${BASE_URL}/industries/oil-gas/`;
@@ -49,15 +51,17 @@ const questions = [
   ['Can ELIMFILTERS identify an oil and gas filter from an OEM or part number?', 'Yes. If an OEM reference or current filter number is known, Part Search provides the fastest route to cross-reference and application information. For an engineering review, include the equipment, protected system and site conditions.'],
 ] as const;
 
-export function OilGasIndustryPage() {
+export function OilGasIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
+  const pageUrl = `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/industries/oil-gas/`;
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': `${PAGE_URL}#page`,
-        url: PAGE_URL,
-        name: 'Oil & Gas Filtration Systems',
+        '@id': `${pageUrl}#page`,
+        url: pageUrl,
+        name: lang === 'es' ? 'Sistemas de filtración para petróleo y gas' : lang === 'pt' ? 'Sistemas de filtração para petróleo e gás' : 'Oil & Gas Filtration Systems',
+        inLanguage: lang === 'pt' ? 'pt-BR' : lang,
         description: 'Oil and gas filtration systems for drilling rigs, pumping units, compressors, hydraulic power units and engine-driven field equipment operating under dust, heat, vibration and extended duty.',
         isPartOf: { '@id': `${BASE_URL}/#website` },
         publisher: { '@id': `${BASE_URL}/#organization` },
@@ -79,27 +83,27 @@ export function OilGasIndustryPage() {
           { '@type': 'Thing', name: 'HYDROCORE' },
           { '@type': 'Thing', name: 'SYNTRAX' },
         ],
-        breadcrumb: { '@id': `${PAGE_URL}#breadcrumb` },
+        breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': `${PAGE_URL}#breadcrumb`,
+        '@id': `${pageUrl}#breadcrumb`,
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
           { '@type': 'ListItem', position: 2, name: 'Industry', item: `${BASE_URL}/industries/` },
-          { '@type': 'ListItem', position: 3, name: 'Oil & Gas Filtration Systems', item: PAGE_URL },
+          { '@type': 'ListItem', position: 3, name: 'Oil & Gas Filtration Systems', item: pageUrl },
         ],
       },
       {
         '@type': 'ItemList',
-        '@id': `${PAGE_URL}#equipment`,
+        '@id': `${pageUrl}#equipment`,
         name: 'Oil and gas equipment applications',
-        itemListElement: equipment.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name })),
+        itemListElement: equipment.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name: oilGasText(lang, name) })),
       },
       {
         '@type': 'FAQPage',
-        '@id': `${PAGE_URL}#faq`,
-        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+        '@id': `${pageUrl}#faq`,
+        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: oilGasText(lang, q), acceptedAnswer: { '@type': 'Answer', text: oilGasText(lang, a) } })),
       },
     ],
   };
@@ -115,40 +119,40 @@ export function OilGasIndustryPage() {
         </video>
         <div style={heroShade} />
         <div style={heroInner}>
-          <p style={eyebrow}>OIL & GAS / FIELD ASSET PROTECTION</p>
-          <h1 style={heroTitle}>Oil & Gas Filtration<br /><span style={yellow}>Systems</span></h1>
-          <p style={heroPromise}>Protect the equipment that keeps energy operations moving.</p>
-          <p style={heroLead}>Air intake, hydraulic, fuel and lubrication contamination control for drilling rigs, pumping units, compressors, hydraulic power units and engine-driven field equipment operating under dust, sand, heat, vibration and extended duty.</p>
+          <p style={eyebrow}>{oilGasText(lang, "OIL & GAS / FIELD ASSET PROTECTION")}</p>
+          <h1 style={heroTitle}>{oilGasText(lang, "Oil & Gas Filtration")}<br /><span style={yellow}>{oilGasText(lang, "Systems")}</span></h1>
+          <p style={heroPromise}>{oilGasText(lang, "Protect the equipment that keeps energy operations moving.")}</p>
+          <p style={heroLead}>{oilGasText(lang, "Air intake, hydraulic, fuel and lubrication contamination control for drilling rigs, pumping units, compressors, hydraulic power units and engine-driven field equipment operating under dust, sand, heat, vibration and extended duty.")}</p>
           <div style={actions}>
-            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY PROTECTION PATH</Link>
-            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a>
+            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{oilGasText(lang, "IDENTIFY MY PROTECTION PATH")}</Link>
+            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{oilGasText(lang, "FIND MY FILTER")}</a>
           </div>
         </div>
       </section>
 
       <section style={directSection} aria-labelledby="direct-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>DIRECT ANSWER</p>
-          <h2 id="direct-title" style={directTitle}>What defines the correct oil & gas filtration strategy?</h2>
-          <p style={directText}>The correct filtration strategy starts with the asset and contamination source, then resolves the protected system, component sensitivity, duty cycle, maintenance access and validated application evidence. Oil and gas equipment should not be selected by industry label or service interval alone.</p>
+          <p style={eyebrow}>{oilGasText(lang, "DIRECT ANSWER")}</p>
+          <h2 id="direct-title" style={directTitle}>{oilGasText(lang, "What defines the correct oil & gas filtration strategy?")}</h2>
+          <p style={directText}>{oilGasText(lang, "The correct filtration strategy starts with the asset and contamination source, then resolves the protected system, component sensitivity, duty cycle, maintenance access and validated application evidence. Oil and gas equipment should not be selected by industry label or service interval alone.")}</p>
         </div>
       </section>
 
       <section style={section} aria-labelledby="reality-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>FIELD OPERATING REALITY</p>
-          <h2 id="reality-title" style={sectionTitle}>Contamination risk changes across the operating chain.</h2>
-          <p style={wideText}>Drilling, pumping, compression, hydraulic control and field power place different demands on filtration even when equipment operates at the same site.</p>
-          <div style={pressureGrid}>{operatingPressures.map(([title, text]) => <article key={title} style={pressureCard}><h3 style={cardTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          <p style={eyebrow}>{oilGasText(lang, "FIELD OPERATING REALITY")}</p>
+          <h2 id="reality-title" style={sectionTitle}>{oilGasText(lang, "Contamination risk changes across the operating chain.")}</h2>
+          <p style={wideText}>{oilGasText(lang, "Drilling, pumping, compression, hydraulic control and field power place different demands on filtration even when equipment operates at the same site.")}</p>
+          <div style={pressureGrid}>{operatingPressures.map(([title, text]) => <article key={title} style={pressureCard}><h3 style={cardTitle}>{oilGasText(lang, title)}</h3><p style={bodyText}>{oilGasText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={equipmentSection} aria-labelledby="equipment-title">
         <div style={equipmentGrid}>
           <div style={equipmentCopy}>
-            <h2 id="equipment-title" style={sectionTitle}>Different assets. Different protection priorities.</h2>
-            <p style={wideText}>A drilling rig, compressor and hydraulic power unit may share a site but not the same contamination mechanism, component sensitivity or service access.</p>
-            <div role="list" aria-label="Oil and gas equipment applications" style={equipmentList}>{equipment.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{asset}</span></div>)}</div>
+            <h2 id="equipment-title" style={sectionTitle}>{oilGasText(lang, "Different assets. Different protection priorities.")}</h2>
+            <p style={wideText}>{oilGasText(lang, "A drilling rig, compressor and hydraulic power unit may share a site but not the same contamination mechanism, component sensitivity or service access.")}</p>
+            <div role="list" aria-label="Oil and gas equipment applications" style={equipmentList}>{equipment.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{oilGasText(lang, asset)}</span></div>)}</div>
           </div>
           <div style={equipmentMedia}><img src="/images/oil&gas.avif" alt="Oil and gas field equipment operating in demanding conditions" style={equipmentImage} /></div>
         </div>
@@ -156,62 +160,62 @@ export function OilGasIndustryPage() {
 
       <section style={section} aria-labelledby="path-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>CONTAMINATION PATHWAYS</p>
-          <h2 id="path-title" style={sectionTitle}>Connect the field threat to the system that must remain protected.</h2>
-          <p style={wideText}>Selection should move from contamination source to protected system, then to the appropriate ELIMFILTERS technology and finally to a validated part.</p>
-          <div className="industry-pathway-grid" style={pathwayGrid}>{protection.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>CONTAMINATION SOURCE</span><strong style={pathwaySource}>{source}</strong><p style={smallText}>{detail}</p></div><div style={pathwayDivider} /><div><span style={smallLabel}>PROTECTION SYSTEM</span><strong style={pathwaySystem}>{system}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>ELIMFILTERS TECHNOLOGY</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>EXPLORE →</span></Link></article>)}</div>
+          <p style={eyebrow}>{oilGasText(lang, "CONTAMINATION PATHWAYS")}</p>
+          <h2 id="path-title" style={sectionTitle}>{oilGasText(lang, "Connect the field threat to the system that must remain protected.")}</h2>
+          <p style={wideText}>{oilGasText(lang, "Selection should move from contamination source to protected system, then to the appropriate ELIMFILTERS technology and finally to a validated part.")}</p>
+          <div className="industry-pathway-grid" style={pathwayGrid}>{protection.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>{oilGasText(lang, "CONTAMINATION SOURCE")}</span><strong style={pathwaySource}>{oilGasText(lang, source)}</strong><p style={smallText}>{oilGasText(lang, detail)}</p></div><div style={pathwayDivider} /><div><span style={smallLabel}>{oilGasText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwaySystem}>{oilGasText(lang, system)}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>{oilGasText(lang, "ELIMFILTERS TECHNOLOGY")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{oilGasText(lang, "EXPLORE →")}</span></Link></article>)}</div>
         </div>
       </section>
 
       <section style={principleSection}>
-        <div style={principle}><span style={principleLabel}>OIL & GAS ENGINEERING PRINCIPLE</span><p style={principleText}>The filtration decision must resolve the equipment, contamination pathway, protected interface, operating duty and application evidence before a product number is accepted.</p></div>
+        <div style={principle}><span style={principleLabel}>{oilGasText(lang, "OIL & GAS ENGINEERING PRINCIPLE")}</span><p style={principleText}>{oilGasText(lang, "The filtration decision must resolve the equipment, contamination pathway, protected interface, operating duty and application evidence before a product number is accepted.")}</p></div>
       </section>
 
       <IndustryFilterCarousel dutyClass="HD" industryName="Oil & Gas" />
 
       <section style={impactSection} aria-labelledby="impact-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>OPERATING CONTINUITY</p>
-          <h2 id="impact-title" style={sectionTitle}>Protect the process before contamination becomes an interruption.</h2>
-          <p style={wideText}>Filtration supports more than the component itself. It protects the operating sequence around engines, pumps, compressors and hydraulic functions that other field activities may depend on.</p>
-          <div style={impactGrid}>{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          <p style={eyebrow}>{oilGasText(lang, "OPERATING CONTINUITY")}</p>
+          <h2 id="impact-title" style={sectionTitle}>{oilGasText(lang, "Protect the process before contamination becomes an interruption.")}</h2>
+          <p style={wideText}>{oilGasText(lang, "Filtration supports more than the component itself. It protects the operating sequence around engines, pumps, compressors and hydraulic functions that other field activities may depend on.")}</p>
+          <div style={impactGrid}>{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{oilGasText(lang, title)}</h3><p style={bodyText}>{oilGasText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={section} aria-labelledby="decision-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>FROM FIELD CONDITION TO PART</p>
-          <h2 id="decision-title" style={sectionTitle}>Resolve the oil & gas application in five decisions.</h2>
+          <p style={eyebrow}>{oilGasText(lang, "FROM FIELD CONDITION TO PART")}</p>
+          <h2 id="decision-title" style={sectionTitle}>{oilGasText(lang, "Resolve the oil & gas application in five decisions.")}</h2>
           <div style={decisionGrid}>{[
             ['Asset', 'Identify the drilling rig, pump, compressor, hydraulic power unit or engine-driven equipment.'],
             ['Exposure', 'Define dust, sand, moisture, fuel handling, heat, vibration and environmental contamination.'],
             ['Duty', 'Establish load, operating hours, pressure, service access and maintenance constraints.'],
             ['Protection', 'Match the contamination mechanism to air intake, hydraulic, fuel or lubrication protection.'],
             ['Application Evidence', 'Validate the final filter using OEM reference, dimensions and documented application evidence.'],
-          ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{oilGasText(lang, title)}</h3><p style={bodyText}>{oilGasText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={evidenceSection} aria-labelledby="evidence-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>APPLICATION EVIDENCE</p>
-          <h2 id="evidence-title" style={sectionTitle}>A plausible cross-reference is not enough.</h2>
-          <p style={wideText}>Final identification should reconcile the known reference, equipment or engine context, dimensions, protected system and operating conditions. Where evidence is incomplete, the application should remain under review rather than be treated as confirmed.</p>
+          <p style={eyebrow}>{oilGasText(lang, "APPLICATION EVIDENCE")}</p>
+          <h2 id="evidence-title" style={sectionTitle}>{oilGasText(lang, "A plausible cross-reference is not enough.")}</h2>
+          <p style={wideText}>{oilGasText(lang, "Final identification should reconcile the known reference, equipment or engine context, dimensions, protected system and operating conditions. Where evidence is incomplete, the application should remain under review rather than be treated as confirmed.")}</p>
         </div>
       </section>
 
       <section style={faqSection} aria-labelledby="faq-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>OIL & GAS FILTRATION QUESTIONS</p>
-          <h2 id="faq-title" style={sectionTitle}>What operators, fleet teams and maintenance teams need to know.</h2>
-          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{q}</h3><p style={faqAnswer}>{a}</p></article>)}</div>
+          <p style={eyebrow}>{oilGasText(lang, "OIL & GAS FILTRATION QUESTIONS")}</p>
+          <h2 id="faq-title" style={sectionTitle}>{oilGasText(lang, "What operators, fleet teams and maintenance teams need to know.")}</h2>
+          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{oilGasText(lang, q)}</h3><p style={faqAnswer}>{oilGasText(lang, a)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={conversionSection}>
         <div style={conversionGrid}>
-          <div><p style={eyebrow}>HAVE AN ASSET OR FIELD-CONTAMINATION PROBLEM?</p><h2 style={conversionTitle}>Identify the protection path before selecting the part.</h2><p style={conversionText}>Send the equipment, engine or power unit, protected system, operating conditions and any known OEM or filter reference.</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY PROTECTION PATH</Link></div>
-          <div style={conversionSecondary}><div><p style={eyebrow}>ALREADY HAVE A PART NUMBER?</p><h3 style={conversionSubTitle}>Go directly to Part Search.</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a></div><div style={divider} /><div><p style={eyebrow}>SERVE OIL & GAS OPERATIONS?</p><h3 style={conversionSubTitle}>Evaluate distributor fit.</h3><Link href="/distributor-application/" style={secondaryButton}>BECOME A DISTRIBUTOR</Link></div></div>
+          <div><p style={eyebrow}>{oilGasText(lang, "HAVE AN ASSET OR FIELD-CONTAMINATION PROBLEM?")}</p><h2 style={conversionTitle}>{oilGasText(lang, "Identify the protection path before selecting the part.")}</h2><p style={conversionText}>{oilGasText(lang, "Send the equipment, engine or power unit, protected system, operating conditions and any known OEM or filter reference.")}</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{oilGasText(lang, "IDENTIFY MY PROTECTION PATH")}</Link></div>
+          <div style={conversionSecondary}><div><p style={eyebrow}>{oilGasText(lang, "ALREADY HAVE A PART NUMBER?")}</p><h3 style={conversionSubTitle}>{oilGasText(lang, "Go directly to Part Search.")}</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{oilGasText(lang, "FIND MY FILTER")}</a></div><div style={divider} /><div><p style={eyebrow}>{oilGasText(lang, "SERVE OIL & GAS OPERATIONS?")}</p><h3 style={conversionSubTitle}>{oilGasText(lang, "Evaluate distributor fit.")}</h3><Link href="/distributor-application/" style={secondaryButton}>{oilGasText(lang, "BECOME A DISTRIBUTOR")}</Link></div></div>
         </div>
       </section>
     </main>
