@@ -1755,10 +1755,13 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     const q = raw.toUpperCase().replace(/[-\s]/g, '');
 
 
+    // A retired row that names a successor (resolution_status.superseded_by) is not out of scope:
+    // the search goes on and finds the successor through its references.
     const excludedSku = await client.query(
       `SELECT 1 FROM elimfilters_catalog
        WHERE catalog_active = false
          AND UPPER(REPLACE(sku,'-','')) = $1
+         AND COALESCE(enrichment_data->'resolution_status'->>'superseded_by','') = ''
        LIMIT 1`,
       [q]
     );
@@ -1793,6 +1796,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
       `SELECT 1 FROM elimfilters_catalog
        WHERE catalog_active = false
          AND UPPER(REPLACE(codigo_base,'-','')) = $1
+         AND COALESCE(enrichment_data->'resolution_status'->>'superseded_by','') = ''
        LIMIT 1`,
       [q]
     );
@@ -3405,6 +3409,7 @@ app.get('/api/ai/search', searchLimiter, async (req, res) => {
       `SELECT 1 FROM elimfilters_catalog
        WHERE catalog_active = false
          AND UPPER(REPLACE(sku,'-','')) = $1
+         AND COALESCE(enrichment_data->'resolution_status'->>'superseded_by','') = ''
        LIMIT 1`,
       [q]
     );
