@@ -67,6 +67,7 @@ test('the ET9 manufacturer-base exception does not leak to other cases', () => {
 test('ET9 legacy SKU exceptions cover the exact SKU/base pairs only', () => {
   const legacy = (sku, base) => et9ParkerRow({ sku, codigo_base: base }, { approved_codigo_base: base });
   assert.equal(validateCanonicalWrite(legacy('ET90900', '900FH')).valid, true);
+  assert.equal(validateCanonicalWrite(legacy('ET90902', '902FH')).valid, true);
   assert.equal(validateCanonicalWrite(legacy('ET95010', '500FG10')).valid, true);
   assert.equal(validateCanonicalWrite(legacy('ET95030', '500FG30')).valid, true);
   // the same SKU on another base, or another SKU on the same base, is still rejected
