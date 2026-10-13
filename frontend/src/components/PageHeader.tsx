@@ -65,7 +65,7 @@ export function PageHeader({ breadcrumbs, currentPage }: PageHeaderProps) {
   const trail: Breadcrumb[] = [{ label: t('category.home', { defaultValue: 'HOME' }), href: homeHref }];
 
   if (industryLabel) {
-    trail.push({ label: 'INDUSTRY', href: '/industries/' });
+    trail.push({ label: t('nav.industries', { defaultValue: 'Industries' }), href: '/industries/' });
     trail.push({ label: industryLabel });
   } else {
     if (breadcrumbs) {
