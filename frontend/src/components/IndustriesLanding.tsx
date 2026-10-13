@@ -96,7 +96,7 @@ export function IndustriesLanding({ lang = 'en' }: { lang?: PageLang }) {
             '@type': 'WebPage',
             name: industryText(lang, industry.label),
             description: industryText(lang, industry.summary),
-            url: `${BASE_URL}/industries/${industry.slug}/`,
+            url: `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/industries/${industry.slug}/`,
           },
         })),
       },
@@ -158,7 +158,7 @@ export function IndustriesLanding({ lang = 'en' }: { lang?: PageLang }) {
           <div style={{ maxWidth: '1180px', margin: '0 auto 2.4rem' }}><p style={eyebrow}>{industryText(lang, "12 OPERATING MARKETS")}</p><h2 id="markets-title" style={sectionTitle}>{industryText(lang, "Select the industry. Understand the risk. Protect the asset.")}</h2></div>
           <div style={marketGrid}>
             {INDUSTRIES.map((industry) => (
-              <Link key={industry.slug} href={lang === 'en' ? `/industries/${industry.slug}/` : ['mining', 'agriculture', 'construction', 'oil-gas', 'marine', 'power-generation', 'trucks-fleets', 'manufacturing'].includes(industry.slug) ? `/${lang}/industries/${industry.slug}/` : `/industries/${industry.slug}/`} style={marketCard} aria-label={lang === 'es' ? `Explorar filtración y protección de activos: ${industryText(lang, industry.label)}` : lang === 'pt' ? `Explorar filtração e proteção de ativos: ${industryText(lang, industry.label)}` : `Explore ${industry.label} filtration and asset protection`}>
+              <Link key={industry.slug} href={lang === 'en' ? `/industries/${industry.slug}/` : `/${lang}/industries/${industry.slug}/`} style={marketCard} aria-label={lang === 'es' ? `Explorar filtración y protección de activos: ${industryText(lang, industry.label)}` : lang === 'pt' ? `Explorar filtração e proteção de ativos: ${industryText(lang, industry.label)}` : `Explore ${industry.label} filtration and asset protection`}>
                 <img src={industry.image} alt={`${industryText(lang, industry.label)} ${lang === 'es' ? 'equipo industrial' : lang === 'pt' ? 'equipamento industrial' : 'industrial equipment'}`} style={marketImage} loading="lazy" />
                 <div style={marketOverlay} />
                 <div style={marketContent}><h3 style={marketTitle}>{industryText(lang, industry.label)}</h3><span style={explore}>{industryText(lang, "EXPLORE INDUSTRY →")}</span></div>
