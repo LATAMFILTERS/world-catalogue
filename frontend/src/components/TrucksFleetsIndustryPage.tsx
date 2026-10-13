@@ -3,6 +3,8 @@ import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { IndustryFilterCarousel } from './IndustryFilterCarousel';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
+import { truckFleetText } from '@/lib/truck-fleets-i18n';
+import type { PageLang } from '@/lib/localized-routes';
 
 const BASE_URL = 'https://elimfilters.com';
 const PAGE_URL = `${BASE_URL}/industries/trucks-fleets/`;
@@ -51,15 +53,17 @@ const questions = [
   ['Can ELIMFILTERS identify a truck filter from an OEM or competitor reference?', 'If a known OEM or current filter reference is available, Part Search is the fastest route to cross-reference and application information. Final confirmation should still reconcile the vehicle or engine context and protected system.'],
 ] as const;
 
-export function TrucksFleetsIndustryPage() {
+export function TrucksFleetsIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
+  const pageUrl = `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/industries/trucks-fleets/`;
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': `${PAGE_URL}#page`,
-        url: PAGE_URL,
-        name: 'Truck Fleets Filtration Systems',
+        '@id': `${pageUrl}#page`,
+        url: pageUrl,
+        name: lang === 'es' ? 'Sistemas de filtración para flotas de camiones' : lang === 'pt' ? 'Sistemas de filtração para frotas de caminhões' : 'Truck Fleets Filtration Systems',
+        inLanguage: lang === 'pt' ? 'pt-BR' : lang,
         description: 'Truck fleet filtration systems for long-haul, regional, vocational and mixed commercial fleets requiring air, fuel, lubrication, cooling, compressed-air and cabin protection.',
         isPartOf: { '@id': `${BASE_URL}/#website` },
         publisher: { '@id': `${BASE_URL}/#organization` },
@@ -85,27 +89,27 @@ export function TrucksFleetsIndustryPage() {
           { '@type': 'Thing', name: 'DRYCORE' },
           { '@type': 'Thing', name: 'MICROKAPPA' },
         ],
-        breadcrumb: { '@id': `${PAGE_URL}#breadcrumb` },
+        breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': `${PAGE_URL}#breadcrumb`,
+        '@id': `${pageUrl}#breadcrumb`,
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
           { '@type': 'ListItem', position: 2, name: 'Industry', item: `${BASE_URL}/industries/` },
-          { '@type': 'ListItem', position: 3, name: 'Truck Fleets Filtration Systems', item: PAGE_URL },
+          { '@type': 'ListItem', position: 3, name: 'Truck Fleets Filtration Systems', item: pageUrl },
         ],
       },
       {
         '@type': 'ItemList',
-        '@id': `${PAGE_URL}#fleet-applications`,
+        '@id': `${pageUrl}#fleet-applications`,
         name: 'Truck fleet applications',
-        itemListElement: equipment.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name })),
+        itemListElement: equipment.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name: truckFleetText(lang, name) })),
       },
       {
         '@type': 'FAQPage',
-        '@id': `${PAGE_URL}#faq`,
-        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+        '@id': `${pageUrl}#faq`,
+        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: truckFleetText(lang, q), acceptedAnswer: { '@type': 'Answer', text: truckFleetText(lang, a) } })),
       },
     ],
   };
@@ -121,41 +125,41 @@ export function TrucksFleetsIndustryPage() {
         </video>
         <div style={heroShade} />
         <div style={heroInner}>
-          <p style={eyebrow}>TRUCK FLEETS / ROUTE UPTIME</p>
-          <h1 style={heroTitle}>Truck Fleets<br /><span style={yellow}>Filtration Systems</span></h1>
-          <p style={heroPromise}>Protect the truck, standardize the fleet and keep service decisions tied to the route.</p>
-          <p style={heroLead}>Filtration architecture for long-haul, regional, vocational and mixed commercial fleets across air intake, fuel, lubrication, cooling, compressed-air and cabin systems.</p>
+          <p style={eyebrow}>{truckFleetText(lang, "TRUCK FLEETS / ROUTE UPTIME")}</p>
+          <h1 style={heroTitle}>{truckFleetText(lang, "Truck Fleets")}<br /><span style={yellow}>{truckFleetText(lang, "Filtration Systems")}</span></h1>
+          <p style={heroPromise}>{truckFleetText(lang, "Protect the truck, standardize the fleet and keep service decisions tied to the route.")}</p>
+          <p style={heroLead}>{truckFleetText(lang, "Filtration architecture for long-haul, regional, vocational and mixed commercial fleets across air intake, fuel, lubrication, cooling, compressed-air and cabin systems.")}</p>
           <div style={actions}>
-            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY FLEET PROTECTION PATH</Link>
-            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a>
+            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{truckFleetText(lang, "IDENTIFY MY FLEET PROTECTION PATH")}</Link>
+            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{truckFleetText(lang, "FIND MY FILTER")}</a>
           </div>
         </div>
       </section>
 
       <section style={directSection} aria-labelledby="direct-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>DIRECT ANSWER</p>
-          <h2 id="direct-title" style={directTitle}>What defines the correct truck-fleet filtration strategy?</h2>
-          <p style={directText}>The correct strategy resolves the vehicle and engine, protected system, route and duty profile, contamination exposure, service plan and validated application evidence. A fleet should not standardize a filter only because a cross-reference looks plausible or because two trucks appear similar.</p>
+          <p style={eyebrow}>{truckFleetText(lang, "DIRECT ANSWER")}</p>
+          <h2 id="direct-title" style={directTitle}>{truckFleetText(lang, "What defines the correct truck-fleet filtration strategy?")}</h2>
+          <p style={directText}>{truckFleetText(lang, "The correct strategy resolves the vehicle and engine, protected system, route and duty profile, contamination exposure, service plan and validated application evidence. A fleet should not standardize a filter only because a cross-reference looks plausible or because two trucks appear similar.")}</p>
         </div>
       </section>
 
       <section style={section} aria-labelledby="fleet-model-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>FLEET OPERATING MODEL</p>
-          <h2 id="fleet-model-title" style={sectionTitle}>The route changes the filtration problem.</h2>
-          <p style={wideText}>A highway tractor, regional delivery truck and vocational unit can share an engine family while experiencing very different dust, fuel, idle, thermal and service conditions.</p>
-          <div style={profileGrid}>{fleetProfiles.map(([title, text]) => <article key={title} style={profileCard}><h3 style={cardTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          <p style={eyebrow}>{truckFleetText(lang, "FLEET OPERATING MODEL")}</p>
+          <h2 id="fleet-model-title" style={sectionTitle}>{truckFleetText(lang, "The route changes the filtration problem.")}</h2>
+          <p style={wideText}>{truckFleetText(lang, "A highway tractor, regional delivery truck and vocational unit can share an engine family while experiencing very different dust, fuel, idle, thermal and service conditions.")}</p>
+          <div style={profileGrid}>{fleetProfiles.map(([title, text]) => <article key={title} style={profileCard}><h3 style={cardTitle}>{truckFleetText(lang, title)}</h3><p style={bodyText}>{truckFleetText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={equipmentSection} aria-labelledby="equipment-title">
         <div style={equipmentGrid}>
           <div style={equipmentCopy}>
-            <p style={eyebrow}>FLEET APPLICATIONS</p>
-            <h2 id="equipment-title" style={sectionTitle}>Build one maintenance language across different trucks.</h2>
-            <p style={wideText}>Fleet consistency starts by identifying which assets can truly share a protection path and which require application-specific parts.</p>
-            <div role="list" aria-label="Truck fleet applications" style={equipmentList}>{equipment.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{asset}</span></div>)}</div>
+            <p style={eyebrow}>{truckFleetText(lang, "FLEET APPLICATIONS")}</p>
+            <h2 id="equipment-title" style={sectionTitle}>{truckFleetText(lang, "Build one maintenance language across different trucks.")}</h2>
+            <p style={wideText}>{truckFleetText(lang, "Fleet consistency starts by identifying which assets can truly share a protection path and which require application-specific parts.")}</p>
+            <div role="list" aria-label="Truck fleet applications" style={equipmentList}>{equipment.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{truckFleetText(lang, asset)}</span></div>)}</div>
           </div>
           <div style={equipmentMedia}><img src="/images/trucks-1.avif" alt="Heavy-duty commercial trucks in fleet operation" style={equipmentImage} /></div>
         </div>
@@ -163,62 +167,62 @@ export function TrucksFleetsIndustryPage() {
 
       <section style={section} aria-labelledby="path-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>PROTECTION PATHWAYS</p>
-          <h2 id="path-title" style={sectionTitle}>Map each fleet risk to the system that keeps the truck available.</h2>
-          <p style={wideText}>The selection path should move from operating exposure to protected system, then to the appropriate ELIMFILTERS technology and finally to a validated filter.</p>
-          <div className="industry-pathway-grid" style={pathwayGrid}>{protection.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>OPERATING EXPOSURE</span><strong style={pathwaySource}>{source}</strong><p style={smallText}>{detail}</p></div><div style={pathwayDivider} /><div><span style={smallLabel}>PROTECTION SYSTEM</span><strong style={pathwaySystem}>{system}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>ELIMFILTERS TECHNOLOGY</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>EXPLORE →</span></Link></article>)}</div>
+          <p style={eyebrow}>{truckFleetText(lang, "PROTECTION PATHWAYS")}</p>
+          <h2 id="path-title" style={sectionTitle}>{truckFleetText(lang, "Map each fleet risk to the system that keeps the truck available.")}</h2>
+          <p style={wideText}>{truckFleetText(lang, "The selection path should move from operating exposure to protected system, then to the appropriate ELIMFILTERS technology and finally to a validated filter.")}</p>
+          <div className="industry-pathway-grid" style={pathwayGrid}>{protection.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>{truckFleetText(lang, "OPERATING EXPOSURE")}</span><strong style={pathwaySource}>{truckFleetText(lang, source)}</strong><p style={smallText}>{truckFleetText(lang, detail)}</p></div><div style={pathwayDivider} /><div><span style={smallLabel}>{truckFleetText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwaySystem}>{truckFleetText(lang, system)}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>{truckFleetText(lang, "ELIMFILTERS TECHNOLOGY")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{truckFleetText(lang, "EXPLORE →")}</span></Link></article>)}</div>
         </div>
       </section>
 
       <section style={principleSection}>
-        <div style={principle}><span style={principleLabel}>FLEET ENGINEERING PRINCIPLE</span><p style={principleText}>Standardize only after the application is validated. The goal is fewer ambiguous parts across the fleet, not one part forced across incompatible configurations.</p></div>
+        <div style={principle}><span style={principleLabel}>{truckFleetText(lang, "FLEET ENGINEERING PRINCIPLE")}</span><p style={principleText}>{truckFleetText(lang, "Standardize only after the application is validated. The goal is fewer ambiguous parts across the fleet, not one part forced across incompatible configurations.")}</p></div>
       </section>
 
-      <IndustryFilterCarousel dutyClass="HD" industryName="Trucks Fleets" />
+      <IndustryFilterCarousel dutyClass="HD" industryName="Trucks Fleets" lang={lang} />
 
       <section style={availabilitySection} aria-labelledby="availability-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>ROUTE AVAILABILITY</p>
-          <h2 id="availability-title" style={sectionTitle}>Protect the maintenance plan before a filter decision becomes a route problem.</h2>
-          <p style={wideText}>Fleet filtration affects more than component protection. It influences service consistency, parts readiness and how confidently maintenance teams can release a truck back to operation.</p>
-          <div style={impactGrid}>{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          <p style={eyebrow}>{truckFleetText(lang, "ROUTE AVAILABILITY")}</p>
+          <h2 id="availability-title" style={sectionTitle}>{truckFleetText(lang, "Protect the maintenance plan before a filter decision becomes a route problem.")}</h2>
+          <p style={wideText}>{truckFleetText(lang, "Fleet filtration affects more than component protection. It influences service consistency, parts readiness and how confidently maintenance teams can release a truck back to operation.")}</p>
+          <div style={impactGrid}>{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{truckFleetText(lang, title)}</h3><p style={bodyText}>{truckFleetText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={section} aria-labelledby="decision-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>FROM FLEET UNIT TO PART</p>
-          <h2 id="decision-title" style={sectionTitle}>Resolve the fleet application in five decisions.</h2>
+          <p style={eyebrow}>{truckFleetText(lang, "FROM FLEET UNIT TO PART")}</p>
+          <h2 id="decision-title" style={sectionTitle}>{truckFleetText(lang, "Resolve the fleet application in five decisions.")}</h2>
           <div style={decisionGrid}>{[
             ['Vehicle + Engine', 'Identify the truck, engine and relevant configuration before treating two units as equivalent.'],
             ['Duty Profile', 'Define long-haul, regional, vocational or mixed use, including idle time, dust and route environment.'],
             ['Protected System', 'Resolve air intake, fuel, lubrication, cooling, compressed air, cabin air or vocational hydraulic protection.'],
             ['Fleet Standardization', 'Determine whether the validated application can be safely standardized across additional fleet units.'],
             ['Application Evidence', 'Confirm the final part using OEM/current reference, dimensions where needed and documented application evidence.'],
-          ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{truckFleetText(lang, title)}</h3><p style={bodyText}>{truckFleetText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={evidenceSection} aria-labelledby="evidence-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>APPLICATION EVIDENCE</p>
-          <h2 id="evidence-title" style={sectionTitle}>Cross-reference is the start of identification, not the end.</h2>
-          <p style={wideText}>Final fleet standardization should reconcile the known reference with the truck or engine context, protected system and application evidence. If the evidence does not support equivalence, the units should remain separate in the fleet parts plan.</p>
+          <p style={eyebrow}>{truckFleetText(lang, "APPLICATION EVIDENCE")}</p>
+          <h2 id="evidence-title" style={sectionTitle}>{truckFleetText(lang, "Cross-reference is the start of identification, not the end.")}</h2>
+          <p style={wideText}>{truckFleetText(lang, "Final fleet standardization should reconcile the known reference with the truck or engine context, protected system and application evidence. If the evidence does not support equivalence, the units should remain separate in the fleet parts plan.")}</p>
         </div>
       </section>
 
       <section style={faqSection} aria-labelledby="faq-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>TRUCK FLEET FILTRATION QUESTIONS</p>
-          <h2 id="faq-title" style={sectionTitle}>What fleet, maintenance and procurement teams need to know.</h2>
-          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{q}</h3><p style={faqAnswer}>{a}</p></article>)}</div>
+          <p style={eyebrow}>{truckFleetText(lang, "TRUCK FLEET FILTRATION QUESTIONS")}</p>
+          <h2 id="faq-title" style={sectionTitle}>{truckFleetText(lang, "What fleet, maintenance and procurement teams need to know.")}</h2>
+          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{truckFleetText(lang, q)}</h3><p style={faqAnswer}>{truckFleetText(lang, a)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={conversionSection}>
         <div style={conversionGrid}>
-          <div><p style={eyebrow}>NEED TO STANDARDIZE OR RESOLVE A FLEET APPLICATION?</p><h2 style={conversionTitle}>Identify the protection path before adding the part to the fleet standard.</h2><p style={conversionText}>Send the truck or fleet unit, engine, protected system, duty profile and any known OEM or current filter reference.</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY FLEET PROTECTION PATH</Link></div>
-          <div style={conversionSecondary}><div><p style={eyebrow}>ALREADY HAVE A PART NUMBER?</p><h3 style={conversionSubTitle}>Go directly to Part Search.</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a></div><div style={divider} /><div><p style={eyebrow}>SERVE COMMERCIAL FLEETS?</p><h3 style={conversionSubTitle}>Evaluate distributor fit.</h3><Link href="/distributor-application/" style={secondaryButton}>BECOME A DISTRIBUTOR</Link></div></div>
+          <div><p style={eyebrow}>{truckFleetText(lang, "NEED TO STANDARDIZE OR RESOLVE A FLEET APPLICATION?")}</p><h2 style={conversionTitle}>{truckFleetText(lang, "Identify the protection path before adding the part to the fleet standard.")}</h2><p style={conversionText}>{truckFleetText(lang, "Send the truck or fleet unit, engine, protected system, duty profile and any known OEM or current filter reference.")}</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{truckFleetText(lang, "IDENTIFY MY FLEET PROTECTION PATH")}</Link></div>
+          <div style={conversionSecondary}><div><p style={eyebrow}>{truckFleetText(lang, "ALREADY HAVE A PART NUMBER?")}</p><h3 style={conversionSubTitle}>{truckFleetText(lang, "Go directly to Part Search.")}</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{truckFleetText(lang, "FIND MY FILTER")}</a></div><div style={divider} /><div><p style={eyebrow}>{truckFleetText(lang, "SERVE COMMERCIAL FLEETS?")}</p><h3 style={conversionSubTitle}>{truckFleetText(lang, "Evaluate distributor fit.")}</h3><Link href="/distributor-application/" style={secondaryButton}>{truckFleetText(lang, "BECOME A DISTRIBUTOR")}</Link></div></div>
         </div>
       </section>
     </main>
