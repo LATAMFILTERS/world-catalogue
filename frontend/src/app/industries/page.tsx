@@ -3,7 +3,7 @@ import Link from 'next/link';
 import type { CSSProperties } from 'react';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
 import { industryText } from '@/lib/industries-i18n';
-import type { PageLang } from '@/lib/localized-routes';
+import { languageAlternates, type PageLang } from '@/lib/localized-routes';
 
 const BASE_URL = 'https://elimfilters.com';
 
@@ -44,7 +44,7 @@ const FAQS = [
 export const metadata = {
   title: 'Industrial Filtration by Industry | ELIMFILTERS',
   description: 'Industrial filtration and contamination-control strategies for mining, agriculture, construction, oil & gas, marine, power generation, commercial fleets, manufacturing, railway, municipal fleets, bus & coach, and automotive applications.',
-  alternates: { canonical: `${BASE_URL}/industries/` },
+  alternates: { canonical: `${BASE_URL}/industries/`, languages: languageAlternates('/industries') },
   robots: { index: true, follow: true },
   openGraph: {
     title: 'Industrial Filtration by Industry | ELIMFILTERS',
@@ -69,9 +69,9 @@ export default function IndustriesPage({ lang = 'en' }: { lang?: PageLang }) {
     '@graph': [
       {
         '@type': 'CollectionPage',
-        '@id': `${BASE_URL}/industries/#page`,
-        url: `${BASE_URL}/industries/`,
-        name: 'Industrial Filtration by Industry',
+        '@id': `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/industries/#page`,
+        url: `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/industries/`,
+        name: lang === 'es' ? 'Filtración industrial por industria' : lang === 'pt' ? 'Filtração industrial por setor' : 'Industrial Filtration by Industry',
         description: 'Industry-specific industrial filtration and contamination-control strategies across 12 operating markets.',
         mainEntity: { '@id': `${BASE_URL}/industries/#industries` },
         breadcrumb: { '@id': `${BASE_URL}/industries/#breadcrumb` },
@@ -87,7 +87,7 @@ export default function IndustriesPage({ lang = 'en' }: { lang?: PageLang }) {
       {
         '@type': 'ItemList',
         '@id': `${BASE_URL}/industries/#industries`,
-        name: 'ELIMFILTERS Industrial Markets',
+        name: lang === 'es' ? 'Mercados industriales ELIMFILTERS' : lang === 'pt' ? 'Mercados industriais ELIMFILTERS' : 'ELIMFILTERS Industrial Markets',
         numberOfItems: INDUSTRIES.length,
         itemListElement: INDUSTRIES.map((industry, index) => ({
           '@type': 'ListItem',
@@ -192,7 +192,7 @@ export default function IndustriesPage({ lang = 'en' }: { lang?: PageLang }) {
           <div>
             <p style={impactLead}>{industryText(lang, "Contamination does more than damage components. It can shorten fluid life, increase maintenance frequency, accelerate replacement demand, and create avoidable material and energy waste across the equipment lifecycle.")}</p>
             <p style={bodyText}>{industryText(lang, "ELIMFILTERS technologies are engineered to help control that burden by keeping critical systems cleaner for longer. The objective is not simply to capture particles, but to protect the useful life of components, fluids, and equipment while reducing unnecessary service intervention and premature replacement.")}</p>
-            <p style={bodyText}>For engineering-level detail on dust exposure, contamination mechanisms, and system-level technical guidance by industry, see the <Link href="/knowledge-center/industries/" style={{ color: '#FFF12D', textDecoration: 'underline', textUnderlineOffset: '0.2em' }}>{industryText(lang, "Knowledge Center Industries reference")}</Link>.</p>
+            <p style={bodyText}>{industryText(lang, 'For engineering-level detail on dust exposure, contamination mechanisms, and system-level technical guidance by industry, see the ')}<Link href="/knowledge-center/industries/" style={{ color: '#FFF12D', textDecoration: 'underline', textUnderlineOffset: '0.2em' }}>{industryText(lang, "Knowledge Center Industries reference")}</Link>.</p>
             <div style={impactOutcomes}>
               <div style={impactOutcome}><span style={impactOutcomeLabel}>{industryText(lang, "LONGER USEFUL LIFE")}</span><p style={impactOutcomeText}>{industryText(lang, "Protect components and fluids from contamination-driven degradation.")}</p></div>
               <div style={impactOutcome}><span style={impactOutcomeLabel}>{industryText(lang, "LESS SERVICE WASTE")}</span><p style={impactOutcomeText}>{industryText(lang, "Reduce avoidable replacement and maintenance activity caused by premature contamination-related wear.")}</p></div>
