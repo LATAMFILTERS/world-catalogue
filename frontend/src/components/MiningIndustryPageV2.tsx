@@ -3,6 +3,8 @@ import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { IndustryFilterCarousel } from './IndustryFilterCarousel';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
+import { miningText } from '@/lib/mining-i18n';
+import type { PageLang } from '@/lib/localized-routes';
 
 const BASE_URL = 'https://elimfilters.com';
 const PAGE_URL = `${BASE_URL}/industries/mining/`;
@@ -66,15 +68,17 @@ const questions = [
   ['Can ELIMFILTERS identify a mining filter from an OEM or part number?', 'Yes. If the OEM reference or current filter number is known, Part Search provides the fastest path to cross-reference and application information. For an engineering review, the machine, protected system and operating environment should also be provided.'],
 ] as const;
 
-export function MiningIndustryPageV2() {
+export function MiningIndustryPageV2({ lang = 'en' }: { lang?: PageLang }) {
+  const pageUrl = `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/industries/mining/`;
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': `${PAGE_URL}#page`,
-        url: PAGE_URL,
-        name: 'Mining Filtration Systems',
+        '@id': `${pageUrl}#page`,
+        url: pageUrl,
+        name: lang === 'es' ? 'Sistemas de filtración minera' : lang === 'pt' ? 'Sistemas de filtração para mineração' : 'Mining Filtration Systems',
+        inLanguage: lang === 'pt' ? 'pt-BR' : lang,
         description: 'Mining filtration systems and contamination-control architecture for haul trucks, excavators, loaders, drills and severe-duty mining equipment.',
         isPartOf: { '@id': `${BASE_URL}/#website` },
         publisher: { '@id': `${BASE_URL}/#organization` },
@@ -86,27 +90,27 @@ export function MiningIndustryPageV2() {
           { '@type': 'Thing', name: 'Mining equipment total cost of ownership' },
           { '@type': 'Thing', name: 'Mining dust failure mechanisms' },
         ],
-        breadcrumb: { '@id': `${PAGE_URL}#breadcrumb` },
+        breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': `${PAGE_URL}#breadcrumb`,
+        '@id': `${pageUrl}#breadcrumb`,
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
           { '@type': 'ListItem', position: 2, name: 'Industries', item: `${BASE_URL}/industries/` },
-          { '@type': 'ListItem', position: 3, name: 'Mining', item: PAGE_URL },
+          { '@type': 'ListItem', position: 3, name: 'Mining', item: pageUrl },
         ],
       },
       {
         '@type': 'ItemList',
-        '@id': `${PAGE_URL}#equipment`,
-        name: 'Mining equipment protected by ELIMFILTERS',
-        itemListElement: equipment.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name })),
+        '@id': `${pageUrl}#equipment`,
+        name: lang === 'es' ? 'Equipos mineros protegidos por ELIMFILTERS' : lang === 'pt' ? 'Equipamentos de mineração protegidos pela ELIMFILTERS' : 'Mining equipment protected by ELIMFILTERS',
+        itemListElement: equipment.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name: miningText(lang, name) })),
       },
       {
         '@type': 'FAQPage',
-        '@id': `${PAGE_URL}#faq`,
-        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+        '@id': `${pageUrl}#faq`,
+        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: miningText(lang, q), acceptedAnswer: { '@type': 'Answer', text: miningText(lang, a) } })),
       },
     ],
   };
@@ -122,33 +126,33 @@ export function MiningIndustryPageV2() {
         </video>
         <div style={heroShade} />
         <div style={heroInner}>
-          <p style={eyebrow}>MINING / SEVERE-DUTY FILTRATION</p>
-          <h1 style={heroTitle}>Mining Filtration<br /><span style={yellowText}>Systems</span></h1>
-          <p style={heroPromise}>Asset protection for equipment that cannot stop when contamination gets aggressive.</p>
-          <p style={heroLead}>Air intake, fuel, lubrication and hydraulic contamination control for haul trucks, excavators, loaders, drills and support equipment operating in open-pit and underground mining environments.</p>
-          <p style={heroContext}>Operating reality: abrasive dust, heavy load, extended duty cycles and constrained service windows.</p>
+          <p style={eyebrow}>{miningText(lang, "MINING / SEVERE-DUTY FILTRATION")}</p>
+          <h1 style={heroTitle}>{miningText(lang, "Mining Filtration")}<br /><span style={yellowText}>{miningText(lang, "Systems")}</span></h1>
+          <p style={heroPromise}>{miningText(lang, "Asset protection for equipment that cannot stop when contamination gets aggressive.")}</p>
+          <p style={heroLead}>{miningText(lang, "Air intake, fuel, lubrication and hydraulic contamination control for haul trucks, excavators, loaders, drills and support equipment operating in open-pit and underground mining environments.")}</p>
+          <p style={heroContext}>{miningText(lang, "Operating reality: abrasive dust, heavy load, extended duty cycles and constrained service windows.")}</p>
           <div style={actions}>
-            <Link href="/contact/" style={primaryButton} data-conversion-action="application-support">PROTECT MINING EQUIPMENT</Link>
-            <a href="https://part-search.elimfilters.com/" style={secondaryButton} data-conversion-action="product-intelligence">FIND MY FILTER</a>
+            <Link href="/contact/" style={primaryButton} data-conversion-action="application-support">{miningText(lang, "PROTECT MINING EQUIPMENT")}</Link>
+            <a href="https://part-search.elimfilters.com/" style={secondaryButton} data-conversion-action="product-intelligence">{miningText(lang, "FIND MY FILTER")}</a>
           </div>
         </div>
       </section>
 
       <section style={section} aria-labelledby="mining-why-title">
         <div style={splitHeader}>
-          <div><p style={eyebrow}>WHY MINING CHANGES FILTRATION</p><h2 id="mining-why-title" style={sectionTitle}>Four forces shape the protection strategy.</h2></div>
-          <div><p style={leadText}>A mining machine combines abrasive airborne contamination, high hydraulic demand, field fuel handling and extended duty cycles.</p><p style={bodyText}>The operating environment establishes the context; component sensitivity, contamination mechanism, service interval and maintenance reality complete the decision.</p></div>
+          <div><p style={eyebrow}>{miningText(lang, "WHY MINING CHANGES FILTRATION")}</p><h2 id="mining-why-title" style={sectionTitle}>{miningText(lang, "Four forces shape the protection strategy.")}</h2></div>
+          <div><p style={leadText}>{miningText(lang, "A mining machine combines abrasive airborne contamination, high hydraulic demand, field fuel handling and extended duty cycles.")}</p><p style={bodyText}>{miningText(lang, "The operating environment establishes the context; component sensitivity, contamination mechanism, service interval and maintenance reality complete the decision.")}</p></div>
         </div>
-        <div style={riskGrid}>{risks.map(([title, text]) => <article key={title} style={riskCard}><h3 style={cardTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+        <div style={riskGrid}>{risks.map(([title, text]) => <article key={title} style={riskCard}><h3 style={cardTitle}>{miningText(lang, title)}</h3><p style={bodyText}>{miningText(lang, text)}</p></article>)}</div>
       </section>
 
       <section style={equipmentSection} aria-labelledby="equipment-title">
         <div style={equipmentGrid}>
           <div style={equipmentCopy}>
-            <h2 id="equipment-title" style={sectionTitle}>Different assets. Different contamination exposure.</h2>
-            <p style={equipmentLead}>The same mine can place completely different demands on a haul truck, excavator, drill rig and processing asset. Equipment type narrows the protection problem before a product number is considered.</p>
+            <h2 id="equipment-title" style={sectionTitle}>{miningText(lang, "Different assets. Different contamination exposure.")}</h2>
+            <p style={equipmentLead}>{miningText(lang, "The same mine can place completely different demands on a haul truck, excavator, drill rig and processing asset. Equipment type narrows the protection problem before a product number is considered.")}</p>
             <div style={equipmentList} role="list" aria-label="Mining equipment applications">
-              {equipment.map((asset) => <div key={asset} style={equipmentRow} role="listitem"><span style={equipmentName}>{asset}</span></div>)}
+              {equipment.map((asset) => <div key={miningText(lang, asset)} style={equipmentRow} role="listitem"><span style={equipmentName}>{miningText(lang, asset)}</span></div>)}
             </div>
           </div>
           <div style={equipmentMedia}><img src="/images/mineria.avif" alt="Mining equipment operating in a severe-duty environment" style={equipmentImage} /></div>
@@ -156,55 +160,55 @@ export function MiningIndustryPageV2() {
       </section>
 
       <section style={section} aria-labelledby="pathway-title">
-        <div style={wideHeader}><p style={eyebrow}>CONTAMINATION PATHWAYS</p><h2 id="pathway-title" style={sectionTitle}>See the threat first. Then engineer the protection.</h2><p style={bodyWide}>Mining contamination begins in the operating environment. Each pathway connects a contamination source to the system at risk and then to the ELIMFILTERS technology engineered for that protection need.</p></div>
+        <div style={wideHeader}><p style={eyebrow}>{miningText(lang, "CONTAMINATION PATHWAYS")}</p><h2 id="pathway-title" style={sectionTitle}>{miningText(lang, "See the threat first. Then engineer the protection.")}</h2><p style={bodyWide}>{miningText(lang, "Mining contamination begins in the operating environment. Each pathway connects a contamination source to the system at risk and then to the ELIMFILTERS technology engineered for that protection need.")}</p></div>
         <div style={pathwayFlow}>
           {protection.map(([source, pathway, risk, system, technology, href, target]) => (
             <article key={system} style={pathwayRow}>
-              <div style={pathwayCell}><span style={stageLabel}>CONTAMINATION SOURCE</span><strong style={pathwayTitle}>{source}</strong><p style={smallText}>{pathway}</p></div>
-              <div style={pathwayCell}><span style={stageLabel}>WHAT IT THREATENS</span><strong style={pathwayTitle}>{risk}</strong><p style={smallText}>{target}</p></div>
-              <div style={pathwayCell}><span style={stageLabel}>PROTECTION SYSTEM</span><strong style={pathwayTitle}>{system}</strong></div>
-              <Link href={href} style={technologyCell}><span style={technologyLabel}>ELIMFILTERS TECHNOLOGY</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>EXPLORE TECHNOLOGY →</span></Link>
+              <div style={pathwayCell}><span style={stageLabel}>{miningText(lang, "CONTAMINATION SOURCE")}</span><strong style={pathwayTitle}>{miningText(lang, source)}</strong><p style={smallText}>{miningText(lang, pathway)}</p></div>
+              <div style={pathwayCell}><span style={stageLabel}>{miningText(lang, "WHAT IT THREATENS")}</span><strong style={pathwayTitle}>{miningText(lang, risk)}</strong><p style={smallText}>{miningText(lang, target)}</p></div>
+              <div style={pathwayCell}><span style={stageLabel}>{miningText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwayTitle}>{miningText(lang, system)}</strong></div>
+              <Link href={href} style={technologyCell}><span style={technologyLabel}>{miningText(lang, "ELIMFILTERS TECHNOLOGY")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{miningText(lang, "EXPLORE TECHNOLOGY →")}</span></Link>
             </article>
           ))}
         </div>
-        <div style={principle}><span style={principleLabel}>MINING ENGINEERING PRINCIPLE</span><p style={principleText}>The correct filtration strategy is not determined by machine type alone. Dust loading, fluid cleanliness requirements, fuel handling, duty cycle, service interval and component sensitivity determine the protection architecture.</p></div>
+        <div style={principle}><span style={principleLabel}>{miningText(lang, "MINING ENGINEERING PRINCIPLE")}</span><p style={principleText}>{miningText(lang, "The correct filtration strategy is not determined by machine type alone. Dust loading, fluid cleanliness requirements, fuel handling, duty cycle, service interval and component sensitivity determine the protection architecture.")}</p></div>
       </section>
 
-      <IndustryFilterCarousel dutyClass="HD" industryName="Mining" />
+      <IndustryFilterCarousel dutyClass="HD" industryName="Mining" lang={lang} />
 
       <section style={stakesSection} aria-labelledby="stakes-title">
-        <div style={wideHeader}><p style={eyebrow}>WHAT CONTAMINATION PUTS AT RISK</p><h2 id="stakes-title" style={sectionTitle}>Protect the operating chain before contamination becomes downtime.</h2><p style={bodyWide}>In mining, contamination can affect airflow, hydraulic cleanliness, fuel-system integrity, thermal control and overall equipment availability across the operating chain.</p></div>
-        <div style={stakesGrid}>{stakes.map(([title, text]) => <article key={title} style={stakeCard}><h3 style={stakeTitle}>{title}</h3><p style={stakeText}>{text}</p></article>)}</div>
+        <div style={wideHeader}><p style={eyebrow}>{miningText(lang, "WHAT CONTAMINATION PUTS AT RISK")}</p><h2 id="stakes-title" style={sectionTitle}>{miningText(lang, "Protect the operating chain before contamination becomes downtime.")}</h2><p style={bodyWide}>{miningText(lang, "In mining, contamination can affect airflow, hydraulic cleanliness, fuel-system integrity, thermal control and overall equipment availability across the operating chain.")}</p></div>
+        <div style={stakesGrid}>{stakes.map(([title, text]) => <article key={title} style={stakeCard}><h3 style={stakeTitle}>{miningText(lang, title)}</h3><p style={stakeText}>{miningText(lang, text)}</p></article>)}</div>
       </section>
 
       <section style={tcoSection} aria-labelledby="mining-tco-title">
-        <div style={wideHeader}><p style={eyebrow}>AVAILABILITY & TOTAL COST OF OWNERSHIP</p><h2 id="mining-tco-title" style={sectionTitle}>The filter is inexpensive. The component it protects is not.</h2><p style={bodyWide}>Mining filtration should be judged against component sensitivity, maintenance consequence and equipment availability—not filter price alone.</p></div>
-        <p style={tcoLead}>A practical protection hierarchy separates long-life asset structures, high-value serviceable components and consumable protection elements. The categories show why a relatively low-cost filtration element can matter to much higher-value interfaces.</p>
-        <div style={valueGrid}>{valueHierarchy.map(([title, text]) => <article key={title} style={valueCard}><h3 style={valueTitle}>{title}</h3><p style={valueText}>{text}</p></article>)}</div>
-        <div style={lifecycleGrid} aria-label="Contamination to lifecycle cost pathway">{lifecycle.map((item) => <div key={item} style={lifecycleItem}>{item}</div>)}</div>
-        <Link href="/knowledge-center/engineering/mining-contamination-tco/" style={textLink}>READ THE ENGINEERING GUIDE →</Link>
+        <div style={wideHeader}><p style={eyebrow}>{miningText(lang, "AVAILABILITY & TOTAL COST OF OWNERSHIP")}</p><h2 id="mining-tco-title" style={sectionTitle}>{miningText(lang, "The filter is inexpensive. The component it protects is not.")}</h2><p style={bodyWide}>{miningText(lang, "Mining filtration should be judged against component sensitivity, maintenance consequence and equipment availability—not filter price alone.")}</p></div>
+        <p style={tcoLead}>{miningText(lang, "A practical protection hierarchy separates long-life asset structures, high-value serviceable components and consumable protection elements. The categories show why a relatively low-cost filtration element can matter to much higher-value interfaces.")}</p>
+        <div style={valueGrid}>{valueHierarchy.map(([title, text]) => <article key={title} style={valueCard}><h3 style={valueTitle}>{miningText(lang, title)}</h3><p style={valueText}>{miningText(lang, text)}</p></article>)}</div>
+        <div style={lifecycleGrid} aria-label="Contamination to lifecycle cost pathway">{lifecycle.map((item) => <div key={item} style={lifecycleItem}>{miningText(lang, item)}</div>)}</div>
+        <Link href="/knowledge-center/engineering/mining-contamination-tco/" style={textLink}>{miningText(lang, "READ THE ENGINEERING GUIDE →")}</Link>
       </section>
 
       <section style={section} aria-labelledby="decision-title">
-        <div style={wideHeader}><p style={eyebrow}>FROM MACHINE TO PROTECTION</p><h2 id="decision-title" style={sectionTitle}>The mining filtration decision in five steps.</h2></div>
+        <div style={wideHeader}><p style={eyebrow}>{miningText(lang, "FROM MACHINE TO PROTECTION")}</p><h2 id="decision-title" style={sectionTitle}>{miningText(lang, "The mining filtration decision in five steps.")}</h2></div>
         <div style={decisionGrid}>{[
           ['Machine', 'Identify the asset, engine and critical systems.'],
           ['Exposure', 'Define dust, water, fuel, debris and environmental contamination.'],
           ['Duty', 'Establish load, operating hours, service access and maintenance interval.'],
           ['Protection', 'Connect each contamination mechanism to the correct filtration system and technology.'],
           ['Part', 'Resolve the final product through OEM reference, dimensions and application evidence.'],
-        ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+        ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{miningText(lang, title)}</h3><p style={bodyText}>{miningText(lang, text)}</p></article>)}</div>
       </section>
 
       <section style={faqSection} aria-labelledby="faq-title">
-        <div style={wideHeader}><p style={eyebrow}>MINING FILTRATION QUESTIONS</p><h2 id="faq-title" style={sectionTitle}>What mining operators and maintenance teams need to know.</h2></div>
-        <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{q}</h3><p style={faqAnswer}>{a}</p></article>)}</div>
+        <div style={wideHeader}><p style={eyebrow}>{miningText(lang, "MINING FILTRATION QUESTIONS")}</p><h2 id="faq-title" style={sectionTitle}>{miningText(lang, "What mining operators and maintenance teams need to know.")}</h2></div>
+        <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{miningText(lang, q)}</h3><p style={faqAnswer}>{miningText(lang, a)}</p></article>)}</div>
       </section>
 
       <section style={conversionSection}>
         <div style={conversionGrid}>
-          <div style={conversionPrimary}><p style={eyebrow}>HAVE A MACHINE OR CONTAMINATION PROBLEM?</p><h2 style={conversionTitle}>Protect mining equipment around the way it actually operates.</h2><p style={conversionText}>Send the machine, engine, protected system, operating environment and any known OEM or filter reference. We will route the request through the correct protection path.</p><Link href="/contact/" style={primaryButton} data-conversion-action="application-support">PROTECT MINING EQUIPMENT</Link></div>
-          <div style={conversionSecondary}><div><p style={eyebrow}>ALREADY HAVE A PART NUMBER?</p><h3 style={conversionSubTitle}>Go directly to Part Search.</h3><a href="https://part-search.elimfilters.com/" style={secondaryButton} data-conversion-action="product-intelligence">FIND MY FILTER</a></div><div style={divider} /><div><p style={eyebrow}>SERVE MINING CUSTOMERS?</p><h3 style={conversionSubTitle}>Evaluate distributor fit.</h3><Link href="/distributor-application/" style={secondaryButton}>BECOME A DISTRIBUTOR</Link></div></div>
+          <div style={conversionPrimary}><p style={eyebrow}>{miningText(lang, "HAVE A MACHINE OR CONTAMINATION PROBLEM?")}</p><h2 style={conversionTitle}>{miningText(lang, "Protect mining equipment around the way it actually operates.")}</h2><p style={conversionText}>{miningText(lang, "Send the machine, engine, protected system, operating environment and any known OEM or filter reference. We will route the request through the correct protection path.")}</p><Link href="/contact/" style={primaryButton} data-conversion-action="application-support">{miningText(lang, "PROTECT MINING EQUIPMENT")}</Link></div>
+          <div style={conversionSecondary}><div><p style={eyebrow}>{miningText(lang, "ALREADY HAVE A PART NUMBER?")}</p><h3 style={conversionSubTitle}>{miningText(lang, "Go directly to Part Search.")}</h3><a href="https://part-search.elimfilters.com/" style={secondaryButton} data-conversion-action="product-intelligence">{miningText(lang, "FIND MY FILTER")}</a></div><div style={divider} /><div><p style={eyebrow}>{miningText(lang, "SERVE MINING CUSTOMERS?")}</p><h3 style={conversionSubTitle}>{miningText(lang, "Evaluate distributor fit.")}</h3><Link href="/distributor-application/" style={secondaryButton}>{miningText(lang, "BECOME A DISTRIBUTOR")}</Link></div></div>
         </div>
       </section>
     </main>

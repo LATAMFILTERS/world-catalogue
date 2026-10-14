@@ -3,6 +3,8 @@ import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { IndustryFilterCarousel } from './IndustryFilterCarousel';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
+import { constructionText } from '@/lib/construction-i18n';
+import type { PageLang } from '@/lib/localized-routes';
 
 const BASE_URL = 'https://elimfilters.com';
 const PAGE_URL = `${BASE_URL}/industries/construction/`;
@@ -43,15 +45,17 @@ const questions = [
   ['Can ELIMFILTERS identify a construction filter from an OEM or part number?', 'Yes. If the OEM reference or current filter number is known, Part Search provides the fastest route to cross-reference and application information. For an engineering review, include the machine, engine, protected system and jobsite conditions.'],
 ] as const;
 
-export function ConstructionIndustryPage() {
+export function ConstructionIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
+  const pageUrl = `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/industries/construction/`;
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': `${PAGE_URL}#page`,
-        url: PAGE_URL,
-        name: 'Construction Filtration Systems',
+        '@id': `${pageUrl}#page`,
+        url: pageUrl,
+        name: lang === 'es' ? 'Sistemas de filtración para construcción' : lang === 'pt' ? 'Sistemas de filtração para construção' : 'Construction Filtration Systems',
+        inLanguage: lang === 'pt' ? 'pt-BR' : lang,
         description: 'Construction filtration systems and contamination-control architecture for excavators, loaders, dozers, graders, compactors and articulated dump trucks operating in abrasive jobsite conditions.',
         isPartOf: { '@id': `${BASE_URL}/#website` },
         publisher: { '@id': `${BASE_URL}/#organization` },
@@ -74,27 +78,27 @@ export function ConstructionIndustryPage() {
           { '@type': 'Thing', name: 'HYDROCORE' },
           { '@type': 'Thing', name: 'SYNTRAX' },
         ],
-        breadcrumb: { '@id': `${PAGE_URL}#breadcrumb` },
+        breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': `${PAGE_URL}#breadcrumb`,
+        '@id': `${pageUrl}#breadcrumb`,
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
           { '@type': 'ListItem', position: 2, name: 'Industry', item: `${BASE_URL}/industries/` },
-          { '@type': 'ListItem', position: 3, name: 'Construction Filtration Systems', item: PAGE_URL },
+          { '@type': 'ListItem', position: 3, name: 'Construction Filtration Systems', item: pageUrl },
         ],
       },
       {
         '@type': 'ItemList',
-        '@id': `${PAGE_URL}#equipment`,
+        '@id': `${pageUrl}#equipment`,
         name: 'Construction equipment applications',
-        itemListElement: equipment.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name })),
+        itemListElement: equipment.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name: constructionText(lang, name) })),
       },
       {
         '@type': 'FAQPage',
-        '@id': `${PAGE_URL}#faq`,
-        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+        '@id': `${pageUrl}#faq`,
+        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: constructionText(lang, q), acceptedAnswer: { '@type': 'Answer', text: constructionText(lang, a) } })),
       },
     ],
   };
@@ -110,40 +114,40 @@ export function ConstructionIndustryPage() {
         </video>
         <div style={heroShade} />
         <div style={heroInner}>
-          <p style={eyebrow}>CONSTRUCTION / JOBSITE ASSET PROTECTION</p>
-          <h1 style={heroTitle}>Construction Filtration<br /><span style={yellow}>Systems</span></h1>
-          <p style={heroPromise}>Protect the machines that keep the project moving.</p>
-          <p style={heroLead}>Air intake, hydraulic, fuel and lubrication contamination control for excavators, loaders, dozers, graders, compactors and articulated dump trucks operating in abrasive dust, vibration, heat and severe off-road duty.</p>
+          <p style={eyebrow}>{constructionText(lang, "CONSTRUCTION / JOBSITE ASSET PROTECTION")}</p>
+          <h1 style={heroTitle}>{constructionText(lang, "Construction Filtration")}<br /><span style={yellow}>{constructionText(lang, "Systems")}</span></h1>
+          <p style={heroPromise}>{constructionText(lang, "Protect the machines that keep the project moving.")}</p>
+          <p style={heroLead}>{constructionText(lang, "Air intake, hydraulic, fuel and lubrication contamination control for excavators, loaders, dozers, graders, compactors and articulated dump trucks operating in abrasive dust, vibration, heat and severe off-road duty.")}</p>
           <div style={actions}>
-            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY PROTECTION PATH</Link>
-            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a>
+            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{constructionText(lang, "IDENTIFY MY PROTECTION PATH")}</Link>
+            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{constructionText(lang, "FIND MY FILTER")}</a>
           </div>
         </div>
       </section>
 
       <section style={directAnswerSection} aria-labelledby="direct-answer-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>DIRECT ANSWER</p>
-          <h2 id="direct-answer-title" style={directAnswerTitle}>What should a construction filtration strategy protect?</h2>
-          <p style={directAnswerText}>A construction filtration strategy should protect the machine systems most exposed to jobsite contamination: engine air intake, hydraulic circuits, fuel handling and delivery, and lubrication. Final filter selection should then be resolved from the machine, contamination source, component sensitivity, duty cycle, service conditions and validated application evidence.</p>
+          <p style={eyebrow}>{constructionText(lang, "DIRECT ANSWER")}</p>
+          <h2 id="direct-answer-title" style={directAnswerTitle}>{constructionText(lang, "What should a construction filtration strategy protect?")}</h2>
+          <p style={directAnswerText}>{constructionText(lang, "A construction filtration strategy should protect the machine systems most exposed to jobsite contamination: engine air intake, hydraulic circuits, fuel handling and delivery, and lubrication. Final filter selection should then be resolved from the machine, contamination source, component sensitivity, duty cycle, service conditions and validated application evidence.")}</p>
         </div>
       </section>
 
       <section style={section} aria-labelledby="jobsite-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>JOBSITE REALITY</p>
-          <h2 id="jobsite-title" style={sectionTitle}>The contamination load changes with the work being done.</h2>
-          <p style={wideText}>Construction equipment moves between excavation, loading, grading, demolition, compaction and haulage. The machine may stay on one project while the contamination mechanism and duty cycle change several times.</p>
-          <div style={pressureGrid}>{jobsitePressures.map(([title, text]) => <article key={title} style={pressureCard}><h3 style={cardTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          <p style={eyebrow}>{constructionText(lang, "JOBSITE REALITY")}</p>
+          <h2 id="jobsite-title" style={sectionTitle}>{constructionText(lang, "The contamination load changes with the work being done.")}</h2>
+          <p style={wideText}>{constructionText(lang, "Construction equipment moves between excavation, loading, grading, demolition, compaction and haulage. The machine may stay on one project while the contamination mechanism and duty cycle change several times.")}</p>
+          <div style={pressureGrid}>{jobsitePressures.map(([title, text]) => <article key={title} style={pressureCard}><h3 style={cardTitle}>{constructionText(lang, title)}</h3><p style={bodyText}>{constructionText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={equipmentSection} aria-labelledby="equipment-title">
         <div style={equipmentGrid}>
           <div style={equipmentCopy}>
-            <h2 id="equipment-title" style={sectionTitle}>Different machines. Different jobsite exposure.</h2>
-            <p style={wideText}>An excavator, loader and grader can operate yards apart and still require different filtration priorities because their airflow, hydraulic load, duty cycle and service access are not the same.</p>
-            <div role="list" aria-label="Construction equipment applications" style={equipmentList}>{equipment.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{asset}</span></div>)}</div>
+            <h2 id="equipment-title" style={sectionTitle}>{constructionText(lang, "Different machines. Different jobsite exposure.")}</h2>
+            <p style={wideText}>{constructionText(lang, "An excavator, loader and grader can operate yards apart and still require different filtration priorities because their airflow, hydraulic load, duty cycle and service access are not the same.")}</p>
+            <div role="list" aria-label="Construction equipment applications" style={equipmentList}>{equipment.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{constructionText(lang, asset)}</span></div>)}</div>
           </div>
           <div style={equipmentMedia}><img src="/images/construccion.avif" alt="Construction equipment operating in severe jobsite conditions" style={equipmentImage} /></div>
         </div>
@@ -151,67 +155,67 @@ export function ConstructionIndustryPage() {
 
       <section style={section} aria-labelledby="protection-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>CONTAMINATION PATHWAYS</p>
-          <h2 id="protection-title" style={sectionTitle}>Connect the jobsite threat to the system that must stay protected.</h2>
-          <p style={wideText}>Construction filtration should begin with the contamination source and protected interface, then resolve the appropriate system, technology and final part.</p>
-          <div className="industry-pathway-grid" style={pathwayGrid}>{protection.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>CONTAMINATION SOURCE</span><strong style={pathwaySource}>{source}</strong><p style={smallText}>{detail}</p></div><div style={pathwayDivider} /><div><span style={smallLabel}>PROTECTION SYSTEM</span><strong style={pathwaySystem}>{system}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>ELIMFILTERS TECHNOLOGY</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>EXPLORE →</span></Link></article>)}</div>
+          <p style={eyebrow}>{constructionText(lang, "CONTAMINATION PATHWAYS")}</p>
+          <h2 id="protection-title" style={sectionTitle}>{constructionText(lang, "Connect the jobsite threat to the system that must stay protected.")}</h2>
+          <p style={wideText}>{constructionText(lang, "Construction filtration should begin with the contamination source and protected interface, then resolve the appropriate system, technology and final part.")}</p>
+          <div className="industry-pathway-grid" style={pathwayGrid}>{protection.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>{constructionText(lang, "CONTAMINATION SOURCE")}</span><strong style={pathwaySource}>{constructionText(lang, source)}</strong><p style={smallText}>{constructionText(lang, detail)}</p></div><div style={pathwayDivider} /><div><span style={smallLabel}>{constructionText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwaySystem}>{constructionText(lang, system)}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>{constructionText(lang, "ELIMFILTERS TECHNOLOGY")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{constructionText(lang, "EXPLORE →")}</span></Link></article>)}</div>
         </div>
       </section>
 
       <section style={principleSection}>
-        <div style={principle}><span style={principleLabel}>CONSTRUCTION ENGINEERING PRINCIPLE</span><p style={principleText}>The correct filter is determined by the machine, jobsite contamination, protected system, component sensitivity, duty cycle and service reality—not by equipment category alone.</p></div>
+        <div style={principle}><span style={principleLabel}>{constructionText(lang, "CONSTRUCTION ENGINEERING PRINCIPLE")}</span><p style={principleText}>{constructionText(lang, "The correct filter is determined by the machine, jobsite contamination, protected system, component sensitivity, duty cycle and service reality—not by equipment category alone.")}</p></div>
       </section>
 
-      <IndustryFilterCarousel dutyClass="HD" industryName="Construction" />
+      <IndustryFilterCarousel dutyClass="HD" industryName="Construction" lang={lang} />
 
       <section style={impactSection} aria-labelledby="impact-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>PROJECT CONTINUITY</p>
-          <h2 id="impact-title" style={sectionTitle}>Protect the operating chain before contamination reaches the schedule.</h2>
-          <p style={wideText}>A filtration problem on one machine can become a production problem for the crew, the next task and the project sequence. Contamination control therefore supports more than component protection.</p>
-          <div style={impactGrid}>{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          <p style={eyebrow}>{constructionText(lang, "PROJECT CONTINUITY")}</p>
+          <h2 id="impact-title" style={sectionTitle}>{constructionText(lang, "Protect the operating chain before contamination reaches the schedule.")}</h2>
+          <p style={wideText}>{constructionText(lang, "A filtration problem on one machine can become a production problem for the crew, the next task and the project sequence. Contamination control therefore supports more than component protection.")}</p>
+          <div style={impactGrid}>{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{constructionText(lang, title)}</h3><p style={bodyText}>{constructionText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={section} aria-labelledby="decision-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>FROM JOBSITE TO PART</p>
-          <h2 id="decision-title" style={sectionTitle}>Resolve the construction application in five decisions.</h2>
+          <p style={eyebrow}>{constructionText(lang, "FROM JOBSITE TO PART")}</p>
+          <h2 id="decision-title" style={sectionTitle}>{constructionText(lang, "Resolve the construction application in five decisions.")}</h2>
           <div style={decisionGrid}>{[
             ['Machine', 'Identify the excavator, loader, dozer, grader, compactor or haul unit.'],
             ['Jobsite', 'Define dust, demolition debris, moisture, fuel handling, heat and vibration exposure.'],
             ['Duty', 'Establish operating hours, hydraulic demand, start-stop pattern and service access.'],
             ['Protection', 'Match the contamination mechanism to air intake, hydraulic, fuel or lubrication protection.'],
             ['Part', 'Resolve the product through OEM reference, dimensions and validated application evidence.'],
-          ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{constructionText(lang, title)}</h3><p style={bodyText}>{constructionText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={evidenceSection} aria-labelledby="evidence-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>APPLICATION EVIDENCE</p>
-          <h2 id="evidence-title" style={sectionTitle}>Selection should end with evidence, not assumption.</h2>
-          <p style={wideText}>A construction application becomes stronger when the equipment identity, protected system and operating reality are checked against available OEM references, current filter numbers, dimensions and documented application evidence before the final product is selected.</p>
+          <p style={eyebrow}>{constructionText(lang, "APPLICATION EVIDENCE")}</p>
+          <h2 id="evidence-title" style={sectionTitle}>{constructionText(lang, "Selection should end with evidence, not assumption.")}</h2>
+          <p style={wideText}>{constructionText(lang, "A construction application becomes stronger when the equipment identity, protected system and operating reality are checked against available OEM references, current filter numbers, dimensions and documented application evidence before the final product is selected.")}</p>
           <div style={evidenceGrid}>
-            <article style={evidenceCard}><h3 style={cardTitle}>Identify the asset</h3><p style={bodyText}>Machine, engine, model and protected system establish the technical context.</p></article>
-            <article style={evidenceCard}><h3 style={cardTitle}>Define the exposure</h3><p style={bodyText}>Dust, moisture, fuel handling, hydraulic demand, vibration and service access define the operating reality.</p></article>
-            <article style={evidenceCard}><h3 style={cardTitle}>Validate the part</h3><p style={bodyText}>OEM references, current filter numbers, dimensions and application evidence support final product identification.</p></article>
+            <article style={evidenceCard}><h3 style={cardTitle}>{constructionText(lang, "Identify the asset")}</h3><p style={bodyText}>{constructionText(lang, "Machine, engine, model and protected system establish the technical context.")}</p></article>
+            <article style={evidenceCard}><h3 style={cardTitle}>{constructionText(lang, "Define the exposure")}</h3><p style={bodyText}>{constructionText(lang, "Dust, moisture, fuel handling, hydraulic demand, vibration and service access define the operating reality.")}</p></article>
+            <article style={evidenceCard}><h3 style={cardTitle}>{constructionText(lang, "Validate the part")}</h3><p style={bodyText}>{constructionText(lang, "OEM references, current filter numbers, dimensions and application evidence support final product identification.")}</p></article>
           </div>
         </div>
       </section>
 
       <section style={faqSection} aria-labelledby="faq-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>CONSTRUCTION FILTRATION QUESTIONS</p>
-          <h2 id="faq-title" style={sectionTitle}>What fleet and maintenance teams need to know.</h2>
-          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{q}</h3><p style={faqAnswer}>{a}</p></article>)}</div>
+          <p style={eyebrow}>{constructionText(lang, "CONSTRUCTION FILTRATION QUESTIONS")}</p>
+          <h2 id="faq-title" style={sectionTitle}>{constructionText(lang, "What fleet and maintenance teams need to know.")}</h2>
+          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{constructionText(lang, q)}</h3><p style={faqAnswer}>{constructionText(lang, a)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={conversionSection}>
         <div style={conversionGrid}>
-          <div><p style={eyebrow}>NEED TO RESOLVE A CONSTRUCTION APPLICATION?</p><h2 style={conversionTitle}>Identify the protection path before choosing the part.</h2><p style={conversionText}>Send the machine, engine, protected system, jobsite conditions and any known OEM or filter reference. ELIMFILTERS can use that information to structure the application path and move from operating condition to validated product identification.</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY PROTECTION PATH</Link></div>
-          <div style={conversionSecondary}><div><p style={eyebrow}>ALREADY HAVE A PART NUMBER?</p><h3 style={conversionSubTitle}>Go directly to Part Search.</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a></div><div style={divider} /><div><p style={eyebrow}>SERVE CONSTRUCTION CUSTOMERS?</p><h3 style={conversionSubTitle}>Evaluate distributor fit.</h3><Link href="/distributor-application/" style={secondaryButton}>BECOME A DISTRIBUTOR</Link></div></div>
+          <div><p style={eyebrow}>{constructionText(lang, "NEED TO RESOLVE A CONSTRUCTION APPLICATION?")}</p><h2 style={conversionTitle}>{constructionText(lang, "Identify the protection path before choosing the part.")}</h2><p style={conversionText}>{constructionText(lang, "Send the machine, engine, protected system, jobsite conditions and any known OEM or filter reference. ELIMFILTERS can use that information to structure the application path and move from operating condition to validated product identification.")}</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{constructionText(lang, "IDENTIFY MY PROTECTION PATH")}</Link></div>
+          <div style={conversionSecondary}><div><p style={eyebrow}>{constructionText(lang, "ALREADY HAVE A PART NUMBER?")}</p><h3 style={conversionSubTitle}>{constructionText(lang, "Go directly to Part Search.")}</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{constructionText(lang, "FIND MY FILTER")}</a></div><div style={divider} /><div><p style={eyebrow}>{constructionText(lang, "SERVE CONSTRUCTION CUSTOMERS?")}</p><h3 style={conversionSubTitle}>{constructionText(lang, "Evaluate distributor fit.")}</h3><Link href="/distributor-application/" style={secondaryButton}>{constructionText(lang, "BECOME A DISTRIBUTOR")}</Link></div></div>
         </div>
       </section>
     </main>
