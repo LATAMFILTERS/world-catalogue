@@ -34,32 +34,50 @@ const MARKER = 'ELIMFILTERS_OEM_PRODUCT_AUTHORITY_V43';
 function patchFunction(definition) {
   if (definition.includes(MARKER)) return definition;
 
-  const anchor = "  IF duty_text = 'HEAVY_DUTY' THEN";
-  const count = definition.split(anchor).length - 1;
-  if (count !== 1) throw new Error(`HD_POLICY_ANCHOR_COUNT_${count}`);
+  const hdMatches = [...definition.matchAll(/^(\s*)IF duty_text = 'HEAVY_DUTY' THEN$/gm)];
+  if (hdMatches.length !== 1) throw new Error(`HD_POLICY_ANCHOR_COUNT_${hdMatches.length}`);
 
-  const block = `  -- ${MARKER}
-  IF upper(coalesce(gov->>'identity_type', '')) = 'ELIMFILTERS_OEM_PRODUCT' THEN
-    IF coalesce((gov->>'internal_product_identity_verified')::boolean, false) IS NOT TRUE
-       OR coalesce((gov->>'primary_manufacturer_verified')::boolean, false) IS NOT TRUE
-       OR approved_manufacturer <> 'ELIMFILTERS'
-       OR approved_code_norm = ''
-       OR approved_code_norm <> base_norm
-       OR approved_source <> 'INTERNAL_PRODUCT_IDENTITY'
-       OR upper(regexp_replace(coalesce(NEW.canonical_source_brand, ''), '[^A-Z0-9]', '', 'g')) <> 'ELIMFILTERS'
-       OR upper(regexp_replace(coalesce(NEW.canonical_source_code, ''), '[^A-Z0-9]', '', 'g'))
-          <> upper(regexp_replace(coalesce(NEW.sku, ''), '[^A-Z0-9]', '', 'g'))
-       OR base_norm <> upper(regexp_replace(coalesce(NEW.sku, ''), '[^A-Z0-9]', '', 'g'))
-    THEN
-      RAISE EXCEPTION 'CATALOG_POLICY_V43: invalid ELIMFILTERS OEM identity for SKU %', NEW.sku;
-    END IF;
+  const indent = hdMatches[0][1];
+  const anchor = hdMatches[0][0];
+  const i = indent;
+  const block = [
+    `${i}-- ${MARKER}`,
+    `${i}IF upper(coalesce(gov->>'identity_type', '')) = 'ELIMFILTERS_OEM_PRODUCT' THEN`,
+    `${i}  IF coalesce((gov->>'internal_product_identity_verified')::boolean, false) IS NOT TRUE`,
+    `${i}     OR coalesce((gov->>'primary_manufacturer_verified')::boolean, false) IS NOT TRUE`,
+    `${i}     OR approved_manufacturer <> 'ELIMFILTERS'`,
+    `${i}     OR approved_code_norm = ''`,
+    `${i}     OR approved_code_norm <> base_norm`,
+    `${i}     OR approved_source <> 'INTERNAL_PRODUCT_IDENTITY'`,
+    `${i}     OR upper(regexp_replace(coalesce(NEW.canonical_source_brand, ''), '[^A-Z0-9]', '', 'g')) <> 'ELIMFILTERS'`,
+    `${i}     OR upper(regexp_replace(coalesce(NEW.canonical_source_code, ''), '[^A-Z0-9]', '', 'g'))`,
+    `${i}        <> upper(regexp_replace(coalesce(NEW.sku, ''), '[^A-Z0-9]', '', 'g'))`,
+    `${i}     OR base_norm <> upper(regexp_replace(coalesce(NEW.sku, ''), '[^A-Z0-9]', '', 'g'))`,
+    `${i}  THEN`,
+    `${i}    RAISE EXCEPTION 'CATALOG_POLICY_V43: invalid ELIMFILTERS OEM identity for SKU %', NEW.sku;`,
+    `${i}  END IF;`,
+    '',
+    `${i}  RETURN NEW;`,
+    `${i}END IF;`,
+    '',
+  ].join('\n');
 
-    RETURN NEW;
-  END IF;
+  let patched = definition.replace(anchor, block + anchor);
 
-`;
+  // Later policy revisions use strict_validation to avoid rechecking unrelated
+  // updates. Ensure ELIMFILTERS OEM governance can never bypass the canonical gate.
+  if (patched.includes('strict_validation') && !patched.includes('ELIMFILTERS_OEM_PRODUCT_STRICT_V43')) {
+    const earlyMatches = [...patched.matchAll(/^(\s*)IF NOT strict_validation THEN$/gm)];
+    if (earlyMatches.length !== 1) throw new Error(`STRICT_POLICY_ANCHOR_COUNT_${earlyMatches.length}`);
+    const earlyIndent = earlyMatches[0][1];
+    const earlyAnchor = earlyMatches[0][0];
+    const strictLine =
+      `${earlyIndent}-- ELIMFILTERS_OEM_PRODUCT_STRICT_V43\n` +
+      `${earlyIndent}strict_validation := strict_validation OR upper(coalesce(gov->>'identity_type','')) = 'ELIMFILTERS_OEM_PRODUCT';\n`;
+    patched = patched.replace(earlyAnchor, strictLine + earlyAnchor);
+  }
 
-  return definition.replace(anchor, block + anchor);
+  return patched;
 }
 
 async function main() {
