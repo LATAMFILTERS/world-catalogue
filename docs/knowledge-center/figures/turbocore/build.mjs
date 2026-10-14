@@ -118,7 +118,9 @@ const TF = vertical(TURB.z0);
 const turbProfile = [[-(TURB.z0 - 54), TURB.hub], [-2, TURB.r - 2, 1], [0, TURB.r], [TURB.z1 - TURB.z0, TURB.r], [COLLAR_Z - TURB.z0, TURB.r - 3]];
 // the deflector is fixed: its helical vanes turn the fuel's own flow into a swirl, nothing rotates
 const vanes = k.fadedSvg(G.ribsOf(TF, 0, TURB.z1 - TURB.z0, TURB.r, VANES, P, { twist: -0.7, fade: [0.25, 0.7] }), { tone: "hi" });
-const turbine = S(G.solidOf(turbProfile, TF, P), { tone: "mid", inner: L(G.arcOf(TF, 0, TURB.r, P, { trim: 0 }) + G.arcOf(TF, TURB.z1 - TURB.z0, TURB.r, P, { trim: 0 }), { tone: "lo" }) }) + `<g data-part="vanes">${vanes}</g>`;
+// the fuel turning in the bowl under the fixed deflector: dashed rings whose dashes travel round
+const swirlRings = [[47, 21.5], [53, 23.5], [59, 24]].map(([z, r]) => `<path class="iso-line pc-swirl" data-flow="" d="${k.ring(0, 0, r, z, P, 72)}"/>`).join("");
+const turbine = swirlRings + S(G.solidOf(turbProfile, TF, P), { tone: "mid", inner: L(G.arcOf(TF, 0, TURB.r, P, { trim: 0 }) + G.arcOf(TF, TURB.z1 - TURB.z0, TURB.r, P, { trim: 0 }), { tone: "lo" }) }) + `<g data-part="vanes">${vanes}</g>`;
 put("bowl", [0, 0, (B.z0 + B.z1) / 2], glassBowl(P, { ...B, inside: turbine }), [A.cylinder(0, 0, B.r, B.z0, B.z1 - B.z0, { name: "bowl", owner: "bowl" }), A.solid(TF, turbProfile, { name: "turbine", owner: "bowl" })]);
 const V0 = vertical(VALVE_Z);
 const capProfile = [[0, 6], [CAP_Z - VALVE_Z - 2, 16, 1], [CAP_Z - VALVE_Z, 23], [B.z0 - VALVE_Z, B.r + 1]];
@@ -133,7 +135,7 @@ const svg = k.figureSvg({
   width: WIDTH,
   height: HEIGHT,
   label:
-    "Carcasa separadora de combustible y agua tipo turbina, con tapa y manija en T, montada con abrazadera a un soporte de pared. A través del vaso transparente se ve el deflector de turbina fijo, que con el propio flujo pone el combustible en remolino y lo centrifuga: el agua, más densa, se desplaza hacia la pared y cae al fondo del vaso, donde un purgador la descarga a una taza. Al levantar la tapa sale el elemento reemplazable.",
+    "Carcasa separadora de combustible y agua tipo turbina, con tapa y manija en T, montada con abrazadera a un soporte de pared. A través del vaso transparente se ve el deflector de turbina fijo, que con el propio flujo pone el combustible en remolino y lo centrifuga: el agua y los residuos sólidos, más densos, se desplazan hacia la pared y caen al fondo del vaso, donde un purgador los descarga a una taza. Al levantar la tapa sale el elemento reemplazable.",
   body: layers,
 });
 
@@ -149,7 +151,7 @@ const lid = { x: 0, v: 0, target: 0 };
 const swirl = [];
 function draw() {
   const hidden = (p) => p.z > T.z0 - 12 && Math.cos(p.a) * VIEW[0] + Math.sin(p.a) * VIEW[1] < 0;
-  drawBowl(swirl.map((p) => ({ at: [p.r * Math.cos(p.a), p.r * Math.sin(p.a), p.z], back: hidden(p) })));
+  drawBowl(swirl.map((p) => ({ at: [p.r * Math.cos(p.a), p.r * Math.sin(p.a), p.z], back: hidden(p), solid: p.solid })));
   const lift = translateAlong(P, [0, 0, T.lift * lid.x]);
   const [dx, dy] = lift.match(/-?[\\d.]+/g).map(Number);
   for (const group of lidGroups) { group.setAttribute("transform", lift); holdStill(group, [dx, dy]); }
@@ -166,7 +168,7 @@ function tick(now) {
   flow += (flowTarget - flow) * (1 - Math.exp(-dt / 0.6));
   // stage 1: the turbine deflector centrifuges the fuel; denser water moves out to the bowl wall and spirals down into the sump
   spawn += dt * (1 + 6 * flow);
-  while (spawn > 1) { spawn -= 1; swirl.push({ r: T.r - 2, a: rand() * Math.PI * 2, z: T.z0 - 3 - rand() * 4, v: 4 }); }
+  while (spawn > 1) { spawn -= 1; swirl.push({ r: T.r - 2, a: rand() * Math.PI * 2, z: T.z0 - 3 - rand() * 4, v: 4, solid: rand() < 0.35 }); }
   const top = waterTop();
   for (let i = swirl.length - 1; i >= 0; i--) {
     const p = swirl[i];
@@ -174,7 +176,9 @@ function tick(now) {
     p.a += dt * (0.8 + 3.2 * flow) * (T.r / p.r);
     p.v = Math.min(p.v + 30 * dt, 22);
     p.z -= p.v * dt;
-    if (p.z <= top) { swirl.splice(i, 1); bowl.level = Math.min(bowl.level + 0.008, 1.06); }
+    // water joins the column; large solids (residues) keep sinking to the floor of the bowl
+    if (p.solid) { if (p.z <= B.z0 + 0.8) { swirl.splice(i, 1); settle(p.r * Math.cos(p.a), p.r * Math.sin(p.a)); } else if (p.z <= top) p.v = Math.min(p.v, 9); }
+    else if (p.z <= top) { swirl.splice(i, 1); bowl.level = Math.min(bowl.level + 0.008, 1.06); }
   }
   stepBowl(dt);
   for (let i = 0; i < T.spring.substeps; i++) { const h = dt / T.spring.substeps; lid.v += ((lid.target - lid.x) * T.spring.stiffness - lid.v * T.spring.damping) * h; lid.x += lid.v * h; }
@@ -209,11 +213,12 @@ const body = PAGE_CSS + k.plateHtml({
   readout: "caudal medio · acumulando agua",
   keys: [
     { mark: "lit", label: "Álabes del deflector de turbina y nivel de agua" },
-    { mark: "blue", label: "Agua separada por centrifugado" },
+    { mark: "blue", label: "Agua y residuos sólidos separados por centrifugado" },
+    { mark: "dashed", label: "El combustible girando bajo el deflector fijo" },
     { mark: "raised", label: "Tapa con manija en T, elemento reemplazable, carcasa con aletas y abrazadera, vaso, purgador" },
   ],
   caption:
-    "Ilustración conceptual de una carcasa separadora de combustible/agua tipo turbina (FH/FG), con separación por etapas. En la primera etapa, visible en el vaso, un deflector de turbina fijo pone el combustible en remolino y lo centrifuga: el agua, más densa, se desplaza hacia la pared y decanta al fondo, donde el purgador la descarga. Las etapas siguientes ocurren en el elemento reemplazable, que se retira por la tapa. Es una ilustración conceptual: no muestra datos de producto.",
+    "Ilustración conceptual de una carcasa separadora de combustible/agua tipo turbina (FH/FG), con separación por etapas. En la primera etapa, visible en el vaso, un deflector de turbina fijo pone el combustible en remolino y lo centrifuga: el agua y las partículas sólidas más grandes, más densas que el diésel, se desplazan hacia la pared y decantan al fondo, donde el purgador las descarga. Las etapas siguientes ocurren en el elemento reemplazable, que se retira por la tapa. Es una ilustración conceptual: no muestra datos de producto.",
   body: `<div class="iso-stage" tabindex="0" role="slider" aria-label="Carcasa TURBOCORE: flechas cambian el caudal, E abre la tapa, espacio purga" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60">${svg}</div>`,
 });
 

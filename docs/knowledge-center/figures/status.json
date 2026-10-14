@@ -29,6 +29,20 @@
       ]
     },
     {
+      "id": "kc-figure-hydrocore-housing-element",
+      "technology": "HYDROCORE",
+      "scope": "standard non-turbine fuel/water separator: permanent housing with replaceable cartridge element and reusable bowl (service: bowl off, change the element, refit the same bowl)",
+      "files": [
+        "hydrocore/hydrocore-housing.html",
+        "hydrocore/hydrocore-housing-light.html"
+      ],
+      "validationStatus": "pending-secondary-validation",
+      "publicationStatus": "internal-only",
+      "open_items": [
+        "Engineering review of the drawn configuration (head, permanent housing, replaceable element, bowl, drain) against approved HYDROCORE applications."
+      ]
+    },
+    {
       "id": "kc-figure-turbocore-turbine-housing",
       "technology": "TURBOCORE",
       "scope": "turbine-style FH/FG fuel/water separation housing with replaceable element",
@@ -94,6 +108,11 @@
       "date": "2026-10-14",
       "by": "operator",
       "decision": "HYDROCORE is shown in its two differentiating configurations: spin-on with integrated drain (water settles in the cartridge sump; the whole cartridge is replaced at service) and separator with a reusable bowl (only the element is changed; the same bowl is refitted)."
+    },
+    {
+      "date": "2026-10-14",
+      "by": "operator",
+      "decision": "Add the third HYDROCORE configuration: replaceable separator elements that go inside permanent separator housings (not turbine housings); at service the bowl comes off, the element is changed and the same bowl is refitted. Show solid residues settling with the water in all fuel figures. TURBOCORE stays one figure; the fuel's swirl under the fixed deflector is shown with animated rings."
     }
   ]
 }

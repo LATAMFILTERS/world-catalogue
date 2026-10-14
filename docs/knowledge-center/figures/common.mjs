@@ -163,6 +163,8 @@ export const PAGE_CSS = `<style>
 .pc-fuel{fill:color-mix(in srgb,#c9a253 10%,var(--anatomy-paper));opacity:.92}
 .pc-water{fill:color-mix(in srgb,var(--anatomy-blue) 30%,var(--anatomy-paper))}
 .pc-drops circle{fill:color-mix(in srgb,var(--anatomy-blue) 72%,var(--anatomy-lit))}
+.pc-drops circle.s{fill:color-mix(in srgb,#6b4f2e 70%,var(--anatomy-hi))}
+.pc-swirl{stroke:color-mix(in srgb,var(--anatomy-blue) 55%,var(--anatomy-mid));opacity:.55;fill:none}
 .pc-stream{stroke:color-mix(in srgb,var(--anatomy-blue) 72%,var(--anatomy-lit));stroke-width:1.2px}
 .pc-glass .iso-shade{opacity:.26}
 .pc-cut .iso-shade{opacity:.5}
@@ -185,7 +187,9 @@ const WING = ringOf({ x: -9, y: -1.4, w: 18, d: 2.8, r: 1.2 }, 3);
 const SPAN = B.mark - B.z0;
 let seed = 7;
 const rand = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
-const bowl = { level: 0.3, open: 0, opening: false, cup: 0 };
+const bowl = { level: 0.3, open: 0, opening: false, cup: 0, sediment: [] };
+// solids (residues) settle on the floor of the bowl and are flushed out with the water when it drains
+const settle = (x, y) => { if (bowl.sediment.length < 48) bowl.sediment.push([x, y]); };
 function setSolid(group, paths) {
   group.querySelector(".iso-fill").setAttribute("d", paths.fill);
   group.querySelector(".iso-top").setAttribute("d", paths.top);
@@ -200,16 +204,17 @@ function stepBowl(dt) {
   if (bowl.level <= 0.08) bowl.opening = false;
   bowl.open += ((bowl.opening ? 1 : 0) - bowl.open) * (1 - Math.exp(-dt / 0.25));
   const out = bowl.open > 0.5 ? Math.min(bowl.level - 0.05, dt * 0.3 * bowl.open) : 0;
-  if (out > 0) { bowl.level -= out; bowl.cup = Math.min(1, bowl.cup + out * 0.35); }
+  if (out > 0) { bowl.level -= out; bowl.cup = Math.min(1, bowl.cup + out * 0.35); if (rand() < dt * 6) bowl.sediment.shift(); }
   else bowl.cup = Math.max(0, bowl.cup - dt * 0.02); // the cup is emptied between drains
 }
 function drawBowl(drops) {
   const top = waterTop();
   water.setAttribute("d", cylinder(0, 0, B.r - 0.8, B.z0, top - B.z0, P, 72).fill);
   surface.setAttribute("d", ring(0, 0, B.r - 0.8, top, P, 72));
-  const dot = (p) => { const [x, y] = iso(p, P); return '<circle cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="1.15"/>'; };
-  back.innerHTML = drops.filter((p) => p.back).map((p) => dot(p.at)).join("");
-  front.innerHTML = drops.filter((p) => !p.back).map((p) => dot(p.at)).join("");
+  const dot = (p) => { const [x, y] = iso(p.at, P); return '<circle' + (p.solid ? ' class="s"' : "") + ' cx="' + x.toFixed(1) + '" cy="' + y.toFixed(1) + '" r="' + (p.solid ? "0.95" : "1.15") + '"/>'; };
+  const floor = bowl.sediment.map(([x, y]) => ({ at: [x, y, B.z0 + 0.7], solid: true }));
+  back.innerHTML = drops.filter((p) => p.back).map(dot).join("");
+  front.innerHTML = floor.concat(drops.filter((p) => !p.back)).map(dot).join("");
   const a = bowl.open * Math.PI / 2, c = Math.cos(a), s = Math.sin(a);
   setSolid(wing.firstChild, extrude(WING.map(([x, y]) => [x * c - y * s, x * s + y * c]), B.wing, 5, P));
   stream.style.opacity = String(clamp((bowl.open - 0.5) * 2, 0, 1));
