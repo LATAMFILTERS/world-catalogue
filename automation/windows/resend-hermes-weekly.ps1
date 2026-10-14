@@ -80,7 +80,14 @@ if ($result.outcome -ne 'SENT') { throw "HERMES resend unexpected outcome: $($re
 if ([string]::IsNullOrWhiteSpace([string]$result.recipient)) { throw 'HERMES resend reported SENT but recipient is empty.' }
 
 Write-Host ''
-Write-Host 'HERMES REVIEW-READY REPORT SENT'
-Write-Host "Recipient: $($result.recipient)"
-Write-Host "Review ready: $($result.review_ready)"
+if ($result.informational_digest -eq $true) {
+  Write-Host 'HERMES WEEKLY INTELLIGENCE DIGEST SENT'
+  Write-Host "Recipient: $($result.recipient)"
+  Write-Host "Review ready: $($result.review_ready)"
+  Write-Host "Queued pending: $($result.queued_pending)"
+} else {
+  Write-Host 'HERMES REVIEW-READY REPORT SENT'
+  Write-Host "Recipient: $($result.recipient)"
+  Write-Host "Review ready: $($result.review_ready)"
+}
 Write-Host "Report: $($latest.FullName)"
