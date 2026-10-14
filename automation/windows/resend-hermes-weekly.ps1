@@ -24,8 +24,14 @@ function Set-EnvFromSecret($Secrets, [string]$Name) {
   return $true
 }
 
-if (-not (Test-Path (Join-Path $RuntimePath '.git'))) { throw "HERMES runtime not found: $RuntimePath" }
+$resolvedRuntime = [System.IO.Path]::GetFullPath($RuntimePath).TrimEnd('\\')
+$devRepoRoot = 'C:\ELIMSERVER\repos\'
+if ($resolvedRuntime.StartsWith($devRepoRoot, [System.StringComparison]::OrdinalIgnoreCase)) {
+  throw "Refusing HERMES resend against a development repository: $resolvedRuntime. Use the isolated runtime clone under C:\ELIMSERVER\apps\hermes-runtime."
+}
+if (-not (Test-Path (Join-Path $resolvedRuntime '.git'))) { throw "HERMES runtime not found: $resolvedRuntime" }
 if (-not (Test-Path $SecretsPath)) { throw "HERMES secrets file not found: $SecretsPath" }
+$RuntimePath = $resolvedRuntime
 
 Set-Location $RuntimePath
 Write-Host 'Refreshing HERMES runtime...'
@@ -69,11 +75,7 @@ if ($jsonStart -lt 0) { throw 'HERMES resend result JSON not found.' }
 $result = ($resultLines[$jsonStart..($resultLines.Count - 1)] -join "`n") | ConvertFrom-Json
 
 if ($result.outcome -eq 'NO_REVIEW_READY') {
-  Write-Host ''
-  Write-Host 'HERMES: NO REVIEW-READY FINDINGS — EMAIL SUPPRESSED'
-  Write-Host "Queued pending: $($result.queued_pending)"
-  Write-Host "Report: $($latest.FullName)"
-  exit 0
+  throw 'HERMES resend runtime is stale: weekly delivery must send an informational digest even when review_ready=0.'
 }
 
 if ($result.outcome -ne 'SENT') { throw "HERMES resend unexpected outcome: $($result.outcome)" }
