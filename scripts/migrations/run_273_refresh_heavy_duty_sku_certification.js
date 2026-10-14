@@ -18,7 +18,8 @@
  * run_100), which this script does not re-run.
  *
  * Left as they are:
- *  - rows held by hand (HERMES_RESEARCH_REQUIRED, REFERENCE_RECONCILIATION_REQUIRED);
+ *  - rows marked by hand (manualLedgerRow in run_093: research holds and
+ *    rows whose policy_version was written by a per-SKU correction);
  *  - ledger rows whose SKU is no longer in the catalogue.
  * Heavy Duty products without a ledger row get one.
  *
@@ -31,7 +32,7 @@ const { Client } = require('pg');
 
 const APPLY = process.argv.includes('--execute');
 const POLICY_VERSION = '2026-10-12-hd-cert-refresh-v1';
-const MANUAL_HOLDS = ['HERMES_RESEARCH_REQUIRED', 'REFERENCE_RECONCILIATION_REQUIRED'];
+const { manualLedgerRow } = require('./run_093_global_sku_certification_audit');
 
 const EVALUATE = `
   WITH catalog AS (
@@ -164,8 +165,8 @@ const EVALUATE = `
         blocker_count=EXCLUDED.blocker_count, blockers=EXCLUDED.blockers, evidence=EXCLUDED.evidence,
         certified_at=CASE WHEN EXCLUDED.certification_state='CERTIFIED' THEN coalesce(t.certified_at, now()) ELSE NULL END,
         audited_at=now()
-      WHERE NOT (t.blockers && $2::text[])
-    `, [POLICY_VERSION, MANUAL_HOLDS]);
+      WHERE NOT ${manualLedgerRow('t')}
+    `, [POLICY_VERSION]);
     report.rows_written = written.rowCount;
 
     if (await ld() !== ldBefore) throw new Error('NON_HEAVY_DUTY_ROWS_CHANGED');
