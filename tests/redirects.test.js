@@ -1,6 +1,6 @@
 'use strict';
 
-// Verifies the 21 legacy pre-migration marketing URLs (found bleeding Search
+// Verifies the 20 legacy pre-migration marketing URLs (found bleeding Search
 // Console impressions with zero clicks) now return a real HTTP 301 with the
 // correct Location header, instead of the removed client-side meta-refresh
 // stub pages. Boots server-original.js in-process on an ephemeral test port
@@ -38,13 +38,12 @@ const REDIRECT_CASES = [
   ['/systems/oil/', '/systems/lubrication/'],
   ['/systems/marine/', '/industries/marine/'],
   ['/technologies/THERMACORE/', '/technologies/thermacore/'],
-  ['/technologies/turbocore-series/', '/technologies/hydrocore/'],
-  ['/technologies/turbocore/', '/technologies/hydrocore/'],
+  ['/technologies/turbocore-series/', '/technologies/turbocore/'],
   ['/technologies/duratech/', '/commercial-lines/duratech/'],
   ['/technologies/marineclean/', '/commercial-lines/marineclean/'],
 ];
 
-test('legacy marketing URLs — 21 cases', async (t) => {
+test('legacy marketing URLs — 20 cases', async (t) => {
   // Give the server a moment to bind before the first request.
   await new Promise((resolve) => setTimeout(resolve, 300));
 
@@ -55,6 +54,12 @@ test('legacy marketing URLs — 21 cases', async (t) => {
       assert.equal(res.headers.get('location'), to, `expected Location: ${to} for ${from}`);
     });
   }
+
+  // TURBOCORE is a live, distinct technology page: never redirected to HYDROCORE.
+  await t.test('/technologies/turbocore/ is not redirected', async () => {
+    const res = await fetch(`${BASE_URL}/technologies/turbocore/`, { redirect: 'manual' });
+    assert.notEqual(res.headers.get('location'), '/technologies/hydrocore/');
+  });
 
   // Query strings must be preserved across the redirect.
   await t.test('query string preserved', async () => {
