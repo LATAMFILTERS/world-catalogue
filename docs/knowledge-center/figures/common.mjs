@@ -157,6 +157,37 @@ export function glassBowl(P, { z0, z1, r, mark, inside = "", cutaway = false }) 
   return out.join("");
 }
 
+// A steel shell seen in section: its inside (cavity), whatever sits inside it, then the shell's front shading and outline.
+// part: "all" in one item, or "back" / "front" when something moving inside must be painted between them.
+export function shellCut(P, { z0, z1, r, inside = "", part = "all" }) {
+  const shell = k.cylinder(0, 0, r, z0, z1 - z0, P, 72);
+  const back = `<path class="pc-cav" d="${shell.fill}"/>`;
+  const front = [`<g class="pc-glass pc-cut">`, ...shell.shades.map((d, i) => (d ? `<path class="iso-shade" data-shade="${i}" d="${d}"/>` : "")), `</g>`, k.lineSvg(shell.outline, { tone: "mid" })].join("");
+  return part === "back" ? back : part === "front" ? front : back + inside + front;
+}
+
+// A pleated filter element: end caps, vertical pleats, and fuel flow running down outside the pleats
+// (the drawn flow lines start and end under the end caps, which are painted after them).
+export function pleatedElement(P, { z0, z1, r, flow = true }) {
+  const F = vertical(z0 + 2);
+  const h = z1 - z0 - 4;
+  const media = k.cylinder(0, 0, r, z0 + 2, h, P, 64);
+  // bottom end cap first, so the pleats stand in front of its top face
+  const out = [k.solidSvg(k.cylinder(0, 0, r + 3, z0, 2, P, 64), { tone: "mid" })];
+  out.push(k.solidSvg(media, { tone: "mid", className: "pc-media" }), k.fadedSvg(G.ribsOf(F, 0, h, r + 0.01, 96, P, { fade: [0.12, 0.6] }), { tone: "lo" }));
+  if (flow) {
+    // fuel running down outside the pleats: each line starts under the top cap and runs out at the bottom of the element
+    const lines = [];
+    for (const deg of [-70, -40, -10, 20, 50]) {
+      const a = ((P.azimuth + deg) * Math.PI) / 180, rr = r + 2.2;
+      lines.push(k.segment([Math.cos(a) * rr, Math.sin(a) * rr, z1 - 1], [Math.cos(a) * rr, Math.sin(a) * rr, z0 + 3], P));
+    }
+    out.push(k.lineSvg(lines.join(""), { tone: "lo", className: "pc-flow", flow: true, free: "end" }));
+  }
+  out.push(k.solidSvg(k.cylinder(0, 0, r + 3, z1 - 2, 2, P, 64), { tone: "mid" }));
+  return out.join("");
+}
+
 export const PAGE_CSS = `<style>
 .pc-cav{fill:var(--anatomy-shade-0)}
 .iso[data-theme="light"] .pc-cav{fill:#e8edf0}
@@ -167,7 +198,9 @@ export const PAGE_CSS = `<style>
 .pc-swirl{stroke:color-mix(in srgb,var(--anatomy-blue) 55%,var(--anatomy-mid));opacity:.55;fill:none}
 .pc-stream{stroke:color-mix(in srgb,var(--anatomy-blue) 72%,var(--anatomy-lit));stroke-width:1.2px}
 .pc-glass .iso-shade{opacity:.26}
-.pc-cut .iso-shade{opacity:.5}
+.pc-cut .iso-shade{opacity:.42}
+.pc-media>.iso-fill,.pc-media>.iso-top{fill:color-mix(in srgb,#c9a253 16%,var(--anatomy-paper))}
+.pc-flow{stroke:color-mix(in srgb,#c9a253 70%,var(--anatomy-mid));stroke-width:.9px}
 .pc-shine{fill:none;stroke:#fff;stroke-width:1.8px;opacity:.85;stroke-linecap:butt}
 .iso:not([data-theme="light"]) .pc-shine{opacity:.16}
 .pc-media{fill:color-mix(in srgb,#c9a253 14%,var(--anatomy-paper))}

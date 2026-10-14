@@ -7,7 +7,7 @@
 import { writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { k, G, A, vertical, studio, glassBowl, PAGE_CSS, LIVE_BOWL, KIT_NOTICE, draftPage } from "../common.mjs";
+import { k, G, A, vertical, studio, glassBowl, shellCut, pleatedElement, PAGE_CSS, LIVE_BOWL, KIT_NOTICE, draftPage } from "../common.mjs";
 import { kitScript } from "../.anatomy/scripts/inline-kit.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -79,14 +79,10 @@ for (const side of [-1, 1]) {
   hose(`${name}.hose`, [[side * 70, PORT_Y - sink, PORT_Z], [side * 70, WALL_FACE + wallReach, PORT_Z]], 3);
 }
 
-// spin-on shell: a rolled seam at the head, a raised grip band with flutes
+// the cartridge (or the housing) is drawn in section, so the pleated element inside can be seen
 const CAN = vertical(CAN_Z);
 const H = HEAD_Z - CAN_Z;
-const band = [[11.4, 26], [12, 26.6], [20, 26.6], [20.6, 26]];
-const canProfile = SPINON
-  ? [[0, 26], ...band, [H - 7, 26], [H - 5.4, 26.8], [H - 1.6, 26.8], [H, 23.5]]
-  : [[0, 23.5], [1.6, 26.8], [5.4, 26.8], [7, 26], ...band, [H - 7, 26], [H - 5.4, 26.8], [H - 1.6, 26.8], [H, 23.5]];
-const seams = L((SPINON ? "" : G.arcOf(CAN, 3.5, 26.8, P)) + G.arcOf(CAN, H - 3.5, 26.8, P), { tone: "faint" });
+const ER = 19; // element media radius; its end caps are 3 wider
 const element = { piece: "element" };
 const keep = { piece: HOUSING ? "bowl" : "stand" };
 if (HOUSING) {
@@ -104,7 +100,18 @@ if (HOUSING) {
     S(G.disc(-STROKE, -STROKE + 2.6, 20.6, EF, P), { tone: "mid" }) +
     `</g>`;
   put("element", [0, 0, CAN_Z], svgEl, [A.slide(EF, 0, 0.4, 20, { name: "element" })], element);
-} else put("canister", [0, 0, CAN_Z + H / 2], S(G.solidOf(canProfile, CAN, P, { fill: "surface" }), { tone: "hi", inner: seams }) + k.fadedSvg(G.ribsOf(CAN, 12, 20, 26.6, 36, P, { fade: [0.3, 0.75] }), { tone: "lo" }), [A.solid(CAN, canProfile, { name: "canister" })], element);
+} else {
+  // the spin-on: a steel shell in section with the pleated element inside, closed by a rolled seam at the head
+  const ST = HEAD_Z - 4;
+  const seam = [[0, 23.5], [1, 26.8], [3, 26.8], [4, 23.5]];
+  put(
+    "canister",
+    [0, 0, CAN_Z + H / 2],
+    shellCut(P, { z0: CAN_Z, z1: ST, r: 26, inside: pleatedElement(P, { z0: CAN_Z + 3, z1: ST, r: ER }) }) + S(G.solidOf(seam, vertical(ST), P), { tone: "hi" }),
+    [A.ring(CAN, 0, ST - CAN_Z, 22.2, 26, { name: "canister", owner: "canister" }), A.cylinder(0, 0, ER + 3, CAN_Z + 3, ST - CAN_Z - 3, { name: "canister.element", owner: "canister" }), A.solid(vertical(ST), seam, { name: "canister.seam", owner: "canister" })],
+    element,
+  );
+}
 
 const V0 = vertical(VALVE_Z);
 if (SPINON) {
