@@ -1,0 +1,108 @@
+{
+  "_status": "APPROVED_PRODUCT_DEFINITION — operator-directed ET97784 TURBOCORE™ complete fuel/water separator assembly. Publication to live elimfilters_catalog remains subject to existing codigo_base write policy; do not bypass the catalog gateway or database trigger.",
+  "_decision_date": "2026-10-13",
+  "_decision": "ET97784 is a complete fuel/water separator assembly. It must never inherit element-only cross references from ES91434. ES91434 HYDROCORE™ is the replaceable service element.",
+  "_catalog_identity": {
+    "sku": "ET97784",
+    "codigo_base": "ET97784",
+    "name": "FUEL/WATER SEPARATOR ASSEMBLY",
+    "description": "Elimfilters® ET97784, fuel filter/water separator assembly. Elimfilters offers a one stop shop of filters and service products, covering the widest scope of engine applications in the on and off highway markets.",
+    "technology": "TURBOCORE™",
+    "filter_type": "fuel",
+    "sub_type": "Assembly",
+    "duty": "HEAVY_DUTY",
+    "installation_type": "Fuel/Water Separator Assembly",
+    "micron_rating": 15,
+    "nominal_efficiency": "15 micron",
+    "catalog_active": false
+  },
+  "_system": {
+    "function": "Diesel fuel pre-filter / water separator",
+    "system_position": "Upstream of OE fuel filter",
+    "replacement_element": {
+      "sku": "ES91434",
+      "technology": "HYDROCORE™",
+      "relation": "SERVICE_ELEMENT"
+    },
+    "fuel_ports": "1/4-18 NPT",
+    "fuel_line_size_mm": 10,
+    "drain_type": "Manual",
+    "water_collection": "Transparent bowl",
+    "mounting": "Vehicle-specific engine-bay bracket"
+  },
+  "_applications": [
+    {
+      "manufacturer": "TOYOTA",
+      "model": "HILUX",
+      "engine": "2GD-FTV",
+      "displacement_l": 2.4,
+      "fuel_system": "COMMON RAIL"
+    },
+    {
+      "manufacturer": "TOYOTA",
+      "model": "HILUX",
+      "engine": "1GD-FTV",
+      "displacement_l": 2.8,
+      "fuel_system": "COMMON RAIL"
+    }
+  ],
+  "oem_codes": [],
+  "competitor_codes": [
+    {
+      "manufacturer": "FUEL MANAGER / DIRECTION PLUS",
+      "code": "FM628DPK",
+      "classification": "COMPETITOR",
+      "product_scope": "COMPLETE_KIT",
+      "source_url": "https://directionplus.com.au/installation-guides/vehicle-fitment-guides/fuel-manager-pre-filter-fitment-guide/",
+      "evidence_note": "Published complete pre-filter kit for Toyota Hilux 2GD-FTV 2.4L and 1GD-FTV 2.8L. External kit is 30 micron; ET97784 remains an ELIMFILTERS 15 micron specification."
+    },
+    {
+      "manufacturer": "FUEL MANAGER",
+      "code": "KFM035",
+      "classification": "COMPETITOR",
+      "product_scope": "COMPLETE_KIT",
+      "source_url": "https://hdi.com.pe/productos/kit-filtro-fuel-manager-para-toyota-hilux-30micras/",
+      "evidence_note": "HDI publishes KFM035 as a Fuel Manager kit for Toyota Hilux. It is retained only as a complete-kit competitor reference, not as a Toyota OEM reference."
+    }
+  ],
+  "_technical_evidence": [
+    {
+      "source": "Direction Plus FM628DPK installation guide",
+      "url": "https://directionplus.com.au/Installation-Guide/FM628DPK-Installation-Guide.pdf",
+      "supports": [
+        "Toyota Hilux 1GD-FTV application",
+        "FM100 pre-filter architecture",
+        "1/4 inch NPT straight fittings",
+        "10 mm fuel hose",
+        "vehicle-specific bracket",
+        "manual pre-filter installation upstream of factory filter"
+      ]
+    },
+    {
+      "source": "Direction Plus Fuel Manager fitment guide",
+      "url": "https://directionplus.com.au/installation-guides/vehicle-fitment-guides/fuel-manager-pre-filter-fitment-guide/",
+      "supports": [
+        "FM628DPK for Toyota Hilux 1GD-FTV 2.8L",
+        "FM628DPK for Toyota Hilux 2GD-FTV 2.4L"
+      ]
+    },
+    {
+      "source": "HDI Peru",
+      "url": "https://hdi.com.pe/productos/kit-filtro-fuel-manager-para-toyota-hilux-30micras/",
+      "supports": [
+        "KFM035 complete Fuel Manager kit",
+        "Toyota Hilux application"
+      ]
+    }
+  ],
+  "_identity_separation": {
+    "assembly_sku": "ET97784",
+    "service_element_sku": "ES91434",
+    "prohibited_element_only_references_on_assembly": [
+      "P551434",
+      "BF7784D",
+      "FS19826",
+      "FS19977"
+    ]
+  }
+}
