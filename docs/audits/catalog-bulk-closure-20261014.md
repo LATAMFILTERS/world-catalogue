@@ -4,7 +4,7 @@ Estado: EN CURSO. No se declara el catálogo completo ni se certifican universal
 
 ## Lectura vigente
 
-Producción catalogo_elimfilters, puerto 5432, consulta de solo lectura: 13,406 filas, 13,390 activas y 16 inactivas. Registro de certificación activo: 4,695 CERTIFIED, 8,612 BLOCKED y 83 RESEARCHING. Porcentaje registrado: 35.06%; pendientes registrados: 8,695. El denominador cambió en una fila durante la sesión por una operación externa.
+Producción catalogo_elimfilters, puerto 5432, consulta de solo lectura: 13,406 filas, 13,390 activas y 16 inactivas. Registro de certificación activo: 4,698 CERTIFIED, 8,598 BLOCKED y 94 RESEARCHING. Porcentaje registrado: 35.09%; pendientes registrados: 8,692. El denominador cambió en una fila durante la sesión por una operación externa.
 
 ## Operaciones comprobadas
 
@@ -69,3 +69,13 @@ Las seis pruebas nuevas y las ocho de model_family están incorporadas al comand
 Se recuperaron catorce referencias MANN que estaban reducidas a cuatro dígitos. Se exigió coincidencia de la referencia original con la única referencia MANN completa actual, documento oficial exacto y marcas de vehículos publicadas cubiertas por la política de familias europea existente. Esa clasificación no describe el país de fabricación del filtro. No se renombraron SKUs ni se consolidaron productos. Los originales y dependencias se respaldaron; hubo prueba revertida y verificación posterior. Las catorce fichas permanecen en investigación por aplicaciones pendientes.
 
 El servicio relacional admite ahora periodos publicados con fin abierto explícito, preservando la etiqueta original y las fechas exactas en la evidencia. Guarda el año final como NULL y rechaza fechas imposibles, años contradictorios, etiquetas incompatibles y el uso de 9999 como fecha final. El formato nuevo exige SHA256 de la fuente; los formatos y hashes anteriores se conservan. Once pruebas nuevas están incluidas en CI: pasan 171 pruebas de gobernanza. Este soporte todavía requiere revisión e integración antes de desplegarse.
+
+## Comprobación posterior de producción, 22:07 UTC
+
+Las catorce recuperaciones de código quedaron en investigación. Con el servicio existente, se corrigieron las aplicaciones publicadas de tres referencias con periodos cerrados: EA35148/C35148 (52 filas), EA37181/C27181 (22) y EL37035/HU7035Y (11). Las dos primeras pasaron todos los controles; EL37035 conserva conflictos. Se conservaron condiciones y fechas del fabricante, respaldos por producto y dependencias, reversión comprobada y lectura posterior. No se desplegó el soporte nuevo de periodos abiertos.
+
+En 388 fichas se retiraron 3,214 duplicados de las columnas de referencias, conservando cada pareja única de fabricante y código completo. La función de cada fabricante coincidía entre las secciones OEM/FILTER del catálogo oficial MANN y la política existente. Se excluyeron marcas ambiguas. Se utilizó exclusivamente la ruta existente de limpieza por retirada, sin cambiar autoridad, aplicaciones o certificados ni ampliar el gateway. Respaldo, reversión y lectura posterior verificados. Esta operación no acredita nuevas equivalencias.
+
+La reevaluación posterior permitió certificar EH61613/P171613; las otras fichas conservan sus bloqueos. Lectura global actual: 4,698 certificados y 8,692 pendientes. Los 94 registros en investigación incluyen las cinco retenciones manuales y recuperaciones documentales pendientes. Las cifras anteriores del informe representan cortes previos. Continúan pendientes las redirecciones públicas y la revisión obligatoria del código.
+
+Se confirmó además la autoridad Donaldson de EH60602/P580602, EH60616/P580616 y EH60618/P580618 mediante su tabla oficial F112100, edición 04/26, página impresa 158. La tabla distingue grados de filtración entre referencias de una misma carcasa. Se corrigió únicamente la autoridad documental y se conservaron explícitamente pendientes esas relaciones entre variantes; no hubo nuevas certificaciones, consolidaciones ni cambios de aplicaciones. Respaldo de originales y dependencias, prueba revertida y lectura posterior comprobados.
