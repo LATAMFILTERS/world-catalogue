@@ -228,7 +228,7 @@ async function main() {
     await db.query('SELECT public.refresh_crossref_cache_sku($1)', [SKU]);
 
     const resolver = await db.query(
-      `SELECT code,sku,source
+      `SELECT code,sku,manufacturer,score,status
        FROM public.v_api_resolver_v7
        WHERE ld_catalog.norm_part(code)=ld_catalog.norm_part($1)
        ORDER BY code,sku`,
