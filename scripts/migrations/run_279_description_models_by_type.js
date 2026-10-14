@@ -23,7 +23,10 @@
  *     HYDROCORE™, never SYNTAPORE™ (scope guardrail)
  *   - air dryer prefix is ED4 (the model said EW7); brand written ELIMFILTERS®
  *
- * Turbine (ET9 TURBOCORE) and Transmission have no model: left unchanged.
+ * Transmission uses the hydraulic model reworded for transmissions. Turbine
+ * (ET9 TURBOCORE) has three wordings: turbine-series assembly, its replacement
+ * element, and fuel processor housing (the three-stage process is stated only
+ * for the turbine series).
  *
  * Dry-run by default (everything runs, then ROLLBACK). Pass --execute to COMMIT.
  * --self-check runs the builder assertions only.
@@ -70,8 +73,22 @@ function describe(row) {
       return `${s} DRYCORE™ air dryer delivers on protection to filter out water vapor, oil vapor, and other contaminants before they can reach the air tanks and valves ensuring optimal uptime. Trust your compressed air systems with superior guarded protection.`;
     case 'Intake':
       return `${s} has revolutionized air filtration design with the introduction of its ${B} INTEKCORE™ technology. To fit shrinking engine compartments, it has a reduced system size. The two-stage air housing design extends filter life and lowers restriction to deliver maximum engine performance. Higher dust holding capacity allows for longer service intervals and lower maintenance costs.`;
+    case 'Transmission': {
+      const what = form === 'Spin On' ? `premium spin-on filter with ${MEDIA}` : form === 'Cartridge' ? 'cartridge filter' : 'filter';
+      return `${s} NANOFORCE™ transmission ${what} is designed to help keep your transmission systems running as intended, providing a solution for various applications. This filter meets or exceeds the equipment OEM quality and performance, bringing your operation top-quality performance and an overall unbeatable total cost of ownership.`;
+    }
+    case 'Turbine':
+      // Wording drawn from the operator's turbine-series notes; no third-party
+      // names and none of the model-specific figures (they belong to one model).
+      if (form === 'Housing') {
+        return `${s} TURBOCORE™ fuel processor housing is designed to separate water and solids from diesel fuel before it reaches the engine, protecting the fuel system when the job demands it.`;
+      }
+      if (/replacement.*element/i.test(row.installation_type || '')) {
+        return `${s} TURBOCORE™ replacement element for turbine-series fuel/water separators uses ${MEDIA} to repel the remaining water and hold fine impurities, completing the three-stage separation process that cleans diesel fuel before it reaches the engine.`;
+      }
+      return `${s} TURBOCORE™ turbine-series fuel/water separator is a high-capacity filtration and water separation system that cleans diesel fuel before it reaches the engine. Its three-stage process uses centrifugal separation to drop large solids and heavy water droplets into the bowl, coalescence to gather the smaller water droplets until they fall, and filtration through ${MEDIA} to hold the remaining impurities.`;
     default:
-      return null; // Turbine, Transmission, unknown prefix: no operator model
+      return null; // unknown prefix: no operator model
   }
 }
 
@@ -86,8 +103,11 @@ function selfCheck() {
   assert.match(d('EH60416', 'hydraulic', 'Spin On'), /NANOFORCE™ hydraulic premium spin-on filter with GENUINE FILTER MEDIA is designed/);
   assert.match(d('ES91855', 'water', 'Spin On', 'HYDROCORE™'), /HYDROCORE™ premium spin-on fuel\/water separator uses GENUINE FILTER MEDIA/);
   assert.match(d('ED40001', 'air', null), /DRYCORE™ air dryer/);
-  assert.equal(d('ET91000', 'fuel', null, 'TURBOCORE™'), null);
-  assert.equal(d('EH68277', 'transmission', 'Cartridge'), null);
+  assert.match(d('ET91000', 'fuel', null, 'TURBOCORE™'), /TURBOCORE™ turbine-series fuel\/water separator is a high-capacity/);
+  assert.match(describe({ sku: 'ET92010P', filter_type: 'fuel', sub_type: 'Cartridge', technology: 'TURBOCORE™', installation_type: 'Replacement Cartridge Element' }), /TURBOCORE™ replacement element/);
+  assert.match(d('ET93027', 'fuel', 'Housing', 'TURBOCORE™'), /TURBOCORE™ fuel processor housing/);
+  assert.match(d('EH68277', 'transmission', 'Cartridge'), /NANOFORCE™ transmission cartridge filter is designed/);
+  assert.equal(d('XX00000', 'fuel', null), null);
   for (const t of [['EA10043', 'air', 'Primary Radial Seal'], ['EA20001', 'air', 'Housing'], ['EW70001', 'other', null],
     ['ES90001', 'water', 'Cartridge'], ['EF90001', 'fuel', 'Spin On'], ['EF90001', 'fuel', 'Cartridge'], ['EH60001', 'hydraulic', 'Cartridge']]) {
     assert.doesNotMatch(d(...t), /patent|OptiAir|DCA4|Compleat|HF35296|first aftermarket|SYNTEPORE|undefined|null| {2}/i);
@@ -101,7 +121,7 @@ require('dotenv').config();
 const { Client } = require('pg');
 
 const APPLY = process.argv.includes('--execute');
-const BANNED = 'synthetic|cellulose|fleetguard|donaldson|mann|fram\\M|patent|optiair|dca4|compleat|^About this item|ber dieses Produkt';
+const BANNED = 'synthetic|cellulose|fleetguard|donaldson|mann|fram\\M|patent|optiair|dca4|compleat|racor|parker|aquabloc|^About this item|ber dieses Produkt';
 
 (async () => {
   selfCheck();
@@ -114,7 +134,7 @@ const BANNED = 'synthetic|cellulose|fleetguard|donaldson|mann|fram\\M|patent|opt
 
   try {
     await db.query('BEGIN');
-    const rows = (await db.query('SELECT sku, filter_type, sub_type, technology FROM public.elimfilters_catalog')).rows;
+    const rows = (await db.query('SELECT sku, filter_type, sub_type, technology, installation_type FROM public.elimfilters_catalog')).rows;
     const skus = [], texts = [];
     for (const r of rows) {
       const t = publicFilterType(r) || '(unknown)';
@@ -135,7 +155,7 @@ const BANNED = 'synthetic|cellulose|fleetguard|donaldson|mann|fram\\M|patent|opt
       `SELECT sku, left(description, 140) AS description FROM public.elimfilters_catalog WHERE description ~* $1 ORDER BY sku LIMIT 10`, [BANNED])).rows;
     report.sample = (await db.query(
       `SELECT sku, description FROM public.elimfilters_catalog WHERE sku = ANY($1::text[]) ORDER BY sku`,
-      [['EA10043', 'EA200003', 'EC19446', 'EL82016', 'EH60416', 'EW70712', 'EF95507', 'ES91855', 'ED47815', 'EA36144']])).rows;
+      [['EA10043', 'EA200003', 'EC19446', 'EL82016', 'EH60416', 'EW70712', 'EF95507', 'ES91855', 'ED47815', 'EA36144', 'ET91000', 'ET92010P', 'ET93027', 'EH68277']])).rows;
     await db.query(APPLY ? 'COMMIT' : 'ROLLBACK');
     report.transaction = APPLY ? 'COMMIT' : 'ROLLBACK';
     console.log(JSON.stringify(report, null, 2));

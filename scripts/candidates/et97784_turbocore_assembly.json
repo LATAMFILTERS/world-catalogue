@@ -1,0 +1,125 @@
+{
+  "_status": "APPROVED_FOR_PUBLICATION — ELIMFILTERS proprietary OEM product. GitHub policy/gateway and migrations run_280/run_281 are prepared; live PostgreSQL execution remains required.",
+  "_decision_date": "2026-10-13",
+  "_decision": "ET97784 is an ELIMFILTERS-manufactured/proprietary complete fuel/water separator assembly. Therefore ET97784 is its own codigo_base. Donaldson, Fleetguard, Parker/Racor or other third-party manufacturer authority must not be required for this identity. ES91434 HYDROCORE™ remains the replaceable service element and element-only cross references must not be inherited by the assembly.",
+  "_catalog_identity": {
+    "sku": "ET97784",
+    "codigo_base": "ET97784",
+    "name": "FUEL/WATER SEPARATOR ASSEMBLY",
+    "description": "Elimfilters® ET97784, fuel filter/water separator assembly. Elimfilters offers a one stop shop of filters and service products, covering the widest scope of engine applications in the on and off highway markets.",
+    "technology": "TURBOCORE™",
+    "filter_type": "fuel",
+    "sub_type": "Assembly",
+    "duty": "HEAVY_DUTY",
+    "installation_type": "Fuel/Water Separator Assembly",
+    "micron_rating": 15,
+    "nominal_efficiency": "15 micron",
+    "catalog_active": true,
+    "canonical_source_brand": "ELIMFILTERS",
+    "canonical_source_code": "ET97784",
+    "canonical_source_status": "VERIFIED",
+    "enrichment_data": {
+      "codigo_base_governance": {
+        "identity_type": "ELIMFILTERS_OEM_PRODUCT",
+        "approved_manufacturer": "ELIMFILTERS",
+        "approved_codigo_base": "ET97784",
+        "approved_source_column": "INTERNAL_PRODUCT_IDENTITY",
+        "primary_manufacturer_verified": true,
+        "internal_product_identity_verified": true,
+        "policy_version": "2026-10-14-v4.3",
+        "state": "CANONICAL_VERIFIED",
+        "governance_state": "CANONICAL_VERIFIED",
+        "required_authority": "VERIFIED_ELIMFILTERS_OEM_PRODUCT"
+      }
+    }
+  },
+  "_system": {
+    "function": "Diesel fuel pre-filter / water separator",
+    "system_position": "Upstream of OE fuel filter",
+    "replacement_element": {
+      "sku": "ES91434",
+      "technology": "HYDROCORE™",
+      "relation": "SERVICE_ELEMENT"
+    },
+    "fuel_ports": "1/4-18 NPT",
+    "fuel_line_size_mm": 10,
+    "drain_type": "Manual",
+    "water_collection": "Transparent bowl",
+    "mounting": "Vehicle-specific engine-bay bracket"
+  },
+  "_applications": [
+    {
+      "manufacturer": "TOYOTA",
+      "model": "HILUX",
+      "engine": "2GD-FTV",
+      "displacement_l": 2.4,
+      "fuel_system": "COMMON RAIL"
+    },
+    {
+      "manufacturer": "TOYOTA",
+      "model": "HILUX",
+      "engine": "1GD-FTV",
+      "displacement_l": 2.8,
+      "fuel_system": "COMMON RAIL"
+    }
+  ],
+  "oem_codes": [],
+  "competitor_codes": [
+    {
+      "manufacturer": "FUEL MANAGER / DIRECTION PLUS",
+      "code": "FM628DPK",
+      "classification": "COMPETITOR",
+      "product_scope": "COMPLETE_KIT",
+      "source_url": "https://directionplus.com.au/installation-guides/vehicle-fitment-guides/fuel-manager-pre-filter-fitment-guide/",
+      "evidence_note": "Published complete pre-filter kit for Toyota Hilux 2GD-FTV 2.4L and 1GD-FTV 2.8L. External kit is 30 micron; ET97784 remains an ELIMFILTERS 15 micron specification."
+    },
+    {
+      "manufacturer": "FUEL MANAGER",
+      "code": "KFM035",
+      "classification": "COMPETITOR",
+      "product_scope": "COMPLETE_KIT",
+      "source_url": "https://hdi.com.pe/productos/kit-filtro-fuel-manager-para-toyota-hilux-30micras/",
+      "evidence_note": "HDI publishes KFM035 as a Fuel Manager kit for Toyota Hilux. It is retained only as a complete-kit competitor reference, not as a Toyota OEM reference."
+    }
+  ],
+  "_technical_evidence": [
+    {
+      "source": "Direction Plus FM628DPK installation guide",
+      "url": "https://directionplus.com.au/Installation-Guide/FM628DPK-Installation-Guide.pdf",
+      "supports": [
+        "Toyota Hilux 1GD-FTV application",
+        "FM100 pre-filter architecture",
+        "1/4 inch NPT straight fittings",
+        "10 mm fuel hose",
+        "vehicle-specific bracket",
+        "manual pre-filter installation upstream of factory filter"
+      ]
+    },
+    {
+      "source": "Direction Plus Fuel Manager fitment guide",
+      "url": "https://directionplus.com.au/installation-guides/vehicle-fitment-guides/fuel-manager-pre-filter-fitment-guide/",
+      "supports": [
+        "FM628DPK for Toyota Hilux 1GD-FTV 2.8L",
+        "FM628DPK for Toyota Hilux 2GD-FTV 2.4L"
+      ]
+    },
+    {
+      "source": "HDI Peru",
+      "url": "https://hdi.com.pe/productos/kit-filtro-fuel-manager-para-toyota-hilux-30micras/",
+      "supports": [
+        "KFM035 complete Fuel Manager kit",
+        "Toyota Hilux application"
+      ]
+    }
+  ],
+  "_identity_separation": {
+    "assembly_sku": "ET97784",
+    "service_element_sku": "ES91434",
+    "prohibited_element_only_references_on_assembly": [
+      "P551434",
+      "BF7784D",
+      "FS19826",
+      "FS19977"
+    ]
+  }
+}

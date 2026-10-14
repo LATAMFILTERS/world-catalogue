@@ -53,7 +53,8 @@ export default function ContactIntentRouter() {
             const mail = route.href.startsWith('mailto:');
             const style = {display:'flex',flexDirection:'column' as const,minHeight:210,padding:24,border:'1px solid rgba(255,255,255,.1)',background:'#0a0a0a',color:'#fff',textDecoration:'none'};
             const content = <><h2 style={{margin:'0 0 12px',font:"700 1.15rem 'Chakra Petch',Arial,sans-serif",textTransform:'uppercase'}}>{t(`contactRouter.routes.${index}.title`, route.title)}</h2><p style={{margin:'0 0 22px',color:'rgba(255,255,255,.62)',lineHeight:1.6}}>{t(`contactRouter.routes.${index}.body`, route.body)}</p><strong style={{marginTop:'auto',color:'#FFF12D',font:"700 .72rem 'Chakra Petch',Arial,sans-serif",letterSpacing:'.08em',textTransform:'uppercase'}}>{t(`contactRouter.routes.${index}.label`, route.label)} →</strong></>;
-            if (external || mail) return <a key={route.title} href={route.href} target={external?'_blank':undefined} rel={external?'noopener noreferrer':undefined} data-conversion-action={route.action} style={style}>{content}</a>;
+            if (mail) return <button key={route.title} type="button" onClick={() => { window.location.href = route.href; }} data-conversion-action={route.action} style={{...style, width:'100%', cursor:'pointer', textAlign:'left', font:'inherit'}}>{content}</button>;
+            if (external) return <a key={route.title} href={route.href} target="_blank" rel="noopener noreferrer" data-conversion-action={route.action} style={style}>{content}</a>;
             return <Link key={route.title} href={route.href} data-conversion-action={route.action} style={style}>{content}</Link>;
           })}
         </div>
