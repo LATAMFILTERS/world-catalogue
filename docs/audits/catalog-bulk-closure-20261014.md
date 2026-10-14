@@ -4,7 +4,7 @@ Estado: EN CURSO. No se declara el catálogo completo ni se certifican universal
 
 ## Lectura vigente
 
-Producción catalogo_elimfilters, puerto 5432, consulta de solo lectura: 13,406 filas, 13,390 activas y 16 inactivas. Registro de certificación activo: 4,738 CERTIFIED, 8,647 BLOCKED y 5 RESEARCHING. Porcentaje registrado: 35.38%; pendientes registrados: 8,652. El denominador cambió en una fila durante la sesión por una operación externa.
+Producción catalogo_elimfilters, puerto 5432, consulta de solo lectura: 13,406 filas, 13,390 activas y 16 inactivas. Registro de certificación activo: 4,695 CERTIFIED, 8,612 BLOCKED y 83 RESEARCHING. Porcentaje registrado: 35.06%; pendientes registrados: 8,695. El denominador cambió en una fila durante la sesión por una operación externa.
 
 ## Operaciones comprobadas
 
@@ -19,17 +19,20 @@ Producción catalogo_elimfilters, puerto 5432, consulta de solo lectura: 13,406 
 | Segundo lote de identidades MANN, reconociendo el campo explícito model_family |108|
 | Reevaluación posterior a clasificación Virgis |6|
 | Reevaluación posterior a clasificación LHA |33|
-| Total bruto desbloqueado |1,505|
+| Clasificación PBR/Cyclone/Diamond |18|
+| Clasificación de quince fabricantes |13|
+| Clasificación de otros treinta y cuatro fabricantes |4|
+| Total bruto de promociones ejecutadas, antes de revisar el alcance MANN |1,540|
 
-Además, diez certificados antiguos fueron corregidos a BLOCKED porque fallan los controles actuales. No se retiraron sus productos ni se cambiaron sus fichas. Reducción neta de pendientes del registro en esta etapa: 1,495.
+Además, diez certificados antiguos fueron corregidos a BLOCKED porque fallan los controles actuales. No se retiraron sus productos ni se cambiaron sus fichas. Además, se retiraron 78 certificaciones MANN de los lotes de 42 y 108: sus documentos publican usos de camión o maquinaria incompatibles con el alcance ligero declarado. Quedaron RESEARCHING para corregir su identidad y alcance con evidencia; no se alteraron ni retiraron sus productos. La validación inicial de esos lotes no detectó este problema semántico. Las promociones brutas no representan el avance neto actual.
 
 Se corrigieron referencias duplicadas de Magneti Marelli en 373 productos y de Tecnocomp en 140. Estas cantidades son operaciones sobre fichas, pueden solaparse y no equivalen a productos completamente cerrados. Solo se retiraron duplicados exactos de marca/código de la columna incorrecta, preservando las referencias distintas y los originales en archivos de respaldo.
 
 ## Fuente oficial y controles
 
-El lote MANN consultó 3,254 códigos originales y confirmó 2,333 mediante coincidencia de título y tipo en el sitio oficial. Eso es investigación documental, no aprobación automática. Para registrar las nuevas identidades se exigió además GTIN válido, imagen exacta, código original igual al actual, origen EUROPEAN y a declarado, familia y terminación coherentes, ausencia de identidad competidora y cumplimiento de los controles vigentes. No se asignó un origen regional por inferencia.
+El lote MANN consultó 3,254 códigos originales y confirmó 2,333 mediante coincidencia de título y tipo en el sitio oficial. Eso es investigación documental, no aprobación automática. Para registrar las nuevas identidades se exigió además GTIN válido, imagen exacta, código original igual al actual, origen EUROPEAN ya declarado, familia y terminación coherentes, ausencia de identidad competidora y cumplimiento de los controles vigentes. No se asignó un origen regional por inferencia.
 
-Los modelos no se deducen de años ni de model_type. El ajuste de lectura admite un model_family explícito no ambiguo cuando no existe y a una identidad de modelo o vehículo reconocida. Mantiene los hashes de las aplicaciones antes válidas y la exigencia de evidencia al escribir aplicaciones.
+Los modelos no se deducen de años ni de model_type. El ajuste de lectura admite un model_family explícito no ambiguo cuando no existe ya una identidad de modelo o vehículo reconocida. Mantiene los hashes de las aplicaciones antes válidas y la exigencia de evidencia al escribir aplicaciones.
 
 EA31877 y EL36006 fueron corregidos mediante el servicio gobernado de aplicaciones, con la URL y el SHA256 del documento de FRAM. Se almacenaron 12 y 66 aplicaciones respectivamente, sin inventar códigos de motor. Se verificó que no surgieran regresiones en las promociones MANN.
 
@@ -46,3 +49,5 @@ Sigue pendiente resolver identidades ambiguas, origen regional no documentado, c
 Validación del cambio de código:40 pruebas de aplicaciones/gateway y 146 pruebas de gobernanza pasan.
 
 La continuación corrigió 130 duplicados en 100 fichas Virgis y 134 en 113 fichas LHA, con respaldo, prueba de reversión y verificación posterior. De ellas, seis y 33 productos respectivamente pasaron todos los controles vigentes y quedaron CERTIFIED. Fuentes: https://www.virgis.com/en/air-elements/ y https://ir.donaldson.com/news/news-details/2003/Donaldson-Company-Acquires-LHA-Industrial-Hydraulic-Business-from-Berendsen-Fluid-Power-Inc/default.aspx. Las otras fichas conservan sus bloqueos. La lectura global posterior confirma los totales indicados arriba.
+
+Lectura posterior de solo lectura, 18:07 UTC: confirma los totales de esta revisión. Los 83 RESEARCHING incluyen las cinco retenciones manuales y los 78 casos MANN en revisión documental. La cifra CERTIFIED describe el registro; no acredita certificación física ni aplicaciones universales. Las 228 URL antiguas probadas devolvieron 404 y sus destinos no están en la publicación limitada a diez fichas de fase 1. La continuidad pública de esas redirecciones sigue pendiente.
