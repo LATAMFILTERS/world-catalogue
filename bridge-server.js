@@ -12,6 +12,15 @@ const PRIMARY_SKU_BY_REFERENCE = Object.freeze({
   LF3620: 'EL82100'
 });
 
+const BRIDGE_PRODUCT_PRESENTATION = Object.freeze({
+  ET97784: Object.freeze({
+    technology: 'TURBOCORE™',
+    canonical_source_brand: 'ELIMFILTERS',
+    canonical_source_code: 'ET97784',
+    canonical_source_status: 'VERIFIED'
+  })
+});
+
 const APPROVED_UI = `
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600;700;800;900&family=Chakra+Petch:wght@500;600;700&display=swap" rel="stylesheet">
@@ -117,6 +126,19 @@ function productSku(product) {
   return String(product && (product.elimfilters_sku || product.sku) || '').toUpperCase();
 }
 
+function applyBridgeProductPresentation(body) {
+  if (!body || !Array.isArray(body.results)) return body;
+  return {
+    ...body,
+    results: body.results.map(product => {
+      const sku = productSku(product);
+      const presentation = BRIDGE_PRODUCT_PRESENTATION[sku];
+      if (!presentation) return product;
+      return { ...product, ...presentation };
+    })
+  };
+}
+
 function primaryOnlySearchBody(body, rawReference) {
   if (!body || !Array.isArray(body.results) || body.results.length <= 1) return body;
 
@@ -190,7 +212,8 @@ function createBridgeServer(upstreamUrl) {
         proxyRes.on('end', () => {
           try {
             const upstreamBody = JSON.parse(Buffer.concat(chunks).toString('utf8'));
-            const repairedBody = primaryOnlySearchBody(upstreamBody, target.searchParams.get('q'));
+            const primaryBody = primaryOnlySearchBody(upstreamBody, target.searchParams.get('q'));
+            const repairedBody = applyBridgeProductPresentation(primaryBody);
             const body = Buffer.from(JSON.stringify(repairedBody));
             const headers = cleanResponseHeaders(proxyRes.headers);
             delete headers['content-encoding'];
@@ -224,4 +247,4 @@ function createBridgeServer(upstreamUrl) {
   });
 }
 
-module.exports = { createBridgeServer, primaryOnlySearchBody, upstreamTargetFor };
+module.exports = { createBridgeServer, primaryOnlySearchBody, applyBridgeProductPresentation, upstreamTargetFor };
