@@ -28,6 +28,53 @@ function baseRow(overrides = {}) {
   };
 }
 
+function et9ParkerRow(overrides = {}, governance = {}) {
+  return {
+    sku: 'ET99030',
+    codigo_base: 'R9030MB',
+    duty: 'HEAVY_DUTY',
+    oem_codes: [],
+    competitor_codes: [],
+    enrichment_data: { codigo_base_governance: {
+      approved_manufacturer: 'PARKER',
+      approved_codigo_base: 'R9030MB',
+      approved_source_column: 'COMPETITOR_CODES',
+      fallback_manufacturer_verified: true,
+      fallback_commercial_code_verified: true,
+      ...governance,
+    } },
+    ...overrides,
+  };
+}
+
+test('ET9 accepts a Parker manufacturer base classified as a competitor code', () => {
+  assert.equal(validateCanonicalWrite(et9ParkerRow()).valid, true);
+  // a Donaldson cross on the row does not turn the Parker base into a Donaldson review
+  assert.equal(validateCanonicalWrite(et9ParkerRow({ competitor_codes: [{ code: 'P551844', manufacturer: 'DONALDSON' }] })).valid, true);
+});
+
+test('the ET9 manufacturer-base exception does not leak to other cases', () => {
+  // same governance outside ET9 still has to follow Donaldson -> Fleetguard -> OEM
+  assert.equal(validateCanonicalWrite(et9ParkerRow({ sku: 'ES99030' })).valid, false);
+  // SKU must still end in the last four digits of the approved code
+  assert.equal(validateCanonicalWrite(et9ParkerRow({ sku: 'ET91234' })).valid, false);
+  // an unverified manufacturer or code is not enough
+  assert.equal(validateCanonicalWrite(et9ParkerRow({}, { fallback_commercial_code_verified: false })).valid, false);
+  // a real OEM base is not covered by the exception
+  assert.equal(validateCanonicalWrite(et9ParkerRow({}, { approved_manufacturer: 'IVECO' })).valid, false);
+});
+
+test('ET9 legacy SKU exceptions cover the exact SKU/base pairs only', () => {
+  const legacy = (sku, base) => et9ParkerRow({ sku, codigo_base: base }, { approved_codigo_base: base });
+  assert.equal(validateCanonicalWrite(legacy('ET90900', '900FH')).valid, true);
+  assert.equal(validateCanonicalWrite(legacy('ET90902', '902FH')).valid, true);
+  assert.equal(validateCanonicalWrite(legacy('ET95010', '500FG10')).valid, true);
+  assert.equal(validateCanonicalWrite(legacy('ET95030', '500FG30')).valid, true);
+  // the same SKU on another base, or another SKU on the same base, is still rejected
+  assert.equal(validateCanonicalWrite(legacy('ET90900', '500FG10')).valid, false);
+  assert.equal(validateCanonicalWrite(legacy('ET90901', '900FH')).valid, false);
+});
+
 function industrialRow(overrides = {}) {
   return {
     sku: 'IG13713',

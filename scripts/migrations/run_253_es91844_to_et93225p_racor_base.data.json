@@ -1,0 +1,14 @@
+[
+ {
+  "from": "ES91844",
+  "to": "ET93225P",
+  "current_base": "P551844",
+  "racor": "S3225P",
+  "micron": 30,
+  "height_mm": 127.0,
+  "diameter_mm": 111.0,
+  "thread": "1\"-14",
+  "pdf_page": 372,
+  "keep_previous_base_as_cross": "DONALDSON"
+ }
+]

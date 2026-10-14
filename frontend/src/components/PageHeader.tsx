@@ -43,6 +43,37 @@ const INDUSTRY_BREADCRUMB_LABELS: Record<string, string> = {
   'Waste Municipal': 'Waste & Municipal Filtration Systems',
 };
 
+const INDUSTRY_TRANSLATED_LABELS: Record<'es' | 'pt', Record<string, string>> = {
+  es: {
+    Agriculture: 'Sistemas de filtración agrícola',
+    Automotive: 'Sistemas de filtración automotriz',
+    'Bus Coach': 'Filtración para autobuses y autocares',
+    Construction: 'Sistemas de filtración para construcción',
+    Manufacturing: 'Sistemas de filtración industrial',
+    Marine: 'Sistemas de filtración marina',
+    Mining: 'Sistemas de filtración minera',
+    'Oil Gas': 'Sistemas de filtración para petróleo y gas',
+    'Power Generation': 'Filtración para generación eléctrica',
+    Railway: 'Sistemas de filtración ferroviaria',
+    'Trucks Fleets': 'Filtración para flotas de camiones',
+    'Waste Municipal': 'Filtración para flotas municipales y de residuos',
+  },
+  pt: {
+    Agriculture: 'Sistemas de filtração agrícola',
+    Automotive: 'Sistemas de filtração automotiva',
+    'Bus Coach': 'Filtração para ônibus e transporte rodoviário',
+    Construction: 'Sistemas de filtração para construção',
+    Manufacturing: 'Sistemas de filtração industrial',
+    Marine: 'Sistemas de filtração marítima',
+    Mining: 'Sistemas de filtração para mineração',
+    'Oil Gas': 'Sistemas de filtração para petróleo e gás',
+    'Power Generation': 'Filtração para geração de energia',
+    Railway: 'Sistemas de filtração ferroviária',
+    'Trucks Fleets': 'Filtração para frotas de caminhões',
+    'Waste Municipal': 'Filtração para frotas municipais e de resíduos',
+  },
+};
+
 export function PageHeader({ breadcrumbs, currentPage }: PageHeaderProps) {
   const { t } = useTranslation();
   const locale = localeFromPath(usePathname());
@@ -65,8 +96,8 @@ export function PageHeader({ breadcrumbs, currentPage }: PageHeaderProps) {
   const trail: Breadcrumb[] = [{ label: t('category.home', { defaultValue: 'HOME' }), href: homeHref }];
 
   if (industryLabel) {
-    trail.push({ label: 'INDUSTRY', href: '/industries/' });
-    trail.push({ label: industryLabel });
+    trail.push({ label: locale === 'es' ? 'Industrias' : locale === 'pt' ? 'Indústrias' : 'Industries', href: locale ? `/${locale}/industries/` : '/industries/' });
+    trail.push({ label: (locale === 'es' || locale === 'pt') && currentPage ? INDUSTRY_TRANSLATED_LABELS[locale][currentPage] ?? industryLabel : industryLabel });
   } else {
     if (breadcrumbs) {
       trail.push(...breadcrumbs.map((crumb) => ({ ...crumb, label: localizeLabel(crumb.label) })));

@@ -11,6 +11,7 @@ const {
   isSameFunctionalFamily,
   filterAlternativesByFunctionalFamily,
 } = require('./lib/alternative-functional-family');
+const { publicFilterType, publicSubType } = require('./lib/public-filter-type');
 const EmailIntentClassifier = require('./lib/email-intent-classifier');
 const TranslationService = require('./lib/translation-service');
 const { findPlatform, parseVehicleSearchText, normalizeAlphaNum } = require('./lib/vehicle-application-normalizer');
@@ -1279,17 +1280,8 @@ function detectLang(req) {
   return langs.some(l => l.startsWith('es')) ? 'es' : 'en';
 }
 
-const PROPRIETARY_SUBTYPES = new Set([
-  'synteq xp', 'synteq', 'ultra-web nanofiber', 'aquabloc® ii', 'aquabloc ii',
-  'alpha-web™', 'alpha-web', 'synteq xp™',
-]);
-function safeSubtype(val, lang = 'en') {
-  const text = extractText(val, lang);
-  if (!text) return null;
-  if (/[®™]/.test(text)) return null;
-  if (PROPRIETARY_SUBTYPES.has(text.toLowerCase())) return null;
-  return text;
-}
+// Operator rule 2026-10-13: the only media/subtype text shown is this one.
+const MEDIA_LABEL = 'GENUINE FILTER MEDIA';
 
 // ── Mojibake repair ──────────────────────────────────────────────────────────
 // Some catalog rows were imported through a pipeline that read UTF-8 bytes as
@@ -1380,13 +1372,6 @@ function fixMojibakeDeep(arr) {
 }
 
 function buildFilterData(row, lang = 'en'){
-  let subtype = safeSubtype(row.sub_type, lang);
-
-  // Enforce rule: No Cellulose/Celulosa media (sub_type) for any filter
-  if (subtype && (subtype.toUpperCase() === 'CELLULOSE' || subtype.toUpperCase() === 'CELULOSA')) {
-    subtype = lang === 'es' ? 'Híbrida' : 'Genuine Media';
-  }
-
   // Re-classify on every response: after the consolidation migration oem_codes
   // may contain competitor filter-brand codes. Merging both arrays and running
   // splitRefs() keeps OEM equipment manufacturers and competitor filter brands
@@ -1396,8 +1381,9 @@ function buildFilterData(row, lang = 'en'){
   return {
     elimfilters_sku: row.sku,
     description: extractText(row.description, lang),
-    filter_type: extractText(row.filter_type, lang),
-    filter_subtype: subtype,
+    filter_type: publicFilterType(row) || extractText(row.filter_type, lang),
+    filter_subtype: publicSubType(row),
+    filter_media: MEDIA_LABEL,
     technology: TECH_NAME_FIXES[row.technology] || row.technology || null,
     technology_logo: getTechLogo(TECH_NAME_FIXES[row.technology] || row.technology),
     installation_type: row.installation_type || null,
@@ -1754,10 +1740,13 @@ app.get('/api/search', searchLimiter, async (req, res) => {
     const q = raw.toUpperCase().replace(/[-\s]/g, '');
 
 
+    // A retired row that names a successor (resolution_status.superseded_by) is not out of scope:
+    // the search goes on and finds the successor through its references.
     const excludedSku = await client.query(
       `SELECT 1 FROM elimfilters_catalog
        WHERE catalog_active = false
          AND UPPER(REPLACE(sku,'-','')) = $1
+         AND COALESCE(enrichment_data->'resolution_status'->>'superseded_by','') = ''
        LIMIT 1`,
       [q]
     );
@@ -1792,6 +1781,7 @@ app.get('/api/search', searchLimiter, async (req, res) => {
       `SELECT 1 FROM elimfilters_catalog
        WHERE catalog_active = false
          AND UPPER(REPLACE(codigo_base,'-','')) = $1
+         AND COALESCE(enrichment_data->'resolution_status'->>'superseded_by','') = ''
        LIMIT 1`,
       [q]
     );
@@ -3404,6 +3394,7 @@ app.get('/api/ai/search', searchLimiter, async (req, res) => {
       `SELECT 1 FROM elimfilters_catalog
        WHERE catalog_active = false
          AND UPPER(REPLACE(sku,'-','')) = $1
+         AND COALESCE(enrichment_data->'resolution_status'->>'superseded_by','') = ''
        LIMIT 1`,
       [q]
     );

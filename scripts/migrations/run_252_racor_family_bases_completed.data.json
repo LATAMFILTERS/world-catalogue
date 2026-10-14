@@ -1,0 +1,101 @@
+[
+ {
+  "from": "ET93216P",
+  "to": "ET93216P",
+  "current_base": "3216",
+  "racor": "S3216P",
+  "micron": 30,
+  "height_mm": 102.0,
+  "diameter_mm": 72.0,
+  "thread": "16mm x 1.5",
+  "pdf_page": 372
+ },
+ {
+  "from": "ET93216S",
+  "to": "ET93216S",
+  "current_base": "3216",
+  "racor": "S3216S",
+  "micron": 2,
+  "height_mm": 102.0,
+  "diameter_mm": 72.0,
+  "thread": "16mm x 1.5",
+  "pdf_page": 372
+ },
+ {
+  "from": "ET93216T",
+  "to": "ET93216T",
+  "current_base": "3216",
+  "racor": "S3216T",
+  "micron": 10,
+  "height_mm": 102.0,
+  "diameter_mm": 72.0,
+  "thread": "16mm x 1.5",
+  "pdf_page": 372
+ },
+ {
+  "from": "ET93222",
+  "to": "ET93222",
+  "current_base": "3222",
+  "racor": "S3222",
+  "micron": 30,
+  "height_mm": 188.0,
+  "diameter_mm": 97.0,
+  "thread": "1\"-14",
+  "pdf_page": 372
+ },
+ {
+  "from": "ET93223",
+  "to": "ET93223",
+  "current_base": "3223",
+  "racor": "S3223",
+  "micron": 30,
+  "height_mm": 216.0,
+  "diameter_mm": 111.0,
+  "thread": "1\"-14",
+  "pdf_page": 372
+ },
+ {
+  "from": "ET93216PB",
+  "to": "ET932016P",
+  "current_base": "3216",
+  "racor": "B32016P",
+  "micron": 30,
+  "height_mm": 149.0,
+  "diameter_mm": 72.0,
+  "thread": "16mm x 1.5",
+  "pdf_page": 372
+ },
+ {
+  "from": "ET93216SB",
+  "to": "ET932016S",
+  "current_base": "3216",
+  "racor": "B32016S",
+  "micron": 2,
+  "height_mm": 149.0,
+  "diameter_mm": 72.0,
+  "thread": "16mm x 1.5",
+  "pdf_page": 372
+ },
+ {
+  "from": "ET93216TB",
+  "to": "ET932016T",
+  "current_base": "3216",
+  "racor": "B32016T",
+  "micron": 10,
+  "height_mm": 149.0,
+  "diameter_mm": 72.0,
+  "thread": "16mm x 1.5",
+  "pdf_page": 372
+ },
+ {
+  "from": "ET93222B",
+  "to": "ET932022",
+  "current_base": "3222",
+  "racor": "B32022",
+  "micron": 30,
+  "height_mm": 269.0,
+  "diameter_mm": 97.0,
+  "thread": "1\"-14",
+  "pdf_page": 372
+ }
+]

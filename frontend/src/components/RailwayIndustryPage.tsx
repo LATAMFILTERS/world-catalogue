@@ -3,6 +3,8 @@ import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { IndustryFilterCarousel } from './IndustryFilterCarousel';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
+import { railwayText } from '@/lib/railway-i18n';
+import type { PageLang } from '@/lib/localized-routes';
 
 const BASE_URL = 'https://elimfilters.com';
 const PAGE_URL = `${BASE_URL}/industries/railway/`;
@@ -50,15 +52,17 @@ const questions = [
   ['How should a mixed railway fleet standardize filters?', 'Standardization should follow confirmed compatibility at the engine, system and part level. Similar locomotive classes or duty profiles do not by themselves establish interchangeability.'],
 ] as const;
 
-export function RailwayIndustryPage() {
+export function RailwayIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
+  const pageUrl = `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/industries/railway/`;
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': `${PAGE_URL}#page`,
-        url: PAGE_URL,
-        name: 'Railway Filtration Systems',
+        '@id': `${pageUrl}#page`,
+        url: pageUrl,
+        name: lang === 'es' ? 'Sistemas de filtración ferroviaria' : lang === 'pt' ? 'Sistemas de filtração ferroviária' : 'Railway Filtration Systems',
+        inLanguage: lang === 'pt' ? 'pt-BR' : lang,
         description: 'Railway filtration systems for freight and passenger locomotives, diesel multiple units, auxiliary power units and rail maintenance equipment operating under vibration, route dust, fuel-handling exposure and extended duty.',
         isPartOf: { '@id': `${BASE_URL}/#website` },
         publisher: { '@id': `${BASE_URL}/#organization` },
@@ -80,27 +84,27 @@ export function RailwayIndustryPage() {
           { '@type': 'Thing', name: 'SYNTRAX' },
           { '@type': 'Thing', name: 'NANOFORCE' },
         ],
-        breadcrumb: { '@id': `${PAGE_URL}#breadcrumb` },
+        breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': `${PAGE_URL}#breadcrumb`,
+        '@id': `${pageUrl}#breadcrumb`,
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
           { '@type': 'ListItem', position: 2, name: 'Industry', item: `${BASE_URL}/industries/` },
-          { '@type': 'ListItem', position: 3, name: 'Railway Filtration Systems', item: PAGE_URL },
+          { '@type': 'ListItem', position: 3, name: 'Railway Filtration Systems', item: pageUrl },
         ],
       },
       {
         '@type': 'ItemList',
-        '@id': `${PAGE_URL}#equipment`,
+        '@id': `${pageUrl}#equipment`,
         name: 'Railway equipment applications',
-        itemListElement: assets.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name })),
+        itemListElement: assets.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name: railwayText(lang, name) })),
       },
       {
         '@type': 'FAQPage',
-        '@id': `${PAGE_URL}#faq`,
-        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+        '@id': `${pageUrl}#faq`,
+        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: railwayText(lang, q), acceptedAnswer: { '@type': 'Answer', text: railwayText(lang, a) } })),
       },
     ],
   };
@@ -116,40 +120,40 @@ export function RailwayIndustryPage() {
         </video>
         <div style={heroShade} />
         <div style={heroInner}>
-          <p style={eyebrow}>RAILWAY / FLEET AVAILABILITY</p>
-          <h1 style={heroTitle}>Railway Filtration<br /><span style={yellow}>Systems</span></h1>
-          <p style={heroPromise}>Protect locomotive systems around route duty, depot service and validated application evidence.</p>
-          <p style={heroLead}>Air intake, fuel-water separation, lubrication and applicable hydraulic contamination control for locomotives, diesel multiple units, auxiliary power units and rail-support equipment operating under vibration, route dust and extended duty.</p>
+          <p style={eyebrow}>{railwayText(lang, "RAILWAY / FLEET AVAILABILITY")}</p>
+          <h1 style={heroTitle}>{railwayText(lang, "Railway Filtration")}<br /><span style={yellow}>Systems</span></h1>
+          <p style={heroPromise}>{railwayText(lang, "Protect locomotive systems around route duty, depot service and validated application evidence.")}</p>
+          <p style={heroLead}>{railwayText(lang, "Air intake, fuel-water separation, lubrication and applicable hydraulic contamination control for locomotives, diesel multiple units, auxiliary power units and rail-support equipment operating under vibration, route dust and extended duty.")}</p>
           <div style={actions}>
-            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY RAIL PROTECTION PATH</Link>
-            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a>
+            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{railwayText(lang, "IDENTIFY MY RAIL PROTECTION PATH")}</Link>
+            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{railwayText(lang, "FIND MY FILTER")}</a>
           </div>
         </div>
       </section>
 
       <section style={directSection} aria-labelledby="rail-direct-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>DIRECT ANSWER</p>
-          <h2 id="rail-direct-title" style={directTitle}>What defines the correct railway filtration strategy?</h2>
-          <p style={directText}>Railway filtration should start with the locomotive or rail asset, engine and protected system, then resolve route exposure, fuel handling, duty cycle, maintenance window and validated application evidence. Similar locomotive classes should not be treated as interchangeable without confirming the actual filter position and application.</p>
+          <p style={eyebrow}>{railwayText(lang, "DIRECT ANSWER")}</p>
+          <h2 id="rail-direct-title" style={directTitle}>{railwayText(lang, "What defines the correct railway filtration strategy?")}</h2>
+          <p style={directText}>{railwayText(lang, "Railway filtration should start with the locomotive or rail asset, engine and protected system, then resolve route exposure, fuel handling, duty cycle, maintenance window and validated application evidence. Similar locomotive classes should not be treated as interchangeable without confirming the actual filter position and application.")}</p>
         </div>
       </section>
 
       <section style={section} aria-labelledby="reality-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>RAIL OPERATING REALITY</p>
-          <h2 id="reality-title" style={sectionTitle}>The maintenance window is short. The duty cycle is not.</h2>
-          <p style={wideText}>Rail assets combine long operating periods with vibration, changing ambient conditions, depot fuel handling and scheduled service events. Filtration decisions have to fit that operating rhythm.</p>
-          <div style={pressureGrid}>{operatingPressures.map(([title, text]) => <article key={title} style={pressureCard}><h3 style={cardTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          <p style={eyebrow}>{railwayText(lang, "RAIL OPERATING REALITY")}</p>
+          <h2 id="reality-title" style={sectionTitle}>{railwayText(lang, "The maintenance window is short. The duty cycle is not.")}</h2>
+          <p style={wideText}>{railwayText(lang, "Rail assets combine long operating periods with vibration, changing ambient conditions, depot fuel handling and scheduled service events. Filtration decisions have to fit that operating rhythm.")}</p>
+          <div style={pressureGrid}>{operatingPressures.map(([title, text]) => <article key={title} style={pressureCard}><h3 style={cardTitle}>{railwayText(lang, title)}</h3><p style={bodyText}>{railwayText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={equipmentSection} aria-labelledby="equipment-title">
         <div style={equipmentGrid}>
           <div style={equipmentCopy}>
-            <h2 id="equipment-title" style={sectionTitle}>One rail network can contain several filtration architectures.</h2>
-            <p style={wideText}>Freight, passenger, maintenance and auxiliary equipment can share depots while using different engines, protected systems and service requirements.</p>
-            <div role="list" aria-label="Railway equipment applications" style={equipmentList}>{assets.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{asset}</span></div>)}</div>
+            <h2 id="equipment-title" style={sectionTitle}>{railwayText(lang, "One rail network can contain several filtration architectures.")}</h2>
+            <p style={wideText}>{railwayText(lang, "Freight, passenger, maintenance and auxiliary equipment can share depots while using different engines, protected systems and service requirements.")}</p>
+            <div role="list" aria-label="Railway equipment applications" style={equipmentList}>{assets.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{railwayText(lang, asset)}</span></div>)}</div>
           </div>
           <div style={equipmentMedia}><img src="/images/trenes.avif" alt="Railway locomotive operating in demanding service conditions" style={equipmentImage} /></div>
         </div>
@@ -157,62 +161,62 @@ export function RailwayIndustryPage() {
 
       <section style={section} aria-labelledby="path-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>CONTAMINATION PATHWAYS</p>
-          <h2 id="path-title" style={sectionTitle}>Trace the contamination path before choosing the part.</h2>
-          <p style={wideText}>Railway selection should connect the contamination source to the protected system, then to the appropriate ELIMFILTERS technology and finally to a validated application.</p>
-          <div className="industry-pathway-grid" style={pathwayGrid}>{pathways.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>CONTAMINATION SOURCE</span><strong style={pathwaySource}>{source}</strong><p style={smallText}>{detail}</p></div><div style={pathwayDivider} /><div><span style={smallLabel}>PROTECTION SYSTEM</span><strong style={pathwaySystem}>{system}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>ELIMFILTERS TECHNOLOGY</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>EXPLORE →</span></Link></article>)}</div>
+          <p style={eyebrow}>{railwayText(lang, "CONTAMINATION PATHWAYS")}</p>
+          <h2 id="path-title" style={sectionTitle}>{railwayText(lang, "Trace the contamination path before choosing the part.")}</h2>
+          <p style={wideText}>{railwayText(lang, "Railway selection should connect the contamination source to the protected system, then to the appropriate ELIMFILTERS technology and finally to a validated application.")}</p>
+          <div className="industry-pathway-grid" style={pathwayGrid}>{pathways.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>{railwayText(lang, "CONTAMINATION SOURCE")}</span><strong style={pathwaySource}>{railwayText(lang, source)}</strong><p style={smallText}>{railwayText(lang, detail)}</p></div><div style={pathwayDivider} /><div><span style={smallLabel}>{railwayText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwaySystem}>{railwayText(lang, system)}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>{railwayText(lang, "ELIMFILTERS TECHNOLOGY")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{railwayText(lang, "EXPLORE →")}</span></Link></article>)}</div>
         </div>
       </section>
 
       <section style={principleSection}>
-        <div style={principle}><span style={principleLabel}>RAILWAY ENGINEERING PRINCIPLE</span><p style={principleText}>The correct railway filter must resolve the locomotive or asset, engine, protected system, route duty, service environment and application evidence before interchangeability is accepted.</p></div>
+        <div style={principle}><span style={principleLabel}>{railwayText(lang, "RAILWAY ENGINEERING PRINCIPLE")}</span><p style={principleText}>{railwayText(lang, "The correct railway filter must resolve the locomotive or asset, engine, protected system, route duty, service environment and application evidence before interchangeability is accepted.")}</p></div>
       </section>
 
-      <IndustryFilterCarousel dutyClass="HD" industryName="Railway" />
+      <IndustryFilterCarousel dutyClass="HD" industryName="Railway" lang={lang} />
 
       <section style={impactSection} aria-labelledby="impact-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>FLEET AVAILABILITY</p>
-          <h2 id="impact-title" style={sectionTitle}>Protect the locomotive before contamination becomes a network constraint.</h2>
-          <p style={wideText}>Filtration supports more than the component. It helps protect the engine, fuel path, service plan and fleet allocation decisions surrounding the asset.</p>
-          <div style={impactGrid}>{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          <p style={eyebrow}>{railwayText(lang, "FLEET AVAILABILITY")}</p>
+          <h2 id="impact-title" style={sectionTitle}>{railwayText(lang, "Protect the locomotive before contamination becomes a network constraint.")}</h2>
+          <p style={wideText}>{railwayText(lang, "Filtration supports more than the component. It helps protect the engine, fuel path, service plan and fleet allocation decisions surrounding the asset.")}</p>
+          <div style={impactGrid}>{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{railwayText(lang, title)}</h3><p style={bodyText}>{railwayText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={section} aria-labelledby="decision-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>FROM LOCOMOTIVE TO PART</p>
-          <h2 id="decision-title" style={sectionTitle}>Resolve the railway application in five decisions.</h2>
+          <p style={eyebrow}>{railwayText(lang, "FROM LOCOMOTIVE TO PART")}</p>
+          <h2 id="decision-title" style={sectionTitle}>{railwayText(lang, "Resolve the railway application in five decisions.")}</h2>
           <div style={decisionGrid}>{[
             ['Rail Asset', 'Identify the locomotive, multiple unit, auxiliary power unit or maintenance equipment.'],
             ['Engine + System', 'Confirm the engine and the exact air, fuel, lubrication or hydraulic filter position.'],
             ['Route Duty', 'Define operating hours, load, route dust, vibration, ambient conditions and maintenance access.'],
             ['Protection', 'Match the contamination mechanism to the protected system and service requirement.'],
             ['Application Evidence', 'Validate the final filter using OEM reference, dimensions and documented application evidence.'],
-          ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{railwayText(lang, title)}</h3><p style={bodyText}>{railwayText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={evidenceSection} aria-labelledby="evidence-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>DEPOT APPLICATION EVIDENCE</p>
-          <h2 id="evidence-title" style={sectionTitle}>A maintenance slot should not be used to discover a part mismatch.</h2>
-          <p style={wideText}>Final identification should reconcile the known reference, locomotive and engine context, dimensions, protected system and operating conditions before the scheduled service event begins.</p>
+          <p style={eyebrow}>{railwayText(lang, "DEPOT APPLICATION EVIDENCE")}</p>
+          <h2 id="evidence-title" style={sectionTitle}>{railwayText(lang, "A maintenance slot should not be used to discover a part mismatch.")}</h2>
+          <p style={wideText}>{railwayText(lang, "Final identification should reconcile the known reference, locomotive and engine context, dimensions, protected system and operating conditions before the scheduled service event begins.")}</p>
         </div>
       </section>
 
       <section style={faqSection} aria-labelledby="faq-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>RAILWAY FILTRATION QUESTIONS</p>
-          <h2 id="faq-title" style={sectionTitle}>What rail operators and maintenance teams need to know.</h2>
-          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{q}</h3><p style={faqAnswer}>{a}</p></article>)}</div>
+          <p style={eyebrow}>{railwayText(lang, "RAILWAY FILTRATION QUESTIONS")}</p>
+          <h2 id="faq-title" style={sectionTitle}>{railwayText(lang, "What rail operators and maintenance teams need to know.")}</h2>
+          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{railwayText(lang, q)}</h3><p style={faqAnswer}>{railwayText(lang, a)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={conversionSection}>
         <div style={conversionGrid}>
-          <div><p style={eyebrow}>HAVE A LOCOMOTIVE OR RAIL APPLICATION TO RESOLVE?</p><h2 style={conversionTitle}>Identify the protection path before the maintenance window opens.</h2><p style={conversionText}>Send the locomotive or rail asset, engine, protected system, route conditions and any known OEM or current filter reference.</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY RAIL PROTECTION PATH</Link></div>
-          <div style={conversionSecondary}><div><p style={eyebrow}>ALREADY HAVE A PART NUMBER?</p><h3 style={conversionSubTitle}>Go directly to Part Search.</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a></div><div style={divider} /><div><p style={eyebrow}>SERVE RAIL CUSTOMERS?</p><h3 style={conversionSubTitle}>Evaluate distributor fit.</h3><Link href="/distributor-application/" style={secondaryButton}>BECOME A DISTRIBUTOR</Link></div></div>
+          <div><p style={eyebrow}>{railwayText(lang, "HAVE A LOCOMOTIVE OR RAIL APPLICATION TO RESOLVE?")}</p><h2 style={conversionTitle}>{railwayText(lang, "Identify the protection path before the maintenance window opens.")}</h2><p style={conversionText}>{railwayText(lang, "Send the locomotive or rail asset, engine, protected system, route conditions and any known OEM or current filter reference.")}</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{railwayText(lang, "IDENTIFY MY RAIL PROTECTION PATH")}</Link></div>
+          <div style={conversionSecondary}><div><p style={eyebrow}>{railwayText(lang, "ALREADY HAVE A PART NUMBER?")}</p><h3 style={conversionSubTitle}>{railwayText(lang, "Go directly to Part Search.")}</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{railwayText(lang, "FIND MY FILTER")}</a></div><div style={divider} /><div><p style={eyebrow}>{railwayText(lang, "SERVE RAIL CUSTOMERS?")}</p><h3 style={conversionSubTitle}>{railwayText(lang, "Evaluate distributor fit.")}</h3><Link href="/distributor-application/" style={secondaryButton}>{railwayText(lang, "BECOME A DISTRIBUTOR")}</Link></div></div>
         </div>
       </section>
     </main>

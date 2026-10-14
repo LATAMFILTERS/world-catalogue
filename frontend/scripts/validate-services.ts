@@ -29,6 +29,8 @@ import {
   buildAIContext,
 } from '../src/lib/services';
 
+import { getCanonicalKnowledgeById } from '../src/lib/services/canonical-knowledge-service';
+
 // ─── Check runner ─────────────────────────────────────────────────────────────
 
 interface CheckResult {
@@ -71,7 +73,11 @@ results.push(check('Knowledge Service — graph loads', () => {
 results.push(check('Search Service — entity ID search', () => {
   const hits = search('TECH-MACROCORE');
   assert(hits.length > 0, 'Search for TECH-MACROCORE returned no results');
-  assert(hits[0].entityId === 'TECH-MACROCORE', `Top hit should be TECH-MACROCORE, got ${hits[0].entityId}`);
+  for (const hit of hits) {
+    const record = getCanonicalKnowledgeById(hit.entityId);
+    assert(record !== null, `Search exposed noncanonical entity ${hit.entityId}`);
+    assert(record!.technologies.some(t => t.includes('MACROCORE')), 'Technology query must resolve approved MACROCORE knowledge');
+  }
 }));
 
 // 3. Search — keyword search
@@ -82,10 +88,11 @@ results.push(check('Search Service — keyword search', () => {
 
 // 4. Search — type filter
 results.push(check('Search Service — type-filtered search', () => {
-  const hits = searchByType('ISO', 'STANDARD');
-  assert(hits.length > 0, 'Type-filtered search for ISO standards returned no results');
+  const hits = searchByType('AEREMIS Air Treatment Architecture', 'TECHNOLOGY_ARCHITECTURE');
+  assert(hits.length > 0, 'Type-filtered search for approved AEREMIS architecture returned no results');
   for (const h of hits) {
-    assert(h.entityType === 'STANDARD', `Expected STANDARD, got ${h.entityType}`);
+    assert(h.entityType === 'TECHNOLOGY_ARCHITECTURE', `Expected TECHNOLOGY_ARCHITECTURE, got ${h.entityType}`);
+    assert(getCanonicalKnowledgeById(h.entityId) !== null, 'Type-filtered search must remain canonical');
   }
 }));
 
@@ -207,7 +214,9 @@ results.push(check('AI Context Builder — single entity', () => {
   assert(ctx.queryEntityId === 'TECH-MACROCORE', 'Query entity should be TECH-MACROCORE');
   assert(ctx.nodes.length > 0, 'Context should include nodes');
   assert(ctx.citations.length > 0, 'Context should include citations');
-  assert(ctx.packageId.startsWith('AICTX-'), `Expected AICTX- prefix, got ${ctx.packageId}`);
+  assert(ctx.packageId.startsWith('AIC-CANONICAL-'), `Expected canonical context prefix, got ${ctx.packageId}`);
+  assert(ctx.authority === '13-canonical-knowledge' && ctx.fallbackBlocked, 'Context must prohibit private evidence fallback');
+  assert(ctx.nodes.every(n => n.provenance.sourceRegistry === '13-canonical-knowledge'), 'Every context node must have approved canonical provenance');
   assert(ctx.graphVersion.length > 0, 'Context should include graph version');
 }));
 
@@ -218,15 +227,12 @@ results.push(check('AI Context Builder — depth 2 includes more nodes', () => {
   assert(ctx2.nodes.length >= ctx1.nodes.length, 'Depth 2 should include at least as many nodes as depth 1');
 }));
 
-// 21. AI Context — unknown entity throws
-results.push(check('AI Context Builder — unknown entity throws', () => {
-  let threw = false;
-  try {
-    buildAIContext('TECH-UNKNOWN-999');
-  } catch {
-    threw = true;
-  }
-  assert(threw, 'buildAIContext with unknown entity should throw');
+// 21. Unknown context remains empty and never falls back to private evidence.
+results.push(check('AI Context Builder — unknown entity has no evidence fallback', () => {
+  const ctx = buildAIContext('TECH-UNKNOWN-999');
+  assert(ctx.nodes.length === 0 && ctx.citations.length === 0, 'Unknown entity must not receive invented context or citations');
+  assert(ctx.fallbackBlocked && ctx.engineeringMemory.length === 0, 'Private evidence fallback must remain blocked');
+  assert(ctx.queryEntityType === 'UNKNOWN', 'Unknown entity must be identified as unknown');
 }));
 
 // ─── Report ───────────────────────────────────────────────────────────────────

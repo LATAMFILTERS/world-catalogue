@@ -3,6 +3,8 @@ import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { IndustryFilterCarousel } from './IndustryFilterCarousel';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
+import { municipalText } from '@/lib/waste-municipal-i18n';
+import type { PageLang } from '@/lib/localized-routes';
 
 const BASE_URL = 'https://elimfilters.com';
 const PAGE_URL = `${BASE_URL}/industries/waste-municipal/`;
@@ -50,15 +52,17 @@ const questions = [
   ['Can ELIMFILTERS identify a municipal fleet filter from an OEM or part number?', 'Yes. If an OEM reference or current filter number is known, Part Search is the fastest route to cross-reference and application information. For fleet standardization or difficult applications, include the vehicle, engine, protected system and operating duty.'],
 ] as const;
 
-export function WasteMunicipalIndustryPage() {
+export function WasteMunicipalIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
+  const pageUrl = `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/industries/waste-municipal/`;
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': `${PAGE_URL}#page`,
-        url: PAGE_URL,
-        name: 'Waste & Municipal Filtration Systems',
+        '@id': `${pageUrl}#page`,
+        url: pageUrl,
+        name: lang === 'es' ? 'Filtración para flotas municipales y de residuos' : lang === 'pt' ? 'Filtração para frotas municipais e de resíduos' : 'Waste & Municipal Filtration Systems',
+        inLanguage: lang === 'pt' ? 'pt-BR' : lang,
         description: 'Waste and municipal filtration systems for refuse trucks, street sweepers, sewer and vacuum trucks, utility vehicles and public-works fleets operating under stop-start urban duty, dust, debris and hydraulic load.',
         isPartOf: { '@id': `${BASE_URL}/#website` },
         publisher: { '@id': `${BASE_URL}/#organization` },
@@ -86,27 +90,27 @@ export function WasteMunicipalIndustryPage() {
           { '@type': 'Thing', name: 'DRYCORE' },
           { '@type': 'Thing', name: 'MICROKAPPA' },
         ],
-        breadcrumb: { '@id': `${PAGE_URL}#breadcrumb` },
+        breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': `${PAGE_URL}#breadcrumb`,
+        '@id': `${pageUrl}#breadcrumb`,
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
           { '@type': 'ListItem', position: 2, name: 'Industry', item: `${BASE_URL}/industries/` },
-          { '@type': 'ListItem', position: 3, name: 'Waste & Municipal Filtration Systems', item: PAGE_URL },
+          { '@type': 'ListItem', position: 3, name: 'Waste & Municipal Filtration Systems', item: pageUrl },
         ],
       },
       {
         '@type': 'ItemList',
-        '@id': `${PAGE_URL}#equipment`,
+        '@id': `${pageUrl}#equipment`,
         name: 'Waste and municipal fleet applications',
         itemListElement: assets.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name })),
       },
       {
         '@type': 'FAQPage',
-        '@id': `${PAGE_URL}#faq`,
-        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+        '@id': `${pageUrl}#faq`,
+        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: municipalText(lang, q), acceptedAnswer: { '@type': 'Answer', text: municipalText(lang, a) } })),
       },
     ],
   };
@@ -122,41 +126,41 @@ export function WasteMunicipalIndustryPage() {
         </video>
         <div style={heroShade} />
         <div style={heroInner}>
-          <p style={eyebrow}>WASTE & MUNICIPAL / PUBLIC-SERVICE FLEET PROTECTION</p>
-          <h1 style={heroTitle}>Waste & Municipal<br /><span style={yellow}>Filtration Systems</span></h1>
-          <p style={heroPromise}>Protect the vehicles and auxiliary systems that keep public-service routes moving.</p>
-          <p style={heroLead}>Air, fuel, lubrication, hydraulic, cooling, compressed-air and cabin protection for refuse trucks, sweepers, vacuum trucks, utility vehicles and public-works equipment operating under repeated urban duty.</p>
+          <p style={eyebrow}>{municipalText(lang, "WASTE & MUNICIPAL / PUBLIC-SERVICE FLEET PROTECTION")}</p>
+          <h1 style={heroTitle}>{municipalText(lang, "Waste & Municipal")}<br /><span style={yellow}>{municipalText(lang, "Filtration Systems")}</span></h1>
+          <p style={heroPromise}>{municipalText(lang, "Protect the vehicles and auxiliary systems that keep public-service routes moving.")}</p>
+          <p style={heroLead}>{municipalText(lang, "Air, fuel, lubrication, hydraulic, cooling, compressed-air and cabin protection for refuse trucks, sweepers, vacuum trucks, utility vehicles and public-works equipment operating under repeated urban duty.")}</p>
           <div style={actions}>
-            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY MUNICIPAL PROTECTION PATH</Link>
-            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a>
+            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{municipalText(lang, "IDENTIFY MY MUNICIPAL PROTECTION PATH")}</Link>
+            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{municipalText(lang, "FIND MY FILTER")}</a>
           </div>
         </div>
       </section>
 
       <section style={directSection} aria-labelledby="direct-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>DIRECT ANSWER</p>
-          <h2 id="direct-title" style={directTitle}>What makes municipal fleet filtration different?</h2>
-          <p style={directText}>Municipal filtration has to account for the vehicle mission as well as the engine. Repeated stop-start duty, idling, urban dust, refuse debris, auxiliary hydraulics and route schedules change which systems are critical and how service should be planned.</p>
+          <p style={eyebrow}>{municipalText(lang, "DIRECT ANSWER")}</p>
+          <h2 id="direct-title" style={directTitle}>{municipalText(lang, "What makes municipal fleet filtration different?")}</h2>
+          <p style={directText}>{municipalText(lang, "Municipal filtration has to account for the vehicle mission as well as the engine. Repeated stop-start duty, idling, urban dust, refuse debris, auxiliary hydraulics and route schedules change which systems are critical and how service should be planned.")}</p>
         </div>
       </section>
 
       <section style={section} aria-labelledby="reality-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>ROUTE OPERATING REALITY</p>
-          <h2 id="reality-title" style={sectionTitle}>The route defines the duty cycle.</h2>
-          <p style={wideText}>Waste collection, sweeping, sewer service and public works combine road travel with stationary or low-speed work. That operating pattern creates a filtration problem that is different from conventional highway duty.</p>
-          <div style={pressureGrid}>{operatingPressures.map(([title, text]) => <article key={title} style={pressureCard}><h3 style={cardTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          <p style={eyebrow}>{municipalText(lang, "ROUTE OPERATING REALITY")}</p>
+          <h2 id="reality-title" style={sectionTitle}>{municipalText(lang, "The route defines the duty cycle.")}</h2>
+          <p style={wideText}>{municipalText(lang, "Waste collection, sweeping, sewer service and public works combine road travel with stationary or low-speed work. That operating pattern creates a filtration problem that is different from conventional highway duty.")}</p>
+          <div style={pressureGrid}>{operatingPressures.map(([title, text]) => <article key={title} style={pressureCard}><h3 style={cardTitle}>{municipalText(lang, title)}</h3><p style={bodyText}>{municipalText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={equipmentSection} aria-labelledby="equipment-title">
         <div style={equipmentGrid}>
           <div style={equipmentCopy}>
-            <p style={eyebrow}>PUBLIC-SERVICE ASSETS</p>
-            <h2 id="equipment-title" style={sectionTitle}>Different missions. Different protection priorities.</h2>
-            <p style={wideText}>A refuse truck, street sweeper and vacuum truck may share a municipal depot while relying on very different auxiliary systems and contamination-control priorities.</p>
-            <div role="list" aria-label="Waste and municipal fleet applications" style={equipmentList}>{assets.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{asset}</span></div>)}</div>
+            <p style={eyebrow}>{municipalText(lang, "PUBLIC-SERVICE ASSETS")}</p>
+            <h2 id="equipment-title" style={sectionTitle}>{municipalText(lang, "Different missions. Different protection priorities.")}</h2>
+            <p style={wideText}>{municipalText(lang, "A refuse truck, street sweeper and vacuum truck may share a municipal depot while relying on very different auxiliary systems and contamination-control priorities.")}</p>
+            <div role="list" aria-label="Waste and municipal fleet applications" style={equipmentList}>{assets.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{municipalText(lang, asset)}</span></div>)}</div>
           </div>
           <div style={equipmentMedia}><img src="/images/wasted.avif" alt="Municipal service fleet equipment operating in urban duty" style={equipmentImage} /></div>
         </div>
@@ -164,62 +168,62 @@ export function WasteMunicipalIndustryPage() {
 
       <section style={section} aria-labelledby="path-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>CONTAMINATION PATHWAYS</p>
-          <h2 id="path-title" style={sectionTitle}>Protect the engine and the equipment that performs the route mission.</h2>
-          <p style={wideText}>Selection should connect the contamination source to the protected system, then to the appropriate ELIMFILTERS technology and finally to a validated part.</p>
-          <div className="industry-pathway-grid" style={pathwayGrid}>{pathways.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>CONTAMINATION SOURCE</span><strong style={pathwaySource}>{source}</strong><p style={smallText}>{detail}</p></div><div style={pathwayDivider} /><div><span style={smallLabel}>PROTECTION SYSTEM</span><strong style={pathwaySystem}>{system}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>ELIMFILTERS TECHNOLOGY</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>EXPLORE →</span></Link></article>)}</div>
+          <p style={eyebrow}>{municipalText(lang, "CONTAMINATION PATHWAYS")}</p>
+          <h2 id="path-title" style={sectionTitle}>{municipalText(lang, "Protect the engine and the equipment that performs the route mission.")}</h2>
+          <p style={wideText}>{municipalText(lang, "Selection should connect the contamination source to the protected system, then to the appropriate ELIMFILTERS technology and finally to a validated part.")}</p>
+          <div className="industry-pathway-grid" style={pathwayGrid}>{pathways.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>{municipalText(lang, "CONTAMINATION SOURCE")}</span><strong style={pathwaySource}>{municipalText(lang, source)}</strong><p style={smallText}>{municipalText(lang, detail)}</p></div><div style={pathwayDivider} /><div><span style={smallLabel}>{municipalText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwaySystem}>{municipalText(lang, system)}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>{municipalText(lang, "ELIMFILTERS TECHNOLOGY")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{municipalText(lang, "EXPLORE →")}</span></Link></article>)}</div>
         </div>
       </section>
 
       <section style={principleSection}>
-        <div style={principle}><span style={principleLabel}>MUNICIPAL FLEET ENGINEERING PRINCIPLE</span><p style={principleText}>Do not standardize a filter simply because vehicles share a fleet class. Resolve the vehicle, engine, auxiliary equipment, contamination path, duty profile and application evidence before assigning the part.</p></div>
+        <div style={principle}><span style={principleLabel}>{municipalText(lang, "MUNICIPAL FLEET ENGINEERING PRINCIPLE")}</span><p style={principleText}>{municipalText(lang, "Do not standardize a filter simply because vehicles share a fleet class. Resolve the vehicle, engine, auxiliary equipment, contamination path, duty profile and application evidence before assigning the part.")}</p></div>
       </section>
 
-      <IndustryFilterCarousel dutyClass="HD" industryName="Waste Municipal" />
+      <IndustryFilterCarousel dutyClass="HD" industryName="Waste Municipal" lang={lang} />
 
       <section style={impactSection} aria-labelledby="impact-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>PUBLIC-SERVICE AVAILABILITY</p>
-          <h2 id="impact-title" style={sectionTitle}>Protect the route before a component problem becomes a service gap.</h2>
-          <p style={wideText}>Municipal fleet availability is operationally visible. Filtration supports the engine, hydraulic functions and service planning around vehicles that must return to scheduled work.</p>
-          <div style={impactGrid}>{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          <p style={eyebrow}>{municipalText(lang, "PUBLIC-SERVICE AVAILABILITY")}</p>
+          <h2 id="impact-title" style={sectionTitle}>{municipalText(lang, "Protect the route before a component problem becomes a service gap.")}</h2>
+          <p style={wideText}>{municipalText(lang, "Municipal fleet availability is operationally visible. Filtration supports the engine, hydraulic functions and service planning around vehicles that must return to scheduled work.")}</p>
+          <div style={impactGrid}>{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{municipalText(lang, title)}</h3><p style={bodyText}>{municipalText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={section} aria-labelledby="decision-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>FROM ROUTE DUTY TO PART</p>
-          <h2 id="decision-title" style={sectionTitle}>Resolve the municipal application in five decisions.</h2>
+          <p style={eyebrow}>{municipalText(lang, "FROM ROUTE DUTY TO PART")}</p>
+          <h2 id="decision-title" style={sectionTitle}>{municipalText(lang, "Resolve the municipal application in five decisions.")}</h2>
           <div style={decisionGrid}>{[
             ['Vehicle / Equipment', 'Identify the refuse truck, sweeper, vacuum truck, utility vehicle or public-works equipment.'],
             ['Mission', 'Define collection, sweeping, sewer, utility or support duty and the auxiliary equipment used.'],
             ['Exposure', 'Document dust, debris, fuel condition, idle time, hydraulic work and route environment.'],
             ['Protection', 'Map the exposure to engine, fuel, lubrication, hydraulic, cooling, compressed-air or cabin protection.'],
             ['Application Evidence', 'Validate the final filter using OEM reference, dimensions, configuration and documented application evidence.'],
-          ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{municipalText(lang, title)}</h3><p style={bodyText}>{municipalText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={evidenceSection} aria-labelledby="evidence-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>FLEET APPLICATION EVIDENCE</p>
-          <h2 id="evidence-title" style={sectionTitle}>Standardization should follow confirmed compatibility.</h2>
-          <p style={wideText}>A municipal fleet may contain similar-looking vehicles with different engines, hydraulic circuits, brake systems or filter specifications. Final identification should reconcile the known reference, vehicle configuration, dimensions and protected system before one SKU is standardized across multiple assets.</p>
+          <p style={eyebrow}>{municipalText(lang, "FLEET APPLICATION EVIDENCE")}</p>
+          <h2 id="evidence-title" style={sectionTitle}>{municipalText(lang, "Standardization should follow confirmed compatibility.")}</h2>
+          <p style={wideText}>{municipalText(lang, "A municipal fleet may contain similar-looking vehicles with different engines, hydraulic circuits, brake systems or filter specifications. Final identification should reconcile the known reference, vehicle configuration, dimensions and protected system before one SKU is standardized across multiple assets.")}</p>
         </div>
       </section>
 
       <section style={faqSection} aria-labelledby="faq-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>WASTE & MUNICIPAL FILTRATION QUESTIONS</p>
-          <h2 id="faq-title" style={sectionTitle}>What fleet and public-works teams need to know.</h2>
-          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{q}</h3><p style={faqAnswer}>{a}</p></article>)}</div>
+          <p style={eyebrow}>{municipalText(lang, "WASTE & MUNICIPAL FILTRATION QUESTIONS")}</p>
+          <h2 id="faq-title" style={sectionTitle}>{municipalText(lang, "What fleet and public-works teams need to know.")}</h2>
+          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{municipalText(lang, q)}</h3><p style={faqAnswer}>{municipalText(lang, a)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={conversionSection}>
         <div style={conversionGrid}>
-          <div><p style={eyebrow}>NEED TO RESOLVE A MUNICIPAL FLEET APPLICATION?</p><h2 style={conversionTitle}>Identify the protection path before standardizing the part.</h2><p style={conversionText}>Send the vehicle, engine, auxiliary equipment, protected system, route duty and any known OEM or filter reference.</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY MUNICIPAL PROTECTION PATH</Link></div>
-          <div style={conversionSecondary}><div><p style={eyebrow}>ALREADY HAVE A PART NUMBER?</p><h3 style={conversionSubTitle}>Go directly to Part Search.</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a></div><div style={divider} /><div><p style={eyebrow}>SERVE MUNICIPAL FLEETS?</p><h3 style={conversionSubTitle}>Evaluate distributor fit.</h3><Link href="/distributor-application/" style={secondaryButton}>BECOME A DISTRIBUTOR</Link></div></div>
+          <div><p style={eyebrow}>{municipalText(lang, "NEED TO RESOLVE A MUNICIPAL FLEET APPLICATION?")}</p><h2 style={conversionTitle}>{municipalText(lang, "Identify the protection path before standardizing the part.")}</h2><p style={conversionText}>{municipalText(lang, "Send the vehicle, engine, auxiliary equipment, protected system, route duty and any known OEM or filter reference.")}</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{municipalText(lang, "IDENTIFY MY MUNICIPAL PROTECTION PATH")}</Link></div>
+          <div style={conversionSecondary}><div><p style={eyebrow}>{municipalText(lang, "ALREADY HAVE A PART NUMBER?")}</p><h3 style={conversionSubTitle}>{municipalText(lang, "Go directly to Part Search.")}</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{municipalText(lang, "FIND MY FILTER")}</a></div><div style={divider} /><div><p style={eyebrow}>{municipalText(lang, "SERVE MUNICIPAL FLEETS?")}</p><h3 style={conversionSubTitle}>{municipalText(lang, "Evaluate distributor fit.")}</h3><Link href="/distributor-application/" style={secondaryButton}>{municipalText(lang, "BECOME A DISTRIBUTOR")}</Link></div></div>
         </div>
       </section>
     </main>

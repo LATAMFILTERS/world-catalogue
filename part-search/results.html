@@ -1284,12 +1284,8 @@ function renderCard(p, index) {
     const mmRound = Math.round(mm);
     return inches + ' inch\n' + mmRound + ' mm';
   }
-  function mediaLabel(val) {
-    if (!val) return null;
-    const v = String(val).toLowerCase().trim();
-    if (v === 'cellulose' || v === 'celulosa') return currentLang === 'es' ? 'HÃ­brida' : 'Genuine Media';
-    return val;
-  }
+  // Operator rule 2026-10-13: the media line reads the same on every SKU.
+  const MEDIA_LABEL = 'GENUINE FILTER MEDIA';
   function psiFmt(psi) {
     if (!psi) return null;
     const bar = (psi * 0.0689476).toFixed(1);
@@ -1318,7 +1314,7 @@ function renderCard(p, index) {
   const perfSpecs = [
     specHTML(effLabel,        micronVal),
     specHTML(T.specTestStd,   p.iso_test_method),
-    specHTML(T.specMediaType, mediaLabel(p.filter_subtype) || null),
+    specHTML(T.specMediaType, MEDIA_LABEL),
     specHTML(T.specBurst,     psiFmt(p.burst_pressure_psi)),
     specHTML(T.specCollapse,  psiFmt(p.collapse_pressure_psi)),
   ].filter(Boolean);
@@ -1347,8 +1343,8 @@ function renderCard(p, index) {
           </div>
           <div class="card-badges">
             ${p.filter_type      ? `<span class="badge badge-type">${esc(p.filter_type)}</span>` : ''}
+            <span class="badge badge-type">${MEDIA_LABEL}</span>
             ${p.filter_subtype   ? `<span class="badge badge-type">${esc(p.filter_subtype)}</span>` : ''}
-            ${p.installation_type ? `<span class="badge badge-type">${esc(p.installation_type)}</span>` : ''}
             ${p.duty             ? `<span class="badge badge-duty">${esc(p.duty.toUpperCase())}</span>` : ''}
             ${p.technology       ? `<a href="https://elimfilters.com/technologies/${String(p.technology).replace(/[™®©]/g, '').normalize('NFKD').replace(/[^A-Za-z0-9]/g, '').toLowerCase()}/" target="_blank" rel="noopener noreferrer" class="badge badge-tech" title="Learn more about ${esc(p.technology)}">${esc(p.technology)}</a>` : ''}
           </div>

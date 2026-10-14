@@ -1,0 +1,1543 @@
+{
+ "EL82016": {
+  "codigo_base": "P502016",
+  "source_file": "donaldson_lube_results.json",
+  "list_md5": "59ef63e1f1573d3f632083856ed94b86",
+  "equipment": [
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR 3034",
+    "equipment": "CATERPILLAR 216"
+   },
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR 3024",
+    "equipment": "CATERPILLAR 216B"
+   },
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR C2.2",
+    "equipment": "CATERPILLAR 216B2"
+   },
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR C2.2",
+    "equipment": "CATERPILLAR 216B3"
+   },
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR 3024T",
+    "equipment": "CATERPILLAR 226B"
+   },
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR C2.2T",
+    "equipment": "CATERPILLAR 226B"
+   },
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR 3024CT",
+    "equipment": "CATERPILLAR 226B2"
+   },
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR 3024",
+    "equipment": "CATERPILLAR 232"
+   },
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR 3024",
+    "equipment": "CATERPILLAR 232B"
+   },
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR 3024T",
+    "equipment": "CATERPILLAR 232B2"
+   },
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR C2.2 CRD",
+    "equipment": "CATERPILLAR 232D3"
+   },
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR C3.3B DIT",
+    "equipment": "CATERPILLAR 236D3"
+   },
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR 3024T",
+    "equipment": "CATERPILLAR 242B"
+   },
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR 3024CT",
+    "equipment": "CATERPILLAR 242B2"
+   },
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR 3044T",
+    "equipment": "CATERPILLAR 246C"
+   },
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR C3.3B DIT",
+    "equipment": "CATERPILLAR 246D3"
+   },
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR 3024T",
+    "equipment": "CATERPILLAR 247B"
+   },
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR 3024T",
+    "equipment": "CATERPILLAR 247B2"
+   },
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR 3024T",
+    "equipment": "CATERPILLAR 257B"
+   },
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR 3024T",
+    "equipment": "CATERPILLAR 257B2"
+   },
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR C3.3B DIT",
+    "equipment": "CATERPILLAR 279D3"
+   },
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR C3.3B DIT",
+    "equipment": "CATERPILLAR 289D3"
+   },
+   {
+    "type": "SKID STEER LOADER",
+    "engine": "CATERPILLAR 3044T",
+    "equipment": "CATERPILLAR 297C"
+   },
+   {
+    "type": "EXCAVATOR TRACKED",
+    "engine": "CATERPILLAR 3003",
+    "equipment": "CATERPILLAR 301.5"
+   },
+   {
+    "type": "EXCAVATOR COMPACT",
+    "engine": "YANMAR 3TNV76",
+    "equipment": "CATERPILLAR 301.7D"
+   },
+   {
+    "type": "EXCAVATOR TRACKED",
+    "engine": "CATERPILLAR C1.1",
+    "equipment": "CATERPILLAR 301.8"
+   },
+   {
+    "type": "EXCAVATOR TRACKED",
+    "engine": "PERKINS 3013",
+    "equipment": "CATERPILLAR 302.5"
+   },
+   {
+    "type": "EXCAVATOR COMPACT",
+    "engine": "YANMAR 3TNV76",
+    "equipment": "CATERPILLAR 302.7D"
+   },
+   {
+    "type": "LOADER WHEELED",
+    "engine": "CATERPILLAR C3.3B DIT",
+    "equipment": "CATERPILLAR 906H2"
+   },
+   {
+    "type": "PAVER",
+    "engine": "CATERPILLAR C2.2",
+    "equipment": "CATERPILLAR AP255E"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR C1.1",
+    "equipment": "CATERPILLAR CB14"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "HATZ 2M40L",
+    "equipment": "CATERPILLAR CB214C"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR 3013",
+    "equipment": "CATERPILLAR CB214D"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR 3013",
+    "equipment": "CATERPILLAR CB214E"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR C1.5",
+    "equipment": "CATERPILLAR CB22"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR 3013",
+    "equipment": "CATERPILLAR CB224D"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR 3013",
+    "equipment": "CATERPILLAR CB224E"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR 3013",
+    "equipment": "CATERPILLAR CB225D"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR 3013",
+    "equipment": "CATERPILLAR CB225E"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR C1.5",
+    "equipment": "CATERPILLAR CB24"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR C1.5",
+    "equipment": "CATERPILLAR CB32"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR 3014",
+    "equipment": "CATERPILLAR CB334D"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR 3024C",
+    "equipment": "CATERPILLAR CB334E"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR 3024C",
+    "equipment": "CATERPILLAR CB334E II"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR 3013",
+    "equipment": "CATERPILLAR CB335D"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR 3024C",
+    "equipment": "CATERPILLAR CB335E"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR 3024C",
+    "equipment": "CATERPILLAR CB335E II"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR C1.5",
+    "equipment": "CATERPILLAR CB34"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR C1.5",
+    "equipment": "CATERPILLAR CB34XW"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR C1.5",
+    "equipment": "CATERPILLAR CC24"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR C2.2",
+    "equipment": "CATERPILLAR CC34"
+   },
+   {
+    "type": "TELEHANDLER",
+    "engine": "CATERPILLAR C3.4B",
+    "equipment": "CATERPILLAR TH417C"
+   },
+   {
+    "type": "TELEHANDLER",
+    "engine": "DEUTZ TCD 3.6 L04",
+    "equipment": "CATERPILLAR TH417D"
+   },
+   {
+    "type": "LIGHT TRUCK",
+    "engine": "FORD 2.5L L4",
+    "equipment": "FORD ESCAPE"
+   },
+   {
+    "type": "LIGHT TRUCK",
+    "engine": "FORD 2.3L L4",
+    "equipment": "FORD ESCAPE"
+   },
+   {
+    "type": "TRACTOR",
+    "engine": "PERKINS 103.10",
+    "equipment": "MCCORMICK G31R"
+   },
+   {
+    "type": "GENERATOR SET",
+    "engine": "PERKINS 404D-22G",
+    "equipment": "PERKINS 12.8KW"
+   },
+   {
+    "type": "COMPRESSOR",
+    "engine": "CATERPILLAR 3054",
+    "equipment": "SULLAIR 185"
+   },
+   {
+    "type": "EXCAVATOR TRACKED",
+    "engine": "PERKINS 403C15",
+    "equipment": "SUNWARD SWE40U"
+   },
+   {
+    "type": "EXCAVATOR",
+    "engine": "- SWE40U",
+    "equipment": "SUNWARD SWE40U"
+   },
+   {
+    "type": "FORKLIFT",
+    "engine": "TOYOTA 4Y",
+    "equipment": "TOYOTA 427FGF25LP"
+   },
+   {
+    "type": "BUS",
+    "engine": "TOYOTA 1KD-FTV",
+    "equipment": "TOYOTA HIACE VAN"
+   },
+   {
+    "type": "LIGHT TRUCK",
+    "engine": "TOYOTA 3.3L V6",
+    "equipment": "TOYOTA HIGHLANDER"
+   },
+   {
+    "type": "LIGHT TRUCK",
+    "engine": "TOYOTA 3.4L V6",
+    "equipment": "TOYOTA TACOMA"
+   },
+   {
+    "type": "LIGHT TRUCK",
+    "engine": "TOYOTA 2RZ-FE",
+    "equipment": "TOYOTA TACOMA"
+   },
+   {
+    "type": "LIGHT TRUCK",
+    "engine": "TOYOTA 3RZ-FE",
+    "equipment": "TOYOTA TACOMA"
+   }
+  ]
+ },
+ "EH66488": {
+  "codigo_base": "P566488",
+  "source_file": "donaldson_hydraulic_results.json",
+  "list_md5": "80f02e45970f05081d9685c4283e123d",
+  "equipment": [
+   {
+    "type": "DRILLING EQUIPMENT",
+    "engine": "CATERPILLAR C15",
+    "equipment": "CATERPILLAR MD6290"
+   },
+   {
+    "type": "DRILLING EQUIPMENT",
+    "engine": "CATERPILLAR C27",
+    "equipment": "CATERPILLAR MD6290"
+   },
+   {
+    "type": "DRILLING EQUIPMENT",
+    "engine": "CUMMINS QSK19",
+    "equipment": "CATERPILLAR MD6290"
+   }
+  ]
+ },
+ "EH66373": {
+  "codigo_base": "P566373",
+  "source_file": "donaldson_hydraulic_results.json",
+  "list_md5": "80f02e45970f05081d9685c4283e123d",
+  "equipment": [
+   {
+    "type": "DRILLING EQUIPMENT",
+    "engine": "CATERPILLAR C15",
+    "equipment": "CATERPILLAR MD6290"
+   },
+   {
+    "type": "DRILLING EQUIPMENT",
+    "engine": "CATERPILLAR C27",
+    "equipment": "CATERPILLAR MD6290"
+   },
+   {
+    "type": "DRILLING EQUIPMENT",
+    "engine": "CUMMINS QSK19",
+    "equipment": "CATERPILLAR MD6290"
+   }
+  ]
+ },
+ "EH66278": {
+  "codigo_base": "P566278",
+  "source_file": "donaldson_hydraulic_results.json",
+  "list_md5": "11de10ea6f43c61a7998caa4f28d75d4",
+  "equipment": [
+   {
+    "type": "DRILLING EQUIPMENT",
+    "engine": "CATERPILLAR C18",
+    "equipment": "ATLAS COPCO DM45"
+   }
+  ]
+ },
+ "EH65239": {
+  "codigo_base": "P165239",
+  "source_file": "donaldson_hydraulic_results.json",
+  "list_md5": "98212b8a5d5a823c2a77423621a6a8de",
+  "equipment": [
+   {
+    "type": "TRACTOR",
+    "engine": "CUMMINS VT1710",
+    "equipment": "ALLIS-CHALMERS HD41B"
+   },
+   {
+    "type": "LOADER",
+    "engine": "ALLIS-CHALMERS 11000 MKII",
+    "equipment": "ALLIS-CHALMERS NA"
+   },
+   {
+    "type": "LOADER",
+    "engine": "ALLIS-CHALMERS 2900 MKII",
+    "equipment": "ALLIS-CHALMERS TL545"
+   },
+   {
+    "type": "LOADER",
+    "engine": "ALLIS-CHALMERS 2900",
+    "equipment": "ALLIS-CHALMERS TL545"
+   },
+   {
+    "type": "LOADER",
+    "engine": "ALLIS-CHALMERS 2900",
+    "equipment": "ALLIS-CHALMERS TL545H"
+   },
+   {
+    "type": "LOADER",
+    "engine": "ALLIS-CHALMERS 2900 MKII",
+    "equipment": "ALLIS-CHALMERS TL605B"
+   },
+   {
+    "type": "LOADER",
+    "engine": "ALLIS-CHALMERS 11000",
+    "equipment": "ALLIS-CHALMERS TL645"
+   },
+   {
+    "type": "LOADER",
+    "engine": "ALLIS-CHALMERS 3500 MKII",
+    "equipment": "ALLIS-CHALMERS TL645B"
+   },
+   {
+    "type": "LOADER",
+    "engine": "ALLIS-CHALMERS 11000",
+    "equipment": "ALLIS-CHALMERS TL645H"
+   },
+   {
+    "type": "LOADER",
+    "engine": "ALLIS-CHALMERS 11000",
+    "equipment": "ALLIS-CHALMERS TL745"
+   },
+   {
+    "type": "LOADER",
+    "engine": "ALLIS-CHALMERS 11000 MKII",
+    "equipment": "ALLIS-CHALMERS TL745B"
+   },
+   {
+    "type": "LOADER",
+    "engine": "ALLIS-CHALMERS 11000 MKII",
+    "equipment": "ALLIS-CHALMERS TL745C"
+   },
+   {
+    "type": "LOADER",
+    "engine": "ALLIS-CHALMERS 25000 MKII",
+    "equipment": "ALLIS-CHALMERS TL945"
+   },
+   {
+    "type": "LOADER",
+    "engine": "ALLIS-CHALMERS 25000 MKII",
+    "equipment": "ALLIS-CHALMERS TL945B"
+   },
+   {
+    "type": "EXCAVATOR TRACKED",
+    "engine": "CATERPILLAR 3402",
+    "equipment": "CATERPILLAR 215"
+   },
+   {
+    "type": "EXCAVATOR TRACKED",
+    "engine": "CATERPILLAR 3204",
+    "equipment": "CATERPILLAR 215B"
+   },
+   {
+    "type": "EXCAVATOR TRACKED",
+    "engine": "CATERPILLAR 3204",
+    "equipment": "CATERPILLAR 215BSA"
+   },
+   {
+    "type": "EXCAVATOR TRACKED",
+    "engine": "CATERPILLAR 3304",
+    "equipment": "CATERPILLAR 215C"
+   },
+   {
+    "type": "EXCAVATOR TRACKED",
+    "engine": "CATERPILLAR 3304",
+    "equipment": "CATERPILLAR 215D"
+   },
+   {
+    "type": "EXCAVATOR TRACKED",
+    "engine": "CATERPILLAR 3304",
+    "equipment": "CATERPILLAR 219"
+   },
+   {
+    "type": "EXCAVATOR TRACKED",
+    "engine": "CATERPILLAR 3304",
+    "equipment": "CATERPILLAR 219D"
+   },
+   {
+    "type": "EXCAVATOR TRACKED",
+    "engine": "CATERPILLAR 3208",
+    "equipment": "CATERPILLAR 225D"
+   },
+   {
+    "type": "EXCAVATOR TRACKED",
+    "engine": "CATERPILLAR 3208",
+    "equipment": "CATERPILLAR 225DLC"
+   },
+   {
+    "type": "EXCAVATOR TRACKED",
+    "engine": "CATERPILLAR 3304",
+    "equipment": "CATERPILLAR 229D"
+   },
+   {
+    "type": "EXCAVATOR TRACKED",
+    "engine": "CATERPILLAR 3208",
+    "equipment": "CATERPILLAR 231D"
+   },
+   {
+    "type": "EXCAVATOR TRACKED",
+    "engine": "CATERPILLAR 3208",
+    "equipment": "CATERPILLAR 231DLC"
+   },
+   {
+    "type": "EXCAVATOR TRACKED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR 235B"
+   },
+   {
+    "type": "EXCAVATOR TRACKED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR 235D"
+   },
+   {
+    "type": "GRADER",
+    "engine": "CATERPILLAR 3412TAE1",
+    "equipment": "CATERPILLAR 24H"
+   },
+   {
+    "type": "PIPE LAYER",
+    "engine": "CATERPILLAR 3116",
+    "equipment": "CATERPILLAR 561M"
+   },
+   {
+    "type": "PIPE LAYER",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR 572R"
+   },
+   {
+    "type": "PIPE LAYER",
+    "engine": "CATERPILLAR 3176C",
+    "equipment": "CATERPILLAR 572R II"
+   },
+   {
+    "type": "PIPE LAYER",
+    "engine": "CATERPILLAR 3406B",
+    "equipment": "CATERPILLAR 578"
+   },
+   {
+    "type": "PIPE LAYER",
+    "engine": "CATERPILLAR 3406C",
+    "equipment": "CATERPILLAR 583R"
+   },
+   {
+    "type": "PIPE LAYER",
+    "engine": "CATERPILLAR C15 ACERT",
+    "equipment": "CATERPILLAR 583T"
+   },
+   {
+    "type": "PIPE LAYER",
+    "engine": "CATERPILLAR 3406C DITA",
+    "equipment": "CATERPILLAR 587R"
+   },
+   {
+    "type": "PIPE LAYER",
+    "engine": "CATERPILLAR C15 ACERT",
+    "equipment": "CATERPILLAR 587T"
+   },
+   {
+    "type": "TRACTOR",
+    "engine": "- 627",
+    "equipment": "CATERPILLAR 627"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3176C",
+    "equipment": "CATERPILLAR 725"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR C9.3",
+    "equipment": "CATERPILLAR 725C"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3196TAE",
+    "equipment": "CATERPILLAR 730"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR C13TA ACERT",
+    "equipment": "CATERPILLAR 730C"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3406E",
+    "equipment": "CATERPILLAR 735"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR C15TA ACERT",
+    "equipment": "CATERPILLAR 735B"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR C15TA ACERT",
+    "equipment": "CATERPILLAR 735C"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3406E",
+    "equipment": "CATERPILLAR 740"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR C15TA ACERT",
+    "equipment": "CATERPILLAR 740"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR C15TA ACERT",
+    "equipment": "CATERPILLAR 740B"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3408TA",
+    "equipment": "CATERPILLAR 768C"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3408TA",
+    "equipment": "CATERPILLAR 769C"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3408TAE",
+    "equipment": "CATERPILLAR 769D"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3408TA",
+    "equipment": "CATERPILLAR 771C"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3408TAE",
+    "equipment": "CATERPILLAR 771D"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3412TA",
+    "equipment": "CATERPILLAR 772B"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3412TA",
+    "equipment": "CATERPILLAR 773B"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3412TAE",
+    "equipment": "CATERPILLAR 773D"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3412TA",
+    "equipment": "CATERPILLAR 775B"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3412TAE",
+    "equipment": "CATERPILLAR 775D"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3508",
+    "equipment": "CATERPILLAR 776C"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3508TAE",
+    "equipment": "CATERPILLAR 776D"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR D348",
+    "equipment": "CATERPILLAR 777"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3508",
+    "equipment": "CATERPILLAR 777B"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3508",
+    "equipment": "CATERPILLAR 777C"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3508TAE",
+    "equipment": "CATERPILLAR 777D"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3512B",
+    "equipment": "CATERPILLAR 777DHAA"
+   },
+   {
+    "type": "HAUL TRUCK",
+    "engine": "CATERPILLAR C32TAACERT",
+    "equipment": "CATERPILLAR 777E"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR C32TA ACERT",
+    "equipment": "CATERPILLAR 777F"
+   },
+   {
+    "type": "HAUL TRUCK",
+    "engine": "CATERPILLAR C32",
+    "equipment": "CATERPILLAR 777G"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3512",
+    "equipment": "CATERPILLAR 784B"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3512TAE",
+    "equipment": "CATERPILLAR 784C"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3512TA",
+    "equipment": "CATERPILLAR 785"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3512",
+    "equipment": "CATERPILLAR 785B"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3512BTA",
+    "equipment": "CATERPILLAR 785C"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3512CTA",
+    "equipment": "CATERPILLAR 785D"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3516B",
+    "equipment": "CATERPILLAR 787B"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3516TA",
+    "equipment": "CATERPILLAR 789"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3516B",
+    "equipment": "CATERPILLAR 789B"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3516BTA",
+    "equipment": "CATERPILLAR 789C"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3516TA",
+    "equipment": "CATERPILLAR 793"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3516B",
+    "equipment": "CATERPILLAR 793B"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3516BTA",
+    "equipment": "CATERPILLAR 793C"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3516BTA",
+    "equipment": "CATERPILLAR 793D"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3516TAE",
+    "equipment": "CATERPILLAR 797"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3524B",
+    "equipment": "CATERPILLAR 797B"
+   },
+   {
+    "type": "DOZER WHEELED",
+    "engine": "CATERPILLAR 3406E ATAAC",
+    "equipment": "CATERPILLAR 824G II"
+   },
+   {
+    "type": "DOZER WHEELED",
+    "engine": "CATERPILLAR C15TA ACERT",
+    "equipment": "CATERPILLAR 824H"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR 3406E ATAAC",
+    "equipment": "CATERPILLAR 825G II"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR C15",
+    "equipment": "CATERPILLAR 825H"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR 3406E ATAAC",
+    "equipment": "CATERPILLAR 826G II"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR C15 ACERT",
+    "equipment": "CATERPILLAR 826H"
+   },
+   {
+    "type": "DOZER WHEELED",
+    "engine": "CATERPILLAR 3412TAE",
+    "equipment": "CATERPILLAR 844"
+   },
+   {
+    "type": "DOZER WHEELED",
+    "engine": "CATERPILLAR C27TA ACERT",
+    "equipment": "CATERPILLAR 844H"
+   },
+   {
+    "type": "DOZER WHEELED",
+    "engine": "- 844H",
+    "equipment": "CATERPILLAR 844H"
+   },
+   {
+    "type": "DOZER WHEELED",
+    "engine": "CATERPILLAR 3508TA",
+    "equipment": "CATERPILLAR 854G"
+   },
+   {
+    "type": "DOZER WHEELED",
+    "engine": "CATERPILLAR C32TA ACERT",
+    "equipment": "CATERPILLAR 854K"
+   },
+   {
+    "type": "LOADER TRACKED",
+    "engine": "CATERPILLAR 3204",
+    "equipment": "CATERPILLAR 943"
+   },
+   {
+    "type": "LOADER TRACKED",
+    "engine": "CATERPILLAR 3204",
+    "equipment": "CATERPILLAR 953"
+   },
+   {
+    "type": "LOADER TRACKED",
+    "engine": "CATERPILLAR 3116",
+    "equipment": "CATERPILLAR 953B"
+   },
+   {
+    "type": "LOADER TRACKED",
+    "engine": "CATERPILLAR 3304",
+    "equipment": "CATERPILLAR 963"
+   },
+   {
+    "type": "LOADER TRACKED",
+    "engine": "CATERPILLAR 3116",
+    "equipment": "CATERPILLAR 963B"
+   },
+   {
+    "type": "LOADER TRACKED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR 973"
+   },
+   {
+    "type": "LOADER WHEELED",
+    "engine": "CATERPILLAR 3412TA",
+    "equipment": "CATERPILLAR 990"
+   },
+   {
+    "type": "LOADER WHEELED",
+    "engine": "CATERPILLAR 3412TAE1",
+    "equipment": "CATERPILLAR 990 II"
+   },
+   {
+    "type": "LOADER WHEELED",
+    "engine": "CATERPILLAR C27TA ACERT",
+    "equipment": "CATERPILLAR 990H"
+   },
+   {
+    "type": "LOADER WHEELED",
+    "engine": "CATERPILLAR 3412",
+    "equipment": "CATERPILLAR 992D"
+   },
+   {
+    "type": "LOADER WHEELED",
+    "engine": "CATERPILLAR 3508TA",
+    "equipment": "CATERPILLAR 992G"
+   },
+   {
+    "type": "LOADER WHEELED",
+    "engine": "CATERPILLAR C32 ACERT",
+    "equipment": "CATERPILLAR 992K"
+   },
+   {
+    "type": "LOADER WHEELED",
+    "engine": "CATERPILLAR C32TA ACERT",
+    "equipment": "CATERPILLAR 993K"
+   },
+   {
+    "type": "LOADER WHEELED",
+    "engine": "CATERPILLAR 3516TA",
+    "equipment": "CATERPILLAR 994"
+   },
+   {
+    "type": "LOADER WHEELED",
+    "engine": "CATERPILLAR 3516TAE",
+    "equipment": "CATERPILLAR 994D"
+   },
+   {
+    "type": "LOADER WHEELED",
+    "engine": "CATERPILLAR 3516BTA",
+    "equipment": "CATERPILLAR 994F"
+   },
+   {
+    "type": "LOADER WHEELED",
+    "engine": "CATERPILLAR 3516BTA",
+    "equipment": "CATERPILLAR 994G"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR 3304",
+    "equipment": "CATERPILLAR CS643"
+   },
+   {
+    "type": "COMPACTOR",
+    "engine": "CATERPILLAR 3304",
+    "equipment": "CATERPILLAR CS653"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3412",
+    "equipment": "CATERPILLAR D10N"
+   },
+   {
+    "type": "DOZER TRACKED",
+    "engine": "CATERPILLAR 3412E",
+    "equipment": "CATERPILLAR D10R"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR C27 ACERT",
+    "equipment": "CATERPILLAR D10T"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3508",
+    "equipment": "CATERPILLAR D11N"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3508B",
+    "equipment": "CATERPILLAR D11R"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3508B",
+    "equipment": "CATERPILLAR D11R CD"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR C32 ACERT",
+    "equipment": "CATERPILLAR D11T"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3116",
+    "equipment": "CATERPILLAR D20D"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D250B"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3116",
+    "equipment": "CATERPILLAR D250D"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D250E"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3306TA",
+    "equipment": "CATERPILLAR D250E II"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D25C"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3306TA",
+    "equipment": "CATERPILLAR D25D"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D300B"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D300D"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D300E"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3306TA",
+    "equipment": "CATERPILLAR D300E II"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D30C"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3306TA",
+    "equipment": "CATERPILLAR D30D"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D350C"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D350D"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3406",
+    "equipment": "CATERPILLAR D350E"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3406CE2",
+    "equipment": "CATERPILLAR D350E II"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D35C"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3406",
+    "equipment": "CATERPILLAR D35HP"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3406TA",
+    "equipment": "CATERPILLAR D400"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3406",
+    "equipment": "CATERPILLAR D400D"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3406",
+    "equipment": "CATERPILLAR D400E"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3406CE3",
+    "equipment": "CATERPILLAR D400E II"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3406",
+    "equipment": "CATERPILLAR D40D"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3408",
+    "equipment": "CATERPILLAR D44B"
+   },
+   {
+    "type": "DUMP TRUCK ARTICULATED",
+    "engine": "CATERPILLAR 3408",
+    "equipment": "CATERPILLAR D550B"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3116",
+    "equipment": "CATERPILLAR D5M LGP"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3116",
+    "equipment": "CATERPILLAR D5M XL"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3126B",
+    "equipment": "CATERPILLAR D5N LGP"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3126B",
+    "equipment": "CATERPILLAR D5N XL"
+   },
+   {
+    "type": "DOZER TRACKED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D6G"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D6H"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D6H II"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D6H II LGP"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D6H II XL"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D6H II XR"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D6H LGP"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3116",
+    "equipment": "CATERPILLAR D6M LGP"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3116",
+    "equipment": "CATERPILLAR D6M XL"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR C6.6 ACERT",
+    "equipment": "CATERPILLAR D6N LGP"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR C6.6 ACERT",
+    "equipment": "CATERPILLAR D6N XL"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D6R"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR C9",
+    "equipment": "CATERPILLAR D6R II"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR C9",
+    "equipment": "CATERPILLAR D6R II LGP"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR C9",
+    "equipment": "CATERPILLAR D6R II XL"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR C9",
+    "equipment": "CATERPILLAR D6R II XW"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D6R LGP"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D6R XL"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D6R XR"
+   },
+   {
+    "type": "DOZER TRACKED",
+    "engine": "CATERPILLAR 3306 DITA",
+    "equipment": "CATERPILLAR D7G II"
+   },
+   {
+    "type": "DOZER TRACKED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D7H II LGP"
+   },
+   {
+    "type": "DOZER TRACKED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D7H II XR"
+   },
+   {
+    "type": "DOZER TRACKED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D7H LGP"
+   },
+   {
+    "type": "DOZER TRACKED",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR D7H XR"
+   },
+   {
+    "type": "DOZER TRACKED",
+    "engine": "CATERPILLAR C9 ACERT",
+    "equipment": "CATERPILLAR D7R"
+   },
+   {
+    "type": "DOZER TRACKED",
+    "engine": "CATERPILLAR 3176C",
+    "equipment": "CATERPILLAR D7R II"
+   },
+   {
+    "type": "DOZER TRACKED",
+    "engine": "CATERPILLAR 3176C",
+    "equipment": "CATERPILLAR D7R II LGP"
+   },
+   {
+    "type": "DOZER TRACKED",
+    "engine": "CATERPILLAR 3176C",
+    "equipment": "CATERPILLAR D7R II XR"
+   },
+   {
+    "type": "DOZER TRACKED",
+    "engine": "CATERPILLAR C9 ACERT",
+    "equipment": "CATERPILLAR D7R LGP"
+   },
+   {
+    "type": "DOZER TRACKED",
+    "engine": "CATERPILLAR C9 ACERT",
+    "equipment": "CATERPILLAR D7R XR"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3406",
+    "equipment": "CATERPILLAR D8N"
+   },
+   {
+    "type": "DOZER TRACKED",
+    "engine": "CATERPILLAR 3406C",
+    "equipment": "CATERPILLAR D8R"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3406E",
+    "equipment": "CATERPILLAR D8R II"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR C15 ACERT",
+    "equipment": "CATERPILLAR D8T"
+   },
+   {
+    "type": "LOADER",
+    "engine": "FIAT 8215",
+    "equipment": "FIAT FR20"
+   },
+   {
+    "type": "LOADER",
+    "engine": "FIAT 8215",
+    "equipment": "FIATALLIS FR20"
+   },
+   {
+    "type": "DOZER TRACKED",
+    "engine": "CUMMINS NH220",
+    "equipment": "KOMATSU D60S"
+   },
+   {
+    "type": "DOZER TRACKED",
+    "engine": "- D65A",
+    "equipment": "KOMATSU D65A"
+   },
+   {
+    "type": "DOZER TRACKED",
+    "engine": "CUMMINS NH220",
+    "equipment": "KOMATSU D75S"
+   },
+   {
+    "type": "DOZER TRACKED",
+    "engine": "- D85A",
+    "equipment": "KOMATSU D85A"
+   }
+  ]
+ },
+ "EH64166": {
+  "codigo_base": "P164166",
+  "source_file": "donaldson_hydraulic_results.json",
+  "list_md5": "ad6ed923fd84d174757901043da87de8",
+  "equipment": [
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CUMMINS NTA855",
+    "equipment": "BEML BH35"
+   },
+   {
+    "type": "GRADER",
+    "engine": "CATERPILLAR 3306",
+    "equipment": "CATERPILLAR 143H"
+   },
+   {
+    "type": "GRADER",
+    "engine": "CATERPILLAR 3176TAA(C)",
+    "equipment": "CATERPILLAR 163H"
+   },
+   {
+    "type": "EXCAVATOR TRACKED",
+    "engine": "CATERPILLAR 3412B HEUI",
+    "equipment": "CATERPILLAR 5110B"
+   },
+   {
+    "type": "EXCAVATOR TRACKED",
+    "engine": "CATERPILLAR 3508B",
+    "equipment": "CATERPILLAR 5130B"
+   },
+   {
+    "type": "EXCAVATOR TRACKED",
+    "engine": "CATERPILLAR 3516B",
+    "equipment": "CATERPILLAR 5230B"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR C15 ACERT",
+    "equipment": "CATERPILLAR 770"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR C18 ACERT",
+    "equipment": "CATERPILLAR 772"
+   },
+   {
+    "type": "HAUL TRUCK",
+    "engine": "CATERPILLAR C18TAACERT",
+    "equipment": "CATERPILLAR 772"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR C27TA ACERT",
+    "equipment": "CATERPILLAR 773F"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR C27TA ACERT",
+    "equipment": "CATERPILLAR 775F"
+   },
+   {
+    "type": "DUMP TRUCK",
+    "engine": "CATERPILLAR 3524B",
+    "equipment": "CATERPILLAR 797B"
+   },
+   {
+    "type": "LOADER WHEELED",
+    "engine": "CATERPILLAR C32TA ACERT",
+    "equipment": "CATERPILLAR 993K"
+   },
+   {
+    "type": "DOZER TRACKED",
+    "engine": "CATERPILLAR 3412E",
+    "equipment": "CATERPILLAR D10R"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3508B",
+    "equipment": "CATERPILLAR D11R"
+   },
+   {
+    "type": "TRACTOR TRACKED",
+    "engine": "CATERPILLAR 3508B",
+    "equipment": "CATERPILLAR D11R CD"
+   },
+   {
+    "type": "TRACTOR",
+    "engine": "JOHN DEERE 6068TRT",
+    "equipment": "CLAAS ARES 617ATZ"
+   },
+   {
+    "type": "TRACTOR",
+    "engine": "JOHN DEERE 6068TRT",
+    "equipment": "CLAAS ARES 657"
+   },
+   {
+    "type": "TRACTOR",
+    "engine": "JOHN DEERE 6068TRT",
+    "equipment": "CLAAS ARES 697ATZ"
+   },
+   {
+    "type": "TRACTOR",
+    "engine": "JOHN DEERE 6068T",
+    "equipment": "CLAAS ARES 816"
+   },
+   {
+    "type": "LOADER",
+    "engine": "FORD 655",
+    "equipment": "FORD 655"
+   },
+   {
+    "type": "BACKHOE LOADER",
+    "engine": "FORD 655C",
+    "equipment": "FORD 655C"
+   },
+   {
+    "type": "DRILLING EQUIPMENT",
+    "engine": "- CHA800",
+    "equipment": "TAMROCK CHA800"
+   }
+  ]
+ },
+ "EH665875": {
+  "codigo_base": "P165875",
+  "source_file": "donaldson_hydraulic_results.json",
+  "list_md5": "b915e878472ac785383d1f3816d21693",
+  "equipment": [
+   {
+    "type": "SPRAYER",
+    "engine": "CUMMINS 6BTA5.9",
+    "equipment": "AG CHEM EQUIPMENT 663"
+   },
+   {
+    "type": "SPRAYER",
+    "engine": "CUMMINS 6BTA5.9",
+    "equipment": "AG CHEM EQUIPMENT 664"
+   },
+   {
+    "type": "SPRAYER",
+    "engine": "CUMMINS 6BTA5.9",
+    "equipment": "AG CHEM EQUIPMENT 844"
+   },
+   {
+    "type": "SPRAYER",
+    "engine": "CUMMINS 6BTA5.9",
+    "equipment": "AG CHEM EQUIPMENT 854"
+   },
+   {
+    "type": "WINDROWER",
+    "engine": "CUMMINS QSB4.5",
+    "equipment": "MACDON M1170"
+   },
+   {
+    "type": "WINDROWER",
+    "engine": "CUMMINS QSB6.7",
+    "equipment": "MACDON M1240"
+   },
+   {
+    "type": "TRENCHER",
+    "engine": "CUMMINS 4BT3.9",
+    "equipment": "VERMEER V8550A"
+   }
+  ]
+ },
+ "EH65015": {
+  "codigo_base": "P165015",
+  "source_file": "donaldson_hydraulic_results.json",
+  "list_md5": "37cb13539d1f3c613ba4344d9afccf3b",
+  "equipment": [
+   {
+    "type": "BOOM LIFT",
+    "engine": "DEUTZ F3L1011",
+    "equipment": "GENIE Z-45/25 RT"
+   },
+   {
+    "type": "CONCRETE MIXER",
+    "engine": "PACCAR MX13",
+    "equipment": "MCNEILUS Bridgemaster"
+   },
+   {
+    "type": "CONCRETE MIXER",
+    "engine": "PACCAR MX11",
+    "equipment": "MCNEILUS Bridgemaster"
+   }
+  ]
+ }
+}

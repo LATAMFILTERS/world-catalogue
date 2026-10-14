@@ -3,6 +3,8 @@ import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { IndustryFilterCarousel } from './IndustryFilterCarousel';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
+import { marineText } from '@/lib/marine-i18n';
+import type { PageLang } from '@/lib/localized-routes';
 
 const BASE_URL = 'https://elimfilters.com';
 const PAGE_URL = `${BASE_URL}/industries/marine/`;
@@ -50,15 +52,17 @@ const questions = [
   ['Can ELIMFILTERS identify a marine filter from an OEM or part number?', 'Yes. If an OEM reference or current filter number is known, Part Search provides the fastest route to cross-reference and application information. For an engineering review, include the vessel, engine, protected system and operating conditions.'],
 ] as const;
 
-export function MarineIndustryPage() {
+export function MarineIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
+  const pageUrl = `${BASE_URL}${lang === 'en' ? '' : `/${lang}`}/industries/marine/`;
   const schema = {
     '@context': 'https://schema.org',
     '@graph': [
       {
         '@type': 'WebPage',
-        '@id': `${PAGE_URL}#page`,
-        url: PAGE_URL,
-        name: 'Marine Filtration Systems',
+        '@id': `${pageUrl}#page`,
+        url: pageUrl,
+        name: lang === 'es' ? 'Sistemas de filtración marina' : lang === 'pt' ? 'Sistemas de filtração marítima' : 'Marine Filtration Systems',
+        inLanguage: lang === 'pt' ? 'pt-BR' : lang,
         description: 'Marine filtration systems for commercial vessels, workboats, marine engines, deck machinery and onboard hydraulic equipment operating under salt air, humidity, fuel-water exposure and extended duty.',
         isPartOf: { '@id': `${BASE_URL}/#website` },
         publisher: { '@id': `${BASE_URL}/#organization` },
@@ -82,27 +86,27 @@ export function MarineIndustryPage() {
           { '@type': 'Thing', name: 'NANOFORCE' },
           { '@type': 'Thing', name: 'SYNTRAX' },
         ],
-        breadcrumb: { '@id': `${PAGE_URL}#breadcrumb` },
+        breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
       },
       {
         '@type': 'BreadcrumbList',
-        '@id': `${PAGE_URL}#breadcrumb`,
+        '@id': `${pageUrl}#breadcrumb`,
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Home', item: `${BASE_URL}/` },
           { '@type': 'ListItem', position: 2, name: 'Industry', item: `${BASE_URL}/industries/` },
-          { '@type': 'ListItem', position: 3, name: 'Marine Filtration Systems', item: PAGE_URL },
+          { '@type': 'ListItem', position: 3, name: 'Marine Filtration Systems', item: pageUrl },
         ],
       },
       {
         '@type': 'ItemList',
-        '@id': `${PAGE_URL}#equipment`,
+        '@id': `${pageUrl}#equipment`,
         name: 'Marine equipment applications',
-        itemListElement: equipment.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name })),
+        itemListElement: equipment.map((name, index) => ({ '@type': 'ListItem', position: index + 1, name: marineText(lang, name) })),
       },
       {
         '@type': 'FAQPage',
-        '@id': `${PAGE_URL}#faq`,
-        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+        '@id': `${pageUrl}#faq`,
+        mainEntity: questions.map(([q, a]) => ({ '@type': 'Question', name: marineText(lang, q), acceptedAnswer: { '@type': 'Answer', text: marineText(lang, a) } })),
       },
     ],
   };
@@ -118,40 +122,40 @@ export function MarineIndustryPage() {
         </video>
         <div style={heroShade} />
         <div style={heroInner}>
-          <p style={eyebrow}>MARINE / VOYAGE ASSET PROTECTION</p>
-          <h1 style={heroTitle}>Marine Filtration<br /><span style={yellow}>Systems</span></h1>
-          <p style={heroPromise}>Protect propulsion, fuel and hydraulic systems before the vessel leaves service access behind.</p>
-          <p style={heroLead}>Fuel-water separation, air intake, lubrication and hydraulic contamination control for commercial vessels, workboats, marine engines, deck machinery and auxiliary systems operating under salt air, humidity and extended duty.</p>
-          <p style={heroLine}><strong>MARINECLEAN™ Marine Filtration Line</strong> — the ELIMFILTERS product line for marine filtration applications.</p>
+          <p style={eyebrow}>{marineText(lang, "MARINE / VOYAGE ASSET PROTECTION")}</p>
+          <h1 style={heroTitle}>{marineText(lang, "Marine Filtration")}<br /><span style={yellow}>{marineText(lang, "Systems")}</span></h1>
+          <p style={heroPromise}>{marineText(lang, "Protect propulsion, fuel and hydraulic systems before the vessel leaves service access behind.")}</p>
+          <p style={heroLead}>{marineText(lang, "Fuel-water separation, air intake, lubrication and hydraulic contamination control for commercial vessels, workboats, marine engines, deck machinery and auxiliary systems operating under salt air, humidity and extended duty.")}</p>
+          <p style={heroLine}><strong>{marineText(lang, "MARINECLEAN™ Marine Filtration Line")}</strong> {marineText(lang, "— the ELIMFILTERS product line for marine filtration applications.")}</p>
           <div style={actions}>
-            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY MARINE PROTECTION PATH</Link>
-            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a>
+            <Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{marineText(lang, "IDENTIFY MY MARINE PROTECTION PATH")}</Link>
+            <a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{marineText(lang, "FIND MY FILTER")}</a>
           </div>
         </div>
       </section>
 
       <section style={directSection} aria-labelledby="marine-direct-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>DIRECT ANSWER</p>
-          <h2 id="marine-direct-title" style={directTitle}>What defines the correct marine filtration strategy?</h2>
-          <p style={directText}>Marine filtration begins with the vessel and contamination path, then resolves fuel-water exposure, protected system, component sensitivity, voyage duty, maintenance access and validated application evidence. The correct filter should not be selected from vessel category or service interval alone.</p>
+          <p style={eyebrow}>{marineText(lang, "DIRECT ANSWER")}</p>
+          <h2 id="marine-direct-title" style={directTitle}>{marineText(lang, "What defines the correct marine filtration strategy?")}</h2>
+          <p style={directText}>{marineText(lang, "Marine filtration begins with the vessel and contamination path, then resolves fuel-water exposure, protected system, component sensitivity, voyage duty, maintenance access and validated application evidence. The correct filter should not be selected from vessel category or service interval alone.")}</p>
         </div>
       </section>
 
       <section style={lineSection} aria-labelledby="marineclean-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>MARINE PRODUCT LINE</p>
-          <h2 id="marineclean-title" style={directTitle}>MARINECLEAN™ Marine Filtration Line</h2>
-          <p style={directText}>MARINECLEAN™ is the ELIMFILTERS line that groups filtration products for marine applications. It defines the marine product class, not the filtration technology itself. A MARINECLEAN™ product is assigned the ELIMFILTERS technology appropriate to the protected system—for example HYDROCORE™ for fuel/water separation, MACROCORE™ for air intake, NANOFORCE™ for hydraulic protection or SYNTRAX™ for lubrication.</p>
+          <p style={eyebrow}>{marineText(lang, "MARINE PRODUCT LINE")}</p>
+          <h2 id="marineclean-title" style={directTitle}>{marineText(lang, "MARINECLEAN™ Marine Filtration Line")}</h2>
+          <p style={directText}>{marineText(lang, "MARINECLEAN™ is the ELIMFILTERS line that groups filtration products for marine applications. It defines the marine product class, not the filtration technology itself. A MARINECLEAN™ product is assigned the ELIMFILTERS technology appropriate to the protected system—for example HYDROCORE™ for fuel/water separation, MACROCORE™ for air intake, NANOFORCE™ for hydraulic protection or SYNTRAX™ for lubrication.")}</p>
         </div>
       </section>
 
       <section style={section} aria-labelledby="reality-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>AT-SEA OPERATING REALITY</p>
-          <h2 id="reality-title" style={sectionTitle}>Water, salt and distance change the protection problem.</h2>
-          <p style={wideText}>Marine equipment operates inside a contamination environment that follows the vessel. Fuel quality, humidity, salt exposure and service access can change across storage, port operations and time underway.</p>
-          <div style={pressureGrid}>{operatingPressures.map(([title, text]) => <article key={title} style={pressureCard}><h3 style={cardTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          <p style={eyebrow}>{marineText(lang, "AT-SEA OPERATING REALITY")}</p>
+          <h2 id="reality-title" style={sectionTitle}>{marineText(lang, "Water, salt and distance change the protection problem.")}</h2>
+          <p style={wideText}>{marineText(lang, "Marine equipment operates inside a contamination environment that follows the vessel. Fuel quality, humidity, salt exposure and service access can change across storage, port operations and time underway.")}</p>
+          <div style={pressureGrid}>{operatingPressures.map(([title, text]) => <article key={title} style={pressureCard}><h3 style={cardTitle}>{marineText(lang, title)}</h3><p style={bodyText}>{marineText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
@@ -159,71 +163,71 @@ export function MarineIndustryPage() {
         <div style={equipmentGrid}>
           <div style={equipmentMedia}><img src="/images/marine-2_converted.avif" alt="Commercial marine vessel operating in a saltwater environment" style={equipmentImage} /></div>
           <div style={equipmentCopy}>
-            <h2 id="equipment-title" style={sectionTitle}>Different onboard systems. Different contamination consequences.</h2>
-            <p style={wideText}>Main propulsion, auxiliary power, steering and deck machinery share the same vessel but not the same contamination mechanism, operating load or service consequence.</p>
-            <div role="list" aria-label="Marine equipment applications" style={equipmentList}>{equipment.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{asset}</span></div>)}</div>
+            <h2 id="equipment-title" style={sectionTitle}>{marineText(lang, "Different onboard systems. Different contamination consequences.")}</h2>
+            <p style={wideText}>{marineText(lang, "Main propulsion, auxiliary power, steering and deck machinery share the same vessel but not the same contamination mechanism, operating load or service consequence.")}</p>
+            <div role="list" aria-label="Marine equipment applications" style={equipmentList}>{equipment.map((asset) => <div role="listitem" key={asset} style={equipmentRow}><span style={equipmentName}>{marineText(lang, asset)}</span></div>)}</div>
           </div>
         </div>
       </section>
 
       <section style={section} aria-labelledby="path-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>CONTAMINATION PATHWAYS</p>
-          <h2 id="path-title" style={sectionTitle}>Start with what enters the vessel system. Then engineer the protection.</h2>
-          <p style={wideText}>Marine selection should connect each contamination source to the protected system, the appropriate ELIMFILTERS technology and finally to a validated part.</p>
-          <div className="industry-pathway-grid" style={pathwayGrid}>{protection.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>CONTAMINATION SOURCE</span><strong style={pathwaySource}>{source}</strong><p style={smallText}>{detail}</p></div><div style={pathwayDivider} /><div><span style={smallLabel}>PROTECTION SYSTEM</span><strong style={pathwaySystem}>{system}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>ELIMFILTERS TECHNOLOGY</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>EXPLORE →</span></Link></article>)}</div>
+          <p style={eyebrow}>{marineText(lang, "CONTAMINATION PATHWAYS")}</p>
+          <h2 id="path-title" style={sectionTitle}>{marineText(lang, "Start with what enters the vessel system. Then engineer the protection.")}</h2>
+          <p style={wideText}>{marineText(lang, "Marine selection should connect each contamination source to the protected system, the appropriate ELIMFILTERS technology and finally to a validated part.")}</p>
+          <div className="industry-pathway-grid" style={pathwayGrid}>{protection.map(([source, detail, system, technology, href]) => <article key={system} style={pathwayCard}><div><span style={smallLabel}>{marineText(lang, "CONTAMINATION SOURCE")}</span><strong style={pathwaySource}>{marineText(lang, source)}</strong><p style={smallText}>{marineText(lang, detail)}</p></div><div style={pathwayDivider} /><div><span style={smallLabel}>{marineText(lang, "PROTECTION SYSTEM")}</span><strong style={pathwaySystem}>{marineText(lang, system)}</strong></div><Link href={href} style={technologyLink}><span style={smallLabelYellow}>{marineText(lang, "ELIMFILTERS TECHNOLOGY")}</span><strong style={technologyName}>{technology}</strong><span style={technologyCta}>{marineText(lang, "EXPLORE →")}</span></Link></article>)}</div>
         </div>
       </section>
 
       <section style={principleSection}>
-        <div style={principle}><span style={principleLabel}>MARINE ENGINEERING PRINCIPLE</span><p style={principleText}>The filtration decision must resolve the vessel, contamination pathway, protected interface, voyage duty, service access and application evidence before a product number is accepted.</p></div>
+        <div style={principle}><span style={principleLabel}>{marineText(lang, "MARINE ENGINEERING PRINCIPLE")}</span><p style={principleText}>{marineText(lang, "The filtration decision must resolve the vessel, contamination pathway, protected interface, voyage duty, service access and application evidence before a product number is accepted.")}</p></div>
       </section>
 
-      <IndustryFilterCarousel dutyClass="HD" industryName="Marine" />
+      <IndustryFilterCarousel dutyClass="HD" industryName="Marine" lang={lang} />
 
       <section style={impactSection} aria-labelledby="impact-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>VOYAGE CONTINUITY</p>
-          <h2 id="impact-title" style={sectionTitle}>Protect the operating chain before contamination becomes an at-sea constraint.</h2>
-          <p style={wideText}>Marine filtration protects more than a component. It supports propulsion, fuel delivery, steering, deck functions and maintenance predictability across the voyage.</p>
-          <div style={impactGrid}>{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          <p style={eyebrow}>{marineText(lang, "VOYAGE CONTINUITY")}</p>
+          <h2 id="impact-title" style={sectionTitle}>{marineText(lang, "Protect the operating chain before contamination becomes an at-sea constraint.")}</h2>
+          <p style={wideText}>{marineText(lang, "Marine filtration protects more than a component. It supports propulsion, fuel delivery, steering, deck functions and maintenance predictability across the voyage.")}</p>
+          <div style={impactGrid}>{consequences.map(([title, text]) => <article key={title} style={impactCard}><h3 style={impactTitle}>{marineText(lang, title)}</h3><p style={bodyText}>{marineText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={section} aria-labelledby="decision-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>FROM VESSEL CONDITION TO PART</p>
-          <h2 id="decision-title" style={sectionTitle}>Resolve the marine application in five decisions.</h2>
+          <p style={eyebrow}>{marineText(lang, "FROM VESSEL CONDITION TO PART")}</p>
+          <h2 id="decision-title" style={sectionTitle}>{marineText(lang, "Resolve the marine application in five decisions.")}</h2>
           <div style={decisionGrid}>{[
             ['Vessel / Asset', 'Identify the vessel, engine, steering system, deck machinery or auxiliary equipment.'],
             ['Exposure', 'Define fuel-water risk, salt air, humidity, particulate, hydraulic contamination and storage conditions.'],
             ['Voyage Duty', 'Establish operating hours, engine load, voyage duration, port access and maintenance constraints.'],
             ['Protection', 'Match the contamination mechanism to fuel, air intake, lubrication or hydraulic protection.'],
             ['Application Evidence', 'Validate the final filter using OEM reference, dimensions and documented application evidence.'],
-          ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{title}</h3><p style={bodyText}>{text}</p></article>)}</div>
+          ].map(([title, text]) => <article key={title} style={decisionCard}><h3 style={cardTitle}>{marineText(lang, title)}</h3><p style={bodyText}>{marineText(lang, text)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={evidenceSection} aria-labelledby="evidence-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>APPLICATION EVIDENCE</p>
-          <h2 id="evidence-title" style={sectionTitle}>A marine cross-reference still has to match the actual vessel application.</h2>
-          <p style={wideText}>Final identification should reconcile the known reference, vessel or engine context, dimensions, protected system and operating conditions. Where evidence is incomplete, the application should remain under review rather than be treated as confirmed.</p>
+          <p style={eyebrow}>{marineText(lang, "APPLICATION EVIDENCE")}</p>
+          <h2 id="evidence-title" style={sectionTitle}>{marineText(lang, "A marine cross-reference still has to match the actual vessel application.")}</h2>
+          <p style={wideText}>{marineText(lang, "Final identification should reconcile the known reference, vessel or engine context, dimensions, protected system and operating conditions. Where evidence is incomplete, the application should remain under review rather than be treated as confirmed.")}</p>
         </div>
       </section>
 
       <section style={faqSection} aria-labelledby="faq-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>MARINE FILTRATION QUESTIONS</p>
-          <h2 id="faq-title" style={sectionTitle}>What vessel operators and maintenance teams need to know.</h2>
-          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{q}</h3><p style={faqAnswer}>{a}</p></article>)}</div>
+          <p style={eyebrow}>{marineText(lang, "MARINE FILTRATION QUESTIONS")}</p>
+          <h2 id="faq-title" style={sectionTitle}>{marineText(lang, "What vessel operators and maintenance teams need to know.")}</h2>
+          <div style={faqList}>{questions.map(([q, a]) => <article key={q} style={faqItem}><h3 style={faqQuestion}>{marineText(lang, q)}</h3><p style={faqAnswer}>{marineText(lang, a)}</p></article>)}</div>
         </div>
       </section>
 
       <section style={conversionSection}>
         <div style={conversionGrid}>
-          <div><p style={eyebrow}>HAVE A VESSEL OR CONTAMINATION PROBLEM?</p><h2 style={conversionTitle}>Identify the protection path before the next voyage depends on the part.</h2><p style={conversionText}>Send the vessel or equipment, engine, protected system, fuel and environmental conditions, duty cycle and any known OEM or filter reference.</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>IDENTIFY MY MARINE PROTECTION PATH</Link></div>
-          <div style={conversionSecondary}><div><p style={eyebrow}>ALREADY HAVE A PART NUMBER?</p><h3 style={conversionSubTitle}>Go directly to Part Search.</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>FIND MY FILTER</a></div><div style={divider} /><div><p style={eyebrow}>SERVE MARINE CUSTOMERS?</p><h3 style={conversionSubTitle}>Evaluate distributor fit.</h3><Link href="/distributor-application/" style={secondaryButton}>BECOME A DISTRIBUTOR</Link></div></div>
+          <div><p style={eyebrow}>{marineText(lang, "HAVE A VESSEL OR CONTAMINATION PROBLEM?")}</p><h2 style={conversionTitle}>{marineText(lang, "Identify the protection path before the next voyage depends on the part.")}</h2><p style={conversionText}>{marineText(lang, "Send the vessel or equipment, engine, protected system, fuel and environmental conditions, duty cycle and any known OEM or filter reference.")}</p><Link href="/contact/" data-conversion-action="application-support" style={primaryButton}>{marineText(lang, "IDENTIFY MY MARINE PROTECTION PATH")}</Link></div>
+          <div style={conversionSecondary}><div><p style={eyebrow}>{marineText(lang, "ALREADY HAVE A PART NUMBER?")}</p><h3 style={conversionSubTitle}>{marineText(lang, "Go directly to Part Search.")}</h3><a href="https://part-search.elimfilters.com/" data-conversion-action="product-intelligence" style={secondaryButton}>{marineText(lang, "FIND MY FILTER")}</a></div><div style={divider} /><div><p style={eyebrow}>{marineText(lang, "SERVE MARINE CUSTOMERS?")}</p><h3 style={conversionSubTitle}>{marineText(lang, "Evaluate distributor fit.")}</h3><Link href="/distributor-application/" style={secondaryButton}>{marineText(lang, "BECOME A DISTRIBUTOR")}</Link></div></div>
         </div>
       </section>
     </main>
