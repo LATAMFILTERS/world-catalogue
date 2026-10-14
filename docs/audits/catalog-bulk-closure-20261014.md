@@ -12,9 +12,9 @@ Producción catalogo_elimfilters, puerto 5432, consulta de solo lectura: 13,406 
 |---|---:|
 | Reevaluación LD con identidad y controles vigentes, incluyendo auditorías MANN099/100 |256|
 | Reevaluación posterior a clasificación de referencias |62|
-| Estados FRAM antiguos contradictorios con la autoridad y a aprobada |986|
+| Estados FRAM antiguos contradictorios con la autoridad ya aprobada |986|
 | Referencias FRAM comprobadas de nuevo mediante sus páginas oficiales |10|
-| EA 31877 y EL 36006: ficha exacta y aplicaciones publicadas por FRAM |2|
+| EA31877 y EL36006: ficha exacta y aplicaciones publicadas por FRAM |2|
 | Identidades MANN faltantes: documento, tipo, GTIN e imagen coincidentes |42|
 | Segundo lote de identidades MANN, reconociendo el campo explícito model_family |108|
 | Reevaluación posterior a clasificación Virgis |6|
@@ -31,7 +31,7 @@ El lote MANN consultó 3,254 códigos originales y confirmó 2,333 mediante coin
 
 Los modelos no se deducen de años ni de model_type. El ajuste de lectura admite un model_family explícito no ambiguo cuando no existe y a una identidad de modelo o vehículo reconocida. Mantiene los hashes de las aplicaciones antes válidas y la exigencia de evidencia al escribir aplicaciones.
 
-EA 31877 y EL 36006 fueron corregidos mediante el servicio gobernado de aplicaciones, con la URL y el SHA256 del documento de FRAM. Se almacenaron 12 y 66 aplicaciones respectivamente, sin inventar códigos de motor. Se verificó que no surgieran regresiones en las promociones MANN.
+EA31877 y EL36006 fueron corregidos mediante el servicio gobernado de aplicaciones, con la URL y el SHA256 del documento de FRAM. Se almacenaron 12 y 66 aplicaciones respectivamente, sin inventar códigos de motor. Se verificó que no surgieran regresiones en las promociones MANN.
 
 La base carecía de 16 columnas usadas por el servicio relacional vigente. Se añadieron únicamente las definiciones aditivas de las migraciones 112/113, sin ejecutar su backfill. Se respaldaron las 296,058 filas completas de la tabla afectada, sus columnas e índices y se comprobó que los valores originales no cambiaron. Las filas antiguas quedaron UNVERIFIED en los nuevos campos de evidencia; no se certificaron por añadir columnas.
 
