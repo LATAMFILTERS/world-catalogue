@@ -1322,6 +1322,16 @@ function renderCard(p, index) {
   const specs = [...dimSpecs, ...perfSpecs]; // kept for empty-check
 
   const { oem, comp } = splitCrossReferences(p.oem_codes, p.competitor_codes);
+  // Proprietary ELIMFILTERS products use their own canonical identity as the OEM
+  // display authority without duplicating codigo_base inside oem_codes.
+  const oemDisplay = [...oem];
+  const canonicalBrand = normalizeBrand(p.canonical_source_brand || '');
+  const canonicalCode = String(p.canonical_source_code || '').toUpperCase();
+  if (canonicalBrand === 'ELIMFILTERS' && canonicalCode && canonicalCode === String(sku).toUpperCase()) {
+    const key = canonicalBrand + '|' + canonicalCode;
+    const exists = oemDisplay.some(r => (r.brand + '|' + r.code) === key);
+    if (!exists) oemDisplay.unshift({ brand: canonicalBrand, code: canonicalCode });
+  }
   const isLD = p.duty === 'LIGHT_DUTY';
   const vehicleApps = Array.isArray(p.vehicle_applications) ? p.vehicle_applications : [];
   const equipApps   = Array.isArray(p.equipment_applications) ? p.equipment_applications : [];
@@ -1370,14 +1380,14 @@ function renderCard(p, index) {
             </div>` : ''}
           </div>` : ''}
 
-        ${(oem.length || comp.length || apps.length) ? `
+        ${(oemDisplay.length || comp.length || apps.length) ? `
           <div class="columns-container">
             <!-- OEM Column -->
             <div>
               <p class="refs-title">${T.oemTitle}</p>
               <div class="refs-grid">
-                ${oem.length 
-                  ? oem.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${esc(r.brand)}</span>` : '<span></span>'}<span class="ref-code">${esc(r.code)}</span></span>`).join('')
+                ${oemDisplay.length 
+                  ? oemDisplay.map(r => `<span class="ref-chip">${r.brand ? `<span class="ref-brand">${esc(r.brand)}</span>` : '<span></span>'}<span class="ref-code">${esc(r.code)}</span></span>`).join('')
                   : `<span style="font-family:'JetBrains Mono',monospace;font-size:0.65rem;color:rgba(255,255,255,0.15);padding:0.3rem 0;">${T.specNoRefs}</span>`
                 }
               </div>
