@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import type { KCComparison, KCComparisonCategory } from '@/lib/knowledge-center-data';
 import RecommendationBlock from '@/components/knowledge-center/RecommendationBlock';
 
@@ -100,7 +101,7 @@ export default function ComparisonContent({
               color: 'rgba(255,255,255,0.3)',
               letterSpacing: '0.08em',
               marginBottom: '0.5rem',
-            }}>ENGINEERING OBJECTIVE</p>
+            }}><PublicUiText textKey="publicUi.text41">{"ENGINEERING OBJECTIVE"}</PublicUiText></p>
             <p style={{
               fontFamily: 'Inter, sans-serif',
               fontSize: '0.85rem',
@@ -118,7 +119,7 @@ export default function ComparisonContent({
               color: 'rgba(255,255,255,0.3)',
               letterSpacing: '0.08em',
               marginBottom: '0.5rem',
-            }}>COMPARISON SCOPE</p>
+            }}><PublicUiText textKey="publicUi.text42">{"COMPARISON SCOPE"}</PublicUiText></p>
             <p style={{
               fontFamily: 'Inter, sans-serif',
               fontSize: '0.85rem',

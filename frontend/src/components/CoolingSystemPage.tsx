@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { HERO_MEDIA_TREATMENT } from '@/lib/hero-media';
@@ -101,13 +102,13 @@ export function CoolingSystemPage() {
           <p style={heroLead}>ELIMFILTERS Cooling System Protection connects coolant condition, contamination exposure and equipment configuration to THERMACORE™ technology, the Coolant Filters family and a validated part number.</p>
           <div style={buttonRow}>
             <Link href="#protection-path" style={yellowButton}>IDENTIFY THE COOLING PATH</Link>
-            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}>FIND MY FILTER</a>
+            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a>
           </div>
         </div>
       </section>
 
       <section style={section}>
-        <p style={eyebrow}>DIRECT ANSWER</p>
+        <p style={eyebrow}><PublicUiText textKey="publicUi.text22">{"DIRECT ANSWER"}</PublicUiText></p>
         <div style={twoCol}>
           <h2 style={h2}>Cooling-system protection is fluid-condition control tied to the actual engine architecture.</h2>
           <div>

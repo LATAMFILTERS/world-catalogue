@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { KC_LEARNING_PATHS } from '@/lib/knowledge-center/learning-paths-registry';
 
@@ -35,9 +36,7 @@ export default function LearningPathsPage() {
           letterSpacing: '0.1em',
           color: 'rgba(255,241,45,0.5)',
           textDecoration: 'none',
-        }}>
-          ← KNOWLEDGE CENTER
-        </Link>
+        }}><PublicUiText textKey="publicUi.text32">{"← KNOWLEDGE CENTER"}</PublicUiText></Link>
       </div>
 
       {/* Hero */}

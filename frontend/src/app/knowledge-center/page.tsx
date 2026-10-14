@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import styles from './KnowledgeCenter.module.css';
 
 const HUBS=[

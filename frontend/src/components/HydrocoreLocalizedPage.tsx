@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import styles from './MacrocoreTechnologyPage.module.css';
 import { TECHNICAL_REVIEWER } from '@/lib/technical-reviewer';
 

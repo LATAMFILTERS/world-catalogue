@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { KC_INDUSTRIES, KC_INDUSTRY_DETAILS, KC_TECHNOLOGIES, KCIndustryDetail } from '@/lib/knowledge-center-data';
 

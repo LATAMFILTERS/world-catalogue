@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { PageHeader } from '@/components/PageHeader';
 import { VIDEOS } from '@/lib/video-metadata';
 

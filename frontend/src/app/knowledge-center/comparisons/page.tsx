@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { KC_COMPARISONS } from '@/lib/knowledge-center-data';
 import type { KCComparisonCategory } from '@/lib/knowledge-center-data';
 
@@ -39,9 +40,7 @@ export default function ComparisonsPage() {
           letterSpacing: '0.08em',
           display: 'block',
           marginBottom: '2.5rem',
-        }}>
-          ← KNOWLEDGE CENTER
-        </Link>
+        }}><PublicUiText textKey="publicUi.text32">{"← KNOWLEDGE CENTER"}</PublicUiText></Link>
 
         {/* Header */}
         <div style={{ marginBottom: '3rem' }}>

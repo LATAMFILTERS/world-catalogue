@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { CatalogueItem, getSlug } from '@/lib/catalogue';
 
 interface CategoryGridProps {

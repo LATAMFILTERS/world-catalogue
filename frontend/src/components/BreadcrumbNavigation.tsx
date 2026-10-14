@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { usePathname } from 'next/navigation';
 import { useEffect, useState } from 'react';
 import { trackNavigationClick, trackContextualLink } from '@/lib/analytics';

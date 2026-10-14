@@ -1,7 +1,8 @@
 'use client';
 
+import { PublicUiText } from '@/components/PublicUiText';
 import { useState, useCallback } from 'react';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import type { KCCalculator } from '@/lib/knowledge-center-data';
 import {
@@ -579,9 +580,7 @@ export default function CalculatorContent({ calc }: { calc: KCCalculator }) {
             color: 'rgba(255,241,45,0.5)',
             marginBottom: '1.25rem',
             textTransform: 'uppercase',
-          }}>
-            FORMULA
-          </h2>
+          }}><PublicUiText textKey="publicUi.text37">{"FORMULA"}</PublicUiText></h2>
           <div style={{
             fontFamily: 'JetBrains Mono, monospace',
             fontSize: '0.95rem',
@@ -791,9 +790,7 @@ export default function CalculatorContent({ calc }: { calc: KCCalculator }) {
           )}
           {calc.relatedTechnologies.length > 0 && (
             <div>
-              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.3)', marginBottom: '0.75rem' }}>
-                RELATED TECHNOLOGIES
-              </p>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.3)', marginBottom: '0.75rem' }}><PublicUiText textKey="publicUi.text24">{"RELATED TECHNOLOGIES"}</PublicUiText></p>
               {calc.relatedTechnologies.map(t => (
                 <p key={t} style={{
                   fontFamily: 'JetBrains Mono, monospace',

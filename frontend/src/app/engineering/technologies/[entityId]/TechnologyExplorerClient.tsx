@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import {
@@ -55,9 +56,7 @@ function TechnologyExplorerContent({ entityId }: { entityId: string }) {
             fontSize: '0.7rem', fontFamily: 'JetBrains Mono, monospace',
             color: 'rgba(255,255,255,0.35)', textDecoration: 'none', letterSpacing: '0.08em',
           }}
-        >
-          ← ENGINEERING INTELLIGENCE
-        </Link>
+        ><PublicUiText textKey="publicUi.text34">{"← ENGINEERING INTELLIGENCE"}</PublicUiText></Link>
       </div>
 
       {/* Hero */}

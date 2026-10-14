@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { HERO_MEDIA_TREATMENT } from '@/lib/hero-media';
@@ -114,13 +115,13 @@ export function HydraulicSystemPage() {
           <p style={heroLead}>ELIMFILTERS Hydraulic Protection organizes fluid cleanliness around pumps, valves, actuators and precision controls. The hydraulic circuit, flow, pressure context, cleanliness requirement and application evidence must be resolved before a part number is accepted.</p>
           <div style={buttonRow}>
             <Link href="#protection-path" style={yellowButton}>IDENTIFY THE HYDRAULIC PATH</Link>
-            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}>FIND MY FILTER</a>
+            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a>
           </div>
         </div>
       </section>
 
       <section style={section}>
-        <p style={eyebrow}>DIRECT ANSWER</p>
+        <p style={eyebrow}><PublicUiText textKey="publicUi.text22">{"DIRECT ANSWER"}</PublicUiText></p>
         <div style={twoCol}>
           <h2 style={h2}>Hydraulic filtration protects the tolerances that make the system work.</h2>
           <div>

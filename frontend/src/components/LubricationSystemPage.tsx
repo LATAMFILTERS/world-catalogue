@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { HERO_MEDIA_TREATMENT } from '@/lib/hero-media';
@@ -96,13 +97,13 @@ export function LubricationSystemPage() {
           <p style={heroLead}>ELIMFILTERS Lubrication Protection connects oil condition, engine duty, SYNTRAX™ filtration technology and the correct oil-filter family to validated application evidence before a part number is accepted.</p>
           <div style={buttonRow}>
             <Link href="#lubrication-path" style={yellowButton}>IDENTIFY THE LUBRICATION PATH</Link>
-            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}>FIND MY FILTER</a>
+            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a>
           </div>
         </div>
       </section>
 
       <section style={section}>
-        <p style={eyebrow}>DIRECT ANSWER</p>
+        <p style={eyebrow}><PublicUiText textKey="publicUi.text22">{"DIRECT ANSWER"}</PublicUiText></p>
         <div style={twoCol}>
           <h2 style={h2}>Oil filtration is a flow-and-cleanliness decision, not only a filter-size decision.</h2>
           <div>

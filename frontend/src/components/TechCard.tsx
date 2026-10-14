@@ -1,8 +1,9 @@
 'use client';
 
+import { PublicUiText } from '@/components/PublicUiText';
 import { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { CatalogueItem, getSlug, getTechLogoFile } from '@/lib/catalogue';
 
 interface TechCardProps {
@@ -132,9 +133,7 @@ export function TechCard({ item, index, visible }: TechCardProps) {
             color: hovered ? 'rgba(255,241,45,0.7)' : 'rgba(255,255,255,0.25)',
             transition: 'color 0.3s ease',
           }}
-        >
-          LEARN MORE
-        </span>
+        ><PublicUiText textKey="publicUi.text16">{"LEARN MORE"}</PublicUiText></span>
       </div>
     </Link>
   );
@@ -183,9 +182,7 @@ export function TechShowcase({ technologies }: TechShowcaseProps) {
                 letterSpacing: '0.2em',
                 color: '#FFF12D',
               }}
-            >
-              TECHNOLOGIES
-            </span>
+            ><PublicUiText textKey="publicUi.text1">{"TECHNOLOGIES"}</PublicUiText></span>
           </div>
           <h2
             style={{
@@ -200,7 +197,7 @@ export function TechShowcase({ technologies }: TechShowcaseProps) {
           >
             PROPRIETARY FILTRATION
             <br />
-            <span style={{ color: '#FFF12D' }}>TECHNOLOGIES</span>
+            <span style={{ color: '#FFF12D' }}><PublicUiText textKey="publicUi.text1">{"TECHNOLOGIES"}</PublicUiText></span>
           </h2>
           <p
             style={{

@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { AnimateIn, StaggerContainer, itemVariants } from './AnimateIn';
 
@@ -22,9 +23,7 @@ export function CabinPage() {
             textDecoration: 'none',
             borderRadius: '4px',
           }}
-        >
-          HOME
-        </Link>
+        ><PublicUiText textKey="publicUi.text0">{"HOME"}</PublicUiText></Link>
       </div>
       <main style={{ background: '#000', color: '#fff' }}>
         {/* Hero Section */}

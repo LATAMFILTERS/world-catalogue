@@ -1,5 +1,6 @@
+import { PublicUiText } from '@/components/PublicUiText';
 import type { CSSProperties } from 'react';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { PageHeader } from '@/components/PageHeader';
 import { getFamilyBySlug } from '@/lib/product-families-data';
 import { BASE_URL, equivalenceLine, productHeading, productMetaDescription, productPath, type ProductPage } from '@/lib/product-pages';
@@ -71,12 +72,12 @@ export function ProductPageView({ product: p }: { product: ProductPage }) {
       <header style={hero}>
         <span style={kicker}>{p.duty} · {familyName}</span>
         <h1 style={h1}>{productHeading(p)}</h1>
-        <p style={lead}>{p.description} Equivalent to {equivalenceLine(p, 3)}.</p>
-        <p style={meta}>Technology: <Link href={`/technologies/${p.technology.toLowerCase()}/`} style={link}>{p.technology}™</Link></p>
+        <p style={lead}>{p.description}{' '}<PublicUiText textKey="publicUi.text9">{"Equivalent to"}</PublicUiText>{' '}{equivalenceLine(p, 3)}.</p>
+        <p style={meta}><PublicUiText textKey="publicUi.text8">{"Technology:"}</PublicUiText>{' '}<Link href={`/technologies/${p.technology.toLowerCase()}/`} style={link}>{p.technology}™</Link></p>
       </header>
 
       <section style={section} aria-labelledby="specs">
-        <h2 id="specs" style={h2}>Specifications</h2>
+        <h2 id="specs" style={h2}><PublicUiText textKey="publicUi.text6">{"Specifications"}</PublicUiText></h2>
         <table style={table}>
           <caption style={srOnly}>{p.sku} specifications</caption>
           <tbody>
@@ -109,7 +110,7 @@ export function ProductPageView({ product: p }: { product: ProductPage }) {
 
       {p.applications.length > 0 && (
         <section style={section} aria-labelledby="applications">
-          <h2 id="applications" style={h2}>Applications</h2>
+          <h2 id="applications" style={h2}><PublicUiText textKey="publicUi.text7">{"Applications"}</PublicUiText></h2>
           <ul style={refList}>{p.applications.map((a) => <li key={a} style={refItem}>{a}</li>)}</ul>
         </section>
       )}

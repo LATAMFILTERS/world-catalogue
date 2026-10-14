@@ -1,5 +1,6 @@
 "use client";
 
+import { PublicUiText } from '@/components/PublicUiText';
 import React, { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
@@ -227,9 +228,7 @@ const ExampleContent = ({
             textDecoration: "none",
             borderRadius: "4px",
           }}
-        >
-          Learn more
-          <ArrowUpRight size={16} />
+        ><PublicUiText textKey="publicUi.text43">{"Learn more"}</PublicUiText><ArrowUpRight size={16} />
         </a>
       </div>
     </div>

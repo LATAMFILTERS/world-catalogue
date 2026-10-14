@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { PageHeader } from './PageHeader';
 
 export type MiningEngineeringSection = {
@@ -34,7 +35,7 @@ export function MiningEngineeringArticle({
 
       <section style={hero}>
         <div style={wide}>
-          <Link href="/knowledge-center/engineering/" style={backLink}>← ENGINEERING</Link>
+          <Link href="/knowledge-center/engineering/" style={backLink}><PublicUiText textKey="publicUi.text33">{"← ENGINEERING"}</PublicUiText></Link>
           <p style={eyebrow}>MINING / ENGINEERING REFERENCE</p>
           <h1 style={heroTitle}>{title}<br /><span style={accent}>{accentTitle}</span></h1>
           <p style={heroLead}>{lead}</p>

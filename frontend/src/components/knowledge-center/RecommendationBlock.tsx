@@ -14,7 +14,7 @@
  * explicit graph relationships via getRecommendations().
  */
 
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { getRecommendations } from '@/lib/knowledge-center/recommendation-engine';
 import { getKCRecommendationGraph, makeKey } from '@/lib/knowledge-center/recommendation-graph';
 import type { KCNodeType, KCReasonType, KCRecommendation } from '@/lib/knowledge-center/recommendation-types';

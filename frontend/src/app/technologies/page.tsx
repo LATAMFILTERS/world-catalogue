@@ -1,4 +1,7 @@
-import Link from 'next/link';
+import { ReviewedText } from '@/components/ReviewedText';
+import { SystemDisplayText } from '@/components/FamilyDisplayText';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 import { TechnologiesPortfolio } from '@/components/TechnologiesPortfolio';
 import { PageHeader } from '@/components/PageHeader';
@@ -154,8 +157,8 @@ export default function TechnologiesPage() {
 
   const renderSystemCard = (group: (typeof systemGroups)[number]) => (
     <article key={group.system} style={systemCard}>
-      <Link href={group.href} style={systemName}>{group.system}</Link>
-      <p style={bodyText}>{group.description}</p>
+      <Link href={group.href} style={systemName}><SystemDisplayText slug={group.href.split('/')[2]} original={group.system} /></Link>
+      <p style={bodyText}><ReviewedText text={group.description} /></p>
       <div style={technologyTags}>
         {group.technologies.map((technology) => (
           <span key={technology} style={technologyTag}>{technology}</span>
@@ -177,35 +180,33 @@ export default function TechnologiesPage() {
         </video>
         <div style={heroOverlay} />
         <div style={heroInner}>
-          <p style={eyebrow}>FILTRATION ENGINEERING ARCHITECTURE</p>
-          <h1 style={heroTitle}>
-            Industrial Filtration
-            <br />
-            <span style={{ color: '#FFF12D' }}>Technologies</span>
+          <p style={eyebrow}><ReviewedText text={"FILTRATION ENGINEERING ARCHITECTURE"} /></p>
+          <h1 style={heroTitle}><ReviewedText text={"Industrial Filtration"} /><br />
+            <span style={{ color: '#FFF12D' }}><ReviewedText text={"Technologies"} /></span>
           </h1>
-          <p style={heroPromise}>Technology defines how contamination is controlled. The protected system defines where that technology belongs.</p>
-          <p style={heroLead}>ELIMFILTERS® organizes ten filtration technologies across five protection systems: air intake and airflow, fuel cleanliness, lubrication, hydraulic and cooling-system protection. Each technology is connected to a defined contamination-control function, product family and validated application path.</p>
+          <p style={heroPromise}><ReviewedText text={"Technology defines how contamination is controlled. The protected system defines where that technology belongs."} /></p>
+          <p style={heroLead}><ReviewedText text={"ELIMFILTERS® organizes ten filtration technologies across five protection systems: air intake and airflow, fuel cleanliness, lubrication, hydraulic and cooling-system protection. Each technology is connected to a defined contamination-control function, product family and validated application path."} /></p>
           <div style={buttonRow}>
-            <Link href="/systems/" style={darkButton}>START WITH A PROTECTION SYSTEM</Link>
+            <Link href="/systems/" style={darkButton}><ReviewedText text={"START WITH A PROTECTION SYSTEM"} /></Link>
           </div>
         </div>
       </section>
 
       <section style={section}>
-        <p style={eyebrow}>DIRECT ANSWER</p>
+        <p style={eyebrow}><PublicUiText textKey="publicUi.text22">{"DIRECT ANSWER"}</PublicUiText></p>
         <div style={twoCol}>
-          <h2 style={{ ...sectionTitle, ...stickyHeading }}>A technology is not a filter family and not a part number.</h2>
+          <h2 style={{ ...sectionTitle, ...stickyHeading }}><ReviewedText text={"A technology is not a filter family and not a part number."} /></h2>
           <div>
-            <p style={leadText}>ELIMFILTERS technologies define the engineering architecture used to control a specific contamination pathway inside a protected system.</p>
-            <p style={bodyText}>The decision sequence is explicit: protected system → contamination function → technology → product family → validated part number. This prevents technology names from being treated as interchangeable product categories.</p>
+            <p style={leadText}><ReviewedText text={"ELIMFILTERS technologies define the engineering architecture used to control a specific contamination pathway inside a protected system."} /></p>
+            <p style={bodyText}><ReviewedText text={"The decision sequence is explicit: protected system → contamination function → technology → product family → validated part number. This prevents technology names from being treated as interchangeable product categories."} /></p>
           </div>
         </div>
       </section>
 
       <section id="technology-architecture" style={sectionAlt}>
         <div style={systemSectionInner}>
-          <p style={eyebrow}>SYSTEM → TECHNOLOGY</p>
-          <h2 style={sectionTitle}>Ten technologies organized inside five protection systems.</h2>
+          <p style={eyebrow}><ReviewedText text={"SYSTEM → TECHNOLOGY"} /></p>
+          <h2 style={sectionTitle}><ReviewedText text={"Ten technologies organized inside five protection systems."} /></h2>
           <div className="system-pyramid">
             <div className="system-pyramid-top">
               {systemGroups.slice(0, 3).map(renderSystemCard)}
@@ -220,12 +221,12 @@ export default function TechnologiesPage() {
       <section style={section}>
         <div style={twoCol}>
           <div style={stickyHeading}>
-            <p style={eyebrow}>ENGINEERING PRINCIPLE</p>
-            <h2 style={sectionTitle}>Do not start with the technology name. Start with the protected function.</h2>
+            <p style={eyebrow}><ReviewedText text={"ENGINEERING PRINCIPLE"} /></p>
+            <h2 style={sectionTitle}><ReviewedText text={"Do not start with the technology name. Start with the protected function."} /></h2>
           </div>
           <div>
-            <p style={leadText}>Two technologies can belong to the same system while protecting different contamination boundaries. Air intake is the clearest example: engine intake, housing integrity, cabin air and compressed-air drying are related by airflow but remain separate engineering functions.</p>
-            <p style={bodyText}>The same discipline applies across fuel, lubrication, hydraulic and cooling systems. Technology selection should follow the operating problem and application evidence, not marketing familiarity.</p>
+            <p style={leadText}><ReviewedText text={"Two technologies can belong to the same system while protecting different contamination boundaries. Air intake is the clearest example: engine intake, housing integrity, cabin air and compressed-air drying are related by airflow but remain separate engineering functions."} /></p>
+            <p style={bodyText}><ReviewedText text={"The same discipline applies across fuel, lubrication, hydraulic and cooling systems. Technology selection should follow the operating problem and application evidence, not marketing familiarity."} /></p>
           </div>
         </div>
       </section>
@@ -233,23 +234,23 @@ export default function TechnologiesPage() {
       <TechnologiesPortfolio />
 
       <section style={sectionAlt}>
-        <p style={eyebrow}>FROM TECHNOLOGY TO PART</p>
-        <h2 style={sectionTitle}>Use the technology to narrow the architecture, not to bypass application validation.</h2>
+        <p style={eyebrow}><ReviewedText text={"FROM TECHNOLOGY TO PART"} /></p>
+        <h2 style={sectionTitle}><ReviewedText text={"Use the technology to narrow the architecture, not to bypass application validation."} /></h2>
         <div className="decision-flow" style={decisionFlow}>
           {['1. ASSET / EQUIPMENT', '2. PROTECTED SYSTEM', '3. CONTAMINATION FUNCTION', '4. ELIMFILTERS TECHNOLOGY', '5. PRODUCT FAMILY', '6. VALIDATED PART NUMBER'].map((step, i) => (
-            <div key={step} className="decision-step" style={decisionStep}><span className="decision-step-index">{String(i + 1).padStart(2, '0')}</span><span className="decision-step-label">{step.replace(/^\d+\.\s*/, '')}</span></div>
+            <div key={step} className="decision-step" style={decisionStep}><span className="decision-step-index">{String(i + 1).padStart(2, '0')}</span><span className="decision-step-label"><ReviewedText text={step.replace(/^\d+\.\s*/, '')} /></span></div>
           ))}
         </div>
       </section>
 
       <section style={section}>
-        <p style={eyebrow}>FREQUENT QUESTIONS</p>
-        <h2 style={sectionTitle}>Industrial Filtration Technologies</h2>
+        <p style={eyebrow}><ReviewedText text={"FREQUENT QUESTIONS"} /></p>
+        <h2 style={sectionTitle}><ReviewedText text={"Industrial Filtration Technologies"} /></h2>
         <div className="faq-grid" style={faqGrid}>
           {faqs.map(([question, answer]) => (
             <article key={question} style={faqCard}>
-              <h3 style={faqQuestion}>{question}</h3>
-              <p style={bodyText}>{answer}</p>
+              <h3 style={faqQuestion}><ReviewedText text={question} /></h3>
+              <p style={bodyText}><ReviewedText text={answer} /></p>
             </article>
           ))}
         </div>
@@ -257,13 +258,13 @@ export default function TechnologiesPage() {
 
       <section className="technologies-final-cta" style={cta}>
         <div style={{ maxWidth: '980px', margin: '0 auto', textAlign: 'center' }}>
-          <p style={eyebrow}>READY TO RESOLVE THE APPLICATION?</p>
-          <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '900px', marginLeft: 'auto', marginRight: 'auto' }}>Connect the protection system to the correct technology, family and part.</h2>
-          <p style={{ ...bodyText, maxWidth: '760px', margin: '1.25rem auto 0' }}>Use Product Intelligence when you already have a reference or known application. Use Application Support when the protected system, duty conditions or technical fit still need to be resolved.</p>
+          <p style={eyebrow}><ReviewedText text={"READY TO RESOLVE THE APPLICATION?"} /></p>
+          <h2 style={{ ...sectionTitle, textAlign: 'center', maxWidth: '900px', marginLeft: 'auto', marginRight: 'auto' }}><ReviewedText text={"Connect the protection system to the correct technology, family and part."} /></h2>
+          <p style={{ ...bodyText, maxWidth: '760px', margin: '1.25rem auto 0' }}><ReviewedText text={"Use Product Intelligence when you already have a reference or known application. Use Application Support when the protected system, duty conditions or technical fit still need to be resolved."} /></p>
           <div style={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: '0.9rem', marginTop: '2rem' }}>
-            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" data-conversion-action="product-intelligence" style={yellowButton}>FIND MY FILTER</a>
-            <Link href="/contact/" data-conversion-action="application-support" style={darkButton}>IDENTIFY MY PROTECTION PATH</Link>
-            <Link href="/systems/" style={darkButton}>EXPLORE PROTECTION SYSTEMS</Link>
+            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" data-conversion-action="product-intelligence" style={yellowButton}><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a>
+            <Link href="/contact/" data-conversion-action="application-support" style={darkButton}><ReviewedText text={"IDENTIFY MY PROTECTION PATH"} /></Link>
+            <Link href="/systems/" style={darkButton}><ReviewedText text={"EXPLORE PROTECTION SYSTEMS"} /></Link>
           </div>
         </div>
       </section>

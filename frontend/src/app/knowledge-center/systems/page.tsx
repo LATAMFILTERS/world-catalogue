@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { KC_SYSTEMS } from '@/lib/knowledge-center-data';
 import { heroBackgroundImage } from '@/lib/hero-media';
@@ -31,9 +32,7 @@ export default function SystemsPage() {
             textDecoration: 'none',
             display: 'inline-block',
             marginBottom: '2rem',
-          }}>
-            ← KNOWLEDGE CENTER
-          </Link>
+          }}><PublicUiText textKey="publicUi.text32">{"← KNOWLEDGE CENTER"}</PublicUiText></Link>
 
           <motion.p
             initial={false}
@@ -147,9 +146,7 @@ export default function SystemsPage() {
                   letterSpacing: '0.1em',
                   color: 'rgba(255,255,255,0.3)',
                   marginBottom: '0.5rem',
-                }}>
-                  TECHNOLOGIES
-                </p>
+                }}><PublicUiText textKey="publicUi.text1">{"TECHNOLOGIES"}</PublicUiText></p>
                 <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap' }}>
                   {system.technologies.map((tech) => (
                     <span key={tech} style={{

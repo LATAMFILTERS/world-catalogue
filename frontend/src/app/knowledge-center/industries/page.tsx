@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { KC_INDUSTRIES } from '@/lib/knowledge-center-data';
 import { heroBackgroundImage } from '@/lib/hero-media';
@@ -38,9 +39,7 @@ export default function IndustriesPage() {
             textDecoration: 'none',
             display: 'inline-block',
             marginBottom: '2rem',
-          }}>
-            ← KNOWLEDGE CENTER
-          </Link>
+          }}><PublicUiText textKey="publicUi.text32">{"← KNOWLEDGE CENTER"}</PublicUiText></Link>
 
           <motion.p
             initial={false}
@@ -138,8 +137,7 @@ export default function IndustriesPage() {
                   padding: '0.2rem 0.5rem',
                   letterSpacing: '0.05em',
                 }}>
-                  {industry.dust.toUpperCase()} EXPOSURE
-                </span>
+                  {industry.dust.toUpperCase()}<PublicUiText textKey="publicUi.text38">{"EXPOSURE"}</PublicUiText></span>
               </div>
 
               <h2 style={{

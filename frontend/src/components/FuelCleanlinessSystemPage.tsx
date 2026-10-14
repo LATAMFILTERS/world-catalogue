@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { HERO_MEDIA_TREATMENT } from '@/lib/hero-media';
@@ -117,13 +118,13 @@ export function FuelCleanlinessSystemPage() {
           <p style={heroLead}>ELIMFILTERS separates particulate filtration, fuel/water separation and applicable turbine-series fuel conditioning into distinct functions within one fuel-protection architecture. The correct path depends on the engine, fuel-system stage, contamination exposure and validated application evidence.</p>
           <div style={buttonRow}>
             <Link href="#fuel-path" style={yellowButton}>IDENTIFY THE FUEL PATH</Link>
-            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}>FIND MY FILTER</a>
+            <a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={darkButton}><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a>
           </div>
         </div>
       </section>
 
       <section style={section}>
-        <p style={eyebrow}>DIRECT ANSWER</p>
+        <p style={eyebrow}><PublicUiText textKey="publicUi.text22">{"DIRECT ANSWER"}</PublicUiText></p>
         <div style={twoCol}>
           <h2 style={h2}>Fuel cleanliness is a system decision, not a single-filter decision.</h2>
           <div>

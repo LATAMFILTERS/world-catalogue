@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { KC_DASHBOARD_DATA } from '@/lib/knowledge-center/dashboard-analytics';
 import type { KCRankedNode, KCRecentStandard, KCTypeConnectivity } from '@/lib/knowledge-center/dashboard-types';
@@ -323,9 +324,7 @@ export default function DashboardPage() {
           color:         'rgba(255,255,255,0.35)',
           textDecoration:'none',
           letterSpacing: '0.06em',
-        }}>
-          ← KNOWLEDGE CENTER
-        </Link>
+        }}><PublicUiText textKey="publicUi.text32">{"← KNOWLEDGE CENTER"}</PublicUiText></Link>
       </div>
 
       {/* Hero */}

@@ -2,6 +2,7 @@
 
 import { useRef, useEffect } from 'react';
 import { motion, useInView, animate } from 'motion/react';
+import { useTranslation } from 'react-i18next';
 import { getHomeStats } from '@/lib/home-stats';
 
 function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
@@ -27,6 +28,7 @@ function AnimatedNumber({ value, suffix }: { value: number; suffix: string }) {
 
 export function HomeStatBar() {
   const stats = getHomeStats();
+  const { t } = useTranslation();
 
   return (
     <section
@@ -78,7 +80,7 @@ export function HomeStatBar() {
                 margin: 0,
               }}
             >
-              {stat.label}
+              {t('home.factualStats.' + stat.id, stat.label)}
             </p>
           </motion.div>
         ))}

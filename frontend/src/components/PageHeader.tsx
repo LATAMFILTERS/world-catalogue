@@ -1,10 +1,11 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { usePathname } from 'next/navigation';
 import { localeFromPath } from '@/i18n-locales';
+import { siteLangFromTag } from '@/lib/language-preference';
 import { LanguageMenu } from './LanguageMenu';
 
 const SCROLL_HIDE_THRESHOLD = 60;
@@ -75,8 +76,9 @@ const INDUSTRY_TRANSLATED_LABELS: Record<'es' | 'pt', Record<string, string>> = 
 };
 
 export function PageHeader({ breadcrumbs, currentPage }: PageHeaderProps) {
-  const { t } = useTranslation();
-  const locale = localeFromPath(usePathname());
+  const { t, i18n } = useTranslation();
+  const language = siteLangFromTag(i18n.resolvedLanguage || i18n.language);
+  const locale = localeFromPath(usePathname()) ?? (language === 'en' ? null : language);
   const homeHref = locale ? `/${locale}/` : '/';
   const [atTop, setAtTop] = useState(true);
 
@@ -114,7 +116,7 @@ export function PageHeader({ breadcrumbs, currentPage }: PageHeaderProps) {
       <LanguageMenu />
     </div>
     <nav
-      aria-label="Breadcrumb"
+      aria-label={t('a11y.breadcrumb', 'Breadcrumb')}
       style={{
         position: 'fixed',
         top: '1.5rem',

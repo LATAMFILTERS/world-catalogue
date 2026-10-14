@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { motion, AnimatePresence } from 'motion/react';
 import { useState, useEffect } from 'react';
 import {

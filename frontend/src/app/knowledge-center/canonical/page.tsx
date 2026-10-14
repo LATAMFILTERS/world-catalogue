@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { listCanonicalKnowledge, CANONICAL_KNOWLEDGE_COUNT } from '@/lib/services/canonical-knowledge-service';
 
 export const metadata: Metadata = {

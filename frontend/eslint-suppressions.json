@@ -121,11 +121,6 @@
       "count": 2
     }
   },
-  "src/app/products/page.tsx": {
-    "@next/next/no-html-link-for-pages": {
-      "count": 1
-    }
-  },
   "src/app/search/page.tsx": {
     "@next/next/no-html-link-for-pages": {
       "count": 1

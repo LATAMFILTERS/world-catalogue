@@ -1,6 +1,10 @@
+import { ReviewedImage } from '@/components/ReviewedMedia';
+import { ReviewedText } from '@/components/ReviewedText';
+import { SystemDisplayText } from '@/components/FamilyDisplayText';
+import { PublicUiText } from '@/components/PublicUiText';
 import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { PageHeader } from '@/components/PageHeader';
 import { PROTECTION_SYSTEM_LIST } from '@/lib/protection-systems-data';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
@@ -59,33 +63,33 @@ export default function SystemsPage() {
         <video autoPlay muted loop playsInline preload="metadata" style={heroVideo}><source src="/images/Robotic_arm_replacing_filtration_system.mp4" type="video/mp4" /></video>
         <div style={heroOverlay} />
         <div style={heroInner}>
-          <p style={eyebrow}>INDUSTRIAL FILTRATION / ASSET PROTECTION ARCHITECTURE</p>
-          <h1 style={heroTitle}>Industrial Filtration & Asset Protection Systems</h1>
-          <p style={heroPromise}>Start with the system you need to protect—not the filter you happen to recognize.</p>
-          <p style={heroLead}>ELIMFILTERS organizes contamination control around five protected operating domains: air intake and airflow, fuel cleanliness, lubrication, hydraulic and cooling. Each domain connects contamination exposure to the appropriate technology, product family and validated application path.</p>
-          <div style={heroActions}><Link href="#systems" style={yellowButton}>SELECT A PROTECTION SYSTEM</Link><a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={secondaryButton}>FIND MY FILTER</a></div>
+          <p style={eyebrow}><ReviewedText text={"INDUSTRIAL FILTRATION / ASSET PROTECTION ARCHITECTURE"} /></p>
+          <h1 style={heroTitle}><ReviewedText text={"Industrial Filtration & Asset Protection Systems"} /></h1>
+          <p style={heroPromise}><ReviewedText text={"Start with the system you need to protect—not the filter you happen to recognize."} /></p>
+          <p style={heroLead}><ReviewedText text={"ELIMFILTERS organizes contamination control around five protected operating domains: air intake and airflow, fuel cleanliness, lubrication, hydraulic and cooling. Each domain connects contamination exposure to the appropriate technology, product family and validated application path."} /></p>
+          <div style={heroActions}><Link href="#systems" style={yellowButton}><ReviewedText text={"SELECT A PROTECTION SYSTEM"} /></Link><a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={secondaryButton}><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a></div>
         </div>
       </section>
 
       <section style={section}>
         <div style={answerGrid}>
-          <div style={decisionHeading}><p style={eyebrow}>DIRECT ANSWER</p><h2 style={sectionTitle}>What is a protection system?</h2></div>
-          <div><p style={leadText}>A protection system is the operating domain that must stay clean enough for the asset to perform its intended function. It defines the contamination pathway, the components at risk and the filtration decisions that follow.</p><p style={bodyText}>The decision sequence is <strong style={{ color: '#fff' }}>asset → protected system → contamination exposure → duty cycle → filtration technology → product family → validated part number.</strong></p></div>
+          <div style={decisionHeading}><p style={eyebrow}><PublicUiText textKey="publicUi.text22">{"DIRECT ANSWER"}</PublicUiText></p><h2 style={sectionTitle}><ReviewedText text={"What is a protection system?"} /></h2></div>
+          <div><p style={leadText}><ReviewedText text={"A protection system is the operating domain that must stay clean enough for the asset to perform its intended function. It defines the contamination pathway, the components at risk and the filtration decisions that follow."} /></p><p style={bodyText}><ReviewedText text={"The decision sequence is"} />{' '}<strong style={{ color: '#fff' }}><ReviewedText text={"asset → protected system → contamination exposure → duty cycle → filtration technology → product family → validated part number."} /></strong></p></div>
         </div>
       </section>
 
       <section id="systems" style={systemsSection}>
         <div style={wrap}>
-          <p style={eyebrow}>THE FIVE PROTECTION DOMAINS</p><h2 style={sectionTitle}>Choose the system before you choose the filter.</h2><p style={{ ...bodyText, maxWidth: '800px' }}>Each system page explains the protected components, contamination mechanisms, applicable technologies and product families for that operating domain.</p>
+          <p style={eyebrow}><ReviewedText text={"THE FIVE PROTECTION DOMAINS"} /></p><h2 style={sectionTitle}><ReviewedText text={"Choose the system before you choose the filter."} /></h2><p style={{ ...bodyText, maxWidth: '800px' }}><ReviewedText text={"Each system page explains the protected components, contamination mechanisms, applicable technologies and product families for that operating domain."} /></p>
           <div style={systemGrid}>
             {PROTECTION_SYSTEM_LIST.map((system, index) => { const details = SYSTEM_DECISIONS[system.slug]; return (
               <Link key={system.key} href={`/systems/${system.slug}/`} style={systemCard}>
-                <div style={systemMediaWrap}><img src={SYSTEM_IMAGES[system.slug] || '/images/sistems-hero.avif'} alt={`${system.name} filtration system`} style={systemImage} /><div style={systemMediaOverlay} /><span style={systemIndex}>0{index + 1}</span></div>
-                <div style={systemContent}><h3 style={systemTitle}>{system.name}</h3><p style={systemTagline}>{system.tagline}</p>
-                  <div style={systemFact}><span style={factLabel}>CONTAMINATION PATH</span><span style={factText}>{details?.exposure}</span></div>
-                  <div style={systemFact}><span style={factLabel}>PROTECTED COMPONENTS</span><span style={factText}>{details?.protects}</span></div>
-                  <div style={systemFact}><span style={factLabel}>TECHNOLOGY PATH</span><span style={factText}>{details?.technologies}</span></div>
-                  <span style={explore}>EXPLORE SYSTEM →</span>
+                <div style={systemMediaWrap}><ReviewedImage src={SYSTEM_IMAGES[system.slug] || '/images/sistems-hero.avif'} alt={`${system.name} filtration system`} style={systemImage} /><div style={systemMediaOverlay} /><span style={systemIndex}>0{index + 1}</span></div>
+                <div style={systemContent}><h3 style={systemTitle}><SystemDisplayText slug={system.slug} original={system.name} /></h3><p style={systemTagline}><ReviewedText text={system.tagline} /></p>
+                  <div style={systemFact}><span style={factLabel}><ReviewedText text={"CONTAMINATION PATH"} /></span><span style={factText}><ReviewedText text={details?.exposure ?? ''} /></span></div>
+                  <div style={systemFact}><span style={factLabel}><ReviewedText text={"PROTECTED COMPONENTS"} /></span><span style={factText}><ReviewedText text={details?.protects ?? ''} /></span></div>
+                  <div style={systemFact}><span style={factLabel}><ReviewedText text={"TECHNOLOGY PATH"} /></span><span style={factText}><ReviewedText text={details?.technologies ?? ''} /></span></div>
+                  <span style={explore}><ReviewedText text={"EXPLORE SYSTEM →"} /></span>
                 </div>
               </Link>
             ); })}
@@ -95,28 +99,28 @@ export default function SystemsPage() {
 
       <section style={section}>
         <div style={decisionShell}>
-          <div style={decisionHeading}><p style={eyebrow}>SYSTEM-LEVEL ENGINEERING</p><h2 style={sectionTitle}>Why system-first selection reduces identification risk.</h2></div>
+          <div style={decisionHeading}><p style={eyebrow}><ReviewedText text={"SYSTEM-LEVEL ENGINEERING"} /></p><h2 style={sectionTitle}><ReviewedText text={"Why system-first selection reduces identification risk."} /></h2></div>
           <div style={decisionSteps}>{[
             ['1', 'Identify the asset', 'Vehicle, machine, engine, generator, vessel, locomotive or plant equipment.'],
             ['2', 'Locate the protected system', 'Airflow, fuel, lubrication, hydraulic or cooling.'],
             ['3', 'Define exposure and duty', 'Contaminant source, environment, operating cycle, fluid condition and service pattern.'],
             ['4', 'Map the filtration architecture', 'Technology and product family are selected according to the system requirement.'],
             ['5', 'Validate the physical part', 'Use OEM references, dimensions, equipment data and application evidence before final selection.'],
-          ].map(([n, title, copy]) => <div key={n} style={decisionStep}><span style={stepNumber}>{n}</span><div><h3 style={stepTitle}>{title}</h3><p style={stepCopy}>{copy}</p></div></div>)}</div>
+          ].map(([n, title, copy]) => <div key={n} style={decisionStep}><span style={stepNumber}>{n}</span><div><h3 style={stepTitle}><ReviewedText text={title} /></h3><p style={stepCopy}><ReviewedText text={copy} /></p></div></div>)}</div>
         </div>
       </section>
 
       <section style={evidenceSection}>
-        <div style={evidenceGrid}><div><img src="/images/banco-pruebas-filtros.png" alt="Filtration engineering test bench" style={evidenceImage} /></div><div><p style={eyebrow}>APPLICATION EVIDENCE</p><h2 style={sectionTitle}>Specifications matter only when they match the actual system.</h2><p style={{ ...leadText, marginTop: '1.5rem' }}>Efficiency, flow, pressure drop, contaminant capacity and structural requirements are meaningful only in the context of the system and duty they are intended to serve.</p><p style={bodyText}>ELIMFILTERS therefore treats reference numbers and dimensions as evidence inside a broader application decision—not as substitutes for understanding what the asset is protecting.</p><Link href="/knowledge-center/" style={{ ...textLink, marginTop: '1.5rem' }}>EXPLORE ENGINEERING KNOWLEDGE →</Link></div></div>
+        <div style={evidenceGrid}><div><ReviewedImage src="/images/banco-pruebas-filtros.png" alt="Filtration engineering test bench" style={evidenceImage} /></div><div><p style={eyebrow}><ReviewedText text={"APPLICATION EVIDENCE"} /></p><h2 style={sectionTitle}><ReviewedText text={"Specifications matter only when they match the actual system."} /></h2><p style={{ ...leadText, marginTop: '1.5rem' }}><ReviewedText text={"Efficiency, flow, pressure drop, contaminant capacity and structural requirements are meaningful only in the context of the system and duty they are intended to serve."} /></p><p style={bodyText}><ReviewedText text={"ELIMFILTERS therefore treats reference numbers and dimensions as evidence inside a broader application decision—not as substitutes for understanding what the asset is protecting."} /></p><Link href="/knowledge-center/" style={{ ...textLink, marginTop: '1.5rem' }}><ReviewedText text={"EXPLORE ENGINEERING KNOWLEDGE →"} /></Link></div></div>
       </section>
 
       <section style={conversionSection}>
-        <div style={conversionGrid}><div><p style={eyebrow}>FROM SYSTEM TO PART</p><h2 style={sectionTitle}>Already know the system? Move directly to identification.</h2><p style={{ ...bodyText, maxWidth: '680px' }}>If you have an OEM number, existing filter reference, vehicle or equipment information, use Part Search. If the contamination problem or protected system is still unclear, start with application support.</p></div><div style={conversionActions}><a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={yellowButton}>FIND MY FILTER</a><Link href="/contact/?intent=application-support" style={secondaryButton}>IDENTIFY MY PROTECTION PATH</Link><Link href="/families/" style={textLink}>Browse Product Families →</Link></div></div>
+        <div style={conversionGrid}><div><p style={eyebrow}><ReviewedText text={"FROM SYSTEM TO PART"} /></p><h2 style={sectionTitle}><ReviewedText text={"Already know the system? Move directly to identification."} /></h2><p style={{ ...bodyText, maxWidth: '680px' }}><ReviewedText text={"If you have an OEM number, existing filter reference, vehicle or equipment information, use Part Search. If the contamination problem or protected system is still unclear, start with application support."} /></p></div><div style={conversionActions}><a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={yellowButton}><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a><Link href="/contact/?intent=application-support" style={secondaryButton}><ReviewedText text={"IDENTIFY MY PROTECTION PATH"} /></Link><Link href="/families/" style={textLink}><ReviewedText text={"Browse Product Families →"} /></Link></div></div>
       </section>
 
-      <section style={section}><div style={wrapNarrow}><p style={eyebrow}>SYSTEMS FAQ</p><h2 style={sectionTitle}>Questions engineers and fleet teams ask before selecting filtration.</h2><div style={faqWrap}>{faq.map(([q, a]) => <div key={q} style={faqItem}><h3 style={faqQuestion}>{q}</h3><p style={faqAnswer}>{a}</p></div>)}</div></div></section>
+      <section style={section}><div style={wrapNarrow}><p style={eyebrow}><ReviewedText text={"SYSTEMS FAQ"} /></p><h2 style={sectionTitle}><ReviewedText text={"Questions engineers and fleet teams ask before selecting filtration."} /></h2><div style={faqWrap}>{faq.map(([q, a]) => <div key={q} style={faqItem}><h3 style={faqQuestion}><ReviewedText text={q} /></h3><p style={faqAnswer}><ReviewedText text={a} /></p></div>)}</div></div></section>
 
-      <section style={finalCta}><div style={wrapNarrow}><p style={eyebrow}>NEED A SYSTEM-LEVEL RECOMMENDATION?</p><h2 style={sectionTitle}>Identify the contamination path before choosing the replacement part.</h2><p style={{ ...bodyText, maxWidth: '700px' }}>Provide the asset, protected system, operating environment, duty cycle and any known OEM or filter reference. ELIMFILTERS can use that evidence to direct the application toward the correct protection architecture.</p><div style={heroActions}><Link href="/contact/?intent=application-support" style={yellowButton}>IDENTIFY MY PROTECTION PATH</Link><a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={secondaryButton}>PART SEARCH</a></div></div></section>
+      <section style={finalCta}><div style={wrapNarrow}><p style={eyebrow}><ReviewedText text={"NEED A SYSTEM-LEVEL RECOMMENDATION?"} /></p><h2 style={sectionTitle}><ReviewedText text={"Identify the contamination path before choosing the replacement part."} /></h2><p style={{ ...bodyText, maxWidth: '700px' }}><ReviewedText text={"Provide the asset, protected system, operating environment, duty cycle and any known OEM or filter reference. ELIMFILTERS can use that evidence to direct the application toward the correct protection architecture."} /></p><div style={heroActions}><Link href="/contact/?intent=application-support" style={yellowButton}><ReviewedText text={"IDENTIFY MY PROTECTION PATH"} /></Link><a href="https://part-search.elimfilters.com" target="_blank" rel="noopener noreferrer" style={secondaryButton}>PART SEARCH</a></div></div></section>
     </main>
   );
 }

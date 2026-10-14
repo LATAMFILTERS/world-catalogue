@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { usePathname } from 'next/navigation';
 
 const SEGMENT_LABELS: Record<string, string> = {
@@ -126,9 +127,7 @@ export function Breadcrumb() {
           }}
           onMouseEnter={(e) => (e.currentTarget.style.color = '#FFF12D')}
           onMouseLeave={(e) => (e.currentTarget.style.color = 'rgba(255,255,255,0.4)')}
-        >
-          HOME
-        </Link>
+        ><PublicUiText textKey="publicUi.text0">{"HOME"}</PublicUiText></Link>
 
         {crumbs.map((crumb) => (
           <span key={crumb.href} style={{ display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
