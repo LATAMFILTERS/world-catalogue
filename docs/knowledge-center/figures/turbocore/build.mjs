@@ -90,7 +90,11 @@ for (const side of [-1, 1]) {
 // lid with its bolt circle and T-handle; lifting it draws the replaceable element out of the housing
 const LID = vertical(BODY_TOP);
 const lidProfile = [[0, BODY_R + 2], [LID_TOP - BODY_TOP - 1, BODY_R + 2], [LID_TOP - BODY_TOP, BODY_R + 1]];
-put("lid", [0, 0, BODY_TOP + 3.5], S(G.solidOf(lidProfile, LID, P), { tone: "mid" }) + D(G.dotsOf(vertical(LID_TOP), 0, BODY_R - 2, 8, P, { all: true, phase: Math.PI / 8 }), { size: 0.7, tone: "hi" }) + L(k.ring(0, 0, BODY_R - 6, LID_TOP, P, 64), { tone: "faint" }), [A.solid(LID, lidProfile, { name: "lid" })], { piece: "lid" });
+// brand, technology and series prefix embossed on the lid, in front of the T-handle
+const lidMark =
+  k.faceTextSvg(k.topMatrix([0, 11], LID_TOP, P, "x"), "ELIMFILTERS", { size: 3.6, tone: "hi", anchor: "middle" }) +
+  k.faceTextSvg(k.topMatrix([0, 16.5], LID_TOP, P, "x"), "TURBOCORE™ · ET9", { size: 2.6, tone: "mid", anchor: "middle" });
+put("lid", [0, 0, BODY_TOP + 3.5], S(G.solidOf(lidProfile, LID, P), { tone: "mid" }) + D(G.dotsOf(vertical(LID_TOP), 0, BODY_R - 2, 8, P, { all: true, phase: Math.PI / 8 }), { size: 0.7, tone: "hi" }) + L(k.ring(0, 0, BODY_R - 6, LID_TOP, P, 64), { tone: "faint" }) + lidMark, [A.solid(LID, lidProfile, { name: "lid" })], { piece: "lid" });
 put("handle.boss", [0, 0, LID_TOP + 1.5], S(k.cylinder(0, 0, 6, LID_TOP, 3, P, 32, 0.5), { tone: "mid" }), [A.cylinder(0, 0, 6, LID_TOP, 3, { name: "handle.boss" })], { piece: "lid" });
 put("handle.stem", [0, 0, (LID_TOP + 3 + STEM_TOP) / 2], S(k.cylinder(0, 0, 2.6, LID_TOP + 3, STEM_TOP - LID_TOP - 3, P, 20), { tone: "mid", crease: "none" }), [A.cylinder(0, 0, 2.6, LID_TOP + 3, STEM_TOP - LID_TOP - 3, { name: "handle.stem" })], { piece: "lid" });
 const BAR = { x: -16, y: -2.4, w: 32, d: 4.8, r: 2.2 };
@@ -200,7 +204,7 @@ draw();
 
 const body = PAGE_CSS + k.plateHtml({
   fig: "Fig 2",
-  title: "TURBOCORE™ · carcasa tipo turbina",
+  title: "ELIMFILTERS · TURBOCORE™ · ET9",
   hint: "Cursor: caudal · arriba: tapa · clic: purgar",
   readout: "caudal medio · acumulando agua",
   keys: [
