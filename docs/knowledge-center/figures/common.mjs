@@ -115,11 +115,11 @@ export function studio(P, { order = ["stand"], spring = { stagger: 0.035, stiffn
   }
 
   // Twist drain under the bowl: a body under the cap, a wing below it that turns a quarter turn to open, and a spout.
-  function drain(valveZ, wingZ) {
-    put("drain.body", [0, 0, (wingZ + 5 + valveZ) / 2], S(k.cylinder(0, 0, 4.2, wingZ + 5, valveZ - wingZ - 5, P, 28), { tone: "mid" }), [A.cylinder(0, 0, 4.2, wingZ + 5, valveZ - wingZ - 5, { name: "drain.body" })]);
+  function drain(valveZ, wingZ, { piece = "stand" } = {}) {
+    put("drain.body", [0, 0, (wingZ + 5 + valveZ) / 2], S(k.cylinder(0, 0, 4.2, wingZ + 5, valveZ - wingZ - 5, P, 28), { tone: "mid" }), [A.cylinder(0, 0, 4.2, wingZ + 5, valveZ - wingZ - 5, { name: "drain.body" })], { piece });
     const wing = k.ringOf({ x: -9, y: -1.4, w: 18, d: 2.8, r: 1.2 }, 3);
-    put("drain.wing", [0, 0, wingZ + 2.5], `<g data-part="wing">${S(k.extrude(wing, wingZ, 5, P), { tone: "hi", lit: true })}</g>`, [A.extruded(wing, wingZ, 5, { name: "drain.wing" })]);
-    put("drain.spout", [0, 0, wingZ - 2.5], S(k.cylinder(0, 0, 1.7, wingZ - 5, 5, P, 16), { tone: "mid", crease: "none" }), [A.cylinder(0, 0, 1.7, wingZ - 5, 5, { name: "drain.spout" })]);
+    put("drain.wing", [0, 0, wingZ + 2.5], `<g data-part="wing">${S(k.extrude(wing, wingZ, 5, P), { tone: "hi", lit: true })}</g>`, [A.extruded(wing, wingZ, 5, { name: "drain.wing" })], { piece });
+    put("drain.spout", [0, 0, wingZ - 2.5], S(k.cylinder(0, 0, 1.7, wingZ - 5, 5, P, 16), { tone: "mid", crease: "none" }), [A.cylinder(0, 0, 1.7, wingZ - 5, 5, { name: "drain.spout" })], { piece });
   }
 
   function render() {
@@ -132,24 +132,27 @@ export function studio(P, { order = ["stand"], spring = { stagger: 0.035, stiffn
 }
 
 // The glass bowl as one item: cavity and fuel behind, live water and drops, then the glass in front.
-export function glassBowl(P, { z0, z1, r, mark, inside = "" }) {
+// cutaway: true draws a steel shell seen in section (the spin-on sump) instead of clear glass.
+export function glassBowl(P, { z0, z1, r, mark, inside = "", cutaway = false }) {
   const L = (d, style) => k.lineSvg(d, style);
   const glass = k.cylinder(0, 0, r, z0, z1 - z0, P, 72);
   const fuel = k.cylinder(0, 0, r - 0.8, z0, z1 - z0, P, 72);
   const out = [`<path class="pc-cav" d="${glass.fill}"/>`, `<path class="pc-fuel" d="${fuel.fill}"/>`];
   out.push(`<path data-part="water" class="pc-water" d=""/>`, `<path data-part="surface" class="iso-line" data-tone="lit" d=""/>`);
   out.push(`<g data-part="drops-back" class="pc-drops"></g>`, inside, `<g data-part="drops-front" class="pc-drops"></g>`);
-  out.push(`<g class="pc-glass">`);
+  out.push(`<g class="pc-glass${cutaway ? " pc-cut" : ""}">`);
   glass.shades.forEach((d, shade) => d && out.push(`<path class="iso-shade" data-shade="${shade}" d="${d}"/>`));
   out.push(`</g>`);
   // graduation: a ring at the drain mark and fine rings below it, all on the glass
   const rings = [];
   for (let z = z0 + 4; z < mark - 1; z += 4) rings.push(k.sideArc(0, 0, r, z, P, 48));
-  out.push(L(rings.join(""), { tone: "faint" }));
-  out.push(L(k.sideArc(0, 0, r, mark, P, 48) + k.sideArc(0, 0, r, mark + 1.6, P, 48), { tone: "hi" }));
+  if (!cutaway) {
+    out.push(L(rings.join(""), { tone: "faint" }));
+    out.push(L(k.sideArc(0, 0, r, mark, P, 48) + k.sideArc(0, 0, r, mark + 1.6, P, 48), { tone: "hi" }));
+  }
   // a reflection down the glass, from the cap rim to under the collar, toward the light
   const a = ((P.azimuth + 58) * Math.PI) / 180;
-  out.push(`<path class="pc-shine" d="${k.segment([Math.cos(a) * r, Math.sin(a) * r, z0], [Math.cos(a) * r, Math.sin(a) * r, z1], P)}"/>`);
+  if (!cutaway) out.push(`<path class="pc-shine" d="${k.segment([Math.cos(a) * r, Math.sin(a) * r, z0], [Math.cos(a) * r, Math.sin(a) * r, z1], P)}"/>`);
   out.push(L(glass.outline, { tone: "mid" }));
   return out.join("");
 }
@@ -162,6 +165,7 @@ export const PAGE_CSS = `<style>
 .pc-drops circle{fill:color-mix(in srgb,var(--anatomy-blue) 72%,var(--anatomy-lit))}
 .pc-stream{stroke:color-mix(in srgb,var(--anatomy-blue) 72%,var(--anatomy-lit));stroke-width:1.2px}
 .pc-glass .iso-shade{opacity:.26}
+.pc-cut .iso-shade{opacity:.5}
 .pc-shine{fill:none;stroke:#fff;stroke-width:1.8px;opacity:.85;stroke-linecap:butt}
 .iso:not([data-theme="light"]) .pc-shine{opacity:.16}
 .pc-media{fill:color-mix(in srgb,#c9a253 14%,var(--anatomy-paper))}

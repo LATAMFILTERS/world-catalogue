@@ -1,6 +1,8 @@
-// DRAFT (internal-only, see ../README.md): HYDROCORE™ standard non-turbine fuel/water separator with transparent bowl and drain.
+// DRAFT (internal-only, see ../README.md): HYDROCORE™ standard non-turbine fuel/water separators, two variants:
+//   default    separator with a reusable transparent bowl and drain (service: change the element, keep the bowl)
+//   --spinon   spin-on with an integrated drain, sump shown in section (service: replace the whole cartridge)
 // Built with the third-party "anatomy" kit (../.anatomy, pinned in ../README.md). Percentages shown are illustrative, not product data.
-// node build.mjs [--light] [--audit]
+// node build.mjs [--spinon] [--light] [--audit]
 import { writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -9,6 +11,8 @@ import { kitScript } from "../.anatomy/scripts/inline-kit.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const theme = process.argv.includes("--light") ? "light" : "dark";
+const SPINON = process.argv.includes("--spinon");
+const SERVICE = [0, 78, 0]; // where the element (bowl variant) or the whole cartridge (spin-on) goes at service
 const WIDTH = 600;
 const HEIGHT = 520;
 
@@ -21,21 +25,21 @@ const HEAD = { x: -30, y: EARS.y + EARS.d, w: 60, d: 87, r: 9 };
 const HEAD_Z = 172;
 const HEAD_TOP = HEAD_Z + 20;
 const PUMP = [0, 6];
-const CAN_Z = 94;
+const CAN_Z = SPINON ? 84 : 94;
 const COLLAR_Z = 89;
-const B = { z0: 40, z1: COLLAR_Z, r: 21.5, mark: 74, wing: 15, cupR: 13, cupH: 6 };
+const B = SPINON ? { z0: 50, z1: CAN_Z, r: 26, mark: 72, wing: 15, cupR: 13, cupH: 6 } : { z0: 40, z1: COLLAR_Z, r: 21.5, mark: 74, wing: 15, cupR: 13, cupH: 6 };
 const CAP_Z = 32;
 const VALVE_Z = 25;
 const PORT_Y = -14;
 const PORT_Z = HEAD_Z + 10;
 
 const P = k.fitProjection(
-  [...k.boxCorners(PLATE, -15, 0), ...k.boxCorners(WALL, 0, WALL_TOP), [84, PORT_Y, PORT_Z], [-84, PORT_Y, PORT_Z]],
+  [...k.boxCorners(PLATE, -15, 0), ...k.boxCorners(WALL, 0, WALL_TOP), [84, PORT_Y, PORT_Z], [-84, PORT_Y, PORT_Z], [27, SERVICE[1] + 27, HEAD_Z], [-27, SERVICE[1] - 27, B.z0 - 25]],
   WIDTH,
   HEIGHT,
   { pad: 26, azimuth: 40 },
 );
-const F = studio(P);
+const F = studio(P, { order: ["element", "stand"], pieces: { element: SERVICE, stand: [0, 0, 0] } });
 const { at, S, L, D, put, hose, fitting } = F;
 
 F.plate(PLATE, { strip: { x: -62, y: PLATE.y + PLATE.d - 14, w: 124, d: 6, r: 1 }, label: { x: 40, y: 36, w: 30, d: 18, r: 1.5 } });
@@ -68,44 +72,58 @@ for (const side of [-1, 1]) {
   hose(`${name}.hose`, [[side * 70, PORT_Y - sink, PORT_Z], [side * 70, WALL_FACE + wallReach, PORT_Z]], 3);
 }
 
-// spin-on separator shell: rolled seams top and bottom, a raised grip band with flutes
+// spin-on shell: a rolled seam at the head, a raised grip band with flutes
 const CAN = vertical(CAN_Z);
 const H = HEAD_Z - CAN_Z;
-const canProfile = [[0, 23.5], [1.6, 26.8], [5.4, 26.8], [7, 26], [11.4, 26], [12, 26.6], [20, 26.6], [20.6, 26], [H - 7, 26], [H - 5.4, 26.8], [H - 1.6, 26.8], [H, 23.5]];
-const seams = L(G.arcOf(CAN, 3.5, 26.8, P) + G.arcOf(CAN, H - 3.5, 26.8, P), { tone: "faint" });
-put("canister", [0, 0, CAN_Z + H / 2], S(G.solidOf(canProfile, CAN, P, { fill: "surface" }), { tone: "hi", inner: seams }) + k.fadedSvg(G.ribsOf(CAN, 12, 20, 26.6, 36, P, { fade: [0.3, 0.75] }), { tone: "lo" }), [A.solid(CAN, canProfile, { name: "canister" })]);
+const band = [[11.4, 26], [12, 26.6], [20, 26.6], [20.6, 26]];
+const canProfile = SPINON
+  ? [[0, 26], ...band, [H - 7, 26], [H - 5.4, 26.8], [H - 1.6, 26.8], [H, 23.5]]
+  : [[0, 23.5], [1.6, 26.8], [5.4, 26.8], [7, 26], ...band, [H - 7, 26], [H - 5.4, 26.8], [H - 1.6, 26.8], [H, 23.5]];
+const seams = L((SPINON ? "" : G.arcOf(CAN, 3.5, 26.8, P)) + G.arcOf(CAN, H - 3.5, 26.8, P), { tone: "faint" });
+const element = { piece: "element" };
+put("canister", [0, 0, CAN_Z + H / 2], S(G.solidOf(canProfile, CAN, P, { fill: "surface" }), { tone: "hi", inner: seams }) + k.fadedSvg(G.ribsOf(CAN, 12, 20, 26.6, 36, P, { fade: [0.3, 0.75] }), { tone: "lo" }), [A.solid(CAN, canProfile, { name: "canister" })], element);
 
-// threaded collar, the glass bowl, the drain cap, the drain and the cup
-const C = vertical(COLLAR_Z);
-const collarProfile = [[0, 22.6], [0.8, 23.6], [CAN_Z - COLLAR_Z - 0.8, 23.6], [CAN_Z - COLLAR_Z, 22.6]];
-put("collar", [0, 0, COLLAR_Z + 2.5], S(G.solidOf(collarProfile, C, P), { tone: "mid" }) + k.fadedSvg(G.ribsOf(C, 0.8, CAN_Z - COLLAR_Z - 0.8, 23.6, 40, P, { fade: [0.3, 0.75] }), { tone: "lo" }), [A.solid(C, collarProfile, { name: "collar" })]);
-put("bowl", [0, 0, (B.z0 + B.z1) / 2], glassBowl(P, B), [A.cylinder(0, 0, B.r, B.z0, B.z1 - B.z0, { name: "bowl" })]);
 const V0 = vertical(VALVE_Z);
-const capProfile = [[0, 6], [CAP_Z - VALVE_Z - 2, 14, 1], [CAP_Z - VALVE_Z, 20], [B.z0 - VALVE_Z, 22.6]];
-put("cap", [0, 0, (VALVE_Z + B.z0) / 2], S(G.solidOf(capProfile, V0, P), { tone: "mid", inner: L(G.arcOf(V0, B.z0 - VALVE_Z - 2.4, 22.1, P), { tone: "faint" }) }), [A.solid(V0, capProfile, { name: "cap" })]);
-F.drain(VALVE_Z, B.wing);
+if (SPINON) {
+  // the lower shell of the same cartridge, cut away to show the sump; a domed end with a rolled seam and the drain
+  put("sump", [0, 0, (B.z0 + B.z1) / 2], glassBowl(P, { ...B, cutaway: true }), [A.cylinder(0, 0, B.r, B.z0, B.z1 - B.z0, { name: "sump" })], element);
+  const e = B.z0 - VALVE_Z;
+  const endProfile = [[0, 6], [CAP_Z - VALVE_Z - 2, 15, 1], [CAP_Z - VALVE_Z, 22], [e - 4, 26], [e - 3.5, 26.8], [e, 26.8]];
+  put("end", [0, 0, (VALVE_Z + B.z0) / 2], S(G.solidOf(endProfile, V0, P), { tone: "hi", inner: L(G.arcOf(V0, e - 1.75, 26.8, P, { trim: 0, least: 0 }), { tone: "faint" }) }), [A.solid(V0, endProfile, { name: "end" })], element);
+  F.drain(VALVE_Z, B.wing, element);
+} else {
+  // threaded collar, the reusable glass bowl, the drain cap and the drain: these stay when the element is changed
+  const C = vertical(COLLAR_Z);
+  const collarProfile = [[0, 22.6], [0.8, 23.6], [CAN_Z - COLLAR_Z - 0.8, 23.6], [CAN_Z - COLLAR_Z, 22.6]];
+  put("collar", [0, 0, COLLAR_Z + 2.5], S(G.solidOf(collarProfile, C, P), { tone: "mid" }) + k.fadedSvg(G.ribsOf(C, 0.8, CAN_Z - COLLAR_Z - 0.8, 23.6, 40, P, { fade: [0.3, 0.75] }), { tone: "lo" }), [A.solid(C, collarProfile, { name: "collar" })]);
+  put("bowl", [0, 0, (B.z0 + B.z1) / 2], glassBowl(P, B), [A.cylinder(0, 0, B.r, B.z0, B.z1 - B.z0, { name: "bowl" })]);
+  const capProfile = [[0, 6], [CAP_Z - VALVE_Z - 2, 14, 1], [CAP_Z - VALVE_Z, 20], [B.z0 - VALVE_Z, 22.6]];
+  put("cap", [0, 0, (VALVE_Z + B.z0) / 2], S(G.solidOf(capProfile, V0, P), { tone: "mid", inner: L(G.arcOf(V0, B.z0 - VALVE_Z - 2.4, 22.1, P), { tone: "faint" }) }), [A.solid(V0, capProfile, { name: "cap" })]);
+  F.drain(VALVE_Z, B.wing);
+}
 F.cup(B.cupR, B.cupH, B.wing - 5);
 
 const layers = F.render();
 A.auditOrExit(F.R, P);
 
-const svg = k.figureSvg({
-  width: WIDTH,
-  height: HEIGHT,
-  label:
-    "Separador de combustible y agua estándar con vaso transparente y purgador, montado en un soporte de pared. Las gotas de agua separadas caen al vaso, el nivel sube hasta la marca y el purgador se abre para vaciarlo en una taza colectora.",
-  body: layers,
-});
 
 const live = `
 const P = ${JSON.stringify(P)};
 const B = ${JSON.stringify(B)};
+const SV = ${JSON.stringify({ out: SERVICE, spinon: SPINON })};
 ${LIVE_BOWL}
+const elementGroups = [...svg.querySelectorAll('[data-piece="element"]')];
+const svc = { x: 0, v: 0, target: 0 };
 let wet = 0.5, wetTarget = 0.5, spawn = 0, clock = 0, touring = true, idle = 0, frame = 0, last = 0, visible = false;
 const falling = [];
 function draw() {
   drawBowl(falling.map((d) => ({ at: [d.x, d.y, d.z], back: false })));
-  const text = bowl.open > 0.5 ? "vaso · purgando" : bowl.level > 0.85 ? "vaso · llegando a la marca" : "vaso · acumulando agua";
+  const shift = translateAlong(P, SV.out.map((v) => v * svc.x));
+  for (const group of elementGroups) group.setAttribute("transform", shift);
+  const where = SV.spinon ? "cartucho" : "vaso";
+  const text = svc.x > 0.5
+    ? (SV.spinon ? "cartucho fuera · se cambia entero" : "elemento fuera · vaso reutilizado")
+    : bowl.open > 0.5 ? where + " · purgando" : bowl.level > 0.85 ? where + " · llegando al límite" : where + " · acumulando agua";
   if (readout.textContent !== text) readout.textContent = text;
   stage.setAttribute("aria-valuenow", String(Math.round(wet * 100)));
   stage.setAttribute("aria-valuetext", (wet > 0.66 ? "mucha" : wet > 0.33 ? "algo de" : "poca") + " agua en el combustible, " + text);
@@ -117,7 +135,7 @@ function tick(now) {
   if (touring) wetTarget = 0.55 + 0.4 * Math.sin(clock * 0.35);
   wet += (wetTarget - wet) * (1 - Math.exp(-dt / 0.5));
   // water separated by the media leaves the element's bottom as drops, denser than the fuel, and settles
-  spawn += dt * (0.6 + 5 * wet);
+  spawn += svc.x > 0.05 ? 0 : dt * (0.6 + 5 * wet); // no separation while the element is out
   while (spawn > 1) { spawn -= 1; const r = Math.sqrt(rand()) * 13, a = rand() * Math.PI * 2; falling.push({ x: Math.cos(a) * r, y: Math.sin(a) * r, z: B.z1 - 1, v: 0 }); }
   const top = waterTop();
   for (let i = falling.length - 1; i >= 0; i--) {
@@ -127,17 +145,24 @@ function tick(now) {
     if (d.z <= top) { falling.splice(i, 1); bowl.level = Math.min(bowl.level + 0.012, 1.08); }
   }
   stepBowl(dt);
+  for (let i = 0; i < 4; i++) { const h = dt / 4; svc.v += ((svc.target - svc.x) * 46 - svc.v * 13.6) * h; svc.x += svc.v * h; }
   draw();
   frame = visible && !still.matches ? requestAnimationFrame(tick) : 0;
 }
-const run = () => { if (!frame && visible && !still.matches) { last = 0; frame = requestAnimationFrame(tick); } };
+const run = () => { if (!frame && visible && !still.matches) { last = 0; frame = requestAnimationFrame(tick); } if (still.matches) { svc.x = svc.target; draw(); } };
 const steer = (next) => { touring = false; wetTarget = clamp(next, 0, 1); clearTimeout(idle); idle = setTimeout(() => { touring = true; }, 4000); run(); };
 new IntersectionObserver((entries) => { visible = entries[entries.length - 1].isIntersecting; if (visible) run(); }, { rootMargin: "120px 0px" }).observe(stage);
-stage.addEventListener("pointermove", (event) => { const box = svg.getBoundingClientRect(); steer(((event.clientX - box.left) / box.width - 0.2) / 0.6); });
+stage.addEventListener("pointermove", (event) => {
+  const box = svg.getBoundingClientRect();
+  svc.target = (event.clientY - box.top) / box.height < 0.3 ? 1 : 0;
+  steer(((event.clientX - box.left) / box.width - 0.2) / 0.6);
+});
+stage.addEventListener("pointerleave", () => { svc.target = 0; run(); });
 stage.addEventListener("click", () => { bowl.opening = true; run(); });
 stage.addEventListener("keydown", (event) => {
   if (event.key === "ArrowRight" || event.key === "ArrowUp") steer(wetTarget + 0.1);
   else if (event.key === "ArrowLeft" || event.key === "ArrowDown") steer(wetTarget - 0.1);
+  else if (event.key === "e" || event.key === "E") { svc.target = svc.target ? 0 : 1; run(); }
   else if (event.key === " " || event.key === "Enter") { bowl.opening = true; run(); }
   else return;
   event.preventDefault();
@@ -145,21 +170,55 @@ stage.addEventListener("keydown", (event) => {
 draw();
 `;
 
-const body = PAGE_CSS + k.plateHtml({
-  fig: "Fig 1",
-  title: "ELIMFILTERS · HYDROCORE™ · ES9",
-  hint: "Cursor: más o menos agua · clic: purgar",
-  readout: "vaso · acumulando agua",
-  keys: [
-    { mark: "lit", label: "Nivel de agua en el vaso y mariposa del purgador" },
-    { mark: "blue", label: "Agua separada: gotas y columna en el vaso" },
-    { mark: "raised", label: "Cabezal con bomba de cebado, cartucho spin-on, vaso transparente, taza colectora" },
-  ],
-  caption:
-    "Ilustración conceptual de un separador de combustible/agua estándar, no-turbina, con vaso transparente y purgador. El agua separada, más densa que el diésel, cae al vaso; cuando alcanza la marca, el purgador se abre y la descarga a la taza. Es una ilustración conceptual: no muestra datos de producto.",
-  body: `<div class="iso-stage" tabindex="0" role="slider" aria-label="Separador HYDROCORE: flechas cambian el agua en el combustible, espacio purga" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">${svg}</div>`,
+const COPY = SPINON
+  ? {
+      fig: "Fig 1B",
+      hint: "Arriba: servicio · clic: purgar",
+      readout: "cartucho · acumulando agua",
+      keys: [
+        { mark: "lit", label: "Nivel de agua en el fondo del cartucho y mariposa del purgador" },
+        { mark: "blue", label: "Agua separada decantando dentro del cartucho" },
+        { mark: "raised", label: "Cabezal con bomba de cebado, cartucho spin-on con purgador incorporado (vista en corte), taza colectora" },
+      ],
+      caption:
+        "Ilustración conceptual de un filtro separador spin-on HYDROCORE™ con purgador incorporado, con el fondo del cartucho en vista de corte. El agua separada, más densa que el diésel, decanta en el fondo del propio cartucho y se descarga abriendo el purgador. En el servicio se reemplaza el cartucho completo, con su purgador. Es una ilustración conceptual: no muestra datos de producto.",
+      aria: "Spin-on HYDROCORE con purgador incorporado: flechas cambian el agua en el combustible, E cambia el cartucho, espacio purga",
+      label:
+        "Filtro separador spin-on de combustible y agua con purgador incorporado, montado en un cabezal sobre un soporte de pared, con el fondo del cartucho en corte. El agua separada decanta en el fondo del cartucho y el purgador la descarga a una taza colectora. Al cambiarlo se retira el cartucho completo.",
+    }
+  : {
+      fig: "Fig 1A",
+      hint: "Arriba: servicio · clic: purgar",
+      readout: "vaso · acumulando agua",
+      keys: [
+        { mark: "lit", label: "Nivel de agua en el vaso y mariposa del purgador" },
+        { mark: "blue", label: "Agua separada: gotas y columna en el vaso" },
+        { mark: "raised", label: "Cabezal con bomba de cebado, elemento spin-on, vaso transparente reutilizable, taza colectora" },
+      ],
+      caption:
+        "Ilustración conceptual de un separador de combustible/agua HYDROCORE™ con vaso transparente reutilizable y purgador. El agua separada, más densa que el diésel, cae al vaso y se descarga por el purgador. En el servicio se cambia solo el elemento: el mismo vaso se desmonta y se instala en el elemento nuevo. Es una ilustración conceptual: no muestra datos de producto.",
+      aria: "Separador HYDROCORE con vaso: flechas cambian el agua en el combustible, E cambia el elemento, espacio purga",
+      label:
+        "Separador de combustible y agua con vaso transparente y purgador, montado en un cabezal sobre un soporte de pared. Las gotas de agua separadas caen al vaso y el purgador las descarga a una taza colectora. Al cambiar el elemento, el vaso se conserva y se reutiliza.",
+    };
+
+const svg = k.figureSvg({
+  width: WIDTH,
+  height: HEIGHT,
+  label: COPY.label,
+  body: layers,
 });
 
-const name = theme === "light" ? "hydrocore-light.html" : "hydrocore.html";
+const body = PAGE_CSS + k.plateHtml({
+  fig: COPY.fig,
+  title: "ELIMFILTERS · HYDROCORE™ · ES9",
+  hint: COPY.hint,
+  readout: COPY.readout,
+  keys: COPY.keys,
+  caption: COPY.caption,
+  body: `<div class="iso-stage" tabindex="0" role="slider" aria-label="${COPY.aria}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">${svg}</div>`,
+});
+
+const name = `hydrocore${SPINON ? "-spinon" : ""}${theme === "light" ? "-light" : ""}.html`;
 writeFileSync(join(HERE, name), draftPage(k.pageHtml({ title: "HYDROCORE separador", theme, body, script: KIT_NOTICE + kitScript() + live })));
 console.log("wrote", name, F.R.items.length, "items");

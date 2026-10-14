@@ -9,7 +9,8 @@ into `frontend/` or any public surface until both statuses are approved.
 
 | Figure | Technology scope | Pages | Preview |
 |---|---|---|---|
-| Fig 1 · HYDROCORE™ standard separator | Standard non-turbine fuel/water separator, drain and transparent bowl | `hydrocore/hydrocore.html`, `hydrocore/hydrocore-light.html` | `shots/hydrocore-light.png`, `shots/hydrocore-dark.png` |
+| Fig 1A · HYDROCORE™ separator with reusable bowl | Standard non-turbine separator, transparent bowl and drain; at service only the element is changed and the bowl is refitted | `hydrocore/hydrocore.html`, `hydrocore/hydrocore-light.html` | `shots/hydrocore-light.png`, `shots/hydrocore-service.png` |
+| Fig 1B · HYDROCORE™ spin-on with integrated drain | Standard non-turbine spin-on, sump in section, integrated drain; at service the whole cartridge is replaced | `hydrocore/hydrocore-spinon.html`, `hydrocore/hydrocore-spinon-light.html` | `shots/hydrocore-spinon-light.png`, `shots/hydrocore-spinon-service.png` |
 | Fig 2 · TURBOCORE™ turbine-style housing | FH/FG turbine-style housing, replaceable element | `turbocore/turbocore.html`, `turbocore/turbocore-light.html` | `shots/turbocore-light.png`, `shots/turbocore-lid-open.png` |
 
 HYDROCORE™ and TURBOCORE™ are separate figures because they are distinct scopes; neither page mentions the other technology.
@@ -33,6 +34,7 @@ cd docs/knowledge-center/figures
 git clone https://github.com/wheresryan22/anatomy .anatomy
 git -C .anatomy checkout be2fa9b47a7e4b05dec468be9ffc42e830c2101c
 node hydrocore/build.mjs --audit && node hydrocore/build.mjs --light
+node hydrocore/build.mjs --spinon --audit && node hydrocore/build.mjs --spinon --light
 node turbocore/build.mjs --audit && node turbocore/build.mjs --light
 ```
 
