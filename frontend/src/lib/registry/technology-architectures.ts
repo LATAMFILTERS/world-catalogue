@@ -27,6 +27,16 @@
 
 import { MATURITY, type TechnologyArchitecture } from './registry-types';
 
+// The architecture records what must be verified; it does not invent SKU performance.
+const PRODUCT_SPECIFIC_PERFORMANCE_VERIFICATION = {
+  kind: 'VERIFICATION_REQUIREMENT',
+  evidenceStatus: 'PRODUCT_EVIDENCE_REQUIRED',
+  metric: 'Product-specific performance verification',
+  value: 'No product-specific performance result is claimed. A test report must identify the product, application, test method, operating conditions and acceptance criteria before numerical performance can be published.',
+  unit: 'verification requirement',
+  evidenceSource: 'CLAUDE.md: product-specific technical claims require approved product/application evidence',
+} as const;
+
 export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = {
 
   // ── MACROCORE — Air Intake Filtration ─────────────────────────────────
@@ -375,7 +385,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     ],
 
     // Component Class 7: Performance Profile
-    performanceProfile: [],
+    performanceProfile: [PRODUCT_SPECIFIC_PERFORMANCE_VERIFICATION],
 
     // Component Class 8: Failure Modes addressed
     failureModes: [
@@ -536,7 +546,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
     ],
 
     // Component Class 7: Performance Profile
-    performanceProfile: [],
+    performanceProfile: [PRODUCT_SPECIFIC_PERFORMANCE_VERIFICATION],
 
     // Component Class 8: Failure Modes addressed
     failureModes: [
@@ -644,7 +654,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       },
     ],
 
-    performanceProfile: [],
+    performanceProfile: [PRODUCT_SPECIFIC_PERFORMANCE_VERIFICATION],
 
     failureModes: [
       {
@@ -750,7 +760,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       },
     ],
 
-    performanceProfile: [],
+    performanceProfile: [PRODUCT_SPECIFIC_PERFORMANCE_VERIFICATION],
 
     failureModes: [
       {
@@ -890,7 +900,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       },
     ],
 
-    performanceProfile: [],
+    performanceProfile: [PRODUCT_SPECIFIC_PERFORMANCE_VERIFICATION],
 
     failureModes: [
       {
@@ -1001,7 +1011,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       },
     ],
 
-    performanceProfile: [],
+    performanceProfile: [PRODUCT_SPECIFIC_PERFORMANCE_VERIFICATION],
 
     failureModes: [
       {
@@ -1137,7 +1147,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       },
     ],
 
-    performanceProfile: [],
+    performanceProfile: [PRODUCT_SPECIFIC_PERFORMANCE_VERIFICATION],
 
     failureModes: [
       {
@@ -1245,7 +1255,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       },
     ],
 
-    performanceProfile: [],
+    performanceProfile: [PRODUCT_SPECIFIC_PERFORMANCE_VERIFICATION],
 
     failureModes: [
       {
@@ -1354,7 +1364,7 @@ export const TECHNOLOGY_ARCHITECTURES: Record<string, TechnologyArchitecture> = 
       },
     ],
 
-    performanceProfile: [],
+    performanceProfile: [PRODUCT_SPECIFIC_PERFORMANCE_VERIFICATION],
 
     failureModes: [
       {
