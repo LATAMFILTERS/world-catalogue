@@ -31,7 +31,6 @@ const BAR_TOP = 190;
 const PORT_Z = 156;
 const CLAMP_Z = 128;
 const VANES = 14;
-const VANE_FRAMES = 16;
 const LIFT = 58;
 const ELEMENT_R = 24;
 const PIECES = { lid: [0, 0, LIFT], stand: [0, 0, 0] };
@@ -113,10 +112,9 @@ const collarProfile = [[0, B.r + 1], [0.8, B.r + 2.2], [BODY_Z - COLLAR_Z - 0.8,
 put("collar", [0, 0, COLLAR_Z + 3], S(G.solidOf(collarProfile, C, P), { tone: "mid" }) + k.fadedSvg(G.ribsOf(C, 0.8, BODY_Z - COLLAR_Z - 0.8, B.r + 2.2, 44, P, { fade: [0.3, 0.75] }), { tone: "lo" }), [A.solid(C, collarProfile, { name: "collar" })]);
 const TF = vertical(TURB.z0);
 const turbProfile = [[-(TURB.z0 - 54), TURB.hub], [-2, TURB.r - 2, 1], [0, TURB.r], [TURB.z1 - TURB.z0, TURB.r], [COLLAR_Z - TURB.z0, TURB.r - 3]];
-const vaneFrames = Array.from({ length: VANE_FRAMES }, (_, f) =>
-  k.fadedSvg(G.ribsOf(TF, 0, TURB.z1 - TURB.z0, TURB.r, VANES, P, { phase: (f / VANE_FRAMES) * ((Math.PI * 2) / VANES), twist: -0.7, fade: [0.25, 0.7] }), { tone: "hi" }),
-);
-const turbine = S(G.solidOf(turbProfile, TF, P), { tone: "mid", inner: L(G.arcOf(TF, 0, TURB.r, P, { trim: 0 }) + G.arcOf(TF, TURB.z1 - TURB.z0, TURB.r, P, { trim: 0 }), { tone: "lo" }) }) + `<g data-part="vanes">${vaneFrames[0]}</g>`;
+// the deflector is fixed: its helical vanes turn the fuel's own flow into a swirl, nothing rotates
+const vanes = k.fadedSvg(G.ribsOf(TF, 0, TURB.z1 - TURB.z0, TURB.r, VANES, P, { twist: -0.7, fade: [0.25, 0.7] }), { tone: "hi" });
+const turbine = S(G.solidOf(turbProfile, TF, P), { tone: "mid", inner: L(G.arcOf(TF, 0, TURB.r, P, { trim: 0 }) + G.arcOf(TF, TURB.z1 - TURB.z0, TURB.r, P, { trim: 0 }), { tone: "lo" }) }) + `<g data-part="vanes">${vanes}</g>`;
 put("bowl", [0, 0, (B.z0 + B.z1) / 2], glassBowl(P, { ...B, inside: turbine }), [A.cylinder(0, 0, B.r, B.z0, B.z1 - B.z0, { name: "bowl", owner: "bowl" }), A.solid(TF, turbProfile, { name: "turbine", owner: "bowl" })]);
 const V0 = vertical(VALVE_Z);
 const capProfile = [[0, 6], [CAP_Z - VALVE_Z - 2, 16, 1], [CAP_Z - VALVE_Z, 23], [B.z0 - VALVE_Z, B.r + 1]];
@@ -131,27 +129,23 @@ const svg = k.figureSvg({
   width: WIDTH,
   height: HEIGHT,
   label:
-    "Carcasa separadora de combustible y agua tipo turbina, con tapa y manija en T, montada con abrazadera a un soporte de pared. A través del vaso transparente se ve el deflector de turbina, que centrifuga el combustible: el agua, más densa, se desplaza hacia la pared y cae al fondo del vaso, donde un purgador la descarga a una taza. Al levantar la tapa sale el elemento reemplazable.",
+    "Carcasa separadora de combustible y agua tipo turbina, con tapa y manija en T, montada con abrazadera a un soporte de pared. A través del vaso transparente se ve el deflector de turbina fijo, que con el propio flujo pone el combustible en remolino y lo centrifuga: el agua, más densa, se desplaza hacia la pared y cae al fondo del vaso, donde un purgador la descarga a una taza. Al levantar la tapa sale el elemento reemplazable.",
   body: layers,
 });
 
 const live = `
 const P = ${JSON.stringify(P)};
 const B = ${JSON.stringify(B)};
-const T = ${JSON.stringify({ ...TURB, frames: VANE_FRAMES, lift: LIFT, spring: SPRING })};
-const VANES = ${JSON.stringify(vaneFrames)};
+const T = ${JSON.stringify({ ...TURB, lift: LIFT, spring: SPRING })};
 ${LIVE_BOWL}
-const vanes = $("vanes");
 const lidGroups = [...svg.querySelectorAll('[data-piece="lid"]')];
 const VIEW = [Math.cos(P.azimuth * Math.PI / 180), Math.sin(P.azimuth * Math.PI / 180)];
-let flow = 0.6, flowTarget = 0.6, spin = 0, spawn = 0, clock = 0, touring = true, idle = 0, shown = -1, frame = 0, last = 0, visible = false;
+let flow = 0.6, flowTarget = 0.6, spawn = 0, clock = 0, touring = true, idle = 0, frame = 0, last = 0, visible = false;
 const lid = { x: 0, v: 0, target: 0 };
 const swirl = [];
 function draw() {
   const hidden = (p) => p.z > T.z0 - 12 && Math.cos(p.a) * VIEW[0] + Math.sin(p.a) * VIEW[1] < 0;
   drawBowl(swirl.map((p) => ({ at: [p.r * Math.cos(p.a), p.r * Math.sin(p.a), p.z], back: hidden(p) })));
-  const index = Math.floor((((spin % 1) + 1) % 1) * T.frames);
-  if (index !== shown) { vanes.innerHTML = VANES[index]; shown = index; }
   const lift = translateAlong(P, [0, 0, T.lift * lid.x]);
   const [dx, dy] = lift.match(/-?[\\d.]+/g).map(Number);
   for (const group of lidGroups) { group.setAttribute("transform", lift); holdStill(group, [dx, dy]); }
@@ -166,7 +160,6 @@ function tick(now) {
   clock += dt;
   if (touring) flowTarget = 0.55 + 0.4 * Math.sin(clock * 0.3);
   flow += (flowTarget - flow) * (1 - Math.exp(-dt / 0.6));
-  spin += dt * flow * 1.6;
   // stage 1: the turbine deflector centrifuges the fuel; denser water moves out to the bowl wall and spirals down into the sump
   spawn += dt * (1 + 6 * flow);
   while (spawn > 1) { spawn -= 1; swirl.push({ r: T.r - 2, a: rand() * Math.PI * 2, z: T.z0 - 3 - rand() * 4, v: 4 }); }
@@ -216,7 +209,7 @@ const body = PAGE_CSS + k.plateHtml({
     { mark: "raised", label: "Tapa con manija en T, elemento reemplazable, carcasa con aletas y abrazadera, vaso, purgador" },
   ],
   caption:
-    "Ilustración conceptual de una carcasa separadora de combustible/agua tipo turbina (FH/FG), con separación por etapas. En la primera etapa, visible en el vaso, un deflector de turbina centrifuga el combustible: el agua, más densa, se desplaza hacia la pared y decanta al fondo, donde el purgador la descarga. Las etapas siguientes ocurren en el elemento reemplazable, que se retira por la tapa. Es una ilustración conceptual: no muestra datos de producto.",
+    "Ilustración conceptual de una carcasa separadora de combustible/agua tipo turbina (FH/FG), con separación por etapas. En la primera etapa, visible en el vaso, un deflector de turbina fijo pone el combustible en remolino y lo centrifuga: el agua, más densa, se desplaza hacia la pared y decanta al fondo, donde el purgador la descarga. Las etapas siguientes ocurren en el elemento reemplazable, que se retira por la tapa. Es una ilustración conceptual: no muestra datos de producto.",
   body: `<div class="iso-stage" tabindex="0" role="slider" aria-label="Carcasa TURBOCORE: flechas cambian el caudal, E abre la tapa, espacio purga" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60">${svg}</div>`,
 });
 

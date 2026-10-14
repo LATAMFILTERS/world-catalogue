@@ -26,7 +26,25 @@
       "publicationStatus": "internal-only",
       "open_items": [
         "Engineering review of the drawn configuration (lid, housing, bowl, deflector, drain) against approved FH/FG applications.",
-        "Attach an ELIMFILTERS-controlled document reference for the operator-confirmed stage-1 mechanism (turbine deflector centrifuges the fuel)."
+        "Stage-1 mechanism is now backed by external manufacturer literature (see evidence) but not yet by an ELIMFILTERS-controlled document. FUEL_CANONICAL_GOVERNANCE.md treats a single external manufacturer source as internal evidence only; operator decides whether that is enough to publish the qualitative mechanism (no brand, no numbers)."
+      ],
+      "evidence": [
+        {
+          "type": "external-manufacturer-literature",
+          "use": "internal evidence only; never cited or named on public surfaces",
+          "source": "Parker Hannifin, Racor Division: Turbine Series 900FH/1000FH instruction sheet 12960 Rev D",
+          "url": "https://www.parker.com/content/dam/Parker-com/Literature/Racor/12960_Rev_D_900FH_and_1000FH_Turbine_Filters.pdf",
+          "finding": "Stage 1 separation: incoming fuel passes through a centrifuge that spins off large solids and water droplets, which fall to the bottom of the collection bowl. Stage 2: fine droplets coalesce on a conical baffle and the cartridge. Stage 3: the cartridge captures fine contaminants.",
+          "retrieved": "2026-10-14 via web search summary; direct PDF fetch blocked from the build environment"
+        },
+        {
+          "type": "external-manufacturer-literature",
+          "use": "internal evidence only",
+          "source": "Parker Hannifin, Racor Division: 500FG Turbine Series instruction sheet 15332",
+          "url": "https://www.parker.com/content/dam/Parker-com/Literature/Racor/Tech_Install/15332_500FG_Turbine_Series.pdf",
+          "finding": "The turbine is fixed: it uses the fuel's own flow to remove large solids and free water by centrifugal force. The figure was corrected to show a static deflector.",
+          "retrieved": "2026-10-14 via web search summary"
+        }
       ]
     }
   ],
@@ -52,6 +70,11 @@
       "date": "2026-10-13",
       "by": "operator",
       "decision": "Readouts show qualitative states instead of numbers on both figures."
+    },
+    {
+      "date": "2026-10-14",
+      "by": "operator",
+      "decision": "Look up the mechanism in Parker Hannifin literature. Result recorded as internal evidence; deflector animation changed from rotating to fixed to match it."
     }
   ]
 }
