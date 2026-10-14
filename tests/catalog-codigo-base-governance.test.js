@@ -5,8 +5,8 @@ const assert = require('node:assert/strict');
 const { POLICY_VERSION, deriveCodigoBaseGovernance } = require('../lib/catalog-codigo-base-governance');
 const { evaluateCodigoBase } = require('../lib/catalog-codigo-base-policy');
 
-test('V4.2 policy version is active', () => {
-  assert.equal(POLICY_VERSION, '2026-10-06-v4.2');
+test('V4.3 policy version is active', () => {
+  assert.equal(POLICY_VERSION, '2026-10-14-v4.3');
 });
 
 test('HD observed Donaldson base is evidenced but not called verified without explicit authority', () => {
