@@ -44,7 +44,12 @@ F.wall(WALL, WALL_TOP, [[-62, 40], [62, 40], [-62, 110], [62, 110]]);
 // cast head: ears bolted to the wall, a body with a parting seam, flow arrows, plugs, a hand primer pump and a bleed screw
 put("head.ears", [0, EARS.y + EARS.d / 2, HEAD_Z + 4], S(k.slabOf(EARS, HEAD_Z - 12, 44, P, 3, 0.5), { tone: "mid" }) + D([[-40, HEAD_Z - 6], [40, HEAD_Z - 6], [-40, HEAD_TOP + 6], [40, HEAD_TOP + 6]].map(([x, z]) => at([x, EARS.y + EARS.d, z])), { size: 0.6, tone: "hi" }), [A.slab(EARS, HEAD_Z - 12, 44, { name: "head.ears" })]);
 const arrows = [-1, 1].map((side) => k.onTop([[side * 12 - 4, PORT_Y], [side * 12 + 4, PORT_Y]], HEAD_TOP, P) + k.onTop([[side * 12 + 1, PORT_Y - 3], [side * 12 + 4, PORT_Y], [side * 12 + 1, PORT_Y + 3]], HEAD_TOP, P)).join("");
-put("head", [0, HEAD.y + HEAD.d / 2, HEAD_Z + 10], S(k.slabOf(HEAD, HEAD_Z, 20, P, 8, 1), { tone: "mid", inner: L(k.sideSeam(HEAD, HEAD_Z + 6, P, 8), { tone: "faint" }) }) + L(arrows, { tone: "lo", free: true }), [A.slab(HEAD, HEAD_Z, 20, { name: "head" })]);
+// brand, technology and series prefix cast into the head's front face
+const FRONT = HEAD.y + HEAD.d;
+const headMark =
+  k.faceTextSvg(k.sideMatrix([0, FRONT], HEAD_Z + 18.6, P, "left"), "ELIMFILTERS", { size: 3, tone: "hi", anchor: "middle" }) +
+  k.faceTextSvg(k.sideMatrix([0, FRONT], HEAD_Z + 15, P, "left"), "HYDROCORE™ · ES9", { size: 2.2, tone: "mid", anchor: "middle" });
+put("head", [0, HEAD.y + HEAD.d / 2, HEAD_Z + 10], S(k.slabOf(HEAD, HEAD_Z, 20, P, 8, 1), { tone: "mid", inner: L(k.sideSeam(HEAD, HEAD_Z + 6, P, 8), { tone: "faint" }) }) + L(arrows, { tone: "lo", free: true }) + headMark, [A.slab(HEAD, HEAD_Z, 20, { name: "head" })]);
 for (const x of [-14, 14]) fitting("head.plug", G.frameOf([x, HEAD.y + HEAD.d, HEAD_Z + 8], [0, 1, 0], [1, 0, 0], [0, 0, 1]), { boss: 4.2, bossH: 1.6, hex: 3.4, hexH: 3 });
 put("pump.base", [PUMP[0], PUMP[1], HEAD_TOP + 1.5], S(k.cylinder(PUMP[0], PUMP[1], 13, HEAD_TOP, 3, P, 48, 0.5), { tone: "mid" }) + D(G.dotsOf(vertical(HEAD_TOP + 3, ...PUMP), 0, 10.6, 6, P, { all: true }), { size: 0.45 }), [A.cylinder(PUMP[0], PUMP[1], 13, HEAD_TOP, 3, { name: "pump.base" })]);
 put("pump.barrel", [PUMP[0], PUMP[1], HEAD_TOP + 6], S(k.cylinder(PUMP[0], PUMP[1], 7.5, HEAD_TOP + 3, 6, P, 32), { tone: "mid", crease: "none" }), [A.cylinder(PUMP[0], PUMP[1], 7.5, HEAD_TOP + 3, 6, { name: "pump.barrel" })]);
@@ -142,7 +147,7 @@ draw();
 
 const body = PAGE_CSS + k.plateHtml({
   fig: "Fig 1",
-  title: "HYDROCORE™ · separador estándar",
+  title: "ELIMFILTERS · HYDROCORE™ · ES9",
   hint: "Cursor: más o menos agua · clic: purgar",
   readout: "vaso · acumulando agua",
   keys: [
