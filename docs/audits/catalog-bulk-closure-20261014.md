@@ -4,7 +4,7 @@ Estado: EN CURSO. No se declara el catálogo completo ni se certifican universal
 
 ## Lectura vigente
 
-Producción catalogo_elimfilters, puerto 5432, consulta de solo lectura: 13,406 filas, 13,390 activas y 16 inactivas. Registro de certificación activo: 4,699 CERTIFIED, 8,686 BLOCKED y 5 RESEARCHING. Porcentaje registrado: 35.09%; pendientes registrados: 8,691. El denominador cambió en una fila durante la sesión por una operación externa.
+Producción catalogo_elimfilters, puerto 5432, consulta de solo lectura: 13,406 filas, 13,390 activas y 16 inactivas. Registro de certificación activo: 4,738 CERTIFIED, 8,647 BLOCKED y 5 RESEARCHING. Porcentaje registrado: 35.38%; pendientes registrados: 8,652. El denominador cambió en una fila durante la sesión por una operación externa.
 
 ## Operaciones comprobadas
 
@@ -17,9 +17,11 @@ Producción catalogo_elimfilters, puerto 5432, consulta de solo lectura: 13,406 
 | EA 31877 y EL 36006: ficha exacta y aplicaciones publicadas por FRAM |2|
 | Identidades MANN faltantes: documento, tipo, GTIN e imagen coincidentes |42|
 | Segundo lote de identidades MANN, reconociendo el campo explícito model_family |108|
-| Total bruto desbloqueado |1,466|
+| Reevaluación posterior a clasificación Virgis |6|
+| Reevaluación posterior a clasificación LHA |33|
+| Total bruto desbloqueado |1,505|
 
-Además, diez certificados antiguos fueron corregidos a BLOCKED porque fallan los controles actuales. No se retiraron sus productos ni se cambiaron sus fichas. Reducción neta de pendientes del registro en esta etapa: 1,456.
+Además, diez certificados antiguos fueron corregidos a BLOCKED porque fallan los controles actuales. No se retiraron sus productos ni se cambiaron sus fichas. Reducción neta de pendientes del registro en esta etapa: 1,495.
 
 Se corrigieron referencias duplicadas de Magneti Marelli en 373 productos y de Tecnocomp en 140. Estas cantidades son operaciones sobre fichas, pueden solaparse y no equivalen a productos completamente cerrados. Solo se retiraron duplicados exactos de marca/código de la columna incorrecta, preservando las referencias distintas y los originales en archivos de respaldo.
 
@@ -42,3 +44,5 @@ No se sustituyó 5432, no se instaló 226 y no se eliminaron retenciones manuale
 Sigue pendiente resolver identidades ambiguas, origen regional no documentado, códigos que no coinciden con su origen, conflictos de referencias y documentos que no se pudieron confirmar. Las siguientes operaciones deben reutilizar los planes documentales por grupos, volver a comprobar producción y conservar los mismos controles; no deben promoverse fichas solo para reducir el conteo.
 
 Validación del cambio de código:40 pruebas de aplicaciones/gateway y 146 pruebas de gobernanza pasan.
+
+La continuación corrigió 130 duplicados en 100 fichas Virgis y 134 en 113 fichas LHA, con respaldo, prueba de reversión y verificación posterior. De ellas, seis y 33 productos respectivamente pasaron todos los controles vigentes y quedaron CERTIFIED. Fuentes: https://www.virgis.com/en/air-elements/ y https://ir.donaldson.com/news/news-details/2003/Donaldson-Company-Acquires-LHA-Industrial-Hydraulic-Business-from-Berendsen-Fluid-Power-Inc/default.aspx. Las otras fichas conservan sus bloqueos. La lectura global posterior confirma los totales indicados arriba.
