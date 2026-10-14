@@ -57,3 +57,9 @@ Lectura posterior de solo lectura, 18:07 UTC: confirma los totales de esta revis
 Se completaron 78 valores numéricos vacíos en 76 fichas MANN, en dos bloques de diez y 66 productos. Se exigió código completo del fabricante igual a la autoridad actual, documento oficial archivado con SHA256 y etiqueta expresa de diámetro interior, diámetro exterior o altura en milímetros. Se conservaron todos los valores que ya existían; no se trasladaron dimensiones entre marcas ni entre referencias comerciales.
 
 Ambos bloques tuvieron respaldo de las filas afectadas, ejecución de prueba revertida y lectura posterior completa. Las identidades, aplicaciones, clasificación de uso y estados de certificación quedaron iguales. Estas correcciones mejoran las fichas y no reducen por sí solas los pendientes. Los respaldos por producto no constituyen un respaldo íntegro de la base.
+
+## Protección adicional de tipos declarados
+
+La validación rechaza maquinaria expresamente declarada, como excavadoras, cosechadoras y cargadoras, cuando se presenta dentro de aplicaciones de uso ligero. No infiere ese tipo por el fabricante o el nombre del modelo; un camión genérico o una pickup no se considera automáticamente pesado. Se conservan los hashes y los controles de evidencia anteriores.
+
+Las seis pruebas nuevas y las ocho de model_family están incorporadas al comando de gobernanza de CI. Pasaron 160 pruebas de gobernanza. Una evaluación de solo lectura sobre las 6,553 fichas ligeras no encontró entradas con esos tipos explícitos; la nueva protección es preventiva y no resuelve los 78 casos MANN cuyo problema aparece en el documento del fabricante. No se atribuye ninguna reducción de pendientes a este cambio. Su integración y despliegue siguen sujetos a revisión obligatoria.
