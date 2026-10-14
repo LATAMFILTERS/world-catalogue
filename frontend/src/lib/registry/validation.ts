@@ -17,7 +17,7 @@
  *   8. Foundation Gate — Phase 1 readiness criteria
  */
 
-import { MATURITY } from './registry-types';
+import { MATURITY, type TechnologyArchitecture } from './registry-types';
 import { ENGINEERING_PRINCIPLES } from './engineering-principles';
 import { TECHNOLOGY_ARCHITECTURES } from './technology-architectures';
 import { STANDARDS_REGISTRY } from './standards-registry';
@@ -239,6 +239,26 @@ export function checkTechnologyDomainMapping(): ValidationResult {
 
 // ── Check 3: Eight-Component Completeness ────────────────────────────────────
 
+/** Empty profiles remain invalid; verification requirements cannot masquerade as results. */
+export function performanceProfileErrors(profile: TechnologyArchitecture['performanceProfile']): string[] {
+  if (!profile?.length) return ['performanceProfile is empty'];
+  const errors: string[] = [];
+  for (const entry of profile) {
+    if ('kind' in entry && entry.kind === 'VERIFICATION_REQUIREMENT') {
+      if (entry.evidenceStatus !== 'PRODUCT_EVIDENCE_REQUIRED'
+        || entry.unit !== 'verification requirement'
+        || !entry.value || entry.value.length < 50
+        || /[0-9%]/.test(entry.value)
+        || entry.evidenceSource !== 'CLAUDE.md: product-specific technical claims require approved product/application evidence') {
+        errors.push('Verification requirement needs explicit pending evidence, policy provenance and no numerical result');
+      }
+    } else if (!entry.metric?.trim() || !entry.value?.trim() || !entry.unit?.trim() || !entry.evidenceSource?.trim()) {
+      errors.push('Performance claim requires a metric, value, unit and evidence source');
+    }
+  }
+  return errors;
+}
+
 export function checkEightComponentCompleteness(): ValidationResult {
   const errors: string[] = [];
 
@@ -260,6 +280,10 @@ export function checkEightComponentCompleteness(): ValidationResult {
       if (!value || value.length === 0) {
         errors.push(`TECH[${techId}] PUBLISHED but component class "${name}" is empty — all 8 components required at Level 3`);
       }
+    }
+
+    for (const error of performanceProfileErrors(tech.performanceProfile)) {
+      errors.push(`TECH[${techId}] ${error}`);
     }
 
     // canonicalDefinition, systemContext, industrialRole must be non-empty

@@ -199,6 +199,18 @@ export interface PerformanceClaim {
   readonly standardRef?: string;
 }
 
+/** A verification obligation, explicitly not a measured performance claim. */
+export interface PerformanceVerificationRequirement {
+  readonly kind: 'VERIFICATION_REQUIREMENT';
+  readonly evidenceStatus: 'PRODUCT_EVIDENCE_REQUIRED';
+  readonly metric: string;
+  readonly value: string;
+  readonly unit: 'verification requirement';
+  readonly evidenceSource: string;
+}
+
+export type PerformanceProfileEntry = PerformanceClaim | PerformanceVerificationRequirement;
+
 export interface FailureModeEntry {
   readonly id: string;
   /** Root cause chain: Cause → Effect → Final Consequence */
@@ -242,7 +254,7 @@ export interface TechnologyArchitecture extends BaseEntity {
   readonly captureMechanisms: readonly CaptureCapability[];
 
   // — COMPONENT CLASS 7: Performance Profile
-  readonly performanceProfile: readonly PerformanceClaim[];
+  readonly performanceProfile: readonly PerformanceProfileEntry[];
 
   // — COMPONENT CLASS 8: Failure Modes addressed
   readonly failureModes: readonly FailureModeEntry[];

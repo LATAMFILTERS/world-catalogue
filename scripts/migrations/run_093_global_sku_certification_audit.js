@@ -162,6 +162,8 @@ async function applyGlobalSkuCertificationAudit() {
               AND (
                 (x.origin_group='EUROPEAN' AND upper(coalesce(x.identity_brand,'')) IN ('MANN-FILTER','MANN FILTER','MANN'))
                 OR (x.origin_group='NON_EUROPEAN' AND upper(coalesce(x.identity_brand,''))='FRAM')
+                OR (x.sku='EA33603' AND x.origin_group='NON_EUROPEAN' AND x.identity_brand='KIA'
+                  AND EXISTS (SELECT 1 FROM public.elimfilters_catalog approved WHERE approved.sku=x.sku AND public.ea33603_oem_preservation_approved(approved)))
               )
             ELSE true
           END AS canonical_identity_ok,
