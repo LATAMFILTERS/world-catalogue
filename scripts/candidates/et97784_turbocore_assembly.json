@@ -1,5 +1,5 @@
 {
-  "_status": "APPROVED_PRODUCT_DEFINITION — ELIMFILTERS proprietary OEM product. ET97784 is both the ELIMFILTERS SKU and codigo_base for the complete TURBOCORE™ fuel/water separator assembly. Live publication remains subject to the existing catalog write gateway and database trigger.",
+  "_status": "APPROVED_FOR_PUBLICATION — ELIMFILTERS proprietary OEM product. GitHub policy/gateway and migrations run_280/run_281 are prepared; live PostgreSQL execution remains required.",
   "_decision_date": "2026-10-13",
   "_decision": "ET97784 is an ELIMFILTERS-manufactured/proprietary complete fuel/water separator assembly. Therefore ET97784 is its own codigo_base. Donaldson, Fleetguard, Parker/Racor or other third-party manufacturer authority must not be required for this identity. ES91434 HYDROCORE™ remains the replaceable service element and element-only cross references must not be inherited by the assembly.",
   "_catalog_identity": {
@@ -14,7 +14,7 @@
     "installation_type": "Fuel/Water Separator Assembly",
     "micron_rating": 15,
     "nominal_efficiency": "15 micron",
-    "catalog_active": false,
+    "catalog_active": true,
     "canonical_source_brand": "ELIMFILTERS",
     "canonical_source_code": "ET97784",
     "canonical_source_status": "VERIFIED",
@@ -25,7 +25,11 @@
         "approved_codigo_base": "ET97784",
         "approved_source_column": "INTERNAL_PRODUCT_IDENTITY",
         "primary_manufacturer_verified": true,
-        "internal_product_identity_verified": true
+        "internal_product_identity_verified": true,
+        "policy_version": "2026-10-14-v4.3",
+        "state": "CANONICAL_VERIFIED",
+        "governance_state": "CANONICAL_VERIFIED",
+        "required_authority": "VERIFIED_ELIMFILTERS_OEM_PRODUCT"
       }
     }
   },
