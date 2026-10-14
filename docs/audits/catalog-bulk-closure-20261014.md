@@ -4,7 +4,7 @@ Estado: EN CURSO. No se declara el catálogo completo ni se certifican universal
 
 ## Lectura vigente
 
-Producción catalogo_elimfilters, puerto 5432, consulta de solo lectura: 13,406 filas, 13,390 activas y 16 inactivas. Registro de certificación activo: 4,698 CERTIFIED, 8,598 BLOCKED y 94 RESEARCHING. Porcentaje registrado: 35.09%; pendientes registrados: 8,692. El denominador cambió en una fila durante la sesión por una operación externa.
+Producción catalogo_elimfilters, puerto 5432, consulta de solo lectura: 13,406 filas, 13,390 activas y 16 inactivas. Registro de certificación activo: 4,663 CERTIFIED, 8,587 BLOCKED y 140 RESEARCHING. Porcentaje registrado: 34.82%; pendientes registrados: 8,727. El denominador cambió en una fila durante la sesión por una operación externa.
 
 ## Operaciones comprobadas
 
@@ -79,3 +79,19 @@ En 388 fichas se retiraron 3,214 duplicados de las columnas de referencias, cons
 La reevaluación posterior permitió certificar EH61613/P171613; las otras fichas conservan sus bloqueos. Lectura global actual: 4,698 certificados y 8,692 pendientes. Los 94 registros en investigación incluyen las cinco retenciones manuales y recuperaciones documentales pendientes. Las cifras anteriores del informe representan cortes previos. Continúan pendientes las redirecciones públicas y la revisión obligatoria del código.
 
 Se confirmó además la autoridad Donaldson de EH60602/P580602, EH60616/P580616 y EH60618/P580618 mediante su tabla oficial F112100, edición 04/26, página impresa 158. La tabla distingue grados de filtración entre referencias de una misma carcasa. Se corrigió únicamente la autoridad documental y se conservaron explícitamente pendientes esas relaciones entre variantes; no hubo nuevas certificaciones, consolidaciones ni cambios de aplicaciones. Respaldo de originales y dependencias, prueba revertida y lectura posterior comprobados.
+
+## Revisión documental y corte vigente, 23:03 UTC
+
+La lectura actual confirma 13,390 activos: 4,663 CERTIFIED, 8,587 BLOCKED y 140 RESEARCHING. Pendientes: 8,727; porcentaje del registro: 34.82%. Los números anteriores de secciones fechadas corresponden a cortes previos y no describen el estado actual.
+
+Los tres bloques recientes de clasificación corrigieron 4,022 duplicados en 537 productos distintos, conservando cada pareja única de fabricante y código completo. El último bloque exigió una fila exacta bajo el encabezado del fabricante y la sección OEM o FILTER del catálogo oficial MANN; no cambió globalmente la taxonomía de marcas ni el gateway. Hubo respaldo SHA256, prueba revertida y comprobación completa después de cada ejecución. Tres productos pesados pasaron los controles completos después de estas limpiezas; otros candidatos conservaron problemas de ciclo de vida o referencias mal colocadas.
+
+Se completaron además 44 alturas vacías desde tablas propias Donaldson con columnas expresas en pulgadas y milímetros. No se sobrescribieron medidas existentes. Se excluyeron 17 códigos cuyo documento muestra valores diferentes entre páginas. Estos cambios no incrementan el conteo de certificados.
+
+EA32512 recuperó C2512 y las doce aplicaciones exactas publicadas por MANN para periodos cerrados. La identidad, las auditorías de origen 099/100 y la lectura posterior se comprobaron usando el servicio existente en producción. Quedó CERTIFIED. El soporte nuevo de periodos abiertos sigue sin desplegarse, pendiente de revisión obligatoria.
+
+La revisión de 309 certificados antiguos con el campo explícito de fuente todavía UNVERIFIED consultó los 275 códigos MANN actuales. Confirmó 152 documentos exactos; los 123 restantes no se confirmaron por esa ruta, lo que no prueba ausencia o retirada. Se encontraron 38 discrepancias documentales: 33 incluyen alcances de maquinaria o vehículos pesados y seis tienen tipo de cabina mientras el catálogo dice aire de motor; un caso se solapa. Sus certificados pasaron a RESEARCHING, sin retirar productos ni cambiar sus fichas. Un alcance mixto exige conciliación y no demuestra que el filtro sea incompatible con todos los coches.
+
+En otras 91 fichas se corrigieron únicamente los campos explícitos de autoridad: documento propio exacto, código completo coincidente con el original y la identidad activa, y tipo confirmado. El registro de certificación, las aplicaciones, el origen, las medidas y las referencias quedaron iguales. Veintiuna fichas se excluyeron porque sus colecciones de referencias están ausentes o mal formadas; no se reemplazaron valores desconocidos por listas vacías para aparentar ausencia.
+
+Estos hallazgos explican el aumento de pendientes respecto del corte anterior: se reconocieron problemas documentales que el registro antiguo no detectaba. El objetivo sigue en curso. No se sustituyó 5432, no se instaló la migración 226, se conservaron las cinco retenciones manuales y continúa pendiente la publicación y verificación HTTP de los sucesores y redirecciones 301.
