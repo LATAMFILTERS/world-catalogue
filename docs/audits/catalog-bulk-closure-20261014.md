@@ -51,3 +51,9 @@ Validación del cambio de código:40 pruebas de aplicaciones/gateway y 146 prueb
 La continuación corrigió 130 duplicados en 100 fichas Virgis y 134 en 113 fichas LHA, con respaldo, prueba de reversión y verificación posterior. De ellas, seis y 33 productos respectivamente pasaron todos los controles vigentes y quedaron CERTIFIED. Fuentes: https://www.virgis.com/en/air-elements/ y https://ir.donaldson.com/news/news-details/2003/Donaldson-Company-Acquires-LHA-Industrial-Hydraulic-Business-from-Berendsen-Fluid-Power-Inc/default.aspx. Las otras fichas conservan sus bloqueos. La lectura global posterior confirma los totales indicados arriba.
 
 Lectura posterior de solo lectura, 18:07 UTC: confirma los totales de esta revisión. Los 83 RESEARCHING incluyen las cinco retenciones manuales y los 78 casos MANN en revisión documental. La cifra CERTIFIED describe el registro; no acredita certificación física ni aplicaciones universales. Las 228 URL antiguas probadas devolvieron 404 y sus destinos no están en la publicación limitada a diez fichas de fase 1. La continuidad pública de esas redirecciones sigue pendiente.
+
+## Dimensiones expresas del fabricante
+
+Se completaron 78 valores numéricos vacíos en 76 fichas MANN, en dos bloques de diez y 66 productos. Se exigió código completo del fabricante igual a la autoridad actual, documento oficial archivado con SHA256 y etiqueta expresa de diámetro interior, diámetro exterior o altura en milímetros. Se conservaron todos los valores que ya existían; no se trasladaron dimensiones entre marcas ni entre referencias comerciales.
+
+Ambos bloques tuvieron respaldo de las filas afectadas, ejecución de prueba revertida y lectura posterior completa. Las identidades, aplicaciones, clasificación de uso y estados de certificación quedaron iguales. Estas correcciones mejoran las fichas y no reducen por sí solas los pendientes. Los respaldos por producto no constituyen un respaldo íntegro de la base.
