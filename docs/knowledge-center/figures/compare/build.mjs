@@ -7,7 +7,7 @@
 import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
-import { k, G, A, vertical, studio, shellCut, pleatedElement, PAGE_CSS, KIT_NOTICE, draftPage, pageTarget, readingHtml } from "../common.mjs";
+import { k, G, A, vertical, studio, shellCut, pleatedElement, PAGE_CSS, KIT_NOTICE, draftPage, pageTarget, readingSteps, readingHtml } from "../common.mjs";
 import { kitScript } from "../.anatomy/scripts/inline-kit.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
@@ -235,78 +235,6 @@ draw();
 
 const svg = k.figureSvg({ width: WIDTH, height: HEIGHT, label: COPY.label, body: layers });
 const CSS = `<style>.cp-dirt circle{fill:color-mix(in srgb,${T.dirt} 78%,var(--anatomy-hi))}</style>`;
-// the figure explained part by part, per technology (same steps as its Knowledge Center page)
-const READ = {
- "syntapore": {
-  "en": [
-   [
-    "Heads on the bracket",
-    "Both filters hang from a fixed head with an inlet and an outlet port. The head belongs to the equipment and is never replaced at service."
-   ],
-   [
-    "Left: spin-on",
-    "The pleated SYNTAPORE™ element is sealed inside its own can, which screws onto the head."
-   ],
-   [
-    "Right: cartridge",
-    "A permanent bowl closes against the head and holds a pleated SYNTAPORE™ element that is replaced on its own."
-   ],
-   [
-    "Flow",
-    "In both formats the fuel enters through the head, crosses the pleated media, where the particles are held, and leaves through the head toward the next component. The filtration principle is the same."
-   ],
-   [
-    "Service",
-    "Moving the cursor to the top, or pressing E, runs the service: the spin-on comes off whole, can included; on the cartridge the bowl drops, the element is changed and the same bowl goes back."
-   ]
-  ],
-  "es": [
-   [
-    "Cabezales en el soporte",
-    "Ambos filtros cuelgan de un cabezal fijo con un puerto de entrada y uno de salida. El cabezal es parte del equipo y nunca se reemplaza en el servicio."
-   ],
-   [
-    "Izquierda: spin-on",
-    "El elemento plisado SYNTAPORE™ va sellado dentro de su propia carcasa, que se enrosca en el cabezal."
-   ],
-   [
-    "Derecha: cartucho",
-    "Un vaso permanente cierra contra el cabezal y aloja un elemento plisado SYNTAPORE™ que se reemplaza solo."
-   ],
-   [
-    "Flujo",
-    "En ambos formatos el combustible entra por el cabezal, atraviesa el medio plisado, donde quedan retenidas las partículas, y sale por el cabezal hacia el siguiente componente. El principio de filtración es el mismo."
-   ],
-   [
-    "Servicio",
-    "Al llevar el cursor arriba, o al pulsar E, se ejecuta el servicio: el spin-on sale completo, carcasa incluida; en el cartucho baja el vaso, se cambia el elemento y se vuelve a montar el mismo vaso."
-   ]
-  ],
-  "pt": [
-   [
-    "Cabeçotes no suporte",
-    "Os dois filtros ficam presos a um cabeçote fixo com uma porta de entrada e uma de saída. O cabeçote faz parte do equipamento e nunca é substituído na manutenção."
-   ],
-   [
-    "Esquerda: spin-on",
-    "O elemento plissado SYNTAPORE™ vem selado dentro da sua própria carcaça, que é rosqueada no cabeçote."
-   ],
-   [
-    "Direita: cartucho",
-    "Um copo permanente fecha contra o cabeçote e aloja um elemento plissado SYNTAPORE™ que é substituído sozinho."
-   ],
-   [
-    "Fluxo",
-    "Nos dois formatos o combustível entra pelo cabeçote, atravessa o meio plissado, onde as partículas ficam retidas, e sai pelo cabeçote em direção ao próximo componente. O princípio de filtração é o mesmo."
-   ],
-   [
-    "Manutenção",
-    "Levar o cursor ao topo, ou pressionar E, executa a manutenção: o spin-on sai inteiro, carcaça incluída; no cartucho o copo desce, troca-se o elemento e o mesmo copo volta ao lugar."
-   ]
-  ]
- }
-};
-
 const body = PAGE_CSS + CSS + k.plateHtml({
   fig: T.fig,
   title: `ELIMFILTERS · ${T.mark}`,
@@ -315,7 +243,7 @@ const body = PAGE_CSS + CSS + k.plateHtml({
   keys: COPY.keys,
   caption: COPY.caption,
   body: `<div class="iso-stage" tabindex="0" role="slider" aria-label="${COPY.aria}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">${svg}</div>`,
-}) + (READ[TECH] ? readingHtml(LANG, READ[TECH][LANG]) : "");
+}) + readingHtml(LANG, readingSteps(TECH, `compare-${TECH}`, LANG));
 
 mkdirSync(TARGET.dir, { recursive: true });
 writeFileSync(TARGET.path, draftPage(k.pageHtml({ title: `${COPY.title} · ${T.mark}`, theme, body, script: KIT_NOTICE + kitScript() + live }), LANG));

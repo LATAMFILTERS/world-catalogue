@@ -117,16 +117,19 @@ export interface KCTechnology {
   worksWith: string[];
   image?: string;
   // interactive explainer figures (self-contained pages in /public), shown as previews that open the figure
-  // `steps` explains the figure part by part, in the order the reader should follow it
-  figures?: { href: string; preview: string; title: string; caption: string; translations?: { lang: string; label: string; href: string }[]; steps?: { part: string; text: string }[] }[];
-  /** Technical explanation of how the technology works, tied to its figures. No product values. */
-  howItWorks?: {
-    overview: string[];
-    components: { name: string; role: string }[];
-    formats?: { name: string; text: string }[];
-    service: string[];
-    diagnostics: { symptom: string; check: string }[];
-  };
+  figures?: { href: string; preview: string; title: string; caption: string; translations?: { lang: string; label: string; href: string }[] }[];
+  /** How the technology works, tied to its figures, in each site language. No product values. */
+  howItWorks?: Record<'en' | 'es' | 'pt', KCHowItWorks>;
+}
+
+export interface KCHowItWorks {
+  overview: string[];
+  /** keyed by the figure's page name (its href without folder and .html); overrides the card's title and caption */
+  figures: Record<string, { title: string; caption: string; steps: { part: string; text: string }[] }>;
+  components: { name: string; role: string }[];
+  formats?: { name: string; text: string }[];
+  service: string[];
+  diagnostics: { symptom: string; check: string }[];
 }
 
 export interface KCSystemDetail {

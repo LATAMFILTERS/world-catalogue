@@ -5,6 +5,7 @@ import { motion } from 'motion/react';
 import { KC_TECHNOLOGIES, KCTechnology } from '@/lib/knowledge-center-data';
 import { getTechSidebarData } from '@/lib/knowledge-center/navigation-index';
 import { TECHNICAL_REVIEWER } from '@/lib/technical-reviewer';
+import HowItWorks from './HowItWorks';
 
 const TECHS = KC_TECHNOLOGIES;
 
@@ -49,9 +50,6 @@ const INDUSTRY_LABELS: Record<string, string> = {
   'railway': 'Railway',
   'waste-municipal': 'Waste & Municipal',
 };
-
-const bodyText = { fontFamily: 'Inter, sans-serif', fontSize: '0.9rem', lineHeight: 1.8, color: 'rgba(255,255,255,0.66)', marginBottom: '1rem' } as const;
-const subHeading = { fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '1.05rem', color: '#fff', marginBottom: '0.75rem' } as const;
 
 export default function TechContent({ tech }: { tech: KCTechnology }) {
   const relatedTechs = TECHS.filter(
@@ -238,81 +236,7 @@ export default function TechContent({ tech }: { tech: KCTechnology }) {
             </div>
           </motion.section>
 
-          {/* How It Works: interactive explainer figures, opened as their own pages */}
-          {tech.figures && tech.figures.length > 0 && (
-            <section aria-labelledby="how-it-works" style={{ marginBottom: '3rem' }}>
-              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,241,45,0.6)', marginBottom: '0.6rem' }}>HOW IT WORKS</p>
-              <h2 id="how-it-works" style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '1.3rem', color: '#fff', marginBottom: '1rem' }}>How {tech.name} Works</h2>
-              {tech.howItWorks?.overview.map((paragraph, i) => (
-                <p key={i} style={bodyText}>{paragraph}</p>
-              ))}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem' }}>
-                {tech.figures.map((figure) => (
-                  <div key={figure.href} style={{ border: '1px solid rgba(255,255,255,0.07)' }}>
-                    <a href={figure.href} style={{ textDecoration: 'none', display: 'block' }}>
-                      <img src={figure.preview} alt={figure.title} loading="lazy" width={993} height={956} style={{ width: '100%', height: 'auto', display: 'block' }} />
-                      <div style={{ padding: '0.9rem 1rem 0' }}>
-                        <p style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.9rem', color: '#fff', marginBottom: '0.35rem' }}>{figure.title}</p>
-                        <p style={{ fontFamily: 'Inter, sans-serif', fontSize: '0.8rem', lineHeight: 1.55, color: 'rgba(255,255,255,0.6)', marginBottom: '0.5rem' }}>{figure.caption}</p>
-                        <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: '#FFF12D' }}>OPEN INTERACTIVE FIGURE →</p>
-                      </div>
-                    </a>
-                    {figure.translations && (
-                      <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', color: 'rgba(255,255,255,0.45)', padding: '0.4rem 1rem 0.9rem', margin: 0 }}>
-                        {figure.translations.map((t, i) => (
-                          <span key={t.href}>{i > 0 && ' · '}<a href={t.href} hrefLang={t.lang} lang={t.lang} style={{ color: 'rgba(255,241,45,0.75)' }}>{t.label}</a></span>
-                        ))}
-                      </p>
-                    )}
-                  </div>
-                ))}
-              </div>
-              {tech.figures.filter((figure) => figure.steps).map((figure) => (
-                <div key={figure.href} style={{ marginTop: '1.75rem' }}>
-                  <h3 style={subHeading}>Reading the figure: {figure.title}</h3>
-                  <ol style={{ paddingLeft: '1.5rem', margin: 0, listStyle: 'decimal', color: '#FFF12D' }}>
-                    {figure.steps!.map((step, i) => (
-                      <li key={i} style={{ ...bodyText, marginBottom: '0.5rem', display: 'list-item' }}><strong style={{ color: '#fff', fontWeight: 600 }}>{step.part}.</strong> {step.text}</li>
-                    ))}
-                  </ol>
-                </div>
-              ))}
-              {tech.howItWorks && (
-                <>
-                  <h3 style={{ ...subHeading, marginTop: '1.75rem' }}>What each component does</h3>
-                  <dl style={{ margin: 0 }}>
-                    {tech.howItWorks.components.map((c) => (
-                      <div key={c.name} style={{ padding: '0.75rem 1rem', marginBottom: '0.5rem', background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)' }}>
-                        <dt style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.9rem', color: '#fff', marginBottom: '0.25rem' }}>{c.name}</dt>
-                        <dd style={{ ...bodyText, margin: 0 }}>{c.role}</dd>
-                      </div>
-                    ))}
-                  </dl>
-                  {tech.howItWorks.formats && (
-                    <>
-                      <h3 style={{ ...subHeading, marginTop: '1.75rem' }}>Spin-on and cartridge formats</h3>
-                      {tech.howItWorks.formats.map((f) => (
-                        <p key={f.name} style={bodyText}><strong style={{ color: '#fff', fontWeight: 600 }}>{f.name}.</strong> {f.text}</p>
-                      ))}
-                    </>
-                  )}
-                  <h3 style={{ ...subHeading, marginTop: '1.75rem' }}>Service sequence</h3>
-                  <ol style={{ paddingLeft: '1.5rem', margin: 0, listStyle: 'decimal', color: '#FFF12D' }}>
-                    {tech.howItWorks.service.map((step, i) => (
-                      <li key={i} style={{ ...bodyText, marginBottom: '0.5rem', display: 'list-item' }}>{step}</li>
-                    ))}
-                  </ol>
-                  <h3 style={{ ...subHeading, marginTop: '1.75rem' }}>Diagnosis in the circuit</h3>
-                  {tech.howItWorks.diagnostics.map((d) => (
-                    <div key={d.symptom} style={{ padding: '0.75rem 1rem', marginBottom: '0.5rem', borderLeft: '2px solid rgba(255,241,45,0.4)', background: 'rgba(255,255,255,0.02)' }}>
-                      <p style={{ fontFamily: 'Outfit, sans-serif', fontWeight: 600, fontSize: '0.88rem', color: '#fff', margin: '0 0 0.25rem' }}>{d.symptom}</p>
-                      <p style={{ ...bodyText, margin: 0 }}>{d.check}</p>
-                    </div>
-                  ))}
-                </>
-              )}
-            </section>
-          )}
+          <HowItWorks tech={tech} />
 
           <motion.section
             initial={{ opacity: 0, y: 16 }}
