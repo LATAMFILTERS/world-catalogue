@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { usePathname } from 'next/navigation';
 import { getItemBySlug } from '@/lib/catalogue';
 import { getIncomingEntities, getRelatedEntities } from '@/lib/entity-graph';

@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 
 export type SeverityLevel = 'critical' | 'high' | 'medium' | 'low';
@@ -63,8 +64,7 @@ export default function IndustryApplication({
           color: SEVERITY_COLORS[severity],
           marginTop: '0.5rem',
         }}>
-          {severity.toUpperCase()} EXPOSURE
-        </p>
+          {severity.toUpperCase()}<PublicUiText textKey="publicUi.text38">{"EXPOSURE"}</PublicUiText></p>
       )}
     </motion.div>
   );

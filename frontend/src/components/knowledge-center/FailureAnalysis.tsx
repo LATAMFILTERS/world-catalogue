@@ -1,5 +1,6 @@
 'use client';
 
+import { PublicUiText } from '@/components/PublicUiText';
 export interface FailureAnalysisProps {
   title?: string;
   chain: string[];
@@ -86,9 +87,7 @@ export default function FailureAnalysis({ title, chain, impact, standards }: Fai
             letterSpacing: '0.08em',
             color: 'rgba(255,241,45,0.5)',
             marginBottom: '0.3rem',
-          }}>
-            OPERATIONAL IMPACT
-          </p>
+          }}><PublicUiText textKey="publicUi.text39">{"OPERATIONAL IMPACT"}</PublicUiText></p>
           <p style={{
             fontFamily: 'Inter, sans-serif',
             fontSize: '0.82rem',

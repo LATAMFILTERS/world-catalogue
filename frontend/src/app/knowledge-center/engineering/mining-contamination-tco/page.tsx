@@ -1,5 +1,6 @@
+import { PublicUiText } from '@/components/PublicUiText';
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { PageHeader } from '@/components/PageHeader';
 
 const BASE_URL = 'https://elimfilters.com';
@@ -136,7 +137,7 @@ export default function MiningContaminationTcoPage() {
 
       <section style={hero}>
         <div style={heroInner}>
-          <Link href="/knowledge-center/engineering/" style={backLink}>← ENGINEERING</Link>
+          <Link href="/knowledge-center/engineering/" style={backLink}><PublicUiText textKey="publicUi.text33">{"← ENGINEERING"}</PublicUiText></Link>
           <p style={eyebrow}>MINING / CONTAMINATION CONTROL</p>
           <h1 style={heroTitle}>Mining Dust Contamination,<br /><span style={{ color: '#FFF12D' }}>Availability & TCO</span></h1>
           <p style={heroLead}>Dust control in mining is not only a filter-maintenance issue. It is an asset-protection decision that influences component wear, service burden, equipment availability and lifecycle cost.</p>
@@ -146,7 +147,7 @@ export default function MiningContaminationTcoPage() {
       <section style={section}>
         <div style={twoCol}>
           <div style={twoColHeading}>
-            <p style={eyebrow}>DIRECT ANSWER</p>
+            <p style={eyebrow}><PublicUiText textKey="publicUi.text22">{"DIRECT ANSWER"}</PublicUiText></p>
             <h2 style={sectionTitle}>Why does contamination matter to mining TCO?</h2>
           </div>
           <div>

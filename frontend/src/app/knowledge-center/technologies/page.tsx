@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { KC_TECHNOLOGIES } from '@/lib/knowledge-center-data';
 import { heroBackgroundImage } from '@/lib/hero-media';
@@ -31,9 +32,7 @@ export default function TechnologiesPage() {
             textDecoration: 'none',
             display: 'inline-block',
             marginBottom: '2rem',
-          }}>
-            ← KNOWLEDGE CENTER
-          </Link>
+          }}><PublicUiText textKey="publicUi.text32">{"← KNOWLEDGE CENTER"}</PublicUiText></Link>
 
           <motion.p
             initial={false}

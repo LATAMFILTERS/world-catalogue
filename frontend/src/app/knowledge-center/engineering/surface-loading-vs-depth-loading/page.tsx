@@ -1,5 +1,6 @@
+import { PublicUiText } from '@/components/PublicUiText';
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 
 const BASE_URL = 'https://elimfilters.com';
 const PAGE_URL = `${BASE_URL}/knowledge-center/engineering/surface-loading-vs-depth-loading/`;
@@ -69,7 +70,7 @@ export default function SurfaceVsDepthLoadingPage() {
 
       <section style={hero}>
         <div style={wide}>
-          <Link href="/knowledge-center/engineering/" style={back}>← ENGINEERING</Link>
+          <Link href="/knowledge-center/engineering/" style={back}><PublicUiText textKey="publicUi.text33">{"← ENGINEERING"}</PublicUiText></Link>
           <p style={eyebrow}>FILTRATION SCIENCE</p>
           <h1 style={heroTitle}>Surface Loading<br/><span style={accent}>vs. Depth Loading</span></h1>
           <p style={heroLead}>Two media architectures can capture the same contaminant in very different ways. The engineering decision is not which label sounds better, but how the loading behavior affects efficiency, contaminant capacity, differential pressure and the actual service strategy.</p>

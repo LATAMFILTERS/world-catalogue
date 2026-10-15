@@ -1,6 +1,7 @@
+import { PublicUiText } from '@/components/PublicUiText';
 import type { CSSProperties } from 'react';
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { notFound } from 'next/navigation';
 import {
   PROTECTION_SYSTEM_LIST,
@@ -203,7 +204,7 @@ export default async function ProtectionSystemPage({ params }: Props) {
         </section>
 
         <section style={{ ...section, borderBottom: 'none' }}>
-          <h2 style={h2Style}>Product Families</h2>
+          <h2 style={h2Style}><PublicUiText textKey="publicUi.text5">{"Product Families"}</PublicUiText></h2>
           {families.length === 0 ? (
             <p style={prose}>DOCUMENTATION PENDING</p>
           ) : (

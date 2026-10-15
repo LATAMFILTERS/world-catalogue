@@ -1,3 +1,4 @@
+import { PublicUiText } from '@/components/PublicUiText';
 import type { CSSProperties } from 'react';
 import type { SystemEditorial } from '@/lib/system-editorial';
 
@@ -142,7 +143,7 @@ function ListBlock({ title, items }: { title: string; items: readonly string[] }
 function FAQBlock({ editorial }: { editorial: SystemEditorial }) {
   return (
     <section style={sectionStyle}>
-      <h2 style={heading}>Questions engineers and fleet teams usually ask</h2>
+      <h2 style={heading}><PublicUiText textKey="publicUi.text28">{"Questions engineers and fleet teams usually ask"}</PublicUiText></h2>
       <div style={{ display: 'grid', gap: '1px', background: 'rgba(255,255,255,0.07)' }}>
         {editorial.faq.map((entry) => (
           <article key={entry.question} style={card}>

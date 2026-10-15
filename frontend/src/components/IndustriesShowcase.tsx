@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import Link from '@/components/LocalizedLink';
 import { useTranslation } from 'react-i18next';
 import styles from './IndustriesShowcase.module.css';
 
@@ -236,7 +237,7 @@ export function IndustriesShowcase() {
 
           <div ref={trackRef} className={styles.track}>
             {INDUSTRIES.map((industry) => (
-              <a key={industry.slug} href={`/industries/${industry.slug}`} className={styles.card}>
+              <Link key={industry.slug} href={`/industries/${industry.slug}`} className={styles.card}>
                 <div
                   role="img"
                   aria-label={t(`home.industryTitles.${industry.slug}`, industry.title)}
@@ -247,7 +248,7 @@ export function IndustriesShowcase() {
                 <div className={styles.cardLabelWrap}>
                   <span className={styles.cardLabel}>{t(`home.industryTitles.${industry.slug}`, industry.title)}</span>
                 </div>
-              </a>
+              </Link>
             ))}
           </div>
         </div>

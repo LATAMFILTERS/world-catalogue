@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 
 export default function ContaminationControlStrategyPage() {
@@ -234,7 +235,7 @@ export default function ContaminationControlStrategyPage() {
                   <strong>Critical component:</strong> {item.critical}
                 </div>
                 <div style={{ fontSize: '0.75rem', color: 'rgba(255,255,255,0.5)', marginBottom: '0.5rem' }}>
-                  <strong>Technology:</strong> {item.technology}
+                  <strong><PublicUiText textKey="publicUi.text8">{"Technology:"}</PublicUiText></strong> {item.technology}
                 </div>
                 <div style={{ fontSize: '0.75rem', color: '#FFF12D' }}>
                   <strong>Target:</strong> {item.target}

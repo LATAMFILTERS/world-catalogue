@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { ENGINEERING_ARTICLES } from '@/lib/knowledge-center-data';
 import { isConsolidatedEngineeringTopic } from '@/lib/knowledge-center/canonical-article-ownership';
@@ -57,9 +58,7 @@ export default function EngineeringHubPage() {
             textDecoration: 'none',
             display: 'inline-block',
             marginBottom: '2rem',
-          }}>
-            ← KNOWLEDGE CENTER
-          </Link>
+          }}><PublicUiText textKey="publicUi.text32">{"← KNOWLEDGE CENTER"}</PublicUiText></Link>
 
           <motion.p
             initial={false}

@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 import type { ApplicationCard } from '@/lib/macrocore-applications';
 
@@ -79,7 +80,7 @@ function renderCard(app: ApplicationCard) {
       <Link key={app.id} href={app.route} style={card}>
         <h3 style={cardLabel}>{app.label}</h3>
         {app.description && <p style={cardDesc}>{app.description}</p>}
-        <span style={cardCta}>VIEW INDUSTRY →</span>
+        <span style={cardCta}><PublicUiText textKey="publicUi.text19">{"VIEW INDUSTRY →"}</PublicUiText></span>
       </Link>
     );
   }

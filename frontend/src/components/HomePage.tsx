@@ -1,6 +1,7 @@
 ﻿'use client';
 
 import dynamic from 'next/dynamic';
+import Link from '@/components/LocalizedLink';
 
 import { useState, useEffect, useRef } from 'react';
 import { motion, useInView, animate, useSpring, useScroll, useTransform } from 'motion/react';
@@ -147,13 +148,13 @@ function IndustryCard({ id, label, href }: { id: string; label: string; href: st
   const [hovered, setHovered] = useState(false);
   const color = INDUSTRY_COLORS[id] || 'rgba(255,241,45,0.08)';
   return (
-    <a href={href} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
+    <Link href={href} onMouseEnter={() => setHovered(true)} onMouseLeave={() => setHovered(false)}
       style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1.5rem', background: hovered ? color : '#000', borderLeft: `2px solid ${hovered ? color.replace(/[\d.]+\)$/, '0.7)') : 'rgba(255,255,255,0.04)'}`, textDecoration: 'none', gap: '0.5rem', transition: 'all 0.25s ease' }}>
       <span style={{ fontFamily: 'Barlow, Arial, sans-serif', fontSize: '0.9rem', fontWeight: hovered ? 600 : 500, color: hovered ? '#fff' : 'rgba(255,255,255,0.65)', transition: 'all 0.25s ease' }}>
         {label}
       </span>
       <motion.span animate={{ x: hovered ? 4 : 0 }} transition={{ duration: 0.2 }} style={{ color: '#FFF12D', fontSize: '0.75rem', opacity: hovered ? 1 : 0.4 }}>{'->'}</motion.span>
-    </a>
+    </Link>
   );
 }
 
@@ -187,7 +188,7 @@ const JOURNEY_CARDS = [
     icon: '03',
     accent: 'rgba(252,165,165,0.06)',
     border: 'rgba(252,165,165,0.18)',
-    href: '/engineering/diagnosis',
+    href: '/engineering/problem-diagnosis',
     external: false,
   },
   {
@@ -203,6 +204,7 @@ const JOURNEY_CARDS = [
 ] as const;
 
 function EngineeringEntrySection() {
+  const { t } = useTranslation();
   function handleResult(results: SearchResult[], intent: CustomerIntent) {
     if (intent === 'KNOWN_PART' && results.length > 0) {
       window.location.href = `https://part-search.elimfilters.com?q=${encodeURIComponent(results[0].label)}`;
@@ -230,14 +232,14 @@ function EngineeringEntrySection() {
             fontFamily: 'var(--font-mono)', fontWeight: 700, letterSpacing: '0.24em',
             marginBottom: '0.75rem',
           }}>
-            ENGINEERING INTELLIGENCE PLATFORM
+            {t('home.engineeringEntry.eyebrow', 'ENGINEERING INTELLIGENCE PLATFORM')}
           </div>
           <h2 style={{
             fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700,
             fontSize: 'clamp(1.5rem, 2.5vw, 2.25rem)',
             color: '#fff', margin: 0,
           }}>
-            What is putting your operation at risk?
+            {t('home.engineeringEntry.title', 'What is putting your operation at risk?')}
           </h2>
         </motion.div>
 
@@ -249,7 +251,7 @@ function EngineeringEntrySection() {
           transition={{ duration: 0.5, delay: 0.1 }}
           style={{ marginBottom: '2.5rem', maxWidth: '680px' }}
         >
-          <EngineeringSearchBar onResult={handleResult} placeholder="Part number, symptom, failure mode, standard..." />
+          <EngineeringSearchBar onResult={handleResult} placeholder={t('home.engineeringEntry.search', 'Part number, symptom, failure mode, standard...')} />
         </motion.div>
 
         {/* Journey cards â€” 2x2 grid */}
@@ -282,12 +284,12 @@ function EngineeringEntrySection() {
                 fontFamily: 'Chakra Petch, Barlow, Arial, sans-serif', fontWeight: 700,
                 color: '#fff', fontSize: '1rem', marginBottom: '0.4rem',
               }}>
-                {card.label}
+                {t('home.engineeringEntry.cards.' + i + '.label', card.label)}
               </div>
               <div style={{
                 color: 'rgba(255,255,255,0.7)', fontSize: '0.82rem', lineHeight: 1.6,
               }}>
-                {card.description}
+                {t('home.engineeringEntry.cards.' + i + '.description', card.description)}
               </div>
               <div style={{
                 marginTop: '1rem', fontSize: '0.75rem',

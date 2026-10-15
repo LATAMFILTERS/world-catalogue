@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { ConversionProvider, useConversion } from '@/components/conversion/ConversionContext';
 import { EngineeringRecommendationsSection } from '@/components/engineering';
@@ -17,9 +18,7 @@ function HydraulicContaminationContent() {
         <Link href="/engineering" style={{
           fontSize: '0.7rem', fontFamily: 'JetBrains Mono, monospace',
           color: 'rgba(255,255,255,0.35)', textDecoration: 'none', letterSpacing: '0.08em',
-        }}>
-          ← ENGINEERING INTELLIGENCE
-        </Link>
+        }}><PublicUiText textKey="publicUi.text34">{"← ENGINEERING INTELLIGENCE"}</PublicUiText></Link>
       </div>
 
       {/* Hero */}
@@ -246,12 +245,12 @@ function HydraulicContaminationContent() {
               {
                 code: 'ISO 4406',
                 scope: 'Particle cleanliness code classification for hydraulic and lube oil systems. Three-number code (4µm / 6µm / 14µm particle count per mL). Target: 16/14/11 for proportional valve circuits; 17/15/12 for standard hydraulic systems.',
-                link: '/knowledge-system/standards/iso-4406',
+                link: '/knowledge-center/standards/iso-4406',
               },
               {
                 code: 'ISO 16889',
                 scope: 'Multi-pass filter efficiency test methodology. Defines Beta ratio (βx[c]) as the ratio of upstream to downstream particle count at a given size. A filter rated β10[c] ≥ 1000 removes 99.9% of particles ≥10 µm.',
-                link: '/knowledge-system/standards/iso-16889',
+                link: '/knowledge-center/standards/iso-16889',
               },
               {
                 code: 'NFPA T2.14',

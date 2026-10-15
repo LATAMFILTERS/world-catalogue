@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { PageHeader } from './PageHeader';
 import { UniversalEndNavigation } from './UniversalEndNavigation';
 import styles from './MacrocoreTechnologyPage.module.css';
@@ -128,7 +129,7 @@ export function MacrocoreTechnologyPageFinal() {
           <div className={styles.mediaGrid}>
             <div className={styles.mediaCopy}>
               <div className={styles.metaStack}>
-                <p><span>Technology:</span> MACROCORE™</p>
+                <p><span><PublicUiText textKey="publicUi.text8">{"Technology:"}</PublicUiText></span> MACROCORE™</p>
                 <p><span>Application:</span> Primary and secondary engine air filtration</p>
               </div>
               <p className={styles.eyebrow}>DESCRIPTION</p>

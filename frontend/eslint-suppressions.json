@@ -121,11 +121,6 @@
       "count": 2
     }
   },
-  "src/app/products/page.tsx": {
-    "@next/next/no-html-link-for-pages": {
-      "count": 1
-    }
-  },
   "src/app/search/page.tsx": {
     "@next/next/no-html-link-for-pages": {
       "count": 1
@@ -161,11 +156,6 @@
   },
   "src/components/HomePage.tsx": {
     "react-hooks/set-state-in-effect": {
-      "count": 1
-    }
-  },
-  "src/components/LubricationSystemPage.tsx": {
-    "react/no-unescaped-entities": {
       "count": 1
     }
   },

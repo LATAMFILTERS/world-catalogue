@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 
 export default function SystemVsCommodityPage() {
@@ -55,9 +56,7 @@ export default function SystemVsCommodityPage() {
           textDecoration: 'none',
           fontSize: '0.9rem',
           fontWeight: 600
-        }}>
-          ← KNOWLEDGE CENTER
-        </Link>
+        }}><PublicUiText textKey="publicUi.text32">{"← KNOWLEDGE CENTER"}</PublicUiText></Link>
       </div>
 
       <section style={{

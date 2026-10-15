@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import type { KCDiagram } from '@/lib/knowledge-center-data';
 import { ArticleSchema } from '@/components/knowledge-center';

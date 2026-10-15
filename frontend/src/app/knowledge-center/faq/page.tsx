@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { getFAQCategories, getFAQRegistry } from '@/lib/faq-registry';
 
 const CANONICAL = 'https://elimfilters.com/knowledge-center/faq/';

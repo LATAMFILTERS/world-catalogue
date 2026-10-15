@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
@@ -132,7 +133,7 @@ export function MiningIndustryPage() {
           <p style={heroContext}>Operating reality: abrasive dust, heavy load, extended duty cycles and constrained service windows.</p>
           <div style={actions}>
             <Link href="/contact/" style={yellowButton} data-conversion-action="application-support">PROTECT MINING EQUIPMENT</Link>
-            <a href="https://part-search.elimfilters.com/" style={darkButton} data-conversion-action="product-intelligence">FIND MY FILTER</a>
+            <a href="https://part-search.elimfilters.com/" style={darkButton} data-conversion-action="product-intelligence"><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a>
           </div>
         </div>
       </section>
@@ -206,7 +207,7 @@ export function MiningIndustryPage() {
               <Link href={item.href} style={technologyStage}>
                 <span style={technologyLabel}>ELIMFILTERS TECHNOLOGY</span>
                 <strong style={technologyName}>{item.technology}</strong>
-                <span style={technologyCta}>EXPLORE TECHNOLOGY →</span>
+                <span style={technologyCta}><PublicUiText textKey="publicUi.text18">{"EXPLORE TECHNOLOGY →"}</PublicUiText></span>
               </Link>
             </article>
           ))}
@@ -336,7 +337,7 @@ export function MiningIndustryPage() {
             <div>
               <p style={eyebrow}>ALREADY HAVE A PART NUMBER?</p>
               <h3 style={secondaryTitle}>Go directly to Part Search.</h3>
-              <a href="https://part-search.elimfilters.com/" style={darkButton} data-conversion-action="product-intelligence">FIND MY FILTER</a>
+              <a href="https://part-search.elimfilters.com/" style={darkButton} data-conversion-action="product-intelligence"><PublicUiText textKey="publicUi.text30">{"FIND MY FILTER"}</PublicUiText></a>
             </div>
             <div style={secondaryDivider} />
             <div>

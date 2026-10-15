@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { KC_SYSTEMS, KC_SYSTEM_DETAILS, KC_TECHNOLOGIES, KCSystemDetail } from '@/lib/knowledge-center-data';
 import { getSystemSidebarData } from '@/lib/knowledge-center/navigation-index';
@@ -318,9 +319,7 @@ export default function SystemContent({ system, detail }: { system: KCSystem; de
 
           {system.technologies.length > 0 && (
             <div style={{ marginBottom: '1.5rem' }}>
-              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', marginBottom: '0.75rem' }}>
-                TECHNOLOGIES
-              </p>
+              <p style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.6rem', letterSpacing: '0.1em', color: 'rgba(255,255,255,0.3)', marginBottom: '0.75rem' }}><PublicUiText textKey="publicUi.text1">{"TECHNOLOGIES"}</PublicUiText></p>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                 {system.technologies.map((tech) => (
                   <div key={tech} style={{ border: '1px solid rgba(255,255,255,0.07)', padding: '0.6rem 0.875rem', fontFamily: 'Inter, sans-serif', fontSize: '0.78rem', fontWeight: 600, color: 'rgba(255,255,255,0.65)' }}>

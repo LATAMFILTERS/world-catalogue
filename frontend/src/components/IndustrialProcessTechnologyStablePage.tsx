@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import styles from './MacrocoreTechnologyPage.module.css';
 import {
   type IndustrialProcessPlatform,
@@ -137,7 +138,7 @@ export function IndustrialProcessTechnologyStablePage({
 
       <nav aria-label="Breadcrumb" style={{padding:'1rem clamp(1.15rem,6vw,6rem)',borderBottom:'1px solid rgba(255,255,255,.12)',background:'#020202'}}>
         <div className={styles.inner} style={{display:'flex',gap:'.65rem',fontSize:'.72rem',letterSpacing:'.08em',flexWrap:'wrap'}}>
-          <Link href="/" style={{color:'rgba(255,255,255,.55)',textDecoration:'none'}}>HOME</Link><span>→</span>
+          <Link href="/" style={{color:'rgba(255,255,255,.55)',textDecoration:'none'}}><PublicUiText textKey="publicUi.text0">{"HOME"}</PublicUiText></Link><span>→</span>
           <Link href="/industrial-process/" style={{color:'rgba(255,255,255,.55)',textDecoration:'none'}}>INDUSTRIAL &amp; PROCESS</Link><span>→</span>
           <Link href={industrialProcessPlatformUrl(platform.slug)} style={{color:'rgba(255,255,255,.55)',textDecoration:'none'}}>{platform.name}</Link><span>→</span>
           <span style={{color:'#fff12d'}}>{technologyName(technology.name, technology.branded)}</span>

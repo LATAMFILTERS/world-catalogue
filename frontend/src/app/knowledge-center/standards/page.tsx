@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { KC_STANDARDS } from '@/lib/knowledge-center-data';
 import type { KCStandard } from '@/lib/knowledge-center-data/types';
@@ -104,9 +105,7 @@ export default function StandardsHubPage() {
               textDecoration: 'none',
               display: 'inline-block',
               marginBottom: '2rem',
-            }}>
-              ← KNOWLEDGE CENTER
-            </Link>
+            }}><PublicUiText textKey="publicUi.text32">{"← KNOWLEDGE CENTER"}</PublicUiText></Link>
 
             <motion.h1
               initial={{ opacity: 0, y: 14 }}

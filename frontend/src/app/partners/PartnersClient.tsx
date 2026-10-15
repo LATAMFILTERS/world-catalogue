@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { useTranslation } from 'react-i18next';
 import { LanguageMenu } from '@/components/LanguageMenu';
 

@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { useEffect, useState } from 'react';
 import {
@@ -42,9 +43,7 @@ function FailureModeExplorerContent({ entityId }: { entityId: string }) {
         <Link href="/search" style={{
           fontSize: '0.7rem', fontFamily: 'JetBrains Mono, monospace',
           color: 'rgba(255,255,255,0.35)', textDecoration: 'none', letterSpacing: '0.08em',
-        }}>
-          ← ENGINEERING INTELLIGENCE
-        </Link>
+        }}><PublicUiText textKey="publicUi.text34">{"← ENGINEERING INTELLIGENCE"}</PublicUiText></Link>
       </div>
 
       <section style={{ padding: 'clamp(3rem, 6vw, 5rem) 2rem 2.5rem', borderBottom: '1px solid rgba(252,165,165,0.08)' }}>

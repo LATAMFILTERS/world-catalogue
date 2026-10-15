@@ -1,6 +1,7 @@
 'use client';
+import { PublicUiText } from '@/components/PublicUiText';
 import { FC, useState } from 'react';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 
 export interface iCardItem {
   title: string;
@@ -90,9 +91,7 @@ const Card: FC<iCardProps> = ({ title, description, system, src, href, i, total 
               color: hovered ? '#FFF12D' : 'rgba(255,241,45,0.5)',
               fontWeight: 700,
               transition: 'color 0.2s',
-            }}>
-              EXPLORE →
-            </div>
+            }}><PublicUiText textKey="publicUi.text17">{"EXPLORE →"}</PublicUiText></div>
           </div>
         </div>
       </Link>

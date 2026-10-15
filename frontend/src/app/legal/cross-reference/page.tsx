@@ -2,7 +2,7 @@
 
 import '@/i18n';
 
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { Footer } from '@/components/Footer';
 

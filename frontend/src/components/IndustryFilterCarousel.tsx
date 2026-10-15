@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { PRODUCT_FAMILIES, type FamilyKey } from '@/lib/product-families-data';
 import { carouselText } from '@/lib/industry-carousel-i18n';
 import type { PageLang } from '@/lib/localized-routes';

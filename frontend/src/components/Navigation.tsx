@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'motion/react';
 import { useTranslation } from 'react-i18next';
@@ -59,7 +59,7 @@ export function Navigation() {
     >
       <div style={{ width: '100%', maxWidth: 'none', margin: 0, padding: 'clamp(0.65rem, 2.4vw, 1.4rem) 0.75rem clamp(0.5rem, 1.7vw, 0.9rem) clamp(1rem, 2vw, 1.75rem)', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }} role="banner">
         <motion.div whileHover={{ opacity: 0.85 }} transition={{ duration: 0.2 }} style={{ marginLeft: 0, transform: 'translateY(-10px) scale(0.8568)', transformOrigin: 'bottom left', flexShrink: 0 }}>
-          <Link href="/" aria-label="ELIMFILTERS — home" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+          <Link href="/" aria-label={t('a11y.home', 'ELIMFILTERS — home')} style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
             {logoError ? (
               <span style={{ fontFamily: HEADER_DISPLAY_FONT, fontWeight: 700, fontSize: 'clamp(1.05rem, 3.6vw, 1.4rem)', letterSpacing: '-0.01em', color: '#fff', textTransform: 'uppercase', whiteSpace: 'nowrap' }}>ELIMFILTERS</span>
             ) : (
@@ -76,12 +76,12 @@ export function Navigation() {
           </Link>
         </motion.div>
 
-        <nav style={{ display: 'flex', alignItems: 'center', gap: 'clamp(0.9rem, 1vw, 1.25rem)', flex: 1, justifyContent: 'space-between', minWidth: 0, marginLeft: 'clamp(1.25rem, 2.4vw, 2.5rem)' }} className="hidden-mobile" aria-label="Main navigation">
+        <nav style={{ display: 'flex', alignItems: 'center', gap: 'clamp(0.9rem, 1vw, 1.25rem)', flex: 1, justifyContent: 'space-between', minWidth: 0, marginLeft: 'clamp(1.25rem, 2.4vw, 2.5rem)' }} className="hidden-mobile" aria-label={t('a11y.mainNavigation', 'Main navigation')}>
           <NavLink href="/industries">{t('nav.industries', 'Industries')}</NavLink>
           <NavLink href="/systems">{t('nav.systems', 'Systems')}</NavLink>
           <NavLink href="/technologies">{t('nav.technologies', 'Technologies')}</NavLink>
           <NavLink href="/knowledge-center/">{t('nav.knowledgeCenter', 'Knowledge Center')}</NavLink>
-          <NavLink href="/industrial-process" accent>Industrial & Process</NavLink>
+          <NavLink href="/industrial-process" accent>{t('nav.industrialProcess', 'Industrial & Process')}</NavLink>
           <NavLink href="/about">{t('nav.about', 'Company')}</NavLink>
           <NavLink href={contactHref}>{t('nav.contact', 'Contact')}</NavLink>
 
@@ -93,7 +93,7 @@ export function Navigation() {
 
         <div className="show-mobile" style={{ display: 'none', alignItems: 'center', gap: '0.1rem' }}>
         <LanguageMenu />
-        <button onClick={() => setMenuOpen(!menuOpen)} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.65rem' }} aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={menuOpen}>
+        <button onClick={() => setMenuOpen(!menuOpen)} style={{ background: 'none', border: 'none', cursor: 'pointer', padding: '0.65rem' }} aria-label={menuOpen ? t('a11y.closeMenu', 'Close navigation menu') : t('a11y.openMenu', 'Open navigation menu')} aria-expanded={menuOpen}>
           <div style={{ width: '24px', display: 'flex', flexDirection: 'column', gap: '5px' }}>
             {[0, 1, 2].map((i) => (
               <motion.span key={i} animate={{ rotate: menuOpen && i === 0 ? 45 : menuOpen && i === 2 ? -45 : 0, scaleX: menuOpen && i === 1 ? 0 : 1, y: menuOpen && i === 0 ? 7 : menuOpen && i === 2 ? -7 : 0 }} transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }} style={{ display: 'block', height: '2px', background: '#FFF12D', transformOrigin: 'center' }} />
@@ -112,7 +112,7 @@ export function Navigation() {
                 { href: '/systems', label: t('nav.systems', 'Systems') },
                 { href: '/technologies', label: t('nav.technologies', 'Technologies') },
                 { href: '/knowledge-center/', label: t('nav.knowledge', 'Knowledge') },
-                { href: '/industrial-process', label: 'Industrial & Process', accent: true },
+                { href: '/industrial-process', label: t('nav.industrialProcess', 'Industrial & Process'), accent: true },
                 { href: '/about', label: t('nav.about', 'Company') },
                 { href: contactHref, label: t('nav.contact', 'Contact') },
               ].map((item) => (

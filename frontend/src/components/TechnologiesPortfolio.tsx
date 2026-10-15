@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 
 type TechnologyCard = readonly [
@@ -50,8 +51,8 @@ export function TechnologiesPortfolio() {
         @media (max-width: 430px) { .technology-portfolio-logo-stage { height: 205px !important; } }
       `}</style>
       <div style={wrap}>
-        <p className="technology-portfolio-eyebrow" style={eyebrow}>TECHNOLOGY PORTFOLIO</p>
-        <h2 className="technology-portfolio-title" style={title}>Select the architecture. Understand the protection role.</h2>
+        <p className="technology-portfolio-eyebrow" style={eyebrow}><PublicUiText textKey="publicUi.text20">{"TECHNOLOGY PORTFOLIO"}</PublicUiText></p>
+        <h2 className="technology-portfolio-title" style={title}><PublicUiText textKey="publicUi.text21">{"Select the architecture. Understand the protection role."}</PublicUiText></h2>
         <div className="technology-portfolio-grid" style={grid}>
           {technologies.map(([slug, name, image, visualScale]) => (
             <Link key={slug} href={`/technologies/${slug}`} className="technology-portfolio-card" style={card}>
@@ -65,7 +66,7 @@ export function TechnologiesPortfolio() {
               </div>
               <div style={overlay} />
               <div className="technology-portfolio-content" style={content}>
-                <span className="technology-portfolio-explore" style={explore}>EXPLORE TECHNOLOGY →</span>
+                <span className="technology-portfolio-explore" style={explore}><PublicUiText textKey="publicUi.text18">{"EXPLORE TECHNOLOGY →"}</PublicUiText></span>
               </div>
             </Link>
           ))}

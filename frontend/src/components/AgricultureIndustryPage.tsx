@@ -1,4 +1,5 @@
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 import { PageHeader } from './PageHeader';
 import { IndustryFilterCarousel } from './IndustryFilterCarousel';
@@ -130,7 +131,7 @@ export function AgricultureIndustryPage({ lang = 'en' }: { lang?: PageLang }) {
 
       <section style={directAnswerSection} aria-labelledby="agriculture-answer-title">
         <div style={contentWidth}>
-          <p style={eyebrow}>DIRECT ANSWER</p>
+          <p style={eyebrow}><PublicUiText textKey="publicUi.text22">{"DIRECT ANSWER"}</PublicUiText></p>
           <h2 id="agriculture-answer-title" style={sectionTitle}>{agricultureText(lang, "What makes agricultural filtration effective?")}</h2>
           <p style={directAnswerText}>{agricultureText(lang, "Effective agricultural filtration connects the machine, seasonal duty, contamination source, protected system and service window to a validated filter application. The path is machine → field condition → contamination mechanism → protection system → ELIMFILTERS technology → verified part.")}</p>
         </div>

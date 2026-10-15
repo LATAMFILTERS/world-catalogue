@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { KC_STANDARDS } from '@/lib/knowledge-center-data';
 import { notFound } from 'next/navigation';
 import StandardContent from './StandardContent';

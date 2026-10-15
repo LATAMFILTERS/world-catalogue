@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { getPublishedTerms, termIdToSlug, TERM_CATEGORY_LABELS } from '@/lib/knowledge-center';
 import type { TermCategory } from '@/lib/knowledge-center';
@@ -42,9 +43,7 @@ export default function GlossaryPage() {
             textDecoration: 'none',
             display: 'inline-block',
             marginBottom: '2rem',
-          }}>
-            ← KNOWLEDGE CENTER
-          </Link>
+          }}><PublicUiText textKey="publicUi.text32">{"← KNOWLEDGE CENTER"}</PublicUiText></Link>
 
           <motion.div
             initial={false}

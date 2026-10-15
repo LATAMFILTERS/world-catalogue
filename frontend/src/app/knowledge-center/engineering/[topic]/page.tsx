@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { ENGINEERING_ARTICLES } from '@/lib/knowledge-center-data';
 import { getEngineeringTopicCanonicalOwner } from '@/lib/knowledge-center/canonical-article-ownership';
 import { notFound } from 'next/navigation';

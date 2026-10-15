@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef } from 'react';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { VIDEO_HERO_TREATMENT } from '@/lib/hero-media';
 
 interface HeroTag {

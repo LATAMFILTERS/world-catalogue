@@ -1,5 +1,6 @@
+import { PublicUiText } from '@/components/PublicUiText';
 import type { Metadata } from 'next';
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 
 export const metadata: Metadata = {
   title: 'GEO Readiness Report — ELIMFILTERS Knowledge Center',
@@ -87,9 +88,7 @@ export default function GeoReportPage() {
           letterSpacing: '0.1em',
           color: 'rgba(255,241,45,0.4)',
           textDecoration: 'none',
-        }}>
-          KNOWLEDGE CENTER
-        </Link>
+        }}><PublicUiText textKey="publicUi.text31">{"KNOWLEDGE CENTER"}</PublicUiText></Link>
         <span style={{ color: 'rgba(255,255,255,0.2)', margin: '0 0.5rem', fontSize: '0.65rem' }}>/</span>
         <span style={{ fontFamily: 'JetBrains Mono, monospace', fontSize: '0.65rem', color: 'rgba(255,255,255,0.35)' }}>
           GEO READINESS REPORT

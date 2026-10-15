@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { ConversionProvider, useConversion } from '@/components/conversion/ConversionContext';
 import { EngineeringRecommendationsSection } from '@/components/engineering';
@@ -17,9 +18,7 @@ function DustIngestionContent() {
         <Link href="/engineering" style={{
           fontSize: '0.7rem', fontFamily: 'JetBrains Mono, monospace',
           color: 'rgba(255,255,255,0.35)', textDecoration: 'none', letterSpacing: '0.08em',
-        }}>
-          ← ENGINEERING INTELLIGENCE
-        </Link>
+        }}><PublicUiText textKey="publicUi.text34">{"← ENGINEERING INTELLIGENCE"}</PublicUiText></Link>
       </div>
 
       {/* Hero */}
@@ -249,7 +248,7 @@ function DustIngestionContent() {
               {
                 code: 'ISO 5011',
                 scope: 'Air filter element performance test method for internal combustion engines and compressors. Measures filtration efficiency (% particle capture at specified sizes), initial restriction, and dust-holding capacity under controlled test conditions. The standard used to rate MACROCORE™ and equivalent air filtration products.',
-                link: '/knowledge-system/standards/air-intake-systems',
+                link: '/knowledge-center/systems/air-intake-protection',
               },
               {
                 code: 'SAE J1539',

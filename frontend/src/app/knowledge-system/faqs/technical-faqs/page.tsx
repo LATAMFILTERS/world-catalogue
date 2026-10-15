@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 
 const FAQS = [
@@ -271,7 +272,7 @@ export default function TechnicalFAQsPage() {
             </p>
 
             <p>
-              <strong>SYSTEMS</strong><br />
+              <strong><PublicUiText textKey="publicUi.text2">{"SYSTEMS"}</PublicUiText></strong><br />
               All industrial filtration domains: Lube oil, air intake, fuel, hydraulic, cabin air, compressed air systems; fleet maintenance operations; equipment asset protection strategies
             </p>
 

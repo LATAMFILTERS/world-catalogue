@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { useState } from 'react';
 import { KCArticle } from '@/lib/knowledge-center-data';
@@ -774,9 +775,7 @@ export default function ArticleContent({ article }: { article: KCArticle }) {
               letterSpacing: '0.1em',
               color: 'rgba(255,255,255,0.3)',
               marginBottom: '1rem',
-            }}>
-              FREQUENTLY ASKED QUESTIONS
-            </p>
+            }}><PublicUiText textKey="publicUi.text27">{"FREQUENTLY ASKED QUESTIONS"}</PublicUiText></p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1px', background: 'rgba(255,255,255,0.04)' }}>
               {article.faqs.map((faq, i) => (
                 <FaqAccordion key={i} question={faq.question} answer={faq.answer} />

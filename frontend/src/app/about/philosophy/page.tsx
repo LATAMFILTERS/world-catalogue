@@ -26,12 +26,70 @@ const PRINCIPLES_ES = [
   { num: '07', title: 'La confiabilidad es el objetivo.', desc: 'El control de contaminación es ingeniería de confiabilidad. Eliminar el desgaste micrónico es el único camino para alcanzar la vida útil de diseño y evitar paradas catastróficas en campo.' },
 ];
 
+const COPY_PT = {
+  "heroTitle": "Nossa Filosofia de Engenharia",
+  "heroLead": "A ELIMFILTERS não projeta peças de reposição genéricas para o mercado de reposição. Desenvolvemos sistemas de controle de contaminação concebidos para preservar máquinas industriais pesadas. Nosso trabalho é regido estritamente pelas leis físicas da tribologia e por normas internacionais verificadas.",
+  "s1Title": "1. Por Que a ELIMFILTERS Existe",
+  "s1Body": "As máquinas pesadas são construídas para trabalhar em condições extremas, mas são vulneráveis a folgas micrométricas invisíveis. A filtragem convencional depende de elementos filtrantes genéricos que capturam partículas grandes enquanto deixam passar as partículas menores e altamente abrasivas. Essas partículas circulam por válvulas hidráulicas, turbocompressores e injetores common rail, gerando atrito e desgaste. A ELIMFILTERS existe para construir uma barreira defensiva que interrompe esse ciclo de desgaste e prolonga a vida útil dos ativos críticos.",
+  "s2Title": "2. No Que Acreditamos",
+  "s2Body": "Acreditamos que a proteção de ativos é uma ciência exata de engenharia, não um exercício de marca. Um filtro não é apenas um consumível genérico destinado a ser substituído pelo menor custo possível; é um componente no nível de sistema que influencia diretamente a eficiência termodinâmica e a integridade mecânica de toda a máquina. Ao controlar a contaminação, restauramos a confiabilidade do equipamento ao seu potencial de projeto.",
+  "s3Title": "3. Nossa Filosofia de Engenharia",
+  "s3Body": "Nossa filosofia se concentra na interceptação de precisão em múltiplas camadas. Rejeitamos projetos de camada única propensos ao bypass. Em vez disso, estruturamos os meios filtrantes com fibras sintéticas de múltiplas densidades, membranas hidrofóbicas e interfaces de vedação radial de bypass zero. Nossa engenharia se concentra inteiramente nas folgas críticas dos sistemas modernos — como as folgas comuns de 1–5 µm em sistemas common rail de alta pressão (HPCR) — garantindo a captura direcionada de partículas onde ela mais importa.",
+  "s4Title": "4. Como Tomamos Decisões de Engenharia",
+  "s4Body": "Tomamos decisões com dados empíricos e verificáveis. Cada tecnologia que desenvolvemos é testada sob condições rigorosas de laboratório e de campo para verificar seu desempenho em relação a normas internacionais: ISO 16889 para eficiência multipasse de óleo lubrificante, ISO 5011 para capacidade de admissão de ar e ISO 4406 para códigos de limpeza de fluido desejados. Se um projeto não pode ser medido, certificado e validado em serviço, ele não sai de nosso laboratório.",
+  "s5Title": "5. Por Que Desenvolvemos Tecnologias Próprias",
+  "s5Body": "Filtros padrão disponíveis no mercado não conseguem oferecer proteção adequada para máquinas industriais de alto valor que operam em condições extremas. Desenvolvemos tecnologias próprias especializadas, como MACROCORE™, SYNTAPORE™ e NANOFORCE™, porque cada domínio de sistema apresenta perfis de contaminação e mecanismos de falha únicos. Nossas estruturas próprias nos permitem otimizar a configuração do meio filtrante para fluidos, pressões e contaminantes específicos.",
+  "s6Title": "6. Nosso Compromisso com os Clientes",
+  "s6Body": "Assumimos o compromisso de oferecer transparência, verificação e suporte de engenharia. Não nos escondemos atrás de slogans de venda. Oferecemos acesso completo ao nosso Sistema de Conhecimento, às fichas técnicas de engenharia e aos registros de certificação. Acreditamos que capacitar nossos clientes com conhecimento sobre controle de contaminação é tão importante quanto os produtos físicos que entregamos.",
+  "principlesEyebrow": "7 PRINCÍPIOS ORIENTADORES",
+  "principlesTitle": "Os Princípios de Engenharia da ELIMFILTERS"
+};
+
+const PRINCIPLES_PT = [
+  {
+    "num": "01",
+    "title": "Proteger o ativo, não apenas o filtro.",
+    "desc": "O filtro é uma ferramenta de engenharia, não o produto final. O sucesso é medido pelo prolongamento da vida útil do componente crítico, não pela longevidade do filtro."
+  },
+  {
+    "num": "02",
+    "title": "A contaminação é o problema.",
+    "desc": "70-80% das falhas hidráulicas e de lubrificação do motor são iniciadas por microabrasão. Projetamos sistemas para eliminar a causa raiz, não apenas reagir à falha."
+  },
+  {
+    "num": "03",
+    "title": "A engenharia vem antes do marketing.",
+    "desc": "Rejeitamos afirmações genéricas e clichês comerciais. Cada afirmação de desempenho deve ser respaldada por normas internacionais e metrologia repetível."
+  },
+  {
+    "num": "04",
+    "title": "Cada sistema de proteção merece sua própria solução.",
+    "desc": "Sistemas de proteção diferentes têm perfis de contaminação distintos. Um único meio de uso múltiplo não pode proteger motores, sistemas hidráulicos e linhas de combustível complexos."
+  },
+  {
+    "num": "05",
+    "title": "As normas orientam as decisões.",
+    "desc": "ISO 4406, ISO 16889, ISO 5011 e as metodologias ASTM são a constituição legal do nosso departamento de engenharia. Projetamos para igualar ou superar as métricas certificadas."
+  },
+  {
+    "num": "06",
+    "title": "O conhecimento gera melhores decisões de manutenção.",
+    "desc": "Publicamos nossa documentação interna e nossos referenciais de metrologia. Um cliente que entende a contaminação é um cliente que escolhe proteção desenvolvida com engenharia."
+  },
+  {
+    "num": "07",
+    "title": "A confiabilidade é o objetivo.",
+    "desc": "O controle de contaminação é engenharia de confiabilidade. Eliminar o desgaste micrométrico é o único caminho para atingir a vida útil de projeto e evitar paradas catastróficas em campo."
+  }
+];
+
 export default function OurPhilosophyPage() {
   const { i18n } = useTranslation();
+  const isPortuguese = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('pt');
   const isSpanish = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('es');
-  const principles = isSpanish ? PRINCIPLES_ES : PRINCIPLES_EN;
+  const principles = isPortuguese ? PRINCIPLES_PT : isSpanish ? PRINCIPLES_ES : PRINCIPLES_EN;
 
-  const copy = isSpanish ? {
+  const copy = isPortuguese ? COPY_PT : isSpanish ? {
     heroTitle: 'Nuestra Filosofía de Ingeniería',
     heroLead: 'ELIMFILTERS no diseña repuestos genéricos de posventa. Diseñamos sistemas de control de contaminación construidos para preservar maquinaria industrial pesada. Nuestro trabajo se rige estrictamente por las leyes físicas de la tribología y normas internacionales verificadas.',
     s1Title: '1. Por Qué Existe ELIMFILTERS',
@@ -105,13 +163,13 @@ export default function OurPhilosophyPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaPhilosophyPage) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaBreadcrumb) }} />
 
-      <PageHeader breadcrumbs={[{ label: 'About', href: '/about' }]} currentPage={isSpanish ? 'Filosofía' : 'Philosophy'} />
+      <PageHeader breadcrumbs={[{ label: 'About', href: '/about' }]} currentPage={isPortuguese ? 'Filosofia' : isSpanish ? 'Filosofía' : 'Philosophy'} />
 
       <section style={heroSection}>
         <div aria-hidden="true" style={heroImage} />
         <div aria-hidden="true" style={heroOverlay} />
         <div style={wrap}>
-          <p style={eyebrow}>{isSpanish ? 'DOCTRINA DE INGENIERÍA' : 'ENGINEERING DOCTRINE'}</p>
+          <p style={eyebrow}>{isPortuguese ? 'DOUTRINA DE ENGENHARIA' : isSpanish ? 'DOCTRINA DE INGENIERÍA' : 'ENGINEERING DOCTRINE'}</p>
           <h1 style={heroTitle}>{copy.heroTitle}</h1>
           <p style={heroLead}>{copy.heroLead}</p>
         </div>

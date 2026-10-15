@@ -1,6 +1,7 @@
 'use client';
 
-import Link from 'next/link';
+import { PublicUiText } from '@/components/PublicUiText';
+import Link from '@/components/LocalizedLink';
 import type { CSSProperties } from 'react';
 import { useTranslation } from 'react-i18next';
 import { PageHeader } from '@/components/PageHeader';
@@ -9,9 +10,21 @@ import { HERO_MEDIA_TREATMENT } from '@/lib/hero-media';
 
 export default function AboutPage() {
   const { i18n } = useTranslation();
+  const isPortuguese = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('pt');
   const isSpanish = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('es');
 
-  const copy = isSpanish ? {
+  const copy = isPortuguese ? {
+    heroTitle: 'Sobre a ELIMFILTERS',
+    heroLead: 'A ELIMFILTERS® é uma organização de engenharia de filtração industrial dedicada à proteção de ativos críticos por meio de controle disciplinado da contaminação, inteligência de aplicação, arquitetura de produto validada e execução comercial confiável.',
+    essenceEyebrow: 'POR QUE A ELIMFILTERS EXISTE',
+    essenceTitle: 'A filtração é tratada como engenharia de confiabilidade, não como uma peça genérica.',
+    essenceBody: 'A maioria das falhas por contaminação é evitável, não inevitável. Um filtro escolhido apenas pelas dimensões não protege nada se não corresponder ao fluido, à pressão ou ao modo de falha real do ativo por trás dele — por isso, cada decisão da ELIMFILTERS começa pelo equipamento protegido, não por uma página de catálogo. O mesmo princípio define como a própria empresa é estruturada: uma Chief Executive Office humana ao lado de agentes executivos de IA especializados, para que a capacidade técnica e a continuidade possam crescer a longo prazo sem acrescentar complexidade organizacional por si só.',
+    cards: [
+      { title: 'Quem somos', body: 'Filtração industrial projetada em torno do ativo: cinco sistemas de proteção, dez tecnologias proprietárias e um processo de validação baseado na aplicação real.', href: '/about/who-we-are' },
+      { title: 'Liderança', body: 'Autoridade executiva humana combinada com funções executivas especializadas operadas por agentes de IA, sob uma estrutura formal de responsabilidade e autoridade delegada.', href: '/about/leadership' },
+      { title: 'Filosofia de engenharia', body: 'Decisões de engenharia orientadas por evidências, validação física e integridade técnica, não por afirmações comerciais genéricas.', href: '/about/philosophy' },
+    ],
+  } : isSpanish ? {
     heroTitle: 'Acerca de ELIMFILTERS',
     heroLead: 'ELIMFILTERS® es una organización de ingeniería de filtración industrial enfocada en proteger activos críticos mediante control disciplinado de contaminación, inteligencia de aplicación, arquitectura de producto validada y ejecución comercial confiable.',
     essenceEyebrow: 'POR QUÉ EXISTE ELIMFILTERS',
@@ -61,13 +74,13 @@ export default function AboutPage() {
 
   return (
     <main id="main-content" style={main}>
-      <PageHeader currentPage={isSpanish ? 'Acerca de' : 'About'} />
+      <PageHeader currentPage={isPortuguese ? 'Sobre' : isSpanish ? 'Acerca de' : 'About'} />
 
       <section style={heroSection}>
         <div aria-hidden="true" style={heroImage} />
         <div aria-hidden="true" style={heroOverlay} />
         <div style={wrap}>
-          <p style={eyebrow}>ABOUT ELIMFILTERS</p>
+          <p style={eyebrow}><PublicUiText textKey="publicUi.text44">{"ABOUT ELIMFILTERS"}</PublicUiText></p>
           <h1 style={heroTitle}>{copy.heroTitle}</h1>
           <p style={heroLead}>{copy.heroLead}</p>
         </div>
@@ -88,7 +101,7 @@ export default function AboutPage() {
               <Link key={card.href} href={card.href} style={cardLink}>
                 <h2 style={cardTitle}>{card.title}</h2>
                 <p style={cardBody}>{card.body}</p>
-                <span style={exploreLabel}>{isSpanish ? 'LEER MÁS →' : 'READ MORE →'}</span>
+                <span style={exploreLabel}>{isPortuguese ? 'LEIA MAIS →' : isSpanish ? 'LEER MÁS →' : 'READ MORE →'}</span>
               </Link>
             ))}
           </div>

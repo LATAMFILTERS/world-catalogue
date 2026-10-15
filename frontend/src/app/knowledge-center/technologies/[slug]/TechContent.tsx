@@ -1,6 +1,6 @@
 'use client';
 
-import Link from 'next/link';
+import Link from '@/components/LocalizedLink';
 import { motion } from 'motion/react';
 import { KC_TECHNOLOGIES, KCTechnology } from '@/lib/knowledge-center-data';
 import { getTechSidebarData } from '@/lib/knowledge-center/navigation-index';

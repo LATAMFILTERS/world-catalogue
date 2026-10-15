@@ -75,7 +75,10 @@ export function LanguageMenu({ style, registers = true }: { style?: CSSPropertie
     // stay put and translate in place when the language on screen differs.
     const target = languageHref(pathname, lang);
     const trim = (path: string) => path.replace(/\/+$/, '') || '/';
-    if (target && trim(target) !== trim(pathname ?? '/')) return;
+    if (target && trim(target) !== trim(pathname ?? '/')) {
+      event.currentTarget.href = target + window.location.search + window.location.hash;
+      return;
+    }
     event.preventDefault();
     if (ref.current) ref.current.open = false;
     if (lang !== current) void applyLanguageInPlace(lang);
