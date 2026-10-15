@@ -118,6 +118,11 @@
       "date": "2026-10-15",
       "by": "operator",
       "decision": "Operator shared field references (a HYDROCORE fuel filter / water separator photographed in service, and the ET97784 assembly render). Fig 1C redrawn to match: metal shroud under the head, tall transparent bowl with the pleated element visible inside, red seal at the rim and drain at the bottom; service takes the bowl off, changes the element and refits the same bowl. Label text, micron ratings and addresses on the references are not reproduced."
+    },
+    {
+      "date": "2026-10-15",
+      "by": "operator",
+      "decision": "ET97784 is sold as one complete assembly (head, spin-on element, bowl and drain), so it carries the assembly prefix ET9 / TURBOCORE on its label; its replaceable service element ES91434 stays ES9 / HYDROCORE. The figures keep showing the separator mechanism as HYDROCORE (ES9) and do not reproduce product labels."
     }
   ]
 }
