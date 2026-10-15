@@ -13,23 +13,31 @@ const ENTRIES = [
   { slug: 'mercofilter', image: '/images/mercofilter_vzla.jpg', titleEn: 'Mercofilter', titleEs: 'Mercofilter', kindEn: 'Distributor Partner · Venezuela', kindEs: 'Socio Distribuidor · Venezuela' },
 ];
 
+const KIND_PT: Record<string, string> = {
+  "fps": "Parceiro Distribuidor · Panamá",
+  "colsaisa": "Parceiro Distribuidor · Colômbia",
+  "troy": "Distribuidor Exclusivo · República Dominicana",
+  "mercofilter": "Parceiro Distribuidor · Venezuela"
+};
+
 export default function NetworkHubPage() {
   const { i18n } = useTranslation();
+  const isPortuguese = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('pt');
   const isSpanish = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('es');
 
   return (
     <main id="main-content" style={main}>
       <PageHeader
-        breadcrumbs={[{ label: 'About', href: '/about' }, { label: isSpanish ? 'Quiénes Somos' : 'Who We Are', href: '/about/who-we-are' }]}
-        currentPage={isSpanish ? 'Red Global' : 'Global Network'}
+        breadcrumbs={[{ label: 'About', href: '/about' }, { label: isPortuguese ? "Quem Somos" : isSpanish ? 'Quiénes Somos' : 'Who We Are', href: '/about/who-we-are' }]}
+        currentPage={isPortuguese ? "Rede Global" : isSpanish ? 'Red Global' : 'Global Network'}
       />
 
       <section style={heroSection}>
         <div style={wrap}>
-          <p style={eyebrow}>{isSpanish ? 'RED GLOBAL' : 'GLOBAL NETWORK'}</p>
-          <h1 style={heroTitle}>{isSpanish ? 'Los socios detrás de la expansión.' : 'The partners behind the expansion.'}</h1>
+          <p style={eyebrow}>{isPortuguese ? "REDE GLOBAL" : isSpanish ? 'RED GLOBAL' : 'GLOBAL NETWORK'}</p>
+          <h1 style={heroTitle}>{isPortuguese ? "Os parceiros por trás da expansão." : isSpanish ? 'Los socios detrás de la expansión.' : 'The partners behind the expansion.'}</h1>
           <p style={heroLead}>
-            {isSpanish
+            {isPortuguese ? "Os parceiros distribuidores que levaram a ELIMFILTERS a novos mercados e as operações logísticas que mantêm a marca em movimento." : isSpanish
               ? 'Los socios distribuidores que llevaron ELIMFILTERS a nuevos mercados, y las operaciones logísticas que mantienen la marca en movimiento.'
               : 'The distributor partners who carried ELIMFILTERS into new markets, and the logistics operations that keep the brand moving.'}
           </p>
@@ -44,7 +52,7 @@ export default function NetworkHubPage() {
                 <div style={cardPhotoShell}>
                   <img src={entry.image} alt={isSpanish ? entry.titleEs : entry.titleEn} style={cardPhoto} />
                 </div>
-                <p style={cardKind}>{isSpanish ? entry.kindEs : entry.kindEn}</p>
+                <p style={cardKind}>{isPortuguese ? KIND_PT[entry.slug] : isSpanish ? entry.kindEs : entry.kindEn}</p>
                 <h2 style={cardTitle}>{isSpanish ? entry.titleEs : entry.titleEn}</h2>
               </Link>
             ))}

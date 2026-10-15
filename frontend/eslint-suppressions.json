@@ -159,11 +159,6 @@
       "count": 1
     }
   },
-  "src/components/LubricationSystemPage.tsx": {
-    "react/no-unescaped-entities": {
-      "count": 1
-    }
-  },
   "src/components/MacrocoreMediaEngineeringPortal.tsx": {
     "react-hooks/set-state-in-effect": {
       "count": 1

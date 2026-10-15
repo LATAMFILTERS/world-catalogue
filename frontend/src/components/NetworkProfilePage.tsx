@@ -14,13 +14,16 @@ interface NetworkProfilePageProps {
   titleEs: string;
   bodyEn: string;
   bodyEs: string;
-  images: { src: string; altEn: string; altEs: string }[];
+  bodyPt: string;
+  eyebrowPt: string;
+  images: { src: string; altEn: string; altEs: string; altPt: string }[];
 }
 
 export function NetworkProfilePage({
-  currentPageEn, currentPageEs, eyebrowEn, eyebrowEs, titleEn, titleEs, bodyEn, bodyEs, images,
+  currentPageEn, currentPageEs, eyebrowEn, eyebrowEs, titleEn, titleEs, bodyEn, bodyEs, bodyPt, eyebrowPt, images,
 }: NetworkProfilePageProps) {
   const { i18n } = useTranslation();
+  const isPortuguese = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('pt');
   const isSpanish = (i18n.resolvedLanguage || i18n.language || '').toLowerCase().startsWith('es');
 
   return (
@@ -28,15 +31,15 @@ export function NetworkProfilePage({
       <PageHeader
         breadcrumbs={[
           { label: 'About', href: '/about' },
-          { label: isSpanish ? 'Quiénes Somos' : 'Who We Are', href: '/about/who-we-are' },
-          { label: isSpanish ? 'Red Global' : 'Global Network', href: '/about/who-we-are/network' },
+          { label: isPortuguese ? "Quem Somos" : isSpanish ? 'Quiénes Somos' : 'Who We Are', href: '/about/who-we-are' },
+          { label: isPortuguese ? "Rede Global" : isSpanish ? 'Red Global' : 'Global Network', href: '/about/who-we-are/network' },
         ]}
         currentPage={isSpanish ? currentPageEs : currentPageEn}
       />
 
       <section style={heroSection}>
         <div style={wrap}>
-          <p style={eyebrow}>{isSpanish ? eyebrowEs : eyebrowEn}</p>
+          <p style={eyebrow}>{isPortuguese ? eyebrowPt : isSpanish ? eyebrowEs : eyebrowEn}</p>
           <h1 style={title}>{isSpanish ? titleEs : titleEn}</h1>
         </div>
       </section>
@@ -46,11 +49,11 @@ export function NetworkProfilePage({
           <div style={photoColumn}>
             {images.map((img) => (
               <div key={img.src} style={photoShell}>
-                <img src={img.src} alt={isSpanish ? img.altEs : img.altEn} style={photoImage} />
+                <img src={img.src} alt={isPortuguese ? img.altPt : isSpanish ? img.altEs : img.altEn} style={photoImage} />
               </div>
             ))}
           </div>
-          <p style={bodyText}>{isSpanish ? bodyEs : bodyEn}</p>
+          <p style={bodyText}>{isPortuguese ? bodyPt : isSpanish ? bodyEs : bodyEn}</p>
         </div>
       </section>
     </main>
