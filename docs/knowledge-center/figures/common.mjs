@@ -9,8 +9,8 @@ export { k, G, A };
 
 // The pages inline the MIT-licensed anatomy kit; this keeps its notice with every copy.
 export const KIT_NOTICE = "/* anatomy kit (github.com/wheresryan22/anatomy @ be2fa9b) · Copyright (c) 2026 Ryan · MIT License, see ANATOMY_LICENSE.txt */\n";
-// Internal-only drafts must never be indexed if they are ever served.
-export const draftPage = (html) => html.replace('<html lang="en">', '<html lang="es">').replace("<head>", '<head><meta name="robots" content="noindex, nofollow">');
+// Figure pages are not indexed on their own: the Knowledge Center page that links them is.
+export const draftPage = (html, lang = "es") => html.replace('<html lang="en">', `<html lang="${lang}">`).replace("<head>", '<head><meta name="robots" content="noindex, nofollow">');
 
 export const UP = [0, 0, 1];
 export const vertical = (z, x = 0, y = 0) => G.frameOf([x, y, z], UP, [1, 0, 0], [0, 1, 0]);

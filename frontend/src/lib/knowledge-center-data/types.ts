@@ -116,6 +116,8 @@ export interface KCTechnology {
   relatedIndustries: string[];
   worksWith: string[];
   image?: string;
+  // interactive explainer figures (self-contained pages in /public), shown as previews that open the figure
+  figures?: { href: string; preview: string; title: string; caption: string }[];
 }
 
 export interface KCSystemDetail {

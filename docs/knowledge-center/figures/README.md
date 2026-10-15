@@ -2,10 +2,11 @@
 
 Interactive isometric explainer figures for Fuel Cleanliness Protection technology pages.
 
-**Status: internal-only.** Every figure here is `validationStatus: pending-secondary-validation` and
-`publicationStatus: internal-only` (see `status.json` and the publication gate in
-`../FUEL_CANONICAL_GOVERNANCE.md`). Nothing in this folder is served by the frontend. Do not copy a page
-into `frontend/` or any public surface until both statuses are approved.
+**Status: see `status.json`.** The three HYDROCORE™ figures are approved for publication: their English
+builds (`--en`) are written to `frontend/public/knowledge-center/figures/` and linked from the How It Works
+section of `/knowledge-center/technologies/hydrocore/`. TURBOCORE™ is still `internal-only` (see the publication
+gate in `../FUEL_CANONICAL_GOVERNANCE.md`); do not publish a figure until both of its statuses are approved.
+The Spanish pages in this folder are the review drafts and are not served.
 
 | Figure | Technology scope | Pages | Preview |
 |---|---|---|---|
@@ -39,6 +40,12 @@ node hydrocore/build.mjs --audit && node hydrocore/build.mjs --light
 node hydrocore/build.mjs --spinon --audit && node hydrocore/build.mjs --spinon --light
 node hydrocore/build.mjs --housing --audit && node hydrocore/build.mjs --housing --light
 node turbocore/build.mjs --audit && node turbocore/build.mjs --light
+# published English pages and their previews (dark theme, for the Knowledge Center)
+for v in "" --spinon --housing; do node hydrocore/build.mjs $v --en; done
+for f in hydrocore hydrocore-spinon hydrocore-housing; do
+  node .anatomy/scripts/capture.mjs ../../../frontend/public/knowledge-center/figures/$f.html --out /tmp/$f.png --wait 4000 --scale 1.5
+  ffmpeg -v error -i /tmp/$f.png -c:v libwebp -quality 82 ../../../frontend/public/knowledge-center/figures/$f.webp -y
+done
 ```
 
 `--audit` proves the geometry (clearances, supports, mounts, depth order, including every lid position).
