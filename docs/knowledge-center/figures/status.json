@@ -179,6 +179,20 @@
         "Recommended: engineering review of the drawn air cleaner (housing, primary and safety elements, cover, restriction indicator) against approved INTEKCORE and MACROCORE applications."
       ]
     }
+,
+    {
+      "id": "kc-figure-nanoforce-pressure-line",
+      "technology": "NANOFORCE",
+      "scope": "hydraulic circuit: reservoir, pump, pressure-line spin-on in section, control-valve block, return (service: replace the spin-on); pressure-line position per the NANOFORCE KC registry",
+      "files": ["nanoforce/nanoforce.html", "nanoforce/nanoforce-light.html"],
+      "validationStatus": "validated",
+      "publicationStatus": "approved-for-publication",
+      "public": ["frontend/public/knowledge-center/figures/nanoforce.html", "frontend/public/knowledge-center/figures/nanoforce-es.html", "frontend/public/knowledge-center/figures/nanoforce-pt.html", "frontend/public/knowledge-center/figures/nanoforce.webp"],
+      "surface": "/knowledge-center/technologies/nanoforce/ (How It Works)",
+      "open_items": [
+        "Recommended: engineering review of the drawn hydraulic circuit against approved NANOFORCE pressure-line applications."
+      ]
+    }
   ],
   "kit": {
     "name": "anatomy",
@@ -267,6 +281,11 @@
       "date": "2026-10-15",
       "by": "operator",
       "decision": "Continue: INTEKCORE (housings) with MACROCORE (industrial air elements) in one air cleaner figure, shown on both technology pages, ES/EN/PT."
+    },
+    {
+      "date": "2026-10-15",
+      "by": "operator",
+      "decision": "Continue: NANOFORCE hydraulic circuit figure (pressure-line spin-on before the control valves), ES/EN/PT, alongside the NANOFORCE spin-on vs cartridge comparison."
     }
   ]
 }
