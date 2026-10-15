@@ -117,7 +117,7 @@ export interface KCTechnology {
   worksWith: string[];
   image?: string;
   // interactive explainer figures (self-contained pages in /public), shown as previews that open the figure
-  figures?: { href: string; preview: string; title: string; caption: string }[];
+  figures?: { href: string; preview: string; title: string; caption: string; translations?: { lang: string; label: string; href: string }[] }[];
 }
 
 export interface KCSystemDetail {

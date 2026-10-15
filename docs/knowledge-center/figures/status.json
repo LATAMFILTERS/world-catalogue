@@ -117,6 +117,40 @@
         "Recommended: engineering review of the drawn lube circuit (pan, pump, full-flow spin-on, main gallery, return) against approved SYNTRAX applications."
       ]
     }
+,
+    {
+      "id": "kc-figure-syntapore-spinon-vs-cartridge",
+      "technology": "SYNTAPORE",
+      "scope": "the two filter formats side by side: spin-on (replaced whole, can included) and cartridge in a permanent housing (the bowl drops, only the element is replaced, the same bowl goes back)",
+      "files": ["compare/compare-syntapore.html", "compare/compare-syntapore-light.html"],
+      "validationStatus": "validated",
+      "publicationStatus": "approved-for-publication",
+      "public": ["frontend/public/knowledge-center/figures/compare-syntapore.html", "frontend/public/knowledge-center/figures/compare-syntapore-es.html", "frontend/public/knowledge-center/figures/compare-syntapore-pt.html", "frontend/public/knowledge-center/figures/compare-syntapore.webp"],
+      "surface": "/knowledge-center/technologies/syntapore/ (How It Works)",
+      "open_items": []
+    },
+    {
+      "id": "kc-figure-syntrax-spinon-vs-cartridge",
+      "technology": "SYNTRAX",
+      "scope": "the two filter formats side by side: spin-on (replaced whole, can included) and cartridge in a permanent housing (the bowl drops, only the element is replaced, the same bowl goes back)",
+      "files": ["compare/compare-syntrax.html", "compare/compare-syntrax-light.html"],
+      "validationStatus": "validated",
+      "publicationStatus": "approved-for-publication",
+      "public": ["frontend/public/knowledge-center/figures/compare-syntrax.html", "frontend/public/knowledge-center/figures/compare-syntrax-es.html", "frontend/public/knowledge-center/figures/compare-syntrax-pt.html", "frontend/public/knowledge-center/figures/compare-syntrax.webp"],
+      "surface": "/knowledge-center/technologies/syntrax/ (How It Works)",
+      "open_items": []
+    },
+    {
+      "id": "kc-figure-nanoforce-spinon-vs-cartridge",
+      "technology": "NANOFORCE",
+      "scope": "the two filter formats side by side: spin-on (replaced whole, can included) and cartridge in a permanent housing (the bowl drops, only the element is replaced, the same bowl goes back)",
+      "files": ["compare/compare-nanoforce.html", "compare/compare-nanoforce-light.html"],
+      "validationStatus": "validated",
+      "publicationStatus": "approved-for-publication",
+      "public": ["frontend/public/knowledge-center/figures/compare-nanoforce.html", "frontend/public/knowledge-center/figures/compare-nanoforce-es.html", "frontend/public/knowledge-center/figures/compare-nanoforce-pt.html", "frontend/public/knowledge-center/figures/compare-nanoforce.webp"],
+      "surface": "/knowledge-center/technologies/nanoforce/ (How It Works)",
+      "open_items": []
+    }
   ],
   "kit": {
     "name": "anatomy",
@@ -185,6 +219,11 @@
       "date": "2026-10-15",
       "by": "operator",
       "decision": "Continue with SYNTRAX: full-flow lube spin-on in the engine lube circuit, published like the fuel figures. Every figure caption now calls it an illustrative simulation of how the technology works (conceptual animation, not an engineering model or test result, no product data)."
+    },
+    {
+      "date": "2026-10-15",
+      "by": "operator",
+      "decision": "Explain how spin-on and cartridge filters work, with graphic examples, for SYNTAPORE, HYDROCORE, NANOFORCE and SYNTRAX (the four technologies that come in both formats); figures in ES, EN and PT. HYDROCORE already shows both formats (Fig 1B spin-on, Figs 1A/1C element in a housing); SYNTAPORE, SYNTRAX and NANOFORCE get a side-by-side comparison figure."
     }
   ]
 }
