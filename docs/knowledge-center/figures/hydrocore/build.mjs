@@ -237,7 +237,7 @@ const COPY_EN = HOUSING
         { mark: "raised", label: "Head with metal shroud, transparent bowl with the pleated element in view, seal, drain, catch cup" },
       ],
       caption:
-        "Conceptual illustration of a HYDROCORE™ fuel/water separator with a replaceable element inside a transparent bowl under a permanent metal shroud. The pleated element can be seen through the bowl. Separated water and impurities, denser than diesel, settle at the bottom of the bowl and are released through the drain. At service the bowl comes off, only the element is changed and the same bowl is refitted with its seal: the shroud and head stay in place. Conceptual illustration: it shows no product data.",
+        "Conceptual illustration of a HYDROCORE™ fuel/water separator with a replaceable element inside a transparent bowl under a permanent metal shroud. The pleated element can be seen through the bowl. Separated water and impurities, denser than diesel, settle at the bottom of the bowl and are released through the drain. At service the bowl comes off, only the element is changed and the same bowl is refitted with its seal: the shroud and head stay in place. Illustrative simulation of how it works: a conceptual animation, not an engineering model or test result, and it shows no product data.",
       aria: "HYDROCORE separator with element in a transparent bowl: arrow keys change the water in the fuel, E runs the service, space drains",
       label:
         "Fuel/water separator with a tall transparent bowl under a metal shroud, mounted on a head on a wall bracket. The pleated element is visible inside the bowl, and water and impurities settle at its bottom, above the drain. At service the bowl comes off, the element is changed and the same bowl is refitted; the shroud and head stay.",
@@ -253,7 +253,7 @@ const COPY_EN = HOUSING
         { mark: "raised", label: "Head with primer pump, spin-on cartridge with built-in drain (section view), catch cup" },
       ],
       caption:
-        "Conceptual illustration of a HYDROCORE™ spin-on separator with a built-in drain, with the bottom of the cartridge shown in section. Separated water and impurities, denser than diesel, settle at the bottom of the cartridge itself and are released by opening the drain. At service the whole cartridge is replaced, drain included. Conceptual illustration: it shows no product data.",
+        "Conceptual illustration of a HYDROCORE™ spin-on separator with a built-in drain, with the bottom of the cartridge shown in section. Separated water and impurities, denser than diesel, settle at the bottom of the cartridge itself and are released by opening the drain. At service the whole cartridge is replaced, drain included. Illustrative simulation of how it works: a conceptual animation, not an engineering model or test result, and it shows no product data.",
       aria: "HYDROCORE spin-on with built-in drain: arrow keys change the water in the fuel, E changes the cartridge, space drains",
       label:
         "Spin-on fuel/water separator with a built-in drain, mounted on a head on a wall bracket, with the bottom of the cartridge in section. Separated water settles at the bottom of the cartridge and the drain releases it into a catch cup. At service the whole cartridge is replaced.",
@@ -268,7 +268,7 @@ const COPY_EN = HOUSING
         { mark: "raised", label: "Head with primer pump, spin-on element, reusable transparent bowl, catch cup" },
       ],
       caption:
-        "Conceptual illustration of a HYDROCORE™ fuel/water separator with a reusable transparent bowl and drain. Separated water and impurities, denser than diesel, settle in the bowl and are released through the drain. At service only the element is changed: the same bowl is removed and fitted to the new element. Conceptual illustration: it shows no product data.",
+        "Conceptual illustration of a HYDROCORE™ fuel/water separator with a reusable transparent bowl and drain. Separated water and impurities, denser than diesel, settle in the bowl and are released through the drain. At service only the element is changed: the same bowl is removed and fitted to the new element. Illustrative simulation of how it works: a conceptual animation, not an engineering model or test result, and it shows no product data.",
       aria: "HYDROCORE separator with bowl: arrow keys change the water in the fuel, E changes the element, space drains",
       label:
         "Fuel/water separator with a transparent bowl and drain, mounted on a head on a wall bracket. Separated water drops fall into the bowl and the drain releases them into a catch cup. When the element is changed, the bowl is kept and reused.",
@@ -285,7 +285,7 @@ const COPY_ES = HOUSING
         { mark: "raised", label: "Cabezal con carcasa metálica, vaso transparente con el elemento plisado a la vista, sello, purgador, taza colectora" },
       ],
       caption:
-        "Ilustración conceptual de un separador de combustible/agua HYDROCORE™ con elemento reemplazable dentro de un vaso transparente, bajo una carcasa metálica permanente. El elemento plisado se ve a través del vaso. El agua y las impurezas separadas, más densas que el diésel, decantan en el fondo del vaso y se descargan por el purgador. En el servicio se desmonta el vaso, se cambia solo el elemento y se vuelve a montar el mismo vaso con su sello: la carcasa y el cabezal quedan en su lugar. Es una ilustración conceptual: no muestra datos de producto.",
+        "Ilustración conceptual de un separador de combustible/agua HYDROCORE™ con elemento reemplazable dentro de un vaso transparente, bajo una carcasa metálica permanente. El elemento plisado se ve a través del vaso. El agua y las impurezas separadas, más densas que el diésel, decantan en el fondo del vaso y se descargan por el purgador. En el servicio se desmonta el vaso, se cambia solo el elemento y se vuelve a montar el mismo vaso con su sello: la carcasa y el cabezal quedan en su lugar. Simulación ilustrativa del funcionamiento: es una animación conceptual, no un modelo de ingeniería ni un resultado de prueba, y no muestra datos de producto.",
       aria: "Separador HYDROCORE con elemento en vaso transparente: flechas cambian el agua en el combustible, E hace el servicio, espacio purga",
       label:
         "Separador de combustible y agua con un vaso transparente alto bajo una carcasa metálica, montado en un cabezal sobre un soporte de pared. El elemento plisado se ve dentro del vaso y el agua y las impurezas decantan en su fondo, sobre el purgador. En el servicio se desmonta el vaso, se cambia el elemento y se vuelve a montar el mismo vaso; la carcasa y el cabezal se quedan.",
@@ -301,7 +301,7 @@ const COPY_ES = HOUSING
         { mark: "raised", label: "Cabezal con bomba de cebado, cartucho spin-on con purgador incorporado (vista en corte), taza colectora" },
       ],
       caption:
-        "Ilustración conceptual de un filtro separador spin-on HYDROCORE™ con purgador incorporado, con el fondo del cartucho en vista de corte. El agua y las impurezas separadas, más densas que el diésel, decantan en el fondo del propio cartucho y se descargan abriendo el purgador. En el servicio se reemplaza el cartucho completo, con su purgador. Es una ilustración conceptual: no muestra datos de producto.",
+        "Ilustración conceptual de un filtro separador spin-on HYDROCORE™ con purgador incorporado, con el fondo del cartucho en vista de corte. El agua y las impurezas separadas, más densas que el diésel, decantan en el fondo del propio cartucho y se descargan abriendo el purgador. En el servicio se reemplaza el cartucho completo, con su purgador. Simulación ilustrativa del funcionamiento: es una animación conceptual, no un modelo de ingeniería ni un resultado de prueba, y no muestra datos de producto.",
       aria: "Spin-on HYDROCORE con purgador incorporado: flechas cambian el agua en el combustible, E cambia el cartucho, espacio purga",
       label:
         "Filtro separador spin-on de combustible y agua con purgador incorporado, montado en un cabezal sobre un soporte de pared, con el fondo del cartucho en corte. El agua separada decanta en el fondo del cartucho y el purgador la descarga a una taza colectora. Al cambiarlo se retira el cartucho completo.",
@@ -316,7 +316,7 @@ const COPY_ES = HOUSING
         { mark: "raised", label: "Cabezal con bomba de cebado, elemento spin-on, vaso transparente reutilizable, taza colectora" },
       ],
       caption:
-        "Ilustración conceptual de un separador de combustible/agua HYDROCORE™ con vaso transparente reutilizable y purgador. El agua y las impurezas separadas, más densas que el diésel, decantan en el vaso y se descargan por el purgador. En el servicio se cambia solo el elemento: el mismo vaso se desmonta y se instala en el elemento nuevo. Es una ilustración conceptual: no muestra datos de producto.",
+        "Ilustración conceptual de un separador de combustible/agua HYDROCORE™ con vaso transparente reutilizable y purgador. El agua y las impurezas separadas, más densas que el diésel, decantan en el vaso y se descargan por el purgador. En el servicio se cambia solo el elemento: el mismo vaso se desmonta y se instala en el elemento nuevo. Simulación ilustrativa del funcionamiento: es una animación conceptual, no un modelo de ingeniería ni un resultado de prueba, y no muestra datos de producto.",
       aria: "Separador HYDROCORE con vaso: flechas cambian el agua en el combustible, E cambia el elemento, espacio purga",
       label:
         "Separador de combustible y agua con vaso transparente y purgador, montado en un cabezal sobre un soporte de pared. Las gotas de agua separadas caen al vaso y el purgador las descarga a una taza colectora. Al cambiar el elemento, el vaso se conserva y se reutiliza.",

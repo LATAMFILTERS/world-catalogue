@@ -122,13 +122,24 @@ export function studio(P, { order = ["stand"], spring = { stagger: 0.035, stiffn
     put("drain.spout", [0, 0, wingZ - 2.5], S(k.cylinder(0, 0, 1.7, wingZ - 5, 5, P, 16), { tone: "mid", crease: "none" }), [A.cylinder(0, 0, 1.7, wingZ - 5, 5, { name: "drain.spout" })], { piece });
   }
 
+  // A hose run with an elbow ball at every corner: each straight run ends rim-on-sphere on its ball.
+  function line(name, points, { r = 3, ball = 4.8 } = {}) {
+    const sink = Math.sqrt(ball * ball - r * r);
+    for (let i = 1; i < points.length - 1; i++) put(`${name}.elbow`, points[i], k.solidSvg(G.sphereOf(points[i], ball, P), { tone: "mid" }), [A.ball(points[i], ball, { name: `${name}.elbow` })]);
+    for (let i = 0; i < points.length - 1; i++) {
+      const a = points[i], b = points[i + 1];
+      const d = G.unit3(G.sub3(b, a));
+      hose(`${name}.hose`, [i === 0 ? a : G.add3(a, G.mul3(d, sink)), i === points.length - 2 ? b : G.sub3(b, G.mul3(d, sink))], r);
+    }
+  }
+
   function render() {
     A.settle(R, P);
     R.items.sort((a, b) => a.key - b.key);
     return R.items.map((item) => `<g data-piece="${item.piece}">${item.svg}</g>`).join("");
   }
 
-  return { R, at, S, L, D, byDepth, put, hose, fitting, plate, wall, cup, drain, render };
+  return { R, at, S, L, D, byDepth, put, hose, line, fitting, plate, wall, cup, drain, render };
 }
 
 // The glass bowl as one item: cavity and fuel behind, live water and drops, then the glass in front.

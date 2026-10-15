@@ -139,6 +139,9 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     relatedIndustries: [],
     worksWith: [],
     image: '/images/technologies/syntrax-media.png',
+    figures: [
+      { href: '/knowledge-center/figures/syntrax.html', preview: '/knowledge-center/figures/syntrax.webp', title: 'Full-flow spin-on in the lube circuit', caption: 'The oil pump sends all the oil through the filter before the main gallery that feeds the bearings; wear particles and soot are held on the pleated media. At service the spin-on is replaced.' },
+    ],
   },
   {
     slug: 'nanoforce',

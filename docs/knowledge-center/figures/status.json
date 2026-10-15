@@ -100,6 +100,23 @@
         "Recommended: engineering review of the drawn circuit (tank, primary, transfer pump, secondary, injection rail) against approved SYNTAPORE applications."
       ]
     }
+,
+    {
+      "id": "kc-figure-syntrax-full-flow-spinon",
+      "technology": "SYNTRAX",
+      "scope": "engine lube filtration: full-flow spin-on on the engine between the oil pump and the main gallery, in section with the pleated element (service: replace the spin-on)",
+      "files": [
+        "syntrax/syntrax.html",
+        "syntrax/syntrax-light.html"
+      ],
+      "validationStatus": "validated",
+      "publicationStatus": "approved-for-publication",
+      "public": ["frontend/public/knowledge-center/figures/syntrax.html", "frontend/public/knowledge-center/figures/syntrax.webp"],
+      "surface": "/knowledge-center/technologies/syntrax/ (How It Works)",
+      "open_items": [
+        "Recommended: engineering review of the drawn lube circuit (pan, pump, full-flow spin-on, main gallery, return) against approved SYNTRAX applications."
+      ]
+    }
   ],
   "kit": {
     "name": "anatomy",
@@ -163,6 +180,11 @@
       "date": "2026-10-15",
       "by": "operator",
       "decision": "SYNTAPORE figure: a primary filter near the transfer pump (suction side) and a secondary filter in its place on the engine, both SYNTAPORE (no HYDROCORE separator in this figure, so scopes are not mixed). Published in the Knowledge Center technology page (How It Works) like HYDROCORE and TURBOCORE. Particle sizes are qualitative (larger in the primary, finer in the secondary); no ratings."
+    },
+    {
+      "date": "2026-10-15",
+      "by": "operator",
+      "decision": "Continue with SYNTRAX: full-flow lube spin-on in the engine lube circuit, published like the fuel figures. Every figure caption now calls it an illustrative simulation of how the technology works (conceptual animation, not an engineering model or test result, no product data)."
     }
   ]
 }
