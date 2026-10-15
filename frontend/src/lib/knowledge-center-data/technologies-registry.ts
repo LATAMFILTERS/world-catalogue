@@ -21,6 +21,9 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     relatedIndustries: [],
     worksWith: ['INTEKCORE™'],
     image: '/images/technologies/macrocore-media.png',
+    figures: [
+      { href: '/knowledge-center/figures/air-intake.html', preview: '/knowledge-center/figures/air-intake.webp', title: 'Primary and safety elements in the air cleaner', caption: 'Dust is held on the pleated primary element while the restriction indicator rises. At service the primary comes out and the safety element stays in place, keeping the clean side closed.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/air-intake-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/air-intake-pt.html' }] },
+    ],
   },
   {
     slug: 'microkappa',
@@ -66,6 +69,9 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     relatedSystems: ['air-intake-protection'],
     relatedIndustries: [],
     worksWith: ['MACROCORE™'],
+    figures: [
+      { href: '/knowledge-center/figures/air-intake.html', preview: '/knowledge-center/figures/air-intake.webp', title: 'Air cleaner housing, ducts and restriction indicator', caption: 'The housing, cover and ducts keep the clean-air boundary sealed around the elements. At service the cover and the primary come off; the safety element stays in place.', translations: [{ lang: 'es', label: 'Español', href: '/knowledge-center/figures/air-intake-es.html' }, { lang: 'pt', label: 'Português', href: '/knowledge-center/figures/air-intake-pt.html' }] },
+    ],
   },
   {
     slug: 'syntapore',

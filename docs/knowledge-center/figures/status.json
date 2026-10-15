@@ -165,6 +165,20 @@
         "Recommended: engineering review of the drawn cooling circuit and of the additive charge depiction against approved THERMACORE applications. The figure states the additive only where an additive-bearing element is approved (KC registry selectionGuidance) and gives no charge, release rate or interval."
       ]
     }
+,
+    {
+      "id": "kc-figure-intekcore-macrocore-air-cleaner",
+      "technology": "INTEKCORE + MACROCORE",
+      "scope": "engine air cleaner in section: INTEKCORE housing (head, ducts, cover, restriction indicator) with MACROCORE primary and safety elements (service: cover and primary off, safety element stays)",
+      "files": ["air/air-intake.html", "air/air-intake-light.html"],
+      "validationStatus": "validated",
+      "publicationStatus": "approved-for-publication",
+      "public": ["frontend/public/knowledge-center/figures/air-intake.html", "frontend/public/knowledge-center/figures/air-intake-es.html", "frontend/public/knowledge-center/figures/air-intake-pt.html", "frontend/public/knowledge-center/figures/air-intake.webp"],
+      "surface": "/knowledge-center/technologies/intekcore/ and /knowledge-center/technologies/macrocore/ (How It Works)",
+      "open_items": [
+        "Recommended: engineering review of the drawn air cleaner (housing, primary and safety elements, cover, restriction indicator) against approved INTEKCORE and MACROCORE applications."
+      ]
+    }
   ],
   "kit": {
     "name": "anatomy",
@@ -248,6 +262,11 @@
       "date": "2026-10-15",
       "by": "operator",
       "decision": "Continue with the remaining technologies. THERMACORE first: coolant filter with the additive pellets (SCA) shown, published in ES/EN/PT like the others."
+    },
+    {
+      "date": "2026-10-15",
+      "by": "operator",
+      "decision": "Continue: INTEKCORE (housings) with MACROCORE (industrial air elements) in one air cleaner figure, shown on both technology pages, ES/EN/PT."
     }
   ]
 }
