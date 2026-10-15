@@ -9,8 +9,8 @@ export { k, G, A };
 
 // The pages inline the MIT-licensed anatomy kit; this keeps its notice with every copy.
 export const KIT_NOTICE = "/* anatomy kit (github.com/wheresryan22/anatomy @ be2fa9b) · Copyright (c) 2026 Ryan · MIT License, see ANATOMY_LICENSE.txt */\n";
-// Internal-only drafts must never be indexed if they are ever served.
-export const draftPage = (html) => html.replace('<html lang="en">', '<html lang="es">').replace("<head>", '<head><meta name="robots" content="noindex, nofollow">');
+// Figure pages are not indexed on their own: the Knowledge Center page that links them is.
+export const draftPage = (html, lang = "es") => html.replace('<html lang="en">', `<html lang="${lang}">`).replace("<head>", '<head><meta name="robots" content="noindex, nofollow">');
 
 export const UP = [0, 0, 1];
 export const vertical = (z, x = 0, y = 0) => G.frameOf([x, y, z], UP, [1, 0, 0], [0, 1, 0]);
@@ -204,6 +204,7 @@ export const PAGE_CSS = `<style>
 .pc-shine{fill:none;stroke:#fff;stroke-width:1.8px;opacity:.85;stroke-linecap:butt}
 .iso:not([data-theme="light"]) .pc-shine{opacity:.16}
 .pc-media{fill:color-mix(in srgb,#c9a253 14%,var(--anatomy-paper))}
+.pc-seal{fill:none;stroke:#c8372d;stroke-width:1.6px;stroke-linecap:butt}
 </style>`;
 
 // Live drain logic shared by both pages: water level, drops, wing and stream. Pasted into each page's script.

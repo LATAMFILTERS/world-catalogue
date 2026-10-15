@@ -2,9 +2,10 @@
 //   default    separator with a reusable transparent bowl and drain (service: change the element, keep the bowl)
 //   --spinon   spin-on with an integrated drain, sump shown in section (service: replace the whole cartridge)
 // Built with the third-party "anatomy" kit (../.anatomy, pinned in ../README.md). Percentages shown are illustrative, not product data.
-//   --housing  cartridge element in a permanent housing with a bowl (service: bowl off, change the element, refit the bowl)
-// node build.mjs [--spinon|--housing] [--light] [--audit]
-import { writeFileSync } from "node:fs";
+//   --housing  replaceable element inside a tall transparent bowl under a permanent metal shroud (service: bowl off, change the element, refit the bowl)
+// node build.mjs [--spinon|--housing] [--light] [--audit] [--en]
+//   --en  English page for the Knowledge Center, written to frontend/public/knowledge-center/figures
+import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { k, G, A, vertical, studio, glassBowl, shellCut, pleatedElement, PAGE_CSS, LIVE_BOWL, KIT_NOTICE, draftPage } from "../common.mjs";
@@ -14,8 +15,8 @@ const HERE = dirname(fileURLToPath(import.meta.url));
 const theme = process.argv.includes("--light") ? "light" : "dark";
 const SPINON = process.argv.includes("--spinon");
 const HOUSING = process.argv.includes("--housing");
-const STROKE = 60; // how far the housing variant's element drops out once the bowl is off
-const SERVICE = [0, 78, 0]; // where the element (bowl variant) or the whole cartridge (spin-on) goes at service
+const EN = process.argv.includes("--en");
+const SERVICE = [0, 78, 0]; // where the element (bowl variant), the whole cartridge (spin-on) or the bowl with its element (housing) goes at service
 const WIDTH = 600;
 const HEIGHT = 520;
 
@@ -30,22 +31,30 @@ const HEAD_TOP = HEAD_Z + 20;
 const PUMP = [0, 6];
 const CAN_Z = SPINON ? 84 : 94;
 const COLLAR_Z = 89;
-const B = SPINON ? { z0: 50, z1: CAN_Z, r: 26, mark: 72, wing: 15, cupR: 13, cupH: 6 } : { z0: 40, z1: COLLAR_Z, r: 21.5, mark: 74, wing: 15, cupR: 13, cupH: 6 };
+// the housing variant's bowl runs up to the shroud and holds the element; drops leave from under the element (B.from)
+const SHROUD_Z = 148;
+const SEAL = 1.6;
+const EL = { z0: 76, z1: SHROUD_Z - SEAL - 1 };
+const B = SPINON
+  ? { z0: 50, z1: CAN_Z, r: 26, mark: 72, wing: 15, cupR: 13, cupH: 6 }
+  : HOUSING
+  ? { z0: 40, z1: SHROUD_Z - SEAL, r: 26, mark: 66, wing: 15, cupR: 13, cupH: 6, from: EL.z0 }
+  : { z0: 40, z1: COLLAR_Z, r: 21.5, mark: 74, wing: 15, cupR: 13, cupH: 6 };
 const CAP_Z = 32;
 const VALVE_Z = 25;
 const PORT_Y = -14;
 const PORT_Z = HEAD_Z + 10;
 
 const P = k.fitProjection(
-  [...k.boxCorners(PLATE, -15, 0), ...k.boxCorners(WALL, 0, WALL_TOP), [84, PORT_Y, PORT_Z], [-84, PORT_Y, PORT_Z], [27, SERVICE[1] + 27, HEAD_Z], [-27, SERVICE[1] - 27, B.z0 - 25], [21, 21, CAN_Z - STROKE]],
+  [...k.boxCorners(PLATE, -15, 0), ...k.boxCorners(WALL, 0, WALL_TOP), [84, PORT_Y, PORT_Z], [-84, PORT_Y, PORT_Z], [27, SERVICE[1] + 27, HEAD_Z], [-27, SERVICE[1] - 27, B.z0 - 25]],
   WIDTH,
   HEIGHT,
   { pad: 26, azimuth: 40 },
 );
 // moving pieces in service order; the housing variant takes the bowl off before the element drops out
-const MOVES = HOUSING ? { bowl: SERVICE, element: [0, 0, -STROKE] } : { element: SERVICE };
+const MOVES = HOUSING ? { bowl: SERVICE } : { element: SERVICE };
 const ORDER = Object.keys(MOVES);
-const SPRING = { stagger: HOUSING ? 1.3 : 0.035, stiffness: 46, damping: 13.6, substeps: 4 };
+const SPRING = { stagger: 0.035, stiffness: 46, damping: 13.6, substeps: 4 };
 const F = studio(P, { order: [...ORDER, "stand"], spring: SPRING, pieces: { ...MOVES, stand: [0, 0, 0] } });
 const { at, S, L, D, put, hose, fitting } = F;
 
@@ -86,20 +95,11 @@ const ER = 19; // element media radius; its end caps are 3 wider
 const element = { piece: "element" };
 const keep = { piece: HOUSING ? "bowl" : "stand" };
 if (HOUSING) {
-  // permanent finned housing; the replaceable element sits inside and drops out of its open bottom at service
-  const HP = [[0, 27], [1.5, 28.5], [H - 1.5, 28.5], [H, 27]];
-  const edges = L(G.arcOf(CAN, 6, 28.5, P, { trim: 0, least: 0 }) + G.arcOf(CAN, H - 6, 28.5, P, { trim: 0, least: 0 }), { tone: "faint" });
-  put("housing", [0, 0, CAN_Z + H / 2], S(G.solidOf(HP, CAN, P), { tone: "mid", inner: edges }) + k.fadedSvg(G.ribsOf(CAN, 6, H - 6, 28.5, 44, P, { fade: [0.3, 0.75] }), { tone: "lo" }), [A.solid(CAN, HP, { name: "housing" })]);
-  const EF = G.frameOf([0, 0, CAN_Z], [0, 0, -1], [1, 0, 0], [0, -1, 0]);
-  const ROD = G.rodOut(EF, 0, 0.4, 20, P, { stroke: STROKE });
-  const pleats = k.fadedSvg(G.ribsOf(EF, -STROKE + 2.6, -2.6, 20.01, 72, P, { fade: [0.2, 0.7] }), { tone: "lo" });
-  const svgEl =
-    `<clipPath id="hc-element"><path data-hold d="${ROD.clip}"/></clipPath><g clip-path="url(#hc-element)">` +
-    S(G.disc(-STROKE + 2.6, -2.6, 20, EF, P), { tone: "mid", inner: pleats }) +
-    S(G.disc(-2.6, 0.4, 20.6, EF, P), { tone: "mid" }) +
-    S(G.disc(-STROKE, -STROKE + 2.6, 20.6, EF, P), { tone: "mid" }) +
-    `</g>`;
-  put("element", [0, 0, CAN_Z], svgEl, [A.slide(EF, 0, 0.4, 20, { name: "element" })], element);
+  // permanent cast shroud under the head, with a lip where the bowl's seal seats
+  const SF = vertical(SHROUD_Z);
+  const SP = [[0, 27.4], [3, 27.4], [3.6, 26.6], [HEAD_Z - SHROUD_Z, 26.6]];
+  const edge = L(G.arcOf(SF, 3, 27.4, P, { trim: 0, least: 0 }), { tone: "faint" });
+  put("shroud", [0, 0, (SHROUD_Z + HEAD_Z) / 2], S(G.solidOf(SP, SF, P), { tone: "mid", inner: edge }), [A.solid(SF, SP, { name: "shroud" })]);
 } else {
   // the spin-on: a steel shell in section with the pleated element inside, closed by a rolled seam at the head
   const ST = HEAD_Z - 4;
@@ -122,13 +122,17 @@ if (SPINON) {
   put("end", [0, 0, (VALVE_Z + B.z0) / 2], S(G.solidOf(endProfile, V0, P), { tone: "hi", inner: L(G.arcOf(V0, e - 1.75, 26.8, P, { trim: 0, least: 0 }), { tone: "faint" }) }), [A.solid(V0, endProfile, { name: "end" })], element);
   F.drain(VALVE_Z, B.wing, element);
 } else {
-  // threaded collar, the reusable glass bowl, the drain cap and the drain: these stay when the element is changed
+  // threaded collar (bowl variant), the reusable glass bowl, the drain cap and the drain: these stay when the element is changed
   const C = vertical(COLLAR_Z);
   const collarProfile = [[0, 22.6], [0.8, 23.6], [CAN_Z - COLLAR_Z - 0.8, 23.6], [CAN_Z - COLLAR_Z, 22.6]];
-  put("collar", [0, 0, COLLAR_Z + 2.5], S(G.solidOf(collarProfile, C, P), { tone: "mid" }) + k.fadedSvg(G.ribsOf(C, 0.8, CAN_Z - COLLAR_Z - 0.8, 23.6, 40, P, { fade: [0.3, 0.75] }), { tone: "lo" }), [A.solid(C, collarProfile, { name: "collar" })], keep);
-  put("bowl", [0, 0, (B.z0 + B.z1) / 2], glassBowl(P, B), [A.cylinder(0, 0, B.r, B.z0, B.z1 - B.z0, { name: "bowl" })], keep);
-  const capProfile = [[0, 6], [CAP_Z - VALVE_Z - 2, 14, 1], [CAP_Z - VALVE_Z, 20], [B.z0 - VALVE_Z, 22.6]];
-  put("cap", [0, 0, (VALVE_Z + B.z0) / 2], S(G.solidOf(capProfile, V0, P), { tone: "mid", inner: L(G.arcOf(V0, B.z0 - VALVE_Z - 2.4, 22.1, P), { tone: "faint" }) }), [A.solid(V0, capProfile, { name: "cap" })], keep);
+  if (!HOUSING) put("collar", [0, 0, COLLAR_Z + 2.5], S(G.solidOf(collarProfile, C, P), { tone: "mid" }) + k.fadedSvg(G.ribsOf(C, 0.8, CAN_Z - COLLAR_Z - 0.8, 23.6, 40, P, { fade: [0.3, 0.75] }), { tone: "lo" }), [A.solid(C, collarProfile, { name: "collar" })], keep);
+  if (HOUSING) {
+    // the tall bowl carries the pleated element, seen through the glass, and a red seal ring at its rim
+    const seal = `<path class="pc-seal" d="${k.sideArc(0, 0, B.r + 0.3, B.z1 + SEAL / 2, P, 64)}"/>`;
+    put("bowl", [0, 0, (B.z0 + B.z1) / 2], glassBowl(P, { ...B, inside: pleatedElement(P, { z0: EL.z0, z1: EL.z1, r: ER }) }) + seal, [A.cylinder(0, 0, B.r, B.z0, B.z1 - B.z0, { name: "bowl" }), A.cylinder(0, 0, B.r + 0.6, B.z1, SEAL, { name: "bowl.seal" })], keep);
+  } else put("bowl", [0, 0, (B.z0 + B.z1) / 2], glassBowl(P, B), [A.cylinder(0, 0, B.r, B.z0, B.z1 - B.z0, { name: "bowl" })], keep);
+  const capProfile = [[0, 6], [CAP_Z - VALVE_Z - 2, 14, 1], [CAP_Z - VALVE_Z, B.r - 1.5], [B.z0 - VALVE_Z, B.r + 1.1]];
+  put("cap", [0, 0, (VALVE_Z + B.z0) / 2], S(G.solidOf(capProfile, V0, P), { tone: "mid", inner: L(G.arcOf(V0, B.z0 - VALVE_Z - 2.4, B.r + 0.6, P), { tone: "faint" }) }), [A.solid(V0, capProfile, { name: "cap" })], keep);
   F.drain(VALVE_Z, B.wing, keep);
 }
 F.cup(B.cupR, B.cupH, B.wing - 5);
@@ -137,10 +141,15 @@ const layers = F.render();
 A.auditOrExit(F.R, P);
 
 
+const LIVE_TEXT = EN
+  ? { cartridge: "cartridge", bowl: "bowl", cartridgeOut: "cartridge off · replaced whole", elementOut: "element off · bowl reused", bowlOut: "bowl off · element changed", draining: " · draining", full: " · near the limit", collecting: " · collecting water", much: "much", some: "some", little: "little", water: " water in the fuel, " }
+  : { cartridge: "cartucho", bowl: "vaso", cartridgeOut: "cartucho fuera · se cambia entero", elementOut: "elemento fuera · vaso reutilizado", bowlOut: "vaso fuera · se cambia el elemento", draining: " · purgando", full: " · llegando al límite", collecting: " · acumulando agua", much: "mucha", some: "algo de", little: "poca", water: " agua en el combustible, " };
+
 const live = `
 const P = ${JSON.stringify(P)};
 const B = ${JSON.stringify(B)};
 const SV = ${JSON.stringify({ moves: MOVES, order: ORDER, spring: SPRING, spinon: SPINON, housing: HOUSING })};
+const T = ${JSON.stringify(LIVE_TEXT)};
 ${LIVE_BOWL}
 // service: each moving piece springs out on the page's own stagger, back in reverse order (as the audit replays it)
 const parts = Object.fromEntries(SV.order.map((name) => [name, { x: 0, v: 0, target: 0, at: 0, next: 0, groups: [...svg.querySelectorAll('[data-piece="' + name + '"]')] }]));
@@ -159,15 +168,15 @@ function draw() {
     const [dx, dy] = shift.match(/-?[\\d.]+/g).map(Number);
     for (const group of parts[name].groups) { group.setAttribute("transform", shift); holdStill(group, [dx, dy]); }
   }
-  const el = parts.element.x, bw = parts.bowl ? parts.bowl.x : 0;
-  const where = SV.spinon ? "cartucho" : "vaso";
+  const el = parts.element ? parts.element.x : 0, bw = parts.bowl ? parts.bowl.x : 0;
+  const where = SV.spinon ? T.cartridge : T.bowl;
   const text = el > 0.5
-    ? (SV.spinon ? "cartucho fuera · se cambia entero" : SV.housing ? "elemento fuera · carcasa y vaso quedan" : "elemento fuera · vaso reutilizado")
-    : bw > 0.5 ? "vaso fuera · se cambia el elemento"
-    : bowl.open > 0.5 ? where + " · purgando" : bowl.level > 0.85 ? where + " · llegando al límite" : where + " · acumulando agua";
+    ? (SV.spinon ? T.cartridgeOut : T.elementOut)
+    : bw > 0.5 ? T.bowlOut
+    : bowl.open > 0.5 ? where + T.draining : bowl.level > 0.85 ? where + T.full : where + T.collecting;
   if (readout.textContent !== text) readout.textContent = text;
   stage.setAttribute("aria-valuenow", String(Math.round(wet * 100)));
-  stage.setAttribute("aria-valuetext", (wet > 0.66 ? "mucha" : wet > 0.33 ? "algo de" : "poca") + " agua en el combustible, " + text);
+  stage.setAttribute("aria-valuetext", (wet > 0.66 ? T.much : wet > 0.33 ? T.some : T.little) + T.water + text);
 }
 function tick(now) {
   const dt = last ? Math.min((now - last) / 1000, 1 / 30) : 1 / 60;
@@ -177,7 +186,7 @@ function tick(now) {
   wet += (wetTarget - wet) * (1 - Math.exp(-dt / 0.5));
   // water separated by the media leaves the element's bottom as drops, denser than the fuel, and settles
   spawn += out() > 0.05 ? 0 : dt * (0.6 + 5 * wet); // no separation while the service is under way
-  while (spawn > 1) { spawn -= 1; const r = Math.sqrt(rand()) * 13, a = rand() * Math.PI * 2; falling.push({ x: Math.cos(a) * r, y: Math.sin(a) * r, z: B.z1 - 1, v: 0, solid: rand() < 0.3 }); }
+  while (spawn > 1) { spawn -= 1; const r = Math.sqrt(rand()) * 13, a = rand() * Math.PI * 2; falling.push({ x: Math.cos(a) * r, y: Math.sin(a) * r, z: (B.from ?? B.z1) - 1, v: 0, solid: rand() < 0.3 }); }
   const top = waterTop();
   for (let i = falling.length - 1; i >= 0; i--) {
     const d = falling[i];
@@ -217,7 +226,55 @@ stage.addEventListener("keydown", (event) => {
 draw();
 `;
 
-const COPY = HOUSING
+const COPY_EN = HOUSING
+  ? {
+      fig: "Fig 1C",
+      hint: "Top: service · click: drain",
+      readout: "bowl · collecting water",
+      keys: [
+        { mark: "lit", label: "Water level in the bowl and drain wing" },
+        { mark: "blue", label: "Water and residues settling in the bowl" },
+        { mark: "raised", label: "Head with metal shroud, transparent bowl with the pleated element in view, seal, drain, catch cup" },
+      ],
+      caption:
+        "Conceptual illustration of a HYDROCORE™ fuel/water separator with a replaceable element inside a transparent bowl under a permanent metal shroud. The pleated element can be seen through the bowl. Separated water and impurities, denser than diesel, settle at the bottom of the bowl and are released through the drain. At service the bowl comes off, only the element is changed and the same bowl is refitted with its seal: the shroud and head stay in place. Conceptual illustration: it shows no product data.",
+      aria: "HYDROCORE separator with element in a transparent bowl: arrow keys change the water in the fuel, E runs the service, space drains",
+      label:
+        "Fuel/water separator with a tall transparent bowl under a metal shroud, mounted on a head on a wall bracket. The pleated element is visible inside the bowl, and water and impurities settle at its bottom, above the drain. At service the bowl comes off, the element is changed and the same bowl is refitted; the shroud and head stay.",
+    }
+  : SPINON
+  ? {
+      fig: "Fig 1B",
+      hint: "Top: service · click: drain",
+      readout: "cartridge · collecting water",
+      keys: [
+        { mark: "lit", label: "Water level at the bottom of the cartridge and drain wing" },
+        { mark: "blue", label: "Water and residues settling inside the cartridge" },
+        { mark: "raised", label: "Head with primer pump, spin-on cartridge with built-in drain (section view), catch cup" },
+      ],
+      caption:
+        "Conceptual illustration of a HYDROCORE™ spin-on separator with a built-in drain, with the bottom of the cartridge shown in section. Separated water and impurities, denser than diesel, settle at the bottom of the cartridge itself and are released by opening the drain. At service the whole cartridge is replaced, drain included. Conceptual illustration: it shows no product data.",
+      aria: "HYDROCORE spin-on with built-in drain: arrow keys change the water in the fuel, E changes the cartridge, space drains",
+      label:
+        "Spin-on fuel/water separator with a built-in drain, mounted on a head on a wall bracket, with the bottom of the cartridge in section. Separated water settles at the bottom of the cartridge and the drain releases it into a catch cup. At service the whole cartridge is replaced.",
+    }
+  : {
+      fig: "Fig 1A",
+      hint: "Top: service · click: drain",
+      readout: "bowl · collecting water",
+      keys: [
+        { mark: "lit", label: "Water level in the bowl and drain wing" },
+        { mark: "blue", label: "Water and residues settling in the bowl" },
+        { mark: "raised", label: "Head with primer pump, spin-on element, reusable transparent bowl, catch cup" },
+      ],
+      caption:
+        "Conceptual illustration of a HYDROCORE™ fuel/water separator with a reusable transparent bowl and drain. Separated water and impurities, denser than diesel, settle in the bowl and are released through the drain. At service only the element is changed: the same bowl is removed and fitted to the new element. Conceptual illustration: it shows no product data.",
+      aria: "HYDROCORE separator with bowl: arrow keys change the water in the fuel, E changes the element, space drains",
+      label:
+        "Fuel/water separator with a transparent bowl and drain, mounted on a head on a wall bracket. Separated water drops fall into the bowl and the drain releases them into a catch cup. When the element is changed, the bowl is kept and reused.",
+    };
+
+const COPY_ES = HOUSING
   ? {
       fig: "Fig 1C",
       hint: "Arriba: servicio · clic: purgar",
@@ -225,13 +282,13 @@ const COPY = HOUSING
       keys: [
         { mark: "lit", label: "Nivel de agua en el vaso y mariposa del purgador" },
         { mark: "blue", label: "Agua y residuos decantando en el vaso" },
-        { mark: "raised", label: "Cabezal, carcasa permanente con aletas, elemento reemplazable, vaso transparente, taza colectora" },
+        { mark: "raised", label: "Cabezal con carcasa metálica, vaso transparente con el elemento plisado a la vista, sello, purgador, taza colectora" },
       ],
       caption:
-        "Ilustración conceptual de un separador de combustible/agua HYDROCORE™ de carcasa permanente con elemento reemplazable y vaso transparente. El agua y las impurezas separadas, más densas que el diésel, decantan en el vaso y se descargan por el purgador. En el servicio se retira el vaso, se cambia solo el elemento y se vuelve a montar el mismo vaso: la carcasa y el cabezal quedan en su lugar. Es una ilustración conceptual: no muestra datos de producto.",
-      aria: "Separador HYDROCORE de carcasa con elemento: flechas cambian el agua en el combustible, E hace el servicio, espacio purga",
+        "Ilustración conceptual de un separador de combustible/agua HYDROCORE™ con elemento reemplazable dentro de un vaso transparente, bajo una carcasa metálica permanente. El elemento plisado se ve a través del vaso. El agua y las impurezas separadas, más densas que el diésel, decantan en el fondo del vaso y se descargan por el purgador. En el servicio se desmonta el vaso, se cambia solo el elemento y se vuelve a montar el mismo vaso con su sello: la carcasa y el cabezal quedan en su lugar. Es una ilustración conceptual: no muestra datos de producto.",
+      aria: "Separador HYDROCORE con elemento en vaso transparente: flechas cambian el agua en el combustible, E hace el servicio, espacio purga",
       label:
-        "Separador de combustible y agua de carcasa permanente con aletas, elemento reemplazable y vaso transparente con purgador, montado en un cabezal sobre un soporte de pared. El agua y las impurezas decantan en el vaso. En el servicio se retira el vaso, el elemento sale por abajo de la carcasa y se reemplaza; la carcasa y el vaso se reutilizan.",
+        "Separador de combustible y agua con un vaso transparente alto bajo una carcasa metálica, montado en un cabezal sobre un soporte de pared. El elemento plisado se ve dentro del vaso y el agua y las impurezas decantan en su fondo, sobre el purgador. En el servicio se desmonta el vaso, se cambia el elemento y se vuelve a montar el mismo vaso; la carcasa y el cabezal se quedan.",
     }
   : SPINON
   ? {
@@ -265,6 +322,8 @@ const COPY = HOUSING
         "Separador de combustible y agua con vaso transparente y purgador, montado en un cabezal sobre un soporte de pared. Las gotas de agua separadas caen al vaso y el purgador las descarga a una taza colectora. Al cambiar el elemento, el vaso se conserva y se reutiliza.",
     };
 
+const COPY = EN ? COPY_EN : COPY_ES;
+
 const svg = k.figureSvg({
   width: WIDTH,
   height: HEIGHT,
@@ -283,5 +342,7 @@ const body = PAGE_CSS + k.plateHtml({
 });
 
 const name = `hydrocore${SPINON ? "-spinon" : HOUSING ? "-housing" : ""}${theme === "light" ? "-light" : ""}.html`;
-writeFileSync(join(HERE, name), draftPage(k.pageHtml({ title: "HYDROCORE separador", theme, body, script: KIT_NOTICE + kitScript() + live })));
+const OUT = EN ? join(HERE, "../../../../frontend/public/knowledge-center/figures") : HERE;
+mkdirSync(OUT, { recursive: true });
+writeFileSync(join(OUT, name), draftPage(k.pageHtml({ title: EN ? "HYDROCORE separator" : "HYDROCORE separador", theme, body, script: KIT_NOTICE + kitScript() + live }), EN ? "en" : "es"));
 console.log("wrote", name, F.R.items.length, "items");

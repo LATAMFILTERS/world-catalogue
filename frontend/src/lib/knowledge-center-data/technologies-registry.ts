@@ -97,6 +97,11 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     relatedSystems: ['fuel-cleanliness-protection'],
     relatedIndustries: [],
     worksWith: ['SYNTAPORE™', 'TURBOCORE™'],
+    figures: [
+      { href: '/knowledge-center/figures/hydrocore.html', preview: '/knowledge-center/figures/hydrocore.webp', title: 'Separator with reusable transparent bowl', caption: 'Water and residues settle in the bowl and leave through the drain. At service only the element is changed; the same bowl is refitted.' },
+      { href: '/knowledge-center/figures/hydrocore-spinon.html', preview: '/knowledge-center/figures/hydrocore-spinon.webp', title: 'Spin-on with built-in drain', caption: 'Water and residues settle at the bottom of the cartridge itself. At service the whole cartridge is replaced.' },
+      { href: '/knowledge-center/figures/hydrocore-housing.html', preview: '/knowledge-center/figures/hydrocore-housing.webp', title: 'Element inside a transparent bowl', caption: 'The pleated element sits inside the bowl under a permanent shroud. At service the bowl comes off, the element is changed and the same bowl is refitted.' },
+    ],
   },
   {
     slug: 'turbocore',
