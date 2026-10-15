@@ -82,6 +82,9 @@ export const KC_TECHNOLOGIES: KCTechnology[] = [
     relatedIndustries: [],
     worksWith: ['HYDROCORE™', 'TURBOCORE™'],
     image: '/images/technologies/syntapore-media.png',
+    figures: [
+      { href: '/knowledge-center/figures/syntapore.html', preview: '/knowledge-center/figures/syntapore.webp', title: 'Primary and secondary filters in the fuel circuit', caption: 'The primary, on the suction side before the transfer pump, holds the larger particles; the secondary, on the engine before the injection system, holds the finer ones. At service each spin-on is replaced.' },
+    ],
   },
   {
     slug: 'hydrocore',

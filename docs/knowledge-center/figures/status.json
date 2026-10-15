@@ -83,6 +83,23 @@
         }
       ]
     }
+,
+    {
+      "id": "kc-figure-syntapore-primary-secondary",
+      "technology": "SYNTAPORE",
+      "scope": "plain diesel particulate filtration: primary spin-on on the suction side before the transfer pump and secondary spin-on on the pressure side on the engine, both in section with the pleated element (service: replace each spin-on)",
+      "files": [
+        "syntapore/syntapore.html",
+        "syntapore/syntapore-light.html"
+      ],
+      "validationStatus": "validated",
+      "publicationStatus": "approved-for-publication",
+      "public": ["frontend/public/knowledge-center/figures/syntapore.html", "frontend/public/knowledge-center/figures/syntapore.webp"],
+      "surface": "/knowledge-center/technologies/syntapore/ (How It Works)",
+      "open_items": [
+        "Recommended: engineering review of the drawn circuit (tank, primary, transfer pump, secondary, injection rail) against approved SYNTAPORE applications."
+      ]
+    }
   ],
   "kit": {
     "name": "anatomy",
@@ -141,6 +158,11 @@
       "date": "2026-10-15",
       "by": "operator",
       "decision": "Publish the TURBOCORE figure in the Knowledge Center technology page (How It Works) the same way as HYDROCORE, taking a 1000FH-type turbine housing as the reference (lid with T-handle, fixed turbine deflector, transparent bowl, drain). This settles the open evidence item: the operator accepts the qualitative mechanism (no brand, no numbers) for publication."
+    },
+    {
+      "date": "2026-10-15",
+      "by": "operator",
+      "decision": "SYNTAPORE figure: a primary filter near the transfer pump (suction side) and a secondary filter in its place on the engine, both SYNTAPORE (no HYDROCORE separator in this figure, so scopes are not mixed). Published in the Knowledge Center technology page (How It Works) like HYDROCORE and TURBOCORE. Particle sizes are qualitative (larger in the primary, finer in the secondary); no ratings."
     }
   ]
 }
