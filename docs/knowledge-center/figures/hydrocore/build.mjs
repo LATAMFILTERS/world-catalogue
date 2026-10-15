@@ -1,4 +1,4 @@
-// DRAFT (internal-only, see ../README.md): HYDROCORE™ standard non-turbine fuel/water separators, two variants:
+// HYDROCORE™ standard non-turbine fuel/water separators (status in ../status.json), three variants:
 //   default    separator with a reusable transparent bowl and drain (service: change the element, keep the bowl)
 //   --spinon   spin-on with an integrated drain, sump shown in section (service: replace the whole cartridge)
 // Built with the third-party "anatomy" kit (../.anatomy, pinned in ../README.md). Percentages shown are illustrative, not product data.

@@ -56,8 +56,10 @@
         "turbocore/turbocore.html",
         "turbocore/turbocore-light.html"
       ],
-      "validationStatus": "pending-secondary-validation",
-      "publicationStatus": "internal-only",
+      "validationStatus": "validated",
+      "publicationStatus": "approved-for-publication",
+      "public": ["frontend/public/knowledge-center/figures/turbocore.html", "frontend/public/knowledge-center/figures/turbocore.webp"],
+      "surface": "/knowledge-center/technologies/turbocore/ (How It Works)",
       "open_items": [
         "Recommended: engineering review of the drawn configuration (lid, housing, bowl, deflector, drain) against approved FH/FG applications.",
         "Stage-1 mechanism is now backed by external manufacturer literature (see evidence) but not yet by an ELIMFILTERS-controlled document. FUEL_CANONICAL_GOVERNANCE.md treats a single external manufacturer source as internal evidence only; operator decides whether that is enough to publish the qualitative mechanism (no brand, no numbers)."
@@ -134,6 +136,11 @@
       "date": "2026-10-15",
       "by": "operator",
       "decision": "The three HYDROCORE figures are approved at illustrative level and published in the Knowledge Center technology page (How It Works), because they explain how the technology works. English builds (--en) are served from frontend/public/knowledge-center/figures and linked from preview cards; the site's frame policy (X-Frame-Options DENY) is left unchanged. TURBOCORE stays internal-only until the operator decides on its open evidence item."
+    },
+    {
+      "date": "2026-10-15",
+      "by": "operator",
+      "decision": "Publish the TURBOCORE figure in the Knowledge Center technology page (How It Works) the same way as HYDROCORE, taking a 1000FH-type turbine housing as the reference (lid with T-handle, fixed turbine deflector, transparent bowl, drain). This settles the open evidence item: the operator accepts the qualitative mechanism (no brand, no numbers) for publication."
     }
   ]
 }

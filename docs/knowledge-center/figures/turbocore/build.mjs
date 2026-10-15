@@ -1,7 +1,8 @@
-// DRAFT (internal-only, see ../README.md): TURBOCORE™ turbine-style FH/FG fuel/water separator housing.
+// TURBOCORE™ (status in ../status.json): turbine-style FH/FG fuel/water separator housing.
 // Built with the third-party "anatomy" kit (../.anatomy, pinned in ../README.md). Flow and percentages shown are illustrative, not product data.
-// node build.mjs [--light] [--audit]
-import { writeFileSync } from "node:fs";
+// node build.mjs [--light] [--audit] [--en]
+//   --en  English page for the Knowledge Center, written to frontend/public/knowledge-center/figures
+import { mkdirSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { k, G, A, vertical, hexagon, studio, glassBowl, PAGE_CSS, LIVE_BOWL, KIT_NOTICE, draftPage } from "../common.mjs";
@@ -9,6 +10,7 @@ import { kitScript } from "../.anatomy/scripts/inline-kit.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const theme = process.argv.includes("--light") ? "light" : "dark";
+const EN = process.argv.includes("--en");
 const WIDTH = 600;
 const HEIGHT = 540;
 
@@ -131,11 +133,46 @@ F.cup(B.cupR, B.cupH, B.wing - 5);
 const layers = F.render();
 A.auditOrExit(F.R, P);
 
+const COPY = EN
+  ? {
+      hint: "Cursor: flow · top: lid · click: drain",
+      readout: "medium flow · collecting water",
+      keys: [
+        { mark: "lit", label: "Turbine deflector vanes and water level" },
+        { mark: "blue", label: "Water and solid residues separated by centrifugal action" },
+        { mark: "dashed", label: "Fuel swirling under the fixed deflector" },
+        { mark: "raised", label: "Lid with T-handle, replaceable element, finned housing with clamp, bowl, drain" },
+      ],
+      caption:
+        "Conceptual illustration of a turbine-style (FH/FG) fuel/water separator housing with staged separation. In the first stage, visible in the bowl, a fixed turbine deflector sets the fuel swirling and centrifuges it: water and the larger solid particles, denser than diesel, move out to the wall and settle at the bottom, where the drain releases them. The following stages take place in the replaceable element, which comes out through the lid. Conceptual illustration: it shows no product data.",
+      aria: "TURBOCORE housing: arrow keys change the flow, E opens the lid, space drains",
+      label:
+        "Turbine-style fuel/water separator housing with a lid and T-handle, clamped to a wall bracket. The fixed turbine deflector can be seen through the transparent bowl: the fuel's own flow sets it swirling and centrifuges it, so the denser water and solid residues move out to the wall and fall to the bottom of the bowl, where a drain releases them into a cup. Lifting the lid brings out the replaceable element.",
+      title: "TURBOCORE housing",
+      live: { out: "element out", flow: "", high: "high flow", mid: "medium flow", low: "low flow", draining: "draining", mark: "water at the mark", collecting: "collecting water" },
+    }
+  : {
+      hint: "Cursor: caudal · arriba: tapa · clic: purgar",
+      readout: "caudal medio · acumulando agua",
+      keys: [
+        { mark: "lit", label: "Álabes del deflector de turbina y nivel de agua" },
+        { mark: "blue", label: "Agua y residuos sólidos separados por centrifugado" },
+        { mark: "dashed", label: "El combustible girando bajo el deflector fijo" },
+        { mark: "raised", label: "Tapa con manija en T, elemento reemplazable, carcasa con aletas y abrazadera, vaso, purgador" },
+      ],
+      caption:
+        "Ilustración conceptual de una carcasa separadora de combustible/agua tipo turbina (FH/FG), con separación por etapas. En la primera etapa, visible en el vaso, un deflector de turbina fijo pone el combustible en remolino y lo centrifuga: el agua y las partículas sólidas más grandes, más densas que el diésel, se desplazan hacia la pared y decantan al fondo, donde el purgador las descarga. Las etapas siguientes ocurren en el elemento reemplazable, que se retira por la tapa. Es una ilustración conceptual: no muestra datos de producto.",
+      aria: "Carcasa TURBOCORE: flechas cambian el caudal, E abre la tapa, espacio purga",
+      label:
+        "Carcasa separadora de combustible y agua tipo turbina, con tapa y manija en T, montada con abrazadera a un soporte de pared. A través del vaso transparente se ve el deflector de turbina fijo, que con el propio flujo pone el combustible en remolino y lo centrifuga: el agua y los residuos sólidos, más densos, se desplazan hacia la pared y caen al fondo del vaso, donde un purgador los descarga a una taza. Al levantar la tapa sale el elemento reemplazable.",
+      title: "TURBOCORE carcasa",
+      live: { out: "elemento fuera", flow: "caudal ", high: "alto", mid: "medio", low: "bajo", draining: "purgando", mark: "agua en la marca", collecting: "acumulando agua" },
+    };
+
 const svg = k.figureSvg({
   width: WIDTH,
   height: HEIGHT,
-  label:
-    "Carcasa separadora de combustible y agua tipo turbina, con tapa y manija en T, montada con abrazadera a un soporte de pared. A través del vaso transparente se ve el deflector de turbina fijo, que con el propio flujo pone el combustible en remolino y lo centrifuga: el agua y los residuos sólidos, más densos, se desplazan hacia la pared y caen al fondo del vaso, donde un purgador los descarga a una taza. Al levantar la tapa sale el elemento reemplazable.",
+  label: COPY.label,
   body: layers,
 });
 
@@ -143,6 +180,7 @@ const live = `
 const P = ${JSON.stringify(P)};
 const B = ${JSON.stringify(B)};
 const T = ${JSON.stringify({ ...TURB, lift: LIFT, spring: SPRING })};
+const W = ${JSON.stringify(COPY.live)};
 ${LIVE_BOWL}
 const lidGroups = [...svg.querySelectorAll('[data-piece="lid"]')];
 const VIEW = [Math.cos(P.azimuth * Math.PI / 180), Math.sin(P.azimuth * Math.PI / 180)];
@@ -155,7 +193,7 @@ function draw() {
   const lift = translateAlong(P, [0, 0, T.lift * lid.x]);
   const [dx, dy] = lift.match(/-?[\\d.]+/g).map(Number);
   for (const group of lidGroups) { group.setAttribute("transform", lift); holdStill(group, [dx, dy]); }
-  const text = (lid.x > 0.5 ? "elemento fuera" : "caudal " + (flow > 0.66 ? "alto" : flow > 0.33 ? "medio" : "bajo")) + " · " + (bowl.open > 0.5 ? "purgando" : bowl.level > 0.85 ? "agua en la marca" : "acumulando agua");
+  const text = (lid.x > 0.5 ? W.out : W.flow + (flow > 0.66 ? W.high : flow > 0.33 ? W.mid : W.low)) + " · " + (bowl.open > 0.5 ? W.draining : bowl.level > 0.85 ? W.mark : W.collecting);
   if (readout.textContent !== text) readout.textContent = text;
   stage.setAttribute("aria-valuenow", String(Math.round(flow * 100)));
   stage.setAttribute("aria-valuetext", text);
@@ -209,19 +247,15 @@ draw();
 const body = PAGE_CSS + k.plateHtml({
   fig: "Fig 2",
   title: "ELIMFILTERS · TURBOCORE™ · ET9",
-  hint: "Cursor: caudal · arriba: tapa · clic: purgar",
-  readout: "caudal medio · acumulando agua",
-  keys: [
-    { mark: "lit", label: "Álabes del deflector de turbina y nivel de agua" },
-    { mark: "blue", label: "Agua y residuos sólidos separados por centrifugado" },
-    { mark: "dashed", label: "El combustible girando bajo el deflector fijo" },
-    { mark: "raised", label: "Tapa con manija en T, elemento reemplazable, carcasa con aletas y abrazadera, vaso, purgador" },
-  ],
-  caption:
-    "Ilustración conceptual de una carcasa separadora de combustible/agua tipo turbina (FH/FG), con separación por etapas. En la primera etapa, visible en el vaso, un deflector de turbina fijo pone el combustible en remolino y lo centrifuga: el agua y las partículas sólidas más grandes, más densas que el diésel, se desplazan hacia la pared y decantan al fondo, donde el purgador las descarga. Las etapas siguientes ocurren en el elemento reemplazable, que se retira por la tapa. Es una ilustración conceptual: no muestra datos de producto.",
-  body: `<div class="iso-stage" tabindex="0" role="slider" aria-label="Carcasa TURBOCORE: flechas cambian el caudal, E abre la tapa, espacio purga" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60">${svg}</div>`,
+  hint: COPY.hint,
+  readout: COPY.readout,
+  keys: COPY.keys,
+  caption: COPY.caption,
+  body: `<div class="iso-stage" tabindex="0" role="slider" aria-label="${COPY.aria}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60">${svg}</div>`,
 });
 
 const name = theme === "light" ? "turbocore-light.html" : "turbocore.html";
-writeFileSync(join(HERE, name), draftPage(k.pageHtml({ title: "TURBOCORE carcasa", theme, body, script: KIT_NOTICE + kitScript() + live })));
+const OUT = EN ? join(HERE, "../../../../frontend/public/knowledge-center/figures") : HERE;
+mkdirSync(OUT, { recursive: true });
+writeFileSync(join(OUT, name), draftPage(k.pageHtml({ title: COPY.title, theme, body, script: KIT_NOTICE + kitScript() + live }), EN ? "en" : "es"));
 console.log("wrote", name, F.R.items.length, "items");

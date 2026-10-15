@@ -2,11 +2,11 @@
 
 Interactive isometric explainer figures for Fuel Cleanliness Protection technology pages.
 
-**Status: see `status.json`.** The three HYDROCORE™ figures are approved for publication: their English
-builds (`--en`) are written to `frontend/public/knowledge-center/figures/` and linked from the How It Works
-section of `/knowledge-center/technologies/hydrocore/`. TURBOCORE™ is still `internal-only` (see the publication
-gate in `../FUEL_CANONICAL_GOVERNANCE.md`); do not publish a figure until both of its statuses are approved.
-The Spanish pages in this folder are the review drafts and are not served.
+**Status: see `status.json`.** The HYDROCORE™ and TURBOCORE™ figures are approved for publication: their
+English builds (`--en`) are written to `frontend/public/knowledge-center/figures/` and linked from the How It
+Works section of `/knowledge-center/technologies/hydrocore/` and `/knowledge-center/technologies/turbocore/`.
+Do not publish a new figure until both of its statuses are approved (see the publication gate in
+`../FUEL_CANONICAL_GOVERNANCE.md`). The Spanish pages in this folder are the review drafts and are not served.
 
 | Figure | Technology scope | Pages | Preview |
 |---|---|---|---|
@@ -42,7 +42,8 @@ node hydrocore/build.mjs --housing --audit && node hydrocore/build.mjs --housing
 node turbocore/build.mjs --audit && node turbocore/build.mjs --light
 # published English pages and their previews (dark theme, for the Knowledge Center)
 for v in "" --spinon --housing; do node hydrocore/build.mjs $v --en; done
-for f in hydrocore hydrocore-spinon hydrocore-housing; do
+node turbocore/build.mjs --en
+for f in hydrocore hydrocore-spinon hydrocore-housing turbocore; do
   node .anatomy/scripts/capture.mjs ../../../frontend/public/knowledge-center/figures/$f.html --out /tmp/$f.png --wait 4000 --scale 1.5
   ffmpeg -v error -i /tmp/$f.png -c:v libwebp -quality 82 ../../../frontend/public/knowledge-center/figures/$f.webp -y
 done

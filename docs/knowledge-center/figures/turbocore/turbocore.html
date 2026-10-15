@@ -807,6 +807,7 @@ const ISO_CSS = `
 const P = {"origin":[300,402.6574434326102],"scale":1.248590427859139,"azimuth":40,"elevation":30};
 const B = {"z0":36,"z1":80,"r":26,"mark":52,"wing":12,"cupR":13,"cupH":5};
 const T = {"r":20,"z0":64,"z1":78,"hub":7,"lift":58,"spring":{"stagger":0.035,"stiffness":46,"damping":13.6,"substeps":4}};
+const W = {"out":"elemento fuera","flow":"caudal ","high":"alto","mid":"medio","low":"bajo","draining":"purgando","mark":"agua en la marca","collecting":"acumulando agua"};
 
 const SVGNS = "http://www.w3.org/2000/svg";
 const stage = document.querySelector(".iso-stage");
@@ -866,7 +867,7 @@ function draw() {
   const lift = translateAlong(P, [0, 0, T.lift * lid.x]);
   const [dx, dy] = lift.match(/-?[\d.]+/g).map(Number);
   for (const group of lidGroups) { group.setAttribute("transform", lift); holdStill(group, [dx, dy]); }
-  const text = (lid.x > 0.5 ? "elemento fuera" : "caudal " + (flow > 0.66 ? "alto" : flow > 0.33 ? "medio" : "bajo")) + " · " + (bowl.open > 0.5 ? "purgando" : bowl.level > 0.85 ? "agua en la marca" : "acumulando agua");
+  const text = (lid.x > 0.5 ? W.out : W.flow + (flow > 0.66 ? W.high : flow > 0.33 ? W.mid : W.low)) + " · " + (bowl.open > 0.5 ? W.draining : bowl.level > 0.85 ? W.mark : W.collecting);
   if (readout.textContent !== text) readout.textContent = text;
   stage.setAttribute("aria-valuenow", String(Math.round(flow * 100)));
   stage.setAttribute("aria-valuetext", text);
