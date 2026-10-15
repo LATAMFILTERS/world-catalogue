@@ -1,5 +1,9 @@
 'use client';
 
+import { ReviewedText } from '@/components/ReviewedText';
+import { reviewedCopyKey } from '@/lib/reviewed-copy-key';
+import { useTranslation } from 'react-i18next';
+
 import PartnerTurnstile from './PartnerTurnstile';
 
 import {  useEffect, useState, useSyncExternalStore, type CSSProperties, useRef } from 'react';
@@ -110,6 +114,8 @@ const partnerSchemaBreadcrumb = {
 const subscribeNever = () => () => {};
 
 export default function DistributorApplication() {
+  const { t } = useTranslation();
+  const formText = (text: string) => t(reviewedCopyKey(text), { defaultValue: text });
   // 'loading' on the server and during hydration; the query string is read on the client only.
   const program = useSyncExternalStore<'loading' | 'country' | 'partner'>(
     subscribeNever,
@@ -192,7 +198,7 @@ export default function DistributorApplication() {
       });
       setTimeout(() => setSubmitted(false), 5000);
     } catch (error) {
-      alert(error instanceof Error ? error.message : 'Application failed');
+      alert(error instanceof Error ? error.message : formText('Application failed'));
     }
   };
 
@@ -247,19 +253,19 @@ export default function DistributorApplication() {
       <section style={{ minHeight: '92vh', display: 'flex', alignItems: 'center', padding: '7rem clamp(1.25rem, 6vw, 6rem)', background: "linear-gradient(100deg, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.74) 42%, rgba(0,0,0,0.34) 75%, rgba(0,0,0,0.15) 100%), radial-gradient(circle at 85% 15%, rgba(255,241,45,0.18), transparent 34%), url('/images/DISTRIBUTION.jpeg') center 32%/cover no-repeat", borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
         <div style={{ maxWidth: '1180px', margin: '0 auto', width: '100%' }}>
           <p style={{ color: '#FFF12D', fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontWeight: 700, letterSpacing: '0.26em', textTransform: 'uppercase', fontSize: '0.76rem', marginBottom: '1.4rem' }}>
-            {partnerMode ? '// COMMERCIAL PARTNERSHIP PROGRAM' : '// COUNTRY MASTER DISTRIBUTOR PROGRAM'}
+            <ReviewedText text={partnerMode ? '// COMMERCIAL PARTNERSHIP PROGRAM' : '// COUNTRY MASTER DISTRIBUTOR PROGRAM'} />
           </p>
           <h1 style={{ maxWidth: '1050px', fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontSize: 'clamp(3.2rem, 8vw, 7.5rem)', lineHeight: 0.88, letterSpacing: '-0.055em', textTransform: 'uppercase', margin: 0 }}>
-            {partnerMode ? 'Grow With ELIMFILTERS' : 'Build ELIMFILTERS'}
-            <span style={{ display: 'block', color: '#FFF12D' }}>{partnerMode ? 'Through Partnership.' : 'In Your Country.'}</span>
+            <ReviewedText text={partnerMode ? 'Grow With ELIMFILTERS' : 'Build ELIMFILTERS'} />
+            <span style={{ display: 'block', color: '#FFF12D' }}><ReviewedText text={partnerMode ? 'Through Partnership.' : 'In Your Country.'} /></span>
           </h1>
           <p style={{ maxWidth: '820px', color: 'rgba(255,255,255,0.78)', fontSize: 'clamp(1.05rem, 2vw, 1.35rem)', lineHeight: 1.7, fontWeight: 600, marginTop: '2rem' }}>
-            {partnerMode ? 'ELIMFILTERS welcomes commercial businesses of different sizes to explore growth opportunities through filtration solutions, technical knowledge and local market development.' : 'We are selecting one primary distribution partner per market to build the ELIMFILTERS business locally. You import in volume, develop the national sales network and own the commercial execution. We provide the brand, product platform, technical intelligence and market-development tools behind it.'}
+            <ReviewedText text={partnerMode ? 'ELIMFILTERS welcomes commercial businesses of different sizes to explore growth opportunities through filtration solutions, technical knowledge and local market development.' : 'We are selecting one primary distribution partner per market to build the ELIMFILTERS business locally. You import in volume, develop the national sales network and own the commercial execution. We provide the brand, product platform, technical intelligence and market-development tools behind it.'} />
           </p>
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.8rem', marginTop: '2rem' }}>
             {(partnerMode ? ['Commercial Opportunities', 'Technical Resources', 'Market Development', 'Asset Protection'] : ['One Primary Partner Per Market', 'Factory-Direct Volume', 'Commercial Support', 'Technical Intelligence']).map((item) => (
               <span key={item} style={{ border: '1px solid rgba(255,255,255,0.16)', padding: '0.8rem 1rem', fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.11em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.8)' }}>
-                {item}
+                <ReviewedText text={item} />
               </span>
             ))}
           </div>
@@ -270,15 +276,15 @@ export default function DistributorApplication() {
         <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
           <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,0.85fr) minmax(0,1.15fr)', gap: 'clamp(2rem, 6vw, 5rem)', alignItems: 'start' }}>
             <div style={{ position: 'sticky', top: '7rem' }}>
-              <p style={{ color: '#FFF12D', fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontWeight: 700, letterSpacing: '0.18em', fontSize: '0.72rem', textTransform: 'uppercase' }}>{partnerMode ? '// OUR PARTNERSHIP APPROACH' : '// THE BUSINESS MODEL'}</p>
-              <h2 style={headingStyle}>{partnerMode ? 'Develop Opportunities Together.' : 'One Country. One Distribution Partner.'}</h2>
+              <p style={{ color: '#FFF12D', fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontWeight: 700, letterSpacing: '0.18em', fontSize: '0.72rem', textTransform: 'uppercase' }}><ReviewedText text={partnerMode ? '// OUR PARTNERSHIP APPROACH' : '// THE BUSINESS MODEL'} /></p>
+              <h2 style={headingStyle}><ReviewedText text={partnerMode ? 'Develop Opportunities Together.' : 'One Country. One Distribution Partner.'} /></h2>
             </div>
             <div>
               <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.22rem', lineHeight: 1.7, fontWeight: 600, marginTop: 0 }}>
-                {partnerMode ? 'ELIMFILTERS provides filtration technologies, technical knowledge and commercial supply opportunities. Partners contribute their market experience, customer relationships and local execution.' : 'ELIMFILTERS is built for wholesale distribution, not direct competition with our partners. Our objective is volume: manufacture efficiently, support the country distributor and help that partner expand through local resellers and commercial accounts.'}
+                <ReviewedText text={partnerMode ? 'ELIMFILTERS provides filtration technologies, technical knowledge and commercial supply opportunities. Partners contribute their market experience, customer relationships and local execution.' : 'ELIMFILTERS is built for wholesale distribution, not direct competition with our partners. Our objective is volume: manufacture efficiently, support the country distributor and help that partner expand through local resellers and commercial accounts.'} />
               </p>
               <p style={{ color: 'rgba(255,255,255,0.58)', fontSize: '1rem', lineHeight: 1.75 }}>
-                {partnerMode ? 'A commercial evaluation creates no obligation or automatic exclusivity. Any territorial rights require a separate approved agreement.' : 'Selected partners can receive territorial exclusivity under a formal agreement, subject to agreed purchasing, inventory, coverage and performance commitments. The result is a protected market-development structure with aligned incentives on both sides.'}
+                <ReviewedText text={partnerMode ? 'A commercial evaluation creates no obligation or automatic exclusivity. Any territorial rights require a separate approved agreement.' : 'Selected partners can receive territorial exclusivity under a formal agreement, subject to agreed purchasing, inventory, coverage and performance commitments. The result is a protected market-development structure with aligned incentives on both sides.'} />
               </p>
             </div>
           </div>
@@ -287,13 +293,13 @@ export default function DistributorApplication() {
 
       <section style={{ ...sectionStyle, background: '#000' }}>
         <div style={{ maxWidth: '1180px', margin: '0 auto' }}>
-          <h2 style={headingStyle}>{partnerMode ? 'Commercial Partnership Resources' : 'What The Country Distributor Receives'}</h2>
+          <h2 style={headingStyle}><ReviewedText text={partnerMode ? 'Commercial Partnership Resources' : 'What The Country Distributor Receives'} /></h2>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '1rem', marginTop: '2.5rem' }}>
             {(partnerMode ? PARTNER_SUPPORT : PROGRAM_SUPPORT).map((item, index) => (
               <article key={item.title} style={{ border: '1px solid rgba(255,255,255,0.1)', background: index === 0 ? 'rgba(255,241,45,0.045)' : '#050505', padding: '1.5rem', minHeight: '220px' }}>
                 <span style={{ color: '#FFF12D', fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontWeight: 700, letterSpacing: '0.14em', fontSize: '0.72rem' }}>{String(index + 1).padStart(2, '0')}</span>
-                <h3 style={{ fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontSize: '1.35rem', textTransform: 'uppercase', margin: '1rem 0 0.75rem' }}>{item.title}</h3>
-                <p style={{ color: 'rgba(255,255,255,0.62)', lineHeight: 1.68, margin: 0 }}>{item.body}</p>
+                <h3 style={{ fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontSize: '1.35rem', textTransform: 'uppercase', margin: '1rem 0 0.75rem' }}><ReviewedText text={item.title} /></h3>
+                <p style={{ color: 'rgba(255,255,255,0.62)', lineHeight: 1.68, margin: 0 }}><ReviewedText text={item.body} /></p>
               </article>
             ))}
           </div>
@@ -303,17 +309,17 @@ export default function DistributorApplication() {
       <section style={{ ...sectionStyle, background: '#050505' }}>
         <div style={{ maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem' }}>
           <div>
-            <p style={{ color: '#FFF12D', fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontWeight: 700, letterSpacing: '0.18em', fontSize: '0.72rem', textTransform: 'uppercase' }}>{partnerMode ? '// POTENTIAL COMMERCIAL PARTNERS' : '// WHO WE ARE LOOKING FOR'}</p>
-            <h2 style={headingStyle}>{partnerMode ? 'Businesses That Develop Markets.' : 'Operators, Not Order Takers.'}</h2>
+            <p style={{ color: '#FFF12D', fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontWeight: 700, letterSpacing: '0.18em', fontSize: '0.72rem', textTransform: 'uppercase' }}><ReviewedText text={partnerMode ? '// POTENTIAL COMMERCIAL PARTNERS' : '// WHO WE ARE LOOKING FOR'} /></p>
+            <h2 style={headingStyle}><ReviewedText text={partnerMode ? 'Businesses That Develop Markets.' : 'Operators, Not Order Takers.'} /></h2>
             <p style={{ color: 'rgba(255,255,255,0.62)', lineHeight: 1.7, marginTop: '1.4rem' }}>
-              {partnerMode ? 'We welcome established businesses of different sizes and specializations with an interest in developing new filtration opportunities.' : 'We are looking for companies capable of building a country-level distribution operation, carrying inventory and developing recurring wholesale demand.'}
+              <ReviewedText text={partnerMode ? 'We welcome established businesses of different sizes and specializations with an interest in developing new filtration opportunities.' : 'We are looking for companies capable of building a country-level distribution operation, carrying inventory and developing recurring wholesale demand.'} />
             </p>
           </div>
           <div style={{ display: 'grid', gap: '0.8rem' }}>
             {(partnerMode ? PARTNER_QUALIFICATION : QUALIFICATION).map((item) => (
               <div key={item} style={{ display: 'flex', gap: '0.8rem', alignItems: 'flex-start', borderBottom: '1px solid rgba(255,255,255,0.08)', padding: '0.9rem 0', color: 'rgba(255,255,255,0.76)', lineHeight: 1.55 }}>
                 <span style={{ color: '#FFF12D', fontWeight: 800 }}>✓</span>
-                <span>{item}</span>
+                <span><ReviewedText text={item} /></span>
               </div>
             ))}
           </div>
@@ -323,87 +329,85 @@ export default function DistributorApplication() {
       <section style={{ ...sectionStyle, background: '#000', paddingBottom: '6rem' }}>
         <div style={{ maxWidth: '1180px', margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: '3rem', alignItems: 'start' }}>
           <div>
-            <p style={{ color: '#FFF12D', fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontWeight: 700, letterSpacing: '0.18em', fontSize: '0.72rem', textTransform: 'uppercase' }}>{partnerMode ? '// COMMERCIAL PARTNERSHIP REVIEW' : '// COUNTRY PARTNER REVIEW'}</p>
-            <h2 style={headingStyle}>{partnerMode ? 'Explore a Commercial Partnership.' : 'Apply To Build Your Market.'}</h2>
+            <p style={{ color: '#FFF12D', fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontWeight: 700, letterSpacing: '0.18em', fontSize: '0.72rem', textTransform: 'uppercase' }}><ReviewedText text={partnerMode ? '// COMMERCIAL PARTNERSHIP REVIEW' : '// COUNTRY PARTNER REVIEW'} /></p>
+            <h2 style={headingStyle}><ReviewedText text={partnerMode ? 'Explore a Commercial Partnership.' : 'Apply To Build Your Market.'} /></h2>
             <p style={{ color: 'rgba(255,255,255,0.68)', lineHeight: 1.72, maxWidth: '560px', marginTop: '1.4rem' }}>
-              {partnerMode ? 'Tell us about your company, market, customers and filtration interests. Our commercial team will evaluate opportunities for potential collaboration.' : 'Tell us about your company, territory, distribution reach and current product lines. We evaluate market fit, import capability, commercial volume and the ability to build ELIMFILTERS as a national business.'}
+              <ReviewedText text={partnerMode ? 'Tell us about your company, market, customers and filtration interests. Our commercial team will evaluate opportunities for potential collaboration.' : 'Tell us about your company, territory, distribution reach and current product lines. We evaluate market fit, import capability, commercial volume and the ability to build ELIMFILTERS as a national business.'} />
             </p>
             <p style={{ color: 'rgba(255,255,255,0.46)', lineHeight: 1.72, maxWidth: '560px' }}>
-              {partnerMode ? 'This initial evaluation does not establish a distribution agreement, purchasing obligation or exclusive territorial rights.' : 'Applications do not create exclusivity automatically. Country rights, purchasing commitments and performance requirements are defined only in the final distribution agreement.'}
+              <ReviewedText text={partnerMode ? 'This initial evaluation does not establish a distribution agreement, purchasing obligation or exclusive territorial rights.' : 'Applications do not create exclusivity automatically. Country rights, purchasing commitments and performance requirements are defined only in the final distribution agreement.'} />
             </p>
           </div>
 
           <div style={{ border: '1px solid rgba(255,241,45,0.28)', background: 'linear-gradient(135deg, rgba(255,241,45,0.055), rgba(255,255,255,0.025))', padding: 'clamp(1.4rem, 4vw, 2.5rem)' }}>
             <h3 style={{ fontFamily: 'Chakra Petch, Arial Narrow, monospace', color: '#FFF12D', fontSize: '0.9rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', marginBottom: '1.8rem' }}>
-              {partnerMode ? 'Commercial Partnership Evaluation' : 'Country Distributor Application'}
+              <ReviewedText text={partnerMode ? 'Commercial Partnership Evaluation' : 'Country Distributor Application'} />
             </h3>
 
             {submitted && (
-              <div style={{ background: 'rgba(100,200,100,0.12)', border: '1px solid rgba(100,200,100,0.35)', padding: '1rem', marginBottom: '1.5rem', fontSize: '0.9rem', color: '#90ee90' }}>
-                Application received successfully. Pending internal commercial review.
-              </div>
+              <div style={{ background: 'rgba(100,200,100,0.12)', border: '1px solid rgba(100,200,100,0.35)', padding: '1rem', marginBottom: '1.5rem', fontSize: '0.9rem', color: '#90ee90' }}><ReviewedText text={"Application received successfully. Pending internal commercial review."} /></div>
             )}
 
             <form onSubmit={handleSubmit}>
               <div style={{ marginBottom: '1rem' }}>
-                <label style={labelStyle}>Company / Commercial Name</label>
+                <label style={labelStyle}><ReviewedText text={"Company / Commercial Name"} /></label>
                 <input type="text" name="companyName" value={formData.companyName} onChange={handleChange} style={inputStyle} />
               </div>
               <div style={{ marginBottom: '1rem' }}>
-                <label style={labelStyle}>Company Legal Name *</label>
+                <label style={labelStyle}><ReviewedText text={"Company Legal Name *"} /></label>
                 <input type="text" name="legalName" value={formData.legalName} onChange={handleChange} required style={inputStyle} />
               </div>
               <div style={{ marginBottom: '1rem' }}>
-                <label style={labelStyle}>Contact Name *</label>
+                <label style={labelStyle}><ReviewedText text={"Contact Name *"} /></label>
                 <input type="text" name="contactName" value={formData.contactName} onChange={handleChange} required style={inputStyle} />
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
-                  <label style={labelStyle}>Email *</label>
+                  <label style={labelStyle}><ReviewedText text={"Email *"} /></label>
                   <input type="email" name="email" value={formData.email} onChange={handleChange} required style={inputStyle} />
                 </div>
                 <div>
-                  <label style={labelStyle}>Phone *</label>
+                  <label style={labelStyle}><ReviewedText text={"Phone *"} /></label>
                   <input type="tel" name="phone" value={formData.phone} onChange={handleChange} required style={inputStyle} />
                 </div>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
-                  <label style={labelStyle}>Country *</label>
+                  <label style={labelStyle}><ReviewedText text={"Country *"} /></label>
                   <input type="text" name="country" value={formData.country} onChange={handleChange} required style={inputStyle} />
                 </div>
                 <div>
-                  <label style={labelStyle}>State / Province</label>
+                  <label style={labelStyle}><ReviewedText text={"State / Province"} /></label>
                   <input type="text" name="state" value={formData.state} onChange={handleChange} style={inputStyle} />
                 </div>
               </div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1rem' }}>
                 <div>
-                  <label style={labelStyle}>Years In Business</label>
+                  <label style={labelStyle}><ReviewedText text={"Years In Business"} /></label>
                   <input type="number" name="yearsInBusiness" value={formData.yearsInBusiness} onChange={handleChange} style={inputStyle} />
                 </div>
                 <div>
-                  <label style={labelStyle}>Employees</label>
+                  <label style={labelStyle}><ReviewedText text={"Employees"} /></label>
                   <input type="number" name="employees" value={formData.employees} onChange={handleChange} style={inputStyle} />
                 </div>
               </div>
               <div style={{ marginBottom: '1rem' }}>
-                <label style={labelStyle}>Current Product Lines / Brands</label>
+                <label style={labelStyle}><ReviewedText text={"Current Product Lines / Brands"} /></label>
                 <textarea name="currentProducts" value={formData.currentProducts} onChange={handleChange} rows={3} style={{ ...inputStyle, resize: 'vertical' }} />
               </div>
               <div style={{ marginBottom: '1rem' }}>
-                <label style={labelStyle}>Distribution Territory / Channels *</label>
-                <textarea name="serviceArea" value={formData.serviceArea} onChange={handleChange} required rows={3} placeholder="Describe your country coverage, reseller network, customer channels and industries served." style={{ ...inputStyle, resize: 'vertical' }} />
+                <label style={labelStyle}><ReviewedText text={"Distribution Territory / Channels *"} /></label>
+                <textarea name="serviceArea" value={formData.serviceArea} onChange={handleChange} required rows={3} placeholder={formText("Describe your country coverage, reseller network, customer channels and industries served.")} style={{ ...inputStyle, resize: 'vertical' }} />
               </div>
               <div style={{ marginBottom: '1.5rem' }}>
-                <label style={labelStyle}>Commercial Capacity / Additional Information</label>
-                <textarea name="message" value={formData.message} onChange={handleChange} rows={4} placeholder={partnerMode ? "Describe your business, customers and potential filtration opportunities." : "Tell us about your import capability, warehouse capacity, purchasing volume and how you would develop ELIMFILTERS in your market."} style={{ ...inputStyle, resize: 'vertical' }} />
+                <label style={labelStyle}><ReviewedText text={"Commercial Capacity / Additional Information"} /></label>
+                <textarea name="message" value={formData.message} onChange={handleChange} rows={4} placeholder={formText(partnerMode ? "Describe your business, customers and potential filtration opportunities." : "Tell us about your import capability, warehouse capacity, purchasing volume and how you would develop ELIMFILTERS in your market.")} style={{ ...inputStyle, resize: 'vertical' }} />
               </div>
 
               <PartnerTurnstile onVerify={setTurnstileToken} />
 
               <button type="submit" disabled={!turnstileToken} style={{ width: '100%', padding: '1rem', background: turnstileToken ? '#FFF12D' : 'rgba(255,255,255,0.18)', color: turnstileToken ? '#000' : 'rgba(255,255,255,0.5)', fontFamily: 'Chakra Petch, Arial Narrow, monospace', fontWeight: 700, fontSize: '0.82rem', letterSpacing: '0.16em', border: 'none', cursor: turnstileToken ? 'pointer' : 'not-allowed', textTransform: 'uppercase' }}>
-                {partnerMode ? 'Submit Commercial Partnership Evaluation' : 'Request Country Distributor Review'}
+                <ReviewedText text={partnerMode ? 'Submit Commercial Partnership Evaluation' : 'Request Country Distributor Review'} />
               </button>
             </form>
           </div>
