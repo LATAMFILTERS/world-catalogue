@@ -26,6 +26,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Validate legacy SKU redirects
+        working-directory: .
+        run: node --test tests/legacy-sku-redirects.test.js
+
       - name: Validate Cloudflare credentials
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
